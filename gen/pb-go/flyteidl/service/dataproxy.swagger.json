@@ -151,10 +151,7 @@
       "type": "object",
       "properties": {
         "signed_url": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
+          "type": "string",
           "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
         },
         "native_url": {

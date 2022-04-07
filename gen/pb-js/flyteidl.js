@@ -40138,7 +40138,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an ItemUploadInfo.
              * @memberof flyteidl.service
              * @interface IItemUploadInfo
-             * @property {Array.<string>|null} [signedUrl] ItemUploadInfo signedUrl
+             * @property {string|null} [signedUrl] ItemUploadInfo signedUrl
              * @property {string|null} [nativeUrl] ItemUploadInfo nativeUrl
              */
 
@@ -40151,7 +40151,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.service.IItemUploadInfo=} [properties] Properties to set
              */
             function ItemUploadInfo(properties) {
-                this.signedUrl = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -40160,11 +40159,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * ItemUploadInfo signedUrl.
-             * @member {Array.<string>} signedUrl
+             * @member {string} signedUrl
              * @memberof flyteidl.service.ItemUploadInfo
              * @instance
              */
-            ItemUploadInfo.prototype.signedUrl = $util.emptyArray;
+            ItemUploadInfo.prototype.signedUrl = "";
 
             /**
              * ItemUploadInfo nativeUrl.
@@ -40198,9 +40197,8 @@ export const flyteidl = $root.flyteidl = (() => {
             ItemUploadInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.signedUrl != null && message.signedUrl.length)
-                    for (let i = 0; i < message.signedUrl.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
                 if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.nativeUrl);
                 return writer;
@@ -40225,9 +40223,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        if (!(message.signedUrl && message.signedUrl.length))
-                            message.signedUrl = [];
-                        message.signedUrl.push(reader.string());
+                        message.signedUrl = reader.string();
                         break;
                     case 2:
                         message.nativeUrl = reader.string();
@@ -40251,13 +40247,9 @@ export const flyteidl = $root.flyteidl = (() => {
             ItemUploadInfo.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.signedUrl != null && message.hasOwnProperty("signedUrl")) {
-                    if (!Array.isArray(message.signedUrl))
-                        return "signedUrl: array expected";
-                    for (let i = 0; i < message.signedUrl.length; ++i)
-                        if (!$util.isString(message.signedUrl[i]))
-                            return "signedUrl: string[] expected";
-                }
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    if (!$util.isString(message.signedUrl))
+                        return "signedUrl: string expected";
                 if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
                     if (!$util.isString(message.nativeUrl))
                         return "nativeUrl: string expected";

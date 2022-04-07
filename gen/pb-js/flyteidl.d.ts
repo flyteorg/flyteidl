@@ -17224,7 +17224,7 @@ export namespace flyteidl {
         interface IItemUploadInfo {
 
             /** ItemUploadInfo signedUrl */
-            signedUrl?: (string[]|null);
+            signedUrl?: (string|null);
 
             /** ItemUploadInfo nativeUrl */
             nativeUrl?: (string|null);
@@ -17240,7 +17240,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.service.IItemUploadInfo);
 
             /** ItemUploadInfo signedUrl. */
-            public signedUrl: string[];
+            public signedUrl: string;
 
             /** ItemUploadInfo nativeUrl. */
             public nativeUrl: string;

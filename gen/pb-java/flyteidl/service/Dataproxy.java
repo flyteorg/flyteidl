@@ -3704,35 +3704,18 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>string signed_url = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getSignedUrlList();
+    java.lang.String getSignedUrl();
     /**
      * <pre>
      * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
-     */
-    int getSignedUrlCount();
-    /**
-     * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-     * </pre>
-     *
-     * <code>repeated string signed_url = 1;</code>
-     */
-    java.lang.String getSignedUrl(int index);
-    /**
-     * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-     * </pre>
-     *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>string signed_url = 1;</code>
      */
     com.google.protobuf.ByteString
-        getSignedUrlBytes(int index);
+        getSignedUrlBytes();
 
     /**
      * <pre>
@@ -3765,7 +3748,7 @@ public final class Dataproxy {
       super(builder);
     }
     private ItemUploadInfo() {
-      signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      signedUrl_ = "";
       nativeUrl_ = "";
     }
 
@@ -3795,11 +3778,8 @@ public final class Dataproxy {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                signedUrl_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              signedUrl_.add(s);
+
+              signedUrl_ = s;
               break;
             }
             case 18: {
@@ -3823,9 +3803,6 @@ public final class Dataproxy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          signedUrl_ = signedUrl_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3843,50 +3820,46 @@ public final class Dataproxy {
               flyteidl.service.Dataproxy.ItemUploadInfo.class, flyteidl.service.Dataproxy.ItemUploadInfo.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SIGNED_URL_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList signedUrl_;
+    private volatile java.lang.Object signedUrl_;
     /**
      * <pre>
      * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>string signed_url = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getSignedUrlList() {
-      return signedUrl_;
+    public java.lang.String getSignedUrl() {
+      java.lang.Object ref = signedUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        signedUrl_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
-     */
-    public int getSignedUrlCount() {
-      return signedUrl_.size();
-    }
-    /**
-     * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-     * </pre>
-     *
-     * <code>repeated string signed_url = 1;</code>
-     */
-    public java.lang.String getSignedUrl(int index) {
-      return signedUrl_.get(index);
-    }
-    /**
-     * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-     * </pre>
-     *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>string signed_url = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getSignedUrlBytes(int index) {
-      return signedUrl_.getByteString(index);
+        getSignedUrlBytes() {
+      java.lang.Object ref = signedUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        signedUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int NATIVE_URL_FIELD_NUMBER = 2;
@@ -3945,8 +3918,8 @@ public final class Dataproxy {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < signedUrl_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedUrl_.getRaw(i));
+      if (!getSignedUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedUrl_);
       }
       if (!getNativeUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nativeUrl_);
@@ -3960,13 +3933,8 @@ public final class Dataproxy {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < signedUrl_.size(); i++) {
-          dataSize += computeStringSizeNoTag(signedUrl_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getSignedUrlList().size();
+      if (!getSignedUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signedUrl_);
       }
       if (!getNativeUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nativeUrl_);
@@ -3986,8 +3954,8 @@ public final class Dataproxy {
       }
       flyteidl.service.Dataproxy.ItemUploadInfo other = (flyteidl.service.Dataproxy.ItemUploadInfo) obj;
 
-      if (!getSignedUrlList()
-          .equals(other.getSignedUrlList())) return false;
+      if (!getSignedUrl()
+          .equals(other.getSignedUrl())) return false;
       if (!getNativeUrl()
           .equals(other.getNativeUrl())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -4001,10 +3969,8 @@ public final class Dataproxy {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getSignedUrlCount() > 0) {
-        hash = (37 * hash) + SIGNED_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getSignedUrlList().hashCode();
-      }
+      hash = (37 * hash) + SIGNED_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getSignedUrl().hashCode();
       hash = (37 * hash) + NATIVE_URL_FIELD_NUMBER;
       hash = (53 * hash) + getNativeUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -4140,8 +4106,8 @@ public final class Dataproxy {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        signedUrl_ = "";
+
         nativeUrl_ = "";
 
         return this;
@@ -4170,15 +4136,8 @@ public final class Dataproxy {
       @java.lang.Override
       public flyteidl.service.Dataproxy.ItemUploadInfo buildPartial() {
         flyteidl.service.Dataproxy.ItemUploadInfo result = new flyteidl.service.Dataproxy.ItemUploadInfo(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          signedUrl_ = signedUrl_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
         result.signedUrl_ = signedUrl_;
         result.nativeUrl_ = nativeUrl_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -4227,14 +4186,8 @@ public final class Dataproxy {
 
       public Builder mergeFrom(flyteidl.service.Dataproxy.ItemUploadInfo other) {
         if (other == flyteidl.service.Dataproxy.ItemUploadInfo.getDefaultInstance()) return this;
-        if (!other.signedUrl_.isEmpty()) {
-          if (signedUrl_.isEmpty()) {
-            signedUrl_ = other.signedUrl_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureSignedUrlIsMutable();
-            signedUrl_.addAll(other.signedUrl_);
-          }
+        if (!other.getSignedUrl().isEmpty()) {
+          signedUrl_ = other.signedUrl_;
           onChanged();
         }
         if (!other.getNativeUrl().isEmpty()) {
@@ -4269,88 +4222,61 @@ public final class Dataproxy {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureSignedUrlIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          signedUrl_ = new com.google.protobuf.LazyStringArrayList(signedUrl_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object signedUrl_ = "";
       /**
        * <pre>
        * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>string signed_url = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getSignedUrlList() {
-        return signedUrl_.getUnmodifiableView();
+      public java.lang.String getSignedUrl() {
+        java.lang.Object ref = signedUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          signedUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
-       */
-      public int getSignedUrlCount() {
-        return signedUrl_.size();
-      }
-      /**
-       * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-       * </pre>
-       *
-       * <code>repeated string signed_url = 1;</code>
-       */
-      public java.lang.String getSignedUrl(int index) {
-        return signedUrl_.get(index);
-      }
-      /**
-       * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-       * </pre>
-       *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>string signed_url = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getSignedUrlBytes(int index) {
-        return signedUrl_.getByteString(index);
+          getSignedUrlBytes() {
+        java.lang.Object ref = signedUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          signedUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
        * <pre>
        * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>string signed_url = 1;</code>
        */
       public Builder setSignedUrl(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSignedUrlIsMutable();
-        signedUrl_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-       * </pre>
-       *
-       * <code>repeated string signed_url = 1;</code>
-       */
-      public Builder addSignedUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureSignedUrlIsMutable();
-        signedUrl_.add(value);
+  
+        signedUrl_ = value;
         onChanged();
         return this;
       }
@@ -4359,26 +4285,11 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
-       */
-      public Builder addAllSignedUrl(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureSignedUrlIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, signedUrl_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-       * </pre>
-       *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>string signed_url = 1;</code>
        */
       public Builder clearSignedUrl() {
-        signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        
+        signedUrl_ = getDefaultInstance().getSignedUrl();
         onChanged();
         return this;
       }
@@ -4387,16 +4298,16 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>string signed_url = 1;</code>
        */
-      public Builder addSignedUrlBytes(
+      public Builder setSignedUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureSignedUrlIsMutable();
-        signedUrl_.add(value);
+        
+        signedUrl_ = value;
         onChanged();
         return this;
       }
@@ -6689,7 +6600,7 @@ public final class Dataproxy {
       "yteidl.service.ItemUploadInfo\022\022\n\nnative_" +
       "url\030\002 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\"8\n\016ItemUploadInfo\022\022\n\ns" +
-      "igned_url\030\001 \003(\t\022\022\n\nnative_url\030\002 \001(\t\"\251\001\n " +
+      "igned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\"\251\001\n " +
       "CreateUploadLocationBatchRequest\022\017\n\007proj" +
       "ect\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(" +
       "\t\022-\n\nexpires_in\030\004 \001(\0132\031.google.protobuf." +

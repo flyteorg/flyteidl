@@ -57,7 +57,7 @@ message CreateUploadLocationBatchResponse {
 
 message ItemUploadInfo {
   // SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-  repeated string signed_url = 1;
+  string signed_url = 1;
 
   // NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
   string native_url = 2;

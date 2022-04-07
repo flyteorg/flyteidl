@@ -647,27 +647,19 @@ class ItemUploadInfo final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string signed_url = 1;
-  int signed_url_size() const;
+  // string signed_url = 1;
   void clear_signed_url();
   static const int kSignedUrlFieldNumber = 1;
-  const ::std::string& signed_url(int index) const;
-  ::std::string* mutable_signed_url(int index);
-  void set_signed_url(int index, const ::std::string& value);
+  const ::std::string& signed_url() const;
+  void set_signed_url(const ::std::string& value);
   #if LANG_CXX11
-  void set_signed_url(int index, ::std::string&& value);
+  void set_signed_url(::std::string&& value);
   #endif
-  void set_signed_url(int index, const char* value);
-  void set_signed_url(int index, const char* value, size_t size);
-  ::std::string* add_signed_url();
-  void add_signed_url(const ::std::string& value);
-  #if LANG_CXX11
-  void add_signed_url(::std::string&& value);
-  #endif
-  void add_signed_url(const char* value);
-  void add_signed_url(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& signed_url() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_signed_url();
+  void set_signed_url(const char* value);
+  void set_signed_url(const char* value, size_t size);
+  ::std::string* mutable_signed_url();
+  ::std::string* release_signed_url();
+  void set_allocated_signed_url(::std::string* signed_url);
 
   // string native_url = 2;
   void clear_native_url();
@@ -688,7 +680,7 @@ class ItemUploadInfo final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> signed_url_;
+  ::google::protobuf::internal::ArenaStringPtr signed_url_;
   ::google::protobuf::internal::ArenaStringPtr native_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
@@ -1548,73 +1540,57 @@ inline void CreateUploadLocationBatchResponse::set_allocated_expires_at(::google
 
 // ItemUploadInfo
 
-// repeated string signed_url = 1;
-inline int ItemUploadInfo::signed_url_size() const {
-  return signed_url_.size();
-}
+// string signed_url = 1;
 inline void ItemUploadInfo::clear_signed_url() {
-  signed_url_.Clear();
+  signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ItemUploadInfo::signed_url(int index) const {
+inline const ::std::string& ItemUploadInfo::signed_url() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.ItemUploadInfo.signed_url)
-  return signed_url_.Get(index);
+  return signed_url_.GetNoArena();
 }
-inline ::std::string* ItemUploadInfo::mutable_signed_url(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.ItemUploadInfo.signed_url)
-  return signed_url_.Mutable(index);
-}
-inline void ItemUploadInfo::set_signed_url(int index, const ::std::string& value) {
+inline void ItemUploadInfo::set_signed_url(const ::std::string& value) {
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.service.ItemUploadInfo.signed_url)
-  signed_url_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void ItemUploadInfo::set_signed_url(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.service.ItemUploadInfo.signed_url)
-  signed_url_.Mutable(index)->assign(std::move(value));
+inline void ItemUploadInfo::set_signed_url(::std::string&& value) {
+  
+  signed_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.ItemUploadInfo.signed_url)
 }
 #endif
-inline void ItemUploadInfo::set_signed_url(int index, const char* value) {
+inline void ItemUploadInfo::set_signed_url(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  signed_url_.Mutable(index)->assign(value);
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.service.ItemUploadInfo.signed_url)
 }
-inline void ItemUploadInfo::set_signed_url(int index, const char* value, size_t size) {
-  signed_url_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
+inline void ItemUploadInfo::set_signed_url(const char* value, size_t size) {
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.service.ItemUploadInfo.signed_url)
 }
-inline ::std::string* ItemUploadInfo::add_signed_url() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.service.ItemUploadInfo.signed_url)
-  return signed_url_.Add();
+inline ::std::string* ItemUploadInfo::mutable_signed_url() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.ItemUploadInfo.signed_url)
+  return signed_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ItemUploadInfo::add_signed_url(const ::std::string& value) {
-  signed_url_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.service.ItemUploadInfo.signed_url)
+inline ::std::string* ItemUploadInfo::release_signed_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.ItemUploadInfo.signed_url)
+  
+  return signed_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-#if LANG_CXX11
-inline void ItemUploadInfo::add_signed_url(::std::string&& value) {
-  signed_url_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.service.ItemUploadInfo.signed_url)
-}
-#endif
-inline void ItemUploadInfo::add_signed_url(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  signed_url_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.service.ItemUploadInfo.signed_url)
-}
-inline void ItemUploadInfo::add_signed_url(const char* value, size_t size) {
-  signed_url_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.service.ItemUploadInfo.signed_url)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-ItemUploadInfo::signed_url() const {
-  // @@protoc_insertion_point(field_list:flyteidl.service.ItemUploadInfo.signed_url)
-  return signed_url_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-ItemUploadInfo::mutable_signed_url() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.ItemUploadInfo.signed_url)
-  return &signed_url_;
+inline void ItemUploadInfo::set_allocated_signed_url(::std::string* signed_url) {
+  if (signed_url != nullptr) {
+    
+  } else {
+    
+  }
+  signed_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_url);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.ItemUploadInfo.signed_url)
 }
 
 // string native_url = 2;

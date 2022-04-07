@@ -243,7 +243,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "yteidl.service.ItemUploadInfo\022\022\n\nnative_"
   "url\030\002 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032.google.p"
   "rotobuf.Timestamp\"8\n\016ItemUploadInfo\022\022\n\ns"
-  "igned_url\030\001 \003(\t\022\022\n\nnative_url\030\002 \001(\t\"\251\001\n "
+  "igned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\"\251\001\n "
   "CreateUploadLocationBatchRequest\022\017\n\007proj"
   "ect\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001("
   "\t\022-\n\nexpires_in\030\004 \001(\0132\031.google.protobuf."
@@ -1756,9 +1756,12 @@ ItemUploadInfo::ItemUploadInfo()
 }
 ItemUploadInfo::ItemUploadInfo(const ItemUploadInfo& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      signed_url_(from.signed_url_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  signed_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.signed_url().size() > 0) {
+    signed_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signed_url_);
+  }
   native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.native_url().size() > 0) {
     native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
@@ -1769,6 +1772,7 @@ ItemUploadInfo::ItemUploadInfo(const ItemUploadInfo& from)
 void ItemUploadInfo::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  signed_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1778,6 +1782,7 @@ ItemUploadInfo::~ItemUploadInfo() {
 }
 
 void ItemUploadInfo::SharedDtor() {
+  signed_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1796,7 +1801,7 @@ void ItemUploadInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  signed_url_.Clear();
+  signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
@@ -1814,23 +1819,20 @@ const char* ItemUploadInfo::_InternalParse(const char* begin, const char* end, v
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated string signed_url = 1;
+      // string signed_url = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.service.ItemUploadInfo.signed_url");
-          object = msg->add_signed_url();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.ItemUploadInfo.signed_url");
+        object = msg->mutable_signed_url();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       // string native_url = 2;
@@ -1883,14 +1885,13 @@ bool ItemUploadInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string signed_url = 1;
+      // string signed_url = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_signed_url()));
+                input, this->mutable_signed_url()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->signed_url(this->signed_url_size() - 1).data(),
-            static_cast<int>(this->signed_url(this->signed_url_size() - 1).length()),
+            this->signed_url().data(), static_cast<int>(this->signed_url().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.service.ItemUploadInfo.signed_url"));
         } else {
@@ -1941,14 +1942,14 @@ void ItemUploadInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
-  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
+  // string signed_url = 1;
+  if (this->signed_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
+      this->signed_url().data(), static_cast<int>(this->signed_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.service.ItemUploadInfo.signed_url");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->signed_url(i), output);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->signed_url(), output);
   }
 
   // string native_url = 2;
@@ -1974,14 +1975,15 @@ void ItemUploadInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
-  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
+  // string signed_url = 1;
+  if (this->signed_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
+      this->signed_url().data(), static_cast<int>(this->signed_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.service.ItemUploadInfo.signed_url");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->signed_url(i), target);
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->signed_url(), target);
   }
 
   // string native_url = 2;
@@ -2016,12 +2018,11 @@ size_t ItemUploadInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->signed_url_size());
-  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->signed_url(i));
+  // string signed_url = 1;
+  if (this->signed_url().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->signed_url());
   }
 
   // string native_url = 2;
@@ -2058,7 +2059,10 @@ void ItemUploadInfo::MergeFrom(const ItemUploadInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  signed_url_.MergeFrom(from.signed_url_);
+  if (from.signed_url().size() > 0) {
+
+    signed_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signed_url_);
+  }
   if (from.native_url().size() > 0) {
 
     native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
@@ -2090,7 +2094,8 @@ void ItemUploadInfo::Swap(ItemUploadInfo* other) {
 void ItemUploadInfo::InternalSwap(ItemUploadInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  signed_url_.InternalSwap(CastToBase(&other->signed_url_));
+  signed_url_.Swap(&other->signed_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   native_url_.Swap(&other->native_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
