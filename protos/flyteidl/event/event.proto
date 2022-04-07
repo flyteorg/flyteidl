@@ -199,7 +199,7 @@ message TaskExecutionEvent {
     // proto message. For example, event_verison > 0 means that maps tasks report logs using the
     // TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
     // in this message.
-    int32 event_version = 17;
+    int32 event_version = 18;
 }
 
 // This message contains metadata about external resources produced or used by a specific task execution.
