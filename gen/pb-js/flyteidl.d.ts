@@ -17156,6 +17156,256 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a CreateUploadLocationBatchResponse. */
+        interface ICreateUploadLocationBatchResponse {
+
+            /** CreateUploadLocationBatchResponse items */
+            items?: (flyteidl.service.IItemUploadInfo[]|null);
+
+            /** CreateUploadLocationBatchResponse nativeUrl */
+            nativeUrl?: (string|null);
+
+            /** CreateUploadLocationBatchResponse expiresAt */
+            expiresAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a CreateUploadLocationBatchResponse. */
+        class CreateUploadLocationBatchResponse implements ICreateUploadLocationBatchResponse {
+
+            /**
+             * Constructs a new CreateUploadLocationBatchResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateUploadLocationBatchResponse);
+
+            /** CreateUploadLocationBatchResponse items. */
+            public items: flyteidl.service.IItemUploadInfo[];
+
+            /** CreateUploadLocationBatchResponse nativeUrl. */
+            public nativeUrl: string;
+
+            /** CreateUploadLocationBatchResponse expiresAt. */
+            public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new CreateUploadLocationBatchResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateUploadLocationBatchResponse instance
+             */
+            public static create(properties?: flyteidl.service.ICreateUploadLocationBatchResponse): flyteidl.service.CreateUploadLocationBatchResponse;
+
+            /**
+             * Encodes the specified CreateUploadLocationBatchResponse message. Does not implicitly {@link flyteidl.service.CreateUploadLocationBatchResponse.verify|verify} messages.
+             * @param message CreateUploadLocationBatchResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateUploadLocationBatchResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateUploadLocationBatchResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateUploadLocationBatchResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateUploadLocationBatchResponse;
+
+            /**
+             * Verifies a CreateUploadLocationBatchResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an ItemUploadInfo. */
+        interface IItemUploadInfo {
+
+            /** ItemUploadInfo signedUrl */
+            signedUrl?: (string[]|null);
+
+            /** ItemUploadInfo nativeUrl */
+            nativeUrl?: (string|null);
+        }
+
+        /** Represents an ItemUploadInfo. */
+        class ItemUploadInfo implements IItemUploadInfo {
+
+            /**
+             * Constructs a new ItemUploadInfo.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IItemUploadInfo);
+
+            /** ItemUploadInfo signedUrl. */
+            public signedUrl: string[];
+
+            /** ItemUploadInfo nativeUrl. */
+            public nativeUrl: string;
+
+            /**
+             * Creates a new ItemUploadInfo instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ItemUploadInfo instance
+             */
+            public static create(properties?: flyteidl.service.IItemUploadInfo): flyteidl.service.ItemUploadInfo;
+
+            /**
+             * Encodes the specified ItemUploadInfo message. Does not implicitly {@link flyteidl.service.ItemUploadInfo.verify|verify} messages.
+             * @param message ItemUploadInfo message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IItemUploadInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ItemUploadInfo message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ItemUploadInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.ItemUploadInfo;
+
+            /**
+             * Verifies an ItemUploadInfo message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateUploadLocationBatchRequest. */
+        interface ICreateUploadLocationBatchRequest {
+
+            /** CreateUploadLocationBatchRequest project */
+            project?: (string|null);
+
+            /** CreateUploadLocationBatchRequest domain */
+            domain?: (string|null);
+
+            /** CreateUploadLocationBatchRequest suffix */
+            suffix?: (string|null);
+
+            /** CreateUploadLocationBatchRequest expiresIn */
+            expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationBatchRequest items */
+            items?: (flyteidl.service.IItem[]|null);
+        }
+
+        /** Represents a CreateUploadLocationBatchRequest. */
+        class CreateUploadLocationBatchRequest implements ICreateUploadLocationBatchRequest {
+
+            /**
+             * Constructs a new CreateUploadLocationBatchRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateUploadLocationBatchRequest);
+
+            /** CreateUploadLocationBatchRequest project. */
+            public project: string;
+
+            /** CreateUploadLocationBatchRequest domain. */
+            public domain: string;
+
+            /** CreateUploadLocationBatchRequest suffix. */
+            public suffix: string;
+
+            /** CreateUploadLocationBatchRequest expiresIn. */
+            public expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationBatchRequest items. */
+            public items: flyteidl.service.IItem[];
+
+            /**
+             * Creates a new CreateUploadLocationBatchRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateUploadLocationBatchRequest instance
+             */
+            public static create(properties?: flyteidl.service.ICreateUploadLocationBatchRequest): flyteidl.service.CreateUploadLocationBatchRequest;
+
+            /**
+             * Encodes the specified CreateUploadLocationBatchRequest message. Does not implicitly {@link flyteidl.service.CreateUploadLocationBatchRequest.verify|verify} messages.
+             * @param message CreateUploadLocationBatchRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateUploadLocationBatchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateUploadLocationBatchRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateUploadLocationBatchRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateUploadLocationBatchRequest;
+
+            /**
+             * Verifies a CreateUploadLocationBatchRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of an Item. */
+        interface IItem {
+
+            /** Item contentMd5 */
+            contentMd5?: (Uint8Array|null);
+        }
+
+        /** Represents an Item. */
+        class Item implements IItem {
+
+            /**
+             * Constructs a new Item.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IItem);
+
+            /** Item contentMd5. */
+            public contentMd5: Uint8Array;
+
+            /**
+             * Creates a new Item instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Item instance
+             */
+            public static create(properties?: flyteidl.service.IItem): flyteidl.service.Item;
+
+            /**
+             * Encodes the specified Item message. Does not implicitly {@link flyteidl.service.Item.verify|verify} messages.
+             * @param message Item message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IItem, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an Item message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Item
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.Item;
+
+            /**
+             * Verifies an Item message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents a DataProxyService */
         class DataProxyService extends $protobuf.rpc.Service {
 
@@ -17189,6 +17439,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createUploadLocation(request: flyteidl.service.ICreateUploadLocationRequest): Promise<flyteidl.service.CreateUploadLocationResponse>;
+
+            /**
+             * Calls CreateUploadLocationBatch.
+             * @param request CreateUploadLocationBatchRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateUploadLocationBatchResponse
+             */
+            public createUploadLocationBatch(request: flyteidl.service.ICreateUploadLocationBatchRequest, callback: flyteidl.service.DataProxyService.CreateUploadLocationBatchCallback): void;
+
+            /**
+             * Calls CreateUploadLocationBatch.
+             * @param request CreateUploadLocationBatchRequest message or plain object
+             * @returns Promise
+             */
+            public createUploadLocationBatch(request: flyteidl.service.ICreateUploadLocationBatchRequest): Promise<flyteidl.service.CreateUploadLocationBatchResponse>;
         }
 
         namespace DataProxyService {
@@ -17199,6 +17463,13 @@ export namespace flyteidl {
              * @param [response] CreateUploadLocationResponse
              */
             type CreateUploadLocationCallback = (error: (Error|null), response?: flyteidl.service.CreateUploadLocationResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createUploadLocationBatch}.
+             * @param error Error, if any
+             * @param [response] CreateUploadLocationBatchResponse
+             */
+            type CreateUploadLocationBatchCallback = (error: (Error|null), response?: flyteidl.service.CreateUploadLocationBatchResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */

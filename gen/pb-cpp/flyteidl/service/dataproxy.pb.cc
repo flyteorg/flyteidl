@@ -16,6 +16,8 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fdataproxy_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fdataproxy_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace flyteidl {
@@ -28,6 +30,22 @@ class CreateUploadLocationRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<CreateUploadLocationRequest> _instance;
 } _CreateUploadLocationRequest_default_instance_;
+class CreateUploadLocationBatchResponseDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<CreateUploadLocationBatchResponse> _instance;
+} _CreateUploadLocationBatchResponse_default_instance_;
+class ItemUploadInfoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ItemUploadInfo> _instance;
+} _ItemUploadInfo_default_instance_;
+class CreateUploadLocationBatchRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<CreateUploadLocationBatchRequest> _instance;
+} _CreateUploadLocationBatchRequest_default_instance_;
+class ItemDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Item> _instance;
+} _Item_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 static void InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto() {
@@ -60,12 +78,76 @@ static void InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdatapro
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {
       &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
 
+static void InitDefaultsCreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::service::_CreateUploadLocationBatchResponse_default_instance_;
+    new (ptr) ::flyteidl::service::CreateUploadLocationBatchResponse();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::service::CreateUploadLocationBatchResponse::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_CreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsCreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto}, {
+      &scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+
+static void InitDefaultsItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::service::_ItemUploadInfo_default_instance_;
+    new (ptr) ::flyteidl::service::ItemUploadInfo();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::service::ItemUploadInfo::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto}, {}};
+
+static void InitDefaultsCreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::service::_CreateUploadLocationBatchRequest_default_instance_;
+    new (ptr) ::flyteidl::service::CreateUploadLocationBatchRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::service::CreateUploadLocationBatchRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_CreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsCreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {
+      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,
+      &scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto.base,}};
+
+static void InitDefaultsItem_flyteidl_2fservice_2fdataproxy_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::service::_Item_default_instance_;
+    new (ptr) ::flyteidl::service::Item();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::service::Item::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsItem_flyteidl_2fservice_2fdataproxy_2eproto}, {}};
+
 void InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[2];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[6];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
 
@@ -88,21 +170,60 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fdataproxy_2epr
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, suffix_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, expires_in_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, content_md5_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchResponse, items_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchResponse, native_url_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchResponse, expires_at_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::ItemUploadInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::ItemUploadInfo, signed_url_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::ItemUploadInfo, native_url_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, project_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, domain_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, suffix_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, expires_in_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationBatchRequest, items_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::Item, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::service::Item, content_md5_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::service::CreateUploadLocationResponse)},
   { 8, -1, sizeof(::flyteidl::service::CreateUploadLocationRequest)},
+  { 18, -1, sizeof(::flyteidl::service::CreateUploadLocationBatchResponse)},
+  { 26, -1, sizeof(::flyteidl::service::ItemUploadInfo)},
+  { 33, -1, sizeof(::flyteidl::service::CreateUploadLocationBatchRequest)},
+  { 43, -1, sizeof(::flyteidl::service::Item)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationBatchResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_ItemUploadInfo_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationBatchRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_Item_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto = {
   {}, AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto, "flyteidl/service/dataproxy.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fservice_2fdataproxy_2eproto::offsets,
-  file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto, 2, file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto, file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto,
+  file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto, 6, file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto, file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
@@ -117,20 +238,37 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "eateUploadLocationRequest\022\017\n\007project\030\001 \001"
   "(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nex"
   "pires_in\030\004 \001(\0132\031.google.protobuf.Duratio"
-  "n\022\023\n\013content_md5\030\005 \001(\0142\205\002\n\020DataProxyServ"
-  "ice\022\360\001\n\024CreateUploadLocation\022-.flyteidl."
-  "service.CreateUploadLocationRequest\032..fl"
-  "yteidl.service.CreateUploadLocationRespo"
-  "nse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/artifact_"
-  "urn:\001*\222AM\032KCreates a write-only http loc"
-  "ation that is accessible for tasks at ru"
-  "ntime.B9Z7github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/serviceb\006proto3"
+  "n\022\023\n\013content_md5\030\005 \001(\014\"\230\001\n!CreateUploadL"
+  "ocationBatchResponse\022/\n\005items\030\001 \003(\0132 .fl"
+  "yteidl.service.ItemUploadInfo\022\022\n\nnative_"
+  "url\030\002 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032.google.p"
+  "rotobuf.Timestamp\"8\n\016ItemUploadInfo\022\022\n\ns"
+  "igned_url\030\001 \003(\t\022\022\n\nnative_url\030\002 \001(\t\"\251\001\n "
+  "CreateUploadLocationBatchRequest\022\017\n\007proj"
+  "ect\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001("
+  "\t\022-\n\nexpires_in\030\004 \001(\0132\031.google.protobuf."
+  "Duration\022%\n\005items\030\005 \003(\0132\026.flyteidl.servi"
+  "ce.Item\"\033\n\004Item\022\023\n\013content_md5\030\001 \001(\0142\207\004\n"
+  "\020DataProxyService\022\360\001\n\024CreateUploadLocati"
+  "on\022-.flyteidl.service.CreateUploadLocati"
+  "onRequest\032..flyteidl.service.CreateUploa"
+  "dLocationResponse\"y\202\323\344\223\002#\"\036/api/v1/datap"
+  "roxy/artifact_urn:\001*\222AM\032KCreates a write"
+  "-only http location that is accessible f"
+  "or tasks at runtime.\022\377\001\n\031CreateUploadLoc"
+  "ationBatch\0222.flyteidl.service.CreateUplo"
+  "adLocationBatchRequest\0323.flyteidl.servic"
+  "e.CreateUploadLocationBatchResponse\"y\202\323\344"
+  "\223\002#\"\036/api/v1/dataproxy/artifact_urn:\001*\222A"
+  "M\032KCreates a write-only http location th"
+  "at is accessible for tasks at runtime.B9"
+  "Z7github.com/flyteorg/flyteidl/gen/pb-go"
+  "/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto,
-  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 793,
+  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 1465,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto() {
@@ -1168,6 +1306,1661 @@ void CreateUploadLocationRequest::InternalSwap(CreateUploadLocationRequest* othe
 }
 
 
+// ===================================================================
+
+void CreateUploadLocationBatchResponse::InitAsDefaultInstance() {
+  ::flyteidl::service::_CreateUploadLocationBatchResponse_default_instance_._instance.get_mutable()->expires_at_ = const_cast< ::google::protobuf::Timestamp*>(
+      ::google::protobuf::Timestamp::internal_default_instance());
+}
+class CreateUploadLocationBatchResponse::HasBitSetters {
+ public:
+  static const ::google::protobuf::Timestamp& expires_at(const CreateUploadLocationBatchResponse* msg);
+};
+
+const ::google::protobuf::Timestamp&
+CreateUploadLocationBatchResponse::HasBitSetters::expires_at(const CreateUploadLocationBatchResponse* msg) {
+  return *msg->expires_at_;
+}
+void CreateUploadLocationBatchResponse::clear_expires_at() {
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CreateUploadLocationBatchResponse::kItemsFieldNumber;
+const int CreateUploadLocationBatchResponse::kNativeUrlFieldNumber;
+const int CreateUploadLocationBatchResponse::kExpiresAtFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CreateUploadLocationBatchResponse::CreateUploadLocationBatchResponse()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.service.CreateUploadLocationBatchResponse)
+}
+CreateUploadLocationBatchResponse::CreateUploadLocationBatchResponse(const CreateUploadLocationBatchResponse& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      items_(from.items_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.native_url().size() > 0) {
+    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
+  }
+  if (from.has_expires_at()) {
+    expires_at_ = new ::google::protobuf::Timestamp(*from.expires_at_);
+  } else {
+    expires_at_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationBatchResponse)
+}
+
+void CreateUploadLocationBatchResponse::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_CreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  expires_at_ = nullptr;
+}
+
+CreateUploadLocationBatchResponse::~CreateUploadLocationBatchResponse() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.CreateUploadLocationBatchResponse)
+  SharedDtor();
+}
+
+void CreateUploadLocationBatchResponse::SharedDtor() {
+  native_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete expires_at_;
+}
+
+void CreateUploadLocationBatchResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CreateUploadLocationBatchResponse& CreateUploadLocationBatchResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_CreateUploadLocationBatchResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void CreateUploadLocationBatchResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  items_.Clear();
+  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
+  }
+  expires_at_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* CreateUploadLocationBatchResponse::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<CreateUploadLocationBatchResponse*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated .flyteidl.service.ItemUploadInfo items = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::service::ItemUploadInfo::_InternalParse;
+          object = msg->add_items();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      // string native_url = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationBatchResponse.native_url");
+        object = msg->mutable_native_url();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .google.protobuf.Timestamp expires_at = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
+        object = msg->mutable_expires_at();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool CreateUploadLocationBatchResponse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .flyteidl.service.ItemUploadInfo items = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_items()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string native_url = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_native_url()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->native_url().data(), static_cast<int>(this->native_url().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.CreateUploadLocationBatchResponse.native_url"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Timestamp expires_at = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expires_at()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.service.CreateUploadLocationBatchResponse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.CreateUploadLocationBatchResponse)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void CreateUploadLocationBatchResponse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.service.ItemUploadInfo items = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->items(static_cast<int>(i)),
+      output);
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->native_url().data(), static_cast<int>(this->native_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchResponse.native_url");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->native_url(), output);
+  }
+
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::expires_at(this), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.CreateUploadLocationBatchResponse)
+}
+
+::google::protobuf::uint8* CreateUploadLocationBatchResponse::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.service.ItemUploadInfo items = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->items(static_cast<int>(i)), target);
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->native_url().data(), static_cast<int>(this->native_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchResponse.native_url");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->native_url(), target);
+  }
+
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::expires_at(this), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.CreateUploadLocationBatchResponse)
+  return target;
+}
+
+size_t CreateUploadLocationBatchResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.service.ItemUploadInfo items = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->items_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->items(static_cast<int>(i)));
+    }
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->native_url());
+  }
+
+  // .google.protobuf.Timestamp expires_at = 3;
+  if (this->has_expires_at()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *expires_at_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CreateUploadLocationBatchResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateUploadLocationBatchResponse* source =
+      ::google::protobuf::DynamicCastToGenerated<CreateUploadLocationBatchResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.CreateUploadLocationBatchResponse)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.CreateUploadLocationBatchResponse)
+    MergeFrom(*source);
+  }
+}
+
+void CreateUploadLocationBatchResponse::MergeFrom(const CreateUploadLocationBatchResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  items_.MergeFrom(from.items_);
+  if (from.native_url().size() > 0) {
+
+    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
+  }
+  if (from.has_expires_at()) {
+    mutable_expires_at()->::google::protobuf::Timestamp::MergeFrom(from.expires_at());
+  }
+}
+
+void CreateUploadLocationBatchResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CreateUploadLocationBatchResponse::CopyFrom(const CreateUploadLocationBatchResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.CreateUploadLocationBatchResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateUploadLocationBatchResponse::IsInitialized() const {
+  return true;
+}
+
+void CreateUploadLocationBatchResponse::Swap(CreateUploadLocationBatchResponse* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CreateUploadLocationBatchResponse::InternalSwap(CreateUploadLocationBatchResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&items_)->InternalSwap(CastToBase(&other->items_));
+  native_url_.Swap(&other->native_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(expires_at_, other->expires_at_);
+}
+
+::google::protobuf::Metadata CreateUploadLocationBatchResponse::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
+  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void ItemUploadInfo::InitAsDefaultInstance() {
+}
+class ItemUploadInfo::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ItemUploadInfo::kSignedUrlFieldNumber;
+const int ItemUploadInfo::kNativeUrlFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ItemUploadInfo::ItemUploadInfo()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.service.ItemUploadInfo)
+}
+ItemUploadInfo::ItemUploadInfo(const ItemUploadInfo& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      signed_url_(from.signed_url_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.native_url().size() > 0) {
+    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.ItemUploadInfo)
+}
+
+void ItemUploadInfo::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+ItemUploadInfo::~ItemUploadInfo() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.ItemUploadInfo)
+  SharedDtor();
+}
+
+void ItemUploadInfo::SharedDtor() {
+  native_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void ItemUploadInfo::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ItemUploadInfo& ItemUploadInfo::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ItemUploadInfo_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ItemUploadInfo::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.ItemUploadInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  signed_url_.Clear();
+  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ItemUploadInfo::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ItemUploadInfo*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated string signed_url = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("flyteidl.service.ItemUploadInfo.signed_url");
+          object = msg->add_signed_url();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      // string native_url = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.ItemUploadInfo.native_url");
+        object = msg->mutable_native_url();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool ItemUploadInfo::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.service.ItemUploadInfo)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated string signed_url = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_signed_url()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->signed_url(this->signed_url_size() - 1).data(),
+            static_cast<int>(this->signed_url(this->signed_url_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.ItemUploadInfo.signed_url"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string native_url = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_native_url()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->native_url().data(), static_cast<int>(this->native_url().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.ItemUploadInfo.native_url"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.service.ItemUploadInfo)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.ItemUploadInfo)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void ItemUploadInfo::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.ItemUploadInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string signed_url = 1;
+  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.ItemUploadInfo.signed_url");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      1, this->signed_url(i), output);
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->native_url().data(), static_cast<int>(this->native_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.ItemUploadInfo.native_url");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->native_url(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.ItemUploadInfo)
+}
+
+::google::protobuf::uint8* ItemUploadInfo::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.ItemUploadInfo)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated string signed_url = 1;
+  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.ItemUploadInfo.signed_url");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(1, this->signed_url(i), target);
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->native_url().data(), static_cast<int>(this->native_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.ItemUploadInfo.native_url");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->native_url(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.ItemUploadInfo)
+  return target;
+}
+
+size_t ItemUploadInfo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.ItemUploadInfo)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string signed_url = 1;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->signed_url_size());
+  for (int i = 0, n = this->signed_url_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->signed_url(i));
+  }
+
+  // string native_url = 2;
+  if (this->native_url().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->native_url());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ItemUploadInfo::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.ItemUploadInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ItemUploadInfo* source =
+      ::google::protobuf::DynamicCastToGenerated<ItemUploadInfo>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.ItemUploadInfo)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.ItemUploadInfo)
+    MergeFrom(*source);
+  }
+}
+
+void ItemUploadInfo::MergeFrom(const ItemUploadInfo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.ItemUploadInfo)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  signed_url_.MergeFrom(from.signed_url_);
+  if (from.native_url().size() > 0) {
+
+    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
+  }
+}
+
+void ItemUploadInfo::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.ItemUploadInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ItemUploadInfo::CopyFrom(const ItemUploadInfo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.ItemUploadInfo)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ItemUploadInfo::IsInitialized() const {
+  return true;
+}
+
+void ItemUploadInfo::Swap(ItemUploadInfo* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ItemUploadInfo::InternalSwap(ItemUploadInfo* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  signed_url_.InternalSwap(CastToBase(&other->signed_url_));
+  native_url_.Swap(&other->native_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::google::protobuf::Metadata ItemUploadInfo::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
+  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void CreateUploadLocationBatchRequest::InitAsDefaultInstance() {
+  ::flyteidl::service::_CreateUploadLocationBatchRequest_default_instance_._instance.get_mutable()->expires_in_ = const_cast< ::google::protobuf::Duration*>(
+      ::google::protobuf::Duration::internal_default_instance());
+}
+class CreateUploadLocationBatchRequest::HasBitSetters {
+ public:
+  static const ::google::protobuf::Duration& expires_in(const CreateUploadLocationBatchRequest* msg);
+};
+
+const ::google::protobuf::Duration&
+CreateUploadLocationBatchRequest::HasBitSetters::expires_in(const CreateUploadLocationBatchRequest* msg) {
+  return *msg->expires_in_;
+}
+void CreateUploadLocationBatchRequest::clear_expires_in() {
+  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
+    delete expires_in_;
+  }
+  expires_in_ = nullptr;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CreateUploadLocationBatchRequest::kProjectFieldNumber;
+const int CreateUploadLocationBatchRequest::kDomainFieldNumber;
+const int CreateUploadLocationBatchRequest::kSuffixFieldNumber;
+const int CreateUploadLocationBatchRequest::kExpiresInFieldNumber;
+const int CreateUploadLocationBatchRequest::kItemsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CreateUploadLocationBatchRequest::CreateUploadLocationBatchRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.service.CreateUploadLocationBatchRequest)
+}
+CreateUploadLocationBatchRequest::CreateUploadLocationBatchRequest(const CreateUploadLocationBatchRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      items_(from.items_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.project().size() > 0) {
+    project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
+  }
+  domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.domain().size() > 0) {
+    domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
+  }
+  suffix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.suffix().size() > 0) {
+    suffix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.suffix_);
+  }
+  if (from.has_expires_in()) {
+    expires_in_ = new ::google::protobuf::Duration(*from.expires_in_);
+  } else {
+    expires_in_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationBatchRequest)
+}
+
+void CreateUploadLocationBatchRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_CreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  suffix_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  expires_in_ = nullptr;
+}
+
+CreateUploadLocationBatchRequest::~CreateUploadLocationBatchRequest() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.CreateUploadLocationBatchRequest)
+  SharedDtor();
+}
+
+void CreateUploadLocationBatchRequest::SharedDtor() {
+  project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  suffix_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete expires_in_;
+}
+
+void CreateUploadLocationBatchRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CreateUploadLocationBatchRequest& CreateUploadLocationBatchRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_CreateUploadLocationBatchRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void CreateUploadLocationBatchRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  items_.Clear();
+  project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
+    delete expires_in_;
+  }
+  expires_in_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* CreateUploadLocationBatchRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<CreateUploadLocationBatchRequest*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string project = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationBatchRequest.project");
+        object = msg->mutable_project();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string domain = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationBatchRequest.domain");
+        object = msg->mutable_domain();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string suffix = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationBatchRequest.suffix");
+        object = msg->mutable_suffix();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .google.protobuf.Duration expires_in = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::google::protobuf::Duration::_InternalParse;
+        object = msg->mutable_expires_in();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // repeated .flyteidl.service.Item items = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::service::Item::_InternalParse;
+          object = msg->add_items();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool CreateUploadLocationBatchRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string project = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_project()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->project().data(), static_cast<int>(this->project().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.CreateUploadLocationBatchRequest.project"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string domain = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_domain()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->domain().data(), static_cast<int>(this->domain().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.CreateUploadLocationBatchRequest.domain"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string suffix = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_suffix()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->suffix().data(), static_cast<int>(this->suffix().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.service.CreateUploadLocationBatchRequest.suffix"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .google.protobuf.Duration expires_in = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_expires_in()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .flyteidl.service.Item items = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_items()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.service.CreateUploadLocationBatchRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.CreateUploadLocationBatchRequest)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void CreateUploadLocationBatchRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string project = 1;
+  if (this->project().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->project().data(), static_cast<int>(this->project().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.project");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->project(), output);
+  }
+
+  // string domain = 2;
+  if (this->domain().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->domain().data(), static_cast<int>(this->domain().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.domain");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->domain(), output);
+  }
+
+  // string suffix = 3;
+  if (this->suffix().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->suffix().data(), static_cast<int>(this->suffix().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.suffix");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->suffix(), output);
+  }
+
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::expires_in(this), output);
+  }
+
+  // repeated .flyteidl.service.Item items = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5,
+      this->items(static_cast<int>(i)),
+      output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.CreateUploadLocationBatchRequest)
+}
+
+::google::protobuf::uint8* CreateUploadLocationBatchRequest::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string project = 1;
+  if (this->project().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->project().data(), static_cast<int>(this->project().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.project");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->project(), target);
+  }
+
+  // string domain = 2;
+  if (this->domain().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->domain().data(), static_cast<int>(this->domain().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.domain");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->domain(), target);
+  }
+
+  // string suffix = 3;
+  if (this->suffix().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->suffix().data(), static_cast<int>(this->suffix().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.service.CreateUploadLocationBatchRequest.suffix");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->suffix(), target);
+  }
+
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::expires_in(this), target);
+  }
+
+  // repeated .flyteidl.service.Item items = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, this->items(static_cast<int>(i)), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.CreateUploadLocationBatchRequest)
+  return target;
+}
+
+size_t CreateUploadLocationBatchRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .flyteidl.service.Item items = 5;
+  {
+    unsigned int count = static_cast<unsigned int>(this->items_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->items(static_cast<int>(i)));
+    }
+  }
+
+  // string project = 1;
+  if (this->project().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->project());
+  }
+
+  // string domain = 2;
+  if (this->domain().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->domain());
+  }
+
+  // string suffix = 3;
+  if (this->suffix().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->suffix());
+  }
+
+  // .google.protobuf.Duration expires_in = 4;
+  if (this->has_expires_in()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *expires_in_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CreateUploadLocationBatchRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateUploadLocationBatchRequest* source =
+      ::google::protobuf::DynamicCastToGenerated<CreateUploadLocationBatchRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.CreateUploadLocationBatchRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.CreateUploadLocationBatchRequest)
+    MergeFrom(*source);
+  }
+}
+
+void CreateUploadLocationBatchRequest::MergeFrom(const CreateUploadLocationBatchRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  items_.MergeFrom(from.items_);
+  if (from.project().size() > 0) {
+
+    project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
+  }
+  if (from.domain().size() > 0) {
+
+    domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
+  }
+  if (from.suffix().size() > 0) {
+
+    suffix_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.suffix_);
+  }
+  if (from.has_expires_in()) {
+    mutable_expires_in()->::google::protobuf::Duration::MergeFrom(from.expires_in());
+  }
+}
+
+void CreateUploadLocationBatchRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CreateUploadLocationBatchRequest::CopyFrom(const CreateUploadLocationBatchRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.CreateUploadLocationBatchRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateUploadLocationBatchRequest::IsInitialized() const {
+  return true;
+}
+
+void CreateUploadLocationBatchRequest::Swap(CreateUploadLocationBatchRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CreateUploadLocationBatchRequest::InternalSwap(CreateUploadLocationBatchRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&items_)->InternalSwap(CastToBase(&other->items_));
+  project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  suffix_.Swap(&other->suffix_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(expires_in_, other->expires_in_);
+}
+
+::google::protobuf::Metadata CreateUploadLocationBatchRequest::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
+  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void Item::InitAsDefaultInstance() {
+}
+class Item::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Item::kContentMd5FieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Item::Item()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.service.Item)
+}
+Item::Item(const Item& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  content_md5_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.content_md5().size() > 0) {
+    content_md5_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_md5_);
+  }
+  // @@protoc_insertion_point(copy_constructor:flyteidl.service.Item)
+}
+
+void Item::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  content_md5_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+Item::~Item() {
+  // @@protoc_insertion_point(destructor:flyteidl.service.Item)
+  SharedDtor();
+}
+
+void Item::SharedDtor() {
+  content_md5_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Item::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Item& Item::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_Item_flyteidl_2fservice_2fdataproxy_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Item::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.service.Item)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  content_md5_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Item::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Item*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // bytes content_md5 = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        object = msg->mutable_content_md5();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParser;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Item::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.service.Item)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bytes content_md5 = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_content_md5()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.service.Item)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.service.Item)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Item::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.service.Item)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes content_md5 = 1;
+  if (this->content_md5().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      1, this->content_md5(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.service.Item)
+}
+
+::google::protobuf::uint8* Item::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.Item)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes content_md5 = 1;
+  if (this->content_md5().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        1, this->content_md5(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.Item)
+  return target;
+}
+
+size_t Item::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.Item)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes content_md5 = 1;
+  if (this->content_md5().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->content_md5());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Item::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.Item)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Item* source =
+      ::google::protobuf::DynamicCastToGenerated<Item>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.Item)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.Item)
+    MergeFrom(*source);
+  }
+}
+
+void Item::MergeFrom(const Item& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.Item)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.content_md5().size() > 0) {
+
+    content_md5_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_md5_);
+  }
+}
+
+void Item::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.Item)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Item::CopyFrom(const Item& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.Item)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Item::IsInitialized() const {
+  return true;
+}
+
+void Item::Swap(Item* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Item::InternalSwap(Item* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  content_md5_.Swap(&other->content_md5_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::google::protobuf::Metadata Item::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
+  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace service
 }  // namespace flyteidl
@@ -1178,6 +2971,18 @@ template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationResponse* 
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage< ::flyteidl::service::CreateUploadLocationRequest >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::service::CreateUploadLocationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationBatchResponse* Arena::CreateMaybeMessage< ::flyteidl::service::CreateUploadLocationBatchResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::CreateUploadLocationBatchResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::service::ItemUploadInfo* Arena::CreateMaybeMessage< ::flyteidl::service::ItemUploadInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::ItemUploadInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationBatchRequest* Arena::CreateMaybeMessage< ::flyteidl::service::CreateUploadLocationBatchRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::CreateUploadLocationBatchRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::flyteidl::service::Item* Arena::CreateMaybeMessage< ::flyteidl::service::Item >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::service::Item >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

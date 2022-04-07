@@ -19,6 +19,11 @@ class DataProxyServiceStub(object):
         request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.SerializeToString,
         response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationResponse.FromString,
         )
+    self.CreateUploadLocationBatch = channel.unary_unary(
+        '/flyteidl.service.DataProxyService/CreateUploadLocationBatch',
+        request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationBatchRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationBatchResponse.FromString,
+        )
 
 
 class DataProxyServiceServicer(object):
@@ -32,6 +37,13 @@ class DataProxyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateUploadLocationBatch(self, request, context):
+    """CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_DataProxyServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -39,6 +51,11 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
           servicer.CreateUploadLocation,
           request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationRequest.FromString,
           response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationResponse.SerializeToString,
+      ),
+      'CreateUploadLocationBatch': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateUploadLocationBatch,
+          request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationBatchRequest.FromString,
+          response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateUploadLocationBatchResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
