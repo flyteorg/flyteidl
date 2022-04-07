@@ -39806,6 +39806,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [domain] CreateUploadLocationRequest domain
              * @property {string|null} [suffix] CreateUploadLocationRequest suffix
              * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationRequest expiresIn
+             * @property {string|null} [contentMd5] CreateUploadLocationRequest contentMd5
              */
 
             /**
@@ -39856,6 +39857,14 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationRequest.prototype.expiresIn = null;
 
             /**
+             * CreateUploadLocationRequest contentMd5.
+             * @member {string} contentMd5
+             * @memberof flyteidl.service.CreateUploadLocationRequest
+             * @instance
+             */
+            CreateUploadLocationRequest.prototype.contentMd5 = "";
+
+            /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
              * @function create
              * @memberof flyteidl.service.CreateUploadLocationRequest
@@ -39887,6 +39896,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
                 if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
                     $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.contentMd5);
                 return writer;
             };
 
@@ -39919,6 +39930,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.contentMd5 = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -39953,6 +39967,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "expiresIn." + error;
                 }
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    if (!$util.isString(message.contentMd5))
+                        return "contentMd5: string expected";
                 return null;
             };
 

@@ -17094,6 +17094,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest expiresIn */
             expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationRequest contentMd5 */
+            contentMd5?: (string|null);
         }
 
         /** Represents a CreateUploadLocationRequest. */
@@ -17116,6 +17119,9 @@ export namespace flyteidl {
 
             /** CreateUploadLocationRequest expiresIn. */
             public expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationRequest contentMd5. */
+            public contentMd5: string;
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.

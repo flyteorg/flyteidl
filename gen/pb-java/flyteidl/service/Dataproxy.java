@@ -1120,6 +1120,26 @@ public final class Dataproxy {
      * <code>.google.protobuf.Duration expires_in = 4;</code>
      */
     com.google.protobuf.DurationOrBuilder getExpiresInOrBuilder();
+
+    /**
+     * <pre>
+     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+     * generated path.
+     * </pre>
+     *
+     * <code>string content_md5 = 5;</code>
+     */
+    java.lang.String getContentMd5();
+    /**
+     * <pre>
+     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+     * generated path.
+     * </pre>
+     *
+     * <code>string content_md5 = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getContentMd5Bytes();
   }
   /**
    * <pre>
@@ -1141,6 +1161,7 @@ public final class Dataproxy {
       project_ = "";
       domain_ = "";
       suffix_ = "";
+      contentMd5_ = "";
     }
 
     @java.lang.Override
@@ -1196,6 +1217,12 @@ public final class Dataproxy {
                 expiresIn_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentMd5_ = s;
               break;
             }
             default: {
@@ -1401,6 +1428,50 @@ public final class Dataproxy {
       return getExpiresIn();
     }
 
+    public static final int CONTENT_MD5_FIELD_NUMBER = 5;
+    private volatile java.lang.Object contentMd5_;
+    /**
+     * <pre>
+     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+     * generated path.
+     * </pre>
+     *
+     * <code>string content_md5 = 5;</code>
+     */
+    public java.lang.String getContentMd5() {
+      java.lang.Object ref = contentMd5_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentMd5_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+     * generated path.
+     * </pre>
+     *
+     * <code>string content_md5 = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentMd5Bytes() {
+      java.lang.Object ref = contentMd5_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentMd5_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1427,6 +1498,9 @@ public final class Dataproxy {
       if (expiresIn_ != null) {
         output.writeMessage(4, getExpiresIn());
       }
+      if (!getContentMd5Bytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contentMd5_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1448,6 +1522,9 @@ public final class Dataproxy {
       if (expiresIn_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getExpiresIn());
+      }
+      if (!getContentMd5Bytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, contentMd5_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1475,6 +1552,8 @@ public final class Dataproxy {
         if (!getExpiresIn()
             .equals(other.getExpiresIn())) return false;
       }
+      if (!getContentMd5()
+          .equals(other.getContentMd5())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1496,6 +1575,8 @@ public final class Dataproxy {
         hash = (37 * hash) + EXPIRES_IN_FIELD_NUMBER;
         hash = (53 * hash) + getExpiresIn().hashCode();
       }
+      hash = (37 * hash) + CONTENT_MD5_FIELD_NUMBER;
+      hash = (53 * hash) + getContentMd5().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1645,6 +1726,8 @@ public final class Dataproxy {
           expiresIn_ = null;
           expiresInBuilder_ = null;
         }
+        contentMd5_ = "";
+
         return this;
       }
 
@@ -1679,6 +1762,7 @@ public final class Dataproxy {
         } else {
           result.expiresIn_ = expiresInBuilder_.build();
         }
+        result.contentMd5_ = contentMd5_;
         onBuilt();
         return result;
       }
@@ -1741,6 +1825,10 @@ public final class Dataproxy {
         }
         if (other.hasExpiresIn()) {
           mergeExpiresIn(other.getExpiresIn());
+        }
+        if (!other.getContentMd5().isEmpty()) {
+          contentMd5_ = other.contentMd5_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2223,6 +2311,100 @@ public final class Dataproxy {
         }
         return expiresInBuilder_;
       }
+
+      private java.lang.Object contentMd5_ = "";
+      /**
+       * <pre>
+       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+       * generated path.
+       * </pre>
+       *
+       * <code>string content_md5 = 5;</code>
+       */
+      public java.lang.String getContentMd5() {
+        java.lang.Object ref = contentMd5_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentMd5_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+       * generated path.
+       * </pre>
+       *
+       * <code>string content_md5 = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentMd5Bytes() {
+        java.lang.Object ref = contentMd5_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentMd5_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+       * generated path.
+       * </pre>
+       *
+       * <code>string content_md5 = 5;</code>
+       */
+      public Builder setContentMd5(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentMd5_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+       * generated path.
+       * </pre>
+       *
+       * <code>string content_md5 = 5;</code>
+       */
+      public Builder clearContentMd5() {
+        
+        contentMd5_ = getDefaultInstance().getContentMd5();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+       * generated path.
+       * </pre>
+       *
+       * <code>string content_md5 = 5;</code>
+       */
+      public Builder setContentMd5Bytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentMd5_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2302,19 +2484,19 @@ public final class Dataproxy {
       "\032\037google/protobuf/timestamp.proto\"v\n\034Cre" +
       "ateUploadLocationResponse\022\022\n\nsigned_url\030" +
       "\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpires_at\030" +
-      "\003 \001(\0132\032.google.protobuf.Timestamp\"}\n\033Cre" +
-      "ateUploadLocationRequest\022\017\n\007project\030\001 \001(" +
-      "\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nexp" +
-      "ires_in\030\004 \001(\0132\031.google.protobuf.Duration" +
-      "2\205\002\n\020DataProxyService\022\360\001\n\024CreateUploadLo" +
-      "cation\022-.flyteidl.service.CreateUploadLo" +
-      "cationRequest\032..flyteidl.service.CreateU" +
-      "ploadLocationResponse\"y\202\323\344\223\002#\"\036/api/v1/d" +
-      "ataproxy/artifact_urn:\001*\222AM\032KCreates a w" +
-      "rite-only http location that is accessib" +
-      "le for tasks at runtime.B9Z7github.com/f" +
-      "lyteorg/flyteidl/gen/pb-go/flyteidl/serv" +
-      "iceb\006proto3"
+      "\003 \001(\0132\032.google.protobuf.Timestamp\"\222\001\n\033Cr" +
+      "eateUploadLocationRequest\022\017\n\007project\030\001 \001" +
+      "(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nex" +
+      "pires_in\030\004 \001(\0132\031.google.protobuf.Duratio" +
+      "n\022\023\n\013content_md5\030\005 \001(\t2\205\002\n\020DataProxyServ" +
+      "ice\022\360\001\n\024CreateUploadLocation\022-.flyteidl." +
+      "service.CreateUploadLocationRequest\032..fl" +
+      "yteidl.service.CreateUploadLocationRespo" +
+      "nse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/artifact_" +
+      "urn:\001*\222AM\032KCreates a write-only http loc" +
+      "ation that is accessible for tasks at ru" +
+      "ntime.B9Z7github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2343,7 +2525,7 @@ public final class Dataproxy {
     internal_static_flyteidl_service_CreateUploadLocationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateUploadLocationRequest_descriptor,
-        new java.lang.String[] { "Project", "Domain", "Suffix", "ExpiresIn", });
+        new java.lang.String[] { "Project", "Domain", "Suffix", "ExpiresIn", "ContentMd5", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

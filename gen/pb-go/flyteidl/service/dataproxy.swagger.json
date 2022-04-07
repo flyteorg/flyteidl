@@ -63,6 +63,10 @@
         "expires_in": {
           "type": "string",
           "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
+        },
+        "content_md5": {
+          "type": "string",
+          "description": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path."
         }
       },
       "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."

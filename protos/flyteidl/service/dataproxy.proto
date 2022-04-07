@@ -37,6 +37,10 @@ message CreateUploadLocationRequest {
   // exceeds the platform allowed max.
   // +optional. The default value comes from a global config.
   google.protobuf.Duration expires_in = 4;
+
+  // ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
+  // generated path.
+  string content_md5 = 5;
 }
 
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
