@@ -1127,19 +1127,9 @@ public final class Dataproxy {
      * generated path.
      * </pre>
      *
-     * <code>string content_md5 = 5;</code>
+     * <code>bytes content_md5 = 5;</code>
      */
-    java.lang.String getContentMd5();
-    /**
-     * <pre>
-     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
-     * generated path.
-     * </pre>
-     *
-     * <code>string content_md5 = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getContentMd5Bytes();
+    com.google.protobuf.ByteString getContentMd5();
   }
   /**
    * <pre>
@@ -1161,7 +1151,7 @@ public final class Dataproxy {
       project_ = "";
       domain_ = "";
       suffix_ = "";
-      contentMd5_ = "";
+      contentMd5_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1220,9 +1210,8 @@ public final class Dataproxy {
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
 
-              contentMd5_ = s;
+              contentMd5_ = input.readBytes();
               break;
             }
             default: {
@@ -1429,47 +1418,17 @@ public final class Dataproxy {
     }
 
     public static final int CONTENT_MD5_FIELD_NUMBER = 5;
-    private volatile java.lang.Object contentMd5_;
+    private com.google.protobuf.ByteString contentMd5_;
     /**
      * <pre>
      * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
      * generated path.
      * </pre>
      *
-     * <code>string content_md5 = 5;</code>
+     * <code>bytes content_md5 = 5;</code>
      */
-    public java.lang.String getContentMd5() {
-      java.lang.Object ref = contentMd5_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        contentMd5_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
-     * generated path.
-     * </pre>
-     *
-     * <code>string content_md5 = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getContentMd5Bytes() {
-      java.lang.Object ref = contentMd5_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        contentMd5_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getContentMd5() {
+      return contentMd5_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1498,8 +1457,8 @@ public final class Dataproxy {
       if (expiresIn_ != null) {
         output.writeMessage(4, getExpiresIn());
       }
-      if (!getContentMd5Bytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contentMd5_);
+      if (!contentMd5_.isEmpty()) {
+        output.writeBytes(5, contentMd5_);
       }
       unknownFields.writeTo(output);
     }
@@ -1523,8 +1482,9 @@ public final class Dataproxy {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getExpiresIn());
       }
-      if (!getContentMd5Bytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, contentMd5_);
+      if (!contentMd5_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, contentMd5_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1726,7 +1686,7 @@ public final class Dataproxy {
           expiresIn_ = null;
           expiresInBuilder_ = null;
         }
-        contentMd5_ = "";
+        contentMd5_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
       }
@@ -1826,9 +1786,8 @@ public final class Dataproxy {
         if (other.hasExpiresIn()) {
           mergeExpiresIn(other.getExpiresIn());
         }
-        if (!other.getContentMd5().isEmpty()) {
-          contentMd5_ = other.contentMd5_;
-          onChanged();
+        if (other.getContentMd5() != com.google.protobuf.ByteString.EMPTY) {
+          setContentMd5(other.getContentMd5());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2312,26 +2271,17 @@ public final class Dataproxy {
         return expiresInBuilder_;
       }
 
-      private java.lang.Object contentMd5_ = "";
+      private com.google.protobuf.ByteString contentMd5_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
        * generated path.
        * </pre>
        *
-       * <code>string content_md5 = 5;</code>
+       * <code>bytes content_md5 = 5;</code>
        */
-      public java.lang.String getContentMd5() {
-        java.lang.Object ref = contentMd5_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          contentMd5_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ByteString getContentMd5() {
+        return contentMd5_;
       }
       /**
        * <pre>
@@ -2339,31 +2289,9 @@ public final class Dataproxy {
        * generated path.
        * </pre>
        *
-       * <code>string content_md5 = 5;</code>
+       * <code>bytes content_md5 = 5;</code>
        */
-      public com.google.protobuf.ByteString
-          getContentMd5Bytes() {
-        java.lang.Object ref = contentMd5_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentMd5_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
-       * generated path.
-       * </pre>
-       *
-       * <code>string content_md5 = 5;</code>
-       */
-      public Builder setContentMd5(
-          java.lang.String value) {
+      public Builder setContentMd5(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2378,30 +2306,11 @@ public final class Dataproxy {
        * generated path.
        * </pre>
        *
-       * <code>string content_md5 = 5;</code>
+       * <code>bytes content_md5 = 5;</code>
        */
       public Builder clearContentMd5() {
         
         contentMd5_ = getDefaultInstance().getContentMd5();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
-       * generated path.
-       * </pre>
-       *
-       * <code>string content_md5 = 5;</code>
-       */
-      public Builder setContentMd5Bytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        contentMd5_ = value;
         onChanged();
         return this;
       }
@@ -2488,7 +2397,7 @@ public final class Dataproxy {
       "eateUploadLocationRequest\022\017\n\007project\030\001 \001" +
       "(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nex" +
       "pires_in\030\004 \001(\0132\031.google.protobuf.Duratio" +
-      "n\022\023\n\013content_md5\030\005 \001(\t2\205\002\n\020DataProxyServ" +
+      "n\022\023\n\013content_md5\030\005 \001(\0142\205\002\n\020DataProxyServ" +
       "ice\022\360\001\n\024CreateUploadLocation\022-.flyteidl." +
       "service.CreateUploadLocationRequest\032..fl" +
       "yteidl.service.CreateUploadLocationRespo" +

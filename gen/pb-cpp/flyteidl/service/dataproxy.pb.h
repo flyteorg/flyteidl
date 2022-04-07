@@ -355,7 +355,7 @@ class CreateUploadLocationRequest final :
   ::std::string* release_suffix();
   void set_allocated_suffix(::std::string* suffix);
 
-  // string content_md5 = 5;
+  // bytes content_md5 = 5;
   void clear_content_md5();
   static const int kContentMd5FieldNumber = 5;
   const ::std::string& content_md5() const;
@@ -364,7 +364,7 @@ class CreateUploadLocationRequest final :
   void set_content_md5(::std::string&& value);
   #endif
   void set_content_md5(const char* value);
-  void set_content_md5(const char* value, size_t size);
+  void set_content_md5(const void* value, size_t size);
   ::std::string* mutable_content_md5();
   ::std::string* release_content_md5();
   void set_allocated_content_md5(::std::string* content_md5);
@@ -763,7 +763,7 @@ inline void CreateUploadLocationRequest::set_allocated_expires_in(::google::prot
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.expires_in)
 }
 
-// string content_md5 = 5;
+// bytes content_md5 = 5;
 inline void CreateUploadLocationRequest::clear_content_md5() {
   content_md5_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -790,7 +790,7 @@ inline void CreateUploadLocationRequest::set_content_md5(const char* value) {
   content_md5_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationRequest.content_md5)
 }
-inline void CreateUploadLocationRequest::set_content_md5(const char* value, size_t size) {
+inline void CreateUploadLocationRequest::set_content_md5(const void* value, size_t size) {
   
   content_md5_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));

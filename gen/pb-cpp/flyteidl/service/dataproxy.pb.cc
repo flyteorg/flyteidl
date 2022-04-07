@@ -117,7 +117,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "eateUploadLocationRequest\022\017\n\007project\030\001 \001"
   "(\t\022\016\n\006domain\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022-\n\nex"
   "pires_in\030\004 \001(\0132\031.google.protobuf.Duratio"
-  "n\022\023\n\013content_md5\030\005 \001(\t2\205\002\n\020DataProxyServ"
+  "n\022\023\n\013content_md5\030\005 \001(\0142\205\002\n\020DataProxyServ"
   "ice\022\360\001\n\024CreateUploadLocation\022-.flyteidl."
   "service.CreateUploadLocationRequest\032..fl"
   "yteidl.service.CreateUploadLocationRespo"
@@ -777,18 +777,17 @@ const char* CreateUploadLocationRequest::_InternalParse(const char* begin, const
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // string content_md5 = 5;
+      // bytes content_md5 = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationRequest.content_md5");
         object = msg->mutable_content_md5();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          parser_till_end = ::google::protobuf::internal::GreedyStringParser;
           goto string_till_end;
         }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
         break;
@@ -883,15 +882,11 @@ bool CreateUploadLocationRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // string content_md5 = 5;
+      // bytes content_md5 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
                 input, this->mutable_content_md5()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->content_md5().data(), static_cast<int>(this->content_md5().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationRequest.content_md5"));
         } else {
           goto handle_unusual;
         }
@@ -961,13 +956,9 @@ void CreateUploadLocationRequest::SerializeWithCachedSizes(
       4, HasBitSetters::expires_in(this), output);
   }
 
-  // string content_md5 = 5;
+  // bytes content_md5 = 5;
   if (this->content_md5().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->content_md5().data(), static_cast<int>(this->content_md5().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.content_md5");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
       5, this->content_md5(), output);
   }
 
@@ -1024,14 +1015,10 @@ void CreateUploadLocationRequest::SerializeWithCachedSizes(
         4, HasBitSetters::expires_in(this), target);
   }
 
-  // string content_md5 = 5;
+  // bytes content_md5 = 5;
   if (this->content_md5().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->content_md5().data(), static_cast<int>(this->content_md5().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.content_md5");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         5, this->content_md5(), target);
   }
 
@@ -1077,10 +1064,10 @@ size_t CreateUploadLocationRequest::ByteSizeLong() const {
         this->suffix());
   }
 
-  // string content_md5 = 5;
+  // bytes content_md5 = 5;
   if (this->content_md5().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->content_md5());
   }
 

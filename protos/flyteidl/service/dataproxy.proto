@@ -40,7 +40,7 @@ message CreateUploadLocationRequest {
 
   // ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
   // generated path.
-  string content_md5 = 5;
+  bytes content_md5 = 5;
 }
 
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.

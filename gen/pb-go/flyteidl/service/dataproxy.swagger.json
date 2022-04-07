@@ -66,6 +66,7 @@
         },
         "content_md5": {
           "type": "string",
+          "format": "byte",
           "description": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path."
         }
       },
