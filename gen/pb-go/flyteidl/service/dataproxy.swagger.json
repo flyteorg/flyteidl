@@ -19,12 +19,12 @@
       "post": {
         "summary": "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.",
         "description": "Creates a write-only http location that is accessible for tasks at runtime.",
-        "operationId": "CreateUploadLocation",
+        "operationId": "CreateUploadLocationBatch",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceCreateUploadLocationResponse"
+              "$ref": "#/definitions/serviceCreateUploadLocationBatchResponse"
             }
           }
         },
@@ -34,7 +34,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/serviceCreateUploadLocationRequest"
+              "$ref": "#/definitions/serviceCreateUploadLocationBatchRequest"
             }
           }
         ],
@@ -45,6 +45,54 @@
     }
   },
   "definitions": {
+    "serviceCreateUploadLocationBatchRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "title": "Project to create the upload location for\n+required"
+        },
+        "domain": {
+          "type": "string",
+          "title": "Domain to create the upload location for.\n+required"
+        },
+        "suffix": {
+          "type": "string",
+          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.\n+optional. By default, the service will generate a consistent name based on the provided parameters."
+        },
+        "expires_in": {
+          "type": "string",
+          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceItem"
+          }
+        }
+      }
+    },
+    "serviceCreateUploadLocationBatchResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceItemUploadInfo"
+          },
+          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+        },
+        "native_url": {
+          "type": "string",
+          "title": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ExpiresAt defines when will the signed URL expires."
+        }
+      }
+    },
     "serviceCreateUploadLocationRequest": {
       "type": "object",
       "properties": {
@@ -87,6 +135,28 @@
           "type": "string",
           "format": "date-time",
           "description": "ExpiresAt defines when will the signed URL expires."
+        }
+      }
+    },
+    "serviceItem": {
+      "type": "object",
+      "properties": {
+        "content_md5": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "serviceItemUploadInfo": {
+      "type": "object",
+      "properties": {
+        "signed_url": {
+          "type": "string",
+          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+        },
+        "native_url": {
+          "type": "string",
+          "title": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
         }
       }
     }

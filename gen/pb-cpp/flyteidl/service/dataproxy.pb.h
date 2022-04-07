@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[2]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -54,18 +54,34 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
 void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto();
 namespace flyteidl {
 namespace service {
+class CreateUploadLocationBatchRequest;
+class CreateUploadLocationBatchRequestDefaultTypeInternal;
+extern CreateUploadLocationBatchRequestDefaultTypeInternal _CreateUploadLocationBatchRequest_default_instance_;
+class CreateUploadLocationBatchResponse;
+class CreateUploadLocationBatchResponseDefaultTypeInternal;
+extern CreateUploadLocationBatchResponseDefaultTypeInternal _CreateUploadLocationBatchResponse_default_instance_;
 class CreateUploadLocationRequest;
 class CreateUploadLocationRequestDefaultTypeInternal;
 extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationRequest_default_instance_;
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
+class Item;
+class ItemDefaultTypeInternal;
+extern ItemDefaultTypeInternal _Item_default_instance_;
+class ItemUploadInfo;
+class ItemUploadInfoDefaultTypeInternal;
+extern ItemUploadInfoDefaultTypeInternal _ItemUploadInfo_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> ::flyteidl::service::CreateUploadLocationBatchRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationBatchRequest>(Arena*);
+template<> ::flyteidl::service::CreateUploadLocationBatchResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationBatchResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
+template<> ::flyteidl::service::Item* Arena::CreateMaybeMessage<::flyteidl::service::Item>(Arena*);
+template<> ::flyteidl::service::ItemUploadInfo* Arena::CreateMaybeMessage<::flyteidl::service::ItemUploadInfo>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -388,6 +404,577 @@ class CreateUploadLocationRequest final :
   ::google::protobuf::internal::ArenaStringPtr suffix_;
   ::google::protobuf::internal::ArenaStringPtr content_md5_;
   ::google::protobuf::Duration* expires_in_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateUploadLocationBatchResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.CreateUploadLocationBatchResponse) */ {
+ public:
+  CreateUploadLocationBatchResponse();
+  virtual ~CreateUploadLocationBatchResponse();
+
+  CreateUploadLocationBatchResponse(const CreateUploadLocationBatchResponse& from);
+
+  inline CreateUploadLocationBatchResponse& operator=(const CreateUploadLocationBatchResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CreateUploadLocationBatchResponse(CreateUploadLocationBatchResponse&& from) noexcept
+    : CreateUploadLocationBatchResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateUploadLocationBatchResponse& operator=(CreateUploadLocationBatchResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CreateUploadLocationBatchResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateUploadLocationBatchResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateUploadLocationBatchResponse*>(
+               &_CreateUploadLocationBatchResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(CreateUploadLocationBatchResponse* other);
+  friend void swap(CreateUploadLocationBatchResponse& a, CreateUploadLocationBatchResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateUploadLocationBatchResponse* New() const final {
+    return CreateMaybeMessage<CreateUploadLocationBatchResponse>(nullptr);
+  }
+
+  CreateUploadLocationBatchResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CreateUploadLocationBatchResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CreateUploadLocationBatchResponse& from);
+  void MergeFrom(const CreateUploadLocationBatchResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateUploadLocationBatchResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.service.ItemUploadInfo items = 1;
+  int items_size() const;
+  void clear_items();
+  static const int kItemsFieldNumber = 1;
+  ::flyteidl::service::ItemUploadInfo* mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::service::ItemUploadInfo >*
+      mutable_items();
+  const ::flyteidl::service::ItemUploadInfo& items(int index) const;
+  ::flyteidl::service::ItemUploadInfo* add_items();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::service::ItemUploadInfo >&
+      items() const;
+
+  // string native_url = 2;
+  void clear_native_url();
+  static const int kNativeUrlFieldNumber = 2;
+  const ::std::string& native_url() const;
+  void set_native_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_native_url(::std::string&& value);
+  #endif
+  void set_native_url(const char* value);
+  void set_native_url(const char* value, size_t size);
+  ::std::string* mutable_native_url();
+  ::std::string* release_native_url();
+  void set_allocated_native_url(::std::string* native_url);
+
+  // .google.protobuf.Timestamp expires_at = 3;
+  bool has_expires_at() const;
+  void clear_expires_at();
+  static const int kExpiresAtFieldNumber = 3;
+  const ::google::protobuf::Timestamp& expires_at() const;
+  ::google::protobuf::Timestamp* release_expires_at();
+  ::google::protobuf::Timestamp* mutable_expires_at();
+  void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationBatchResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::service::ItemUploadInfo > items_;
+  ::google::protobuf::internal::ArenaStringPtr native_url_;
+  ::google::protobuf::Timestamp* expires_at_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ItemUploadInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.ItemUploadInfo) */ {
+ public:
+  ItemUploadInfo();
+  virtual ~ItemUploadInfo();
+
+  ItemUploadInfo(const ItemUploadInfo& from);
+
+  inline ItemUploadInfo& operator=(const ItemUploadInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ItemUploadInfo(ItemUploadInfo&& from) noexcept
+    : ItemUploadInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline ItemUploadInfo& operator=(ItemUploadInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ItemUploadInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ItemUploadInfo* internal_default_instance() {
+    return reinterpret_cast<const ItemUploadInfo*>(
+               &_ItemUploadInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(ItemUploadInfo* other);
+  friend void swap(ItemUploadInfo& a, ItemUploadInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ItemUploadInfo* New() const final {
+    return CreateMaybeMessage<ItemUploadInfo>(nullptr);
+  }
+
+  ItemUploadInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ItemUploadInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ItemUploadInfo& from);
+  void MergeFrom(const ItemUploadInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ItemUploadInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string signed_url = 1;
+  void clear_signed_url();
+  static const int kSignedUrlFieldNumber = 1;
+  const ::std::string& signed_url() const;
+  void set_signed_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signed_url(::std::string&& value);
+  #endif
+  void set_signed_url(const char* value);
+  void set_signed_url(const char* value, size_t size);
+  ::std::string* mutable_signed_url();
+  ::std::string* release_signed_url();
+  void set_allocated_signed_url(::std::string* signed_url);
+
+  // string native_url = 2;
+  void clear_native_url();
+  static const int kNativeUrlFieldNumber = 2;
+  const ::std::string& native_url() const;
+  void set_native_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_native_url(::std::string&& value);
+  #endif
+  void set_native_url(const char* value);
+  void set_native_url(const char* value, size_t size);
+  ::std::string* mutable_native_url();
+  ::std::string* release_native_url();
+  void set_allocated_native_url(::std::string* native_url);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.service.ItemUploadInfo)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr signed_url_;
+  ::google::protobuf::internal::ArenaStringPtr native_url_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CreateUploadLocationBatchRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.CreateUploadLocationBatchRequest) */ {
+ public:
+  CreateUploadLocationBatchRequest();
+  virtual ~CreateUploadLocationBatchRequest();
+
+  CreateUploadLocationBatchRequest(const CreateUploadLocationBatchRequest& from);
+
+  inline CreateUploadLocationBatchRequest& operator=(const CreateUploadLocationBatchRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CreateUploadLocationBatchRequest(CreateUploadLocationBatchRequest&& from) noexcept
+    : CreateUploadLocationBatchRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline CreateUploadLocationBatchRequest& operator=(CreateUploadLocationBatchRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CreateUploadLocationBatchRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CreateUploadLocationBatchRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateUploadLocationBatchRequest*>(
+               &_CreateUploadLocationBatchRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(CreateUploadLocationBatchRequest* other);
+  friend void swap(CreateUploadLocationBatchRequest& a, CreateUploadLocationBatchRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CreateUploadLocationBatchRequest* New() const final {
+    return CreateMaybeMessage<CreateUploadLocationBatchRequest>(nullptr);
+  }
+
+  CreateUploadLocationBatchRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CreateUploadLocationBatchRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CreateUploadLocationBatchRequest& from);
+  void MergeFrom(const CreateUploadLocationBatchRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CreateUploadLocationBatchRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.service.Item items = 5;
+  int items_size() const;
+  void clear_items();
+  static const int kItemsFieldNumber = 5;
+  ::flyteidl::service::Item* mutable_items(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::service::Item >*
+      mutable_items();
+  const ::flyteidl::service::Item& items(int index) const;
+  ::flyteidl::service::Item* add_items();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::service::Item >&
+      items() const;
+
+  // string project = 1;
+  void clear_project();
+  static const int kProjectFieldNumber = 1;
+  const ::std::string& project() const;
+  void set_project(const ::std::string& value);
+  #if LANG_CXX11
+  void set_project(::std::string&& value);
+  #endif
+  void set_project(const char* value);
+  void set_project(const char* value, size_t size);
+  ::std::string* mutable_project();
+  ::std::string* release_project();
+  void set_allocated_project(::std::string* project);
+
+  // string domain = 2;
+  void clear_domain();
+  static const int kDomainFieldNumber = 2;
+  const ::std::string& domain() const;
+  void set_domain(const ::std::string& value);
+  #if LANG_CXX11
+  void set_domain(::std::string&& value);
+  #endif
+  void set_domain(const char* value);
+  void set_domain(const char* value, size_t size);
+  ::std::string* mutable_domain();
+  ::std::string* release_domain();
+  void set_allocated_domain(::std::string* domain);
+
+  // string suffix = 3;
+  void clear_suffix();
+  static const int kSuffixFieldNumber = 3;
+  const ::std::string& suffix() const;
+  void set_suffix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_suffix(::std::string&& value);
+  #endif
+  void set_suffix(const char* value);
+  void set_suffix(const char* value, size_t size);
+  ::std::string* mutable_suffix();
+  ::std::string* release_suffix();
+  void set_allocated_suffix(::std::string* suffix);
+
+  // .google.protobuf.Duration expires_in = 4;
+  bool has_expires_in() const;
+  void clear_expires_in();
+  static const int kExpiresInFieldNumber = 4;
+  const ::google::protobuf::Duration& expires_in() const;
+  ::google::protobuf::Duration* release_expires_in();
+  ::google::protobuf::Duration* mutable_expires_in();
+  void set_allocated_expires_in(::google::protobuf::Duration* expires_in);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.service.CreateUploadLocationBatchRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::service::Item > items_;
+  ::google::protobuf::internal::ArenaStringPtr project_;
+  ::google::protobuf::internal::ArenaStringPtr domain_;
+  ::google::protobuf::internal::ArenaStringPtr suffix_;
+  ::google::protobuf::Duration* expires_in_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Item final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.Item) */ {
+ public:
+  Item();
+  virtual ~Item();
+
+  Item(const Item& from);
+
+  inline Item& operator=(const Item& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Item(Item&& from) noexcept
+    : Item() {
+    *this = ::std::move(from);
+  }
+
+  inline Item& operator=(Item&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Item& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Item* internal_default_instance() {
+    return reinterpret_cast<const Item*>(
+               &_Item_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(Item* other);
+  friend void swap(Item& a, Item& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Item* New() const final {
+    return CreateMaybeMessage<Item>(nullptr);
+  }
+
+  Item* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Item>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Item& from);
+  void MergeFrom(const Item& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Item* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes content_md5 = 1;
+  void clear_content_md5();
+  static const int kContentMd5FieldNumber = 1;
+  const ::std::string& content_md5() const;
+  void set_content_md5(const ::std::string& value);
+  #if LANG_CXX11
+  void set_content_md5(::std::string&& value);
+  #endif
+  void set_content_md5(const char* value);
+  void set_content_md5(const void* value, size_t size);
+  ::std::string* mutable_content_md5();
+  ::std::string* release_content_md5();
+  void set_allocated_content_md5(::std::string* content_md5);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.service.Item)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr content_md5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -816,9 +1403,556 @@ inline void CreateUploadLocationRequest::set_allocated_content_md5(::std::string
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.content_md5)
 }
 
+// -------------------------------------------------------------------
+
+// CreateUploadLocationBatchResponse
+
+// repeated .flyteidl.service.ItemUploadInfo items = 1;
+inline int CreateUploadLocationBatchResponse::items_size() const {
+  return items_.size();
+}
+inline void CreateUploadLocationBatchResponse::clear_items() {
+  items_.Clear();
+}
+inline ::flyteidl::service::ItemUploadInfo* CreateUploadLocationBatchResponse::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchResponse.items)
+  return items_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::service::ItemUploadInfo >*
+CreateUploadLocationBatchResponse::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.CreateUploadLocationBatchResponse.items)
+  return &items_;
+}
+inline const ::flyteidl::service::ItemUploadInfo& CreateUploadLocationBatchResponse::items(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchResponse.items)
+  return items_.Get(index);
+}
+inline ::flyteidl::service::ItemUploadInfo* CreateUploadLocationBatchResponse::add_items() {
+  // @@protoc_insertion_point(field_add:flyteidl.service.CreateUploadLocationBatchResponse.items)
+  return items_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::service::ItemUploadInfo >&
+CreateUploadLocationBatchResponse::items() const {
+  // @@protoc_insertion_point(field_list:flyteidl.service.CreateUploadLocationBatchResponse.items)
+  return items_;
+}
+
+// string native_url = 2;
+inline void CreateUploadLocationBatchResponse::clear_native_url() {
+  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationBatchResponse::native_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+  return native_url_.GetNoArena();
+}
+inline void CreateUploadLocationBatchResponse::set_native_url(const ::std::string& value) {
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationBatchResponse::set_native_url(::std::string&& value) {
+  
+  native_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+}
+#endif
+inline void CreateUploadLocationBatchResponse::set_native_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+}
+inline void CreateUploadLocationBatchResponse::set_native_url(const char* value, size_t size) {
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+}
+inline ::std::string* CreateUploadLocationBatchResponse::mutable_native_url() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+  return native_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationBatchResponse::release_native_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+  
+  return native_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationBatchResponse::set_allocated_native_url(::std::string* native_url) {
+  if (native_url != nullptr) {
+    
+  } else {
+    
+  }
+  native_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), native_url);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchResponse.native_url)
+}
+
+// .google.protobuf.Timestamp expires_at = 3;
+inline bool CreateUploadLocationBatchResponse::has_expires_at() const {
+  return this != internal_default_instance() && expires_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& CreateUploadLocationBatchResponse::expires_at() const {
+  const ::google::protobuf::Timestamp* p = expires_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchResponse.expires_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* CreateUploadLocationBatchResponse::release_expires_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchResponse.expires_at)
+  
+  ::google::protobuf::Timestamp* temp = expires_at_;
+  expires_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* CreateUploadLocationBatchResponse::mutable_expires_at() {
+  
+  if (expires_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    expires_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchResponse.expires_at)
+  return expires_at_;
+}
+inline void CreateUploadLocationBatchResponse::set_allocated_expires_at(::google::protobuf::Timestamp* expires_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_at_);
+  }
+  if (expires_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      expires_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_at_ = expires_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchResponse.expires_at)
+}
+
+// -------------------------------------------------------------------
+
+// ItemUploadInfo
+
+// string signed_url = 1;
+inline void ItemUploadInfo::clear_signed_url() {
+  signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ItemUploadInfo::signed_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.ItemUploadInfo.signed_url)
+  return signed_url_.GetNoArena();
+}
+inline void ItemUploadInfo::set_signed_url(const ::std::string& value) {
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.ItemUploadInfo.signed_url)
+}
+#if LANG_CXX11
+inline void ItemUploadInfo::set_signed_url(::std::string&& value) {
+  
+  signed_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.ItemUploadInfo.signed_url)
+}
+#endif
+inline void ItemUploadInfo::set_signed_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.ItemUploadInfo.signed_url)
+}
+inline void ItemUploadInfo::set_signed_url(const char* value, size_t size) {
+  
+  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.ItemUploadInfo.signed_url)
+}
+inline ::std::string* ItemUploadInfo::mutable_signed_url() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.ItemUploadInfo.signed_url)
+  return signed_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ItemUploadInfo::release_signed_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.ItemUploadInfo.signed_url)
+  
+  return signed_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ItemUploadInfo::set_allocated_signed_url(::std::string* signed_url) {
+  if (signed_url != nullptr) {
+    
+  } else {
+    
+  }
+  signed_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_url);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.ItemUploadInfo.signed_url)
+}
+
+// string native_url = 2;
+inline void ItemUploadInfo::clear_native_url() {
+  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ItemUploadInfo::native_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.ItemUploadInfo.native_url)
+  return native_url_.GetNoArena();
+}
+inline void ItemUploadInfo::set_native_url(const ::std::string& value) {
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.ItemUploadInfo.native_url)
+}
+#if LANG_CXX11
+inline void ItemUploadInfo::set_native_url(::std::string&& value) {
+  
+  native_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.ItemUploadInfo.native_url)
+}
+#endif
+inline void ItemUploadInfo::set_native_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.ItemUploadInfo.native_url)
+}
+inline void ItemUploadInfo::set_native_url(const char* value, size_t size) {
+  
+  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.ItemUploadInfo.native_url)
+}
+inline ::std::string* ItemUploadInfo::mutable_native_url() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.ItemUploadInfo.native_url)
+  return native_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ItemUploadInfo::release_native_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.ItemUploadInfo.native_url)
+  
+  return native_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ItemUploadInfo::set_allocated_native_url(::std::string* native_url) {
+  if (native_url != nullptr) {
+    
+  } else {
+    
+  }
+  native_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), native_url);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.ItemUploadInfo.native_url)
+}
+
+// -------------------------------------------------------------------
+
+// CreateUploadLocationBatchRequest
+
+// string project = 1;
+inline void CreateUploadLocationBatchRequest::clear_project() {
+  project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationBatchRequest::project() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchRequest.project)
+  return project_.GetNoArena();
+}
+inline void CreateUploadLocationBatchRequest::set_project(const ::std::string& value) {
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationBatchRequest.project)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationBatchRequest::set_project(::std::string&& value) {
+  
+  project_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationBatchRequest.project)
+}
+#endif
+inline void CreateUploadLocationBatchRequest::set_project(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationBatchRequest.project)
+}
+inline void CreateUploadLocationBatchRequest::set_project(const char* value, size_t size) {
+  
+  project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationBatchRequest.project)
+}
+inline ::std::string* CreateUploadLocationBatchRequest::mutable_project() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchRequest.project)
+  return project_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationBatchRequest::release_project() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchRequest.project)
+  
+  return project_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationBatchRequest::set_allocated_project(::std::string* project) {
+  if (project != nullptr) {
+    
+  } else {
+    
+  }
+  project_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), project);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchRequest.project)
+}
+
+// string domain = 2;
+inline void CreateUploadLocationBatchRequest::clear_domain() {
+  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationBatchRequest::domain() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+  return domain_.GetNoArena();
+}
+inline void CreateUploadLocationBatchRequest::set_domain(const ::std::string& value) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationBatchRequest::set_domain(::std::string&& value) {
+  
+  domain_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+}
+#endif
+inline void CreateUploadLocationBatchRequest::set_domain(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+}
+inline void CreateUploadLocationBatchRequest::set_domain(const char* value, size_t size) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+}
+inline ::std::string* CreateUploadLocationBatchRequest::mutable_domain() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+  return domain_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationBatchRequest::release_domain() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+  
+  return domain_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationBatchRequest::set_allocated_domain(::std::string* domain) {
+  if (domain != nullptr) {
+    
+  } else {
+    
+  }
+  domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchRequest.domain)
+}
+
+// string suffix = 3;
+inline void CreateUploadLocationBatchRequest::clear_suffix() {
+  suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CreateUploadLocationBatchRequest::suffix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+  return suffix_.GetNoArena();
+}
+inline void CreateUploadLocationBatchRequest::set_suffix(const ::std::string& value) {
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+}
+#if LANG_CXX11
+inline void CreateUploadLocationBatchRequest::set_suffix(::std::string&& value) {
+  
+  suffix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+}
+#endif
+inline void CreateUploadLocationBatchRequest::set_suffix(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+}
+inline void CreateUploadLocationBatchRequest::set_suffix(const char* value, size_t size) {
+  
+  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+}
+inline ::std::string* CreateUploadLocationBatchRequest::mutable_suffix() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+  return suffix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateUploadLocationBatchRequest::release_suffix() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+  
+  return suffix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CreateUploadLocationBatchRequest::set_allocated_suffix(::std::string* suffix) {
+  if (suffix != nullptr) {
+    
+  } else {
+    
+  }
+  suffix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), suffix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchRequest.suffix)
+}
+
+// .google.protobuf.Duration expires_in = 4;
+inline bool CreateUploadLocationBatchRequest::has_expires_in() const {
+  return this != internal_default_instance() && expires_in_ != nullptr;
+}
+inline const ::google::protobuf::Duration& CreateUploadLocationBatchRequest::expires_in() const {
+  const ::google::protobuf::Duration* p = expires_in_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchRequest.expires_in)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Duration*>(
+      &::google::protobuf::_Duration_default_instance_);
+}
+inline ::google::protobuf::Duration* CreateUploadLocationBatchRequest::release_expires_in() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationBatchRequest.expires_in)
+  
+  ::google::protobuf::Duration* temp = expires_in_;
+  expires_in_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Duration* CreateUploadLocationBatchRequest::mutable_expires_in() {
+  
+  if (expires_in_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Duration>(GetArenaNoVirtual());
+    expires_in_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchRequest.expires_in)
+  return expires_in_;
+}
+inline void CreateUploadLocationBatchRequest::set_allocated_expires_in(::google::protobuf::Duration* expires_in) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_in_);
+  }
+  if (expires_in) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires_in)->GetArena();
+    if (message_arena != submessage_arena) {
+      expires_in = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires_in, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_in_ = expires_in;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationBatchRequest.expires_in)
+}
+
+// repeated .flyteidl.service.Item items = 5;
+inline int CreateUploadLocationBatchRequest::items_size() const {
+  return items_.size();
+}
+inline void CreateUploadLocationBatchRequest::clear_items() {
+  items_.Clear();
+}
+inline ::flyteidl::service::Item* CreateUploadLocationBatchRequest::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationBatchRequest.items)
+  return items_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::service::Item >*
+CreateUploadLocationBatchRequest::mutable_items() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.CreateUploadLocationBatchRequest.items)
+  return &items_;
+}
+inline const ::flyteidl::service::Item& CreateUploadLocationBatchRequest::items(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationBatchRequest.items)
+  return items_.Get(index);
+}
+inline ::flyteidl::service::Item* CreateUploadLocationBatchRequest::add_items() {
+  // @@protoc_insertion_point(field_add:flyteidl.service.CreateUploadLocationBatchRequest.items)
+  return items_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::service::Item >&
+CreateUploadLocationBatchRequest::items() const {
+  // @@protoc_insertion_point(field_list:flyteidl.service.CreateUploadLocationBatchRequest.items)
+  return items_;
+}
+
+// -------------------------------------------------------------------
+
+// Item
+
+// bytes content_md5 = 1;
+inline void Item::clear_content_md5() {
+  content_md5_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Item::content_md5() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.Item.content_md5)
+  return content_md5_.GetNoArena();
+}
+inline void Item::set_content_md5(const ::std::string& value) {
+  
+  content_md5_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.Item.content_md5)
+}
+#if LANG_CXX11
+inline void Item::set_content_md5(::std::string&& value) {
+  
+  content_md5_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.Item.content_md5)
+}
+#endif
+inline void Item::set_content_md5(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  content_md5_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.Item.content_md5)
+}
+inline void Item::set_content_md5(const void* value, size_t size) {
+  
+  content_md5_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.Item.content_md5)
+}
+inline ::std::string* Item::mutable_content_md5() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.Item.content_md5)
+  return content_md5_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Item::release_content_md5() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.Item.content_md5)
+  
+  return content_md5_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Item::set_allocated_content_md5(::std::string* content_md5) {
+  if (content_md5 != nullptr) {
+    
+  } else {
+    
+  }
+  content_md5_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), content_md5);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.Item.content_md5)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

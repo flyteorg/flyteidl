@@ -39976,6 +39976,589 @@ export const flyteidl = $root.flyteidl = (() => {
             return CreateUploadLocationRequest;
         })();
 
+        service.CreateUploadLocationBatchResponse = (function() {
+
+            /**
+             * Properties of a CreateUploadLocationBatchResponse.
+             * @memberof flyteidl.service
+             * @interface ICreateUploadLocationBatchResponse
+             * @property {Array.<flyteidl.service.IItemUploadInfo>|null} [items] CreateUploadLocationBatchResponse items
+             * @property {string|null} [nativeUrl] CreateUploadLocationBatchResponse nativeUrl
+             * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateUploadLocationBatchResponse expiresAt
+             */
+
+            /**
+             * Constructs a new CreateUploadLocationBatchResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateUploadLocationBatchResponse.
+             * @implements ICreateUploadLocationBatchResponse
+             * @constructor
+             * @param {flyteidl.service.ICreateUploadLocationBatchResponse=} [properties] Properties to set
+             */
+            function CreateUploadLocationBatchResponse(properties) {
+                this.items = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateUploadLocationBatchResponse items.
+             * @member {Array.<flyteidl.service.IItemUploadInfo>} items
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @instance
+             */
+            CreateUploadLocationBatchResponse.prototype.items = $util.emptyArray;
+
+            /**
+             * CreateUploadLocationBatchResponse nativeUrl.
+             * @member {string} nativeUrl
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @instance
+             */
+            CreateUploadLocationBatchResponse.prototype.nativeUrl = "";
+
+            /**
+             * CreateUploadLocationBatchResponse expiresAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @instance
+             */
+            CreateUploadLocationBatchResponse.prototype.expiresAt = null;
+
+            /**
+             * Creates a new CreateUploadLocationBatchResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @static
+             * @param {flyteidl.service.ICreateUploadLocationBatchResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateUploadLocationBatchResponse} CreateUploadLocationBatchResponse instance
+             */
+            CreateUploadLocationBatchResponse.create = function create(properties) {
+                return new CreateUploadLocationBatchResponse(properties);
+            };
+
+            /**
+             * Encodes the specified CreateUploadLocationBatchResponse message. Does not implicitly {@link flyteidl.service.CreateUploadLocationBatchResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @static
+             * @param {flyteidl.service.ICreateUploadLocationBatchResponse} message CreateUploadLocationBatchResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateUploadLocationBatchResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.items != null && message.items.length)
+                    for (let i = 0; i < message.items.length; ++i)
+                        $root.flyteidl.service.ItemUploadInfo.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.nativeUrl);
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateUploadLocationBatchResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateUploadLocationBatchResponse} CreateUploadLocationBatchResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateUploadLocationBatchResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateUploadLocationBatchResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.items && message.items.length))
+                            message.items = [];
+                        message.items.push($root.flyteidl.service.ItemUploadInfo.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.nativeUrl = reader.string();
+                        break;
+                    case 3:
+                        message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateUploadLocationBatchResponse message.
+             * @function verify
+             * @memberof flyteidl.service.CreateUploadLocationBatchResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateUploadLocationBatchResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.items != null && message.hasOwnProperty("items")) {
+                    if (!Array.isArray(message.items))
+                        return "items: array expected";
+                    for (let i = 0; i < message.items.length; ++i) {
+                        let error = $root.flyteidl.service.ItemUploadInfo.verify(message.items[i]);
+                        if (error)
+                            return "items." + error;
+                    }
+                }
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    if (!$util.isString(message.nativeUrl))
+                        return "nativeUrl: string expected";
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                    if (error)
+                        return "expiresAt." + error;
+                }
+                return null;
+            };
+
+            return CreateUploadLocationBatchResponse;
+        })();
+
+        service.ItemUploadInfo = (function() {
+
+            /**
+             * Properties of an ItemUploadInfo.
+             * @memberof flyteidl.service
+             * @interface IItemUploadInfo
+             * @property {string|null} [signedUrl] ItemUploadInfo signedUrl
+             * @property {string|null} [nativeUrl] ItemUploadInfo nativeUrl
+             */
+
+            /**
+             * Constructs a new ItemUploadInfo.
+             * @memberof flyteidl.service
+             * @classdesc Represents an ItemUploadInfo.
+             * @implements IItemUploadInfo
+             * @constructor
+             * @param {flyteidl.service.IItemUploadInfo=} [properties] Properties to set
+             */
+            function ItemUploadInfo(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ItemUploadInfo signedUrl.
+             * @member {string} signedUrl
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @instance
+             */
+            ItemUploadInfo.prototype.signedUrl = "";
+
+            /**
+             * ItemUploadInfo nativeUrl.
+             * @member {string} nativeUrl
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @instance
+             */
+            ItemUploadInfo.prototype.nativeUrl = "";
+
+            /**
+             * Creates a new ItemUploadInfo instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @static
+             * @param {flyteidl.service.IItemUploadInfo=} [properties] Properties to set
+             * @returns {flyteidl.service.ItemUploadInfo} ItemUploadInfo instance
+             */
+            ItemUploadInfo.create = function create(properties) {
+                return new ItemUploadInfo(properties);
+            };
+
+            /**
+             * Encodes the specified ItemUploadInfo message. Does not implicitly {@link flyteidl.service.ItemUploadInfo.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @static
+             * @param {flyteidl.service.IItemUploadInfo} message ItemUploadInfo message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ItemUploadInfo.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.nativeUrl);
+                return writer;
+            };
+
+            /**
+             * Decodes an ItemUploadInfo message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.ItemUploadInfo} ItemUploadInfo
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ItemUploadInfo.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.ItemUploadInfo();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.signedUrl = reader.string();
+                        break;
+                    case 2:
+                        message.nativeUrl = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ItemUploadInfo message.
+             * @function verify
+             * @memberof flyteidl.service.ItemUploadInfo
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ItemUploadInfo.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    if (!$util.isString(message.signedUrl))
+                        return "signedUrl: string expected";
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    if (!$util.isString(message.nativeUrl))
+                        return "nativeUrl: string expected";
+                return null;
+            };
+
+            return ItemUploadInfo;
+        })();
+
+        service.CreateUploadLocationBatchRequest = (function() {
+
+            /**
+             * Properties of a CreateUploadLocationBatchRequest.
+             * @memberof flyteidl.service
+             * @interface ICreateUploadLocationBatchRequest
+             * @property {string|null} [project] CreateUploadLocationBatchRequest project
+             * @property {string|null} [domain] CreateUploadLocationBatchRequest domain
+             * @property {string|null} [suffix] CreateUploadLocationBatchRequest suffix
+             * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationBatchRequest expiresIn
+             * @property {Array.<flyteidl.service.IItem>|null} [items] CreateUploadLocationBatchRequest items
+             */
+
+            /**
+             * Constructs a new CreateUploadLocationBatchRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateUploadLocationBatchRequest.
+             * @implements ICreateUploadLocationBatchRequest
+             * @constructor
+             * @param {flyteidl.service.ICreateUploadLocationBatchRequest=} [properties] Properties to set
+             */
+            function CreateUploadLocationBatchRequest(properties) {
+                this.items = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateUploadLocationBatchRequest project.
+             * @member {string} project
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @instance
+             */
+            CreateUploadLocationBatchRequest.prototype.project = "";
+
+            /**
+             * CreateUploadLocationBatchRequest domain.
+             * @member {string} domain
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @instance
+             */
+            CreateUploadLocationBatchRequest.prototype.domain = "";
+
+            /**
+             * CreateUploadLocationBatchRequest suffix.
+             * @member {string} suffix
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @instance
+             */
+            CreateUploadLocationBatchRequest.prototype.suffix = "";
+
+            /**
+             * CreateUploadLocationBatchRequest expiresIn.
+             * @member {google.protobuf.IDuration|null|undefined} expiresIn
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @instance
+             */
+            CreateUploadLocationBatchRequest.prototype.expiresIn = null;
+
+            /**
+             * CreateUploadLocationBatchRequest items.
+             * @member {Array.<flyteidl.service.IItem>} items
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @instance
+             */
+            CreateUploadLocationBatchRequest.prototype.items = $util.emptyArray;
+
+            /**
+             * Creates a new CreateUploadLocationBatchRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @static
+             * @param {flyteidl.service.ICreateUploadLocationBatchRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateUploadLocationBatchRequest} CreateUploadLocationBatchRequest instance
+             */
+            CreateUploadLocationBatchRequest.create = function create(properties) {
+                return new CreateUploadLocationBatchRequest(properties);
+            };
+
+            /**
+             * Encodes the specified CreateUploadLocationBatchRequest message. Does not implicitly {@link flyteidl.service.CreateUploadLocationBatchRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @static
+             * @param {flyteidl.service.ICreateUploadLocationBatchRequest} message CreateUploadLocationBatchRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateUploadLocationBatchRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.suffix != null && message.hasOwnProperty("suffix"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
+                    $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.items != null && message.items.length)
+                    for (let i = 0; i < message.items.length; ++i)
+                        $root.flyteidl.service.Item.encode(message.items[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateUploadLocationBatchRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateUploadLocationBatchRequest} CreateUploadLocationBatchRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateUploadLocationBatchRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateUploadLocationBatchRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.suffix = reader.string();
+                        break;
+                    case 4:
+                        message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        if (!(message.items && message.items.length))
+                            message.items = [];
+                        message.items.push($root.flyteidl.service.Item.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateUploadLocationBatchRequest message.
+             * @function verify
+             * @memberof flyteidl.service.CreateUploadLocationBatchRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateUploadLocationBatchRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.suffix != null && message.hasOwnProperty("suffix"))
+                    if (!$util.isString(message.suffix))
+                        return "suffix: string expected";
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
+                    let error = $root.google.protobuf.Duration.verify(message.expiresIn);
+                    if (error)
+                        return "expiresIn." + error;
+                }
+                if (message.items != null && message.hasOwnProperty("items")) {
+                    if (!Array.isArray(message.items))
+                        return "items: array expected";
+                    for (let i = 0; i < message.items.length; ++i) {
+                        let error = $root.flyteidl.service.Item.verify(message.items[i]);
+                        if (error)
+                            return "items." + error;
+                    }
+                }
+                return null;
+            };
+
+            return CreateUploadLocationBatchRequest;
+        })();
+
+        service.Item = (function() {
+
+            /**
+             * Properties of an Item.
+             * @memberof flyteidl.service
+             * @interface IItem
+             * @property {Uint8Array|null} [contentMd5] Item contentMd5
+             */
+
+            /**
+             * Constructs a new Item.
+             * @memberof flyteidl.service
+             * @classdesc Represents an Item.
+             * @implements IItem
+             * @constructor
+             * @param {flyteidl.service.IItem=} [properties] Properties to set
+             */
+            function Item(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Item contentMd5.
+             * @member {Uint8Array} contentMd5
+             * @memberof flyteidl.service.Item
+             * @instance
+             */
+            Item.prototype.contentMd5 = $util.newBuffer([]);
+
+            /**
+             * Creates a new Item instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.Item
+             * @static
+             * @param {flyteidl.service.IItem=} [properties] Properties to set
+             * @returns {flyteidl.service.Item} Item instance
+             */
+            Item.create = function create(properties) {
+                return new Item(properties);
+            };
+
+            /**
+             * Encodes the specified Item message. Does not implicitly {@link flyteidl.service.Item.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.Item
+             * @static
+             * @param {flyteidl.service.IItem} message Item message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Item.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.contentMd5);
+                return writer;
+            };
+
+            /**
+             * Decodes an Item message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.Item
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.Item} Item
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Item.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.Item();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.contentMd5 = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an Item message.
+             * @function verify
+             * @memberof flyteidl.service.Item
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Item.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    if (!(message.contentMd5 && typeof message.contentMd5.length === "number" || $util.isString(message.contentMd5)))
+                        return "contentMd5: buffer expected";
+                return null;
+            };
+
+            return Item;
+        })();
+
         service.DataProxyService = (function() {
 
             /**
@@ -40038,6 +40621,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.service.ICreateUploadLocationRequest} request CreateUploadLocationRequest message or plain object
              * @returns {Promise<flyteidl.service.CreateUploadLocationResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createUploadLocationBatch}.
+             * @memberof flyteidl.service.DataProxyService
+             * @typedef CreateUploadLocationBatchCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.CreateUploadLocationBatchResponse} [response] CreateUploadLocationBatchResponse
+             */
+
+            /**
+             * Calls CreateUploadLocationBatch.
+             * @function createUploadLocationBatch
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateUploadLocationBatchRequest} request CreateUploadLocationBatchRequest message or plain object
+             * @param {flyteidl.service.DataProxyService.CreateUploadLocationBatchCallback} callback Node-style callback called with the error, if any, and CreateUploadLocationBatchResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(DataProxyService.prototype.createUploadLocationBatch = function createUploadLocationBatch(request, callback) {
+                return this.rpcCall(createUploadLocationBatch, $root.flyteidl.service.CreateUploadLocationBatchRequest, $root.flyteidl.service.CreateUploadLocationBatchResponse, request, callback);
+            }, "name", { value: "CreateUploadLocationBatch" });
+
+            /**
+             * Calls CreateUploadLocationBatch.
+             * @function createUploadLocationBatch
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateUploadLocationBatchRequest} request CreateUploadLocationBatchRequest message or plain object
+             * @returns {Promise<flyteidl.service.CreateUploadLocationBatchResponse>} Promise
              * @variation 2
              */
 
