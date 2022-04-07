@@ -58,7 +58,7 @@
         },
         "suffix": {
           "type": "string",
-          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.\n+optional. By default, the service will generate a random file name."
+          "description": "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.\n+optional. By default, the service will generate a consistent name based on the provided parameters."
         },
         "expires_in": {
           "type": "string",
@@ -67,7 +67,7 @@
         "content_md5": {
           "type": "string",
           "format": "byte",
-          "description": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path."
+          "title": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path.\n+required"
         }
       },
       "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."

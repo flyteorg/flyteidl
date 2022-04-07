@@ -95,7 +95,7 @@ type CreateUploadLocationRequest struct {
 	// +required
 	Domain string `protobuf:"bytes,2,opt,name=domain,proto3" json:"domain,omitempty"`
 	// Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-	// +optional. By default, the service will generate a random file name.
+	// +optional. By default, the service will generate a consistent name based on the provided parameters.
 	Suffix string `protobuf:"bytes,3,opt,name=suffix,proto3" json:"suffix,omitempty"`
 	// ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
 	// exceeds the platform allowed max.
@@ -103,6 +103,7 @@ type CreateUploadLocationRequest struct {
 	ExpiresIn *duration.Duration `protobuf:"bytes,4,opt,name=expires_in,json=expiresIn,proto3" json:"expires_in,omitempty"`
 	// ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
 	// generated path.
+	// +required
 	ContentMd5           []byte   `protobuf:"bytes,5,opt,name=content_md5,json=contentMd5,proto3" json:"content_md5,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

@@ -1073,7 +1073,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-     * +optional. By default, the service will generate a random file name.
+     * +optional. By default, the service will generate a consistent name based on the provided parameters.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1082,7 +1082,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-     * +optional. By default, the service will generate a random file name.
+     * +optional. By default, the service will generate a consistent name based on the provided parameters.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1125,6 +1125,7 @@ public final class Dataproxy {
      * <pre>
      * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
      * generated path.
+     * +required
      * </pre>
      *
      * <code>bytes content_md5 = 5;</code>
@@ -1339,7 +1340,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-     * +optional. By default, the service will generate a random file name.
+     * +optional. By default, the service will generate a consistent name based on the provided parameters.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1359,7 +1360,7 @@ public final class Dataproxy {
     /**
      * <pre>
      * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-     * +optional. By default, the service will generate a random file name.
+     * +optional. By default, the service will generate a consistent name based on the provided parameters.
      * </pre>
      *
      * <code>string suffix = 3;</code>
@@ -1423,6 +1424,7 @@ public final class Dataproxy {
      * <pre>
      * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
      * generated path.
+     * +required
      * </pre>
      *
      * <code>bytes content_md5 = 5;</code>
@@ -2010,7 +2012,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-       * +optional. By default, the service will generate a random file name.
+       * +optional. By default, the service will generate a consistent name based on the provided parameters.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2030,7 +2032,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-       * +optional. By default, the service will generate a random file name.
+       * +optional. By default, the service will generate a consistent name based on the provided parameters.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2051,7 +2053,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-       * +optional. By default, the service will generate a random file name.
+       * +optional. By default, the service will generate a consistent name based on the provided parameters.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2069,7 +2071,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-       * +optional. By default, the service will generate a random file name.
+       * +optional. By default, the service will generate a consistent name based on the provided parameters.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2083,7 +2085,7 @@ public final class Dataproxy {
       /**
        * <pre>
        * Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
-       * +optional. By default, the service will generate a random file name.
+       * +optional. By default, the service will generate a consistent name based on the provided parameters.
        * </pre>
        *
        * <code>string suffix = 3;</code>
@@ -2276,6 +2278,7 @@ public final class Dataproxy {
        * <pre>
        * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
        * generated path.
+       * +required
        * </pre>
        *
        * <code>bytes content_md5 = 5;</code>
@@ -2287,6 +2290,7 @@ public final class Dataproxy {
        * <pre>
        * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
        * generated path.
+       * +required
        * </pre>
        *
        * <code>bytes content_md5 = 5;</code>
@@ -2304,6 +2308,7 @@ public final class Dataproxy {
        * <pre>
        * ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the
        * generated path.
+       * +required
        * </pre>
        *
        * <code>bytes content_md5 = 5;</code>
