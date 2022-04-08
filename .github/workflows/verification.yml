@@ -220,3 +220,27 @@ jobs:
           path: ./gen
       - name: Test
         run: ./scripts/test_diff.sh
+
+  test-docs:
+    runs-on: ubuntu-latest
+    name: Test Docs
+    steps:
+      - name: "Set up Go"
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.17.0
+      - run: |
+          go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
+          export PATH=${PATH}:`go env GOPATH`/bin
+          echo $PATH
+          protoc --version
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: Set up Docker
+        uses: docker-practice/actions-setup-docker@master
+      - name: Generate Docs
+        run: make generate
+      - name: Test Docs
+        run: ./scripts/test_diff.sh
