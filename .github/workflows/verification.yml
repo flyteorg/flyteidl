@@ -236,8 +236,6 @@ jobs:
       - name: Clean Generated
         run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
         continue-on-error: true
-      - name: Install Protoc
-        uses: arduino/setup-protoc@v1
       - name: Generate Docs
         run: protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=tmp/doc_gen_deps -I=protos `echo $core_proto_files` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
       - name: Test Docs
