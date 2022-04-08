@@ -225,16 +225,22 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Docs
     needs: [generate-swagger-code]
+    container:
+      image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
+      options: --cpus 1
+      volumes:
+        - /github/workspace:/defs
+      env:
+        REPO_BLOB_SHA: master
+        PROJECT_ANNOTATION_PREFIX: flyte.interface
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
-      - name: Go
-        uses: cedrickring/golang-action@1.7.0
-        env:
-          GO111MODULE: "on"
-        with:
-          args: make generate
+      - name: Generate Docs
+        run: core_proto_files=`ls protos/flyteidl/core/*.proto |xargs`
+        run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
+        run: python3 /usr/local/bin/entrypoint.py protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=tmp/doc_gen_deps -I=protos `echo $core_proto_files` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
       - name: Test Docs
         run: ./scripts/test_diff.sh
