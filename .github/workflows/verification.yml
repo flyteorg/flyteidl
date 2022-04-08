@@ -228,8 +228,9 @@ jobs:
       - name: "Set up Go"
         uses: actions/setup-go@v3
         with:
-          go-version: 1.16.0
-      - run: go get -u github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+          go-version: 1.17.0
+      - run: go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc
+      - run: protoc --version
       - name: Checkout
         uses: actions/checkout@v2
         with:
