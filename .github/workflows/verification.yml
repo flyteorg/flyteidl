@@ -224,7 +224,6 @@ jobs:
   test-docs:
     runs-on: ubuntu-latest
     name: Test Docs
-    needs: [generate-swagger-code]
     container:
       image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
       options: --cpus 1
@@ -238,9 +237,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
+      - run: core_proto_files=`ls protos/flyteidl/core/*.proto |xargs`
+      - run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
       - name: Generate Docs
-        run: core_proto_files=`ls protos/flyteidl/core/*.proto |xargs`
-        run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
         run: python3 /usr/local/bin/entrypoint.py protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=tmp/doc_gen_deps -I=protos `echo $core_proto_files` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
       - name: Test Docs
         run: ./scripts/test_diff.sh
