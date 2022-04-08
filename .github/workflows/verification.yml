@@ -233,6 +233,8 @@ jobs:
         uses: docker-practice/actions-setup-docker@master
       - name: Go
         uses: cedrickring/golang-action@1.7.0
+        env:
+          GO111MODULE: "on"
       - name: Generate Docs
         run: make download_tooling && make generate
       - name: Test Docs
