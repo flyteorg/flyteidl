@@ -238,7 +238,9 @@ jobs:
         with:
           fetch-depth: "0"
       - run: core_proto_files=`ls protos/flyteidl/core/*.proto |xargs`
-      - run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
+      - name: Clean Generated
+        run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
+        continue-on-error: true
       - name: Generate Docs
         run: python3 /usr/local/bin/entrypoint.py protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=tmp/doc_gen_deps -I=protos `echo $core_proto_files` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
       - name: Test Docs
