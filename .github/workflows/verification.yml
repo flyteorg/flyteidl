@@ -232,11 +232,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
-      - run: core_proto_files=`ls protos/flyteidl/core/*.proto |xargs`
-      - name: Clean Generated
-        run: ls -d protos/docs/core/* | grep -v index.rst | xargs rm
-        continue-on-error: true
+      - name: Setup Docker
+        uses: docker-practice/actions-setup-docker@master
       - name: Generate Docs
-        run: protoc --doc_out=protos/docs/core --doc_opt=restructuredtext,core.rst -I=tmp/doc_gen_deps -I=protos `echo $core_proto_files` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
+        uses: make generate
       - name: Test Docs
         run: ./scripts/test_diff.sh
