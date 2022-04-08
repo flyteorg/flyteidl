@@ -224,18 +224,17 @@ jobs:
   test-docs:
     runs-on: ubuntu-latest
     name: Test Docs
+    needs: [generate-swagger-code]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
-      - name: Set up Docker
-        uses: docker-practice/actions-setup-docker@master
       - name: Go
         uses: cedrickring/golang-action@1.7.0
         env:
           GO111MODULE: "on"
         with:
-          args: make download_tooling && make generate
+          args: make generate
       - name: Test Docs
         run: ./scripts/test_diff.sh
