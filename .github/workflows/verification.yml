@@ -220,3 +220,18 @@ jobs:
           path: ./gen
       - name: Test
         run: ./scripts/test_diff.sh
+
+  test-docs:
+    runs-on: ubuntu-latest
+    name: Test Docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: "Set up Docker"
+        uses: docker-practice/actions-setup-docker@master
+      - name: "Generate Docs"
+        run: make download_tooling && make generate
+      - name: "Test Docs"
+        run: ./scripts/test_diff.sh
