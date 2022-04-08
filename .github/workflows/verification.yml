@@ -225,13 +225,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Docs
     container:
-      image: lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2
+      image: pseudomuto/protoc-gen-doc
       options: --cpus 1
-      volumes:
-        - /github/workspace:/defs
-      env:
-        REPO_BLOB_SHA: master
-        PROJECT_ANNOTATION_PREFIX: flyte.interface
     steps:
       - name: Checkout
         uses: actions/checkout@v2
