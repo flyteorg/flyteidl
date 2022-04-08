@@ -229,8 +229,10 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.17.0
-      - run: go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
-      - run: protoc --version
+      - run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
+        protoc --version
       - name: Checkout
         uses: actions/checkout@v2
         with:
