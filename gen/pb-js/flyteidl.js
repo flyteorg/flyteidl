@@ -39838,8 +39838,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ICreateUploadLocationRequest
              * @property {string|null} [project] CreateUploadLocationRequest project
              * @property {string|null} [domain] CreateUploadLocationRequest domain
-             * @property {string|null} [suffix] CreateUploadLocationRequest suffix
+             * @property {string|null} [filename] CreateUploadLocationRequest filename
              * @property {google.protobuf.IDuration|null} [expiresIn] CreateUploadLocationRequest expiresIn
+             * @property {Uint8Array|null} [contentMd5] CreateUploadLocationRequest contentMd5
              */
 
             /**
@@ -39874,12 +39875,12 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateUploadLocationRequest.prototype.domain = "";
 
             /**
-             * CreateUploadLocationRequest suffix.
-             * @member {string} suffix
+             * CreateUploadLocationRequest filename.
+             * @member {string} filename
              * @memberof flyteidl.service.CreateUploadLocationRequest
              * @instance
              */
-            CreateUploadLocationRequest.prototype.suffix = "";
+            CreateUploadLocationRequest.prototype.filename = "";
 
             /**
              * CreateUploadLocationRequest expiresIn.
@@ -39888,6 +39889,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             CreateUploadLocationRequest.prototype.expiresIn = null;
+
+            /**
+             * CreateUploadLocationRequest contentMd5.
+             * @member {Uint8Array} contentMd5
+             * @memberof flyteidl.service.CreateUploadLocationRequest
+             * @instance
+             */
+            CreateUploadLocationRequest.prototype.contentMd5 = $util.newBuffer([]);
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
@@ -39917,10 +39926,12 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
-                if (message.suffix != null && message.hasOwnProperty("suffix"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.suffix);
+                if (message.filename != null && message.hasOwnProperty("filename"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.filename);
                 if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
                     $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.contentMd5);
                 return writer;
             };
 
@@ -39949,10 +39960,13 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.domain = reader.string();
                         break;
                     case 3:
-                        message.suffix = reader.string();
+                        message.filename = reader.string();
                         break;
                     case 4:
                         message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.contentMd5 = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -39979,14 +39993,17 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.domain != null && message.hasOwnProperty("domain"))
                     if (!$util.isString(message.domain))
                         return "domain: string expected";
-                if (message.suffix != null && message.hasOwnProperty("suffix"))
-                    if (!$util.isString(message.suffix))
-                        return "suffix: string expected";
+                if (message.filename != null && message.hasOwnProperty("filename"))
+                    if (!$util.isString(message.filename))
+                        return "filename: string expected";
                 if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
                     let error = $root.google.protobuf.Duration.verify(message.expiresIn);
                     if (error)
                         return "expiresIn." + error;
                 }
+                if (message.contentMd5 != null && message.hasOwnProperty("contentMd5"))
+                    if (!(message.contentMd5 && typeof message.contentMd5.length === "number" || $util.isString(message.contentMd5)))
+                        return "contentMd5: buffer expected";
                 return null;
             };
 

@@ -225,8 +225,9 @@ CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 
    "project", ":ref:`ref_string`", "", "Project to create the upload location for +required"
    "domain", ":ref:`ref_string`", "", "Domain to create the upload location for. +required"
-   "suffix", ":ref:`ref_string`", "", "Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`. +optional. By default, the service will generate a random file name."
+   "filename", ":ref:`ref_string`", "", "Filename specifies a desired suffix for the generated location. E.g. `file.py` or `pre/fix/file.zip`. +optional. By default, the service will generate a consistent name based on the provided parameters."
    "expires_in", ":ref:`ref_google.protobuf.Duration`", "", "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this exceeds the platform allowed max. +optional. The default value comes from a global config."
+   "content_md5", ":ref:`ref_bytes`", "", "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the generated path. +required"
 
 
 
