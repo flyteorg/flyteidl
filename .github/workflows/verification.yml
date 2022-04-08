@@ -235,7 +235,7 @@ jobs:
         uses: cedrickring/golang-action@1.7.0
         env:
           GO111MODULE: "on"
-      - name: Generate Docs
-        run: make download_tooling && make generate
+        with:
+          args: make download_tooling && make generate
       - name: Test Docs
         run: ./scripts/test_diff.sh
