@@ -6692,6 +6692,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent metadata */
             metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
+
+            /** TaskExecutionEvent eventVersion */
+            eventVersion?: (number|null);
         }
 
         /** Represents a TaskExecutionEvent. */
@@ -6750,6 +6753,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent metadata. */
             public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
+
+            /** TaskExecutionEvent eventVersion. */
+            public eventVersion: number;
 
             /** TaskExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -14561,6 +14567,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure metadata */
             metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
+
+            /** TaskExecutionClosure eventVersion */
+            eventVersion?: (number|null);
         }
 
         /** Represents a TaskExecutionClosure. */
@@ -14610,6 +14619,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure metadata. */
             public metadata?: (flyteidl.event.ITaskExecutionMetadata|null);
+
+            /** TaskExecutionClosure eventVersion. */
+            public eventVersion: number;
 
             /** TaskExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -17095,11 +17107,14 @@ export namespace flyteidl {
             /** CreateUploadLocationRequest domain */
             domain?: (string|null);
 
-            /** CreateUploadLocationRequest suffix */
-            suffix?: (string|null);
+            /** CreateUploadLocationRequest filename */
+            filename?: (string|null);
 
             /** CreateUploadLocationRequest expiresIn */
             expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationRequest contentMd5 */
+            contentMd5?: (Uint8Array|null);
         }
 
         /** Represents a CreateUploadLocationRequest. */
@@ -17117,11 +17132,14 @@ export namespace flyteidl {
             /** CreateUploadLocationRequest domain. */
             public domain: string;
 
-            /** CreateUploadLocationRequest suffix. */
-            public suffix: string;
+            /** CreateUploadLocationRequest filename. */
+            public filename: string;
 
             /** CreateUploadLocationRequest expiresIn. */
             public expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateUploadLocationRequest contentMd5. */
+            public contentMd5: Uint8Array;
 
             /**
              * Creates a new CreateUploadLocationRequest instance using the specified properties.
