@@ -229,9 +229,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: "0"
-      - name: "Set up Docker"
+      - name: Set up Docker
         uses: docker-practice/actions-setup-docker@master
-      - name: "Generate Docs"
+      - name: Go
+        uses: cedrickring/golang-action@1.7.0
+      - name: Generate Docs
         run: make download_tooling && make generate
-      - name: "Test Docs"
+      - name: Test Docs
         run: ./scripts/test_diff.sh
