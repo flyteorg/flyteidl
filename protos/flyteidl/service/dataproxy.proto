@@ -29,9 +29,9 @@ message CreateUploadLocationRequest {
   // +required
   string domain = 2;
 
-  // Suffix specifies a desired suffix for the generated location. E.g. `/file.py` or `pre/fix/file.zip`.
+  // Filename specifies a desired suffix for the generated location. E.g. `file.py` or `pre/fix/file.zip`.
   // +optional. By default, the service will generate a consistent name based on the provided parameters.
-  string suffix = 3;
+  string filename = 3;
 
   // ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this
   // exceeds the platform allowed max.

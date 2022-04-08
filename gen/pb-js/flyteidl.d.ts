@@ -17089,8 +17089,8 @@ export namespace flyteidl {
             /** CreateUploadLocationRequest domain */
             domain?: (string|null);
 
-            /** CreateUploadLocationRequest suffix */
-            suffix?: (string|null);
+            /** CreateUploadLocationRequest filename */
+            filename?: (string|null);
 
             /** CreateUploadLocationRequest expiresIn */
             expiresIn?: (google.protobuf.IDuration|null);
@@ -17114,8 +17114,8 @@ export namespace flyteidl {
             /** CreateUploadLocationRequest domain. */
             public domain: string;
 
-            /** CreateUploadLocationRequest suffix. */
-            public suffix: string;
+            /** CreateUploadLocationRequest filename. */
+            public filename: string;
 
             /** CreateUploadLocationRequest expiresIn. */
             public expiresIn?: (google.protobuf.IDuration|null);

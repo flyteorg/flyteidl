@@ -341,19 +341,19 @@ class CreateUploadLocationRequest final :
   ::std::string* release_domain();
   void set_allocated_domain(::std::string* domain);
 
-  // string suffix = 3;
-  void clear_suffix();
-  static const int kSuffixFieldNumber = 3;
-  const ::std::string& suffix() const;
-  void set_suffix(const ::std::string& value);
+  // string filename = 3;
+  void clear_filename();
+  static const int kFilenameFieldNumber = 3;
+  const ::std::string& filename() const;
+  void set_filename(const ::std::string& value);
   #if LANG_CXX11
-  void set_suffix(::std::string&& value);
+  void set_filename(::std::string&& value);
   #endif
-  void set_suffix(const char* value);
-  void set_suffix(const char* value, size_t size);
-  ::std::string* mutable_suffix();
-  ::std::string* release_suffix();
-  void set_allocated_suffix(::std::string* suffix);
+  void set_filename(const char* value);
+  void set_filename(const char* value, size_t size);
+  ::std::string* mutable_filename();
+  ::std::string* release_filename();
+  void set_allocated_filename(::std::string* filename);
 
   // bytes content_md5 = 5;
   void clear_content_md5();
@@ -385,7 +385,7 @@ class CreateUploadLocationRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
-  ::google::protobuf::internal::ArenaStringPtr suffix_;
+  ::google::protobuf::internal::ArenaStringPtr filename_;
   ::google::protobuf::internal::ArenaStringPtr content_md5_;
   ::google::protobuf::Duration* expires_in_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -664,57 +664,57 @@ inline void CreateUploadLocationRequest::set_allocated_domain(::std::string* dom
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.domain)
 }
 
-// string suffix = 3;
-inline void CreateUploadLocationRequest::clear_suffix() {
-  suffix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string filename = 3;
+inline void CreateUploadLocationRequest::clear_filename() {
+  filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& CreateUploadLocationRequest::suffix() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.suffix)
-  return suffix_.GetNoArena();
+inline const ::std::string& CreateUploadLocationRequest::filename() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateUploadLocationRequest.filename)
+  return filename_.GetNoArena();
 }
-inline void CreateUploadLocationRequest::set_suffix(const ::std::string& value) {
+inline void CreateUploadLocationRequest::set_filename(const ::std::string& value) {
   
-  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationRequest.suffix)
+  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateUploadLocationRequest.filename)
 }
 #if LANG_CXX11
-inline void CreateUploadLocationRequest::set_suffix(::std::string&& value) {
+inline void CreateUploadLocationRequest::set_filename(::std::string&& value) {
   
-  suffix_.SetNoArena(
+  filename_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationRequest.suffix)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateUploadLocationRequest.filename)
 }
 #endif
-inline void CreateUploadLocationRequest::set_suffix(const char* value) {
+inline void CreateUploadLocationRequest::set_filename(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationRequest.suffix)
+  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateUploadLocationRequest.filename)
 }
-inline void CreateUploadLocationRequest::set_suffix(const char* value, size_t size) {
+inline void CreateUploadLocationRequest::set_filename(const char* value, size_t size) {
   
-  suffix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationRequest.suffix)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateUploadLocationRequest.filename)
 }
-inline ::std::string* CreateUploadLocationRequest::mutable_suffix() {
+inline ::std::string* CreateUploadLocationRequest::mutable_filename() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.suffix)
-  return suffix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateUploadLocationRequest.filename)
+  return filename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* CreateUploadLocationRequest::release_suffix() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.suffix)
+inline ::std::string* CreateUploadLocationRequest::release_filename() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateUploadLocationRequest.filename)
   
-  return suffix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return filename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void CreateUploadLocationRequest::set_allocated_suffix(::std::string* suffix) {
-  if (suffix != nullptr) {
+inline void CreateUploadLocationRequest::set_allocated_filename(::std::string* filename) {
+  if (filename != nullptr) {
     
   } else {
     
   }
-  suffix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), suffix);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.suffix)
+  filename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filename);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateUploadLocationRequest.filename)
 }
 
 // .google.protobuf.Duration expires_in = 4;
