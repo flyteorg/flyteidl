@@ -5,10 +5,9 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
@@ -16,128 +15,96 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fsecurity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fsecurity_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fsecurity_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fsecurity_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto;
+PROTOBUF_PRAGMA_INIT_SEG
 namespace flyteidl {
 namespace core {
-class SecretDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Secret> _instance;
-} _Secret_default_instance_;
-class OAuth2ClientDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<OAuth2Client> _instance;
-} _OAuth2Client_default_instance_;
-class IdentityDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Identity> _instance;
-} _Identity_default_instance_;
-class OAuth2TokenRequestDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<OAuth2TokenRequest> _instance;
-} _OAuth2TokenRequest_default_instance_;
-class SecurityContextDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SecurityContext> _instance;
-} _SecurityContext_default_instance_;
+constexpr Secret::Secret(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : group_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , group_version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , mount_requirement_(0)
+{}
+struct SecretDefaultTypeInternal {
+  constexpr SecretDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SecretDefaultTypeInternal() {}
+  union {
+    Secret _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecretDefaultTypeInternal _Secret_default_instance_;
+constexpr OAuth2Client::OAuth2Client(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : client_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , client_secret_(nullptr){}
+struct OAuth2ClientDefaultTypeInternal {
+  constexpr OAuth2ClientDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OAuth2ClientDefaultTypeInternal() {}
+  union {
+    OAuth2Client _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OAuth2ClientDefaultTypeInternal _OAuth2Client_default_instance_;
+constexpr Identity::Identity(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : iam_role_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , k8s_service_account_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , oauth2_client_(nullptr){}
+struct IdentityDefaultTypeInternal {
+  constexpr IdentityDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~IdentityDefaultTypeInternal() {}
+  union {
+    Identity _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IdentityDefaultTypeInternal _Identity_default_instance_;
+constexpr OAuth2TokenRequest::OAuth2TokenRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , idp_discovery_endpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , token_endpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , client_(nullptr)
+  , type_(0)
+{}
+struct OAuth2TokenRequestDefaultTypeInternal {
+  constexpr OAuth2TokenRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OAuth2TokenRequestDefaultTypeInternal() {}
+  union {
+    OAuth2TokenRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OAuth2TokenRequestDefaultTypeInternal _OAuth2TokenRequest_default_instance_;
+constexpr SecurityContext::SecurityContext(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : secrets_()
+  , tokens_()
+  , run_as_(nullptr){}
+struct SecurityContextDefaultTypeInternal {
+  constexpr SecurityContextDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SecurityContextDefaultTypeInternal() {}
+  union {
+    SecurityContext _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SecurityContextDefaultTypeInternal _SecurityContext_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
-static void InitDefaultsSecret_flyteidl_2fcore_2fsecurity_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[5];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto[2];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2fsecurity_2eproto = nullptr;
 
-  {
-    void* ptr = &::flyteidl::core::_Secret_default_instance_;
-    new (ptr) ::flyteidl::core::Secret();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::core::Secret::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSecret_flyteidl_2fcore_2fsecurity_2eproto}, {}};
-
-static void InitDefaultsOAuth2Client_flyteidl_2fcore_2fsecurity_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::core::_OAuth2Client_default_instance_;
-    new (ptr) ::flyteidl::core::OAuth2Client();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::core::OAuth2Client::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsOAuth2Client_flyteidl_2fcore_2fsecurity_2eproto}, {
-      &scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base,}};
-
-static void InitDefaultsIdentity_flyteidl_2fcore_2fsecurity_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::core::_Identity_default_instance_;
-    new (ptr) ::flyteidl::core::Identity();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::core::Identity::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsIdentity_flyteidl_2fcore_2fsecurity_2eproto}, {
-      &scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto.base,}};
-
-static void InitDefaultsOAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::core::_OAuth2TokenRequest_default_instance_;
-    new (ptr) ::flyteidl::core::OAuth2TokenRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::core::OAuth2TokenRequest::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsOAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto}, {
-      &scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto.base,}};
-
-static void InitDefaultsSecurityContext_flyteidl_2fcore_2fsecurity_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::core::_SecurityContext_default_instance_;
-    new (ptr) ::flyteidl::core::SecurityContext();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::core::SecurityContext::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<3> scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsSecurityContext_flyteidl_2fcore_2fsecurity_2eproto}, {
-      &scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto.base,
-      &scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base,
-      &scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto.base,}};
-
-void InitDefaults_flyteidl_2fcore_2fsecurity_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto.base);
-}
-
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[5];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto[2];
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2fsecurity_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_flyteidl_2fcore_2fsecurity_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, group_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, group_version_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Secret, key_),
@@ -147,6 +114,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2Client, client_id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2Client, client_secret_),
   ~0u,  // no _has_bits_
@@ -154,6 +122,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Identity, iam_role_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Identity, k8s_service_account_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::Identity, oauth2_client_),
@@ -162,6 +131,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2TokenRequest, name_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2TokenRequest, type_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::OAuth2TokenRequest, client_),
@@ -172,75 +142,75 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fsecurity_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SecurityContext, run_as_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SecurityContext, secrets_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SecurityContext, tokens_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::core::Secret)},
-  { 9, -1, sizeof(::flyteidl::core::OAuth2Client)},
-  { 16, -1, sizeof(::flyteidl::core::Identity)},
-  { 24, -1, sizeof(::flyteidl::core::OAuth2TokenRequest)},
-  { 34, -1, sizeof(::flyteidl::core::SecurityContext)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::flyteidl::core::Secret)},
+  { 10, -1, -1, sizeof(::flyteidl::core::OAuth2Client)},
+  { 18, -1, -1, sizeof(::flyteidl::core::Identity)},
+  { 27, -1, -1, sizeof(::flyteidl::core::OAuth2TokenRequest)},
+  { 38, -1, -1, sizeof(::flyteidl::core::SecurityContext)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Secret_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_OAuth2Client_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Identity_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_OAuth2TokenRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SecurityContext_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::core::_Secret_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::core::_OAuth2Client_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::core::_Identity_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::core::_OAuth2TokenRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::core::_SecurityContext_default_instance_),
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto = {
-  {}, AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto, "flyteidl/core/security.proto", schemas,
-  file_default_instances, TableStruct_flyteidl_2fcore_2fsecurity_2eproto::offsets,
-  file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto, 5, file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto, file_level_service_descriptors_flyteidl_2fcore_2fsecurity_2eproto,
-};
-
-const char descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto[] =
+const char descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034flyteidl/core/security.proto\022\rflyteidl"
-  ".core\"\244\001\n\006Secret\022\r\n\005group\030\001 \001(\t\022\025\n\rgroup"
-  "_version\030\002 \001(\t\022\013\n\003key\030\003 \001(\t\022:\n\021mount_req"
-  "uirement\030\004 \001(\0162\037.flyteidl.core.Secret.Mo"
-  "untType\"+\n\tMountType\022\007\n\003ANY\020\000\022\013\n\007ENV_VAR"
-  "\020\001\022\010\n\004FILE\020\002\"O\n\014OAuth2Client\022\021\n\tclient_i"
-  "d\030\001 \001(\t\022,\n\rclient_secret\030\002 \001(\0132\025.flyteid"
-  "l.core.Secret\"m\n\010Identity\022\020\n\010iam_role\030\001 "
-  "\001(\t\022\033\n\023k8s_service_account\030\002 \001(\t\0222\n\roaut"
-  "h2_client\030\003 \001(\0132\033.flyteidl.core.OAuth2Cl"
-  "ient\"\335\001\n\022OAuth2TokenRequest\022\014\n\004name\030\001 \001("
-  "\t\0224\n\004type\030\002 \001(\0162&.flyteidl.core.OAuth2To"
-  "kenRequest.Type\022+\n\006client\030\003 \001(\0132\033.flytei"
-  "dl.core.OAuth2Client\022\036\n\026idp_discovery_en"
-  "dpoint\030\004 \001(\t\022\026\n\016token_endpoint\030\005 \001(\t\"\036\n\004"
-  "Type\022\026\n\022CLIENT_CREDENTIALS\020\000\"\225\001\n\017Securit"
-  "yContext\022\'\n\006run_as\030\001 \001(\0132\027.flyteidl.core"
-  ".Identity\022&\n\007secrets\030\002 \003(\0132\025.flyteidl.co"
-  "re.Secret\0221\n\006tokens\030\003 \003(\0132!.flyteidl.cor"
-  "e.OAuth2TokenRequestB6Z4github.com/flyte"
-  "org/flyteidl/gen/pb-go/flyteidl/coreb\006pr"
-  "oto3"
+  ".core\"\320\001\n\006Secret\022\024\n\005group\030\001 \001(\tR\005group\022#"
+  "\n\rgroup_version\030\002 \001(\tR\014groupVersion\022\020\n\003k"
+  "ey\030\003 \001(\tR\003key\022L\n\021mount_requirement\030\004 \001(\016"
+  "2\037.flyteidl.core.Secret.MountTypeR\020mount"
+  "Requirement\"+\n\tMountType\022\007\n\003ANY\020\000\022\013\n\007ENV"
+  "_VAR\020\001\022\010\n\004FILE\020\002\"g\n\014OAuth2Client\022\033\n\tclie"
+  "nt_id\030\001 \001(\tR\010clientId\022:\n\rclient_secret\030\002"
+  " \001(\0132\025.flyteidl.core.SecretR\014clientSecre"
+  "t\"\227\001\n\010Identity\022\031\n\010iam_role\030\001 \001(\tR\007iamRol"
+  "e\022.\n\023k8s_service_account\030\002 \001(\tR\021k8sServi"
+  "ceAccount\022@\n\roauth2_client\030\003 \001(\0132\033.flyte"
+  "idl.core.OAuth2ClientR\014oauth2Client\"\226\002\n\022"
+  "OAuth2TokenRequest\022\022\n\004name\030\001 \001(\tR\004name\022:"
+  "\n\004type\030\002 \001(\0162&.flyteidl.core.OAuth2Token"
+  "Request.TypeR\004type\0223\n\006client\030\003 \001(\0132\033.fly"
+  "teidl.core.OAuth2ClientR\006client\0224\n\026idp_d"
+  "iscovery_endpoint\030\004 \001(\tR\024idpDiscoveryEnd"
+  "point\022%\n\016token_endpoint\030\005 \001(\tR\rtokenEndp"
+  "oint\"\036\n\004Type\022\026\n\022CLIENT_CREDENTIALS\020\000\"\255\001\n"
+  "\017SecurityContext\022.\n\006run_as\030\001 \001(\0132\027.flyte"
+  "idl.core.IdentityR\005runAs\022/\n\007secrets\030\002 \003("
+  "\0132\025.flyteidl.core.SecretR\007secrets\0229\n\006tok"
+  "ens\030\003 \003(\0132!.flyteidl.core.OAuth2TokenReq"
+  "uestR\006tokensB\260\001\n\021com.flyteidl.coreB\rSecu"
+  "rityProtoH\002Z4github.com/flyteorg/flyteid"
+  "l/gen/pb-go/flyteidl/core\370\001\000\242\002\003FCX\252\002\rFly"
+  "teidl.Core\312\002\rFlyteidl\\Core\342\002\031Flyteidl\\Co"
+  "re\\GPBMetadata\352\002\016Flyteidl::Coreb\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fsecurity_2eproto = {
-  false, InitDefaults_flyteidl_2fcore_2fsecurity_2eproto, 
-  descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto,
-  "flyteidl/core/security.proto", &assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto, 844,
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fsecurity_2eproto = {
+  false, false, 1159, descriptor_table_protodef_flyteidl_2fcore_2fsecurity_2eproto, "flyteidl/core/security.proto", 
+  &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once, nullptr, 0, 5,
+  schemas, file_default_instances, TableStruct_flyteidl_2fcore_2fsecurity_2eproto::offsets,
+  file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto, file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto, file_level_service_descriptors_flyteidl_2fcore_2fsecurity_2eproto,
 };
-
-void AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
-  {
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2fsecurity_2eproto, deps, 0);
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter() {
+  return &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_flyteidl_2fcore_2fsecurity_2eproto = []() { AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto(); return true; }();
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_flyteidl_2fcore_2fsecurity_2eproto(&descriptor_table_flyteidl_2fcore_2fsecurity_2eproto);
 namespace flyteidl {
 namespace core {
-const ::google::protobuf::EnumDescriptor* Secret_MountType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Secret_MountType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_flyteidl_2fcore_2fsecurity_2eproto);
   return file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto[0];
 }
 bool Secret_MountType_IsValid(int value) {
@@ -254,16 +224,16 @@ bool Secret_MountType_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Secret_MountType Secret::ANY;
-const Secret_MountType Secret::ENV_VAR;
-const Secret_MountType Secret::FILE;
-const Secret_MountType Secret::MountType_MIN;
-const Secret_MountType Secret::MountType_MAX;
-const int Secret::MountType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* OAuth2TokenRequest_Type_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr Secret_MountType Secret::ANY;
+constexpr Secret_MountType Secret::ENV_VAR;
+constexpr Secret_MountType Secret::FILE;
+constexpr Secret_MountType Secret::MountType_MIN;
+constexpr Secret_MountType Secret::MountType_MAX;
+constexpr int Secret::MountType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OAuth2TokenRequest_Type_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_flyteidl_2fcore_2fsecurity_2eproto);
   return file_level_enum_descriptors_flyteidl_2fcore_2fsecurity_2eproto[1];
 }
 bool OAuth2TokenRequest_Type_IsValid(int value) {
@@ -275,538 +245,141 @@ bool OAuth2TokenRequest_Type_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const OAuth2TokenRequest_Type OAuth2TokenRequest::CLIENT_CREDENTIALS;
-const OAuth2TokenRequest_Type OAuth2TokenRequest::Type_MIN;
-const OAuth2TokenRequest_Type OAuth2TokenRequest::Type_MAX;
-const int OAuth2TokenRequest::Type_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr OAuth2TokenRequest_Type OAuth2TokenRequest::CLIENT_CREDENTIALS;
+constexpr OAuth2TokenRequest_Type OAuth2TokenRequest::Type_MIN;
+constexpr OAuth2TokenRequest_Type OAuth2TokenRequest::Type_MAX;
+constexpr int OAuth2TokenRequest::Type_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void Secret::InitAsDefaultInstance() {
-}
-class Secret::HasBitSetters {
+class Secret::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Secret::kGroupFieldNumber;
-const int Secret::kGroupVersionFieldNumber;
-const int Secret::kKeyFieldNumber;
-const int Secret::kMountRequirementFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Secret::Secret()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+Secret::Secret(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.Secret)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.core.Secret)
 }
 Secret::Secret(const Secret& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.group().size() > 0) {
-    group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_group().empty()) {
+    group_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_group(), 
+      GetArenaForAllocation());
   }
-  group_version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.group_version().size() > 0) {
-    group_version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_version_);
+  group_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    group_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_group_version().empty()) {
+    group_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_group_version(), 
+      GetArenaForAllocation());
   }
-  key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.key().size() > 0) {
-    key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
+  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_key().empty()) {
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
+      GetArenaForAllocation());
   }
   mount_requirement_ = from.mount_requirement_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.Secret)
 }
 
-void Secret::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base);
-  group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  group_version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  mount_requirement_ = 0;
+inline void Secret::SharedCtor() {
+group_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  group_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+group_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  group_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+mount_requirement_ = 0;
 }
 
 Secret::~Secret() {
   // @@protoc_insertion_point(destructor:flyteidl.core.Secret)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Secret::SharedDtor() {
-  group_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  group_version_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Secret::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  group_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  group_version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Secret::ArenaDtor(void* object) {
+  Secret* _this = reinterpret_cast< Secret* >(object);
+  (void)_this;
+}
+void Secret::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Secret::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Secret& Secret::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Secret_flyteidl_2fcore_2fsecurity_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void Secret::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.Secret)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  group_version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  mount_requirement_ = 0;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Secret::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Secret*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string group = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Secret.group");
-        object = msg->mutable_group();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string group_version = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Secret.group_version");
-        object = msg->mutable_group_version();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string key = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Secret.key");
-        object = msg->mutable_key();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.Secret.MountType mount_requirement = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_mount_requirement(static_cast<::flyteidl::core::Secret_MountType>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Secret::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.Secret)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string group = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_group()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->group().data(), static_cast<int>(this->group().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Secret.group"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string group_version = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_group_version()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->group_version().data(), static_cast<int>(this->group_version().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Secret.group_version"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string key = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_key()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->key().data(), static_cast<int>(this->key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Secret.key"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.Secret.MountType mount_requirement = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_mount_requirement(static_cast< ::flyteidl::core::Secret_MountType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.Secret)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.Secret)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Secret::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.Secret)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string group = 1;
-  if (this->group().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group().data(), static_cast<int>(this->group().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.group");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->group(), output);
-  }
-
-  // string group_version = 2;
-  if (this->group_version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group_version().data(), static_cast<int>(this->group_version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.group_version");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->group_version(), output);
-  }
-
-  // string key = 3;
-  if (this->key().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), static_cast<int>(this->key().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.key");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->key(), output);
-  }
-
-  // .flyteidl.core.Secret.MountType mount_requirement = 4;
-  if (this->mount_requirement() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->mount_requirement(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.Secret)
-}
-
-::google::protobuf::uint8* Secret::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.Secret)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string group = 1;
-  if (this->group().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group().data(), static_cast<int>(this->group().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.group");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->group(), target);
-  }
-
-  // string group_version = 2;
-  if (this->group_version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->group_version().data(), static_cast<int>(this->group_version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.group_version");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->group_version(), target);
-  }
-
-  // string key = 3;
-  if (this->key().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->key().data(), static_cast<int>(this->key().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Secret.key");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->key(), target);
-  }
-
-  // .flyteidl.core.Secret.MountType mount_requirement = 4;
-  if (this->mount_requirement() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->mount_requirement(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.Secret)
-  return target;
-}
-
-size_t Secret::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.Secret)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string group = 1;
-  if (this->group().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->group());
-  }
-
-  // string group_version = 2;
-  if (this->group_version().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->group_version());
-  }
-
-  // string key = 3;
-  if (this->key().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->key());
-  }
-
-  // .flyteidl.core.Secret.MountType mount_requirement = 4;
-  if (this->mount_requirement() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->mount_requirement());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Secret::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.Secret)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Secret* source =
-      ::google::protobuf::DynamicCastToGenerated<Secret>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.Secret)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.Secret)
-    MergeFrom(*source);
-  }
-}
-
-void Secret::MergeFrom(const Secret& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.Secret)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.group().size() > 0) {
-
-    group_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_);
-  }
-  if (from.group_version().size() > 0) {
-
-    group_version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.group_version_);
-  }
-  if (from.key().size() > 0) {
-
-    key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.key_);
-  }
-  if (from.mount_requirement() != 0) {
-    set_mount_requirement(from.mount_requirement());
-  }
-}
-
-void Secret::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.Secret)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Secret::CopyFrom(const Secret& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.Secret)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Secret::IsInitialized() const {
-  return true;
-}
-
-void Secret::Swap(Secret* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Secret::InternalSwap(Secret* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  group_.Swap(&other->group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  group_version_.Swap(&other->group_version_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  key_.Swap(&other->key_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(mount_requirement_, other->mount_requirement_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata Secret::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Secret::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter, &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once,
+      file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void OAuth2Client::InitAsDefaultInstance() {
-  ::flyteidl::core::_OAuth2Client_default_instance_._instance.get_mutable()->client_secret_ = const_cast< ::flyteidl::core::Secret*>(
-      ::flyteidl::core::Secret::internal_default_instance());
-}
-class OAuth2Client::HasBitSetters {
+class OAuth2Client::_Internal {
  public:
   static const ::flyteidl::core::Secret& client_secret(const OAuth2Client* msg);
 };
 
 const ::flyteidl::core::Secret&
-OAuth2Client::HasBitSetters::client_secret(const OAuth2Client* msg) {
+OAuth2Client::_Internal::client_secret(const OAuth2Client* msg) {
   return *msg->client_secret_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int OAuth2Client::kClientIdFieldNumber;
-const int OAuth2Client::kClientSecretFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-OAuth2Client::OAuth2Client()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+OAuth2Client::OAuth2Client(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.OAuth2Client)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.core.OAuth2Client)
 }
 OAuth2Client::OAuth2Client(const OAuth2Client& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  client_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.client_id().size() > 0) {
-    client_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.client_id_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    client_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_client_id().empty()) {
+    client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_client_id(), 
+      GetArenaForAllocation());
   }
-  if (from.has_client_secret()) {
+  if (from._internal_has_client_secret()) {
     client_secret_ = new ::flyteidl::core::Secret(*from.client_secret_);
   } else {
     client_secret_ = nullptr;
@@ -814,368 +387,87 @@ OAuth2Client::OAuth2Client(const OAuth2Client& from)
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.OAuth2Client)
 }
 
-void OAuth2Client::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto.base);
-  client_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  client_secret_ = nullptr;
+inline void OAuth2Client::SharedCtor() {
+client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  client_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+client_secret_ = nullptr;
 }
 
 OAuth2Client::~OAuth2Client() {
   // @@protoc_insertion_point(destructor:flyteidl.core.OAuth2Client)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void OAuth2Client::SharedDtor() {
-  client_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void OAuth2Client::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete client_secret_;
 }
 
+void OAuth2Client::ArenaDtor(void* object) {
+  OAuth2Client* _this = reinterpret_cast< OAuth2Client* >(object);
+  (void)_this;
+}
+void OAuth2Client::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OAuth2Client::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const OAuth2Client& OAuth2Client::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_OAuth2Client_flyteidl_2fcore_2fsecurity_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void OAuth2Client::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.OAuth2Client)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && client_secret_ != nullptr) {
-    delete client_secret_;
-  }
-  client_secret_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* OAuth2Client::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<OAuth2Client*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string client_id = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.OAuth2Client.client_id");
-        object = msg->mutable_client_id();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.Secret client_secret = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Secret::_InternalParse;
-        object = msg->mutable_client_secret();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool OAuth2Client::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.OAuth2Client)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string client_id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_client_id()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->client_id().data(), static_cast<int>(this->client_id().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.OAuth2Client.client_id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.Secret client_secret = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client_secret()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.OAuth2Client)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.OAuth2Client)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void OAuth2Client::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.OAuth2Client)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string client_id = 1;
-  if (this->client_id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->client_id().data(), static_cast<int>(this->client_id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2Client.client_id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->client_id(), output);
-  }
-
-  // .flyteidl.core.Secret client_secret = 2;
-  if (this->has_client_secret()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::client_secret(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.OAuth2Client)
-}
-
-::google::protobuf::uint8* OAuth2Client::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.OAuth2Client)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string client_id = 1;
-  if (this->client_id().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->client_id().data(), static_cast<int>(this->client_id().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2Client.client_id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->client_id(), target);
-  }
-
-  // .flyteidl.core.Secret client_secret = 2;
-  if (this->has_client_secret()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::client_secret(this), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.OAuth2Client)
-  return target;
-}
-
-size_t OAuth2Client::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.OAuth2Client)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string client_id = 1;
-  if (this->client_id().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->client_id());
-  }
-
-  // .flyteidl.core.Secret client_secret = 2;
-  if (this->has_client_secret()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *client_secret_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void OAuth2Client::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.OAuth2Client)
-  GOOGLE_DCHECK_NE(&from, this);
-  const OAuth2Client* source =
-      ::google::protobuf::DynamicCastToGenerated<OAuth2Client>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.OAuth2Client)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.OAuth2Client)
-    MergeFrom(*source);
-  }
-}
-
-void OAuth2Client::MergeFrom(const OAuth2Client& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.OAuth2Client)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.client_id().size() > 0) {
-
-    client_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.client_id_);
-  }
-  if (from.has_client_secret()) {
-    mutable_client_secret()->::flyteidl::core::Secret::MergeFrom(from.client_secret());
-  }
-}
-
-void OAuth2Client::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.OAuth2Client)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void OAuth2Client::CopyFrom(const OAuth2Client& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.OAuth2Client)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool OAuth2Client::IsInitialized() const {
-  return true;
-}
-
-void OAuth2Client::Swap(OAuth2Client* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void OAuth2Client::InternalSwap(OAuth2Client* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  client_id_.Swap(&other->client_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(client_secret_, other->client_secret_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata OAuth2Client::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata OAuth2Client::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter, &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once,
+      file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void Identity::InitAsDefaultInstance() {
-  ::flyteidl::core::_Identity_default_instance_._instance.get_mutable()->oauth2_client_ = const_cast< ::flyteidl::core::OAuth2Client*>(
-      ::flyteidl::core::OAuth2Client::internal_default_instance());
-}
-class Identity::HasBitSetters {
+class Identity::_Internal {
  public:
   static const ::flyteidl::core::OAuth2Client& oauth2_client(const Identity* msg);
 };
 
 const ::flyteidl::core::OAuth2Client&
-Identity::HasBitSetters::oauth2_client(const Identity* msg) {
+Identity::_Internal::oauth2_client(const Identity* msg) {
   return *msg->oauth2_client_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Identity::kIamRoleFieldNumber;
-const int Identity::kK8SServiceAccountFieldNumber;
-const int Identity::kOauth2ClientFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Identity::Identity()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+Identity::Identity(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.Identity)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.core.Identity)
 }
 Identity::Identity(const Identity& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  iam_role_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.iam_role().size() > 0) {
-    iam_role_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iam_role_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  iam_role_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    iam_role_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_iam_role().empty()) {
+    iam_role_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_iam_role(), 
+      GetArenaForAllocation());
   }
-  k8s_service_account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.k8s_service_account().size() > 0) {
-    k8s_service_account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.k8s_service_account_);
+  k8s_service_account_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    k8s_service_account_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_k8s_service_account().empty()) {
+    k8s_service_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_k8s_service_account(), 
+      GetArenaForAllocation());
   }
-  if (from.has_oauth2_client()) {
+  if (from._internal_has_oauth2_client()) {
     oauth2_client_ = new ::flyteidl::core::OAuth2Client(*from.oauth2_client_);
   } else {
     oauth2_client_ = nullptr;
@@ -1183,442 +475,100 @@ Identity::Identity(const Identity& from)
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.Identity)
 }
 
-void Identity::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto.base);
-  iam_role_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  k8s_service_account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  oauth2_client_ = nullptr;
+inline void Identity::SharedCtor() {
+iam_role_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  iam_role_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+k8s_service_account_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  k8s_service_account_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+oauth2_client_ = nullptr;
 }
 
 Identity::~Identity() {
   // @@protoc_insertion_point(destructor:flyteidl.core.Identity)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Identity::SharedDtor() {
-  iam_role_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  k8s_service_account_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Identity::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  iam_role_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  k8s_service_account_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete oauth2_client_;
 }
 
+void Identity::ArenaDtor(void* object) {
+  Identity* _this = reinterpret_cast< Identity* >(object);
+  (void)_this;
+}
+void Identity::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Identity::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Identity& Identity::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Identity_flyteidl_2fcore_2fsecurity_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void Identity::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.Identity)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  iam_role_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  k8s_service_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && oauth2_client_ != nullptr) {
-    delete oauth2_client_;
-  }
-  oauth2_client_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Identity::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<Identity*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string iam_role = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Identity.iam_role");
-        object = msg->mutable_iam_role();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string k8s_service_account = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.Identity.k8s_service_account");
-        object = msg->mutable_k8s_service_account();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.OAuth2Client oauth2_client = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::OAuth2Client::_InternalParse;
-        object = msg->mutable_oauth2_client();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Identity::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.Identity)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string iam_role = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_iam_role()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->iam_role().data(), static_cast<int>(this->iam_role().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Identity.iam_role"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string k8s_service_account = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_k8s_service_account()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.Identity.k8s_service_account"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.OAuth2Client oauth2_client = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_oauth2_client()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.Identity)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.Identity)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void Identity::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.Identity)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string iam_role = 1;
-  if (this->iam_role().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->iam_role().data(), static_cast<int>(this->iam_role().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Identity.iam_role");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->iam_role(), output);
-  }
-
-  // string k8s_service_account = 2;
-  if (this->k8s_service_account().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Identity.k8s_service_account");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->k8s_service_account(), output);
-  }
-
-  // .flyteidl.core.OAuth2Client oauth2_client = 3;
-  if (this->has_oauth2_client()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::oauth2_client(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.Identity)
-}
-
-::google::protobuf::uint8* Identity::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.Identity)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string iam_role = 1;
-  if (this->iam_role().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->iam_role().data(), static_cast<int>(this->iam_role().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Identity.iam_role");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->iam_role(), target);
-  }
-
-  // string k8s_service_account = 2;
-  if (this->k8s_service_account().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->k8s_service_account().data(), static_cast<int>(this->k8s_service_account().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.Identity.k8s_service_account");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->k8s_service_account(), target);
-  }
-
-  // .flyteidl.core.OAuth2Client oauth2_client = 3;
-  if (this->has_oauth2_client()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::oauth2_client(this), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.Identity)
-  return target;
-}
-
-size_t Identity::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.Identity)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string iam_role = 1;
-  if (this->iam_role().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->iam_role());
-  }
-
-  // string k8s_service_account = 2;
-  if (this->k8s_service_account().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->k8s_service_account());
-  }
-
-  // .flyteidl.core.OAuth2Client oauth2_client = 3;
-  if (this->has_oauth2_client()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *oauth2_client_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Identity::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.Identity)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Identity* source =
-      ::google::protobuf::DynamicCastToGenerated<Identity>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.Identity)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.Identity)
-    MergeFrom(*source);
-  }
-}
-
-void Identity::MergeFrom(const Identity& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.Identity)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.iam_role().size() > 0) {
-
-    iam_role_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iam_role_);
-  }
-  if (from.k8s_service_account().size() > 0) {
-
-    k8s_service_account_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.k8s_service_account_);
-  }
-  if (from.has_oauth2_client()) {
-    mutable_oauth2_client()->::flyteidl::core::OAuth2Client::MergeFrom(from.oauth2_client());
-  }
-}
-
-void Identity::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.Identity)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Identity::CopyFrom(const Identity& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.Identity)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Identity::IsInitialized() const {
-  return true;
-}
-
-void Identity::Swap(Identity* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Identity::InternalSwap(Identity* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  iam_role_.Swap(&other->iam_role_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  k8s_service_account_.Swap(&other->k8s_service_account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(oauth2_client_, other->oauth2_client_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata Identity::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Identity::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter, &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once,
+      file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[2]);
 }
-
 
 // ===================================================================
 
-void OAuth2TokenRequest::InitAsDefaultInstance() {
-  ::flyteidl::core::_OAuth2TokenRequest_default_instance_._instance.get_mutable()->client_ = const_cast< ::flyteidl::core::OAuth2Client*>(
-      ::flyteidl::core::OAuth2Client::internal_default_instance());
-}
-class OAuth2TokenRequest::HasBitSetters {
+class OAuth2TokenRequest::_Internal {
  public:
   static const ::flyteidl::core::OAuth2Client& client(const OAuth2TokenRequest* msg);
 };
 
 const ::flyteidl::core::OAuth2Client&
-OAuth2TokenRequest::HasBitSetters::client(const OAuth2TokenRequest* msg) {
+OAuth2TokenRequest::_Internal::client(const OAuth2TokenRequest* msg) {
   return *msg->client_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int OAuth2TokenRequest::kNameFieldNumber;
-const int OAuth2TokenRequest::kTypeFieldNumber;
-const int OAuth2TokenRequest::kClientFieldNumber;
-const int OAuth2TokenRequest::kIdpDiscoveryEndpointFieldNumber;
-const int OAuth2TokenRequest::kTokenEndpointFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-OAuth2TokenRequest::OAuth2TokenRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+OAuth2TokenRequest::OAuth2TokenRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.OAuth2TokenRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.core.OAuth2TokenRequest)
 }
 OAuth2TokenRequest::OAuth2TokenRequest(const OAuth2TokenRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.name().size() > 0) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
-  idp_discovery_endpoint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.idp_discovery_endpoint().size() > 0) {
-    idp_discovery_endpoint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.idp_discovery_endpoint_);
+  idp_discovery_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    idp_discovery_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_idp_discovery_endpoint().empty()) {
+    idp_discovery_endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_idp_discovery_endpoint(), 
+      GetArenaForAllocation());
   }
-  token_endpoint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.token_endpoint().size() > 0) {
-    token_endpoint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_endpoint_);
+  token_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    token_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token_endpoint().empty()) {
+    token_endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token_endpoint(), 
+      GetArenaForAllocation());
   }
-  if (from.has_client()) {
+  if (from._internal_has_client()) {
     client_ = new ::flyteidl::core::OAuth2Client(*from.client_);
   } else {
     client_ = nullptr;
@@ -1627,545 +577,88 @@ OAuth2TokenRequest::OAuth2TokenRequest(const OAuth2TokenRequest& from)
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.OAuth2TokenRequest)
 }
 
-void OAuth2TokenRequest::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto.base);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  idp_discovery_endpoint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  token_endpoint_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&client_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&type_) -
-      reinterpret_cast<char*>(&client_)) + sizeof(type_));
+inline void OAuth2TokenRequest::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+idp_discovery_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  idp_discovery_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+token_endpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  token_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&client_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&client_)) + sizeof(type_));
 }
 
 OAuth2TokenRequest::~OAuth2TokenRequest() {
   // @@protoc_insertion_point(destructor:flyteidl.core.OAuth2TokenRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void OAuth2TokenRequest::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  idp_discovery_endpoint_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  token_endpoint_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void OAuth2TokenRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  idp_discovery_endpoint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  token_endpoint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete client_;
 }
 
+void OAuth2TokenRequest::ArenaDtor(void* object) {
+  OAuth2TokenRequest* _this = reinterpret_cast< OAuth2TokenRequest* >(object);
+  (void)_this;
+}
+void OAuth2TokenRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OAuth2TokenRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const OAuth2TokenRequest& OAuth2TokenRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_OAuth2TokenRequest_flyteidl_2fcore_2fsecurity_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void OAuth2TokenRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.OAuth2TokenRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  idp_discovery_endpoint_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  token_endpoint_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && client_ != nullptr) {
-    delete client_;
-  }
-  client_ = nullptr;
-  type_ = 0;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* OAuth2TokenRequest::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<OAuth2TokenRequest*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string name = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.OAuth2TokenRequest.name");
-        object = msg->mutable_name();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.OAuth2TokenRequest.Type type = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_type(static_cast<::flyteidl::core::OAuth2TokenRequest_Type>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // .flyteidl.core.OAuth2Client client = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::OAuth2Client::_InternalParse;
-        object = msg->mutable_client();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // string idp_discovery_endpoint = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.OAuth2TokenRequest.idp_discovery_endpoint");
-        object = msg->mutable_idp_discovery_endpoint();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string token_endpoint = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.OAuth2TokenRequest.token_endpoint");
-        object = msg->mutable_token_endpoint();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool OAuth2TokenRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.OAuth2TokenRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.OAuth2TokenRequest.name"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.OAuth2TokenRequest.Type type = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_type(static_cast< ::flyteidl::core::OAuth2TokenRequest_Type >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.OAuth2Client client = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_client()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string idp_discovery_endpoint = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_idp_discovery_endpoint()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->idp_discovery_endpoint().data(), static_cast<int>(this->idp_discovery_endpoint().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.OAuth2TokenRequest.idp_discovery_endpoint"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string token_endpoint = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_token_endpoint()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->token_endpoint().data(), static_cast<int>(this->token_endpoint().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.OAuth2TokenRequest.token_endpoint"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.OAuth2TokenRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.OAuth2TokenRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void OAuth2TokenRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.OAuth2TokenRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
-  }
-
-  // .flyteidl.core.OAuth2TokenRequest.Type type = 2;
-  if (this->type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->type(), output);
-  }
-
-  // .flyteidl.core.OAuth2Client client = 3;
-  if (this->has_client()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::client(this), output);
-  }
-
-  // string idp_discovery_endpoint = 4;
-  if (this->idp_discovery_endpoint().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->idp_discovery_endpoint().data(), static_cast<int>(this->idp_discovery_endpoint().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.idp_discovery_endpoint");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->idp_discovery_endpoint(), output);
-  }
-
-  // string token_endpoint = 5;
-  if (this->token_endpoint().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token_endpoint().data(), static_cast<int>(this->token_endpoint().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.token_endpoint");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->token_endpoint(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.OAuth2TokenRequest)
-}
-
-::google::protobuf::uint8* OAuth2TokenRequest::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.OAuth2TokenRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
-  }
-
-  // .flyteidl.core.OAuth2TokenRequest.Type type = 2;
-  if (this->type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->type(), target);
-  }
-
-  // .flyteidl.core.OAuth2Client client = 3;
-  if (this->has_client()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::client(this), target);
-  }
-
-  // string idp_discovery_endpoint = 4;
-  if (this->idp_discovery_endpoint().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->idp_discovery_endpoint().data(), static_cast<int>(this->idp_discovery_endpoint().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.idp_discovery_endpoint");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->idp_discovery_endpoint(), target);
-  }
-
-  // string token_endpoint = 5;
-  if (this->token_endpoint().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token_endpoint().data(), static_cast<int>(this->token_endpoint().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.OAuth2TokenRequest.token_endpoint");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->token_endpoint(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.OAuth2TokenRequest)
-  return target;
-}
-
-size_t OAuth2TokenRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.OAuth2TokenRequest)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
-  }
-
-  // string idp_discovery_endpoint = 4;
-  if (this->idp_discovery_endpoint().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->idp_discovery_endpoint());
-  }
-
-  // string token_endpoint = 5;
-  if (this->token_endpoint().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->token_endpoint());
-  }
-
-  // .flyteidl.core.OAuth2Client client = 3;
-  if (this->has_client()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *client_);
-  }
-
-  // .flyteidl.core.OAuth2TokenRequest.Type type = 2;
-  if (this->type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void OAuth2TokenRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.OAuth2TokenRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const OAuth2TokenRequest* source =
-      ::google::protobuf::DynamicCastToGenerated<OAuth2TokenRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.OAuth2TokenRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.OAuth2TokenRequest)
-    MergeFrom(*source);
-  }
-}
-
-void OAuth2TokenRequest::MergeFrom(const OAuth2TokenRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.OAuth2TokenRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-  if (from.idp_discovery_endpoint().size() > 0) {
-
-    idp_discovery_endpoint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.idp_discovery_endpoint_);
-  }
-  if (from.token_endpoint().size() > 0) {
-
-    token_endpoint_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_endpoint_);
-  }
-  if (from.has_client()) {
-    mutable_client()->::flyteidl::core::OAuth2Client::MergeFrom(from.client());
-  }
-  if (from.type() != 0) {
-    set_type(from.type());
-  }
-}
-
-void OAuth2TokenRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.OAuth2TokenRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void OAuth2TokenRequest::CopyFrom(const OAuth2TokenRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.OAuth2TokenRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool OAuth2TokenRequest::IsInitialized() const {
-  return true;
-}
-
-void OAuth2TokenRequest::Swap(OAuth2TokenRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void OAuth2TokenRequest::InternalSwap(OAuth2TokenRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  idp_discovery_endpoint_.Swap(&other->idp_discovery_endpoint_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  token_endpoint_.Swap(&other->token_endpoint_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(client_, other->client_);
-  swap(type_, other->type_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata OAuth2TokenRequest::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata OAuth2TokenRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter, &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once,
+      file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[3]);
 }
-
 
 // ===================================================================
 
-void SecurityContext::InitAsDefaultInstance() {
-  ::flyteidl::core::_SecurityContext_default_instance_._instance.get_mutable()->run_as_ = const_cast< ::flyteidl::core::Identity*>(
-      ::flyteidl::core::Identity::internal_default_instance());
-}
-class SecurityContext::HasBitSetters {
+class SecurityContext::_Internal {
  public:
   static const ::flyteidl::core::Identity& run_as(const SecurityContext* msg);
 };
 
 const ::flyteidl::core::Identity&
-SecurityContext::HasBitSetters::run_as(const SecurityContext* msg) {
+SecurityContext::_Internal::run_as(const SecurityContext* msg) {
   return *msg->run_as_;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SecurityContext::kRunAsFieldNumber;
-const int SecurityContext::kSecretsFieldNumber;
-const int SecurityContext::kTokensFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SecurityContext::SecurityContext()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+SecurityContext::SecurityContext(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  secrets_(arena),
+  tokens_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.SecurityContext)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.core.SecurityContext)
 }
 SecurityContext::SecurityContext(const SecurityContext& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       secrets_(from.secrets_),
       tokens_(from.tokens_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_run_as()) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_run_as()) {
     run_as_ = new ::flyteidl::core::Identity(*from.run_as_);
   } else {
     run_as_ = nullptr;
@@ -2173,395 +666,62 @@ SecurityContext::SecurityContext(const SecurityContext& from)
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.SecurityContext)
 }
 
-void SecurityContext::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto.base);
-  run_as_ = nullptr;
+inline void SecurityContext::SharedCtor() {
+run_as_ = nullptr;
 }
 
 SecurityContext::~SecurityContext() {
   // @@protoc_insertion_point(destructor:flyteidl.core.SecurityContext)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void SecurityContext::SharedDtor() {
+inline void SecurityContext::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete run_as_;
 }
 
+void SecurityContext::ArenaDtor(void* object) {
+  SecurityContext* _this = reinterpret_cast< SecurityContext* >(object);
+  (void)_this;
+}
+void SecurityContext::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SecurityContext::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SecurityContext& SecurityContext::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void SecurityContext::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.SecurityContext)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  secrets_.Clear();
-  tokens_.Clear();
-  if (GetArenaNoVirtual() == nullptr && run_as_ != nullptr) {
-    delete run_as_;
-  }
-  run_as_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* SecurityContext::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<SecurityContext*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // .flyteidl.core.Identity run_as = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Identity::_InternalParse;
-        object = msg->mutable_run_as();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // repeated .flyteidl.core.Secret secrets = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::core::Secret::_InternalParse;
-          object = msg->add_secrets();
-          if (size > end - ptr) goto len_delim_till_end;
-          ptr += size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-              {parser_till_end, object}, ptr - size, ptr));
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
-        break;
-      }
-      // repeated .flyteidl.core.OAuth2TokenRequest tokens = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::core::OAuth2TokenRequest::_InternalParse;
-          object = msg->add_tokens();
-          if (size > end - ptr) goto len_delim_till_end;
-          ptr += size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-              {parser_till_end, object}, ptr - size, ptr));
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SecurityContext::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.SecurityContext)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.Identity run_as = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_run_as()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .flyteidl.core.Secret secrets = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_secrets()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .flyteidl.core.OAuth2TokenRequest tokens = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_tokens()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.SecurityContext)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.SecurityContext)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void SecurityContext::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.SecurityContext)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .flyteidl.core.Identity run_as = 1;
-  if (this->has_run_as()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::run_as(this), output);
-  }
-
-  // repeated .flyteidl.core.Secret secrets = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->secrets_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->secrets(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .flyteidl.core.OAuth2TokenRequest tokens = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->tokens_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->tokens(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.SecurityContext)
-}
-
-::google::protobuf::uint8* SecurityContext::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SecurityContext)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .flyteidl.core.Identity run_as = 1;
-  if (this->has_run_as()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::run_as(this), target);
-  }
-
-  // repeated .flyteidl.core.Secret secrets = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->secrets_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->secrets(static_cast<int>(i)), target);
-  }
-
-  // repeated .flyteidl.core.OAuth2TokenRequest tokens = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->tokens_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->tokens(static_cast<int>(i)), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.SecurityContext)
-  return target;
-}
-
-size_t SecurityContext::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.SecurityContext)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .flyteidl.core.Secret secrets = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->secrets_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->secrets(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .flyteidl.core.OAuth2TokenRequest tokens = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->tokens_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->tokens(static_cast<int>(i)));
-    }
-  }
-
-  // .flyteidl.core.Identity run_as = 1;
-  if (this->has_run_as()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *run_as_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SecurityContext::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.SecurityContext)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SecurityContext* source =
-      ::google::protobuf::DynamicCastToGenerated<SecurityContext>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.SecurityContext)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.SecurityContext)
-    MergeFrom(*source);
-  }
-}
-
-void SecurityContext::MergeFrom(const SecurityContext& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.SecurityContext)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  secrets_.MergeFrom(from.secrets_);
-  tokens_.MergeFrom(from.tokens_);
-  if (from.has_run_as()) {
-    mutable_run_as()->::flyteidl::core::Identity::MergeFrom(from.run_as());
-  }
-}
-
-void SecurityContext::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.SecurityContext)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void SecurityContext::CopyFrom(const SecurityContext& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.SecurityContext)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SecurityContext::IsInitialized() const {
-  return true;
-}
-
-void SecurityContext::Swap(SecurityContext* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SecurityContext::InternalSwap(SecurityContext* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&secrets_)->InternalSwap(CastToBase(&other->secrets_));
-  CastToBase(&tokens_)->InternalSwap(CastToBase(&other->tokens_));
-  swap(run_as_, other->run_as_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata SecurityContext::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fsecurity_2eproto);
-  return ::file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata SecurityContext::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_getter, &descriptor_table_flyteidl_2fcore_2fsecurity_2eproto_once,
+      file_level_metadata_flyteidl_2fcore_2fsecurity_2eproto[4]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace core
 }  // namespace flyteidl
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::flyteidl::core::Secret* Arena::CreateMaybeMessage< ::flyteidl::core::Secret >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::Secret >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::core::Secret >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::OAuth2Client* Arena::CreateMaybeMessage< ::flyteidl::core::OAuth2Client >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::OAuth2Client >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::core::OAuth2Client >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::Identity* Arena::CreateMaybeMessage< ::flyteidl::core::Identity >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::Identity >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::core::Identity >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::OAuth2TokenRequest* Arena::CreateMaybeMessage< ::flyteidl::core::OAuth2TokenRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::OAuth2TokenRequest >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::core::OAuth2TokenRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::SecurityContext* Arena::CreateMaybeMessage< ::flyteidl::core::SecurityContext >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::SecurityContext >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::core::SecurityContext >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

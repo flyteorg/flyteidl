@@ -5,10 +5,9 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
@@ -16,608 +15,182 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+PROTOBUF_PRAGMA_INIT_SEG
 namespace flyteidl {
 namespace admin {
-class EmailMessageDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EmailMessage> _instance;
-} _EmailMessage_default_instance_;
+constexpr EmailMessage::EmailMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : recipients_email_()
+  , sender_email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , subject_line_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , body_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct EmailMessageDefaultTypeInternal {
+  constexpr EmailMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EmailMessageDefaultTypeInternal() {}
+  union {
+    EmailMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EmailMessageDefaultTypeInternal _EmailMessage_default_instance_;
 }  // namespace admin
 }  // namespace flyteidl
-static void InitDefaultsEmailMessage_flyteidl_2fadmin_2fnotification_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fnotification_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fnotification_2eproto = nullptr;
 
-  {
-    void* ptr = &::flyteidl::admin::_EmailMessage_default_instance_;
-    new (ptr) ::flyteidl::admin::EmailMessage();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::admin::EmailMessage::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_EmailMessage_flyteidl_2fadmin_2fnotification_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmailMessage_flyteidl_2fadmin_2fnotification_2eproto}, {}};
-
-void InitDefaults_flyteidl_2fadmin_2fnotification_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_EmailMessage_flyteidl_2fadmin_2fnotification_2eproto.base);
-}
-
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto[1];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fadmin_2fnotification_2eproto = nullptr;
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fnotification_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnotification_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_flyteidl_2fadmin_2fnotification_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailMessage, recipients_email_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailMessage, sender_email_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailMessage, subject_line_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailMessage, body_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::admin::EmailMessage)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::flyteidl::admin::EmailMessage)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_EmailMessage_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::admin::_EmailMessage_default_instance_),
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fnotification_2eproto = {
-  {}, AddDescriptors_flyteidl_2fadmin_2fnotification_2eproto, "flyteidl/admin/notification.proto", schemas,
-  file_default_instances, TableStruct_flyteidl_2fadmin_2fnotification_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto, 1, file_level_enum_descriptors_flyteidl_2fadmin_2fnotification_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fnotification_2eproto,
-};
-
-const char descriptor_table_protodef_flyteidl_2fadmin_2fnotification_2eproto[] =
+const char descriptor_table_protodef_flyteidl_2fadmin_2fnotification_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n!flyteidl/admin/notification.proto\022\016fly"
-  "teidl.admin\"b\n\014EmailMessage\022\030\n\020recipient"
-  "s_email\030\001 \003(\t\022\024\n\014sender_email\030\002 \001(\t\022\024\n\014s"
-  "ubject_line\030\003 \001(\t\022\014\n\004body\030\004 \001(\tB7Z5githu"
-  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
-  "dl/adminb\006proto3"
+  "teidl.admin\"\223\001\n\014EmailMessage\022)\n\020recipien"
+  "ts_email\030\001 \003(\tR\017recipientsEmail\022!\n\014sende"
+  "r_email\030\002 \001(\tR\013senderEmail\022!\n\014subject_li"
+  "ne\030\003 \001(\tR\013subjectLine\022\022\n\004body\030\004 \001(\tR\004bod"
+  "yB\272\001\n\022com.flyteidl.adminB\021NotificationPr"
+  "otoH\002Z5github.com/flyteorg/flyteidl/gen/"
+  "pb-go/flyteidl/admin\370\001\000\242\002\003FAX\252\002\016Flyteidl"
+  ".Admin\312\002\016Flyteidl\\Admin\342\002\032Flyteidl\\Admin"
+  "\\GPBMetadata\352\002\017Flyteidl::Adminb\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnotification_2eproto = {
-  false, InitDefaults_flyteidl_2fadmin_2fnotification_2eproto, 
-  descriptor_table_protodef_flyteidl_2fadmin_2fnotification_2eproto,
-  "flyteidl/admin/notification.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnotification_2eproto, 216,
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_flyteidl_2fadmin_2fnotification_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnotification_2eproto = {
+  false, false, 398, descriptor_table_protodef_flyteidl_2fadmin_2fnotification_2eproto, "flyteidl/admin/notification.proto", 
+  &descriptor_table_flyteidl_2fadmin_2fnotification_2eproto_once, nullptr, 0, 1,
+  schemas, file_default_instances, TableStruct_flyteidl_2fadmin_2fnotification_2eproto::offsets,
+  file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto, file_level_enum_descriptors_flyteidl_2fadmin_2fnotification_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fnotification_2eproto,
 };
-
-void AddDescriptors_flyteidl_2fadmin_2fnotification_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
-  {
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fnotification_2eproto, deps, 0);
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_flyteidl_2fadmin_2fnotification_2eproto_getter() {
+  return &descriptor_table_flyteidl_2fadmin_2fnotification_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_flyteidl_2fadmin_2fnotification_2eproto = []() { AddDescriptors_flyteidl_2fadmin_2fnotification_2eproto(); return true; }();
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_flyteidl_2fadmin_2fnotification_2eproto(&descriptor_table_flyteidl_2fadmin_2fnotification_2eproto);
 namespace flyteidl {
 namespace admin {
 
 // ===================================================================
 
-void EmailMessage::InitAsDefaultInstance() {
-}
-class EmailMessage::HasBitSetters {
+class EmailMessage::_Internal {
  public:
 };
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EmailMessage::kRecipientsEmailFieldNumber;
-const int EmailMessage::kSenderEmailFieldNumber;
-const int EmailMessage::kSubjectLineFieldNumber;
-const int EmailMessage::kBodyFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-EmailMessage::EmailMessage()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+EmailMessage::EmailMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  recipients_email_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.EmailMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.admin.EmailMessage)
 }
 EmailMessage::EmailMessage(const EmailMessage& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       recipients_email_(from.recipients_email_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  sender_email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.sender_email().size() > 0) {
-    sender_email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sender_email_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  sender_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    sender_email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_sender_email().empty()) {
+    sender_email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sender_email(), 
+      GetArenaForAllocation());
   }
-  subject_line_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.subject_line().size() > 0) {
-    subject_line_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_line_);
+  subject_line_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    subject_line_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_subject_line().empty()) {
+    subject_line_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_subject_line(), 
+      GetArenaForAllocation());
   }
-  body_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.body().size() > 0) {
-    body_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.body_);
+  body_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    body_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_body().empty()) {
+    body_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_body(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.EmailMessage)
 }
 
-void EmailMessage::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_EmailMessage_flyteidl_2fadmin_2fnotification_2eproto.base);
-  sender_email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  subject_line_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  body_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void EmailMessage::SharedCtor() {
+sender_email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  sender_email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+subject_line_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  subject_line_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+body_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  body_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 EmailMessage::~EmailMessage() {
   // @@protoc_insertion_point(destructor:flyteidl.admin.EmailMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void EmailMessage::SharedDtor() {
-  sender_email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  subject_line_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  body_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void EmailMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  sender_email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  subject_line_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  body_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void EmailMessage::ArenaDtor(void* object) {
+  EmailMessage* _this = reinterpret_cast< EmailMessage* >(object);
+  (void)_this;
+}
+void EmailMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EmailMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EmailMessage& EmailMessage::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EmailMessage_flyteidl_2fadmin_2fnotification_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void EmailMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.EmailMessage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  recipients_email_.Clear();
-  sender_email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  subject_line_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  body_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EmailMessage::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EmailMessage*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // repeated string recipients_email = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.EmailMessage.recipients_email");
-          object = msg->add_recipients_email();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
-        break;
-      }
-      // string sender_email = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.EmailMessage.sender_email");
-        object = msg->mutable_sender_email();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string subject_line = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.EmailMessage.subject_line");
-        object = msg->mutable_subject_line();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string body = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.EmailMessage.body");
-        object = msg->mutable_body();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EmailMessage::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.EmailMessage)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string recipients_email = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_recipients_email()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->recipients_email(this->recipients_email_size() - 1).data(),
-            static_cast<int>(this->recipients_email(this->recipients_email_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.EmailMessage.recipients_email"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string sender_email = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_sender_email()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->sender_email().data(), static_cast<int>(this->sender_email().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.EmailMessage.sender_email"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string subject_line = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_subject_line()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->subject_line().data(), static_cast<int>(this->subject_line().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.EmailMessage.subject_line"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string body = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_body()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->body().data(), static_cast<int>(this->body().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.EmailMessage.body"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.EmailMessage)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.EmailMessage)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void EmailMessage::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.EmailMessage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string recipients_email = 1;
-  for (int i = 0, n = this->recipients_email_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->recipients_email(i).data(), static_cast<int>(this->recipients_email(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.recipients_email");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->recipients_email(i), output);
-  }
-
-  // string sender_email = 2;
-  if (this->sender_email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sender_email().data(), static_cast<int>(this->sender_email().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.sender_email");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->sender_email(), output);
-  }
-
-  // string subject_line = 3;
-  if (this->subject_line().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->subject_line().data(), static_cast<int>(this->subject_line().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.subject_line");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->subject_line(), output);
-  }
-
-  // string body = 4;
-  if (this->body().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->body().data(), static_cast<int>(this->body().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.body");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->body(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.EmailMessage)
-}
-
-::google::protobuf::uint8* EmailMessage::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.EmailMessage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated string recipients_email = 1;
-  for (int i = 0, n = this->recipients_email_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->recipients_email(i).data(), static_cast<int>(this->recipients_email(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.recipients_email");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->recipients_email(i), target);
-  }
-
-  // string sender_email = 2;
-  if (this->sender_email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->sender_email().data(), static_cast<int>(this->sender_email().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.sender_email");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->sender_email(), target);
-  }
-
-  // string subject_line = 3;
-  if (this->subject_line().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->subject_line().data(), static_cast<int>(this->subject_line().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.subject_line");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->subject_line(), target);
-  }
-
-  // string body = 4;
-  if (this->body().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->body().data(), static_cast<int>(this->body().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.EmailMessage.body");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->body(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.EmailMessage)
-  return target;
-}
-
-size_t EmailMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.EmailMessage)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated string recipients_email = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->recipients_email_size());
-  for (int i = 0, n = this->recipients_email_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->recipients_email(i));
-  }
-
-  // string sender_email = 2;
-  if (this->sender_email().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->sender_email());
-  }
-
-  // string subject_line = 3;
-  if (this->subject_line().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->subject_line());
-  }
-
-  // string body = 4;
-  if (this->body().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->body());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void EmailMessage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.EmailMessage)
-  GOOGLE_DCHECK_NE(&from, this);
-  const EmailMessage* source =
-      ::google::protobuf::DynamicCastToGenerated<EmailMessage>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.EmailMessage)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.EmailMessage)
-    MergeFrom(*source);
-  }
-}
-
-void EmailMessage::MergeFrom(const EmailMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.EmailMessage)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  recipients_email_.MergeFrom(from.recipients_email_);
-  if (from.sender_email().size() > 0) {
-
-    sender_email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sender_email_);
-  }
-  if (from.subject_line().size() > 0) {
-
-    subject_line_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_line_);
-  }
-  if (from.body().size() > 0) {
-
-    body_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.body_);
-  }
-}
-
-void EmailMessage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.EmailMessage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void EmailMessage::CopyFrom(const EmailMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.EmailMessage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool EmailMessage::IsInitialized() const {
-  return true;
-}
-
-void EmailMessage::Swap(EmailMessage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void EmailMessage::InternalSwap(EmailMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  recipients_email_.InternalSwap(CastToBase(&other->recipients_email_));
-  sender_email_.Swap(&other->sender_email_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  subject_line_.Swap(&other->subject_line_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  body_.Swap(&other->body_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata EmailMessage::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fnotification_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata EmailMessage::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fadmin_2fnotification_2eproto_getter, &descriptor_table_flyteidl_2fadmin_2fnotification_2eproto_once,
+      file_level_metadata_flyteidl_2fadmin_2fnotification_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace admin
 }  // namespace flyteidl
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::EmailMessage* Arena::CreateMaybeMessage< ::flyteidl::admin::EmailMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::EmailMessage >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::admin::EmailMessage >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

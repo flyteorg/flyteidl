@@ -5,10 +5,9 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
@@ -16,65 +15,52 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fduration_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Duration_google_2fprotobuf_2fduration_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
+PROTOBUF_PRAGMA_INIT_SEG
 namespace flyteidl {
 namespace service {
-class CreateUploadLocationResponseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<CreateUploadLocationResponse> _instance;
-} _CreateUploadLocationResponse_default_instance_;
-class CreateUploadLocationRequestDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<CreateUploadLocationRequest> _instance;
-} _CreateUploadLocationRequest_default_instance_;
+constexpr CreateUploadLocationResponse::CreateUploadLocationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : signed_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , native_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expires_at_(nullptr){}
+struct CreateUploadLocationResponseDefaultTypeInternal {
+  constexpr CreateUploadLocationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateUploadLocationResponseDefaultTypeInternal() {}
+  union {
+    CreateUploadLocationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
+constexpr CreateUploadLocationRequest::CreateUploadLocationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : project_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , filename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , content_md5_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , expires_in_(nullptr){}
+struct CreateUploadLocationRequestDefaultTypeInternal {
+  constexpr CreateUploadLocationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CreateUploadLocationRequestDefaultTypeInternal() {}
+  union {
+    CreateUploadLocationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationRequest_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
-static void InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[2];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
 
-  {
-    void* ptr = &::flyteidl::service::_CreateUploadLocationResponse_default_instance_;
-    new (ptr) ::flyteidl::service::CreateUploadLocationResponse();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::service::CreateUploadLocationResponse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto}, {
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
-
-static void InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::service::_CreateUploadLocationRequest_default_instance_;
-    new (ptr) ::flyteidl::service::CreateUploadLocationRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::service::CreateUploadLocationRequest::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto}, {
-      &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
-
-void InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
-}
-
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[2];
-constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
-constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto = nullptr;
-
-const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fdataproxy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_flyteidl_2fservice_2fdataproxy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, signed_url_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, native_url_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationResponse, expires_at_),
@@ -83,1104 +69,308 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fservice_2fdataproxy_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, project_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, domain_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, filename_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, expires_in_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::service::CreateUploadLocationRequest, content_md5_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::service::CreateUploadLocationResponse)},
-  { 8, -1, sizeof(::flyteidl::service::CreateUploadLocationRequest)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::flyteidl::service::CreateUploadLocationResponse)},
+  { 9, -1, -1, sizeof(::flyteidl::service::CreateUploadLocationRequest)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationResponse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::service::_CreateUploadLocationRequest_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::service::_CreateUploadLocationResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::flyteidl::service::_CreateUploadLocationRequest_default_instance_),
 };
 
-::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto = {
-  {}, AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto, "flyteidl/service/dataproxy.proto", schemas,
-  file_default_instances, TableStruct_flyteidl_2fservice_2fdataproxy_2eproto::offsets,
-  file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto, 2, file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto, file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto,
-};
-
-const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
+const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n flyteidl/service/dataproxy.proto\022\020flyt"
   "eidl.service\032\034google/api/annotations.pro"
   "to\032,protoc-gen-swagger/options/annotatio"
   "ns.proto\032\036google/protobuf/duration.proto"
-  "\032\037google/protobuf/timestamp.proto\"v\n\034Cre"
-  "ateUploadLocationResponse\022\022\n\nsigned_url\030"
-  "\001 \001(\t\022\022\n\nnative_url\030\002 \001(\t\022.\n\nexpires_at\030"
-  "\003 \001(\0132\032.google.protobuf.Timestamp\"\224\001\n\033Cr"
-  "eateUploadLocationRequest\022\017\n\007project\030\001 \001"
-  "(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010filename\030\003 \001(\t\022-\n\n"
-  "expires_in\030\004 \001(\0132\031.google.protobuf.Durat"
-  "ion\022\023\n\013content_md5\030\005 \001(\0142\205\002\n\020DataProxySe"
-  "rvice\022\360\001\n\024CreateUploadLocation\022-.flyteid"
-  "l.service.CreateUploadLocationRequest\032.."
-  "flyteidl.service.CreateUploadLocationRes"
-  "ponse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/artifac"
-  "t_urn:\001*\222AM\032KCreates a write-only http l"
-  "ocation that is accessible for tasks at "
-  "runtime.B9Z7github.com/flyteorg/flyteidl"
-  "/gen/pb-go/flyteidl/serviceb\006proto3"
+  "\032\037google/protobuf/timestamp.proto\"\227\001\n\034Cr"
+  "eateUploadLocationResponse\022\035\n\nsigned_url"
+  "\030\001 \001(\tR\tsignedUrl\022\035\n\nnative_url\030\002 \001(\tR\tn"
+  "ativeUrl\0229\n\nexpires_at\030\003 \001(\0132\032.google.pr"
+  "otobuf.TimestampR\texpiresAt\"\306\001\n\033CreateUp"
+  "loadLocationRequest\022\030\n\007project\030\001 \001(\tR\007pr"
+  "oject\022\026\n\006domain\030\002 \001(\tR\006domain\022\032\n\010filenam"
+  "e\030\003 \001(\tR\010filename\0228\n\nexpires_in\030\004 \001(\0132\031."
+  "google.protobuf.DurationR\texpiresIn\022\037\n\013c"
+  "ontent_md5\030\005 \001(\014R\ncontentMd52\205\002\n\020DataPro"
+  "xyService\022\360\001\n\024CreateUploadLocation\022-.fly"
+  "teidl.service.CreateUploadLocationReques"
+  "t\032..flyteidl.service.CreateUploadLocatio"
+  "nResponse\"y\222AM\032KCreates a write-only htt"
+  "p location that is accessible for tasks "
+  "at runtime.\202\323\344\223\002#\"\036/api/v1/dataproxy/art"
+  "ifact_urn:\001*B\303\001\n\024com.flyteidl.serviceB\016D"
+  "ataproxyProtoH\002Z7github.com/flyteorg/fly"
+  "teidl/gen/pb-go/flyteidl/service\370\001\000\242\002\003FS"
+  "X\252\002\020Flyteidl.Service\312\002\020Flyteidl\\Service\342"
+  "\002\034Flyteidl\\Service\\GPBMetadata\352\002\021Flyteid"
+  "l::Serviceb\006proto3"
   ;
-::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
-  false, InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto, 
-  descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto,
-  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 795,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_deps[4] = {
+  &::descriptor_table_google_2fapi_2fannotations_2eproto,
+  &::descriptor_table_google_2fprotobuf_2fduration_2eproto,
+  &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
+  &::descriptor_table_protoc_2dgen_2dswagger_2foptions_2fannotations_2eproto,
 };
-
-void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
-  {
-    ::AddDescriptors_google_2fapi_2fannotations_2eproto,
-    ::AddDescriptors_protoc_2dgen_2dswagger_2foptions_2fannotations_2eproto,
-    ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
-    ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
-  };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto, deps, 4);
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
+  false, false, 1018, descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto, "flyteidl/service/dataproxy.proto", 
+  &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_once, descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_deps, 4, 2,
+  schemas, file_default_instances, TableStruct_flyteidl_2fservice_2fdataproxy_2eproto::offsets,
+  file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto, file_level_enum_descriptors_flyteidl_2fservice_2fdataproxy_2eproto, file_level_service_descriptors_flyteidl_2fservice_2fdataproxy_2eproto,
+};
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_getter() {
+  return &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_flyteidl_2fservice_2fdataproxy_2eproto = []() { AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto(); return true; }();
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_flyteidl_2fservice_2fdataproxy_2eproto(&descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto);
 namespace flyteidl {
 namespace service {
 
 // ===================================================================
 
-void CreateUploadLocationResponse::InitAsDefaultInstance() {
-  ::flyteidl::service::_CreateUploadLocationResponse_default_instance_._instance.get_mutable()->expires_at_ = const_cast< ::google::protobuf::Timestamp*>(
-      ::google::protobuf::Timestamp::internal_default_instance());
-}
-class CreateUploadLocationResponse::HasBitSetters {
+class CreateUploadLocationResponse::_Internal {
  public:
-  static const ::google::protobuf::Timestamp& expires_at(const CreateUploadLocationResponse* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& expires_at(const CreateUploadLocationResponse* msg);
 };
 
-const ::google::protobuf::Timestamp&
-CreateUploadLocationResponse::HasBitSetters::expires_at(const CreateUploadLocationResponse* msg) {
+const ::PROTOBUF_NAMESPACE_ID::Timestamp&
+CreateUploadLocationResponse::_Internal::expires_at(const CreateUploadLocationResponse* msg) {
   return *msg->expires_at_;
 }
 void CreateUploadLocationResponse::clear_expires_at() {
-  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && expires_at_ != nullptr) {
     delete expires_at_;
   }
   expires_at_ = nullptr;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CreateUploadLocationResponse::kSignedUrlFieldNumber;
-const int CreateUploadLocationResponse::kNativeUrlFieldNumber;
-const int CreateUploadLocationResponse::kExpiresAtFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-CreateUploadLocationResponse::CreateUploadLocationResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+CreateUploadLocationResponse::CreateUploadLocationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.service.CreateUploadLocationResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.service.CreateUploadLocationResponse)
 }
 CreateUploadLocationResponse::CreateUploadLocationResponse(const CreateUploadLocationResponse& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  signed_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.signed_url().size() > 0) {
-    signed_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signed_url_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  signed_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    signed_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_signed_url().empty()) {
+    signed_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_signed_url(), 
+      GetArenaForAllocation());
   }
-  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.native_url().size() > 0) {
-    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
+  native_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    native_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_native_url().empty()) {
+    native_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_native_url(), 
+      GetArenaForAllocation());
   }
-  if (from.has_expires_at()) {
-    expires_at_ = new ::google::protobuf::Timestamp(*from.expires_at_);
+  if (from._internal_has_expires_at()) {
+    expires_at_ = new ::PROTOBUF_NAMESPACE_ID::Timestamp(*from.expires_at_);
   } else {
     expires_at_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationResponse)
 }
 
-void CreateUploadLocationResponse::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
-  signed_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  native_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  expires_at_ = nullptr;
+inline void CreateUploadLocationResponse::SharedCtor() {
+signed_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  signed_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+native_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  native_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+expires_at_ = nullptr;
 }
 
 CreateUploadLocationResponse::~CreateUploadLocationResponse() {
   // @@protoc_insertion_point(destructor:flyteidl.service.CreateUploadLocationResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void CreateUploadLocationResponse::SharedDtor() {
-  signed_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  native_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CreateUploadLocationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  signed_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  native_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete expires_at_;
 }
 
+void CreateUploadLocationResponse::ArenaDtor(void* object) {
+  CreateUploadLocationResponse* _this = reinterpret_cast< CreateUploadLocationResponse* >(object);
+  (void)_this;
+}
+void CreateUploadLocationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateUploadLocationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateUploadLocationResponse& CreateUploadLocationResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_CreateUploadLocationResponse_flyteidl_2fservice_2fdataproxy_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void CreateUploadLocationResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.service.CreateUploadLocationResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && expires_at_ != nullptr) {
-    delete expires_at_;
-  }
-  expires_at_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* CreateUploadLocationResponse::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<CreateUploadLocationResponse*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string signed_url = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationResponse.signed_url");
-        object = msg->mutable_signed_url();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string native_url = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationResponse.native_url");
-        object = msg->mutable_native_url();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .google.protobuf.Timestamp expires_at = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
-        object = msg->mutable_expires_at();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool CreateUploadLocationResponse::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.service.CreateUploadLocationResponse)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string signed_url = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_signed_url()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->signed_url().data(), static_cast<int>(this->signed_url().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationResponse.signed_url"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string native_url = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_native_url()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->native_url().data(), static_cast<int>(this->native_url().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationResponse.native_url"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Timestamp expires_at = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_expires_at()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.service.CreateUploadLocationResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.service.CreateUploadLocationResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void CreateUploadLocationResponse::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.service.CreateUploadLocationResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string signed_url = 1;
-  if (this->signed_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signed_url().data(), static_cast<int>(this->signed_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationResponse.signed_url");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->signed_url(), output);
-  }
-
-  // string native_url = 2;
-  if (this->native_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->native_url().data(), static_cast<int>(this->native_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationResponse.native_url");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->native_url(), output);
-  }
-
-  // .google.protobuf.Timestamp expires_at = 3;
-  if (this->has_expires_at()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::expires_at(this), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.service.CreateUploadLocationResponse)
-}
-
-::google::protobuf::uint8* CreateUploadLocationResponse::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.CreateUploadLocationResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string signed_url = 1;
-  if (this->signed_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signed_url().data(), static_cast<int>(this->signed_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationResponse.signed_url");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->signed_url(), target);
-  }
-
-  // string native_url = 2;
-  if (this->native_url().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->native_url().data(), static_cast<int>(this->native_url().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationResponse.native_url");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->native_url(), target);
-  }
-
-  // .google.protobuf.Timestamp expires_at = 3;
-  if (this->has_expires_at()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::expires_at(this), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.CreateUploadLocationResponse)
-  return target;
-}
-
-size_t CreateUploadLocationResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.CreateUploadLocationResponse)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string signed_url = 1;
-  if (this->signed_url().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->signed_url());
-  }
-
-  // string native_url = 2;
-  if (this->native_url().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->native_url());
-  }
-
-  // .google.protobuf.Timestamp expires_at = 3;
-  if (this->has_expires_at()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *expires_at_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CreateUploadLocationResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.CreateUploadLocationResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CreateUploadLocationResponse* source =
-      ::google::protobuf::DynamicCastToGenerated<CreateUploadLocationResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.CreateUploadLocationResponse)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.CreateUploadLocationResponse)
-    MergeFrom(*source);
-  }
-}
-
-void CreateUploadLocationResponse::MergeFrom(const CreateUploadLocationResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.CreateUploadLocationResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.signed_url().size() > 0) {
-
-    signed_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signed_url_);
-  }
-  if (from.native_url().size() > 0) {
-
-    native_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.native_url_);
-  }
-  if (from.has_expires_at()) {
-    mutable_expires_at()->::google::protobuf::Timestamp::MergeFrom(from.expires_at());
-  }
-}
-
-void CreateUploadLocationResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.CreateUploadLocationResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CreateUploadLocationResponse::CopyFrom(const CreateUploadLocationResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.CreateUploadLocationResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CreateUploadLocationResponse::IsInitialized() const {
-  return true;
-}
-
-void CreateUploadLocationResponse::Swap(CreateUploadLocationResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void CreateUploadLocationResponse::InternalSwap(CreateUploadLocationResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  signed_url_.Swap(&other->signed_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  native_url_.Swap(&other->native_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(expires_at_, other->expires_at_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata CreateUploadLocationResponse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
-  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata CreateUploadLocationResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_getter, &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_once,
+      file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void CreateUploadLocationRequest::InitAsDefaultInstance() {
-  ::flyteidl::service::_CreateUploadLocationRequest_default_instance_._instance.get_mutable()->expires_in_ = const_cast< ::google::protobuf::Duration*>(
-      ::google::protobuf::Duration::internal_default_instance());
-}
-class CreateUploadLocationRequest::HasBitSetters {
+class CreateUploadLocationRequest::_Internal {
  public:
-  static const ::google::protobuf::Duration& expires_in(const CreateUploadLocationRequest* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Duration& expires_in(const CreateUploadLocationRequest* msg);
 };
 
-const ::google::protobuf::Duration&
-CreateUploadLocationRequest::HasBitSetters::expires_in(const CreateUploadLocationRequest* msg) {
+const ::PROTOBUF_NAMESPACE_ID::Duration&
+CreateUploadLocationRequest::_Internal::expires_in(const CreateUploadLocationRequest* msg) {
   return *msg->expires_in_;
 }
 void CreateUploadLocationRequest::clear_expires_in() {
-  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && expires_in_ != nullptr) {
     delete expires_in_;
   }
   expires_in_ = nullptr;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CreateUploadLocationRequest::kProjectFieldNumber;
-const int CreateUploadLocationRequest::kDomainFieldNumber;
-const int CreateUploadLocationRequest::kFilenameFieldNumber;
-const int CreateUploadLocationRequest::kExpiresInFieldNumber;
-const int CreateUploadLocationRequest::kContentMd5FieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-CreateUploadLocationRequest::CreateUploadLocationRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+CreateUploadLocationRequest::CreateUploadLocationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.service.CreateUploadLocationRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:flyteidl.service.CreateUploadLocationRequest)
 }
 CreateUploadLocationRequest::CreateUploadLocationRequest(const CreateUploadLocationRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.project().size() > 0) {
-    project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  project_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    project_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_project().empty()) {
+    project_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_project(), 
+      GetArenaForAllocation());
   }
-  domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.domain().size() > 0) {
-    domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
+  domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    domain_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_domain().empty()) {
+    domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_domain(), 
+      GetArenaForAllocation());
   }
-  filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.filename().size() > 0) {
-    filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filename_);
+  filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_filename().empty()) {
+    filename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_filename(), 
+      GetArenaForAllocation());
   }
-  content_md5_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.content_md5().size() > 0) {
-    content_md5_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_md5_);
+  content_md5_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    content_md5_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_content_md5().empty()) {
+    content_md5_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_content_md5(), 
+      GetArenaForAllocation());
   }
-  if (from.has_expires_in()) {
-    expires_in_ = new ::google::protobuf::Duration(*from.expires_in_);
+  if (from._internal_has_expires_in()) {
+    expires_in_ = new ::PROTOBUF_NAMESPACE_ID::Duration(*from.expires_in_);
   } else {
     expires_in_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.service.CreateUploadLocationRequest)
 }
 
-void CreateUploadLocationRequest::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
-  project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  content_md5_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  expires_in_ = nullptr;
+inline void CreateUploadLocationRequest::SharedCtor() {
+project_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  project_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  domain_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+content_md5_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  content_md5_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+expires_in_ = nullptr;
 }
 
 CreateUploadLocationRequest::~CreateUploadLocationRequest() {
   // @@protoc_insertion_point(destructor:flyteidl.service.CreateUploadLocationRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void CreateUploadLocationRequest::SharedDtor() {
-  project_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  domain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  content_md5_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CreateUploadLocationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  project_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  domain_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  filename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  content_md5_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete expires_in_;
 }
 
+void CreateUploadLocationRequest::ArenaDtor(void* object) {
+  CreateUploadLocationRequest* _this = reinterpret_cast< CreateUploadLocationRequest* >(object);
+  (void)_this;
+}
+void CreateUploadLocationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateUploadLocationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CreateUploadLocationRequest& CreateUploadLocationRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_CreateUploadLocationRequest_flyteidl_2fservice_2fdataproxy_2eproto.base);
-  return *internal_default_instance();
-}
 
-
-void CreateUploadLocationRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.service.CreateUploadLocationRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  content_md5_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && expires_in_ != nullptr) {
-    delete expires_in_;
-  }
-  expires_in_ = nullptr;
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* CreateUploadLocationRequest::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<CreateUploadLocationRequest*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string project = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationRequest.project");
-        object = msg->mutable_project();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string domain = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationRequest.domain");
-        object = msg->mutable_domain();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string filename = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.service.CreateUploadLocationRequest.filename");
-        object = msg->mutable_filename();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .google.protobuf.Duration expires_in = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Duration::_InternalParse;
-        object = msg->mutable_expires_in();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // bytes content_md5 = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        object = msg->mutable_content_md5();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParser;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheck(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool CreateUploadLocationRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.service.CreateUploadLocationRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string project = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_project()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->project().data(), static_cast<int>(this->project().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationRequest.project"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string domain = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_domain()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->domain().data(), static_cast<int>(this->domain().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationRequest.domain"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string filename = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_filename()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->filename().data(), static_cast<int>(this->filename().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.service.CreateUploadLocationRequest.filename"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Duration expires_in = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_expires_in()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // bytes content_md5 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_content_md5()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.service.CreateUploadLocationRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.service.CreateUploadLocationRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void CreateUploadLocationRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.service.CreateUploadLocationRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string project = 1;
-  if (this->project().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->project().data(), static_cast<int>(this->project().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.project");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->project(), output);
-  }
-
-  // string domain = 2;
-  if (this->domain().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->domain().data(), static_cast<int>(this->domain().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.domain");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->domain(), output);
-  }
-
-  // string filename = 3;
-  if (this->filename().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->filename().data(), static_cast<int>(this->filename().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.filename");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->filename(), output);
-  }
-
-  // .google.protobuf.Duration expires_in = 4;
-  if (this->has_expires_in()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::expires_in(this), output);
-  }
-
-  // bytes content_md5 = 5;
-  if (this->content_md5().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      5, this->content_md5(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.service.CreateUploadLocationRequest)
-}
-
-::google::protobuf::uint8* CreateUploadLocationRequest::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.service.CreateUploadLocationRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string project = 1;
-  if (this->project().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->project().data(), static_cast<int>(this->project().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.project");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->project(), target);
-  }
-
-  // string domain = 2;
-  if (this->domain().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->domain().data(), static_cast<int>(this->domain().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.domain");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->domain(), target);
-  }
-
-  // string filename = 3;
-  if (this->filename().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->filename().data(), static_cast<int>(this->filename().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.service.CreateUploadLocationRequest.filename");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->filename(), target);
-  }
-
-  // .google.protobuf.Duration expires_in = 4;
-  if (this->has_expires_in()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, HasBitSetters::expires_in(this), target);
-  }
-
-  // bytes content_md5 = 5;
-  if (this->content_md5().size() > 0) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        5, this->content_md5(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.service.CreateUploadLocationRequest)
-  return target;
-}
-
-size_t CreateUploadLocationRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.service.CreateUploadLocationRequest)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string project = 1;
-  if (this->project().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->project());
-  }
-
-  // string domain = 2;
-  if (this->domain().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->domain());
-  }
-
-  // string filename = 3;
-  if (this->filename().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->filename());
-  }
-
-  // bytes content_md5 = 5;
-  if (this->content_md5().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->content_md5());
-  }
-
-  // .google.protobuf.Duration expires_in = 4;
-  if (this->has_expires_in()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *expires_in_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CreateUploadLocationRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.service.CreateUploadLocationRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CreateUploadLocationRequest* source =
-      ::google::protobuf::DynamicCastToGenerated<CreateUploadLocationRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.service.CreateUploadLocationRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.service.CreateUploadLocationRequest)
-    MergeFrom(*source);
-  }
-}
-
-void CreateUploadLocationRequest::MergeFrom(const CreateUploadLocationRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.service.CreateUploadLocationRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.project().size() > 0) {
-
-    project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
-  }
-  if (from.domain().size() > 0) {
-
-    domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
-  }
-  if (from.filename().size() > 0) {
-
-    filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filename_);
-  }
-  if (from.content_md5().size() > 0) {
-
-    content_md5_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_md5_);
-  }
-  if (from.has_expires_in()) {
-    mutable_expires_in()->::google::protobuf::Duration::MergeFrom(from.expires_in());
-  }
-}
-
-void CreateUploadLocationRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.service.CreateUploadLocationRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CreateUploadLocationRequest::CopyFrom(const CreateUploadLocationRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.service.CreateUploadLocationRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CreateUploadLocationRequest::IsInitialized() const {
-  return true;
-}
-
-void CreateUploadLocationRequest::Swap(CreateUploadLocationRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void CreateUploadLocationRequest::InternalSwap(CreateUploadLocationRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  filename_.Swap(&other->filename_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  content_md5_.Swap(&other->content_md5_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(expires_in_, other->expires_in_);
-}
+  GetReflection()->Swap(this, other);}
 
-::google::protobuf::Metadata CreateUploadLocationRequest::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto);
-  return ::file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata CreateUploadLocationRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_getter, &descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto_once,
+      file_level_metadata_flyteidl_2fservice_2fdataproxy_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace service
 }  // namespace flyteidl
-namespace google {
-namespace protobuf {
+PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage< ::flyteidl::service::CreateUploadLocationResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::service::CreateUploadLocationResponse >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::service::CreateUploadLocationResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage< ::flyteidl::service::CreateUploadLocationRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::service::CreateUploadLocationRequest >(arena);
+  return Arena::CreateMessageInternal< ::flyteidl::service::CreateUploadLocationRequest >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 #include <google/protobuf/port_undef.inc>

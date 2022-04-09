@@ -1,0 +1,33 @@
+version: v1
+managed:
+  enabled: true
+  cc_enable_arenas: false
+  java_multiple_files: false
+  java_package_prefix: com
+  java_string_check_utf8: false
+  optimize_for: CODE_SIZE
+  go_package_prefix:
+    default: github.com/flyteorg/flyteidl/gen/pb-go
+    except:
+      - buf.build/googleapis/googleapis
+#  override:
+#    JAVA_PACKAGE:
+#      flyteorg/flyteidl: "org"
+# After migration we can deprecate the old proto
+plugins:
+  - name: cpp
+    out: gen/pb-cpp
+  - name: java
+    out: gen/pb-java
+  - name: python
+    out: gen/pb-python
+  - name: go
+    out: gen/pb-go
+    opt: paths=source_relative
+  - remote: buf.build/grpc/plugins/go:v1.2.0-1
+    out: gen/pb-go
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+  - name: js
+    out: gen/pb-js
