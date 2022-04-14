@@ -4709,34 +4709,13 @@ public final class LaunchPlanOuterClass {
 
     /**
      * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+     * Allows for a workflow to be flagged as interruptible for a single execution.
+     * Omitting this field uses the workflow's defined value as a default.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
+     * <code>bool interruptible = 19;</code>
      */
-    boolean hasInterruptible();
-    /**
-     * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-     */
-    com.google.protobuf.BoolValue getInterruptible();
-    /**
-     * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-     */
-    com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder();
+    boolean getInterruptible();
   }
   /**
    * <pre>
@@ -4936,17 +4915,9 @@ public final class LaunchPlanOuterClass {
               maxParallelism_ = input.readInt32();
               break;
             }
-            case 154: {
-              com.google.protobuf.BoolValue.Builder subBuilder = null;
-              if (interruptible_ != null) {
-                subBuilder = interruptible_.toBuilder();
-              }
-              interruptible_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(interruptible_);
-                interruptible_ = subBuilder.buildPartial();
-              }
+            case 152: {
 
+              interruptible_ = input.readBool();
               break;
             }
             default: {
@@ -5396,42 +5367,17 @@ public final class LaunchPlanOuterClass {
     }
 
     public static final int INTERRUPTIBLE_FIELD_NUMBER = 19;
-    private com.google.protobuf.BoolValue interruptible_;
+    private boolean interruptible_;
     /**
      * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+     * Allows for a workflow to be flagged as interruptible for a single execution.
+     * Omitting this field uses the workflow's defined value as a default.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
+     * <code>bool interruptible = 19;</code>
      */
-    public boolean hasInterruptible() {
-      return interruptible_ != null;
-    }
-    /**
-     * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-     */
-    public com.google.protobuf.BoolValue getInterruptible() {
-      return interruptible_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
-    }
-    /**
-     * <pre>
-     * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-     * Omitting this field uses the workflow's value as a default.
-     * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-     * </pre>
-     *
-     * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-     */
-    public com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder() {
-      return getInterruptible();
+    public boolean getInterruptible() {
+      return interruptible_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5487,8 +5433,8 @@ public final class LaunchPlanOuterClass {
       if (maxParallelism_ != 0) {
         output.writeInt32(18, maxParallelism_);
       }
-      if (interruptible_ != null) {
-        output.writeMessage(19, getInterruptible());
+      if (interruptible_ != false) {
+        output.writeBool(19, interruptible_);
       }
       unknownFields.writeTo(output);
     }
@@ -5550,9 +5496,9 @@ public final class LaunchPlanOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, maxParallelism_);
       }
-      if (interruptible_ != null) {
+      if (interruptible_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getInterruptible());
+          .computeBoolSize(19, interruptible_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5628,11 +5574,8 @@ public final class LaunchPlanOuterClass {
       }
       if (getMaxParallelism()
           != other.getMaxParallelism()) return false;
-      if (hasInterruptible() != other.hasInterruptible()) return false;
-      if (hasInterruptible()) {
-        if (!getInterruptible()
-            .equals(other.getInterruptible())) return false;
-      }
+      if (getInterruptible()
+          != other.getInterruptible()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5692,10 +5635,9 @@ public final class LaunchPlanOuterClass {
       }
       hash = (37 * hash) + MAX_PARALLELISM_FIELD_NUMBER;
       hash = (53 * hash) + getMaxParallelism();
-      if (hasInterruptible()) {
-        hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-        hash = (53 * hash) + getInterruptible().hashCode();
-      }
+      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getInterruptible());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5903,12 +5845,8 @@ public final class LaunchPlanOuterClass {
         }
         maxParallelism_ = 0;
 
-        if (interruptibleBuilder_ == null) {
-          interruptible_ = null;
-        } else {
-          interruptible_ = null;
-          interruptibleBuilder_ = null;
-        }
+        interruptible_ = false;
+
         return this;
       }
 
@@ -5992,11 +5930,7 @@ public final class LaunchPlanOuterClass {
           result.rawOutputDataConfig_ = rawOutputDataConfigBuilder_.build();
         }
         result.maxParallelism_ = maxParallelism_;
-        if (interruptibleBuilder_ == null) {
-          result.interruptible_ = interruptible_;
-        } else {
-          result.interruptible_ = interruptibleBuilder_.build();
-        }
+        result.interruptible_ = interruptible_;
         onBuilt();
         return result;
       }
@@ -6085,8 +6019,8 @@ public final class LaunchPlanOuterClass {
         if (other.getMaxParallelism() != 0) {
           setMaxParallelism(other.getMaxParallelism());
         }
-        if (other.hasInterruptible()) {
-          mergeInterruptible(other.getInterruptible());
+        if (other.getInterruptible() != false) {
+          setInterruptible(other.getInterruptible());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7915,175 +7849,45 @@ public final class LaunchPlanOuterClass {
         return this;
       }
 
-      private com.google.protobuf.BoolValue interruptible_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> interruptibleBuilder_;
+      private boolean interruptible_ ;
       /**
        * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+       * Allows for a workflow to be flagged as interruptible for a single execution.
+       * Omitting this field uses the workflow's defined value as a default.
        * </pre>
        *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
+       * <code>bool interruptible = 19;</code>
        */
-      public boolean hasInterruptible() {
-        return interruptibleBuilder_ != null || interruptible_ != null;
+      public boolean getInterruptible() {
+        return interruptible_;
       }
       /**
        * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+       * Allows for a workflow to be flagged as interruptible for a single execution.
+       * Omitting this field uses the workflow's defined value as a default.
        * </pre>
        *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
+       * <code>bool interruptible = 19;</code>
        */
-      public com.google.protobuf.BoolValue getInterruptible() {
-        if (interruptibleBuilder_ == null) {
-          return interruptible_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
-        } else {
-          return interruptibleBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      public Builder setInterruptible(com.google.protobuf.BoolValue value) {
-        if (interruptibleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          interruptible_ = value;
-          onChanged();
-        } else {
-          interruptibleBuilder_.setMessage(value);
-        }
-
+      public Builder setInterruptible(boolean value) {
+        
+        interruptible_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+       * Allows for a workflow to be flagged as interruptible for a single execution.
+       * Omitting this field uses the workflow's defined value as a default.
        * </pre>
        *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      public Builder setInterruptible(
-          com.google.protobuf.BoolValue.Builder builderForValue) {
-        if (interruptibleBuilder_ == null) {
-          interruptible_ = builderForValue.build();
-          onChanged();
-        } else {
-          interruptibleBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      public Builder mergeInterruptible(com.google.protobuf.BoolValue value) {
-        if (interruptibleBuilder_ == null) {
-          if (interruptible_ != null) {
-            interruptible_ =
-              com.google.protobuf.BoolValue.newBuilder(interruptible_).mergeFrom(value).buildPartial();
-          } else {
-            interruptible_ = value;
-          }
-          onChanged();
-        } else {
-          interruptibleBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
+       * <code>bool interruptible = 19;</code>
        */
       public Builder clearInterruptible() {
-        if (interruptibleBuilder_ == null) {
-          interruptible_ = null;
-          onChanged();
-        } else {
-          interruptible_ = null;
-          interruptibleBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      public com.google.protobuf.BoolValue.Builder getInterruptibleBuilder() {
         
+        interruptible_ = false;
         onChanged();
-        return getInterruptibleFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      public com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder() {
-        if (interruptibleBuilder_ != null) {
-          return interruptibleBuilder_.getMessageOrBuilder();
-        } else {
-          return interruptible_ == null ?
-              com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
-        }
-      }
-      /**
-       * <pre>
-       * Allows for the interruptible flag of a workflow to be overwritten for an execution.
-       * Omitting this field uses the workflow's value as a default.
-       * As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
-       * </pre>
-       *
-       * <code>.google.protobuf.BoolValue interruptible = 19;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
-          getInterruptibleFieldBuilder() {
-        if (interruptibleBuilder_ == null) {
-          interruptibleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                  getInterruptible(),
-                  getParentForChildren(),
-                  isClean());
-          interruptible_ = null;
-        }
-        return interruptibleBuilder_;
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14202,58 +14006,56 @@ public final class LaunchPlanOuterClass {
       "nterface.proto\032\034flyteidl/core/security.p" +
       "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
       "teidl/admin/common.proto\032\037google/protobu" +
-      "f/timestamp.proto\032\036google/protobuf/wrapp" +
-      "ers.proto\"n\n\027LaunchPlanCreateRequest\022%\n\002" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004s" +
-      "pec\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpe" +
-      "c\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nLaunch" +
-      "Plan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
+      "f/timestamp.proto\"n\n\027LaunchPlanCreateReq" +
+      "uest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
       "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
-      "hPlanSpec\0222\n\007closure\030\003 \001(\0132!.flyteidl.ad" +
-      "min.LaunchPlanClosure\"Q\n\016LaunchPlanList\022" +
-      "0\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin.L" +
-      "aunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assu" +
-      "mable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_servi" +
-      "ce_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec\022" +
-      ".\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
-      "ntifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyte" +
-      "idl.admin.LaunchPlanMetadata\0223\n\016default_" +
-      "inputs\030\003 \001(\0132\033.flyteidl.core.ParameterMa" +
-      "p\022/\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core." +
-      "LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006" +
-      " \001(\0132\026.flyteidl.admin.Labels\0220\n\013annotati" +
-      "ons\030\007 \001(\0132\033.flyteidl.admin.Annotations\022&" +
-      "\n\004auth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022/" +
-      "\n\tauth_role\030\t \001(\0132\030.flyteidl.admin.AuthR" +
-      "oleB\002\030\001\0228\n\020security_context\030\n \001(\0132\036.flyt" +
-      "eidl.core.SecurityContext\022;\n\022quality_of_" +
-      "service\030\020 \001(\0132\037.flyteidl.core.QualityOfS" +
-      "ervice\022C\n\026raw_output_data_config\030\021 \001(\0132#" +
-      ".flyteidl.admin.RawOutputDataConfig\022\027\n\017m" +
-      "ax_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023 " +
-      "\001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Laun" +
-      "chPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl." +
-      "admin.LaunchPlanState\0224\n\017expected_inputs" +
-      "\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020e" +
-      "xpected_outputs\030\003 \001(\0132\032.flyteidl.core.Va" +
-      "riableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032." +
-      "google.protobuf.Timestamp\"u\n\022LaunchPlanM" +
-      "etadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.adm" +
-      "in.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fly" +
-      "teidl.admin.Notification\"p\n\027LaunchPlanUp" +
-      "dateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core." +
-      "Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.adm" +
-      "in.LaunchPlanState\"\032\n\030LaunchPlanUpdateRe" +
-      "sponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id\030" +
-      "\001 \001(\0132%.flyteidl.admin.NamedEntityIdenti" +
-      "fier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n\007" +
-      "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003" +
-      " \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f" +
-      "lyteidl.admin.Sort*+\n\017LaunchPlanState\022\014\n" +
-      "\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/fl" +
-      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
-      "b\006proto3"
+      "hPlanSpec\"\032\n\030LaunchPlanCreateResponse\"\225\001" +
+      "\n\nLaunchPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
+      ".Identifier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.adm" +
+      "in.LaunchPlanSpec\0222\n\007closure\030\003 \001(\0132!.fly" +
+      "teidl.admin.LaunchPlanClosure\"Q\n\016LaunchP" +
+      "lanList\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl" +
+      ".admin.LaunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth" +
+      "\022\032\n\022assumable_iam_role\030\001 \001(\t\022\"\n\032kubernet" +
+      "es_service_account\030\002 \001(\t:\002\030\001\"\224\005\n\016LaunchP" +
+      "lanSpec\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl." +
+      "core.Identifier\022;\n\017entity_metadata\030\002 \001(\013" +
+      "2\".flyteidl.admin.LaunchPlanMetadata\0223\n\016" +
+      "default_inputs\030\003 \001(\0132\033.flyteidl.core.Par" +
+      "ameterMap\022/\n\014fixed_inputs\030\004 \001(\0132\031.flytei" +
+      "dl.core.LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006" +
+      "labels\030\006 \001(\0132\026.flyteidl.admin.Labels\0220\n\013" +
+      "annotations\030\007 \001(\0132\033.flyteidl.admin.Annot" +
+      "ations\022&\n\004auth\030\010 \001(\0132\024.flyteidl.admin.Au" +
+      "thB\002\030\001\022/\n\tauth_role\030\t \001(\0132\030.flyteidl.adm" +
+      "in.AuthRoleB\002\030\001\0228\n\020security_context\030\n \001(" +
+      "\0132\036.flyteidl.core.SecurityContext\022;\n\022qua" +
+      "lity_of_service\030\020 \001(\0132\037.flyteidl.core.Qu" +
+      "alityOfService\022C\n\026raw_output_data_config" +
+      "\030\021 \001(\0132#.flyteidl.admin.RawOutputDataCon" +
+      "fig\022\027\n\017max_parallelism\030\022 \001(\005\022\025\n\rinterrup" +
+      "tible\030\023 \001(\010\"\217\002\n\021LaunchPlanClosure\022.\n\005sta" +
+      "te\030\001 \001(\0162\037.flyteidl.admin.LaunchPlanStat" +
+      "e\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteidl.co" +
+      "re.ParameterMap\0224\n\020expected_outputs\030\003 \001(" +
+      "\0132\032.flyteidl.core.VariableMap\022.\n\ncreated" +
+      "_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022.\n" +
+      "\nupdated_at\030\005 \001(\0132\032.google.protobuf.Time" +
+      "stamp\"u\n\022LaunchPlanMetadata\022*\n\010schedule\030" +
+      "\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rnotif" +
+      "ications\030\002 \003(\0132\034.flyteidl.admin.Notifica" +
+      "tion\"p\n\027LaunchPlanUpdateRequest\022%\n\002id\030\001 " +
+      "\001(\0132\031.flyteidl.core.Identifier\022.\n\005state\030" +
+      "\002 \001(\0162\037.flyteidl.admin.LaunchPlanState\"\032" +
+      "\n\030LaunchPlanUpdateResponse\"L\n\027ActiveLaun" +
+      "chPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl.adm" +
+      "in.NamedEntityIdentifier\"\203\001\n\033ActiveLaunc" +
+      "hPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006dom" +
+      "ain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022" +
+      "%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sort*+" +
+      "\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTIV" +
+      "E\020\001B7Z5github.com/flyteorg/flyteidl/gen/" +
+      "pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14274,7 +14076,6 @@ public final class LaunchPlanOuterClass {
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.protobuf.WrappersProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_LaunchPlanCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -14356,7 +14157,6 @@ public final class LaunchPlanOuterClass {
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

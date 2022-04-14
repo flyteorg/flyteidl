@@ -602,15 +602,7 @@ func (m *WorkflowExecutionConfig) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetInterruptible()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return WorkflowExecutionConfigValidationError{
-				field:  "Interruptible",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
+	// no validation rules for Interruptible
 
 	return nil
 }

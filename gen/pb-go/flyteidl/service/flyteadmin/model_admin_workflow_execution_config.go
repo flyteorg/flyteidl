@@ -21,6 +21,6 @@ type AdminWorkflowExecutionConfig struct {
 	Labels *AdminLabels `json:"labels,omitempty"`
 	// Custom annotations to be applied to a triggered execution resource.
 	Annotations *AdminAnnotations `json:"annotations,omitempty"`
-	// Allows for the interruptible flag of a workflow to be overwritten for an execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we're using one of the scalar type wrappers provided.
+	// Allows for a workflow to be flagged as interruptible for a single execution. Omitting this field uses the workflow's defined value as a default.
 	Interruptible bool `json:"interruptible,omitempty"`
 }
