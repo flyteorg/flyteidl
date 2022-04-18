@@ -3305,6 +3305,608 @@ public final class Tasks {
 
   }
 
+  public interface DeckMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.DeckMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML files are.
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    java.lang.String getUri();
+    /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML files are.
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+  }
+  /**
+   * <pre>
+   * Flyte deck information. This is loosely defined to allow for extensibility
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.DeckMetadata}
+   */
+  public  static final class DeckMetadata extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.DeckMetadata)
+      DeckMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeckMetadata.newBuilder() to construct.
+    private DeckMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeckMetadata() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeckMetadata(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_DeckMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Tasks.internal_static_flyteidl_core_DeckMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Tasks.DeckMetadata.class, flyteidl.core.Tasks.DeckMetadata.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uri_;
+    /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML files are.
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML files are.
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Tasks.DeckMetadata)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Tasks.DeckMetadata other = (flyteidl.core.Tasks.DeckMetadata) obj;
+
+      if (!getUri()
+          .equals(other.getUri())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Tasks.DeckMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Tasks.DeckMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Flyte deck information. This is loosely defined to allow for extensibility
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.DeckMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.DeckMetadata)
+        flyteidl.core.Tasks.DeckMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DeckMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DeckMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Tasks.DeckMetadata.class, flyteidl.core.Tasks.DeckMetadata.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Tasks.DeckMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uri_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Tasks.internal_static_flyteidl_core_DeckMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.DeckMetadata getDefaultInstanceForType() {
+        return flyteidl.core.Tasks.DeckMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.DeckMetadata build() {
+        flyteidl.core.Tasks.DeckMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Tasks.DeckMetadata buildPartial() {
+        flyteidl.core.Tasks.DeckMetadata result = new flyteidl.core.Tasks.DeckMetadata(this);
+        result.uri_ = uri_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Tasks.DeckMetadata) {
+          return mergeFrom((flyteidl.core.Tasks.DeckMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Tasks.DeckMetadata other) {
+        if (other == flyteidl.core.Tasks.DeckMetadata.getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Tasks.DeckMetadata parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Tasks.DeckMetadata) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object uri_ = "";
+      /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML files are.
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML files are.
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML files are.
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML files are.
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML files are.
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.DeckMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.DeckMetadata)
+    private static final flyteidl.core.Tasks.DeckMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Tasks.DeckMetadata();
+    }
+
+    public static flyteidl.core.Tasks.DeckMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeckMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<DeckMetadata>() {
+      @java.lang.Override
+      public DeckMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeckMetadata(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeckMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeckMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Tasks.DeckMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TaskMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.TaskMetadata)
       com.google.protobuf.MessageOrBuilder {
@@ -3445,6 +4047,31 @@ public final class Tasks {
      */
     boolean getCacheSerializable();
 
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    boolean hasDeck();
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    flyteidl.core.Tasks.DeckMetadata getDeck();
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    flyteidl.core.Tasks.DeckMetadataOrBuilder getDeckOrBuilder();
+
     public flyteidl.core.Tasks.TaskMetadata.InterruptibleValueCase getInterruptibleValueCase();
   }
   /**
@@ -3556,6 +4183,19 @@ public final class Tasks {
             case 72: {
 
               cacheSerializable_ = input.readBool();
+              break;
+            }
+            case 82: {
+              flyteidl.core.Tasks.DeckMetadata.Builder subBuilder = null;
+              if (deck_ != null) {
+                subBuilder = deck_.toBuilder();
+              }
+              deck_ = input.readMessage(flyteidl.core.Tasks.DeckMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deck_);
+                deck_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3848,6 +4488,39 @@ public final class Tasks {
       return cacheSerializable_;
     }
 
+    public static final int DECK_FIELD_NUMBER = 10;
+    private flyteidl.core.Tasks.DeckMetadata deck_;
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    public boolean hasDeck() {
+      return deck_ != null;
+    }
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    public flyteidl.core.Tasks.DeckMetadata getDeck() {
+      return deck_ == null ? flyteidl.core.Tasks.DeckMetadata.getDefaultInstance() : deck_;
+    }
+    /**
+     * <pre>
+     * Extra metadata about the deck
+     * </pre>
+     *
+     * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+     */
+    public flyteidl.core.Tasks.DeckMetadataOrBuilder getDeckOrBuilder() {
+      return getDeck();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3886,6 +4559,9 @@ public final class Tasks {
       }
       if (cacheSerializable_ != false) {
         output.writeBool(9, cacheSerializable_);
+      }
+      if (deck_ != null) {
+        output.writeMessage(10, getDeck());
       }
       unknownFields.writeTo(output);
     }
@@ -3927,6 +4603,10 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, cacheSerializable_);
       }
+      if (deck_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getDeck());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3965,6 +4645,11 @@ public final class Tasks {
           .equals(other.getDeprecatedErrorMessage())) return false;
       if (getCacheSerializable()
           != other.getCacheSerializable()) return false;
+      if (hasDeck() != other.hasDeck()) return false;
+      if (hasDeck()) {
+        if (!getDeck()
+            .equals(other.getDeck())) return false;
+      }
       if (!getInterruptibleValueCase().equals(other.getInterruptibleValueCase())) return false;
       switch (interruptibleValueCase_) {
         case 8:
@@ -4007,6 +4692,10 @@ public final class Tasks {
       hash = (37 * hash) + CACHE_SERIALIZABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getCacheSerializable());
+      if (hasDeck()) {
+        hash = (37 * hash) + DECK_FIELD_NUMBER;
+        hash = (53 * hash) + getDeck().hashCode();
+      }
       switch (interruptibleValueCase_) {
         case 8:
           hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
@@ -4179,6 +4868,12 @@ public final class Tasks {
 
         cacheSerializable_ = false;
 
+        if (deckBuilder_ == null) {
+          deck_ = null;
+        } else {
+          deck_ = null;
+          deckBuilder_ = null;
+        }
         interruptibleValueCase_ = 0;
         interruptibleValue_ = null;
         return this;
@@ -4229,6 +4924,11 @@ public final class Tasks {
           result.interruptibleValue_ = interruptibleValue_;
         }
         result.cacheSerializable_ = cacheSerializable_;
+        if (deckBuilder_ == null) {
+          result.deck_ = deck_;
+        } else {
+          result.deck_ = deckBuilder_.build();
+        }
         result.interruptibleValueCase_ = interruptibleValueCase_;
         onBuilt();
         return result;
@@ -4300,6 +5000,9 @@ public final class Tasks {
         }
         if (other.getCacheSerializable() != false) {
           setCacheSerializable(other.getCacheSerializable());
+        }
+        if (other.hasDeck()) {
+          mergeDeck(other.getDeck());
         }
         switch (other.getInterruptibleValueCase()) {
           case INTERRUPTIBLE: {
@@ -5100,6 +5803,159 @@ public final class Tasks {
         cacheSerializable_ = false;
         onChanged();
         return this;
+      }
+
+      private flyteidl.core.Tasks.DeckMetadata deck_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.DeckMetadata, flyteidl.core.Tasks.DeckMetadata.Builder, flyteidl.core.Tasks.DeckMetadataOrBuilder> deckBuilder_;
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public boolean hasDeck() {
+        return deckBuilder_ != null || deck_ != null;
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public flyteidl.core.Tasks.DeckMetadata getDeck() {
+        if (deckBuilder_ == null) {
+          return deck_ == null ? flyteidl.core.Tasks.DeckMetadata.getDefaultInstance() : deck_;
+        } else {
+          return deckBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public Builder setDeck(flyteidl.core.Tasks.DeckMetadata value) {
+        if (deckBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deck_ = value;
+          onChanged();
+        } else {
+          deckBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public Builder setDeck(
+          flyteidl.core.Tasks.DeckMetadata.Builder builderForValue) {
+        if (deckBuilder_ == null) {
+          deck_ = builderForValue.build();
+          onChanged();
+        } else {
+          deckBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public Builder mergeDeck(flyteidl.core.Tasks.DeckMetadata value) {
+        if (deckBuilder_ == null) {
+          if (deck_ != null) {
+            deck_ =
+              flyteidl.core.Tasks.DeckMetadata.newBuilder(deck_).mergeFrom(value).buildPartial();
+          } else {
+            deck_ = value;
+          }
+          onChanged();
+        } else {
+          deckBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public Builder clearDeck() {
+        if (deckBuilder_ == null) {
+          deck_ = null;
+          onChanged();
+        } else {
+          deck_ = null;
+          deckBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public flyteidl.core.Tasks.DeckMetadata.Builder getDeckBuilder() {
+        
+        onChanged();
+        return getDeckFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      public flyteidl.core.Tasks.DeckMetadataOrBuilder getDeckOrBuilder() {
+        if (deckBuilder_ != null) {
+          return deckBuilder_.getMessageOrBuilder();
+        } else {
+          return deck_ == null ?
+              flyteidl.core.Tasks.DeckMetadata.getDefaultInstance() : deck_;
+        }
+      }
+      /**
+       * <pre>
+       * Extra metadata about the deck
+       * </pre>
+       *
+       * <code>.flyteidl.core.DeckMetadata deck = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.DeckMetadata, flyteidl.core.Tasks.DeckMetadata.Builder, flyteidl.core.Tasks.DeckMetadataOrBuilder> 
+          getDeckFieldBuilder() {
+        if (deckBuilder_ == null) {
+          deckBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.DeckMetadata, flyteidl.core.Tasks.DeckMetadata.Builder, flyteidl.core.Tasks.DeckMetadataOrBuilder>(
+                  getDeck(),
+                  getParentForChildren(),
+                  isClean());
+          deck_ = null;
+        }
+        return deckBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -17602,6 +18458,11 @@ public final class Tasks {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_RuntimeMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_DeckMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_DeckMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_TaskMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -17687,67 +18548,69 @@ public final class Tasks {
       "ype\030\001 \001(\0162*.flyteidl.core.RuntimeMetadat" +
       "a.RuntimeType\022\017\n\007version\030\002 \001(\t\022\016\n\006flavor" +
       "\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005OTHER\020\000\022\r\n\tFLYT" +
-      "E_SDK\020\001\"\271\002\n\014TaskMetadata\022\024\n\014discoverable" +
-      "\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036.flyteidl.core." +
-      "RuntimeMetadata\022*\n\007timeout\030\004 \001(\0132\031.googl" +
-      "e.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.f" +
-      "lyteidl.core.RetryStrategy\022\031\n\021discovery_" +
-      "version\030\006 \001(\t\022 \n\030deprecated_error_messag" +
-      "e\030\007 \001(\t\022\027\n\rinterruptible\030\010 \001(\010H\000\022\032\n\022cach" +
-      "e_serializable\030\t \001(\010B\025\n\023interruptible_va" +
-      "lue\"\220\004\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flyte" +
-      "idl.core.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010met" +
-      "adata\030\003 \001(\0132\033.flyteidl.core.TaskMetadata" +
-      "\0220\n\tinterface\030\004 \001(\0132\035.flyteidl.core.Type" +
-      "dInterface\022\'\n\006custom\030\005 \001(\0132\027.google.prot" +
-      "obuf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteid" +
-      "l.core.ContainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.fl" +
-      "yteidl.core.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyt" +
-      "eidl.core.SqlH\000\022\031\n\021task_type_version\030\007 \001" +
-      "(\005\0228\n\020security_context\030\010 \001(\0132\036.flyteidl." +
-      "core.SecurityContext\0227\n\006config\030\020 \003(\0132\'.f" +
-      "lyteidl.core.TaskTemplate.ConfigEntry\032-\n" +
-      "\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001B\010\n\006target\"\'\n\rContainerPort\022\026\n\016conta" +
-      "iner_port\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001" +
-      " \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tr" +
-      "esources\030\004 \001(\0132\030.flyteidl.core.Resources" +
-      "\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyValuePa" +
-      "ir\022/\n\006config\030\006 \003(\0132\033.flyteidl.core.KeyVa" +
-      "luePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.co" +
-      "re.ContainerPort\0225\n\013data_config\030\t \001(\0132 ." +
-      "flyteidl.core.DataLoadingConfig\022;\n\014archi" +
-      "tecture\030\n \001(\0162%.flyteidl.core.Container." +
-      "Architecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020" +
-      "\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006A" +
-      "RM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030" +
-      "\001 \001(\0162&.flyteidl.core.IOStrategy.Downloa" +
-      "dMode\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.co" +
-      "re.IOStrategy.UploadMode\"L\n\014DownloadMode" +
-      "\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020" +
-      "\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016" +
-      "UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO" +
-      "_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007e" +
-      "nabled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013outp" +
-      "ut_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl" +
-      ".core.DataLoadingConfig.LiteralMapFormat" +
-      "\022.\n\013io_strategy\030\005 \001(\0132\031.flyteidl.core.IO" +
-      "Strategy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010" +
-      "\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadat" +
-      "a\030\001 \001(\0132 .flyteidl.core.K8sObjectMetadat" +
-      "a\022)\n\010pod_spec\030\002 \001(\0132\027.google.protobuf.St" +
-      "ruct\"\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003" +
-      "(\0132,.flyteidl.core.K8sObjectMetadata.Lab" +
-      "elsEntry\022F\n\013annotations\030\002 \003(\01321.flyteidl" +
-      ".core.K8sObjectMetadata.AnnotationsEntry" +
-      "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030" +
-      "\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.S" +
-      "ql.Dialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004" +
-      "ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
-      "oreb\006proto3"
+      "E_SDK\020\001\"\033\n\014DeckMetadata\022\013\n\003uri\030\001 \001(\t\"\344\002\n" +
+      "\014TaskMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007r" +
+      "untime\030\002 \001(\0132\036.flyteidl.core.RuntimeMeta" +
+      "data\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf." +
+      "Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.cor" +
+      "e.RetryStrategy\022\031\n\021discovery_version\030\006 \001" +
+      "(\t\022 \n\030deprecated_error_message\030\007 \001(\t\022\027\n\r" +
+      "interruptible\030\010 \001(\010H\000\022\032\n\022cache_serializa" +
+      "ble\030\t \001(\010\022)\n\004deck\030\n \001(\0132\033.flyteidl.core." +
+      "DeckMetadataB\025\n\023interruptible_value\"\220\004\n\014" +
+      "TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
+      ".Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 " +
+      "\001(\0132\033.flyteidl.core.TaskMetadata\0220\n\tinte" +
+      "rface\030\004 \001(\0132\035.flyteidl.core.TypedInterfa" +
+      "ce\022\'\n\006custom\030\005 \001(\0132\027.google.protobuf.Str" +
+      "uct\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.C" +
+      "ontainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl.c" +
+      "ore.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyteidl.cor" +
+      "e.SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020se" +
+      "curity_context\030\010 \001(\0132\036.flyteidl.core.Sec" +
+      "urityContext\0227\n\006config\030\020 \003(\0132\'.flyteidl." +
+      "core.TaskTemplate.ConfigEntry\032-\n\013ConfigE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010\n\006" +
+      "target\"\'\n\rContainerPort\022\026\n\016container_por" +
+      "t\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007" +
+      "command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources" +
+      "\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003env\030" +
+      "\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006co" +
+      "nfig\030\006 \003(\0132\033.flyteidl.core.KeyValuePairB" +
+      "\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Conta" +
+      "inerPort\0225\n\013data_config\030\t \001(\0132 .flyteidl" +
+      ".core.DataLoadingConfig\022;\n\014architecture\030" +
+      "\n \001(\0162%.flyteidl.core.Container.Architec" +
+      "ture\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD" +
+      "64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"" +
+      "\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162&." +
+      "flyteidl.core.IOStrategy.DownloadMode\0229\n" +
+      "\013upload_mode\030\002 \001(\0162$.flyteidl.core.IOStr" +
+      "ategy.UploadMode\"L\n\014DownloadMode\022\022\n\016DOWN" +
+      "LOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_" +
+      "NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_O" +
+      "N_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPL" +
+      "OAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled\030\001" +
+      " \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_path\030" +
+      "\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core.Da" +
+      "taLoadingConfig.LiteralMapFormat\022.\n\013io_s" +
+      "trategy\030\005 \001(\0132\031.flyteidl.core.IOStrategy" +
+      "\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001" +
+      "\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132" +
+      " .flyteidl.core.K8sObjectMetadata\022)\n\010pod" +
+      "_spec\030\002 \001(\0132\027.google.protobuf.Struct\"\374\001\n" +
+      "\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.fly" +
+      "teidl.core.K8sObjectMetadata.LabelsEntry" +
+      "\022F\n\013annotations\030\002 \003(\01321.flyteidl.core.K8" +
+      "sObjectMetadata.AnnotationsEntry\032-\n\013Labe" +
+      "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032" +
+      "2\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022+\n" +
+      "\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Diale" +
+      "ct\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022\010" +
+      "\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyteo" +
+      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -17785,14 +18648,20 @@ public final class Tasks {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RuntimeMetadata_descriptor,
         new java.lang.String[] { "Type", "Version", "Flavor", });
-    internal_static_flyteidl_core_TaskMetadata_descriptor =
+    internal_static_flyteidl_core_DeckMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_core_DeckMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_DeckMetadata_descriptor,
+        new java.lang.String[] { "Uri", });
+    internal_static_flyteidl_core_TaskMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_TaskMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskMetadata_descriptor,
-        new java.lang.String[] { "Discoverable", "Runtime", "Timeout", "Retries", "DiscoveryVersion", "DeprecatedErrorMessage", "Interruptible", "CacheSerializable", "InterruptibleValue", });
+        new java.lang.String[] { "Discoverable", "Runtime", "Timeout", "Retries", "DiscoveryVersion", "DeprecatedErrorMessage", "Interruptible", "CacheSerializable", "Deck", "InterruptibleValue", });
     internal_static_flyteidl_core_TaskTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
@@ -17804,37 +18673,37 @@ public final class Tasks {
         internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_ContainerPort_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ContainerPort_descriptor,
         new java.lang.String[] { "ContainerPort", });
     internal_static_flyteidl_core_Container_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_Container_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Container_descriptor,
         new java.lang.String[] { "Image", "Command", "Args", "Resources", "Env", "Config", "Ports", "DataConfig", "Architecture", });
     internal_static_flyteidl_core_IOStrategy_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_IOStrategy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_IOStrategy_descriptor,
         new java.lang.String[] { "DownloadMode", "UploadMode", });
     internal_static_flyteidl_core_DataLoadingConfig_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_DataLoadingConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_DataLoadingConfig_descriptor,
         new java.lang.String[] { "Enabled", "InputPath", "OutputPath", "Format", "IoStrategy", });
     internal_static_flyteidl_core_K8sPod_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_K8sPod_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_K8sPod_descriptor,
         new java.lang.String[] { "Metadata", "PodSpec", });
     internal_static_flyteidl_core_K8sObjectMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_K8sObjectMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_K8sObjectMetadata_descriptor,
@@ -17852,7 +18721,7 @@ public final class Tasks {
         internal_static_flyteidl_core_K8sObjectMetadata_AnnotationsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_Sql_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_Sql_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Sql_descriptor,

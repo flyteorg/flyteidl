@@ -11293,6 +11293,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return RuntimeMetadata;
         })();
 
+        core.DeckMetadata = (function() {
+
+            /**
+             * Properties of a DeckMetadata.
+             * @memberof flyteidl.core
+             * @interface IDeckMetadata
+             * @property {string|null} [uri] DeckMetadata uri
+             */
+
+            /**
+             * Constructs a new DeckMetadata.
+             * @memberof flyteidl.core
+             * @classdesc Represents a DeckMetadata.
+             * @implements IDeckMetadata
+             * @constructor
+             * @param {flyteidl.core.IDeckMetadata=} [properties] Properties to set
+             */
+            function DeckMetadata(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DeckMetadata uri.
+             * @member {string} uri
+             * @memberof flyteidl.core.DeckMetadata
+             * @instance
+             */
+            DeckMetadata.prototype.uri = "";
+
+            /**
+             * Creates a new DeckMetadata instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.DeckMetadata
+             * @static
+             * @param {flyteidl.core.IDeckMetadata=} [properties] Properties to set
+             * @returns {flyteidl.core.DeckMetadata} DeckMetadata instance
+             */
+            DeckMetadata.create = function create(properties) {
+                return new DeckMetadata(properties);
+            };
+
+            /**
+             * Encodes the specified DeckMetadata message. Does not implicitly {@link flyteidl.core.DeckMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.DeckMetadata
+             * @static
+             * @param {flyteidl.core.IDeckMetadata} message DeckMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DeckMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.uri);
+                return writer;
+            };
+
+            /**
+             * Decodes a DeckMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.DeckMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.DeckMetadata} DeckMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DeckMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.DeckMetadata();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.uri = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DeckMetadata message.
+             * @function verify
+             * @memberof flyteidl.core.DeckMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DeckMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.uri != null && message.hasOwnProperty("uri"))
+                    if (!$util.isString(message.uri))
+                        return "uri: string expected";
+                return null;
+            };
+
+            return DeckMetadata;
+        })();
+
         core.TaskMetadata = (function() {
 
             /**
@@ -11307,6 +11417,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [deprecatedErrorMessage] TaskMetadata deprecatedErrorMessage
              * @property {boolean|null} [interruptible] TaskMetadata interruptible
              * @property {boolean|null} [cacheSerializable] TaskMetadata cacheSerializable
+             * @property {flyteidl.core.IDeckMetadata|null} [deck] TaskMetadata deck
              */
 
             /**
@@ -11388,6 +11499,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskMetadata.prototype.cacheSerializable = false;
 
+            /**
+             * TaskMetadata deck.
+             * @member {flyteidl.core.IDeckMetadata|null|undefined} deck
+             * @memberof flyteidl.core.TaskMetadata
+             * @instance
+             */
+            TaskMetadata.prototype.deck = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -11442,6 +11561,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 8, wireType 0 =*/64).bool(message.interruptible);
                 if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
                     writer.uint32(/* id 9, wireType 0 =*/72).bool(message.cacheSerializable);
+                if (message.deck != null && message.hasOwnProperty("deck"))
+                    $root.flyteidl.core.DeckMetadata.encode(message.deck, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 return writer;
             };
 
@@ -11486,6 +11607,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.cacheSerializable = reader.bool();
+                        break;
+                    case 10:
+                        message.deck = $root.flyteidl.core.DeckMetadata.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11539,6 +11663,11 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
                     if (typeof message.cacheSerializable !== "boolean")
                         return "cacheSerializable: boolean expected";
+                if (message.deck != null && message.hasOwnProperty("deck")) {
+                    let error = $root.flyteidl.core.DeckMetadata.verify(message.deck);
+                    if (error)
+                        return "deck." + error;
+                }
                 return null;
             };
 
