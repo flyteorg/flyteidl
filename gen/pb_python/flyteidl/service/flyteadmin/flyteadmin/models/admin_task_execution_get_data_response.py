@@ -37,23 +37,26 @@ class AdminTaskExecutionGetDataResponse(object):
         'inputs': 'AdminUrlBlob',
         'outputs': 'AdminUrlBlob',
         'full_inputs': 'CoreLiteralMap',
-        'full_outputs': 'CoreLiteralMap'
+        'full_outputs': 'CoreLiteralMap',
+        'deck_uri': 'str'
     }
 
     attribute_map = {
         'inputs': 'inputs',
         'outputs': 'outputs',
         'full_inputs': 'full_inputs',
-        'full_outputs': 'full_outputs'
+        'full_outputs': 'full_outputs',
+        'deck_uri': 'deck_uri'
     }
 
-    def __init__(self, inputs=None, outputs=None, full_inputs=None, full_outputs=None):  # noqa: E501
+    def __init__(self, inputs=None, outputs=None, full_inputs=None, full_outputs=None, deck_uri=None):  # noqa: E501
         """AdminTaskExecutionGetDataResponse - a model defined in Swagger"""  # noqa: E501
 
         self._inputs = None
         self._outputs = None
         self._full_inputs = None
         self._full_outputs = None
+        self._deck_uri = None
         self.discriminator = None
 
         if inputs is not None:
@@ -64,6 +67,8 @@ class AdminTaskExecutionGetDataResponse(object):
             self.full_inputs = full_inputs
         if full_outputs is not None:
             self.full_outputs = full_outputs
+        if deck_uri is not None:
+            self.deck_uri = deck_uri
 
     @property
     def inputs(self):
@@ -156,6 +161,27 @@ class AdminTaskExecutionGetDataResponse(object):
         """
 
         self._full_outputs = full_outputs
+
+    @property
+    def deck_uri(self):
+        """Gets the deck_uri of this AdminTaskExecutionGetDataResponse.  # noqa: E501
+
+
+        :return: The deck_uri of this AdminTaskExecutionGetDataResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._deck_uri
+
+    @deck_uri.setter
+    def deck_uri(self, deck_uri):
+        """Sets the deck_uri of this AdminTaskExecutionGetDataResponse.
+
+
+        :param deck_uri: The deck_uri of this AdminTaskExecutionGetDataResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._deck_uri = deck_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

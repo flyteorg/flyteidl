@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_deck_metadata import CoreDeckMetadata  # noqa: F401,E501
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy  # noqa: F401,E501
 from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata  # noqa: F401,E501
 
@@ -42,8 +41,7 @@ class CoreTaskMetadata(object):
         'discovery_version': 'str',
         'deprecated_error_message': 'str',
         'interruptible': 'bool',
-        'cache_serializable': 'bool',
-        'deck': 'CoreDeckMetadata'
+        'cache_serializable': 'bool'
     }
 
     attribute_map = {
@@ -54,11 +52,10 @@ class CoreTaskMetadata(object):
         'discovery_version': 'discovery_version',
         'deprecated_error_message': 'deprecated_error_message',
         'interruptible': 'interruptible',
-        'cache_serializable': 'cache_serializable',
-        'deck': 'deck'
+        'cache_serializable': 'cache_serializable'
     }
 
-    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None, cache_serializable=None, deck=None):  # noqa: E501
+    def __init__(self, discoverable=None, runtime=None, timeout=None, retries=None, discovery_version=None, deprecated_error_message=None, interruptible=None, cache_serializable=None):  # noqa: E501
         """CoreTaskMetadata - a model defined in Swagger"""  # noqa: E501
 
         self._discoverable = None
@@ -69,7 +66,6 @@ class CoreTaskMetadata(object):
         self._deprecated_error_message = None
         self._interruptible = None
         self._cache_serializable = None
-        self._deck = None
         self.discriminator = None
 
         if discoverable is not None:
@@ -88,8 +84,6 @@ class CoreTaskMetadata(object):
             self.interruptible = interruptible
         if cache_serializable is not None:
             self.cache_serializable = cache_serializable
-        if deck is not None:
-            self.deck = deck
 
     @property
     def discoverable(self):
@@ -270,27 +264,6 @@ class CoreTaskMetadata(object):
         """
 
         self._cache_serializable = cache_serializable
-
-    @property
-    def deck(self):
-        """Gets the deck of this CoreTaskMetadata.  # noqa: E501
-
-
-        :return: The deck of this CoreTaskMetadata.  # noqa: E501
-        :rtype: CoreDeckMetadata
-        """
-        return self._deck
-
-    @deck.setter
-    def deck(self, deck):
-        """Sets the deck of this CoreTaskMetadata.
-
-
-        :param deck: The deck of this CoreTaskMetadata.  # noqa: E501
-        :type: CoreDeckMetadata
-        """
-
-        self._deck = deck
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[16]
+  static const ::google::protobuf::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -69,9 +69,6 @@ extern ContainerPortDefaultTypeInternal _ContainerPort_default_instance_;
 class DataLoadingConfig;
 class DataLoadingConfigDefaultTypeInternal;
 extern DataLoadingConfigDefaultTypeInternal _DataLoadingConfig_default_instance_;
-class DeckMetadata;
-class DeckMetadataDefaultTypeInternal;
-extern DeckMetadataDefaultTypeInternal _DeckMetadata_default_instance_;
 class IOStrategy;
 class IOStrategyDefaultTypeInternal;
 extern IOStrategyDefaultTypeInternal _IOStrategy_default_instance_;
@@ -115,7 +112,6 @@ namespace protobuf {
 template<> ::flyteidl::core::Container* Arena::CreateMaybeMessage<::flyteidl::core::Container>(Arena*);
 template<> ::flyteidl::core::ContainerPort* Arena::CreateMaybeMessage<::flyteidl::core::ContainerPort>(Arena*);
 template<> ::flyteidl::core::DataLoadingConfig* Arena::CreateMaybeMessage<::flyteidl::core::DataLoadingConfig>(Arena*);
-template<> ::flyteidl::core::DeckMetadata* Arena::CreateMaybeMessage<::flyteidl::core::DeckMetadata>(Arena*);
 template<> ::flyteidl::core::IOStrategy* Arena::CreateMaybeMessage<::flyteidl::core::IOStrategy>(Arena*);
 template<> ::flyteidl::core::K8sObjectMetadata* Arena::CreateMaybeMessage<::flyteidl::core::K8sObjectMetadata>(Arena*);
 template<> ::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse>(Arena*);
@@ -756,126 +752,6 @@ class RuntimeMetadata final :
 };
 // -------------------------------------------------------------------
 
-class DeckMetadata final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.DeckMetadata) */ {
- public:
-  DeckMetadata();
-  virtual ~DeckMetadata();
-
-  DeckMetadata(const DeckMetadata& from);
-
-  inline DeckMetadata& operator=(const DeckMetadata& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  DeckMetadata(DeckMetadata&& from) noexcept
-    : DeckMetadata() {
-    *this = ::std::move(from);
-  }
-
-  inline DeckMetadata& operator=(DeckMetadata&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const DeckMetadata& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DeckMetadata* internal_default_instance() {
-    return reinterpret_cast<const DeckMetadata*>(
-               &_DeckMetadata_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  void Swap(DeckMetadata* other);
-  friend void swap(DeckMetadata& a, DeckMetadata& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DeckMetadata* New() const final {
-    return CreateMaybeMessage<DeckMetadata>(nullptr);
-  }
-
-  DeckMetadata* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DeckMetadata>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DeckMetadata& from);
-  void MergeFrom(const DeckMetadata& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DeckMetadata* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string uri = 1;
-  void clear_uri();
-  static const int kUriFieldNumber = 1;
-  const ::std::string& uri() const;
-  void set_uri(const ::std::string& value);
-  #if LANG_CXX11
-  void set_uri(::std::string&& value);
-  #endif
-  void set_uri(const char* value);
-  void set_uri(const char* value, size_t size);
-  ::std::string* mutable_uri();
-  ::std::string* release_uri();
-  void set_allocated_uri(::std::string* uri);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.core.DeckMetadata)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr uri_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fcore_2ftasks_2eproto;
-};
-// -------------------------------------------------------------------
-
 class TaskMetadata final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TaskMetadata) */ {
  public:
@@ -919,7 +795,7 @@ class TaskMetadata final :
                &_TaskMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(TaskMetadata* other);
   friend void swap(TaskMetadata& a, TaskMetadata& b) {
@@ -1031,15 +907,6 @@ class TaskMetadata final :
   ::flyteidl::core::RetryStrategy* mutable_retries();
   void set_allocated_retries(::flyteidl::core::RetryStrategy* retries);
 
-  // .flyteidl.core.DeckMetadata deck = 10;
-  bool has_deck() const;
-  void clear_deck();
-  static const int kDeckFieldNumber = 10;
-  const ::flyteidl::core::DeckMetadata& deck() const;
-  ::flyteidl::core::DeckMetadata* release_deck();
-  ::flyteidl::core::DeckMetadata* mutable_deck();
-  void set_allocated_deck(::flyteidl::core::DeckMetadata* deck);
-
   // bool discoverable = 1;
   void clear_discoverable();
   static const int kDiscoverableFieldNumber = 1;
@@ -1077,7 +944,6 @@ class TaskMetadata final :
   ::flyteidl::core::RuntimeMetadata* runtime_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
-  ::flyteidl::core::DeckMetadata* deck_;
   bool discoverable_;
   bool cache_serializable_;
   union InterruptibleValueUnion {
@@ -1160,7 +1026,7 @@ class TaskTemplate final :
                &_TaskTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(TaskTemplate* other);
   friend void swap(TaskTemplate& a, TaskTemplate& b) {
@@ -1396,7 +1262,7 @@ class ContainerPort final :
                &_ContainerPort_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(ContainerPort* other);
   friend void swap(ContainerPort& a, ContainerPort& b) {
@@ -1508,7 +1374,7 @@ class Container final :
                &_Container_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(Container* other);
   friend void swap(Container& a, Container& b) {
@@ -1772,7 +1638,7 @@ class IOStrategy final :
                &_IOStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(IOStrategy* other);
   friend void swap(IOStrategy& a, IOStrategy& b) {
@@ -1947,7 +1813,7 @@ class DataLoadingConfig final :
                &_DataLoadingConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(DataLoadingConfig* other);
   friend void swap(DataLoadingConfig& a, DataLoadingConfig& b) {
@@ -2134,7 +2000,7 @@ class K8sPod final :
                &_K8sPod_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(K8sPod* other);
   friend void swap(K8sPod& a, K8sPod& b) {
@@ -2307,7 +2173,7 @@ class K8sObjectMetadata final :
                &_K8sObjectMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   void Swap(K8sObjectMetadata* other);
   friend void swap(K8sObjectMetadata& a, K8sObjectMetadata& b) {
@@ -2443,7 +2309,7 @@ class Sql final :
                &_Sql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   void Swap(Sql* other);
   friend void swap(Sql& a, Sql& b) {
@@ -2828,63 +2694,6 @@ inline void RuntimeMetadata::set_allocated_flavor(::std::string* flavor) {
 
 // -------------------------------------------------------------------
 
-// DeckMetadata
-
-// string uri = 1;
-inline void DeckMetadata::clear_uri() {
-  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& DeckMetadata::uri() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.DeckMetadata.uri)
-  return uri_.GetNoArena();
-}
-inline void DeckMetadata::set_uri(const ::std::string& value) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.DeckMetadata.uri)
-}
-#if LANG_CXX11
-inline void DeckMetadata::set_uri(::std::string&& value) {
-  
-  uri_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.DeckMetadata.uri)
-}
-#endif
-inline void DeckMetadata::set_uri(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.DeckMetadata.uri)
-}
-inline void DeckMetadata::set_uri(const char* value, size_t size) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.DeckMetadata.uri)
-}
-inline ::std::string* DeckMetadata::mutable_uri() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.DeckMetadata.uri)
-  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* DeckMetadata::release_uri() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.DeckMetadata.uri)
-  
-  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void DeckMetadata::set_allocated_uri(::std::string* uri) {
-  if (uri != nullptr) {
-    
-  } else {
-    
-  }
-  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.DeckMetadata.uri)
-}
-
-// -------------------------------------------------------------------
-
 // TaskMetadata
 
 // bool discoverable = 1;
@@ -3190,57 +2999,6 @@ inline void TaskMetadata::set_cache_serializable(bool value) {
   
   cache_serializable_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.cache_serializable)
-}
-
-// .flyteidl.core.DeckMetadata deck = 10;
-inline bool TaskMetadata::has_deck() const {
-  return this != internal_default_instance() && deck_ != nullptr;
-}
-inline void TaskMetadata::clear_deck() {
-  if (GetArenaNoVirtual() == nullptr && deck_ != nullptr) {
-    delete deck_;
-  }
-  deck_ = nullptr;
-}
-inline const ::flyteidl::core::DeckMetadata& TaskMetadata::deck() const {
-  const ::flyteidl::core::DeckMetadata* p = deck_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.deck)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::DeckMetadata*>(
-      &::flyteidl::core::_DeckMetadata_default_instance_);
-}
-inline ::flyteidl::core::DeckMetadata* TaskMetadata::release_deck() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.TaskMetadata.deck)
-  
-  ::flyteidl::core::DeckMetadata* temp = deck_;
-  deck_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::DeckMetadata* TaskMetadata::mutable_deck() {
-  
-  if (deck_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::DeckMetadata>(GetArenaNoVirtual());
-    deck_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskMetadata.deck)
-  return deck_;
-}
-inline void TaskMetadata::set_allocated_deck(::flyteidl::core::DeckMetadata* deck) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete deck_;
-  }
-  if (deck) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      deck = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, deck, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  deck_ = deck;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskMetadata.deck)
 }
 
 inline bool TaskMetadata::has_interruptible_value() const {
@@ -4560,8 +4318,6 @@ inline void Sql::set_dialect(::flyteidl::core::Sql_Dialect value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

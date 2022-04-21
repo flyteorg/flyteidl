@@ -61,12 +61,12 @@ message RuntimeMetadata {
     string flavor = 3;
 }
 
-// Flyte deck information. This is loosely defined to allow for extensibility
-message DeckMetadata {
-    // String location uniquely identifying where the deck HTML files are.
-    // Should start with the storage location (e.g. s3://, gs:// etc.)
-    string uri = 1;
-}
+//// Flyte deck information. This is loosely defined to allow for extensibility
+//message DeckMetadata {
+//    // String location uniquely identifying where the deck HTML files are.
+//    // Should start with the storage location (e.g. s3://, gs:// etc.)
+//    string uri = 1;
+//}
 
 
 // Task Metadata
@@ -105,7 +105,7 @@ message TaskMetadata {
     bool cache_serializable = 9;
 
     // Extra metadata about the deck
-    DeckMetadata deck = 10;
+    // DeckMetadata deck = 10;
 }
 
 // A Task structure that uniquely identifies a task in the system

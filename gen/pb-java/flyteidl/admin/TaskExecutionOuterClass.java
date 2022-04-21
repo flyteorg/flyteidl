@@ -8945,6 +8945,24 @@ public final class TaskExecutionOuterClass {
      * <code>.flyteidl.core.LiteralMap full_outputs = 4;</code>
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder();
+
+    /**
+     * <pre>
+     * Path to flyte deck file
+     * </pre>
+     *
+     * <code>string deck_uri = 5;</code>
+     */
+    java.lang.String getDeckUri();
+    /**
+     * <pre>
+     * Path to flyte deck file
+     * </pre>
+     *
+     * <code>string deck_uri = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeckUriBytes();
   }
   /**
    * <pre>
@@ -8963,6 +8981,7 @@ public final class TaskExecutionOuterClass {
       super(builder);
     }
     private TaskExecutionGetDataResponse() {
+      deckUri_ = "";
     }
 
     @java.lang.Override
@@ -9039,6 +9058,12 @@ public final class TaskExecutionOuterClass {
                 fullOutputs_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deckUri_ = s;
               break;
             }
             default: {
@@ -9211,6 +9236,48 @@ public final class TaskExecutionOuterClass {
       return getFullOutputs();
     }
 
+    public static final int DECK_URI_FIELD_NUMBER = 5;
+    private volatile java.lang.Object deckUri_;
+    /**
+     * <pre>
+     * Path to flyte deck file
+     * </pre>
+     *
+     * <code>string deck_uri = 5;</code>
+     */
+    public java.lang.String getDeckUri() {
+      java.lang.Object ref = deckUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deckUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Path to flyte deck file
+     * </pre>
+     *
+     * <code>string deck_uri = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeckUriBytes() {
+      java.lang.Object ref = deckUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deckUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9237,6 +9304,9 @@ public final class TaskExecutionOuterClass {
       if (fullOutputs_ != null) {
         output.writeMessage(4, getFullOutputs());
       }
+      if (!getDeckUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deckUri_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9261,6 +9331,9 @@ public final class TaskExecutionOuterClass {
       if (fullOutputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFullOutputs());
+      }
+      if (!getDeckUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deckUri_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9297,6 +9370,8 @@ public final class TaskExecutionOuterClass {
         if (!getFullOutputs()
             .equals(other.getFullOutputs())) return false;
       }
+      if (!getDeckUri()
+          .equals(other.getDeckUri())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9324,6 +9399,8 @@ public final class TaskExecutionOuterClass {
         hash = (37 * hash) + FULL_OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getFullOutputs().hashCode();
       }
+      hash = (37 * hash) + DECK_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getDeckUri().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9485,6 +9562,8 @@ public final class TaskExecutionOuterClass {
           fullOutputs_ = null;
           fullOutputsBuilder_ = null;
         }
+        deckUri_ = "";
+
         return this;
       }
 
@@ -9531,6 +9610,7 @@ public final class TaskExecutionOuterClass {
         } else {
           result.fullOutputs_ = fullOutputsBuilder_.build();
         }
+        result.deckUri_ = deckUri_;
         onBuilt();
         return result;
       }
@@ -9590,6 +9670,10 @@ public final class TaskExecutionOuterClass {
         }
         if (other.hasFullOutputs()) {
           mergeFullOutputs(other.getFullOutputs());
+        }
+        if (!other.getDeckUri().isEmpty()) {
+          deckUri_ = other.deckUri_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10249,6 +10333,95 @@ public final class TaskExecutionOuterClass {
         }
         return fullOutputsBuilder_;
       }
+
+      private java.lang.Object deckUri_ = "";
+      /**
+       * <pre>
+       * Path to flyte deck file
+       * </pre>
+       *
+       * <code>string deck_uri = 5;</code>
+       */
+      public java.lang.String getDeckUri() {
+        java.lang.Object ref = deckUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deckUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Path to flyte deck file
+       * </pre>
+       *
+       * <code>string deck_uri = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeckUriBytes() {
+        java.lang.Object ref = deckUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deckUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Path to flyte deck file
+       * </pre>
+       *
+       * <code>string deck_uri = 5;</code>
+       */
+      public Builder setDeckUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deckUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Path to flyte deck file
+       * </pre>
+       *
+       * <code>string deck_uri = 5;</code>
+       */
+      public Builder clearDeckUri() {
+        
+        deckUri_ = getDefaultInstance().getDeckUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Path to flyte deck file
+       * </pre>
+       *
+       * <code>string deck_uri = 5;</code>
+       */
+      public Builder setDeckUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deckUri_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10383,14 +10556,15 @@ public final class TaskExecutionOuterClass {
       "t.TaskExecutionMetadata\022\025\n\revent_version" +
       "\030\021 \001(\005B\017\n\routput_result\"Q\n\033TaskExecution" +
       "GetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.co" +
-      "re.TaskExecutionIdentifier\"\332\001\n\034TaskExecu" +
+      "re.TaskExecutionIdentifier\"\354\001\n\034TaskExecu" +
       "tionGetDataResponse\022+\n\006inputs\030\001 \001(\0132\027.fl" +
       "yteidl.admin.UrlBlobB\002\030\001\022,\n\007outputs\030\002 \001(" +
       "\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_i" +
       "nputs\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/" +
       "\n\014full_outputs\030\004 \001(\0132\031.flyteidl.core.Lit" +
-      "eralMapB7Z5github.com/flyteorg/flyteidl/" +
-      "gen/pb-go/flyteidl/adminb\006proto3"
+      "eralMap\022\020\n\010deck_uri\030\005 \001(\tB7Z5github.com/" +
+      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10453,7 +10627,7 @@ public final class TaskExecutionOuterClass {
     internal_static_flyteidl_admin_TaskExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskExecutionGetDataResponse_descriptor,
-        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", });
+        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", "DeckUri", });
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();

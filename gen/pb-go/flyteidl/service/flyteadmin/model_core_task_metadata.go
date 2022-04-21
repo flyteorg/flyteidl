@@ -24,5 +24,4 @@ type CoreTaskMetadata struct {
 	DeprecatedErrorMessage string `json:"deprecated_error_message,omitempty"`
 	Interruptible bool `json:"interruptible,omitempty"`
 	CacheSerializable bool `json:"cache_serializable,omitempty"`
-	Deck *CoreDeckMetadata `json:"deck,omitempty"`
 }

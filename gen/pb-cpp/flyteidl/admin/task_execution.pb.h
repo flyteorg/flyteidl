@@ -1144,6 +1144,20 @@ class TaskExecutionGetDataResponse final :
 
   // accessors -------------------------------------------------------
 
+  // string deck_uri = 5;
+  void clear_deck_uri();
+  static const int kDeckUriFieldNumber = 5;
+  const ::std::string& deck_uri() const;
+  void set_deck_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_deck_uri(::std::string&& value);
+  #endif
+  void set_deck_uri(const char* value);
+  void set_deck_uri(const char* value, size_t size);
+  ::std::string* mutable_deck_uri();
+  ::std::string* release_deck_uri();
+  void set_allocated_deck_uri(::std::string* deck_uri);
+
   // .flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];
   PROTOBUF_DEPRECATED bool has_inputs() const;
   PROTOBUF_DEPRECATED void clear_inputs();
@@ -1185,6 +1199,7 @@ class TaskExecutionGetDataResponse final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr deck_uri_;
   ::flyteidl::admin::UrlBlob* inputs_;
   ::flyteidl::admin::UrlBlob* outputs_;
   ::flyteidl::core::LiteralMap* full_inputs_;
@@ -2558,6 +2573,59 @@ inline void TaskExecutionGetDataResponse::set_allocated_full_outputs(::flyteidl:
   }
   full_outputs_ = full_outputs;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionGetDataResponse.full_outputs)
+}
+
+// string deck_uri = 5;
+inline void TaskExecutionGetDataResponse::clear_deck_uri() {
+  deck_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskExecutionGetDataResponse::deck_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+  return deck_uri_.GetNoArena();
+}
+inline void TaskExecutionGetDataResponse::set_deck_uri(const ::std::string& value) {
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+}
+#if LANG_CXX11
+inline void TaskExecutionGetDataResponse::set_deck_uri(::std::string&& value) {
+  
+  deck_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+}
+#endif
+inline void TaskExecutionGetDataResponse::set_deck_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+}
+inline void TaskExecutionGetDataResponse::set_deck_uri(const char* value, size_t size) {
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+}
+inline ::std::string* TaskExecutionGetDataResponse::mutable_deck_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+  return deck_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskExecutionGetDataResponse::release_deck_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
+  
+  return deck_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskExecutionGetDataResponse::set_allocated_deck_uri(::std::string* deck_uri) {
+  if (deck_uri != nullptr) {
+    
+  } else {
+    
+  }
+  deck_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), deck_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionGetDataResponse.deck_uri)
 }
 
 #ifdef __GNUC__

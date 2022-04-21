@@ -3195,6 +3195,7 @@ Response structure for TaskExecutionGetDataRequest which contains inputs and out
    "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of task execution outputs. Deprecated: Please use full_outputs instead."
    "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_inputs will only be populated if they are under a configured size threshold."
    "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_outputs will only be populated if they are under a configured size threshold."
+   "deck_uri", ":ref:`ref_string`", "", "Path to flyte deck file"
 
 
 

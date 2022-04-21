@@ -201,73 +201,6 @@ var _ interface {
 	ErrorName() string
 } = RuntimeMetadataValidationError{}
 
-// Validate checks the field values on DeckMetadata with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *DeckMetadata) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Uri
-
-	return nil
-}
-
-// DeckMetadataValidationError is the validation error returned by
-// DeckMetadata.Validate if the designated constraints aren't met.
-type DeckMetadataValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e DeckMetadataValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e DeckMetadataValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e DeckMetadataValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e DeckMetadataValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e DeckMetadataValidationError) ErrorName() string { return "DeckMetadataValidationError" }
-
-// Error satisfies the builtin error interface
-func (e DeckMetadataValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sDeckMetadata.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = DeckMetadataValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = DeckMetadataValidationError{}
-
 // Validate checks the field values on TaskMetadata with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -313,16 +246,6 @@ func (m *TaskMetadata) Validate() error {
 	// no validation rules for DeprecatedErrorMessage
 
 	// no validation rules for CacheSerializable
-
-	if v, ok := interface{}(m.GetDeck()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return TaskMetadataValidationError{
-				field:  "Deck",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
 
 	switch m.InterruptibleValue.(type) {
 

@@ -148,4 +148,6 @@ message TaskExecutionGetDataResponse {
 
     // Full_outputs will only be populated if they are under a configured size threshold.
     core.LiteralMap full_outputs               = 4;
+    // Path to flyte deck file
+    string deck_uri                            = 5;
 }

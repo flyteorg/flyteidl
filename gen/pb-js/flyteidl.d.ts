@@ -4766,58 +4766,6 @@ export namespace flyteidl {
             }
         }
 
-        /** Properties of a DeckMetadata. */
-        interface IDeckMetadata {
-
-            /** DeckMetadata uri */
-            uri?: (string|null);
-        }
-
-        /** Represents a DeckMetadata. */
-        class DeckMetadata implements IDeckMetadata {
-
-            /**
-             * Constructs a new DeckMetadata.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.core.IDeckMetadata);
-
-            /** DeckMetadata uri. */
-            public uri: string;
-
-            /**
-             * Creates a new DeckMetadata instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns DeckMetadata instance
-             */
-            public static create(properties?: flyteidl.core.IDeckMetadata): flyteidl.core.DeckMetadata;
-
-            /**
-             * Encodes the specified DeckMetadata message. Does not implicitly {@link flyteidl.core.DeckMetadata.verify|verify} messages.
-             * @param message DeckMetadata message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.core.IDeckMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a DeckMetadata message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns DeckMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.DeckMetadata;
-
-            /**
-             * Verifies a DeckMetadata message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a TaskMetadata. */
         interface ITaskMetadata {
 
@@ -4844,9 +4792,6 @@ export namespace flyteidl {
 
             /** TaskMetadata cacheSerializable */
             cacheSerializable?: (boolean|null);
-
-            /** TaskMetadata deck */
-            deck?: (flyteidl.core.IDeckMetadata|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -4881,9 +4826,6 @@ export namespace flyteidl {
 
             /** TaskMetadata cacheSerializable. */
             public cacheSerializable: boolean;
-
-            /** TaskMetadata deck. */
-            public deck?: (flyteidl.core.IDeckMetadata|null);
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -14783,6 +14725,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs */
             fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a TaskExecutionGetDataResponse. */
@@ -14805,6 +14750,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs. */
             public fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse deckUri. */
+            public deckUri: string;
 
             /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.

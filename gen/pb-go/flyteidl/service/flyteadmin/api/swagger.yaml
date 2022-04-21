@@ -11080,8 +11080,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -11332,8 +11330,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -14230,8 +14226,6 @@ definitions:
               retries:
                 retries: 0
               discoverable: true
-              deck:
-                uri: "uri"
               runtime:
                 flavor: "flavor"
                 type: {}
@@ -14498,8 +14492,6 @@ definitions:
             retries:
               retries: 0
             discoverable: true
-            deck:
-              uri: "uri"
             runtime:
               flavor: "flavor"
               type: {}
@@ -14882,6 +14874,9 @@ definitions:
         description: "Full_outputs will only be populated if they are under a configured\
           \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
+      deck_uri:
+        type: "string"
+        title: "Path to flyte deck file"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
     example:
@@ -14895,6 +14890,7 @@ definitions:
         url: "url"
       full_outputs:
         literals: {}
+      deck_uri: "deck_uri"
   adminTaskExecutionList:
     type: "object"
     properties:
@@ -15162,8 +15158,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -15423,8 +15417,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -19471,8 +19463,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -19723,8 +19713,6 @@ definitions:
                 retries:
                   retries: 0
                 discoverable: true
-                deck:
-                  uri: "uri"
                 runtime:
                   flavor: "flavor"
                   type: {}
@@ -25786,8 +25774,6 @@ definitions:
               retries:
                 retries: 0
               discoverable: true
-              deck:
-                uri: "uri"
               runtime:
                 flavor: "flavor"
                 type: {}
@@ -26038,8 +26024,6 @@ definitions:
               retries:
                 retries: 0
               discoverable: true
-              deck:
-                uri: "uri"
               runtime:
                 flavor: "flavor"
                 type: {}
@@ -31950,8 +31934,6 @@ definitions:
                   retries:
                     retries: 0
                   discoverable: true
-                  deck:
-                    uri: "uri"
                   runtime:
                     flavor: "flavor"
                     type: {}
@@ -32202,8 +32184,6 @@ definitions:
                   retries:
                     retries: 0
                   discoverable: true
-                  deck:
-                    uri: "uri"
                   runtime:
                     flavor: "flavor"
                     type: {}
@@ -37962,8 +37942,6 @@ definitions:
                   retries:
                     retries: 0
                   discoverable: true
-                  deck:
-                    uri: "uri"
                   runtime:
                     flavor: "flavor"
                     type: {}
@@ -38214,8 +38192,6 @@ definitions:
                   retries:
                     retries: 0
                   discoverable: true
-                  deck:
-                    uri: "uri"
                   runtime:
                     flavor: "flavor"
                     type: {}
@@ -41011,8 +40987,6 @@ definitions:
           retries:
             retries: 0
           discoverable: true
-          deck:
-            uri: "uri"
           runtime:
             flavor: "flavor"
             type: {}
@@ -46800,8 +46774,6 @@ definitions:
             retries:
               retries: 0
             discoverable: true
-            deck:
-              uri: "uri"
             runtime:
               flavor: "flavor"
               type: {}
@@ -47052,8 +47024,6 @@ definitions:
             retries:
               retries: 0
             discoverable: true
-            deck:
-              uri: "uri"
             runtime:
               flavor: "flavor"
               type: {}
@@ -49284,16 +49254,6 @@ definitions:
       output_path: "output_path"
       enabled: true
       input_path: "input_path"
-  coreDeckMetadata:
-    type: "object"
-    properties:
-      uri:
-        type: "string"
-        title: "String location uniquely identifying where the deck HTML files are.\n\
-          Should start with the storage location (e.g. s3://, gs:// etc.)"
-    title: "Flyte deck information. This is loosely defined to allow for extensibility"
-    example:
-      uri: "uri"
   coreEnumType:
     type: "object"
     properties:
@@ -51428,16 +51388,11 @@ definitions:
         format: "boolean"
         title: "Indicates whether the system should attempt to execute discoverable\
           \ instances in serial to avoid duplicate work"
-      deck:
-        title: "Extra metadata about the deck"
-        $ref: "#/definitions/coreDeckMetadata"
     title: "Task Metadata"
     example:
       retries:
         retries: 0
       discoverable: true
-      deck:
-        uri: "uri"
       runtime:
         flavor: "flavor"
         type: {}
@@ -51592,8 +51547,6 @@ definitions:
         retries:
           retries: 0
         discoverable: true
-        deck:
-          uri: "uri"
         runtime:
           flavor: "flavor"
           type: {}
@@ -58207,8 +58160,6 @@ definitions:
               retries:
                 retries: 0
               discoverable: true
-              deck:
-                uri: "uri"
               runtime:
                 flavor: "flavor"
                 type: {}
@@ -58459,8 +58410,6 @@ definitions:
               retries:
                 retries: 0
               discoverable: true
-              deck:
-                uri: "uri"
               runtime:
                 flavor: "flavor"
                 type: {}
