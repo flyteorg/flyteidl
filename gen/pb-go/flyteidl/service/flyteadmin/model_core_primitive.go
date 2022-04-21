@@ -20,4 +20,5 @@ type CorePrimitive struct {
 	Boolean bool `json:"boolean,omitempty"`
 	Datetime time.Time `json:"datetime,omitempty"`
 	Duration string `json:"duration,omitempty"`
+	MyNewValue string `json:"my_new_value,omitempty"`
 }

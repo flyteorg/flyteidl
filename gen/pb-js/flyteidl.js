@@ -4391,6 +4391,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {boolean|null} [boolean] Primitive boolean
              * @property {google.protobuf.ITimestamp|null} [datetime] Primitive datetime
              * @property {google.protobuf.IDuration|null} [duration] Primitive duration
+             * @property {string|null} [myNewValue] Primitive myNewValue
              */
 
             /**
@@ -4456,17 +4457,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Primitive.prototype.duration = null;
 
+            /**
+             * Primitive myNewValue.
+             * @member {string} myNewValue
+             * @memberof flyteidl.core.Primitive
+             * @instance
+             */
+            Primitive.prototype.myNewValue = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Primitive value.
-             * @member {"integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration"|undefined} value
+             * @member {"integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration"|"myNewValue"|undefined} value
              * @memberof flyteidl.core.Primitive
              * @instance
              */
             Object.defineProperty(Primitive.prototype, "value", {
-                get: $util.oneOfGetter($oneOfFields = ["integer", "floatValue", "stringValue", "boolean", "datetime", "duration"]),
+                get: $util.oneOfGetter($oneOfFields = ["integer", "floatValue", "stringValue", "boolean", "datetime", "duration", "myNewValue"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -4506,6 +4515,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.google.protobuf.Timestamp.encode(message.datetime, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.duration != null && message.hasOwnProperty("duration"))
                     $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.myNewValue != null && message.hasOwnProperty("myNewValue"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).string(message.myNewValue);
                 return writer;
             };
 
@@ -4544,6 +4555,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.myNewValue = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4610,6 +4624,13 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (error)
                             return "duration." + error;
                     }
+                }
+                if (message.myNewValue != null && message.hasOwnProperty("myNewValue")) {
+                    if (properties.value === 1)
+                        return "value: multiple values";
+                    properties.value = 1;
+                    if (!$util.isString(message.myNewValue))
+                        return "myNewValue: string expected";
                 }
                 return null;
             };

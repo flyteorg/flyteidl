@@ -20,6 +20,7 @@ message Primitive {
         bool boolean = 4;
         google.protobuf.Timestamp datetime = 5;
         google.protobuf.Duration duration = 6;
+	string my_new_value = 7;
     }
 }
 

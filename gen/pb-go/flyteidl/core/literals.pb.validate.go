@@ -81,6 +81,9 @@ func (m *Primitive) Validate() error {
 			}
 		}
 
+	case *Primitive_MyNewValue:
+		// no validation rules for MyNewValue
+
 	}
 
 	return nil

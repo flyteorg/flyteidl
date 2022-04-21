@@ -195,6 +195,7 @@ class Primitive final :
     kBoolean = 4,
     kDatetime = 5,
     kDuration = 6,
+    kMyNewValue = 7,
     VALUE_NOT_SET = 0,
   };
 
@@ -323,6 +324,23 @@ class Primitive final :
   ::google::protobuf::Duration* mutable_duration();
   void set_allocated_duration(::google::protobuf::Duration* duration);
 
+  // string my_new_value = 7;
+  private:
+  bool has_my_new_value() const;
+  public:
+  void clear_my_new_value();
+  static const int kMyNewValueFieldNumber = 7;
+  const ::std::string& my_new_value() const;
+  void set_my_new_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_my_new_value(::std::string&& value);
+  #endif
+  void set_my_new_value(const char* value);
+  void set_my_new_value(const char* value, size_t size);
+  ::std::string* mutable_my_new_value();
+  ::std::string* release_my_new_value();
+  void set_allocated_my_new_value(::std::string* my_new_value);
+
   void clear_value();
   ValueCase value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.Primitive)
@@ -334,6 +352,7 @@ class Primitive final :
   void set_has_boolean();
   void set_has_datetime();
   void set_has_duration();
+  void set_has_my_new_value();
 
   inline bool has_value() const;
   inline void clear_has_value();
@@ -347,6 +366,7 @@ class Primitive final :
     bool boolean_;
     ::google::protobuf::Timestamp* datetime_;
     ::google::protobuf::Duration* duration_;
+    ::google::protobuf::internal::ArenaStringPtr my_new_value_;
   } value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -3188,6 +3208,98 @@ inline ::google::protobuf::Duration* Primitive::mutable_duration() {
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.Primitive.duration)
   return value_.duration_;
+}
+
+// string my_new_value = 7;
+inline bool Primitive::has_my_new_value() const {
+  return value_case() == kMyNewValue;
+}
+inline void Primitive::set_has_my_new_value() {
+  _oneof_case_[0] = kMyNewValue;
+}
+inline void Primitive::clear_my_new_value() {
+  if (has_my_new_value()) {
+    value_.my_new_value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_value();
+  }
+}
+inline const ::std::string& Primitive::my_new_value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Primitive.my_new_value)
+  if (has_my_new_value()) {
+    return value_.my_new_value_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void Primitive::set_my_new_value(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Primitive.my_new_value)
+  if (!has_my_new_value()) {
+    clear_value();
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.my_new_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.Primitive.my_new_value)
+}
+#if LANG_CXX11
+inline void Primitive::set_my_new_value(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.Primitive.my_new_value)
+  if (!has_my_new_value()) {
+    clear_value();
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.my_new_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.Primitive.my_new_value)
+}
+#endif
+inline void Primitive::set_my_new_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_my_new_value()) {
+    clear_value();
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.my_new_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.Primitive.my_new_value)
+}
+inline void Primitive::set_my_new_value(const char* value, size_t size) {
+  if (!has_my_new_value()) {
+    clear_value();
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.my_new_value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.Primitive.my_new_value)
+}
+inline ::std::string* Primitive::mutable_my_new_value() {
+  if (!has_my_new_value()) {
+    clear_value();
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Primitive.my_new_value)
+  return value_.my_new_value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Primitive::release_my_new_value() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Primitive.my_new_value)
+  if (has_my_new_value()) {
+    clear_has_value();
+    return value_.my_new_value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void Primitive::set_allocated_my_new_value(::std::string* my_new_value) {
+  if (has_value()) {
+    clear_value();
+  }
+  if (my_new_value != nullptr) {
+    set_has_my_new_value();
+    value_.my_new_value_.UnsafeSetDefault(my_new_value);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.Primitive.my_new_value)
 }
 
 inline bool Primitive::has_value() const {

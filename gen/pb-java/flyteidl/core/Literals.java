@@ -69,6 +69,16 @@ public final class Literals {
      */
     com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
 
+    /**
+     * <code>string my_new_value = 7;</code>
+     */
+    java.lang.String getMyNewValue();
+    /**
+     * <code>string my_new_value = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getMyNewValueBytes();
+
     public flyteidl.core.Literals.Primitive.ValueCase getValueCase();
   }
   /**
@@ -163,6 +173,12 @@ public final class Literals {
               valueCase_ = 6;
               break;
             }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              valueCase_ = 7;
+              value_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -205,6 +221,7 @@ public final class Literals {
       BOOLEAN(4),
       DATETIME(5),
       DURATION(6),
+      MY_NEW_VALUE(7),
       VALUE_NOT_SET(0);
       private final int value;
       private ValueCase(int value) {
@@ -226,6 +243,7 @@ public final class Literals {
           case 4: return BOOLEAN;
           case 5: return DATETIME;
           case 6: return DURATION;
+          case 7: return MY_NEW_VALUE;
           case 0: return VALUE_NOT_SET;
           default: return null;
         }
@@ -369,6 +387,49 @@ public final class Literals {
       return com.google.protobuf.Duration.getDefaultInstance();
     }
 
+    public static final int MY_NEW_VALUE_FIELD_NUMBER = 7;
+    /**
+     * <code>string my_new_value = 7;</code>
+     */
+    public java.lang.String getMyNewValue() {
+      java.lang.Object ref = "";
+      if (valueCase_ == 7) {
+        ref = value_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (valueCase_ == 7) {
+          value_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>string my_new_value = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMyNewValueBytes() {
+      java.lang.Object ref = "";
+      if (valueCase_ == 7) {
+        ref = value_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (valueCase_ == 7) {
+          value_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -404,6 +465,9 @@ public final class Literals {
       if (valueCase_ == 6) {
         output.writeMessage(6, (com.google.protobuf.Duration) value_);
       }
+      if (valueCase_ == 7) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, value_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -438,6 +502,9 @@ public final class Literals {
       if (valueCase_ == 6) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, (com.google.protobuf.Duration) value_);
+      }
+      if (valueCase_ == 7) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -481,6 +548,10 @@ public final class Literals {
           if (!getDuration()
               .equals(other.getDuration())) return false;
           break;
+        case 7:
+          if (!getMyNewValue()
+              .equals(other.getMyNewValue())) return false;
+          break;
         case 0:
         default:
       }
@@ -522,6 +593,10 @@ public final class Literals {
         case 6:
           hash = (37 * hash) + DURATION_FIELD_NUMBER;
           hash = (53 * hash) + getDuration().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + MY_NEW_VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getMyNewValue().hashCode();
           break;
         case 0:
         default:
@@ -717,6 +792,9 @@ public final class Literals {
             result.value_ = durationBuilder_.build();
           }
         }
+        if (valueCase_ == 7) {
+          result.value_ = value_;
+        }
         result.valueCase_ = valueCase_;
         onBuilt();
         return result;
@@ -791,6 +869,12 @@ public final class Literals {
           }
           case DURATION: {
             mergeDuration(other.getDuration());
+            break;
+          }
+          case MY_NEW_VALUE: {
+            valueCase_ = 7;
+            value_ = other.value_;
+            onChanged();
             break;
           }
           case VALUE_NOT_SET: {
@@ -1281,6 +1365,86 @@ public final class Literals {
         valueCase_ = 6;
         onChanged();;
         return durationBuilder_;
+      }
+
+      /**
+       * <code>string my_new_value = 7;</code>
+       */
+      public java.lang.String getMyNewValue() {
+        java.lang.Object ref = "";
+        if (valueCase_ == 7) {
+          ref = value_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (valueCase_ == 7) {
+            value_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string my_new_value = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMyNewValueBytes() {
+        java.lang.Object ref = "";
+        if (valueCase_ == 7) {
+          ref = value_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (valueCase_ == 7) {
+            value_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string my_new_value = 7;</code>
+       */
+      public Builder setMyNewValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  valueCase_ = 7;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string my_new_value = 7;</code>
+       */
+      public Builder clearMyNewValue() {
+        if (valueCase_ == 7) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string my_new_value = 7;</code>
+       */
+      public Builder setMyNewValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        valueCase_ = 7;
+        value_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18476,64 +18640,64 @@ public final class Literals {
       ".core\032\037google/protobuf/timestamp.proto\032\036" +
       "google/protobuf/duration.proto\032\034google/p" +
       "rotobuf/struct.proto\032\031flyteidl/core/type" +
-      "s.proto\"\310\001\n\tPrimitive\022\021\n\007integer\030\001 \001(\003H\000" +
+      "s.proto\"\340\001\n\tPrimitive\022\021\n\007integer\030\001 \001(\003H\000" +
       "\022\025\n\013float_value\030\002 \001(\001H\000\022\026\n\014string_value\030" +
       "\003 \001(\tH\000\022\021\n\007boolean\030\004 \001(\010H\000\022.\n\010datetime\030\005" +
       " \001(\0132\032.google.protobuf.TimestampH\000\022-\n\010du" +
       "ration\030\006 \001(\0132\031.google.protobuf.DurationH" +
-      "\000B\007\n\005value\"\006\n\004Void\"B\n\004Blob\022-\n\010metadata\030\001" +
-      " \001(\0132\033.flyteidl.core.BlobMetadata\022\013\n\003uri" +
-      "\030\003 \001(\t\"5\n\014BlobMetadata\022%\n\004type\030\001 \001(\0132\027.f" +
-      "lyteidl.core.BlobType\"$\n\006Binary\022\r\n\005value" +
-      "\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001" +
-      "(\t\022\'\n\004type\030\003 \001(\0132\031.flyteidl.core.SchemaT" +
-      "ype\"X\n\005Union\022%\n\005value\030\001 \001(\0132\026.flyteidl.c" +
-      "ore.Literal\022(\n\004type\030\002 \001(\0132\032.flyteidl.cor" +
-      "e.LiteralType\"b\n\031StructuredDatasetMetada" +
-      "ta\022E\n\027structured_dataset_type\030\001 \001(\0132$.fl" +
-      "yteidl.core.StructuredDatasetType\"\\\n\021Str" +
-      "ucturedDataset\022\013\n\003uri\030\001 \001(\t\022:\n\010metadata\030" +
-      "\002 \001(\0132(.flyteidl.core.StructuredDatasetM" +
-      "etadata\"\233\003\n\006Scalar\022-\n\tprimitive\030\001 \001(\0132\030." +
-      "flyteidl.core.PrimitiveH\000\022#\n\004blob\030\002 \001(\0132" +
-      "\023.flyteidl.core.BlobH\000\022\'\n\006binary\030\003 \001(\0132\025" +
-      ".flyteidl.core.BinaryH\000\022\'\n\006schema\030\004 \001(\0132" +
-      "\025.flyteidl.core.SchemaH\000\022(\n\tnone_type\030\005 " +
-      "\001(\0132\023.flyteidl.core.VoidH\000\022%\n\005error\030\006 \001(" +
-      "\0132\024.flyteidl.core.ErrorH\000\022*\n\007generic\030\007 \001" +
-      "(\0132\027.google.protobuf.StructH\000\022>\n\022structu" +
-      "red_dataset\030\010 \001(\0132 .flyteidl.core.Struct" +
-      "uredDatasetH\000\022%\n\005union\030\t \001(\0132\024.flyteidl." +
-      "core.UnionH\000B\007\n\005value\"\253\001\n\007Literal\022\'\n\006sca" +
-      "lar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\0226\n\nco" +
-      "llection\030\002 \001(\0132 .flyteidl.core.LiteralCo" +
-      "llectionH\000\022(\n\003map\030\003 \001(\0132\031.flyteidl.core." +
-      "LiteralMapH\000\022\014\n\004hash\030\004 \001(\tB\007\n\005value\"=\n\021L" +
-      "iteralCollection\022(\n\010literals\030\001 \003(\0132\026.fly" +
-      "teidl.core.Literal\"\220\001\n\nLiteralMap\0229\n\010lit" +
-      "erals\030\001 \003(\0132\'.flyteidl.core.LiteralMap.L" +
-      "iteralsEntry\032G\n\rLiteralsEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Litera" +
-      "l:\0028\001\"E\n\025BindingDataCollection\022,\n\010bindin" +
-      "gs\030\001 \003(\0132\032.flyteidl.core.BindingData\"\234\001\n" +
-      "\016BindingDataMap\022=\n\010bindings\030\001 \003(\0132+.flyt" +
-      "eidl.core.BindingDataMap.BindingsEntry\032K" +
-      "\n\rBindingsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 " +
-      "\001(\0132\032.flyteidl.core.BindingData:\0028\001\";\n\tU" +
-      "nionInfo\022.\n\ntargetType\030\001 \001(\0132\032.flyteidl." +
-      "core.LiteralType\"\205\002\n\013BindingData\022\'\n\006scal" +
-      "ar\030\001 \001(\0132\025.flyteidl.core.ScalarH\000\022:\n\ncol" +
-      "lection\030\002 \001(\0132$.flyteidl.core.BindingDat" +
-      "aCollectionH\000\0221\n\007promise\030\003 \001(\0132\036.flyteid" +
-      "l.core.OutputReferenceH\000\022,\n\003map\030\004 \001(\0132\035." +
-      "flyteidl.core.BindingDataMapH\000\022\'\n\005union\030" +
-      "\005 \001(\0132\030.flyteidl.core.UnionInfoB\007\n\005value" +
-      "\"C\n\007Binding\022\013\n\003var\030\001 \001(\t\022+\n\007binding\030\002 \001(" +
-      "\0132\032.flyteidl.core.BindingData\"*\n\014KeyValu" +
-      "ePair\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\" \n\rRet" +
-      "ryStrategy\022\017\n\007retries\030\005 \001(\rB6Z4github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c" +
-      "oreb\006proto3"
+      "\000\022\026\n\014my_new_value\030\007 \001(\tH\000B\007\n\005value\"\006\n\004Vo" +
+      "id\"B\n\004Blob\022-\n\010metadata\030\001 \001(\0132\033.flyteidl." +
+      "core.BlobMetadata\022\013\n\003uri\030\003 \001(\t\"5\n\014BlobMe" +
+      "tadata\022%\n\004type\030\001 \001(\0132\027.flyteidl.core.Blo" +
+      "bType\"$\n\006Binary\022\r\n\005value\030\001 \001(\014\022\013\n\003tag\030\002 " +
+      "\001(\t\">\n\006Schema\022\013\n\003uri\030\001 \001(\t\022\'\n\004type\030\003 \001(\013" +
+      "2\031.flyteidl.core.SchemaType\"X\n\005Union\022%\n\005" +
+      "value\030\001 \001(\0132\026.flyteidl.core.Literal\022(\n\004t" +
+      "ype\030\002 \001(\0132\032.flyteidl.core.LiteralType\"b\n" +
+      "\031StructuredDatasetMetadata\022E\n\027structured" +
+      "_dataset_type\030\001 \001(\0132$.flyteidl.core.Stru" +
+      "cturedDatasetType\"\\\n\021StructuredDataset\022\013" +
+      "\n\003uri\030\001 \001(\t\022:\n\010metadata\030\002 \001(\0132(.flyteidl" +
+      ".core.StructuredDatasetMetadata\"\233\003\n\006Scal" +
+      "ar\022-\n\tprimitive\030\001 \001(\0132\030.flyteidl.core.Pr" +
+      "imitiveH\000\022#\n\004blob\030\002 \001(\0132\023.flyteidl.core." +
+      "BlobH\000\022\'\n\006binary\030\003 \001(\0132\025.flyteidl.core.B" +
+      "inaryH\000\022\'\n\006schema\030\004 \001(\0132\025.flyteidl.core." +
+      "SchemaH\000\022(\n\tnone_type\030\005 \001(\0132\023.flyteidl.c" +
+      "ore.VoidH\000\022%\n\005error\030\006 \001(\0132\024.flyteidl.cor" +
+      "e.ErrorH\000\022*\n\007generic\030\007 \001(\0132\027.google.prot" +
+      "obuf.StructH\000\022>\n\022structured_dataset\030\010 \001(" +
+      "\0132 .flyteidl.core.StructuredDatasetH\000\022%\n" +
+      "\005union\030\t \001(\0132\024.flyteidl.core.UnionH\000B\007\n\005" +
+      "value\"\253\001\n\007Literal\022\'\n\006scalar\030\001 \001(\0132\025.flyt" +
+      "eidl.core.ScalarH\000\0226\n\ncollection\030\002 \001(\0132 " +
+      ".flyteidl.core.LiteralCollectionH\000\022(\n\003ma" +
+      "p\030\003 \001(\0132\031.flyteidl.core.LiteralMapH\000\022\014\n\004" +
+      "hash\030\004 \001(\tB\007\n\005value\"=\n\021LiteralCollection" +
+      "\022(\n\010literals\030\001 \003(\0132\026.flyteidl.core.Liter" +
+      "al\"\220\001\n\nLiteralMap\0229\n\010literals\030\001 \003(\0132\'.fl" +
+      "yteidl.core.LiteralMap.LiteralsEntry\032G\n\r" +
+      "LiteralsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(" +
+      "\0132\026.flyteidl.core.Literal:\0028\001\"E\n\025Binding" +
+      "DataCollection\022,\n\010bindings\030\001 \003(\0132\032.flyte" +
+      "idl.core.BindingData\"\234\001\n\016BindingDataMap\022" +
+      "=\n\010bindings\030\001 \003(\0132+.flyteidl.core.Bindin" +
+      "gDataMap.BindingsEntry\032K\n\rBindingsEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.flyteidl.c" +
+      "ore.BindingData:\0028\001\";\n\tUnionInfo\022.\n\ntarg" +
+      "etType\030\001 \001(\0132\032.flyteidl.core.LiteralType" +
+      "\"\205\002\n\013BindingData\022\'\n\006scalar\030\001 \001(\0132\025.flyte" +
+      "idl.core.ScalarH\000\022:\n\ncollection\030\002 \001(\0132$." +
+      "flyteidl.core.BindingDataCollectionH\000\0221\n" +
+      "\007promise\030\003 \001(\0132\036.flyteidl.core.OutputRef" +
+      "erenceH\000\022,\n\003map\030\004 \001(\0132\035.flyteidl.core.Bi" +
+      "ndingDataMapH\000\022\'\n\005union\030\005 \001(\0132\030.flyteidl" +
+      ".core.UnionInfoB\007\n\005value\"C\n\007Binding\022\013\n\003v" +
+      "ar\030\001 \001(\t\022+\n\007binding\030\002 \001(\0132\032.flyteidl.cor" +
+      "e.BindingData\"*\n\014KeyValuePair\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t\" \n\rRetryStrategy\022\017\n\007re" +
+      "tries\030\005 \001(\rB6Z4github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18556,7 +18720,7 @@ public final class Literals {
     internal_static_flyteidl_core_Primitive_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Primitive_descriptor,
-        new java.lang.String[] { "Integer", "FloatValue", "StringValue", "Boolean", "Datetime", "Duration", "Value", });
+        new java.lang.String[] { "Integer", "FloatValue", "StringValue", "Boolean", "Datetime", "Duration", "MyNewValue", "Value", });
     internal_static_flyteidl_core_Void_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_Void_fieldAccessorTable = new

@@ -5911,6 +5911,9 @@
         },
         "duration": {
           "type": "string"
+        },
+        "my_new_value": {
+          "type": "string"
         }
       },
       "title": "Primitive Types"

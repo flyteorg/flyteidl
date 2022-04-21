@@ -36,7 +36,8 @@ class CorePrimitive(object):
         'string_value': 'str',
         'boolean': 'bool',
         '_datetime': 'datetime',
-        'duration': 'str'
+        'duration': 'str',
+        'my_new_value': 'str'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class CorePrimitive(object):
         'string_value': 'string_value',
         'boolean': 'boolean',
         '_datetime': 'datetime',
-        'duration': 'duration'
+        'duration': 'duration',
+        'my_new_value': 'my_new_value'
     }
 
-    def __init__(self, integer=None, float_value=None, string_value=None, boolean=None, _datetime=None, duration=None):  # noqa: E501
+    def __init__(self, integer=None, float_value=None, string_value=None, boolean=None, _datetime=None, duration=None, my_new_value=None):  # noqa: E501
         """CorePrimitive - a model defined in Swagger"""  # noqa: E501
 
         self._integer = None
@@ -57,6 +59,7 @@ class CorePrimitive(object):
         self._boolean = None
         self.__datetime = None
         self._duration = None
+        self._my_new_value = None
         self.discriminator = None
 
         if integer is not None:
@@ -71,6 +74,8 @@ class CorePrimitive(object):
             self._datetime = _datetime
         if duration is not None:
             self.duration = duration
+        if my_new_value is not None:
+            self.my_new_value = my_new_value
 
     @property
     def integer(self):
@@ -197,6 +202,27 @@ class CorePrimitive(object):
         """
 
         self._duration = duration
+
+    @property
+    def my_new_value(self):
+        """Gets the my_new_value of this CorePrimitive.  # noqa: E501
+
+
+        :return: The my_new_value of this CorePrimitive.  # noqa: E501
+        :rtype: str
+        """
+        return self._my_new_value
+
+    @my_new_value.setter
+    def my_new_value(self, my_new_value):
+        """Sets the my_new_value of this CorePrimitive.
+
+
+        :param my_new_value: The my_new_value of this CorePrimitive.  # noqa: E501
+        :type: str
+        """
+
+        self._my_new_value = my_new_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

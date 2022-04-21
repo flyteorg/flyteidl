@@ -1840,6 +1840,9 @@ export namespace flyteidl {
 
             /** Primitive duration */
             duration?: (google.protobuf.IDuration|null);
+
+            /** Primitive myNewValue */
+            myNewValue?: (string|null);
         }
 
         /** Represents a Primitive. */
@@ -1869,8 +1872,11 @@ export namespace flyteidl {
             /** Primitive duration. */
             public duration?: (google.protobuf.IDuration|null);
 
+            /** Primitive myNewValue. */
+            public myNewValue: string;
+
             /** Primitive value. */
-            public value?: ("integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration");
+            public value?: ("integer"|"floatValue"|"stringValue"|"boolean"|"datetime"|"duration"|"myNewValue");
 
             /**
              * Creates a new Primitive instance using the specified properties.
