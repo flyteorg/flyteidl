@@ -19,6 +19,7 @@ type AdminNodeExecutionGetDataResponse struct {
 	FullInputs *CoreLiteralMap `json:"full_inputs,omitempty"`
 	// Full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs *CoreLiteralMap `json:"full_outputs,omitempty"`
+	DeckUri string `json:"deck_uri,omitempty"`
 	// Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
 	DynamicWorkflow *FlyteidladminDynamicWorkflowNodeMetadata `json:"dynamic_workflow,omitempty"`
 }

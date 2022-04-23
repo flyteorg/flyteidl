@@ -2292,6 +2292,7 @@ Response structure for NodeExecutionGetDataRequest which contains inputs and out
    "outputs", ":ref:`ref_flyteidl.admin.UrlBlob`", "", "**Deprecated.** Signed url to fetch a core.LiteralMap of node execution outputs. Deprecated: Please use full_outputs instead."
    "full_inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_inputs will only be populated if they are under a configured size threshold."
    "full_outputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "Full_outputs will only be populated if they are under a configured size threshold."
+   "deck_uri", ":ref:`ref_string`", "", ""
    "dynamic_workflow", ":ref:`ref_flyteidl.admin.DynamicWorkflowNodeMetadata`", "", "Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here."
 
 

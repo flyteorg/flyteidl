@@ -4158,6 +4158,9 @@
           "$ref": "#/definitions/coreLiteralMap",
           "description": "Full_outputs will only be populated if they are under a configured size threshold."
         },
+        "deck_uri": {
+          "type": "string"
+        },
         "dynamic_workflow": {
           "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
           "description": "Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here."

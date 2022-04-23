@@ -406,6 +406,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataResponse, outputs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataResponse, full_inputs_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataResponse, full_outputs_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataResponse, deck_uri_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetDataResponse, dynamic_workflow_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -499,21 +500,22 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto
   "fier\022A\n\021compiled_workflow\030\002 \001(\0132&.flytei"
   "dl.core.CompiledWorkflowClosure\"Q\n\033NodeE"
   "xecutionGetDataRequest\0222\n\002id\030\001 \001(\0132&.fly"
-  "teidl.core.NodeExecutionIdentifier\"\241\002\n\034N"
+  "teidl.core.NodeExecutionIdentifier\"\263\002\n\034N"
   "odeExecutionGetDataResponse\022+\n\006inputs\030\001 "
   "\001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022,\n\007outp"
   "uts\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022."
   "\n\013full_inputs\030\003 \001(\0132\031.flyteidl.core.Lite"
   "ralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl."
-  "core.LiteralMap\022E\n\020dynamic_workflow\030\020 \001("
-  "\0132+.flyteidl.admin.DynamicWorkflowNodeMe"
-  "tadataB7Z5github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  "core.LiteralMap\022\020\n\010deck_uri\030\005 \001(\t\022E\n\020dyn"
+  "amic_workflow\030\020 \001(\0132+.flyteidl.admin.Dyn"
+  "amicWorkflowNodeMetadataB7Z5github.com/f"
+  "lyteorg/flyteidl/gen/pb-go/flyteidl/admi"
+  "nb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
-  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 2551,
+  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 2569,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
@@ -5738,6 +5740,7 @@ const int NodeExecutionGetDataResponse::kInputsFieldNumber;
 const int NodeExecutionGetDataResponse::kOutputsFieldNumber;
 const int NodeExecutionGetDataResponse::kFullInputsFieldNumber;
 const int NodeExecutionGetDataResponse::kFullOutputsFieldNumber;
+const int NodeExecutionGetDataResponse::kDeckUriFieldNumber;
 const int NodeExecutionGetDataResponse::kDynamicWorkflowFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -5750,6 +5753,10 @@ NodeExecutionGetDataResponse::NodeExecutionGetDataResponse(const NodeExecutionGe
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  deck_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.deck_uri().size() > 0) {
+    deck_uri_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.deck_uri_);
+  }
   if (from.has_inputs()) {
     inputs_ = new ::flyteidl::admin::UrlBlob(*from.inputs_);
   } else {
@@ -5781,6 +5788,7 @@ NodeExecutionGetDataResponse::NodeExecutionGetDataResponse(const NodeExecutionGe
 void NodeExecutionGetDataResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_NodeExecutionGetDataResponse_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  deck_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&inputs_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&dynamic_workflow_) -
       reinterpret_cast<char*>(&inputs_)) + sizeof(dynamic_workflow_));
@@ -5792,6 +5800,7 @@ NodeExecutionGetDataResponse::~NodeExecutionGetDataResponse() {
 }
 
 void NodeExecutionGetDataResponse::SharedDtor() {
+  deck_uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete inputs_;
   if (this != internal_default_instance()) delete outputs_;
   if (this != internal_default_instance()) delete full_inputs_;
@@ -5814,6 +5823,7 @@ void NodeExecutionGetDataResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  deck_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && inputs_ != nullptr) {
     delete inputs_;
   }
@@ -5902,6 +5912,22 @@ const char* NodeExecutionGetDataResponse::_InternalParse(const char* begin, cons
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // string deck_uri = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.NodeExecutionGetDataResponse.deck_uri");
+        object = msg->mutable_deck_uri();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       // .flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
       case 16: {
         if (static_cast<::google::protobuf::uint8>(tag) != 130) goto handle_unusual;
@@ -5930,6 +5956,10 @@ const char* NodeExecutionGetDataResponse::_InternalParse(const char* begin, cons
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -5983,6 +6013,21 @@ bool NodeExecutionGetDataResponse::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_full_outputs()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string deck_uri = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_deck_uri()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->deck_uri().data(), static_cast<int>(this->deck_uri().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.NodeExecutionGetDataResponse.deck_uri"));
         } else {
           goto handle_unusual;
         }
@@ -6051,6 +6096,16 @@ void NodeExecutionGetDataResponse::SerializeWithCachedSizes(
       4, HasBitSetters::full_outputs(this), output);
   }
 
+  // string deck_uri = 5;
+  if (this->deck_uri().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->deck_uri().data(), static_cast<int>(this->deck_uri().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionGetDataResponse.deck_uri");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->deck_uri(), output);
+  }
+
   // .flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
   if (this->has_dynamic_workflow()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -6098,6 +6153,17 @@ void NodeExecutionGetDataResponse::SerializeWithCachedSizes(
         4, HasBitSetters::full_outputs(this), target);
   }
 
+  // string deck_uri = 5;
+  if (this->deck_uri().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->deck_uri().data(), static_cast<int>(this->deck_uri().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.NodeExecutionGetDataResponse.deck_uri");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->deck_uri(), target);
+  }
+
   // .flyteidl.admin.DynamicWorkflowNodeMetadata dynamic_workflow = 16;
   if (this->has_dynamic_workflow()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -6125,6 +6191,13 @@ size_t NodeExecutionGetDataResponse::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string deck_uri = 5;
+  if (this->deck_uri().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->deck_uri());
+  }
 
   // .flyteidl.admin.UrlBlob inputs = 1 [deprecated = true];
   if (this->has_inputs()) {
@@ -6188,6 +6261,10 @@ void NodeExecutionGetDataResponse::MergeFrom(const NodeExecutionGetDataResponse&
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.deck_uri().size() > 0) {
+
+    deck_uri_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.deck_uri_);
+  }
   if (from.has_inputs()) {
     mutable_inputs()->::flyteidl::admin::UrlBlob::MergeFrom(from.inputs());
   }
@@ -6230,6 +6307,8 @@ void NodeExecutionGetDataResponse::Swap(NodeExecutionGetDataResponse* other) {
 void NodeExecutionGetDataResponse::InternalSwap(NodeExecutionGetDataResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  deck_uri_.Swap(&other->deck_uri_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(inputs_, other->inputs_);
   swap(outputs_, other->outputs_);
   swap(full_inputs_, other->full_inputs_);

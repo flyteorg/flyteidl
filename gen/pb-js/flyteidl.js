@@ -31142,6 +31142,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] NodeExecutionGetDataResponse outputs
              * @property {flyteidl.core.ILiteralMap|null} [fullInputs] NodeExecutionGetDataResponse fullInputs
              * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] NodeExecutionGetDataResponse fullOutputs
+             * @property {string|null} [deckUri] NodeExecutionGetDataResponse deckUri
              * @property {flyteidl.admin.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] NodeExecutionGetDataResponse dynamicWorkflow
              */
 
@@ -31193,6 +31194,14 @@ export const flyteidl = $root.flyteidl = (() => {
             NodeExecutionGetDataResponse.prototype.fullOutputs = null;
 
             /**
+             * NodeExecutionGetDataResponse deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+             * @instance
+             */
+            NodeExecutionGetDataResponse.prototype.deckUri = "";
+
+            /**
              * NodeExecutionGetDataResponse dynamicWorkflow.
              * @member {flyteidl.admin.IDynamicWorkflowNodeMetadata|null|undefined} dynamicWorkflow
              * @memberof flyteidl.admin.NodeExecutionGetDataResponse
@@ -31232,6 +31241,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
                     $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.deckUri);
                 if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow"))
                     $root.flyteidl.admin.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflow, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
@@ -31266,6 +31277,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.deckUri = reader.string();
                         break;
                     case 16:
                         message.dynamicWorkflow = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
@@ -31309,6 +31323,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "fullOutputs." + error;
                 }
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow")) {
                     let error = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflow);
                     if (error)

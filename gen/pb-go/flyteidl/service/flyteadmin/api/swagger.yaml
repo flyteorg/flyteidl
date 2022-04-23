@@ -7353,6 +7353,8 @@ definitions:
         description: "Full_outputs will only be populated if they are under a configured\
           \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
+      deck_uri:
+        type: "string"
       dynamic_workflow:
         description: "Optional Workflow closure for a dynamically generated workflow,\
           \ in the case this node yields a dynamic workflow we return its structure\
@@ -13378,6 +13380,7 @@ definitions:
         url: "url"
       full_outputs:
         literals: {}
+      deck_uri: "deck_uri"
   adminNodeExecutionList:
     type: "object"
     properties:
