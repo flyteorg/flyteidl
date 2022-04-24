@@ -4159,7 +4159,8 @@
           "description": "Full_outputs will only be populated if they are under a configured size threshold."
         },
         "deck_uri": {
-          "type": "string"
+          "type": "string",
+          "title": "String location uniquely identifying where the deck HTML file is\nShould start with the storage location (e.g. s3://, gs:// etc.)"
         },
         "dynamic_workflow": {
           "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",

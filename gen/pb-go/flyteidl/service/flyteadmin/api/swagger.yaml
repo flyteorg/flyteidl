@@ -7355,6 +7355,8 @@ definitions:
         $ref: "#/definitions/coreLiteralMap"
       deck_uri:
         type: "string"
+        title: "String location uniquely identifying where the deck HTML file is\n\
+          Should start with the storage location (e.g. s3://, gs:// etc.)"
       dynamic_workflow:
         description: "Optional Workflow closure for a dynamically generated workflow,\
           \ in the case this node yields a dynamic workflow we return its structure\

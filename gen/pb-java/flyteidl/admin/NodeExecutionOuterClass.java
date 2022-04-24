@@ -13100,10 +13100,20 @@ public final class NodeExecutionOuterClass {
     flyteidl.core.Literals.LiteralMapOrBuilder getFullOutputsOrBuilder();
 
     /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML file is
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
      * <code>string deck_uri = 5;</code>
      */
     java.lang.String getDeckUri();
     /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML file is
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
      * <code>string deck_uri = 5;</code>
      */
     com.google.protobuf.ByteString
@@ -13422,6 +13432,11 @@ public final class NodeExecutionOuterClass {
     public static final int DECK_URI_FIELD_NUMBER = 5;
     private volatile java.lang.Object deckUri_;
     /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML file is
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
      * <code>string deck_uri = 5;</code>
      */
     public java.lang.String getDeckUri() {
@@ -13437,6 +13452,11 @@ public final class NodeExecutionOuterClass {
       }
     }
     /**
+     * <pre>
+     * String location uniquely identifying where the deck HTML file is
+     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * </pre>
+     *
      * <code>string deck_uri = 5;</code>
      */
     public com.google.protobuf.ByteString
@@ -14574,6 +14594,11 @@ public final class NodeExecutionOuterClass {
 
       private java.lang.Object deckUri_ = "";
       /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML file is
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
        * <code>string deck_uri = 5;</code>
        */
       public java.lang.String getDeckUri() {
@@ -14589,6 +14614,11 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML file is
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
        * <code>string deck_uri = 5;</code>
        */
       public com.google.protobuf.ByteString
@@ -14605,6 +14635,11 @@ public final class NodeExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML file is
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
        * <code>string deck_uri = 5;</code>
        */
       public Builder setDeckUri(
@@ -14618,6 +14653,11 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML file is
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
        * <code>string deck_uri = 5;</code>
        */
       public Builder clearDeckUri() {
@@ -14627,6 +14667,11 @@ public final class NodeExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * String location uniquely identifying where the deck HTML file is
+       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * </pre>
+       *
        * <code>string deck_uri = 5;</code>
        */
       public Builder setDeckUriBytes(
