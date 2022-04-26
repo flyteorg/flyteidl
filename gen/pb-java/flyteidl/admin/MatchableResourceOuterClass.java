@@ -6220,13 +6220,40 @@ public final class MatchableResourceOuterClass {
 
     /**
      * <pre>
-     * Allows for a workflow to be flagged as interruptible for a single execution.
-     * Omitting this field uses the workflow's defined value as a default.
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
      * </pre>
      *
-     * <code>bool interruptible = 6;</code>
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
      */
-    boolean getInterruptible();
+    boolean hasInterruptible();
+    /**
+     * <pre>
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+     */
+    com.google.protobuf.BoolValue getInterruptible();
+    /**
+     * <pre>
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+     */
+    com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder();
   }
   /**
    * <pre>
@@ -6328,9 +6355,17 @@ public final class MatchableResourceOuterClass {
 
               break;
             }
-            case 48: {
+            case 50: {
+              com.google.protobuf.BoolValue.Builder subBuilder = null;
+              if (interruptible_ != null) {
+                subBuilder = interruptible_.toBuilder();
+              }
+              interruptible_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(interruptible_);
+                interruptible_ = subBuilder.buildPartial();
+              }
 
-              interruptible_ = input.readBool();
               break;
             }
             default: {
@@ -6511,17 +6546,48 @@ public final class MatchableResourceOuterClass {
     }
 
     public static final int INTERRUPTIBLE_FIELD_NUMBER = 6;
-    private boolean interruptible_;
+    private com.google.protobuf.BoolValue interruptible_;
     /**
      * <pre>
-     * Allows for a workflow to be flagged as interruptible for a single execution.
-     * Omitting this field uses the workflow's defined value as a default.
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
      * </pre>
      *
-     * <code>bool interruptible = 6;</code>
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
      */
-    public boolean getInterruptible() {
-      return interruptible_;
+    public boolean hasInterruptible() {
+      return interruptible_ != null;
+    }
+    /**
+     * <pre>
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+     */
+    public com.google.protobuf.BoolValue getInterruptible() {
+      return interruptible_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
+    }
+    /**
+     * <pre>
+     * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+     * Omitting this field uses the workflow's value as a default.
+     * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+     * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+     * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder() {
+      return getInterruptible();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6553,8 +6619,8 @@ public final class MatchableResourceOuterClass {
       if (annotations_ != null) {
         output.writeMessage(5, getAnnotations());
       }
-      if (interruptible_ != false) {
-        output.writeBool(6, interruptible_);
+      if (interruptible_ != null) {
+        output.writeMessage(6, getInterruptible());
       }
       unknownFields.writeTo(output);
     }
@@ -6585,9 +6651,9 @@ public final class MatchableResourceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getAnnotations());
       }
-      if (interruptible_ != false) {
+      if (interruptible_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, interruptible_);
+          .computeMessageSize(6, getInterruptible());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6626,8 +6692,11 @@ public final class MatchableResourceOuterClass {
         if (!getAnnotations()
             .equals(other.getAnnotations())) return false;
       }
-      if (getInterruptible()
-          != other.getInterruptible()) return false;
+      if (hasInterruptible() != other.hasInterruptible()) return false;
+      if (hasInterruptible()) {
+        if (!getInterruptible()
+            .equals(other.getInterruptible())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6657,9 +6726,10 @@ public final class MatchableResourceOuterClass {
         hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getAnnotations().hashCode();
       }
-      hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getInterruptible());
+      if (hasInterruptible()) {
+        hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
+        hash = (53 * hash) + getInterruptible().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6823,8 +6893,12 @@ public final class MatchableResourceOuterClass {
           annotations_ = null;
           annotationsBuilder_ = null;
         }
-        interruptible_ = false;
-
+        if (interruptibleBuilder_ == null) {
+          interruptible_ = null;
+        } else {
+          interruptible_ = null;
+          interruptibleBuilder_ = null;
+        }
         return this;
       }
 
@@ -6872,7 +6946,11 @@ public final class MatchableResourceOuterClass {
         } else {
           result.annotations_ = annotationsBuilder_.build();
         }
-        result.interruptible_ = interruptible_;
+        if (interruptibleBuilder_ == null) {
+          result.interruptible_ = interruptible_;
+        } else {
+          result.interruptible_ = interruptibleBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -6936,8 +7014,8 @@ public final class MatchableResourceOuterClass {
         if (other.hasAnnotations()) {
           mergeAnnotations(other.getAnnotations());
         }
-        if (other.getInterruptible() != false) {
-          setInterruptible(other.getInterruptible());
+        if (other.hasInterruptible()) {
+          mergeInterruptible(other.getInterruptible());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7618,45 +7696,193 @@ public final class MatchableResourceOuterClass {
         return annotationsBuilder_;
       }
 
-      private boolean interruptible_ ;
+      private com.google.protobuf.BoolValue interruptible_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> interruptibleBuilder_;
       /**
        * <pre>
-       * Allows for a workflow to be flagged as interruptible for a single execution.
-       * Omitting this field uses the workflow's defined value as a default.
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
        * </pre>
        *
-       * <code>bool interruptible = 6;</code>
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
        */
-      public boolean getInterruptible() {
-        return interruptible_;
+      public boolean hasInterruptible() {
+        return interruptibleBuilder_ != null || interruptible_ != null;
       }
       /**
        * <pre>
-       * Allows for a workflow to be flagged as interruptible for a single execution.
-       * Omitting this field uses the workflow's defined value as a default.
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
        * </pre>
        *
-       * <code>bool interruptible = 6;</code>
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
        */
-      public Builder setInterruptible(boolean value) {
-        
-        interruptible_ = value;
-        onChanged();
+      public com.google.protobuf.BoolValue getInterruptible() {
+        if (interruptibleBuilder_ == null) {
+          return interruptible_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
+        } else {
+          return interruptibleBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      public Builder setInterruptible(com.google.protobuf.BoolValue value) {
+        if (interruptibleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          interruptible_ = value;
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       * Allows for a workflow to be flagged as interruptible for a single execution.
-       * Omitting this field uses the workflow's defined value as a default.
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
        * </pre>
        *
-       * <code>bool interruptible = 6;</code>
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      public Builder setInterruptible(
+          com.google.protobuf.BoolValue.Builder builderForValue) {
+        if (interruptibleBuilder_ == null) {
+          interruptible_ = builderForValue.build();
+          onChanged();
+        } else {
+          interruptibleBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      public Builder mergeInterruptible(com.google.protobuf.BoolValue value) {
+        if (interruptibleBuilder_ == null) {
+          if (interruptible_ != null) {
+            interruptible_ =
+              com.google.protobuf.BoolValue.newBuilder(interruptible_).mergeFrom(value).buildPartial();
+          } else {
+            interruptible_ = value;
+          }
+          onChanged();
+        } else {
+          interruptibleBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
        */
       public Builder clearInterruptible() {
-        
-        interruptible_ = false;
-        onChanged();
+        if (interruptibleBuilder_ == null) {
+          interruptible_ = null;
+          onChanged();
+        } else {
+          interruptible_ = null;
+          interruptibleBuilder_ = null;
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      public com.google.protobuf.BoolValue.Builder getInterruptibleBuilder() {
+        
+        onChanged();
+        return getInterruptibleFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      public com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder() {
+        if (interruptibleBuilder_ != null) {
+          return interruptibleBuilder_.getMessageOrBuilder();
+        } else {
+          return interruptible_ == null ?
+              com.google.protobuf.BoolValue.getDefaultInstance() : interruptible_;
+        }
+      }
+      /**
+       * <pre>
+       * Allows for the interruptible flag of a workflow to be overwritten for a single execution.
+       * Omitting this field uses the workflow's value as a default.
+       * As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
+       * around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
+       * "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+       * </pre>
+       *
+       * <code>.google.protobuf.BoolValue interruptible = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+          getInterruptibleFieldBuilder() {
+        if (interruptibleBuilder_ == null) {
+          interruptibleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                  getInterruptible(),
+                  getParentForChildren(),
+                  isClean());
+          interruptible_ = null;
+        }
+        return interruptibleBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12524,65 +12750,66 @@ public final class MatchableResourceOuterClass {
       "o\022\016flyteidl.admin\032\033flyteidl/admin/common" +
       ".proto\032\'flyteidl/admin/cluster_assignmen" +
       "t.proto\032\035flyteidl/core/execution.proto\032\034" +
-      "flyteidl/core/security.proto\"h\n\020TaskReso" +
-      "urceSpec\022\013\n\003cpu\030\001 \001(\t\022\013\n\003gpu\030\002 \001(\t\022\016\n\006me" +
-      "mory\030\003 \001(\t\022\017\n\007storage\030\004 \001(\t\022\031\n\021ephemeral" +
-      "_storage\030\005 \001(\t\"~\n\026TaskResourceAttributes" +
-      "\0222\n\010defaults\030\001 \001(\0132 .flyteidl.admin.Task" +
-      "ResourceSpec\0220\n\006limits\030\002 \001(\0132 .flyteidl." +
-      "admin.TaskResourceSpec\"\235\001\n\031ClusterResour" +
-      "ceAttributes\022M\n\nattributes\030\001 \003(\01329.flyte" +
-      "idl.admin.ClusterResourceAttributes.Attr" +
-      "ibutesEntry\0321\n\017AttributesEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueue" +
-      "Attributes\022\014\n\004tags\030\001 \003(\t\"&\n\025ExecutionClu" +
-      "sterLabel\022\r\n\005value\030\001 \001(\t\"\301\001\n\016PluginOverr" +
-      "ide\022\021\n\ttask_type\030\001 \001(\t\022\021\n\tplugin_id\030\002 \003(" +
-      "\t\022U\n\027missing_plugin_behavior\030\004 \001(\01624.fly" +
-      "teidl.admin.PluginOverride.MissingPlugin" +
-      "Behavior\"2\n\025MissingPluginBehavior\022\010\n\004FAI" +
-      "L\020\000\022\017\n\013USE_DEFAULT\020\001\"D\n\017PluginOverrides\022" +
-      "1\n\toverrides\030\001 \003(\0132\036.flyteidl.admin.Plug" +
-      "inOverride\"\242\002\n\027WorkflowExecutionConfig\022\027" +
-      "\n\017max_parallelism\030\001 \001(\005\0228\n\020security_cont" +
-      "ext\030\002 \001(\0132\036.flyteidl.core.SecurityContex" +
-      "t\022C\n\026raw_output_data_config\030\003 \001(\0132#.flyt" +
-      "eidl.admin.RawOutputDataConfig\022&\n\006labels" +
-      "\030\004 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annota" +
-      "tions\030\005 \001(\0132\033.flyteidl.admin.Annotations" +
-      "\022\025\n\rinterruptible\030\006 \001(\010\"\341\004\n\022MatchingAttr" +
-      "ibutes\022J\n\030task_resource_attributes\030\001 \001(\013" +
-      "2&.flyteidl.admin.TaskResourceAttributes" +
-      "H\000\022P\n\033cluster_resource_attributes\030\002 \001(\0132" +
-      ").flyteidl.admin.ClusterResourceAttribut" +
-      "esH\000\022N\n\032execution_queue_attributes\030\003 \001(\013" +
-      "2(.flyteidl.admin.ExecutionQueueAttribut" +
-      "esH\000\022H\n\027execution_cluster_label\030\004 \001(\0132%." +
-      "flyteidl.admin.ExecutionClusterLabelH\000\022=" +
-      "\n\022quality_of_service\030\005 \001(\0132\037.flyteidl.co" +
-      "re.QualityOfServiceH\000\022;\n\020plugin_override" +
-      "s\030\006 \001(\0132\037.flyteidl.admin.PluginOverrides" +
-      "H\000\022L\n\031workflow_execution_config\030\007 \001(\0132\'." +
-      "flyteidl.admin.WorkflowExecutionConfigH\000" +
-      "\022?\n\022cluster_assignment\030\010 \001(\0132!.flyteidl." +
-      "admin.ClusterAssignmentH\000B\010\n\006target\"\242\001\n " +
-      "MatchableAttributesConfiguration\0226\n\nattr" +
-      "ibutes\030\001 \001(\0132\".flyteidl.admin.MatchingAt" +
-      "tributes\022\016\n\006domain\030\002 \001(\t\022\017\n\007project\030\003 \001(" +
-      "\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013launch_plan\030\005 \001(\t" +
-      "\"Z\n\036ListMatchableAttributesRequest\0228\n\rre" +
-      "source_type\030\001 \001(\0162!.flyteidl.admin.Match" +
-      "ableResource\"k\n\037ListMatchableAttributesR" +
-      "esponse\022H\n\016configurations\030\001 \003(\01320.flytei" +
-      "dl.admin.MatchableAttributesConfiguratio" +
-      "n*\340\001\n\021MatchableResource\022\021\n\rTASK_RESOURCE" +
-      "\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTION_QU" +
-      "EUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003\022$\n QU" +
-      "ALITY_OF_SERVICE_SPECIFICATION\020\004\022\023\n\017PLUG" +
-      "IN_OVERRIDE\020\005\022\035\n\031WORKFLOW_EXECUTION_CONF" +
-      "IG\020\006\022\026\n\022CLUSTER_ASSIGNMENT\020\007B7Z5github.c" +
-      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
-      "adminb\006proto3"
+      "flyteidl/core/security.proto\032\036google/pro" +
+      "tobuf/wrappers.proto\"h\n\020TaskResourceSpec" +
+      "\022\013\n\003cpu\030\001 \001(\t\022\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030\003 \001" +
+      "(\t\022\017\n\007storage\030\004 \001(\t\022\031\n\021ephemeral_storage" +
+      "\030\005 \001(\t\"~\n\026TaskResourceAttributes\0222\n\010defa" +
+      "ults\030\001 \001(\0132 .flyteidl.admin.TaskResource" +
+      "Spec\0220\n\006limits\030\002 \001(\0132 .flyteidl.admin.Ta" +
+      "skResourceSpec\"\235\001\n\031ClusterResourceAttrib" +
+      "utes\022M\n\nattributes\030\001 \003(\01329.flyteidl.admi" +
+      "n.ClusterResourceAttributes.AttributesEn" +
+      "try\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueueAttribut" +
+      "es\022\014\n\004tags\030\001 \003(\t\"&\n\025ExecutionClusterLabe" +
+      "l\022\r\n\005value\030\001 \001(\t\"\301\001\n\016PluginOverride\022\021\n\tt" +
+      "ask_type\030\001 \001(\t\022\021\n\tplugin_id\030\002 \003(\t\022U\n\027mis" +
+      "sing_plugin_behavior\030\004 \001(\01624.flyteidl.ad" +
+      "min.PluginOverride.MissingPluginBehavior" +
+      "\"2\n\025MissingPluginBehavior\022\010\n\004FAIL\020\000\022\017\n\013U" +
+      "SE_DEFAULT\020\001\"D\n\017PluginOverrides\0221\n\toverr" +
+      "ides\030\001 \003(\0132\036.flyteidl.admin.PluginOverri" +
+      "de\"\276\002\n\027WorkflowExecutionConfig\022\027\n\017max_pa" +
+      "rallelism\030\001 \001(\005\0228\n\020security_context\030\002 \001(" +
+      "\0132\036.flyteidl.core.SecurityContext\022C\n\026raw" +
+      "_output_data_config\030\003 \001(\0132#.flyteidl.adm" +
+      "in.RawOutputDataConfig\022&\n\006labels\030\004 \001(\0132\026" +
+      ".flyteidl.admin.Labels\0220\n\013annotations\030\005 " +
+      "\001(\0132\033.flyteidl.admin.Annotations\0221\n\rinte" +
+      "rruptible\030\006 \001(\0132\032.google.protobuf.BoolVa" +
+      "lue\"\341\004\n\022MatchingAttributes\022J\n\030task_resou" +
+      "rce_attributes\030\001 \001(\0132&.flyteidl.admin.Ta" +
+      "skResourceAttributesH\000\022P\n\033cluster_resour" +
+      "ce_attributes\030\002 \001(\0132).flyteidl.admin.Clu" +
+      "sterResourceAttributesH\000\022N\n\032execution_qu" +
+      "eue_attributes\030\003 \001(\0132(.flyteidl.admin.Ex" +
+      "ecutionQueueAttributesH\000\022H\n\027execution_cl" +
+      "uster_label\030\004 \001(\0132%.flyteidl.admin.Execu" +
+      "tionClusterLabelH\000\022=\n\022quality_of_service" +
+      "\030\005 \001(\0132\037.flyteidl.core.QualityOfServiceH" +
+      "\000\022;\n\020plugin_overrides\030\006 \001(\0132\037.flyteidl.a" +
+      "dmin.PluginOverridesH\000\022L\n\031workflow_execu" +
+      "tion_config\030\007 \001(\0132\'.flyteidl.admin.Workf" +
+      "lowExecutionConfigH\000\022?\n\022cluster_assignme" +
+      "nt\030\010 \001(\0132!.flyteidl.admin.ClusterAssignm" +
+      "entH\000B\010\n\006target\"\242\001\n MatchableAttributesC" +
+      "onfiguration\0226\n\nattributes\030\001 \001(\0132\".flyte" +
+      "idl.admin.MatchingAttributes\022\016\n\006domain\030\002" +
+      " \001(\t\022\017\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022" +
+      "\023\n\013launch_plan\030\005 \001(\t\"Z\n\036ListMatchableAtt" +
+      "ributesRequest\0228\n\rresource_type\030\001 \001(\0162!." +
+      "flyteidl.admin.MatchableResource\"k\n\037List" +
+      "MatchableAttributesResponse\022H\n\016configura" +
+      "tions\030\001 \003(\01320.flyteidl.admin.MatchableAt" +
+      "tributesConfiguration*\340\001\n\021MatchableResou" +
+      "rce\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RESOUR" +
+      "CE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXECUTION_C" +
+      "LUSTER_LABEL\020\003\022$\n QUALITY_OF_SERVICE_SPE" +
+      "CIFICATION\020\004\022\023\n\017PLUGIN_OVERRIDE\020\005\022\035\n\031WOR" +
+      "KFLOW_EXECUTION_CONFIG\020\006\022\026\n\022CLUSTER_ASSI" +
+      "GNMENT\020\007B7Z5github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12599,6 +12826,7 @@ public final class MatchableResourceOuterClass {
           flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
+          com.google.protobuf.WrappersProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_TaskResourceSpec_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12682,6 +12910,7 @@ public final class MatchableResourceOuterClass {
     flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.Security.getDescriptor();
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

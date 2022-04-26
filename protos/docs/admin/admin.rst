@@ -1179,7 +1179,7 @@ of an execution as it progresses across phase changes.
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of task nodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
-   "interruptible", ":ref:`ref_bool`", "", "Allows for a workflow to be flagged as interruptible for a single execution. Omitting this field uses the workflow's defined value as a default."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided."
 
 
 
@@ -1707,7 +1707,7 @@ User-provided launch plan definition and configuration values.
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
-   "interruptible", ":ref:`ref_bool`", "", "Allows for a workflow to be flagged as interruptible for a single execution. Omitting this field uses the workflow's defined value as a default."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided."
 
 
 
@@ -2086,7 +2086,7 @@ Adds defaults for customizable workflow-execution specifications and overrides.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Custom labels to be applied to a triggered execution resource."
    "annotations", ":ref:`ref_flyteidl.admin.Annotations`", "", "Custom annotations to be applied to a triggered execution resource."
-   "interruptible", ":ref:`ref_bool`", "", "Allows for a workflow to be flagged as interruptible for a single execution. Omitting this field uses the workflow's defined value as a default."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided."
 
 
 

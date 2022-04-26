@@ -39,6 +39,7 @@
 #include "flyteidl/admin/cluster_assignment.pb.h"
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/security.pb.h"
+#include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto
@@ -1292,17 +1293,20 @@ class WorkflowExecutionConfig final :
   ::flyteidl::admin::Annotations* mutable_annotations();
   void set_allocated_annotations(::flyteidl::admin::Annotations* annotations);
 
+  // .google.protobuf.BoolValue interruptible = 6;
+  bool has_interruptible() const;
+  void clear_interruptible();
+  static const int kInterruptibleFieldNumber = 6;
+  const ::google::protobuf::BoolValue& interruptible() const;
+  ::google::protobuf::BoolValue* release_interruptible();
+  ::google::protobuf::BoolValue* mutable_interruptible();
+  void set_allocated_interruptible(::google::protobuf::BoolValue* interruptible);
+
   // int32 max_parallelism = 1;
   void clear_max_parallelism();
   static const int kMaxParallelismFieldNumber = 1;
   ::google::protobuf::int32 max_parallelism() const;
   void set_max_parallelism(::google::protobuf::int32 value);
-
-  // bool interruptible = 6;
-  void clear_interruptible();
-  static const int kInterruptibleFieldNumber = 6;
-  bool interruptible() const;
-  void set_interruptible(bool value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowExecutionConfig)
  private:
@@ -1313,8 +1317,8 @@ class WorkflowExecutionConfig final :
   ::flyteidl::admin::RawOutputDataConfig* raw_output_data_config_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::Annotations* annotations_;
+  ::google::protobuf::BoolValue* interruptible_;
   ::google::protobuf::int32 max_parallelism_;
-  bool interruptible_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 };
@@ -2846,18 +2850,50 @@ inline void WorkflowExecutionConfig::set_allocated_annotations(::flyteidl::admin
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionConfig.annotations)
 }
 
-// bool interruptible = 6;
-inline void WorkflowExecutionConfig::clear_interruptible() {
-  interruptible_ = false;
+// .google.protobuf.BoolValue interruptible = 6;
+inline bool WorkflowExecutionConfig::has_interruptible() const {
+  return this != internal_default_instance() && interruptible_ != nullptr;
 }
-inline bool WorkflowExecutionConfig::interruptible() const {
+inline const ::google::protobuf::BoolValue& WorkflowExecutionConfig::interruptible() const {
+  const ::google::protobuf::BoolValue* p = interruptible_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowExecutionConfig.interruptible)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::BoolValue*>(
+      &::google::protobuf::_BoolValue_default_instance_);
+}
+inline ::google::protobuf::BoolValue* WorkflowExecutionConfig::release_interruptible() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowExecutionConfig.interruptible)
+  
+  ::google::protobuf::BoolValue* temp = interruptible_;
+  interruptible_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::BoolValue* WorkflowExecutionConfig::mutable_interruptible() {
+  
+  if (interruptible_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::BoolValue>(GetArenaNoVirtual());
+    interruptible_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowExecutionConfig.interruptible)
   return interruptible_;
 }
-inline void WorkflowExecutionConfig::set_interruptible(bool value) {
-  
-  interruptible_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowExecutionConfig.interruptible)
+inline void WorkflowExecutionConfig::set_allocated_interruptible(::google::protobuf::BoolValue* interruptible) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(interruptible_);
+  }
+  if (interruptible) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(interruptible)->GetArena();
+    if (message_arena != submessage_arena) {
+      interruptible = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, interruptible, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  interruptible_ = interruptible;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionConfig.interruptible)
 }
 
 // -------------------------------------------------------------------

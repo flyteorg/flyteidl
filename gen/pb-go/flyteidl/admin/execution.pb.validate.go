@@ -1362,7 +1362,15 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
-	// no validation rules for Interruptible
+	if v, ok := interface{}(m.GetInterruptible()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return ExecutionSpecValidationError{
+				field:  "Interruptible",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	switch m.NotificationOverrides.(type) {
 
