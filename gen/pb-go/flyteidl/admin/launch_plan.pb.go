@@ -335,10 +335,9 @@ type LaunchPlanSpec struct {
 	// and parallelism/concurrency of MapTasks is independent from this.
 	MaxParallelism int32 `protobuf:"varint,18,opt,name=max_parallelism,json=maxParallelism,proto3" json:"max_parallelism,omitempty"`
 	// Allows for the interruptible flag of a workflow to be overwritten for a single execution.
-	// Omitting this field uses the workflow's value as a default.
+	// Omitting this field uses the launch plan's value as a default.
 	// As we need to distinguish between the field not being provided and its default value "false", we have to use a wrapper
-	// around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use
-	// "oneof" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+	// around the bool field.
 	Interruptible        *wrappers.BoolValue `protobuf:"bytes,19,opt,name=interruptible,proto3" json:"interruptible,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`

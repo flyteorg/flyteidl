@@ -33,6 +33,6 @@ type AdminExecutionSpec struct {
 	RawOutputDataConfig *AdminRawOutputDataConfig `json:"raw_output_data_config,omitempty"`
 	// Controls how to select an available cluster on which this execution should run.
 	ClusterAssignment *AdminClusterAssignment `json:"cluster_assignment,omitempty"`
-	// Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field. Since flyteadmin defines an interface requiring a unified interruptble override in several places, we cannot use \"oneof\" like in other places since that would generate incompatible Go types - instead, we're using one of the scalar type wrappers provided.
+	// Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the launch plan's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field.
 	Interruptible bool `json:"interruptible,omitempty"`
 }
