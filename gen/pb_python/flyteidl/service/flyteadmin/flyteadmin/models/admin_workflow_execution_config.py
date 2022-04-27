@@ -196,7 +196,7 @@ class AdminWorkflowExecutionConfig(object):
     def interruptible(self):
         """Gets the interruptible of this AdminWorkflowExecutionConfig.  # noqa: E501
 
-        Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the launch plan's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field.  # noqa: E501
+        Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field.  # noqa: E501
 
         :return: The interruptible of this AdminWorkflowExecutionConfig.  # noqa: E501
         :rtype: bool
@@ -207,7 +207,7 @@ class AdminWorkflowExecutionConfig(object):
     def interruptible(self, interruptible):
         """Sets the interruptible of this AdminWorkflowExecutionConfig.
 
-        Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the launch plan's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field.  # noqa: E501
+        Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value \"false\", we have to use a wrapper around the bool field.  # noqa: E501
 
         :param interruptible: The interruptible of this AdminWorkflowExecutionConfig.  # noqa: E501
         :type: bool

@@ -4029,7 +4029,7 @@ definitions:
         type: "boolean"
         format: "boolean"
         description: "Allows for the interruptible flag of a workflow to be overwritten\
-          \ for a single execution.\nOmitting this field uses the launch plan's value\
+          \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value \"false\", we have to use a wrapper\naround the\
           \ bool field."
@@ -6236,7 +6236,7 @@ definitions:
         type: "boolean"
         format: "boolean"
         description: "Allows for the interruptible flag of a workflow to be overwritten\
-          \ for a single execution.\nOmitting this field uses the launch plan's value\
+          \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value \"false\", we have to use a wrapper\naround the\
           \ bool field."
@@ -28129,7 +28129,7 @@ definitions:
         type: "boolean"
         format: "boolean"
         description: "Allows for the interruptible flag of a workflow to be overwritten\
-          \ for a single execution.\nOmitting this field uses the launch plan's value\
+          \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value \"false\", we have to use a wrapper\naround the\
           \ bool field."
