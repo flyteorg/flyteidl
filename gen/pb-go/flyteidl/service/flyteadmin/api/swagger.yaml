@@ -4031,8 +4031,8 @@ definitions:
         description: "Allows for the interruptible flag of a workflow to be overwritten\
           \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
-          \ and its default value \"false\", we have to use a wrapper\naround the\
-          \ bool field."
+          \ and its default value false, we have to use a wrapper\naround the bool\
+          \ field."
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -6238,8 +6238,8 @@ definitions:
         description: "Allows for the interruptible flag of a workflow to be overwritten\
           \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
-          \ and its default value \"false\", we have to use a wrapper\naround the\
-          \ bool field."
+          \ and its default value false, we have to use a wrapper\naround the bool\
+          \ field."
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -28131,8 +28131,8 @@ definitions:
         description: "Allows for the interruptible flag of a workflow to be overwritten\
           \ for a single execution.\nOmitting this field uses the workflow's value\
           \ as a default.\nAs we need to distinguish between the field not being provided\
-          \ and its default value \"false\", we have to use a wrapper\naround the\
-          \ bool field."
+          \ and its default value false, we have to use a wrapper\naround the bool\
+          \ field."
     description: "Adds defaults for customizable workflow-execution specifications\
       \ and overrides."
     example:
