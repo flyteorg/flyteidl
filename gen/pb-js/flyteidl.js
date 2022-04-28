@@ -35174,7 +35174,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IUrlBlob|null} [outputs] TaskExecutionGetDataResponse outputs
              * @property {flyteidl.core.ILiteralMap|null} [fullInputs] TaskExecutionGetDataResponse fullInputs
              * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] TaskExecutionGetDataResponse fullOutputs
-             * @property {string|null} [deckUri] TaskExecutionGetDataResponse deckUri
              */
 
             /**
@@ -35225,14 +35224,6 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskExecutionGetDataResponse.prototype.fullOutputs = null;
 
             /**
-             * TaskExecutionGetDataResponse deckUri.
-             * @member {string} deckUri
-             * @memberof flyteidl.admin.TaskExecutionGetDataResponse
-             * @instance
-             */
-            TaskExecutionGetDataResponse.prototype.deckUri = "";
-
-            /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.TaskExecutionGetDataResponse
@@ -35264,8 +35255,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
                     $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.deckUri);
                 return writer;
             };
 
@@ -35298,9 +35287,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 4:
                         message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
-                        break;
-                    case 5:
-                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -35341,9 +35327,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "fullOutputs." + error;
                 }
-                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
-                    if (!$util.isString(message.deckUri))
-                        return "deckUri: string expected";
                 return null;
             };
 

@@ -14879,9 +14879,6 @@ definitions:
         description: "Full_outputs will only be populated if they are under a configured\
           \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
-      deck_uri:
-        type: "string"
-        title: "Path to flyte deck file"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
     example:
@@ -14895,7 +14892,6 @@ definitions:
         url: "url"
       full_outputs:
         literals: {}
-      deck_uri: "deck_uri"
   adminTaskExecutionList:
     type: "object"
     properties:

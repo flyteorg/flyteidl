@@ -690,8 +690,6 @@ func (m *TaskExecutionGetDataResponse) Validate() error {
 		}
 	}
 
-	// no validation rules for DeckUri
-
 	return nil
 }
 

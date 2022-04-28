@@ -14731,9 +14731,6 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs */
             fullOutputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** TaskExecutionGetDataResponse deckUri */
-            deckUri?: (string|null);
         }
 
         /** Represents a TaskExecutionGetDataResponse. */
@@ -14756,9 +14753,6 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs. */
             public fullOutputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** TaskExecutionGetDataResponse deckUri. */
-            public deckUri: string;
 
             /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
