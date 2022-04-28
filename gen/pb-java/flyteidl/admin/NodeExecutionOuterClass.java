@@ -13102,7 +13102,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * It should be a pre-signed url.
      * </pre>
      *
      * <code>string deck_uri = 5;</code>
@@ -13111,7 +13111,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * It should be a pre-signed url.
      * </pre>
      *
      * <code>string deck_uri = 5;</code>
@@ -13434,7 +13434,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * It should be a pre-signed url.
      * </pre>
      *
      * <code>string deck_uri = 5;</code>
@@ -13454,7 +13454,7 @@ public final class NodeExecutionOuterClass {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * Should start with the storage location (e.g. s3://, gs:// etc.)
+     * It should be a pre-signed url.
      * </pre>
      *
      * <code>string deck_uri = 5;</code>
@@ -14596,7 +14596,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * It should be a pre-signed url.
        * </pre>
        *
        * <code>string deck_uri = 5;</code>
@@ -14616,7 +14616,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * It should be a pre-signed url.
        * </pre>
        *
        * <code>string deck_uri = 5;</code>
@@ -14637,7 +14637,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * It should be a pre-signed url.
        * </pre>
        *
        * <code>string deck_uri = 5;</code>
@@ -14655,7 +14655,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * It should be a pre-signed url.
        * </pre>
        *
        * <code>string deck_uri = 5;</code>
@@ -14669,7 +14669,7 @@ public final class NodeExecutionOuterClass {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * Should start with the storage location (e.g. s3://, gs:// etc.)
+       * It should be a pre-signed url.
        * </pre>
        *
        * <code>string deck_uri = 5;</code>

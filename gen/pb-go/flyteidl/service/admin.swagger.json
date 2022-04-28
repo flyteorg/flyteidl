@@ -4160,7 +4160,7 @@
         },
         "deck_uri": {
           "type": "string",
-          "title": "String location uniquely identifying where the deck HTML file is\nShould start with the storage location (e.g. s3://, gs:// etc.)"
+          "description": "String location uniquely identifying where the deck HTML file is\nIt should be a pre-signed url."
         },
         "dynamic_workflow": {
           "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
