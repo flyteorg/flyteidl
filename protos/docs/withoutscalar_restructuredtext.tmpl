@@ -42,7 +42,9 @@ Protocol Documentation
 {{- end}}
 {{end}}
 
-{{end}} <!-- end messages -->
+{{end}}
+..
+   end messages
 
 {{range .Enums}}
 
@@ -60,7 +62,9 @@ Protocol Documentation
    "{{.Name}}", "{{.Number}}", "{{nobr .Description}}"
 {{- end}}
 
-{{end}} <!-- end enums -->
+{{end}}
+..
+   end enums
 
 {{if .HasExtensions}}
 
@@ -75,7 +79,9 @@ File-level Extensions
 {{range .Extensions}}
    "{{.Name}}", "{{.LongType}}", "{{.ContainingLongType}}", "{{.Number}}", "{{nobr .Description}}{{if .DefaultValue}} Default: `{{.DefaultValue}}`{{end}}"
 {{- end}}
-{{end}} <!-- end HasExtensions -->
+{{end}}
+..
+   end HasExtensions
 
 {{range .Services}}
 
@@ -92,6 +98,8 @@ File-level Extensions
 {{range .Methods}}
    "{{.Name}}", ":ref:`ref_{{.RequestFullType}}`{{if .RequestStreaming}} stream{{end}}", ":ref:`ref_{{.ResponseFullType}}`{{if .ResponseStreaming}} stream{{end}}", "{{nobr .Description}}"
 {{- end}}
-{{end}} <!-- end services -->
+{{end}}
+..
+   end services
 
 {{end}}
