@@ -6,6 +6,9 @@ LYFT_IMAGE="lyft/protocgenerator:8167e11d3b3439373c2f033080a4b550078884a2"
 SWAGGER_CLI_IMAGE="docker.io/lyft/swagger-codegen-cli:dc5ce6ec6d7d4d980fa882d6bd13a83cba3be3c3"
 PROTOC_GEN_DOC_IMAGE="pseudomuto/protoc-gen-doc:1.4.1"
 
+# Override system locale during protos/docs generation to ensure consistent sorting (differences in system locale could e.g. lead to differently ordered docs)
+export LC_ALL=C.UTF-8
+
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/service --with_gateway -l go --go_source_relative
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/admin --with_gateway -l go --go_source_relative --validate_out
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/core --with_gateway -l go --go_source_relative --validate_out
