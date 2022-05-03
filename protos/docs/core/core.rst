@@ -2697,6 +2697,46 @@ Define a set of simple types.
 
 
 
+.. _ref_flyteidl/core/workflow_closure.proto:
+
+flyteidl/core/workflow_closure.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.core.WorkflowClosure:
+
+WorkflowClosure
+------------------------------------------------------------------
+
+Defines an enclosed package of workflow and tasks it references.
+
+
+
+.. csv-table:: WorkflowClosure type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "workflow", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "required. Workflow template."
+   "tasks", ":ref:`ref_flyteidl.core.TaskTemplate`", "repeated", "optional. A collection of tasks referenced by the workflow. Only needed if the workflow references tasks."
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
 .. _ref_flyteidl/core/workflow.proto:
 
 flyteidl/core/workflow.proto
@@ -2743,6 +2783,28 @@ runtime based on a series of conditions that get evaluated on various parameters
    :widths: auto
 
    "if_else", ":ref:`ref_flyteidl.core.IfElseBlock`", "", "&#43;required"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.GateNode:
+
+GateNode
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: GateNode type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signal", ":ref:`ref_flyteidl.core.SignalConditional`", "", "TODO hamersaw - document"
+   "sleep", ":ref:`ref_flyteidl.core.SleepConditional`", "", "TODO hamersaw - document"
 
 
 
@@ -2819,6 +2881,7 @@ node.
    "task_node", ":ref:`ref_flyteidl.core.TaskNode`", "", "Information about the Task to execute in this node."
    "workflow_node", ":ref:`ref_flyteidl.core.WorkflowNode`", "", "Information about the Workflow to execute in this mode."
    "branch_node", ":ref:`ref_flyteidl.core.BranchNode`", "", "Information about the branch node to evaluate in this node."
+   "gate_node", ":ref:`ref_flyteidl.core.GateNode`", "", "TODO hamersaw - document"
 
 
 
@@ -2843,6 +2906,41 @@ Defines extra information about the Node.
    "timeout", ":ref:`ref_google.protobuf.Duration`", "", "The overall timeout of a task."
    "retries", ":ref:`ref_flyteidl.core.RetryStrategy`", "", "Number of retries per task."
    "interruptible", ":ref:`ref_bool`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.SignalConditional:
+
+SignalConditional
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.SleepConditional:
+
+SleepConditional
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: SleepConditional type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "duration", ":ref:`ref_google.protobuf.Duration`", "", "The overall duration for this sleep."
 
 
 
@@ -3007,46 +3105,6 @@ Failure Handling Strategy
 
    "FAIL_IMMEDIATELY", "0", "FAIL_IMMEDIATELY instructs the system to fail as soon as a node fails in the workflow. It&#39;ll automatically abort all currently running nodes and clean up resources before finally marking the workflow executions as failed."
    "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE", "1", "FAIL_AFTER_EXECUTABLE_NODES_COMPLETE instructs the system to make as much progress as it can. The system will not alter the dependencies of the execution graph so any node that depend on the failed node will not be run. Other nodes that will be executed to completion before cleaning up resources and marking the workflow execution as failed."
-
- 
-
- 
-
- 
-
-
-
-
-.. _ref_flyteidl/core/workflow_closure.proto:
-
-flyteidl/core/workflow_closure.proto
-==================================================================
-
-
-
-
-
-.. _ref_flyteidl.core.WorkflowClosure:
-
-WorkflowClosure
-------------------------------------------------------------------
-
-Defines an enclosed package of workflow and tasks it references.
-
-
-
-.. csv-table:: WorkflowClosure type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "workflow", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "required. Workflow template."
-   "tasks", ":ref:`ref_flyteidl.core.TaskTemplate`", "repeated", "optional. A collection of tasks referenced by the workflow. Only needed if the workflow references tasks."
-
-
-
-
-
- 
 
  
 

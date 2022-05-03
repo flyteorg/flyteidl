@@ -27,4 +27,5 @@ type CoreNode struct {
 	WorkflowNode *CoreWorkflowNode `json:"workflow_node,omitempty"`
 	// Information about the branch node to evaluate in this node.
 	BranchNode *CoreBranchNode `json:"branch_node,omitempty"`
+	GateNode *CoreGateNode `json:"gate_node,omitempty"`
 }

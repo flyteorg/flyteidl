@@ -7790,6 +7790,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -8245,6 +8249,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -8699,6 +8707,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -9622,6 +9634,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -10077,6 +10093,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -10531,6 +10551,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -11956,6 +11980,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -12411,6 +12439,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -12865,6 +12897,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -16169,6 +16205,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -16624,6 +16664,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -17078,6 +17122,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18001,6 +18049,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18456,6 +18508,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18910,6 +18966,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -20335,6 +20395,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -20790,6 +20854,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -21244,6 +21312,10 @@ definitions:
                   name: "name"
                   interruptible: true
                   timeout: "timeout"
+                gate_node:
+                  sleep:
+                    duration: "duration"
+                  signal: {}
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -22480,6 +22552,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -22935,6 +23011,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -23389,6 +23469,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -24312,6 +24396,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -24767,6 +24855,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -25221,6 +25313,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -26646,6 +26742,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -27101,6 +27201,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -27555,6 +27659,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -28640,6 +28748,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -29095,6 +29207,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -29549,6 +29665,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -30472,6 +30592,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -30927,6 +31051,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -31381,6 +31509,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -32806,6 +32938,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -33261,6 +33397,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -33715,6 +33855,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -34648,6 +34792,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -35103,6 +35251,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -35557,6 +35709,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -36480,6 +36636,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -36935,6 +37095,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -37389,6 +37553,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -38814,6 +38982,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -39269,6 +39441,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -39723,6 +39899,10 @@ definitions:
                     name: "name"
                     interruptible: true
                     timeout: "timeout"
+                  gate_node:
+                    sleep:
+                      duration: "duration"
+                    signal: {}
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -41621,6 +41801,10 @@ definitions:
             name: "name"
             interruptible: true
             timeout: "timeout"
+          gate_node:
+            sleep:
+              duration: "duration"
+            signal: {}
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -42076,6 +42260,10 @@ definitions:
             name: "name"
             interruptible: true
             timeout: "timeout"
+          gate_node:
+            sleep:
+              duration: "duration"
+            signal: {}
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -42530,6 +42718,10 @@ definitions:
             name: "name"
             interruptible: true
             timeout: "timeout"
+          gate_node:
+            sleep:
+              duration: "duration"
+            signal: {}
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -43480,6 +43672,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -43935,6 +44131,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -44389,6 +44589,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -45312,6 +45516,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -45767,6 +45975,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -46221,6 +46433,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -47646,6 +47862,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -48101,6 +48321,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -48555,6 +48779,10 @@ definitions:
               name: "name"
               interruptible: true
               timeout: "timeout"
+            gate_node:
+              sleep:
+                duration: "duration"
+              signal: {}
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -49298,6 +49526,20 @@ definitions:
       kind: {}
       message: "message"
       error_uri: "error_uri"
+  coreGateNode:
+    type: "object"
+    properties:
+      signal:
+        title: "TODO hamersaw - document"
+        $ref: "#/definitions/coreSignalConditional"
+      sleep:
+        title: "TODO hamersaw - document"
+        $ref: "#/definitions/coreSleepConditional"
+    title: "TODO hamersaw - document"
+    example:
+      sleep:
+        duration: "duration"
+      signal: {}
   coreIOStrategy:
     type: "object"
     properties:
@@ -49847,6 +50089,9 @@ definitions:
       branch_node:
         description: "Information about the branch node to evaluate in this node."
         $ref: "#/definitions/coreBranchNode"
+      gate_node:
+        title: "TODO hamersaw - document"
+        $ref: "#/definitions/coreGateNode"
     description: "A Workflow graph Node. One unit of execution in the graph. Each\
       \ node can be linked to a Task, a Workflow or a branch\nnode."
     example:
@@ -49932,6 +50177,10 @@ definitions:
         name: "name"
         interruptible: true
         timeout: "timeout"
+      gate_node:
+        sleep:
+          duration: "duration"
+        signal: {}
       upstream_node_ids:
       - "upstream_node_ids"
       - "upstream_node_ids"
@@ -51189,6 +51438,9 @@ definitions:
         group_version: "group_version"
         key: "key"
         group: "group"
+  coreSignalConditional:
+    type: "object"
+    title: "TODO hamersaw - document"
   coreSimpleType:
     type: "string"
     description: "Define a set of simple types."
@@ -51204,6 +51456,15 @@ definitions:
     - "ERROR"
     - "STRUCT"
     default: "NONE"
+  coreSleepConditional:
+    type: "object"
+    properties:
+      duration:
+        type: "string"
+        description: "The overall duration for this sleep."
+    title: "TODO hamersaw - document"
+    example:
+      duration: "duration"
   coreSql:
     type: "object"
     properties:
@@ -52724,6 +52985,10 @@ definitions:
           name: "name"
           interruptible: true
           timeout: "timeout"
+        gate_node:
+          sleep:
+            duration: "duration"
+          signal: {}
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -53179,6 +53444,10 @@ definitions:
           name: "name"
           interruptible: true
           timeout: "timeout"
+        gate_node:
+          sleep:
+            duration: "duration"
+          signal: {}
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -53633,6 +53902,10 @@ definitions:
           name: "name"
           interruptible: true
           timeout: "timeout"
+        gate_node:
+          sleep:
+            duration: "duration"
+          signal: {}
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -54866,6 +55139,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -55321,6 +55598,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -55775,6 +56056,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -56698,6 +56983,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -57153,6 +57442,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -57607,6 +57900,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -59032,6 +59329,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -59487,6 +59788,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -59941,6 +60246,10 @@ definitions:
                 name: "name"
                 interruptible: true
                 timeout: "timeout"
+              gate_node:
+                sleep:
+                  duration: "duration"
+                signal: {}
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"

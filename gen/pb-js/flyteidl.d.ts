@@ -1061,6 +1061,165 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a SignalConditional. */
+        interface ISignalConditional {
+        }
+
+        /** Represents a SignalConditional. */
+        class SignalConditional implements ISignalConditional {
+
+            /**
+             * Constructs a new SignalConditional.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ISignalConditional);
+
+            /**
+             * Creates a new SignalConditional instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SignalConditional instance
+             */
+            public static create(properties?: flyteidl.core.ISignalConditional): flyteidl.core.SignalConditional;
+
+            /**
+             * Encodes the specified SignalConditional message. Does not implicitly {@link flyteidl.core.SignalConditional.verify|verify} messages.
+             * @param message SignalConditional message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ISignalConditional, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SignalConditional message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SignalConditional
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.SignalConditional;
+
+            /**
+             * Verifies a SignalConditional message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SleepConditional. */
+        interface ISleepConditional {
+
+            /** SleepConditional duration */
+            duration?: (google.protobuf.IDuration|null);
+        }
+
+        /** Represents a SleepConditional. */
+        class SleepConditional implements ISleepConditional {
+
+            /**
+             * Constructs a new SleepConditional.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ISleepConditional);
+
+            /** SleepConditional duration. */
+            public duration?: (google.protobuf.IDuration|null);
+
+            /**
+             * Creates a new SleepConditional instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SleepConditional instance
+             */
+            public static create(properties?: flyteidl.core.ISleepConditional): flyteidl.core.SleepConditional;
+
+            /**
+             * Encodes the specified SleepConditional message. Does not implicitly {@link flyteidl.core.SleepConditional.verify|verify} messages.
+             * @param message SleepConditional message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ISleepConditional, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SleepConditional message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SleepConditional
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.SleepConditional;
+
+            /**
+             * Verifies a SleepConditional message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GateNode. */
+        interface IGateNode {
+
+            /** GateNode signal */
+            signal?: (flyteidl.core.ISignalConditional|null);
+
+            /** GateNode sleep */
+            sleep?: (flyteidl.core.ISleepConditional|null);
+        }
+
+        /** Represents a GateNode. */
+        class GateNode implements IGateNode {
+
+            /**
+             * Constructs a new GateNode.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IGateNode);
+
+            /** GateNode signal. */
+            public signal?: (flyteidl.core.ISignalConditional|null);
+
+            /** GateNode sleep. */
+            public sleep?: (flyteidl.core.ISleepConditional|null);
+
+            /** GateNode conditional. */
+            public conditional?: ("signal"|"sleep");
+
+            /**
+             * Creates a new GateNode instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GateNode instance
+             */
+            public static create(properties?: flyteidl.core.IGateNode): flyteidl.core.GateNode;
+
+            /**
+             * Encodes the specified GateNode message. Does not implicitly {@link flyteidl.core.GateNode.verify|verify} messages.
+             * @param message GateNode message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IGateNode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GateNode message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GateNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.GateNode;
+
+            /**
+             * Verifies a GateNode message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a NodeMetadata. */
         interface INodeMetadata {
 
@@ -1218,6 +1377,9 @@ export namespace flyteidl {
 
             /** Node branchNode */
             branchNode?: (flyteidl.core.IBranchNode|null);
+
+            /** Node gateNode */
+            gateNode?: (flyteidl.core.IGateNode|null);
         }
 
         /** Represents a Node. */
@@ -1253,8 +1415,11 @@ export namespace flyteidl {
             /** Node branchNode. */
             public branchNode?: (flyteidl.core.IBranchNode|null);
 
+            /** Node gateNode. */
+            public gateNode?: (flyteidl.core.IGateNode|null);
+
             /** Node target. */
-            public target?: ("taskNode"|"workflowNode"|"branchNode");
+            public target?: ("taskNode"|"workflowNode"|"branchNode"|"gateNode");
 
             /**
              * Creates a new Node instance using the specified properties.

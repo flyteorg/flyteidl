@@ -68,6 +68,27 @@ message WorkflowNode {
     }
 }
 
+// TODO hamersaw - document
+message SignalConditional {
+}
+
+// TODO hamersaw - document
+message SleepConditional {
+    // The overall duration for this sleep.
+    google.protobuf.Duration duration = 4;
+}
+
+// TODO hamersaw - document
+message GateNode {
+    oneof conditional {
+        // TODO hamersaw - document
+        SignalConditional signal = 2;
+
+        // TODO hamersaw - document
+        SleepConditional sleep = 1;
+    }
+}
+
 // Defines extra information about the Node.
 message NodeMetadata {
     // A friendly name for the Node
@@ -129,6 +150,9 @@ message Node {
 
         // Information about the branch node to evaluate in this node.
         BranchNode branch_node = 8;
+
+        // TODO hamersaw - document
+        GateNode gate_node = 9;
     }
 }
 

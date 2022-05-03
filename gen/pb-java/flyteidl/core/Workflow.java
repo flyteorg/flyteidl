@@ -5341,6 +5341,2141 @@ public final class Workflow {
 
   }
 
+  public interface SignalConditionalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.SignalConditional)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * TODO hamersaw - document
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.SignalConditional}
+   */
+  public  static final class SignalConditional extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.SignalConditional)
+      SignalConditionalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignalConditional.newBuilder() to construct.
+    private SignalConditional(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignalConditional() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignalConditional(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Workflow.SignalConditional.class, flyteidl.core.Workflow.SignalConditional.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Workflow.SignalConditional)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Workflow.SignalConditional other = (flyteidl.core.Workflow.SignalConditional) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Workflow.SignalConditional prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.SignalConditional}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.SignalConditional)
+        flyteidl.core.Workflow.SignalConditionalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Workflow.SignalConditional.class, flyteidl.core.Workflow.SignalConditional.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Workflow.SignalConditional.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SignalConditional getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SignalConditional build() {
+        flyteidl.core.Workflow.SignalConditional result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SignalConditional buildPartial() {
+        flyteidl.core.Workflow.SignalConditional result = new flyteidl.core.Workflow.SignalConditional(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Workflow.SignalConditional) {
+          return mergeFrom((flyteidl.core.Workflow.SignalConditional)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Workflow.SignalConditional other) {
+        if (other == flyteidl.core.Workflow.SignalConditional.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Workflow.SignalConditional parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Workflow.SignalConditional) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.SignalConditional)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.SignalConditional)
+    private static final flyteidl.core.Workflow.SignalConditional DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SignalConditional();
+    }
+
+    public static flyteidl.core.Workflow.SignalConditional getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignalConditional>
+        PARSER = new com.google.protobuf.AbstractParser<SignalConditional>() {
+      @java.lang.Override
+      public SignalConditional parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignalConditional(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignalConditional> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignalConditional> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Workflow.SignalConditional getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SleepConditionalOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.SleepConditional)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    boolean hasDuration();
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    com.google.protobuf.Duration getDuration();
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+  }
+  /**
+   * <pre>
+   * TODO hamersaw - document
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.SleepConditional}
+   */
+  public  static final class SleepConditional extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.SleepConditional)
+      SleepConditionalOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SleepConditional.newBuilder() to construct.
+    private SleepConditional(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SleepConditional() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SleepConditional(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 34: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (duration_ != null) {
+                subBuilder = duration_.toBuilder();
+              }
+              duration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(duration_);
+                duration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Workflow.SleepConditional.class, flyteidl.core.Workflow.SleepConditional.Builder.class);
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 4;
+    private com.google.protobuf.Duration duration_;
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    public com.google.protobuf.Duration getDuration() {
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+    }
+    /**
+     * <pre>
+     * The overall duration for this sleep.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 4;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+      return getDuration();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (duration_ != null) {
+        output.writeMessage(4, getDuration());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getDuration());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Workflow.SleepConditional)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Workflow.SleepConditional other = (flyteidl.core.Workflow.SleepConditional) obj;
+
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration()
+            .equals(other.getDuration())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Workflow.SleepConditional prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.SleepConditional}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.SleepConditional)
+        flyteidl.core.Workflow.SleepConditionalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Workflow.SleepConditional.class, flyteidl.core.Workflow.SleepConditional.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Workflow.SleepConditional.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (durationBuilder_ == null) {
+          duration_ = null;
+        } else {
+          duration_ = null;
+          durationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SleepConditional getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SleepConditional build() {
+        flyteidl.core.Workflow.SleepConditional result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.SleepConditional buildPartial() {
+        flyteidl.core.Workflow.SleepConditional result = new flyteidl.core.Workflow.SleepConditional(this);
+        if (durationBuilder_ == null) {
+          result.duration_ = duration_;
+        } else {
+          result.duration_ = durationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Workflow.SleepConditional) {
+          return mergeFrom((flyteidl.core.Workflow.SleepConditional)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Workflow.SleepConditional other) {
+        if (other == flyteidl.core.Workflow.SleepConditional.getDefaultInstance()) return this;
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Workflow.SleepConditional parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Workflow.SleepConditional) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.Duration duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> durationBuilder_;
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public boolean hasDuration() {
+        return durationBuilder_ != null || duration_ != null;
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public com.google.protobuf.Duration getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+          onChanged();
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public Builder setDuration(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+          onChanged();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public Builder mergeDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (duration_ != null) {
+            duration_ =
+              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+          } else {
+            duration_ = value;
+          }
+          onChanged();
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public Builder clearDuration() {
+        if (durationBuilder_ == null) {
+          duration_ = null;
+          onChanged();
+        } else {
+          duration_ = null;
+          durationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public com.google.protobuf.Duration.Builder getDurationBuilder() {
+        
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       * <pre>
+       * The overall duration for this sleep.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getDuration(),
+                  getParentForChildren(),
+                  isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.SleepConditional)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.SleepConditional)
+    private static final flyteidl.core.Workflow.SleepConditional DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SleepConditional();
+    }
+
+    public static flyteidl.core.Workflow.SleepConditional getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SleepConditional>
+        PARSER = new com.google.protobuf.AbstractParser<SleepConditional>() {
+      @java.lang.Override
+      public SleepConditional parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SleepConditional(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SleepConditional> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SleepConditional> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Workflow.SleepConditional getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GateNodeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.GateNode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    boolean hasSignal();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    flyteidl.core.Workflow.SignalConditional getSignal();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder();
+
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    boolean hasSleep();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    flyteidl.core.Workflow.SleepConditional getSleep();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder();
+
+    public flyteidl.core.Workflow.GateNode.ConditionalCase getConditionalCase();
+  }
+  /**
+   * <pre>
+   * TODO hamersaw - document
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.GateNode}
+   */
+  public  static final class GateNode extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.GateNode)
+      GateNodeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GateNode.newBuilder() to construct.
+    private GateNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GateNode() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GateNode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.Workflow.SleepConditional.Builder subBuilder = null;
+              if (conditionalCase_ == 1) {
+                subBuilder = ((flyteidl.core.Workflow.SleepConditional) conditional_).toBuilder();
+              }
+              conditional_ =
+                  input.readMessage(flyteidl.core.Workflow.SleepConditional.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Workflow.SleepConditional) conditional_);
+                conditional_ = subBuilder.buildPartial();
+              }
+              conditionalCase_ = 1;
+              break;
+            }
+            case 18: {
+              flyteidl.core.Workflow.SignalConditional.Builder subBuilder = null;
+              if (conditionalCase_ == 2) {
+                subBuilder = ((flyteidl.core.Workflow.SignalConditional) conditional_).toBuilder();
+              }
+              conditional_ =
+                  input.readMessage(flyteidl.core.Workflow.SignalConditional.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Workflow.SignalConditional) conditional_);
+                conditional_ = subBuilder.buildPartial();
+              }
+              conditionalCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_GateNode_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_GateNode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Workflow.GateNode.class, flyteidl.core.Workflow.GateNode.Builder.class);
+    }
+
+    private int conditionalCase_ = 0;
+    private java.lang.Object conditional_;
+    public enum ConditionalCase
+        implements com.google.protobuf.Internal.EnumLite {
+      SIGNAL(2),
+      SLEEP(1),
+      CONDITIONAL_NOT_SET(0);
+      private final int value;
+      private ConditionalCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ConditionalCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ConditionalCase forNumber(int value) {
+        switch (value) {
+          case 2: return SIGNAL;
+          case 1: return SLEEP;
+          case 0: return CONDITIONAL_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ConditionalCase
+    getConditionalCase() {
+      return ConditionalCase.forNumber(
+          conditionalCase_);
+    }
+
+    public static final int SIGNAL_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    public boolean hasSignal() {
+      return conditionalCase_ == 2;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    public flyteidl.core.Workflow.SignalConditional getSignal() {
+      if (conditionalCase_ == 2) {
+         return (flyteidl.core.Workflow.SignalConditional) conditional_;
+      }
+      return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     */
+    public flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder() {
+      if (conditionalCase_ == 2) {
+         return (flyteidl.core.Workflow.SignalConditional) conditional_;
+      }
+      return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+    }
+
+    public static final int SLEEP_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    public boolean hasSleep() {
+      return conditionalCase_ == 1;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    public flyteidl.core.Workflow.SleepConditional getSleep() {
+      if (conditionalCase_ == 1) {
+         return (flyteidl.core.Workflow.SleepConditional) conditional_;
+      }
+      return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     */
+    public flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder() {
+      if (conditionalCase_ == 1) {
+         return (flyteidl.core.Workflow.SleepConditional) conditional_;
+      }
+      return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (conditionalCase_ == 1) {
+        output.writeMessage(1, (flyteidl.core.Workflow.SleepConditional) conditional_);
+      }
+      if (conditionalCase_ == 2) {
+        output.writeMessage(2, (flyteidl.core.Workflow.SignalConditional) conditional_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (conditionalCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (flyteidl.core.Workflow.SleepConditional) conditional_);
+      }
+      if (conditionalCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (flyteidl.core.Workflow.SignalConditional) conditional_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Workflow.GateNode)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Workflow.GateNode other = (flyteidl.core.Workflow.GateNode) obj;
+
+      if (!getConditionalCase().equals(other.getConditionalCase())) return false;
+      switch (conditionalCase_) {
+        case 2:
+          if (!getSignal()
+              .equals(other.getSignal())) return false;
+          break;
+        case 1:
+          if (!getSleep()
+              .equals(other.getSleep())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (conditionalCase_) {
+        case 2:
+          hash = (37 * hash) + SIGNAL_FIELD_NUMBER;
+          hash = (53 * hash) + getSignal().hashCode();
+          break;
+        case 1:
+          hash = (37 * hash) + SLEEP_FIELD_NUMBER;
+          hash = (53 * hash) + getSleep().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.GateNode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.GateNode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.GateNode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Workflow.GateNode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.GateNode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.GateNode)
+        flyteidl.core.Workflow.GateNodeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_GateNode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_GateNode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Workflow.GateNode.class, flyteidl.core.Workflow.GateNode.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Workflow.GateNode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        conditionalCase_ = 0;
+        conditional_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_GateNode_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.GateNode getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.GateNode build() {
+        flyteidl.core.Workflow.GateNode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.GateNode buildPartial() {
+        flyteidl.core.Workflow.GateNode result = new flyteidl.core.Workflow.GateNode(this);
+        if (conditionalCase_ == 2) {
+          if (signalBuilder_ == null) {
+            result.conditional_ = conditional_;
+          } else {
+            result.conditional_ = signalBuilder_.build();
+          }
+        }
+        if (conditionalCase_ == 1) {
+          if (sleepBuilder_ == null) {
+            result.conditional_ = conditional_;
+          } else {
+            result.conditional_ = sleepBuilder_.build();
+          }
+        }
+        result.conditionalCase_ = conditionalCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Workflow.GateNode) {
+          return mergeFrom((flyteidl.core.Workflow.GateNode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Workflow.GateNode other) {
+        if (other == flyteidl.core.Workflow.GateNode.getDefaultInstance()) return this;
+        switch (other.getConditionalCase()) {
+          case SIGNAL: {
+            mergeSignal(other.getSignal());
+            break;
+          }
+          case SLEEP: {
+            mergeSleep(other.getSleep());
+            break;
+          }
+          case CONDITIONAL_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Workflow.GateNode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Workflow.GateNode) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int conditionalCase_ = 0;
+      private java.lang.Object conditional_;
+      public ConditionalCase
+          getConditionalCase() {
+        return ConditionalCase.forNumber(
+            conditionalCase_);
+      }
+
+      public Builder clearConditional() {
+        conditionalCase_ = 0;
+        conditional_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder> signalBuilder_;
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public boolean hasSignal() {
+        return conditionalCase_ == 2;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public flyteidl.core.Workflow.SignalConditional getSignal() {
+        if (signalBuilder_ == null) {
+          if (conditionalCase_ == 2) {
+            return (flyteidl.core.Workflow.SignalConditional) conditional_;
+          }
+          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+        } else {
+          if (conditionalCase_ == 2) {
+            return signalBuilder_.getMessage();
+          }
+          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public Builder setSignal(flyteidl.core.Workflow.SignalConditional value) {
+        if (signalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          conditional_ = value;
+          onChanged();
+        } else {
+          signalBuilder_.setMessage(value);
+        }
+        conditionalCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public Builder setSignal(
+          flyteidl.core.Workflow.SignalConditional.Builder builderForValue) {
+        if (signalBuilder_ == null) {
+          conditional_ = builderForValue.build();
+          onChanged();
+        } else {
+          signalBuilder_.setMessage(builderForValue.build());
+        }
+        conditionalCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public Builder mergeSignal(flyteidl.core.Workflow.SignalConditional value) {
+        if (signalBuilder_ == null) {
+          if (conditionalCase_ == 2 &&
+              conditional_ != flyteidl.core.Workflow.SignalConditional.getDefaultInstance()) {
+            conditional_ = flyteidl.core.Workflow.SignalConditional.newBuilder((flyteidl.core.Workflow.SignalConditional) conditional_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            conditional_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionalCase_ == 2) {
+            signalBuilder_.mergeFrom(value);
+          }
+          signalBuilder_.setMessage(value);
+        }
+        conditionalCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public Builder clearSignal() {
+        if (signalBuilder_ == null) {
+          if (conditionalCase_ == 2) {
+            conditionalCase_ = 0;
+            conditional_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionalCase_ == 2) {
+            conditionalCase_ = 0;
+            conditional_ = null;
+          }
+          signalBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public flyteidl.core.Workflow.SignalConditional.Builder getSignalBuilder() {
+        return getSignalFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      public flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder() {
+        if ((conditionalCase_ == 2) && (signalBuilder_ != null)) {
+          return signalBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionalCase_ == 2) {
+            return (flyteidl.core.Workflow.SignalConditional) conditional_;
+          }
+          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder> 
+          getSignalFieldBuilder() {
+        if (signalBuilder_ == null) {
+          if (!(conditionalCase_ == 2)) {
+            conditional_ = flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+          }
+          signalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder>(
+                  (flyteidl.core.Workflow.SignalConditional) conditional_,
+                  getParentForChildren(),
+                  isClean());
+          conditional_ = null;
+        }
+        conditionalCase_ = 2;
+        onChanged();;
+        return signalBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder> sleepBuilder_;
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public boolean hasSleep() {
+        return conditionalCase_ == 1;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public flyteidl.core.Workflow.SleepConditional getSleep() {
+        if (sleepBuilder_ == null) {
+          if (conditionalCase_ == 1) {
+            return (flyteidl.core.Workflow.SleepConditional) conditional_;
+          }
+          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+        } else {
+          if (conditionalCase_ == 1) {
+            return sleepBuilder_.getMessage();
+          }
+          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public Builder setSleep(flyteidl.core.Workflow.SleepConditional value) {
+        if (sleepBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          conditional_ = value;
+          onChanged();
+        } else {
+          sleepBuilder_.setMessage(value);
+        }
+        conditionalCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public Builder setSleep(
+          flyteidl.core.Workflow.SleepConditional.Builder builderForValue) {
+        if (sleepBuilder_ == null) {
+          conditional_ = builderForValue.build();
+          onChanged();
+        } else {
+          sleepBuilder_.setMessage(builderForValue.build());
+        }
+        conditionalCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public Builder mergeSleep(flyteidl.core.Workflow.SleepConditional value) {
+        if (sleepBuilder_ == null) {
+          if (conditionalCase_ == 1 &&
+              conditional_ != flyteidl.core.Workflow.SleepConditional.getDefaultInstance()) {
+            conditional_ = flyteidl.core.Workflow.SleepConditional.newBuilder((flyteidl.core.Workflow.SleepConditional) conditional_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            conditional_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionalCase_ == 1) {
+            sleepBuilder_.mergeFrom(value);
+          }
+          sleepBuilder_.setMessage(value);
+        }
+        conditionalCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public Builder clearSleep() {
+        if (sleepBuilder_ == null) {
+          if (conditionalCase_ == 1) {
+            conditionalCase_ = 0;
+            conditional_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionalCase_ == 1) {
+            conditionalCase_ = 0;
+            conditional_ = null;
+          }
+          sleepBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public flyteidl.core.Workflow.SleepConditional.Builder getSleepBuilder() {
+        return getSleepFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      public flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder() {
+        if ((conditionalCase_ == 1) && (sleepBuilder_ != null)) {
+          return sleepBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionalCase_ == 1) {
+            return (flyteidl.core.Workflow.SleepConditional) conditional_;
+          }
+          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder> 
+          getSleepFieldBuilder() {
+        if (sleepBuilder_ == null) {
+          if (!(conditionalCase_ == 1)) {
+            conditional_ = flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+          }
+          sleepBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder>(
+                  (flyteidl.core.Workflow.SleepConditional) conditional_,
+                  getParentForChildren(),
+                  isClean());
+          conditional_ = null;
+        }
+        conditionalCase_ = 1;
+        onChanged();;
+        return sleepBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.GateNode)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.GateNode)
+    private static final flyteidl.core.Workflow.GateNode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.GateNode();
+    }
+
+    public static flyteidl.core.Workflow.GateNode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GateNode>
+        PARSER = new com.google.protobuf.AbstractParser<GateNode>() {
+      @java.lang.Override
+      public GateNode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GateNode(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GateNode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GateNode> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Workflow.GateNode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NodeMetadataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.NodeMetadata)
       com.google.protobuf.MessageOrBuilder {
@@ -7624,6 +9759,31 @@ public final class Workflow {
      */
     flyteidl.core.Workflow.BranchNodeOrBuilder getBranchNodeOrBuilder();
 
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    boolean hasGateNode();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    flyteidl.core.Workflow.GateNode getGateNode();
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    flyteidl.core.Workflow.GateNodeOrBuilder getGateNodeOrBuilder();
+
     public flyteidl.core.Workflow.Node.TargetCase getTargetCase();
   }
   /**
@@ -7762,6 +9922,20 @@ public final class Workflow {
               targetCase_ = 8;
               break;
             }
+            case 74: {
+              flyteidl.core.Workflow.GateNode.Builder subBuilder = null;
+              if (targetCase_ == 9) {
+                subBuilder = ((flyteidl.core.Workflow.GateNode) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(flyteidl.core.Workflow.GateNode.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Workflow.GateNode) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 9;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7811,6 +9985,7 @@ public final class Workflow {
       TASK_NODE(6),
       WORKFLOW_NODE(7),
       BRANCH_NODE(8),
+      GATE_NODE(9),
       TARGET_NOT_SET(0);
       private final int value;
       private TargetCase(int value) {
@@ -7829,6 +10004,7 @@ public final class Workflow {
           case 6: return TASK_NODE;
           case 7: return WORKFLOW_NODE;
           case 8: return BRANCH_NODE;
+          case 9: return GATE_NODE;
           case 0: return TARGET_NOT_SET;
           default: return null;
         }
@@ -8213,6 +10389,44 @@ public final class Workflow {
       return flyteidl.core.Workflow.BranchNode.getDefaultInstance();
     }
 
+    public static final int GATE_NODE_FIELD_NUMBER = 9;
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    public boolean hasGateNode() {
+      return targetCase_ == 9;
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    public flyteidl.core.Workflow.GateNode getGateNode() {
+      if (targetCase_ == 9) {
+         return (flyteidl.core.Workflow.GateNode) target_;
+      }
+      return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * TODO hamersaw - document
+     * </pre>
+     *
+     * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+     */
+    public flyteidl.core.Workflow.GateNodeOrBuilder getGateNodeOrBuilder() {
+      if (targetCase_ == 9) {
+         return (flyteidl.core.Workflow.GateNode) target_;
+      }
+      return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8250,6 +10464,9 @@ public final class Workflow {
       }
       if (targetCase_ == 8) {
         output.writeMessage(8, (flyteidl.core.Workflow.BranchNode) target_);
+      }
+      if (targetCase_ == 9) {
+        output.writeMessage(9, (flyteidl.core.Workflow.GateNode) target_);
       }
       unknownFields.writeTo(output);
     }
@@ -8295,6 +10512,10 @@ public final class Workflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, (flyteidl.core.Workflow.BranchNode) target_);
       }
+      if (targetCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (flyteidl.core.Workflow.GateNode) target_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8336,6 +10557,10 @@ public final class Workflow {
         case 8:
           if (!getBranchNode()
               .equals(other.getBranchNode())) return false;
+          break;
+        case 9:
+          if (!getGateNode()
+              .equals(other.getGateNode())) return false;
           break;
         case 0:
         default:
@@ -8381,6 +10606,10 @@ public final class Workflow {
         case 8:
           hash = (37 * hash) + BRANCH_NODE_FIELD_NUMBER;
           hash = (53 * hash) + getBranchNode().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + GATE_NODE_FIELD_NUMBER;
+          hash = (53 * hash) + getGateNode().hashCode();
           break;
         case 0:
         default:
@@ -8627,6 +10856,13 @@ public final class Workflow {
             result.target_ = branchNodeBuilder_.build();
           }
         }
+        if (targetCase_ == 9) {
+          if (gateNodeBuilder_ == null) {
+            result.target_ = target_;
+          } else {
+            result.target_ = gateNodeBuilder_.build();
+          }
+        }
         result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -8757,6 +10993,10 @@ public final class Workflow {
           }
           case BRANCH_NODE: {
             mergeBranchNode(other.getBranchNode());
+            break;
+          }
+          case GATE_NODE: {
+            mergeGateNode(other.getGateNode());
             break;
           }
           case TARGET_NOT_SET: {
@@ -10395,6 +12635,178 @@ public final class Workflow {
         targetCase_ = 8;
         onChanged();;
         return branchNodeBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.GateNode, flyteidl.core.Workflow.GateNode.Builder, flyteidl.core.Workflow.GateNodeOrBuilder> gateNodeBuilder_;
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public boolean hasGateNode() {
+        return targetCase_ == 9;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public flyteidl.core.Workflow.GateNode getGateNode() {
+        if (gateNodeBuilder_ == null) {
+          if (targetCase_ == 9) {
+            return (flyteidl.core.Workflow.GateNode) target_;
+          }
+          return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+        } else {
+          if (targetCase_ == 9) {
+            return gateNodeBuilder_.getMessage();
+          }
+          return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public Builder setGateNode(flyteidl.core.Workflow.GateNode value) {
+        if (gateNodeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          target_ = value;
+          onChanged();
+        } else {
+          gateNodeBuilder_.setMessage(value);
+        }
+        targetCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public Builder setGateNode(
+          flyteidl.core.Workflow.GateNode.Builder builderForValue) {
+        if (gateNodeBuilder_ == null) {
+          target_ = builderForValue.build();
+          onChanged();
+        } else {
+          gateNodeBuilder_.setMessage(builderForValue.build());
+        }
+        targetCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public Builder mergeGateNode(flyteidl.core.Workflow.GateNode value) {
+        if (gateNodeBuilder_ == null) {
+          if (targetCase_ == 9 &&
+              target_ != flyteidl.core.Workflow.GateNode.getDefaultInstance()) {
+            target_ = flyteidl.core.Workflow.GateNode.newBuilder((flyteidl.core.Workflow.GateNode) target_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            target_ = value;
+          }
+          onChanged();
+        } else {
+          if (targetCase_ == 9) {
+            gateNodeBuilder_.mergeFrom(value);
+          }
+          gateNodeBuilder_.setMessage(value);
+        }
+        targetCase_ = 9;
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public Builder clearGateNode() {
+        if (gateNodeBuilder_ == null) {
+          if (targetCase_ == 9) {
+            targetCase_ = 0;
+            target_ = null;
+            onChanged();
+          }
+        } else {
+          if (targetCase_ == 9) {
+            targetCase_ = 0;
+            target_ = null;
+          }
+          gateNodeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public flyteidl.core.Workflow.GateNode.Builder getGateNodeBuilder() {
+        return getGateNodeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      public flyteidl.core.Workflow.GateNodeOrBuilder getGateNodeOrBuilder() {
+        if ((targetCase_ == 9) && (gateNodeBuilder_ != null)) {
+          return gateNodeBuilder_.getMessageOrBuilder();
+        } else {
+          if (targetCase_ == 9) {
+            return (flyteidl.core.Workflow.GateNode) target_;
+          }
+          return flyteidl.core.Workflow.GateNode.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * TODO hamersaw - document
+       * </pre>
+       *
+       * <code>.flyteidl.core.GateNode gate_node = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.GateNode, flyteidl.core.Workflow.GateNode.Builder, flyteidl.core.Workflow.GateNodeOrBuilder> 
+          getGateNodeFieldBuilder() {
+        if (gateNodeBuilder_ == null) {
+          if (!(targetCase_ == 9)) {
+            target_ = flyteidl.core.Workflow.GateNode.getDefaultInstance();
+          }
+          gateNodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Workflow.GateNode, flyteidl.core.Workflow.GateNode.Builder, flyteidl.core.Workflow.GateNodeOrBuilder>(
+                  (flyteidl.core.Workflow.GateNode) target_,
+                  getParentForChildren(),
+                  isClean());
+          target_ = null;
+        }
+        targetCase_ = 9;
+        onChanged();;
+        return gateNodeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15449,6 +17861,21 @@ public final class Workflow {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_WorkflowNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_SignalConditional_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_SignalConditional_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_SleepConditional_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_SleepConditional_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_GateNode_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_GateNode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_NodeMetadata_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -15515,40 +17942,46 @@ public final class Workflow {
       "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
       "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
       "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001" +
-      "(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Du" +
-      "ration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core." +
-      "RetryStrategy\022\027\n\rinterruptible\030\006 \001(\010H\000B\025" +
-      "\n\023interruptible_value\"#\n\005Alias\022\013\n\003var\030\001 " +
-      "\001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022" +
-      "-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.NodeMe" +
-      "tadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.B" +
-      "inding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016out" +
-      "put_aliases\030\005 \003(\0132\024.flyteidl.core.Alias\022" +
-      ",\n\ttask_node\030\006 \001(\0132\027.flyteidl.core.TaskN" +
-      "odeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyteidl." +
-      "core.WorkflowNodeH\000\0220\n\013branch_node\030\010 \001(\013" +
-      "2\031.flyteidl.core.BranchNodeH\000B\010\n\006target\"" +
-      "\347\001\n\020WorkflowMetadata\022;\n\022quality_of_servi" +
-      "ce\030\001 \001(\0132\037.flyteidl.core.QualityOfServic" +
-      "e\022C\n\non_failure\030\002 \001(\0162/.flyteidl.core.Wo" +
-      "rkflowMetadata.OnFailurePolicy\"Q\n\017OnFail" +
-      "urePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_" +
-      "AFTER_EXECUTABLE_NODES_COMPLETE\020\001\"1\n\030Wor" +
-      "kflowMetadataDefaults\022\025\n\rinterruptible\030\001" +
-      " \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031." +
-      "flyteidl.core.Identifier\0221\n\010metadata\030\002 \001" +
-      "(\0132\037.flyteidl.core.WorkflowMetadata\0220\n\ti" +
-      "nterface\030\003 \001(\0132\035.flyteidl.core.TypedInte" +
-      "rface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.Nod" +
-      "e\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bindi" +
-      "ng\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core" +
-      ".Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyte" +
-      "idl.core.WorkflowMetadataDefaults\"@\n\021Tas" +
-      "kNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyt" +
-      "eidl.core.ResourcesB6Z4github.com/flyteo" +
-      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
-      "to3"
+      "\n\treference\"\023\n\021SignalConditional\"?\n\020Slee" +
+      "pConditional\022+\n\010duration\030\004 \001(\0132\031.google." +
+      "protobuf.Duration\"\177\n\010GateNode\0222\n\006signal\030" +
+      "\002 \001(\0132 .flyteidl.core.SignalConditionalH" +
+      "\000\0220\n\005sleep\030\001 \001(\0132\037.flyteidl.core.SleepCo" +
+      "nditionalH\000B\r\n\013conditional\"\247\001\n\014NodeMetad" +
+      "ata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.goo" +
+      "gle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034" +
+      ".flyteidl.core.RetryStrategy\022\027\n\rinterrup" +
+      "tible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005" +
+      "Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004No" +
+      "de\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyte" +
+      "idl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026." +
+      "flyteidl.core.Binding\022\031\n\021upstream_node_i" +
+      "ds\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyte" +
+      "idl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyt" +
+      "eidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007 " +
+      "\001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013br" +
+      "anch_node\030\010 \001(\0132\031.flyteidl.core.BranchNo" +
+      "deH\000\022,\n\tgate_node\030\t \001(\0132\027.flyteidl.core." +
+      "GateNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMetadat" +
+      "a\022;\n\022quality_of_service\030\001 \001(\0132\037.flyteidl" +
+      ".core.QualityOfService\022C\n\non_failure\030\002 \001" +
+      "(\0162/.flyteidl.core.WorkflowMetadata.OnFa" +
+      "ilurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_I" +
+      "MMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NO" +
+      "DES_COMPLETE\020\001\"1\n\030WorkflowMetadataDefaul" +
+      "ts\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTe" +
+      "mplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident" +
+      "ifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core." +
+      "WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035.fl" +
+      "yteidl.core.TypedInterface\022\"\n\005nodes\030\004 \003(" +
+      "\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132" +
+      "\026.flyteidl.core.Binding\022)\n\014failure_node\030" +
+      "\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadata_d" +
+      "efaults\030\007 \001(\0132\'.flyteidl.core.WorkflowMe" +
+      "tadataDefaults\"@\n\021TaskNodeOverrides\022+\n\tr" +
+      "esources\030\001 \001(\0132\030.flyteidl.core.Resources" +
+      "B6Z4github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15601,44 +18034,62 @@ public final class Workflow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowNode_descriptor,
         new java.lang.String[] { "LaunchplanRef", "SubWorkflowRef", "Reference", });
-    internal_static_flyteidl_core_NodeMetadata_descriptor =
+    internal_static_flyteidl_core_SignalConditional_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_core_SignalConditional_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_SignalConditional_descriptor,
+        new java.lang.String[] { });
+    internal_static_flyteidl_core_SleepConditional_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_core_SleepConditional_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_SleepConditional_descriptor,
+        new java.lang.String[] { "Duration", });
+    internal_static_flyteidl_core_GateNode_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_flyteidl_core_GateNode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_GateNode_descriptor,
+        new java.lang.String[] { "Signal", "Sleep", "Conditional", });
+    internal_static_flyteidl_core_NodeMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
         new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "InterruptibleValue", });
     internal_static_flyteidl_core_Alias_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Alias_descriptor,
         new java.lang.String[] { "Var", "Alias", });
     internal_static_flyteidl_core_Node_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Node_descriptor,
-        new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "Target", });
+        new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "GateNode", "Target", });
     internal_static_flyteidl_core_WorkflowMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
         new java.lang.String[] { "QualityOfService", "OnFailure", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor,
         new java.lang.String[] { "Interruptible", });
     internal_static_flyteidl_core_WorkflowTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowTemplate_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Interface", "Nodes", "Outputs", "FailureNode", "MetadataDefaults", });
     internal_static_flyteidl_core_TaskNodeOverrides_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,

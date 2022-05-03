@@ -2514,6 +2514,365 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowNode;
         })();
 
+        core.SignalConditional = (function() {
+
+            /**
+             * Properties of a SignalConditional.
+             * @memberof flyteidl.core
+             * @interface ISignalConditional
+             */
+
+            /**
+             * Constructs a new SignalConditional.
+             * @memberof flyteidl.core
+             * @classdesc Represents a SignalConditional.
+             * @implements ISignalConditional
+             * @constructor
+             * @param {flyteidl.core.ISignalConditional=} [properties] Properties to set
+             */
+            function SignalConditional(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new SignalConditional instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.SignalConditional
+             * @static
+             * @param {flyteidl.core.ISignalConditional=} [properties] Properties to set
+             * @returns {flyteidl.core.SignalConditional} SignalConditional instance
+             */
+            SignalConditional.create = function create(properties) {
+                return new SignalConditional(properties);
+            };
+
+            /**
+             * Encodes the specified SignalConditional message. Does not implicitly {@link flyteidl.core.SignalConditional.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.SignalConditional
+             * @static
+             * @param {flyteidl.core.ISignalConditional} message SignalConditional message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SignalConditional.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a SignalConditional message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.SignalConditional
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.SignalConditional} SignalConditional
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SignalConditional.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.SignalConditional();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SignalConditional message.
+             * @function verify
+             * @memberof flyteidl.core.SignalConditional
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SignalConditional.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return SignalConditional;
+        })();
+
+        core.SleepConditional = (function() {
+
+            /**
+             * Properties of a SleepConditional.
+             * @memberof flyteidl.core
+             * @interface ISleepConditional
+             * @property {google.protobuf.IDuration|null} [duration] SleepConditional duration
+             */
+
+            /**
+             * Constructs a new SleepConditional.
+             * @memberof flyteidl.core
+             * @classdesc Represents a SleepConditional.
+             * @implements ISleepConditional
+             * @constructor
+             * @param {flyteidl.core.ISleepConditional=} [properties] Properties to set
+             */
+            function SleepConditional(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SleepConditional duration.
+             * @member {google.protobuf.IDuration|null|undefined} duration
+             * @memberof flyteidl.core.SleepConditional
+             * @instance
+             */
+            SleepConditional.prototype.duration = null;
+
+            /**
+             * Creates a new SleepConditional instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.SleepConditional
+             * @static
+             * @param {flyteidl.core.ISleepConditional=} [properties] Properties to set
+             * @returns {flyteidl.core.SleepConditional} SleepConditional instance
+             */
+            SleepConditional.create = function create(properties) {
+                return new SleepConditional(properties);
+            };
+
+            /**
+             * Encodes the specified SleepConditional message. Does not implicitly {@link flyteidl.core.SleepConditional.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.SleepConditional
+             * @static
+             * @param {flyteidl.core.ISleepConditional} message SleepConditional message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SleepConditional.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.duration != null && message.hasOwnProperty("duration"))
+                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SleepConditional message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.SleepConditional
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.SleepConditional} SleepConditional
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SleepConditional.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.SleepConditional();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 4:
+                        message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SleepConditional message.
+             * @function verify
+             * @memberof flyteidl.core.SleepConditional
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SleepConditional.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.duration != null && message.hasOwnProperty("duration")) {
+                    let error = $root.google.protobuf.Duration.verify(message.duration);
+                    if (error)
+                        return "duration." + error;
+                }
+                return null;
+            };
+
+            return SleepConditional;
+        })();
+
+        core.GateNode = (function() {
+
+            /**
+             * Properties of a GateNode.
+             * @memberof flyteidl.core
+             * @interface IGateNode
+             * @property {flyteidl.core.ISignalConditional|null} [signal] GateNode signal
+             * @property {flyteidl.core.ISleepConditional|null} [sleep] GateNode sleep
+             */
+
+            /**
+             * Constructs a new GateNode.
+             * @memberof flyteidl.core
+             * @classdesc Represents a GateNode.
+             * @implements IGateNode
+             * @constructor
+             * @param {flyteidl.core.IGateNode=} [properties] Properties to set
+             */
+            function GateNode(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * GateNode signal.
+             * @member {flyteidl.core.ISignalConditional|null|undefined} signal
+             * @memberof flyteidl.core.GateNode
+             * @instance
+             */
+            GateNode.prototype.signal = null;
+
+            /**
+             * GateNode sleep.
+             * @member {flyteidl.core.ISleepConditional|null|undefined} sleep
+             * @memberof flyteidl.core.GateNode
+             * @instance
+             */
+            GateNode.prototype.sleep = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * GateNode conditional.
+             * @member {"signal"|"sleep"|undefined} conditional
+             * @memberof flyteidl.core.GateNode
+             * @instance
+             */
+            Object.defineProperty(GateNode.prototype, "conditional", {
+                get: $util.oneOfGetter($oneOfFields = ["signal", "sleep"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new GateNode instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.GateNode
+             * @static
+             * @param {flyteidl.core.IGateNode=} [properties] Properties to set
+             * @returns {flyteidl.core.GateNode} GateNode instance
+             */
+            GateNode.create = function create(properties) {
+                return new GateNode(properties);
+            };
+
+            /**
+             * Encodes the specified GateNode message. Does not implicitly {@link flyteidl.core.GateNode.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.GateNode
+             * @static
+             * @param {flyteidl.core.IGateNode} message GateNode message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GateNode.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sleep != null && message.hasOwnProperty("sleep"))
+                    $root.flyteidl.core.SleepConditional.encode(message.sleep, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.signal != null && message.hasOwnProperty("signal"))
+                    $root.flyteidl.core.SignalConditional.encode(message.signal, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a GateNode message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.GateNode
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.GateNode} GateNode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GateNode.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.GateNode();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 2:
+                        message.signal = $root.flyteidl.core.SignalConditional.decode(reader, reader.uint32());
+                        break;
+                    case 1:
+                        message.sleep = $root.flyteidl.core.SleepConditional.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a GateNode message.
+             * @function verify
+             * @memberof flyteidl.core.GateNode
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GateNode.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.signal != null && message.hasOwnProperty("signal")) {
+                    properties.conditional = 1;
+                    {
+                        let error = $root.flyteidl.core.SignalConditional.verify(message.signal);
+                        if (error)
+                            return "signal." + error;
+                    }
+                }
+                if (message.sleep != null && message.hasOwnProperty("sleep")) {
+                    if (properties.conditional === 1)
+                        return "conditional: multiple values";
+                    properties.conditional = 1;
+                    {
+                        let error = $root.flyteidl.core.SleepConditional.verify(message.sleep);
+                        if (error)
+                            return "sleep." + error;
+                    }
+                }
+                return null;
+            };
+
+            return GateNode;
+        })();
+
         core.NodeMetadata = (function() {
 
             /**
@@ -2837,6 +3196,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.ITaskNode|null} [taskNode] Node taskNode
              * @property {flyteidl.core.IWorkflowNode|null} [workflowNode] Node workflowNode
              * @property {flyteidl.core.IBranchNode|null} [branchNode] Node branchNode
+             * @property {flyteidl.core.IGateNode|null} [gateNode] Node gateNode
              */
 
             /**
@@ -2921,17 +3281,25 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             Node.prototype.branchNode = null;
 
+            /**
+             * Node gateNode.
+             * @member {flyteidl.core.IGateNode|null|undefined} gateNode
+             * @memberof flyteidl.core.Node
+             * @instance
+             */
+            Node.prototype.gateNode = null;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
             /**
              * Node target.
-             * @member {"taskNode"|"workflowNode"|"branchNode"|undefined} target
+             * @member {"taskNode"|"workflowNode"|"branchNode"|"gateNode"|undefined} target
              * @memberof flyteidl.core.Node
              * @instance
              */
             Object.defineProperty(Node.prototype, "target", {
-                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode"]),
+                get: $util.oneOfGetter($oneOfFields = ["taskNode", "workflowNode", "branchNode", "gateNode"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -2978,6 +3346,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.WorkflowNode.encode(message.workflowNode, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.branchNode != null && message.hasOwnProperty("branchNode"))
                     $root.flyteidl.core.BranchNode.encode(message.branchNode, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.gateNode != null && message.hasOwnProperty("gateNode"))
+                    $root.flyteidl.core.GateNode.encode(message.gateNode, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 return writer;
             };
 
@@ -3028,6 +3398,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 8:
                         message.branchNode = $root.flyteidl.core.BranchNode.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.gateNode = $root.flyteidl.core.GateNode.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3108,6 +3481,16 @@ export const flyteidl = $root.flyteidl = (() => {
                         let error = $root.flyteidl.core.BranchNode.verify(message.branchNode);
                         if (error)
                             return "branchNode." + error;
+                    }
+                }
+                if (message.gateNode != null && message.hasOwnProperty("gateNode")) {
+                    if (properties.target === 1)
+                        return "target: multiple values";
+                    properties.target = 1;
+                    {
+                        let error = $root.flyteidl.core.GateNode.verify(message.gateNode);
+                        if (error)
+                            return "gateNode." + error;
                     }
                 }
                 return null;

@@ -5442,6 +5442,20 @@
       },
       "description": "Represents the error message from the execution."
     },
+    "coreGateNode": {
+      "type": "object",
+      "properties": {
+        "signal": {
+          "$ref": "#/definitions/coreSignalConditional",
+          "title": "TODO hamersaw - document"
+        },
+        "sleep": {
+          "$ref": "#/definitions/coreSleepConditional",
+          "title": "TODO hamersaw - document"
+        }
+      },
+      "title": "TODO hamersaw - document"
+    },
     "coreIOStrategy": {
       "type": "object",
       "properties": {
@@ -5724,6 +5738,10 @@
         "branch_node": {
           "$ref": "#/definitions/coreBranchNode",
           "description": "Information about the branch node to evaluate in this node."
+        },
+        "gate_node": {
+          "$ref": "#/definitions/coreGateNode",
+          "title": "TODO hamersaw - document"
         }
       },
       "description": "A Workflow graph Node. One unit of execution in the graph. Each node can be linked to a Task, a Workflow or a branch\nnode."
@@ -6089,6 +6107,10 @@
       },
       "description": "SecurityContext holds security attributes that apply to tasks."
     },
+    "coreSignalConditional": {
+      "type": "object",
+      "title": "TODO hamersaw - document"
+    },
     "coreSimpleType": {
       "type": "string",
       "enum": [
@@ -6105,6 +6127,16 @@
       ],
       "default": "NONE",
       "description": "Define a set of simple types."
+    },
+    "coreSleepConditional": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "string",
+          "description": "The overall duration for this sleep."
+        }
+      },
+      "title": "TODO hamersaw - document"
     },
     "coreSql": {
       "type": "object",
