@@ -33366,6 +33366,3224 @@ export const flyteidl = $root.flyteidl = (() => {
             return ProjectDomainAttributesDeleteResponse;
         })();
 
+        admin.SettingsCollection = (function() {
+
+            /**
+             * Properties of a SettingsCollection.
+             * @memberof flyteidl.admin
+             * @interface ISettingsCollection
+             * @property {flyteidl.admin.IMatchingAttributes|null} [taskResourceSettings] SettingsCollection taskResourceSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [clusterResourceSettings] SettingsCollection clusterResourceSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [executionQueueSettings] SettingsCollection executionQueueSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [executionClusterLabelSettings] SettingsCollection executionClusterLabelSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [qualityOfServiceSettings] SettingsCollection qualityOfServiceSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [pluginOverrideSettings] SettingsCollection pluginOverrideSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [workflowExecutionSettings] SettingsCollection workflowExecutionSettings
+             * @property {flyteidl.admin.IMatchingAttributes|null} [clusterAssignmentSettings] SettingsCollection clusterAssignmentSettings
+             */
+
+            /**
+             * Constructs a new SettingsCollection.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsCollection.
+             * @implements ISettingsCollection
+             * @constructor
+             * @param {flyteidl.admin.ISettingsCollection=} [properties] Properties to set
+             */
+            function SettingsCollection(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SettingsCollection taskResourceSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} taskResourceSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.taskResourceSettings = null;
+
+            /**
+             * SettingsCollection clusterResourceSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} clusterResourceSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.clusterResourceSettings = null;
+
+            /**
+             * SettingsCollection executionQueueSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} executionQueueSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.executionQueueSettings = null;
+
+            /**
+             * SettingsCollection executionClusterLabelSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} executionClusterLabelSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.executionClusterLabelSettings = null;
+
+            /**
+             * SettingsCollection qualityOfServiceSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} qualityOfServiceSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.qualityOfServiceSettings = null;
+
+            /**
+             * SettingsCollection pluginOverrideSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} pluginOverrideSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.pluginOverrideSettings = null;
+
+            /**
+             * SettingsCollection workflowExecutionSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} workflowExecutionSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.workflowExecutionSettings = null;
+
+            /**
+             * SettingsCollection clusterAssignmentSettings.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} clusterAssignmentSettings
+             * @memberof flyteidl.admin.SettingsCollection
+             * @instance
+             */
+            SettingsCollection.prototype.clusterAssignmentSettings = null;
+
+            /**
+             * Creates a new SettingsCollection instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsCollection
+             * @static
+             * @param {flyteidl.admin.ISettingsCollection=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsCollection} SettingsCollection instance
+             */
+            SettingsCollection.create = function create(properties) {
+                return new SettingsCollection(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsCollection message. Does not implicitly {@link flyteidl.admin.SettingsCollection.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsCollection
+             * @static
+             * @param {flyteidl.admin.ISettingsCollection} message SettingsCollection message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsCollection.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskResourceSettings != null && message.hasOwnProperty("taskResourceSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.taskResourceSettings, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.clusterResourceSettings != null && message.hasOwnProperty("clusterResourceSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.clusterResourceSettings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.executionQueueSettings != null && message.hasOwnProperty("executionQueueSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.executionQueueSettings, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.executionClusterLabelSettings != null && message.hasOwnProperty("executionClusterLabelSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.executionClusterLabelSettings, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.qualityOfServiceSettings != null && message.hasOwnProperty("qualityOfServiceSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.qualityOfServiceSettings, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.pluginOverrideSettings != null && message.hasOwnProperty("pluginOverrideSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.pluginOverrideSettings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.workflowExecutionSettings, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.clusterAssignmentSettings != null && message.hasOwnProperty("clusterAssignmentSettings"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.clusterAssignmentSettings, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsCollection message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsCollection
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsCollection} SettingsCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsCollection.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsCollection();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskResourceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.clusterResourceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.executionQueueSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.executionClusterLabelSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.qualityOfServiceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.pluginOverrideSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.workflowExecutionSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.clusterAssignmentSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsCollection message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsCollection
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsCollection.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskResourceSettings != null && message.hasOwnProperty("taskResourceSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.taskResourceSettings);
+                    if (error)
+                        return "taskResourceSettings." + error;
+                }
+                if (message.clusterResourceSettings != null && message.hasOwnProperty("clusterResourceSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.clusterResourceSettings);
+                    if (error)
+                        return "clusterResourceSettings." + error;
+                }
+                if (message.executionQueueSettings != null && message.hasOwnProperty("executionQueueSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.executionQueueSettings);
+                    if (error)
+                        return "executionQueueSettings." + error;
+                }
+                if (message.executionClusterLabelSettings != null && message.hasOwnProperty("executionClusterLabelSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.executionClusterLabelSettings);
+                    if (error)
+                        return "executionClusterLabelSettings." + error;
+                }
+                if (message.qualityOfServiceSettings != null && message.hasOwnProperty("qualityOfServiceSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.qualityOfServiceSettings);
+                    if (error)
+                        return "qualityOfServiceSettings." + error;
+                }
+                if (message.pluginOverrideSettings != null && message.hasOwnProperty("pluginOverrideSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.pluginOverrideSettings);
+                    if (error)
+                        return "pluginOverrideSettings." + error;
+                }
+                if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.workflowExecutionSettings);
+                    if (error)
+                        return "workflowExecutionSettings." + error;
+                }
+                if (message.clusterAssignmentSettings != null && message.hasOwnProperty("clusterAssignmentSettings")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.clusterAssignmentSettings);
+                    if (error)
+                        return "clusterAssignmentSettings." + error;
+                }
+                return null;
+            };
+
+            return SettingsCollection;
+        })();
+
+        admin.Settings = (function() {
+
+            /**
+             * Properties of a Settings.
+             * @memberof flyteidl.admin
+             * @interface ISettings
+             * @property {flyteidl.admin.ISettingsCollection|null} [global] Settings global
+             * @property {Object.<string,flyteidl.admin.IProjectSettings>|null} [projectSettings] Settings projectSettings
+             */
+
+            /**
+             * Constructs a new Settings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Settings.
+             * @implements ISettings
+             * @constructor
+             * @param {flyteidl.admin.ISettings=} [properties] Properties to set
+             */
+            function Settings(properties) {
+                this.projectSettings = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Settings global.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} global
+             * @memberof flyteidl.admin.Settings
+             * @instance
+             */
+            Settings.prototype.global = null;
+
+            /**
+             * Settings projectSettings.
+             * @member {Object.<string,flyteidl.admin.IProjectSettings>} projectSettings
+             * @memberof flyteidl.admin.Settings
+             * @instance
+             */
+            Settings.prototype.projectSettings = $util.emptyObject;
+
+            /**
+             * Creates a new Settings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {flyteidl.admin.ISettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.Settings} Settings instance
+             */
+            Settings.create = function create(properties) {
+                return new Settings(properties);
+            };
+
+            /**
+             * Encodes the specified Settings message. Does not implicitly {@link flyteidl.admin.Settings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {flyteidl.admin.ISettings} message Settings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Settings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.global != null && message.hasOwnProperty("global"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.global, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectSettings != null && message.hasOwnProperty("projectSettings"))
+                    for (let keys = Object.keys(message.projectSettings), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.admin.ProjectSettings.encode(message.projectSettings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a Settings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Settings} Settings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Settings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Settings(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.global = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        reader.skip().pos++;
+                        if (message.projectSettings === $util.emptyObject)
+                            message.projectSettings = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.projectSettings[key] = $root.flyteidl.admin.ProjectSettings.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Settings message.
+             * @function verify
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Settings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.global != null && message.hasOwnProperty("global")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.global);
+                    if (error)
+                        return "global." + error;
+                }
+                if (message.projectSettings != null && message.hasOwnProperty("projectSettings")) {
+                    if (!$util.isObject(message.projectSettings))
+                        return "projectSettings: object expected";
+                    let key = Object.keys(message.projectSettings);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.admin.ProjectSettings.verify(message.projectSettings[key[i]]);
+                        if (error)
+                            return "projectSettings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Settings;
+        })();
+
+        admin.ProjectSettings = (function() {
+
+            /**
+             * Properties of a ProjectSettings.
+             * @memberof flyteidl.admin
+             * @interface IProjectSettings
+             * @property {string|null} [project] ProjectSettings project
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] ProjectSettings settings
+             * @property {Object.<string,flyteidl.admin.IDomainSettings>|null} [domainSettings] ProjectSettings domainSettings
+             */
+
+            /**
+             * Constructs a new ProjectSettings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectSettings.
+             * @implements IProjectSettings
+             * @constructor
+             * @param {flyteidl.admin.IProjectSettings=} [properties] Properties to set
+             */
+            function ProjectSettings(properties) {
+                this.domainSettings = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectSettings project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectSettings
+             * @instance
+             */
+            ProjectSettings.prototype.project = "";
+
+            /**
+             * ProjectSettings settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.ProjectSettings
+             * @instance
+             */
+            ProjectSettings.prototype.settings = null;
+
+            /**
+             * ProjectSettings domainSettings.
+             * @member {Object.<string,flyteidl.admin.IDomainSettings>} domainSettings
+             * @memberof flyteidl.admin.ProjectSettings
+             * @instance
+             */
+            ProjectSettings.prototype.domainSettings = $util.emptyObject;
+
+            /**
+             * Creates a new ProjectSettings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectSettings
+             * @static
+             * @param {flyteidl.admin.IProjectSettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectSettings} ProjectSettings instance
+             */
+            ProjectSettings.create = function create(properties) {
+                return new ProjectSettings(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectSettings message. Does not implicitly {@link flyteidl.admin.ProjectSettings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectSettings
+             * @static
+             * @param {flyteidl.admin.IProjectSettings} message ProjectSettings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectSettings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainSettings != null && message.hasOwnProperty("domainSettings"))
+                    for (let keys = Object.keys(message.domainSettings), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.admin.DomainSettings.encode(message.domainSettings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectSettings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectSettings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectSettings} ProjectSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectSettings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectSettings(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        reader.skip().pos++;
+                        if (message.domainSettings === $util.emptyObject)
+                            message.domainSettings = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.domainSettings[key] = $root.flyteidl.admin.DomainSettings.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectSettings message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectSettings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectSettings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                if (message.domainSettings != null && message.hasOwnProperty("domainSettings")) {
+                    if (!$util.isObject(message.domainSettings))
+                        return "domainSettings: object expected";
+                    let key = Object.keys(message.domainSettings);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.admin.DomainSettings.verify(message.domainSettings[key[i]]);
+                        if (error)
+                            return "domainSettings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return ProjectSettings;
+        })();
+
+        admin.DomainSettings = (function() {
+
+            /**
+             * Properties of a DomainSettings.
+             * @memberof flyteidl.admin
+             * @interface IDomainSettings
+             * @property {string|null} [domain] DomainSettings domain
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] DomainSettings settings
+             * @property {Object.<string,flyteidl.admin.IWorkflowSettings>|null} [workflowSettings] DomainSettings workflowSettings
+             */
+
+            /**
+             * Constructs a new DomainSettings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a DomainSettings.
+             * @implements IDomainSettings
+             * @constructor
+             * @param {flyteidl.admin.IDomainSettings=} [properties] Properties to set
+             */
+            function DomainSettings(properties) {
+                this.workflowSettings = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DomainSettings domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.DomainSettings
+             * @instance
+             */
+            DomainSettings.prototype.domain = "";
+
+            /**
+             * DomainSettings settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.DomainSettings
+             * @instance
+             */
+            DomainSettings.prototype.settings = null;
+
+            /**
+             * DomainSettings workflowSettings.
+             * @member {Object.<string,flyteidl.admin.IWorkflowSettings>} workflowSettings
+             * @memberof flyteidl.admin.DomainSettings
+             * @instance
+             */
+            DomainSettings.prototype.workflowSettings = $util.emptyObject;
+
+            /**
+             * Creates a new DomainSettings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.DomainSettings
+             * @static
+             * @param {flyteidl.admin.IDomainSettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.DomainSettings} DomainSettings instance
+             */
+            DomainSettings.create = function create(properties) {
+                return new DomainSettings(properties);
+            };
+
+            /**
+             * Encodes the specified DomainSettings message. Does not implicitly {@link flyteidl.admin.DomainSettings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.DomainSettings
+             * @static
+             * @param {flyteidl.admin.IDomainSettings} message DomainSettings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DomainSettings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.domain);
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.workflowSettings != null && message.hasOwnProperty("workflowSettings"))
+                    for (let keys = Object.keys(message.workflowSettings), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.admin.WorkflowSettings.encode(message.workflowSettings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a DomainSettings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.DomainSettings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.DomainSettings} DomainSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DomainSettings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.DomainSettings(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.domain = reader.string();
+                        break;
+                    case 2:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        reader.skip().pos++;
+                        if (message.workflowSettings === $util.emptyObject)
+                            message.workflowSettings = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.workflowSettings[key] = $root.flyteidl.admin.WorkflowSettings.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DomainSettings message.
+             * @function verify
+             * @memberof flyteidl.admin.DomainSettings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DomainSettings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                if (message.workflowSettings != null && message.hasOwnProperty("workflowSettings")) {
+                    if (!$util.isObject(message.workflowSettings))
+                        return "workflowSettings: object expected";
+                    let key = Object.keys(message.workflowSettings);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.admin.WorkflowSettings.verify(message.workflowSettings[key[i]]);
+                        if (error)
+                            return "workflowSettings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return DomainSettings;
+        })();
+
+        admin.WorkflowSettings = (function() {
+
+            /**
+             * Properties of a WorkflowSettings.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowSettings
+             * @property {string|null} [workflow] WorkflowSettings workflow
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] WorkflowSettings settings
+             * @property {Object.<string,flyteidl.admin.ILaunchplanSettings>|null} [launchplanSettings] WorkflowSettings launchplanSettings
+             */
+
+            /**
+             * Constructs a new WorkflowSettings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowSettings.
+             * @implements IWorkflowSettings
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowSettings=} [properties] Properties to set
+             */
+            function WorkflowSettings(properties) {
+                this.launchplanSettings = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowSettings workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @instance
+             */
+            WorkflowSettings.prototype.workflow = "";
+
+            /**
+             * WorkflowSettings settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @instance
+             */
+            WorkflowSettings.prototype.settings = null;
+
+            /**
+             * WorkflowSettings launchplanSettings.
+             * @member {Object.<string,flyteidl.admin.ILaunchplanSettings>} launchplanSettings
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @instance
+             */
+            WorkflowSettings.prototype.launchplanSettings = $util.emptyObject;
+
+            /**
+             * Creates a new WorkflowSettings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @static
+             * @param {flyteidl.admin.IWorkflowSettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowSettings} WorkflowSettings instance
+             */
+            WorkflowSettings.create = function create(properties) {
+                return new WorkflowSettings(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowSettings message. Does not implicitly {@link flyteidl.admin.WorkflowSettings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @static
+             * @param {flyteidl.admin.IWorkflowSettings} message WorkflowSettings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowSettings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.workflow);
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.launchplanSettings != null && message.hasOwnProperty("launchplanSettings"))
+                    for (let keys = Object.keys(message.launchplanSettings), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.admin.LaunchplanSettings.encode(message.launchplanSettings[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowSettings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowSettings} WorkflowSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowSettings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowSettings(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.workflow = reader.string();
+                        break;
+                    case 2:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        reader.skip().pos++;
+                        if (message.launchplanSettings === $util.emptyObject)
+                            message.launchplanSettings = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.launchplanSettings[key] = $root.flyteidl.admin.LaunchplanSettings.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowSettings message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowSettings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowSettings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                if (message.launchplanSettings != null && message.hasOwnProperty("launchplanSettings")) {
+                    if (!$util.isObject(message.launchplanSettings))
+                        return "launchplanSettings: object expected";
+                    let key = Object.keys(message.launchplanSettings);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.admin.LaunchplanSettings.verify(message.launchplanSettings[key[i]]);
+                        if (error)
+                            return "launchplanSettings." + error;
+                    }
+                }
+                return null;
+            };
+
+            return WorkflowSettings;
+        })();
+
+        admin.LaunchplanSettings = (function() {
+
+            /**
+             * Properties of a LaunchplanSettings.
+             * @memberof flyteidl.admin
+             * @interface ILaunchplanSettings
+             * @property {string|null} [launchplan] LaunchplanSettings launchplan
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] LaunchplanSettings settings
+             */
+
+            /**
+             * Constructs a new LaunchplanSettings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchplanSettings.
+             * @implements ILaunchplanSettings
+             * @constructor
+             * @param {flyteidl.admin.ILaunchplanSettings=} [properties] Properties to set
+             */
+            function LaunchplanSettings(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchplanSettings launchplan.
+             * @member {string} launchplan
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @instance
+             */
+            LaunchplanSettings.prototype.launchplan = "";
+
+            /**
+             * LaunchplanSettings settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @instance
+             */
+            LaunchplanSettings.prototype.settings = null;
+
+            /**
+             * Creates a new LaunchplanSettings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @static
+             * @param {flyteidl.admin.ILaunchplanSettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchplanSettings} LaunchplanSettings instance
+             */
+            LaunchplanSettings.create = function create(properties) {
+                return new LaunchplanSettings(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchplanSettings message. Does not implicitly {@link flyteidl.admin.LaunchplanSettings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @static
+             * @param {flyteidl.admin.ILaunchplanSettings} message LaunchplanSettings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchplanSettings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.launchplan != null && message.hasOwnProperty("launchplan"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.launchplan);
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchplanSettings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchplanSettings} LaunchplanSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchplanSettings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchplanSettings();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.launchplan = reader.string();
+                        break;
+                    case 2:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchplanSettings message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchplanSettings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchplanSettings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.launchplan != null && message.hasOwnProperty("launchplan"))
+                    if (!$util.isString(message.launchplan))
+                        return "launchplan: string expected";
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                return null;
+            };
+
+            return LaunchplanSettings;
+        })();
+
+        admin.GlobalLevel = (function() {
+
+            /**
+             * Properties of a GlobalLevel.
+             * @memberof flyteidl.admin
+             * @interface IGlobalLevel
+             */
+
+            /**
+             * Constructs a new GlobalLevel.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a GlobalLevel.
+             * @implements IGlobalLevel
+             * @constructor
+             * @param {flyteidl.admin.IGlobalLevel=} [properties] Properties to set
+             */
+            function GlobalLevel(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new GlobalLevel instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.GlobalLevel
+             * @static
+             * @param {flyteidl.admin.IGlobalLevel=} [properties] Properties to set
+             * @returns {flyteidl.admin.GlobalLevel} GlobalLevel instance
+             */
+            GlobalLevel.create = function create(properties) {
+                return new GlobalLevel(properties);
+            };
+
+            /**
+             * Encodes the specified GlobalLevel message. Does not implicitly {@link flyteidl.admin.GlobalLevel.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.GlobalLevel
+             * @static
+             * @param {flyteidl.admin.IGlobalLevel} message GlobalLevel message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GlobalLevel.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a GlobalLevel message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.GlobalLevel
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.GlobalLevel} GlobalLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GlobalLevel.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GlobalLevel();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a GlobalLevel message.
+             * @function verify
+             * @memberof flyteidl.admin.GlobalLevel
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GlobalLevel.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return GlobalLevel;
+        })();
+
+        admin.ProjectLevel = (function() {
+
+            /**
+             * Properties of a ProjectLevel.
+             * @memberof flyteidl.admin
+             * @interface IProjectLevel
+             * @property {string|null} [project] ProjectLevel project
+             */
+
+            /**
+             * Constructs a new ProjectLevel.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectLevel.
+             * @implements IProjectLevel
+             * @constructor
+             * @param {flyteidl.admin.IProjectLevel=} [properties] Properties to set
+             */
+            function ProjectLevel(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectLevel project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectLevel
+             * @instance
+             */
+            ProjectLevel.prototype.project = "";
+
+            /**
+             * Creates a new ProjectLevel instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectLevel
+             * @static
+             * @param {flyteidl.admin.IProjectLevel=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectLevel} ProjectLevel instance
+             */
+            ProjectLevel.create = function create(properties) {
+                return new ProjectLevel(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectLevel message. Does not implicitly {@link flyteidl.admin.ProjectLevel.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectLevel
+             * @static
+             * @param {flyteidl.admin.IProjectLevel} message ProjectLevel message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectLevel.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectLevel message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectLevel
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectLevel} ProjectLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectLevel.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectLevel();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectLevel message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectLevel
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectLevel.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                return null;
+            };
+
+            return ProjectLevel;
+        })();
+
+        admin.DomainLevel = (function() {
+
+            /**
+             * Properties of a DomainLevel.
+             * @memberof flyteidl.admin
+             * @interface IDomainLevel
+             * @property {string|null} [project] DomainLevel project
+             * @property {string|null} [domain] DomainLevel domain
+             */
+
+            /**
+             * Constructs a new DomainLevel.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a DomainLevel.
+             * @implements IDomainLevel
+             * @constructor
+             * @param {flyteidl.admin.IDomainLevel=} [properties] Properties to set
+             */
+            function DomainLevel(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DomainLevel project.
+             * @member {string} project
+             * @memberof flyteidl.admin.DomainLevel
+             * @instance
+             */
+            DomainLevel.prototype.project = "";
+
+            /**
+             * DomainLevel domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.DomainLevel
+             * @instance
+             */
+            DomainLevel.prototype.domain = "";
+
+            /**
+             * Creates a new DomainLevel instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.DomainLevel
+             * @static
+             * @param {flyteidl.admin.IDomainLevel=} [properties] Properties to set
+             * @returns {flyteidl.admin.DomainLevel} DomainLevel instance
+             */
+            DomainLevel.create = function create(properties) {
+                return new DomainLevel(properties);
+            };
+
+            /**
+             * Encodes the specified DomainLevel message. Does not implicitly {@link flyteidl.admin.DomainLevel.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.DomainLevel
+             * @static
+             * @param {flyteidl.admin.IDomainLevel} message DomainLevel message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DomainLevel.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                return writer;
+            };
+
+            /**
+             * Decodes a DomainLevel message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.DomainLevel
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.DomainLevel} DomainLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DomainLevel.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.DomainLevel();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DomainLevel message.
+             * @function verify
+             * @memberof flyteidl.admin.DomainLevel
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DomainLevel.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                return null;
+            };
+
+            return DomainLevel;
+        })();
+
+        admin.WorkflowLevel = (function() {
+
+            /**
+             * Properties of a WorkflowLevel.
+             * @memberof flyteidl.admin
+             * @interface IWorkflowLevel
+             * @property {string|null} [project] WorkflowLevel project
+             * @property {string|null} [domain] WorkflowLevel domain
+             * @property {string|null} [workflow] WorkflowLevel workflow
+             */
+
+            /**
+             * Constructs a new WorkflowLevel.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a WorkflowLevel.
+             * @implements IWorkflowLevel
+             * @constructor
+             * @param {flyteidl.admin.IWorkflowLevel=} [properties] Properties to set
+             */
+            function WorkflowLevel(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkflowLevel project.
+             * @member {string} project
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @instance
+             */
+            WorkflowLevel.prototype.project = "";
+
+            /**
+             * WorkflowLevel domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @instance
+             */
+            WorkflowLevel.prototype.domain = "";
+
+            /**
+             * WorkflowLevel workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @instance
+             */
+            WorkflowLevel.prototype.workflow = "";
+
+            /**
+             * Creates a new WorkflowLevel instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @static
+             * @param {flyteidl.admin.IWorkflowLevel=} [properties] Properties to set
+             * @returns {flyteidl.admin.WorkflowLevel} WorkflowLevel instance
+             */
+            WorkflowLevel.create = function create(properties) {
+                return new WorkflowLevel(properties);
+            };
+
+            /**
+             * Encodes the specified WorkflowLevel message. Does not implicitly {@link flyteidl.admin.WorkflowLevel.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @static
+             * @param {flyteidl.admin.IWorkflowLevel} message WorkflowLevel message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkflowLevel.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkflowLevel message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.WorkflowLevel} WorkflowLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkflowLevel.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.WorkflowLevel();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkflowLevel message.
+             * @function verify
+             * @memberof flyteidl.admin.WorkflowLevel
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkflowLevel.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                return null;
+            };
+
+            return WorkflowLevel;
+        })();
+
+        admin.LaunchplanLevel = (function() {
+
+            /**
+             * Properties of a LaunchplanLevel.
+             * @memberof flyteidl.admin
+             * @interface ILaunchplanLevel
+             * @property {string|null} [project] LaunchplanLevel project
+             * @property {string|null} [domain] LaunchplanLevel domain
+             * @property {string|null} [workflow] LaunchplanLevel workflow
+             * @property {string|null} [launchplan] LaunchplanLevel launchplan
+             */
+
+            /**
+             * Constructs a new LaunchplanLevel.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchplanLevel.
+             * @implements ILaunchplanLevel
+             * @constructor
+             * @param {flyteidl.admin.ILaunchplanLevel=} [properties] Properties to set
+             */
+            function LaunchplanLevel(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchplanLevel project.
+             * @member {string} project
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @instance
+             */
+            LaunchplanLevel.prototype.project = "";
+
+            /**
+             * LaunchplanLevel domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @instance
+             */
+            LaunchplanLevel.prototype.domain = "";
+
+            /**
+             * LaunchplanLevel workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @instance
+             */
+            LaunchplanLevel.prototype.workflow = "";
+
+            /**
+             * LaunchplanLevel launchplan.
+             * @member {string} launchplan
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @instance
+             */
+            LaunchplanLevel.prototype.launchplan = "";
+
+            /**
+             * Creates a new LaunchplanLevel instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @static
+             * @param {flyteidl.admin.ILaunchplanLevel=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchplanLevel} LaunchplanLevel instance
+             */
+            LaunchplanLevel.create = function create(properties) {
+                return new LaunchplanLevel(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchplanLevel message. Does not implicitly {@link flyteidl.admin.LaunchplanLevel.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @static
+             * @param {flyteidl.admin.ILaunchplanLevel} message LaunchplanLevel message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchplanLevel.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.launchplan != null && message.hasOwnProperty("launchplan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.launchplan);
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchplanLevel message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchplanLevel} LaunchplanLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchplanLevel.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchplanLevel();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    case 4:
+                        message.launchplan = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchplanLevel message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchplanLevel
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchplanLevel.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.launchplan != null && message.hasOwnProperty("launchplan"))
+                    if (!$util.isString(message.launchplan))
+                        return "launchplan: string expected";
+                return null;
+            };
+
+            return LaunchplanLevel;
+        })();
+
+        admin.SettingsUpdateRequest = (function() {
+
+            /**
+             * Properties of a SettingsUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface ISettingsUpdateRequest
+             * @property {flyteidl.admin.IGlobalLevel|null} [globalLevel] SettingsUpdateRequest globalLevel
+             * @property {flyteidl.admin.IProjectLevel|null} [projectLevel] SettingsUpdateRequest projectLevel
+             * @property {flyteidl.admin.IDomainLevel|null} [domainLevel] SettingsUpdateRequest domainLevel
+             * @property {flyteidl.admin.IWorkflowLevel|null} [workflowLevel] SettingsUpdateRequest workflowLevel
+             * @property {flyteidl.admin.ILaunchplanLevel|null} [launchplanLevel] SettingsUpdateRequest launchplanLevel
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] SettingsUpdateRequest settings
+             */
+
+            /**
+             * Constructs a new SettingsUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsUpdateRequest.
+             * @implements ISettingsUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.ISettingsUpdateRequest=} [properties] Properties to set
+             */
+            function SettingsUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SettingsUpdateRequest globalLevel.
+             * @member {flyteidl.admin.IGlobalLevel|null|undefined} globalLevel
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.globalLevel = null;
+
+            /**
+             * SettingsUpdateRequest projectLevel.
+             * @member {flyteidl.admin.IProjectLevel|null|undefined} projectLevel
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.projectLevel = null;
+
+            /**
+             * SettingsUpdateRequest domainLevel.
+             * @member {flyteidl.admin.IDomainLevel|null|undefined} domainLevel
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.domainLevel = null;
+
+            /**
+             * SettingsUpdateRequest workflowLevel.
+             * @member {flyteidl.admin.IWorkflowLevel|null|undefined} workflowLevel
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.workflowLevel = null;
+
+            /**
+             * SettingsUpdateRequest launchplanLevel.
+             * @member {flyteidl.admin.ILaunchplanLevel|null|undefined} launchplanLevel
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.launchplanLevel = null;
+
+            /**
+             * SettingsUpdateRequest settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            SettingsUpdateRequest.prototype.settings = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * SettingsUpdateRequest level.
+             * @member {"globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel"|undefined} level
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @instance
+             */
+            Object.defineProperty(SettingsUpdateRequest.prototype, "level", {
+                get: $util.oneOfGetter($oneOfFields = ["globalLevel", "projectLevel", "domainLevel", "workflowLevel", "launchplanLevel"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new SettingsUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsUpdateRequest} SettingsUpdateRequest instance
+             */
+            SettingsUpdateRequest.create = function create(properties) {
+                return new SettingsUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsUpdateRequest message. Does not implicitly {@link flyteidl.admin.SettingsUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsUpdateRequest} message SettingsUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel"))
+                    $root.flyteidl.admin.GlobalLevel.encode(message.globalLevel, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel"))
+                    $root.flyteidl.admin.ProjectLevel.encode(message.projectLevel, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel"))
+                    $root.flyteidl.admin.DomainLevel.encode(message.domainLevel, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel"))
+                    $root.flyteidl.admin.WorkflowLevel.encode(message.workflowLevel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel"))
+                    $root.flyteidl.admin.LaunchplanLevel.encode(message.launchplanLevel, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsUpdateRequest} SettingsUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.globalLevel = $root.flyteidl.admin.GlobalLevel.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.projectLevel = $root.flyteidl.admin.ProjectLevel.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.domainLevel = $root.flyteidl.admin.DomainLevel.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.workflowLevel = $root.flyteidl.admin.WorkflowLevel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.launchplanLevel = $root.flyteidl.admin.LaunchplanLevel.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel")) {
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.GlobalLevel.verify(message.globalLevel);
+                        if (error)
+                            return "globalLevel." + error;
+                    }
+                }
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.ProjectLevel.verify(message.projectLevel);
+                        if (error)
+                            return "projectLevel." + error;
+                    }
+                }
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.DomainLevel.verify(message.domainLevel);
+                        if (error)
+                            return "domainLevel." + error;
+                    }
+                }
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowLevel.verify(message.workflowLevel);
+                        if (error)
+                            return "workflowLevel." + error;
+                    }
+                }
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.LaunchplanLevel.verify(message.launchplanLevel);
+                        if (error)
+                            return "launchplanLevel." + error;
+                    }
+                }
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                return null;
+            };
+
+            return SettingsUpdateRequest;
+        })();
+
+        admin.FullSettingsUpdateRequest = (function() {
+
+            /**
+             * Properties of a FullSettingsUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface IFullSettingsUpdateRequest
+             * @property {flyteidl.admin.IGlobalLevel|null} [globalLevel] FullSettingsUpdateRequest globalLevel
+             * @property {flyteidl.admin.IProjectLevel|null} [projectLevel] FullSettingsUpdateRequest projectLevel
+             * @property {flyteidl.admin.IDomainLevel|null} [domainLevel] FullSettingsUpdateRequest domainLevel
+             * @property {flyteidl.admin.IWorkflowLevel|null} [workflowLevel] FullSettingsUpdateRequest workflowLevel
+             * @property {flyteidl.admin.ILaunchplanLevel|null} [launchplanLevel] FullSettingsUpdateRequest launchplanLevel
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] FullSettingsUpdateRequest settings
+             */
+
+            /**
+             * Constructs a new FullSettingsUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a FullSettingsUpdateRequest.
+             * @implements IFullSettingsUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.IFullSettingsUpdateRequest=} [properties] Properties to set
+             */
+            function FullSettingsUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FullSettingsUpdateRequest globalLevel.
+             * @member {flyteidl.admin.IGlobalLevel|null|undefined} globalLevel
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.globalLevel = null;
+
+            /**
+             * FullSettingsUpdateRequest projectLevel.
+             * @member {flyteidl.admin.IProjectLevel|null|undefined} projectLevel
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.projectLevel = null;
+
+            /**
+             * FullSettingsUpdateRequest domainLevel.
+             * @member {flyteidl.admin.IDomainLevel|null|undefined} domainLevel
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.domainLevel = null;
+
+            /**
+             * FullSettingsUpdateRequest workflowLevel.
+             * @member {flyteidl.admin.IWorkflowLevel|null|undefined} workflowLevel
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.workflowLevel = null;
+
+            /**
+             * FullSettingsUpdateRequest launchplanLevel.
+             * @member {flyteidl.admin.ILaunchplanLevel|null|undefined} launchplanLevel
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.launchplanLevel = null;
+
+            /**
+             * FullSettingsUpdateRequest settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            FullSettingsUpdateRequest.prototype.settings = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * FullSettingsUpdateRequest level.
+             * @member {"globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel"|undefined} level
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @instance
+             */
+            Object.defineProperty(FullSettingsUpdateRequest.prototype, "level", {
+                get: $util.oneOfGetter($oneOfFields = ["globalLevel", "projectLevel", "domainLevel", "workflowLevel", "launchplanLevel"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new FullSettingsUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IFullSettingsUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.FullSettingsUpdateRequest} FullSettingsUpdateRequest instance
+             */
+            FullSettingsUpdateRequest.create = function create(properties) {
+                return new FullSettingsUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified FullSettingsUpdateRequest message. Does not implicitly {@link flyteidl.admin.FullSettingsUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IFullSettingsUpdateRequest} message FullSettingsUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FullSettingsUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel"))
+                    $root.flyteidl.admin.GlobalLevel.encode(message.globalLevel, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel"))
+                    $root.flyteidl.admin.ProjectLevel.encode(message.projectLevel, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel"))
+                    $root.flyteidl.admin.DomainLevel.encode(message.domainLevel, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel"))
+                    $root.flyteidl.admin.WorkflowLevel.encode(message.workflowLevel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel"))
+                    $root.flyteidl.admin.LaunchplanLevel.encode(message.launchplanLevel, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a FullSettingsUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.FullSettingsUpdateRequest} FullSettingsUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FullSettingsUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FullSettingsUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.globalLevel = $root.flyteidl.admin.GlobalLevel.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.projectLevel = $root.flyteidl.admin.ProjectLevel.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.domainLevel = $root.flyteidl.admin.DomainLevel.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.workflowLevel = $root.flyteidl.admin.WorkflowLevel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.launchplanLevel = $root.flyteidl.admin.LaunchplanLevel.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FullSettingsUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.FullSettingsUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FullSettingsUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel")) {
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.GlobalLevel.verify(message.globalLevel);
+                        if (error)
+                            return "globalLevel." + error;
+                    }
+                }
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.ProjectLevel.verify(message.projectLevel);
+                        if (error)
+                            return "projectLevel." + error;
+                    }
+                }
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.DomainLevel.verify(message.domainLevel);
+                        if (error)
+                            return "domainLevel." + error;
+                    }
+                }
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowLevel.verify(message.workflowLevel);
+                        if (error)
+                            return "workflowLevel." + error;
+                    }
+                }
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.LaunchplanLevel.verify(message.launchplanLevel);
+                        if (error)
+                            return "launchplanLevel." + error;
+                    }
+                }
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                return null;
+            };
+
+            return FullSettingsUpdateRequest;
+        })();
+
+        admin.FullSettingsUpdateResponse = (function() {
+
+            /**
+             * Properties of a FullSettingsUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface IFullSettingsUpdateResponse
+             */
+
+            /**
+             * Constructs a new FullSettingsUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a FullSettingsUpdateResponse.
+             * @implements IFullSettingsUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.IFullSettingsUpdateResponse=} [properties] Properties to set
+             */
+            function FullSettingsUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new FullSettingsUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.FullSettingsUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IFullSettingsUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.FullSettingsUpdateResponse} FullSettingsUpdateResponse instance
+             */
+            FullSettingsUpdateResponse.create = function create(properties) {
+                return new FullSettingsUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified FullSettingsUpdateResponse message. Does not implicitly {@link flyteidl.admin.FullSettingsUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.FullSettingsUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IFullSettingsUpdateResponse} message FullSettingsUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FullSettingsUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a FullSettingsUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.FullSettingsUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.FullSettingsUpdateResponse} FullSettingsUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FullSettingsUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FullSettingsUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FullSettingsUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.FullSettingsUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FullSettingsUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return FullSettingsUpdateResponse;
+        })();
+
+        admin.SettingsGetRequest = (function() {
+
+            /**
+             * Properties of a SettingsGetRequest.
+             * @memberof flyteidl.admin
+             * @interface ISettingsGetRequest
+             * @property {flyteidl.admin.IGlobalLevel|null} [globalLevel] SettingsGetRequest globalLevel
+             * @property {flyteidl.admin.IProjectLevel|null} [projectLevel] SettingsGetRequest projectLevel
+             * @property {flyteidl.admin.IDomainLevel|null} [domainLevel] SettingsGetRequest domainLevel
+             * @property {flyteidl.admin.IWorkflowLevel|null} [workflowLevel] SettingsGetRequest workflowLevel
+             * @property {flyteidl.admin.ILaunchplanLevel|null} [launchplanLevel] SettingsGetRequest launchplanLevel
+             */
+
+            /**
+             * Constructs a new SettingsGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsGetRequest.
+             * @implements ISettingsGetRequest
+             * @constructor
+             * @param {flyteidl.admin.ISettingsGetRequest=} [properties] Properties to set
+             */
+            function SettingsGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SettingsGetRequest globalLevel.
+             * @member {flyteidl.admin.IGlobalLevel|null|undefined} globalLevel
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            SettingsGetRequest.prototype.globalLevel = null;
+
+            /**
+             * SettingsGetRequest projectLevel.
+             * @member {flyteidl.admin.IProjectLevel|null|undefined} projectLevel
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            SettingsGetRequest.prototype.projectLevel = null;
+
+            /**
+             * SettingsGetRequest domainLevel.
+             * @member {flyteidl.admin.IDomainLevel|null|undefined} domainLevel
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            SettingsGetRequest.prototype.domainLevel = null;
+
+            /**
+             * SettingsGetRequest workflowLevel.
+             * @member {flyteidl.admin.IWorkflowLevel|null|undefined} workflowLevel
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            SettingsGetRequest.prototype.workflowLevel = null;
+
+            /**
+             * SettingsGetRequest launchplanLevel.
+             * @member {flyteidl.admin.ILaunchplanLevel|null|undefined} launchplanLevel
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            SettingsGetRequest.prototype.launchplanLevel = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * SettingsGetRequest level.
+             * @member {"globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel"|undefined} level
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @instance
+             */
+            Object.defineProperty(SettingsGetRequest.prototype, "level", {
+                get: $util.oneOfGetter($oneOfFields = ["globalLevel", "projectLevel", "domainLevel", "workflowLevel", "launchplanLevel"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new SettingsGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsGetRequest} SettingsGetRequest instance
+             */
+            SettingsGetRequest.create = function create(properties) {
+                return new SettingsGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsGetRequest message. Does not implicitly {@link flyteidl.admin.SettingsGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsGetRequest} message SettingsGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel"))
+                    $root.flyteidl.admin.GlobalLevel.encode(message.globalLevel, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel"))
+                    $root.flyteidl.admin.ProjectLevel.encode(message.projectLevel, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel"))
+                    $root.flyteidl.admin.DomainLevel.encode(message.domainLevel, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel"))
+                    $root.flyteidl.admin.WorkflowLevel.encode(message.workflowLevel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel"))
+                    $root.flyteidl.admin.LaunchplanLevel.encode(message.launchplanLevel, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsGetRequest} SettingsGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.globalLevel = $root.flyteidl.admin.GlobalLevel.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.projectLevel = $root.flyteidl.admin.ProjectLevel.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.domainLevel = $root.flyteidl.admin.DomainLevel.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.workflowLevel = $root.flyteidl.admin.WorkflowLevel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.launchplanLevel = $root.flyteidl.admin.LaunchplanLevel.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel")) {
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.GlobalLevel.verify(message.globalLevel);
+                        if (error)
+                            return "globalLevel." + error;
+                    }
+                }
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.ProjectLevel.verify(message.projectLevel);
+                        if (error)
+                            return "projectLevel." + error;
+                    }
+                }
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.DomainLevel.verify(message.domainLevel);
+                        if (error)
+                            return "domainLevel." + error;
+                    }
+                }
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowLevel.verify(message.workflowLevel);
+                        if (error)
+                            return "workflowLevel." + error;
+                    }
+                }
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.LaunchplanLevel.verify(message.launchplanLevel);
+                        if (error)
+                            return "launchplanLevel." + error;
+                    }
+                }
+                return null;
+            };
+
+            return SettingsGetRequest;
+        })();
+
+        admin.SettingsGetResponse = (function() {
+
+            /**
+             * Properties of a SettingsGetResponse.
+             * @memberof flyteidl.admin
+             * @interface ISettingsGetResponse
+             * @property {flyteidl.admin.IGlobalLevel|null} [globalLevel] SettingsGetResponse globalLevel
+             * @property {flyteidl.admin.IProjectLevel|null} [projectLevel] SettingsGetResponse projectLevel
+             * @property {flyteidl.admin.IDomainLevel|null} [domainLevel] SettingsGetResponse domainLevel
+             * @property {flyteidl.admin.IWorkflowLevel|null} [workflowLevel] SettingsGetResponse workflowLevel
+             * @property {flyteidl.admin.ILaunchplanLevel|null} [launchplanLevel] SettingsGetResponse launchplanLevel
+             * @property {flyteidl.admin.ISettingsCollection|null} [settings] SettingsGetResponse settings
+             */
+
+            /**
+             * Constructs a new SettingsGetResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsGetResponse.
+             * @implements ISettingsGetResponse
+             * @constructor
+             * @param {flyteidl.admin.ISettingsGetResponse=} [properties] Properties to set
+             */
+            function SettingsGetResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SettingsGetResponse globalLevel.
+             * @member {flyteidl.admin.IGlobalLevel|null|undefined} globalLevel
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.globalLevel = null;
+
+            /**
+             * SettingsGetResponse projectLevel.
+             * @member {flyteidl.admin.IProjectLevel|null|undefined} projectLevel
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.projectLevel = null;
+
+            /**
+             * SettingsGetResponse domainLevel.
+             * @member {flyteidl.admin.IDomainLevel|null|undefined} domainLevel
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.domainLevel = null;
+
+            /**
+             * SettingsGetResponse workflowLevel.
+             * @member {flyteidl.admin.IWorkflowLevel|null|undefined} workflowLevel
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.workflowLevel = null;
+
+            /**
+             * SettingsGetResponse launchplanLevel.
+             * @member {flyteidl.admin.ILaunchplanLevel|null|undefined} launchplanLevel
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.launchplanLevel = null;
+
+            /**
+             * SettingsGetResponse settings.
+             * @member {flyteidl.admin.ISettingsCollection|null|undefined} settings
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            SettingsGetResponse.prototype.settings = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * SettingsGetResponse level.
+             * @member {"globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel"|undefined} level
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @instance
+             */
+            Object.defineProperty(SettingsGetResponse.prototype, "level", {
+                get: $util.oneOfGetter($oneOfFields = ["globalLevel", "projectLevel", "domainLevel", "workflowLevel", "launchplanLevel"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new SettingsGetResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @static
+             * @param {flyteidl.admin.ISettingsGetResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsGetResponse} SettingsGetResponse instance
+             */
+            SettingsGetResponse.create = function create(properties) {
+                return new SettingsGetResponse(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsGetResponse message. Does not implicitly {@link flyteidl.admin.SettingsGetResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @static
+             * @param {flyteidl.admin.ISettingsGetResponse} message SettingsGetResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsGetResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel"))
+                    $root.flyteidl.admin.GlobalLevel.encode(message.globalLevel, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel"))
+                    $root.flyteidl.admin.ProjectLevel.encode(message.projectLevel, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel"))
+                    $root.flyteidl.admin.DomainLevel.encode(message.domainLevel, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel"))
+                    $root.flyteidl.admin.WorkflowLevel.encode(message.workflowLevel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel"))
+                    $root.flyteidl.admin.LaunchplanLevel.encode(message.launchplanLevel, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.SettingsCollection.encode(message.settings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsGetResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsGetResponse} SettingsGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsGetResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsGetResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.globalLevel = $root.flyteidl.admin.GlobalLevel.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.projectLevel = $root.flyteidl.admin.ProjectLevel.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.domainLevel = $root.flyteidl.admin.DomainLevel.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.workflowLevel = $root.flyteidl.admin.WorkflowLevel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.launchplanLevel = $root.flyteidl.admin.LaunchplanLevel.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.settings = $root.flyteidl.admin.SettingsCollection.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsGetResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsGetResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsGetResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel")) {
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.GlobalLevel.verify(message.globalLevel);
+                        if (error)
+                            return "globalLevel." + error;
+                    }
+                }
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.ProjectLevel.verify(message.projectLevel);
+                        if (error)
+                            return "projectLevel." + error;
+                    }
+                }
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.DomainLevel.verify(message.domainLevel);
+                        if (error)
+                            return "domainLevel." + error;
+                    }
+                }
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowLevel.verify(message.workflowLevel);
+                        if (error)
+                            return "workflowLevel." + error;
+                    }
+                }
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.LaunchplanLevel.verify(message.launchplanLevel);
+                        if (error)
+                            return "launchplanLevel." + error;
+                    }
+                }
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.SettingsCollection.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                return null;
+            };
+
+            return SettingsGetResponse;
+        })();
+
+        admin.FullSettingsGetRequest = (function() {
+
+            /**
+             * Properties of a FullSettingsGetRequest.
+             * @memberof flyteidl.admin
+             * @interface IFullSettingsGetRequest
+             */
+
+            /**
+             * Constructs a new FullSettingsGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a FullSettingsGetRequest.
+             * @implements IFullSettingsGetRequest
+             * @constructor
+             * @param {flyteidl.admin.IFullSettingsGetRequest=} [properties] Properties to set
+             */
+            function FullSettingsGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new FullSettingsGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.FullSettingsGetRequest
+             * @static
+             * @param {flyteidl.admin.IFullSettingsGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.FullSettingsGetRequest} FullSettingsGetRequest instance
+             */
+            FullSettingsGetRequest.create = function create(properties) {
+                return new FullSettingsGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified FullSettingsGetRequest message. Does not implicitly {@link flyteidl.admin.FullSettingsGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.FullSettingsGetRequest
+             * @static
+             * @param {flyteidl.admin.IFullSettingsGetRequest} message FullSettingsGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FullSettingsGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a FullSettingsGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.FullSettingsGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.FullSettingsGetRequest} FullSettingsGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FullSettingsGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FullSettingsGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FullSettingsGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.FullSettingsGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FullSettingsGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return FullSettingsGetRequest;
+        })();
+
+        admin.FullSettingsGetResponse = (function() {
+
+            /**
+             * Properties of a FullSettingsGetResponse.
+             * @memberof flyteidl.admin
+             * @interface IFullSettingsGetResponse
+             * @property {flyteidl.admin.ISettings|null} [settings] FullSettingsGetResponse settings
+             */
+
+            /**
+             * Constructs a new FullSettingsGetResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a FullSettingsGetResponse.
+             * @implements IFullSettingsGetResponse
+             * @constructor
+             * @param {flyteidl.admin.IFullSettingsGetResponse=} [properties] Properties to set
+             */
+            function FullSettingsGetResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * FullSettingsGetResponse settings.
+             * @member {flyteidl.admin.ISettings|null|undefined} settings
+             * @memberof flyteidl.admin.FullSettingsGetResponse
+             * @instance
+             */
+            FullSettingsGetResponse.prototype.settings = null;
+
+            /**
+             * Creates a new FullSettingsGetResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.FullSettingsGetResponse
+             * @static
+             * @param {flyteidl.admin.IFullSettingsGetResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.FullSettingsGetResponse} FullSettingsGetResponse instance
+             */
+            FullSettingsGetResponse.create = function create(properties) {
+                return new FullSettingsGetResponse(properties);
+            };
+
+            /**
+             * Encodes the specified FullSettingsGetResponse message. Does not implicitly {@link flyteidl.admin.FullSettingsGetResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.FullSettingsGetResponse
+             * @static
+             * @param {flyteidl.admin.IFullSettingsGetResponse} message FullSettingsGetResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FullSettingsGetResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.Settings.encode(message.settings, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a FullSettingsGetResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.FullSettingsGetResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.FullSettingsGetResponse} FullSettingsGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FullSettingsGetResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FullSettingsGetResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.settings = $root.flyteidl.admin.Settings.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a FullSettingsGetResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.FullSettingsGetResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FullSettingsGetResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.Settings.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
+                return null;
+            };
+
+            return FullSettingsGetResponse;
+        })();
+
+        admin.SettingsDeleteRequest = (function() {
+
+            /**
+             * Properties of a SettingsDeleteRequest.
+             * @memberof flyteidl.admin
+             * @interface ISettingsDeleteRequest
+             * @property {flyteidl.admin.IGlobalLevel|null} [globalLevel] SettingsDeleteRequest globalLevel
+             * @property {flyteidl.admin.IProjectLevel|null} [projectLevel] SettingsDeleteRequest projectLevel
+             * @property {flyteidl.admin.IDomainLevel|null} [domainLevel] SettingsDeleteRequest domainLevel
+             * @property {flyteidl.admin.IWorkflowLevel|null} [workflowLevel] SettingsDeleteRequest workflowLevel
+             * @property {flyteidl.admin.ILaunchplanLevel|null} [launchplanLevel] SettingsDeleteRequest launchplanLevel
+             */
+
+            /**
+             * Constructs a new SettingsDeleteRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsDeleteRequest.
+             * @implements ISettingsDeleteRequest
+             * @constructor
+             * @param {flyteidl.admin.ISettingsDeleteRequest=} [properties] Properties to set
+             */
+            function SettingsDeleteRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SettingsDeleteRequest globalLevel.
+             * @member {flyteidl.admin.IGlobalLevel|null|undefined} globalLevel
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            SettingsDeleteRequest.prototype.globalLevel = null;
+
+            /**
+             * SettingsDeleteRequest projectLevel.
+             * @member {flyteidl.admin.IProjectLevel|null|undefined} projectLevel
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            SettingsDeleteRequest.prototype.projectLevel = null;
+
+            /**
+             * SettingsDeleteRequest domainLevel.
+             * @member {flyteidl.admin.IDomainLevel|null|undefined} domainLevel
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            SettingsDeleteRequest.prototype.domainLevel = null;
+
+            /**
+             * SettingsDeleteRequest workflowLevel.
+             * @member {flyteidl.admin.IWorkflowLevel|null|undefined} workflowLevel
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            SettingsDeleteRequest.prototype.workflowLevel = null;
+
+            /**
+             * SettingsDeleteRequest launchplanLevel.
+             * @member {flyteidl.admin.ILaunchplanLevel|null|undefined} launchplanLevel
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            SettingsDeleteRequest.prototype.launchplanLevel = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * SettingsDeleteRequest level.
+             * @member {"globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel"|undefined} level
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @instance
+             */
+            Object.defineProperty(SettingsDeleteRequest.prototype, "level", {
+                get: $util.oneOfGetter($oneOfFields = ["globalLevel", "projectLevel", "domainLevel", "workflowLevel", "launchplanLevel"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new SettingsDeleteRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsDeleteRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsDeleteRequest} SettingsDeleteRequest instance
+             */
+            SettingsDeleteRequest.create = function create(properties) {
+                return new SettingsDeleteRequest(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsDeleteRequest message. Does not implicitly {@link flyteidl.admin.SettingsDeleteRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @static
+             * @param {flyteidl.admin.ISettingsDeleteRequest} message SettingsDeleteRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsDeleteRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel"))
+                    $root.flyteidl.admin.GlobalLevel.encode(message.globalLevel, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel"))
+                    $root.flyteidl.admin.ProjectLevel.encode(message.projectLevel, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel"))
+                    $root.flyteidl.admin.DomainLevel.encode(message.domainLevel, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel"))
+                    $root.flyteidl.admin.WorkflowLevel.encode(message.workflowLevel, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel"))
+                    $root.flyteidl.admin.LaunchplanLevel.encode(message.launchplanLevel, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsDeleteRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsDeleteRequest} SettingsDeleteRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsDeleteRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsDeleteRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.globalLevel = $root.flyteidl.admin.GlobalLevel.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.projectLevel = $root.flyteidl.admin.ProjectLevel.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.domainLevel = $root.flyteidl.admin.DomainLevel.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.workflowLevel = $root.flyteidl.admin.WorkflowLevel.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.launchplanLevel = $root.flyteidl.admin.LaunchplanLevel.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsDeleteRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsDeleteRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsDeleteRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.globalLevel != null && message.hasOwnProperty("globalLevel")) {
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.GlobalLevel.verify(message.globalLevel);
+                        if (error)
+                            return "globalLevel." + error;
+                    }
+                }
+                if (message.projectLevel != null && message.hasOwnProperty("projectLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.ProjectLevel.verify(message.projectLevel);
+                        if (error)
+                            return "projectLevel." + error;
+                    }
+                }
+                if (message.domainLevel != null && message.hasOwnProperty("domainLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.DomainLevel.verify(message.domainLevel);
+                        if (error)
+                            return "domainLevel." + error;
+                    }
+                }
+                if (message.workflowLevel != null && message.hasOwnProperty("workflowLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.WorkflowLevel.verify(message.workflowLevel);
+                        if (error)
+                            return "workflowLevel." + error;
+                    }
+                }
+                if (message.launchplanLevel != null && message.hasOwnProperty("launchplanLevel")) {
+                    if (properties.level === 1)
+                        return "level: multiple values";
+                    properties.level = 1;
+                    {
+                        let error = $root.flyteidl.admin.LaunchplanLevel.verify(message.launchplanLevel);
+                        if (error)
+                            return "launchplanLevel." + error;
+                    }
+                }
+                return null;
+            };
+
+            return SettingsDeleteRequest;
+        })();
+
+        admin.SettingsDeleteResponse = (function() {
+
+            /**
+             * Properties of a SettingsDeleteResponse.
+             * @memberof flyteidl.admin
+             * @interface ISettingsDeleteResponse
+             */
+
+            /**
+             * Constructs a new SettingsDeleteResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a SettingsDeleteResponse.
+             * @implements ISettingsDeleteResponse
+             * @constructor
+             * @param {flyteidl.admin.ISettingsDeleteResponse=} [properties] Properties to set
+             */
+            function SettingsDeleteResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new SettingsDeleteResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.SettingsDeleteResponse
+             * @static
+             * @param {flyteidl.admin.ISettingsDeleteResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.SettingsDeleteResponse} SettingsDeleteResponse instance
+             */
+            SettingsDeleteResponse.create = function create(properties) {
+                return new SettingsDeleteResponse(properties);
+            };
+
+            /**
+             * Encodes the specified SettingsDeleteResponse message. Does not implicitly {@link flyteidl.admin.SettingsDeleteResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.SettingsDeleteResponse
+             * @static
+             * @param {flyteidl.admin.ISettingsDeleteResponse} message SettingsDeleteResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SettingsDeleteResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a SettingsDeleteResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.SettingsDeleteResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.SettingsDeleteResponse} SettingsDeleteResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SettingsDeleteResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.SettingsDeleteResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a SettingsDeleteResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.SettingsDeleteResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SettingsDeleteResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return SettingsDeleteResponse;
+        })();
+
         admin.TaskCreateRequest = (function() {
 
             /**

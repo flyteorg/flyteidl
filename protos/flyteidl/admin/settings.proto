@@ -1,0 +1,194 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/admin/matchable_resource.proto";
+
+
+// Defines settings collection for flyte resources
+message SettingsCollection {
+  MatchingAttributes task_resource_settings = 1;
+  MatchingAttributes cluster_resource_settings = 2;
+  MatchingAttributes execution_queue_settings = 3;
+  MatchingAttributes execution_cluster_label_settings = 4;
+  MatchingAttributes quality_of_service_settings = 5;
+  MatchingAttributes plugin_override_settings = 6;
+  MatchingAttributes workflow_execution_settings = 7;
+  MatchingAttributes cluster_assignment_settings = 8;
+}
+
+
+// Defines settings at various levels
+// Global : These are global settings which apply if no overrides are defined.
+// Project : These are project level settings which get applied if they exist and no overrides exist at domain level
+// Domain : These are domain level settings which get applied if they exist and no overrides exist at workflow level
+// Workflow : These are workflow level settings which get applied if they exist
+// Launchplan : These are launchplan level settings which get applied if they exist and no overrides exist at launchplan level
+message Settings {
+    // Global settings applicable for all projects
+    SettingsCollection global = 1;
+    // All project settings keyed on there name
+    map<string, ProjectSettings> project_settings = 2;
+}
+
+// Defines Project level setting which contains it own settings and all the domain settings registered project
+message ProjectSettings {
+  // Unique project id for which these settings are defined
+  string project                 = 1;
+  // Project settings applicable for current project
+  SettingsCollection settings = 2;
+  // All domain settings keyed on there name
+  map<string, DomainSettings> domain_settings = 3;
+}
+
+
+// Defines a domain level settings which contains it own settings and all the workflow settings registered in that domain
+message DomainSettings {
+  // Unique domain id for which these settings are defined in project
+  string domain                 = 1;
+  // Domain settings applicable for current project domain
+  SettingsCollection settings = 2;
+  // All workflow settings keyed on there name
+  map<string, WorkflowSettings> workflow_settings = 3;
+}
+
+
+// Defines a workflow level settings which contains it own settings and all the launchplan settings registered in that domain
+message WorkflowSettings {
+  // Workflow name for which these settings are defined in the project domain.
+  string workflow                = 1;
+  // Workflow settings applicable for current project domain workflow
+  SettingsCollection settings = 2;
+  // All launchplan settings keyed on there name
+  map<string, LaunchplanSettings> launchplan_settings = 3;
+}
+
+
+// Defines a launchplan level settings which contains it own settings
+message LaunchplanSettings {
+  // Launchplan name for which these settings are defined in the project domain workflow.
+  string launchplan                = 1;
+  SettingsCollection settings = 2;
+}
+
+// Defines global level
+message GlobalLevel{
+}
+
+// Defines project level
+message ProjectLevel{
+  string project =1;
+}
+
+// Defines domain level
+message DomainLevel{
+  string project =1;
+  string domain =2;
+}
+
+// Defines workflow level
+message WorkflowLevel{
+  string project =1;
+  string domain =2;
+  string workflow =3;
+}
+
+// Defines launchplan level
+message LaunchplanLevel{
+  string project =1;
+  string domain =2;
+  string workflow =3;
+  string launchplan =4;
+}
+
+// Defines the settings update with level at which settings need to be applied.
+message SettingsUpdateRequest {
+  // +required
+  oneof level {
+    GlobalLevel global_level = 1;
+    ProjectLevel project_level = 2;
+    DomainLevel domain_level = 3;
+
+    WorkflowLevel workflow_level = 4;
+    LaunchplanLevel launchplan_level=5;
+  }
+
+  SettingsCollection settings = 6;
+}
+
+// Defines the full settings update request to be applied.
+message FullSettingsUpdateRequest {
+  // +required
+  oneof level {
+    GlobalLevel global_level = 1;
+    ProjectLevel project_level = 2;
+    DomainLevel domain_level = 3;
+
+    WorkflowLevel workflow_level = 4;
+    LaunchplanLevel launchplan_level=5;
+  }
+
+  SettingsCollection settings = 6;
+}
+
+// Purposefully empty, may be populated in the future.
+message FullSettingsUpdateResponse {
+}
+
+
+// Defines the settings get request.
+message SettingsGetRequest {
+  // +required
+  oneof level {
+    GlobalLevel global_level = 1;
+    ProjectLevel project_level = 2;
+    DomainLevel domain_level = 3;
+
+    WorkflowLevel workflow_level = 4;
+    LaunchplanLevel launchplan_level=5;
+  }
+}
+
+
+// Returns the settings for the provided level in SettingsGetRequest.
+message SettingsGetResponse {
+  // +required
+  oneof level {
+    GlobalLevel global_level = 1;
+    ProjectLevel project_level = 2;
+    DomainLevel domain_level = 3;
+
+    WorkflowLevel workflow_level = 4;
+    LaunchplanLevel launchplan_level=5;
+  }
+
+  SettingsCollection settings = 6;
+}
+
+// Defines the full settings get request.
+message FullSettingsGetRequest {
+}
+
+
+// Returns the full settings.
+message FullSettingsGetResponse {
+    Settings settings = 1;
+}
+
+// Defines the settings delete request.
+message SettingsDeleteRequest {
+  // +required
+  oneof level {
+    GlobalLevel global_level = 1;
+    ProjectLevel project_level = 2;
+    DomainLevel domain_level = 3;
+
+    WorkflowLevel workflow_level = 4;
+    LaunchplanLevel launchplan_level=5;
+  }
+}
+
+// Purposefully empty, may be populated in the future.
+message SettingsDeleteResponse {
+}
