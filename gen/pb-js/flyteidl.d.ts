@@ -13962,28 +13962,28 @@ export namespace flyteidl {
         interface ISettingsCollection {
 
             /** SettingsCollection taskResourceSettings */
-            taskResourceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            taskResourceSettings?: (flyteidl.admin.ITaskResourceAttributes|null);
 
             /** SettingsCollection clusterResourceSettings */
-            clusterResourceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            clusterResourceSettings?: (flyteidl.admin.IClusterResourceAttributes|null);
 
             /** SettingsCollection executionQueueSettings */
-            executionQueueSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            executionQueueSettings?: (flyteidl.admin.IExecutionQueueAttributes|null);
 
             /** SettingsCollection executionClusterLabelSettings */
-            executionClusterLabelSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            executionClusterLabelSettings?: (flyteidl.admin.IExecutionClusterLabel|null);
 
             /** SettingsCollection qualityOfServiceSettings */
-            qualityOfServiceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            qualityOfServiceSettings?: (flyteidl.core.IQualityOfService|null);
 
             /** SettingsCollection pluginOverrideSettings */
-            pluginOverrideSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            pluginOverrideSettings?: (flyteidl.admin.IPluginOverride|null);
 
             /** SettingsCollection workflowExecutionSettings */
-            workflowExecutionSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
 
             /** SettingsCollection clusterAssignmentSettings */
-            clusterAssignmentSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            clusterAssignmentSettings?: (flyteidl.admin.IClusterAssignment|null);
         }
 
         /** Represents a SettingsCollection. */
@@ -13996,28 +13996,28 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.ISettingsCollection);
 
             /** SettingsCollection taskResourceSettings. */
-            public taskResourceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public taskResourceSettings?: (flyteidl.admin.ITaskResourceAttributes|null);
 
             /** SettingsCollection clusterResourceSettings. */
-            public clusterResourceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public clusterResourceSettings?: (flyteidl.admin.IClusterResourceAttributes|null);
 
             /** SettingsCollection executionQueueSettings. */
-            public executionQueueSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public executionQueueSettings?: (flyteidl.admin.IExecutionQueueAttributes|null);
 
             /** SettingsCollection executionClusterLabelSettings. */
-            public executionClusterLabelSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public executionClusterLabelSettings?: (flyteidl.admin.IExecutionClusterLabel|null);
 
             /** SettingsCollection qualityOfServiceSettings. */
-            public qualityOfServiceSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public qualityOfServiceSettings?: (flyteidl.core.IQualityOfService|null);
 
             /** SettingsCollection pluginOverrideSettings. */
-            public pluginOverrideSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public pluginOverrideSettings?: (flyteidl.admin.IPluginOverride|null);
 
             /** SettingsCollection workflowExecutionSettings. */
-            public workflowExecutionSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
 
             /** SettingsCollection clusterAssignmentSettings. */
-            public clusterAssignmentSettings?: (flyteidl.admin.IMatchingAttributes|null);
+            public clusterAssignmentSettings?: (flyteidl.admin.IClusterAssignment|null);
 
             /**
              * Creates a new SettingsCollection instance using the specified properties.

@@ -34,6 +34,8 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/admin/cluster_assignment.pb.h"
+#include "flyteidl/core/execution.pb.h"
 #include "flyteidl/admin/matchable_resource.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -256,91 +258,91 @@ class SettingsCollection final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+  // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
   bool has_task_resource_settings() const;
   void clear_task_resource_settings();
   static const int kTaskResourceSettingsFieldNumber = 1;
-  const ::flyteidl::admin::MatchingAttributes& task_resource_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_task_resource_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_task_resource_settings();
-  void set_allocated_task_resource_settings(::flyteidl::admin::MatchingAttributes* task_resource_settings);
+  const ::flyteidl::admin::TaskResourceAttributes& task_resource_settings() const;
+  ::flyteidl::admin::TaskResourceAttributes* release_task_resource_settings();
+  ::flyteidl::admin::TaskResourceAttributes* mutable_task_resource_settings();
+  void set_allocated_task_resource_settings(::flyteidl::admin::TaskResourceAttributes* task_resource_settings);
 
-  // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+  // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
   bool has_cluster_resource_settings() const;
   void clear_cluster_resource_settings();
   static const int kClusterResourceSettingsFieldNumber = 2;
-  const ::flyteidl::admin::MatchingAttributes& cluster_resource_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_cluster_resource_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_cluster_resource_settings();
-  void set_allocated_cluster_resource_settings(::flyteidl::admin::MatchingAttributes* cluster_resource_settings);
+  const ::flyteidl::admin::ClusterResourceAttributes& cluster_resource_settings() const;
+  ::flyteidl::admin::ClusterResourceAttributes* release_cluster_resource_settings();
+  ::flyteidl::admin::ClusterResourceAttributes* mutable_cluster_resource_settings();
+  void set_allocated_cluster_resource_settings(::flyteidl::admin::ClusterResourceAttributes* cluster_resource_settings);
 
-  // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+  // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
   bool has_execution_queue_settings() const;
   void clear_execution_queue_settings();
   static const int kExecutionQueueSettingsFieldNumber = 3;
-  const ::flyteidl::admin::MatchingAttributes& execution_queue_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_execution_queue_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_execution_queue_settings();
-  void set_allocated_execution_queue_settings(::flyteidl::admin::MatchingAttributes* execution_queue_settings);
+  const ::flyteidl::admin::ExecutionQueueAttributes& execution_queue_settings() const;
+  ::flyteidl::admin::ExecutionQueueAttributes* release_execution_queue_settings();
+  ::flyteidl::admin::ExecutionQueueAttributes* mutable_execution_queue_settings();
+  void set_allocated_execution_queue_settings(::flyteidl::admin::ExecutionQueueAttributes* execution_queue_settings);
 
-  // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+  // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
   bool has_execution_cluster_label_settings() const;
   void clear_execution_cluster_label_settings();
   static const int kExecutionClusterLabelSettingsFieldNumber = 4;
-  const ::flyteidl::admin::MatchingAttributes& execution_cluster_label_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_execution_cluster_label_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_execution_cluster_label_settings();
-  void set_allocated_execution_cluster_label_settings(::flyteidl::admin::MatchingAttributes* execution_cluster_label_settings);
+  const ::flyteidl::admin::ExecutionClusterLabel& execution_cluster_label_settings() const;
+  ::flyteidl::admin::ExecutionClusterLabel* release_execution_cluster_label_settings();
+  ::flyteidl::admin::ExecutionClusterLabel* mutable_execution_cluster_label_settings();
+  void set_allocated_execution_cluster_label_settings(::flyteidl::admin::ExecutionClusterLabel* execution_cluster_label_settings);
 
-  // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+  // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
   bool has_quality_of_service_settings() const;
   void clear_quality_of_service_settings();
   static const int kQualityOfServiceSettingsFieldNumber = 5;
-  const ::flyteidl::admin::MatchingAttributes& quality_of_service_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_quality_of_service_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_quality_of_service_settings();
-  void set_allocated_quality_of_service_settings(::flyteidl::admin::MatchingAttributes* quality_of_service_settings);
+  const ::flyteidl::core::QualityOfService& quality_of_service_settings() const;
+  ::flyteidl::core::QualityOfService* release_quality_of_service_settings();
+  ::flyteidl::core::QualityOfService* mutable_quality_of_service_settings();
+  void set_allocated_quality_of_service_settings(::flyteidl::core::QualityOfService* quality_of_service_settings);
 
-  // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+  // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
   bool has_plugin_override_settings() const;
   void clear_plugin_override_settings();
   static const int kPluginOverrideSettingsFieldNumber = 6;
-  const ::flyteidl::admin::MatchingAttributes& plugin_override_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_plugin_override_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_plugin_override_settings();
-  void set_allocated_plugin_override_settings(::flyteidl::admin::MatchingAttributes* plugin_override_settings);
+  const ::flyteidl::admin::PluginOverride& plugin_override_settings() const;
+  ::flyteidl::admin::PluginOverride* release_plugin_override_settings();
+  ::flyteidl::admin::PluginOverride* mutable_plugin_override_settings();
+  void set_allocated_plugin_override_settings(::flyteidl::admin::PluginOverride* plugin_override_settings);
 
-  // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+  // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
   bool has_workflow_execution_settings() const;
   void clear_workflow_execution_settings();
   static const int kWorkflowExecutionSettingsFieldNumber = 7;
-  const ::flyteidl::admin::MatchingAttributes& workflow_execution_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_workflow_execution_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_workflow_execution_settings();
-  void set_allocated_workflow_execution_settings(::flyteidl::admin::MatchingAttributes* workflow_execution_settings);
+  const ::flyteidl::admin::WorkflowExecutionConfig& workflow_execution_settings() const;
+  ::flyteidl::admin::WorkflowExecutionConfig* release_workflow_execution_settings();
+  ::flyteidl::admin::WorkflowExecutionConfig* mutable_workflow_execution_settings();
+  void set_allocated_workflow_execution_settings(::flyteidl::admin::WorkflowExecutionConfig* workflow_execution_settings);
 
-  // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+  // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
   bool has_cluster_assignment_settings() const;
   void clear_cluster_assignment_settings();
   static const int kClusterAssignmentSettingsFieldNumber = 8;
-  const ::flyteidl::admin::MatchingAttributes& cluster_assignment_settings() const;
-  ::flyteidl::admin::MatchingAttributes* release_cluster_assignment_settings();
-  ::flyteidl::admin::MatchingAttributes* mutable_cluster_assignment_settings();
-  void set_allocated_cluster_assignment_settings(::flyteidl::admin::MatchingAttributes* cluster_assignment_settings);
+  const ::flyteidl::admin::ClusterAssignment& cluster_assignment_settings() const;
+  ::flyteidl::admin::ClusterAssignment* release_cluster_assignment_settings();
+  ::flyteidl::admin::ClusterAssignment* mutable_cluster_assignment_settings();
+  void set_allocated_cluster_assignment_settings(::flyteidl::admin::ClusterAssignment* cluster_assignment_settings);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.SettingsCollection)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::admin::MatchingAttributes* task_resource_settings_;
-  ::flyteidl::admin::MatchingAttributes* cluster_resource_settings_;
-  ::flyteidl::admin::MatchingAttributes* execution_queue_settings_;
-  ::flyteidl::admin::MatchingAttributes* execution_cluster_label_settings_;
-  ::flyteidl::admin::MatchingAttributes* quality_of_service_settings_;
-  ::flyteidl::admin::MatchingAttributes* plugin_override_settings_;
-  ::flyteidl::admin::MatchingAttributes* workflow_execution_settings_;
-  ::flyteidl::admin::MatchingAttributes* cluster_assignment_settings_;
+  ::flyteidl::admin::TaskResourceAttributes* task_resource_settings_;
+  ::flyteidl::admin::ClusterResourceAttributes* cluster_resource_settings_;
+  ::flyteidl::admin::ExecutionQueueAttributes* execution_queue_settings_;
+  ::flyteidl::admin::ExecutionClusterLabel* execution_cluster_label_settings_;
+  ::flyteidl::core::QualityOfService* quality_of_service_settings_;
+  ::flyteidl::admin::PluginOverride* plugin_override_settings_;
+  ::flyteidl::admin::WorkflowExecutionConfig* workflow_execution_settings_;
+  ::flyteidl::admin::ClusterAssignment* cluster_assignment_settings_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fsettings_2eproto;
 };
@@ -3180,33 +3182,33 @@ class SettingsDeleteResponse final :
 #endif  // __GNUC__
 // SettingsCollection
 
-// .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+// .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
 inline bool SettingsCollection::has_task_resource_settings() const {
   return this != internal_default_instance() && task_resource_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::task_resource_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = task_resource_settings_;
+inline const ::flyteidl::admin::TaskResourceAttributes& SettingsCollection::task_resource_settings() const {
+  const ::flyteidl::admin::TaskResourceAttributes* p = task_resource_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.task_resource_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::TaskResourceAttributes*>(
+      &::flyteidl::admin::_TaskResourceAttributes_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_task_resource_settings() {
+inline ::flyteidl::admin::TaskResourceAttributes* SettingsCollection::release_task_resource_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.task_resource_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = task_resource_settings_;
+  ::flyteidl::admin::TaskResourceAttributes* temp = task_resource_settings_;
   task_resource_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_task_resource_settings() {
+inline ::flyteidl::admin::TaskResourceAttributes* SettingsCollection::mutable_task_resource_settings() {
   
   if (task_resource_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::TaskResourceAttributes>(GetArenaNoVirtual());
     task_resource_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.task_resource_settings)
   return task_resource_settings_;
 }
-inline void SettingsCollection::set_allocated_task_resource_settings(::flyteidl::admin::MatchingAttributes* task_resource_settings) {
+inline void SettingsCollection::set_allocated_task_resource_settings(::flyteidl::admin::TaskResourceAttributes* task_resource_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_resource_settings_);
@@ -3225,33 +3227,33 @@ inline void SettingsCollection::set_allocated_task_resource_settings(::flyteidl:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.task_resource_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+// .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
 inline bool SettingsCollection::has_cluster_resource_settings() const {
   return this != internal_default_instance() && cluster_resource_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::cluster_resource_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = cluster_resource_settings_;
+inline const ::flyteidl::admin::ClusterResourceAttributes& SettingsCollection::cluster_resource_settings() const {
+  const ::flyteidl::admin::ClusterResourceAttributes* p = cluster_resource_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.cluster_resource_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ClusterResourceAttributes*>(
+      &::flyteidl::admin::_ClusterResourceAttributes_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_cluster_resource_settings() {
+inline ::flyteidl::admin::ClusterResourceAttributes* SettingsCollection::release_cluster_resource_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.cluster_resource_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = cluster_resource_settings_;
+  ::flyteidl::admin::ClusterResourceAttributes* temp = cluster_resource_settings_;
   cluster_resource_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_cluster_resource_settings() {
+inline ::flyteidl::admin::ClusterResourceAttributes* SettingsCollection::mutable_cluster_resource_settings() {
   
   if (cluster_resource_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ClusterResourceAttributes>(GetArenaNoVirtual());
     cluster_resource_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.cluster_resource_settings)
   return cluster_resource_settings_;
 }
-inline void SettingsCollection::set_allocated_cluster_resource_settings(::flyteidl::admin::MatchingAttributes* cluster_resource_settings) {
+inline void SettingsCollection::set_allocated_cluster_resource_settings(::flyteidl::admin::ClusterResourceAttributes* cluster_resource_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(cluster_resource_settings_);
@@ -3270,33 +3272,33 @@ inline void SettingsCollection::set_allocated_cluster_resource_settings(::flytei
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.cluster_resource_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+// .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
 inline bool SettingsCollection::has_execution_queue_settings() const {
   return this != internal_default_instance() && execution_queue_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::execution_queue_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = execution_queue_settings_;
+inline const ::flyteidl::admin::ExecutionQueueAttributes& SettingsCollection::execution_queue_settings() const {
+  const ::flyteidl::admin::ExecutionQueueAttributes* p = execution_queue_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.execution_queue_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionQueueAttributes*>(
+      &::flyteidl::admin::_ExecutionQueueAttributes_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_execution_queue_settings() {
+inline ::flyteidl::admin::ExecutionQueueAttributes* SettingsCollection::release_execution_queue_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.execution_queue_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = execution_queue_settings_;
+  ::flyteidl::admin::ExecutionQueueAttributes* temp = execution_queue_settings_;
   execution_queue_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_execution_queue_settings() {
+inline ::flyteidl::admin::ExecutionQueueAttributes* SettingsCollection::mutable_execution_queue_settings() {
   
   if (execution_queue_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionQueueAttributes>(GetArenaNoVirtual());
     execution_queue_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.execution_queue_settings)
   return execution_queue_settings_;
 }
-inline void SettingsCollection::set_allocated_execution_queue_settings(::flyteidl::admin::MatchingAttributes* execution_queue_settings) {
+inline void SettingsCollection::set_allocated_execution_queue_settings(::flyteidl::admin::ExecutionQueueAttributes* execution_queue_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(execution_queue_settings_);
@@ -3315,33 +3317,33 @@ inline void SettingsCollection::set_allocated_execution_queue_settings(::flyteid
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.execution_queue_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+// .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
 inline bool SettingsCollection::has_execution_cluster_label_settings() const {
   return this != internal_default_instance() && execution_cluster_label_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::execution_cluster_label_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = execution_cluster_label_settings_;
+inline const ::flyteidl::admin::ExecutionClusterLabel& SettingsCollection::execution_cluster_label_settings() const {
+  const ::flyteidl::admin::ExecutionClusterLabel* p = execution_cluster_label_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.execution_cluster_label_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ExecutionClusterLabel*>(
+      &::flyteidl::admin::_ExecutionClusterLabel_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_execution_cluster_label_settings() {
+inline ::flyteidl::admin::ExecutionClusterLabel* SettingsCollection::release_execution_cluster_label_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.execution_cluster_label_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = execution_cluster_label_settings_;
+  ::flyteidl::admin::ExecutionClusterLabel* temp = execution_cluster_label_settings_;
   execution_cluster_label_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_execution_cluster_label_settings() {
+inline ::flyteidl::admin::ExecutionClusterLabel* SettingsCollection::mutable_execution_cluster_label_settings() {
   
   if (execution_cluster_label_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ExecutionClusterLabel>(GetArenaNoVirtual());
     execution_cluster_label_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.execution_cluster_label_settings)
   return execution_cluster_label_settings_;
 }
-inline void SettingsCollection::set_allocated_execution_cluster_label_settings(::flyteidl::admin::MatchingAttributes* execution_cluster_label_settings) {
+inline void SettingsCollection::set_allocated_execution_cluster_label_settings(::flyteidl::admin::ExecutionClusterLabel* execution_cluster_label_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(execution_cluster_label_settings_);
@@ -3360,33 +3362,33 @@ inline void SettingsCollection::set_allocated_execution_cluster_label_settings(:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.execution_cluster_label_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+// .flyteidl.core.QualityOfService quality_of_service_settings = 5;
 inline bool SettingsCollection::has_quality_of_service_settings() const {
   return this != internal_default_instance() && quality_of_service_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::quality_of_service_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = quality_of_service_settings_;
+inline const ::flyteidl::core::QualityOfService& SettingsCollection::quality_of_service_settings() const {
+  const ::flyteidl::core::QualityOfService* p = quality_of_service_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.quality_of_service_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::QualityOfService*>(
+      &::flyteidl::core::_QualityOfService_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_quality_of_service_settings() {
+inline ::flyteidl::core::QualityOfService* SettingsCollection::release_quality_of_service_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.quality_of_service_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = quality_of_service_settings_;
+  ::flyteidl::core::QualityOfService* temp = quality_of_service_settings_;
   quality_of_service_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_quality_of_service_settings() {
+inline ::flyteidl::core::QualityOfService* SettingsCollection::mutable_quality_of_service_settings() {
   
   if (quality_of_service_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::core::QualityOfService>(GetArenaNoVirtual());
     quality_of_service_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.quality_of_service_settings)
   return quality_of_service_settings_;
 }
-inline void SettingsCollection::set_allocated_quality_of_service_settings(::flyteidl::admin::MatchingAttributes* quality_of_service_settings) {
+inline void SettingsCollection::set_allocated_quality_of_service_settings(::flyteidl::core::QualityOfService* quality_of_service_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_of_service_settings_);
@@ -3405,33 +3407,33 @@ inline void SettingsCollection::set_allocated_quality_of_service_settings(::flyt
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.quality_of_service_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+// .flyteidl.admin.PluginOverride plugin_override_settings = 6;
 inline bool SettingsCollection::has_plugin_override_settings() const {
   return this != internal_default_instance() && plugin_override_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::plugin_override_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = plugin_override_settings_;
+inline const ::flyteidl::admin::PluginOverride& SettingsCollection::plugin_override_settings() const {
+  const ::flyteidl::admin::PluginOverride* p = plugin_override_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.plugin_override_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::PluginOverride*>(
+      &::flyteidl::admin::_PluginOverride_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_plugin_override_settings() {
+inline ::flyteidl::admin::PluginOverride* SettingsCollection::release_plugin_override_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.plugin_override_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = plugin_override_settings_;
+  ::flyteidl::admin::PluginOverride* temp = plugin_override_settings_;
   plugin_override_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_plugin_override_settings() {
+inline ::flyteidl::admin::PluginOverride* SettingsCollection::mutable_plugin_override_settings() {
   
   if (plugin_override_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::PluginOverride>(GetArenaNoVirtual());
     plugin_override_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.plugin_override_settings)
   return plugin_override_settings_;
 }
-inline void SettingsCollection::set_allocated_plugin_override_settings(::flyteidl::admin::MatchingAttributes* plugin_override_settings) {
+inline void SettingsCollection::set_allocated_plugin_override_settings(::flyteidl::admin::PluginOverride* plugin_override_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(plugin_override_settings_);
@@ -3450,33 +3452,33 @@ inline void SettingsCollection::set_allocated_plugin_override_settings(::flyteid
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.plugin_override_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+// .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
 inline bool SettingsCollection::has_workflow_execution_settings() const {
   return this != internal_default_instance() && workflow_execution_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::workflow_execution_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = workflow_execution_settings_;
+inline const ::flyteidl::admin::WorkflowExecutionConfig& SettingsCollection::workflow_execution_settings() const {
+  const ::flyteidl::admin::WorkflowExecutionConfig* p = workflow_execution_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.workflow_execution_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::WorkflowExecutionConfig*>(
+      &::flyteidl::admin::_WorkflowExecutionConfig_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_workflow_execution_settings() {
+inline ::flyteidl::admin::WorkflowExecutionConfig* SettingsCollection::release_workflow_execution_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.workflow_execution_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = workflow_execution_settings_;
+  ::flyteidl::admin::WorkflowExecutionConfig* temp = workflow_execution_settings_;
   workflow_execution_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_workflow_execution_settings() {
+inline ::flyteidl::admin::WorkflowExecutionConfig* SettingsCollection::mutable_workflow_execution_settings() {
   
   if (workflow_execution_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::WorkflowExecutionConfig>(GetArenaNoVirtual());
     workflow_execution_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.workflow_execution_settings)
   return workflow_execution_settings_;
 }
-inline void SettingsCollection::set_allocated_workflow_execution_settings(::flyteidl::admin::MatchingAttributes* workflow_execution_settings) {
+inline void SettingsCollection::set_allocated_workflow_execution_settings(::flyteidl::admin::WorkflowExecutionConfig* workflow_execution_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(workflow_execution_settings_);
@@ -3495,33 +3497,33 @@ inline void SettingsCollection::set_allocated_workflow_execution_settings(::flyt
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SettingsCollection.workflow_execution_settings)
 }
 
-// .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+// .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
 inline bool SettingsCollection::has_cluster_assignment_settings() const {
   return this != internal_default_instance() && cluster_assignment_settings_ != nullptr;
 }
-inline const ::flyteidl::admin::MatchingAttributes& SettingsCollection::cluster_assignment_settings() const {
-  const ::flyteidl::admin::MatchingAttributes* p = cluster_assignment_settings_;
+inline const ::flyteidl::admin::ClusterAssignment& SettingsCollection::cluster_assignment_settings() const {
+  const ::flyteidl::admin::ClusterAssignment* p = cluster_assignment_settings_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.SettingsCollection.cluster_assignment_settings)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::MatchingAttributes*>(
-      &::flyteidl::admin::_MatchingAttributes_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::ClusterAssignment*>(
+      &::flyteidl::admin::_ClusterAssignment_default_instance_);
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::release_cluster_assignment_settings() {
+inline ::flyteidl::admin::ClusterAssignment* SettingsCollection::release_cluster_assignment_settings() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.SettingsCollection.cluster_assignment_settings)
   
-  ::flyteidl::admin::MatchingAttributes* temp = cluster_assignment_settings_;
+  ::flyteidl::admin::ClusterAssignment* temp = cluster_assignment_settings_;
   cluster_assignment_settings_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::MatchingAttributes* SettingsCollection::mutable_cluster_assignment_settings() {
+inline ::flyteidl::admin::ClusterAssignment* SettingsCollection::mutable_cluster_assignment_settings() {
   
   if (cluster_assignment_settings_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::MatchingAttributes>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::admin::ClusterAssignment>(GetArenaNoVirtual());
     cluster_assignment_settings_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.SettingsCollection.cluster_assignment_settings)
   return cluster_assignment_settings_;
 }
-inline void SettingsCollection::set_allocated_cluster_assignment_settings(::flyteidl::admin::MatchingAttributes* cluster_assignment_settings) {
+inline void SettingsCollection::set_allocated_cluster_assignment_settings(::flyteidl::admin::ClusterAssignment* cluster_assignment_settings) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(cluster_assignment_settings_);

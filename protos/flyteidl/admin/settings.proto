@@ -3,19 +3,21 @@ syntax = "proto3";
 package flyteidl.admin;
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
+import "flyteidl/admin/cluster_assignment.proto";
+import "flyteidl/core/execution.proto";
 import "flyteidl/admin/matchable_resource.proto";
 
 
 // Defines settings collection for flyte resources
 message SettingsCollection {
-  MatchingAttributes task_resource_settings = 1;
-  MatchingAttributes cluster_resource_settings = 2;
-  MatchingAttributes execution_queue_settings = 3;
-  MatchingAttributes execution_cluster_label_settings = 4;
-  MatchingAttributes quality_of_service_settings = 5;
-  MatchingAttributes plugin_override_settings = 6;
-  MatchingAttributes workflow_execution_settings = 7;
-  MatchingAttributes cluster_assignment_settings = 8;
+  TaskResourceAttributes task_resource_settings = 1;
+  ClusterResourceAttributes cluster_resource_settings = 2;
+  ExecutionQueueAttributes execution_queue_settings = 3;
+  ExecutionClusterLabel execution_cluster_label_settings = 4;
+  core.QualityOfService quality_of_service_settings = 5;
+  PluginOverride plugin_override_settings = 6;
+  WorkflowExecutionConfig workflow_execution_settings = 7;
+  ClusterAssignment cluster_assignment_settings = 8;
 }
 
 

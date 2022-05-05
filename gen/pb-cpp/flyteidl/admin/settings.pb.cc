@@ -16,7 +16,13 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcluster_5fassignment_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ClusterAssignment_flyteidl_2fadmin_2fcluster_5fassignment_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PluginOverride_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fmatchable_5fresource_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_WorkflowExecutionConfig_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DomainLevel_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_GlobalLevel_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LaunchplanLevel_flyteidl_2fadmin_2fsettings_2eproto;
@@ -25,13 +31,14 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DomainSettings_WorkflowSettingsEntry_DoNotUse_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_LaunchplanSettings_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProjectSettings_DomainSettingsEntry_DoNotUse_flyteidl_2fadmin_2fsettings_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SettingsCollection_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Settings_ProjectSettingsEntry_DoNotUse_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowSettings_LaunchplanSettingsEntry_DoNotUse_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_DomainSettings_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ProjectSettings_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Settings_flyteidl_2fadmin_2fsettings_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowSettings_flyteidl_2fadmin_2fsettings_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsettings_2eproto ::google::protobuf::internal::SCCInfo<8> scc_info_SettingsCollection_flyteidl_2fadmin_2fsettings_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_QualityOfService_flyteidl_2fcore_2fexecution_2eproto;
 namespace flyteidl {
 namespace admin {
 class SettingsCollectionDefaultTypeInternal {
@@ -168,9 +175,16 @@ static void InitDefaultsSettingsCollection_flyteidl_2fadmin_2fsettings_2eproto()
   ::flyteidl::admin::SettingsCollection::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SettingsCollection_flyteidl_2fadmin_2fsettings_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSettingsCollection_flyteidl_2fadmin_2fsettings_2eproto}, {
-      &scc_info_MatchingAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<8> scc_info_SettingsCollection_flyteidl_2fadmin_2fsettings_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 8, InitDefaultsSettingsCollection_flyteidl_2fadmin_2fsettings_2eproto}, {
+      &scc_info_TaskResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_ClusterResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_ExecutionQueueAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_ExecutionClusterLabel_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_QualityOfService_flyteidl_2fcore_2fexecution_2eproto.base,
+      &scc_info_PluginOverride_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_WorkflowExecutionConfig_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base,
+      &scc_info_ClusterAssignment_flyteidl_2fadmin_2fcluster_5fassignment_2eproto.base,}};
 
 static void InitDefaultsSettings_ProjectSettingsEntry_DoNotUse_flyteidl_2fadmin_2fsettings_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -828,119 +842,123 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fsettings_2eproto[] =
   "\n\035flyteidl/admin/settings.proto\022\016flyteid"
-  "l.admin\032\'flyteidl/admin/matchable_resour"
-  "ce.proto\"\324\004\n\022SettingsCollection\022B\n\026task_"
-  "resource_settings\030\001 \001(\0132\".flyteidl.admin"
-  ".MatchingAttributes\022E\n\031cluster_resource_"
-  "settings\030\002 \001(\0132\".flyteidl.admin.Matching"
-  "Attributes\022D\n\030execution_queue_settings\030\003"
-  " \001(\0132\".flyteidl.admin.MatchingAttributes"
-  "\022L\n execution_cluster_label_settings\030\004 \001"
-  "(\0132\".flyteidl.admin.MatchingAttributes\022G"
-  "\n\033quality_of_service_settings\030\005 \001(\0132\".fl"
-  "yteidl.admin.MatchingAttributes\022D\n\030plugi"
-  "n_override_settings\030\006 \001(\0132\".flyteidl.adm"
-  "in.MatchingAttributes\022G\n\033workflow_execut"
-  "ion_settings\030\007 \001(\0132\".flyteidl.admin.Matc"
-  "hingAttributes\022G\n\033cluster_assignment_set"
-  "tings\030\010 \001(\0132\".flyteidl.admin.MatchingAtt"
-  "ributes\"\340\001\n\010Settings\0222\n\006global\030\001 \001(\0132\".f"
-  "lyteidl.admin.SettingsCollection\022G\n\020proj"
-  "ect_settings\030\002 \003(\0132-.flyteidl.admin.Sett"
-  "ings.ProjectSettingsEntry\032W\n\024ProjectSett"
-  "ingsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037."
-  "flyteidl.admin.ProjectSettings:\0028\001\"\375\001\n\017P"
-  "rojectSettings\022\017\n\007project\030\001 \001(\t\0224\n\010setti"
-  "ngs\030\002 \001(\0132\".flyteidl.admin.SettingsColle"
-  "ction\022L\n\017domain_settings\030\003 \003(\01323.flyteid"
-  "l.admin.ProjectSettings.DomainSettingsEn"
-  "try\032U\n\023DomainSettingsEntry\022\013\n\003key\030\001 \001(\t\022"
-  "-\n\005value\030\002 \001(\0132\036.flyteidl.admin.DomainSe"
-  "ttings:\0028\001\"\202\002\n\016DomainSettings\022\016\n\006domain\030"
-  "\001 \001(\t\0224\n\010settings\030\002 \001(\0132\".flyteidl.admin"
-  ".SettingsCollection\022O\n\021workflow_settings"
-  "\030\003 \003(\01324.flyteidl.admin.DomainSettings.W"
-  "orkflowSettingsEntry\032Y\n\025WorkflowSettings"
-  "Entry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .flyt"
-  "eidl.admin.WorkflowSettings:\0028\001\"\220\002\n\020Work"
-  "flowSettings\022\020\n\010workflow\030\001 \001(\t\0224\n\010settin"
-  "gs\030\002 \001(\0132\".flyteidl.admin.SettingsCollec"
-  "tion\022U\n\023launchplan_settings\030\003 \003(\01328.flyt"
-  "eidl.admin.WorkflowSettings.LaunchplanSe"
-  "ttingsEntry\032]\n\027LaunchplanSettingsEntry\022\013"
-  "\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".flyteidl.ad"
-  "min.LaunchplanSettings:\0028\001\"^\n\022Launchplan"
-  "Settings\022\022\n\nlaunchplan\030\001 \001(\t\0224\n\010settings"
-  "\030\002 \001(\0132\".flyteidl.admin.SettingsCollecti"
-  "on\"\r\n\013GlobalLevel\"\037\n\014ProjectLevel\022\017\n\007pro"
-  "ject\030\001 \001(\t\".\n\013DomainLevel\022\017\n\007project\030\001 \001"
-  "(\t\022\016\n\006domain\030\002 \001(\t\"B\n\rWorkflowLevel\022\017\n\007p"
-  "roject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow"
-  "\030\003 \001(\t\"X\n\017LaunchplanLevel\022\017\n\007project\030\001 \001"
-  "(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\022\022\n\n"
-  "launchplan\030\004 \001(\t\"\355\002\n\025SettingsUpdateReque"
-  "st\0223\n\014global_level\030\001 \001(\0132\033.flyteidl.admi"
-  "n.GlobalLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034"
-  ".flyteidl.admin.ProjectLevelH\000\0223\n\014domain"
-  "_level\030\003 \001(\0132\033.flyteidl.admin.DomainLeve"
-  "lH\000\0227\n\016workflow_level\030\004 \001(\0132\035.flyteidl.a"
-  "dmin.WorkflowLevelH\000\022;\n\020launchplan_level"
-  "\030\005 \001(\0132\037.flyteidl.admin.LaunchplanLevelH"
-  "\000\0224\n\010settings\030\006 \001(\0132\".flyteidl.admin.Set"
-  "tingsCollectionB\007\n\005level\"\361\002\n\031FullSetting"
-  "sUpdateRequest\0223\n\014global_level\030\001 \001(\0132\033.f"
-  "lyteidl.admin.GlobalLevelH\000\0225\n\rproject_l"
-  "evel\030\002 \001(\0132\034.flyteidl.admin.ProjectLevel"
-  "H\000\0223\n\014domain_level\030\003 \001(\0132\033.flyteidl.admi"
-  "n.DomainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132"
-  "\035.flyteidl.admin.WorkflowLevelH\000\022;\n\020laun"
-  "chplan_level\030\005 \001(\0132\037.flyteidl.admin.Laun"
-  "chplanLevelH\000\0224\n\010settings\030\006 \001(\0132\".flytei"
-  "dl.admin.SettingsCollectionB\007\n\005level\"\034\n\032"
-  "FullSettingsUpdateResponse\"\264\002\n\022SettingsG"
-  "etRequest\0223\n\014global_level\030\001 \001(\0132\033.flytei"
-  "dl.admin.GlobalLevelH\000\0225\n\rproject_level\030"
-  "\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\0223\n"
-  "\014domain_level\030\003 \001(\0132\033.flyteidl.admin.Dom"
-  "ainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.fly"
-  "teidl.admin.WorkflowLevelH\000\022;\n\020launchpla"
-  "n_level\030\005 \001(\0132\037.flyteidl.admin.Launchpla"
-  "nLevelH\000B\007\n\005level\"\353\002\n\023SettingsGetRespons"
-  "e\0223\n\014global_level\030\001 \001(\0132\033.flyteidl.admin"
-  ".GlobalLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034."
-  "flyteidl.admin.ProjectLevelH\000\0223\n\014domain_"
-  "level\030\003 \001(\0132\033.flyteidl.admin.DomainLevel"
-  "H\000\0227\n\016workflow_level\030\004 \001(\0132\035.flyteidl.ad"
-  "min.WorkflowLevelH\000\022;\n\020launchplan_level\030"
-  "\005 \001(\0132\037.flyteidl.admin.LaunchplanLevelH\000"
-  "\0224\n\010settings\030\006 \001(\0132\".flyteidl.admin.Sett"
-  "ingsCollectionB\007\n\005level\"\030\n\026FullSettingsG"
-  "etRequest\"E\n\027FullSettingsGetResponse\022*\n\010"
-  "settings\030\001 \001(\0132\030.flyteidl.admin.Settings"
-  "\"\267\002\n\025SettingsDeleteRequest\0223\n\014global_lev"
-  "el\030\001 \001(\0132\033.flyteidl.admin.GlobalLevelH\000\022"
-  "5\n\rproject_level\030\002 \001(\0132\034.flyteidl.admin."
-  "ProjectLevelH\000\0223\n\014domain_level\030\003 \001(\0132\033.f"
-  "lyteidl.admin.DomainLevelH\000\0227\n\016workflow_"
-  "level\030\004 \001(\0132\035.flyteidl.admin.WorkflowLev"
-  "elH\000\022;\n\020launchplan_level\030\005 \001(\0132\037.flyteid"
-  "l.admin.LaunchplanLevelH\000B\007\n\005level\"\030\n\026Se"
-  "ttingsDeleteResponseB7Z5github.com/flyte"
-  "org/flyteidl/gen/pb-go/flyteidl/adminb\006p"
-  "roto3"
+  "l.admin\032\'flyteidl/admin/cluster_assignme"
+  "nt.proto\032\035flyteidl/core/execution.proto\032"
+  "\'flyteidl/admin/matchable_resource.proto"
+  "\"\345\004\n\022SettingsCollection\022F\n\026task_resource"
+  "_settings\030\001 \001(\0132&.flyteidl.admin.TaskRes"
+  "ourceAttributes\022L\n\031cluster_resource_sett"
+  "ings\030\002 \001(\0132).flyteidl.admin.ClusterResou"
+  "rceAttributes\022J\n\030execution_queue_setting"
+  "s\030\003 \001(\0132(.flyteidl.admin.ExecutionQueueA"
+  "ttributes\022O\n execution_cluster_label_set"
+  "tings\030\004 \001(\0132%.flyteidl.admin.ExecutionCl"
+  "usterLabel\022D\n\033quality_of_service_setting"
+  "s\030\005 \001(\0132\037.flyteidl.core.QualityOfService"
+  "\022@\n\030plugin_override_settings\030\006 \001(\0132\036.fly"
+  "teidl.admin.PluginOverride\022L\n\033workflow_e"
+  "xecution_settings\030\007 \001(\0132\'.flyteidl.admin"
+  ".WorkflowExecutionConfig\022F\n\033cluster_assi"
+  "gnment_settings\030\010 \001(\0132!.flyteidl.admin.C"
+  "lusterAssignment\"\340\001\n\010Settings\0222\n\006global\030"
+  "\001 \001(\0132\".flyteidl.admin.SettingsCollectio"
+  "n\022G\n\020project_settings\030\002 \003(\0132-.flyteidl.a"
+  "dmin.Settings.ProjectSettingsEntry\032W\n\024Pr"
+  "ojectSettingsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value"
+  "\030\002 \001(\0132\037.flyteidl.admin.ProjectSettings:"
+  "\0028\001\"\375\001\n\017ProjectSettings\022\017\n\007project\030\001 \001(\t"
+  "\0224\n\010settings\030\002 \001(\0132\".flyteidl.admin.Sett"
+  "ingsCollection\022L\n\017domain_settings\030\003 \003(\0132"
+  "3.flyteidl.admin.ProjectSettings.DomainS"
+  "ettingsEntry\032U\n\023DomainSettingsEntry\022\013\n\003k"
+  "ey\030\001 \001(\t\022-\n\005value\030\002 \001(\0132\036.flyteidl.admin"
+  ".DomainSettings:\0028\001\"\202\002\n\016DomainSettings\022\016"
+  "\n\006domain\030\001 \001(\t\0224\n\010settings\030\002 \001(\0132\".flyte"
+  "idl.admin.SettingsCollection\022O\n\021workflow"
+  "_settings\030\003 \003(\01324.flyteidl.admin.DomainS"
+  "ettings.WorkflowSettingsEntry\032Y\n\025Workflo"
+  "wSettingsEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001"
+  "(\0132 .flyteidl.admin.WorkflowSettings:\0028\001"
+  "\"\220\002\n\020WorkflowSettings\022\020\n\010workflow\030\001 \001(\t\022"
+  "4\n\010settings\030\002 \001(\0132\".flyteidl.admin.Setti"
+  "ngsCollection\022U\n\023launchplan_settings\030\003 \003"
+  "(\01328.flyteidl.admin.WorkflowSettings.Lau"
+  "nchplanSettingsEntry\032]\n\027LaunchplanSettin"
+  "gsEntry\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".fl"
+  "yteidl.admin.LaunchplanSettings:\0028\001\"^\n\022L"
+  "aunchplanSettings\022\022\n\nlaunchplan\030\001 \001(\t\0224\n"
+  "\010settings\030\002 \001(\0132\".flyteidl.admin.Setting"
+  "sCollection\"\r\n\013GlobalLevel\"\037\n\014ProjectLev"
+  "el\022\017\n\007project\030\001 \001(\t\".\n\013DomainLevel\022\017\n\007pr"
+  "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"B\n\rWorkflowL"
+  "evel\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n"
+  "\010workflow\030\003 \001(\t\"X\n\017LaunchplanLevel\022\017\n\007pr"
+  "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030"
+  "\003 \001(\t\022\022\n\nlaunchplan\030\004 \001(\t\"\355\002\n\025SettingsUp"
+  "dateRequest\0223\n\014global_level\030\001 \001(\0132\033.flyt"
+  "eidl.admin.GlobalLevelH\000\0225\n\rproject_leve"
+  "l\030\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\022"
+  "3\n\014domain_level\030\003 \001(\0132\033.flyteidl.admin.D"
+  "omainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.f"
+  "lyteidl.admin.WorkflowLevelH\000\022;\n\020launchp"
+  "lan_level\030\005 \001(\0132\037.flyteidl.admin.Launchp"
+  "lanLevelH\000\0224\n\010settings\030\006 \001(\0132\".flyteidl."
+  "admin.SettingsCollectionB\007\n\005level\"\361\002\n\031Fu"
+  "llSettingsUpdateRequest\0223\n\014global_level\030"
+  "\001 \001(\0132\033.flyteidl.admin.GlobalLevelH\000\0225\n\r"
+  "project_level\030\002 \001(\0132\034.flyteidl.admin.Pro"
+  "jectLevelH\000\0223\n\014domain_level\030\003 \001(\0132\033.flyt"
+  "eidl.admin.DomainLevelH\000\0227\n\016workflow_lev"
+  "el\030\004 \001(\0132\035.flyteidl.admin.WorkflowLevelH"
+  "\000\022;\n\020launchplan_level\030\005 \001(\0132\037.flyteidl.a"
+  "dmin.LaunchplanLevelH\000\0224\n\010settings\030\006 \001(\013"
+  "2\".flyteidl.admin.SettingsCollectionB\007\n\005"
+  "level\"\034\n\032FullSettingsUpdateResponse\"\264\002\n\022"
+  "SettingsGetRequest\0223\n\014global_level\030\001 \001(\013"
+  "2\033.flyteidl.admin.GlobalLevelH\000\0225\n\rproje"
+  "ct_level\030\002 \001(\0132\034.flyteidl.admin.ProjectL"
+  "evelH\000\0223\n\014domain_level\030\003 \001(\0132\033.flyteidl."
+  "admin.DomainLevelH\000\0227\n\016workflow_level\030\004 "
+  "\001(\0132\035.flyteidl.admin.WorkflowLevelH\000\022;\n\020"
+  "launchplan_level\030\005 \001(\0132\037.flyteidl.admin."
+  "LaunchplanLevelH\000B\007\n\005level\"\353\002\n\023SettingsG"
+  "etResponse\0223\n\014global_level\030\001 \001(\0132\033.flyte"
+  "idl.admin.GlobalLevelH\000\0225\n\rproject_level"
+  "\030\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\0223"
+  "\n\014domain_level\030\003 \001(\0132\033.flyteidl.admin.Do"
+  "mainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.fl"
+  "yteidl.admin.WorkflowLevelH\000\022;\n\020launchpl"
+  "an_level\030\005 \001(\0132\037.flyteidl.admin.Launchpl"
+  "anLevelH\000\0224\n\010settings\030\006 \001(\0132\".flyteidl.a"
+  "dmin.SettingsCollectionB\007\n\005level\"\030\n\026Full"
+  "SettingsGetRequest\"E\n\027FullSettingsGetRes"
+  "ponse\022*\n\010settings\030\001 \001(\0132\030.flyteidl.admin"
+  ".Settings\"\267\002\n\025SettingsDeleteRequest\0223\n\014g"
+  "lobal_level\030\001 \001(\0132\033.flyteidl.admin.Globa"
+  "lLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034.flytei"
+  "dl.admin.ProjectLevelH\000\0223\n\014domain_level\030"
+  "\003 \001(\0132\033.flyteidl.admin.DomainLevelH\000\0227\n\016"
+  "workflow_level\030\004 \001(\0132\035.flyteidl.admin.Wo"
+  "rkflowLevelH\000\022;\n\020launchplan_level\030\005 \001(\0132"
+  "\037.flyteidl.admin.LaunchplanLevelH\000B\007\n\005le"
+  "vel\"\030\n\026SettingsDeleteResponseB7Z5github."
+  "com/flyteorg/flyteidl/gen/pb-go/flyteidl"
+  "/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fsettings_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fsettings_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fsettings_2eproto,
-  "flyteidl/admin/settings.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsettings_2eproto, 4005,
+  "flyteidl/admin/settings.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsettings_2eproto, 4094,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fsettings_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
   {
+    ::AddDescriptors_flyteidl_2fadmin_2fcluster_5fassignment_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
     ::AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fsettings_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fsettings_2eproto, deps, 3);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -951,64 +969,64 @@ namespace admin {
 // ===================================================================
 
 void SettingsCollection::InitAsDefaultInstance() {
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->task_resource_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->cluster_resource_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->execution_queue_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->execution_cluster_label_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->quality_of_service_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->plugin_override_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->workflow_execution_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
-  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->cluster_assignment_settings_ = const_cast< ::flyteidl::admin::MatchingAttributes*>(
-      ::flyteidl::admin::MatchingAttributes::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->task_resource_settings_ = const_cast< ::flyteidl::admin::TaskResourceAttributes*>(
+      ::flyteidl::admin::TaskResourceAttributes::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->cluster_resource_settings_ = const_cast< ::flyteidl::admin::ClusterResourceAttributes*>(
+      ::flyteidl::admin::ClusterResourceAttributes::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->execution_queue_settings_ = const_cast< ::flyteidl::admin::ExecutionQueueAttributes*>(
+      ::flyteidl::admin::ExecutionQueueAttributes::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->execution_cluster_label_settings_ = const_cast< ::flyteidl::admin::ExecutionClusterLabel*>(
+      ::flyteidl::admin::ExecutionClusterLabel::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->quality_of_service_settings_ = const_cast< ::flyteidl::core::QualityOfService*>(
+      ::flyteidl::core::QualityOfService::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->plugin_override_settings_ = const_cast< ::flyteidl::admin::PluginOverride*>(
+      ::flyteidl::admin::PluginOverride::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->workflow_execution_settings_ = const_cast< ::flyteidl::admin::WorkflowExecutionConfig*>(
+      ::flyteidl::admin::WorkflowExecutionConfig::internal_default_instance());
+  ::flyteidl::admin::_SettingsCollection_default_instance_._instance.get_mutable()->cluster_assignment_settings_ = const_cast< ::flyteidl::admin::ClusterAssignment*>(
+      ::flyteidl::admin::ClusterAssignment::internal_default_instance());
 }
 class SettingsCollection::HasBitSetters {
  public:
-  static const ::flyteidl::admin::MatchingAttributes& task_resource_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& cluster_resource_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& execution_queue_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& execution_cluster_label_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& quality_of_service_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& plugin_override_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& workflow_execution_settings(const SettingsCollection* msg);
-  static const ::flyteidl::admin::MatchingAttributes& cluster_assignment_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::TaskResourceAttributes& task_resource_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::ClusterResourceAttributes& cluster_resource_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::ExecutionQueueAttributes& execution_queue_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::ExecutionClusterLabel& execution_cluster_label_settings(const SettingsCollection* msg);
+  static const ::flyteidl::core::QualityOfService& quality_of_service_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::PluginOverride& plugin_override_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::WorkflowExecutionConfig& workflow_execution_settings(const SettingsCollection* msg);
+  static const ::flyteidl::admin::ClusterAssignment& cluster_assignment_settings(const SettingsCollection* msg);
 };
 
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::TaskResourceAttributes&
 SettingsCollection::HasBitSetters::task_resource_settings(const SettingsCollection* msg) {
   return *msg->task_resource_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::ClusterResourceAttributes&
 SettingsCollection::HasBitSetters::cluster_resource_settings(const SettingsCollection* msg) {
   return *msg->cluster_resource_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::ExecutionQueueAttributes&
 SettingsCollection::HasBitSetters::execution_queue_settings(const SettingsCollection* msg) {
   return *msg->execution_queue_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::ExecutionClusterLabel&
 SettingsCollection::HasBitSetters::execution_cluster_label_settings(const SettingsCollection* msg) {
   return *msg->execution_cluster_label_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::core::QualityOfService&
 SettingsCollection::HasBitSetters::quality_of_service_settings(const SettingsCollection* msg) {
   return *msg->quality_of_service_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::PluginOverride&
 SettingsCollection::HasBitSetters::plugin_override_settings(const SettingsCollection* msg) {
   return *msg->plugin_override_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::WorkflowExecutionConfig&
 SettingsCollection::HasBitSetters::workflow_execution_settings(const SettingsCollection* msg) {
   return *msg->workflow_execution_settings_;
 }
-const ::flyteidl::admin::MatchingAttributes&
+const ::flyteidl::admin::ClusterAssignment&
 SettingsCollection::HasBitSetters::cluster_assignment_settings(const SettingsCollection* msg) {
   return *msg->cluster_assignment_settings_;
 }
@@ -1081,42 +1099,42 @@ SettingsCollection::SettingsCollection(const SettingsCollection& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_task_resource_settings()) {
-    task_resource_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.task_resource_settings_);
+    task_resource_settings_ = new ::flyteidl::admin::TaskResourceAttributes(*from.task_resource_settings_);
   } else {
     task_resource_settings_ = nullptr;
   }
   if (from.has_cluster_resource_settings()) {
-    cluster_resource_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.cluster_resource_settings_);
+    cluster_resource_settings_ = new ::flyteidl::admin::ClusterResourceAttributes(*from.cluster_resource_settings_);
   } else {
     cluster_resource_settings_ = nullptr;
   }
   if (from.has_execution_queue_settings()) {
-    execution_queue_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.execution_queue_settings_);
+    execution_queue_settings_ = new ::flyteidl::admin::ExecutionQueueAttributes(*from.execution_queue_settings_);
   } else {
     execution_queue_settings_ = nullptr;
   }
   if (from.has_execution_cluster_label_settings()) {
-    execution_cluster_label_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.execution_cluster_label_settings_);
+    execution_cluster_label_settings_ = new ::flyteidl::admin::ExecutionClusterLabel(*from.execution_cluster_label_settings_);
   } else {
     execution_cluster_label_settings_ = nullptr;
   }
   if (from.has_quality_of_service_settings()) {
-    quality_of_service_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.quality_of_service_settings_);
+    quality_of_service_settings_ = new ::flyteidl::core::QualityOfService(*from.quality_of_service_settings_);
   } else {
     quality_of_service_settings_ = nullptr;
   }
   if (from.has_plugin_override_settings()) {
-    plugin_override_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.plugin_override_settings_);
+    plugin_override_settings_ = new ::flyteidl::admin::PluginOverride(*from.plugin_override_settings_);
   } else {
     plugin_override_settings_ = nullptr;
   }
   if (from.has_workflow_execution_settings()) {
-    workflow_execution_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.workflow_execution_settings_);
+    workflow_execution_settings_ = new ::flyteidl::admin::WorkflowExecutionConfig(*from.workflow_execution_settings_);
   } else {
     workflow_execution_settings_ = nullptr;
   }
   if (from.has_cluster_assignment_settings()) {
-    cluster_assignment_settings_ = new ::flyteidl::admin::MatchingAttributes(*from.cluster_assignment_settings_);
+    cluster_assignment_settings_ = new ::flyteidl::admin::ClusterAssignment(*from.cluster_assignment_settings_);
   } else {
     cluster_assignment_settings_ = nullptr;
   }
@@ -1210,12 +1228,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+      // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::TaskResourceAttributes::_InternalParse;
         object = msg->mutable_task_resource_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1223,12 +1241,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+      // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::ClusterResourceAttributes::_InternalParse;
         object = msg->mutable_cluster_resource_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1236,12 +1254,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+      // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::ExecutionQueueAttributes::_InternalParse;
         object = msg->mutable_execution_queue_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1249,12 +1267,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+      // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::ExecutionClusterLabel::_InternalParse;
         object = msg->mutable_execution_cluster_label_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1262,12 +1280,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+      // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::core::QualityOfService::_InternalParse;
         object = msg->mutable_quality_of_service_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1275,12 +1293,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+      // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::PluginOverride::_InternalParse;
         object = msg->mutable_plugin_override_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1288,12 +1306,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+      // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
       case 7: {
         if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::WorkflowExecutionConfig::_InternalParse;
         object = msg->mutable_workflow_execution_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1301,12 +1319,12 @@ const char* SettingsCollection::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+      // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
       case 8: {
         if (static_cast<::google::protobuf::uint8>(tag) != 66) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::MatchingAttributes::_InternalParse;
+        parser_till_end = ::flyteidl::admin::ClusterAssignment::_InternalParse;
         object = msg->mutable_cluster_assignment_settings();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1344,7 +1362,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+      // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1355,7 +1373,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+      // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1366,7 +1384,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+      // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1377,7 +1395,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+      // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1388,7 +1406,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+      // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1399,7 +1417,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+      // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1410,7 +1428,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+      // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1421,7 +1439,7 @@ bool SettingsCollection::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+      // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (66 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1459,49 +1477,49 @@ void SettingsCollection::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+  // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
   if (this->has_task_resource_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, HasBitSetters::task_resource_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+  // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
   if (this->has_cluster_resource_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, HasBitSetters::cluster_resource_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+  // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
   if (this->has_execution_queue_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, HasBitSetters::execution_queue_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+  // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
   if (this->has_execution_cluster_label_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, HasBitSetters::execution_cluster_label_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+  // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
   if (this->has_quality_of_service_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, HasBitSetters::quality_of_service_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+  // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
   if (this->has_plugin_override_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, HasBitSetters::plugin_override_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+  // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
   if (this->has_workflow_execution_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, HasBitSetters::workflow_execution_settings(this), output);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+  // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
   if (this->has_cluster_assignment_settings()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       8, HasBitSetters::cluster_assignment_settings(this), output);
@@ -1520,56 +1538,56 @@ void SettingsCollection::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+  // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
   if (this->has_task_resource_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, HasBitSetters::task_resource_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+  // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
   if (this->has_cluster_resource_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::cluster_resource_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+  // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
   if (this->has_execution_queue_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         3, HasBitSetters::execution_queue_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+  // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
   if (this->has_execution_cluster_label_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, HasBitSetters::execution_cluster_label_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+  // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
   if (this->has_quality_of_service_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::quality_of_service_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+  // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
   if (this->has_plugin_override_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         6, HasBitSetters::plugin_override_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+  // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
   if (this->has_workflow_execution_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         7, HasBitSetters::workflow_execution_settings(this), target);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+  // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
   if (this->has_cluster_assignment_settings()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -1597,56 +1615,56 @@ size_t SettingsCollection::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.admin.MatchingAttributes task_resource_settings = 1;
+  // .flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;
   if (this->has_task_resource_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *task_resource_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;
+  // .flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;
   if (this->has_cluster_resource_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *cluster_resource_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_queue_settings = 3;
+  // .flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;
   if (this->has_execution_queue_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *execution_queue_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;
+  // .flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;
   if (this->has_execution_cluster_label_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *execution_cluster_label_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;
+  // .flyteidl.core.QualityOfService quality_of_service_settings = 5;
   if (this->has_quality_of_service_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *quality_of_service_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes plugin_override_settings = 6;
+  // .flyteidl.admin.PluginOverride plugin_override_settings = 6;
   if (this->has_plugin_override_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *plugin_override_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;
+  // .flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;
   if (this->has_workflow_execution_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *workflow_execution_settings_);
   }
 
-  // .flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;
+  // .flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;
   if (this->has_cluster_assignment_settings()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -1681,28 +1699,28 @@ void SettingsCollection::MergeFrom(const SettingsCollection& from) {
   (void) cached_has_bits;
 
   if (from.has_task_resource_settings()) {
-    mutable_task_resource_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.task_resource_settings());
+    mutable_task_resource_settings()->::flyteidl::admin::TaskResourceAttributes::MergeFrom(from.task_resource_settings());
   }
   if (from.has_cluster_resource_settings()) {
-    mutable_cluster_resource_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.cluster_resource_settings());
+    mutable_cluster_resource_settings()->::flyteidl::admin::ClusterResourceAttributes::MergeFrom(from.cluster_resource_settings());
   }
   if (from.has_execution_queue_settings()) {
-    mutable_execution_queue_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.execution_queue_settings());
+    mutable_execution_queue_settings()->::flyteidl::admin::ExecutionQueueAttributes::MergeFrom(from.execution_queue_settings());
   }
   if (from.has_execution_cluster_label_settings()) {
-    mutable_execution_cluster_label_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.execution_cluster_label_settings());
+    mutable_execution_cluster_label_settings()->::flyteidl::admin::ExecutionClusterLabel::MergeFrom(from.execution_cluster_label_settings());
   }
   if (from.has_quality_of_service_settings()) {
-    mutable_quality_of_service_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.quality_of_service_settings());
+    mutable_quality_of_service_settings()->::flyteidl::core::QualityOfService::MergeFrom(from.quality_of_service_settings());
   }
   if (from.has_plugin_override_settings()) {
-    mutable_plugin_override_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.plugin_override_settings());
+    mutable_plugin_override_settings()->::flyteidl::admin::PluginOverride::MergeFrom(from.plugin_override_settings());
   }
   if (from.has_workflow_execution_settings()) {
-    mutable_workflow_execution_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.workflow_execution_settings());
+    mutable_workflow_execution_settings()->::flyteidl::admin::WorkflowExecutionConfig::MergeFrom(from.workflow_execution_settings());
   }
   if (from.has_cluster_assignment_settings()) {
-    mutable_cluster_assignment_settings()->::flyteidl::admin::MatchingAttributes::MergeFrom(from.cluster_assignment_settings());
+    mutable_cluster_assignment_settings()->::flyteidl::admin::ClusterAssignment::MergeFrom(from.cluster_assignment_settings());
   }
 }
 

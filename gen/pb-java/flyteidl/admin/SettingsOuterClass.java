@@ -19,108 +19,108 @@ public final class SettingsOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
     boolean hasTaskResourceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getTaskResourceSettings();
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes getTaskResourceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getTaskResourceSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder getTaskResourceSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
     boolean hasClusterResourceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterResourceSettings();
+    flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes getClusterResourceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterResourceSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder getClusterResourceSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
     boolean hasExecutionQueueSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionQueueSettings();
+    flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes getExecutionQueueSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionQueueSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder getExecutionQueueSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
     boolean hasExecutionClusterLabelSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionClusterLabelSettings();
+    flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel getExecutionClusterLabelSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionClusterLabelSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder getExecutionClusterLabelSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
     boolean hasQualityOfServiceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getQualityOfServiceSettings();
+    flyteidl.core.Execution.QualityOfService getQualityOfServiceSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getQualityOfServiceSettingsOrBuilder();
+    flyteidl.core.Execution.QualityOfServiceOrBuilder getQualityOfServiceSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
     boolean hasPluginOverrideSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getPluginOverrideSettings();
+    flyteidl.admin.MatchableResourceOuterClass.PluginOverride getPluginOverrideSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getPluginOverrideSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder getPluginOverrideSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
     boolean hasWorkflowExecutionSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getWorkflowExecutionSettings();
+    flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig getWorkflowExecutionSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getWorkflowExecutionSettingsOrBuilder();
+    flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder getWorkflowExecutionSettingsOrBuilder();
 
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
     boolean hasClusterAssignmentSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterAssignmentSettings();
+    flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignmentSettings();
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
-    flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterAssignmentSettingsOrBuilder();
+    flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentSettingsOrBuilder();
   }
   /**
    * <pre>
@@ -166,11 +166,11 @@ public final class SettingsOuterClass {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder subBuilder = null;
               if (taskResourceSettings_ != null) {
                 subBuilder = taskResourceSettings_.toBuilder();
               }
-              taskResourceSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              taskResourceSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(taskResourceSettings_);
                 taskResourceSettings_ = subBuilder.buildPartial();
@@ -179,11 +179,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 18: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder subBuilder = null;
               if (clusterResourceSettings_ != null) {
                 subBuilder = clusterResourceSettings_.toBuilder();
               }
-              clusterResourceSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              clusterResourceSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(clusterResourceSettings_);
                 clusterResourceSettings_ = subBuilder.buildPartial();
@@ -192,11 +192,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 26: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder subBuilder = null;
               if (executionQueueSettings_ != null) {
                 subBuilder = executionQueueSettings_.toBuilder();
               }
-              executionQueueSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              executionQueueSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(executionQueueSettings_);
                 executionQueueSettings_ = subBuilder.buildPartial();
@@ -205,11 +205,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 34: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder subBuilder = null;
               if (executionClusterLabelSettings_ != null) {
                 subBuilder = executionClusterLabelSettings_.toBuilder();
               }
-              executionClusterLabelSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              executionClusterLabelSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(executionClusterLabelSettings_);
                 executionClusterLabelSettings_ = subBuilder.buildPartial();
@@ -218,11 +218,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 42: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.core.Execution.QualityOfService.Builder subBuilder = null;
               if (qualityOfServiceSettings_ != null) {
                 subBuilder = qualityOfServiceSettings_.toBuilder();
               }
-              qualityOfServiceSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              qualityOfServiceSettings_ = input.readMessage(flyteidl.core.Execution.QualityOfService.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(qualityOfServiceSettings_);
                 qualityOfServiceSettings_ = subBuilder.buildPartial();
@@ -231,11 +231,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 50: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder subBuilder = null;
               if (pluginOverrideSettings_ != null) {
                 subBuilder = pluginOverrideSettings_.toBuilder();
               }
-              pluginOverrideSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              pluginOverrideSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.PluginOverride.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pluginOverrideSettings_);
                 pluginOverrideSettings_ = subBuilder.buildPartial();
@@ -244,11 +244,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 58: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder subBuilder = null;
               if (workflowExecutionSettings_ != null) {
                 subBuilder = workflowExecutionSettings_.toBuilder();
               }
-              workflowExecutionSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              workflowExecutionSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(workflowExecutionSettings_);
                 workflowExecutionSettings_ = subBuilder.buildPartial();
@@ -257,11 +257,11 @@ public final class SettingsOuterClass {
               break;
             }
             case 66: {
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder subBuilder = null;
+              flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder subBuilder = null;
               if (clusterAssignmentSettings_ != null) {
                 subBuilder = clusterAssignmentSettings_.toBuilder();
               }
-              clusterAssignmentSettings_ = input.readMessage(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.parser(), extensionRegistry);
+              clusterAssignmentSettings_ = input.readMessage(flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(clusterAssignmentSettings_);
                 clusterAssignmentSettings_ = subBuilder.buildPartial();
@@ -302,170 +302,170 @@ public final class SettingsOuterClass {
     }
 
     public static final int TASK_RESOURCE_SETTINGS_FIELD_NUMBER = 1;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes taskResourceSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes taskResourceSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
     public boolean hasTaskResourceSettings() {
       return taskResourceSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getTaskResourceSettings() {
-      return taskResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : taskResourceSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes getTaskResourceSettings() {
+      return taskResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance() : taskResourceSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+     * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getTaskResourceSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder getTaskResourceSettingsOrBuilder() {
       return getTaskResourceSettings();
     }
 
     public static final int CLUSTER_RESOURCE_SETTINGS_FIELD_NUMBER = 2;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes clusterResourceSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes clusterResourceSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
     public boolean hasClusterResourceSettings() {
       return clusterResourceSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterResourceSettings() {
-      return clusterResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterResourceSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes getClusterResourceSettings() {
+      return clusterResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.getDefaultInstance() : clusterResourceSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+     * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterResourceSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder getClusterResourceSettingsOrBuilder() {
       return getClusterResourceSettings();
     }
 
     public static final int EXECUTION_QUEUE_SETTINGS_FIELD_NUMBER = 3;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes executionQueueSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes executionQueueSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
     public boolean hasExecutionQueueSettings() {
       return executionQueueSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionQueueSettings() {
-      return executionQueueSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionQueueSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes getExecutionQueueSettings() {
+      return executionQueueSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.getDefaultInstance() : executionQueueSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+     * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionQueueSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder getExecutionQueueSettingsOrBuilder() {
       return getExecutionQueueSettings();
     }
 
     public static final int EXECUTION_CLUSTER_LABEL_SETTINGS_FIELD_NUMBER = 4;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes executionClusterLabelSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel executionClusterLabelSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
     public boolean hasExecutionClusterLabelSettings() {
       return executionClusterLabelSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionClusterLabelSettings() {
-      return executionClusterLabelSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionClusterLabelSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel getExecutionClusterLabelSettings() {
+      return executionClusterLabelSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.getDefaultInstance() : executionClusterLabelSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+     * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionClusterLabelSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder getExecutionClusterLabelSettingsOrBuilder() {
       return getExecutionClusterLabelSettings();
     }
 
     public static final int QUALITY_OF_SERVICE_SETTINGS_FIELD_NUMBER = 5;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes qualityOfServiceSettings_;
+    private flyteidl.core.Execution.QualityOfService qualityOfServiceSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
     public boolean hasQualityOfServiceSettings() {
       return qualityOfServiceSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getQualityOfServiceSettings() {
-      return qualityOfServiceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : qualityOfServiceSettings_;
+    public flyteidl.core.Execution.QualityOfService getQualityOfServiceSettings() {
+      return qualityOfServiceSettings_ == null ? flyteidl.core.Execution.QualityOfService.getDefaultInstance() : qualityOfServiceSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+     * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getQualityOfServiceSettingsOrBuilder() {
+    public flyteidl.core.Execution.QualityOfServiceOrBuilder getQualityOfServiceSettingsOrBuilder() {
       return getQualityOfServiceSettings();
     }
 
     public static final int PLUGIN_OVERRIDE_SETTINGS_FIELD_NUMBER = 6;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes pluginOverrideSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.PluginOverride pluginOverrideSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
     public boolean hasPluginOverrideSettings() {
       return pluginOverrideSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getPluginOverrideSettings() {
-      return pluginOverrideSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : pluginOverrideSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.PluginOverride getPluginOverrideSettings() {
+      return pluginOverrideSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.PluginOverride.getDefaultInstance() : pluginOverrideSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+     * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getPluginOverrideSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder getPluginOverrideSettingsOrBuilder() {
       return getPluginOverrideSettings();
     }
 
     public static final int WORKFLOW_EXECUTION_SETTINGS_FIELD_NUMBER = 7;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes workflowExecutionSettings_;
+    private flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig workflowExecutionSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
     public boolean hasWorkflowExecutionSettings() {
       return workflowExecutionSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getWorkflowExecutionSettings() {
-      return workflowExecutionSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : workflowExecutionSettings_;
+    public flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig getWorkflowExecutionSettings() {
+      return workflowExecutionSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.getDefaultInstance() : workflowExecutionSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+     * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getWorkflowExecutionSettingsOrBuilder() {
+    public flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder getWorkflowExecutionSettingsOrBuilder() {
       return getWorkflowExecutionSettings();
     }
 
     public static final int CLUSTER_ASSIGNMENT_SETTINGS_FIELD_NUMBER = 8;
-    private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes clusterAssignmentSettings_;
+    private flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment clusterAssignmentSettings_;
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
     public boolean hasClusterAssignmentSettings() {
       return clusterAssignmentSettings_ != null;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterAssignmentSettings() {
-      return clusterAssignmentSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterAssignmentSettings_;
+    public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignmentSettings() {
+      return clusterAssignmentSettings_ == null ? flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.getDefaultInstance() : clusterAssignmentSettings_;
     }
     /**
-     * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+     * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
      */
-    public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterAssignmentSettingsOrBuilder() {
+    public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentSettingsOrBuilder() {
       return getClusterAssignmentSettings();
     }
 
@@ -998,29 +998,29 @@ public final class SettingsOuterClass {
         return this;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes taskResourceSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes taskResourceSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> taskResourceSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder> taskResourceSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
       public boolean hasTaskResourceSettings() {
         return taskResourceSettingsBuilder_ != null || taskResourceSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getTaskResourceSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes getTaskResourceSettings() {
         if (taskResourceSettingsBuilder_ == null) {
-          return taskResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : taskResourceSettings_;
+          return taskResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance() : taskResourceSettings_;
         } else {
           return taskResourceSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
-      public Builder setTaskResourceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setTaskResourceSettings(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes value) {
         if (taskResourceSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1034,10 +1034,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
       public Builder setTaskResourceSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder builderForValue) {
         if (taskResourceSettingsBuilder_ == null) {
           taskResourceSettings_ = builderForValue.build();
           onChanged();
@@ -1048,13 +1048,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
-      public Builder mergeTaskResourceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeTaskResourceSettings(flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes value) {
         if (taskResourceSettingsBuilder_ == null) {
           if (taskResourceSettings_ != null) {
             taskResourceSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(taskResourceSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.newBuilder(taskResourceSettings_).mergeFrom(value).buildPartial();
           } else {
             taskResourceSettings_ = value;
           }
@@ -1066,7 +1066,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
       public Builder clearTaskResourceSettings() {
         if (taskResourceSettingsBuilder_ == null) {
@@ -1080,33 +1080,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getTaskResourceSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder getTaskResourceSettingsBuilder() {
         
         onChanged();
         return getTaskResourceSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getTaskResourceSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder getTaskResourceSettingsOrBuilder() {
         if (taskResourceSettingsBuilder_ != null) {
           return taskResourceSettingsBuilder_.getMessageOrBuilder();
         } else {
           return taskResourceSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : taskResourceSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.getDefaultInstance() : taskResourceSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes task_resource_settings = 1;</code>
+       * <code>.flyteidl.admin.TaskResourceAttributes task_resource_settings = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder> 
           getTaskResourceSettingsFieldBuilder() {
         if (taskResourceSettingsBuilder_ == null) {
           taskResourceSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.TaskResourceAttributesOrBuilder>(
                   getTaskResourceSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1115,29 +1115,29 @@ public final class SettingsOuterClass {
         return taskResourceSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes clusterResourceSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes clusterResourceSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> clusterResourceSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder> clusterResourceSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
       public boolean hasClusterResourceSettings() {
         return clusterResourceSettingsBuilder_ != null || clusterResourceSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterResourceSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes getClusterResourceSettings() {
         if (clusterResourceSettingsBuilder_ == null) {
-          return clusterResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterResourceSettings_;
+          return clusterResourceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.getDefaultInstance() : clusterResourceSettings_;
         } else {
           return clusterResourceSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
-      public Builder setClusterResourceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setClusterResourceSettings(flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes value) {
         if (clusterResourceSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1151,10 +1151,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
       public Builder setClusterResourceSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder builderForValue) {
         if (clusterResourceSettingsBuilder_ == null) {
           clusterResourceSettings_ = builderForValue.build();
           onChanged();
@@ -1165,13 +1165,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
-      public Builder mergeClusterResourceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeClusterResourceSettings(flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes value) {
         if (clusterResourceSettingsBuilder_ == null) {
           if (clusterResourceSettings_ != null) {
             clusterResourceSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(clusterResourceSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.newBuilder(clusterResourceSettings_).mergeFrom(value).buildPartial();
           } else {
             clusterResourceSettings_ = value;
           }
@@ -1183,7 +1183,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
       public Builder clearClusterResourceSettings() {
         if (clusterResourceSettingsBuilder_ == null) {
@@ -1197,33 +1197,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getClusterResourceSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder getClusterResourceSettingsBuilder() {
         
         onChanged();
         return getClusterResourceSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterResourceSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder getClusterResourceSettingsOrBuilder() {
         if (clusterResourceSettingsBuilder_ != null) {
           return clusterResourceSettingsBuilder_.getMessageOrBuilder();
         } else {
           return clusterResourceSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterResourceSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.getDefaultInstance() : clusterResourceSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_resource_settings = 2;</code>
+       * <code>.flyteidl.admin.ClusterResourceAttributes cluster_resource_settings = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder> 
           getClusterResourceSettingsFieldBuilder() {
         if (clusterResourceSettingsBuilder_ == null) {
           clusterResourceSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ClusterResourceAttributesOrBuilder>(
                   getClusterResourceSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1232,29 +1232,29 @@ public final class SettingsOuterClass {
         return clusterResourceSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes executionQueueSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes executionQueueSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> executionQueueSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder> executionQueueSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
       public boolean hasExecutionQueueSettings() {
         return executionQueueSettingsBuilder_ != null || executionQueueSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionQueueSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes getExecutionQueueSettings() {
         if (executionQueueSettingsBuilder_ == null) {
-          return executionQueueSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionQueueSettings_;
+          return executionQueueSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.getDefaultInstance() : executionQueueSettings_;
         } else {
           return executionQueueSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
-      public Builder setExecutionQueueSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setExecutionQueueSettings(flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes value) {
         if (executionQueueSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1268,10 +1268,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
       public Builder setExecutionQueueSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder builderForValue) {
         if (executionQueueSettingsBuilder_ == null) {
           executionQueueSettings_ = builderForValue.build();
           onChanged();
@@ -1282,13 +1282,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
-      public Builder mergeExecutionQueueSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeExecutionQueueSettings(flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes value) {
         if (executionQueueSettingsBuilder_ == null) {
           if (executionQueueSettings_ != null) {
             executionQueueSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(executionQueueSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.newBuilder(executionQueueSettings_).mergeFrom(value).buildPartial();
           } else {
             executionQueueSettings_ = value;
           }
@@ -1300,7 +1300,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
       public Builder clearExecutionQueueSettings() {
         if (executionQueueSettingsBuilder_ == null) {
@@ -1314,33 +1314,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getExecutionQueueSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder getExecutionQueueSettingsBuilder() {
         
         onChanged();
         return getExecutionQueueSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionQueueSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder getExecutionQueueSettingsOrBuilder() {
         if (executionQueueSettingsBuilder_ != null) {
           return executionQueueSettingsBuilder_.getMessageOrBuilder();
         } else {
           return executionQueueSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionQueueSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.getDefaultInstance() : executionQueueSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_queue_settings = 3;</code>
+       * <code>.flyteidl.admin.ExecutionQueueAttributes execution_queue_settings = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder> 
           getExecutionQueueSettingsFieldBuilder() {
         if (executionQueueSettingsBuilder_ == null) {
           executionQueueSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionQueueAttributesOrBuilder>(
                   getExecutionQueueSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1349,29 +1349,29 @@ public final class SettingsOuterClass {
         return executionQueueSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes executionClusterLabelSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel executionClusterLabelSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> executionClusterLabelSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder> executionClusterLabelSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
       public boolean hasExecutionClusterLabelSettings() {
         return executionClusterLabelSettingsBuilder_ != null || executionClusterLabelSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getExecutionClusterLabelSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel getExecutionClusterLabelSettings() {
         if (executionClusterLabelSettingsBuilder_ == null) {
-          return executionClusterLabelSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionClusterLabelSettings_;
+          return executionClusterLabelSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.getDefaultInstance() : executionClusterLabelSettings_;
         } else {
           return executionClusterLabelSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
-      public Builder setExecutionClusterLabelSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setExecutionClusterLabelSettings(flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel value) {
         if (executionClusterLabelSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1385,10 +1385,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
       public Builder setExecutionClusterLabelSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder builderForValue) {
         if (executionClusterLabelSettingsBuilder_ == null) {
           executionClusterLabelSettings_ = builderForValue.build();
           onChanged();
@@ -1399,13 +1399,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
-      public Builder mergeExecutionClusterLabelSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeExecutionClusterLabelSettings(flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel value) {
         if (executionClusterLabelSettingsBuilder_ == null) {
           if (executionClusterLabelSettings_ != null) {
             executionClusterLabelSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(executionClusterLabelSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.newBuilder(executionClusterLabelSettings_).mergeFrom(value).buildPartial();
           } else {
             executionClusterLabelSettings_ = value;
           }
@@ -1417,7 +1417,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
       public Builder clearExecutionClusterLabelSettings() {
         if (executionClusterLabelSettingsBuilder_ == null) {
@@ -1431,33 +1431,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getExecutionClusterLabelSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder getExecutionClusterLabelSettingsBuilder() {
         
         onChanged();
         return getExecutionClusterLabelSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getExecutionClusterLabelSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder getExecutionClusterLabelSettingsOrBuilder() {
         if (executionClusterLabelSettingsBuilder_ != null) {
           return executionClusterLabelSettingsBuilder_.getMessageOrBuilder();
         } else {
           return executionClusterLabelSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : executionClusterLabelSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.getDefaultInstance() : executionClusterLabelSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes execution_cluster_label_settings = 4;</code>
+       * <code>.flyteidl.admin.ExecutionClusterLabel execution_cluster_label_settings = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder> 
           getExecutionClusterLabelSettingsFieldBuilder() {
         if (executionClusterLabelSettingsBuilder_ == null) {
           executionClusterLabelSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabel.Builder, flyteidl.admin.MatchableResourceOuterClass.ExecutionClusterLabelOrBuilder>(
                   getExecutionClusterLabelSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1466,29 +1466,29 @@ public final class SettingsOuterClass {
         return executionClusterLabelSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes qualityOfServiceSettings_;
+      private flyteidl.core.Execution.QualityOfService qualityOfServiceSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> qualityOfServiceSettingsBuilder_;
+          flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder> qualityOfServiceSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
       public boolean hasQualityOfServiceSettings() {
         return qualityOfServiceSettingsBuilder_ != null || qualityOfServiceSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getQualityOfServiceSettings() {
+      public flyteidl.core.Execution.QualityOfService getQualityOfServiceSettings() {
         if (qualityOfServiceSettingsBuilder_ == null) {
-          return qualityOfServiceSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : qualityOfServiceSettings_;
+          return qualityOfServiceSettings_ == null ? flyteidl.core.Execution.QualityOfService.getDefaultInstance() : qualityOfServiceSettings_;
         } else {
           return qualityOfServiceSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
-      public Builder setQualityOfServiceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setQualityOfServiceSettings(flyteidl.core.Execution.QualityOfService value) {
         if (qualityOfServiceSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1502,10 +1502,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
       public Builder setQualityOfServiceSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.core.Execution.QualityOfService.Builder builderForValue) {
         if (qualityOfServiceSettingsBuilder_ == null) {
           qualityOfServiceSettings_ = builderForValue.build();
           onChanged();
@@ -1516,13 +1516,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
-      public Builder mergeQualityOfServiceSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeQualityOfServiceSettings(flyteidl.core.Execution.QualityOfService value) {
         if (qualityOfServiceSettingsBuilder_ == null) {
           if (qualityOfServiceSettings_ != null) {
             qualityOfServiceSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(qualityOfServiceSettings_).mergeFrom(value).buildPartial();
+              flyteidl.core.Execution.QualityOfService.newBuilder(qualityOfServiceSettings_).mergeFrom(value).buildPartial();
           } else {
             qualityOfServiceSettings_ = value;
           }
@@ -1534,7 +1534,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
       public Builder clearQualityOfServiceSettings() {
         if (qualityOfServiceSettingsBuilder_ == null) {
@@ -1548,33 +1548,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getQualityOfServiceSettingsBuilder() {
+      public flyteidl.core.Execution.QualityOfService.Builder getQualityOfServiceSettingsBuilder() {
         
         onChanged();
         return getQualityOfServiceSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getQualityOfServiceSettingsOrBuilder() {
+      public flyteidl.core.Execution.QualityOfServiceOrBuilder getQualityOfServiceSettingsOrBuilder() {
         if (qualityOfServiceSettingsBuilder_ != null) {
           return qualityOfServiceSettingsBuilder_.getMessageOrBuilder();
         } else {
           return qualityOfServiceSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : qualityOfServiceSettings_;
+              flyteidl.core.Execution.QualityOfService.getDefaultInstance() : qualityOfServiceSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes quality_of_service_settings = 5;</code>
+       * <code>.flyteidl.core.QualityOfService quality_of_service_settings = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder> 
           getQualityOfServiceSettingsFieldBuilder() {
         if (qualityOfServiceSettingsBuilder_ == null) {
           qualityOfServiceSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.core.Execution.QualityOfService, flyteidl.core.Execution.QualityOfService.Builder, flyteidl.core.Execution.QualityOfServiceOrBuilder>(
                   getQualityOfServiceSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1583,29 +1583,29 @@ public final class SettingsOuterClass {
         return qualityOfServiceSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes pluginOverrideSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.PluginOverride pluginOverrideSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> pluginOverrideSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.PluginOverride, flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder, flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder> pluginOverrideSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
       public boolean hasPluginOverrideSettings() {
         return pluginOverrideSettingsBuilder_ != null || pluginOverrideSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getPluginOverrideSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.PluginOverride getPluginOverrideSettings() {
         if (pluginOverrideSettingsBuilder_ == null) {
-          return pluginOverrideSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : pluginOverrideSettings_;
+          return pluginOverrideSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.PluginOverride.getDefaultInstance() : pluginOverrideSettings_;
         } else {
           return pluginOverrideSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
-      public Builder setPluginOverrideSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setPluginOverrideSettings(flyteidl.admin.MatchableResourceOuterClass.PluginOverride value) {
         if (pluginOverrideSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1619,10 +1619,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
       public Builder setPluginOverrideSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder builderForValue) {
         if (pluginOverrideSettingsBuilder_ == null) {
           pluginOverrideSettings_ = builderForValue.build();
           onChanged();
@@ -1633,13 +1633,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
-      public Builder mergePluginOverrideSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergePluginOverrideSettings(flyteidl.admin.MatchableResourceOuterClass.PluginOverride value) {
         if (pluginOverrideSettingsBuilder_ == null) {
           if (pluginOverrideSettings_ != null) {
             pluginOverrideSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(pluginOverrideSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.PluginOverride.newBuilder(pluginOverrideSettings_).mergeFrom(value).buildPartial();
           } else {
             pluginOverrideSettings_ = value;
           }
@@ -1651,7 +1651,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
       public Builder clearPluginOverrideSettings() {
         if (pluginOverrideSettingsBuilder_ == null) {
@@ -1665,33 +1665,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getPluginOverrideSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder getPluginOverrideSettingsBuilder() {
         
         onChanged();
         return getPluginOverrideSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getPluginOverrideSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder getPluginOverrideSettingsOrBuilder() {
         if (pluginOverrideSettingsBuilder_ != null) {
           return pluginOverrideSettingsBuilder_.getMessageOrBuilder();
         } else {
           return pluginOverrideSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : pluginOverrideSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.PluginOverride.getDefaultInstance() : pluginOverrideSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes plugin_override_settings = 6;</code>
+       * <code>.flyteidl.admin.PluginOverride plugin_override_settings = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.PluginOverride, flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder, flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder> 
           getPluginOverrideSettingsFieldBuilder() {
         if (pluginOverrideSettingsBuilder_ == null) {
           pluginOverrideSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.PluginOverride, flyteidl.admin.MatchableResourceOuterClass.PluginOverride.Builder, flyteidl.admin.MatchableResourceOuterClass.PluginOverrideOrBuilder>(
                   getPluginOverrideSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1700,29 +1700,29 @@ public final class SettingsOuterClass {
         return pluginOverrideSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes workflowExecutionSettings_;
+      private flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig workflowExecutionSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> workflowExecutionSettingsBuilder_;
+          flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder> workflowExecutionSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
       public boolean hasWorkflowExecutionSettings() {
         return workflowExecutionSettingsBuilder_ != null || workflowExecutionSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getWorkflowExecutionSettings() {
+      public flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig getWorkflowExecutionSettings() {
         if (workflowExecutionSettingsBuilder_ == null) {
-          return workflowExecutionSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : workflowExecutionSettings_;
+          return workflowExecutionSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.getDefaultInstance() : workflowExecutionSettings_;
         } else {
           return workflowExecutionSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
-      public Builder setWorkflowExecutionSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setWorkflowExecutionSettings(flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig value) {
         if (workflowExecutionSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1736,10 +1736,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
       public Builder setWorkflowExecutionSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder builderForValue) {
         if (workflowExecutionSettingsBuilder_ == null) {
           workflowExecutionSettings_ = builderForValue.build();
           onChanged();
@@ -1750,13 +1750,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
-      public Builder mergeWorkflowExecutionSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeWorkflowExecutionSettings(flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig value) {
         if (workflowExecutionSettingsBuilder_ == null) {
           if (workflowExecutionSettings_ != null) {
             workflowExecutionSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(workflowExecutionSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.newBuilder(workflowExecutionSettings_).mergeFrom(value).buildPartial();
           } else {
             workflowExecutionSettings_ = value;
           }
@@ -1768,7 +1768,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
       public Builder clearWorkflowExecutionSettings() {
         if (workflowExecutionSettingsBuilder_ == null) {
@@ -1782,33 +1782,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getWorkflowExecutionSettingsBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder getWorkflowExecutionSettingsBuilder() {
         
         onChanged();
         return getWorkflowExecutionSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getWorkflowExecutionSettingsOrBuilder() {
+      public flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder getWorkflowExecutionSettingsOrBuilder() {
         if (workflowExecutionSettingsBuilder_ != null) {
           return workflowExecutionSettingsBuilder_.getMessageOrBuilder();
         } else {
           return workflowExecutionSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : workflowExecutionSettings_;
+              flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.getDefaultInstance() : workflowExecutionSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes workflow_execution_settings = 7;</code>
+       * <code>.flyteidl.admin.WorkflowExecutionConfig workflow_execution_settings = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder> 
           getWorkflowExecutionSettingsFieldBuilder() {
         if (workflowExecutionSettingsBuilder_ == null) {
           workflowExecutionSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfig.Builder, flyteidl.admin.MatchableResourceOuterClass.WorkflowExecutionConfigOrBuilder>(
                   getWorkflowExecutionSettings(),
                   getParentForChildren(),
                   isClean());
@@ -1817,29 +1817,29 @@ public final class SettingsOuterClass {
         return workflowExecutionSettingsBuilder_;
       }
 
-      private flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes clusterAssignmentSettings_;
+      private flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment clusterAssignmentSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> clusterAssignmentSettingsBuilder_;
+          flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder> clusterAssignmentSettingsBuilder_;
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
       public boolean hasClusterAssignmentSettings() {
         return clusterAssignmentSettingsBuilder_ != null || clusterAssignmentSettings_ != null;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes getClusterAssignmentSettings() {
+      public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment getClusterAssignmentSettings() {
         if (clusterAssignmentSettingsBuilder_ == null) {
-          return clusterAssignmentSettings_ == null ? flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterAssignmentSettings_;
+          return clusterAssignmentSettings_ == null ? flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.getDefaultInstance() : clusterAssignmentSettings_;
         } else {
           return clusterAssignmentSettingsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
-      public Builder setClusterAssignmentSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder setClusterAssignmentSettings(flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment value) {
         if (clusterAssignmentSettingsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1853,10 +1853,10 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
       public Builder setClusterAssignmentSettings(
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder builderForValue) {
+          flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder builderForValue) {
         if (clusterAssignmentSettingsBuilder_ == null) {
           clusterAssignmentSettings_ = builderForValue.build();
           onChanged();
@@ -1867,13 +1867,13 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
-      public Builder mergeClusterAssignmentSettings(flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes value) {
+      public Builder mergeClusterAssignmentSettings(flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment value) {
         if (clusterAssignmentSettingsBuilder_ == null) {
           if (clusterAssignmentSettings_ != null) {
             clusterAssignmentSettings_ =
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.newBuilder(clusterAssignmentSettings_).mergeFrom(value).buildPartial();
+              flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.newBuilder(clusterAssignmentSettings_).mergeFrom(value).buildPartial();
           } else {
             clusterAssignmentSettings_ = value;
           }
@@ -1885,7 +1885,7 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
       public Builder clearClusterAssignmentSettings() {
         if (clusterAssignmentSettingsBuilder_ == null) {
@@ -1899,33 +1899,33 @@ public final class SettingsOuterClass {
         return this;
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder getClusterAssignmentSettingsBuilder() {
+      public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder getClusterAssignmentSettingsBuilder() {
         
         onChanged();
         return getClusterAssignmentSettingsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
-      public flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder getClusterAssignmentSettingsOrBuilder() {
+      public flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder getClusterAssignmentSettingsOrBuilder() {
         if (clusterAssignmentSettingsBuilder_ != null) {
           return clusterAssignmentSettingsBuilder_.getMessageOrBuilder();
         } else {
           return clusterAssignmentSettings_ == null ?
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.getDefaultInstance() : clusterAssignmentSettings_;
+              flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.getDefaultInstance() : clusterAssignmentSettings_;
         }
       }
       /**
-       * <code>.flyteidl.admin.MatchingAttributes cluster_assignment_settings = 8;</code>
+       * <code>.flyteidl.admin.ClusterAssignment cluster_assignment_settings = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder> 
+          flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder> 
           getClusterAssignmentSettingsFieldBuilder() {
         if (clusterAssignmentSettingsBuilder_ == null) {
           clusterAssignmentSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributes.Builder, flyteidl.admin.MatchableResourceOuterClass.MatchingAttributesOrBuilder>(
+              flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignmentOrBuilder>(
                   getClusterAssignmentSettings(),
                   getParentForChildren(),
                   isClean());
@@ -21419,106 +21419,108 @@ public final class SettingsOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035flyteidl/admin/settings.proto\022\016flyteid" +
-      "l.admin\032\'flyteidl/admin/matchable_resour" +
-      "ce.proto\"\324\004\n\022SettingsCollection\022B\n\026task_" +
-      "resource_settings\030\001 \001(\0132\".flyteidl.admin" +
-      ".MatchingAttributes\022E\n\031cluster_resource_" +
-      "settings\030\002 \001(\0132\".flyteidl.admin.Matching" +
-      "Attributes\022D\n\030execution_queue_settings\030\003" +
-      " \001(\0132\".flyteidl.admin.MatchingAttributes" +
-      "\022L\n execution_cluster_label_settings\030\004 \001" +
-      "(\0132\".flyteidl.admin.MatchingAttributes\022G" +
-      "\n\033quality_of_service_settings\030\005 \001(\0132\".fl" +
-      "yteidl.admin.MatchingAttributes\022D\n\030plugi" +
-      "n_override_settings\030\006 \001(\0132\".flyteidl.adm" +
-      "in.MatchingAttributes\022G\n\033workflow_execut" +
-      "ion_settings\030\007 \001(\0132\".flyteidl.admin.Matc" +
-      "hingAttributes\022G\n\033cluster_assignment_set" +
-      "tings\030\010 \001(\0132\".flyteidl.admin.MatchingAtt" +
-      "ributes\"\340\001\n\010Settings\0222\n\006global\030\001 \001(\0132\".f" +
-      "lyteidl.admin.SettingsCollection\022G\n\020proj" +
-      "ect_settings\030\002 \003(\0132-.flyteidl.admin.Sett" +
-      "ings.ProjectSettingsEntry\032W\n\024ProjectSett" +
-      "ingsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037." +
-      "flyteidl.admin.ProjectSettings:\0028\001\"\375\001\n\017P" +
-      "rojectSettings\022\017\n\007project\030\001 \001(\t\0224\n\010setti" +
-      "ngs\030\002 \001(\0132\".flyteidl.admin.SettingsColle" +
-      "ction\022L\n\017domain_settings\030\003 \003(\01323.flyteid" +
-      "l.admin.ProjectSettings.DomainSettingsEn" +
-      "try\032U\n\023DomainSettingsEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "-\n\005value\030\002 \001(\0132\036.flyteidl.admin.DomainSe" +
-      "ttings:\0028\001\"\202\002\n\016DomainSettings\022\016\n\006domain\030" +
-      "\001 \001(\t\0224\n\010settings\030\002 \001(\0132\".flyteidl.admin" +
-      ".SettingsCollection\022O\n\021workflow_settings" +
-      "\030\003 \003(\01324.flyteidl.admin.DomainSettings.W" +
-      "orkflowSettingsEntry\032Y\n\025WorkflowSettings" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 .flyt" +
-      "eidl.admin.WorkflowSettings:\0028\001\"\220\002\n\020Work" +
-      "flowSettings\022\020\n\010workflow\030\001 \001(\t\0224\n\010settin" +
-      "gs\030\002 \001(\0132\".flyteidl.admin.SettingsCollec" +
-      "tion\022U\n\023launchplan_settings\030\003 \003(\01328.flyt" +
-      "eidl.admin.WorkflowSettings.LaunchplanSe" +
-      "ttingsEntry\032]\n\027LaunchplanSettingsEntry\022\013" +
-      "\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".flyteidl.ad" +
-      "min.LaunchplanSettings:\0028\001\"^\n\022Launchplan" +
-      "Settings\022\022\n\nlaunchplan\030\001 \001(\t\0224\n\010settings" +
-      "\030\002 \001(\0132\".flyteidl.admin.SettingsCollecti" +
-      "on\"\r\n\013GlobalLevel\"\037\n\014ProjectLevel\022\017\n\007pro" +
-      "ject\030\001 \001(\t\".\n\013DomainLevel\022\017\n\007project\030\001 \001" +
-      "(\t\022\016\n\006domain\030\002 \001(\t\"B\n\rWorkflowLevel\022\017\n\007p" +
-      "roject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow" +
-      "\030\003 \001(\t\"X\n\017LaunchplanLevel\022\017\n\007project\030\001 \001" +
-      "(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030\003 \001(\t\022\022\n\n" +
-      "launchplan\030\004 \001(\t\"\355\002\n\025SettingsUpdateReque" +
-      "st\0223\n\014global_level\030\001 \001(\0132\033.flyteidl.admi" +
-      "n.GlobalLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034" +
-      ".flyteidl.admin.ProjectLevelH\000\0223\n\014domain" +
-      "_level\030\003 \001(\0132\033.flyteidl.admin.DomainLeve" +
-      "lH\000\0227\n\016workflow_level\030\004 \001(\0132\035.flyteidl.a" +
-      "dmin.WorkflowLevelH\000\022;\n\020launchplan_level" +
-      "\030\005 \001(\0132\037.flyteidl.admin.LaunchplanLevelH" +
-      "\000\0224\n\010settings\030\006 \001(\0132\".flyteidl.admin.Set" +
-      "tingsCollectionB\007\n\005level\"\361\002\n\031FullSetting" +
-      "sUpdateRequest\0223\n\014global_level\030\001 \001(\0132\033.f" +
-      "lyteidl.admin.GlobalLevelH\000\0225\n\rproject_l" +
-      "evel\030\002 \001(\0132\034.flyteidl.admin.ProjectLevel" +
-      "H\000\0223\n\014domain_level\030\003 \001(\0132\033.flyteidl.admi" +
-      "n.DomainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132" +
-      "\035.flyteidl.admin.WorkflowLevelH\000\022;\n\020laun" +
-      "chplan_level\030\005 \001(\0132\037.flyteidl.admin.Laun" +
-      "chplanLevelH\000\0224\n\010settings\030\006 \001(\0132\".flytei" +
-      "dl.admin.SettingsCollectionB\007\n\005level\"\034\n\032" +
-      "FullSettingsUpdateResponse\"\264\002\n\022SettingsG" +
-      "etRequest\0223\n\014global_level\030\001 \001(\0132\033.flytei" +
-      "dl.admin.GlobalLevelH\000\0225\n\rproject_level\030" +
-      "\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\0223\n" +
-      "\014domain_level\030\003 \001(\0132\033.flyteidl.admin.Dom" +
-      "ainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.fly" +
-      "teidl.admin.WorkflowLevelH\000\022;\n\020launchpla" +
-      "n_level\030\005 \001(\0132\037.flyteidl.admin.Launchpla" +
-      "nLevelH\000B\007\n\005level\"\353\002\n\023SettingsGetRespons" +
-      "e\0223\n\014global_level\030\001 \001(\0132\033.flyteidl.admin" +
-      ".GlobalLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034." +
-      "flyteidl.admin.ProjectLevelH\000\0223\n\014domain_" +
-      "level\030\003 \001(\0132\033.flyteidl.admin.DomainLevel" +
-      "H\000\0227\n\016workflow_level\030\004 \001(\0132\035.flyteidl.ad" +
-      "min.WorkflowLevelH\000\022;\n\020launchplan_level\030" +
-      "\005 \001(\0132\037.flyteidl.admin.LaunchplanLevelH\000" +
-      "\0224\n\010settings\030\006 \001(\0132\".flyteidl.admin.Sett" +
-      "ingsCollectionB\007\n\005level\"\030\n\026FullSettingsG" +
-      "etRequest\"E\n\027FullSettingsGetResponse\022*\n\010" +
-      "settings\030\001 \001(\0132\030.flyteidl.admin.Settings" +
-      "\"\267\002\n\025SettingsDeleteRequest\0223\n\014global_lev" +
-      "el\030\001 \001(\0132\033.flyteidl.admin.GlobalLevelH\000\022" +
-      "5\n\rproject_level\030\002 \001(\0132\034.flyteidl.admin." +
-      "ProjectLevelH\000\0223\n\014domain_level\030\003 \001(\0132\033.f" +
-      "lyteidl.admin.DomainLevelH\000\0227\n\016workflow_" +
-      "level\030\004 \001(\0132\035.flyteidl.admin.WorkflowLev" +
-      "elH\000\022;\n\020launchplan_level\030\005 \001(\0132\037.flyteid" +
-      "l.admin.LaunchplanLevelH\000B\007\n\005level\"\030\n\026Se" +
-      "ttingsDeleteResponseB7Z5github.com/flyte" +
-      "org/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
-      "roto3"
+      "l.admin\032\'flyteidl/admin/cluster_assignme" +
+      "nt.proto\032\035flyteidl/core/execution.proto\032" +
+      "\'flyteidl/admin/matchable_resource.proto" +
+      "\"\345\004\n\022SettingsCollection\022F\n\026task_resource" +
+      "_settings\030\001 \001(\0132&.flyteidl.admin.TaskRes" +
+      "ourceAttributes\022L\n\031cluster_resource_sett" +
+      "ings\030\002 \001(\0132).flyteidl.admin.ClusterResou" +
+      "rceAttributes\022J\n\030execution_queue_setting" +
+      "s\030\003 \001(\0132(.flyteidl.admin.ExecutionQueueA" +
+      "ttributes\022O\n execution_cluster_label_set" +
+      "tings\030\004 \001(\0132%.flyteidl.admin.ExecutionCl" +
+      "usterLabel\022D\n\033quality_of_service_setting" +
+      "s\030\005 \001(\0132\037.flyteidl.core.QualityOfService" +
+      "\022@\n\030plugin_override_settings\030\006 \001(\0132\036.fly" +
+      "teidl.admin.PluginOverride\022L\n\033workflow_e" +
+      "xecution_settings\030\007 \001(\0132\'.flyteidl.admin" +
+      ".WorkflowExecutionConfig\022F\n\033cluster_assi" +
+      "gnment_settings\030\010 \001(\0132!.flyteidl.admin.C" +
+      "lusterAssignment\"\340\001\n\010Settings\0222\n\006global\030" +
+      "\001 \001(\0132\".flyteidl.admin.SettingsCollectio" +
+      "n\022G\n\020project_settings\030\002 \003(\0132-.flyteidl.a" +
+      "dmin.Settings.ProjectSettingsEntry\032W\n\024Pr" +
+      "ojectSettingsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value" +
+      "\030\002 \001(\0132\037.flyteidl.admin.ProjectSettings:" +
+      "\0028\001\"\375\001\n\017ProjectSettings\022\017\n\007project\030\001 \001(\t" +
+      "\0224\n\010settings\030\002 \001(\0132\".flyteidl.admin.Sett" +
+      "ingsCollection\022L\n\017domain_settings\030\003 \003(\0132" +
+      "3.flyteidl.admin.ProjectSettings.DomainS" +
+      "ettingsEntry\032U\n\023DomainSettingsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022-\n\005value\030\002 \001(\0132\036.flyteidl.admin" +
+      ".DomainSettings:\0028\001\"\202\002\n\016DomainSettings\022\016" +
+      "\n\006domain\030\001 \001(\t\0224\n\010settings\030\002 \001(\0132\".flyte" +
+      "idl.admin.SettingsCollection\022O\n\021workflow" +
+      "_settings\030\003 \003(\01324.flyteidl.admin.DomainS" +
+      "ettings.WorkflowSettingsEntry\032Y\n\025Workflo" +
+      "wSettingsEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001" +
+      "(\0132 .flyteidl.admin.WorkflowSettings:\0028\001" +
+      "\"\220\002\n\020WorkflowSettings\022\020\n\010workflow\030\001 \001(\t\022" +
+      "4\n\010settings\030\002 \001(\0132\".flyteidl.admin.Setti" +
+      "ngsCollection\022U\n\023launchplan_settings\030\003 \003" +
+      "(\01328.flyteidl.admin.WorkflowSettings.Lau" +
+      "nchplanSettingsEntry\032]\n\027LaunchplanSettin" +
+      "gsEntry\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".fl" +
+      "yteidl.admin.LaunchplanSettings:\0028\001\"^\n\022L" +
+      "aunchplanSettings\022\022\n\nlaunchplan\030\001 \001(\t\0224\n" +
+      "\010settings\030\002 \001(\0132\".flyteidl.admin.Setting" +
+      "sCollection\"\r\n\013GlobalLevel\"\037\n\014ProjectLev" +
+      "el\022\017\n\007project\030\001 \001(\t\".\n\013DomainLevel\022\017\n\007pr" +
+      "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\"B\n\rWorkflowL" +
+      "evel\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n" +
+      "\010workflow\030\003 \001(\t\"X\n\017LaunchplanLevel\022\017\n\007pr" +
+      "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010workflow\030" +
+      "\003 \001(\t\022\022\n\nlaunchplan\030\004 \001(\t\"\355\002\n\025SettingsUp" +
+      "dateRequest\0223\n\014global_level\030\001 \001(\0132\033.flyt" +
+      "eidl.admin.GlobalLevelH\000\0225\n\rproject_leve" +
+      "l\030\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\022" +
+      "3\n\014domain_level\030\003 \001(\0132\033.flyteidl.admin.D" +
+      "omainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.f" +
+      "lyteidl.admin.WorkflowLevelH\000\022;\n\020launchp" +
+      "lan_level\030\005 \001(\0132\037.flyteidl.admin.Launchp" +
+      "lanLevelH\000\0224\n\010settings\030\006 \001(\0132\".flyteidl." +
+      "admin.SettingsCollectionB\007\n\005level\"\361\002\n\031Fu" +
+      "llSettingsUpdateRequest\0223\n\014global_level\030" +
+      "\001 \001(\0132\033.flyteidl.admin.GlobalLevelH\000\0225\n\r" +
+      "project_level\030\002 \001(\0132\034.flyteidl.admin.Pro" +
+      "jectLevelH\000\0223\n\014domain_level\030\003 \001(\0132\033.flyt" +
+      "eidl.admin.DomainLevelH\000\0227\n\016workflow_lev" +
+      "el\030\004 \001(\0132\035.flyteidl.admin.WorkflowLevelH" +
+      "\000\022;\n\020launchplan_level\030\005 \001(\0132\037.flyteidl.a" +
+      "dmin.LaunchplanLevelH\000\0224\n\010settings\030\006 \001(\013" +
+      "2\".flyteidl.admin.SettingsCollectionB\007\n\005" +
+      "level\"\034\n\032FullSettingsUpdateResponse\"\264\002\n\022" +
+      "SettingsGetRequest\0223\n\014global_level\030\001 \001(\013" +
+      "2\033.flyteidl.admin.GlobalLevelH\000\0225\n\rproje" +
+      "ct_level\030\002 \001(\0132\034.flyteidl.admin.ProjectL" +
+      "evelH\000\0223\n\014domain_level\030\003 \001(\0132\033.flyteidl." +
+      "admin.DomainLevelH\000\0227\n\016workflow_level\030\004 " +
+      "\001(\0132\035.flyteidl.admin.WorkflowLevelH\000\022;\n\020" +
+      "launchplan_level\030\005 \001(\0132\037.flyteidl.admin." +
+      "LaunchplanLevelH\000B\007\n\005level\"\353\002\n\023SettingsG" +
+      "etResponse\0223\n\014global_level\030\001 \001(\0132\033.flyte" +
+      "idl.admin.GlobalLevelH\000\0225\n\rproject_level" +
+      "\030\002 \001(\0132\034.flyteidl.admin.ProjectLevelH\000\0223" +
+      "\n\014domain_level\030\003 \001(\0132\033.flyteidl.admin.Do" +
+      "mainLevelH\000\0227\n\016workflow_level\030\004 \001(\0132\035.fl" +
+      "yteidl.admin.WorkflowLevelH\000\022;\n\020launchpl" +
+      "an_level\030\005 \001(\0132\037.flyteidl.admin.Launchpl" +
+      "anLevelH\000\0224\n\010settings\030\006 \001(\0132\".flyteidl.a" +
+      "dmin.SettingsCollectionB\007\n\005level\"\030\n\026Full" +
+      "SettingsGetRequest\"E\n\027FullSettingsGetRes" +
+      "ponse\022*\n\010settings\030\001 \001(\0132\030.flyteidl.admin" +
+      ".Settings\"\267\002\n\025SettingsDeleteRequest\0223\n\014g" +
+      "lobal_level\030\001 \001(\0132\033.flyteidl.admin.Globa" +
+      "lLevelH\000\0225\n\rproject_level\030\002 \001(\0132\034.flytei" +
+      "dl.admin.ProjectLevelH\000\0223\n\014domain_level\030" +
+      "\003 \001(\0132\033.flyteidl.admin.DomainLevelH\000\0227\n\016" +
+      "workflow_level\030\004 \001(\0132\035.flyteidl.admin.Wo" +
+      "rkflowLevelH\000\022;\n\020launchplan_level\030\005 \001(\0132" +
+      "\037.flyteidl.admin.LaunchplanLevelH\000B\007\n\005le" +
+      "vel\"\030\n\026SettingsDeleteResponseB7Z5github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21531,6 +21533,8 @@ public final class SettingsOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor(),
+          flyteidl.core.Execution.getDescriptor(),
           flyteidl.admin.MatchableResourceOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_SettingsCollection_descriptor =
@@ -21677,6 +21681,8 @@ public final class SettingsOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SettingsDeleteResponse_descriptor,
         new java.lang.String[] { });
+    flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor();
+    flyteidl.core.Execution.getDescriptor();
     flyteidl.admin.MatchableResourceOuterClass.getDescriptor();
   }
 

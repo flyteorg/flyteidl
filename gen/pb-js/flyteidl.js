@@ -33372,14 +33372,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a SettingsCollection.
              * @memberof flyteidl.admin
              * @interface ISettingsCollection
-             * @property {flyteidl.admin.IMatchingAttributes|null} [taskResourceSettings] SettingsCollection taskResourceSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [clusterResourceSettings] SettingsCollection clusterResourceSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [executionQueueSettings] SettingsCollection executionQueueSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [executionClusterLabelSettings] SettingsCollection executionClusterLabelSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [qualityOfServiceSettings] SettingsCollection qualityOfServiceSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [pluginOverrideSettings] SettingsCollection pluginOverrideSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [workflowExecutionSettings] SettingsCollection workflowExecutionSettings
-             * @property {flyteidl.admin.IMatchingAttributes|null} [clusterAssignmentSettings] SettingsCollection clusterAssignmentSettings
+             * @property {flyteidl.admin.ITaskResourceAttributes|null} [taskResourceSettings] SettingsCollection taskResourceSettings
+             * @property {flyteidl.admin.IClusterResourceAttributes|null} [clusterResourceSettings] SettingsCollection clusterResourceSettings
+             * @property {flyteidl.admin.IExecutionQueueAttributes|null} [executionQueueSettings] SettingsCollection executionQueueSettings
+             * @property {flyteidl.admin.IExecutionClusterLabel|null} [executionClusterLabelSettings] SettingsCollection executionClusterLabelSettings
+             * @property {flyteidl.core.IQualityOfService|null} [qualityOfServiceSettings] SettingsCollection qualityOfServiceSettings
+             * @property {flyteidl.admin.IPluginOverride|null} [pluginOverrideSettings] SettingsCollection pluginOverrideSettings
+             * @property {flyteidl.admin.IWorkflowExecutionConfig|null} [workflowExecutionSettings] SettingsCollection workflowExecutionSettings
+             * @property {flyteidl.admin.IClusterAssignment|null} [clusterAssignmentSettings] SettingsCollection clusterAssignmentSettings
              */
 
             /**
@@ -33399,7 +33399,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection taskResourceSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} taskResourceSettings
+             * @member {flyteidl.admin.ITaskResourceAttributes|null|undefined} taskResourceSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33407,7 +33407,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection clusterResourceSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} clusterResourceSettings
+             * @member {flyteidl.admin.IClusterResourceAttributes|null|undefined} clusterResourceSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33415,7 +33415,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection executionQueueSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} executionQueueSettings
+             * @member {flyteidl.admin.IExecutionQueueAttributes|null|undefined} executionQueueSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33423,7 +33423,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection executionClusterLabelSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} executionClusterLabelSettings
+             * @member {flyteidl.admin.IExecutionClusterLabel|null|undefined} executionClusterLabelSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33431,7 +33431,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection qualityOfServiceSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} qualityOfServiceSettings
+             * @member {flyteidl.core.IQualityOfService|null|undefined} qualityOfServiceSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33439,7 +33439,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection pluginOverrideSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} pluginOverrideSettings
+             * @member {flyteidl.admin.IPluginOverride|null|undefined} pluginOverrideSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33447,7 +33447,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection workflowExecutionSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} workflowExecutionSettings
+             * @member {flyteidl.admin.IWorkflowExecutionConfig|null|undefined} workflowExecutionSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33455,7 +33455,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * SettingsCollection clusterAssignmentSettings.
-             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} clusterAssignmentSettings
+             * @member {flyteidl.admin.IClusterAssignment|null|undefined} clusterAssignmentSettings
              * @memberof flyteidl.admin.SettingsCollection
              * @instance
              */
@@ -33486,21 +33486,21 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.taskResourceSettings != null && message.hasOwnProperty("taskResourceSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.taskResourceSettings, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.flyteidl.admin.TaskResourceAttributes.encode(message.taskResourceSettings, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.clusterResourceSettings != null && message.hasOwnProperty("clusterResourceSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.clusterResourceSettings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.admin.ClusterResourceAttributes.encode(message.clusterResourceSettings, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.executionQueueSettings != null && message.hasOwnProperty("executionQueueSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.executionQueueSettings, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.admin.ExecutionQueueAttributes.encode(message.executionQueueSettings, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.executionClusterLabelSettings != null && message.hasOwnProperty("executionClusterLabelSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.executionClusterLabelSettings, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.flyteidl.admin.ExecutionClusterLabel.encode(message.executionClusterLabelSettings, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.qualityOfServiceSettings != null && message.hasOwnProperty("qualityOfServiceSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.qualityOfServiceSettings, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.core.QualityOfService.encode(message.qualityOfServiceSettings, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.pluginOverrideSettings != null && message.hasOwnProperty("pluginOverrideSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.pluginOverrideSettings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.flyteidl.admin.PluginOverride.encode(message.pluginOverrideSettings, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.workflowExecutionSettings, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    $root.flyteidl.admin.WorkflowExecutionConfig.encode(message.workflowExecutionSettings, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.clusterAssignmentSettings != null && message.hasOwnProperty("clusterAssignmentSettings"))
-                    $root.flyteidl.admin.MatchingAttributes.encode(message.clusterAssignmentSettings, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    $root.flyteidl.admin.ClusterAssignment.encode(message.clusterAssignmentSettings, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                 return writer;
             };
 
@@ -33523,28 +33523,28 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.taskResourceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.taskResourceSettings = $root.flyteidl.admin.TaskResourceAttributes.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.clusterResourceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.clusterResourceSettings = $root.flyteidl.admin.ClusterResourceAttributes.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.executionQueueSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.executionQueueSettings = $root.flyteidl.admin.ExecutionQueueAttributes.decode(reader, reader.uint32());
                         break;
                     case 4:
-                        message.executionClusterLabelSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.executionClusterLabelSettings = $root.flyteidl.admin.ExecutionClusterLabel.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.qualityOfServiceSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.qualityOfServiceSettings = $root.flyteidl.core.QualityOfService.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.pluginOverrideSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.pluginOverrideSettings = $root.flyteidl.admin.PluginOverride.decode(reader, reader.uint32());
                         break;
                     case 7:
-                        message.workflowExecutionSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.workflowExecutionSettings = $root.flyteidl.admin.WorkflowExecutionConfig.decode(reader, reader.uint32());
                         break;
                     case 8:
-                        message.clusterAssignmentSettings = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        message.clusterAssignmentSettings = $root.flyteidl.admin.ClusterAssignment.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -33566,42 +33566,42 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.taskResourceSettings != null && message.hasOwnProperty("taskResourceSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.taskResourceSettings);
+                    let error = $root.flyteidl.admin.TaskResourceAttributes.verify(message.taskResourceSettings);
                     if (error)
                         return "taskResourceSettings." + error;
                 }
                 if (message.clusterResourceSettings != null && message.hasOwnProperty("clusterResourceSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.clusterResourceSettings);
+                    let error = $root.flyteidl.admin.ClusterResourceAttributes.verify(message.clusterResourceSettings);
                     if (error)
                         return "clusterResourceSettings." + error;
                 }
                 if (message.executionQueueSettings != null && message.hasOwnProperty("executionQueueSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.executionQueueSettings);
+                    let error = $root.flyteidl.admin.ExecutionQueueAttributes.verify(message.executionQueueSettings);
                     if (error)
                         return "executionQueueSettings." + error;
                 }
                 if (message.executionClusterLabelSettings != null && message.hasOwnProperty("executionClusterLabelSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.executionClusterLabelSettings);
+                    let error = $root.flyteidl.admin.ExecutionClusterLabel.verify(message.executionClusterLabelSettings);
                     if (error)
                         return "executionClusterLabelSettings." + error;
                 }
                 if (message.qualityOfServiceSettings != null && message.hasOwnProperty("qualityOfServiceSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.qualityOfServiceSettings);
+                    let error = $root.flyteidl.core.QualityOfService.verify(message.qualityOfServiceSettings);
                     if (error)
                         return "qualityOfServiceSettings." + error;
                 }
                 if (message.pluginOverrideSettings != null && message.hasOwnProperty("pluginOverrideSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.pluginOverrideSettings);
+                    let error = $root.flyteidl.admin.PluginOverride.verify(message.pluginOverrideSettings);
                     if (error)
                         return "pluginOverrideSettings." + error;
                 }
                 if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.workflowExecutionSettings);
+                    let error = $root.flyteidl.admin.WorkflowExecutionConfig.verify(message.workflowExecutionSettings);
                     if (error)
                         return "workflowExecutionSettings." + error;
                 }
                 if (message.clusterAssignmentSettings != null && message.hasOwnProperty("clusterAssignmentSettings")) {
-                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.clusterAssignmentSettings);
+                    let error = $root.flyteidl.admin.ClusterAssignment.verify(message.clusterAssignmentSettings);
                     if (error)
                         return "clusterAssignmentSettings." + error;
                 }

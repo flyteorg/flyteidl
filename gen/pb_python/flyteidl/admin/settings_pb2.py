@@ -13,6 +13,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.admin import cluster_assignment_pb2 as flyteidl_dot_admin_dot_cluster__assignment__pb2
+from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
 from flyteidl.admin import matchable_resource_pb2 as flyteidl_dot_admin_dot_matchable__resource__pb2
 
 
@@ -21,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/settings.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/matchable_resource.proto\"\xd4\x04\n\x12SettingsCollection\x12\x42\n\x16task_resource_settings\x18\x01 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12\x45\n\x19\x63luster_resource_settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12\x44\n\x18\x65xecution_queue_settings\x18\x03 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12L\n execution_cluster_label_settings\x18\x04 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12G\n\x1bquality_of_service_settings\x18\x05 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12\x44\n\x18plugin_override_settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12G\n\x1bworkflow_execution_settings\x18\x07 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\x12G\n\x1b\x63luster_assignment_settings\x18\x08 \x01(\x0b\x32\".flyteidl.admin.MatchingAttributes\"\xe0\x01\n\x08Settings\x12\x32\n\x06global\x18\x01 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12G\n\x10project_settings\x18\x02 \x03(\x0b\x32-.flyteidl.admin.Settings.ProjectSettingsEntry\x1aW\n\x14ProjectSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.ProjectSettings:\x02\x38\x01\"\xfd\x01\n\x0fProjectSettings\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12L\n\x0f\x64omain_settings\x18\x03 \x03(\x0b\x32\x33.flyteidl.admin.ProjectSettings.DomainSettingsEntry\x1aU\n\x13\x44omainSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.flyteidl.admin.DomainSettings:\x02\x38\x01\"\x82\x02\n\x0e\x44omainSettings\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12O\n\x11workflow_settings\x18\x03 \x03(\x0b\x32\x34.flyteidl.admin.DomainSettings.WorkflowSettingsEntry\x1aY\n\x15WorkflowSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .flyteidl.admin.WorkflowSettings:\x02\x38\x01\"\x90\x02\n\x10WorkflowSettings\x12\x10\n\x08workflow\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12U\n\x13launchplan_settings\x18\x03 \x03(\x0b\x32\x38.flyteidl.admin.WorkflowSettings.LaunchplanSettingsEntry\x1a]\n\x17LaunchplanSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\x05value\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchplanSettings:\x02\x38\x01\"^\n\x12LaunchplanSettings\x12\x12\n\nlaunchplan\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\"\r\n\x0bGlobalLevel\"\x1f\n\x0cProjectLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\".\n\x0b\x44omainLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"B\n\rWorkflowLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\"X\n\x0fLaunchplanLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12\x12\n\nlaunchplan\x18\x04 \x01(\t\"\xed\x02\n\x15SettingsUpdateRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\xf1\x02\n\x19\x46ullSettingsUpdateRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\x1c\n\x1a\x46ullSettingsUpdateResponse\"\xb4\x02\n\x12SettingsGetRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x42\x07\n\x05level\"\xeb\x02\n\x13SettingsGetResponse\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\x18\n\x16\x46ullSettingsGetRequest\"E\n\x17\x46ullSettingsGetResponse\x12*\n\x08settings\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Settings\"\xb7\x02\n\x15SettingsDeleteRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x42\x07\n\x05level\"\x18\n\x16SettingsDeleteResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/settings.proto\x12\x0e\x66lyteidl.admin\x1a\'flyteidl/admin/cluster_assignment.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\'flyteidl/admin/matchable_resource.proto\"\xe5\x04\n\x12SettingsCollection\x12\x46\n\x16task_resource_settings\x18\x01 \x01(\x0b\x32&.flyteidl.admin.TaskResourceAttributes\x12L\n\x19\x63luster_resource_settings\x18\x02 \x01(\x0b\x32).flyteidl.admin.ClusterResourceAttributes\x12J\n\x18\x65xecution_queue_settings\x18\x03 \x01(\x0b\x32(.flyteidl.admin.ExecutionQueueAttributes\x12O\n execution_cluster_label_settings\x18\x04 \x01(\x0b\x32%.flyteidl.admin.ExecutionClusterLabel\x12\x44\n\x1bquality_of_service_settings\x18\x05 \x01(\x0b\x32\x1f.flyteidl.core.QualityOfService\x12@\n\x18plugin_override_settings\x18\x06 \x01(\x0b\x32\x1e.flyteidl.admin.PluginOverride\x12L\n\x1bworkflow_execution_settings\x18\x07 \x01(\x0b\x32\'.flyteidl.admin.WorkflowExecutionConfig\x12\x46\n\x1b\x63luster_assignment_settings\x18\x08 \x01(\x0b\x32!.flyteidl.admin.ClusterAssignment\"\xe0\x01\n\x08Settings\x12\x32\n\x06global\x18\x01 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12G\n\x10project_settings\x18\x02 \x03(\x0b\x32-.flyteidl.admin.Settings.ProjectSettingsEntry\x1aW\n\x14ProjectSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.ProjectSettings:\x02\x38\x01\"\xfd\x01\n\x0fProjectSettings\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12L\n\x0f\x64omain_settings\x18\x03 \x03(\x0b\x32\x33.flyteidl.admin.ProjectSettings.DomainSettingsEntry\x1aU\n\x13\x44omainSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.flyteidl.admin.DomainSettings:\x02\x38\x01\"\x82\x02\n\x0e\x44omainSettings\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12O\n\x11workflow_settings\x18\x03 \x03(\x0b\x32\x34.flyteidl.admin.DomainSettings.WorkflowSettingsEntry\x1aY\n\x15WorkflowSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .flyteidl.admin.WorkflowSettings:\x02\x38\x01\"\x90\x02\n\x10WorkflowSettings\x12\x10\n\x08workflow\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\x12U\n\x13launchplan_settings\x18\x03 \x03(\x0b\x32\x38.flyteidl.admin.WorkflowSettings.LaunchplanSettingsEntry\x1a]\n\x17LaunchplanSettingsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x31\n\x05value\x18\x02 \x01(\x0b\x32\".flyteidl.admin.LaunchplanSettings:\x02\x38\x01\"^\n\x12LaunchplanSettings\x12\x12\n\nlaunchplan\x18\x01 \x01(\t\x12\x34\n\x08settings\x18\x02 \x01(\x0b\x32\".flyteidl.admin.SettingsCollection\"\r\n\x0bGlobalLevel\"\x1f\n\x0cProjectLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\".\n\x0b\x44omainLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"B\n\rWorkflowLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\"X\n\x0fLaunchplanLevel\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08workflow\x18\x03 \x01(\t\x12\x12\n\nlaunchplan\x18\x04 \x01(\t\"\xed\x02\n\x15SettingsUpdateRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\xf1\x02\n\x19\x46ullSettingsUpdateRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\x1c\n\x1a\x46ullSettingsUpdateResponse\"\xb4\x02\n\x12SettingsGetRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x42\x07\n\x05level\"\xeb\x02\n\x13SettingsGetResponse\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x12\x34\n\x08settings\x18\x06 \x01(\x0b\x32\".flyteidl.admin.SettingsCollectionB\x07\n\x05level\"\x18\n\x16\x46ullSettingsGetRequest\"E\n\x17\x46ullSettingsGetResponse\x12*\n\x08settings\x18\x01 \x01(\x0b\x32\x18.flyteidl.admin.Settings\"\xb7\x02\n\x15SettingsDeleteRequest\x12\x33\n\x0cglobal_level\x18\x01 \x01(\x0b\x32\x1b.flyteidl.admin.GlobalLevelH\x00\x12\x35\n\rproject_level\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.ProjectLevelH\x00\x12\x33\n\x0c\x64omain_level\x18\x03 \x01(\x0b\x32\x1b.flyteidl.admin.DomainLevelH\x00\x12\x37\n\x0eworkflow_level\x18\x04 \x01(\x0b\x32\x1d.flyteidl.admin.WorkflowLevelH\x00\x12;\n\x10launchplan_level\x18\x05 \x01(\x0b\x32\x1f.flyteidl.admin.LaunchplanLevelH\x00\x42\x07\n\x05level\"\x18\n\x16SettingsDeleteResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_admin_dot_cluster__assignment__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_matchable__resource__pb2.DESCRIPTOR,])
 
 
 
@@ -103,8 +105,8 @@ _SETTINGSCOLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=91,
-  serialized_end=687,
+  serialized_start=163,
+  serialized_end=776,
 )
 
 
@@ -141,8 +143,8 @@ _SETTINGS_PROJECTSETTINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=827,
-  serialized_end=914,
+  serialized_start=916,
+  serialized_end=1003,
 )
 
 _SETTINGS = _descriptor.Descriptor(
@@ -178,8 +180,8 @@ _SETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=690,
-  serialized_end=914,
+  serialized_start=779,
+  serialized_end=1003,
 )
 
 
@@ -216,8 +218,8 @@ _PROJECTSETTINGS_DOMAINSETTINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1085,
-  serialized_end=1170,
+  serialized_start=1174,
+  serialized_end=1259,
 )
 
 _PROJECTSETTINGS = _descriptor.Descriptor(
@@ -260,8 +262,8 @@ _PROJECTSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=917,
-  serialized_end=1170,
+  serialized_start=1006,
+  serialized_end=1259,
 )
 
 
@@ -298,8 +300,8 @@ _DOMAINSETTINGS_WORKFLOWSETTINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1342,
-  serialized_end=1431,
+  serialized_start=1431,
+  serialized_end=1520,
 )
 
 _DOMAINSETTINGS = _descriptor.Descriptor(
@@ -342,8 +344,8 @@ _DOMAINSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1173,
-  serialized_end=1431,
+  serialized_start=1262,
+  serialized_end=1520,
 )
 
 
@@ -380,8 +382,8 @@ _WORKFLOWSETTINGS_LAUNCHPLANSETTINGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1613,
-  serialized_end=1706,
+  serialized_start=1702,
+  serialized_end=1795,
 )
 
 _WORKFLOWSETTINGS = _descriptor.Descriptor(
@@ -424,8 +426,8 @@ _WORKFLOWSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1434,
-  serialized_end=1706,
+  serialized_start=1523,
+  serialized_end=1795,
 )
 
 
@@ -462,8 +464,8 @@ _LAUNCHPLANSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1708,
-  serialized_end=1802,
+  serialized_start=1797,
+  serialized_end=1891,
 )
 
 
@@ -486,8 +488,8 @@ _GLOBALLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1804,
-  serialized_end=1817,
+  serialized_start=1893,
+  serialized_end=1906,
 )
 
 
@@ -517,8 +519,8 @@ _PROJECTLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1819,
-  serialized_end=1850,
+  serialized_start=1908,
+  serialized_end=1939,
 )
 
 
@@ -555,8 +557,8 @@ _DOMAINLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1852,
-  serialized_end=1898,
+  serialized_start=1941,
+  serialized_end=1987,
 )
 
 
@@ -600,8 +602,8 @@ _WORKFLOWLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1900,
-  serialized_end=1966,
+  serialized_start=1989,
+  serialized_end=2055,
 )
 
 
@@ -652,8 +654,8 @@ _LAUNCHPLANLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1968,
-  serialized_end=2056,
+  serialized_start=2057,
+  serialized_end=2145,
 )
 
 
@@ -721,8 +723,8 @@ _SETTINGSUPDATEREQUEST = _descriptor.Descriptor(
       name='level', full_name='flyteidl.admin.SettingsUpdateRequest.level',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2059,
-  serialized_end=2424,
+  serialized_start=2148,
+  serialized_end=2513,
 )
 
 
@@ -790,8 +792,8 @@ _FULLSETTINGSUPDATEREQUEST = _descriptor.Descriptor(
       name='level', full_name='flyteidl.admin.FullSettingsUpdateRequest.level',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2427,
-  serialized_end=2796,
+  serialized_start=2516,
+  serialized_end=2885,
 )
 
 
@@ -814,8 +816,8 @@ _FULLSETTINGSUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2798,
-  serialized_end=2826,
+  serialized_start=2887,
+  serialized_end=2915,
 )
 
 
@@ -876,8 +878,8 @@ _SETTINGSGETREQUEST = _descriptor.Descriptor(
       name='level', full_name='flyteidl.admin.SettingsGetRequest.level',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2829,
-  serialized_end=3137,
+  serialized_start=2918,
+  serialized_end=3226,
 )
 
 
@@ -945,8 +947,8 @@ _SETTINGSGETRESPONSE = _descriptor.Descriptor(
       name='level', full_name='flyteidl.admin.SettingsGetResponse.level',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=3140,
-  serialized_end=3503,
+  serialized_start=3229,
+  serialized_end=3592,
 )
 
 
@@ -969,8 +971,8 @@ _FULLSETTINGSGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3505,
-  serialized_end=3529,
+  serialized_start=3594,
+  serialized_end=3618,
 )
 
 
@@ -1000,8 +1002,8 @@ _FULLSETTINGSGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3531,
-  serialized_end=3600,
+  serialized_start=3620,
+  serialized_end=3689,
 )
 
 
@@ -1062,8 +1064,8 @@ _SETTINGSDELETEREQUEST = _descriptor.Descriptor(
       name='level', full_name='flyteidl.admin.SettingsDeleteRequest.level',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=3603,
-  serialized_end=3914,
+  serialized_start=3692,
+  serialized_end=4003,
 )
 
 
@@ -1086,18 +1088,18 @@ _SETTINGSDELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3916,
-  serialized_end=3940,
+  serialized_start=4005,
+  serialized_end=4029,
 )
 
-_SETTINGSCOLLECTION.fields_by_name['task_resource_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['cluster_resource_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['execution_queue_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['execution_cluster_label_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['quality_of_service_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['plugin_override_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['workflow_execution_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
-_SETTINGSCOLLECTION.fields_by_name['cluster_assignment_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._MATCHINGATTRIBUTES
+_SETTINGSCOLLECTION.fields_by_name['task_resource_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._TASKRESOURCEATTRIBUTES
+_SETTINGSCOLLECTION.fields_by_name['cluster_resource_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._CLUSTERRESOURCEATTRIBUTES
+_SETTINGSCOLLECTION.fields_by_name['execution_queue_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._EXECUTIONQUEUEATTRIBUTES
+_SETTINGSCOLLECTION.fields_by_name['execution_cluster_label_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._EXECUTIONCLUSTERLABEL
+_SETTINGSCOLLECTION.fields_by_name['quality_of_service_settings'].message_type = flyteidl_dot_core_dot_execution__pb2._QUALITYOFSERVICE
+_SETTINGSCOLLECTION.fields_by_name['plugin_override_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._PLUGINOVERRIDE
+_SETTINGSCOLLECTION.fields_by_name['workflow_execution_settings'].message_type = flyteidl_dot_admin_dot_matchable__resource__pb2._WORKFLOWEXECUTIONCONFIG
+_SETTINGSCOLLECTION.fields_by_name['cluster_assignment_settings'].message_type = flyteidl_dot_admin_dot_cluster__assignment__pb2._CLUSTERASSIGNMENT
 _SETTINGS_PROJECTSETTINGSENTRY.fields_by_name['value'].message_type = _PROJECTSETTINGS
 _SETTINGS_PROJECTSETTINGSENTRY.containing_type = _SETTINGS
 _SETTINGS.fields_by_name['global'].message_type = _SETTINGSCOLLECTION
