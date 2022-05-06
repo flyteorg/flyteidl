@@ -8,6 +8,7 @@ import "flyteidl/admin/project.proto";
 import "flyteidl/admin/project_domain_attributes.proto";
 import "flyteidl/admin/task.proto";
 import "flyteidl/admin/workflow.proto";
+import "flyteidl/admin/launch_plan_attributes.proto";
 import "flyteidl/admin/workflow_attributes.proto";
 import "flyteidl/admin/launch_plan.proto";
 import "flyteidl/admin/event.proto";
@@ -518,6 +519,38 @@ service AdminService {
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Delete the customized resource attributes associated with a project, domain and workflow combination"
+    };
+  }
+
+  // Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+  rpc UpdateLaunchPlanAttributes (flyteidl.admin.LaunchPlanAttributesUpdateRequest) returns (flyteidl.admin.LaunchPlanAttributesUpdateResponse) {
+    option (google.api.http) = {
+      put: "/api/v1/launch_plan_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}/{attributes.launch_plan}"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Update the customized resource attributes associated with a project, domain, workflow and launch plan combination"
+    };
+  }
+
+  // Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+  rpc GetLaunchPlanAttributes (flyteidl.admin.LaunchPlanAttributesGetRequest) returns (flyteidl.admin.LaunchPlanAttributesGetResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieve the customized resource attributes associated with a project, domain, workflow and launch plan combination"
+    };
+  }
+
+  // Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+  rpc DeleteLaunchPlanAttributes (flyteidl.admin.LaunchPlanAttributesDeleteRequest) returns (flyteidl.admin.LaunchPlanAttributesDeleteResponse) {
+    option (google.api.http) = {
+      delete: "/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Delete the customized resource attributes associated with a project, domain, workflow and launch plan combination"
     };
   }
 
