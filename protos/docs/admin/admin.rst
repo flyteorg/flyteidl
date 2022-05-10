@@ -2942,6 +2942,103 @@ Represents a frequency at which to run a schedule.
 
 
 
+.. _ref_flyteidl/admin/signal.proto:
+
+flyteidl/admin/signal.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.Signal:
+
+Signal
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: Signal type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "TODO hamersaw - document"
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", "TODO hamersaw - document"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalCreateRequest:
+
+SignalCreateRequest
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: SignalCreateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "TODO hamersaw - document"
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", "TODO hamersaw - document"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalCreateResponse:
+
+SignalCreateResponse
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalGetRequest:
+
+SignalGetRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: SignalGetRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+
 .. _ref_flyteidl/admin/task_execution.proto:
 
 flyteidl/admin/task_execution.proto

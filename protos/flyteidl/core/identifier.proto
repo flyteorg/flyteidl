@@ -63,3 +63,10 @@ message TaskExecutionIdentifier {
 
     uint32 retry_attempt     = 3;
 }
+
+// TODO hamersaw - document
+message SignalIdentifier {
+    string signal_id = 1;
+
+    WorkflowExecutionIdentifier execution_id = 2;
+}

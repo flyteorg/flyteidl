@@ -899,6 +899,28 @@ Encapsulation of fields that identify a Flyte node execution entity.
 
 
 
+.. _ref_flyteidl.core.SignalIdentifier:
+
+SignalIdentifier
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: SignalIdentifier type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signal_id", ":ref:`ref_string`", "", ""
+   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", ""
+
+
+
+
+
+
+
 .. _ref_flyteidl.core.TaskExecutionIdentifier:
 
 TaskExecutionIdentifier

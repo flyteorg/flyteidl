@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/core/identifier.proto";
+import "flyteidl/core/literals.proto";
+
+// TODO hamersaw - document
+message SignalCreateRequest {
+    // TODO hamersaw - document
+    core.SignalIdentifier id = 1;
+
+    // TODO hamersaw - document
+    core.Literal value = 2;
+}
+
+// TODO hamersaw - document
+message SignalCreateResponse {
+}
+
+message SignalGetRequest {
+    core.SignalIdentifier id = 1;    
+}
+
+// TODO hamersaw - document
+message Signal {
+    // TODO hamersaw - document
+    core.SignalIdentifier id = 1;
+
+    // TODO hamersaw - document
+    core.Literal value = 2;
+}
