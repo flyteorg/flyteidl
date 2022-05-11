@@ -10,10 +10,6 @@ managed:
     default: github.com/flyteorg/flyteidl/gen/pb-go
     except:
       - buf.build/googleapis/googleapis
-#  override:
-#    JAVA_PACKAGE:
-#      flyteorg/flyteidl: "org"
-# After migration we can deprecate the old proto
 plugins:
   - name: cpp
     out: gen/pb-cpp
