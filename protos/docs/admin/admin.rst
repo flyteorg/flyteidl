@@ -1781,6 +1781,173 @@ group will be observed and trigger executions at a defined cadence.
 
 
 
+.. _ref_flyteidl/admin/launch_plan_attributes.proto:
+
+flyteidl/admin/launch_plan_attributes.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributes:
+
+LaunchPlanAttributes
+------------------------------------------------------------------
+
+Defines a set of custom matching attributes which defines resource defaults for a project, domain, workflow and launch plan.
+For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
+
+
+
+.. csv-table:: LaunchPlanAttributes type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", "Unique project id for which this set of attributes will be applied."
+   "domain", ":ref:`ref_string`", "", "Unique domain id for which this set of attributes will be applied."
+   "workflow", ":ref:`ref_string`", "", "Workflow name for which this set of attributes will be applied."
+   "launch_plan", ":ref:`ref_string`", "", "LaunchPlan name for which this set of attributes will be applied."
+   "matching_attributes", ":ref:`ref_flyteidl.admin.MatchingAttributes`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesDeleteRequest:
+
+LaunchPlanAttributesDeleteRequest
+------------------------------------------------------------------
+
+Request to delete a set matchable launch plan attribute override.
+For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
+
+
+
+.. csv-table:: LaunchPlanAttributesDeleteRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", "Unique project id which this set of attributes references. +required"
+   "domain", ":ref:`ref_string`", "", "Unique domain id which this set of attributes references. +required"
+   "workflow", ":ref:`ref_string`", "", "Workflow name which this set of attributes references. +required"
+   "launch_plan", ":ref:`ref_string`", "", "Launch plan name which this set of attributes references. +required"
+   "resource_type", ":ref:`ref_flyteidl.admin.MatchableResource`", "", "Which type of matchable attributes to delete. +required"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesDeleteResponse:
+
+LaunchPlanAttributesDeleteResponse
+------------------------------------------------------------------
+
+Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesGetRequest:
+
+LaunchPlanAttributesGetRequest
+------------------------------------------------------------------
+
+Request to get an individual launch plan attribute override.
+For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
+
+
+
+.. csv-table:: LaunchPlanAttributesGetRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", "Unique project id which this set of attributes references. +required"
+   "domain", ":ref:`ref_string`", "", "Unique domain id which this set of attributes references. +required"
+   "workflow", ":ref:`ref_string`", "", "Workflow name which this set of attributes references. +required"
+   "launch_plan", ":ref:`ref_string`", "", "Launch plan name which this set of attributes references. +required"
+   "resource_type", ":ref:`ref_flyteidl.admin.MatchableResource`", "", "Which type of matchable attributes to return. +required"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesGetResponse:
+
+LaunchPlanAttributesGetResponse
+------------------------------------------------------------------
+
+Response to get an individual launch plan attribute override.
+
+
+
+.. csv-table:: LaunchPlanAttributesGetResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "attributes", ":ref:`ref_flyteidl.admin.LaunchPlanAttributes`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesUpdateRequest:
+
+LaunchPlanAttributesUpdateRequest
+------------------------------------------------------------------
+
+Sets custom attributes for a project, domain, workflow and launch plan combination.
+For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
+
+
+
+.. csv-table:: LaunchPlanAttributesUpdateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "attributes", ":ref:`ref_flyteidl.admin.LaunchPlanAttributes`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanAttributesUpdateResponse:
+
+LaunchPlanAttributesUpdateResponse
+------------------------------------------------------------------
+
+Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+
 .. _ref_flyteidl/admin/matchable_resource.proto:
 
 flyteidl/admin/matchable_resource.proto

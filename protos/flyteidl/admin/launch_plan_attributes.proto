@@ -87,5 +87,5 @@ message LaunchPlanAttributesDeleteRequest {
 }
 
 // Purposefully empty, may be populated in the future.
-message WorkflowAttributesDeleteResponse {
+message LaunchPlanAttributesDeleteResponse {
 }

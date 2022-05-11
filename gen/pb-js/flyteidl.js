@@ -27499,6 +27499,974 @@ export const flyteidl = $root.flyteidl = (() => {
             return Schedule;
         })();
 
+        admin.LaunchPlanAttributes = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributes.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributes
+             * @property {string|null} [project] LaunchPlanAttributes project
+             * @property {string|null} [domain] LaunchPlanAttributes domain
+             * @property {string|null} [workflow] LaunchPlanAttributes workflow
+             * @property {string|null} [launchPlan] LaunchPlanAttributes launchPlan
+             * @property {flyteidl.admin.IMatchingAttributes|null} [matchingAttributes] LaunchPlanAttributes matchingAttributes
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributes.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributes.
+             * @implements ILaunchPlanAttributes
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributes=} [properties] Properties to set
+             */
+            function LaunchPlanAttributes(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanAttributes project.
+             * @member {string} project
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @instance
+             */
+            LaunchPlanAttributes.prototype.project = "";
+
+            /**
+             * LaunchPlanAttributes domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @instance
+             */
+            LaunchPlanAttributes.prototype.domain = "";
+
+            /**
+             * LaunchPlanAttributes workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @instance
+             */
+            LaunchPlanAttributes.prototype.workflow = "";
+
+            /**
+             * LaunchPlanAttributes launchPlan.
+             * @member {string} launchPlan
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @instance
+             */
+            LaunchPlanAttributes.prototype.launchPlan = "";
+
+            /**
+             * LaunchPlanAttributes matchingAttributes.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} matchingAttributes
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @instance
+             */
+            LaunchPlanAttributes.prototype.matchingAttributes = null;
+
+            /**
+             * Creates a new LaunchPlanAttributes instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributes=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributes} LaunchPlanAttributes instance
+             */
+            LaunchPlanAttributes.create = function create(properties) {
+                return new LaunchPlanAttributes(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributes message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributes.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributes} message LaunchPlanAttributes message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributes.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.launchPlan);
+                if (message.matchingAttributes != null && message.hasOwnProperty("matchingAttributes"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.matchingAttributes, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributes message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributes} LaunchPlanAttributes
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributes.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributes();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    case 4:
+                        message.launchPlan = reader.string();
+                        break;
+                    case 5:
+                        message.matchingAttributes = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributes message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributes
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributes.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    if (!$util.isString(message.launchPlan))
+                        return "launchPlan: string expected";
+                if (message.matchingAttributes != null && message.hasOwnProperty("matchingAttributes")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.matchingAttributes);
+                    if (error)
+                        return "matchingAttributes." + error;
+                }
+                return null;
+            };
+
+            return LaunchPlanAttributes;
+        })();
+
+        admin.LaunchPlanAttributesUpdateRequest = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesUpdateRequest
+             * @property {flyteidl.admin.ILaunchPlanAttributes|null} [attributes] LaunchPlanAttributesUpdateRequest attributes
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesUpdateRequest.
+             * @implements ILaunchPlanAttributesUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateRequest=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanAttributesUpdateRequest attributes.
+             * @member {flyteidl.admin.ILaunchPlanAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateRequest
+             * @instance
+             */
+            LaunchPlanAttributesUpdateRequest.prototype.attributes = null;
+
+            /**
+             * Creates a new LaunchPlanAttributesUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesUpdateRequest} LaunchPlanAttributesUpdateRequest instance
+             */
+            LaunchPlanAttributesUpdateRequest.create = function create(properties) {
+                return new LaunchPlanAttributesUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesUpdateRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateRequest} message LaunchPlanAttributesUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.LaunchPlanAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesUpdateRequest} LaunchPlanAttributesUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.LaunchPlanAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.LaunchPlanAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return LaunchPlanAttributesUpdateRequest;
+        })();
+
+        admin.LaunchPlanAttributesUpdateResponse = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesUpdateResponse
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesUpdateResponse.
+             * @implements ILaunchPlanAttributesUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateResponse=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new LaunchPlanAttributesUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesUpdateResponse} LaunchPlanAttributesUpdateResponse instance
+             */
+            LaunchPlanAttributesUpdateResponse.create = function create(properties) {
+                return new LaunchPlanAttributesUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesUpdateResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateResponse} message LaunchPlanAttributesUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesUpdateResponse} LaunchPlanAttributesUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return LaunchPlanAttributesUpdateResponse;
+        })();
+
+        admin.LaunchPlanAttributesGetRequest = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesGetRequest.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesGetRequest
+             * @property {string|null} [project] LaunchPlanAttributesGetRequest project
+             * @property {string|null} [domain] LaunchPlanAttributesGetRequest domain
+             * @property {string|null} [workflow] LaunchPlanAttributesGetRequest workflow
+             * @property {string|null} [launchPlan] LaunchPlanAttributesGetRequest launchPlan
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] LaunchPlanAttributesGetRequest resourceType
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesGetRequest.
+             * @implements ILaunchPlanAttributesGetRequest
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetRequest=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanAttributesGetRequest project.
+             * @member {string} project
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @instance
+             */
+            LaunchPlanAttributesGetRequest.prototype.project = "";
+
+            /**
+             * LaunchPlanAttributesGetRequest domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @instance
+             */
+            LaunchPlanAttributesGetRequest.prototype.domain = "";
+
+            /**
+             * LaunchPlanAttributesGetRequest workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @instance
+             */
+            LaunchPlanAttributesGetRequest.prototype.workflow = "";
+
+            /**
+             * LaunchPlanAttributesGetRequest launchPlan.
+             * @member {string} launchPlan
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @instance
+             */
+            LaunchPlanAttributesGetRequest.prototype.launchPlan = "";
+
+            /**
+             * LaunchPlanAttributesGetRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @instance
+             */
+            LaunchPlanAttributesGetRequest.prototype.resourceType = 0;
+
+            /**
+             * Creates a new LaunchPlanAttributesGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesGetRequest} LaunchPlanAttributesGetRequest instance
+             */
+            LaunchPlanAttributesGetRequest.create = function create(properties) {
+                return new LaunchPlanAttributesGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesGetRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetRequest} message LaunchPlanAttributesGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.launchPlan);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.resourceType);
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesGetRequest} LaunchPlanAttributesGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    case 4:
+                        message.launchPlan = reader.string();
+                        break;
+                    case 5:
+                        message.resourceType = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    if (!$util.isString(message.launchPlan))
+                        return "launchPlan: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        break;
+                    }
+                return null;
+            };
+
+            return LaunchPlanAttributesGetRequest;
+        })();
+
+        admin.LaunchPlanAttributesGetResponse = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesGetResponse.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesGetResponse
+             * @property {flyteidl.admin.ILaunchPlanAttributes|null} [attributes] LaunchPlanAttributesGetResponse attributes
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesGetResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesGetResponse.
+             * @implements ILaunchPlanAttributesGetResponse
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetResponse=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesGetResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanAttributesGetResponse attributes.
+             * @member {flyteidl.admin.ILaunchPlanAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetResponse
+             * @instance
+             */
+            LaunchPlanAttributesGetResponse.prototype.attributes = null;
+
+            /**
+             * Creates a new LaunchPlanAttributesGetResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesGetResponse} LaunchPlanAttributesGetResponse instance
+             */
+            LaunchPlanAttributesGetResponse.create = function create(properties) {
+                return new LaunchPlanAttributesGetResponse(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesGetResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesGetResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetResponse} message LaunchPlanAttributesGetResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesGetResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.LaunchPlanAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesGetResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesGetResponse} LaunchPlanAttributesGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesGetResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesGetResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.LaunchPlanAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesGetResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesGetResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesGetResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.LaunchPlanAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return LaunchPlanAttributesGetResponse;
+        })();
+
+        admin.LaunchPlanAttributesDeleteRequest = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesDeleteRequest.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesDeleteRequest
+             * @property {string|null} [project] LaunchPlanAttributesDeleteRequest project
+             * @property {string|null} [domain] LaunchPlanAttributesDeleteRequest domain
+             * @property {string|null} [workflow] LaunchPlanAttributesDeleteRequest workflow
+             * @property {string|null} [launchPlan] LaunchPlanAttributesDeleteRequest launchPlan
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] LaunchPlanAttributesDeleteRequest resourceType
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesDeleteRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesDeleteRequest.
+             * @implements ILaunchPlanAttributesDeleteRequest
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteRequest=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesDeleteRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LaunchPlanAttributesDeleteRequest project.
+             * @member {string} project
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @instance
+             */
+            LaunchPlanAttributesDeleteRequest.prototype.project = "";
+
+            /**
+             * LaunchPlanAttributesDeleteRequest domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @instance
+             */
+            LaunchPlanAttributesDeleteRequest.prototype.domain = "";
+
+            /**
+             * LaunchPlanAttributesDeleteRequest workflow.
+             * @member {string} workflow
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @instance
+             */
+            LaunchPlanAttributesDeleteRequest.prototype.workflow = "";
+
+            /**
+             * LaunchPlanAttributesDeleteRequest launchPlan.
+             * @member {string} launchPlan
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @instance
+             */
+            LaunchPlanAttributesDeleteRequest.prototype.launchPlan = "";
+
+            /**
+             * LaunchPlanAttributesDeleteRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @instance
+             */
+            LaunchPlanAttributesDeleteRequest.prototype.resourceType = 0;
+
+            /**
+             * Creates a new LaunchPlanAttributesDeleteRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesDeleteRequest} LaunchPlanAttributesDeleteRequest instance
+             */
+            LaunchPlanAttributesDeleteRequest.create = function create(properties) {
+                return new LaunchPlanAttributesDeleteRequest(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesDeleteRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesDeleteRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteRequest} message LaunchPlanAttributesDeleteRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesDeleteRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.domain);
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.workflow);
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.launchPlan);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.resourceType);
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesDeleteRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesDeleteRequest} LaunchPlanAttributesDeleteRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesDeleteRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesDeleteRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.domain = reader.string();
+                        break;
+                    case 3:
+                        message.workflow = reader.string();
+                        break;
+                    case 4:
+                        message.launchPlan = reader.string();
+                        break;
+                    case 5:
+                        message.resourceType = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesDeleteRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesDeleteRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.workflow != null && message.hasOwnProperty("workflow"))
+                    if (!$util.isString(message.workflow))
+                        return "workflow: string expected";
+                if (message.launchPlan != null && message.hasOwnProperty("launchPlan"))
+                    if (!$util.isString(message.launchPlan))
+                        return "launchPlan: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        break;
+                    }
+                return null;
+            };
+
+            return LaunchPlanAttributesDeleteRequest;
+        })();
+
+        admin.LaunchPlanAttributesDeleteResponse = (function() {
+
+            /**
+             * Properties of a LaunchPlanAttributesDeleteResponse.
+             * @memberof flyteidl.admin
+             * @interface ILaunchPlanAttributesDeleteResponse
+             */
+
+            /**
+             * Constructs a new LaunchPlanAttributesDeleteResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a LaunchPlanAttributesDeleteResponse.
+             * @implements ILaunchPlanAttributesDeleteResponse
+             * @constructor
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteResponse=} [properties] Properties to set
+             */
+            function LaunchPlanAttributesDeleteResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new LaunchPlanAttributesDeleteResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.LaunchPlanAttributesDeleteResponse} LaunchPlanAttributesDeleteResponse instance
+             */
+            LaunchPlanAttributesDeleteResponse.create = function create(properties) {
+                return new LaunchPlanAttributesDeleteResponse(properties);
+            };
+
+            /**
+             * Encodes the specified LaunchPlanAttributesDeleteResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesDeleteResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteResponse
+             * @static
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteResponse} message LaunchPlanAttributesDeleteResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LaunchPlanAttributesDeleteResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a LaunchPlanAttributesDeleteResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.LaunchPlanAttributesDeleteResponse} LaunchPlanAttributesDeleteResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LaunchPlanAttributesDeleteResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanAttributesDeleteResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a LaunchPlanAttributesDeleteResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.LaunchPlanAttributesDeleteResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LaunchPlanAttributesDeleteResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return LaunchPlanAttributesDeleteResponse;
+        })();
+
         /**
          * MatchableResource enum.
          * @name flyteidl.admin.MatchableResource
@@ -38828,6 +39796,105 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IWorkflowAttributesDeleteRequest} request WorkflowAttributesDeleteRequest message or plain object
              * @returns {Promise<flyteidl.admin.WorkflowAttributesDeleteResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlanAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateLaunchPlanAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlanAttributesUpdateResponse} [response] LaunchPlanAttributesUpdateResponse
+             */
+
+            /**
+             * Calls UpdateLaunchPlanAttributes.
+             * @function updateLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateRequest} request LaunchPlanAttributesUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateLaunchPlanAttributesCallback} callback Node-style callback called with the error, if any, and LaunchPlanAttributesUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateLaunchPlanAttributes = function updateLaunchPlanAttributes(request, callback) {
+                return this.rpcCall(updateLaunchPlanAttributes, $root.flyteidl.admin.LaunchPlanAttributesUpdateRequest, $root.flyteidl.admin.LaunchPlanAttributesUpdateResponse, request, callback);
+            }, "name", { value: "UpdateLaunchPlanAttributes" });
+
+            /**
+             * Calls UpdateLaunchPlanAttributes.
+             * @function updateLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesUpdateRequest} request LaunchPlanAttributesUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlanAttributesUpdateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getLaunchPlanAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetLaunchPlanAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlanAttributesGetResponse} [response] LaunchPlanAttributesGetResponse
+             */
+
+            /**
+             * Calls GetLaunchPlanAttributes.
+             * @function getLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetRequest} request LaunchPlanAttributesGetRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetLaunchPlanAttributesCallback} callback Node-style callback called with the error, if any, and LaunchPlanAttributesGetResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getLaunchPlanAttributes = function getLaunchPlanAttributes(request, callback) {
+                return this.rpcCall(getLaunchPlanAttributes, $root.flyteidl.admin.LaunchPlanAttributesGetRequest, $root.flyteidl.admin.LaunchPlanAttributesGetResponse, request, callback);
+            }, "name", { value: "GetLaunchPlanAttributes" });
+
+            /**
+             * Calls GetLaunchPlanAttributes.
+             * @function getLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesGetRequest} request LaunchPlanAttributesGetRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlanAttributesGetResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#deleteLaunchPlanAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef DeleteLaunchPlanAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.LaunchPlanAttributesDeleteResponse} [response] LaunchPlanAttributesDeleteResponse
+             */
+
+            /**
+             * Calls DeleteLaunchPlanAttributes.
+             * @function deleteLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteRequest} request LaunchPlanAttributesDeleteRequest message or plain object
+             * @param {flyteidl.service.AdminService.DeleteLaunchPlanAttributesCallback} callback Node-style callback called with the error, if any, and LaunchPlanAttributesDeleteResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.deleteLaunchPlanAttributes = function deleteLaunchPlanAttributes(request, callback) {
+                return this.rpcCall(deleteLaunchPlanAttributes, $root.flyteidl.admin.LaunchPlanAttributesDeleteRequest, $root.flyteidl.admin.LaunchPlanAttributesDeleteResponse, request, callback);
+            }, "name", { value: "DeleteLaunchPlanAttributes" });
+
+            /**
+             * Calls DeleteLaunchPlanAttributes.
+             * @function deleteLaunchPlanAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.ILaunchPlanAttributesDeleteRequest} request LaunchPlanAttributesDeleteRequest message or plain object
+             * @returns {Promise<flyteidl.admin.LaunchPlanAttributesDeleteResponse>} Promise
              * @variation 2
              */
 

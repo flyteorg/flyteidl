@@ -4,6 +4,7 @@ import grpc
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.admin import event_pb2 as flyteidl_dot_admin_dot_event__pb2
 from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
+from flyteidl.admin import launch_plan_attributes_pb2 as flyteidl_dot_admin_dot_launch__plan__attributes__pb2
 from flyteidl.admin import launch_plan_pb2 as flyteidl_dot_admin_dot_launch__plan__pb2
 from flyteidl.admin import matchable_resource_pb2 as flyteidl_dot_admin_dot_matchable__resource__pb2
 from flyteidl.admin import node_execution_pb2 as flyteidl_dot_admin_dot_node__execution__pb2
@@ -236,6 +237,21 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/DeleteWorkflowAttributes',
         request_serializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteResponse.FromString,
+        )
+    self.UpdateLaunchPlanAttributes = channel.unary_unary(
+        '/flyteidl.service.AdminService/UpdateLaunchPlanAttributes',
+        request_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesUpdateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesUpdateResponse.FromString,
+        )
+    self.GetLaunchPlanAttributes = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetLaunchPlanAttributes',
+        request_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesGetResponse.FromString,
+        )
+    self.DeleteLaunchPlanAttributes = channel.unary_unary(
+        '/flyteidl.service.AdminService/DeleteLaunchPlanAttributes',
+        request_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesDeleteRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesDeleteResponse.FromString,
         )
     self.ListMatchableAttributes = channel.unary_unary(
         '/flyteidl.service.AdminService/ListMatchableAttributes',
@@ -569,6 +585,27 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def UpdateLaunchPlanAttributes(self, request, context):
+    """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetLaunchPlanAttributes(self, request, context):
+    """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteLaunchPlanAttributes(self, request, context):
+    """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListMatchableAttributes(self, request, context):
     """Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.
     """
@@ -816,6 +853,21 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.DeleteWorkflowAttributes,
           request_deserializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_workflow__attributes__pb2.WorkflowAttributesDeleteResponse.SerializeToString,
+      ),
+      'UpdateLaunchPlanAttributes': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateLaunchPlanAttributes,
+          request_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesUpdateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesUpdateResponse.SerializeToString,
+      ),
+      'GetLaunchPlanAttributes': grpc.unary_unary_rpc_method_handler(
+          servicer.GetLaunchPlanAttributes,
+          request_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesGetResponse.SerializeToString,
+      ),
+      'DeleteLaunchPlanAttributes': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteLaunchPlanAttributes,
+          request_deserializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesDeleteRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_launch__plan__attributes__pb2.LaunchPlanAttributesDeleteResponse.SerializeToString,
       ),
       'ListMatchableAttributes': grpc.unary_unary_rpc_method_handler(
           servicer.ListMatchableAttributes,

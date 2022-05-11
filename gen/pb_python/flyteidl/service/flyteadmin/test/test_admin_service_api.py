@@ -78,6 +78,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_launch_plan_attributes(self):
+        """Test case for delete_launch_plan_attributes
+
+        Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+        """
+        pass
+
     def test_delete_project_domain_attributes(self):
         """Test case for delete_project_domain_attributes
 
@@ -117,6 +124,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """Test case for get_launch_plan
 
         Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.  # noqa: E501
+        """
+        pass
+
+    def test_get_launch_plan_attributes(self):
+        """Test case for get_launch_plan_attributes
+
+        Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
         """
         pass
 
@@ -347,6 +361,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """Test case for update_launch_plan
 
         Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
+        """
+        pass
+
+    def test_update_launch_plan_attributes(self):
+        """Test case for update_launch_plan_attributes
+
+        Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
         """
         pass
 

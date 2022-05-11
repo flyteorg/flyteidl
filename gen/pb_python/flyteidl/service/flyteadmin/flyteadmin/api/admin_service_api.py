@@ -726,6 +726,137 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_launch_plan_attributes(self, project, domain, workflow, launch_plan, body, **kwargs):  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Delete the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_launch_plan_attributes(project, domain, workflow, launch_plan, body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str launch_plan: Launch plan name which this set of attributes references. +required (required)
+        :param AdminLaunchPlanAttributesDeleteRequest body: (required)
+        :return: AdminLaunchPlanAttributesDeleteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, body, **kwargs)  # noqa: E501
+            return data
+
+    def delete_launch_plan_attributes_with_http_info(self, project, domain, workflow, launch_plan, body, **kwargs):  # noqa: E501
+        """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Delete the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str launch_plan: Launch plan name which this set of attributes references. +required (required)
+        :param AdminLaunchPlanAttributesDeleteRequest body: (required)
+        :return: AdminLaunchPlanAttributesDeleteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['project', 'domain', 'workflow', 'launch_plan', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_launch_plan_attributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'project' is set
+        if ('project' not in params or
+                params['project'] is None):
+            raise ValueError("Missing the required parameter `project` when calling `delete_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'domain' is set
+        if ('domain' not in params or
+                params['domain'] is None):
+            raise ValueError("Missing the required parameter `domain` when calling `delete_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'workflow' is set
+        if ('workflow' not in params or
+                params['workflow'] is None):
+            raise ValueError("Missing the required parameter `workflow` when calling `delete_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'launch_plan' is set
+        if ('launch_plan' not in params or
+                params['launch_plan'] is None):
+            raise ValueError("Missing the required parameter `launch_plan` when calling `delete_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `delete_launch_plan_attributes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project' in params:
+            path_params['project'] = params['project']  # noqa: E501
+        if 'domain' in params:
+            path_params['domain'] = params['domain']  # noqa: E501
+        if 'workflow' in params:
+            path_params['workflow'] = params['workflow']  # noqa: E501
+        if 'launch_plan' in params:
+            path_params['launch_plan'] = params['launch_plan']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminLaunchPlanAttributesDeleteResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_project_domain_attributes(self, project, domain, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
@@ -1429,6 +1560,133 @@ class AdminServiceApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AdminLaunchPlan',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_launch_plan_attributes(self, project, domain, workflow, launch_plan, **kwargs):  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Retrieve the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_launch_plan_attributes(project, domain, workflow, launch_plan, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str launch_plan: Launch plan name which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.  - CLUSTER_ASSIGNMENT: Controls how to select an available cluster on which this execution should run.
+        :return: AdminLaunchPlanAttributesGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, **kwargs)  # noqa: E501
+            return data
+
+    def get_launch_plan_attributes_with_http_info(self, project, domain, workflow, launch_plan, **kwargs):  # noqa: E501
+        """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Retrieve the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_launch_plan_attributes_with_http_info(project, domain, workflow, launch_plan, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str project: Unique project id which this set of attributes references. +required (required)
+        :param str domain: Unique domain id which this set of attributes references. +required (required)
+        :param str workflow: Workflow name which this set of attributes references. +required (required)
+        :param str launch_plan: Launch plan name which this set of attributes references. +required (required)
+        :param str resource_type: Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.  - CLUSTER_ASSIGNMENT: Controls how to select an available cluster on which this execution should run.
+        :return: AdminLaunchPlanAttributesGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['project', 'domain', 'workflow', 'launch_plan', 'resource_type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_launch_plan_attributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'project' is set
+        if ('project' not in params or
+                params['project'] is None):
+            raise ValueError("Missing the required parameter `project` when calling `get_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'domain' is set
+        if ('domain' not in params or
+                params['domain'] is None):
+            raise ValueError("Missing the required parameter `domain` when calling `get_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'workflow' is set
+        if ('workflow' not in params or
+                params['workflow'] is None):
+            raise ValueError("Missing the required parameter `workflow` when calling `get_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'launch_plan' is set
+        if ('launch_plan' not in params or
+                params['launch_plan'] is None):
+            raise ValueError("Missing the required parameter `launch_plan` when calling `get_launch_plan_attributes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project' in params:
+            path_params['project'] = params['project']  # noqa: E501
+        if 'domain' in params:
+            path_params['domain'] = params['domain']  # noqa: E501
+        if 'workflow' in params:
+            path_params['workflow'] = params['workflow']  # noqa: E501
+        if 'launch_plan' in params:
+            path_params['launch_plan'] = params['launch_plan']  # noqa: E501
+
+        query_params = []
+        if 'resource_type' in params:
+            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminLaunchPlanAttributesGetResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -5624,6 +5882,137 @@ class AdminServiceApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AdminLaunchPlanUpdateResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_launch_plan_attributes(self, attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, **kwargs):  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Update the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_launch_plan_attributes(attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str attributes_project: Unique project id for which this set of attributes will be applied. (required)
+        :param str attributes_domain: Unique domain id for which this set of attributes will be applied. (required)
+        :param str attributes_workflow: Workflow name for which this set of attributes will be applied. (required)
+        :param str attributes_launch_plan: LaunchPlan name for which this set of attributes will be applied. (required)
+        :param AdminLaunchPlanAttributesUpdateRequest body: (required)
+        :return: AdminLaunchPlanAttributesUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_launch_plan_attributes_with_http_info(attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_launch_plan_attributes_with_http_info(attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, **kwargs)  # noqa: E501
+            return data
+
+    def update_launch_plan_attributes_with_http_info(self, attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, **kwargs):  # noqa: E501
+        """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
+
+        Update the customized resource attributes associated with a project, domain, workflow and launch plan combination  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_launch_plan_attributes_with_http_info(attributes_project, attributes_domain, attributes_workflow, attributes_launch_plan, body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str attributes_project: Unique project id for which this set of attributes will be applied. (required)
+        :param str attributes_domain: Unique domain id for which this set of attributes will be applied. (required)
+        :param str attributes_workflow: Workflow name for which this set of attributes will be applied. (required)
+        :param str attributes_launch_plan: LaunchPlan name for which this set of attributes will be applied. (required)
+        :param AdminLaunchPlanAttributesUpdateRequest body: (required)
+        :return: AdminLaunchPlanAttributesUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['attributes_project', 'attributes_domain', 'attributes_workflow', 'attributes_launch_plan', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_launch_plan_attributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'attributes_project' is set
+        if ('attributes_project' not in params or
+                params['attributes_project'] is None):
+            raise ValueError("Missing the required parameter `attributes_project` when calling `update_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'attributes_domain' is set
+        if ('attributes_domain' not in params or
+                params['attributes_domain'] is None):
+            raise ValueError("Missing the required parameter `attributes_domain` when calling `update_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'attributes_workflow' is set
+        if ('attributes_workflow' not in params or
+                params['attributes_workflow'] is None):
+            raise ValueError("Missing the required parameter `attributes_workflow` when calling `update_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'attributes_launch_plan' is set
+        if ('attributes_launch_plan' not in params or
+                params['attributes_launch_plan'] is None):
+            raise ValueError("Missing the required parameter `attributes_launch_plan` when calling `update_launch_plan_attributes`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_launch_plan_attributes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'attributes_project' in params:
+            path_params['attributes.project'] = params['attributes_project']  # noqa: E501
+        if 'attributes_domain' in params:
+            path_params['attributes.domain'] = params['attributes_domain']  # noqa: E501
+        if 'attributes_workflow' in params:
+            path_params['attributes.workflow'] = params['attributes_workflow']  # noqa: E501
+        if 'attributes_launch_plan' in params:
+            path_params['attributes.launch_plan'] = params['attributes_launch_plan']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/launch_plan_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}/{attributes.launch_plan}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminLaunchPlanAttributesUpdateResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

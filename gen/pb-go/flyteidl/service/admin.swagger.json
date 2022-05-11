@@ -832,6 +832,182 @@
         ]
       }
     },
+    "/api/v1/launch_plan_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}/{attributes.launch_plan}": {
+      "put": {
+        "summary": "Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
+        "description": "Update the customized resource attributes associated with a project, domain, workflow and launch plan combination",
+        "operationId": "UpdateLaunchPlanAttributes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanAttributesUpdateResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "attributes.project",
+            "description": "Unique project id for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attributes.domain",
+            "description": "Unique domain id for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attributes.workflow",
+            "description": "Workflow name for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "attributes.launch_plan",
+            "description": "LaunchPlan name for which this set of attributes will be applied.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanAttributesUpdateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}": {
+      "get": {
+        "summary": "Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
+        "description": "Retrieve the customized resource attributes associated with a project, domain, workflow and launch plan combination",
+        "operationId": "GetLaunchPlanAttributes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanAttributesGetResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Unique project id which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Unique domain id which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "workflow",
+            "description": "Workflow name which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan",
+            "description": "Launch plan name which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "resource_type",
+            "description": "Which type of matchable attributes to return.\n+required.\n\n - TASK_RESOURCE: Applies to customizable task resource requests and limits.\n - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.\n - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.\n - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run\n - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.\n - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.\n - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.\n - CLUSTER_ASSIGNMENT: Controls how to select an available cluster on which this execution should run.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "TASK_RESOURCE",
+              "CLUSTER_RESOURCE",
+              "EXECUTION_QUEUE",
+              "EXECUTION_CLUSTER_LABEL",
+              "QUALITY_OF_SERVICE_SPECIFICATION",
+              "PLUGIN_OVERRIDE",
+              "WORKFLOW_EXECUTION_CONFIG",
+              "CLUSTER_ASSIGNMENT"
+            ],
+            "default": "TASK_RESOURCE"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.",
+        "description": "Delete the customized resource attributes associated with a project, domain, workflow and launch plan combination",
+        "operationId": "DeleteLaunchPlanAttributes",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanAttributesDeleteResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "description": "Unique project id which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "domain",
+            "description": "Unique domain id which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "workflow",
+            "description": "Workflow name which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "launch_plan",
+            "description": "Launch plan name which this set of attributes references.\n+required",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminLaunchPlanAttributesDeleteRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/launch_plan_ids/{project}/{domain}": {
       "get": {
         "summary": "Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.",
@@ -3709,6 +3885,83 @@
         }
       },
       "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
+    },
+    "adminLaunchPlanAttributes": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "description": "Unique project id for which this set of attributes will be applied."
+        },
+        "domain": {
+          "type": "string",
+          "description": "Unique domain id for which this set of attributes will be applied."
+        },
+        "workflow": {
+          "type": "string",
+          "description": "Workflow name for which this set of attributes will be applied."
+        },
+        "launch_plan": {
+          "type": "string",
+          "description": "LaunchPlan name for which this set of attributes will be applied."
+        },
+        "matching_attributes": {
+          "$ref": "#/definitions/adminMatchingAttributes"
+        }
+      },
+      "title": "Defines a set of custom matching attributes which defines resource defaults for a project, domain, workflow and launch plan.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+    },
+    "adminLaunchPlanAttributesDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "title": "Unique project id which this set of attributes references.\n+required"
+        },
+        "domain": {
+          "type": "string",
+          "title": "Unique domain id which this set of attributes references.\n+required"
+        },
+        "workflow": {
+          "type": "string",
+          "title": "Workflow name which this set of attributes references.\n+required"
+        },
+        "launch_plan": {
+          "type": "string",
+          "title": "Launch plan name which this set of attributes references.\n+required"
+        },
+        "resource_type": {
+          "$ref": "#/definitions/adminMatchableResource",
+          "title": "Which type of matchable attributes to delete.\n+required"
+        }
+      },
+      "title": "Request to delete a set matchable launch plan attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+    },
+    "adminLaunchPlanAttributesDeleteResponse": {
+      "type": "object",
+      "description": "Purposefully empty, may be populated in the future."
+    },
+    "adminLaunchPlanAttributesGetResponse": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "$ref": "#/definitions/adminLaunchPlanAttributes"
+        }
+      },
+      "description": "Response to get an individual launch plan attribute override."
+    },
+    "adminLaunchPlanAttributesUpdateRequest": {
+      "type": "object",
+      "properties": {
+        "attributes": {
+          "$ref": "#/definitions/adminLaunchPlanAttributes"
+        }
+      },
+      "title": "Sets custom attributes for a project, domain, workflow and launch plan combination.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+    },
+    "adminLaunchPlanAttributesUpdateResponse": {
+      "type": "object",
+      "description": "Purposefully empty, may be populated in the future."
     },
     "adminLaunchPlanClosure": {
       "type": "object",

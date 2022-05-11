@@ -11476,6 +11476,430 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a LaunchPlanAttributes. */
+        interface ILaunchPlanAttributes {
+
+            /** LaunchPlanAttributes project */
+            project?: (string|null);
+
+            /** LaunchPlanAttributes domain */
+            domain?: (string|null);
+
+            /** LaunchPlanAttributes workflow */
+            workflow?: (string|null);
+
+            /** LaunchPlanAttributes launchPlan */
+            launchPlan?: (string|null);
+
+            /** LaunchPlanAttributes matchingAttributes */
+            matchingAttributes?: (flyteidl.admin.IMatchingAttributes|null);
+        }
+
+        /** Represents a LaunchPlanAttributes. */
+        class LaunchPlanAttributes implements ILaunchPlanAttributes {
+
+            /**
+             * Constructs a new LaunchPlanAttributes.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributes);
+
+            /** LaunchPlanAttributes project. */
+            public project: string;
+
+            /** LaunchPlanAttributes domain. */
+            public domain: string;
+
+            /** LaunchPlanAttributes workflow. */
+            public workflow: string;
+
+            /** LaunchPlanAttributes launchPlan. */
+            public launchPlan: string;
+
+            /** LaunchPlanAttributes matchingAttributes. */
+            public matchingAttributes?: (flyteidl.admin.IMatchingAttributes|null);
+
+            /**
+             * Creates a new LaunchPlanAttributes instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributes instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributes): flyteidl.admin.LaunchPlanAttributes;
+
+            /**
+             * Encodes the specified LaunchPlanAttributes message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributes.verify|verify} messages.
+             * @param message LaunchPlanAttributes message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributes, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributes message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributes
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributes;
+
+            /**
+             * Verifies a LaunchPlanAttributes message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesUpdateRequest. */
+        interface ILaunchPlanAttributesUpdateRequest {
+
+            /** LaunchPlanAttributesUpdateRequest attributes */
+            attributes?: (flyteidl.admin.ILaunchPlanAttributes|null);
+        }
+
+        /** Represents a LaunchPlanAttributesUpdateRequest. */
+        class LaunchPlanAttributesUpdateRequest implements ILaunchPlanAttributesUpdateRequest {
+
+            /**
+             * Constructs a new LaunchPlanAttributesUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesUpdateRequest);
+
+            /** LaunchPlanAttributesUpdateRequest attributes. */
+            public attributes?: (flyteidl.admin.ILaunchPlanAttributes|null);
+
+            /**
+             * Creates a new LaunchPlanAttributesUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesUpdateRequest): flyteidl.admin.LaunchPlanAttributesUpdateRequest;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesUpdateRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesUpdateRequest.verify|verify} messages.
+             * @param message LaunchPlanAttributesUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesUpdateRequest;
+
+            /**
+             * Verifies a LaunchPlanAttributesUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesUpdateResponse. */
+        interface ILaunchPlanAttributesUpdateResponse {
+        }
+
+        /** Represents a LaunchPlanAttributesUpdateResponse. */
+        class LaunchPlanAttributesUpdateResponse implements ILaunchPlanAttributesUpdateResponse {
+
+            /**
+             * Constructs a new LaunchPlanAttributesUpdateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesUpdateResponse);
+
+            /**
+             * Creates a new LaunchPlanAttributesUpdateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesUpdateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesUpdateResponse): flyteidl.admin.LaunchPlanAttributesUpdateResponse;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesUpdateResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesUpdateResponse.verify|verify} messages.
+             * @param message LaunchPlanAttributesUpdateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesUpdateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesUpdateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesUpdateResponse;
+
+            /**
+             * Verifies a LaunchPlanAttributesUpdateResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesGetRequest. */
+        interface ILaunchPlanAttributesGetRequest {
+
+            /** LaunchPlanAttributesGetRequest project */
+            project?: (string|null);
+
+            /** LaunchPlanAttributesGetRequest domain */
+            domain?: (string|null);
+
+            /** LaunchPlanAttributesGetRequest workflow */
+            workflow?: (string|null);
+
+            /** LaunchPlanAttributesGetRequest launchPlan */
+            launchPlan?: (string|null);
+
+            /** LaunchPlanAttributesGetRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
+        }
+
+        /** Represents a LaunchPlanAttributesGetRequest. */
+        class LaunchPlanAttributesGetRequest implements ILaunchPlanAttributesGetRequest {
+
+            /**
+             * Constructs a new LaunchPlanAttributesGetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesGetRequest);
+
+            /** LaunchPlanAttributesGetRequest project. */
+            public project: string;
+
+            /** LaunchPlanAttributesGetRequest domain. */
+            public domain: string;
+
+            /** LaunchPlanAttributesGetRequest workflow. */
+            public workflow: string;
+
+            /** LaunchPlanAttributesGetRequest launchPlan. */
+            public launchPlan: string;
+
+            /** LaunchPlanAttributesGetRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
+
+            /**
+             * Creates a new LaunchPlanAttributesGetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesGetRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesGetRequest): flyteidl.admin.LaunchPlanAttributesGetRequest;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesGetRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesGetRequest.verify|verify} messages.
+             * @param message LaunchPlanAttributesGetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesGetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesGetRequest;
+
+            /**
+             * Verifies a LaunchPlanAttributesGetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesGetResponse. */
+        interface ILaunchPlanAttributesGetResponse {
+
+            /** LaunchPlanAttributesGetResponse attributes */
+            attributes?: (flyteidl.admin.ILaunchPlanAttributes|null);
+        }
+
+        /** Represents a LaunchPlanAttributesGetResponse. */
+        class LaunchPlanAttributesGetResponse implements ILaunchPlanAttributesGetResponse {
+
+            /**
+             * Constructs a new LaunchPlanAttributesGetResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesGetResponse);
+
+            /** LaunchPlanAttributesGetResponse attributes. */
+            public attributes?: (flyteidl.admin.ILaunchPlanAttributes|null);
+
+            /**
+             * Creates a new LaunchPlanAttributesGetResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesGetResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesGetResponse): flyteidl.admin.LaunchPlanAttributesGetResponse;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesGetResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesGetResponse.verify|verify} messages.
+             * @param message LaunchPlanAttributesGetResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesGetResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesGetResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesGetResponse;
+
+            /**
+             * Verifies a LaunchPlanAttributesGetResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesDeleteRequest. */
+        interface ILaunchPlanAttributesDeleteRequest {
+
+            /** LaunchPlanAttributesDeleteRequest project */
+            project?: (string|null);
+
+            /** LaunchPlanAttributesDeleteRequest domain */
+            domain?: (string|null);
+
+            /** LaunchPlanAttributesDeleteRequest workflow */
+            workflow?: (string|null);
+
+            /** LaunchPlanAttributesDeleteRequest launchPlan */
+            launchPlan?: (string|null);
+
+            /** LaunchPlanAttributesDeleteRequest resourceType */
+            resourceType?: (flyteidl.admin.MatchableResource|null);
+        }
+
+        /** Represents a LaunchPlanAttributesDeleteRequest. */
+        class LaunchPlanAttributesDeleteRequest implements ILaunchPlanAttributesDeleteRequest {
+
+            /**
+             * Constructs a new LaunchPlanAttributesDeleteRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesDeleteRequest);
+
+            /** LaunchPlanAttributesDeleteRequest project. */
+            public project: string;
+
+            /** LaunchPlanAttributesDeleteRequest domain. */
+            public domain: string;
+
+            /** LaunchPlanAttributesDeleteRequest workflow. */
+            public workflow: string;
+
+            /** LaunchPlanAttributesDeleteRequest launchPlan. */
+            public launchPlan: string;
+
+            /** LaunchPlanAttributesDeleteRequest resourceType. */
+            public resourceType: flyteidl.admin.MatchableResource;
+
+            /**
+             * Creates a new LaunchPlanAttributesDeleteRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesDeleteRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesDeleteRequest): flyteidl.admin.LaunchPlanAttributesDeleteRequest;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesDeleteRequest message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesDeleteRequest.verify|verify} messages.
+             * @param message LaunchPlanAttributesDeleteRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesDeleteRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesDeleteRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesDeleteRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesDeleteRequest;
+
+            /**
+             * Verifies a LaunchPlanAttributesDeleteRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchPlanAttributesDeleteResponse. */
+        interface ILaunchPlanAttributesDeleteResponse {
+        }
+
+        /** Represents a LaunchPlanAttributesDeleteResponse. */
+        class LaunchPlanAttributesDeleteResponse implements ILaunchPlanAttributesDeleteResponse {
+
+            /**
+             * Constructs a new LaunchPlanAttributesDeleteResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchPlanAttributesDeleteResponse);
+
+            /**
+             * Creates a new LaunchPlanAttributesDeleteResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchPlanAttributesDeleteResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchPlanAttributesDeleteResponse): flyteidl.admin.LaunchPlanAttributesDeleteResponse;
+
+            /**
+             * Encodes the specified LaunchPlanAttributesDeleteResponse message. Does not implicitly {@link flyteidl.admin.LaunchPlanAttributesDeleteResponse.verify|verify} messages.
+             * @param message LaunchPlanAttributesDeleteResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchPlanAttributesDeleteResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchPlanAttributesDeleteResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchPlanAttributesDeleteResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchPlanAttributesDeleteResponse;
+
+            /**
+             * Verifies a LaunchPlanAttributesDeleteResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** MatchableResource enum. */
         enum MatchableResource {
             TASK_RESOURCE = 0,
@@ -16316,6 +16740,48 @@ export namespace flyteidl {
             public deleteWorkflowAttributes(request: flyteidl.admin.IWorkflowAttributesDeleteRequest): Promise<flyteidl.admin.WorkflowAttributesDeleteResponse>;
 
             /**
+             * Calls UpdateLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesUpdateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlanAttributesUpdateResponse
+             */
+            public updateLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesUpdateRequest, callback: flyteidl.service.AdminService.UpdateLaunchPlanAttributesCallback): void;
+
+            /**
+             * Calls UpdateLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesUpdateRequest message or plain object
+             * @returns Promise
+             */
+            public updateLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesUpdateRequest): Promise<flyteidl.admin.LaunchPlanAttributesUpdateResponse>;
+
+            /**
+             * Calls GetLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlanAttributesGetResponse
+             */
+            public getLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesGetRequest, callback: flyteidl.service.AdminService.GetLaunchPlanAttributesCallback): void;
+
+            /**
+             * Calls GetLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesGetRequest message or plain object
+             * @returns Promise
+             */
+            public getLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesGetRequest): Promise<flyteidl.admin.LaunchPlanAttributesGetResponse>;
+
+            /**
+             * Calls DeleteLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesDeleteRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and LaunchPlanAttributesDeleteResponse
+             */
+            public deleteLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesDeleteRequest, callback: flyteidl.service.AdminService.DeleteLaunchPlanAttributesCallback): void;
+
+            /**
+             * Calls DeleteLaunchPlanAttributes.
+             * @param request LaunchPlanAttributesDeleteRequest message or plain object
+             * @returns Promise
+             */
+            public deleteLaunchPlanAttributes(request: flyteidl.admin.ILaunchPlanAttributesDeleteRequest): Promise<flyteidl.admin.LaunchPlanAttributesDeleteResponse>;
+
+            /**
              * Calls ListMatchableAttributes.
              * @param request ListMatchableAttributesRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ListMatchableAttributesResponse
@@ -16681,6 +17147,27 @@ export namespace flyteidl {
              * @param [response] WorkflowAttributesDeleteResponse
              */
             type DeleteWorkflowAttributesCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowAttributesDeleteResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateLaunchPlanAttributes}.
+             * @param error Error, if any
+             * @param [response] LaunchPlanAttributesUpdateResponse
+             */
+            type UpdateLaunchPlanAttributesCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanAttributesUpdateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getLaunchPlanAttributes}.
+             * @param error Error, if any
+             * @param [response] LaunchPlanAttributesGetResponse
+             */
+            type GetLaunchPlanAttributesCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanAttributesGetResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#deleteLaunchPlanAttributes}.
+             * @param error Error, if any
+             * @param [response] LaunchPlanAttributesDeleteResponse
+             */
+            type DeleteLaunchPlanAttributesCallback = (error: (Error|null), response?: flyteidl.admin.LaunchPlanAttributesDeleteResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listMatchableAttributes}.

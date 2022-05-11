@@ -77,12 +77,14 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**create_task_event**](docs/AdminServiceApi.md#create_task_event) | **POST** /api/v1/events/tasks | Indicates a :ref:&#x60;ref_flyteidl.event.TaskExecutionEvent&#x60; has occurred.
 *AdminServiceApi* | [**create_workflow**](docs/AdminServiceApi.md#create_workflow) | **POST** /api/v1/workflows | Create and upload a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition
 *AdminServiceApi* | [**create_workflow_event**](docs/AdminServiceApi.md#create_workflow_event) | **POST** /api/v1/events/workflows | Indicates a :ref:&#x60;ref_flyteidl.event.WorkflowExecutionEvent&#x60; has occurred.
+*AdminServiceApi* | [**delete_launch_plan_attributes**](docs/AdminServiceApi.md#delete_launch_plan_attributes) | **DELETE** /api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**delete_project_domain_attributes**](docs/AdminServiceApi.md#delete_project_domain_attributes) | **DELETE** /api/v1/project_domain_attributes/{project}/{domain} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**delete_workflow_attributes**](docs/AdminServiceApi.md#delete_workflow_attributes) | **DELETE** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**get_active_launch_plan**](docs/AdminServiceApi.md#get_active_launch_plan) | **GET** /api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name} | Fetch the active version of a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
+*AdminServiceApi* | [**get_launch_plan_attributes**](docs/AdminServiceApi.md#get_launch_plan_attributes) | **GET** /api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**get_named_entity**](docs/AdminServiceApi.md#get_named_entity) | **GET** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**get_node_execution**](docs/AdminServiceApi.md#get_node_execution) | **GET** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**get_node_execution_data**](docs/AdminServiceApi.md#get_node_execution_data) | **GET** /api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
@@ -116,6 +118,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**terminate_execution**](docs/AdminServiceApi.md#terminate_execution) | **DELETE** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Terminates an in-progress :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**update_execution**](docs/AdminServiceApi.md#update_execution) | **PUT** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Update execution belonging to project domain :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**update_launch_plan**](docs/AdminServiceApi.md#update_launch_plan) | **PUT** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Updates the status of a registered :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
+*AdminServiceApi* | [**update_launch_plan_attributes**](docs/AdminServiceApi.md#update_launch_plan_attributes) | **PUT** /api/v1/launch_plan_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}/{attributes.launch_plan} | Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**update_named_entity**](docs/AdminServiceApi.md#update_named_entity) | **PUT** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Updates a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**update_project**](docs/AdminServiceApi.md#update_project) | **PUT** /api/v1/projects/{id} | Updates an existing :ref:&#x60;ref_flyteidl.admin.Project&#x60;  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
 *AdminServiceApi* | [**update_project_domain_attributes**](docs/AdminServiceApi.md#update_project_domain_attributes) | **PUT** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain} | Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
@@ -156,6 +159,12 @@ Class | Method | HTTP request | Description
  - [AdminGetVersionResponse](docs/AdminGetVersionResponse.md)
  - [AdminLabels](docs/AdminLabels.md)
  - [AdminLaunchPlan](docs/AdminLaunchPlan.md)
+ - [AdminLaunchPlanAttributes](docs/AdminLaunchPlanAttributes.md)
+ - [AdminLaunchPlanAttributesDeleteRequest](docs/AdminLaunchPlanAttributesDeleteRequest.md)
+ - [AdminLaunchPlanAttributesDeleteResponse](docs/AdminLaunchPlanAttributesDeleteResponse.md)
+ - [AdminLaunchPlanAttributesGetResponse](docs/AdminLaunchPlanAttributesGetResponse.md)
+ - [AdminLaunchPlanAttributesUpdateRequest](docs/AdminLaunchPlanAttributesUpdateRequest.md)
+ - [AdminLaunchPlanAttributesUpdateResponse](docs/AdminLaunchPlanAttributesUpdateResponse.md)
  - [AdminLaunchPlanClosure](docs/AdminLaunchPlanClosure.md)
  - [AdminLaunchPlanCreateRequest](docs/AdminLaunchPlanCreateRequest.md)
  - [AdminLaunchPlanCreateResponse](docs/AdminLaunchPlanCreateResponse.md)

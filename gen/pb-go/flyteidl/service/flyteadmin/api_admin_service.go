@@ -723,6 +723,104 @@ func (a *AdminServiceApiService) CreateWorkflowEvent(ctx context.Context, body A
 }
 
 /* 
+AdminServiceApiService Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
+Delete the customized resource attributes associated with a project, domain, workflow and launch plan combination
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param project Unique project id which this set of attributes references. +required
+ * @param domain Unique domain id which this set of attributes references. +required
+ * @param workflow Workflow name which this set of attributes references. +required
+ * @param launchPlan Launch plan name which this set of attributes references. +required
+ * @param body
+
+@return AdminLaunchPlanAttributesDeleteResponse
+*/
+func (a *AdminServiceApiService) DeleteLaunchPlanAttributes(ctx context.Context, project string, domain string, workflow string, launchPlan string, body AdminLaunchPlanAttributesDeleteRequest) (AdminLaunchPlanAttributesDeleteResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue AdminLaunchPlanAttributesDeleteResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}"
+	localVarPath = strings.Replace(localVarPath, "{"+"project"+"}", fmt.Sprintf("%v", project), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"domain"+"}", fmt.Sprintf("%v", domain), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"workflow"+"}", fmt.Sprintf("%v", workflow), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"launch_plan"+"}", fmt.Sprintf("%v", launchPlan), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &body
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		
+		if localVarHttpResponse.StatusCode == 200 {
+			var v AdminLaunchPlanAttributesDeleteResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/* 
 AdminServiceApiService Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 Delete the customized resource attributes associated with a project-domain combination
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1281,6 +1379,111 @@ func (a *AdminServiceApiService) GetLaunchPlan(ctx context.Context, idProject st
 		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v AdminLaunchPlan
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/* 
+AdminServiceApiService Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
+Retrieve the customized resource attributes associated with a project, domain, workflow and launch plan combination
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param project Unique project id which this set of attributes references. +required
+ * @param domain Unique domain id which this set of attributes references. +required
+ * @param workflow Workflow name which this set of attributes references. +required
+ * @param launchPlan Launch plan name which this set of attributes references. +required
+ * @param optional nil or *GetLaunchPlanAttributesOpts - Optional Parameters:
+     * @param "ResourceType" (optional.String) -  Which type of matchable attributes to return. +required.   - TASK_RESOURCE: Applies to customizable task resource requests and limits.  - CLUSTER_RESOURCE: Applies to configuring templated kubernetes cluster resources.  - EXECUTION_QUEUE: Configures task and dynamic task execution queue assignment.  - EXECUTION_CLUSTER_LABEL: Configures the K8s cluster label to be used for execution to be run  - QUALITY_OF_SERVICE_SPECIFICATION: Configures default quality of service when undefined in an execution spec.  - PLUGIN_OVERRIDE: Selects configurable plugin implementation behavior for a given task type.  - WORKFLOW_EXECUTION_CONFIG: Adds defaults for customizable workflow-execution specifications and overrides.  - CLUSTER_ASSIGNMENT: Controls how to select an available cluster on which this execution should run.
+
+@return AdminLaunchPlanAttributesGetResponse
+*/
+
+type GetLaunchPlanAttributesOpts struct { 
+	ResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetLaunchPlanAttributes(ctx context.Context, project string, domain string, workflow string, launchPlan string, localVarOptionals *GetLaunchPlanAttributesOpts) (AdminLaunchPlanAttributesGetResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue AdminLaunchPlanAttributesGetResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/api/v1/launch_plan_attributes/{project}/{domain}/{workflow}/{launch_plan}"
+	localVarPath = strings.Replace(localVarPath, "{"+"project"+"}", fmt.Sprintf("%v", project), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"domain"+"}", fmt.Sprintf("%v", domain), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"workflow"+"}", fmt.Sprintf("%v", workflow), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"launch_plan"+"}", fmt.Sprintf("%v", launchPlan), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		
+		if localVarHttpResponse.StatusCode == 200 {
+			var v AdminLaunchPlanAttributesGetResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -4939,6 +5142,104 @@ func (a *AdminServiceApiService) UpdateLaunchPlan(ctx context.Context, idProject
 		
 		if localVarHttpResponse.StatusCode == 200 {
 			var v AdminLaunchPlanUpdateResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/* 
+AdminServiceApiService Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
+Update the customized resource attributes associated with a project, domain, workflow and launch plan combination
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param attributesProject Unique project id for which this set of attributes will be applied.
+ * @param attributesDomain Unique domain id for which this set of attributes will be applied.
+ * @param attributesWorkflow Workflow name for which this set of attributes will be applied.
+ * @param attributesLaunchPlan LaunchPlan name for which this set of attributes will be applied.
+ * @param body
+
+@return AdminLaunchPlanAttributesUpdateResponse
+*/
+func (a *AdminServiceApiService) UpdateLaunchPlanAttributes(ctx context.Context, attributesProject string, attributesDomain string, attributesWorkflow string, attributesLaunchPlan string, body AdminLaunchPlanAttributesUpdateRequest) (AdminLaunchPlanAttributesUpdateResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Put")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue AdminLaunchPlanAttributesUpdateResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/api/v1/launch_plan_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow}/{attributes.launch_plan}"
+	localVarPath = strings.Replace(localVarPath, "{"+"attributes.project"+"}", fmt.Sprintf("%v", attributesProject), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attributes.domain"+"}", fmt.Sprintf("%v", attributesDomain), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attributes.workflow"+"}", fmt.Sprintf("%v", attributesWorkflow), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attributes.launch_plan"+"}", fmt.Sprintf("%v", attributesLaunchPlan), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &body
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		
+		if localVarHttpResponse.StatusCode == 200 {
+			var v AdminLaunchPlanAttributesUpdateResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

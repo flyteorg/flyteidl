@@ -62,6 +62,9 @@ static const char* AdminService_method_names[] = {
   "/flyteidl.service.AdminService/UpdateWorkflowAttributes",
   "/flyteidl.service.AdminService/GetWorkflowAttributes",
   "/flyteidl.service.AdminService/DeleteWorkflowAttributes",
+  "/flyteidl.service.AdminService/UpdateLaunchPlanAttributes",
+  "/flyteidl.service.AdminService/GetLaunchPlanAttributes",
+  "/flyteidl.service.AdminService/DeleteLaunchPlanAttributes",
   "/flyteidl.service.AdminService/ListMatchableAttributes",
   "/flyteidl.service.AdminService/ListNamedEntities",
   "/flyteidl.service.AdminService/GetNamedEntity",
@@ -118,11 +121,14 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_UpdateWorkflowAttributes_(AdminService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetWorkflowAttributes_(AdminService_method_names[40], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteWorkflowAttributes_(AdminService_method_names[41], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListMatchableAttributes_(AdminService_method_names[42], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ListNamedEntities_(AdminService_method_names[43], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNamedEntity_(AdminService_method_names[44], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateNamedEntity_(AdminService_method_names[45], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetVersion_(AdminService_method_names[46], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateLaunchPlanAttributes_(AdminService_method_names[42], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLaunchPlanAttributes_(AdminService_method_names[43], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteLaunchPlanAttributes_(AdminService_method_names[44], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListMatchableAttributes_(AdminService_method_names[45], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListNamedEntities_(AdminService_method_names[46], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNamedEntity_(AdminService_method_names[47], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateNamedEntity_(AdminService_method_names[48], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetVersion_(AdminService_method_names[49], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminService::Stub::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::flyteidl::admin::TaskCreateResponse* response) {
@@ -1301,6 +1307,90 @@ void AdminService::Stub::experimental_async::DeleteWorkflowAttributes(::grpc::Cl
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::WorkflowAttributesDeleteResponse>::Create(channel_.get(), cq, rpcmethod_DeleteWorkflowAttributes_, context, request, false);
 }
 
+::grpc::Status AdminService::Stub::UpdateLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest& request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateLaunchPlanAttributes_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest* request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest* request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::UpdateLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesUpdateResponse>* AdminService::Stub::AsyncUpdateLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateLaunchPlanAttributes_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesUpdateResponse>* AdminService::Stub::PrepareAsyncUpdateLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesUpdateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateLaunchPlanAttributes_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::GetLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest& request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetLaunchPlanAttributes_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest* request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest* request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::GetLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesGetResponse>* AdminService::Stub::AsyncGetLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesGetResponse>::Create(channel_.get(), cq, rpcmethod_GetLaunchPlanAttributes_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesGetResponse>* AdminService::Stub::PrepareAsyncGetLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesGetResponse>::Create(channel_.get(), cq, rpcmethod_GetLaunchPlanAttributes_, context, request, false);
+}
+
+::grpc::Status AdminService::Stub::DeleteLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest& request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteLaunchPlanAttributes_, context, request, response);
+}
+
+void AdminService::Stub::experimental_async::DeleteLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest* request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::DeleteLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteLaunchPlanAttributes_, context, request, response, std::move(f));
+}
+
+void AdminService::Stub::experimental_async::DeleteLaunchPlanAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest* request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+void AdminService::Stub::experimental_async::DeleteLaunchPlanAttributes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteLaunchPlanAttributes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesDeleteResponse>* AdminService::Stub::AsyncDeleteLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesDeleteResponse>::Create(channel_.get(), cq, rpcmethod_DeleteLaunchPlanAttributes_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::LaunchPlanAttributesDeleteResponse>* AdminService::Stub::PrepareAsyncDeleteLaunchPlanAttributesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::LaunchPlanAttributesDeleteResponse>::Create(channel_.get(), cq, rpcmethod_DeleteLaunchPlanAttributes_, context, request, false);
+}
+
 ::grpc::Status AdminService::Stub::ListMatchableAttributes(::grpc::ClientContext* context, const ::flyteidl::admin::ListMatchableAttributesRequest& request, ::flyteidl::admin::ListMatchableAttributesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListMatchableAttributes_, context, request, response);
 }
@@ -1655,25 +1745,40 @@ AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[42],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::LaunchPlanAttributesUpdateRequest, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse>(
+          std::mem_fn(&AdminService::Service::UpdateLaunchPlanAttributes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[43],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::LaunchPlanAttributesGetRequest, ::flyteidl::admin::LaunchPlanAttributesGetResponse>(
+          std::mem_fn(&AdminService::Service::GetLaunchPlanAttributes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[44],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::LaunchPlanAttributesDeleteRequest, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse>(
+          std::mem_fn(&AdminService::Service::DeleteLaunchPlanAttributes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AdminService_method_names[45],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::ListMatchableAttributesRequest, ::flyteidl::admin::ListMatchableAttributesResponse>(
           std::mem_fn(&AdminService::Service::ListMatchableAttributes), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AdminService_method_names[43],
+      AdminService_method_names[46],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityListRequest, ::flyteidl::admin::NamedEntityList>(
           std::mem_fn(&AdminService::Service::ListNamedEntities), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AdminService_method_names[44],
+      AdminService_method_names[47],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityGetRequest, ::flyteidl::admin::NamedEntity>(
           std::mem_fn(&AdminService::Service::GetNamedEntity), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AdminService_method_names[45],
+      AdminService_method_names[48],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NamedEntityUpdateRequest, ::flyteidl::admin::NamedEntityUpdateResponse>(
           std::mem_fn(&AdminService::Service::UpdateNamedEntity), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AdminService_method_names[46],
+      AdminService_method_names[49],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::GetVersionRequest, ::flyteidl::admin::GetVersionResponse>(
           std::mem_fn(&AdminService::Service::GetVersion), this)));
@@ -1970,6 +2075,27 @@ AdminService::Service::~Service() {
 }
 
 ::grpc::Status AdminService::Service::DeleteWorkflowAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowAttributesDeleteRequest* request, ::flyteidl::admin::WorkflowAttributesDeleteResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::UpdateLaunchPlanAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::LaunchPlanAttributesUpdateRequest* request, ::flyteidl::admin::LaunchPlanAttributesUpdateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::GetLaunchPlanAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::LaunchPlanAttributesGetRequest* request, ::flyteidl::admin::LaunchPlanAttributesGetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AdminService::Service::DeleteLaunchPlanAttributes(::grpc::ServerContext* context, const ::flyteidl::admin::LaunchPlanAttributesDeleteRequest* request, ::flyteidl::admin::LaunchPlanAttributesDeleteResponse* response) {
   (void) context;
   (void) request;
   (void) response;

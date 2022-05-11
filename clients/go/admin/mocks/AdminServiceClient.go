@@ -353,6 +353,54 @@ func (_m *AdminServiceClient) CreateWorkflowEvent(ctx context.Context, in *admin
 	return r0, r1
 }
 
+type AdminServiceClient_DeleteLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceClient_DeleteLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesDeleteResponse, _a1 error) *AdminServiceClient_DeleteLaunchPlanAttributes {
+	return &AdminServiceClient_DeleteLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceClient) OnDeleteLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesDeleteRequest, opts ...grpc.CallOption) *AdminServiceClient_DeleteLaunchPlanAttributes {
+	c_call := _m.On("DeleteLaunchPlanAttributes", ctx, in, opts)
+	return &AdminServiceClient_DeleteLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceClient) OnDeleteLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceClient_DeleteLaunchPlanAttributes {
+	c_call := _m.On("DeleteLaunchPlanAttributes", matchers...)
+	return &AdminServiceClient_DeleteLaunchPlanAttributes{Call: c_call}
+}
+
+// DeleteLaunchPlanAttributes provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) DeleteLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesDeleteRequest, opts ...grpc.CallOption) (*admin.LaunchPlanAttributesDeleteResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.LaunchPlanAttributesDeleteResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesDeleteRequest, ...grpc.CallOption) *admin.LaunchPlanAttributesDeleteResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesDeleteResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesDeleteRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceClient_DeleteProjectDomainAttributes struct {
 	*mock.Call
 }
@@ -633,6 +681,54 @@ func (_m *AdminServiceClient) GetLaunchPlan(ctx context.Context, in *admin.Objec
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.ObjectGetRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+type AdminServiceClient_GetLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceClient_GetLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesGetResponse, _a1 error) *AdminServiceClient_GetLaunchPlanAttributes {
+	return &AdminServiceClient_GetLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceClient) OnGetLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesGetRequest, opts ...grpc.CallOption) *AdminServiceClient_GetLaunchPlanAttributes {
+	c_call := _m.On("GetLaunchPlanAttributes", ctx, in, opts)
+	return &AdminServiceClient_GetLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceClient) OnGetLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceClient_GetLaunchPlanAttributes {
+	c_call := _m.On("GetLaunchPlanAttributes", matchers...)
+	return &AdminServiceClient_GetLaunchPlanAttributes{Call: c_call}
+}
+
+// GetLaunchPlanAttributes provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) GetLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesGetRequest, opts ...grpc.CallOption) (*admin.LaunchPlanAttributesGetResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.LaunchPlanAttributesGetResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesGetRequest, ...grpc.CallOption) *admin.LaunchPlanAttributesGetResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesGetResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesGetRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)
@@ -2073,6 +2169,54 @@ func (_m *AdminServiceClient) UpdateLaunchPlan(ctx context.Context, in *admin.La
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanUpdateRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+type AdminServiceClient_UpdateLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceClient_UpdateLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesUpdateResponse, _a1 error) *AdminServiceClient_UpdateLaunchPlanAttributes {
+	return &AdminServiceClient_UpdateLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceClient) OnUpdateLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesUpdateRequest, opts ...grpc.CallOption) *AdminServiceClient_UpdateLaunchPlanAttributes {
+	c_call := _m.On("UpdateLaunchPlanAttributes", ctx, in, opts)
+	return &AdminServiceClient_UpdateLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceClient) OnUpdateLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceClient_UpdateLaunchPlanAttributes {
+	c_call := _m.On("UpdateLaunchPlanAttributes", matchers...)
+	return &AdminServiceClient_UpdateLaunchPlanAttributes{Call: c_call}
+}
+
+// UpdateLaunchPlanAttributes provides a mock function with given fields: ctx, in, opts
+func (_m *AdminServiceClient) UpdateLaunchPlanAttributes(ctx context.Context, in *admin.LaunchPlanAttributesUpdateRequest, opts ...grpc.CallOption) (*admin.LaunchPlanAttributesUpdateResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *admin.LaunchPlanAttributesUpdateResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesUpdateRequest, ...grpc.CallOption) *admin.LaunchPlanAttributesUpdateResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesUpdateResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesUpdateRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

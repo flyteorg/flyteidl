@@ -34,6 +34,7 @@
 #include "flyteidl/admin/project_domain_attributes.pb.h"
 #include "flyteidl/admin/task.pb.h"
 #include "flyteidl/admin/workflow.pb.h"
+#include "flyteidl/admin/launch_plan_attributes.pb.h"
 #include "flyteidl/admin/workflow_attributes.pb.h"
 #include "flyteidl/admin/launch_plan.pb.h"
 #include "flyteidl/admin/event.pb.h"

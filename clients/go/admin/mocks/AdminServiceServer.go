@@ -302,6 +302,47 @@ func (_m *AdminServiceServer) CreateWorkflowEvent(_a0 context.Context, _a1 *admi
 	return r0, r1
 }
 
+type AdminServiceServer_DeleteLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_DeleteLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesDeleteResponse, _a1 error) *AdminServiceServer_DeleteLaunchPlanAttributes {
+	return &AdminServiceServer_DeleteLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnDeleteLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesDeleteRequest) *AdminServiceServer_DeleteLaunchPlanAttributes {
+	c_call := _m.On("DeleteLaunchPlanAttributes", _a0, _a1)
+	return &AdminServiceServer_DeleteLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnDeleteLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceServer_DeleteLaunchPlanAttributes {
+	c_call := _m.On("DeleteLaunchPlanAttributes", matchers...)
+	return &AdminServiceServer_DeleteLaunchPlanAttributes{Call: c_call}
+}
+
+// DeleteLaunchPlanAttributes provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) DeleteLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesDeleteRequest) (*admin.LaunchPlanAttributesDeleteResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.LaunchPlanAttributesDeleteResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesDeleteRequest) *admin.LaunchPlanAttributesDeleteResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesDeleteResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesDeleteRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceServer_DeleteProjectDomainAttributes struct {
 	*mock.Call
 }
@@ -540,6 +581,47 @@ func (_m *AdminServiceServer) GetLaunchPlan(_a0 context.Context, _a1 *admin.Obje
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.ObjectGetRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+type AdminServiceServer_GetLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_GetLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesGetResponse, _a1 error) *AdminServiceServer_GetLaunchPlanAttributes {
+	return &AdminServiceServer_GetLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnGetLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesGetRequest) *AdminServiceServer_GetLaunchPlanAttributes {
+	c_call := _m.On("GetLaunchPlanAttributes", _a0, _a1)
+	return &AdminServiceServer_GetLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnGetLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceServer_GetLaunchPlanAttributes {
+	c_call := _m.On("GetLaunchPlanAttributes", matchers...)
+	return &AdminServiceServer_GetLaunchPlanAttributes{Call: c_call}
+}
+
+// GetLaunchPlanAttributes provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) GetLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesGetRequest) (*admin.LaunchPlanAttributesGetResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.LaunchPlanAttributesGetResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesGetRequest) *admin.LaunchPlanAttributesGetResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesGetResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesGetRequest) error); ok {
 		r1 = rf(_a0, _a1)
 	} else {
 		r1 = ret.Error(1)
@@ -1770,6 +1852,47 @@ func (_m *AdminServiceServer) UpdateLaunchPlan(_a0 context.Context, _a1 *admin.L
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanUpdateRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+type AdminServiceServer_UpdateLaunchPlanAttributes struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_UpdateLaunchPlanAttributes) Return(_a0 *admin.LaunchPlanAttributesUpdateResponse, _a1 error) *AdminServiceServer_UpdateLaunchPlanAttributes {
+	return &AdminServiceServer_UpdateLaunchPlanAttributes{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnUpdateLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesUpdateRequest) *AdminServiceServer_UpdateLaunchPlanAttributes {
+	c_call := _m.On("UpdateLaunchPlanAttributes", _a0, _a1)
+	return &AdminServiceServer_UpdateLaunchPlanAttributes{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnUpdateLaunchPlanAttributesMatch(matchers ...interface{}) *AdminServiceServer_UpdateLaunchPlanAttributes {
+	c_call := _m.On("UpdateLaunchPlanAttributes", matchers...)
+	return &AdminServiceServer_UpdateLaunchPlanAttributes{Call: c_call}
+}
+
+// UpdateLaunchPlanAttributes provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) UpdateLaunchPlanAttributes(_a0 context.Context, _a1 *admin.LaunchPlanAttributesUpdateRequest) (*admin.LaunchPlanAttributesUpdateResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.LaunchPlanAttributesUpdateResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.LaunchPlanAttributesUpdateRequest) *admin.LaunchPlanAttributesUpdateResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.LaunchPlanAttributesUpdateResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.LaunchPlanAttributesUpdateRequest) error); ok {
 		r1 = rf(_a0, _a1)
 	} else {
 		r1 = ret.Error(1)
