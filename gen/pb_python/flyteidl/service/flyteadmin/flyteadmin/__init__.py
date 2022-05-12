@@ -204,9 +204,9 @@ from flyteadmin.models.core_scalar import CoreScalar
 from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
-from flyteadmin.models.core_signal_conditional import CoreSignalConditional
+from flyteadmin.models.core_signal_condition import CoreSignalCondition
 from flyteadmin.models.core_simple_type import CoreSimpleType
-from flyteadmin.models.core_sleep_conditional import CoreSleepConditional
+from flyteadmin.models.core_sleep_condition import CoreSleepCondition
 from flyteadmin.models.core_sql import CoreSql
 from flyteadmin.models.core_structured_dataset import CoreStructuredDataset
 from flyteadmin.models.core_structured_dataset_metadata import CoreStructuredDatasetMetadata

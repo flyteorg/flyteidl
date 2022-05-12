@@ -69,23 +69,23 @@ message WorkflowNode {
 }
 
 // TODO hamersaw - document
-message SignalConditional {
+message SignalCondition {
 }
 
 // TODO hamersaw - document
-message SleepConditional {
+message SleepCondition {
     // The overall duration for this sleep.
     google.protobuf.Duration duration = 4;
 }
 
 // TODO hamersaw - document
 message GateNode {
-    oneof conditional {
+    oneof condition {
         // TODO hamersaw - document
-        SignalConditional signal = 2;
+        SignalCondition signal = 2;
 
         // TODO hamersaw - document
-        SleepConditional sleep = 1;
+        SleepCondition sleep = 1;
     }
 }
 

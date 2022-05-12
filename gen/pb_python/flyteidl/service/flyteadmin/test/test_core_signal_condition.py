@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_signal_conditional import CoreSignalConditional  # noqa: E501
+from flyteadmin.models.core_signal_condition import CoreSignalCondition  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreSignalConditional(unittest.TestCase):
-    """CoreSignalConditional unit test stubs"""
+class TestCoreSignalCondition(unittest.TestCase):
+    """CoreSignalCondition unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreSignalConditional(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreSignalConditional(self):
-        """Test CoreSignalConditional"""
+    def testCoreSignalCondition(self):
+        """Test CoreSignalCondition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_signal_conditional.CoreSignalConditional()  # noqa: E501
+        # model = flyteadmin.models.core_signal_condition.CoreSignalCondition()  # noqa: E501
         pass
 
 

@@ -49572,10 +49572,10 @@ definitions:
     properties:
       signal:
         title: "TODO hamersaw - document"
-        $ref: "#/definitions/coreSignalConditional"
+        $ref: "#/definitions/coreSignalCondition"
       sleep:
         title: "TODO hamersaw - document"
-        $ref: "#/definitions/coreSleepConditional"
+        $ref: "#/definitions/coreSleepCondition"
     title: "TODO hamersaw - document"
     example:
       sleep:
@@ -51479,7 +51479,7 @@ definitions:
         group_version: "group_version"
         key: "key"
         group: "group"
-  coreSignalConditional:
+  coreSignalCondition:
     type: "object"
     title: "TODO hamersaw - document"
   coreSimpleType:
@@ -51497,7 +51497,7 @@ definitions:
     - "ERROR"
     - "STRUCT"
     default: "NONE"
-  coreSleepConditional:
+  coreSleepCondition:
     type: "object"
     properties:
       duration:

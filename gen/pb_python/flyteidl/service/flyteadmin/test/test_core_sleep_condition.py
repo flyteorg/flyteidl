@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_sleep_conditional import CoreSleepConditional  # noqa: E501
+from flyteadmin.models.core_sleep_condition import CoreSleepCondition  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreSleepConditional(unittest.TestCase):
-    """CoreSleepConditional unit test stubs"""
+class TestCoreSleepCondition(unittest.TestCase):
+    """CoreSleepCondition unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreSleepConditional(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreSleepConditional(self):
-        """Test CoreSleepConditional"""
+    def testCoreSleepCondition(self):
+        """Test CoreSleepCondition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_sleep_conditional.CoreSleepConditional()  # noqa: E501
+        # model = flyteadmin.models.core_sleep_condition.CoreSleepCondition()  # noqa: E501
         pass
 
 

@@ -5461,11 +5461,11 @@
       "type": "object",
       "properties": {
         "signal": {
-          "$ref": "#/definitions/coreSignalConditional",
+          "$ref": "#/definitions/coreSignalCondition",
           "title": "TODO hamersaw - document"
         },
         "sleep": {
-          "$ref": "#/definitions/coreSleepConditional",
+          "$ref": "#/definitions/coreSleepCondition",
           "title": "TODO hamersaw - document"
         }
       },
@@ -6122,7 +6122,7 @@
       },
       "description": "SecurityContext holds security attributes that apply to tasks."
     },
-    "coreSignalConditional": {
+    "coreSignalCondition": {
       "type": "object",
       "title": "TODO hamersaw - document"
     },
@@ -6143,7 +6143,7 @@
       "default": "NONE",
       "description": "Define a set of simple types."
     },
-    "coreSleepConditional": {
+    "coreSleepCondition": {
       "type": "object",
       "properties": {
         "duration": {

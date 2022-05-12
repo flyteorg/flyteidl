@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.core_signal_conditional import CoreSignalConditional  # noqa: F401,E501
-from flyteadmin.models.core_sleep_conditional import CoreSleepConditional  # noqa: F401,E501
+from flyteadmin.models.core_signal_condition import CoreSignalCondition  # noqa: F401,E501
+from flyteadmin.models.core_sleep_condition import CoreSleepCondition  # noqa: F401,E501
 
 
 class CoreGateNode(object):
@@ -34,8 +34,8 @@ class CoreGateNode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'signal': 'CoreSignalConditional',
-        'sleep': 'CoreSleepConditional'
+        'signal': 'CoreSignalCondition',
+        'sleep': 'CoreSleepCondition'
     }
 
     attribute_map = {
@@ -61,7 +61,7 @@ class CoreGateNode(object):
 
 
         :return: The signal of this CoreGateNode.  # noqa: E501
-        :rtype: CoreSignalConditional
+        :rtype: CoreSignalCondition
         """
         return self._signal
 
@@ -71,7 +71,7 @@ class CoreGateNode(object):
 
 
         :param signal: The signal of this CoreGateNode.  # noqa: E501
-        :type: CoreSignalConditional
+        :type: CoreSignalCondition
         """
 
         self._signal = signal
@@ -82,7 +82,7 @@ class CoreGateNode(object):
 
 
         :return: The sleep of this CoreGateNode.  # noqa: E501
-        :rtype: CoreSleepConditional
+        :rtype: CoreSleepCondition
         """
         return self._sleep
 
@@ -92,7 +92,7 @@ class CoreGateNode(object):
 
 
         :param sleep: The sleep of this CoreGateNode.  # noqa: E501
-        :type: CoreSleepConditional
+        :type: CoreSleepCondition
         """
 
         self._sleep = sleep

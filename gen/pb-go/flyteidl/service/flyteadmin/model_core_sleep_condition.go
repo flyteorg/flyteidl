@@ -9,5 +9,7 @@
 
 package flyteadmin
 
-type CoreSignalConditional struct {
+type CoreSleepCondition struct {
+	// The overall duration for this sleep.
+	Duration string `json:"duration,omitempty"`
 }

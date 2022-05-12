@@ -2825,8 +2825,8 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signal", ":ref:`ref_flyteidl.core.SignalConditional`", "", "TODO hamersaw - document"
-   "sleep", ":ref:`ref_flyteidl.core.SleepConditional`", "", "TODO hamersaw - document"
+   "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "TODO hamersaw - document"
+   "sleep", ":ref:`ref_flyteidl.core.SleepCondition`", "", "TODO hamersaw - document"
 
 
 
@@ -2935,9 +2935,9 @@ Defines extra information about the Node.
 
 
 
-.. _ref_flyteidl.core.SignalConditional:
+.. _ref_flyteidl.core.SignalCondition:
 
-SignalConditional
+SignalCondition
 ------------------------------------------------------------------
 
 TODO hamersaw - document
@@ -2949,16 +2949,16 @@ TODO hamersaw - document
 
 
 
-.. _ref_flyteidl.core.SleepConditional:
+.. _ref_flyteidl.core.SleepCondition:
 
-SleepConditional
+SleepCondition
 ------------------------------------------------------------------
 
 TODO hamersaw - document
 
 
 
-.. csv-table:: SleepConditional type fields
+.. csv-table:: SleepCondition type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 

@@ -495,10 +495,10 @@ var _ interface {
 	ErrorName() string
 } = WorkflowNodeValidationError{}
 
-// Validate checks the field values on SignalConditional with the rules defined
+// Validate checks the field values on SignalCondition with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.
-func (m *SignalConditional) Validate() error {
+func (m *SignalCondition) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -506,9 +506,9 @@ func (m *SignalConditional) Validate() error {
 	return nil
 }
 
-// SignalConditionalValidationError is the validation error returned by
-// SignalConditional.Validate if the designated constraints aren't met.
-type SignalConditionalValidationError struct {
+// SignalConditionValidationError is the validation error returned by
+// SignalCondition.Validate if the designated constraints aren't met.
+type SignalConditionValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -516,24 +516,22 @@ type SignalConditionalValidationError struct {
 }
 
 // Field function returns field value.
-func (e SignalConditionalValidationError) Field() string { return e.field }
+func (e SignalConditionValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SignalConditionalValidationError) Reason() string { return e.reason }
+func (e SignalConditionValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SignalConditionalValidationError) Cause() error { return e.cause }
+func (e SignalConditionValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SignalConditionalValidationError) Key() bool { return e.key }
+func (e SignalConditionValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SignalConditionalValidationError) ErrorName() string {
-	return "SignalConditionalValidationError"
-}
+func (e SignalConditionValidationError) ErrorName() string { return "SignalConditionValidationError" }
 
 // Error satisfies the builtin error interface
-func (e SignalConditionalValidationError) Error() string {
+func (e SignalConditionValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -545,14 +543,14 @@ func (e SignalConditionalValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSignalConditional.%s: %s%s",
+		"invalid %sSignalCondition.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SignalConditionalValidationError{}
+var _ error = SignalConditionValidationError{}
 
 var _ interface {
 	Field() string
@@ -560,19 +558,19 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SignalConditionalValidationError{}
+} = SignalConditionValidationError{}
 
-// Validate checks the field values on SleepConditional with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *SleepConditional) Validate() error {
+// Validate checks the field values on SleepCondition with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *SleepCondition) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetDuration()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return SleepConditionalValidationError{
+			return SleepConditionValidationError{
 				field:  "Duration",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -583,9 +581,9 @@ func (m *SleepConditional) Validate() error {
 	return nil
 }
 
-// SleepConditionalValidationError is the validation error returned by
-// SleepConditional.Validate if the designated constraints aren't met.
-type SleepConditionalValidationError struct {
+// SleepConditionValidationError is the validation error returned by
+// SleepCondition.Validate if the designated constraints aren't met.
+type SleepConditionValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -593,22 +591,22 @@ type SleepConditionalValidationError struct {
 }
 
 // Field function returns field value.
-func (e SleepConditionalValidationError) Field() string { return e.field }
+func (e SleepConditionValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SleepConditionalValidationError) Reason() string { return e.reason }
+func (e SleepConditionValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SleepConditionalValidationError) Cause() error { return e.cause }
+func (e SleepConditionValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SleepConditionalValidationError) Key() bool { return e.key }
+func (e SleepConditionValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SleepConditionalValidationError) ErrorName() string { return "SleepConditionalValidationError" }
+func (e SleepConditionValidationError) ErrorName() string { return "SleepConditionValidationError" }
 
 // Error satisfies the builtin error interface
-func (e SleepConditionalValidationError) Error() string {
+func (e SleepConditionValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -620,14 +618,14 @@ func (e SleepConditionalValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSleepConditional.%s: %s%s",
+		"invalid %sSleepCondition.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SleepConditionalValidationError{}
+var _ error = SleepConditionValidationError{}
 
 var _ interface {
 	Field() string
@@ -635,7 +633,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SleepConditionalValidationError{}
+} = SleepConditionValidationError{}
 
 // Validate checks the field values on GateNode with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -644,7 +642,7 @@ func (m *GateNode) Validate() error {
 		return nil
 	}
 
-	switch m.Conditional.(type) {
+	switch m.Condition.(type) {
 
 	case *GateNode_Signal:
 

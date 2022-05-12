@@ -25,9 +25,9 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::pro
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SignalConditional_flyteidl_2fcore_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskNodeOverrides_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNode_flyteidl_2fcore_2fworkflow_2eproto;
@@ -63,19 +63,19 @@ class WorkflowNodeDefaultTypeInternal {
   const ::flyteidl::core::Identifier* launchplan_ref_;
   const ::flyteidl::core::Identifier* sub_workflow_ref_;
 } _WorkflowNode_default_instance_;
-class SignalConditionalDefaultTypeInternal {
+class SignalConditionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SignalConditional> _instance;
-} _SignalConditional_default_instance_;
-class SleepConditionalDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<SignalCondition> _instance;
+} _SignalCondition_default_instance_;
+class SleepConditionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SleepConditional> _instance;
-} _SleepConditional_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<SleepCondition> _instance;
+} _SleepCondition_default_instance_;
 class GateNodeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<GateNode> _instance;
-  const ::flyteidl::core::SignalConditional* signal_;
-  const ::flyteidl::core::SleepConditional* sleep_;
+  const ::flyteidl::core::SignalCondition* signal_;
+  const ::flyteidl::core::SleepCondition* sleep_;
 } _GateNode_default_instance_;
 class NodeMetadataDefaultTypeInternal {
  public:
@@ -183,33 +183,33 @@ static void InitDefaultsWorkflowNode_flyteidl_2fcore_2fworkflow_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsWorkflowNode_flyteidl_2fcore_2fworkflow_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
 
-static void InitDefaultsSignalConditional_flyteidl_2fcore_2fworkflow_2eproto() {
+static void InitDefaultsSignalCondition_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::core::_SignalConditional_default_instance_;
-    new (ptr) ::flyteidl::core::SignalConditional();
+    void* ptr = &::flyteidl::core::_SignalCondition_default_instance_;
+    new (ptr) ::flyteidl::core::SignalCondition();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::core::SignalConditional::InitAsDefaultInstance();
+  ::flyteidl::core::SignalCondition::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SignalConditional_flyteidl_2fcore_2fworkflow_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSignalConditional_flyteidl_2fcore_2fworkflow_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSignalCondition_flyteidl_2fcore_2fworkflow_2eproto}, {}};
 
-static void InitDefaultsSleepConditional_flyteidl_2fcore_2fworkflow_2eproto() {
+static void InitDefaultsSleepCondition_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::core::_SleepConditional_default_instance_;
-    new (ptr) ::flyteidl::core::SleepConditional();
+    void* ptr = &::flyteidl::core::_SleepCondition_default_instance_;
+    new (ptr) ::flyteidl::core::SleepCondition();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::core::SleepConditional::InitAsDefaultInstance();
+  ::flyteidl::core::SleepCondition::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSleepConditional_flyteidl_2fcore_2fworkflow_2eproto}, {
+::google::protobuf::internal::SCCInfo<1> scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSleepCondition_flyteidl_2fcore_2fworkflow_2eproto}, {
       &scc_info_Duration_google_2fprotobuf_2fduration_2eproto.base,}};
 
 static void InitDefaultsGateNode_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -225,8 +225,8 @@ static void InitDefaultsGateNode_flyteidl_2fcore_2fworkflow_2eproto() {
 
 ::google::protobuf::internal::SCCInfo<2> scc_info_GateNode_flyteidl_2fcore_2fworkflow_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsGateNode_flyteidl_2fcore_2fworkflow_2eproto}, {
-      &scc_info_SignalConditional_flyteidl_2fcore_2fworkflow_2eproto.base,
-      &scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto.base,}};
+      &scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto.base,
+      &scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto.base,}};
 
 static void InitDefaultsNodeMetadata_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -326,8 +326,8 @@ void InitDefaults_flyteidl_2fcore_2fworkflow_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_BranchNode_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TaskNode_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_WorkflowNode_flyteidl_2fcore_2fworkflow_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SignalConditional_flyteidl_2fcore_2fworkflow_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_GateNode_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NodeMetadata_flyteidl_2fcore_2fworkflow_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto.base);
@@ -382,16 +382,16 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   offsetof(::flyteidl::core::WorkflowNodeDefaultTypeInternal, sub_workflow_ref_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::WorkflowNode, reference_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SignalConditional, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SignalCondition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SleepConditional, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SleepCondition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SleepConditional, duration_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SleepCondition, duration_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::GateNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -399,7 +399,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _weak_field_map_
   offsetof(::flyteidl::core::GateNodeDefaultTypeInternal, signal_),
   offsetof(::flyteidl::core::GateNodeDefaultTypeInternal, sleep_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::GateNode, conditional_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::GateNode, condition_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::NodeMetadata, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -470,8 +470,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 17, -1, sizeof(::flyteidl::core::BranchNode)},
   { 23, -1, sizeof(::flyteidl::core::TaskNode)},
   { 31, -1, sizeof(::flyteidl::core::WorkflowNode)},
-  { 39, -1, sizeof(::flyteidl::core::SignalConditional)},
-  { 44, -1, sizeof(::flyteidl::core::SleepConditional)},
+  { 39, -1, sizeof(::flyteidl::core::SignalCondition)},
+  { 44, -1, sizeof(::flyteidl::core::SleepCondition)},
   { 50, -1, sizeof(::flyteidl::core::GateNode)},
   { 58, -1, sizeof(::flyteidl::core::NodeMetadata)},
   { 68, -1, sizeof(::flyteidl::core::Alias)},
@@ -488,8 +488,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_BranchNode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_TaskNode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_WorkflowNode_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SignalConditional_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SleepConditional_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SignalCondition_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_SleepCondition_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_GateNode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_NodeMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::core::_Alias_default_instance_),
@@ -530,51 +530,51 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly"
   "teidl.core.IdentifierH\000\0225\n\020sub_workflow_"
   "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013"
-  "\n\treference\"\023\n\021SignalConditional\"\?\n\020Slee"
-  "pConditional\022+\n\010duration\030\004 \001(\0132\031.google."
-  "protobuf.Duration\"\177\n\010GateNode\0222\n\006signal\030"
-  "\002 \001(\0132 .flyteidl.core.SignalConditionalH"
-  "\000\0220\n\005sleep\030\001 \001(\0132\037.flyteidl.core.SleepCo"
-  "nditionalH\000B\r\n\013conditional\"\247\001\n\014NodeMetad"
-  "ata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.goo"
-  "gle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034"
-  ".flyteidl.core.RetryStrategy\022\027\n\rinterrup"
-  "tible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005"
-  "Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004No"
-  "de\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyte"
-  "idl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026."
-  "flyteidl.core.Binding\022\031\n\021upstream_node_i"
-  "ds\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyte"
-  "idl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyt"
-  "eidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007 "
-  "\001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013br"
-  "anch_node\030\010 \001(\0132\031.flyteidl.core.BranchNo"
-  "deH\000\022,\n\tgate_node\030\t \001(\0132\027.flyteidl.core."
-  "GateNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMetadat"
-  "a\022;\n\022quality_of_service\030\001 \001(\0132\037.flyteidl"
-  ".core.QualityOfService\022C\n\non_failure\030\002 \001"
-  "(\0162/.flyteidl.core.WorkflowMetadata.OnFa"
-  "ilurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_I"
-  "MMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NO"
-  "DES_COMPLETE\020\001\"1\n\030WorkflowMetadataDefaul"
-  "ts\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTe"
-  "mplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident"
-  "ifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core."
-  "WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035.fl"
-  "yteidl.core.TypedInterface\022\"\n\005nodes\030\004 \003("
-  "\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132"
-  "\026.flyteidl.core.Binding\022)\n\014failure_node\030"
-  "\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadata_d"
-  "efaults\030\007 \001(\0132\'.flyteidl.core.WorkflowMe"
-  "tadataDefaults\"@\n\021TaskNodeOverrides\022+\n\tr"
-  "esources\030\001 \001(\0132\030.flyteidl.core.Resources"
-  "B6Z4github.com/flyteorg/flyteidl/gen/pb-"
-  "go/flyteidl/coreb\006proto3"
+  "\n\treference\"\021\n\017SignalCondition\"=\n\016SleepC"
+  "ondition\022+\n\010duration\030\004 \001(\0132\031.google.prot"
+  "obuf.Duration\"y\n\010GateNode\0220\n\006signal\030\002 \001("
+  "\0132\036.flyteidl.core.SignalConditionH\000\022.\n\005s"
+  "leep\030\001 \001(\0132\035.flyteidl.core.SleepConditio"
+  "nH\000B\013\n\tcondition\"\247\001\n\014NodeMetadata\022\014\n\004nam"
+  "e\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protob"
+  "uf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl."
+  "core.RetryStrategy\022\027\n\rinterruptible\030\006 \001("
+  "\010H\000B\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003v"
+  "ar\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001"
+  " \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.N"
+  "odeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.c"
+  "ore.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,"
+  "\n\016output_aliases\030\005 \003(\0132\024.flyteidl.core.A"
+  "lias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core."
+  "TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyt"
+  "eidl.core.WorkflowNodeH\000\0220\n\013branch_node\030"
+  "\010 \001(\0132\031.flyteidl.core.BranchNodeH\000\022,\n\tga"
+  "te_node\030\t \001(\0132\027.flyteidl.core.GateNodeH\000"
+  "B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022quali"
+  "ty_of_service\030\001 \001(\0132\037.flyteidl.core.Qual"
+  "ityOfService\022C\n\non_failure\030\002 \001(\0162/.flyte"
+  "idl.core.WorkflowMetadata.OnFailurePolic"
+  "y\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY"
+  "\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLE"
+  "TE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinte"
+  "rruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002"
+  "id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010m"
+  "etadata\030\002 \001(\0132\037.flyteidl.core.WorkflowMe"
+  "tadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.cor"
+  "e.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flytei"
+  "dl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl"
+  ".core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.fl"
+  "yteidl.core.Node\022B\n\021metadata_defaults\030\007 "
+  "\001(\0132\'.flyteidl.core.WorkflowMetadataDefa"
+  "ults\"@\n\021TaskNodeOverrides\022+\n\tresources\030\001"
+  " \001(\0132\030.flyteidl.core.ResourcesB6Z4github"
+  ".com/flyteorg/flyteidl/gen/pb-go/flyteid"
+  "l/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2504,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2494,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -2639,49 +2639,49 @@ void WorkflowNode::InternalSwap(WorkflowNode* other) {
 
 // ===================================================================
 
-void SignalConditional::InitAsDefaultInstance() {
+void SignalCondition::InitAsDefaultInstance() {
 }
-class SignalConditional::HasBitSetters {
+class SignalCondition::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SignalConditional::SignalConditional()
+SignalCondition::SignalCondition()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(constructor:flyteidl.core.SignalCondition)
 }
-SignalConditional::SignalConditional(const SignalConditional& from)
+SignalCondition::SignalCondition(const SignalCondition& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.SignalCondition)
 }
 
-void SignalConditional::SharedCtor() {
+void SignalCondition::SharedCtor() {
 }
 
-SignalConditional::~SignalConditional() {
-  // @@protoc_insertion_point(destructor:flyteidl.core.SignalConditional)
+SignalCondition::~SignalCondition() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.SignalCondition)
   SharedDtor();
 }
 
-void SignalConditional::SharedDtor() {
+void SignalCondition::SharedDtor() {
 }
 
-void SignalConditional::SetCachedSize(int size) const {
+void SignalCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SignalConditional& SignalConditional::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_SignalConditional_flyteidl_2fcore_2fworkflow_2eproto.base);
+const SignalCondition& SignalCondition::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void SignalConditional::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.SignalConditional)
+void SignalCondition::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.SignalCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2690,9 +2690,9 @@ void SignalConditional::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* SignalConditional::_InternalParse(const char* begin, const char* end, void* object,
+const char* SignalCondition::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<SignalConditional*>(object);
+  auto msg = static_cast<SignalCondition*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -2718,11 +2718,11 @@ const char* SignalConditional::_InternalParse(const char* begin, const char* end
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SignalConditional::MergePartialFromCodedStream(
+bool SignalCondition::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(parse_start:flyteidl.core.SignalCondition)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -2735,18 +2735,18 @@ bool SignalConditional::MergePartialFromCodedStream(
           input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(parse_success:flyteidl.core.SignalCondition)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.SignalCondition)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void SignalConditional::SerializeWithCachedSizes(
+void SignalCondition::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.SignalCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2754,12 +2754,12 @@ void SignalConditional::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.SignalCondition)
 }
 
-::google::protobuf::uint8* SignalConditional::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* SignalCondition::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SignalCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2767,12 +2767,12 @@ void SignalConditional::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.SignalCondition)
   return target;
 }
 
-size_t SignalConditional::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.SignalConditional)
+size_t SignalCondition::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.SignalCondition)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2789,23 +2789,23 @@ size_t SignalConditional::ByteSizeLong() const {
   return total_size;
 }
 
-void SignalConditional::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.SignalConditional)
+void SignalCondition::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.SignalCondition)
   GOOGLE_DCHECK_NE(&from, this);
-  const SignalConditional* source =
-      ::google::protobuf::DynamicCastToGenerated<SignalConditional>(
+  const SignalCondition* source =
+      ::google::protobuf::DynamicCastToGenerated<SignalCondition>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.SignalCondition)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.SignalConditional)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.SignalCondition)
     MergeFrom(*source);
   }
 }
 
-void SignalConditional::MergeFrom(const SignalConditional& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.SignalConditional)
+void SignalCondition::MergeFrom(const SignalCondition& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.SignalCondition)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -2813,34 +2813,34 @@ void SignalConditional::MergeFrom(const SignalConditional& from) {
 
 }
 
-void SignalConditional::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.SignalConditional)
+void SignalCondition::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.SignalCondition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SignalConditional::CopyFrom(const SignalConditional& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.SignalConditional)
+void SignalCondition::CopyFrom(const SignalCondition& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.SignalCondition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SignalConditional::IsInitialized() const {
+bool SignalCondition::IsInitialized() const {
   return true;
 }
 
-void SignalConditional::Swap(SignalConditional* other) {
+void SignalCondition::Swap(SignalCondition* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SignalConditional::InternalSwap(SignalConditional* other) {
+void SignalCondition::InternalSwap(SignalCondition* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata SignalConditional::GetMetadata() const {
+::google::protobuf::Metadata SignalCondition::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto);
   return ::file_level_metadata_flyteidl_2fcore_2fworkflow_2eproto[kIndexInFileMessages];
 }
@@ -2848,35 +2848,35 @@ void SignalConditional::InternalSwap(SignalConditional* other) {
 
 // ===================================================================
 
-void SleepConditional::InitAsDefaultInstance() {
-  ::flyteidl::core::_SleepConditional_default_instance_._instance.get_mutable()->duration_ = const_cast< ::google::protobuf::Duration*>(
+void SleepCondition::InitAsDefaultInstance() {
+  ::flyteidl::core::_SleepCondition_default_instance_._instance.get_mutable()->duration_ = const_cast< ::google::protobuf::Duration*>(
       ::google::protobuf::Duration::internal_default_instance());
 }
-class SleepConditional::HasBitSetters {
+class SleepCondition::HasBitSetters {
  public:
-  static const ::google::protobuf::Duration& duration(const SleepConditional* msg);
+  static const ::google::protobuf::Duration& duration(const SleepCondition* msg);
 };
 
 const ::google::protobuf::Duration&
-SleepConditional::HasBitSetters::duration(const SleepConditional* msg) {
+SleepCondition::HasBitSetters::duration(const SleepCondition* msg) {
   return *msg->duration_;
 }
-void SleepConditional::clear_duration() {
+void SleepCondition::clear_duration() {
   if (GetArenaNoVirtual() == nullptr && duration_ != nullptr) {
     delete duration_;
   }
   duration_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SleepConditional::kDurationFieldNumber;
+const int SleepCondition::kDurationFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SleepConditional::SleepConditional()
+SleepCondition::SleepCondition()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(constructor:flyteidl.core.SleepCondition)
 }
-SleepConditional::SleepConditional(const SleepConditional& from)
+SleepCondition::SleepCondition(const SleepCondition& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -2885,35 +2885,35 @@ SleepConditional::SleepConditional(const SleepConditional& from)
   } else {
     duration_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.core.SleepCondition)
 }
 
-void SleepConditional::SharedCtor() {
+void SleepCondition::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto.base);
+      &scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
   duration_ = nullptr;
 }
 
-SleepConditional::~SleepConditional() {
-  // @@protoc_insertion_point(destructor:flyteidl.core.SleepConditional)
+SleepCondition::~SleepCondition() {
+  // @@protoc_insertion_point(destructor:flyteidl.core.SleepCondition)
   SharedDtor();
 }
 
-void SleepConditional::SharedDtor() {
+void SleepCondition::SharedDtor() {
   if (this != internal_default_instance()) delete duration_;
 }
 
-void SleepConditional::SetCachedSize(int size) const {
+void SleepCondition::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SleepConditional& SleepConditional::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_SleepConditional_flyteidl_2fcore_2fworkflow_2eproto.base);
+const SleepCondition& SleepCondition::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void SleepConditional::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.core.SleepConditional)
+void SleepCondition::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.core.SleepCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2926,9 +2926,9 @@ void SleepConditional::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* SleepConditional::_InternalParse(const char* begin, const char* end, void* object,
+const char* SleepCondition::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<SleepConditional*>(object);
+  auto msg = static_cast<SleepCondition*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -2971,11 +2971,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SleepConditional::MergePartialFromCodedStream(
+bool SleepCondition::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(parse_start:flyteidl.core.SleepCondition)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -3004,18 +3004,18 @@ bool SleepConditional::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(parse_success:flyteidl.core.SleepCondition)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(parse_failure:flyteidl.core.SleepCondition)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void SleepConditional::SerializeWithCachedSizes(
+void SleepCondition::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(serialize_start:flyteidl.core.SleepCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3029,12 +3029,12 @@ void SleepConditional::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(serialize_end:flyteidl.core.SleepCondition)
 }
 
-::google::protobuf::uint8* SleepConditional::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* SleepCondition::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SleepCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3049,12 +3049,12 @@ void SleepConditional::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.core.SleepCondition)
   return target;
 }
 
-size_t SleepConditional::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.SleepConditional)
+size_t SleepCondition::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.core.SleepCondition)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3078,23 +3078,23 @@ size_t SleepConditional::ByteSizeLong() const {
   return total_size;
 }
 
-void SleepConditional::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.SleepConditional)
+void SleepCondition::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.core.SleepCondition)
   GOOGLE_DCHECK_NE(&from, this);
-  const SleepConditional* source =
-      ::google::protobuf::DynamicCastToGenerated<SleepConditional>(
+  const SleepCondition* source =
+      ::google::protobuf::DynamicCastToGenerated<SleepCondition>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.core.SleepCondition)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.SleepConditional)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.core.SleepCondition)
     MergeFrom(*source);
   }
 }
 
-void SleepConditional::MergeFrom(const SleepConditional& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.SleepConditional)
+void SleepCondition::MergeFrom(const SleepCondition& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.core.SleepCondition)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -3105,35 +3105,35 @@ void SleepConditional::MergeFrom(const SleepConditional& from) {
   }
 }
 
-void SleepConditional::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.SleepConditional)
+void SleepCondition::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.core.SleepCondition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SleepConditional::CopyFrom(const SleepConditional& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.SleepConditional)
+void SleepCondition::CopyFrom(const SleepCondition& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.core.SleepCondition)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SleepConditional::IsInitialized() const {
+bool SleepCondition::IsInitialized() const {
   return true;
 }
 
-void SleepConditional::Swap(SleepConditional* other) {
+void SleepCondition::Swap(SleepCondition* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SleepConditional::InternalSwap(SleepConditional* other) {
+void SleepCondition::InternalSwap(SleepCondition* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(duration_, other->duration_);
 }
 
-::google::protobuf::Metadata SleepConditional::GetMetadata() const {
+::google::protobuf::Metadata SleepCondition::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto);
   return ::file_level_metadata_flyteidl_2fcore_2fworkflow_2eproto[kIndexInFileMessages];
 }
@@ -3142,28 +3142,28 @@ void SleepConditional::InternalSwap(SleepConditional* other) {
 // ===================================================================
 
 void GateNode::InitAsDefaultInstance() {
-  ::flyteidl::core::_GateNode_default_instance_.signal_ = const_cast< ::flyteidl::core::SignalConditional*>(
-      ::flyteidl::core::SignalConditional::internal_default_instance());
-  ::flyteidl::core::_GateNode_default_instance_.sleep_ = const_cast< ::flyteidl::core::SleepConditional*>(
-      ::flyteidl::core::SleepConditional::internal_default_instance());
+  ::flyteidl::core::_GateNode_default_instance_.signal_ = const_cast< ::flyteidl::core::SignalCondition*>(
+      ::flyteidl::core::SignalCondition::internal_default_instance());
+  ::flyteidl::core::_GateNode_default_instance_.sleep_ = const_cast< ::flyteidl::core::SleepCondition*>(
+      ::flyteidl::core::SleepCondition::internal_default_instance());
 }
 class GateNode::HasBitSetters {
  public:
-  static const ::flyteidl::core::SignalConditional& signal(const GateNode* msg);
-  static const ::flyteidl::core::SleepConditional& sleep(const GateNode* msg);
+  static const ::flyteidl::core::SignalCondition& signal(const GateNode* msg);
+  static const ::flyteidl::core::SleepCondition& sleep(const GateNode* msg);
 };
 
-const ::flyteidl::core::SignalConditional&
+const ::flyteidl::core::SignalCondition&
 GateNode::HasBitSetters::signal(const GateNode* msg) {
-  return *msg->conditional_.signal_;
+  return *msg->condition_.signal_;
 }
-const ::flyteidl::core::SleepConditional&
+const ::flyteidl::core::SleepCondition&
 GateNode::HasBitSetters::sleep(const GateNode* msg) {
-  return *msg->conditional_.sleep_;
+  return *msg->condition_.sleep_;
 }
-void GateNode::set_allocated_signal(::flyteidl::core::SignalConditional* signal) {
+void GateNode::set_allocated_signal(::flyteidl::core::SignalCondition* signal) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_conditional();
+  clear_condition();
   if (signal) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
@@ -3171,13 +3171,13 @@ void GateNode::set_allocated_signal(::flyteidl::core::SignalConditional* signal)
           message_arena, signal, submessage_arena);
     }
     set_has_signal();
-    conditional_.signal_ = signal;
+    condition_.signal_ = signal;
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.GateNode.signal)
 }
-void GateNode::set_allocated_sleep(::flyteidl::core::SleepConditional* sleep) {
+void GateNode::set_allocated_sleep(::flyteidl::core::SleepCondition* sleep) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  clear_conditional();
+  clear_condition();
   if (sleep) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
@@ -3185,7 +3185,7 @@ void GateNode::set_allocated_sleep(::flyteidl::core::SleepConditional* sleep) {
           message_arena, sleep, submessage_arena);
     }
     set_has_sleep();
-    conditional_.sleep_ = sleep;
+    condition_.sleep_ = sleep;
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.GateNode.sleep)
 }
@@ -3203,17 +3203,17 @@ GateNode::GateNode(const GateNode& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  clear_has_conditional();
-  switch (from.conditional_case()) {
+  clear_has_condition();
+  switch (from.condition_case()) {
     case kSignal: {
-      mutable_signal()->::flyteidl::core::SignalConditional::MergeFrom(from.signal());
+      mutable_signal()->::flyteidl::core::SignalCondition::MergeFrom(from.signal());
       break;
     }
     case kSleep: {
-      mutable_sleep()->::flyteidl::core::SleepConditional::MergeFrom(from.sleep());
+      mutable_sleep()->::flyteidl::core::SleepCondition::MergeFrom(from.sleep());
       break;
     }
-    case CONDITIONAL_NOT_SET: {
+    case CONDITION_NOT_SET: {
       break;
     }
   }
@@ -3223,7 +3223,7 @@ GateNode::GateNode(const GateNode& from)
 void GateNode::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_GateNode_flyteidl_2fcore_2fworkflow_2eproto.base);
-  clear_has_conditional();
+  clear_has_condition();
 }
 
 GateNode::~GateNode() {
@@ -3232,8 +3232,8 @@ GateNode::~GateNode() {
 }
 
 void GateNode::SharedDtor() {
-  if (has_conditional()) {
-    clear_conditional();
+  if (has_condition()) {
+    clear_condition();
   }
 }
 
@@ -3246,22 +3246,22 @@ const GateNode& GateNode::default_instance() {
 }
 
 
-void GateNode::clear_conditional() {
+void GateNode::clear_condition() {
 // @@protoc_insertion_point(one_of_clear_start:flyteidl.core.GateNode)
-  switch (conditional_case()) {
+  switch (condition_case()) {
     case kSignal: {
-      delete conditional_.signal_;
+      delete condition_.signal_;
       break;
     }
     case kSleep: {
-      delete conditional_.sleep_;
+      delete condition_.sleep_;
       break;
     }
-    case CONDITIONAL_NOT_SET: {
+    case CONDITION_NOT_SET: {
       break;
     }
   }
-  _oneof_case_[0] = CONDITIONAL_NOT_SET;
+  _oneof_case_[0] = CONDITION_NOT_SET;
 }
 
 
@@ -3271,7 +3271,7 @@ void GateNode::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_conditional();
+  clear_condition();
   _internal_metadata_.Clear();
 }
 
@@ -3288,12 +3288,12 @@ const char* GateNode::_InternalParse(const char* begin, const char* end, void* o
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.SleepConditional sleep = 1;
+      // .flyteidl.core.SleepCondition sleep = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::SleepConditional::_InternalParse;
+        parser_till_end = ::flyteidl::core::SleepCondition::_InternalParse;
         object = msg->mutable_sleep();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -3301,12 +3301,12 @@ const char* GateNode::_InternalParse(const char* begin, const char* end, void* o
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.core.SignalConditional signal = 2;
+      // .flyteidl.core.SignalCondition signal = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::SignalConditional::_InternalParse;
+        parser_till_end = ::flyteidl::core::SignalCondition::_InternalParse;
         object = msg->mutable_signal();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -3344,7 +3344,7 @@ bool GateNode::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.SleepConditional sleep = 1;
+      // .flyteidl.core.SleepCondition sleep = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -3355,7 +3355,7 @@ bool GateNode::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.SignalConditional signal = 2;
+      // .flyteidl.core.SignalCondition signal = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -3393,13 +3393,13 @@ void GateNode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.SleepConditional sleep = 1;
+  // .flyteidl.core.SleepCondition sleep = 1;
   if (has_sleep()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, HasBitSetters::sleep(this), output);
   }
 
-  // .flyteidl.core.SignalConditional signal = 2;
+  // .flyteidl.core.SignalCondition signal = 2;
   if (has_signal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, HasBitSetters::signal(this), output);
@@ -3418,14 +3418,14 @@ void GateNode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.SleepConditional sleep = 1;
+  // .flyteidl.core.SleepCondition sleep = 1;
   if (has_sleep()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, HasBitSetters::sleep(this), target);
   }
 
-  // .flyteidl.core.SignalConditional signal = 2;
+  // .flyteidl.core.SignalCondition signal = 2;
   if (has_signal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -3453,22 +3453,22 @@ size_t GateNode::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (conditional_case()) {
-    // .flyteidl.core.SignalConditional signal = 2;
+  switch (condition_case()) {
+    // .flyteidl.core.SignalCondition signal = 2;
     case kSignal: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *conditional_.signal_);
+          *condition_.signal_);
       break;
     }
-    // .flyteidl.core.SleepConditional sleep = 1;
+    // .flyteidl.core.SleepCondition sleep = 1;
     case kSleep: {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *conditional_.sleep_);
+          *condition_.sleep_);
       break;
     }
-    case CONDITIONAL_NOT_SET: {
+    case CONDITION_NOT_SET: {
       break;
     }
   }
@@ -3499,16 +3499,16 @@ void GateNode::MergeFrom(const GateNode& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.conditional_case()) {
+  switch (from.condition_case()) {
     case kSignal: {
-      mutable_signal()->::flyteidl::core::SignalConditional::MergeFrom(from.signal());
+      mutable_signal()->::flyteidl::core::SignalCondition::MergeFrom(from.signal());
       break;
     }
     case kSleep: {
-      mutable_sleep()->::flyteidl::core::SleepConditional::MergeFrom(from.sleep());
+      mutable_sleep()->::flyteidl::core::SleepCondition::MergeFrom(from.sleep());
       break;
     }
-    case CONDITIONAL_NOT_SET: {
+    case CONDITION_NOT_SET: {
       break;
     }
   }
@@ -3539,7 +3539,7 @@ void GateNode::Swap(GateNode* other) {
 void GateNode::InternalSwap(GateNode* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(conditional_, other->conditional_);
+  swap(condition_, other->condition_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
@@ -6949,11 +6949,11 @@ template<> PROTOBUF_NOINLINE ::flyteidl::core::TaskNode* Arena::CreateMaybeMessa
 template<> PROTOBUF_NOINLINE ::flyteidl::core::WorkflowNode* Arena::CreateMaybeMessage< ::flyteidl::core::WorkflowNode >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::WorkflowNode >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::core::SignalConditional* Arena::CreateMaybeMessage< ::flyteidl::core::SignalConditional >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::SignalConditional >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::core::SignalCondition* Arena::CreateMaybeMessage< ::flyteidl::core::SignalCondition >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::SignalCondition >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::core::SleepConditional* Arena::CreateMaybeMessage< ::flyteidl::core::SleepConditional >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::core::SleepConditional >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::core::SleepCondition* Arena::CreateMaybeMessage< ::flyteidl::core::SleepCondition >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::core::SleepCondition >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::core::GateNode* Arena::CreateMaybeMessage< ::flyteidl::core::GateNode >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::core::GateNode >(arena);

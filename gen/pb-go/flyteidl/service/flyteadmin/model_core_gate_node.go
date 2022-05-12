@@ -10,6 +10,6 @@
 package flyteadmin
 
 type CoreGateNode struct {
-	Signal *CoreSignalConditional `json:"signal,omitempty"`
-	Sleep *CoreSleepConditional `json:"sleep,omitempty"`
+	Signal *CoreSignalCondition `json:"signal,omitempty"`
+	Sleep *CoreSleepCondition `json:"sleep,omitempty"`
 }

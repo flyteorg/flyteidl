@@ -5341,8 +5341,8 @@ public final class Workflow {
 
   }
 
-  public interface SignalConditionalOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.SignalConditional)
+  public interface SignalConditionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.SignalCondition)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
@@ -5350,18 +5350,18 @@ public final class Workflow {
    * TODO hamersaw - document
    * </pre>
    *
-   * Protobuf type {@code flyteidl.core.SignalConditional}
+   * Protobuf type {@code flyteidl.core.SignalCondition}
    */
-  public  static final class SignalConditional extends
+  public  static final class SignalCondition extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.SignalConditional)
-      SignalConditionalOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.SignalCondition)
+      SignalConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SignalConditional.newBuilder() to construct.
-    private SignalConditional(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SignalCondition.newBuilder() to construct.
+    private SignalCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SignalConditional() {
+    private SignalCondition() {
     }
 
     @java.lang.Override
@@ -5369,7 +5369,7 @@ public final class Workflow {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SignalConditional(
+    private SignalCondition(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5408,15 +5408,15 @@ public final class Workflow {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalCondition_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_fieldAccessorTable
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalCondition_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Workflow.SignalConditional.class, flyteidl.core.Workflow.SignalConditional.Builder.class);
+              flyteidl.core.Workflow.SignalCondition.class, flyteidl.core.Workflow.SignalCondition.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5452,10 +5452,10 @@ public final class Workflow {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Workflow.SignalConditional)) {
+      if (!(obj instanceof flyteidl.core.Workflow.SignalCondition)) {
         return super.equals(obj);
       }
-      flyteidl.core.Workflow.SignalConditional other = (flyteidl.core.Workflow.SignalConditional) obj;
+      flyteidl.core.Workflow.SignalCondition other = (flyteidl.core.Workflow.SignalCondition) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -5473,69 +5473,69 @@ public final class Workflow {
       return hash;
     }
 
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(byte[] data)
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(java.io.InputStream input)
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.Workflow.SignalCondition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseDelimitedFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SignalConditional parseFrom(
+    public static flyteidl.core.Workflow.SignalCondition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5548,7 +5548,7 @@ public final class Workflow {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Workflow.SignalConditional prototype) {
+    public static Builder newBuilder(flyteidl.core.Workflow.SignalCondition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5568,26 +5568,26 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * Protobuf type {@code flyteidl.core.SignalConditional}
+     * Protobuf type {@code flyteidl.core.SignalCondition}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.SignalConditional)
-        flyteidl.core.Workflow.SignalConditionalOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.SignalCondition)
+        flyteidl.core.Workflow.SignalConditionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalCondition_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_fieldAccessorTable
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalCondition_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Workflow.SignalConditional.class, flyteidl.core.Workflow.SignalConditional.Builder.class);
+                flyteidl.core.Workflow.SignalCondition.class, flyteidl.core.Workflow.SignalCondition.Builder.class);
       }
 
-      // Construct using flyteidl.core.Workflow.SignalConditional.newBuilder()
+      // Construct using flyteidl.core.Workflow.SignalCondition.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5611,17 +5611,17 @@ public final class Workflow {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalConditional_descriptor;
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SignalCondition_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SignalConditional getDefaultInstanceForType() {
-        return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+      public flyteidl.core.Workflow.SignalCondition getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SignalConditional build() {
-        flyteidl.core.Workflow.SignalConditional result = buildPartial();
+      public flyteidl.core.Workflow.SignalCondition build() {
+        flyteidl.core.Workflow.SignalCondition result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5629,8 +5629,8 @@ public final class Workflow {
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SignalConditional buildPartial() {
-        flyteidl.core.Workflow.SignalConditional result = new flyteidl.core.Workflow.SignalConditional(this);
+      public flyteidl.core.Workflow.SignalCondition buildPartial() {
+        flyteidl.core.Workflow.SignalCondition result = new flyteidl.core.Workflow.SignalCondition(this);
         onBuilt();
         return result;
       }
@@ -5669,16 +5669,16 @@ public final class Workflow {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Workflow.SignalConditional) {
-          return mergeFrom((flyteidl.core.Workflow.SignalConditional)other);
+        if (other instanceof flyteidl.core.Workflow.SignalCondition) {
+          return mergeFrom((flyteidl.core.Workflow.SignalCondition)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Workflow.SignalConditional other) {
-        if (other == flyteidl.core.Workflow.SignalConditional.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.Workflow.SignalCondition other) {
+        if (other == flyteidl.core.Workflow.SignalCondition.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5694,11 +5694,11 @@ public final class Workflow {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Workflow.SignalConditional parsedMessage = null;
+        flyteidl.core.Workflow.SignalCondition parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Workflow.SignalConditional) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.Workflow.SignalCondition) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5720,48 +5720,48 @@ public final class Workflow {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.SignalConditional)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.SignalCondition)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.SignalConditional)
-    private static final flyteidl.core.Workflow.SignalConditional DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.SignalCondition)
+    private static final flyteidl.core.Workflow.SignalCondition DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SignalConditional();
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SignalCondition();
     }
 
-    public static flyteidl.core.Workflow.SignalConditional getDefaultInstance() {
+    public static flyteidl.core.Workflow.SignalCondition getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SignalConditional>
-        PARSER = new com.google.protobuf.AbstractParser<SignalConditional>() {
+    private static final com.google.protobuf.Parser<SignalCondition>
+        PARSER = new com.google.protobuf.AbstractParser<SignalCondition>() {
       @java.lang.Override
-      public SignalConditional parsePartialFrom(
+      public SignalCondition parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignalConditional(input, extensionRegistry);
+        return new SignalCondition(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SignalConditional> parser() {
+    public static com.google.protobuf.Parser<SignalCondition> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SignalConditional> getParserForType() {
+    public com.google.protobuf.Parser<SignalCondition> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.Workflow.SignalConditional getDefaultInstanceForType() {
+    public flyteidl.core.Workflow.SignalCondition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SleepConditionalOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.core.SleepConditional)
+  public interface SleepConditionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.SleepCondition)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5794,18 +5794,18 @@ public final class Workflow {
    * TODO hamersaw - document
    * </pre>
    *
-   * Protobuf type {@code flyteidl.core.SleepConditional}
+   * Protobuf type {@code flyteidl.core.SleepCondition}
    */
-  public  static final class SleepConditional extends
+  public  static final class SleepCondition extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.core.SleepConditional)
-      SleepConditionalOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.core.SleepCondition)
+      SleepConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SleepConditional.newBuilder() to construct.
-    private SleepConditional(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SleepCondition.newBuilder() to construct.
+    private SleepCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SleepConditional() {
+    private SleepCondition() {
     }
 
     @java.lang.Override
@@ -5813,7 +5813,7 @@ public final class Workflow {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SleepConditional(
+    private SleepCondition(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5866,15 +5866,15 @@ public final class Workflow {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepCondition_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_fieldAccessorTable
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepCondition_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Workflow.SleepConditional.class, flyteidl.core.Workflow.SleepConditional.Builder.class);
+              flyteidl.core.Workflow.SleepCondition.class, flyteidl.core.Workflow.SleepCondition.Builder.class);
     }
 
     public static final int DURATION_FIELD_NUMBER = 4;
@@ -5950,10 +5950,10 @@ public final class Workflow {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Workflow.SleepConditional)) {
+      if (!(obj instanceof flyteidl.core.Workflow.SleepCondition)) {
         return super.equals(obj);
       }
-      flyteidl.core.Workflow.SleepConditional other = (flyteidl.core.Workflow.SleepConditional) obj;
+      flyteidl.core.Workflow.SleepCondition other = (flyteidl.core.Workflow.SleepCondition) obj;
 
       if (hasDuration() != other.hasDuration()) return false;
       if (hasDuration()) {
@@ -5980,69 +5980,69 @@ public final class Workflow {
       return hash;
     }
 
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(byte[] data)
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(java.io.InputStream input)
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.Workflow.SleepCondition parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseDelimitedFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Workflow.SleepConditional parseFrom(
+    public static flyteidl.core.Workflow.SleepCondition parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6055,7 +6055,7 @@ public final class Workflow {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Workflow.SleepConditional prototype) {
+    public static Builder newBuilder(flyteidl.core.Workflow.SleepCondition prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6075,26 +6075,26 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * Protobuf type {@code flyteidl.core.SleepConditional}
+     * Protobuf type {@code flyteidl.core.SleepCondition}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.core.SleepConditional)
-        flyteidl.core.Workflow.SleepConditionalOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.SleepCondition)
+        flyteidl.core.Workflow.SleepConditionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepCondition_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_fieldAccessorTable
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepCondition_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Workflow.SleepConditional.class, flyteidl.core.Workflow.SleepConditional.Builder.class);
+                flyteidl.core.Workflow.SleepCondition.class, flyteidl.core.Workflow.SleepCondition.Builder.class);
       }
 
-      // Construct using flyteidl.core.Workflow.SleepConditional.newBuilder()
+      // Construct using flyteidl.core.Workflow.SleepCondition.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6124,17 +6124,17 @@ public final class Workflow {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepConditional_descriptor;
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_SleepCondition_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SleepConditional getDefaultInstanceForType() {
-        return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+      public flyteidl.core.Workflow.SleepCondition getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SleepConditional build() {
-        flyteidl.core.Workflow.SleepConditional result = buildPartial();
+      public flyteidl.core.Workflow.SleepCondition build() {
+        flyteidl.core.Workflow.SleepCondition result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6142,8 +6142,8 @@ public final class Workflow {
       }
 
       @java.lang.Override
-      public flyteidl.core.Workflow.SleepConditional buildPartial() {
-        flyteidl.core.Workflow.SleepConditional result = new flyteidl.core.Workflow.SleepConditional(this);
+      public flyteidl.core.Workflow.SleepCondition buildPartial() {
+        flyteidl.core.Workflow.SleepCondition result = new flyteidl.core.Workflow.SleepCondition(this);
         if (durationBuilder_ == null) {
           result.duration_ = duration_;
         } else {
@@ -6187,16 +6187,16 @@ public final class Workflow {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Workflow.SleepConditional) {
-          return mergeFrom((flyteidl.core.Workflow.SleepConditional)other);
+        if (other instanceof flyteidl.core.Workflow.SleepCondition) {
+          return mergeFrom((flyteidl.core.Workflow.SleepCondition)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Workflow.SleepConditional other) {
-        if (other == flyteidl.core.Workflow.SleepConditional.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.Workflow.SleepCondition other) {
+        if (other == flyteidl.core.Workflow.SleepCondition.getDefaultInstance()) return this;
         if (other.hasDuration()) {
           mergeDuration(other.getDuration());
         }
@@ -6215,11 +6215,11 @@ public final class Workflow {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Workflow.SleepConditional parsedMessage = null;
+        flyteidl.core.Workflow.SleepCondition parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Workflow.SleepConditional) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.Workflow.SleepCondition) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6394,41 +6394,41 @@ public final class Workflow {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.core.SleepConditional)
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.SleepCondition)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.core.SleepConditional)
-    private static final flyteidl.core.Workflow.SleepConditional DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.core.SleepCondition)
+    private static final flyteidl.core.Workflow.SleepCondition DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SleepConditional();
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.SleepCondition();
     }
 
-    public static flyteidl.core.Workflow.SleepConditional getDefaultInstance() {
+    public static flyteidl.core.Workflow.SleepCondition getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SleepConditional>
-        PARSER = new com.google.protobuf.AbstractParser<SleepConditional>() {
+    private static final com.google.protobuf.Parser<SleepCondition>
+        PARSER = new com.google.protobuf.AbstractParser<SleepCondition>() {
       @java.lang.Override
-      public SleepConditional parsePartialFrom(
+      public SleepCondition parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SleepConditional(input, extensionRegistry);
+        return new SleepCondition(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SleepConditional> parser() {
+    public static com.google.protobuf.Parser<SleepCondition> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SleepConditional> getParserForType() {
+    public com.google.protobuf.Parser<SleepCondition> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.core.Workflow.SleepConditional getDefaultInstanceForType() {
+    public flyteidl.core.Workflow.SleepCondition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6443,7 +6443,7 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
     boolean hasSignal();
     /**
@@ -6451,24 +6451,24 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
-    flyteidl.core.Workflow.SignalConditional getSignal();
+    flyteidl.core.Workflow.SignalCondition getSignal();
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
-    flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder();
+    flyteidl.core.Workflow.SignalConditionOrBuilder getSignalOrBuilder();
 
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
     boolean hasSleep();
     /**
@@ -6476,19 +6476,19 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
-    flyteidl.core.Workflow.SleepConditional getSleep();
+    flyteidl.core.Workflow.SleepCondition getSleep();
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
-    flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder();
+    flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder();
 
-    public flyteidl.core.Workflow.GateNode.ConditionalCase getConditionalCase();
+    public flyteidl.core.Workflow.GateNode.ConditionCase getConditionCase();
   }
   /**
    * <pre>
@@ -6534,31 +6534,31 @@ public final class Workflow {
               done = true;
               break;
             case 10: {
-              flyteidl.core.Workflow.SleepConditional.Builder subBuilder = null;
-              if (conditionalCase_ == 1) {
-                subBuilder = ((flyteidl.core.Workflow.SleepConditional) conditional_).toBuilder();
+              flyteidl.core.Workflow.SleepCondition.Builder subBuilder = null;
+              if (conditionCase_ == 1) {
+                subBuilder = ((flyteidl.core.Workflow.SleepCondition) condition_).toBuilder();
               }
-              conditional_ =
-                  input.readMessage(flyteidl.core.Workflow.SleepConditional.parser(), extensionRegistry);
+              condition_ =
+                  input.readMessage(flyteidl.core.Workflow.SleepCondition.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.Workflow.SleepConditional) conditional_);
-                conditional_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((flyteidl.core.Workflow.SleepCondition) condition_);
+                condition_ = subBuilder.buildPartial();
               }
-              conditionalCase_ = 1;
+              conditionCase_ = 1;
               break;
             }
             case 18: {
-              flyteidl.core.Workflow.SignalConditional.Builder subBuilder = null;
-              if (conditionalCase_ == 2) {
-                subBuilder = ((flyteidl.core.Workflow.SignalConditional) conditional_).toBuilder();
+              flyteidl.core.Workflow.SignalCondition.Builder subBuilder = null;
+              if (conditionCase_ == 2) {
+                subBuilder = ((flyteidl.core.Workflow.SignalCondition) condition_).toBuilder();
               }
-              conditional_ =
-                  input.readMessage(flyteidl.core.Workflow.SignalConditional.parser(), extensionRegistry);
+              condition_ =
+                  input.readMessage(flyteidl.core.Workflow.SignalCondition.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.Workflow.SignalConditional) conditional_);
-                conditional_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((flyteidl.core.Workflow.SignalCondition) condition_);
+                condition_ = subBuilder.buildPartial();
               }
-              conditionalCase_ = 2;
+              conditionCase_ = 2;
               break;
             }
             default: {
@@ -6593,30 +6593,30 @@ public final class Workflow {
               flyteidl.core.Workflow.GateNode.class, flyteidl.core.Workflow.GateNode.Builder.class);
     }
 
-    private int conditionalCase_ = 0;
-    private java.lang.Object conditional_;
-    public enum ConditionalCase
+    private int conditionCase_ = 0;
+    private java.lang.Object condition_;
+    public enum ConditionCase
         implements com.google.protobuf.Internal.EnumLite {
       SIGNAL(2),
       SLEEP(1),
-      CONDITIONAL_NOT_SET(0);
+      CONDITION_NOT_SET(0);
       private final int value;
-      private ConditionalCase(int value) {
+      private ConditionCase(int value) {
         this.value = value;
       }
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static ConditionalCase valueOf(int value) {
+      public static ConditionCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static ConditionalCase forNumber(int value) {
+      public static ConditionCase forNumber(int value) {
         switch (value) {
           case 2: return SIGNAL;
           case 1: return SLEEP;
-          case 0: return CONDITIONAL_NOT_SET;
+          case 0: return CONDITION_NOT_SET;
           default: return null;
         }
       }
@@ -6625,10 +6625,10 @@ public final class Workflow {
       }
     };
 
-    public ConditionalCase
-    getConditionalCase() {
-      return ConditionalCase.forNumber(
-          conditionalCase_);
+    public ConditionCase
+    getConditionCase() {
+      return ConditionCase.forNumber(
+          conditionCase_);
     }
 
     public static final int SIGNAL_FIELD_NUMBER = 2;
@@ -6637,36 +6637,36 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
     public boolean hasSignal() {
-      return conditionalCase_ == 2;
+      return conditionCase_ == 2;
     }
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
-    public flyteidl.core.Workflow.SignalConditional getSignal() {
-      if (conditionalCase_ == 2) {
-         return (flyteidl.core.Workflow.SignalConditional) conditional_;
+    public flyteidl.core.Workflow.SignalCondition getSignal() {
+      if (conditionCase_ == 2) {
+         return (flyteidl.core.Workflow.SignalCondition) condition_;
       }
-      return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+      return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
     }
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+     * <code>.flyteidl.core.SignalCondition signal = 2;</code>
      */
-    public flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder() {
-      if (conditionalCase_ == 2) {
-         return (flyteidl.core.Workflow.SignalConditional) conditional_;
+    public flyteidl.core.Workflow.SignalConditionOrBuilder getSignalOrBuilder() {
+      if (conditionCase_ == 2) {
+         return (flyteidl.core.Workflow.SignalCondition) condition_;
       }
-      return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+      return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
     }
 
     public static final int SLEEP_FIELD_NUMBER = 1;
@@ -6675,36 +6675,36 @@ public final class Workflow {
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
     public boolean hasSleep() {
-      return conditionalCase_ == 1;
+      return conditionCase_ == 1;
     }
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
-    public flyteidl.core.Workflow.SleepConditional getSleep() {
-      if (conditionalCase_ == 1) {
-         return (flyteidl.core.Workflow.SleepConditional) conditional_;
+    public flyteidl.core.Workflow.SleepCondition getSleep() {
+      if (conditionCase_ == 1) {
+         return (flyteidl.core.Workflow.SleepCondition) condition_;
       }
-      return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+      return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
     }
     /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
-     * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
      */
-    public flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder() {
-      if (conditionalCase_ == 1) {
-         return (flyteidl.core.Workflow.SleepConditional) conditional_;
+    public flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder() {
+      if (conditionCase_ == 1) {
+         return (flyteidl.core.Workflow.SleepCondition) condition_;
       }
-      return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+      return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6721,11 +6721,11 @@ public final class Workflow {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (conditionalCase_ == 1) {
-        output.writeMessage(1, (flyteidl.core.Workflow.SleepConditional) conditional_);
+      if (conditionCase_ == 1) {
+        output.writeMessage(1, (flyteidl.core.Workflow.SleepCondition) condition_);
       }
-      if (conditionalCase_ == 2) {
-        output.writeMessage(2, (flyteidl.core.Workflow.SignalConditional) conditional_);
+      if (conditionCase_ == 2) {
+        output.writeMessage(2, (flyteidl.core.Workflow.SignalCondition) condition_);
       }
       unknownFields.writeTo(output);
     }
@@ -6736,13 +6736,13 @@ public final class Workflow {
       if (size != -1) return size;
 
       size = 0;
-      if (conditionalCase_ == 1) {
+      if (conditionCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (flyteidl.core.Workflow.SleepConditional) conditional_);
+          .computeMessageSize(1, (flyteidl.core.Workflow.SleepCondition) condition_);
       }
-      if (conditionalCase_ == 2) {
+      if (conditionCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (flyteidl.core.Workflow.SignalConditional) conditional_);
+          .computeMessageSize(2, (flyteidl.core.Workflow.SignalCondition) condition_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6759,8 +6759,8 @@ public final class Workflow {
       }
       flyteidl.core.Workflow.GateNode other = (flyteidl.core.Workflow.GateNode) obj;
 
-      if (!getConditionalCase().equals(other.getConditionalCase())) return false;
-      switch (conditionalCase_) {
+      if (!getConditionCase().equals(other.getConditionCase())) return false;
+      switch (conditionCase_) {
         case 2:
           if (!getSignal()
               .equals(other.getSignal())) return false;
@@ -6783,7 +6783,7 @@ public final class Workflow {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      switch (conditionalCase_) {
+      switch (conditionCase_) {
         case 2:
           hash = (37 * hash) + SIGNAL_FIELD_NUMBER;
           hash = (53 * hash) + getSignal().hashCode();
@@ -6932,8 +6932,8 @@ public final class Workflow {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        conditionalCase_ = 0;
-        conditional_ = null;
+        conditionCase_ = 0;
+        condition_ = null;
         return this;
       }
 
@@ -6960,21 +6960,21 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.GateNode buildPartial() {
         flyteidl.core.Workflow.GateNode result = new flyteidl.core.Workflow.GateNode(this);
-        if (conditionalCase_ == 2) {
+        if (conditionCase_ == 2) {
           if (signalBuilder_ == null) {
-            result.conditional_ = conditional_;
+            result.condition_ = condition_;
           } else {
-            result.conditional_ = signalBuilder_.build();
+            result.condition_ = signalBuilder_.build();
           }
         }
-        if (conditionalCase_ == 1) {
+        if (conditionCase_ == 1) {
           if (sleepBuilder_ == null) {
-            result.conditional_ = conditional_;
+            result.condition_ = condition_;
           } else {
-            result.conditional_ = sleepBuilder_.build();
+            result.condition_ = sleepBuilder_.build();
           }
         }
-        result.conditionalCase_ = conditionalCase_;
+        result.conditionCase_ = conditionCase_;
         onBuilt();
         return result;
       }
@@ -7023,7 +7023,7 @@ public final class Workflow {
 
       public Builder mergeFrom(flyteidl.core.Workflow.GateNode other) {
         if (other == flyteidl.core.Workflow.GateNode.getDefaultInstance()) return this;
-        switch (other.getConditionalCase()) {
+        switch (other.getConditionCase()) {
           case SIGNAL: {
             mergeSignal(other.getSignal());
             break;
@@ -7032,7 +7032,7 @@ public final class Workflow {
             mergeSleep(other.getSleep());
             break;
           }
-          case CONDITIONAL_NOT_SET: {
+          case CONDITION_NOT_SET: {
             break;
           }
         }
@@ -7064,52 +7064,52 @@ public final class Workflow {
         }
         return this;
       }
-      private int conditionalCase_ = 0;
-      private java.lang.Object conditional_;
-      public ConditionalCase
-          getConditionalCase() {
-        return ConditionalCase.forNumber(
-            conditionalCase_);
+      private int conditionCase_ = 0;
+      private java.lang.Object condition_;
+      public ConditionCase
+          getConditionCase() {
+        return ConditionCase.forNumber(
+            conditionCase_);
       }
 
-      public Builder clearConditional() {
-        conditionalCase_ = 0;
-        conditional_ = null;
+      public Builder clearCondition() {
+        conditionCase_ = 0;
+        condition_ = null;
         onChanged();
         return this;
       }
 
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder> signalBuilder_;
+          flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder> signalBuilder_;
       /**
        * <pre>
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
       public boolean hasSignal() {
-        return conditionalCase_ == 2;
+        return conditionCase_ == 2;
       }
       /**
        * <pre>
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
-      public flyteidl.core.Workflow.SignalConditional getSignal() {
+      public flyteidl.core.Workflow.SignalCondition getSignal() {
         if (signalBuilder_ == null) {
-          if (conditionalCase_ == 2) {
-            return (flyteidl.core.Workflow.SignalConditional) conditional_;
+          if (conditionCase_ == 2) {
+            return (flyteidl.core.Workflow.SignalCondition) condition_;
           }
-          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
         } else {
-          if (conditionalCase_ == 2) {
+          if (conditionCase_ == 2) {
             return signalBuilder_.getMessage();
           }
-          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
         }
       }
       /**
@@ -7117,19 +7117,19 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
-      public Builder setSignal(flyteidl.core.Workflow.SignalConditional value) {
+      public Builder setSignal(flyteidl.core.Workflow.SignalCondition value) {
         if (signalBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          conditional_ = value;
+          condition_ = value;
           onChanged();
         } else {
           signalBuilder_.setMessage(value);
         }
-        conditionalCase_ = 2;
+        conditionCase_ = 2;
         return this;
       }
       /**
@@ -7137,17 +7137,17 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
       public Builder setSignal(
-          flyteidl.core.Workflow.SignalConditional.Builder builderForValue) {
+          flyteidl.core.Workflow.SignalCondition.Builder builderForValue) {
         if (signalBuilder_ == null) {
-          conditional_ = builderForValue.build();
+          condition_ = builderForValue.build();
           onChanged();
         } else {
           signalBuilder_.setMessage(builderForValue.build());
         }
-        conditionalCase_ = 2;
+        conditionCase_ = 2;
         return this;
       }
       /**
@@ -7155,25 +7155,25 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
-      public Builder mergeSignal(flyteidl.core.Workflow.SignalConditional value) {
+      public Builder mergeSignal(flyteidl.core.Workflow.SignalCondition value) {
         if (signalBuilder_ == null) {
-          if (conditionalCase_ == 2 &&
-              conditional_ != flyteidl.core.Workflow.SignalConditional.getDefaultInstance()) {
-            conditional_ = flyteidl.core.Workflow.SignalConditional.newBuilder((flyteidl.core.Workflow.SignalConditional) conditional_)
+          if (conditionCase_ == 2 &&
+              condition_ != flyteidl.core.Workflow.SignalCondition.getDefaultInstance()) {
+            condition_ = flyteidl.core.Workflow.SignalCondition.newBuilder((flyteidl.core.Workflow.SignalCondition) condition_)
                 .mergeFrom(value).buildPartial();
           } else {
-            conditional_ = value;
+            condition_ = value;
           }
           onChanged();
         } else {
-          if (conditionalCase_ == 2) {
+          if (conditionCase_ == 2) {
             signalBuilder_.mergeFrom(value);
           }
           signalBuilder_.setMessage(value);
         }
-        conditionalCase_ = 2;
+        conditionCase_ = 2;
         return this;
       }
       /**
@@ -7181,19 +7181,19 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
       public Builder clearSignal() {
         if (signalBuilder_ == null) {
-          if (conditionalCase_ == 2) {
-            conditionalCase_ = 0;
-            conditional_ = null;
+          if (conditionCase_ == 2) {
+            conditionCase_ = 0;
+            condition_ = null;
             onChanged();
           }
         } else {
-          if (conditionalCase_ == 2) {
-            conditionalCase_ = 0;
-            conditional_ = null;
+          if (conditionCase_ == 2) {
+            conditionCase_ = 0;
+            condition_ = null;
           }
           signalBuilder_.clear();
         }
@@ -7204,9 +7204,9 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
-      public flyteidl.core.Workflow.SignalConditional.Builder getSignalBuilder() {
+      public flyteidl.core.Workflow.SignalCondition.Builder getSignalBuilder() {
         return getSignalFieldBuilder().getBuilder();
       }
       /**
@@ -7214,16 +7214,16 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
-      public flyteidl.core.Workflow.SignalConditionalOrBuilder getSignalOrBuilder() {
-        if ((conditionalCase_ == 2) && (signalBuilder_ != null)) {
+      public flyteidl.core.Workflow.SignalConditionOrBuilder getSignalOrBuilder() {
+        if ((conditionCase_ == 2) && (signalBuilder_ != null)) {
           return signalBuilder_.getMessageOrBuilder();
         } else {
-          if (conditionalCase_ == 2) {
-            return (flyteidl.core.Workflow.SignalConditional) conditional_;
+          if (conditionCase_ == 2) {
+            return (flyteidl.core.Workflow.SignalCondition) condition_;
           }
-          return flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
         }
       }
       /**
@@ -7231,57 +7231,57 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SignalConditional signal = 2;</code>
+       * <code>.flyteidl.core.SignalCondition signal = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder> 
+          flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder> 
           getSignalFieldBuilder() {
         if (signalBuilder_ == null) {
-          if (!(conditionalCase_ == 2)) {
-            conditional_ = flyteidl.core.Workflow.SignalConditional.getDefaultInstance();
+          if (!(conditionCase_ == 2)) {
+            condition_ = flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
           }
           signalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Workflow.SignalConditional, flyteidl.core.Workflow.SignalConditional.Builder, flyteidl.core.Workflow.SignalConditionalOrBuilder>(
-                  (flyteidl.core.Workflow.SignalConditional) conditional_,
+              flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder>(
+                  (flyteidl.core.Workflow.SignalCondition) condition_,
                   getParentForChildren(),
                   isClean());
-          conditional_ = null;
+          condition_ = null;
         }
-        conditionalCase_ = 2;
+        conditionCase_ = 2;
         onChanged();;
         return signalBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder> sleepBuilder_;
+          flyteidl.core.Workflow.SleepCondition, flyteidl.core.Workflow.SleepCondition.Builder, flyteidl.core.Workflow.SleepConditionOrBuilder> sleepBuilder_;
       /**
        * <pre>
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
       public boolean hasSleep() {
-        return conditionalCase_ == 1;
+        return conditionCase_ == 1;
       }
       /**
        * <pre>
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
-      public flyteidl.core.Workflow.SleepConditional getSleep() {
+      public flyteidl.core.Workflow.SleepCondition getSleep() {
         if (sleepBuilder_ == null) {
-          if (conditionalCase_ == 1) {
-            return (flyteidl.core.Workflow.SleepConditional) conditional_;
+          if (conditionCase_ == 1) {
+            return (flyteidl.core.Workflow.SleepCondition) condition_;
           }
-          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
         } else {
-          if (conditionalCase_ == 1) {
+          if (conditionCase_ == 1) {
             return sleepBuilder_.getMessage();
           }
-          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
         }
       }
       /**
@@ -7289,19 +7289,19 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
-      public Builder setSleep(flyteidl.core.Workflow.SleepConditional value) {
+      public Builder setSleep(flyteidl.core.Workflow.SleepCondition value) {
         if (sleepBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          conditional_ = value;
+          condition_ = value;
           onChanged();
         } else {
           sleepBuilder_.setMessage(value);
         }
-        conditionalCase_ = 1;
+        conditionCase_ = 1;
         return this;
       }
       /**
@@ -7309,17 +7309,17 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
       public Builder setSleep(
-          flyteidl.core.Workflow.SleepConditional.Builder builderForValue) {
+          flyteidl.core.Workflow.SleepCondition.Builder builderForValue) {
         if (sleepBuilder_ == null) {
-          conditional_ = builderForValue.build();
+          condition_ = builderForValue.build();
           onChanged();
         } else {
           sleepBuilder_.setMessage(builderForValue.build());
         }
-        conditionalCase_ = 1;
+        conditionCase_ = 1;
         return this;
       }
       /**
@@ -7327,25 +7327,25 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
-      public Builder mergeSleep(flyteidl.core.Workflow.SleepConditional value) {
+      public Builder mergeSleep(flyteidl.core.Workflow.SleepCondition value) {
         if (sleepBuilder_ == null) {
-          if (conditionalCase_ == 1 &&
-              conditional_ != flyteidl.core.Workflow.SleepConditional.getDefaultInstance()) {
-            conditional_ = flyteidl.core.Workflow.SleepConditional.newBuilder((flyteidl.core.Workflow.SleepConditional) conditional_)
+          if (conditionCase_ == 1 &&
+              condition_ != flyteidl.core.Workflow.SleepCondition.getDefaultInstance()) {
+            condition_ = flyteidl.core.Workflow.SleepCondition.newBuilder((flyteidl.core.Workflow.SleepCondition) condition_)
                 .mergeFrom(value).buildPartial();
           } else {
-            conditional_ = value;
+            condition_ = value;
           }
           onChanged();
         } else {
-          if (conditionalCase_ == 1) {
+          if (conditionCase_ == 1) {
             sleepBuilder_.mergeFrom(value);
           }
           sleepBuilder_.setMessage(value);
         }
-        conditionalCase_ = 1;
+        conditionCase_ = 1;
         return this;
       }
       /**
@@ -7353,19 +7353,19 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
       public Builder clearSleep() {
         if (sleepBuilder_ == null) {
-          if (conditionalCase_ == 1) {
-            conditionalCase_ = 0;
-            conditional_ = null;
+          if (conditionCase_ == 1) {
+            conditionCase_ = 0;
+            condition_ = null;
             onChanged();
           }
         } else {
-          if (conditionalCase_ == 1) {
-            conditionalCase_ = 0;
-            conditional_ = null;
+          if (conditionCase_ == 1) {
+            conditionCase_ = 0;
+            condition_ = null;
           }
           sleepBuilder_.clear();
         }
@@ -7376,9 +7376,9 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
-      public flyteidl.core.Workflow.SleepConditional.Builder getSleepBuilder() {
+      public flyteidl.core.Workflow.SleepCondition.Builder getSleepBuilder() {
         return getSleepFieldBuilder().getBuilder();
       }
       /**
@@ -7386,16 +7386,16 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
-      public flyteidl.core.Workflow.SleepConditionalOrBuilder getSleepOrBuilder() {
-        if ((conditionalCase_ == 1) && (sleepBuilder_ != null)) {
+      public flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder() {
+        if ((conditionCase_ == 1) && (sleepBuilder_ != null)) {
           return sleepBuilder_.getMessageOrBuilder();
         } else {
-          if (conditionalCase_ == 1) {
-            return (flyteidl.core.Workflow.SleepConditional) conditional_;
+          if (conditionCase_ == 1) {
+            return (flyteidl.core.Workflow.SleepCondition) condition_;
           }
-          return flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+          return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
         }
       }
       /**
@@ -7403,23 +7403,23 @@ public final class Workflow {
        * TODO hamersaw - document
        * </pre>
        *
-       * <code>.flyteidl.core.SleepConditional sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder> 
+          flyteidl.core.Workflow.SleepCondition, flyteidl.core.Workflow.SleepCondition.Builder, flyteidl.core.Workflow.SleepConditionOrBuilder> 
           getSleepFieldBuilder() {
         if (sleepBuilder_ == null) {
-          if (!(conditionalCase_ == 1)) {
-            conditional_ = flyteidl.core.Workflow.SleepConditional.getDefaultInstance();
+          if (!(conditionCase_ == 1)) {
+            condition_ = flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
           }
           sleepBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Workflow.SleepConditional, flyteidl.core.Workflow.SleepConditional.Builder, flyteidl.core.Workflow.SleepConditionalOrBuilder>(
-                  (flyteidl.core.Workflow.SleepConditional) conditional_,
+              flyteidl.core.Workflow.SleepCondition, flyteidl.core.Workflow.SleepCondition.Builder, flyteidl.core.Workflow.SleepConditionOrBuilder>(
+                  (flyteidl.core.Workflow.SleepCondition) condition_,
                   getParentForChildren(),
                   isClean());
-          conditional_ = null;
+          condition_ = null;
         }
-        conditionalCase_ = 1;
+        conditionCase_ = 1;
         onChanged();;
         return sleepBuilder_;
       }
@@ -17861,15 +17861,15 @@ public final class Workflow {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_WorkflowNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_SignalConditional_descriptor;
+    internal_static_flyteidl_core_SignalCondition_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_SignalConditional_fieldAccessorTable;
+      internal_static_flyteidl_core_SignalCondition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_SleepConditional_descriptor;
+    internal_static_flyteidl_core_SleepCondition_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_SleepConditional_fieldAccessorTable;
+      internal_static_flyteidl_core_SleepCondition_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_GateNode_descriptor;
   private static final 
@@ -17942,46 +17942,46 @@ public final class Workflow {
       "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
       "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
       "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"\023\n\021SignalConditional\"?\n\020Slee" +
-      "pConditional\022+\n\010duration\030\004 \001(\0132\031.google." +
-      "protobuf.Duration\"\177\n\010GateNode\0222\n\006signal\030" +
-      "\002 \001(\0132 .flyteidl.core.SignalConditionalH" +
-      "\000\0220\n\005sleep\030\001 \001(\0132\037.flyteidl.core.SleepCo" +
-      "nditionalH\000B\r\n\013conditional\"\247\001\n\014NodeMetad" +
-      "ata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.goo" +
-      "gle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034" +
-      ".flyteidl.core.RetryStrategy\022\027\n\rinterrup" +
-      "tible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n\005" +
-      "Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004No" +
-      "de\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyte" +
-      "idl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026." +
-      "flyteidl.core.Binding\022\031\n\021upstream_node_i" +
-      "ds\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyte" +
-      "idl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.flyt" +
-      "eidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007 " +
-      "\001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013br" +
-      "anch_node\030\010 \001(\0132\031.flyteidl.core.BranchNo" +
-      "deH\000\022,\n\tgate_node\030\t \001(\0132\027.flyteidl.core." +
-      "GateNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMetadat" +
-      "a\022;\n\022quality_of_service\030\001 \001(\0132\037.flyteidl" +
-      ".core.QualityOfService\022C\n\non_failure\030\002 \001" +
-      "(\0162/.flyteidl.core.WorkflowMetadata.OnFa" +
-      "ilurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_I" +
-      "MMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NO" +
-      "DES_COMPLETE\020\001\"1\n\030WorkflowMetadataDefaul" +
-      "ts\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowTe" +
-      "mplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core." +
-      "WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035.fl" +
-      "yteidl.core.TypedInterface\022\"\n\005nodes\030\004 \003(" +
-      "\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\0132" +
-      "\026.flyteidl.core.Binding\022)\n\014failure_node\030" +
-      "\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadata_d" +
-      "efaults\030\007 \001(\0132\'.flyteidl.core.WorkflowMe" +
-      "tadataDefaults\"@\n\021TaskNodeOverrides\022+\n\tr" +
-      "esources\030\001 \001(\0132\030.flyteidl.core.Resources" +
-      "B6Z4github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/coreb\006proto3"
+      "\n\treference\"\021\n\017SignalCondition\"=\n\016SleepC" +
+      "ondition\022+\n\010duration\030\004 \001(\0132\031.google.prot" +
+      "obuf.Duration\"y\n\010GateNode\0220\n\006signal\030\002 \001(" +
+      "\0132\036.flyteidl.core.SignalConditionH\000\022.\n\005s" +
+      "leep\030\001 \001(\0132\035.flyteidl.core.SleepConditio" +
+      "nH\000B\013\n\tcondition\"\247\001\n\014NodeMetadata\022\014\n\004nam" +
+      "e\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protob" +
+      "uf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl." +
+      "core.RetryStrategy\022\027\n\rinterruptible\030\006 \001(" +
+      "\010H\000B\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003v" +
+      "ar\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001" +
+      " \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.N" +
+      "odeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.c" +
+      "ore.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022," +
+      "\n\016output_aliases\030\005 \003(\0132\024.flyteidl.core.A" +
+      "lias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core." +
+      "TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyt" +
+      "eidl.core.WorkflowNodeH\000\0220\n\013branch_node\030" +
+      "\010 \001(\0132\031.flyteidl.core.BranchNodeH\000\022,\n\tga" +
+      "te_node\030\t \001(\0132\027.flyteidl.core.GateNodeH\000" +
+      "B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022quali" +
+      "ty_of_service\030\001 \001(\0132\037.flyteidl.core.Qual" +
+      "ityOfService\022C\n\non_failure\030\002 \001(\0162/.flyte" +
+      "idl.core.WorkflowMetadata.OnFailurePolic" +
+      "y\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY" +
+      "\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLE" +
+      "TE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinte" +
+      "rruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002" +
+      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010m" +
+      "etadata\030\002 \001(\0132\037.flyteidl.core.WorkflowMe" +
+      "tadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.cor" +
+      "e.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flytei" +
+      "dl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl" +
+      ".core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.fl" +
+      "yteidl.core.Node\022B\n\021metadata_defaults\030\007 " +
+      "\001(\0132\'.flyteidl.core.WorkflowMetadataDefa" +
+      "ults\"@\n\021TaskNodeOverrides\022+\n\tresources\030\001" +
+      " \001(\0132\030.flyteidl.core.ResourcesB6Z4github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18034,24 +18034,24 @@ public final class Workflow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowNode_descriptor,
         new java.lang.String[] { "LaunchplanRef", "SubWorkflowRef", "Reference", });
-    internal_static_flyteidl_core_SignalConditional_descriptor =
+    internal_static_flyteidl_core_SignalCondition_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_flyteidl_core_SignalConditional_fieldAccessorTable = new
+    internal_static_flyteidl_core_SignalCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_SignalConditional_descriptor,
+        internal_static_flyteidl_core_SignalCondition_descriptor,
         new java.lang.String[] { });
-    internal_static_flyteidl_core_SleepConditional_descriptor =
+    internal_static_flyteidl_core_SleepCondition_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_core_SleepConditional_fieldAccessorTable = new
+    internal_static_flyteidl_core_SleepCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_SleepConditional_descriptor,
+        internal_static_flyteidl_core_SleepCondition_descriptor,
         new java.lang.String[] { "Duration", });
     internal_static_flyteidl_core_GateNode_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_GateNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_GateNode_descriptor,
-        new java.lang.String[] { "Signal", "Sleep", "Conditional", });
+        new java.lang.String[] { "Signal", "Sleep", "Condition", });
     internal_static_flyteidl_core_NodeMetadata_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
