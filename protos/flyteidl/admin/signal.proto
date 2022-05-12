@@ -5,29 +5,27 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/types.proto";
 
 // TODO hamersaw - document
-message SignalCreateRequest {
-    // TODO hamersaw - document
+message SignalGetOrCreateRequest {
     core.SignalIdentifier id = 1;
+    core.LiteralType type = 2;
+}
 
-    // TODO hamersaw - document
+// TODO hamersaw - document
+message SignalSetRequest {
+    core.SignalIdentifier id = 1;    
     core.Literal value = 2;
 }
 
 // TODO hamersaw - document
-message SignalCreateResponse {
-}
-
-message SignalGetRequest {
-    core.SignalIdentifier id = 1;    
+message SignalSetResponse {
 }
 
 // TODO hamersaw - document
 message Signal {
-    // TODO hamersaw - document
     core.SignalIdentifier id = 1;
-
-    // TODO hamersaw - document
-    core.Literal value = 2;
+    core.LiteralType type = 2;
+    core.Literal value = 3;
 }
