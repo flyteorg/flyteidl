@@ -49,71 +49,111 @@ class SignalService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Create and upload a :ref:`ref_flyteidl.admin.Signal` definition
-    virtual ::grpc::Status CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::flyteidl::admin::SignalCreateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>> AsyncCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>>(AsyncCreateSignalRaw(context, request, cq));
+    // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
+    virtual ::grpc::Status GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::flyteidl::admin::Signal* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>> AsyncGetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>>(AsyncGetOrCreateSignalRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>> PrepareAsyncCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>>(PrepareAsyncCreateSignalRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>> PrepareAsyncGetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>>(PrepareAsyncGetOrCreateSignalRaw(context, request, cq));
     }
-    // Fetches a :ref:`ref_flyteidl.admin.Signal`.
-    virtual ::grpc::Status GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::flyteidl::admin::Signal* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>> AsyncGetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>>(AsyncGetSignalRaw(context, request, cq));
+    // TODO figure out correct calls
+    // Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
+    virtual ::grpc::Status SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::flyteidl::admin::SignalSetResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>> AsyncSetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>>(AsyncSetSignalRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>> PrepareAsyncGetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>>(PrepareAsyncGetSignalRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>> PrepareAsyncSetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>>(PrepareAsyncSetSignalRaw(context, request, cq));
     }
+    // option (google.api.http) = {
+    // post: "/api/v1/signals"
+    // body: "*"
+    // };
+    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    // description: "Set a signal value."
+    // responses: {
+    // key: "400"
+    // value: {
+    // description: "Returned for bad request that may have failed validation."
+    // }
+    // }
+    // responses: {
+    // key: "409"
+    // value: {
+    // description: "Returned for a request that references an identical entity that has already been registered."
+    // }
+    // }
+    // };
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      // Create and upload a :ref:`ref_flyteidl.admin.Signal` definition
-      virtual void CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      // Fetches a :ref:`ref_flyteidl.admin.Signal`.
-      virtual void GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
+      virtual void GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // TODO figure out correct calls
+      // Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
+      virtual void SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // option (google.api.http) = {
+      // post: "/api/v1/signals"
+      // body: "*"
+      // };
+      // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      // description: "Set a signal value."
+      // responses: {
+      // key: "400"
+      // value: {
+      // description: "Returned for bad request that may have failed validation."
+      // }
+      // }
+      // responses: {
+      // key: "409"
+      // value: {
+      // description: "Returned for a request that references an identical entity that has already been registered."
+      // }
+      // }
+      // };
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>* AsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalCreateResponse>* PrepareAsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>* AsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>* PrepareAsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>* AsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::Signal>* PrepareAsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>* AsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::SignalSetResponse>* PrepareAsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::flyteidl::admin::SignalCreateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>> AsyncCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>>(AsyncCreateSignalRaw(context, request, cq));
+    ::grpc::Status GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::flyteidl::admin::Signal* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>> AsyncGetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>>(AsyncGetOrCreateSignalRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>> PrepareAsyncCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>>(PrepareAsyncCreateSignalRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>> PrepareAsyncGetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>>(PrepareAsyncGetOrCreateSignalRaw(context, request, cq));
     }
-    ::grpc::Status GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::flyteidl::admin::Signal* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>> AsyncGetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>>(AsyncGetSignalRaw(context, request, cq));
+    ::grpc::Status SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::flyteidl::admin::SignalSetResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>> AsyncSetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>>(AsyncSetSignalRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>> PrepareAsyncGetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>>(PrepareAsyncGetSignalRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>> PrepareAsyncSetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>>(PrepareAsyncSetSignalRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) override;
-      void GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) override;
-      void GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) override;
+      void GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)>) override;
+      void GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -125,12 +165,12 @@ class SignalService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>* AsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>* PrepareAsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* AsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* PrepareAsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_CreateSignal_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetSignal_;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* AsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* PrepareAsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>* AsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>* PrepareAsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOrCreateSignal_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetSignal_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -138,282 +178,302 @@ class SignalService final {
    public:
     Service();
     virtual ~Service();
-    // Create and upload a :ref:`ref_flyteidl.admin.Signal` definition
-    virtual ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response);
-    // Fetches a :ref:`ref_flyteidl.admin.Signal`.
-    virtual ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response);
+    // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
+    virtual ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response);
+    // TODO figure out correct calls
+    // Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
+    virtual ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response);
+    // option (google.api.http) = {
+    // post: "/api/v1/signals"
+    // body: "*"
+    // };
+    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    // description: "Set a signal value."
+    // responses: {
+    // key: "400"
+    // value: {
+    // description: "Returned for bad request that may have failed validation."
+    // }
+    // }
+    // responses: {
+    // key: "409"
+    // value: {
+    // description: "Returned for a request that references an identical entity that has already been registered."
+    // }
+    // }
+    // };
   };
   template <class BaseClass>
-  class WithAsyncMethod_CreateSignal : public BaseClass {
+  class WithAsyncMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_CreateSignal() {
+    WithAsyncMethod_GetOrCreateSignal() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_CreateSignal() override {
+    ~WithAsyncMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateSignal(::grpc::ServerContext* context, ::flyteidl::admin::SignalCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::SignalCreateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetOrCreateSignal(::grpc::ServerContext* context, ::flyteidl::admin::SignalGetOrCreateRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::Signal>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetSignal : public BaseClass {
+  class WithAsyncMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_GetSignal() {
+    WithAsyncMethod_SetSignal() {
       ::grpc::Service::MarkMethodAsync(1);
     }
-    ~WithAsyncMethod_GetSignal() override {
+    ~WithAsyncMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetSignal(::grpc::ServerContext* context, ::flyteidl::admin::SignalGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::Signal>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSetSignal(::grpc::ServerContext* context, ::flyteidl::admin::SignalSetRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::SignalSetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSignal<WithAsyncMethod_GetSignal<Service > > AsyncService;
+  typedef WithAsyncMethod_GetOrCreateSignal<WithAsyncMethod_SetSignal<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_CreateSignal : public BaseClass {
+  class ExperimentalWithCallbackMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_CreateSignal() {
+    ExperimentalWithCallbackMethod_GetOrCreateSignal() {
       ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalCreateRequest, ::flyteidl::admin::SignalCreateResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalGetOrCreateRequest, ::flyteidl::admin::Signal>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::admin::SignalCreateRequest* request,
-                 ::flyteidl::admin::SignalCreateResponse* response,
+                 const ::flyteidl::admin::SignalGetOrCreateRequest* request,
+                 ::flyteidl::admin::Signal* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->CreateSignal(context, request, response, controller);
+                   return this->GetOrCreateSignal(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_CreateSignal(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::SignalCreateRequest, ::flyteidl::admin::SignalCreateResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalCreateRequest, ::flyteidl::admin::SignalCreateResponse>*>(
+    void SetMessageAllocatorFor_GetOrCreateSignal(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::SignalGetOrCreateRequest, ::flyteidl::admin::Signal>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalGetOrCreateRequest, ::flyteidl::admin::Signal>*>(
           ::grpc::Service::experimental().GetHandler(0))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_CreateSignal() override {
+    ~ExperimentalWithCallbackMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetSignal : public BaseClass {
+  class ExperimentalWithCallbackMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_GetSignal() {
+    ExperimentalWithCallbackMethod_SetSignal() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalGetRequest, ::flyteidl::admin::Signal>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalSetRequest, ::flyteidl::admin::SignalSetResponse>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::admin::SignalGetRequest* request,
-                 ::flyteidl::admin::Signal* response,
+                 const ::flyteidl::admin::SignalSetRequest* request,
+                 ::flyteidl::admin::SignalSetResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->GetSignal(context, request, response, controller);
+                   return this->SetSignal(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_GetSignal(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::SignalGetRequest, ::flyteidl::admin::Signal>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalGetRequest, ::flyteidl::admin::Signal>*>(
+    void SetMessageAllocatorFor_SetSignal(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::SignalSetRequest, ::flyteidl::admin::SignalSetResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::SignalSetRequest, ::flyteidl::admin::SignalSetResponse>*>(
           ::grpc::Service::experimental().GetHandler(1))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetSignal() override {
+    ~ExperimentalWithCallbackMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_CreateSignal<ExperimentalWithCallbackMethod_GetSignal<Service > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_GetOrCreateSignal<ExperimentalWithCallbackMethod_SetSignal<Service > > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_CreateSignal : public BaseClass {
+  class WithGenericMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_CreateSignal() {
+    WithGenericMethod_GetOrCreateSignal() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_CreateSignal() override {
+    ~WithGenericMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_GetSignal : public BaseClass {
+  class WithGenericMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_GetSignal() {
+    WithGenericMethod_SetSignal() {
       ::grpc::Service::MarkMethodGeneric(1);
     }
-    ~WithGenericMethod_GetSignal() override {
+    ~WithGenericMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithRawMethod_CreateSignal : public BaseClass {
+  class WithRawMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_CreateSignal() {
+    WithRawMethod_GetOrCreateSignal() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_CreateSignal() override {
+    ~WithRawMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateSignal(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetOrCreateSignal(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetSignal : public BaseClass {
+  class WithRawMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_GetSignal() {
+    WithRawMethod_SetSignal() {
       ::grpc::Service::MarkMethodRaw(1);
     }
-    ~WithRawMethod_GetSignal() override {
+    ~WithRawMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetSignal(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSetSignal(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_CreateSignal : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_CreateSignal() {
+    ExperimentalWithRawCallbackMethod_GetOrCreateSignal() {
       ::grpc::Service::experimental().MarkMethodRawCallback(0,
         new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->CreateSignal(context, request, response, controller);
+                   this->GetOrCreateSignal(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_CreateSignal() override {
+    ~ExperimentalWithRawCallbackMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void CreateSignal(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetOrCreateSignal(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetSignal : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetSignal() {
+    ExperimentalWithRawCallbackMethod_SetSignal() {
       ::grpc::Service::experimental().MarkMethodRawCallback(1,
         new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->GetSignal(context, request, response, controller);
+                   this->SetSignal(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetSignal() override {
+    ~ExperimentalWithRawCallbackMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetSignal(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void SetSignal(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_CreateSignal : public BaseClass {
+  class WithStreamedUnaryMethod_GetOrCreateSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_CreateSignal() {
+    WithStreamedUnaryMethod_GetOrCreateSignal() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::SignalCreateRequest, ::flyteidl::admin::SignalCreateResponse>(std::bind(&WithStreamedUnaryMethod_CreateSignal<BaseClass>::StreamedCreateSignal, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::SignalGetOrCreateRequest, ::flyteidl::admin::Signal>(std::bind(&WithStreamedUnaryMethod_GetOrCreateSignal<BaseClass>::StreamedGetOrCreateSignal, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_CreateSignal() override {
+    ~WithStreamedUnaryMethod_GetOrCreateSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) override {
+    ::grpc::Status GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateSignal(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::SignalCreateRequest,::flyteidl::admin::SignalCreateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetOrCreateSignal(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::SignalGetOrCreateRequest,::flyteidl::admin::Signal>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetSignal : public BaseClass {
+  class WithStreamedUnaryMethod_SetSignal : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_GetSignal() {
+    WithStreamedUnaryMethod_SetSignal() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::SignalGetRequest, ::flyteidl::admin::Signal>(std::bind(&WithStreamedUnaryMethod_GetSignal<BaseClass>::StreamedGetSignal, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::SignalSetRequest, ::flyteidl::admin::SignalSetResponse>(std::bind(&WithStreamedUnaryMethod_SetSignal<BaseClass>::StreamedSetSignal, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_GetSignal() override {
+    ~WithStreamedUnaryMethod_SetSignal() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) override {
+    ::grpc::Status SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetSignal(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::SignalGetRequest,::flyteidl::admin::Signal>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedSetSignal(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::SignalSetRequest,::flyteidl::admin::SignalSetResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateSignal<WithStreamedUnaryMethod_GetSignal<Service > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetOrCreateSignal<WithStreamedUnaryMethod_SetSignal<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSignal<WithStreamedUnaryMethod_GetSignal<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetOrCreateSignal<WithStreamedUnaryMethod_SetSignal<Service > > StreamedService;
 };
 
 }  // namespace service

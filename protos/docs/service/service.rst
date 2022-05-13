@@ -381,8 +381,12 @@ TODO hamersaw - document
    :header: "Method Name", "Request Type", "Response Type", "Description"
    :widths: auto
 
-   "CreateSignal", ":ref:`ref_flyteidl.admin.SignalCreateRequest`", ":ref:`ref_flyteidl.admin.SignalCreateResponse`", "Create and upload a :ref:`ref_flyteidl.admin.Signal` definition"
-   "GetSignal", ":ref:`ref_flyteidl.admin.SignalGetRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches a :ref:`ref_flyteidl.admin.Signal`."
+   "GetOrCreateSignal", ":ref:`ref_flyteidl.admin.SignalGetOrCreateRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
+
+TODO figure out correct calls"
+   "SetSignal", ":ref:`ref_flyteidl.admin.SignalSetRequest`", ":ref:`ref_flyteidl.admin.SignalSetResponse`", "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
+
+option (google.api.http) = { post: "/api/v1/signals" body: "*" }; option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = { description: "Set a signal value." responses: { key: "400" value: { description: "Returned for bad request that may have failed validation." } } responses: { key: "409" value: { description: "Returned for a request that references an identical entity that has already been registered." } } };"
  <!-- end services -->
 
 

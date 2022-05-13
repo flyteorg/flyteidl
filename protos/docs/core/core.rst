@@ -2944,6 +2944,14 @@ TODO hamersaw - document
 
 
 
+.. csv-table:: SignalCondition type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signal_id", ":ref:`ref_string`", "", ""
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+
+
 
 
 

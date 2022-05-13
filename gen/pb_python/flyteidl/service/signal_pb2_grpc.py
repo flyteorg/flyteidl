@@ -14,15 +14,15 @@ class SignalServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.CreateSignal = channel.unary_unary(
-        '/flyteidl.service.SignalService/CreateSignal',
-        request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalCreateRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalCreateResponse.FromString,
-        )
-    self.GetSignal = channel.unary_unary(
-        '/flyteidl.service.SignalService/GetSignal',
-        request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetRequest.SerializeToString,
+    self.GetOrCreateSignal = channel.unary_unary(
+        '/flyteidl.service.SignalService/GetOrCreateSignal',
+        request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetOrCreateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_signal__pb2.Signal.FromString,
+        )
+    self.SetSignal = channel.unary_unary(
+        '/flyteidl.service.SignalService/SetSignal',
+        request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalSetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalSetResponse.FromString,
         )
 
 
@@ -30,15 +30,35 @@ class SignalServiceServicer(object):
   """TODO hamersaw - document
   """
 
-  def CreateSignal(self, request, context):
-    """Create and upload a :ref:`ref_flyteidl.admin.Signal` definition
+  def GetOrCreateSignal(self, request, context):
+    """Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
+    TODO figure out correct calls
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetSignal(self, request, context):
-    """Fetches a :ref:`ref_flyteidl.admin.Signal`.
+  def SetSignal(self, request, context):
+    """Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
+    option (google.api.http) = {
+    post: "/api/v1/signals"
+    body: "*"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    description: "Set a signal value."
+    responses: {
+    key: "400"
+    value: {
+    description: "Returned for bad request that may have failed validation."
+    }
+    }
+    responses: {
+    key: "409"
+    value: {
+    description: "Returned for a request that references an identical entity that has already been registered."
+    }
+    }
+    };
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -47,15 +67,15 @@ class SignalServiceServicer(object):
 
 def add_SignalServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'CreateSignal': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateSignal,
-          request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalCreateRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalCreateResponse.SerializeToString,
-      ),
-      'GetSignal': grpc.unary_unary_rpc_method_handler(
-          servicer.GetSignal,
-          request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetRequest.FromString,
+      'GetOrCreateSignal': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOrCreateSignal,
+          request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetOrCreateRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_signal__pb2.Signal.SerializeToString,
+      ),
+      'SetSignal': grpc.unary_unary_rpc_method_handler(
+          servicer.SetSignal,
+          request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalSetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalSetResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

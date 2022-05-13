@@ -40,28 +40,19 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto[] =
   "\n\035flyteidl/service/signal.proto\022\020flyteid"
   "l.service\032\034google/api/annotations.proto\032"
   "\033flyteidl/admin/signal.proto\032,protoc-gen"
-  "-swagger/options/annotations.proto2\270\004\n\rS"
-  "ignalService\022\302\002\n\014CreateSignal\022#.flyteidl"
-  ".admin.SignalCreateRequest\032$.flyteidl.ad"
-  "min.SignalCreateResponse\"\346\001\202\323\344\223\002\024\"\017/api/"
-  "v1/signals:\001*\222A\310\001\032\033Create a signal defin"
-  "ition.JB\n\003400\022;\n9Returned for bad reques"
-  "t that may have failed validation.Je\n\00340"
-  "9\022^\n\\Returned for a request that referen"
-  "ces an identical entity that has already"
-  " been registered.\022\341\001\n\tGetSignal\022 .flytei"
-  "dl.admin.SignalGetRequest\032\026.flyteidl.adm"
-  "in.Signal\"\231\001\202\323\344\223\002j\022h/api/v1/signals/{id."
-  "execution_id.project}/{id.execution_id.d"
-  "omain}/{id.execution_id.name}/{id.signal"
-  "_id}\222A&\032$Retrieve an existing node execu"
-  "tion.B9Z7github.com/flyteorg/flyteidl/ge"
-  "n/pb-go/flyteidl/serviceb\006proto3"
+  "-swagger/options/annotations.proto2\274\001\n\rS"
+  "ignalService\022W\n\021GetOrCreateSignal\022(.flyt"
+  "eidl.admin.SignalGetOrCreateRequest\032\026.fl"
+  "yteidl.admin.Signal\"\000\022R\n\tSetSignal\022 .fly"
+  "teidl.admin.SignalSetRequest\032!.flyteidl."
+  "admin.SignalSetResponse\"\000B9Z7github.com/"
+  "flyteorg/flyteidl/gen/pb-go/flyteidl/ser"
+  "viceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fsignal_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fsignal_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto,
-  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 792,
+  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 412,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fsignal_2eproto() {

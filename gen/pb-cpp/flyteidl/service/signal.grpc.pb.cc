@@ -20,8 +20,8 @@ namespace flyteidl {
 namespace service {
 
 static const char* SignalService_method_names[] = {
-  "/flyteidl.service.SignalService/CreateSignal",
-  "/flyteidl.service.SignalService/GetSignal",
+  "/flyteidl.service.SignalService/GetOrCreateSignal",
+  "/flyteidl.service.SignalService/SetSignal",
 };
 
 std::unique_ptr< SignalService::Stub> SignalService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -31,90 +31,90 @@ std::unique_ptr< SignalService::Stub> SignalService::NewStub(const std::shared_p
 }
 
 SignalService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_CreateSignal_(SignalService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetSignal_(SignalService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_GetOrCreateSignal_(SignalService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetSignal_(SignalService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status SignalService::Stub::CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::flyteidl::admin::SignalCreateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateSignal_, context, request, response);
+::grpc::Status SignalService::Stub::GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::flyteidl::admin::Signal* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOrCreateSignal_, context, request, response);
 }
 
-void SignalService::Stub::experimental_async::CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateSignal_, context, request, response, std::move(f));
+void SignalService::Stub::experimental_async::GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrCreateSignal_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateSignal_, context, request, response, std::move(f));
+void SignalService::Stub::experimental_async::GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrCreateSignal_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::CreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateSignal_, context, request, response, reactor);
+void SignalService::Stub::experimental_async::GetOrCreateSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrCreateSignal_, context, request, response, reactor);
 }
 
-void SignalService::Stub::experimental_async::CreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateSignal_, context, request, response, reactor);
+void SignalService::Stub::experimental_async::GetOrCreateSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrCreateSignal_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>* SignalService::Stub::AsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalCreateResponse>::Create(channel_.get(), cq, rpcmethod_CreateSignal_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* SignalService::Stub::AsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Signal>::Create(channel_.get(), cq, rpcmethod_GetOrCreateSignal_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalCreateResponse>* SignalService::Stub::PrepareAsyncCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalCreateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalCreateResponse>::Create(channel_.get(), cq, rpcmethod_CreateSignal_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* SignalService::Stub::PrepareAsyncGetOrCreateSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Signal>::Create(channel_.get(), cq, rpcmethod_GetOrCreateSignal_, context, request, false);
 }
 
-::grpc::Status SignalService::Stub::GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::flyteidl::admin::Signal* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetSignal_, context, request, response);
+::grpc::Status SignalService::Stub::SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::flyteidl::admin::SignalSetResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetSignal_, context, request, response);
 }
 
-void SignalService::Stub::experimental_async::GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSignal_, context, request, response, std::move(f));
+void SignalService::Stub::experimental_async::SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetSignal_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSignal_, context, request, response, std::move(f));
+void SignalService::Stub::experimental_async::SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetSignal_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::GetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSignal_, context, request, response, reactor);
+void SignalService::Stub::experimental_async::SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetSignal_, context, request, response, reactor);
 }
 
-void SignalService::Stub::experimental_async::GetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::Signal* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSignal_, context, request, response, reactor);
+void SignalService::Stub::experimental_async::SetSignal(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalSetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SetSignal_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* SignalService::Stub::AsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Signal>::Create(channel_.get(), cq, rpcmethod_GetSignal_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>* SignalService::Stub::AsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalSetResponse>::Create(channel_.get(), cq, rpcmethod_SetSignal_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::Signal>* SignalService::Stub::PrepareAsyncGetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Signal>::Create(channel_.get(), cq, rpcmethod_GetSignal_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalSetResponse>* SignalService::Stub::PrepareAsyncSetSignalRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalSetResponse>::Create(channel_.get(), cq, rpcmethod_SetSignal_, context, request, false);
 }
 
 SignalService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SignalService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalCreateRequest, ::flyteidl::admin::SignalCreateResponse>(
-          std::mem_fn(&SignalService::Service::CreateSignal), this)));
+      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalGetOrCreateRequest, ::flyteidl::admin::Signal>(
+          std::mem_fn(&SignalService::Service::GetOrCreateSignal), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SignalService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalGetRequest, ::flyteidl::admin::Signal>(
-          std::mem_fn(&SignalService::Service::GetSignal), this)));
+      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalSetRequest, ::flyteidl::admin::SignalSetResponse>(
+          std::mem_fn(&SignalService::Service::SetSignal), this)));
 }
 
 SignalService::Service::~Service() {
 }
 
-::grpc::Status SignalService::Service::CreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalCreateRequest* request, ::flyteidl::admin::SignalCreateResponse* response) {
+::grpc::Status SignalService::Service::GetOrCreateSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetOrCreateRequest* request, ::flyteidl::admin::Signal* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status SignalService::Service::GetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalGetRequest* request, ::flyteidl::admin::Signal* response) {
+::grpc::Status SignalService::Service::SetSignal(::grpc::ServerContext* context, const ::flyteidl::admin::SignalSetRequest* request, ::flyteidl::admin::SignalSetResponse* response) {
   (void) context;
   (void) request;
   (void) response;

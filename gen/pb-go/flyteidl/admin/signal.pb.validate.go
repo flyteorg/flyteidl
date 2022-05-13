@@ -36,17 +36,104 @@ var (
 // define the regex for a UUID once up-front
 var _signal_uuidPattern = regexp.MustCompile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 
-// Validate checks the field values on SignalCreateRequest with the rules
+// Validate checks the field values on SignalGetOrCreateRequest with the rules
 // defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *SignalCreateRequest) Validate() error {
+func (m *SignalGetOrCreateRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return SignalCreateRequestValidationError{
+			return SignalGetOrCreateRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalGetOrCreateRequestValidationError{
+				field:  "Type",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// SignalGetOrCreateRequestValidationError is the validation error returned by
+// SignalGetOrCreateRequest.Validate if the designated constraints aren't met.
+type SignalGetOrCreateRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SignalGetOrCreateRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SignalGetOrCreateRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SignalGetOrCreateRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SignalGetOrCreateRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SignalGetOrCreateRequestValidationError) ErrorName() string {
+	return "SignalGetOrCreateRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SignalGetOrCreateRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSignalGetOrCreateRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SignalGetOrCreateRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SignalGetOrCreateRequestValidationError{}
+
+// Validate checks the field values on SignalSetRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *SignalSetRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalSetRequestValidationError{
 				field:  "Id",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -56,7 +143,7 @@ func (m *SignalCreateRequest) Validate() error {
 
 	if v, ok := interface{}(m.GetValue()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return SignalCreateRequestValidationError{
+			return SignalSetRequestValidationError{
 				field:  "Value",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -67,9 +154,9 @@ func (m *SignalCreateRequest) Validate() error {
 	return nil
 }
 
-// SignalCreateRequestValidationError is the validation error returned by
-// SignalCreateRequest.Validate if the designated constraints aren't met.
-type SignalCreateRequestValidationError struct {
+// SignalSetRequestValidationError is the validation error returned by
+// SignalSetRequest.Validate if the designated constraints aren't met.
+type SignalSetRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -77,24 +164,22 @@ type SignalCreateRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e SignalCreateRequestValidationError) Field() string { return e.field }
+func (e SignalSetRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SignalCreateRequestValidationError) Reason() string { return e.reason }
+func (e SignalSetRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SignalCreateRequestValidationError) Cause() error { return e.cause }
+func (e SignalSetRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SignalCreateRequestValidationError) Key() bool { return e.key }
+func (e SignalSetRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SignalCreateRequestValidationError) ErrorName() string {
-	return "SignalCreateRequestValidationError"
-}
+func (e SignalSetRequestValidationError) ErrorName() string { return "SignalSetRequestValidationError" }
 
 // Error satisfies the builtin error interface
-func (e SignalCreateRequestValidationError) Error() string {
+func (e SignalSetRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -106,14 +191,14 @@ func (e SignalCreateRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSignalCreateRequest.%s: %s%s",
+		"invalid %sSignalSetRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SignalCreateRequestValidationError{}
+var _ error = SignalSetRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -121,99 +206,22 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SignalCreateRequestValidationError{}
+} = SignalSetRequestValidationError{}
 
-// Validate checks the field values on SignalCreateResponse with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *SignalCreateResponse) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	return nil
-}
-
-// SignalCreateResponseValidationError is the validation error returned by
-// SignalCreateResponse.Validate if the designated constraints aren't met.
-type SignalCreateResponseValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e SignalCreateResponseValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e SignalCreateResponseValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e SignalCreateResponseValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e SignalCreateResponseValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e SignalCreateResponseValidationError) ErrorName() string {
-	return "SignalCreateResponseValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e SignalCreateResponseValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sSignalCreateResponse.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = SignalCreateResponseValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = SignalCreateResponseValidationError{}
-
-// Validate checks the field values on SignalGetRequest with the rules defined
+// Validate checks the field values on SignalSetResponse with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.
-func (m *SignalGetRequest) Validate() error {
+func (m *SignalSetResponse) Validate() error {
 	if m == nil {
 		return nil
-	}
-
-	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return SignalGetRequestValidationError{
-				field:  "Id",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
 	}
 
 	return nil
 }
 
-// SignalGetRequestValidationError is the validation error returned by
-// SignalGetRequest.Validate if the designated constraints aren't met.
-type SignalGetRequestValidationError struct {
+// SignalSetResponseValidationError is the validation error returned by
+// SignalSetResponse.Validate if the designated constraints aren't met.
+type SignalSetResponseValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -221,22 +229,24 @@ type SignalGetRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e SignalGetRequestValidationError) Field() string { return e.field }
+func (e SignalSetResponseValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SignalGetRequestValidationError) Reason() string { return e.reason }
+func (e SignalSetResponseValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SignalGetRequestValidationError) Cause() error { return e.cause }
+func (e SignalSetResponseValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SignalGetRequestValidationError) Key() bool { return e.key }
+func (e SignalSetResponseValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SignalGetRequestValidationError) ErrorName() string { return "SignalGetRequestValidationError" }
+func (e SignalSetResponseValidationError) ErrorName() string {
+	return "SignalSetResponseValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e SignalGetRequestValidationError) Error() string {
+func (e SignalSetResponseValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -248,14 +258,14 @@ func (e SignalGetRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSignalGetRequest.%s: %s%s",
+		"invalid %sSignalSetResponse.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SignalGetRequestValidationError{}
+var _ error = SignalSetResponseValidationError{}
 
 var _ interface {
 	Field() string
@@ -263,7 +273,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SignalGetRequestValidationError{}
+} = SignalSetResponseValidationError{}
 
 // Validate checks the field values on Signal with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -276,6 +286,16 @@ func (m *Signal) Validate() error {
 		if err := v.Validate(); err != nil {
 			return SignalValidationError{
 				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalValidationError{
+				field:  "Type",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

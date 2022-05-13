@@ -70,6 +70,9 @@ message WorkflowNode {
 
 // TODO hamersaw - document
 message SignalCondition {
+    string signal_id = 1;
+
+    LiteralType type = 2;
 }
 
 // TODO hamersaw - document

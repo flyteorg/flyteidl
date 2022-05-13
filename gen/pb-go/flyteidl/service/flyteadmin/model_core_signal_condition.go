@@ -10,4 +10,6 @@
 package flyteadmin
 
 type CoreSignalCondition struct {
+	SignalId string `json:"signal_id,omitempty"`
+	Type_ *CoreLiteralType `json:"type,omitempty"`
 }

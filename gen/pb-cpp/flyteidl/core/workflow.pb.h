@@ -937,11 +937,36 @@ class SignalCondition final :
 
   // accessors -------------------------------------------------------
 
+  // string signal_id = 1;
+  void clear_signal_id();
+  static const int kSignalIdFieldNumber = 1;
+  const ::std::string& signal_id() const;
+  void set_signal_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signal_id(::std::string&& value);
+  #endif
+  void set_signal_id(const char* value);
+  void set_signal_id(const char* value, size_t size);
+  ::std::string* mutable_signal_id();
+  ::std::string* release_signal_id();
+  void set_allocated_signal_id(::std::string* signal_id);
+
+  // .flyteidl.core.LiteralType type = 2;
+  bool has_type() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 2;
+  const ::flyteidl::core::LiteralType& type() const;
+  ::flyteidl::core::LiteralType* release_type();
+  ::flyteidl::core::LiteralType* mutable_type();
+  void set_allocated_type(::flyteidl::core::LiteralType* type);
+
   // @@protoc_insertion_point(class_scope:flyteidl.core.SignalCondition)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr signal_id_;
+  ::flyteidl::core::LiteralType* type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
 };
@@ -2818,6 +2843,104 @@ inline WorkflowNode::ReferenceCase WorkflowNode::reference_case() const {
 // -------------------------------------------------------------------
 
 // SignalCondition
+
+// string signal_id = 1;
+inline void SignalCondition::clear_signal_id() {
+  signal_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignalCondition::signal_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.SignalCondition.signal_id)
+  return signal_id_.GetNoArena();
+}
+inline void SignalCondition::set_signal_id(const ::std::string& value) {
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.SignalCondition.signal_id)
+}
+#if LANG_CXX11
+inline void SignalCondition::set_signal_id(::std::string&& value) {
+  
+  signal_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.SignalCondition.signal_id)
+}
+#endif
+inline void SignalCondition::set_signal_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.SignalCondition.signal_id)
+}
+inline void SignalCondition::set_signal_id(const char* value, size_t size) {
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.SignalCondition.signal_id)
+}
+inline ::std::string* SignalCondition::mutable_signal_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.SignalCondition.signal_id)
+  return signal_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignalCondition::release_signal_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.SignalCondition.signal_id)
+  
+  return signal_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignalCondition::set_allocated_signal_id(::std::string* signal_id) {
+  if (signal_id != nullptr) {
+    
+  } else {
+    
+  }
+  signal_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signal_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.SignalCondition.signal_id)
+}
+
+// .flyteidl.core.LiteralType type = 2;
+inline bool SignalCondition::has_type() const {
+  return this != internal_default_instance() && type_ != nullptr;
+}
+inline const ::flyteidl::core::LiteralType& SignalCondition::type() const {
+  const ::flyteidl::core::LiteralType* p = type_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.SignalCondition.type)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralType*>(
+      &::flyteidl::core::_LiteralType_default_instance_);
+}
+inline ::flyteidl::core::LiteralType* SignalCondition::release_type() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.SignalCondition.type)
+  
+  ::flyteidl::core::LiteralType* temp = type_;
+  type_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::LiteralType* SignalCondition::mutable_type() {
+  
+  if (type_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralType>(GetArenaNoVirtual());
+    type_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.SignalCondition.type)
+  return type_;
+}
+inline void SignalCondition::set_allocated_type(::flyteidl::core::LiteralType* type) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(type_);
+  }
+  if (type) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      type = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, type, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  type_ = type;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.SignalCondition.type)
+}
 
 // -------------------------------------------------------------------
 

@@ -24,9 +24,10 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::pro
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Binding_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Error_flyteidl_2fcore_2ftypes_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Alias_flyteidl_2fcore_2fworkflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowMetadataDefaults_flyteidl_2fcore_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SleepCondition_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskNodeOverrides_flyteidl_2fcore_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowMetadata_flyteidl_2fcore_2fworkflow_2eproto;
@@ -194,8 +195,9 @@ static void InitDefaultsSignalCondition_flyteidl_2fcore_2fworkflow_2eproto() {
   ::flyteidl::core::SignalCondition::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSignalCondition_flyteidl_2fcore_2fworkflow_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSignalCondition_flyteidl_2fcore_2fworkflow_2eproto}, {
+      &scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto.base,}};
 
 static void InitDefaultsSleepCondition_flyteidl_2fcore_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -386,6 +388,8 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fworkflow_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SignalCondition, signal_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::SignalCondition, type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::SleepCondition, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -471,15 +475,15 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 23, -1, sizeof(::flyteidl::core::TaskNode)},
   { 31, -1, sizeof(::flyteidl::core::WorkflowNode)},
   { 39, -1, sizeof(::flyteidl::core::SignalCondition)},
-  { 44, -1, sizeof(::flyteidl::core::SleepCondition)},
-  { 50, -1, sizeof(::flyteidl::core::GateNode)},
-  { 58, -1, sizeof(::flyteidl::core::NodeMetadata)},
-  { 68, -1, sizeof(::flyteidl::core::Alias)},
-  { 75, -1, sizeof(::flyteidl::core::Node)},
-  { 90, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
-  { 97, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
-  { 103, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
-  { 115, -1, sizeof(::flyteidl::core::TaskNodeOverrides)},
+  { 46, -1, sizeof(::flyteidl::core::SleepCondition)},
+  { 52, -1, sizeof(::flyteidl::core::GateNode)},
+  { 60, -1, sizeof(::flyteidl::core::NodeMetadata)},
+  { 70, -1, sizeof(::flyteidl::core::Alias)},
+  { 77, -1, sizeof(::flyteidl::core::Node)},
+  { 92, -1, sizeof(::flyteidl::core::WorkflowMetadata)},
+  { 99, -1, sizeof(::flyteidl::core::WorkflowMetadataDefaults)},
+  { 105, -1, sizeof(::flyteidl::core::WorkflowTemplate)},
+  { 117, -1, sizeof(::flyteidl::core::TaskNodeOverrides)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -530,51 +534,52 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly"
   "teidl.core.IdentifierH\000\0225\n\020sub_workflow_"
   "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013"
-  "\n\treference\"\021\n\017SignalCondition\"=\n\016SleepC"
-  "ondition\022+\n\010duration\030\004 \001(\0132\031.google.prot"
-  "obuf.Duration\"y\n\010GateNode\0220\n\006signal\030\002 \001("
-  "\0132\036.flyteidl.core.SignalConditionH\000\022.\n\005s"
-  "leep\030\001 \001(\0132\035.flyteidl.core.SleepConditio"
-  "nH\000B\013\n\tcondition\"\247\001\n\014NodeMetadata\022\014\n\004nam"
-  "e\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protob"
-  "uf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl."
-  "core.RetryStrategy\022\027\n\rinterruptible\030\006 \001("
-  "\010H\000B\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003v"
-  "ar\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001"
-  " \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.N"
-  "odeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.c"
-  "ore.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,"
-  "\n\016output_aliases\030\005 \003(\0132\024.flyteidl.core.A"
-  "lias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core."
-  "TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyt"
-  "eidl.core.WorkflowNodeH\000\0220\n\013branch_node\030"
-  "\010 \001(\0132\031.flyteidl.core.BranchNodeH\000\022,\n\tga"
-  "te_node\030\t \001(\0132\027.flyteidl.core.GateNodeH\000"
-  "B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022quali"
-  "ty_of_service\030\001 \001(\0132\037.flyteidl.core.Qual"
-  "ityOfService\022C\n\non_failure\030\002 \001(\0162/.flyte"
-  "idl.core.WorkflowMetadata.OnFailurePolic"
-  "y\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY"
-  "\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLE"
-  "TE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinte"
-  "rruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002"
-  "id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010m"
-  "etadata\030\002 \001(\0132\037.flyteidl.core.WorkflowMe"
-  "tadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.cor"
-  "e.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flytei"
-  "dl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl"
-  ".core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.fl"
-  "yteidl.core.Node\022B\n\021metadata_defaults\030\007 "
-  "\001(\0132\'.flyteidl.core.WorkflowMetadataDefa"
-  "ults\"@\n\021TaskNodeOverrides\022+\n\tresources\030\001"
-  " \001(\0132\030.flyteidl.core.ResourcesB6Z4github"
-  ".com/flyteorg/flyteidl/gen/pb-go/flyteid"
-  "l/coreb\006proto3"
+  "\n\treference\"N\n\017SignalCondition\022\021\n\tsignal"
+  "_id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core."
+  "LiteralType\"=\n\016SleepCondition\022+\n\010duratio"
+  "n\030\004 \001(\0132\031.google.protobuf.Duration\"y\n\010Ga"
+  "teNode\0220\n\006signal\030\002 \001(\0132\036.flyteidl.core.S"
+  "ignalConditionH\000\022.\n\005sleep\030\001 \001(\0132\035.flytei"
+  "dl.core.SleepConditionH\000B\013\n\tcondition\"\247\001"
+  "\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030"
+  "\004 \001(\0132\031.google.protobuf.Duration\022-\n\007retr"
+  "ies\030\005 \001(\0132\034.flyteidl.core.RetryStrategy\022"
+  "\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interruptibl"
+  "e_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002"
+  " \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 "
+  "\001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006inpu"
+  "ts\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021upst"
+  "ream_node_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 "
+  "\003(\0132\024.flyteidl.core.Alias\022,\n\ttask_node\030\006"
+  " \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rworkf"
+  "low_node\030\007 \001(\0132\033.flyteidl.core.WorkflowN"
+  "odeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl.co"
+  "re.BranchNodeH\000\022,\n\tgate_node\030\t \001(\0132\027.fly"
+  "teidl.core.GateNodeH\000B\010\n\006target\"\347\001\n\020Work"
+  "flowMetadata\022;\n\022quality_of_service\030\001 \001(\013"
+  "2\037.flyteidl.core.QualityOfService\022C\n\non_"
+  "failure\030\002 \001(\0162/.flyteidl.core.WorkflowMe"
+  "tadata.OnFailurePolicy\"Q\n\017OnFailurePolic"
+  "y\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EX"
+  "ECUTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowMet"
+  "adataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n"
+  "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl"
+  ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly"
+  "teidl.core.WorkflowMetadata\0220\n\tinterface"
+  "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n"
+  "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out"
+  "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa"
+  "ilure_node\030\006 \001(\0132\023.flyteidl.core.Node\022B\n"
+  "\021metadata_defaults\030\007 \001(\0132\'.flyteidl.core"
+  ".WorkflowMetadataDefaults\"@\n\021TaskNodeOve"
+  "rrides\022+\n\tresources\030\001 \001(\0132\030.flyteidl.cor"
+  "e.ResourcesB6Z4github.com/flyteorg/flyte"
+  "idl/gen/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2494,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2555,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
@@ -2640,12 +2645,27 @@ void WorkflowNode::InternalSwap(WorkflowNode* other) {
 // ===================================================================
 
 void SignalCondition::InitAsDefaultInstance() {
+  ::flyteidl::core::_SignalCondition_default_instance_._instance.get_mutable()->type_ = const_cast< ::flyteidl::core::LiteralType*>(
+      ::flyteidl::core::LiteralType::internal_default_instance());
 }
 class SignalCondition::HasBitSetters {
  public:
+  static const ::flyteidl::core::LiteralType& type(const SignalCondition* msg);
 };
 
+const ::flyteidl::core::LiteralType&
+SignalCondition::HasBitSetters::type(const SignalCondition* msg) {
+  return *msg->type_;
+}
+void SignalCondition::clear_type() {
+  if (GetArenaNoVirtual() == nullptr && type_ != nullptr) {
+    delete type_;
+  }
+  type_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SignalCondition::kSignalIdFieldNumber;
+const int SignalCondition::kTypeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SignalCondition::SignalCondition()
@@ -2657,10 +2677,23 @@ SignalCondition::SignalCondition(const SignalCondition& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  signal_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.signal_id().size() > 0) {
+    signal_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signal_id_);
+  }
+  if (from.has_type()) {
+    type_ = new ::flyteidl::core::LiteralType(*from.type_);
+  } else {
+    type_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.SignalCondition)
 }
 
 void SignalCondition::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SignalCondition_flyteidl_2fcore_2fworkflow_2eproto.base);
+  signal_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  type_ = nullptr;
 }
 
 SignalCondition::~SignalCondition() {
@@ -2669,6 +2702,8 @@ SignalCondition::~SignalCondition() {
 }
 
 void SignalCondition::SharedDtor() {
+  signal_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete type_;
 }
 
 void SignalCondition::SetCachedSize(int size) const {
@@ -2686,6 +2721,11 @@ void SignalCondition::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  signal_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && type_ != nullptr) {
+    delete type_;
+  }
+  type_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -2702,7 +2742,37 @@ const char* SignalCondition::_InternalParse(const char* begin, const char* end, 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
+      // string signal_id = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.SignalCondition.signal_id");
+        object = msg->mutable_signal_id();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .flyteidl.core.LiteralType type = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::LiteralType::_InternalParse;
+        object = msg->mutable_type();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
       default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->EndGroup(tag);
           return ptr;
@@ -2716,6 +2786,13 @@ const char* SignalCondition::_InternalParse(const char* begin, const char* end, 
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool SignalCondition::MergePartialFromCodedStream(
@@ -2727,12 +2804,43 @@ bool SignalCondition::MergePartialFromCodedStream(
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0) {
-      goto success;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string signal_id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_signal_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->signal_id().data(), static_cast<int>(this->signal_id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.core.SignalCondition.signal_id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.core.LiteralType type = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_type()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, _internal_metadata_.mutable_unknown_fields()));
   }
 success:
   // @@protoc_insertion_point(parse_success:flyteidl.core.SignalCondition)
@@ -2750,6 +2858,22 @@ void SignalCondition::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  // string signal_id = 1;
+  if (this->signal_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->signal_id().data(), static_cast<int>(this->signal_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.SignalCondition.signal_id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->signal_id(), output);
+  }
+
+  // .flyteidl.core.LiteralType type = 2;
+  if (this->has_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, HasBitSetters::type(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -2762,6 +2886,24 @@ void SignalCondition::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_to_array_start:flyteidl.core.SignalCondition)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // string signal_id = 1;
+  if (this->signal_id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->signal_id().data(), static_cast<int>(this->signal_id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.core.SignalCondition.signal_id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->signal_id(), target);
+  }
+
+  // .flyteidl.core.LiteralType type = 2;
+  if (this->has_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, HasBitSetters::type(this), target);
+  }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -2783,6 +2925,20 @@ size_t SignalCondition::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string signal_id = 1;
+  if (this->signal_id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->signal_id());
+  }
+
+  // .flyteidl.core.LiteralType type = 2;
+  if (this->has_type()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *type_);
+  }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2811,6 +2967,13 @@ void SignalCondition::MergeFrom(const SignalCondition& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.signal_id().size() > 0) {
+
+    signal_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signal_id_);
+  }
+  if (from.has_type()) {
+    mutable_type()->::flyteidl::core::LiteralType::MergeFrom(from.type());
+  }
 }
 
 void SignalCondition::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2838,6 +3001,9 @@ void SignalCondition::Swap(SignalCondition* other) {
 void SignalCondition::InternalSwap(SignalCondition* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  signal_id_.Swap(&other->signal_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(type_, other->type_);
 }
 
 ::google::protobuf::Metadata SignalCondition::GetMetadata() const {

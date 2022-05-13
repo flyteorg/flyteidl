@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/service/signal.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1b\x66lyteidl/admin/signal.proto\x1a,protoc-gen-swagger/options/annotations.proto2\xb8\x04\n\rSignalService\x12\xc2\x02\n\x0c\x43reateSignal\x12#.flyteidl.admin.SignalCreateRequest\x1a$.flyteidl.admin.SignalCreateResponse\"\xe6\x01\x82\xd3\xe4\x93\x02\x14\"\x0f/api/v1/signals:\x01*\x92\x41\xc8\x01\x1a\x1b\x43reate a signal definition.JB\n\x03\x34\x30\x30\x12;\n9Returned for bad request that may have failed validation.Je\n\x03\x34\x30\x39\x12^\n\\Returned for a request that references an identical entity that has already been registered.\x12\xe1\x01\n\tGetSignal\x12 .flyteidl.admin.SignalGetRequest\x1a\x16.flyteidl.admin.Signal\"\x99\x01\x82\xd3\xe4\x93\x02j\x12h/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}\x92\x41&\x1a$Retrieve an existing node execution.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/service/signal.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1b\x66lyteidl/admin/signal.proto\x1a,protoc-gen-swagger/options/annotations.proto2\xbc\x01\n\rSignalService\x12W\n\x11GetOrCreateSignal\x12(.flyteidl.admin.SignalGetOrCreateRequest\x1a\x16.flyteidl.admin.Signal\"\x00\x12R\n\tSetSignal\x12 .flyteidl.admin.SignalSetRequest\x1a!.flyteidl.admin.SignalSetResponse\"\x00\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_signal__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -41,25 +41,25 @@ _SIGNALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=157,
-  serialized_end=725,
+  serialized_end=345,
   methods=[
   _descriptor.MethodDescriptor(
-    name='CreateSignal',
-    full_name='flyteidl.service.SignalService.CreateSignal',
+    name='GetOrCreateSignal',
+    full_name='flyteidl.service.SignalService.GetOrCreateSignal',
     index=0,
     containing_service=None,
-    input_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALCREATEREQUEST,
-    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALCREATERESPONSE,
-    serialized_options=_b('\202\323\344\223\002\024\"\017/api/v1/signals:\001*\222A\310\001\032\033Create a signal definition.JB\n\003400\022;\n9Returned for bad request that may have failed validation.Je\n\003409\022^\n\\Returned for a request that references an identical entity that has already been registered.'),
+    input_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALGETORCREATEREQUEST,
+    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNAL,
+    serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='GetSignal',
-    full_name='flyteidl.service.SignalService.GetSignal',
+    name='SetSignal',
+    full_name='flyteidl.service.SignalService.SetSignal',
     index=1,
     containing_service=None,
-    input_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALGETREQUEST,
-    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNAL,
-    serialized_options=_b('\202\323\344\223\002j\022h/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}\222A&\032$Retrieve an existing node execution.'),
+    input_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALSETREQUEST,
+    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALSETRESPONSE,
+    serialized_options=None,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SIGNALSERVICE)

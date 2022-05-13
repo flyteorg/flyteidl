@@ -11,17 +11,18 @@ import "protoc-gen-swagger/options/annotations.proto";
 service SignalService {
   // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
   rpc GetOrCreateSignal (flyteidl.admin.SignalGetOrCreateRequest) returns (flyteidl.admin.Signal) {
-    option (google.api.http) = {
+    // TODO figure out correct calls
+    /*option (google.api.http) = {
       get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve an existing signal."
-    };
+    };*/
   }
 
   // Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
   rpc SetSignal (flyteidl.admin.SignalSetRequest) returns (flyteidl.admin.SignalSetResponse) {
-    option (google.api.http) = {
+    /*option (google.api.http) = {
       post: "/api/v1/signals"
       body: "*"
     };
@@ -39,8 +40,6 @@ service SignalService {
           description: "Returned for a request that references an identical entity that has already been registered."
         }
       }
-    };
+    };*/
   }
-
-  // TODO hamersaw - add list API
 }

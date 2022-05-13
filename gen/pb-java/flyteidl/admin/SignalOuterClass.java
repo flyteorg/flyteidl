@@ -14,56 +14,840 @@ public final class SignalOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface SignalCreateRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalCreateRequest)
+  public interface SignalGetOrCreateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalGetOrCreateRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
 
     /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralType getType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
+  }
+  /**
+   * <pre>
+   * TODO hamersaw - document
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.SignalGetOrCreateRequest}
+   */
+  public  static final class SignalGetOrCreateRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalGetOrCreateRequest)
+      SignalGetOrCreateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignalGetOrCreateRequest.newBuilder() to construct.
+    private SignalGetOrCreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignalGetOrCreateRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignalGetOrCreateRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.SignalIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              flyteidl.core.Types.LiteralType.Builder subBuilder = null;
+              if (type_ != null) {
+                subBuilder = type_.toBuilder();
+              }
+              type_ = input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(type_);
+                type_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetOrCreateRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.class, flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private flyteidl.core.Types.LiteralType type_;
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public boolean hasType() {
+      return type_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralType getType() {
+      return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+      return getType();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      if (type_ != null) {
+        output.writeMessage(2, getType());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      if (type_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getType());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest other = (flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (hasType() != other.hasType()) return false;
+      if (hasType()) {
+        if (!getType()
+            .equals(other.getType())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
      * <pre>
      * TODO hamersaw - document
      * </pre>
      *
+     * Protobuf type {@code flyteidl.admin.SignalGetOrCreateRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalGetOrCreateRequest)
+        flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetOrCreateRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.class, flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        if (typeBuilder_ == null) {
+          type_ = null;
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest build() {
+        flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest result = new flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        if (typeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = typeBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        if (other.hasType()) {
+          mergeType(other.getType());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+
+      private flyteidl.core.Types.LiteralType type_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public boolean hasType() {
+        return typeBuilder_ != null || type_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType getType() {
+        if (typeBuilder_ == null) {
+          return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        } else {
+          return typeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(
+          flyteidl.core.Types.LiteralType.Builder builderForValue) {
+        if (typeBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder mergeType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (type_ != null) {
+            type_ =
+              flyteidl.core.Types.LiteralType.newBuilder(type_).mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          typeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder clearType() {
+        if (typeBuilder_ == null) {
+          type_ = null;
+          onChanged();
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
+        
+        onChanged();
+        return getTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+        if (typeBuilder_ != null) {
+          return typeBuilder_.getMessageOrBuilder();
+        } else {
+          return type_ == null ?
+              flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
+          getTypeFieldBuilder() {
+        if (typeBuilder_ == null) {
+          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
+                  getType(),
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        return typeBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalGetOrCreateRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalGetOrCreateRequest)
+    private static final flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest();
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignalGetOrCreateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SignalGetOrCreateRequest>() {
+      @java.lang.Override
+      public SignalGetOrCreateRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignalGetOrCreateRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignalGetOrCreateRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignalGetOrCreateRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.SignalOuterClass.SignalGetOrCreateRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SignalSetRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalSetRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
+    /**
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
+
+    /**
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     boolean hasValue();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     flyteidl.core.Literals.Literal getValue();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder();
@@ -73,18 +857,18 @@ public final class SignalOuterClass {
    * TODO hamersaw - document
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.SignalCreateRequest}
+   * Protobuf type {@code flyteidl.admin.SignalSetRequest}
    */
-  public  static final class SignalCreateRequest extends
+  public  static final class SignalSetRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalCreateRequest)
-      SignalCreateRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalSetRequest)
+      SignalSetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SignalCreateRequest.newBuilder() to construct.
-    private SignalCreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SignalSetRequest.newBuilder() to construct.
+    private SignalSetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SignalCreateRequest() {
+    private SignalSetRequest() {
     }
 
     @java.lang.Override
@@ -92,7 +876,7 @@ public final class SignalOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SignalCreateRequest(
+    private SignalSetRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -158,44 +942,32 @@ public final class SignalOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateRequest_descriptor;
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateRequest_fieldAccessorTable
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.SignalOuterClass.SignalCreateRequest.class, flyteidl.admin.SignalOuterClass.SignalCreateRequest.Builder.class);
+              flyteidl.admin.SignalOuterClass.SignalSetRequest.class, flyteidl.admin.SignalOuterClass.SignalSetRequest.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -205,30 +977,18 @@ public final class SignalOuterClass {
     public static final int VALUE_FIELD_NUMBER = 2;
     private flyteidl.core.Literals.Literal value_;
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public flyteidl.core.Literals.Literal getValue() {
       return value_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : value_;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -282,10 +1042,10 @@ public final class SignalOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalCreateRequest)) {
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalSetRequest)) {
         return super.equals(obj);
       }
-      flyteidl.admin.SignalOuterClass.SignalCreateRequest other = (flyteidl.admin.SignalOuterClass.SignalCreateRequest) obj;
+      flyteidl.admin.SignalOuterClass.SignalSetRequest other = (flyteidl.admin.SignalOuterClass.SignalSetRequest) obj;
 
       if (hasId() != other.hasId()) return false;
       if (hasId()) {
@@ -321,69 +1081,69 @@ public final class SignalOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(byte[] data)
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseDelimitedFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -396,7 +1156,7 @@ public final class SignalOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalCreateRequest prototype) {
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalSetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -416,26 +1176,26 @@ public final class SignalOuterClass {
      * TODO hamersaw - document
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.SignalCreateRequest}
+     * Protobuf type {@code flyteidl.admin.SignalSetRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalCreateRequest)
-        flyteidl.admin.SignalOuterClass.SignalCreateRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalSetRequest)
+        flyteidl.admin.SignalOuterClass.SignalSetRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateRequest_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateRequest_fieldAccessorTable
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.SignalOuterClass.SignalCreateRequest.class, flyteidl.admin.SignalOuterClass.SignalCreateRequest.Builder.class);
+                flyteidl.admin.SignalOuterClass.SignalSetRequest.class, flyteidl.admin.SignalOuterClass.SignalSetRequest.Builder.class);
       }
 
-      // Construct using flyteidl.admin.SignalOuterClass.SignalCreateRequest.newBuilder()
+      // Construct using flyteidl.admin.SignalOuterClass.SignalSetRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -471,17 +1231,17 @@ public final class SignalOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateRequest_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetRequest_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateRequest getDefaultInstanceForType() {
-        return flyteidl.admin.SignalOuterClass.SignalCreateRequest.getDefaultInstance();
+      public flyteidl.admin.SignalOuterClass.SignalSetRequest getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalSetRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateRequest build() {
-        flyteidl.admin.SignalOuterClass.SignalCreateRequest result = buildPartial();
+      public flyteidl.admin.SignalOuterClass.SignalSetRequest build() {
+        flyteidl.admin.SignalOuterClass.SignalSetRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -489,8 +1249,8 @@ public final class SignalOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateRequest buildPartial() {
-        flyteidl.admin.SignalOuterClass.SignalCreateRequest result = new flyteidl.admin.SignalOuterClass.SignalCreateRequest(this);
+      public flyteidl.admin.SignalOuterClass.SignalSetRequest buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalSetRequest result = new flyteidl.admin.SignalOuterClass.SignalSetRequest(this);
         if (idBuilder_ == null) {
           result.id_ = id_;
         } else {
@@ -539,16 +1299,16 @@ public final class SignalOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.SignalOuterClass.SignalCreateRequest) {
-          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalCreateRequest)other);
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalSetRequest) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalSetRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalCreateRequest other) {
-        if (other == flyteidl.admin.SignalOuterClass.SignalCreateRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalSetRequest other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalSetRequest.getDefaultInstance()) return this;
         if (other.hasId()) {
           mergeId(other.getId());
         }
@@ -570,11 +1330,11 @@ public final class SignalOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.SignalOuterClass.SignalCreateRequest parsedMessage = null;
+        flyteidl.admin.SignalOuterClass.SignalSetRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalCreateRequest) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalSetRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -588,20 +1348,12 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
@@ -612,10 +1364,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -632,10 +1380,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -650,10 +1394,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -672,10 +1412,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -690,10 +1426,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
@@ -702,10 +1434,6 @@ public final class SignalOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -717,10 +1445,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -741,20 +1465,12 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> valueBuilder_;
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.Literal getValue() {
@@ -765,10 +1481,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder setValue(flyteidl.core.Literals.Literal value) {
@@ -785,10 +1497,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder setValue(
@@ -803,10 +1511,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder mergeValue(flyteidl.core.Literals.Literal value) {
@@ -825,10 +1529,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder clearValue() {
@@ -843,10 +1543,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.Literal.Builder getValueBuilder() {
@@ -855,10 +1551,6 @@ public final class SignalOuterClass {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -870,10 +1562,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -902,48 +1590,48 @@ public final class SignalOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalCreateRequest)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalSetRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalCreateRequest)
-    private static final flyteidl.admin.SignalOuterClass.SignalCreateRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalSetRequest)
+    private static final flyteidl.admin.SignalOuterClass.SignalSetRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalCreateRequest();
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalSetRequest();
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalCreateRequest getDefaultInstance() {
+    public static flyteidl.admin.SignalOuterClass.SignalSetRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SignalCreateRequest>
-        PARSER = new com.google.protobuf.AbstractParser<SignalCreateRequest>() {
+    private static final com.google.protobuf.Parser<SignalSetRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SignalSetRequest>() {
       @java.lang.Override
-      public SignalCreateRequest parsePartialFrom(
+      public SignalSetRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignalCreateRequest(input, extensionRegistry);
+        return new SignalSetRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SignalCreateRequest> parser() {
+    public static com.google.protobuf.Parser<SignalSetRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SignalCreateRequest> getParserForType() {
+    public com.google.protobuf.Parser<SignalSetRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.SignalOuterClass.SignalCreateRequest getDefaultInstanceForType() {
+    public flyteidl.admin.SignalOuterClass.SignalSetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SignalCreateResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalCreateResponse)
+  public interface SignalSetResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalSetResponse)
       com.google.protobuf.MessageOrBuilder {
   }
   /**
@@ -951,18 +1639,18 @@ public final class SignalOuterClass {
    * TODO hamersaw - document
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.SignalCreateResponse}
+   * Protobuf type {@code flyteidl.admin.SignalSetResponse}
    */
-  public  static final class SignalCreateResponse extends
+  public  static final class SignalSetResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalCreateResponse)
-      SignalCreateResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalSetResponse)
+      SignalSetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SignalCreateResponse.newBuilder() to construct.
-    private SignalCreateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SignalSetResponse.newBuilder() to construct.
+    private SignalSetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SignalCreateResponse() {
+    private SignalSetResponse() {
     }
 
     @java.lang.Override
@@ -970,7 +1658,7 @@ public final class SignalOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SignalCreateResponse(
+    private SignalSetResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1009,15 +1697,15 @@ public final class SignalOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateResponse_descriptor;
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateResponse_fieldAccessorTable
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.SignalOuterClass.SignalCreateResponse.class, flyteidl.admin.SignalOuterClass.SignalCreateResponse.Builder.class);
+              flyteidl.admin.SignalOuterClass.SignalSetResponse.class, flyteidl.admin.SignalOuterClass.SignalSetResponse.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1053,10 +1741,10 @@ public final class SignalOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalCreateResponse)) {
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalSetResponse)) {
         return super.equals(obj);
       }
-      flyteidl.admin.SignalOuterClass.SignalCreateResponse other = (flyteidl.admin.SignalOuterClass.SignalCreateResponse) obj;
+      flyteidl.admin.SignalOuterClass.SignalSetResponse other = (flyteidl.admin.SignalOuterClass.SignalSetResponse) obj;
 
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -1074,69 +1762,69 @@ public final class SignalOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(byte[] data)
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseDelimitedFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1149,7 +1837,7 @@ public final class SignalOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalCreateResponse prototype) {
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalSetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1169,26 +1857,26 @@ public final class SignalOuterClass {
      * TODO hamersaw - document
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.SignalCreateResponse}
+     * Protobuf type {@code flyteidl.admin.SignalSetResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalCreateResponse)
-        flyteidl.admin.SignalOuterClass.SignalCreateResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalSetResponse)
+        flyteidl.admin.SignalOuterClass.SignalSetResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateResponse_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateResponse_fieldAccessorTable
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.SignalOuterClass.SignalCreateResponse.class, flyteidl.admin.SignalOuterClass.SignalCreateResponse.Builder.class);
+                flyteidl.admin.SignalOuterClass.SignalSetResponse.class, flyteidl.admin.SignalOuterClass.SignalSetResponse.Builder.class);
       }
 
-      // Construct using flyteidl.admin.SignalOuterClass.SignalCreateResponse.newBuilder()
+      // Construct using flyteidl.admin.SignalOuterClass.SignalSetResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1212,17 +1900,17 @@ public final class SignalOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalCreateResponse_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalSetResponse_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateResponse getDefaultInstanceForType() {
-        return flyteidl.admin.SignalOuterClass.SignalCreateResponse.getDefaultInstance();
+      public flyteidl.admin.SignalOuterClass.SignalSetResponse getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalSetResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateResponse build() {
-        flyteidl.admin.SignalOuterClass.SignalCreateResponse result = buildPartial();
+      public flyteidl.admin.SignalOuterClass.SignalSetResponse build() {
+        flyteidl.admin.SignalOuterClass.SignalSetResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1230,8 +1918,8 @@ public final class SignalOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalCreateResponse buildPartial() {
-        flyteidl.admin.SignalOuterClass.SignalCreateResponse result = new flyteidl.admin.SignalOuterClass.SignalCreateResponse(this);
+      public flyteidl.admin.SignalOuterClass.SignalSetResponse buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalSetResponse result = new flyteidl.admin.SignalOuterClass.SignalSetResponse(this);
         onBuilt();
         return result;
       }
@@ -1270,16 +1958,16 @@ public final class SignalOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.SignalOuterClass.SignalCreateResponse) {
-          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalCreateResponse)other);
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalSetResponse) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalSetResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalCreateResponse other) {
-        if (other == flyteidl.admin.SignalOuterClass.SignalCreateResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalSetResponse other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalSetResponse.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1295,11 +1983,11 @@ public final class SignalOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.SignalOuterClass.SignalCreateResponse parsedMessage = null;
+        flyteidl.admin.SignalOuterClass.SignalSetResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalCreateResponse) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalSetResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1321,647 +2009,41 @@ public final class SignalOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalCreateResponse)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalSetResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalCreateResponse)
-    private static final flyteidl.admin.SignalOuterClass.SignalCreateResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalSetResponse)
+    private static final flyteidl.admin.SignalOuterClass.SignalSetResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalCreateResponse();
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalSetResponse();
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalCreateResponse getDefaultInstance() {
+    public static flyteidl.admin.SignalOuterClass.SignalSetResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SignalCreateResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SignalCreateResponse>() {
+    private static final com.google.protobuf.Parser<SignalSetResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SignalSetResponse>() {
       @java.lang.Override
-      public SignalCreateResponse parsePartialFrom(
+      public SignalSetResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignalCreateResponse(input, extensionRegistry);
+        return new SignalSetResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SignalCreateResponse> parser() {
+    public static com.google.protobuf.Parser<SignalSetResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SignalCreateResponse> getParserForType() {
+    public com.google.protobuf.Parser<SignalSetResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.SignalOuterClass.SignalCreateResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SignalGetRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalGetRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
-  }
-  /**
-   * Protobuf type {@code flyteidl.admin.SignalGetRequest}
-   */
-  public  static final class SignalGetRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalGetRequest)
-      SignalGetRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SignalGetRequest.newBuilder() to construct.
-    private SignalGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SignalGetRequest() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SignalGetRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder subBuilder = null;
-              if (id_ != null) {
-                subBuilder = id_.toBuilder();
-              }
-              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.SignalIdentifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.admin.SignalOuterClass.SignalGetRequest.class, flyteidl.admin.SignalOuterClass.SignalGetRequest.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    public boolean hasId() {
-      return id_ != null;
-    }
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
-      return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
-    }
-    /**
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
-      return getId();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (id_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalGetRequest)) {
-        return super.equals(obj);
-      }
-      flyteidl.admin.SignalOuterClass.SignalGetRequest other = (flyteidl.admin.SignalOuterClass.SignalGetRequest) obj;
-
-      if (hasId() != other.hasId()) return false;
-      if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalGetRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code flyteidl.admin.SignalGetRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalGetRequest)
-        flyteidl.admin.SignalOuterClass.SignalGetRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.admin.SignalOuterClass.SignalGetRequest.class, flyteidl.admin.SignalOuterClass.SignalGetRequest.Builder.class);
-      }
-
-      // Construct using flyteidl.admin.SignalOuterClass.SignalGetRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalGetRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalGetRequest getDefaultInstanceForType() {
-        return flyteidl.admin.SignalOuterClass.SignalGetRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalGetRequest build() {
-        flyteidl.admin.SignalOuterClass.SignalGetRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalGetRequest buildPartial() {
-        flyteidl.admin.SignalOuterClass.SignalGetRequest result = new flyteidl.admin.SignalOuterClass.SignalGetRequest(this);
-        if (idBuilder_ == null) {
-          result.id_ = id_;
-        } else {
-          result.id_ = idBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.SignalOuterClass.SignalGetRequest) {
-          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalGetRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalGetRequest other) {
-        if (other == flyteidl.admin.SignalOuterClass.SignalGetRequest.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.admin.SignalOuterClass.SignalGetRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalGetRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public boolean hasId() {
-        return idBuilder_ != null || id_ != null;
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
-        } else {
-          return idBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
-        if (idBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          id_ = value;
-          onChanged();
-        } else {
-          idBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public Builder setId(
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
-          onChanged();
-        } else {
-          idBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
-        if (idBuilder_ == null) {
-          if (id_ != null) {
-            id_ =
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
-          } else {
-            id_ = value;
-          }
-          onChanged();
-        } else {
-          idBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
-          onChanged();
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
-        
-        onChanged();
-        return getIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
-        } else {
-          return id_ == null ?
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
-        }
-      }
-      /**
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder>(
-                  getId(),
-                  getParentForChildren(),
-                  isClean());
-          id_ = null;
-        }
-        return idBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalGetRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalGetRequest)
-    private static final flyteidl.admin.SignalOuterClass.SignalGetRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalGetRequest();
-    }
-
-    public static flyteidl.admin.SignalOuterClass.SignalGetRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SignalGetRequest>
-        PARSER = new com.google.protobuf.AbstractParser<SignalGetRequest>() {
-      @java.lang.Override
-      public SignalGetRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignalGetRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SignalGetRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SignalGetRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.admin.SignalOuterClass.SignalGetRequest getDefaultInstanceForType() {
+    public flyteidl.admin.SignalOuterClass.SignalSetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1972,52 +2054,41 @@ public final class SignalOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
 
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralType getType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
+
+    /**
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     boolean hasValue();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     flyteidl.core.Literals.Literal getValue();
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder();
   }
@@ -2078,6 +2149,19 @@ public final class SignalOuterClass {
               break;
             }
             case 18: {
+              flyteidl.core.Types.LiteralType.Builder subBuilder = null;
+              if (type_ != null) {
+                subBuilder = type_.toBuilder();
+              }
+              type_ = input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(type_);
+                type_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
               flyteidl.core.Literals.Literal.Builder subBuilder = null;
               if (value_ != null) {
                 subBuilder = value_.toBuilder();
@@ -2125,64 +2209,61 @@ public final class SignalOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
       return getId();
     }
 
-    public static final int VALUE_FIELD_NUMBER = 2;
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private flyteidl.core.Types.LiteralType type_;
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public boolean hasType() {
+      return type_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralType getType() {
+      return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+      return getType();
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 3;
     private flyteidl.core.Literals.Literal value_;
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public flyteidl.core.Literals.Literal getValue() {
       return value_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : value_;
     }
     /**
-     * <pre>
-     * TODO hamersaw - document
-     * </pre>
-     *
-     * <code>.flyteidl.core.Literal value = 2;</code>
+     * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
       return getValue();
@@ -2205,8 +2286,11 @@ public final class SignalOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
+      if (type_ != null) {
+        output.writeMessage(2, getType());
+      }
       if (value_ != null) {
-        output.writeMessage(2, getValue());
+        output.writeMessage(3, getValue());
       }
       unknownFields.writeTo(output);
     }
@@ -2221,9 +2305,13 @@ public final class SignalOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
       }
+      if (type_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getType());
+      }
       if (value_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getValue());
+          .computeMessageSize(3, getValue());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2245,6 +2333,11 @@ public final class SignalOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
+      if (hasType() != other.hasType()) return false;
+      if (hasType()) {
+        if (!getType()
+            .equals(other.getType())) return false;
+      }
       if (hasValue() != other.hasValue()) return false;
       if (hasValue()) {
         if (!getValue()
@@ -2264,6 +2357,10 @@ public final class SignalOuterClass {
       if (hasId()) {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
+      }
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
       }
       if (hasValue()) {
         hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -2412,6 +2509,12 @@ public final class SignalOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
+        if (typeBuilder_ == null) {
+          type_ = null;
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
         if (valueBuilder_ == null) {
           value_ = null;
         } else {
@@ -2448,6 +2551,11 @@ public final class SignalOuterClass {
           result.id_ = id_;
         } else {
           result.id_ = idBuilder_.build();
+        }
+        if (typeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = typeBuilder_.build();
         }
         if (valueBuilder_ == null) {
           result.value_ = value_;
@@ -2505,6 +2613,9 @@ public final class SignalOuterClass {
         if (other.hasId()) {
           mergeId(other.getId());
         }
+        if (other.hasType()) {
+          mergeType(other.getType());
+        }
         if (other.hasValue()) {
           mergeValue(other.getValue());
         }
@@ -2541,20 +2652,12 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
@@ -2565,10 +2668,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -2585,10 +2684,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -2603,10 +2698,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -2625,10 +2716,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -2643,10 +2730,6 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
@@ -2655,10 +2738,6 @@ public final class SignalOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -2670,10 +2749,6 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2690,25 +2765,134 @@ public final class SignalOuterClass {
         return idBuilder_;
       }
 
+      private flyteidl.core.Types.LiteralType type_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public boolean hasType() {
+        return typeBuilder_ != null || type_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType getType() {
+        if (typeBuilder_ == null) {
+          return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        } else {
+          return typeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(
+          flyteidl.core.Types.LiteralType.Builder builderForValue) {
+        if (typeBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder mergeType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (type_ != null) {
+            type_ =
+              flyteidl.core.Types.LiteralType.newBuilder(type_).mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          typeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder clearType() {
+        if (typeBuilder_ == null) {
+          type_ = null;
+          onChanged();
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
+        
+        onChanged();
+        return getTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+        if (typeBuilder_ != null) {
+          return typeBuilder_.getMessageOrBuilder();
+        } else {
+          return type_ == null ?
+              flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
+          getTypeFieldBuilder() {
+        if (typeBuilder_ == null) {
+          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
+                  getType(),
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        return typeBuilder_;
+      }
+
       private flyteidl.core.Literals.Literal value_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> valueBuilder_;
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.Literal getValue() {
         if (valueBuilder_ == null) {
@@ -2718,11 +2902,7 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder setValue(flyteidl.core.Literals.Literal value) {
         if (valueBuilder_ == null) {
@@ -2738,11 +2918,7 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder setValue(
           flyteidl.core.Literals.Literal.Builder builderForValue) {
@@ -2756,11 +2932,7 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder mergeValue(flyteidl.core.Literals.Literal value) {
         if (valueBuilder_ == null) {
@@ -2778,11 +2950,7 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -2796,11 +2964,7 @@ public final class SignalOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.Literal.Builder getValueBuilder() {
         
@@ -2808,11 +2972,7 @@ public final class SignalOuterClass {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
@@ -2823,11 +2983,7 @@ public final class SignalOuterClass {
         }
       }
       /**
-       * <pre>
-       * TODO hamersaw - document
-       * </pre>
-       *
-       * <code>.flyteidl.core.Literal value = 2;</code>
+       * <code>.flyteidl.core.Literal value = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> 
@@ -2896,20 +3052,20 @@ public final class SignalOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_SignalCreateRequest_descriptor;
+    internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_SignalCreateRequest_fieldAccessorTable;
+      internal_static_flyteidl_admin_SignalGetOrCreateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_SignalCreateResponse_descriptor;
+    internal_static_flyteidl_admin_SignalSetRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_SignalCreateResponse_fieldAccessorTable;
+      internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_SignalGetRequest_descriptor;
+    internal_static_flyteidl_admin_SignalSetResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_SignalGetRequest_fieldAccessorTable;
+      internal_static_flyteidl_admin_SignalSetResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_Signal_descriptor;
   private static final 
@@ -2926,16 +3082,19 @@ public final class SignalOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/admin/signal.proto\022\016flyteidl." +
       "admin\032\036flyteidl/core/identifier.proto\032\034f" +
-      "lyteidl/core/literals.proto\"i\n\023SignalCre" +
-      "ateRequest\022+\n\002id\030\001 \001(\0132\037.flyteidl.core.S" +
-      "ignalIdentifier\022%\n\005value\030\002 \001(\0132\026.flyteid" +
-      "l.core.Literal\"\026\n\024SignalCreateResponse\"?" +
-      "\n\020SignalGetRequest\022+\n\002id\030\001 \001(\0132\037.flyteid" +
-      "l.core.SignalIdentifier\"\\\n\006Signal\022+\n\002id\030" +
-      "\001 \001(\0132\037.flyteidl.core.SignalIdentifier\022%" +
-      "\n\005value\030\002 \001(\0132\026.flyteidl.core.LiteralB7Z" +
-      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/adminb\006proto3"
+      "lyteidl/core/literals.proto\032\031flyteidl/co" +
+      "re/types.proto\"q\n\030SignalGetOrCreateReque" +
+      "st\022+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIde" +
+      "ntifier\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li" +
+      "teralType\"f\n\020SignalSetRequest\022+\n\002id\030\001 \001(" +
+      "\0132\037.flyteidl.core.SignalIdentifier\022%\n\005va" +
+      "lue\030\002 \001(\0132\026.flyteidl.core.Literal\"\023\n\021Sig" +
+      "nalSetResponse\"\206\001\n\006Signal\022+\n\002id\030\001 \001(\0132\037." +
+      "flyteidl.core.SignalIdentifier\022(\n\004type\030\002" +
+      " \001(\0132\032.flyteidl.core.LiteralType\022%\n\005valu" +
+      "e\030\003 \001(\0132\026.flyteidl.core.LiteralB7Z5githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2950,33 +3109,35 @@ public final class SignalOuterClass {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
+          flyteidl.core.Types.getDescriptor(),
         }, assigner);
-    internal_static_flyteidl_admin_SignalCreateRequest_descriptor =
+    internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_flyteidl_admin_SignalCreateRequest_fieldAccessorTable = new
+    internal_static_flyteidl_admin_SignalGetOrCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_SignalCreateRequest_descriptor,
-        new java.lang.String[] { "Id", "Value", });
-    internal_static_flyteidl_admin_SignalCreateResponse_descriptor =
+        internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor,
+        new java.lang.String[] { "Id", "Type", });
+    internal_static_flyteidl_admin_SignalSetRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_admin_SignalCreateResponse_fieldAccessorTable = new
+    internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_SignalCreateResponse_descriptor,
-        new java.lang.String[] { });
-    internal_static_flyteidl_admin_SignalGetRequest_descriptor =
+        internal_static_flyteidl_admin_SignalSetRequest_descriptor,
+        new java.lang.String[] { "Id", "Value", });
+    internal_static_flyteidl_admin_SignalSetResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_admin_SignalGetRequest_fieldAccessorTable = new
+    internal_static_flyteidl_admin_SignalSetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_SignalGetRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        internal_static_flyteidl_admin_SignalSetResponse_descriptor,
+        new java.lang.String[] { });
     internal_static_flyteidl_admin_Signal_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_Signal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Signal_descriptor,
-        new java.lang.String[] { "Id", "Value", });
+        new java.lang.String[] { "Id", "Type", "Value", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
+    flyteidl.core.Types.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

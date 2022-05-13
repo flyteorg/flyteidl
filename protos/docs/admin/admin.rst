@@ -2964,8 +2964,9 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "TODO hamersaw - document"
-   "value", ":ref:`ref_flyteidl.core.Literal`", "", "TODO hamersaw - document"
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
 
 
 
@@ -2973,56 +2974,57 @@ TODO hamersaw - document
 
 
 
-.. _ref_flyteidl.admin.SignalCreateRequest:
+.. _ref_flyteidl.admin.SignalGetOrCreateRequest:
 
-SignalCreateRequest
+SignalGetOrCreateRequest
 ------------------------------------------------------------------
 
 TODO hamersaw - document
 
 
 
-.. csv-table:: SignalCreateRequest type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "TODO hamersaw - document"
-   "value", ":ref:`ref_flyteidl.core.Literal`", "", "TODO hamersaw - document"
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.SignalCreateResponse:
-
-SignalCreateResponse
-------------------------------------------------------------------
-
-TODO hamersaw - document
-
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.SignalGetRequest:
-
-SignalGetRequest
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: SignalGetRequest type fields
+.. csv-table:: SignalGetOrCreateRequest type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
    "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalSetRequest:
+
+SignalSetRequest
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
+
+
+.. csv-table:: SignalSetRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalSetResponse:
+
+SignalSetResponse
+------------------------------------------------------------------
+
+TODO hamersaw - document
+
 
 
 

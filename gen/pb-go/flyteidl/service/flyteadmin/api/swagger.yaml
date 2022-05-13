@@ -7821,7 +7821,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -8280,7 +8332,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -8738,7 +8842,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -9665,7 +9821,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -10124,7 +10332,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -10582,7 +10842,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -12011,7 +12323,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -12470,7 +12834,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -12928,7 +13344,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -16238,7 +16706,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -16697,7 +17217,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -17155,7 +17727,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18082,7 +18706,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18541,7 +19217,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -18999,7 +19727,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -20428,7 +21208,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -20887,7 +21719,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -21345,7 +22229,59 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
-                  signal: {}
+                  signal:
+                    signal_id: "signal_id"
+                    type:
+                      schema:
+                        columns:
+                        - name: "name"
+                          type: {}
+                        - name: "name"
+                          type: {}
+                      annotation:
+                        annotations:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                      structured_dataset_type:
+                        external_schema_type: "external_schema_type"
+                        columns:
+                        - name: "name"
+                        - name: "name"
+                        format: "format"
+                        external_schema_bytes: "external_schema_bytes"
+                      metadata:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                      blob:
+                        dimensionality: {}
+                        format: "format"
+                      enum_type:
+                        values:
+                        - "values"
+                        - "values"
+                      union_type:
+                        variants:
+                        - null
+                        - null
+                      simple: {}
+                      structure:
+                        tag: "tag"
                 upstream_node_ids:
                 - "upstream_node_ids"
                 - "upstream_node_ids"
@@ -22587,7 +23523,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -23046,7 +24034,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -23504,7 +24544,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -24431,7 +25523,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -24890,7 +26034,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -25348,7 +26544,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -26777,7 +28025,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -27236,7 +28536,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -27694,7 +29046,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -28792,7 +30196,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -29251,7 +30707,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -29709,7 +31217,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -30636,7 +32196,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -31095,7 +32707,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -31553,7 +33217,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -32982,7 +34698,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -33441,7 +35209,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -33899,7 +35719,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -34836,7 +36708,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -35295,7 +37219,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -35753,7 +37729,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -36680,7 +38708,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -37139,7 +39219,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -37597,7 +39729,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -39026,7 +41210,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -39485,7 +41721,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -39943,7 +42231,59 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
-                    signal: {}
+                    signal:
+                      signal_id: "signal_id"
+                      type:
+                        schema:
+                          columns:
+                          - name: "name"
+                            type: {}
+                          - name: "name"
+                            type: {}
+                        annotation:
+                          annotations:
+                            fields:
+                              key:
+                                list_value:
+                                  values:
+                                  - null
+                                  - null
+                                number_value: 6.027456183070403
+                                string_value: "string_value"
+                                null_value: {}
+                                bool_value: true
+                        structured_dataset_type:
+                          external_schema_type: "external_schema_type"
+                          columns:
+                          - name: "name"
+                          - name: "name"
+                          format: "format"
+                          external_schema_bytes: "external_schema_bytes"
+                        metadata:
+                          fields:
+                            key:
+                              list_value:
+                                values:
+                                - null
+                                - null
+                              number_value: 6.027456183070403
+                              string_value: "string_value"
+                              null_value: {}
+                              bool_value: true
+                        blob:
+                          dimensionality: {}
+                          format: "format"
+                        enum_type:
+                          values:
+                          - "values"
+                          - "values"
+                        union_type:
+                          variants:
+                          - null
+                          - null
+                        simple: {}
+                        structure:
+                          tag: "tag"
                   upstream_node_ids:
                   - "upstream_node_ids"
                   - "upstream_node_ids"
@@ -41845,7 +44185,59 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
-            signal: {}
+            signal:
+              signal_id: "signal_id"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                annotation:
+                  annotations:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                structured_dataset_type:
+                  external_schema_type: "external_schema_type"
+                  columns:
+                  - name: "name"
+                  - name: "name"
+                  format: "format"
+                  external_schema_bytes: "external_schema_bytes"
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                union_type:
+                  variants:
+                  - null
+                  - null
+                simple: {}
+                structure:
+                  tag: "tag"
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -42304,7 +44696,59 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
-            signal: {}
+            signal:
+              signal_id: "signal_id"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                annotation:
+                  annotations:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                structured_dataset_type:
+                  external_schema_type: "external_schema_type"
+                  columns:
+                  - name: "name"
+                  - name: "name"
+                  format: "format"
+                  external_schema_bytes: "external_schema_bytes"
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                union_type:
+                  variants:
+                  - null
+                  - null
+                simple: {}
+                structure:
+                  tag: "tag"
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -42762,7 +45206,59 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
-            signal: {}
+            signal:
+              signal_id: "signal_id"
+              type:
+                schema:
+                  columns:
+                  - name: "name"
+                    type: {}
+                  - name: "name"
+                    type: {}
+                annotation:
+                  annotations:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                structured_dataset_type:
+                  external_schema_type: "external_schema_type"
+                  columns:
+                  - name: "name"
+                  - name: "name"
+                  format: "format"
+                  external_schema_bytes: "external_schema_bytes"
+                metadata:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+                blob:
+                  dimensionality: {}
+                  format: "format"
+                enum_type:
+                  values:
+                  - "values"
+                  - "values"
+                union_type:
+                  variants:
+                  - null
+                  - null
+                simple: {}
+                structure:
+                  tag: "tag"
           upstream_node_ids:
           - "upstream_node_ids"
           - "upstream_node_ids"
@@ -43716,7 +46212,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -44175,7 +46723,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -44633,7 +47233,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -45560,7 +48212,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -46019,7 +48723,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -46477,7 +49233,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -47906,7 +50714,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -48365,7 +51225,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -48823,7 +51735,59 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
-              signal: {}
+              signal:
+                signal_id: "signal_id"
+                type:
+                  schema:
+                    columns:
+                    - name: "name"
+                      type: {}
+                    - name: "name"
+                      type: {}
+                  annotation:
+                    annotations:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                  structured_dataset_type:
+                    external_schema_type: "external_schema_type"
+                    columns:
+                    - name: "name"
+                    - name: "name"
+                    format: "format"
+                    external_schema_bytes: "external_schema_bytes"
+                  metadata:
+                    fields:
+                      key:
+                        list_value:
+                          values:
+                          - null
+                          - null
+                        number_value: 6.027456183070403
+                        string_value: "string_value"
+                        null_value: {}
+                        bool_value: true
+                  blob:
+                    dimensionality: {}
+                    format: "format"
+                  enum_type:
+                    values:
+                    - "values"
+                    - "values"
+                  union_type:
+                    variants:
+                    - null
+                    - null
+                  simple: {}
+                  structure:
+                    tag: "tag"
             upstream_node_ids:
             - "upstream_node_ids"
             - "upstream_node_ids"
@@ -49580,7 +52544,59 @@ definitions:
     example:
       sleep:
         duration: "duration"
-      signal: {}
+      signal:
+        signal_id: "signal_id"
+        type:
+          schema:
+            columns:
+            - name: "name"
+              type: {}
+            - name: "name"
+              type: {}
+          annotation:
+            annotations:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+          structured_dataset_type:
+            external_schema_type: "external_schema_type"
+            columns:
+            - name: "name"
+            - name: "name"
+            format: "format"
+            external_schema_bytes: "external_schema_bytes"
+          metadata:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+          blob:
+            dimensionality: {}
+            format: "format"
+          enum_type:
+            values:
+            - "values"
+            - "values"
+          union_type:
+            variants:
+            - null
+            - null
+          simple: {}
+          structure:
+            tag: "tag"
   coreIOStrategy:
     type: "object"
     properties:
@@ -50221,7 +53237,59 @@ definitions:
       gate_node:
         sleep:
           duration: "duration"
-        signal: {}
+        signal:
+          signal_id: "signal_id"
+          type:
+            schema:
+              columns:
+              - name: "name"
+                type: {}
+              - name: "name"
+                type: {}
+            annotation:
+              annotations:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+            structured_dataset_type:
+              external_schema_type: "external_schema_type"
+              columns:
+              - name: "name"
+              - name: "name"
+              format: "format"
+              external_schema_bytes: "external_schema_bytes"
+            metadata:
+              fields:
+                key:
+                  list_value:
+                    values:
+                    - null
+                    - null
+                  number_value: 6.027456183070403
+                  string_value: "string_value"
+                  null_value: {}
+                  bool_value: true
+            blob:
+              dimensionality: {}
+              format: "format"
+            enum_type:
+              values:
+              - "values"
+              - "values"
+            union_type:
+              variants:
+              - null
+              - null
+            simple: {}
+            structure:
+              tag: "tag"
       upstream_node_ids:
       - "upstream_node_ids"
       - "upstream_node_ids"
@@ -51481,7 +54549,65 @@ definitions:
         group: "group"
   coreSignalCondition:
     type: "object"
+    properties:
+      signal_id:
+        type: "string"
+      type:
+        $ref: "#/definitions/coreLiteralType"
     title: "TODO hamersaw - document"
+    example:
+      signal_id: "signal_id"
+      type:
+        schema:
+          columns:
+          - name: "name"
+            type: {}
+          - name: "name"
+            type: {}
+        annotation:
+          annotations:
+            fields:
+              key:
+                list_value:
+                  values:
+                  - null
+                  - null
+                number_value: 6.027456183070403
+                string_value: "string_value"
+                null_value: {}
+                bool_value: true
+        structured_dataset_type:
+          external_schema_type: "external_schema_type"
+          columns:
+          - name: "name"
+          - name: "name"
+          format: "format"
+          external_schema_bytes: "external_schema_bytes"
+        metadata:
+          fields:
+            key:
+              list_value:
+                values:
+                - null
+                - null
+              number_value: 6.027456183070403
+              string_value: "string_value"
+              null_value: {}
+              bool_value: true
+        blob:
+          dimensionality: {}
+          format: "format"
+        enum_type:
+          values:
+          - "values"
+          - "values"
+        union_type:
+          variants:
+          - null
+          - null
+        simple: {}
+        structure:
+          tag: "tag"
   coreSimpleType:
     type: "string"
     description: "Define a set of simple types."
@@ -53029,7 +56155,59 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
-          signal: {}
+          signal:
+            signal_id: "signal_id"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              annotation:
+                annotations:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              structured_dataset_type:
+                external_schema_type: "external_schema_type"
+                columns:
+                - name: "name"
+                - name: "name"
+                format: "format"
+                external_schema_bytes: "external_schema_bytes"
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              union_type:
+                variants:
+                - null
+                - null
+              simple: {}
+              structure:
+                tag: "tag"
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -53488,7 +56666,59 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
-          signal: {}
+          signal:
+            signal_id: "signal_id"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              annotation:
+                annotations:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              structured_dataset_type:
+                external_schema_type: "external_schema_type"
+                columns:
+                - name: "name"
+                - name: "name"
+                format: "format"
+                external_schema_bytes: "external_schema_bytes"
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              union_type:
+                variants:
+                - null
+                - null
+              simple: {}
+              structure:
+                tag: "tag"
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -53946,7 +57176,59 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
-          signal: {}
+          signal:
+            signal_id: "signal_id"
+            type:
+              schema:
+                columns:
+                - name: "name"
+                  type: {}
+                - name: "name"
+                  type: {}
+              annotation:
+                annotations:
+                  fields:
+                    key:
+                      list_value:
+                        values:
+                        - null
+                        - null
+                      number_value: 6.027456183070403
+                      string_value: "string_value"
+                      null_value: {}
+                      bool_value: true
+              structured_dataset_type:
+                external_schema_type: "external_schema_type"
+                columns:
+                - name: "name"
+                - name: "name"
+                format: "format"
+                external_schema_bytes: "external_schema_bytes"
+              metadata:
+                fields:
+                  key:
+                    list_value:
+                      values:
+                      - null
+                      - null
+                    number_value: 6.027456183070403
+                    string_value: "string_value"
+                    null_value: {}
+                    bool_value: true
+              blob:
+                dimensionality: {}
+                format: "format"
+              enum_type:
+                values:
+                - "values"
+                - "values"
+              union_type:
+                variants:
+                - null
+                - null
+              simple: {}
+              structure:
+                tag: "tag"
         upstream_node_ids:
         - "upstream_node_ids"
         - "upstream_node_ids"
@@ -55183,7 +58465,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -55642,7 +58976,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -56100,7 +59486,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -57027,7 +60465,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -57486,7 +60976,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -57944,7 +61486,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -59373,7 +62967,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -59832,7 +63478,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"
@@ -60290,7 +63988,59 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
-                signal: {}
+                signal:
+                  signal_id: "signal_id"
+                  type:
+                    schema:
+                      columns:
+                      - name: "name"
+                        type: {}
+                      - name: "name"
+                        type: {}
+                    annotation:
+                      annotations:
+                        fields:
+                          key:
+                            list_value:
+                              values:
+                              - null
+                              - null
+                            number_value: 6.027456183070403
+                            string_value: "string_value"
+                            null_value: {}
+                            bool_value: true
+                    structured_dataset_type:
+                      external_schema_type: "external_schema_type"
+                      columns:
+                      - name: "name"
+                      - name: "name"
+                      format: "format"
+                      external_schema_bytes: "external_schema_bytes"
+                    metadata:
+                      fields:
+                        key:
+                          list_value:
+                            values:
+                            - null
+                            - null
+                          number_value: 6.027456183070403
+                          string_value: "string_value"
+                          null_value: {}
+                          bool_value: true
+                    blob:
+                      dimensionality: {}
+                      format: "format"
+                    enum_type:
+                      values:
+                      - "values"
+                      - "values"
+                    union_type:
+                      variants:
+                      - null
+                      - null
+                    simple: {}
+                    structure:
+                      tag: "tag"
               upstream_node_ids:
               - "upstream_node_ids"
               - "upstream_node_ids"

@@ -5344,6 +5344,29 @@ public final class Workflow {
   public interface SignalConditionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.SignalCondition)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string signal_id = 1;</code>
+     */
+    java.lang.String getSignalId();
+    /**
+     * <code>string signal_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSignalIdBytes();
+
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralType getType();
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
   }
   /**
    * <pre>
@@ -5362,6 +5385,7 @@ public final class Workflow {
       super(builder);
     }
     private SignalCondition() {
+      signalId_ = "";
     }
 
     @java.lang.Override
@@ -5377,6 +5401,7 @@ public final class Workflow {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5387,6 +5412,25 @@ public final class Workflow {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signalId_ = s;
+              break;
+            }
+            case 18: {
+              flyteidl.core.Types.LiteralType.Builder subBuilder = null;
+              if (type_ != null) {
+                subBuilder = type_.toBuilder();
+              }
+              type_ = input.readMessage(flyteidl.core.Types.LiteralType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(type_);
+                type_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5419,6 +5463,61 @@ public final class Workflow {
               flyteidl.core.Workflow.SignalCondition.class, flyteidl.core.Workflow.SignalCondition.Builder.class);
     }
 
+    public static final int SIGNAL_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object signalId_;
+    /**
+     * <code>string signal_id = 1;</code>
+     */
+    public java.lang.String getSignalId() {
+      java.lang.Object ref = signalId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        signalId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string signal_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSignalIdBytes() {
+      java.lang.Object ref = signalId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        signalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private flyteidl.core.Types.LiteralType type_;
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public boolean hasType() {
+      return type_ != null;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralType getType() {
+      return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+    }
+    /**
+     * <code>.flyteidl.core.LiteralType type = 2;</code>
+     */
+    public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+      return getType();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5433,6 +5532,12 @@ public final class Workflow {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getSignalIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signalId_);
+      }
+      if (type_ != null) {
+        output.writeMessage(2, getType());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5442,6 +5547,13 @@ public final class Workflow {
       if (size != -1) return size;
 
       size = 0;
+      if (!getSignalIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signalId_);
+      }
+      if (type_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getType());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5457,6 +5569,13 @@ public final class Workflow {
       }
       flyteidl.core.Workflow.SignalCondition other = (flyteidl.core.Workflow.SignalCondition) obj;
 
+      if (!getSignalId()
+          .equals(other.getSignalId())) return false;
+      if (hasType() != other.hasType()) return false;
+      if (hasType()) {
+        if (!getType()
+            .equals(other.getType())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5468,6 +5587,12 @@ public final class Workflow {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SIGNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSignalId().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5605,6 +5730,14 @@ public final class Workflow {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        signalId_ = "";
+
+        if (typeBuilder_ == null) {
+          type_ = null;
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
         return this;
       }
 
@@ -5631,6 +5764,12 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.SignalCondition buildPartial() {
         flyteidl.core.Workflow.SignalCondition result = new flyteidl.core.Workflow.SignalCondition(this);
+        result.signalId_ = signalId_;
+        if (typeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = typeBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5679,6 +5818,13 @@ public final class Workflow {
 
       public Builder mergeFrom(flyteidl.core.Workflow.SignalCondition other) {
         if (other == flyteidl.core.Workflow.SignalCondition.getDefaultInstance()) return this;
+        if (!other.getSignalId().isEmpty()) {
+          signalId_ = other.signalId_;
+          onChanged();
+        }
+        if (other.hasType()) {
+          mergeType(other.getType());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5706,6 +5852,192 @@ public final class Workflow {
           }
         }
         return this;
+      }
+
+      private java.lang.Object signalId_ = "";
+      /**
+       * <code>string signal_id = 1;</code>
+       */
+      public java.lang.String getSignalId() {
+        java.lang.Object ref = signalId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          signalId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string signal_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSignalIdBytes() {
+        java.lang.Object ref = signalId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          signalId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder setSignalId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        signalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder clearSignalId() {
+        
+        signalId_ = getDefaultInstance().getSignalId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder setSignalIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        signalId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.core.Types.LiteralType type_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public boolean hasType() {
+        return typeBuilder_ != null || type_ != null;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType getType() {
+        if (typeBuilder_ == null) {
+          return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        } else {
+          return typeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder setType(
+          flyteidl.core.Types.LiteralType.Builder builderForValue) {
+        if (typeBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder mergeType(flyteidl.core.Types.LiteralType value) {
+        if (typeBuilder_ == null) {
+          if (type_ != null) {
+            type_ =
+              flyteidl.core.Types.LiteralType.newBuilder(type_).mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          typeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public Builder clearType() {
+        if (typeBuilder_ == null) {
+          type_ = null;
+          onChanged();
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
+        
+        onChanged();
+        return getTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
+        if (typeBuilder_ != null) {
+          return typeBuilder_.getMessageOrBuilder();
+        } else {
+          return type_ == null ?
+              flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
+        }
+      }
+      /**
+       * <code>.flyteidl.core.LiteralType type = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> 
+          getTypeFieldBuilder() {
+        if (typeBuilder_ == null) {
+          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder>(
+                  getType(),
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        return typeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -17942,46 +18274,47 @@ public final class Workflow {
       "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
       "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
       "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"\021\n\017SignalCondition\"=\n\016SleepC" +
-      "ondition\022+\n\010duration\030\004 \001(\0132\031.google.prot" +
-      "obuf.Duration\"y\n\010GateNode\0220\n\006signal\030\002 \001(" +
-      "\0132\036.flyteidl.core.SignalConditionH\000\022.\n\005s" +
-      "leep\030\001 \001(\0132\035.flyteidl.core.SleepConditio" +
-      "nH\000B\013\n\tcondition\"\247\001\n\014NodeMetadata\022\014\n\004nam" +
-      "e\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protob" +
-      "uf.Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl." +
-      "core.RetryStrategy\022\027\n\rinterruptible\030\006 \001(" +
-      "\010H\000B\025\n\023interruptible_value\"#\n\005Alias\022\013\n\003v" +
-      "ar\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001" +
-      " \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.N" +
-      "odeMetadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.c" +
-      "ore.Binding\022\031\n\021upstream_node_ids\030\004 \003(\t\022," +
-      "\n\016output_aliases\030\005 \003(\0132\024.flyteidl.core.A" +
-      "lias\022,\n\ttask_node\030\006 \001(\0132\027.flyteidl.core." +
-      "TaskNodeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyt" +
-      "eidl.core.WorkflowNodeH\000\0220\n\013branch_node\030" +
-      "\010 \001(\0132\031.flyteidl.core.BranchNodeH\000\022,\n\tga" +
-      "te_node\030\t \001(\0132\027.flyteidl.core.GateNodeH\000" +
-      "B\010\n\006target\"\347\001\n\020WorkflowMetadata\022;\n\022quali" +
-      "ty_of_service\030\001 \001(\0132\037.flyteidl.core.Qual" +
-      "ityOfService\022C\n\non_failure\030\002 \001(\0162/.flyte" +
-      "idl.core.WorkflowMetadata.OnFailurePolic" +
-      "y\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_IMMEDIATELY" +
-      "\020\000\022(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLE" +
-      "TE\020\001\"1\n\030WorkflowMetadataDefaults\022\025\n\rinte" +
-      "rruptible\030\001 \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\0221\n\010m" +
-      "etadata\030\002 \001(\0132\037.flyteidl.core.WorkflowMe" +
-      "tadata\0220\n\tinterface\030\003 \001(\0132\035.flyteidl.cor" +
-      "e.TypedInterface\022\"\n\005nodes\030\004 \003(\0132\023.flytei" +
-      "dl.core.Node\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl" +
-      ".core.Binding\022)\n\014failure_node\030\006 \001(\0132\023.fl" +
-      "yteidl.core.Node\022B\n\021metadata_defaults\030\007 " +
-      "\001(\0132\'.flyteidl.core.WorkflowMetadataDefa" +
-      "ults\"@\n\021TaskNodeOverrides\022+\n\tresources\030\001" +
-      " \001(\0132\030.flyteidl.core.ResourcesB6Z4github" +
-      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
-      "l/coreb\006proto3"
+      "\n\treference\"N\n\017SignalCondition\022\021\n\tsignal" +
+      "_id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core." +
+      "LiteralType\"=\n\016SleepCondition\022+\n\010duratio" +
+      "n\030\004 \001(\0132\031.google.protobuf.Duration\"y\n\010Ga" +
+      "teNode\0220\n\006signal\030\002 \001(\0132\036.flyteidl.core.S" +
+      "ignalConditionH\000\022.\n\005sleep\030\001 \001(\0132\035.flytei" +
+      "dl.core.SleepConditionH\000B\013\n\tcondition\"\247\001" +
+      "\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030" +
+      "\004 \001(\0132\031.google.protobuf.Duration\022-\n\007retr" +
+      "ies\030\005 \001(\0132\034.flyteidl.core.RetryStrategy\022" +
+      "\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interruptibl" +
+      "e_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002" +
+      " \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 " +
+      "\001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006inpu" +
+      "ts\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021upst" +
+      "ream_node_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 " +
+      "\003(\0132\024.flyteidl.core.Alias\022,\n\ttask_node\030\006" +
+      " \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rworkf" +
+      "low_node\030\007 \001(\0132\033.flyteidl.core.WorkflowN" +
+      "odeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl.co" +
+      "re.BranchNodeH\000\022,\n\tgate_node\030\t \001(\0132\027.fly" +
+      "teidl.core.GateNodeH\000B\010\n\006target\"\347\001\n\020Work" +
+      "flowMetadata\022;\n\022quality_of_service\030\001 \001(\013" +
+      "2\037.flyteidl.core.QualityOfService\022C\n\non_" +
+      "failure\030\002 \001(\0162/.flyteidl.core.WorkflowMe" +
+      "tadata.OnFailurePolicy\"Q\n\017OnFailurePolic" +
+      "y\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EX" +
+      "ECUTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowMet" +
+      "adataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n" +
+      "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl" +
+      ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly" +
+      "teidl.core.WorkflowMetadata\0220\n\tinterface" +
+      "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n" +
+      "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out" +
+      "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa" +
+      "ilure_node\030\006 \001(\0132\023.flyteidl.core.Node\022B\n" +
+      "\021metadata_defaults\030\007 \001(\0132\'.flyteidl.core" +
+      ".WorkflowMetadataDefaults\"@\n\021TaskNodeOve" +
+      "rrides\022+\n\tresources\030\001 \001(\0132\030.flyteidl.cor" +
+      "e.ResourcesB6Z4github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18039,7 +18372,7 @@ public final class Workflow {
     internal_static_flyteidl_core_SignalCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SignalCondition_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "SignalId", "Type", });
     internal_static_flyteidl_core_SleepCondition_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_SleepCondition_fieldAccessorTable = new

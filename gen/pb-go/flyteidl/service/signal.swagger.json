@@ -14,91 +14,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/api/v1/signals": {
-      "post": {
-        "summary": "Create and upload a :ref:`ref_flyteidl.admin.Signal` definition",
-        "description": "Create a signal definition.",
-        "operationId": "CreateSignal",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminSignalCreateResponse"
-            }
-          },
-          "400": {
-            "description": "Returned for bad request that may have failed validation.",
-            "schema": {}
-          },
-          "409": {
-            "description": "Returned for a request that references an identical entity that has already been registered.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminSignalCreateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SignalService"
-        ]
-      }
-    },
-    "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}": {
-      "get": {
-        "summary": "Fetches a :ref:`ref_flyteidl.admin.Signal`.",
-        "description": "Retrieve an existing node execution.",
-        "operationId": "GetSignal",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminSignal"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.signal_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "SignalService"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "BlobTypeBlobDimensionality": {
       "type": "string",
@@ -150,31 +66,18 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreSignalIdentifier",
-          "title": "TODO hamersaw - document"
+          "$ref": "#/definitions/coreSignalIdentifier"
+        },
+        "type": {
+          "$ref": "#/definitions/coreLiteralType"
         },
         "value": {
-          "$ref": "#/definitions/coreLiteral",
-          "title": "TODO hamersaw - document"
+          "$ref": "#/definitions/coreLiteral"
         }
       },
       "title": "TODO hamersaw - document"
     },
-    "adminSignalCreateRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/coreSignalIdentifier",
-          "title": "TODO hamersaw - document"
-        },
-        "value": {
-          "$ref": "#/definitions/coreLiteral",
-          "title": "TODO hamersaw - document"
-        }
-      },
-      "title": "TODO hamersaw - document"
-    },
-    "adminSignalCreateResponse": {
+    "adminSignalSetResponse": {
       "type": "object",
       "title": "TODO hamersaw - document"
     },

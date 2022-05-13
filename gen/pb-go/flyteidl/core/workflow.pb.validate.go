@@ -503,6 +503,18 @@ func (m *SignalCondition) Validate() error {
 		return nil
 	}
 
+	// no validation rules for SignalId
+
+	if v, ok := interface{}(m.GetType()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalConditionValidationError{
+				field:  "Type",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 
