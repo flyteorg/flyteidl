@@ -425,6 +425,47 @@ func (_m *AdminServiceServer) GetActiveLaunchPlan(_a0 context.Context, _a1 *admi
 	return r0, r1
 }
 
+type AdminServiceServer_GetDescription struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_GetDescription) Return(_a0 *admin.EntityDescription, _a1 error) *AdminServiceServer_GetDescription {
+	return &AdminServiceServer_GetDescription{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnGetDescription(_a0 context.Context, _a1 *admin.ObjectGetRequest) *AdminServiceServer_GetDescription {
+	c_call := _m.On("GetDescription", _a0, _a1)
+	return &AdminServiceServer_GetDescription{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnGetDescriptionMatch(matchers ...interface{}) *AdminServiceServer_GetDescription {
+	c_call := _m.On("GetDescription", matchers...)
+	return &AdminServiceServer_GetDescription{Call: c_call}
+}
+
+// GetDescription provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) GetDescription(_a0 context.Context, _a1 *admin.ObjectGetRequest) (*admin.EntityDescription, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.EntityDescription
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ObjectGetRequest) *admin.EntityDescription); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.EntityDescription)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.ObjectGetRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceServer_GetExecution struct {
 	*mock.Call
 }

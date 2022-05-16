@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_entity_description import AdminEntityDescription  # noqa: F401,E501
 from flyteadmin.models.core_workflow_template import CoreWorkflowTemplate  # noqa: F401,E501
 
 
@@ -34,25 +35,30 @@ class AdminWorkflowSpec(object):
     """
     swagger_types = {
         'template': 'CoreWorkflowTemplate',
-        'sub_workflows': 'list[CoreWorkflowTemplate]'
+        'sub_workflows': 'list[CoreWorkflowTemplate]',
+        'entity_description': 'AdminEntityDescription'
     }
 
     attribute_map = {
         'template': 'template',
-        'sub_workflows': 'sub_workflows'
+        'sub_workflows': 'sub_workflows',
+        'entity_description': 'entity_description'
     }
 
-    def __init__(self, template=None, sub_workflows=None):  # noqa: E501
+    def __init__(self, template=None, sub_workflows=None, entity_description=None):  # noqa: E501
         """AdminWorkflowSpec - a model defined in Swagger"""  # noqa: E501
 
         self._template = None
         self._sub_workflows = None
+        self._entity_description = None
         self.discriminator = None
 
         if template is not None:
             self.template = template
         if sub_workflows is not None:
             self.sub_workflows = sub_workflows
+        if entity_description is not None:
+            self.entity_description = entity_description
 
     @property
     def template(self):
@@ -99,6 +105,29 @@ class AdminWorkflowSpec(object):
         """
 
         self._sub_workflows = sub_workflows
+
+    @property
+    def entity_description(self):
+        """Gets the entity_description of this AdminWorkflowSpec.  # noqa: E501
+
+        EntityDescription encapsulates all the detailed documentation for the workflow.  # noqa: E501
+
+        :return: The entity_description of this AdminWorkflowSpec.  # noqa: E501
+        :rtype: AdminEntityDescription
+        """
+        return self._entity_description
+
+    @entity_description.setter
+    def entity_description(self, entity_description):
+        """Sets the entity_description of this AdminWorkflowSpec.
+
+        EntityDescription encapsulates all the detailed documentation for the workflow.  # noqa: E501
+
+        :param entity_description: The entity_description of this AdminWorkflowSpec.  # noqa: E501
+        :type: AdminEntityDescription
+        """
+
+        self._entity_description = entity_description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

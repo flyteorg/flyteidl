@@ -35,6 +35,7 @@
 #include "flyteidl/core/tasks.pb.h"
 #include "flyteidl/core/compiler.pb.h"
 #include <google/protobuf/timestamp.pb.h>
+#include "flyteidl/admin/entity_description.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2ftask_2eproto
@@ -681,12 +682,22 @@ class TaskSpec final :
   ::flyteidl::core::TaskTemplate* mutable_template_();
   void set_allocated_template_(::flyteidl::core::TaskTemplate* template_);
 
+  // .flyteidl.admin.EntityDescription entity_description = 2;
+  bool has_entity_description() const;
+  void clear_entity_description();
+  static const int kEntityDescriptionFieldNumber = 2;
+  const ::flyteidl::admin::EntityDescription& entity_description() const;
+  ::flyteidl::admin::EntityDescription* release_entity_description();
+  ::flyteidl::admin::EntityDescription* mutable_entity_description();
+  void set_allocated_entity_description(::flyteidl::admin::EntityDescription* entity_description);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskSpec)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::TaskTemplate* template__;
+  ::flyteidl::admin::EntityDescription* entity_description_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2ftask_2eproto;
 };
@@ -1160,6 +1171,51 @@ inline void TaskSpec::set_allocated_template_(::flyteidl::core::TaskTemplate* te
   }
   template__ = template_;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskSpec.template)
+}
+
+// .flyteidl.admin.EntityDescription entity_description = 2;
+inline bool TaskSpec::has_entity_description() const {
+  return this != internal_default_instance() && entity_description_ != nullptr;
+}
+inline const ::flyteidl::admin::EntityDescription& TaskSpec::entity_description() const {
+  const ::flyteidl::admin::EntityDescription* p = entity_description_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskSpec.entity_description)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::EntityDescription*>(
+      &::flyteidl::admin::_EntityDescription_default_instance_);
+}
+inline ::flyteidl::admin::EntityDescription* TaskSpec::release_entity_description() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskSpec.entity_description)
+  
+  ::flyteidl::admin::EntityDescription* temp = entity_description_;
+  entity_description_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::EntityDescription* TaskSpec::mutable_entity_description() {
+  
+  if (entity_description_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::EntityDescription>(GetArenaNoVirtual());
+    entity_description_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskSpec.entity_description)
+  return entity_description_;
+}
+inline void TaskSpec::set_allocated_entity_description(::flyteidl::admin::EntityDescription* entity_description) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(entity_description_);
+  }
+  if (entity_description) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      entity_description = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, entity_description, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  entity_description_ = entity_description;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskSpec.entity_description)
 }
 
 // -------------------------------------------------------------------

@@ -17,6 +17,7 @@ from flyteidl.core import compiler_pb2 as flyteidl_dot_core_dot_compiler__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 from flyteidl.core import workflow_pb2 as flyteidl_dot_core_dot_workflow__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from flyteidl.admin import entity_description_pb2 as flyteidl_dot_admin_dot_entity__description__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"j\n\x15WorkflowCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12*\n\x04spec\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.WorkflowSpec\"\x18\n\x16WorkflowCreateResponse\"c\n\x08Workflow\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x30\n\x07\x63losure\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.WorkflowClosure\"J\n\x0cWorkflowList\x12+\n\tworkflows\x18\x01 \x03(\x0b\x32\x18.flyteidl.admin.Workflow\x12\r\n\x05token\x18\x02 \x01(\t\"y\n\x0cWorkflowSpec\x12\x31\n\x08template\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\x12\x36\n\rsub_workflows\x18\x02 \x03(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\"\x84\x01\n\x0fWorkflowClosure\x12\x41\n\x11\x63ompiled_workflow\x18\x01 \x01(\x0b\x32&.flyteidl.core.CompiledWorkflowClosure\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/admin/workflow.proto\x12\x0e\x66lyteidl.admin\x1a\x1c\x66lyteidl/core/compiler.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/workflow.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'flyteidl/admin/entity_description.proto\"j\n\x15WorkflowCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12*\n\x04spec\x18\x02 \x01(\x0b\x32\x1c.flyteidl.admin.WorkflowSpec\"\x18\n\x16WorkflowCreateResponse\"c\n\x08Workflow\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x30\n\x07\x63losure\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.WorkflowClosure\"J\n\x0cWorkflowList\x12+\n\tworkflows\x18\x01 \x03(\x0b\x32\x18.flyteidl.admin.Workflow\x12\r\n\x05token\x18\x02 \x01(\t\"\xb8\x01\n\x0cWorkflowSpec\x12\x31\n\x08template\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\x12\x36\n\rsub_workflows\x18\x02 \x03(\x0b\x32\x1f.flyteidl.core.WorkflowTemplate\x12=\n\x12\x65ntity_description\x18\x03 \x01(\x0b\x32!.flyteidl.admin.EntityDescription\"\x84\x01\n\x0fWorkflowClosure\x12\x41\n\x11\x63ompiled_workflow\x18\x01 \x01(\x0b\x32&.flyteidl.core.CompiledWorkflowClosure\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_core_dot_compiler__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_workflow__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_entity__description__pb2.DESCRIPTOR,])
 
 
 
@@ -64,8 +65,8 @@ _WORKFLOWCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=174,
-  serialized_end=280,
+  serialized_start=215,
+  serialized_end=321,
 )
 
 
@@ -88,8 +89,8 @@ _WORKFLOWCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=306,
+  serialized_start=323,
+  serialized_end=347,
 )
 
 
@@ -126,8 +127,8 @@ _WORKFLOW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=407,
+  serialized_start=349,
+  serialized_end=448,
 )
 
 
@@ -164,8 +165,8 @@ _WORKFLOWLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=409,
-  serialized_end=483,
+  serialized_start=450,
+  serialized_end=524,
 )
 
 
@@ -190,6 +191,13 @@ _WORKFLOWSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='entity_description', full_name='flyteidl.admin.WorkflowSpec.entity_description', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -202,8 +210,8 @@ _WORKFLOWSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=606,
+  serialized_start=527,
+  serialized_end=711,
 )
 
 
@@ -240,8 +248,8 @@ _WORKFLOWCLOSURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=741,
+  serialized_start=714,
+  serialized_end=846,
 )
 
 _WORKFLOWCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
@@ -251,6 +259,7 @@ _WORKFLOW.fields_by_name['closure'].message_type = _WORKFLOWCLOSURE
 _WORKFLOWLIST.fields_by_name['workflows'].message_type = _WORKFLOW
 _WORKFLOWSPEC.fields_by_name['template'].message_type = flyteidl_dot_core_dot_workflow__pb2._WORKFLOWTEMPLATE
 _WORKFLOWSPEC.fields_by_name['sub_workflows'].message_type = flyteidl_dot_core_dot_workflow__pb2._WORKFLOWTEMPLATE
+_WORKFLOWSPEC.fields_by_name['entity_description'].message_type = flyteidl_dot_admin_dot_entity__description__pb2._ENTITYDESCRIPTION
 _WORKFLOWCLOSURE.fields_by_name['compiled_workflow'].message_type = flyteidl_dot_core_dot_compiler__pb2._COMPILEDWORKFLOWCLOSURE
 _WORKFLOWCLOSURE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['WorkflowCreateRequest'] = _WORKFLOWCREATEREQUEST

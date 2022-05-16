@@ -35,4 +35,8 @@ type AdminExecutionSpec struct {
 	ClusterAssignment *AdminClusterAssignment `json:"cluster_assignment,omitempty"`
 	// Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field.
 	Interruptible bool `json:"interruptible,omitempty"`
+	// One-liner overview of the execution.
+	Description string `json:"description,omitempty"`
+	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.
+	Tags []string `json:"tags,omitempty"`
 }

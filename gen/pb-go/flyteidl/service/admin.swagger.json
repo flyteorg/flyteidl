@@ -447,6 +447,69 @@
         ]
       }
     },
+    "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}": {
+      "get": {
+        "summary": "Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.",
+        "description": "Retrieve an existing entity description.",
+        "operationId": "GetDescription",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminEntityDescription"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN",
+              "DATASET"
+            ],
+            "default": "UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/events/nodes": {
       "post": {
         "summary": "Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.",
@@ -3002,6 +3065,17 @@
       "description": "- UPLOAD_ON_EXIT: All data will be uploaded after the main container exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references will be written",
       "title": "Mode to use for uploading"
     },
+    "LongDescriptionDescriptionFormat": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "MARKDOWN",
+        "HTML",
+        "RST"
+      ],
+      "default": "UNKNOWN",
+      "title": "- RST: python default documentation - comments is rst"
+    },
     "PluginOverrideMissingPluginBehavior": {
       "type": "string",
       "enum": [
@@ -3296,6 +3370,35 @@
       },
       "description": "Defines an email notification specification."
     },
+    "adminEntityDescription": {
+      "type": "object",
+      "properties": {
+        "short_description": {
+          "type": "string",
+          "description": "One-liner overview of the entity."
+        },
+        "long_description": {
+          "$ref": "#/definitions/adminLongDescription",
+          "description": "Full user description with formatting preserved."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
+        },
+        "labels": {
+          "$ref": "#/definitions/adminLabels",
+          "description": "User-defined free-form key-value pair attributes. These are arbitrary\nand can be used for searching, filtering and discovering entities."
+        },
+        "source": {
+          "$ref": "#/definitions/adminSourceCode",
+          "description": "Optional link to source code used to define this entity."
+        }
+      },
+      "description": "EntityDescription contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
+    },
     "adminExecution": {
       "type": "object",
       "properties": {
@@ -3582,6 +3685,17 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "description": {
+          "type": "string",
+          "description": "One-liner overview of the execution."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -3847,6 +3961,10 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "entity_description": {
+          "$ref": "#/definitions/adminEntityDescription",
+          "description": "EntityDescription encapsulates all the detailed documentation for the launch plan."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -3903,6 +4021,28 @@
         }
       },
       "title": "Input/output data can represented by actual values or a link to where values are stored"
+    },
+    "adminLongDescription": {
+      "type": "object",
+      "properties": {
+        "values": {
+          "type": "string",
+          "title": "long description - no more than 4KB"
+        },
+        "uri": {
+          "type": "string",
+          "title": "if the description sizes exceed some threshold we can offload the entire\ndescription proto altogether to an external data store, like S3 rather than store inline in the db"
+        },
+        "long_format": {
+          "$ref": "#/definitions/LongDescriptionDescriptionFormat",
+          "title": "format of the long description"
+        },
+        "icon_link": {
+          "type": "string",
+          "title": "Optional link to an icon for the entity"
+        }
+      },
+      "description": "Full user description with formatting preserved. This can be rendered\nby clients, such as the console or command line tools with in-tact\nformatting."
     },
     "adminMatchableAttributesConfiguration": {
       "type": "object",
@@ -4319,6 +4459,13 @@
         },
         "state": {
           "$ref": "#/definitions/ProjectProjectState"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "Top-level namespace used to classify different entities like workflows and executions."
@@ -4507,6 +4654,37 @@
         }
       },
       "description": "Specifies sort ordering in a list request."
+    },
+    "adminSourceCode": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "string",
+          "title": "File where the code is located"
+        },
+        "line_number": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Line number where the task definition, workflow definition, etc starts at"
+        },
+        "repo": {
+          "type": "string",
+          "title": "git repository"
+        },
+        "branch": {
+          "type": "string",
+          "title": "branch of the repository"
+        },
+        "link": {
+          "type": "string",
+          "title": "link to the original repository"
+        },
+        "language": {
+          "type": "string",
+          "title": "language of the code"
+        }
+      },
+      "title": "Link to source code used to define this entity"
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -4745,6 +4923,10 @@
         "template": {
           "$ref": "#/definitions/coreTaskTemplate",
           "description": "Template of the task that encapsulates all the metadata of the task."
+        },
+        "entity_description": {
+          "$ref": "#/definitions/adminEntityDescription",
+          "description": "EntityDescription encapsulates all the detailed documentation for the task."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5011,6 +5193,10 @@
             "$ref": "#/definitions/coreWorkflowTemplate"
           },
           "description": "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the\npropeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out\nto Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered."
+        },
+        "entity_description": {
+          "$ref": "#/definitions/adminEntityDescription",
+          "description": "EntityDescription encapsulates all the detailed documentation for the workflow."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."

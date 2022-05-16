@@ -726,6 +726,120 @@ Sort.Direction
 
 
 
+.. _ref_flyteidl/admin/entity_description.proto:
+
+flyteidl/admin/entity_description.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.EntityDescription:
+
+EntityDescription
+------------------------------------------------------------------
+
+EntityDescription contains detailed description for the task/workflow/launch plan.
+Documentation could provide insight into the algorithms, business use case, etc.
+
+
+
+.. csv-table:: EntityDescription type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
+   "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
+   "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities."
+   "source", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LongDescription:
+
+LongDescription
+------------------------------------------------------------------
+
+Full user description with formatting preserved. This can be rendered
+by clients, such as the console or command line tools with in-tact
+formatting.
+
+
+
+.. csv-table:: LongDescription type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "values", ":ref:`ref_string`", "", "long description - no more than 4KB"
+   "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
+   "long_format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "format of the long description"
+   "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SourceCode:
+
+SourceCode
+------------------------------------------------------------------
+
+Link to source code used to define this entity
+
+
+
+.. csv-table:: SourceCode type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "file", ":ref:`ref_string`", "", "File where the code is located"
+   "line_number", ":ref:`ref_uint32`", "", "Line number where the task definition, workflow definition, etc starts at"
+   "repo", ":ref:`ref_string`", "", "git repository"
+   "branch", ":ref:`ref_string`", "", "branch of the repository"
+   "link", ":ref:`ref_string`", "", "link to the original repository"
+   "language", ":ref:`ref_string`", "", "language of the code"
+
+
+
+
+
+ <!-- end messages -->
+
+
+
+.. _ref_flyteidl.admin.LongDescription.DescriptionFormat:
+
+LongDescription.DescriptionFormat
+------------------------------------------------------------------
+
+
+
+.. csv-table:: Enum LongDescription.DescriptionFormat values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "UNKNOWN", "0", ""
+   "MARKDOWN", "1", ""
+   "HTML", "2", ""
+   "RST", "3", "python default documentation - comments is rst"
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+
 .. _ref_flyteidl/admin/event.proto:
 
 flyteidl/admin/event.proto
@@ -1180,6 +1294,8 @@ of an execution as it progresses across phase changes.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
+   "description", ":ref:`ref_string`", "", "One-liner overview of the execution."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
 
@@ -1708,6 +1824,7 @@ User-provided launch plan definition and configuration values.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
+   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the launch plan."
 
 
 
@@ -2546,6 +2663,7 @@ Top-level namespace used to classify different entities like workflows and execu
    "description", ":ref:`ref_string`", "", ""
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Leverage Labels from flyteidel.admin.common.proto to tag projects with ownership information."
    "state", ":ref:`ref_flyteidl.admin.Project.ProjectState`", "", ""
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
 
@@ -3074,6 +3192,7 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
+   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the task."
 
 
 
@@ -3491,6 +3610,7 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
+   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the workflow."
 
 
 

@@ -383,6 +383,28 @@ class Project final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Domain >&
       domains() const;
 
+  // repeated string tags = 7;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 7;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // string id = 1;
   void clear_id();
   static const int kIdFieldNumber = 1;
@@ -446,6 +468,7 @@ class Project final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Domain > domains_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr description_;
@@ -1431,6 +1454,75 @@ inline void Project::set_state(::flyteidl::admin::Project_ProjectState value) {
   
   state_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.Project.state)
+}
+
+// repeated string tags = 7;
+inline int Project::tags_size() const {
+  return tags_.size();
+}
+inline void Project::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Project::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Project.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Project::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Project.tags)
+  return tags_.Mutable(index);
+}
+inline void Project::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Project.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Project::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Project.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Project::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Project.tags)
+}
+inline void Project::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Project.tags)
+}
+inline ::std::string* Project::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.Project.tags)
+  return tags_.Add();
+}
+inline void Project::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.Project.tags)
+}
+#if LANG_CXX11
+inline void Project::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.Project.tags)
+}
+#endif
+inline void Project::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.Project.tags)
+}
+inline void Project::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.Project.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+Project::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.Project.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+Project::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.Project.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

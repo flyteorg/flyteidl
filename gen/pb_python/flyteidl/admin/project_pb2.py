@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\xfe\x01\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12\x33\n\x05state\x18\x06 \x01(\x0e\x32$.flyteidl.admin.Project.ProjectState\">\n\x0cProjectState\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\x0c\n\x08\x41RCHIVED\x10\x01\x12\x14\n\x10SYSTEM_GENERATED\x10\x02\"D\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\x12\r\n\x05token\x18\x02 \x01(\t\"j\n\x12ProjectListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\x12%\n\x07sort_by\x18\x04 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponse\"\x17\n\x15ProjectUpdateResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/admin/project.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\"\"\n\x06\x44omain\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8c\x02\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x07\x64omains\x18\x03 \x03(\x0b\x32\x16.flyteidl.admin.Domain\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12\x33\n\x05state\x18\x06 \x01(\x0e\x32$.flyteidl.admin.Project.ProjectState\x12\x0c\n\x04tags\x18\x07 \x03(\t\">\n\x0cProjectState\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\x0c\n\x08\x41RCHIVED\x10\x01\x12\x14\n\x10SYSTEM_GENERATED\x10\x02\"D\n\x08Projects\x12)\n\x08projects\x18\x01 \x03(\x0b\x32\x17.flyteidl.admin.Project\x12\r\n\x05token\x18\x02 \x01(\t\"j\n\x12ProjectListRequest\x12\r\n\x05limit\x18\x01 \x01(\r\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x01(\t\x12%\n\x07sort_by\x18\x04 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"B\n\x16ProjectRegisterRequest\x12(\n\x07project\x18\x01 \x01(\x0b\x32\x17.flyteidl.admin.Project\"\x19\n\x17ProjectRegisterResponse\"\x17\n\x15ProjectUpdateResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _PROJECT_PROJECTSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=306,
-  serialized_end=368,
+  serialized_start=320,
+  serialized_end=382,
 )
 _sym_db.RegisterEnumDescriptor(_PROJECT_PROJECTSTATE)
 
@@ -141,6 +141,13 @@ _PROJECT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='flyteidl.admin.Project.tags', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -155,7 +162,7 @@ _PROJECT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=114,
-  serialized_end=368,
+  serialized_end=382,
 )
 
 
@@ -192,8 +199,8 @@ _PROJECTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=370,
-  serialized_end=438,
+  serialized_start=384,
+  serialized_end=452,
 )
 
 
@@ -244,8 +251,8 @@ _PROJECTLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=440,
-  serialized_end=546,
+  serialized_start=454,
+  serialized_end=560,
 )
 
 
@@ -275,8 +282,8 @@ _PROJECTREGISTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=548,
-  serialized_end=614,
+  serialized_start=562,
+  serialized_end=628,
 )
 
 
@@ -299,8 +306,8 @@ _PROJECTREGISTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=616,
-  serialized_end=641,
+  serialized_start=630,
+  serialized_end=655,
 )
 
 
@@ -323,8 +330,8 @@ _PROJECTUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=666,
+  serialized_start=657,
+  serialized_end=680,
 )
 
 _PROJECT.fields_by_name['domains'].message_type = _DOMAIN

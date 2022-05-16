@@ -17,6 +17,7 @@ import "flyteidl/admin/node_execution.proto";
 import "flyteidl/admin/task_execution.proto";
 import "flyteidl/admin/version.proto";
 import "flyteidl/admin/common.proto";
+import "flyteidl/admin/entity_description.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
 // The following defines an RPC service that is also served over HTTP via grpc-gateway.
@@ -571,5 +572,14 @@ service AdminService {
       };
   }
 
+  // Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.
+  rpc GetDescription (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.EntityDescription) {
+    option (google.api.http) = {
+      get: "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieve an existing entity description."
+    };
+  }
 }
 

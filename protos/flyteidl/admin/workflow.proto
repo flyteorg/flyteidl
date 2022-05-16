@@ -7,6 +7,7 @@ import "flyteidl/core/compiler.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/workflow.proto";
 import "google/protobuf/timestamp.proto";
+import "flyteidl/admin/entity_description.proto";
 
 // Represents a request structure to create a revision of a workflow.
 // See :ref:`ref_flyteidl.admin.Workflow` for more details
@@ -55,6 +56,9 @@ message WorkflowSpec {
     // propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out
     // to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
     repeated core.WorkflowTemplate sub_workflows = 2;
+
+    // EntityDescription encapsulates all the detailed documentation for the workflow.
+    EntityDescription entity_description = 3;
 }
 
 // A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.

@@ -3495,6 +3495,31 @@ public final class WorkflowOuterClass {
      */
     flyteidl.core.Workflow.WorkflowTemplateOrBuilder getSubWorkflowsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    boolean hasEntityDescription();
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription();
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder();
   }
   /**
    * <pre>
@@ -3560,6 +3585,19 @@ public final class WorkflowOuterClass {
               }
               subWorkflows_.add(
                   input.readMessage(flyteidl.core.Workflow.WorkflowTemplate.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder subBuilder = null;
+              if (entityDescription_ != null) {
+                subBuilder = entityDescription_.toBuilder();
+              }
+              entityDescription_ = input.readMessage(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(entityDescription_);
+                entityDescription_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3696,6 +3734,39 @@ public final class WorkflowOuterClass {
       return subWorkflows_.get(index);
     }
 
+    public static final int ENTITY_DESCRIPTION_FIELD_NUMBER = 3;
+    private flyteidl.admin.EntityDescriptionOuterClass.EntityDescription entityDescription_;
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    public boolean hasEntityDescription() {
+      return entityDescription_ != null;
+    }
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription() {
+      return entityDescription_ == null ? flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+    }
+    /**
+     * <pre>
+     * EntityDescription encapsulates all the detailed documentation for the workflow.
+     * </pre>
+     *
+     * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+     */
+    public flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder() {
+      return getEntityDescription();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3716,6 +3787,9 @@ public final class WorkflowOuterClass {
       for (int i = 0; i < subWorkflows_.size(); i++) {
         output.writeMessage(2, subWorkflows_.get(i));
       }
+      if (entityDescription_ != null) {
+        output.writeMessage(3, getEntityDescription());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3732,6 +3806,10 @@ public final class WorkflowOuterClass {
       for (int i = 0; i < subWorkflows_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, subWorkflows_.get(i));
+      }
+      if (entityDescription_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getEntityDescription());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3755,6 +3833,11 @@ public final class WorkflowOuterClass {
       }
       if (!getSubWorkflowsList()
           .equals(other.getSubWorkflowsList())) return false;
+      if (hasEntityDescription() != other.hasEntityDescription()) return false;
+      if (hasEntityDescription()) {
+        if (!getEntityDescription()
+            .equals(other.getEntityDescription())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3773,6 +3856,10 @@ public final class WorkflowOuterClass {
       if (getSubWorkflowsCount() > 0) {
         hash = (37 * hash) + SUB_WORKFLOWS_FIELD_NUMBER;
         hash = (53 * hash) + getSubWorkflowsList().hashCode();
+      }
+      if (hasEntityDescription()) {
+        hash = (37 * hash) + ENTITY_DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getEntityDescription().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3924,6 +4011,12 @@ public final class WorkflowOuterClass {
         } else {
           subWorkflowsBuilder_.clear();
         }
+        if (entityDescriptionBuilder_ == null) {
+          entityDescription_ = null;
+        } else {
+          entityDescription_ = null;
+          entityDescriptionBuilder_ = null;
+        }
         return this;
       }
 
@@ -3965,6 +4058,11 @@ public final class WorkflowOuterClass {
           result.subWorkflows_ = subWorkflows_;
         } else {
           result.subWorkflows_ = subWorkflowsBuilder_.build();
+        }
+        if (entityDescriptionBuilder_ == null) {
+          result.entityDescription_ = entityDescription_;
+        } else {
+          result.entityDescription_ = entityDescriptionBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -4043,6 +4141,9 @@ public final class WorkflowOuterClass {
               subWorkflowsBuilder_.addAllMessages(other.subWorkflows_);
             }
           }
+        }
+        if (other.hasEntityDescription()) {
+          mergeEntityDescription(other.getEntityDescription());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4573,6 +4674,159 @@ public final class WorkflowOuterClass {
           subWorkflows_ = null;
         }
         return subWorkflowsBuilder_;
+      }
+
+      private flyteidl.admin.EntityDescriptionOuterClass.EntityDescription entityDescription_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder> entityDescriptionBuilder_;
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public boolean hasEntityDescription() {
+        return entityDescriptionBuilder_ != null || entityDescription_ != null;
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription() {
+        if (entityDescriptionBuilder_ == null) {
+          return entityDescription_ == null ? flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+        } else {
+          return entityDescriptionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public Builder setEntityDescription(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription value) {
+        if (entityDescriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entityDescription_ = value;
+          onChanged();
+        } else {
+          entityDescriptionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public Builder setEntityDescription(
+          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder builderForValue) {
+        if (entityDescriptionBuilder_ == null) {
+          entityDescription_ = builderForValue.build();
+          onChanged();
+        } else {
+          entityDescriptionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public Builder mergeEntityDescription(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription value) {
+        if (entityDescriptionBuilder_ == null) {
+          if (entityDescription_ != null) {
+            entityDescription_ =
+              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.newBuilder(entityDescription_).mergeFrom(value).buildPartial();
+          } else {
+            entityDescription_ = value;
+          }
+          onChanged();
+        } else {
+          entityDescriptionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public Builder clearEntityDescription() {
+        if (entityDescriptionBuilder_ == null) {
+          entityDescription_ = null;
+          onChanged();
+        } else {
+          entityDescription_ = null;
+          entityDescriptionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder getEntityDescriptionBuilder() {
+        
+        onChanged();
+        return getEntityDescriptionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder() {
+        if (entityDescriptionBuilder_ != null) {
+          return entityDescriptionBuilder_.getMessageOrBuilder();
+        } else {
+          return entityDescription_ == null ?
+              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+        }
+      }
+      /**
+       * <pre>
+       * EntityDescription encapsulates all the detailed documentation for the workflow.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.EntityDescription entity_description = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder> 
+          getEntityDescriptionFieldBuilder() {
+        if (entityDescriptionBuilder_ == null) {
+          entityDescriptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder>(
+                  getEntityDescription(),
+                  getParentForChildren(),
+                  isClean());
+          entityDescription_ = null;
+        }
+        return entityDescriptionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5598,23 +5852,25 @@ public final class WorkflowOuterClass {
       "l.admin\032\034flyteidl/core/compiler.proto\032\036f" +
       "lyteidl/core/identifier.proto\032\034flyteidl/" +
       "core/workflow.proto\032\037google/protobuf/tim" +
-      "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n" +
-      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004" +
-      "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec" +
-      "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n" +
-      "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow" +
-      "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003" +
-      "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 " +
-      "\001(\t\"y\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037." +
-      "flyteidl.core.WorkflowTemplate\0226\n\rsub_wo" +
-      "rkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowTe" +
-      "mplate\"\204\001\n\017WorkflowClosure\022A\n\021compiled_w" +
-      "orkflow\030\001 \001(\0132&.flyteidl.core.CompiledWo" +
-      "rkflowClosure\022.\n\ncreated_at\030\002 \001(\0132\032.goog" +
-      "le.protobuf.TimestampB7Z5github.com/flyt" +
-      "eorg/flyteidl/gen/pb-go/flyteidl/adminb\006" +
-      "proto3"
+      "estamp.proto\032\'flyteidl/admin/entity_desc" +
+      "ription.proto\"j\n\025WorkflowCreateRequest\022%" +
+      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n" +
+      "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe" +
+      "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
+      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
+      "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
+      "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 " +
+      "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002" +
+      " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132" +
+      "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_" +
+      "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow" +
+      "Template\022=\n\022entity_description\030\003 \001(\0132!.f" +
+      "lyteidl.admin.EntityDescription\"\204\001\n\017Work" +
+      "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&" +
+      ".flyteidl.core.CompiledWorkflowClosure\022." +
+      "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim" +
+      "estampB7Z5github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5631,6 +5887,7 @@ public final class WorkflowOuterClass {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Workflow.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
+          flyteidl.admin.EntityDescriptionOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5661,7 +5918,7 @@ public final class WorkflowOuterClass {
     internal_static_flyteidl_admin_WorkflowSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowSpec_descriptor,
-        new java.lang.String[] { "Template", "SubWorkflows", });
+        new java.lang.String[] { "Template", "SubWorkflows", "EntityDescription", });
     internal_static_flyteidl_admin_WorkflowClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_WorkflowClosure_fieldAccessorTable = new
@@ -5672,6 +5929,7 @@ public final class WorkflowOuterClass {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Workflow.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    flyteidl.admin.EntityDescriptionOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

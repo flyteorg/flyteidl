@@ -8603,6 +8603,245 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an EntityDescription. */
+        interface IEntityDescription {
+
+            /** EntityDescription shortDescription */
+            shortDescription?: (string|null);
+
+            /** EntityDescription longDescription */
+            longDescription?: (flyteidl.admin.ILongDescription|null);
+
+            /** EntityDescription tags */
+            tags?: (string[]|null);
+
+            /** EntityDescription labels */
+            labels?: (flyteidl.admin.ILabels|null);
+
+            /** EntityDescription source */
+            source?: (flyteidl.admin.ISourceCode|null);
+        }
+
+        /** Represents an EntityDescription. */
+        class EntityDescription implements IEntityDescription {
+
+            /**
+             * Constructs a new EntityDescription.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IEntityDescription);
+
+            /** EntityDescription shortDescription. */
+            public shortDescription: string;
+
+            /** EntityDescription longDescription. */
+            public longDescription?: (flyteidl.admin.ILongDescription|null);
+
+            /** EntityDescription tags. */
+            public tags: string[];
+
+            /** EntityDescription labels. */
+            public labels?: (flyteidl.admin.ILabels|null);
+
+            /** EntityDescription source. */
+            public source?: (flyteidl.admin.ISourceCode|null);
+
+            /**
+             * Creates a new EntityDescription instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns EntityDescription instance
+             */
+            public static create(properties?: flyteidl.admin.IEntityDescription): flyteidl.admin.EntityDescription;
+
+            /**
+             * Encodes the specified EntityDescription message. Does not implicitly {@link flyteidl.admin.EntityDescription.verify|verify} messages.
+             * @param message EntityDescription message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IEntityDescription, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an EntityDescription message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns EntityDescription
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.EntityDescription;
+
+            /**
+             * Verifies an EntityDescription message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LongDescription. */
+        interface ILongDescription {
+
+            /** LongDescription values */
+            values?: (string|null);
+
+            /** LongDescription uri */
+            uri?: (string|null);
+
+            /** LongDescription longFormat */
+            longFormat?: (flyteidl.admin.LongDescription.DescriptionFormat|null);
+
+            /** LongDescription iconLink */
+            iconLink?: (string|null);
+        }
+
+        /** Represents a LongDescription. */
+        class LongDescription implements ILongDescription {
+
+            /**
+             * Constructs a new LongDescription.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILongDescription);
+
+            /** LongDescription values. */
+            public values: string;
+
+            /** LongDescription uri. */
+            public uri: string;
+
+            /** LongDescription longFormat. */
+            public longFormat: flyteidl.admin.LongDescription.DescriptionFormat;
+
+            /** LongDescription iconLink. */
+            public iconLink: string;
+
+            /**
+             * Creates a new LongDescription instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LongDescription instance
+             */
+            public static create(properties?: flyteidl.admin.ILongDescription): flyteidl.admin.LongDescription;
+
+            /**
+             * Encodes the specified LongDescription message. Does not implicitly {@link flyteidl.admin.LongDescription.verify|verify} messages.
+             * @param message LongDescription message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILongDescription, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LongDescription message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LongDescription
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LongDescription;
+
+            /**
+             * Verifies a LongDescription message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace LongDescription {
+
+            /** DescriptionFormat enum. */
+            enum DescriptionFormat {
+                UNKNOWN = 0,
+                MARKDOWN = 1,
+                HTML = 2,
+                RST = 3
+            }
+        }
+
+        /** Properties of a SourceCode. */
+        interface ISourceCode {
+
+            /** SourceCode file */
+            file?: (string|null);
+
+            /** SourceCode lineNumber */
+            lineNumber?: (number|null);
+
+            /** SourceCode repo */
+            repo?: (string|null);
+
+            /** SourceCode branch */
+            branch?: (string|null);
+
+            /** SourceCode link */
+            link?: (string|null);
+
+            /** SourceCode language */
+            language?: (string|null);
+        }
+
+        /** Represents a SourceCode. */
+        class SourceCode implements ISourceCode {
+
+            /**
+             * Constructs a new SourceCode.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISourceCode);
+
+            /** SourceCode file. */
+            public file: string;
+
+            /** SourceCode lineNumber. */
+            public lineNumber: number;
+
+            /** SourceCode repo. */
+            public repo: string;
+
+            /** SourceCode branch. */
+            public branch: string;
+
+            /** SourceCode link. */
+            public link: string;
+
+            /** SourceCode language. */
+            public language: string;
+
+            /**
+             * Creates a new SourceCode instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SourceCode instance
+             */
+            public static create(properties?: flyteidl.admin.ISourceCode): flyteidl.admin.SourceCode;
+
+            /**
+             * Encodes the specified SourceCode message. Does not implicitly {@link flyteidl.admin.SourceCode.verify|verify} messages.
+             * @param message SourceCode message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISourceCode, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SourceCode message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SourceCode
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SourceCode;
+
+            /**
+             * Verifies a SourceCode message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of an EventErrorAlreadyInTerminalState. */
         interface IEventErrorAlreadyInTerminalState {
 
@@ -10005,6 +10244,12 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec description */
+            description?: (string|null);
+
+            /** ExecutionSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10057,6 +10302,12 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec description. */
+            public description: string;
+
+            /** ExecutionSpec tags. */
+            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -10828,6 +11079,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec entityDescription */
+            entityDescription?: (flyteidl.admin.IEntityDescription|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -10880,6 +11134,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec entityDescription. */
+            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -13226,6 +13483,9 @@ export namespace flyteidl {
 
             /** Project state */
             state?: (flyteidl.admin.Project.ProjectState|null);
+
+            /** Project tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a Project. */
@@ -13254,6 +13514,9 @@ export namespace flyteidl {
 
             /** Project state. */
             public state: flyteidl.admin.Project.ProjectState;
+
+            /** Project tags. */
+            public tags: string[];
 
             /**
              * Creates a new Project instance using the specified properties.
@@ -14183,6 +14446,9 @@ export namespace flyteidl {
 
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskSpec entityDescription */
+            entityDescription?: (flyteidl.admin.IEntityDescription|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14196,6 +14462,9 @@ export namespace flyteidl {
 
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskSpec entityDescription. */
+            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15189,6 +15458,9 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
+
+            /** WorkflowSpec entityDescription */
+            entityDescription?: (flyteidl.admin.IEntityDescription|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15205,6 +15477,9 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
+
+            /** WorkflowSpec entityDescription. */
+            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -16384,6 +16659,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public getVersion(request: flyteidl.admin.IGetVersionRequest): Promise<flyteidl.admin.GetVersionResponse>;
+
+            /**
+             * Calls GetDescription.
+             * @param request ObjectGetRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and EntityDescription
+             */
+            public getDescription(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetDescriptionCallback): void;
+
+            /**
+             * Calls GetDescription.
+             * @param request ObjectGetRequest message or plain object
+             * @returns Promise
+             */
+            public getDescription(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.EntityDescription>;
         }
 
         namespace AdminService {
@@ -16716,6 +17005,13 @@ export namespace flyteidl {
              * @param [response] GetVersionResponse
              */
             type GetVersionCallback = (error: (Error|null), response?: flyteidl.admin.GetVersionResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getDescription}.
+             * @param error Error, if any
+             * @param [response] EntityDescription
+             */
+            type GetDescriptionCallback = (error: (Error|null), response?: flyteidl.admin.EntityDescription) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

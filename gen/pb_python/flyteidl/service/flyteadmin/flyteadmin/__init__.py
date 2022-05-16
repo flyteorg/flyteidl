@@ -32,6 +32,7 @@ from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterReso
 from flyteadmin.models.admin_cron_schedule import AdminCronSchedule
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
+from flyteadmin.models.admin_entity_description import AdminEntityDescription
 from flyteadmin.models.admin_execution import AdminExecution
 from flyteadmin.models.admin_execution_closure import AdminExecutionClosure
 from flyteadmin.models.admin_execution_cluster_label import AdminExecutionClusterLabel
@@ -65,6 +66,7 @@ from flyteadmin.models.admin_launch_plan_update_request import AdminLaunchPlanUp
 from flyteadmin.models.admin_launch_plan_update_response import AdminLaunchPlanUpdateResponse
 from flyteadmin.models.admin_list_matchable_attributes_response import AdminListMatchableAttributesResponse
 from flyteadmin.models.admin_literal_map_blob import AdminLiteralMapBlob
+from flyteadmin.models.admin_long_description import AdminLongDescription
 from flyteadmin.models.admin_matchable_attributes_configuration import AdminMatchableAttributesConfiguration
 from flyteadmin.models.admin_matchable_resource import AdminMatchableResource
 from flyteadmin.models.admin_matching_attributes import AdminMatchingAttributes
@@ -104,6 +106,7 @@ from flyteadmin.models.admin_selector import AdminSelector
 from flyteadmin.models.admin_selector_operator import AdminSelectorOperator
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
+from flyteadmin.models.admin_source_code import AdminSourceCode
 from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
 from flyteadmin.models.admin_task import AdminTask
 from flyteadmin.models.admin_task_closure import AdminTaskClosure
@@ -252,6 +255,7 @@ from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTask
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata
 from flyteadmin.models.io_strategy_download_mode import IOStrategyDownloadMode
 from flyteadmin.models.io_strategy_upload_mode import IOStrategyUploadMode
+from flyteadmin.models.long_description_description_format import LongDescriptionDescriptionFormat
 from flyteadmin.models.plugin_override_missing_plugin_behavior import PluginOverrideMissingPluginBehavior
 from flyteadmin.models.project_project_state import ProjectProjectState
 from flyteadmin.models.protobuf_list_value import ProtobufListValue

@@ -43,6 +43,7 @@
 #include "flyteidl/admin/task_execution.pb.h"
 #include "flyteidl/admin/version.pb.h"
 #include "flyteidl/admin/common.pb.h"
+#include "flyteidl/admin/entity_description.pb.h"
 #include "protoc-gen-swagger/options/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>

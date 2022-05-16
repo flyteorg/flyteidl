@@ -2,6 +2,7 @@
 import grpc
 
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+from flyteidl.admin import entity_description_pb2 as flyteidl_dot_admin_dot_entity__description__pb2
 from flyteidl.admin import event_pb2 as flyteidl_dot_admin_dot_event__pb2
 from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
 from flyteidl.admin import launch_plan_pb2 as flyteidl_dot_admin_dot_launch__plan__pb2
@@ -261,6 +262,11 @@ class AdminServiceStub(object):
         '/flyteidl.service.AdminService/GetVersion',
         request_serializer=flyteidl_dot_admin_dot_version__pb2.GetVersionRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_version__pb2.GetVersionResponse.FromString,
+        )
+    self.GetDescription = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetDescription',
+        request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_entity__description__pb2.EntityDescription.FromString,
         )
 
 
@@ -604,6 +610,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetDescription(self, request, context):
+    """Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -841,6 +854,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.GetVersion,
           request_deserializer=flyteidl_dot_admin_dot_version__pb2.GetVersionRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_version__pb2.GetVersionResponse.SerializeToString,
+      ),
+      'GetDescription': grpc.unary_unary_rpc_method_handler(
+          servicer.GetDescription,
+          request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_entity__description__pb2.EntityDescription.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

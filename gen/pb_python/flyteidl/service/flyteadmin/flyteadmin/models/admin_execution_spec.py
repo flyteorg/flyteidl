@@ -56,7 +56,9 @@ class AdminExecutionSpec(object):
         'max_parallelism': 'int',
         'raw_output_data_config': 'AdminRawOutputDataConfig',
         'cluster_assignment': 'AdminClusterAssignment',
-        'interruptible': 'bool'
+        'interruptible': 'bool',
+        'description': 'str',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
@@ -73,10 +75,12 @@ class AdminExecutionSpec(object):
         'max_parallelism': 'max_parallelism',
         'raw_output_data_config': 'raw_output_data_config',
         'cluster_assignment': 'cluster_assignment',
-        'interruptible': 'interruptible'
+        'interruptible': 'interruptible',
+        'description': 'description',
+        'tags': 'tags'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None, description=None, tags=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -93,6 +97,8 @@ class AdminExecutionSpec(object):
         self._raw_output_data_config = None
         self._cluster_assignment = None
         self._interruptible = None
+        self._description = None
+        self._tags = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -123,6 +129,10 @@ class AdminExecutionSpec(object):
             self.cluster_assignment = cluster_assignment
         if interruptible is not None:
             self.interruptible = interruptible
+        if description is not None:
+            self.description = description
+        if tags is not None:
+            self.tags = tags
 
     @property
     def launch_plan(self):
@@ -437,6 +447,52 @@ class AdminExecutionSpec(object):
         """
 
         self._interruptible = interruptible
+
+    @property
+    def description(self):
+        """Gets the description of this AdminExecutionSpec.  # noqa: E501
+
+        One-liner overview of the execution.  # noqa: E501
+
+        :return: The description of this AdminExecutionSpec.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this AdminExecutionSpec.
+
+        One-liner overview of the execution.  # noqa: E501
+
+        :param description: The description of this AdminExecutionSpec.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def tags(self):
+        """Gets the tags of this AdminExecutionSpec.  # noqa: E501
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+
+        :return: The tags of this AdminExecutionSpec.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this AdminExecutionSpec.
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+
+        :param tags: The tags of this AdminExecutionSpec.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

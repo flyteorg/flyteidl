@@ -372,6 +372,16 @@ func (m *TaskSpec) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetEntityDescription()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskSpecValidationError{
+				field:  "EntityDescription",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

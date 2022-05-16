@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**delete_project_domain_attributes**](docs/AdminServiceApi.md#delete_project_domain_attributes) | **DELETE** /api/v1/project_domain_attributes/{project}/{domain} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**delete_workflow_attributes**](docs/AdminServiceApi.md#delete_workflow_attributes) | **DELETE** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**get_active_launch_plan**](docs/AdminServiceApi.md#get_active_launch_plan) | **GET** /api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name} | Fetch the active version of a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
+*AdminServiceApi* | [**get_description**](docs/AdminServiceApi.md#get_description) | **GET** /api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.EntityDescription&#x60; definition.
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
@@ -134,6 +135,7 @@ Class | Method | HTTP request | Description
  - [AdminCronSchedule](docs/AdminCronSchedule.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
+ - [AdminEntityDescription](docs/AdminEntityDescription.md)
  - [AdminExecution](docs/AdminExecution.md)
  - [AdminExecutionClosure](docs/AdminExecutionClosure.md)
  - [AdminExecutionClusterLabel](docs/AdminExecutionClusterLabel.md)
@@ -167,6 +169,7 @@ Class | Method | HTTP request | Description
  - [AdminLaunchPlanUpdateResponse](docs/AdminLaunchPlanUpdateResponse.md)
  - [AdminListMatchableAttributesResponse](docs/AdminListMatchableAttributesResponse.md)
  - [AdminLiteralMapBlob](docs/AdminLiteralMapBlob.md)
+ - [AdminLongDescription](docs/AdminLongDescription.md)
  - [AdminMatchableAttributesConfiguration](docs/AdminMatchableAttributesConfiguration.md)
  - [AdminMatchableResource](docs/AdminMatchableResource.md)
  - [AdminMatchingAttributes](docs/AdminMatchingAttributes.md)
@@ -206,6 +209,7 @@ Class | Method | HTTP request | Description
  - [AdminSelectorOperator](docs/AdminSelectorOperator.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
+ - [AdminSourceCode](docs/AdminSourceCode.md)
  - [AdminSystemMetadata](docs/AdminSystemMetadata.md)
  - [AdminTask](docs/AdminTask.md)
  - [AdminTaskClosure](docs/AdminTaskClosure.md)
@@ -354,6 +358,7 @@ Class | Method | HTTP request | Description
  - [FlyteidleventWorkflowNodeMetadata](docs/FlyteidleventWorkflowNodeMetadata.md)
  - [IOStrategyDownloadMode](docs/IOStrategyDownloadMode.md)
  - [IOStrategyUploadMode](docs/IOStrategyUploadMode.md)
+ - [LongDescriptionDescriptionFormat](docs/LongDescriptionDescriptionFormat.md)
  - [PluginOverrideMissingPluginBehavior](docs/PluginOverrideMissingPluginBehavior.md)
  - [ProjectProjectState](docs/ProjectProjectState.md)
  - [ProtobufListValue](docs/ProtobufListValue.md)

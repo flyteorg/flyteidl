@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/core/identifier.proto";
+import "flyteidl/admin/common.proto";
+
+// EntityDescription contains detailed description for the task/workflow/launch plan.
+// Documentation could provide insight into the algorithms, business use case, etc.
+message EntityDescription {
+  // One-liner overview of the entity.
+  string short_description = 1;
+  // Full user description with formatting preserved.
+  LongDescription long_description = 2;
+  // User-specified tags. These are arbitrary and can be used for searching
+  // filtering and discovering entities.
+  repeated string tags = 3;
+  // User-defined free-form key-value pair attributes. These are arbitrary
+  // and can be used for searching, filtering and discovering entities.
+  Labels labels = 4;
+  // Optional link to source code used to define this entity.
+  SourceCode source = 5;
+}
+
+// Full user description with formatting preserved. This can be rendered
+// by clients, such as the console or command line tools with in-tact
+// formatting.
+message LongDescription {
+  // long description - no more than 4KB
+  string values = 1;
+  // if the description sizes exceed some threshold we can offload the entire
+  // description proto altogether to an external data store, like S3 rather than store inline in the db
+  string uri = 2;
+
+  enum DescriptionFormat {
+    UNKNOWN = 0;
+    MARKDOWN = 1;
+    HTML = 2;
+    // python default documentation - comments is rst
+    RST = 3;
+  }
+  // format of the long description
+  DescriptionFormat long_format = 3;
+  // Optional link to an icon for the entity
+  string icon_link = 4;
+}
+
+// Link to source code used to define this entity
+message SourceCode {
+  // File where the code is located
+  string file = 1;
+  // Line number where the task definition, workflow definition, etc starts at
+  uint32 line_number = 2;
+  // git repository
+  string repo = 3;
+  // branch of the repository
+  string branch = 4;
+  // link to the original repository
+  string link = 5;
+  // language of the code
+  string language = 6;
+}

@@ -7,6 +7,7 @@ import "flyteidl/core/identifier.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
 import "google/protobuf/timestamp.proto";
+import "flyteidl/admin/entity_description.proto";
 
 // Represents a request structure to create a revision of a task.
 // See :ref:`ref_flyteidl.admin.Task` for more details
@@ -51,6 +52,9 @@ message TaskList {
 message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
+
+    // EntityDescription encapsulates all the detailed documentation for the task.
+    EntityDescription entity_description = 2;
 }
 
 // Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data

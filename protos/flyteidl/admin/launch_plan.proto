@@ -10,6 +10,7 @@ import "flyteidl/core/interface.proto";
 import "flyteidl/core/security.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
+import "flyteidl/admin/entity_description.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
@@ -125,6 +126,9 @@ message LaunchPlanSpec {
     // As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
     // around the bool field.
     google.protobuf.BoolValue interruptible = 19;
+
+    // EntityDescription encapsulates all the detailed documentation for the launch plan.
+    EntityDescription entity_description = 20;
 }
 
 // Values computed by the flyte platform after launch plan registration.
