@@ -21,7 +21,6 @@ const (
 	DefaultClientID  = "flytepropeller"
 )
 
-
 var DefaultClientSecretLocation = filepath.Join(string(filepath.Separator), "etc", "secrets", "client_secret")
 
 //go:generate enumer --type=AuthType -json -yaml -trimprefix=AuthType
