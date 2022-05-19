@@ -1,7 +1,6 @@
 // Initializes an Admin Client that exposes all implemented services by FlyteAdmin server. The library supports different
-// authentication flows (see AuthType). It initializes the grpc connection once and reuses it. The gRPC connection is
-// sticky (it hogs one server and keeps the connection alive). For better load balancing against the server, place a
-// proxy service in between instead.
+// authentication flows (see AuthType). It initializes the grpc connection once and reuses it. A grpc load balancing policy
+// can be configured as well.
 package admin
 
 import (
@@ -70,8 +69,8 @@ type Config struct {
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
 	// available policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
-	// if the value of the Balancer is not found, the grpc client will default to pick_first
-	Balancer string `json:"balancer" pdflag:",Set balancer for grpc client"`
+	// if the value of the LoadBalancingPolicy is not found, the grpc client will default to pick_first
+	LoadBalancingPolicy string `json:"loadBalancingPolicy" pdflag:",Set load balancing policy for grpc client"`
 }
 
 var (
