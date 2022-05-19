@@ -193,7 +193,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 	}
 
 	if cfg.Balancer != "" {
-		// policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
+		// available policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
 		opts = append(opts, grpc.WithDefaultServiceConfig(fmt.Sprintf(`{"loadBalancingPolicy":"%v"}`, cfg.Balancer)))
 	}
 
