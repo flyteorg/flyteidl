@@ -70,6 +70,7 @@ type Config struct {
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
 	// available policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
+	// if the value of the Balancer is not found, the grpc client will default to pick_first
 	Balancer string `json:"balancer" pdflag:",Set balancer for grpc client"`
 }
 
