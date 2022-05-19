@@ -19,7 +19,7 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health/grpc_health_v1"
 
-	_ "google.golang.org/grpc/balancer/grpclb" //nolint
+	_ "google.golang.org/grpc/balancer/grpclb"     //nolint
 	_ "google.golang.org/grpc/balancer/roundrobin" //nolint
 )
 
