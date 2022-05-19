@@ -68,6 +68,8 @@ type Config struct {
 	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
 
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
+
+	Balancer string `json:"balancer" pdflag:",Set balancer for grpc client"`
 }
 
 var (
