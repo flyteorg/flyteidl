@@ -276,33 +276,3 @@ func ExampleClientSetBuilder() {
 	_ = clientSet.AuthMetadataClient()
 	_ = clientSet.IdentityClient()
 }
-
-func TestBalancerConfigs(t *testing.T) {
-	u, _ := url.Parse("localhost:8089")
-	adminServiceConfig := &Config{
-		Endpoint:              config.URL{URL: *u},
-		UseInsecureConnection: true,
-		Balancer:              "round_robin",
-	}
-
-	assert.NoError(t, SetConfig(adminServiceConfig))
-
-	ctx := context.Background()
-	t.Run("legal", func(t *testing.T) {
-		u, err := url.Parse("http://localhost:8089")
-		assert.NoError(t, err)
-		clientSet, err := ClientSetBuilder().WithConfig(&Config{Endpoint: config.URL{URL: *u}}).Build(ctx)
-		assert.NoError(t, err)
-		assert.NotNil(t, clientSet)
-		assert.NotNil(t, clientSet.AdminClient())
-		assert.NotNil(t, clientSet.AuthMetadataClient())
-		assert.NotNil(t, clientSet.IdentityClient())
-		assert.NotNil(t, clientSet.HealthServiceClient())
-	})
-
-	t.Run("legal-from-config", func(t *testing.T) {
-		clientSet, err := initializeClients(ctx, adminServiceConfig, nil)
-		assert.NoError(t, err)
-		assert.NotNil(t, clientSet)
-	})
-}
