@@ -18,6 +18,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health/grpc_health_v1"
+
+	_ "google.golang.org/grpc/balancer/grpclb"
+	_ "google.golang.org/grpc/balancer/roundrobin"
 )
 
 // IDE "Go Generate File". This will create a mocks/AdminServiceClient.go file
