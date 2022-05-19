@@ -69,6 +69,7 @@ type Config struct {
 
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
+	// available policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
 	Balancer string `json:"balancer" pdflag:",Set balancer for grpc client"`
 }
 
