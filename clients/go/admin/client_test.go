@@ -277,13 +277,12 @@ func ExampleClientSetBuilder() {
 	_ = clientSet.IdentityClient()
 }
 
-
 func TestBalancerConfigs(t *testing.T) {
 	u, _ := url.Parse("localhost:8089")
 	adminServiceConfig := &Config{
 		Endpoint:              config.URL{URL: *u},
 		UseInsecureConnection: true,
-		Balancer: 			   "round_robin",
+		Balancer:              "round_robin",
 	}
 
 	assert.NoError(t, SetConfig(adminServiceConfig))
