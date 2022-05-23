@@ -4133,22 +4133,22 @@ public final class Dataproxy {
       "\nexpires_in\030\002 \001(\0132\031.google.protobuf.Dura" +
       "tion\"d\n\036CreateDownloadLocationResponse\022\022" +
       "\n\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032" +
-      ".google.protobuf.Timestamp2\372\003\n\020DataProxy" +
+      ".google.protobuf.Timestamp2\210\004\n\020DataProxy" +
       "Service\022\360\001\n\024CreateUploadLocation\022-.flyte" +
       "idl.service.CreateUploadLocationRequest\032" +
       "..flyteidl.service.CreateUploadLocationR" +
       "esponse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/artif" +
       "act_urn:\001*\222AM\032KCreates a write-only http" +
       " location that is accessible for tasks a" +
-      "t runtime.\022\362\001\n\026CreateDownloadLocation\022/." +
+      "t runtime.\022\200\002\n\026CreateDownloadLocation\022/." +
       "flyteidl.service.CreateDownloadLocationR" +
       "equest\0320.flyteidl.service.CreateDownload" +
-      "LocationResponse\"u\202\323\344\223\002 \022\036/api/v1/datapr" +
-      "oxy/artifact_urn\222AL\032JCreates a read-only" +
-      " http location that is accessible for ta" +
-      "sks at runtime.B9Z7github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/serviceb\006prot" +
-      "o3"
+      "LocationResponse\"\202\001\202\323\344\223\002-\022+/api/v1/datap" +
+      "roxy/artifact_urn/{native_url}\222AL\032JCreat" +
+      "es a read-only http location that is acc" +
+      "essible for tasks at runtime.B9Z7github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
