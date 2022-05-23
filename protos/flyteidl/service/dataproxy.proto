@@ -79,7 +79,6 @@ service DataProxyService {
   rpc CreateDownloadLocation (CreateDownloadLocationRequest) returns (CreateDownloadLocationResponse) {
     option (google.api.http) = {
       get: "/api/v1/dataproxy/artifact_urn"
-      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Creates a read-only http location that is accessible for tasks at runtime."

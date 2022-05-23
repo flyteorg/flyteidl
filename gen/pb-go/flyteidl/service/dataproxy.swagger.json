@@ -1,0 +1,140 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "flyteidl/service/dataproxy.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/dataproxy/artifact_urn": {
+      "get": {
+        "summary": "CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.",
+        "description": "Creates a read-only http location that is accessible for tasks at runtime.",
+        "operationId": "CreateDownloadLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceCreateDownloadLocationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "native_url",
+            "description": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expires_in",
+            "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DataProxyService"
+        ]
+      },
+      "post": {
+        "summary": "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.",
+        "description": "Creates a write-only http location that is accessible for tasks at runtime.",
+        "operationId": "CreateUploadLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DataProxyService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "serviceCreateDownloadLocationResponse": {
+      "type": "object",
+      "properties": {
+        "signed_url": {
+          "type": "string",
+          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ExpiresAt defines when will the signed URL expires."
+        }
+      }
+    },
+    "serviceCreateUploadLocationRequest": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "title": "Project to create the upload location for\n+required"
+        },
+        "domain": {
+          "type": "string",
+          "title": "Domain to create the upload location for.\n+required"
+        },
+        "filename": {
+          "type": "string",
+          "description": "Filename specifies a desired suffix for the generated location. E.g. `file.py` or `pre/fix/file.zip`.\n+optional. By default, the service will generate a consistent name based on the provided parameters."
+        },
+        "expires_in": {
+          "type": "string",
+          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
+        },
+        "content_md5": {
+          "type": "string",
+          "format": "byte",
+          "title": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path.\n+required"
+        }
+      },
+      "description": "CreateDownloadLocationRequest specified request for the CreateDownloadLocation API."
+    },
+    "serviceCreateUploadLocationResponse": {
+      "type": "object",
+      "properties": {
+        "signed_url": {
+          "type": "string",
+          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+        },
+        "native_url": {
+          "type": "string",
+          "title": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ExpiresAt defines when will the signed URL expires."
+        }
+      }
+    }
+  }
+}
