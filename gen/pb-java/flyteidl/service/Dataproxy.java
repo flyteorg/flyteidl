@@ -1134,7 +1134,7 @@ public final class Dataproxy {
   }
   /**
    * <pre>
-   * CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+   * CreateUploadLocationRequest specified request for the CreateUploadLocation API.
    * </pre>
    *
    * Protobuf type {@code flyteidl.service.CreateUploadLocationRequest}
@@ -1636,7 +1636,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+     * CreateUploadLocationRequest specified request for the CreateUploadLocation API.
      * </pre>
      *
      * Protobuf type {@code flyteidl.service.CreateUploadLocationRequest}

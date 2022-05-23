@@ -260,7 +260,7 @@ CreateDownloadLocationResponse
 CreateUploadLocationRequest
 ------------------------------------------------------------------
 
-CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 
 
 

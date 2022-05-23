@@ -116,7 +116,7 @@
           "title": "ContentMD5 restricts the upload location to the specific MD5 provided. The ContentMD5 will also appear in the\ngenerated path.\n+required"
         }
       },
-      "description": "CreateDownloadLocationRequest specified request for the CreateDownloadLocation API."
+      "description": "CreateUploadLocationRequest specified request for the CreateUploadLocation API."
     },
     "serviceCreateUploadLocationResponse": {
       "type": "object",

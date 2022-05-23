@@ -86,7 +86,7 @@ func (m *CreateUploadLocationResponse) GetExpiresAt() *timestamp.Timestamp {
 	return nil
 }
 
-// CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+// CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 type CreateUploadLocationRequest struct {
 	// Project to create the upload location for
 	// +required

@@ -19,7 +19,7 @@ message CreateUploadLocationResponse {
   google.protobuf.Timestamp expires_at = 3;
 }
 
-// CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+// CreateUploadLocationRequest specified request for the CreateUploadLocation API.
 message CreateUploadLocationRequest {
   // Project to create the upload location for
   // +required
