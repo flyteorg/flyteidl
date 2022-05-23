@@ -16,6 +16,38 @@
   ],
   "paths": {
     "/api/v1/dataproxy/artifact_urn": {
+      "get": {
+        "summary": "CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.",
+        "description": "Creates a read-only http location that is accessible for tasks at runtime.",
+        "operationId": "CreateDownloadLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceCreateDownloadLocationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "native_url",
+            "description": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expires_in",
+            "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DataProxyService"
+        ]
+      },
       "post": {
         "summary": "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.",
         "description": "Creates a write-only http location that is accessible for tasks at runtime.",
@@ -36,40 +68,6 @@
             "schema": {
               "$ref": "#/definitions/serviceCreateUploadLocationRequest"
             }
-          }
-        ],
-        "tags": [
-          "DataProxyService"
-        ]
-      }
-    },
-    "/api/v1/dataproxy/artifact_urn/{native_url}": {
-      "get": {
-        "summary": "CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.",
-        "description": "Creates a read-only http location that is accessible for tasks at runtime.",
-        "operationId": "CreateDownloadLocation",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceCreateDownloadLocationResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "native_url",
-            "description": "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "expires_in",
-            "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config.",
-            "in": "query",
-            "required": false,
-            "type": "string"
           }
         ],
         "tags": [
