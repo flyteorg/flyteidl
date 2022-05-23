@@ -12708,6 +12708,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure taskNodeMetadata */
             taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
+
+            /** NodeExecutionClosure deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -12748,6 +12751,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure taskNodeMetadata. */
             public taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
+
+            /** NodeExecutionClosure deckUri. */
+            public deckUri: string;
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");

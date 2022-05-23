@@ -30390,6 +30390,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [updatedAt] NodeExecutionClosure updatedAt
              * @property {flyteidl.admin.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionClosure workflowNodeMetadata
              * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
+             * @property {string|null} [deckUri] NodeExecutionClosure deckUri
              */
 
             /**
@@ -30487,6 +30488,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionClosure.prototype.taskNodeMetadata = null;
 
+            /**
+             * NodeExecutionClosure deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.deckUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -30556,6 +30565,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.outputData != null && message.hasOwnProperty("outputData"))
                     $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
                 return writer;
             };
 
@@ -30606,6 +30617,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.taskNodeMetadata = $root.flyteidl.admin.TaskNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 11:
+                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -30707,6 +30721,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "taskNodeMetadata." + error;
                     }
                 }
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 return null;
             };
 
