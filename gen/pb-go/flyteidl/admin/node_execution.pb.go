@@ -824,8 +824,8 @@ type NodeExecutionGetDataResponse struct {
 	FullInputs *core.LiteralMap `protobuf:"bytes,3,opt,name=full_inputs,json=fullInputs,proto3" json:"full_inputs,omitempty"`
 	// Full_outputs will only be populated if they are under a configured size threshold.
 	FullOutputs *core.LiteralMap `protobuf:"bytes,4,opt,name=full_outputs,json=fullOutputs,proto3" json:"full_outputs,omitempty"`
-	// String location uniquely identifying where the deck HTML file is
-	// It should be a pre-signed url.
+	// String location uniquely identifying where the deck HTML file is.
+	// NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
 	DeckUri string `protobuf:"bytes,5,opt,name=deck_uri,json=deckUri,proto3" json:"deck_uri,omitempty"`
 	// Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
 	DynamicWorkflow      *DynamicWorkflowNodeMetadata `protobuf:"bytes,16,opt,name=dynamic_workflow,json=dynamicWorkflow,proto3" json:"dynamic_workflow,omitempty"`
