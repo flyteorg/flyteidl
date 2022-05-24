@@ -195,8 +195,8 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		opts = append(opts, authOpt)
 	}
 
-	if cfg.LoadBalancingPolicy != "" {
-		opts = append(opts, grpc.WithDefaultServiceConfig(fmt.Sprintf(`{"loadBalancingPolicy":"%v"}`, cfg.LoadBalancingPolicy)))
+	if cfg.ServiceConfig != "" {
+		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.ServiceConfig))
 	}
 
 	adminConnection, err := NewAdminConnection(ctx, cfg, opts...)
