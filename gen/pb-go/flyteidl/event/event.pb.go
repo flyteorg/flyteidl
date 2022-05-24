@@ -221,7 +221,7 @@ type NodeExecutionEvent struct {
 	// Whether this node yielded a dynamic workflow.
 	IsDynamic bool `protobuf:"varint,18,opt,name=is_dynamic,json=isDynamic,proto3" json:"is_dynamic,omitempty"`
 	// String location uniquely identifying where the deck HTML file is
-	// It should be a pre-signed url.
+	// NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
 	DeckUri              string   `protobuf:"bytes,19,opt,name=deck_uri,json=deckUri,proto3" json:"deck_uri,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

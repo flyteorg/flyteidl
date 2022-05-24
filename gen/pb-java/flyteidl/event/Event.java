@@ -2369,7 +2369,7 @@ public final class Event {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * It should be a pre-signed url.
+     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
      * </pre>
      *
      * <code>string deck_uri = 19;</code>
@@ -2378,7 +2378,7 @@ public final class Event {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * It should be a pre-signed url.
+     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
      * </pre>
      *
      * <code>string deck_uri = 19;</code>
@@ -3294,7 +3294,7 @@ public final class Event {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * It should be a pre-signed url.
+     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
      * </pre>
      *
      * <code>string deck_uri = 19;</code>
@@ -3314,7 +3314,7 @@ public final class Event {
     /**
      * <pre>
      * String location uniquely identifying where the deck HTML file is
-     * It should be a pre-signed url.
+     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
      * </pre>
      *
      * <code>string deck_uri = 19;</code>
@@ -6023,7 +6023,7 @@ public final class Event {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * It should be a pre-signed url.
+       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
        * </pre>
        *
        * <code>string deck_uri = 19;</code>
@@ -6043,7 +6043,7 @@ public final class Event {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * It should be a pre-signed url.
+       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
        * </pre>
        *
        * <code>string deck_uri = 19;</code>
@@ -6064,7 +6064,7 @@ public final class Event {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * It should be a pre-signed url.
+       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
        * </pre>
        *
        * <code>string deck_uri = 19;</code>
@@ -6082,7 +6082,7 @@ public final class Event {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * It should be a pre-signed url.
+       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
        * </pre>
        *
        * <code>string deck_uri = 19;</code>
@@ -6096,7 +6096,7 @@ public final class Event {
       /**
        * <pre>
        * String location uniquely identifying where the deck HTML file is
-       * It should be a pre-signed url.
+       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
        * </pre>
        *
        * <code>string deck_uri = 19;</code>

@@ -54288,8 +54288,9 @@ definitions:
         description: "Whether this node yielded a dynamic workflow."
       deck_uri:
         type: "string"
-        description: "String location uniquely identifying where the deck HTML file\
-          \ is\nIt should be a pre-signed url."
+        title: "String location uniquely identifying where the deck HTML file is\n\
+          NativeUrl specifies the url in the format of the configured storage provider\
+          \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:

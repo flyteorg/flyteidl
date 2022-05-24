@@ -542,7 +542,6 @@ class EventNodeExecutionEvent(object):
     def deck_uri(self):
         """Gets the deck_uri of this EventNodeExecutionEvent.  # noqa: E501
 
-        String location uniquely identifying where the deck HTML file is It should be a pre-signed url.  # noqa: E501
 
         :return: The deck_uri of this EventNodeExecutionEvent.  # noqa: E501
         :rtype: str
@@ -553,7 +552,6 @@ class EventNodeExecutionEvent(object):
     def deck_uri(self, deck_uri):
         """Sets the deck_uri of this EventNodeExecutionEvent.
 
-        String location uniquely identifying where the deck HTML file is It should be a pre-signed url.  # noqa: E501
 
         :param deck_uri: The deck_uri of this EventNodeExecutionEvent.  # noqa: E501
         :type: str
