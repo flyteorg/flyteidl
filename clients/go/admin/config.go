@@ -68,9 +68,10 @@ type Config struct {
 
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
-	// available policies can be found here https://github.com/grpc/grpc/blob/master/doc/load-balancing.md#load-balancing-policies
-	// if the value of the LoadBalancingPolicy is not found, the grpc client will default to pick_first
-	LoadBalancingPolicy string `json:"loadBalancingPolicy" pdflag:",Set load balancing policy for grpc client"`
+	// Set the ServiceConfig formatted as a json string https://github.com/grpc/grpc/blob/master/doc/service_config.md
+	// eg. { "loadBalancingConfig": [{ "round_robin":{} }], "methodConfig": [{ "name": [{ "service": "foo", "method": "bar" }, { "service": "baz" }], "timeout": "1.000000001s"}]}
+	// find the full schema here https://github.com/grpc/grpc-proto/blob/master/grpc/service_config/service_config.proto#L625
+	ServiceConfig string `json:"serviceConfig" pdflag:",Set the service config for the grpc client"`
 }
 
 var (
