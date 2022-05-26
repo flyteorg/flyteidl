@@ -60,7 +60,7 @@ message CreateDownloadLocationResponse {
   // SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
   string signed_url = 1;
   // ExpiresAt defines when will the signed URL expires.
-  google.protobuf.Timestamp expires_at = 3;
+  google.protobuf.Timestamp expires_at = 2;
 }
 
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.

@@ -40332,7 +40332,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
                 if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
-                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -40357,7 +40357,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 1:
                         message.signedUrl = reader.string();
                         break;
-                    case 3:
+                    case 2:
                         message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:

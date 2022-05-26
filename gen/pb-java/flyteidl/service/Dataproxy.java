@@ -3276,7 +3276,7 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     boolean hasExpiresAt();
     /**
@@ -3284,7 +3284,7 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     com.google.protobuf.Timestamp getExpiresAt();
     /**
@@ -3292,7 +3292,7 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
   }
@@ -3342,7 +3342,7 @@ public final class Dataproxy {
               signedUrl_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (expiresAt_ != null) {
                 subBuilder = expiresAt_.toBuilder();
@@ -3429,14 +3429,14 @@ public final class Dataproxy {
       }
     }
 
-    public static final int EXPIRES_AT_FIELD_NUMBER = 3;
+    public static final int EXPIRES_AT_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp expiresAt_;
     /**
      * <pre>
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     public boolean hasExpiresAt() {
       return expiresAt_ != null;
@@ -3446,7 +3446,7 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     public com.google.protobuf.Timestamp getExpiresAt() {
       return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
@@ -3456,7 +3456,7 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expires.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
       return getExpiresAt();
@@ -3480,7 +3480,7 @@ public final class Dataproxy {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedUrl_);
       }
       if (expiresAt_ != null) {
-        output.writeMessage(3, getExpiresAt());
+        output.writeMessage(2, getExpiresAt());
       }
       unknownFields.writeTo(output);
     }
@@ -3496,7 +3496,7 @@ public final class Dataproxy {
       }
       if (expiresAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getExpiresAt());
+          .computeMessageSize(2, getExpiresAt());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3891,7 +3891,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public boolean hasExpiresAt() {
         return expiresAtBuilder_ != null || expiresAt_ != null;
@@ -3901,7 +3901,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public com.google.protobuf.Timestamp getExpiresAt() {
         if (expiresAtBuilder_ == null) {
@@ -3915,7 +3915,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public Builder setExpiresAt(com.google.protobuf.Timestamp value) {
         if (expiresAtBuilder_ == null) {
@@ -3935,7 +3935,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public Builder setExpiresAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3953,7 +3953,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public Builder mergeExpiresAt(com.google.protobuf.Timestamp value) {
         if (expiresAtBuilder_ == null) {
@@ -3975,7 +3975,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public Builder clearExpiresAt() {
         if (expiresAtBuilder_ == null) {
@@ -3993,7 +3993,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getExpiresAtBuilder() {
         
@@ -4005,7 +4005,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
         if (expiresAtBuilder_ != null) {
@@ -4020,7 +4020,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expires.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 3;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -4132,7 +4132,7 @@ public final class Dataproxy {
       "adLocationRequest\022\022\n\nnative_url\030\001 \001(\t\022-\n" +
       "\nexpires_in\030\002 \001(\0132\031.google.protobuf.Dura" +
       "tion\"d\n\036CreateDownloadLocationResponse\022\022" +
-      "\n\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032" +
+      "\n\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032" +
       ".google.protobuf.Timestamp2\372\003\n\020DataProxy" +
       "Service\022\360\001\n\024CreateUploadLocation\022-.flyte" +
       "idl.service.CreateUploadLocationRequest\032" +

@@ -179,7 +179,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "adLocationRequest\022\022\n\nnative_url\030\001 \001(\t\022-\n"
   "\nexpires_in\030\002 \001(\0132\031.google.protobuf.Dura"
   "tion\"d\n\036CreateDownloadLocationResponse\022\022"
-  "\n\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032"
+  "\n\nsigned_url\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032"
   ".google.protobuf.Timestamp2\372\003\n\020DataProxy"
   "Service\022\360\001\n\024CreateUploadLocation\022-.flyte"
   "idl.service.CreateUploadLocationRequest\032"
@@ -1724,9 +1724,9 @@ const char* CreateDownloadLocationResponse::_InternalParse(const char* begin, co
         ptr += size;
         break;
       }
-      // .google.protobuf.Timestamp expires_at = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+      // .google.protobuf.Timestamp expires_at = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
@@ -1786,9 +1786,9 @@ bool CreateDownloadLocationResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // .google.protobuf.Timestamp expires_at = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+      // .google.protobuf.Timestamp expires_at = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_expires_at()));
         } else {
@@ -1834,10 +1834,10 @@ void CreateDownloadLocationResponse::SerializeWithCachedSizes(
       1, this->signed_url(), output);
   }
 
-  // .google.protobuf.Timestamp expires_at = 3;
+  // .google.protobuf.Timestamp expires_at = 2;
   if (this->has_expires_at()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::expires_at(this), output);
+      2, HasBitSetters::expires_at(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1864,11 +1864,11 @@ void CreateDownloadLocationResponse::SerializeWithCachedSizes(
         1, this->signed_url(), target);
   }
 
-  // .google.protobuf.Timestamp expires_at = 3;
+  // .google.protobuf.Timestamp expires_at = 2;
   if (this->has_expires_at()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, HasBitSetters::expires_at(this), target);
+        2, HasBitSetters::expires_at(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1899,7 +1899,7 @@ size_t CreateDownloadLocationResponse::ByteSizeLong() const {
         this->signed_url());
   }
 
-  // .google.protobuf.Timestamp expires_at = 3;
+  // .google.protobuf.Timestamp expires_at = 2;
   if (this->has_expires_at()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(

@@ -640,10 +640,10 @@ class CreateDownloadLocationResponse final :
   ::std::string* release_signed_url();
   void set_allocated_signed_url(::std::string* signed_url);
 
-  // .google.protobuf.Timestamp expires_at = 3;
+  // .google.protobuf.Timestamp expires_at = 2;
   bool has_expires_at() const;
   void clear_expires_at();
-  static const int kExpiresAtFieldNumber = 3;
+  static const int kExpiresAtFieldNumber = 2;
   const ::google::protobuf::Timestamp& expires_at() const;
   ::google::protobuf::Timestamp* release_expires_at();
   ::google::protobuf::Timestamp* mutable_expires_at();
@@ -1244,7 +1244,7 @@ inline void CreateDownloadLocationResponse::set_allocated_signed_url(::std::stri
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLocationResponse.signed_url)
 }
 
-// .google.protobuf.Timestamp expires_at = 3;
+// .google.protobuf.Timestamp expires_at = 2;
 inline bool CreateDownloadLocationResponse::has_expires_at() const {
   return this != internal_default_instance() && expires_at_ != nullptr;
 }
