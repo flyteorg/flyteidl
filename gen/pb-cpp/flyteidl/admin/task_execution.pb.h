@@ -796,6 +796,20 @@ class TaskExecutionClosure final :
   ::std::string* release_task_type();
   void set_allocated_task_type(::std::string* task_type);
 
+  // string deck_uri = 18;
+  void clear_deck_uri();
+  static const int kDeckUriFieldNumber = 18;
+  const ::std::string& deck_uri() const;
+  void set_deck_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_deck_uri(::std::string&& value);
+  #endif
+  void set_deck_uri(const char* value);
+  void set_deck_uri(const char* value, size_t size);
+  ::std::string* mutable_deck_uri();
+  ::std::string* release_deck_uri();
+  void set_allocated_deck_uri(::std::string* deck_uri);
+
   // .google.protobuf.Timestamp started_at = 5;
   bool has_started_at() const;
   void clear_started_at();
@@ -913,6 +927,7 @@ class TaskExecutionClosure final :
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::TaskLog > logs_;
   ::google::protobuf::internal::ArenaStringPtr reason_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
+  ::google::protobuf::internal::ArenaStringPtr deck_uri_;
   ::google::protobuf::Timestamp* started_at_;
   ::google::protobuf::Duration* duration_;
   ::google::protobuf::Timestamp* created_at_;
@@ -2316,6 +2331,59 @@ inline void TaskExecutionClosure::set_event_version(::google::protobuf::int32 va
   
   event_version_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionClosure.event_version)
+}
+
+// string deck_uri = 18;
+inline void TaskExecutionClosure::clear_deck_uri() {
+  deck_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskExecutionClosure::deck_uri() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionClosure.deck_uri)
+  return deck_uri_.GetNoArena();
+}
+inline void TaskExecutionClosure::set_deck_uri(const ::std::string& value) {
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskExecutionClosure.deck_uri)
+}
+#if LANG_CXX11
+inline void TaskExecutionClosure::set_deck_uri(::std::string&& value) {
+  
+  deck_uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.TaskExecutionClosure.deck_uri)
+}
+#endif
+inline void TaskExecutionClosure::set_deck_uri(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.TaskExecutionClosure.deck_uri)
+}
+inline void TaskExecutionClosure::set_deck_uri(const char* value, size_t size) {
+  
+  deck_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.TaskExecutionClosure.deck_uri)
+}
+inline ::std::string* TaskExecutionClosure::mutable_deck_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionClosure.deck_uri)
+  return deck_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskExecutionClosure::release_deck_uri() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskExecutionClosure.deck_uri)
+  
+  return deck_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskExecutionClosure::set_allocated_deck_uri(::std::string* deck_uri) {
+  if (deck_uri != nullptr) {
+    
+  } else {
+    
+  }
+  deck_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), deck_uri);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionClosure.deck_uri)
 }
 
 inline bool TaskExecutionClosure::has_output_result() const {

@@ -16031,6 +16031,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [taskType] TaskExecutionEvent taskType
              * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
              * @property {number|null} [eventVersion] TaskExecutionEvent eventVersion
+             * @property {string|null} [deckUri] TaskExecutionEvent deckUri
              */
 
             /**
@@ -16185,6 +16186,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskExecutionEvent.prototype.eventVersion = 0;
 
+            /**
+             * TaskExecutionEvent deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.event.TaskExecutionEvent
+             * @instance
+             */
+            TaskExecutionEvent.prototype.deckUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -16258,6 +16267,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                     writer.uint32(/* id 18, wireType 0 =*/144).int32(message.eventVersion);
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 19, wireType 2 =*/154).string(message.deckUri);
                 return writer;
             };
 
@@ -16331,6 +16342,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 18:
                         message.eventVersion = reader.int32();
+                        break;
+                    case 19:
+                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16446,6 +16460,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                     if (!$util.isInteger(message.eventVersion))
                         return "eventVersion: integer expected";
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 return null;
             };
 
@@ -34751,6 +34768,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [taskType] TaskExecutionClosure taskType
              * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionClosure metadata
              * @property {number|null} [eventVersion] TaskExecutionClosure eventVersion
+             * @property {string|null} [deckUri] TaskExecutionClosure deckUri
              */
 
             /**
@@ -34881,6 +34899,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskExecutionClosure.prototype.eventVersion = 0;
 
+            /**
+             * TaskExecutionClosure deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.admin.TaskExecutionClosure
+             * @instance
+             */
+            TaskExecutionClosure.prototype.deckUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -34948,6 +34974,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.event.TaskExecutionMetadata.encode(message.metadata, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                     writer.uint32(/* id 17, wireType 0 =*/136).int32(message.eventVersion);
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 18, wireType 2 =*/146).string(message.deckUri);
                 return writer;
             };
 
@@ -35012,6 +35040,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 17:
                         message.eventVersion = reader.int32();
+                        break;
+                    case 18:
+                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -35120,6 +35151,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                     if (!$util.isInteger(message.eventVersion))
                         return "eventVersion: integer expected";
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 return null;
             };
 

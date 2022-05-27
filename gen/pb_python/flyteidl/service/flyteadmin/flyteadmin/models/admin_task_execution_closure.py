@@ -51,7 +51,8 @@ class AdminTaskExecutionClosure(object):
         'reason': 'str',
         'task_type': 'str',
         'metadata': 'EventTaskExecutionMetadata',
-        'event_version': 'int'
+        'event_version': 'int',
+        'deck_uri': 'str'
     }
 
     attribute_map = {
@@ -68,10 +69,11 @@ class AdminTaskExecutionClosure(object):
         'reason': 'reason',
         'task_type': 'task_type',
         'metadata': 'metadata',
-        'event_version': 'event_version'
+        'event_version': 'event_version',
+        'deck_uri': 'deck_uri'
     }
 
-    def __init__(self, output_uri=None, error=None, output_data=None, phase=None, logs=None, started_at=None, duration=None, created_at=None, updated_at=None, custom_info=None, reason=None, task_type=None, metadata=None, event_version=None):  # noqa: E501
+    def __init__(self, output_uri=None, error=None, output_data=None, phase=None, logs=None, started_at=None, duration=None, created_at=None, updated_at=None, custom_info=None, reason=None, task_type=None, metadata=None, event_version=None, deck_uri=None):  # noqa: E501
         """AdminTaskExecutionClosure - a model defined in Swagger"""  # noqa: E501
 
         self._output_uri = None
@@ -88,6 +90,7 @@ class AdminTaskExecutionClosure(object):
         self._task_type = None
         self._metadata = None
         self._event_version = None
+        self._deck_uri = None
         self.discriminator = None
 
         if output_uri is not None:
@@ -118,6 +121,8 @@ class AdminTaskExecutionClosure(object):
             self.metadata = metadata
         if event_version is not None:
             self.event_version = event_version
+        if deck_uri is not None:
+            self.deck_uri = deck_uri
 
     @property
     def output_uri(self):
@@ -440,6 +445,27 @@ class AdminTaskExecutionClosure(object):
         """
 
         self._event_version = event_version
+
+    @property
+    def deck_uri(self):
+        """Gets the deck_uri of this AdminTaskExecutionClosure.  # noqa: E501
+
+
+        :return: The deck_uri of this AdminTaskExecutionClosure.  # noqa: E501
+        :rtype: str
+        """
+        return self._deck_uri
+
+    @deck_uri.setter
+    def deck_uri(self, deck_uri):
+        """Sets the deck_uri of this AdminTaskExecutionClosure.
+
+
+        :param deck_uri: The deck_uri of this AdminTaskExecutionClosure.  # noqa: E501
+        :type: str
+        """
+
+        self._deck_uri = deck_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

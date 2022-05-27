@@ -6701,6 +6701,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent eventVersion */
             eventVersion?: (number|null);
+
+            /** TaskExecutionEvent deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a TaskExecutionEvent. */
@@ -6762,6 +6765,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent eventVersion. */
             public eventVersion: number;
+
+            /** TaskExecutionEvent deckUri. */
+            public deckUri: string;
 
             /** TaskExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -14600,6 +14606,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure eventVersion */
             eventVersion?: (number|null);
+
+            /** TaskExecutionClosure deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a TaskExecutionClosure. */
@@ -14652,6 +14661,9 @@ export namespace flyteidl {
 
             /** TaskExecutionClosure eventVersion. */
             public eventVersion: number;
+
+            /** TaskExecutionClosure deckUri. */
+            public deckUri: string;
 
             /** TaskExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");

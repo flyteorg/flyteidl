@@ -43,4 +43,5 @@ type EventTaskExecutionEvent struct {
 	Metadata *EventTaskExecutionMetadata `json:"metadata,omitempty"`
 	// The event version is used to indicate versioned changes in how data is reported using this proto message. For example, event_verison > 0 means that maps tasks report logs using the TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog in this message.
 	EventVersion int32 `json:"event_version,omitempty"`
+	DeckUri string `json:"deck_uri,omitempty"`
 }

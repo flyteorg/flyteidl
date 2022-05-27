@@ -4634,6 +4634,10 @@
           "type": "integer",
           "format": "int32",
           "description": "The event version is used to indicate versioned changes in how data is maintained using this\nproto message. For example, event_verison \u003e 0 means that maps tasks logs use the\nTaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog\nin this message."
+        },
+        "deck_uri": {
+          "type": "string",
+          "title": "String location uniquely identifying where the deck HTML file is.\nNativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
         }
       },
       "description": "Container for task execution details and results."
@@ -6780,6 +6784,10 @@
           "type": "integer",
           "format": "int32",
           "description": "The event version is used to indicate versioned changes in how data is reported using this\nproto message. For example, event_verison \u003e 0 means that maps tasks report logs using the\nTaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog\nin this message."
+        },
+        "deck_uri": {
+          "type": "string",
+          "title": "String location uniquely identifying where the deck HTML file is\nNativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
         }
       },
       "description": "Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."

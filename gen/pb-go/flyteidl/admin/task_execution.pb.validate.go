@@ -474,6 +474,8 @@ func (m *TaskExecutionClosure) Validate() error {
 
 	// no validation rules for EventVersion
 
+	// no validation rules for DeckUri
+
 	switch m.OutputResult.(type) {
 
 	case *TaskExecutionClosure_OutputUri:
