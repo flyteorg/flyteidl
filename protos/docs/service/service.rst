@@ -262,7 +262,7 @@ CreateDownloadLocationResponse
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signed_url", ":ref:`ref_string`", "", "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+   "signed_url", ":ref:`ref_string`", "", "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
    "expires_at", ":ref:`ref_google.protobuf.Timestamp`", "", "ExpiresAt defines when will the signed URL expires."
 
 

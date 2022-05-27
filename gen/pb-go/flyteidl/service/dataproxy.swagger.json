@@ -82,7 +82,7 @@
       "properties": {
         "signed_url": {
           "type": "string",
-          "title": "SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+          "title": "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
         },
         "expires_at": {
           "type": "string",

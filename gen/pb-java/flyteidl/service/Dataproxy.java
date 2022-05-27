@@ -3255,7 +3255,7 @@ public final class Dataproxy {
 
     /**
      * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
      * <code>string signed_url = 1;</code>
@@ -3263,7 +3263,7 @@ public final class Dataproxy {
     java.lang.String getSignedUrl();
     /**
      * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
      * <code>string signed_url = 1;</code>
@@ -3391,7 +3391,7 @@ public final class Dataproxy {
     private volatile java.lang.Object signedUrl_;
     /**
      * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
      * <code>string signed_url = 1;</code>
@@ -3410,7 +3410,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
      * <code>string signed_url = 1;</code>
@@ -3797,7 +3797,7 @@ public final class Dataproxy {
       private java.lang.Object signedUrl_ = "";
       /**
        * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
        * <code>string signed_url = 1;</code>
@@ -3816,7 +3816,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
        * <code>string signed_url = 1;</code>
@@ -3836,7 +3836,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
        * <code>string signed_url = 1;</code>
@@ -3853,7 +3853,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
        * <code>string signed_url = 1;</code>
@@ -3866,7 +3866,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
        * <code>string signed_url = 1;</code>

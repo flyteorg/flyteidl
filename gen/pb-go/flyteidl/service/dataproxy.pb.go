@@ -223,7 +223,7 @@ func (m *CreateDownloadLocationRequest) GetExpiresIn() *duration.Duration {
 }
 
 type CreateDownloadLocationResponse struct {
-	// SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+	// SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
 	SignedUrl string `protobuf:"bytes,1,opt,name=signed_url,json=signedUrl,proto3" json:"signed_url,omitempty"`
 	// ExpiresAt defines when will the signed URL expires.
 	ExpiresAt            *timestamp.Timestamp `protobuf:"bytes,2,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
