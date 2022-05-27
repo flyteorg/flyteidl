@@ -57,7 +57,7 @@ class DataProxyService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateUploadLocationResponse>> PrepareAsyncCreateUploadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateUploadLocationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateUploadLocationResponse>>(PrepareAsyncCreateUploadLocationRaw(context, request, cq));
     }
-    // CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+    // CreateDownloadLocation creates a signed url to download artifacts.
     virtual ::grpc::Status CreateDownloadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest& request, ::flyteidl::service::CreateDownloadLocationResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLocationResponse>> AsyncCreateDownloadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLocationResponse>>(AsyncCreateDownloadLocationRaw(context, request, cq));
@@ -73,7 +73,7 @@ class DataProxyService final {
       virtual void CreateUploadLocation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateUploadLocationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateUploadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateUploadLocationRequest* request, ::flyteidl::service::CreateUploadLocationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void CreateUploadLocation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateUploadLocationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      // CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+      // CreateDownloadLocation creates a signed url to download artifacts.
       virtual void CreateDownloadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest* request, ::flyteidl::service::CreateDownloadLocationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateDownloadLocation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateDownloadLocationResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateDownloadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest* request, ::flyteidl::service::CreateDownloadLocationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -140,7 +140,7 @@ class DataProxyService final {
     virtual ~Service();
     // CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.
     virtual ::grpc::Status CreateUploadLocation(::grpc::ServerContext* context, const ::flyteidl::service::CreateUploadLocationRequest* request, ::flyteidl::service::CreateUploadLocationResponse* response);
-    // CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+    // CreateDownloadLocation creates a signed url to download artifacts.
     virtual ::grpc::Status CreateDownloadLocation(::grpc::ServerContext* context, const ::flyteidl::service::CreateDownloadLocationRequest* request, ::flyteidl::service::CreateDownloadLocationResponse* response);
   };
   template <class BaseClass>

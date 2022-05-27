@@ -13029,9 +13029,6 @@ export namespace flyteidl {
             /** NodeExecutionGetDataResponse fullOutputs */
             fullOutputs?: (flyteidl.core.ILiteralMap|null);
 
-            /** NodeExecutionGetDataResponse deckUri */
-            deckUri?: (string|null);
-
             /** NodeExecutionGetDataResponse dynamicWorkflow */
             dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
         }
@@ -13056,9 +13053,6 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataResponse fullOutputs. */
             public fullOutputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** NodeExecutionGetDataResponse deckUri. */
-            public deckUri: string;
 
             /** NodeExecutionGetDataResponse dynamicWorkflow. */
             public dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);

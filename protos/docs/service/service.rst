@@ -343,7 +343,7 @@ DataProxyService defines an RPC Service that allows access to user-data in a con
    :widths: auto
 
    "CreateUploadLocation", ":ref:`ref_flyteidl.service.CreateUploadLocationRequest`", ":ref:`ref_flyteidl.service.CreateUploadLocationResponse`", "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain."
-   "CreateDownloadLocation", ":ref:`ref_flyteidl.service.CreateDownloadLocationRequest`", ":ref:`ref_flyteidl.service.CreateDownloadLocationResponse`", "CreateDownloadLocation creates a signed url to download artifacts for a given project/domain."
+   "CreateDownloadLocation", ":ref:`ref_flyteidl.service.CreateDownloadLocationRequest`", ":ref:`ref_flyteidl.service.CreateDownloadLocationResponse`", "CreateDownloadLocation creates a signed url to download artifacts."
 
 ..
    end services

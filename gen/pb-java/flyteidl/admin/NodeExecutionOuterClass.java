@@ -13283,26 +13283,6 @@ public final class NodeExecutionOuterClass {
 
     /**
      * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 5;</code>
-     */
-    java.lang.String getDeckUri();
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeckUriBytes();
-
-    /**
-     * <pre>
      * Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
      * </pre>
      *
@@ -13343,7 +13323,6 @@ public final class NodeExecutionOuterClass {
       super(builder);
     }
     private NodeExecutionGetDataResponse() {
-      deckUri_ = "";
     }
 
     @java.lang.Override
@@ -13420,12 +13399,6 @@ public final class NodeExecutionOuterClass {
                 fullOutputs_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deckUri_ = s;
               break;
             }
             case 130: {
@@ -13611,50 +13584,6 @@ public final class NodeExecutionOuterClass {
       return getFullOutputs();
     }
 
-    public static final int DECK_URI_FIELD_NUMBER = 5;
-    private volatile java.lang.Object deckUri_;
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 5;</code>
-     */
-    public java.lang.String getDeckUri() {
-      java.lang.Object ref = deckUri_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deckUri_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeckUriBytes() {
-      java.lang.Object ref = deckUri_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deckUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int DYNAMIC_WORKFLOW_FIELD_NUMBER = 16;
     private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
     /**
@@ -13714,9 +13643,6 @@ public final class NodeExecutionOuterClass {
       if (fullOutputs_ != null) {
         output.writeMessage(4, getFullOutputs());
       }
-      if (!getDeckUriBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deckUri_);
-      }
       if (dynamicWorkflow_ != null) {
         output.writeMessage(16, getDynamicWorkflow());
       }
@@ -13744,9 +13670,6 @@ public final class NodeExecutionOuterClass {
       if (fullOutputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getFullOutputs());
-      }
-      if (!getDeckUriBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deckUri_);
       }
       if (dynamicWorkflow_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -13787,8 +13710,6 @@ public final class NodeExecutionOuterClass {
         if (!getFullOutputs()
             .equals(other.getFullOutputs())) return false;
       }
-      if (!getDeckUri()
-          .equals(other.getDeckUri())) return false;
       if (hasDynamicWorkflow() != other.hasDynamicWorkflow()) return false;
       if (hasDynamicWorkflow()) {
         if (!getDynamicWorkflow()
@@ -13821,8 +13742,6 @@ public final class NodeExecutionOuterClass {
         hash = (37 * hash) + FULL_OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getFullOutputs().hashCode();
       }
-      hash = (37 * hash) + DECK_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getDeckUri().hashCode();
       if (hasDynamicWorkflow()) {
         hash = (37 * hash) + DYNAMIC_WORKFLOW_FIELD_NUMBER;
         hash = (53 * hash) + getDynamicWorkflow().hashCode();
@@ -13988,8 +13907,6 @@ public final class NodeExecutionOuterClass {
           fullOutputs_ = null;
           fullOutputsBuilder_ = null;
         }
-        deckUri_ = "";
-
         if (dynamicWorkflowBuilder_ == null) {
           dynamicWorkflow_ = null;
         } else {
@@ -14042,7 +13959,6 @@ public final class NodeExecutionOuterClass {
         } else {
           result.fullOutputs_ = fullOutputsBuilder_.build();
         }
-        result.deckUri_ = deckUri_;
         if (dynamicWorkflowBuilder_ == null) {
           result.dynamicWorkflow_ = dynamicWorkflow_;
         } else {
@@ -14107,10 +14023,6 @@ public final class NodeExecutionOuterClass {
         }
         if (other.hasFullOutputs()) {
           mergeFullOutputs(other.getFullOutputs());
-        }
-        if (!other.getDeckUri().isEmpty()) {
-          deckUri_ = other.deckUri_;
-          onChanged();
         }
         if (other.hasDynamicWorkflow()) {
           mergeDynamicWorkflow(other.getDynamicWorkflow());
@@ -14774,100 +14686,6 @@ public final class NodeExecutionOuterClass {
         return fullOutputsBuilder_;
       }
 
-      private java.lang.Object deckUri_ = "";
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 5;</code>
-       */
-      public java.lang.String getDeckUri() {
-        java.lang.Object ref = deckUri_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deckUri_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeckUriBytes() {
-        java.lang.Object ref = deckUri_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deckUri_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 5;</code>
-       */
-      public Builder setDeckUri(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deckUri_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 5;</code>
-       */
-      public Builder clearDeckUri() {
-        
-        deckUri_ = getDefaultInstance().getDeckUri();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 5;</code>
-       */
-      public Builder setDeckUriBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deckUri_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata dynamicWorkflow_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadata.Builder, flyteidl.admin.NodeExecutionOuterClass.DynamicWorkflowNodeMetadataOrBuilder> dynamicWorkflowBuilder_;
@@ -15197,16 +15015,16 @@ public final class NodeExecutionOuterClass {
       "low\030\002 \001(\0132&.flyteidl.core.CompiledWorkfl" +
       "owClosure\"Q\n\033NodeExecutionGetDataRequest" +
       "\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExecuti" +
-      "onIdentifier\"\263\002\n\034NodeExecutionGetDataRes" +
+      "onIdentifier\"\241\002\n\034NodeExecutionGetDataRes" +
       "ponse\022+\n\006inputs\030\001 \001(\0132\027.flyteidl.admin.U" +
       "rlBlobB\002\030\001\022,\n\007outputs\030\002 \001(\0132\027.flyteidl.a" +
       "dmin.UrlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031." +
       "flyteidl.core.LiteralMap\022/\n\014full_outputs" +
-      "\030\004 \001(\0132\031.flyteidl.core.LiteralMap\022\020\n\010dec" +
-      "k_uri\030\005 \001(\t\022E\n\020dynamic_workflow\030\020 \001(\0132+." +
-      "flyteidl.admin.DynamicWorkflowNodeMetada" +
-      "taB7Z5github.com/flyteorg/flyteidl/gen/p" +
-      "b-go/flyteidl/adminb\006proto3"
+      "\030\004 \001(\0132\031.flyteidl.core.LiteralMap\022E\n\020dyn" +
+      "amic_workflow\030\020 \001(\0132+.flyteidl.admin.Dyn" +
+      "amicWorkflowNodeMetadataB7Z5github.com/f" +
+      "lyteorg/flyteidl/gen/pb-go/flyteidl/admi" +
+      "nb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15299,7 +15117,7 @@ public final class NodeExecutionOuterClass {
     internal_static_flyteidl_admin_NodeExecutionGetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_NodeExecutionGetDataResponse_descriptor,
-        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", "DeckUri", "DynamicWorkflow", });
+        new java.lang.String[] { "Inputs", "Outputs", "FullInputs", "FullOutputs", "DynamicWorkflow", });
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.Catalog.getDescriptor();

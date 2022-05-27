@@ -75,7 +75,7 @@ service DataProxyService {
       description: "Creates a write-only http location that is accessible for tasks at runtime."
     };
   }
-  // CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+  // CreateDownloadLocation creates a signed url to download artifacts.
   rpc CreateDownloadLocation (CreateDownloadLocationRequest) returns (CreateDownloadLocationResponse) {
     option (google.api.http) = {
       get: "/api/v1/dataproxy/artifact_urn"

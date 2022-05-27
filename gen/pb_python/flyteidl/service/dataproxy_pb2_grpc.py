@@ -38,7 +38,7 @@ class DataProxyServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CreateDownloadLocation(self, request, context):
-    """CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+    """CreateDownloadLocation creates a signed url to download artifacts.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

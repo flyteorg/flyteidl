@@ -1102,8 +1102,6 @@ func (m *NodeExecutionGetDataResponse) Validate() error {
 		}
 	}
 
-	// no validation rules for DeckUri
-
 	if v, ok := interface{}(m.GetDynamicWorkflow()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return NodeExecutionGetDataResponseValidationError{

@@ -17,7 +17,7 @@
   "paths": {
     "/api/v1/dataproxy/artifact_urn": {
       "get": {
-        "summary": "CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.",
+        "summary": "CreateDownloadLocation creates a signed url to download artifacts.",
         "description": "Creates a read-only http location that is accessible for tasks at runtime.",
         "operationId": "CreateDownloadLocation",
         "responses": {

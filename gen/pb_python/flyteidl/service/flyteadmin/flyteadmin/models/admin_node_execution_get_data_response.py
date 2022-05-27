@@ -39,7 +39,6 @@ class AdminNodeExecutionGetDataResponse(object):
         'outputs': 'AdminUrlBlob',
         'full_inputs': 'CoreLiteralMap',
         'full_outputs': 'CoreLiteralMap',
-        'deck_uri': 'str',
         'dynamic_workflow': 'FlyteidladminDynamicWorkflowNodeMetadata'
     }
 
@@ -48,18 +47,16 @@ class AdminNodeExecutionGetDataResponse(object):
         'outputs': 'outputs',
         'full_inputs': 'full_inputs',
         'full_outputs': 'full_outputs',
-        'deck_uri': 'deck_uri',
         'dynamic_workflow': 'dynamic_workflow'
     }
 
-    def __init__(self, inputs=None, outputs=None, full_inputs=None, full_outputs=None, deck_uri=None, dynamic_workflow=None):  # noqa: E501
+    def __init__(self, inputs=None, outputs=None, full_inputs=None, full_outputs=None, dynamic_workflow=None):  # noqa: E501
         """AdminNodeExecutionGetDataResponse - a model defined in Swagger"""  # noqa: E501
 
         self._inputs = None
         self._outputs = None
         self._full_inputs = None
         self._full_outputs = None
-        self._deck_uri = None
         self._dynamic_workflow = None
         self.discriminator = None
 
@@ -71,8 +68,6 @@ class AdminNodeExecutionGetDataResponse(object):
             self.full_inputs = full_inputs
         if full_outputs is not None:
             self.full_outputs = full_outputs
-        if deck_uri is not None:
-            self.deck_uri = deck_uri
         if dynamic_workflow is not None:
             self.dynamic_workflow = dynamic_workflow
 
@@ -167,27 +162,6 @@ class AdminNodeExecutionGetDataResponse(object):
         """
 
         self._full_outputs = full_outputs
-
-    @property
-    def deck_uri(self):
-        """Gets the deck_uri of this AdminNodeExecutionGetDataResponse.  # noqa: E501
-
-
-        :return: The deck_uri of this AdminNodeExecutionGetDataResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._deck_uri
-
-    @deck_uri.setter
-    def deck_uri(self, deck_uri):
-        """Sets the deck_uri of this AdminNodeExecutionGetDataResponse.
-
-
-        :param deck_uri: The deck_uri of this AdminNodeExecutionGetDataResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._deck_uri = deck_uri
 
     @property
     def dynamic_workflow(self):

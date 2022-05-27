@@ -335,7 +335,7 @@ const _ = grpc.SupportPackageIsVersion4
 type DataProxyServiceClient interface {
 	// CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.
 	CreateUploadLocation(ctx context.Context, in *CreateUploadLocationRequest, opts ...grpc.CallOption) (*CreateUploadLocationResponse, error)
-	// CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+	// CreateDownloadLocation creates a signed url to download artifacts.
 	CreateDownloadLocation(ctx context.Context, in *CreateDownloadLocationRequest, opts ...grpc.CallOption) (*CreateDownloadLocationResponse, error)
 }
 
@@ -369,7 +369,7 @@ func (c *dataProxyServiceClient) CreateDownloadLocation(ctx context.Context, in 
 type DataProxyServiceServer interface {
 	// CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.
 	CreateUploadLocation(context.Context, *CreateUploadLocationRequest) (*CreateUploadLocationResponse, error)
-	// CreateDownloadLocation creates a signed url to download artifacts for a given project/domain.
+	// CreateDownloadLocation creates a signed url to download artifacts.
 	CreateDownloadLocation(context.Context, *CreateDownloadLocationRequest) (*CreateDownloadLocationResponse, error)
 }
 
