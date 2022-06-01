@@ -18,9 +18,6 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health/grpc_health_v1"
-
-	_ "google.golang.org/grpc/balancer/grpclb"     //nolint
-	_ "google.golang.org/grpc/balancer/roundrobin" //nolint
 )
 
 // IDE "Go Generate File". This will create a mocks/AdminServiceClient.go file
@@ -195,8 +192,8 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 		opts = append(opts, authOpt)
 	}
 
-	if cfg.ServiceConfig != "" {
-		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.ServiceConfig))
+	if cfg.DefaultServiceConfig != "" {
+		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.DefaultServiceConfig))
 	}
 
 	adminConnection, err := NewAdminConnection(ctx, cfg, opts...)
