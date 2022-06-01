@@ -56,8 +56,7 @@ class EventTaskExecutionEvent(object):
         'reason': 'str',
         'task_type': 'str',
         'metadata': 'EventTaskExecutionMetadata',
-        'event_version': 'int',
-        'deck_uri': 'str'
+        'event_version': 'int'
     }
 
     attribute_map = {
@@ -77,11 +76,10 @@ class EventTaskExecutionEvent(object):
         'reason': 'reason',
         'task_type': 'task_type',
         'metadata': 'metadata',
-        'event_version': 'event_version',
-        'deck_uri': 'deck_uri'
+        'event_version': 'event_version'
     }
 
-    def __init__(self, task_id=None, parent_node_execution_id=None, retry_attempt=None, phase=None, producer_id=None, logs=None, occurred_at=None, input_uri=None, output_uri=None, error=None, output_data=None, custom_info=None, phase_version=None, reason=None, task_type=None, metadata=None, event_version=None, deck_uri=None):  # noqa: E501
+    def __init__(self, task_id=None, parent_node_execution_id=None, retry_attempt=None, phase=None, producer_id=None, logs=None, occurred_at=None, input_uri=None, output_uri=None, error=None, output_data=None, custom_info=None, phase_version=None, reason=None, task_type=None, metadata=None, event_version=None):  # noqa: E501
         """EventTaskExecutionEvent - a model defined in Swagger"""  # noqa: E501
 
         self._task_id = None
@@ -101,7 +99,6 @@ class EventTaskExecutionEvent(object):
         self._task_type = None
         self._metadata = None
         self._event_version = None
-        self._deck_uri = None
         self.discriminator = None
 
         if task_id is not None:
@@ -138,8 +135,6 @@ class EventTaskExecutionEvent(object):
             self.metadata = metadata
         if event_version is not None:
             self.event_version = event_version
-        if deck_uri is not None:
-            self.deck_uri = deck_uri
 
     @property
     def task_id(self):
@@ -519,27 +514,6 @@ class EventTaskExecutionEvent(object):
         """
 
         self._event_version = event_version
-
-    @property
-    def deck_uri(self):
-        """Gets the deck_uri of this EventTaskExecutionEvent.  # noqa: E501
-
-
-        :return: The deck_uri of this EventTaskExecutionEvent.  # noqa: E501
-        :rtype: str
-        """
-        return self._deck_uri
-
-    @deck_uri.setter
-    def deck_uri(self, deck_uri):
-        """Sets the deck_uri of this EventTaskExecutionEvent.
-
-
-        :param deck_uri: The deck_uri of this EventTaskExecutionEvent.  # noqa: E501
-        :type: str
-        """
-
-        self._deck_uri = deck_uri
 
     def to_dict(self):
         """Returns the model properties as a dict"""

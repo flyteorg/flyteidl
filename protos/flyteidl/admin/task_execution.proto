@@ -123,10 +123,6 @@ message TaskExecutionClosure {
     // TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
     // in this message.
     int32 event_version = 17;
-
-    // String location uniquely identifying where the deck HTML file is.
-    // NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-    string deck_uri = 18;
 }
 
 // Request structure to fetch inputs and output for a task execution.

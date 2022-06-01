@@ -3249,7 +3249,6 @@ Container for task execution details and results.
    "task_type", ":ref:`ref_string`", "", "A predefined yet extensible Task type identifier."
    "metadata", ":ref:`ref_flyteidl.event.TaskExecutionMetadata`", "", "Metadata around how a task was executed."
    "event_version", ":ref:`ref_int32`", "", "The event version is used to indicate versioned changes in how data is maintained using this proto message. For example, event_verison > 0 means that maps tasks logs use the TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog in this message."
-   "deck_uri", ":ref:`ref_string`", "", "String location uniquely identifying where the deck HTML file is. NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
 
 
 

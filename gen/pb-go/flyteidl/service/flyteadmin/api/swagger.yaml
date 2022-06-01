@@ -14807,11 +14807,6 @@ definitions:
           \ data is maintained using this\nproto message. For example, event_verison\
           \ > 0 means that maps tasks logs use the\nTaskExecutionMetadata ExternalResourceInfo\
           \ fields for each subtask rather than the TaskLog\nin this message."
-      deck_uri:
-        type: "string"
-        title: "String location uniquely identifying where the deck HTML file is.\n\
-          NativeUrl specifies the url in the format of the configured storage provider\
-          \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
     description: "Container for task execution details and results."
     example:
       phase: {}
@@ -14886,7 +14881,6 @@ definitions:
         name: "name"
         uri: "uri"
         ttl: "ttl"
-      deck_uri: "deck_uri"
   adminTaskExecutionEventRequest:
     type: "object"
     properties:
@@ -15036,7 +15030,6 @@ definitions:
             name: "name"
             uri: "uri"
             ttl: "ttl"
-          deck_uri: "deck_uri"
       - input_uri: "input_uri"
         id:
           task_id:
@@ -15126,7 +15119,6 @@ definitions:
             name: "name"
             uri: "uri"
             ttl: "ttl"
-          deck_uri: "deck_uri"
       token: "token"
   adminTaskList:
     type: "object"
@@ -54399,11 +54391,6 @@ definitions:
           \ > 0 means that maps tasks report logs using the\nTaskExecutionMetadata\
           \ ExternalResourceInfo fields for each subtask rather than the TaskLog\n\
           in this message."
-      deck_uri:
-        type: "string"
-        title: "String location uniquely identifying where the deck HTML file is\n\
-          NativeUrl specifies the url in the format of the configured storage provider\
-          \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
     description: "Plugin specific execution event information. For tasks like Python,\
       \ Hive, Spark, DynamicJob."
   eventTaskExecutionMetadata:
@@ -60705,7 +60692,6 @@ definitions:
           name: "name"
           uri: "uri"
           ttl: "ttl"
-        deck_uri: "deck_uri"
   flyteidladminTaskNodeMetadata:
     type: "object"
     properties:

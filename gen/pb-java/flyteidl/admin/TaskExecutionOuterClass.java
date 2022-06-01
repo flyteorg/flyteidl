@@ -4634,26 +4634,6 @@ public final class TaskExecutionOuterClass {
      */
     int getEventVersion();
 
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 18;</code>
-     */
-    java.lang.String getDeckUri();
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 18;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeckUriBytes();
-
     public flyteidl.admin.TaskExecutionOuterClass.TaskExecutionClosure.OutputResultCase getOutputResultCase();
   }
   /**
@@ -4677,7 +4657,6 @@ public final class TaskExecutionOuterClass {
       logs_ = java.util.Collections.emptyList();
       reason_ = "";
       taskType_ = "";
-      deckUri_ = "";
     }
 
     @java.lang.Override
@@ -4846,12 +4825,6 @@ public final class TaskExecutionOuterClass {
             case 136: {
 
               eventVersion_ = input.readInt32();
-              break;
-            }
-            case 146: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deckUri_ = s;
               break;
             }
             default: {
@@ -5440,50 +5413,6 @@ public final class TaskExecutionOuterClass {
       return eventVersion_;
     }
 
-    public static final int DECK_URI_FIELD_NUMBER = 18;
-    private volatile java.lang.Object deckUri_;
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 18;</code>
-     */
-    public java.lang.String getDeckUri() {
-      java.lang.Object ref = deckUri_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deckUri_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * String location uniquely identifying where the deck HTML file is.
-     * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-     * </pre>
-     *
-     * <code>string deck_uri = 18;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeckUriBytes() {
-      java.lang.Object ref = deckUri_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deckUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5539,9 +5468,6 @@ public final class TaskExecutionOuterClass {
       }
       if (eventVersion_ != 0) {
         output.writeInt32(17, eventVersion_);
-      }
-      if (!getDeckUriBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, deckUri_);
       }
       unknownFields.writeTo(output);
     }
@@ -5605,9 +5531,6 @@ public final class TaskExecutionOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(17, eventVersion_);
       }
-      if (!getDeckUriBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, deckUri_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5662,8 +5585,6 @@ public final class TaskExecutionOuterClass {
       }
       if (getEventVersion()
           != other.getEventVersion()) return false;
-      if (!getDeckUri()
-          .equals(other.getDeckUri())) return false;
       if (!getOutputResultCase().equals(other.getOutputResultCase())) return false;
       switch (outputResultCase_) {
         case 1:
@@ -5728,8 +5649,6 @@ public final class TaskExecutionOuterClass {
       }
       hash = (37 * hash) + EVENT_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getEventVersion();
-      hash = (37 * hash) + DECK_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getDeckUri().hashCode();
       switch (outputResultCase_) {
         case 1:
           hash = (37 * hash) + OUTPUT_URI_FIELD_NUMBER;
@@ -5934,8 +5853,6 @@ public final class TaskExecutionOuterClass {
         }
         eventVersion_ = 0;
 
-        deckUri_ = "";
-
         outputResultCase_ = 0;
         outputResult_ = null;
         return this;
@@ -6026,7 +5943,6 @@ public final class TaskExecutionOuterClass {
           result.metadata_ = metadataBuilder_.build();
         }
         result.eventVersion_ = eventVersion_;
-        result.deckUri_ = deckUri_;
         result.bitField0_ = to_bitField0_;
         result.outputResultCase_ = outputResultCase_;
         onBuilt();
@@ -6134,10 +6050,6 @@ public final class TaskExecutionOuterClass {
         }
         if (other.getEventVersion() != 0) {
           setEventVersion(other.getEventVersion());
-        }
-        if (!other.getDeckUri().isEmpty()) {
-          deckUri_ = other.deckUri_;
-          onChanged();
         }
         switch (other.getOutputResultCase()) {
           case OUTPUT_URI: {
@@ -8177,100 +8089,6 @@ public final class TaskExecutionOuterClass {
       public Builder clearEventVersion() {
         
         eventVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object deckUri_ = "";
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 18;</code>
-       */
-      public java.lang.String getDeckUri() {
-        java.lang.Object ref = deckUri_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deckUri_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 18;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeckUriBytes() {
-        java.lang.Object ref = deckUri_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deckUri_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 18;</code>
-       */
-      public Builder setDeckUri(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deckUri_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 18;</code>
-       */
-      public Builder clearDeckUri() {
-        
-        deckUri_ = getDefaultInstance().getDeckUri();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * String location uniquely identifying where the deck HTML file is.
-       * NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)
-       * </pre>
-       *
-       * <code>string deck_uri = 18;</code>
-       */
-      public Builder setDeckUriBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deckUri_ = value;
         onChanged();
         return this;
       }
@@ -10548,7 +10366,7 @@ public final class TaskExecutionOuterClass {
       "in.TaskExecutionClosure\022\021\n\tis_parent\030\004 \001" +
       "(\010\"Z\n\021TaskExecutionList\0226\n\017task_executio" +
       "ns\030\001 \003(\0132\035.flyteidl.admin.TaskExecution\022" +
-      "\r\n\005token\030\002 \001(\t\"\360\004\n\024TaskExecutionClosure\022" +
+      "\r\n\005token\030\002 \001(\t\"\336\004\n\024TaskExecutionClosure\022" +
       "\030\n\noutput_uri\030\001 \001(\tB\002\030\001H\000\022.\n\005error\030\002 \001(\013" +
       "2\035.flyteidl.core.ExecutionErrorH\000\0224\n\013out" +
       "put_data\030\014 \001(\0132\031.flyteidl.core.LiteralMa" +
@@ -10563,17 +10381,16 @@ public final class TaskExecutionOuterClass {
       "obuf.Struct\022\016\n\006reason\030\n \001(\t\022\021\n\ttask_type" +
       "\030\013 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.even" +
       "t.TaskExecutionMetadata\022\025\n\revent_version" +
-      "\030\021 \001(\005\022\020\n\010deck_uri\030\022 \001(\tB\017\n\routput_resul" +
-      "t\"Q\n\033TaskExecutionGetDataRequest\0222\n\002id\030\001" +
-      " \001(\0132&.flyteidl.core.TaskExecutionIdenti" +
-      "fier\"\332\001\n\034TaskExecutionGetDataResponse\022+\n" +
-      "\006inputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002" +
-      "\030\001\022,\n\007outputs\030\002 \001(\0132\027.flyteidl.admin.Url" +
-      "BlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl" +
-      ".core.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132\031" +
-      ".flyteidl.core.LiteralMapB7Z5github.com/" +
-      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
-      "inb\006proto3"
+      "\030\021 \001(\005B\017\n\routput_result\"Q\n\033TaskExecution" +
+      "GetDataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.co" +
+      "re.TaskExecutionIdentifier\"\332\001\n\034TaskExecu" +
+      "tionGetDataResponse\022+\n\006inputs\030\001 \001(\0132\027.fl" +
+      "yteidl.admin.UrlBlobB\002\030\001\022,\n\007outputs\030\002 \001(" +
+      "\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_i" +
+      "nputs\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/" +
+      "\n\014full_outputs\030\004 \001(\0132\031.flyteidl.core.Lit" +
+      "eralMapB7Z5github.com/flyteorg/flyteidl/" +
+      "gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10624,7 +10441,7 @@ public final class TaskExecutionOuterClass {
     internal_static_flyteidl_admin_TaskExecutionClosure_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskExecutionClosure_descriptor,
-        new java.lang.String[] { "OutputUri", "Error", "OutputData", "Phase", "Logs", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "CustomInfo", "Reason", "TaskType", "Metadata", "EventVersion", "DeckUri", "OutputResult", });
+        new java.lang.String[] { "OutputUri", "Error", "OutputData", "Phase", "Logs", "StartedAt", "Duration", "CreatedAt", "UpdatedAt", "CustomInfo", "Reason", "TaskType", "Metadata", "EventVersion", "OutputResult", });
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_fieldAccessorTable = new
