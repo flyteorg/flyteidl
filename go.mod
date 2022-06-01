@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/antihax/optional v1.0.0
-	github.com/flyteorg/flytestdlib v1.0.0
+	github.com/flyteorg/flytestdlib v1.0.4-0.20220601010535-57c1386c358f
 	github.com/go-test/deep v1.0.7
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
