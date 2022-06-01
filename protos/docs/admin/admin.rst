@@ -99,7 +99,9 @@ Defines a set of specific label selectors that the execution can tolerate on a c
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -120,11 +122,17 @@ Defines how a label with a corresponding key and value is selected or excluded.
    "NOT_IN", "3", ""
    "EXISTS", "4", "A label key with any value"
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -682,7 +690,9 @@ Represents a string url and associated metadata used throughout the platform.
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -717,11 +727,17 @@ Sort.Direction
    "DESCENDING", "0", "By default, fields are sorted in descending order."
    "ASCENDING", "1", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -908,13 +924,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -1179,6 +1203,7 @@ of an execution as it progresses across phase changes.
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of task nodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
 
 
 
@@ -1415,7 +1440,9 @@ See :ref:`ref_flyteidl.admin.Execution` for more details
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -1453,11 +1480,17 @@ The state of the execution is used to control its visibility in the UI/CLI.
    "EXECUTION_ACTIVE", "0", "By default, all executions are considered active."
    "EXECUTION_ARCHIVED", "1", "Archived executions are no longer visible in the UI."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -1706,6 +1739,7 @@ User-provided launch plan definition and configuration values.
    "quality_of_service", ":ref:`ref_flyteidl.core.QualityOfService`", "", "Indicates the runtime priority of the execution."
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
 
 
 
@@ -1748,7 +1782,9 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -1770,11 +1806,17 @@ group will be observed and trigger executions at a defined cadence.
    "INACTIVE", "0", ""
    "ACTIVE", "1", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2084,12 +2126,15 @@ Adds defaults for customizable workflow-execution specifications and overrides.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Custom labels to be applied to a triggered execution resource."
    "annotations", ":ref:`ref_flyteidl.admin.Annotations`", "", "Custom annotations to be applied to a triggered execution resource."
+   "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
 
 
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -2130,11 +2175,17 @@ PluginOverride.MissingPluginBehavior
    "FAIL", "0", "By default, if this plugin is not enabled for a Flyte deployment then execution will fail."
    "USE_DEFAULT", "1", "Uses the system-configured default implementation."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2437,13 +2488,21 @@ Metadata for a WorkflowNode
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2481,13 +2540,21 @@ Note: This is internal to Admin and doesn't need to be exposed to other componen
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2646,7 +2713,9 @@ See :ref:`ref_flyteidl.admin.Project` for more details
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -2665,11 +2734,17 @@ The state of the project is used to control its visibility in the UI and validit
    "ARCHIVED", "1", "Archived projects are no longer visible in the UI and no longer valid."
    "SYSTEM_GENERATED", "2", "System generated projects that aren't explicitly created or managed by a user."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2825,13 +2900,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2911,7 +2994,9 @@ Defines complete set of information required to trigger an execution on a schedu
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -2930,11 +3015,17 @@ Represents a frequency at which to run a schedule.
    "HOUR", "1", ""
    "DAY", "2", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3076,13 +3167,21 @@ Represents a structure that encapsulates the user-configured specification of th
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3271,13 +3370,21 @@ See :ref:`ref_flyteidl.admin.TaskExecution` for more details
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3347,13 +3454,21 @@ Provides Version information for a component
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3493,13 +3608,21 @@ Represents a structure that encapsulates the specification of the workflow.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3657,13 +3780,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3754,12 +3885,253 @@ microsecond should be expressed in JSON format as "3.000001s".
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
+.. _ref_google/protobuf/wrappers.proto:
+
+google/protobuf/wrappers.proto
+==================================================================
+
+
+
+
+
+.. _ref_google.protobuf.BoolValue:
+
+BoolValue
+------------------------------------------------------------------
+
+Wrapper message for `bool`.
+
+The JSON representation for `BoolValue` is JSON `true` and `false`.
+
+
+
+.. csv-table:: BoolValue type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_bool`", "", "The bool value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.BytesValue:
+
+BytesValue
+------------------------------------------------------------------
+
+Wrapper message for `bytes`.
+
+The JSON representation for `BytesValue` is JSON string.
+
+
+
+.. csv-table:: BytesValue type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_bytes`", "", "The bytes value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.DoubleValue:
+
+DoubleValue
+------------------------------------------------------------------
+
+Wrapper message for `double`.
+
+The JSON representation for `DoubleValue` is JSON number.
+
+
+
+.. csv-table:: DoubleValue type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_double`", "", "The double value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.FloatValue:
+
+FloatValue
+------------------------------------------------------------------
+
+Wrapper message for `float`.
+
+The JSON representation for `FloatValue` is JSON number.
+
+
+
+.. csv-table:: FloatValue type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_float`", "", "The float value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.Int32Value:
+
+Int32Value
+------------------------------------------------------------------
+
+Wrapper message for `int32`.
+
+The JSON representation for `Int32Value` is JSON number.
+
+
+
+.. csv-table:: Int32Value type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_int32`", "", "The int32 value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.Int64Value:
+
+Int64Value
+------------------------------------------------------------------
+
+Wrapper message for `int64`.
+
+The JSON representation for `Int64Value` is JSON string.
+
+
+
+.. csv-table:: Int64Value type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_int64`", "", "The int64 value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.StringValue:
+
+StringValue
+------------------------------------------------------------------
+
+Wrapper message for `string`.
+
+The JSON representation for `StringValue` is JSON string.
+
+
+
+.. csv-table:: StringValue type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_string`", "", "The string value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.UInt32Value:
+
+UInt32Value
+------------------------------------------------------------------
+
+Wrapper message for `uint32`.
+
+The JSON representation for `UInt32Value` is JSON number.
+
+
+
+.. csv-table:: UInt32Value type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_uint32`", "", "The uint32 value."
+
+
+
+
+
+
+
+.. _ref_google.protobuf.UInt64Value:
+
+UInt64Value
+------------------------------------------------------------------
+
+Wrapper message for `uint64`.
+
+The JSON representation for `UInt64Value` is JSON string.
+
+
+
+.. csv-table:: UInt64Value type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_uint64`", "", "The uint64 value."
+
+
+
+
+
+
+..
+   end messages
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
