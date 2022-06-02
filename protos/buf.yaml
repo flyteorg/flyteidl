@@ -8,5 +8,4 @@ breaking:
     - FILE
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/evalsocket/k8s
   - buf.build/evalsocket/protoc-gen-swagger
