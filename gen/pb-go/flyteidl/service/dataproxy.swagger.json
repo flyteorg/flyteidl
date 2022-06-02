@@ -16,6 +16,34 @@
   ],
   "paths": {
     "/api/v1/dataproxy/artifact_urn": {
+      "post": {
+        "summary": "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.",
+        "description": "Creates a write-only http location that is accessible for tasks at runtime.",
+        "operationId": "CreateUploadLocation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateUploadLocationRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DataProxyService"
+        ]
+      }
+    },
+    "/api/v1/dataproxy/artifact_urn_test": {
       "get": {
         "summary": "CreateDownloadLocation creates a signed url to download artifacts.",
         "description": "Creates a read-only http location that is accessible for tasks at runtime.",
@@ -42,32 +70,6 @@
             "in": "query",
             "required": false,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "DataProxyService"
-        ]
-      },
-      "post": {
-        "summary": "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.",
-        "description": "Creates a write-only http location that is accessible for tasks at runtime.",
-        "operationId": "CreateUploadLocation",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceCreateUploadLocationResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceCreateUploadLocationRequest"
-            }
           }
         ],
         "tags": [
