@@ -8,4 +8,4 @@ breaking:
     - FILE
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/evalsocket/protoc-gen-swagger
+  - buf.build/unionai/protoc-gen-swagger
