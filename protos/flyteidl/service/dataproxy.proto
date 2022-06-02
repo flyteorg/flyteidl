@@ -78,7 +78,7 @@ service DataProxyService {
   // CreateDownloadLocation creates a signed url to download artifacts.
   rpc CreateDownloadLocation (CreateDownloadLocationRequest) returns (CreateDownloadLocationResponse) {
     option (google.api.http) = {
-      get: "/api/v1/dataproxy/artifact_urn"
+      get: "/api/v1/dataproxy/artifact_urn_test"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Creates a read-only http location that is accessible for tasks at runtime."
