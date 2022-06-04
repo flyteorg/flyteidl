@@ -43,7 +43,7 @@
         ]
       }
     },
-    "/api/v1/dataproxy/artifact_urn_test": {
+    "/api/v1/dataproxy/download/artifact_urn": {
       "get": {
         "summary": "CreateDownloadLocation creates a signed url to download artifacts.",
         "description": "Creates a read-only http location that is accessible for tasks at runtime.",
