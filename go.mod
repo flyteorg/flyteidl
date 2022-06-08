@@ -6,7 +6,6 @@ require (
 	github.com/antihax/optional v1.0.0
 	github.com/flyteorg/flytestdlib v1.0.4-0.20220601010535-57c1386c358f
 	github.com/go-test/deep v1.0.7
-	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
@@ -21,6 +20,5 @@ require (
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
 	google.golang.org/genproto v0.0.0-20220407144326-9054f6ed7bac
 	google.golang.org/grpc v1.45.0
-	k8s.io/api v0.20.2
 	k8s.io/apimachinery v0.20.2
 )
