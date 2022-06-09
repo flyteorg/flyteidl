@@ -99,7 +99,7 @@ class CoreNode(object):
     def id(self):
         """Gets the id of this CoreNode.  # noqa: E501
 
-        A workflow-level unique identifier that identifies this node in the workflow. \"inputs\" and \"outputs\" are reserved node ids that cannot be used by other nodes.  # noqa: E501
+        A workflow-level unique identifier that identifies this node in the workflow. 'inputs' and 'outputs' are reserved node ids that cannot be used by other nodes.  # noqa: E501
 
         :return: The id of this CoreNode.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class CoreNode(object):
     def id(self, id):
         """Sets the id of this CoreNode.
 
-        A workflow-level unique identifier that identifies this node in the workflow. \"inputs\" and \"outputs\" are reserved node ids that cannot be used by other nodes.  # noqa: E501
+        A workflow-level unique identifier that identifies this node in the workflow. 'inputs' and 'outputs' are reserved node ids that cannot be used by other nodes.  # noqa: E501
 
         :param id: The id of this CoreNode.  # noqa: E501
         :type: str

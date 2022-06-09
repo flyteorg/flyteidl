@@ -12,11 +12,17 @@ flyteidl/service/admin.proto
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
+
+..
+   end enums
+
+
+..
+   end HasExtensions
 
 
 
@@ -79,7 +85,9 @@ Standard response codes for both are defined here: https://github.com/grpc-ecosy
    "GetNamedEntity", ":ref:`ref_flyteidl.admin.NamedEntityGetRequest`", ":ref:`ref_flyteidl.admin.NamedEntity`", "Returns a :ref:`ref_flyteidl.admin.NamedEntity` object."
    "UpdateNamedEntity", ":ref:`ref_flyteidl.admin.NamedEntityUpdateRequest`", ":ref:`ref_flyteidl.admin.NamedEntityUpdateResponse`", "Updates a :ref:`ref_flyteidl.admin.NamedEntity` object."
    "GetVersion", ":ref:`ref_flyteidl.admin.GetVersionRequest`", ":ref:`ref_flyteidl.admin.GetVersionResponse`", ""
- <!-- end services -->
+
+..
+   end services
 
 
 
@@ -174,11 +182,17 @@ FlyteClientResponse encapsulates public information that flyte clients (CLIs... 
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
+
+..
+   end enums
+
+
+..
+   end HasExtensions
 
 
 
@@ -197,7 +211,9 @@ RPCs defined in this service must be anonymously accessible.
 
    "GetOAuth2Metadata", ":ref:`ref_flyteidl.service.OAuth2MetadataRequest`", ":ref:`ref_flyteidl.service.OAuth2MetadataResponse`", "Anonymously accessible. Retrieves local or external oauth authorization server metadata."
    "GetPublicClientConfig", ":ref:`ref_flyteidl.service.PublicClientAuthConfigRequest`", ":ref:`ref_flyteidl.service.PublicClientAuthConfigResponse`", "Anonymously accessible. Retrieves the client information clients should use when initiating OAuth2 authorization requests."
- <!-- end services -->
+
+..
+   end services
 
 
 
@@ -206,6 +222,50 @@ RPCs defined in this service must be anonymously accessible.
 
 flyteidl/service/dataproxy.proto
 ==================================================================
+
+
+
+
+
+.. _ref_flyteidl.service.CreateDownloadLocationRequest:
+
+CreateDownloadLocationRequest
+------------------------------------------------------------------
+
+CreateDownloadLocationRequest specified request for the CreateDownloadLocation API.
+
+
+
+.. csv-table:: CreateDownloadLocationRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "native_url", ":ref:`ref_string`", "", "NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
+   "expires_in", ":ref:`ref_google.protobuf.Duration`", "", "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this exceeds the platform allowed max. +optional. The default value comes from a global config."
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.CreateDownloadLocationResponse:
+
+CreateDownloadLocationResponse
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: CreateDownloadLocationResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signed_url", ":ref:`ref_string`", "", "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+   "expires_at", ":ref:`ref_google.protobuf.Timestamp`", "", "ExpiresAt defines when will the signed URL expires."
+
+
 
 
 
@@ -257,11 +317,17 @@ CreateUploadLocationResponse
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
+
+..
+   end enums
+
+
+..
+   end HasExtensions
 
 
 
@@ -277,7 +343,10 @@ DataProxyService defines an RPC Service that allows access to user-data in a con
    :widths: auto
 
    "CreateUploadLocation", ":ref:`ref_flyteidl.service.CreateUploadLocationRequest`", ":ref:`ref_flyteidl.service.CreateUploadLocationResponse`", "CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain."
- <!-- end services -->
+   "CreateDownloadLocation", ":ref:`ref_flyteidl.service.CreateDownloadLocationRequest`", ":ref:`ref_flyteidl.service.CreateDownloadLocationResponse`", "CreateDownloadLocation creates a signed url to download artifacts."
+
+..
+   end services
 
 
 
@@ -330,11 +399,17 @@ See the OpenID Connect spec at https://openid.net/specs/openid-connect-core-1_0.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
+
+..
+   end enums
+
+
+..
+   end HasExtensions
 
 
 
@@ -350,7 +425,9 @@ IdentityService defines an RPC Service that interacts with user/app identities.
    :widths: auto
 
    "UserInfo", ":ref:`ref_flyteidl.service.UserInfoRequest`", ":ref:`ref_flyteidl.service.UserInfoResponse`", "Retrieves user information about the currently logged in user."
- <!-- end services -->
+
+..
+   end services
 
 
 
@@ -362,11 +439,17 @@ flyteidl/service/signal.proto
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
+
+..
+   end enums
+
+
+..
+   end HasExtensions
 
 
 
@@ -384,6 +467,8 @@ SignalService defines an RPC Service that may create, update, and retrieve signa
    "GetOrCreateSignal", ":ref:`ref_flyteidl.admin.SignalGetOrCreateRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches or creates a :ref:`ref_flyteidl.admin.Signal`."
    "ListSignals", ":ref:`ref_flyteidl.admin.SignalListRequest`", ":ref:`ref_flyteidl.admin.SignalListRequest`", "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions."
    "SetSignal", ":ref:`ref_flyteidl.admin.SignalSetRequest`", ":ref:`ref_flyteidl.admin.SignalSetResponse`", "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition"
- <!-- end services -->
+
+..
+   end services
 
 
