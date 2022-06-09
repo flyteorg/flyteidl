@@ -5346,31 +5346,51 @@ public final class Workflow {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     java.lang.String getSignalId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getSignalIdBytes();
 
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     boolean hasType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralType getType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * SignalCondition represents a dependency on an existing signal.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.SignalCondition}
@@ -5466,6 +5486,10 @@ public final class Workflow {
     public static final int SIGNAL_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object signalId_;
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     public java.lang.String getSignalId() {
@@ -5481,6 +5505,10 @@ public final class Workflow {
       }
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -5500,18 +5528,30 @@ public final class Workflow {
     public static final int TYPE_FIELD_NUMBER = 2;
     private flyteidl.core.Types.LiteralType type_;
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public boolean hasType() {
       return type_ != null;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralType getType() {
       return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -5690,7 +5730,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.SignalCondition}
@@ -5856,6 +5896,10 @@ public final class Workflow {
 
       private java.lang.Object signalId_ = "";
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public java.lang.String getSignalId() {
@@ -5871,6 +5915,10 @@ public final class Workflow {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -5887,6 +5935,10 @@ public final class Workflow {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder setSignalId(
@@ -5900,6 +5952,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder clearSignalId() {
@@ -5909,6 +5965,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder setSignalIdBytes(
@@ -5927,12 +5987,20 @@ public final class Workflow {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public boolean hasType() {
         return typeBuilder_ != null || type_ != null;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType getType() {
@@ -5943,6 +6011,10 @@ public final class Workflow {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(flyteidl.core.Types.LiteralType value) {
@@ -5959,6 +6031,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(
@@ -5973,6 +6049,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder mergeType(flyteidl.core.Types.LiteralType value) {
@@ -5991,6 +6071,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder clearType() {
@@ -6005,6 +6089,10 @@ public final class Workflow {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
@@ -6013,6 +6101,10 @@ public final class Workflow {
         return getTypeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -6024,6 +6116,10 @@ public final class Workflow {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6123,7 +6219,7 @@ public final class Workflow {
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * SleepCondition represents a dependency on waiting for the specified duration.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.SleepCondition}
@@ -6404,7 +6500,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.SleepCondition}
@@ -6772,7 +6868,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -6780,7 +6876,7 @@ public final class Workflow {
     boolean hasSignal();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -6788,7 +6884,7 @@ public final class Workflow {
     flyteidl.core.Workflow.SignalCondition getSignal();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -6797,7 +6893,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -6805,7 +6901,7 @@ public final class Workflow {
     boolean hasSleep();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -6813,7 +6909,7 @@ public final class Workflow {
     flyteidl.core.Workflow.SleepCondition getSleep();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -6824,7 +6920,7 @@ public final class Workflow {
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * GateNode refers to the condition that is required for the gate to successfully complete.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.GateNode}
@@ -6966,7 +7062,7 @@ public final class Workflow {
     public static final int SIGNAL_FIELD_NUMBER = 2;
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -6976,7 +7072,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -6989,7 +7085,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalCondition represents a dependency on an existing signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7004,7 +7100,7 @@ public final class Workflow {
     public static final int SLEEP_FIELD_NUMBER = 1;
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7014,7 +7110,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7027,7 +7123,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
      * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7224,7 +7320,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * GateNode refers to the condition that is required for the gate to successfully complete.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.GateNode}
@@ -7416,7 +7512,7 @@ public final class Workflow {
           flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder> signalBuilder_;
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7426,7 +7522,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7446,7 +7542,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7466,7 +7562,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7484,7 +7580,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7510,7 +7606,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7533,7 +7629,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7543,7 +7639,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7560,7 +7656,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SignalCondition represents a dependency on an existing signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7588,7 +7684,7 @@ public final class Workflow {
           flyteidl.core.Workflow.SleepCondition, flyteidl.core.Workflow.SleepCondition.Builder, flyteidl.core.Workflow.SleepConditionOrBuilder> sleepBuilder_;
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7598,7 +7694,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7618,7 +7714,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7638,7 +7734,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7656,7 +7752,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7682,7 +7778,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7705,7 +7801,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7715,7 +7811,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
@@ -7732,7 +7828,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
        * <code>.flyteidl.core.SleepCondition sleep = 1;</code>

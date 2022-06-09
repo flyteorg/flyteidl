@@ -58,6 +58,7 @@ class CoreSignalCondition(object):
     def signal_id(self):
         """Gets the signal_id of this CoreSignalCondition.  # noqa: E501
 
+        A unique identifier for the requested signal.  # noqa: E501
 
         :return: The signal_id of this CoreSignalCondition.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class CoreSignalCondition(object):
     def signal_id(self, signal_id):
         """Sets the signal_id of this CoreSignalCondition.
 
+        A unique identifier for the requested signal.  # noqa: E501
 
         :param signal_id: The signal_id of this CoreSignalCondition.  # noqa: E501
         :type: str
@@ -79,6 +81,7 @@ class CoreSignalCondition(object):
     def type(self):
         """Gets the type of this CoreSignalCondition.  # noqa: E501
 
+        A type denoting the required value type for this signal.  # noqa: E501
 
         :return: The type of this CoreSignalCondition.  # noqa: E501
         :rtype: CoreLiteralType
@@ -89,6 +92,7 @@ class CoreSignalCondition(object):
     def type(self, type):
         """Sets the type of this CoreSignalCondition.
 
+        A type denoting the required value type for this signal.  # noqa: E501
 
         :param type: The type of this CoreSignalCondition.  # noqa: E501
         :type: CoreLiteralType

@@ -52543,12 +52543,14 @@ definitions:
     type: "object"
     properties:
       signal:
-        title: "TODO hamersaw - document"
+        description: "SignalCondition represents a dependency on an existing signal."
         $ref: "#/definitions/coreSignalCondition"
       sleep:
-        title: "TODO hamersaw - document"
+        description: "SleepCondition represents a dependency on waiting for the specified\
+          \ duration."
         $ref: "#/definitions/coreSleepCondition"
-    title: "TODO hamersaw - document"
+    description: "GateNode refers to the condition that is required for the gate to\
+      \ successfully complete."
     example:
       sleep:
         duration: "duration"
@@ -54560,9 +54562,11 @@ definitions:
     properties:
       signal_id:
         type: "string"
+        description: "A unique identifier for the requested signal."
       type:
+        description: "A type denoting the required value type for this signal."
         $ref: "#/definitions/coreLiteralType"
-    title: "TODO hamersaw - document"
+    description: "SignalCondition represents a dependency on an existing signal."
     example:
       signal_id: "signal_id"
       type:
@@ -54637,7 +54641,8 @@ definitions:
       duration:
         type: "string"
         description: "The overall duration for this sleep."
-    title: "TODO hamersaw - document"
+    description: "SleepCondition represents a dependency on waiting for the specified\
+      \ duration."
     example:
       duration: "duration"
   coreSql:

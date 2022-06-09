@@ -2873,7 +2873,7 @@ runtime based on a series of conditions that get evaluated on various parameters
 GateNode
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+GateNode refers to the condition that is required for the gate to successfully complete.
 
 
 
@@ -2881,8 +2881,8 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "TODO hamersaw - document"
-   "sleep", ":ref:`ref_flyteidl.core.SleepCondition`", "", "TODO hamersaw - document"
+   "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "SignalCondition represents a dependency on an existing signal."
+   "sleep", ":ref:`ref_flyteidl.core.SleepCondition`", "", "SleepCondition represents a dependency on waiting for the specified duration."
 
 
 
@@ -2996,7 +2996,7 @@ Defines extra information about the Node.
 SignalCondition
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SignalCondition represents a dependency on an existing signal.
 
 
 
@@ -3004,8 +3004,8 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signal_id", ":ref:`ref_string`", "", ""
-   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+   "signal_id", ":ref:`ref_string`", "", "A unique identifier for the requested signal."
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", "A type denoting the required value type for this signal."
 
 
 
@@ -3018,7 +3018,7 @@ TODO hamersaw - document
 SleepCondition
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SleepCondition represents a dependency on waiting for the specified duration.
 
 
 

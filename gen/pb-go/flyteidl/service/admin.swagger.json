@@ -5466,14 +5466,14 @@
       "properties": {
         "signal": {
           "$ref": "#/definitions/coreSignalCondition",
-          "title": "TODO hamersaw - document"
+          "description": "SignalCondition represents a dependency on an existing signal."
         },
         "sleep": {
           "$ref": "#/definitions/coreSleepCondition",
-          "title": "TODO hamersaw - document"
+          "description": "SleepCondition represents a dependency on waiting for the specified duration."
         }
       },
-      "title": "TODO hamersaw - document"
+      "description": "GateNode refers to the condition that is required for the gate to successfully complete."
     },
     "coreIOStrategy": {
       "type": "object",
@@ -6130,13 +6130,15 @@
       "type": "object",
       "properties": {
         "signal_id": {
-          "type": "string"
+          "type": "string",
+          "description": "A unique identifier for the requested signal."
         },
         "type": {
-          "$ref": "#/definitions/coreLiteralType"
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "A type denoting the required value type for this signal."
         }
       },
-      "title": "TODO hamersaw - document"
+      "description": "SignalCondition represents a dependency on an existing signal."
     },
     "coreSimpleType": {
       "type": "string",
@@ -6163,7 +6165,7 @@
           "description": "The overall duration for this sleep."
         }
       },
-      "title": "TODO hamersaw - document"
+      "description": "SleepCondition represents a dependency on waiting for the specified duration."
     },
     "coreSql": {
       "type": "object",

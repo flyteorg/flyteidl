@@ -9,7 +9,10 @@
 
 package flyteadmin
 
+// SignalCondition represents a dependency on an existing signal.
 type CoreSignalCondition struct {
+	// A unique identifier for the requested signal.
 	SignalId string `json:"signal_id,omitempty"`
+	// A type denoting the required value type for this signal.
 	Type_ *CoreLiteralType `json:"type,omitempty"`
 }

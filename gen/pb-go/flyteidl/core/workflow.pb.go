@@ -402,9 +402,11 @@ func (*WorkflowNode) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// TODO hamersaw - document
+// SignalCondition represents a dependency on an existing signal.
 type SignalCondition struct {
-	SignalId             string       `protobuf:"bytes,1,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
+	// A unique identifier for the requested signal.
+	SignalId string `protobuf:"bytes,1,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
+	// A type denoting the required value type for this signal.
 	Type                 *LiteralType `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
@@ -450,7 +452,7 @@ func (m *SignalCondition) GetType() *LiteralType {
 	return nil
 }
 
-// TODO hamersaw - document
+// SleepCondition represents a dependency on waiting for the specified duration.
 type SleepCondition struct {
 	// The overall duration for this sleep.
 	Duration             *duration.Duration `protobuf:"bytes,4,opt,name=duration,proto3" json:"duration,omitempty"`
@@ -491,7 +493,7 @@ func (m *SleepCondition) GetDuration() *duration.Duration {
 	return nil
 }
 
-// TODO hamersaw - document
+// GateNode refers to the condition that is required for the gate to successfully complete.
 type GateNode struct {
 	// Types that are valid to be assigned to Condition:
 	//	*GateNode_Signal

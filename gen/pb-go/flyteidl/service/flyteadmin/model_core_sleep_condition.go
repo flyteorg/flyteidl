@@ -9,6 +9,7 @@
 
 package flyteadmin
 
+// SleepCondition represents a dependency on waiting for the specified duration.
 type CoreSleepCondition struct {
 	// The overall duration for this sleep.
 	Duration string `json:"duration,omitempty"`

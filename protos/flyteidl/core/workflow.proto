@@ -68,26 +68,28 @@ message WorkflowNode {
     }
 }
 
-// TODO hamersaw - document
+// SignalCondition represents a dependency on an existing signal.
 message SignalCondition {
+    // A unique identifier for the requested signal.
     string signal_id = 1;
 
+    // A type denoting the required value type for this signal.
     LiteralType type = 2;
 }
 
-// TODO hamersaw - document
+// SleepCondition represents a dependency on waiting for the specified duration.
 message SleepCondition {
     // The overall duration for this sleep.
     google.protobuf.Duration duration = 4;
 }
 
-// TODO hamersaw - document
+// GateNode refers to the condition that is required for the gate to successfully complete.
 message GateNode {
     oneof condition {
-        // TODO hamersaw - document
+        // SignalCondition represents a dependency on an existing signal.
         SignalCondition signal = 2;
 
-        // TODO hamersaw - document
+        // SleepCondition represents a dependency on waiting for the specified duration.
         SleepCondition sleep = 1;
     }
 }

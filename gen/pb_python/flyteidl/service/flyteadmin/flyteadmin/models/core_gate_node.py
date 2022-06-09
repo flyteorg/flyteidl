@@ -59,6 +59,7 @@ class CoreGateNode(object):
     def signal(self):
         """Gets the signal of this CoreGateNode.  # noqa: E501
 
+        SignalCondition represents a dependency on an existing signal.  # noqa: E501
 
         :return: The signal of this CoreGateNode.  # noqa: E501
         :rtype: CoreSignalCondition
@@ -69,6 +70,7 @@ class CoreGateNode(object):
     def signal(self, signal):
         """Sets the signal of this CoreGateNode.
 
+        SignalCondition represents a dependency on an existing signal.  # noqa: E501
 
         :param signal: The signal of this CoreGateNode.  # noqa: E501
         :type: CoreSignalCondition
@@ -80,6 +82,7 @@ class CoreGateNode(object):
     def sleep(self):
         """Gets the sleep of this CoreGateNode.  # noqa: E501
 
+        SleepCondition represents a dependency on waiting for the specified duration.  # noqa: E501
 
         :return: The sleep of this CoreGateNode.  # noqa: E501
         :rtype: CoreSleepCondition
@@ -90,6 +93,7 @@ class CoreGateNode(object):
     def sleep(self, sleep):
         """Sets the sleep of this CoreGateNode.
 
+        SleepCondition represents a dependency on waiting for the specified duration.  # noqa: E501
 
         :param sleep: The sleep of this CoreGateNode.  # noqa: E501
         :type: CoreSleepCondition
