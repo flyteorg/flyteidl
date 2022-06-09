@@ -375,18 +375,15 @@ flyteidl/service/signal.proto
 SignalService
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SignalService defines an RPC Service that may create, update, and retrieve signal(s).
 
 .. csv-table:: SignalService service methods
    :header: "Method Name", "Request Type", "Response Type", "Description"
    :widths: auto
 
-   "GetOrCreateSignal", ":ref:`ref_flyteidl.admin.SignalGetOrCreateRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
-
-TODO figure out correct calls"
-   "SetSignal", ":ref:`ref_flyteidl.admin.SignalSetRequest`", ":ref:`ref_flyteidl.admin.SignalSetResponse`", "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
-
-option (google.api.http) = { post: "/api/v1/signals" body: "*" }; option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = { description: "Set a signal value." responses: { key: "400" value: { description: "Returned for bad request that may have failed validation." } } responses: { key: "409" value: { description: "Returned for a request that references an identical entity that has already been registered." } } };"
+   "GetOrCreateSignal", ":ref:`ref_flyteidl.admin.SignalGetOrCreateRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches or creates a :ref:`ref_flyteidl.admin.Signal`."
+   "ListSignals", ":ref:`ref_flyteidl.admin.SignalListRequest`", ":ref:`ref_flyteidl.admin.SignalListRequest`", "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions."
+   "SetSignal", ":ref:`ref_flyteidl.admin.SignalSetRequest`", ":ref:`ref_flyteidl.admin.SignalSetResponse`", "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition"
  <!-- end services -->
 
 

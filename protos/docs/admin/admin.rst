@@ -2956,7 +2956,9 @@ flyteidl/admin/signal.proto
 Signal
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte
+signal. Signals may exist either without a set value (representing a signal request) or with a
+populated value (indicating the signal has been given).
 
 
 
@@ -2964,9 +2966,9 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
-   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "A unique identifier for the requested signal."
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", "A type denoting the required value type for this signal."
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", "The value of the signal. This is only available if the signal has been "set" and must match the defined the type."
 
 
 
@@ -2979,7 +2981,8 @@ TODO hamersaw - document
 SignalGetOrCreateRequest
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SignalGetOrCreateRequest represents a request structure to retrive or create a signal.
+See :ref:`ref_flyteidl.admin.Signal` for more details
 
 
 
@@ -2987,8 +2990,52 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
-   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", ""
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "A unique identifier for the requested signal."
+   "type", ":ref:`ref_flyteidl.core.LiteralType`", "", "A type denoting the required value type for this signal."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalListRequest:
+
+SignalListRequest
+------------------------------------------------------------------
+
+SignalListRequest represents a request structure to retrieve a collection of signals.
+See :ref:`ref_flyteidl.admin.Signal` for more details
+
+
+
+.. csv-table:: SignalListRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "A unique identifier for the requested signal, available fields will be used as input filters."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SignalListResponse:
+
+SignalListResponse
+------------------------------------------------------------------
+
+SignalListResponse represents a response structure containing a collection of signals.
+See :ref:`ref_flyteidl.admin.Signal` for more details
+
+
+
+.. csv-table:: SignalListResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signals", ":ref:`ref_flyteidl.admin.Signal`", "repeated", "A list of signals matching the input filters."
 
 
 
@@ -3001,7 +3048,9 @@ TODO hamersaw - document
 SignalSetRequest
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SignalSetRequest represents a request structure to set the value on a signal. Setting a signal
+effetively satisfies the signal condition within a Flyte workflow.
+See :ref:`ref_flyteidl.admin.Signal` for more details
 
 
 
@@ -3009,8 +3058,8 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Literal`", "", ""
+   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "A unique identifier for the requested signal."
+   "value", ":ref:`ref_flyteidl.core.Literal`", "", "The value of this signal, must match the defining signal type."
 
 
 
@@ -3023,7 +3072,9 @@ TODO hamersaw - document
 SignalSetResponse
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+SignalSetResponse represents a response structure if signal setting succeeds.
+
+Purposefully empty, may be populated in the future.
 
 
 

@@ -40,19 +40,35 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto[] =
   "\n\035flyteidl/service/signal.proto\022\020flyteid"
   "l.service\032\034google/api/annotations.proto\032"
   "\033flyteidl/admin/signal.proto\032,protoc-gen"
-  "-swagger/options/annotations.proto2\274\001\n\rS"
-  "ignalService\022W\n\021GetOrCreateSignal\022(.flyt"
-  "eidl.admin.SignalGetOrCreateRequest\032\026.fl"
-  "yteidl.admin.Signal\"\000\022R\n\tSetSignal\022 .fly"
-  "teidl.admin.SignalSetRequest\032!.flyteidl."
-  "admin.SignalSetResponse\"\000B9Z7github.com/"
-  "flyteorg/flyteidl/gen/pb-go/flyteidl/ser"
-  "viceb\006proto3"
+  "-swagger/options/annotations.proto2\311\006\n\rS"
+  "ignalService\022\220\001\n\021GetOrCreateSignal\022(.fly"
+  "teidl.admin.SignalGetOrCreateRequest\032\026.f"
+  "lyteidl.admin.Signal\"9\222A6\0324Retrieve a si"
+  "gnal, creating it if it does not exist.\022"
+  "\360\002\n\013ListSignals\022!.flyteidl.admin.SignalL"
+  "istRequest\032!.flyteidl.admin.SignalListRe"
+  "quest\"\232\002\202\323\344\223\002\307\001\022h/api/v1/signals/{id.exe"
+  "cution_id.project}/{id.execution_id.doma"
+  "in}/{id.execution_id.name}/{id.signal_id"
+  "}Z[\022Y/api/v1/signals/{id.execution_id.pr"
+  "oject}/{id.execution_id.domain}/{id.exec"
+  "ution_id.name}\222AI\032GFetch existing signal"
+  " definitions matching the input signal i"
+  "d filters.\022\261\002\n\tSetSignal\022 .flyteidl.admi"
+  "n.SignalSetRequest\032!.flyteidl.admin.Sign"
+  "alSetResponse\"\336\001\202\323\344\223\002\024\"\017/api/v1/signals:"
+  "\001*\222A\300\001\032\023Set a signal value.JB\n\003400\022;\n9Re"
+  "turned for bad request that may have fai"
+  "led validation.Je\n\003409\022^\n\\Returned for a"
+  " request that references an identical en"
+  "tity that has already been registered.B9"
+  "Z7github.com/flyteorg/flyteidl/gen/pb-go"
+  "/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fsignal_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fsignal_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto,
-  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 412,
+  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 1065,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fsignal_2eproto() {

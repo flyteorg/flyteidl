@@ -5,7 +5,7 @@ from flyteidl.admin import signal_pb2 as flyteidl_dot_admin_dot_signal__pb2
 
 
 class SignalServiceStub(object):
-  """TODO hamersaw - document
+  """SignalService defines an RPC Service that may create, update, and retrieve signal(s).
   """
 
   def __init__(self, channel):
@@ -19,6 +19,11 @@ class SignalServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetOrCreateRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_signal__pb2.Signal.FromString,
         )
+    self.ListSignals = channel.unary_unary(
+        '/flyteidl.service.SignalService/ListSignals',
+        request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.FromString,
+        )
     self.SetSignal = channel.unary_unary(
         '/flyteidl.service.SignalService/SetSignal',
         request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalSetRequest.SerializeToString,
@@ -27,12 +32,18 @@ class SignalServiceStub(object):
 
 
 class SignalServiceServicer(object):
-  """TODO hamersaw - document
+  """SignalService defines an RPC Service that may create, update, and retrieve signal(s).
   """
 
   def GetOrCreateSignal(self, request, context):
     """Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
-    TODO figure out correct calls
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListSignals(self, request, context):
+    """Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -40,25 +51,6 @@ class SignalServiceServicer(object):
 
   def SetSignal(self, request, context):
     """Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition
-    option (google.api.http) = {
-    post: "/api/v1/signals"
-    body: "*"
-    };
-    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-    description: "Set a signal value."
-    responses: {
-    key: "400"
-    value: {
-    description: "Returned for bad request that may have failed validation."
-    }
-    }
-    responses: {
-    key: "409"
-    value: {
-    description: "Returned for a request that references an identical entity that has already been registered."
-    }
-    }
-    };
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -71,6 +63,11 @@ def add_SignalServiceServicer_to_server(servicer, server):
           servicer.GetOrCreateSignal,
           request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalGetOrCreateRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_signal__pb2.Signal.SerializeToString,
+      ),
+      'ListSignals': grpc.unary_unary_rpc_method_handler(
+          servicer.ListSignals,
+          request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.SerializeToString,
       ),
       'SetSignal': grpc.unary_unary_rpc_method_handler(
           servicer.SetSignal,

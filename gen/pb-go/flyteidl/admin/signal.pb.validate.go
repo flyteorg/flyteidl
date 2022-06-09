@@ -123,6 +123,165 @@ var _ interface {
 	ErrorName() string
 } = SignalGetOrCreateRequestValidationError{}
 
+// Validate checks the field values on SignalListRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *SignalListRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalListRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// SignalListRequestValidationError is the validation error returned by
+// SignalListRequest.Validate if the designated constraints aren't met.
+type SignalListRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SignalListRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SignalListRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SignalListRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SignalListRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SignalListRequestValidationError) ErrorName() string {
+	return "SignalListRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SignalListRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSignalListRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SignalListRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SignalListRequestValidationError{}
+
+// Validate checks the field values on SignalListResponse with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *SignalListResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetSignals() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return SignalListResponseValidationError{
+					field:  fmt.Sprintf("Signals[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// SignalListResponseValidationError is the validation error returned by
+// SignalListResponse.Validate if the designated constraints aren't met.
+type SignalListResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e SignalListResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e SignalListResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e SignalListResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e SignalListResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e SignalListResponseValidationError) ErrorName() string {
+	return "SignalListResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e SignalListResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sSignalListResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = SignalListResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = SignalListResponseValidationError{}
+
 // Validate checks the field values on SignalSetRequest with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.

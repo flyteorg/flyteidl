@@ -300,9 +300,11 @@ func (m *TaskExecutionIdentifier) GetRetryAttempt() uint32 {
 	return 0
 }
 
-// TODO hamersaw - document
+// Encapsulation of fields the uniquely identify a signal.
 type SignalIdentifier struct {
-	SignalId             string                       `protobuf:"bytes,1,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
+	// Unique identifier for a signal.
+	SignalId string `protobuf:"bytes,1,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
+	// Identifies the Flyte workflow execution this signal belongs to.
 	ExecutionId          *WorkflowExecutionIdentifier `protobuf:"bytes,2,opt,name=execution_id,json=executionId,proto3" json:"execution_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                     `json:"-"`
 	XXX_unrecognized     []byte                       `json:"-"`

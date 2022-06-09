@@ -14,7 +14,140 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/v1/signals": {
+      "post": {
+        "summary": "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition",
+        "description": "Set a signal value.",
+        "operationId": "SetSignal",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminSignalSetResponse"
+            }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminSignalSetRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SignalService"
+        ]
+      }
+    },
+    "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}": {
+      "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.",
+        "description": "Fetch existing signal definitions matching the input signal id filters.",
+        "operationId": "ListSignals2",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminSignalListRequest"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.signal_id",
+            "description": "Unique identifier for a signal.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SignalService"
+        ]
+      }
+    },
+    "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}": {
+      "get": {
+        "summary": "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.",
+        "description": "Fetch existing signal definitions matching the input signal id filters.",
+        "operationId": "ListSignals",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminSignalListRequest"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.signal_id",
+            "description": "Unique identifier for a signal.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SignalService"
+        ]
+      }
+    }
+  },
   "definitions": {
     "BlobTypeBlobDimensionality": {
       "type": "string",
@@ -66,20 +199,47 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/coreSignalIdentifier"
+          "$ref": "#/definitions/coreSignalIdentifier",
+          "description": "A unique identifier for the requested signal."
         },
         "type": {
-          "$ref": "#/definitions/coreLiteralType"
+          "$ref": "#/definitions/coreLiteralType",
+          "description": "A type denoting the required value type for this signal."
         },
         "value": {
-          "$ref": "#/definitions/coreLiteral"
+          "$ref": "#/definitions/coreLiteral",
+          "description": "The value of the signal. This is only available if the signal has been \"set\" and must match\nthe defined the type."
         }
       },
-      "title": "TODO hamersaw - document"
+      "description": "Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte\nsignal. Signals may exist either without a set value (representing a signal request) or with a\npopulated value (indicating the signal has been given)."
+    },
+    "adminSignalListRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreSignalIdentifier",
+          "description": "A unique identifier for the requested signal, available fields will be used as input filters."
+        }
+      },
+      "title": "SignalListRequest represents a request structure to retrieve a collection of signals.\nSee :ref:`ref_flyteidl.admin.Signal` for more details"
+    },
+    "adminSignalSetRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreSignalIdentifier",
+          "description": "A unique identifier for the requested signal."
+        },
+        "value": {
+          "$ref": "#/definitions/coreLiteral",
+          "description": "The value of this signal, must match the defining signal type."
+        }
+      },
+      "title": "SignalSetRequest represents a request structure to set the value on a signal. Setting a signal\neffetively satisfies the signal condition within a Flyte workflow.\nSee :ref:`ref_flyteidl.admin.Signal` for more details"
     },
     "adminSignalSetResponse": {
       "type": "object",
-      "title": "TODO hamersaw - document"
+      "description": "SignalSetResponse represents a response structure if signal setting succeeds."
     },
     "coreBinary": {
       "type": "object",
@@ -327,13 +487,15 @@
       "type": "object",
       "properties": {
         "signal_id": {
-          "type": "string"
+          "type": "string",
+          "description": "Unique identifier for a signal."
         },
         "execution_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "Identifies the Flyte workflow execution this signal belongs to."
         }
       },
-      "title": "TODO hamersaw - document"
+      "description": "Encapsulation of fields the uniquely identify a signal."
     },
     "coreSimpleType": {
       "type": "string",

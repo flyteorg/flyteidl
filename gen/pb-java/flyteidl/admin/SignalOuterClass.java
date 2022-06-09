@@ -19,34 +19,59 @@ public final class SignalOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
 
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     boolean hasType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralType getType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * SignalGetOrCreateRequest represents a request structure to retrive or create a signal.
+   * See :ref:`ref_flyteidl.admin.Signal` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.SignalGetOrCreateRequest}
@@ -148,18 +173,30 @@ public final class SignalOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -169,18 +206,30 @@ public final class SignalOuterClass {
     public static final int TYPE_FIELD_NUMBER = 2;
     private flyteidl.core.Types.LiteralType type_;
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public boolean hasType() {
       return type_ != null;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralType getType() {
       return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -365,7 +414,8 @@ public final class SignalOuterClass {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalGetOrCreateRequest represents a request structure to retrive or create a signal.
+     * See :ref:`ref_flyteidl.admin.Signal` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.SignalGetOrCreateRequest}
@@ -540,12 +590,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
@@ -556,6 +614,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -572,6 +634,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -586,6 +652,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -604,6 +674,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -618,6 +692,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
@@ -626,6 +704,10 @@ public final class SignalOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -637,6 +719,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -657,12 +743,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public boolean hasType() {
         return typeBuilder_ != null || type_ != null;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType getType() {
@@ -673,6 +767,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(flyteidl.core.Types.LiteralType value) {
@@ -689,6 +787,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(
@@ -703,6 +805,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder mergeType(flyteidl.core.Types.LiteralType value) {
@@ -721,6 +827,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder clearType() {
@@ -735,6 +845,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
@@ -743,6 +857,10 @@ public final class SignalOuterClass {
         return getTypeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -754,6 +872,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -822,39 +944,1644 @@ public final class SignalOuterClass {
 
   }
 
+  public interface SignalListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalListRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
+  }
+  /**
+   * <pre>
+   * SignalListRequest represents a request structure to retrieve a collection of signals.
+   * See :ref:`ref_flyteidl.admin.Signal` for more details
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.SignalListRequest}
+   */
+  public  static final class SignalListRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalListRequest)
+      SignalListRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignalListRequest.newBuilder() to construct.
+    private SignalListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignalListRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignalListRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder subBuilder = null;
+              if (id_ != null) {
+                subBuilder = id_.toBuilder();
+              }
+              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.SignalIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(id_);
+                id_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.SignalOuterClass.SignalListRequest.class, flyteidl.admin.SignalOuterClass.SignalListRequest.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public boolean hasId() {
+      return id_ != null;
+    }
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
+      return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+    }
+    /**
+     * <pre>
+     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * </pre>
+     *
+     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
+      return getId();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != null) {
+        output.writeMessage(1, getId());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getId());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalListRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.SignalOuterClass.SignalListRequest other = (flyteidl.admin.SignalOuterClass.SignalListRequest) obj;
+
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (!getId()
+            .equals(other.getId())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalListRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * SignalListRequest represents a request structure to retrieve a collection of signals.
+     * See :ref:`ref_flyteidl.admin.Signal` for more details
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.SignalListRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalListRequest)
+        flyteidl.admin.SignalOuterClass.SignalListRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.SignalOuterClass.SignalListRequest.class, flyteidl.admin.SignalOuterClass.SignalListRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.SignalOuterClass.SignalListRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (idBuilder_ == null) {
+          id_ = null;
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListRequest getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalListRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListRequest build() {
+        flyteidl.admin.SignalOuterClass.SignalListRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListRequest buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalListRequest result = new flyteidl.admin.SignalOuterClass.SignalListRequest(this);
+        if (idBuilder_ == null) {
+          result.id_ = id_;
+        } else {
+          result.id_ = idBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalListRequest) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalListRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalListRequest other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalListRequest.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          mergeId(other.getId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.SignalOuterClass.SignalListRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalListRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public boolean hasId() {
+        return idBuilder_ != null || id_ != null;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
+        if (idBuilder_ == null) {
+          return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+        } else {
+          return idBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
+        if (idBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          id_ = value;
+          onChanged();
+        } else {
+          idBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder setId(
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder builderForValue) {
+        if (idBuilder_ == null) {
+          id_ = builderForValue.build();
+          onChanged();
+        } else {
+          idBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
+        if (idBuilder_ == null) {
+          if (id_ != null) {
+            id_ =
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+          } else {
+            id_ = value;
+          }
+          onChanged();
+        } else {
+          idBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public Builder clearId() {
+        if (idBuilder_ == null) {
+          id_ = null;
+          onChanged();
+        } else {
+          id_ = null;
+          idBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
+        
+        onChanged();
+        return getIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
+        if (idBuilder_ != null) {
+          return idBuilder_.getMessageOrBuilder();
+        } else {
+          return id_ == null ?
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+        }
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * </pre>
+       *
+       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> 
+          getIdFieldBuilder() {
+        if (idBuilder_ == null) {
+          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder>(
+                  getId(),
+                  getParentForChildren(),
+                  isClean());
+          id_ = null;
+        }
+        return idBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalListRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListRequest)
+    private static final flyteidl.admin.SignalOuterClass.SignalListRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalListRequest();
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalListRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignalListRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SignalListRequest>() {
+      @java.lang.Override
+      public SignalListRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignalListRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignalListRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignalListRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.SignalOuterClass.SignalListRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SignalListResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalListResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    java.util.List<flyteidl.admin.SignalOuterClass.Signal> 
+        getSignalsList();
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    flyteidl.admin.SignalOuterClass.Signal getSignals(int index);
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    int getSignalsCount();
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    java.util.List<? extends flyteidl.admin.SignalOuterClass.SignalOrBuilder> 
+        getSignalsOrBuilderList();
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    flyteidl.admin.SignalOuterClass.SignalOrBuilder getSignalsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * SignalListResponse represents a response structure containing a collection of signals.
+   * See :ref:`ref_flyteidl.admin.Signal` for more details
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.SignalListResponse}
+   */
+  public  static final class SignalListResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalListResponse)
+      SignalListResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignalListResponse.newBuilder() to construct.
+    private SignalListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignalListResponse() {
+      signals_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignalListResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signals_ = new java.util.ArrayList<flyteidl.admin.SignalOuterClass.Signal>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signals_.add(
+                  input.readMessage(flyteidl.admin.SignalOuterClass.Signal.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signals_ = java.util.Collections.unmodifiableList(signals_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.SignalOuterClass.SignalListResponse.class, flyteidl.admin.SignalOuterClass.SignalListResponse.Builder.class);
+    }
+
+    public static final int SIGNALS_FIELD_NUMBER = 1;
+    private java.util.List<flyteidl.admin.SignalOuterClass.Signal> signals_;
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    public java.util.List<flyteidl.admin.SignalOuterClass.Signal> getSignalsList() {
+      return signals_;
+    }
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.admin.SignalOuterClass.SignalOrBuilder> 
+        getSignalsOrBuilderList() {
+      return signals_;
+    }
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    public int getSignalsCount() {
+      return signals_.size();
+    }
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    public flyteidl.admin.SignalOuterClass.Signal getSignals(int index) {
+      return signals_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of signals matching the input filters.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+     */
+    public flyteidl.admin.SignalOuterClass.SignalOrBuilder getSignalsOrBuilder(
+        int index) {
+      return signals_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < signals_.size(); i++) {
+        output.writeMessage(1, signals_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < signals_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, signals_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalListResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.SignalOuterClass.SignalListResponse other = (flyteidl.admin.SignalOuterClass.SignalListResponse) obj;
+
+      if (!getSignalsList()
+          .equals(other.getSignalsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSignalsCount() > 0) {
+        hash = (37 * hash) + SIGNALS_FIELD_NUMBER;
+        hash = (53 * hash) + getSignalsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalListResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * SignalListResponse represents a response structure containing a collection of signals.
+     * See :ref:`ref_flyteidl.admin.Signal` for more details
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.SignalListResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalListResponse)
+        flyteidl.admin.SignalOuterClass.SignalListResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.SignalOuterClass.SignalListResponse.class, flyteidl.admin.SignalOuterClass.SignalListResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.SignalOuterClass.SignalListResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSignalsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (signalsBuilder_ == null) {
+          signals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          signalsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalListResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListResponse build() {
+        flyteidl.admin.SignalOuterClass.SignalListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.SignalOuterClass.SignalListResponse buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalListResponse result = new flyteidl.admin.SignalOuterClass.SignalListResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (signalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            signals_ = java.util.Collections.unmodifiableList(signals_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.signals_ = signals_;
+        } else {
+          result.signals_ = signalsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalListResponse) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalListResponse other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalListResponse.getDefaultInstance()) return this;
+        if (signalsBuilder_ == null) {
+          if (!other.signals_.isEmpty()) {
+            if (signals_.isEmpty()) {
+              signals_ = other.signals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSignalsIsMutable();
+              signals_.addAll(other.signals_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.signals_.isEmpty()) {
+            if (signalsBuilder_.isEmpty()) {
+              signalsBuilder_.dispose();
+              signalsBuilder_ = null;
+              signals_ = other.signals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              signalsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSignalsFieldBuilder() : null;
+            } else {
+              signalsBuilder_.addAllMessages(other.signals_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.SignalOuterClass.SignalListResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalListResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<flyteidl.admin.SignalOuterClass.Signal> signals_ =
+        java.util.Collections.emptyList();
+      private void ensureSignalsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          signals_ = new java.util.ArrayList<flyteidl.admin.SignalOuterClass.Signal>(signals_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.SignalOuterClass.Signal, flyteidl.admin.SignalOuterClass.Signal.Builder, flyteidl.admin.SignalOuterClass.SignalOrBuilder> signalsBuilder_;
+
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.SignalOuterClass.Signal> getSignalsList() {
+        if (signalsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(signals_);
+        } else {
+          return signalsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public int getSignalsCount() {
+        if (signalsBuilder_ == null) {
+          return signals_.size();
+        } else {
+          return signalsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public flyteidl.admin.SignalOuterClass.Signal getSignals(int index) {
+        if (signalsBuilder_ == null) {
+          return signals_.get(index);
+        } else {
+          return signalsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder setSignals(
+          int index, flyteidl.admin.SignalOuterClass.Signal value) {
+        if (signalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSignalsIsMutable();
+          signals_.set(index, value);
+          onChanged();
+        } else {
+          signalsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder setSignals(
+          int index, flyteidl.admin.SignalOuterClass.Signal.Builder builderForValue) {
+        if (signalsBuilder_ == null) {
+          ensureSignalsIsMutable();
+          signals_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          signalsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder addSignals(flyteidl.admin.SignalOuterClass.Signal value) {
+        if (signalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSignalsIsMutable();
+          signals_.add(value);
+          onChanged();
+        } else {
+          signalsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder addSignals(
+          int index, flyteidl.admin.SignalOuterClass.Signal value) {
+        if (signalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSignalsIsMutable();
+          signals_.add(index, value);
+          onChanged();
+        } else {
+          signalsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder addSignals(
+          flyteidl.admin.SignalOuterClass.Signal.Builder builderForValue) {
+        if (signalsBuilder_ == null) {
+          ensureSignalsIsMutable();
+          signals_.add(builderForValue.build());
+          onChanged();
+        } else {
+          signalsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder addSignals(
+          int index, flyteidl.admin.SignalOuterClass.Signal.Builder builderForValue) {
+        if (signalsBuilder_ == null) {
+          ensureSignalsIsMutable();
+          signals_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          signalsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder addAllSignals(
+          java.lang.Iterable<? extends flyteidl.admin.SignalOuterClass.Signal> values) {
+        if (signalsBuilder_ == null) {
+          ensureSignalsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, signals_);
+          onChanged();
+        } else {
+          signalsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder clearSignals() {
+        if (signalsBuilder_ == null) {
+          signals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          signalsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public Builder removeSignals(int index) {
+        if (signalsBuilder_ == null) {
+          ensureSignalsIsMutable();
+          signals_.remove(index);
+          onChanged();
+        } else {
+          signalsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public flyteidl.admin.SignalOuterClass.Signal.Builder getSignalsBuilder(
+          int index) {
+        return getSignalsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public flyteidl.admin.SignalOuterClass.SignalOrBuilder getSignalsOrBuilder(
+          int index) {
+        if (signalsBuilder_ == null) {
+          return signals_.get(index);  } else {
+          return signalsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.admin.SignalOuterClass.SignalOrBuilder> 
+           getSignalsOrBuilderList() {
+        if (signalsBuilder_ != null) {
+          return signalsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(signals_);
+        }
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public flyteidl.admin.SignalOuterClass.Signal.Builder addSignalsBuilder() {
+        return getSignalsFieldBuilder().addBuilder(
+            flyteidl.admin.SignalOuterClass.Signal.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public flyteidl.admin.SignalOuterClass.Signal.Builder addSignalsBuilder(
+          int index) {
+        return getSignalsFieldBuilder().addBuilder(
+            index, flyteidl.admin.SignalOuterClass.Signal.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of signals matching the input filters.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.Signal signals = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.SignalOuterClass.Signal.Builder> 
+           getSignalsBuilderList() {
+        return getSignalsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.SignalOuterClass.Signal, flyteidl.admin.SignalOuterClass.Signal.Builder, flyteidl.admin.SignalOuterClass.SignalOrBuilder> 
+          getSignalsFieldBuilder() {
+        if (signalsBuilder_ == null) {
+          signalsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.admin.SignalOuterClass.Signal, flyteidl.admin.SignalOuterClass.Signal.Builder, flyteidl.admin.SignalOuterClass.SignalOrBuilder>(
+                  signals_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          signals_ = null;
+        }
+        return signalsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalListResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListResponse)
+    private static final flyteidl.admin.SignalOuterClass.SignalListResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalListResponse();
+    }
+
+    public static flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignalListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SignalListResponse>() {
+      @java.lang.Override
+      public SignalListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignalListResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignalListResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignalListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SignalSetRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalSetRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
 
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     boolean hasValue();
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     flyteidl.core.Literals.Literal getValue();
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder();
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * SignalSetRequest represents a request structure to set the value on a signal. Setting a signal
+   * effetively satisfies the signal condition within a Flyte workflow.
+   * See :ref:`ref_flyteidl.admin.Signal` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.SignalSetRequest}
@@ -956,18 +2683,30 @@ public final class SignalOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -977,18 +2716,30 @@ public final class SignalOuterClass {
     public static final int VALUE_FIELD_NUMBER = 2;
     private flyteidl.core.Literals.Literal value_;
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public flyteidl.core.Literals.Literal getValue() {
       return value_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : value_;
     }
     /**
+     * <pre>
+     * The value of this signal, must match the defining signal type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 2;</code>
      */
     public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -1173,7 +2924,9 @@ public final class SignalOuterClass {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalSetRequest represents a request structure to set the value on a signal. Setting a signal
+     * effetively satisfies the signal condition within a Flyte workflow.
+     * See :ref:`ref_flyteidl.admin.Signal` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.SignalSetRequest}
@@ -1348,12 +3101,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
@@ -1364,6 +3125,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -1380,6 +3145,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -1394,6 +3163,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -1412,6 +3185,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -1426,6 +3203,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
@@ -1434,6 +3215,10 @@ public final class SignalOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -1445,6 +3230,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1465,12 +3254,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> valueBuilder_;
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.Literal getValue() {
@@ -1481,6 +3278,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder setValue(flyteidl.core.Literals.Literal value) {
@@ -1497,6 +3298,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder setValue(
@@ -1511,6 +3316,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder mergeValue(flyteidl.core.Literals.Literal value) {
@@ -1529,6 +3338,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public Builder clearValue() {
@@ -1543,6 +3356,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.Literal.Builder getValueBuilder() {
@@ -1551,6 +3368,10 @@ public final class SignalOuterClass {
         return getValueFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -1562,6 +3383,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * The value of this signal, must match the defining signal type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1636,7 +3461,7 @@ public final class SignalOuterClass {
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * SignalSetResponse represents a response structure if signal setting succeeds.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.SignalSetResponse}
@@ -1854,7 +3679,7 @@ public final class SignalOuterClass {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * SignalSetResponse represents a response structure if signal setting succeeds.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.SignalSetResponse}
@@ -2054,47 +3879,88 @@ public final class SignalOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
 
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     boolean hasType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralType getType();
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
 
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     boolean hasValue();
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     flyteidl.core.Literals.Literal getValue();
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder();
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte
+   * signal. Signals may exist either without a set value (representing a signal request) or with a
+   * populated value (indicating the signal has been given).
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.Signal}
@@ -2209,18 +4075,30 @@ public final class SignalOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
     }
     /**
+     * <pre>
+     * A unique identifier for the requested signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -2230,18 +4108,30 @@ public final class SignalOuterClass {
     public static final int TYPE_FIELD_NUMBER = 2;
     private flyteidl.core.Types.LiteralType type_;
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public boolean hasType() {
       return type_ != null;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralType getType() {
       return type_ == null ? flyteidl.core.Types.LiteralType.getDefaultInstance() : type_;
     }
     /**
+     * <pre>
+     * A type denoting the required value type for this signal.
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -2251,18 +4141,33 @@ public final class SignalOuterClass {
     public static final int VALUE_FIELD_NUMBER = 3;
     private flyteidl.core.Literals.Literal value_;
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public boolean hasValue() {
       return value_ != null;
     }
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public flyteidl.core.Literals.Literal getValue() {
       return value_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : value_;
     }
     /**
+     * <pre>
+     * The value of the signal. This is only available if the signal has been "set" and must match
+     * the defined the type.
+     * </pre>
+     *
      * <code>.flyteidl.core.Literal value = 3;</code>
      */
     public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -2463,7 +4368,9 @@ public final class SignalOuterClass {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte
+     * signal. Signals may exist either without a set value (representing a signal request) or with a
+     * populated value (indicating the signal has been given).
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.Signal}
@@ -2652,12 +4559,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
@@ -2668,6 +4583,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -2684,6 +4603,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -2698,6 +4621,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
@@ -2716,6 +4643,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -2730,6 +4661,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
@@ -2738,6 +4673,10 @@ public final class SignalOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
@@ -2749,6 +4688,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A unique identifier for the requested signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2769,12 +4712,20 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Types.LiteralType, flyteidl.core.Types.LiteralType.Builder, flyteidl.core.Types.LiteralTypeOrBuilder> typeBuilder_;
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public boolean hasType() {
         return typeBuilder_ != null || type_ != null;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType getType() {
@@ -2785,6 +4736,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(flyteidl.core.Types.LiteralType value) {
@@ -2801,6 +4756,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder setType(
@@ -2815,6 +4774,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder mergeType(flyteidl.core.Types.LiteralType value) {
@@ -2833,6 +4796,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public Builder clearType() {
@@ -2847,6 +4814,10 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralType.Builder getTypeBuilder() {
@@ -2855,6 +4826,10 @@ public final class SignalOuterClass {
         return getTypeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       public flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder() {
@@ -2866,6 +4841,10 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * A type denoting the required value type for this signal.
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralType type = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2886,12 +4865,22 @@ public final class SignalOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> valueBuilder_;
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.Literal getValue() {
@@ -2902,6 +4891,11 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder setValue(flyteidl.core.Literals.Literal value) {
@@ -2918,6 +4912,11 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder setValue(
@@ -2932,6 +4931,11 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder mergeValue(flyteidl.core.Literals.Literal value) {
@@ -2950,6 +4954,11 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public Builder clearValue() {
@@ -2964,6 +4973,11 @@ public final class SignalOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.Literal.Builder getValueBuilder() {
@@ -2972,6 +4986,11 @@ public final class SignalOuterClass {
         return getValueFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       public flyteidl.core.Literals.LiteralOrBuilder getValueOrBuilder() {
@@ -2983,6 +5002,11 @@ public final class SignalOuterClass {
         }
       }
       /**
+       * <pre>
+       * The value of the signal. This is only available if the signal has been "set" and must match
+       * the defined the type.
+       * </pre>
+       *
        * <code>.flyteidl.core.Literal value = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3057,6 +5081,16 @@ public final class SignalOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_SignalGetOrCreateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_SignalListRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_SignalListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_SignalSetRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3086,15 +5120,18 @@ public final class SignalOuterClass {
       "re/types.proto\"q\n\030SignalGetOrCreateReque" +
       "st\022+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIde" +
       "ntifier\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li" +
-      "teralType\"f\n\020SignalSetRequest\022+\n\002id\030\001 \001(" +
-      "\0132\037.flyteidl.core.SignalIdentifier\022%\n\005va" +
-      "lue\030\002 \001(\0132\026.flyteidl.core.Literal\"\023\n\021Sig" +
-      "nalSetResponse\"\206\001\n\006Signal\022+\n\002id\030\001 \001(\0132\037." +
-      "flyteidl.core.SignalIdentifier\022(\n\004type\030\002" +
-      " \001(\0132\032.flyteidl.core.LiteralType\022%\n\005valu" +
-      "e\030\003 \001(\0132\026.flyteidl.core.LiteralB7Z5githu" +
-      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
-      "dl/adminb\006proto3"
+      "teralType\"@\n\021SignalListRequest\022+\n\002id\030\001 \001" +
+      "(\0132\037.flyteidl.core.SignalIdentifier\"=\n\022S" +
+      "ignalListResponse\022\'\n\007signals\030\001 \003(\0132\026.fly" +
+      "teidl.admin.Signal\"f\n\020SignalSetRequest\022+" +
+      "\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdentif" +
+      "ier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Liter" +
+      "al\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002id" +
+      "\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier\022" +
+      "(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTyp" +
+      "e\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Literal" +
+      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3117,20 +5154,32 @@ public final class SignalOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalGetOrCreateRequest_descriptor,
         new java.lang.String[] { "Id", "Type", });
-    internal_static_flyteidl_admin_SignalSetRequest_descriptor =
+    internal_static_flyteidl_admin_SignalListRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_SignalListRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_flyteidl_admin_SignalListResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_SignalListResponse_descriptor,
+        new java.lang.String[] { "Signals", });
+    internal_static_flyteidl_admin_SignalSetRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalSetRequest_descriptor,
         new java.lang.String[] { "Id", "Value", });
     internal_static_flyteidl_admin_SignalSetResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_SignalSetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalSetResponse_descriptor,
         new java.lang.String[] { });
     internal_static_flyteidl_admin_Signal_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_Signal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Signal_descriptor,

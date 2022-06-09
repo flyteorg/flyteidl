@@ -904,7 +904,7 @@ Encapsulation of fields that identify a Flyte node execution entity.
 SignalIdentifier
 ------------------------------------------------------------------
 
-TODO hamersaw - document
+Encapsulation of fields the uniquely identify a signal.
 
 
 
@@ -912,8 +912,8 @@ TODO hamersaw - document
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signal_id", ":ref:`ref_string`", "", ""
-   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", ""
+   "signal_id", ":ref:`ref_string`", "", "Unique identifier for a signal."
+   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifies the Flyte workflow execution this signal belongs to."
 
 
 

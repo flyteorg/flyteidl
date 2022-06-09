@@ -3980,31 +3980,51 @@ public final class IdentifierOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Unique identifier for a signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     java.lang.String getSignalId();
     /**
+     * <pre>
+     * Unique identifier for a signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getSignalIdBytes();
 
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     boolean hasExecutionId();
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId();
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder();
   }
   /**
    * <pre>
-   * TODO hamersaw - document
+   * Encapsulation of fields the uniquely identify a signal.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.SignalIdentifier}
@@ -4100,6 +4120,10 @@ public final class IdentifierOuterClass {
     public static final int SIGNAL_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object signalId_;
     /**
+     * <pre>
+     * Unique identifier for a signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     public java.lang.String getSignalId() {
@@ -4115,6 +4139,10 @@ public final class IdentifierOuterClass {
       }
     }
     /**
+     * <pre>
+     * Unique identifier for a signal.
+     * </pre>
+     *
      * <code>string signal_id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -4134,18 +4162,30 @@ public final class IdentifierOuterClass {
     public static final int EXECUTION_ID_FIELD_NUMBER = 2;
     private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier executionId_;
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     public boolean hasExecutionId() {
       return executionId_ != null;
     }
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId() {
       return executionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : executionId_;
     }
     /**
+     * <pre>
+     * Identifies the Flyte workflow execution this signal belongs to.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder() {
@@ -4324,7 +4364,7 @@ public final class IdentifierOuterClass {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Encapsulation of fields the uniquely identify a signal.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.SignalIdentifier}
@@ -4490,6 +4530,10 @@ public final class IdentifierOuterClass {
 
       private java.lang.Object signalId_ = "";
       /**
+       * <pre>
+       * Unique identifier for a signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public java.lang.String getSignalId() {
@@ -4505,6 +4549,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * Unique identifier for a signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -4521,6 +4569,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * Unique identifier for a signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder setSignalId(
@@ -4534,6 +4586,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Unique identifier for a signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder clearSignalId() {
@@ -4543,6 +4599,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Unique identifier for a signal.
+       * </pre>
+       *
        * <code>string signal_id = 1;</code>
        */
       public Builder setSignalIdBytes(
@@ -4561,12 +4621,20 @@ public final class IdentifierOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> executionIdBuilder_;
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public boolean hasExecutionId() {
         return executionIdBuilder_ != null || executionId_ != null;
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId() {
@@ -4577,6 +4645,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public Builder setExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -4593,6 +4665,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public Builder setExecutionId(
@@ -4607,6 +4683,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public Builder mergeExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -4625,6 +4705,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public Builder clearExecutionId() {
@@ -4639,6 +4723,10 @@ public final class IdentifierOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getExecutionIdBuilder() {
@@ -4647,6 +4735,10 @@ public final class IdentifierOuterClass {
         return getExecutionIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getExecutionIdOrBuilder() {
@@ -4658,6 +4750,10 @@ public final class IdentifierOuterClass {
         }
       }
       /**
+       * <pre>
+       * Identifies the Flyte workflow execution this signal belongs to.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
