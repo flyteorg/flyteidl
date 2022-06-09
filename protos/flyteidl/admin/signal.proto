@@ -7,25 +7,57 @@ import "flyteidl/core/identifier.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/types.proto";
 
-// TODO hamersaw - document
+// SignalGetOrCreateRequest represents a request structure to retrive or create a signal.
+// See :ref:`ref_flyteidl.admin.Signal` for more details
 message SignalGetOrCreateRequest {
+    // A unique identifier for the requested signal.
     core.SignalIdentifier id = 1;
+
+    // A type denoting the required value type for this signal.
     core.LiteralType type = 2;
 }
 
-// TODO hamersaw - document
-message SignalSetRequest {
+// SignalListRequest represents a request structure to retrieve a collection of signals.
+// See :ref:`ref_flyteidl.admin.Signal` for more details
+message SignalListRequest {
+    // A unique identifier for the requested signal, available fields will be used as input filters.
     core.SignalIdentifier id = 1;    
+}
+
+// SignalListResponse represents a response structure containing a collection of signals.
+// See :ref:`ref_flyteidl.admin.Signal` for more details
+message SignalListRequest {
+    // A list of signals matching the input filters.
+    repeated Signal signals = 1;    
+}
+
+// SignalSetRequest represents a request structure to set the value on a signal. Setting a signal
+// effetively satisfies the signal condition within a Flyte workflow.
+// See :ref:`ref_flyteidl.admin.Signal` for more details
+message SignalSetRequest {
+    // A unique identifier for the requested signal.
+    core.SignalIdentifier id = 1;    
+
+    // The value of this signal, must match the defining signal type.
     core.Literal value = 2;
 }
 
-// TODO hamersaw - document
+// SignalSetResponse represents a response structure if signal setting succeeds.
 message SignalSetResponse {
+    // Purposefully empty, may be populated in the future.
 }
 
-// TODO hamersaw - document
+// Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte
+// signal. Signals may exist either without a set value (representing a signal request) or with a
+// populated value (indicating the signal has been given).
 message Signal {
+    // A unique identifier for the requested signal.
     core.SignalIdentifier id = 1;
+
+    // A type denoting the required value type for this signal.
     core.LiteralType type = 2;
+
+    // The value of the signal. This is only available if the signal has been "set" and must match
+    // the defined the type.
     core.Literal value = 3;
 }
