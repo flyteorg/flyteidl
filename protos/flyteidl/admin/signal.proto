@@ -26,7 +26,7 @@ message SignalListRequest {
 
 // SignalListResponse represents a response structure containing a collection of signals.
 // See :ref:`ref_flyteidl.admin.Signal` for more details
-message SignalListRequest {
+message SignalListResponse {
     // A list of signals matching the input filters.
     repeated Signal signals = 1;    
 }
