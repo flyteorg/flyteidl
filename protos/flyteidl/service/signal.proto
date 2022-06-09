@@ -11,9 +11,10 @@ import "protoc-gen-swagger/options/annotations.proto";
 service SignalService {
   // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
   rpc GetOrCreateSignal (flyteidl.admin.SignalGetOrCreateRequest) returns (flyteidl.admin.Signal) {
-    option (google.api.http) = {
-      get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}"
-    };
+    // Purposfully left out an HTTP API for this RPC call. This is meant to idempotently retrieve
+    // a signal, meaining the first call will create the signal and all subsequent calls will
+    // fetch the existing signal. This is only useful during Flyte Workflow execution and therefore
+    // is not exposed to mitigate unintended behavior.
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve a signal, creating it if it does not exist."
     };
@@ -22,9 +23,9 @@ service SignalService {
   // Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.
   rpc ListSignals (flyteidl.admin.SignalListRequest) returns (flyteidl.admin.SignalListRequest) {
     option (google.api.http) = {
-      get: "/api/v1/tasks/{id.execution_id.project}/{id.execution_id.domain}/{id.execuction_id.name}/{id.signal_id}"
+      get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}"
       additional_bindings {
-        get: "/api/v1/tasks/{id.execution_id.project}/{id.execution_id.domain}/{id.execuction_id.name}"
+        get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
       }
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
