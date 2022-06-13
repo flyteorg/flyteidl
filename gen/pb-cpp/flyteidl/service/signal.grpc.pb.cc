@@ -65,32 +65,32 @@ void SignalService::Stub::experimental_async::GetOrCreateSignal(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::Signal>::Create(channel_.get(), cq, rpcmethod_GetOrCreateSignal_, context, request, false);
 }
 
-::grpc::Status SignalService::Stub::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::flyteidl::admin::SignalListRequest* response) {
+::grpc::Status SignalService::Stub::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::flyteidl::admin::SignalList* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ListSignals_, context, request, response);
 }
 
-void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalListRequest* response, std::function<void(::grpc::Status)> f) {
+void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalList* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListSignals_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalListRequest* response, std::function<void(::grpc::Status)> f) {
+void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalList* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ListSignals_, context, request, response, std::move(f));
 }
 
-void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalListRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListSignals_, context, request, response, reactor);
 }
 
-void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalListRequest* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void SignalService::Stub::experimental_async::ListSignals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::SignalList* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ListSignals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalListRequest>* SignalService::Stub::AsyncListSignalsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalListRequest>::Create(channel_.get(), cq, rpcmethod_ListSignals_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalList>* SignalService::Stub::AsyncListSignalsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalList>::Create(channel_.get(), cq, rpcmethod_ListSignals_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalListRequest>* SignalService::Stub::PrepareAsyncListSignalsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalListRequest>::Create(channel_.get(), cq, rpcmethod_ListSignals_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::admin::SignalList>* SignalService::Stub::PrepareAsyncListSignalsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::SignalListRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::SignalList>::Create(channel_.get(), cq, rpcmethod_ListSignals_, context, request, false);
 }
 
 ::grpc::Status SignalService::Stub::SetSignal(::grpc::ClientContext* context, const ::flyteidl::admin::SignalSetRequest& request, ::flyteidl::admin::SignalSetResponse* response) {
@@ -130,7 +130,7 @@ SignalService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SignalService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalListRequest, ::flyteidl::admin::SignalListRequest>(
+      new ::grpc::internal::RpcMethodHandler< SignalService::Service, ::flyteidl::admin::SignalListRequest, ::flyteidl::admin::SignalList>(
           std::mem_fn(&SignalService::Service::ListSignals), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       SignalService_method_names[2],
@@ -149,7 +149,7 @@ SignalService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status SignalService::Service::ListSignals(::grpc::ServerContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalListRequest* response) {
+::grpc::Status SignalService::Service::ListSignals(::grpc::ServerContext* context, const ::flyteidl::admin::SignalListRequest* request, ::flyteidl::admin::SignalList* response) {
   (void) context;
   (void) request;
   (void) response;

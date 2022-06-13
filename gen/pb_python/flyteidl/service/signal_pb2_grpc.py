@@ -22,7 +22,7 @@ class SignalServiceStub(object):
     self.ListSignals = channel.unary_unary(
         '/flyteidl.service.SignalService/ListSignals',
         request_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.FromString,
+        response_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalList.FromString,
         )
     self.SetSignal = channel.unary_unary(
         '/flyteidl.service.SignalService/SetSignal',
@@ -67,7 +67,7 @@ def add_SignalServiceServicer_to_server(servicer, server):
       'ListSignals': grpc.unary_unary_rpc_method_handler(
           servicer.ListSignals,
           request_deserializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalListRequest.SerializeToString,
+          response_serializer=flyteidl_dot_admin_dot_signal__pb2.SignalList.SerializeToString,
       ),
       'SetSignal': grpc.unary_unary_rpc_method_handler(
           servicer.SetSignal,

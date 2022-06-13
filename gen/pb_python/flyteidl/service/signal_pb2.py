@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n\x1d\x66lyteidl/service/signal.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1b\x66lyteidl/admin/signal.proto\x1a,protoc-gen-swagger/options/annotations.proto2\xee\x05\n\rSignalService\x12\x90\x01\n\x11GetOrCreateSignal\x12(.flyteidl.admin.SignalGetOrCreateRequest\x1a\x16.flyteidl.admin.Signal\"9\x92\x41\x36\x1a\x34Retrieve a signal, creating it if it does not exist.\x12\x95\x02\n\x0bListSignals\x12!.flyteidl.admin.SignalListRequest\x1a!.flyteidl.admin.SignalListRequest\"\xbf\x01\x82\xd3\xe4\x93\x02m\x12k/api/v1/signals/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}\x92\x41I\x1aGFetch existing signal definitions matching the input signal id filters.\x12\xb1\x02\n\tSetSignal\x12 .flyteidl.admin.SignalSetRequest\x1a!.flyteidl.admin.SignalSetResponse\"\xde\x01\x82\xd3\xe4\x93\x02\x14\"\x0f/api/v1/signals:\x01*\x92\x41\xc0\x01\x1a\x13Set a signal value.JB\n\x03\x34\x30\x30\x12;\n9Returned for bad request that may have failed validation.Je\n\x03\x34\x30\x39\x12^\n\\Returned for a request that references an identical entity that has already been registered.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n\x1d\x66lyteidl/service/signal.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1b\x66lyteidl/admin/signal.proto\x1a,protoc-gen-swagger/options/annotations.proto2\xe7\x05\n\rSignalService\x12\x90\x01\n\x11GetOrCreateSignal\x12(.flyteidl.admin.SignalGetOrCreateRequest\x1a\x16.flyteidl.admin.Signal\"9\x92\x41\x36\x1a\x34Retrieve a signal, creating it if it does not exist.\x12\x8e\x02\n\x0bListSignals\x12!.flyteidl.admin.SignalListRequest\x1a\x1a.flyteidl.admin.SignalList\"\xbf\x01\x82\xd3\xe4\x93\x02m\x12k/api/v1/signals/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}\x92\x41I\x1aGFetch existing signal definitions matching the input signal id filters.\x12\xb1\x02\n\tSetSignal\x12 .flyteidl.admin.SignalSetRequest\x1a!.flyteidl.admin.SignalSetResponse\"\xde\x01\x82\xd3\xe4\x93\x02\x14\"\x0f/api/v1/signals:\x01*\x92\x41\xc0\x01\x1a\x13Set a signal value.JB\n\x03\x34\x30\x30\x12;\n9Returned for bad request that may have failed validation.Je\n\x03\x34\x30\x39\x12^\n\\Returned for a request that references an identical entity that has already been registered.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_signal__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _SIGNALSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=157,
-  serialized_end=907,
+  serialized_end=900,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetOrCreateSignal',
@@ -58,7 +58,7 @@ _SIGNALSERVICE = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALLISTREQUEST,
-    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALLISTREQUEST,
+    output_type=flyteidl_dot_admin_dot_signal__pb2._SIGNALLIST,
     serialized_options=_b('\202\323\344\223\002m\022k/api/v1/signals/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}\222AI\032GFetch existing signal definitions matching the input signal id filters.'),
   ),
   _descriptor.MethodDescriptor(

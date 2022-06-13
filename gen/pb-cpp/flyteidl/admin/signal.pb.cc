@@ -32,10 +32,10 @@ class SignalListRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SignalListRequest> _instance;
 } _SignalListRequest_default_instance_;
-class SignalListResponseDefaultTypeInternal {
+class SignalListDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SignalListResponse> _instance;
-} _SignalListResponse_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<SignalList> _instance;
+} _SignalList_default_instance_;
 class SignalSetRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SignalSetRequest> _instance;
@@ -82,19 +82,19 @@ static void InitDefaultsSignalListRequest_flyteidl_2fadmin_2fsignal_2eproto() {
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
-static void InitDefaultsSignalListResponse_flyteidl_2fadmin_2fsignal_2eproto() {
+static void InitDefaultsSignalList_flyteidl_2fadmin_2fsignal_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::flyteidl::admin::_SignalListResponse_default_instance_;
-    new (ptr) ::flyteidl::admin::SignalListResponse();
+    void* ptr = &::flyteidl::admin::_SignalList_default_instance_;
+    new (ptr) ::flyteidl::admin::SignalList();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::flyteidl::admin::SignalListResponse::InitAsDefaultInstance();
+  ::flyteidl::admin::SignalList::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SignalListResponse_flyteidl_2fadmin_2fsignal_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSignalListResponse_flyteidl_2fadmin_2fsignal_2eproto}, {
+::google::protobuf::internal::SCCInfo<1> scc_info_SignalList_flyteidl_2fadmin_2fsignal_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSignalList_flyteidl_2fadmin_2fsignal_2eproto}, {
       &scc_info_Signal_flyteidl_2fadmin_2fsignal_2eproto.base,}};
 
 static void InitDefaultsSignalSetRequest_flyteidl_2fadmin_2fsignal_2eproto() {
@@ -147,7 +147,7 @@ static void InitDefaultsSignal_flyteidl_2fadmin_2fsignal_2eproto() {
 void InitDefaults_flyteidl_2fadmin_2fsignal_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_SignalGetOrCreateRequest_flyteidl_2fadmin_2fsignal_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SignalListRequest_flyteidl_2fadmin_2fsignal_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SignalListResponse_flyteidl_2fadmin_2fsignal_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SignalList_flyteidl_2fadmin_2fsignal_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SignalSetRequest_flyteidl_2fadmin_2fsignal_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SignalSetResponse_flyteidl_2fadmin_2fsignal_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Signal_flyteidl_2fadmin_2fsignal_2eproto.base);
@@ -176,12 +176,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fsignal_2eproto::
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, filters_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, sort_by_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, signals_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, token_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalList, signals_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalList, token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalSetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -206,7 +206,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fsignal_2eproto::
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::SignalGetOrCreateRequest)},
   { 7, -1, sizeof(::flyteidl::admin::SignalListRequest)},
-  { 17, -1, sizeof(::flyteidl::admin::SignalListResponse)},
+  { 17, -1, sizeof(::flyteidl::admin::SignalList)},
   { 24, -1, sizeof(::flyteidl::admin::SignalSetRequest)},
   { 31, -1, sizeof(::flyteidl::admin::SignalSetResponse)},
   { 36, -1, sizeof(::flyteidl::admin::Signal)},
@@ -215,7 +215,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalGetOrCreateRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalListRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalListResponse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalList_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalSetRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_SignalSetResponse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Signal_default_instance_),
@@ -239,22 +239,22 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fsignal_2eproto[] =
   "on_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec"
   "utionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030"
   "\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132"
-  "\024.flyteidl.admin.Sort\"L\n\022SignalListRespo"
-  "nse\022\'\n\007signals\030\001 \003(\0132\026.flyteidl.admin.Si"
-  "gnal\022\r\n\005token\030\002 \001(\t\"f\n\020SignalSetRequest\022"
-  "+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdenti"
-  "fier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Lite"
-  "ral\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002i"
-  "d\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier"
-  "\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTy"
-  "pe\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Litera"
-  "lB7Z5github.com/flyteorg/flyteidl/gen/pb"
-  "-go/flyteidl/adminb\006proto3"
+  "\024.flyteidl.admin.Sort\"D\n\nSignalList\022\'\n\007s"
+  "ignals\030\001 \003(\0132\026.flyteidl.admin.Signal\022\r\n\005"
+  "token\030\002 \001(\t\"f\n\020SignalSetRequest\022+\n\002id\030\001 "
+  "\001(\0132\037.flyteidl.core.SignalIdentifier\022%\n\005"
+  "value\030\002 \001(\0132\026.flyteidl.core.Literal\"\023\n\021S"
+  "ignalSetResponse\"\206\001\n\006Signal\022+\n\002id\030\001 \001(\0132"
+  "\037.flyteidl.core.SignalIdentifier\022(\n\004type"
+  "\030\002 \001(\0132\032.flyteidl.core.LiteralType\022%\n\005va"
+  "lue\030\003 \001(\0132\026.flyteidl.core.LiteralB7Z5git"
+  "hub.com/flyteorg/flyteidl/gen/pb-go/flyt"
+  "eidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fsignal_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fsignal_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fsignal_2eproto,
-  "flyteidl/admin/signal.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsignal_2eproto, 866,
+  "flyteidl/admin/signal.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsignal_2eproto, 858,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fsignal_2eproto() {
@@ -1203,23 +1203,23 @@ void SignalListRequest::InternalSwap(SignalListRequest* other) {
 
 // ===================================================================
 
-void SignalListResponse::InitAsDefaultInstance() {
+void SignalList::InitAsDefaultInstance() {
 }
-class SignalListResponse::HasBitSetters {
+class SignalList::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SignalListResponse::kSignalsFieldNumber;
-const int SignalListResponse::kTokenFieldNumber;
+const int SignalList::kSignalsFieldNumber;
+const int SignalList::kTokenFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SignalListResponse::SignalListResponse()
+SignalList::SignalList()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(constructor:flyteidl.admin.SignalList)
 }
-SignalListResponse::SignalListResponse(const SignalListResponse& from)
+SignalList::SignalList(const SignalList& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
       signals_(from.signals_) {
@@ -1228,35 +1228,35 @@ SignalListResponse::SignalListResponse(const SignalListResponse& from)
   if (from.token().size() > 0) {
     token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
   }
-  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SignalList)
 }
 
-void SignalListResponse::SharedCtor() {
+void SignalList::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_SignalListResponse_flyteidl_2fadmin_2fsignal_2eproto.base);
+      &scc_info_SignalList_flyteidl_2fadmin_2fsignal_2eproto.base);
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-SignalListResponse::~SignalListResponse() {
-  // @@protoc_insertion_point(destructor:flyteidl.admin.SignalListResponse)
+SignalList::~SignalList() {
+  // @@protoc_insertion_point(destructor:flyteidl.admin.SignalList)
   SharedDtor();
 }
 
-void SignalListResponse::SharedDtor() {
+void SignalList::SharedDtor() {
   token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void SignalListResponse::SetCachedSize(int size) const {
+void SignalList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SignalListResponse& SignalListResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_SignalListResponse_flyteidl_2fadmin_2fsignal_2eproto.base);
+const SignalList& SignalList::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_SignalList_flyteidl_2fadmin_2fsignal_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void SignalListResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.admin.SignalListResponse)
+void SignalList::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.admin.SignalList)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1267,9 +1267,9 @@ void SignalListResponse::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* SignalListResponse::_InternalParse(const char* begin, const char* end, void* object,
+const char* SignalList::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<SignalListResponse*>(object);
+  auto msg = static_cast<SignalList*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1300,7 +1300,7 @@ const char* SignalListResponse::_InternalParse(const char* begin, const char* en
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SignalListResponse.token");
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SignalList.token");
         object = msg->mutable_token();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1335,11 +1335,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool SignalListResponse::MergePartialFromCodedStream(
+bool SignalList::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(parse_start:flyteidl.admin.SignalList)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1364,7 +1364,7 @@ bool SignalListResponse::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->token().data(), static_cast<int>(this->token().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.SignalListResponse.token"));
+            "flyteidl.admin.SignalList.token"));
         } else {
           goto handle_unusual;
         }
@@ -1383,18 +1383,18 @@ bool SignalListResponse::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(parse_success:flyteidl.admin.SignalList)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(parse_failure:flyteidl.admin.SignalList)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void SignalListResponse::SerializeWithCachedSizes(
+void SignalList::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(serialize_start:flyteidl.admin.SignalList)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1412,7 +1412,7 @@ void SignalListResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SignalListResponse.token");
+      "flyteidl.admin.SignalList.token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->token(), output);
   }
@@ -1421,12 +1421,12 @@ void SignalListResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(serialize_end:flyteidl.admin.SignalList)
 }
 
-::google::protobuf::uint8* SignalListResponse::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* SignalList::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.admin.SignalList)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1443,7 +1443,7 @@ void SignalListResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SignalListResponse.token");
+      "flyteidl.admin.SignalList.token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->token(), target);
@@ -1453,12 +1453,12 @@ void SignalListResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.admin.SignalList)
   return target;
 }
 
-size_t SignalListResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.SignalListResponse)
+size_t SignalList::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.admin.SignalList)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1493,23 +1493,23 @@ size_t SignalListResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void SignalListResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.SignalListResponse)
+void SignalList::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.admin.SignalList)
   GOOGLE_DCHECK_NE(&from, this);
-  const SignalListResponse* source =
-      ::google::protobuf::DynamicCastToGenerated<SignalListResponse>(
+  const SignalList* source =
+      ::google::protobuf::DynamicCastToGenerated<SignalList>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.admin.SignalList)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.admin.SignalList)
     MergeFrom(*source);
   }
 }
 
-void SignalListResponse::MergeFrom(const SignalListResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.SignalListResponse)
+void SignalList::MergeFrom(const SignalList& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.admin.SignalList)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1522,29 +1522,29 @@ void SignalListResponse::MergeFrom(const SignalListResponse& from) {
   }
 }
 
-void SignalListResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.SignalListResponse)
+void SignalList::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.admin.SignalList)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SignalListResponse::CopyFrom(const SignalListResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.SignalListResponse)
+void SignalList::CopyFrom(const SignalList& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.admin.SignalList)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SignalListResponse::IsInitialized() const {
+bool SignalList::IsInitialized() const {
   return true;
 }
 
-void SignalListResponse::Swap(SignalListResponse* other) {
+void SignalList::Swap(SignalList* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SignalListResponse::InternalSwap(SignalListResponse* other) {
+void SignalList::InternalSwap(SignalList* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&signals_)->InternalSwap(CastToBase(&other->signals_));
@@ -1552,7 +1552,7 @@ void SignalListResponse::InternalSwap(SignalListResponse* other) {
     GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata SignalListResponse::GetMetadata() const {
+::google::protobuf::Metadata SignalList::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fsignal_2eproto);
   return ::file_level_metadata_flyteidl_2fadmin_2fsignal_2eproto[kIndexInFileMessages];
 }
@@ -2584,8 +2584,8 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::SignalGetOrCreateRequest* Arena:
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::SignalListRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::SignalListRequest >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::SignalListRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::SignalListResponse* Arena::CreateMaybeMessage< ::flyteidl::admin::SignalListResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::SignalListResponse >(arena);
+template<> PROTOBUF_NOINLINE ::flyteidl::admin::SignalList* Arena::CreateMaybeMessage< ::flyteidl::admin::SignalList >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::admin::SignalList >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::SignalSetRequest* Arena::CreateMaybeMessage< ::flyteidl::admin::SignalSetRequest >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::SignalSetRequest >(arena);

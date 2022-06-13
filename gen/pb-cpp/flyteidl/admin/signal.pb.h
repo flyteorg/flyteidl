@@ -60,12 +60,12 @@ extern SignalDefaultTypeInternal _Signal_default_instance_;
 class SignalGetOrCreateRequest;
 class SignalGetOrCreateRequestDefaultTypeInternal;
 extern SignalGetOrCreateRequestDefaultTypeInternal _SignalGetOrCreateRequest_default_instance_;
+class SignalList;
+class SignalListDefaultTypeInternal;
+extern SignalListDefaultTypeInternal _SignalList_default_instance_;
 class SignalListRequest;
 class SignalListRequestDefaultTypeInternal;
 extern SignalListRequestDefaultTypeInternal _SignalListRequest_default_instance_;
-class SignalListResponse;
-class SignalListResponseDefaultTypeInternal;
-extern SignalListResponseDefaultTypeInternal _SignalListResponse_default_instance_;
 class SignalSetRequest;
 class SignalSetRequestDefaultTypeInternal;
 extern SignalSetRequestDefaultTypeInternal _SignalSetRequest_default_instance_;
@@ -78,8 +78,8 @@ namespace google {
 namespace protobuf {
 template<> ::flyteidl::admin::Signal* Arena::CreateMaybeMessage<::flyteidl::admin::Signal>(Arena*);
 template<> ::flyteidl::admin::SignalGetOrCreateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::SignalGetOrCreateRequest>(Arena*);
+template<> ::flyteidl::admin::SignalList* Arena::CreateMaybeMessage<::flyteidl::admin::SignalList>(Arena*);
 template<> ::flyteidl::admin::SignalListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::SignalListRequest>(Arena*);
-template<> ::flyteidl::admin::SignalListResponse* Arena::CreateMaybeMessage<::flyteidl::admin::SignalListResponse>(Arena*);
 template<> ::flyteidl::admin::SignalSetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::SignalSetRequest>(Arena*);
 template<> ::flyteidl::admin::SignalSetResponse* Arena::CreateMaybeMessage<::flyteidl::admin::SignalSetResponse>(Arena*);
 }  // namespace protobuf
@@ -376,25 +376,25 @@ class SignalListRequest final :
 };
 // -------------------------------------------------------------------
 
-class SignalListResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.SignalListResponse) */ {
+class SignalList final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.SignalList) */ {
  public:
-  SignalListResponse();
-  virtual ~SignalListResponse();
+  SignalList();
+  virtual ~SignalList();
 
-  SignalListResponse(const SignalListResponse& from);
+  SignalList(const SignalList& from);
 
-  inline SignalListResponse& operator=(const SignalListResponse& from) {
+  inline SignalList& operator=(const SignalList& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  SignalListResponse(SignalListResponse&& from) noexcept
-    : SignalListResponse() {
+  SignalList(SignalList&& from) noexcept
+    : SignalList() {
     *this = ::std::move(from);
   }
 
-  inline SignalListResponse& operator=(SignalListResponse&& from) noexcept {
+  inline SignalList& operator=(SignalList&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -406,34 +406,34 @@ class SignalListResponse final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const SignalListResponse& default_instance();
+  static const SignalList& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SignalListResponse* internal_default_instance() {
-    return reinterpret_cast<const SignalListResponse*>(
-               &_SignalListResponse_default_instance_);
+  static inline const SignalList* internal_default_instance() {
+    return reinterpret_cast<const SignalList*>(
+               &_SignalList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(SignalListResponse* other);
-  friend void swap(SignalListResponse& a, SignalListResponse& b) {
+  void Swap(SignalList* other);
+  friend void swap(SignalList& a, SignalList& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline SignalListResponse* New() const final {
-    return CreateMaybeMessage<SignalListResponse>(nullptr);
+  inline SignalList* New() const final {
+    return CreateMaybeMessage<SignalList>(nullptr);
   }
 
-  SignalListResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SignalListResponse>(arena);
+  SignalList* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SignalList>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SignalListResponse& from);
-  void MergeFrom(const SignalListResponse& from);
+  void CopyFrom(const SignalList& from);
+  void MergeFrom(const SignalList& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -455,7 +455,7 @@ class SignalListResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SignalListResponse* other);
+  void InternalSwap(SignalList* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -497,7 +497,7 @@ class SignalListResponse final :
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListResponse)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalList)
  private:
   class HasBitSetters;
 
@@ -1189,89 +1189,89 @@ inline void SignalListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* so
 
 // -------------------------------------------------------------------
 
-// SignalListResponse
+// SignalList
 
 // repeated .flyteidl.admin.Signal signals = 1;
-inline int SignalListResponse::signals_size() const {
+inline int SignalList::signals_size() const {
   return signals_.size();
 }
-inline void SignalListResponse::clear_signals() {
+inline void SignalList::clear_signals() {
   signals_.Clear();
 }
-inline ::flyteidl::admin::Signal* SignalListResponse::mutable_signals(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListResponse.signals)
+inline ::flyteidl::admin::Signal* SignalList::mutable_signals(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalList.signals)
   return signals_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Signal >*
-SignalListResponse::mutable_signals() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.SignalListResponse.signals)
+SignalList::mutable_signals() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.SignalList.signals)
   return &signals_;
 }
-inline const ::flyteidl::admin::Signal& SignalListResponse::signals(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListResponse.signals)
+inline const ::flyteidl::admin::Signal& SignalList::signals(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalList.signals)
   return signals_.Get(index);
 }
-inline ::flyteidl::admin::Signal* SignalListResponse::add_signals() {
-  // @@protoc_insertion_point(field_add:flyteidl.admin.SignalListResponse.signals)
+inline ::flyteidl::admin::Signal* SignalList::add_signals() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.SignalList.signals)
   return signals_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Signal >&
-SignalListResponse::signals() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.SignalListResponse.signals)
+SignalList::signals() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.SignalList.signals)
   return signals_;
 }
 
 // string token = 2;
-inline void SignalListResponse::clear_token() {
+inline void SignalList::clear_token() {
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& SignalListResponse::token() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListResponse.token)
+inline const ::std::string& SignalList::token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalList.token)
   return token_.GetNoArena();
 }
-inline void SignalListResponse::set_token(const ::std::string& value) {
+inline void SignalList::set_token(const ::std::string& value) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalList.token)
 }
 #if LANG_CXX11
-inline void SignalListResponse::set_token(::std::string&& value) {
+inline void SignalList::set_token(::std::string&& value) {
   
   token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SignalList.token)
 }
 #endif
-inline void SignalListResponse::set_token(const char* value) {
+inline void SignalList::set_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SignalList.token)
 }
-inline void SignalListResponse::set_token(const char* value, size_t size) {
+inline void SignalList::set_token(const char* value, size_t size) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SignalList.token)
 }
-inline ::std::string* SignalListResponse::mutable_token() {
+inline ::std::string* SignalList::mutable_token() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalList.token)
   return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* SignalListResponse::release_token() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListResponse.token)
+inline ::std::string* SignalList::release_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalList.token)
   
   return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SignalListResponse::set_allocated_token(::std::string* token) {
+inline void SignalList::set_allocated_token(::std::string* token) {
   if (token != nullptr) {
     
   } else {
     
   }
   token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListResponse.token)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalList.token)
 }
 
 // -------------------------------------------------------------------

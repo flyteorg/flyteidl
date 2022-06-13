@@ -465,7 +465,7 @@ SignalService defines an RPC Service that may create, update, and retrieve signa
    :widths: auto
 
    "GetOrCreateSignal", ":ref:`ref_flyteidl.admin.SignalGetOrCreateRequest`", ":ref:`ref_flyteidl.admin.Signal`", "Fetches or creates a :ref:`ref_flyteidl.admin.Signal`."
-   "ListSignals", ":ref:`ref_flyteidl.admin.SignalListRequest`", ":ref:`ref_flyteidl.admin.SignalListRequest`", "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions."
+   "ListSignals", ":ref:`ref_flyteidl.admin.SignalListRequest`", ":ref:`ref_flyteidl.admin.SignalList`", "Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions."
    "SetSignal", ":ref:`ref_flyteidl.admin.SignalSetRequest`", ":ref:`ref_flyteidl.admin.SignalSetResponse`", "Sets the value on a :ref:`ref_flyteidl.admin.Signal` definition"
 
 ..

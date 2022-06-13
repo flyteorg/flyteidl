@@ -3088,6 +3088,29 @@ See :ref:`ref_flyteidl.admin.Signal` for more details
 
 
 
+.. _ref_flyteidl.admin.SignalList:
+
+SignalList
+------------------------------------------------------------------
+
+SignalList represents collection of signals along with the token of the last result.
+See :ref:`ref_flyteidl.admin.Signal` for more details
+
+
+
+.. csv-table:: SignalList type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signals", ":ref:`ref_flyteidl.admin.Signal`", "repeated", "A list of signals matching the input filters."
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. If there are no more results, this value will be empty."
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.SignalListRequest:
 
 SignalListRequest
@@ -3107,29 +3130,6 @@ See :ref:`ref_flyteidl.admin.Signal` for more details
    "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional"
    "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
    "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.SignalListResponse:
-
-SignalListResponse
-------------------------------------------------------------------
-
-SignalListResponse represents a response structure containing a collection of signals.
-See :ref:`ref_flyteidl.admin.Signal` for more details
-
-
-
-.. csv-table:: SignalListResponse type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "signals", ":ref:`ref_flyteidl.admin.Signal`", "repeated", "A list of signals matching the input filters."
-   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. If there are no more results, this value will be empty."
 
 
 

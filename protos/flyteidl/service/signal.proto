@@ -21,7 +21,7 @@ service SignalService {
   }
 
   // Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.
-  rpc ListSignals (flyteidl.admin.SignalListRequest) returns (flyteidl.admin.SignalListRequest) {
+  rpc ListSignals (flyteidl.admin.SignalListRequest) returns (flyteidl.admin.SignalList) {
     option (google.api.http) = {
       get: "/api/v1/signals/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}"
     };

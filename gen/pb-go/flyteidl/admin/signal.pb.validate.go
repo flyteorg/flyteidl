@@ -216,10 +216,9 @@ var _ interface {
 	ErrorName() string
 } = SignalListRequestValidationError{}
 
-// Validate checks the field values on SignalListResponse with the rules
-// defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *SignalListResponse) Validate() error {
+// Validate checks the field values on SignalList with the rules defined in the
+// proto definition for this message. If any rules are violated, an error is returned.
+func (m *SignalList) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -229,7 +228,7 @@ func (m *SignalListResponse) Validate() error {
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
-				return SignalListResponseValidationError{
+				return SignalListValidationError{
 					field:  fmt.Sprintf("Signals[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
@@ -244,9 +243,9 @@ func (m *SignalListResponse) Validate() error {
 	return nil
 }
 
-// SignalListResponseValidationError is the validation error returned by
-// SignalListResponse.Validate if the designated constraints aren't met.
-type SignalListResponseValidationError struct {
+// SignalListValidationError is the validation error returned by
+// SignalList.Validate if the designated constraints aren't met.
+type SignalListValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -254,24 +253,22 @@ type SignalListResponseValidationError struct {
 }
 
 // Field function returns field value.
-func (e SignalListResponseValidationError) Field() string { return e.field }
+func (e SignalListValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SignalListResponseValidationError) Reason() string { return e.reason }
+func (e SignalListValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SignalListResponseValidationError) Cause() error { return e.cause }
+func (e SignalListValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SignalListResponseValidationError) Key() bool { return e.key }
+func (e SignalListValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SignalListResponseValidationError) ErrorName() string {
-	return "SignalListResponseValidationError"
-}
+func (e SignalListValidationError) ErrorName() string { return "SignalListValidationError" }
 
 // Error satisfies the builtin error interface
-func (e SignalListResponseValidationError) Error() string {
+func (e SignalListValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -283,14 +280,14 @@ func (e SignalListResponseValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sSignalListResponse.%s: %s%s",
+		"invalid %sSignalList.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SignalListResponseValidationError{}
+var _ error = SignalListValidationError{}
 
 var _ interface {
 	Field() string
@@ -298,7 +295,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SignalListResponseValidationError{}
+} = SignalListValidationError{}
 
 // Validate checks the field values on SignalSetRequest with the rules defined
 // in the proto definition for this message. If any rules are violated, an

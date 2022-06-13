@@ -2373,8 +2373,8 @@ public final class SignalOuterClass {
 
   }
 
-  public interface SignalListResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalListResponse)
+  public interface SignalListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.SignalList)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2443,22 +2443,22 @@ public final class SignalOuterClass {
   }
   /**
    * <pre>
-   * SignalListResponse represents a response structure containing a collection of signals.
+   * SignalList represents collection of signals along with the token of the last result.
    * See :ref:`ref_flyteidl.admin.Signal` for more details
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.SignalListResponse}
+   * Protobuf type {@code flyteidl.admin.SignalList}
    */
-  public  static final class SignalListResponse extends
+  public  static final class SignalList extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalListResponse)
-      SignalListResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.SignalList)
+      SignalListOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SignalListResponse.newBuilder() to construct.
-    private SignalListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SignalList.newBuilder() to construct.
+    private SignalList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SignalListResponse() {
+    private SignalList() {
       signals_ = java.util.Collections.emptyList();
       token_ = "";
     }
@@ -2468,7 +2468,7 @@ public final class SignalOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SignalListResponse(
+    private SignalList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2526,15 +2526,15 @@ public final class SignalOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable
+      return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.SignalOuterClass.SignalListResponse.class, flyteidl.admin.SignalOuterClass.SignalListResponse.Builder.class);
+              flyteidl.admin.SignalOuterClass.SignalList.class, flyteidl.admin.SignalOuterClass.SignalList.Builder.class);
     }
 
     private int bitField0_;
@@ -2683,10 +2683,10 @@ public final class SignalOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalListResponse)) {
+      if (!(obj instanceof flyteidl.admin.SignalOuterClass.SignalList)) {
         return super.equals(obj);
       }
-      flyteidl.admin.SignalOuterClass.SignalListResponse other = (flyteidl.admin.SignalOuterClass.SignalListResponse) obj;
+      flyteidl.admin.SignalOuterClass.SignalList other = (flyteidl.admin.SignalOuterClass.SignalList) obj;
 
       if (!getSignalsList()
           .equals(other.getSignalsList())) return false;
@@ -2714,69 +2714,69 @@ public final class SignalOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(byte[] data)
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.SignalOuterClass.SignalList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseDelimitedFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse parseFrom(
+    public static flyteidl.admin.SignalOuterClass.SignalList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2789,7 +2789,7 @@ public final class SignalOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalListResponse prototype) {
+    public static Builder newBuilder(flyteidl.admin.SignalOuterClass.SignalList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2806,30 +2806,30 @@ public final class SignalOuterClass {
     }
     /**
      * <pre>
-     * SignalListResponse represents a response structure containing a collection of signals.
+     * SignalList represents collection of signals along with the token of the last result.
      * See :ref:`ref_flyteidl.admin.Signal` for more details
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.SignalListResponse}
+     * Protobuf type {@code flyteidl.admin.SignalList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalListResponse)
-        flyteidl.admin.SignalOuterClass.SignalListResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.SignalList)
+        flyteidl.admin.SignalOuterClass.SignalListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.SignalOuterClass.SignalListResponse.class, flyteidl.admin.SignalOuterClass.SignalListResponse.Builder.class);
+                flyteidl.admin.SignalOuterClass.SignalList.class, flyteidl.admin.SignalOuterClass.SignalList.Builder.class);
       }
 
-      // Construct using flyteidl.admin.SignalOuterClass.SignalListResponse.newBuilder()
+      // Construct using flyteidl.admin.SignalOuterClass.SignalList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2862,17 +2862,17 @@ public final class SignalOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalListResponse_descriptor;
+        return flyteidl.admin.SignalOuterClass.internal_static_flyteidl_admin_SignalList_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstanceForType() {
-        return flyteidl.admin.SignalOuterClass.SignalListResponse.getDefaultInstance();
+      public flyteidl.admin.SignalOuterClass.SignalList getDefaultInstanceForType() {
+        return flyteidl.admin.SignalOuterClass.SignalList.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalListResponse build() {
-        flyteidl.admin.SignalOuterClass.SignalListResponse result = buildPartial();
+      public flyteidl.admin.SignalOuterClass.SignalList build() {
+        flyteidl.admin.SignalOuterClass.SignalList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2880,8 +2880,8 @@ public final class SignalOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.SignalOuterClass.SignalListResponse buildPartial() {
-        flyteidl.admin.SignalOuterClass.SignalListResponse result = new flyteidl.admin.SignalOuterClass.SignalListResponse(this);
+      public flyteidl.admin.SignalOuterClass.SignalList buildPartial() {
+        flyteidl.admin.SignalOuterClass.SignalList result = new flyteidl.admin.SignalOuterClass.SignalList(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (signalsBuilder_ == null) {
@@ -2933,16 +2933,16 @@ public final class SignalOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.SignalOuterClass.SignalListResponse) {
-          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalListResponse)other);
+        if (other instanceof flyteidl.admin.SignalOuterClass.SignalList) {
+          return mergeFrom((flyteidl.admin.SignalOuterClass.SignalList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalListResponse other) {
-        if (other == flyteidl.admin.SignalOuterClass.SignalListResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalList other) {
+        if (other == flyteidl.admin.SignalOuterClass.SignalList.getDefaultInstance()) return this;
         if (signalsBuilder_ == null) {
           if (!other.signals_.isEmpty()) {
             if (signals_.isEmpty()) {
@@ -2988,11 +2988,11 @@ public final class SignalOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.SignalOuterClass.SignalListResponse parsedMessage = null;
+        flyteidl.admin.SignalOuterClass.SignalList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalListResponse) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.SignalOuterClass.SignalList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3421,41 +3421,41 @@ public final class SignalOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalListResponse)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.SignalList)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListResponse)
-    private static final flyteidl.admin.SignalOuterClass.SignalListResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalList)
+    private static final flyteidl.admin.SignalOuterClass.SignalList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalListResponse();
+      DEFAULT_INSTANCE = new flyteidl.admin.SignalOuterClass.SignalList();
     }
 
-    public static flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstance() {
+    public static flyteidl.admin.SignalOuterClass.SignalList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SignalListResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SignalListResponse>() {
+    private static final com.google.protobuf.Parser<SignalList>
+        PARSER = new com.google.protobuf.AbstractParser<SignalList>() {
       @java.lang.Override
-      public SignalListResponse parsePartialFrom(
+      public SignalList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignalListResponse(input, extensionRegistry);
+        return new SignalList(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SignalListResponse> parser() {
+    public static com.google.protobuf.Parser<SignalList> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SignalListResponse> getParserForType() {
+    public com.google.protobuf.Parser<SignalList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.SignalOuterClass.SignalListResponse getDefaultInstanceForType() {
+    public flyteidl.admin.SignalOuterClass.SignalList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6024,10 +6024,10 @@ public final class SignalOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_SignalListResponse_descriptor;
+    internal_static_flyteidl_admin_SignalList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable;
+      internal_static_flyteidl_admin_SignalList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_SignalSetRequest_descriptor;
   private static final 
@@ -6063,17 +6063,17 @@ public final class SignalOuterClass {
       "on_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
       "utionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030" +
       "\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132" +
-      "\024.flyteidl.admin.Sort\"L\n\022SignalListRespo" +
-      "nse\022\'\n\007signals\030\001 \003(\0132\026.flyteidl.admin.Si" +
-      "gnal\022\r\n\005token\030\002 \001(\t\"f\n\020SignalSetRequest\022" +
-      "+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdenti" +
-      "fier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Lite" +
-      "ral\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002i" +
-      "d\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier" +
-      "\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTy" +
-      "pe\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Litera" +
-      "lB7Z5github.com/flyteorg/flyteidl/gen/pb" +
-      "-go/flyteidl/adminb\006proto3"
+      "\024.flyteidl.admin.Sort\"D\n\nSignalList\022\'\n\007s" +
+      "ignals\030\001 \003(\0132\026.flyteidl.admin.Signal\022\r\n\005" +
+      "token\030\002 \001(\t\"f\n\020SignalSetRequest\022+\n\002id\030\001 " +
+      "\001(\0132\037.flyteidl.core.SignalIdentifier\022%\n\005" +
+      "value\030\002 \001(\0132\026.flyteidl.core.Literal\"\023\n\021S" +
+      "ignalSetResponse\"\206\001\n\006Signal\022+\n\002id\030\001 \001(\0132" +
+      "\037.flyteidl.core.SignalIdentifier\022(\n\004type" +
+      "\030\002 \001(\0132\032.flyteidl.core.LiteralType\022%\n\005va" +
+      "lue\030\003 \001(\0132\026.flyteidl.core.LiteralB7Z5git" +
+      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
+      "eidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6103,11 +6103,11 @@ public final class SignalOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalListRequest_descriptor,
         new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", });
-    internal_static_flyteidl_admin_SignalListResponse_descriptor =
+    internal_static_flyteidl_admin_SignalList_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable = new
+    internal_static_flyteidl_admin_SignalList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_SignalListResponse_descriptor,
+        internal_static_flyteidl_admin_SignalList_descriptor,
         new java.lang.String[] { "Signals", "Token", });
     internal_static_flyteidl_admin_SignalSetRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);

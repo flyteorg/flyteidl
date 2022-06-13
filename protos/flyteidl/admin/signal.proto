@@ -44,15 +44,15 @@ message SignalListRequest {
     Sort sort_by = 5;
 }
 
-// SignalListResponse represents a response structure containing a collection of signals.
+// SignalList represents collection of signals along with the token of the last result.
 // See :ref:`ref_flyteidl.admin.Signal` for more details
-message SignalListResponse {
+message SignalList {
     // A list of signals matching the input filters.
     repeated Signal signals = 1;    
 
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query. If there are no more results, this value will be empty.
-    string token                           = 2;
+    string token = 2;
 }
 
 // SignalSetRequest represents a request structure to set the value on a signal. Setting a signal

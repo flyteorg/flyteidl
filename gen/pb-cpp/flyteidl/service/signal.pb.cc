@@ -40,33 +40,33 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto[] =
   "\n\035flyteidl/service/signal.proto\022\020flyteid"
   "l.service\032\034google/api/annotations.proto\032"
   "\033flyteidl/admin/signal.proto\032,protoc-gen"
-  "-swagger/options/annotations.proto2\356\005\n\rS"
+  "-swagger/options/annotations.proto2\347\005\n\rS"
   "ignalService\022\220\001\n\021GetOrCreateSignal\022(.fly"
   "teidl.admin.SignalGetOrCreateRequest\032\026.f"
   "lyteidl.admin.Signal\"9\222A6\0324Retrieve a si"
   "gnal, creating it if it does not exist.\022"
-  "\225\002\n\013ListSignals\022!.flyteidl.admin.SignalL"
-  "istRequest\032!.flyteidl.admin.SignalListRe"
-  "quest\"\277\001\202\323\344\223\002m\022k/api/v1/signals/{workflo"
-  "w_execution_id.project}/{workflow_execut"
-  "ion_id.domain}/{workflow_execution_id.na"
-  "me}\222AI\032GFetch existing signal definition"
-  "s matching the input signal id filters.\022"
-  "\261\002\n\tSetSignal\022 .flyteidl.admin.SignalSet"
-  "Request\032!.flyteidl.admin.SignalSetRespon"
-  "se\"\336\001\202\323\344\223\002\024\"\017/api/v1/signals:\001*\222A\300\001\032\023Set"
-  " a signal value.JB\n\003400\022;\n9Returned for "
-  "bad request that may have failed validat"
-  "ion.Je\n\003409\022^\n\\Returned for a request th"
-  "at references an identical entity that h"
-  "as already been registered.B9Z7github.co"
-  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/s"
-  "erviceb\006proto3"
+  "\216\002\n\013ListSignals\022!.flyteidl.admin.SignalL"
+  "istRequest\032\032.flyteidl.admin.SignalList\"\277"
+  "\001\202\323\344\223\002m\022k/api/v1/signals/{workflow_execu"
+  "tion_id.project}/{workflow_execution_id."
+  "domain}/{workflow_execution_id.name}\222AI\032"
+  "GFetch existing signal definitions match"
+  "ing the input signal id filters.\022\261\002\n\tSet"
+  "Signal\022 .flyteidl.admin.SignalSetRequest"
+  "\032!.flyteidl.admin.SignalSetResponse\"\336\001\202\323"
+  "\344\223\002\024\"\017/api/v1/signals:\001*\222A\300\001\032\023Set a sign"
+  "al value.JB\n\003400\022;\n9Returned for bad req"
+  "uest that may have failed validation.Je\n"
+  "\003409\022^\n\\Returned for a request that refe"
+  "rences an identical entity that has alre"
+  "ady been registered.B9Z7github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/serviceb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fsignal_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fsignal_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fsignal_2eproto,
-  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 974,
+  "flyteidl/service/signal.proto", &assign_descriptors_table_flyteidl_2fservice_2fsignal_2eproto, 967,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fsignal_2eproto() {

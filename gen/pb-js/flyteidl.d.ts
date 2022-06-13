@@ -14339,58 +14339,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a SignalListResponse. */
-        interface ISignalListResponse {
+        /** Properties of a SignalList. */
+        interface ISignalList {
 
-            /** SignalListResponse signals */
+            /** SignalList signals */
             signals?: (flyteidl.admin.ISignal[]|null);
 
-            /** SignalListResponse token */
+            /** SignalList token */
             token?: (string|null);
         }
 
-        /** Represents a SignalListResponse. */
-        class SignalListResponse implements ISignalListResponse {
+        /** Represents a SignalList. */
+        class SignalList implements ISignalList {
 
             /**
-             * Constructs a new SignalListResponse.
+             * Constructs a new SignalList.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.ISignalListResponse);
+            constructor(properties?: flyteidl.admin.ISignalList);
 
-            /** SignalListResponse signals. */
+            /** SignalList signals. */
             public signals: flyteidl.admin.ISignal[];
 
-            /** SignalListResponse token. */
+            /** SignalList token. */
             public token: string;
 
             /**
-             * Creates a new SignalListResponse instance using the specified properties.
+             * Creates a new SignalList instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns SignalListResponse instance
+             * @returns SignalList instance
              */
-            public static create(properties?: flyteidl.admin.ISignalListResponse): flyteidl.admin.SignalListResponse;
+            public static create(properties?: flyteidl.admin.ISignalList): flyteidl.admin.SignalList;
 
             /**
-             * Encodes the specified SignalListResponse message. Does not implicitly {@link flyteidl.admin.SignalListResponse.verify|verify} messages.
-             * @param message SignalListResponse message or plain object to encode
+             * Encodes the specified SignalList message. Does not implicitly {@link flyteidl.admin.SignalList.verify|verify} messages.
+             * @param message SignalList message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.ISignalListResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.ISignalList, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a SignalListResponse message from the specified reader or buffer.
+             * Decodes a SignalList message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns SignalListResponse
+             * @returns SignalList
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SignalListResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SignalList;
 
             /**
-             * Verifies a SignalListResponse message.
+             * Verifies a SignalList message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -18197,7 +18197,7 @@ export namespace flyteidl {
             /**
              * Calls ListSignals.
              * @param request SignalListRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and SignalListRequest
+             * @param callback Node-style callback called with the error, if any, and SignalList
              */
             public listSignals(request: flyteidl.admin.ISignalListRequest, callback: flyteidl.service.SignalService.ListSignalsCallback): void;
 
@@ -18206,7 +18206,7 @@ export namespace flyteidl {
              * @param request SignalListRequest message or plain object
              * @returns Promise
              */
-            public listSignals(request: flyteidl.admin.ISignalListRequest): Promise<flyteidl.admin.SignalListRequest>;
+            public listSignals(request: flyteidl.admin.ISignalListRequest): Promise<flyteidl.admin.SignalList>;
 
             /**
              * Calls SetSignal.
@@ -18235,9 +18235,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.service.SignalService#listSignals}.
              * @param error Error, if any
-             * @param [response] SignalListRequest
+             * @param [response] SignalList
              */
-            type ListSignalsCallback = (error: (Error|null), response?: flyteidl.admin.SignalListRequest) => void;
+            type ListSignalsCallback = (error: (Error|null), response?: flyteidl.admin.SignalList) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.SignalService#setSignal}.

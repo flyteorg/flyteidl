@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/signal.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\"q\n\x18SignalGetOrCreateRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\xb4\x01\n\x11SignalListRequest\x12I\n\x15workflow_execution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"L\n\x12SignalListResponse\x12\'\n\x07signals\x18\x01 \x03(\x0b\x32\x16.flyteidl.admin.Signal\x12\r\n\x05token\x18\x02 \x01(\t\"f\n\x10SignalSetRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"\x13\n\x11SignalSetResponse\"\x86\x01\n\x06Signal\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12%\n\x05value\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/signal.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\"q\n\x18SignalGetOrCreateRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\xb4\x01\n\x11SignalListRequest\x12I\n\x15workflow_execution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"D\n\nSignalList\x12\'\n\x07signals\x18\x01 \x03(\x0b\x32\x16.flyteidl.admin.Signal\x12\r\n\x05token\x18\x02 \x01(\t\"f\n\x10SignalSetRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"\x13\n\x11SignalSetResponse\"\x86\x01\n\x06Signal\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12%\n\x05value\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
 
@@ -128,22 +128,22 @@ _SIGNALLISTREQUEST = _descriptor.Descriptor(
 )
 
 
-_SIGNALLISTRESPONSE = _descriptor.Descriptor(
-  name='SignalListResponse',
-  full_name='flyteidl.admin.SignalListResponse',
+_SIGNALLIST = _descriptor.Descriptor(
+  name='SignalList',
+  full_name='flyteidl.admin.SignalList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='signals', full_name='flyteidl.admin.SignalListResponse.signals', index=0,
+      name='signals', full_name='flyteidl.admin.SignalList.signals', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token', full_name='flyteidl.admin.SignalListResponse.token', index=1,
+      name='token', full_name='flyteidl.admin.SignalList.token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -162,7 +162,7 @@ _SIGNALLISTRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=463,
-  serialized_end=539,
+  serialized_end=531,
 )
 
 
@@ -199,8 +199,8 @@ _SIGNALSETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=643,
+  serialized_start=533,
+  serialized_end=635,
 )
 
 
@@ -223,8 +223,8 @@ _SIGNALSETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=645,
-  serialized_end=664,
+  serialized_start=637,
+  serialized_end=656,
 )
 
 
@@ -268,15 +268,15 @@ _SIGNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=667,
-  serialized_end=801,
+  serialized_start=659,
+  serialized_end=793,
 )
 
 _SIGNALGETORCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
 _SIGNALGETORCREATEREQUEST.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
 _SIGNALLISTREQUEST.fields_by_name['workflow_execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
 _SIGNALLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
-_SIGNALLISTRESPONSE.fields_by_name['signals'].message_type = _SIGNAL
+_SIGNALLIST.fields_by_name['signals'].message_type = _SIGNAL
 _SIGNALSETREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
 _SIGNALSETREQUEST.fields_by_name['value'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
 _SIGNAL.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
@@ -284,7 +284,7 @@ _SIGNAL.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._
 _SIGNAL.fields_by_name['value'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
 DESCRIPTOR.message_types_by_name['SignalGetOrCreateRequest'] = _SIGNALGETORCREATEREQUEST
 DESCRIPTOR.message_types_by_name['SignalListRequest'] = _SIGNALLISTREQUEST
-DESCRIPTOR.message_types_by_name['SignalListResponse'] = _SIGNALLISTRESPONSE
+DESCRIPTOR.message_types_by_name['SignalList'] = _SIGNALLIST
 DESCRIPTOR.message_types_by_name['SignalSetRequest'] = _SIGNALSETREQUEST
 DESCRIPTOR.message_types_by_name['SignalSetResponse'] = _SIGNALSETRESPONSE
 DESCRIPTOR.message_types_by_name['Signal'] = _SIGNAL
@@ -304,12 +304,12 @@ SignalListRequest = _reflection.GeneratedProtocolMessageType('SignalListRequest'
   ))
 _sym_db.RegisterMessage(SignalListRequest)
 
-SignalListResponse = _reflection.GeneratedProtocolMessageType('SignalListResponse', (_message.Message,), dict(
-  DESCRIPTOR = _SIGNALLISTRESPONSE,
+SignalList = _reflection.GeneratedProtocolMessageType('SignalList', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNALLIST,
   __module__ = 'flyteidl.admin.signal_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListResponse)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.SignalList)
   ))
-_sym_db.RegisterMessage(SignalListResponse)
+_sym_db.RegisterMessage(SignalList)
 
 SignalSetRequest = _reflection.GeneratedProtocolMessageType('SignalSetRequest', (_message.Message,), dict(
   DESCRIPTOR = _SIGNALSETREQUEST,

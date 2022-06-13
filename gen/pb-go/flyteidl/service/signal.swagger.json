@@ -60,7 +60,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminSignalListRequest"
+              "$ref": "#/definitions/adminSignalList"
             }
           }
         },
@@ -208,32 +208,22 @@
       },
       "description": "Signal encapsulates a unique identifier, associated metadata, and a value for a single Flyte\nsignal. Signals may exist either without a set value (representing a signal request) or with a\npopulated value (indicating the signal has been given)."
     },
-    "adminSignalListRequest": {
+    "adminSignalList": {
       "type": "object",
       "properties": {
-        "workflow_execution_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
-          "title": "Indicates the workflow execution to filter by.\n+required"
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Indicates the number of resources to be returned.\n+required"
+        "signals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminSignal"
+          },
+          "description": "A list of signals matching the input filters."
         },
         "token": {
           "type": "string",
-          "title": "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page\nin a query.\n+optional"
-        },
-        "filters": {
-          "type": "string",
-          "title": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional"
-        },
-        "sort_by": {
-          "$ref": "#/definitions/adminSort",
-          "title": "Sort ordering.\n+optional"
+          "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
         }
       },
-      "title": "SignalListRequest represents a request structure to retrieve a collection of signals.\nSee :ref:`ref_flyteidl.admin.Signal` for more details"
+      "title": "SignalList represents collection of signals along with the token of the last result.\nSee :ref:`ref_flyteidl.admin.Signal` for more details"
     },
     "adminSignalSetRequest": {
       "type": "object",
