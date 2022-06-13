@@ -3102,7 +3102,11 @@ See :ref:`ref_flyteidl.admin.Signal` for more details
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.SignalIdentifier`", "", "A unique identifier for the requested signal, available fields will be used as input filters."
+   "workflow_execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Indicates the workflow execution to filter by. +required"
+   "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned. +required"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the, server-provided token can be used to fetch the next page in a query. +optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering. +optional"
 
 
 
@@ -3125,6 +3129,7 @@ See :ref:`ref_flyteidl.admin.Signal` for more details
    :widths: auto
 
    "signals", ":ref:`ref_flyteidl.admin.Signal`", "repeated", "A list of signals matching the input filters."
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. If there are no more results, this value will be empty."
 
 
 

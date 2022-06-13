@@ -34085,7 +34085,11 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a SignalListRequest.
              * @memberof flyteidl.admin
              * @interface ISignalListRequest
-             * @property {flyteidl.core.ISignalIdentifier|null} [id] SignalListRequest id
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [workflowExecutionId] SignalListRequest workflowExecutionId
+             * @property {number|null} [limit] SignalListRequest limit
+             * @property {string|null} [token] SignalListRequest token
+             * @property {string|null} [filters] SignalListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] SignalListRequest sortBy
              */
 
             /**
@@ -34104,12 +34108,44 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * SignalListRequest id.
-             * @member {flyteidl.core.ISignalIdentifier|null|undefined} id
+             * SignalListRequest workflowExecutionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} workflowExecutionId
              * @memberof flyteidl.admin.SignalListRequest
              * @instance
              */
-            SignalListRequest.prototype.id = null;
+            SignalListRequest.prototype.workflowExecutionId = null;
+
+            /**
+             * SignalListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.SignalListRequest
+             * @instance
+             */
+            SignalListRequest.prototype.limit = 0;
+
+            /**
+             * SignalListRequest token.
+             * @member {string} token
+             * @memberof flyteidl.admin.SignalListRequest
+             * @instance
+             */
+            SignalListRequest.prototype.token = "";
+
+            /**
+             * SignalListRequest filters.
+             * @member {string} filters
+             * @memberof flyteidl.admin.SignalListRequest
+             * @instance
+             */
+            SignalListRequest.prototype.filters = "";
+
+            /**
+             * SignalListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.SignalListRequest
+             * @instance
+             */
+            SignalListRequest.prototype.sortBy = null;
 
             /**
              * Creates a new SignalListRequest instance using the specified properties.
@@ -34135,8 +34171,16 @@ export const flyteidl = $root.flyteidl = (() => {
             SignalListRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
-                    $root.flyteidl.core.SignalIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.workflowExecutionId != null && message.hasOwnProperty("workflowExecutionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.workflowExecutionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.limit);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -34159,7 +34203,19 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.id = $root.flyteidl.core.SignalIdentifier.decode(reader, reader.uint32());
+                        message.workflowExecutionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.limit = reader.uint32();
+                        break;
+                    case 3:
+                        message.token = reader.string();
+                        break;
+                    case 4:
+                        message.filters = reader.string();
+                        break;
+                    case 5:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -34180,10 +34236,24 @@ export const flyteidl = $root.flyteidl = (() => {
             SignalListRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.id != null && message.hasOwnProperty("id")) {
-                    let error = $root.flyteidl.core.SignalIdentifier.verify(message.id);
+                if (message.workflowExecutionId != null && message.hasOwnProperty("workflowExecutionId")) {
+                    let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.workflowExecutionId);
                     if (error)
-                        return "id." + error;
+                        return "workflowExecutionId." + error;
+                }
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    if (!$util.isString(message.filters))
+                        return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
                 }
                 return null;
             };
@@ -34198,6 +34268,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ISignalListResponse
              * @property {Array.<flyteidl.admin.ISignal>|null} [signals] SignalListResponse signals
+             * @property {string|null} [token] SignalListResponse token
              */
 
             /**
@@ -34223,6 +34294,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             SignalListResponse.prototype.signals = $util.emptyArray;
+
+            /**
+             * SignalListResponse token.
+             * @member {string} token
+             * @memberof flyteidl.admin.SignalListResponse
+             * @instance
+             */
+            SignalListResponse.prototype.token = "";
 
             /**
              * Creates a new SignalListResponse instance using the specified properties.
@@ -34251,6 +34330,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.signals != null && message.signals.length)
                     for (let i = 0; i < message.signals.length; ++i)
                         $root.flyteidl.admin.Signal.encode(message.signals[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
                 return writer;
             };
 
@@ -34276,6 +34357,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (!(message.signals && message.signals.length))
                             message.signals = [];
                         message.signals.push($root.flyteidl.admin.Signal.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -34305,6 +34389,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "signals." + error;
                     }
                 }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
                 return null;
             };
 

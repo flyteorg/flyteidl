@@ -950,28 +950,113 @@ public final class SignalOuterClass {
 
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    boolean hasId();
+    boolean hasWorkflowExecutionId();
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.SignalIdentifier getId();
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowExecutionId();
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder();
+    flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowExecutionIdOrBuilder();
+
+    /**
+     * <pre>
+     * Indicates the number of resources to be returned.
+     * +required
+     * </pre>
+     *
+     * <code>uint32 limit = 2;</code>
+     */
+    int getLimit();
+
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    java.lang.String getFilters();
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getFiltersBytes();
+
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    boolean hasSortBy();
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    flyteidl.admin.Common.Sort getSortBy();
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
   }
   /**
    * <pre>
@@ -991,6 +1076,8 @@ public final class SignalOuterClass {
       super(builder);
     }
     private SignalListRequest() {
+      token_ = "";
+      filters_ = "";
     }
 
     @java.lang.Override
@@ -1018,14 +1105,44 @@ public final class SignalOuterClass {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder subBuilder = null;
-              if (id_ != null) {
-                subBuilder = id_.toBuilder();
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder subBuilder = null;
+              if (workflowExecutionId_ != null) {
+                subBuilder = workflowExecutionId_.toBuilder();
               }
-              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.SignalIdentifier.parser(), extensionRegistry);
+              workflowExecutionId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(workflowExecutionId_);
+                workflowExecutionId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              limit_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filters_ = s;
+              break;
+            }
+            case 42: {
+              flyteidl.admin.Common.Sort.Builder subBuilder = null;
+              if (sortBy_ != null) {
+                subBuilder = sortBy_.toBuilder();
+              }
+              sortBy_ = input.readMessage(flyteidl.admin.Common.Sort.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sortBy_);
+                sortBy_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1062,37 +1179,182 @@ public final class SignalOuterClass {
               flyteidl.admin.SignalOuterClass.SignalListRequest.class, flyteidl.admin.SignalOuterClass.SignalListRequest.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+    public static final int WORKFLOW_EXECUTION_ID_FIELD_NUMBER = 1;
+    private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier workflowExecutionId_;
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    public boolean hasId() {
-      return id_ != null;
+    public boolean hasWorkflowExecutionId() {
+      return workflowExecutionId_ != null;
     }
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
-      return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowExecutionId() {
+      return workflowExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : workflowExecutionId_;
     }
     /**
      * <pre>
-     * A unique identifier for the requested signal, available fields will be used as input filters.
+     * Indicates the workflow execution to filter by.
+     * +required
      * </pre>
      *
-     * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+     * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
      */
-    public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
-      return getId();
+    public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowExecutionIdOrBuilder() {
+      return getWorkflowExecutionId();
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
+    private int limit_;
+    /**
+     * <pre>
+     * Indicates the number of resources to be returned.
+     * +required
+     * </pre>
+     *
+     * <code>uint32 limit = 2;</code>
+     */
+    public int getLimit() {
+      return limit_;
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object token_;
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILTERS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object filters_;
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    public java.lang.String getFilters() {
+      java.lang.Object ref = filters_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filters_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFiltersBytes() {
+      java.lang.Object ref = filters_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filters_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SORT_BY_FIELD_NUMBER = 5;
+    private flyteidl.admin.Common.Sort sortBy_;
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public boolean hasSortBy() {
+      return sortBy_ != null;
+    }
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public flyteidl.admin.Common.Sort getSortBy() {
+      return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+    }
+    /**
+     * <pre>
+     * Sort ordering.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+      return getSortBy();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1109,8 +1371,20 @@ public final class SignalOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
+      if (workflowExecutionId_ != null) {
+        output.writeMessage(1, getWorkflowExecutionId());
+      }
+      if (limit_ != 0) {
+        output.writeUInt32(2, limit_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
+      }
+      if (!getFiltersBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filters_);
+      }
+      if (sortBy_ != null) {
+        output.writeMessage(5, getSortBy());
       }
       unknownFields.writeTo(output);
     }
@@ -1121,9 +1395,23 @@ public final class SignalOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != null) {
+      if (workflowExecutionId_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
+          .computeMessageSize(1, getWorkflowExecutionId());
+      }
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, limit_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
+      }
+      if (!getFiltersBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filters_);
+      }
+      if (sortBy_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getSortBy());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1140,10 +1428,21 @@ public final class SignalOuterClass {
       }
       flyteidl.admin.SignalOuterClass.SignalListRequest other = (flyteidl.admin.SignalOuterClass.SignalListRequest) obj;
 
-      if (hasId() != other.hasId()) return false;
-      if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
+      if (hasWorkflowExecutionId() != other.hasWorkflowExecutionId()) return false;
+      if (hasWorkflowExecutionId()) {
+        if (!getWorkflowExecutionId()
+            .equals(other.getWorkflowExecutionId())) return false;
+      }
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getFilters()
+          .equals(other.getFilters())) return false;
+      if (hasSortBy() != other.hasSortBy()) return false;
+      if (hasSortBy()) {
+        if (!getSortBy()
+            .equals(other.getSortBy())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -1156,9 +1455,19 @@ public final class SignalOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
+      if (hasWorkflowExecutionId()) {
+        hash = (37 * hash) + WORKFLOW_EXECUTION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflowExecutionId().hashCode();
+      }
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getFilters().hashCode();
+      if (hasSortBy()) {
+        hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
+        hash = (53 * hash) + getSortBy().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1298,11 +1607,23 @@ public final class SignalOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
+        if (workflowExecutionIdBuilder_ == null) {
+          workflowExecutionId_ = null;
         } else {
-          id_ = null;
-          idBuilder_ = null;
+          workflowExecutionId_ = null;
+          workflowExecutionIdBuilder_ = null;
+        }
+        limit_ = 0;
+
+        token_ = "";
+
+        filters_ = "";
+
+        if (sortByBuilder_ == null) {
+          sortBy_ = null;
+        } else {
+          sortBy_ = null;
+          sortByBuilder_ = null;
         }
         return this;
       }
@@ -1330,10 +1651,18 @@ public final class SignalOuterClass {
       @java.lang.Override
       public flyteidl.admin.SignalOuterClass.SignalListRequest buildPartial() {
         flyteidl.admin.SignalOuterClass.SignalListRequest result = new flyteidl.admin.SignalOuterClass.SignalListRequest(this);
-        if (idBuilder_ == null) {
-          result.id_ = id_;
+        if (workflowExecutionIdBuilder_ == null) {
+          result.workflowExecutionId_ = workflowExecutionId_;
         } else {
-          result.id_ = idBuilder_.build();
+          result.workflowExecutionId_ = workflowExecutionIdBuilder_.build();
+        }
+        result.limit_ = limit_;
+        result.token_ = token_;
+        result.filters_ = filters_;
+        if (sortByBuilder_ == null) {
+          result.sortBy_ = sortBy_;
+        } else {
+          result.sortBy_ = sortByBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1383,8 +1712,22 @@ public final class SignalOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.SignalOuterClass.SignalListRequest other) {
         if (other == flyteidl.admin.SignalOuterClass.SignalListRequest.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
+        if (other.hasWorkflowExecutionId()) {
+          mergeWorkflowExecutionId(other.getWorkflowExecutionId());
+        }
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getFilters().isEmpty()) {
+          filters_ = other.filters_;
+          onChanged();
+        }
+        if (other.hasSortBy()) {
+          mergeSortBy(other.getSortBy());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1415,157 +1758,567 @@ public final class SignalOuterClass {
         return this;
       }
 
-      private flyteidl.core.IdentifierOuterClass.SignalIdentifier id_;
+      private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier workflowExecutionId_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> idBuilder_;
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> workflowExecutionIdBuilder_;
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public boolean hasId() {
-        return idBuilder_ != null || id_ != null;
+      public boolean hasWorkflowExecutionId() {
+        return workflowExecutionIdBuilder_ != null || workflowExecutionId_ != null;
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifier getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowExecutionId() {
+        if (workflowExecutionIdBuilder_ == null) {
+          return workflowExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : workflowExecutionId_;
         } else {
-          return idBuilder_.getMessage();
+          return workflowExecutionIdBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public Builder setId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
-        if (idBuilder_ == null) {
+      public Builder setWorkflowExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (workflowExecutionIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          id_ = value;
+          workflowExecutionId_ = value;
           onChanged();
         } else {
-          idBuilder_.setMessage(value);
+          workflowExecutionIdBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public Builder setId(
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
+      public Builder setWorkflowExecutionId(
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder builderForValue) {
+        if (workflowExecutionIdBuilder_ == null) {
+          workflowExecutionId_ = builderForValue.build();
           onChanged();
         } else {
-          idBuilder_.setMessage(builderForValue.build());
+          workflowExecutionIdBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public Builder mergeId(flyteidl.core.IdentifierOuterClass.SignalIdentifier value) {
-        if (idBuilder_ == null) {
-          if (id_ != null) {
-            id_ =
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.newBuilder(id_).mergeFrom(value).buildPartial();
+      public Builder mergeWorkflowExecutionId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
+        if (workflowExecutionIdBuilder_ == null) {
+          if (workflowExecutionId_ != null) {
+            workflowExecutionId_ =
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.newBuilder(workflowExecutionId_).mergeFrom(value).buildPartial();
           } else {
-            id_ = value;
+            workflowExecutionId_ = value;
           }
           onChanged();
         } else {
-          idBuilder_.mergeFrom(value);
+          workflowExecutionIdBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
+      public Builder clearWorkflowExecutionId() {
+        if (workflowExecutionIdBuilder_ == null) {
+          workflowExecutionId_ = null;
           onChanged();
         } else {
-          id_ = null;
-          idBuilder_ = null;
+          workflowExecutionId_ = null;
+          workflowExecutionIdBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder getIdBuilder() {
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getWorkflowExecutionIdBuilder() {
         
         onChanged();
-        return getIdFieldBuilder().getBuilder();
+        return getWorkflowExecutionIdFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
-      public flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
+      public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowExecutionIdOrBuilder() {
+        if (workflowExecutionIdBuilder_ != null) {
+          return workflowExecutionIdBuilder_.getMessageOrBuilder();
         } else {
-          return id_ == null ?
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier.getDefaultInstance() : id_;
+          return workflowExecutionId_ == null ?
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : workflowExecutionId_;
         }
       }
       /**
        * <pre>
-       * A unique identifier for the requested signal, available fields will be used as input filters.
+       * Indicates the workflow execution to filter by.
+       * +required
        * </pre>
        *
-       * <code>.flyteidl.core.SignalIdentifier id = 1;</code>
+       * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.SignalIdentifier, flyteidl.core.IdentifierOuterClass.SignalIdentifier.Builder, flyteidl.core.IdentifierOuterClass.SignalIdentifierOrBuilder>(
-                  getId(),
+          flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> 
+          getWorkflowExecutionIdFieldBuilder() {
+        if (workflowExecutionIdBuilder_ == null) {
+          workflowExecutionIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder>(
+                  getWorkflowExecutionId(),
                   getParentForChildren(),
                   isClean());
-          id_ = null;
+          workflowExecutionId_ = null;
         }
-        return idBuilder_;
+        return workflowExecutionIdBuilder_;
+      }
+
+      private int limit_ ;
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public Builder setLimit(int value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the, server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filters_ = "";
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public java.lang.String getFilters() {
+        java.lang.Object ref = filters_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filters_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFiltersBytes() {
+        java.lang.Object ref = filters_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filters_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder setFilters(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        filters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder clearFilters() {
+        
+        filters_ = getDefaultInstance().getFilters();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder setFiltersBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        filters_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.admin.Common.Sort sortBy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> sortByBuilder_;
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public boolean hasSortBy() {
+        return sortByBuilder_ != null || sortBy_ != null;
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.Sort getSortBy() {
+        if (sortByBuilder_ == null) {
+          return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+        } else {
+          return sortByBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder setSortBy(flyteidl.admin.Common.Sort value) {
+        if (sortByBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sortBy_ = value;
+          onChanged();
+        } else {
+          sortByBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder setSortBy(
+          flyteidl.admin.Common.Sort.Builder builderForValue) {
+        if (sortByBuilder_ == null) {
+          sortBy_ = builderForValue.build();
+          onChanged();
+        } else {
+          sortByBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder mergeSortBy(flyteidl.admin.Common.Sort value) {
+        if (sortByBuilder_ == null) {
+          if (sortBy_ != null) {
+            sortBy_ =
+              flyteidl.admin.Common.Sort.newBuilder(sortBy_).mergeFrom(value).buildPartial();
+          } else {
+            sortBy_ = value;
+          }
+          onChanged();
+        } else {
+          sortByBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder clearSortBy() {
+        if (sortByBuilder_ == null) {
+          sortBy_ = null;
+          onChanged();
+        } else {
+          sortBy_ = null;
+          sortByBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.Sort.Builder getSortByBuilder() {
+        
+        onChanged();
+        return getSortByFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+        if (sortByBuilder_ != null) {
+          return sortByBuilder_.getMessageOrBuilder();
+        } else {
+          return sortBy_ == null ?
+              flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+        }
+      }
+      /**
+       * <pre>
+       * Sort ordering.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> 
+          getSortByFieldBuilder() {
+        if (sortByBuilder_ == null) {
+          sortByBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder>(
+                  getSortBy(),
+                  getParentForChildren(),
+                  isClean());
+          sortBy_ = null;
+        }
+        return sortByBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1667,6 +2420,26 @@ public final class SignalOuterClass {
      */
     flyteidl.admin.SignalOuterClass.SignalOrBuilder getSignalsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
   }
   /**
    * <pre>
@@ -1687,6 +2460,7 @@ public final class SignalOuterClass {
     }
     private SignalListResponse() {
       signals_ = java.util.Collections.emptyList();
+      token_ = "";
     }
 
     @java.lang.Override
@@ -1720,6 +2494,12 @@ public final class SignalOuterClass {
               }
               signals_.add(
                   input.readMessage(flyteidl.admin.SignalOuterClass.Signal.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
               break;
             }
             default: {
@@ -1757,6 +2537,7 @@ public final class SignalOuterClass {
               flyteidl.admin.SignalOuterClass.SignalListResponse.class, flyteidl.admin.SignalOuterClass.SignalListResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SIGNALS_FIELD_NUMBER = 1;
     private java.util.List<flyteidl.admin.SignalOuterClass.Signal> signals_;
     /**
@@ -1812,6 +2593,50 @@ public final class SignalOuterClass {
       return signals_.get(index);
     }
 
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object token_;
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1829,6 +2654,9 @@ public final class SignalOuterClass {
       for (int i = 0; i < signals_.size(); i++) {
         output.writeMessage(1, signals_.get(i));
       }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1841,6 +2669,9 @@ public final class SignalOuterClass {
       for (int i = 0; i < signals_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, signals_.get(i));
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1859,6 +2690,8 @@ public final class SignalOuterClass {
 
       if (!getSignalsList()
           .equals(other.getSignalsList())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1874,6 +2707,8 @@ public final class SignalOuterClass {
         hash = (37 * hash) + SIGNALS_FIELD_NUMBER;
         hash = (53 * hash) + getSignalsList().hashCode();
       }
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2019,6 +2854,8 @@ public final class SignalOuterClass {
         } else {
           signalsBuilder_.clear();
         }
+        token_ = "";
+
         return this;
       }
 
@@ -2046,6 +2883,7 @@ public final class SignalOuterClass {
       public flyteidl.admin.SignalOuterClass.SignalListResponse buildPartial() {
         flyteidl.admin.SignalOuterClass.SignalListResponse result = new flyteidl.admin.SignalOuterClass.SignalListResponse(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (signalsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             signals_ = java.util.Collections.unmodifiableList(signals_);
@@ -2055,6 +2893,8 @@ public final class SignalOuterClass {
         } else {
           result.signals_ = signalsBuilder_.build();
         }
+        result.token_ = token_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2128,6 +2968,10 @@ public final class SignalOuterClass {
               signalsBuilder_.addAllMessages(other.signals_);
             }
           }
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2469,6 +3313,100 @@ public final class SignalOuterClass {
           signals_ = null;
         }
         return signalsBuilder_;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5115,23 +6053,27 @@ public final class SignalOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/admin/signal.proto\022\016flyteidl." +
-      "admin\032\036flyteidl/core/identifier.proto\032\034f" +
-      "lyteidl/core/literals.proto\032\031flyteidl/co" +
-      "re/types.proto\"q\n\030SignalGetOrCreateReque" +
-      "st\022+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIde" +
-      "ntifier\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li" +
-      "teralType\"@\n\021SignalListRequest\022+\n\002id\030\001 \001" +
-      "(\0132\037.flyteidl.core.SignalIdentifier\"=\n\022S" +
-      "ignalListResponse\022\'\n\007signals\030\001 \003(\0132\026.fly" +
-      "teidl.admin.Signal\"f\n\020SignalSetRequest\022+" +
-      "\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdentif" +
-      "ier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Liter" +
-      "al\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002id" +
-      "\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier\022" +
-      "(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTyp" +
-      "e\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Literal" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "admin\032\033flyteidl/admin/common.proto\032\036flyt" +
+      "eidl/core/identifier.proto\032\034flyteidl/cor" +
+      "e/literals.proto\032\031flyteidl/core/types.pr" +
+      "oto\"q\n\030SignalGetOrCreateRequest\022+\n\002id\030\001 " +
+      "\001(\0132\037.flyteidl.core.SignalIdentifier\022(\n\004" +
+      "type\030\002 \001(\0132\032.flyteidl.core.LiteralType\"\264" +
+      "\001\n\021SignalListRequest\022I\n\025workflow_executi" +
+      "on_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
+      "utionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030" +
+      "\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132" +
+      "\024.flyteidl.admin.Sort\"L\n\022SignalListRespo" +
+      "nse\022\'\n\007signals\030\001 \003(\0132\026.flyteidl.admin.Si" +
+      "gnal\022\r\n\005token\030\002 \001(\t\"f\n\020SignalSetRequest\022" +
+      "+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdenti" +
+      "fier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Lite" +
+      "ral\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002i" +
+      "d\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier" +
+      "\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTy" +
+      "pe\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Litera" +
+      "lB7Z5github.com/flyteorg/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5144,6 +6086,7 @@ public final class SignalOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.admin.Common.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Types.getDescriptor(),
@@ -5159,13 +6102,13 @@ public final class SignalOuterClass {
     internal_static_flyteidl_admin_SignalListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalListRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "WorkflowExecutionId", "Limit", "Token", "Filters", "SortBy", });
     internal_static_flyteidl_admin_SignalListResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_SignalListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SignalListResponse_descriptor,
-        new java.lang.String[] { "Signals", });
+        new java.lang.String[] { "Signals", "Token", });
     internal_static_flyteidl_admin_SignalSetRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_SignalSetRequest_fieldAccessorTable = new
@@ -5184,6 +6127,7 @@ public final class SignalOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Signal_descriptor,
         new java.lang.String[] { "Id", "Type", "Value", });
+    flyteidl.admin.Common.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Types.getDescriptor();

@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/admin/common.pb.h"
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/types.pb.h"
@@ -308,21 +309,68 @@ class SignalListRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.SignalIdentifier id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  const ::flyteidl::core::SignalIdentifier& id() const;
-  ::flyteidl::core::SignalIdentifier* release_id();
-  ::flyteidl::core::SignalIdentifier* mutable_id();
-  void set_allocated_id(::flyteidl::core::SignalIdentifier* id);
+  // string token = 3;
+  void clear_token();
+  static const int kTokenFieldNumber = 3;
+  const ::std::string& token() const;
+  void set_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token(::std::string&& value);
+  #endif
+  void set_token(const char* value);
+  void set_token(const char* value, size_t size);
+  ::std::string* mutable_token();
+  ::std::string* release_token();
+  void set_allocated_token(::std::string* token);
+
+  // string filters = 4;
+  void clear_filters();
+  static const int kFiltersFieldNumber = 4;
+  const ::std::string& filters() const;
+  void set_filters(const ::std::string& value);
+  #if LANG_CXX11
+  void set_filters(::std::string&& value);
+  #endif
+  void set_filters(const char* value);
+  void set_filters(const char* value, size_t size);
+  ::std::string* mutable_filters();
+  ::std::string* release_filters();
+  void set_allocated_filters(::std::string* filters);
+
+  // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+  bool has_workflow_execution_id() const;
+  void clear_workflow_execution_id();
+  static const int kWorkflowExecutionIdFieldNumber = 1;
+  const ::flyteidl::core::WorkflowExecutionIdentifier& workflow_execution_id() const;
+  ::flyteidl::core::WorkflowExecutionIdentifier* release_workflow_execution_id();
+  ::flyteidl::core::WorkflowExecutionIdentifier* mutable_workflow_execution_id();
+  void set_allocated_workflow_execution_id(::flyteidl::core::WorkflowExecutionIdentifier* workflow_execution_id);
+
+  // .flyteidl.admin.Sort sort_by = 5;
+  bool has_sort_by() const;
+  void clear_sort_by();
+  static const int kSortByFieldNumber = 5;
+  const ::flyteidl::admin::Sort& sort_by() const;
+  ::flyteidl::admin::Sort* release_sort_by();
+  ::flyteidl::admin::Sort* mutable_sort_by();
+  void set_allocated_sort_by(::flyteidl::admin::Sort* sort_by);
+
+  // uint32 limit = 2;
+  void clear_limit();
+  static const int kLimitFieldNumber = 2;
+  ::google::protobuf::uint32 limit() const;
+  void set_limit(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::SignalIdentifier* id_;
+  ::google::protobuf::internal::ArenaStringPtr token_;
+  ::google::protobuf::internal::ArenaStringPtr filters_;
+  ::flyteidl::core::WorkflowExecutionIdentifier* workflow_execution_id_;
+  ::flyteidl::admin::Sort* sort_by_;
+  ::google::protobuf::uint32 limit_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fsignal_2eproto;
 };
@@ -435,12 +483,27 @@ class SignalListResponse final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Signal >&
       signals() const;
 
+  // string token = 2;
+  void clear_token();
+  static const int kTokenFieldNumber = 2;
+  const ::std::string& token() const;
+  void set_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token(::std::string&& value);
+  #endif
+  void set_token(const char* value);
+  void set_token(const char* value, size_t size);
+  ::std::string* mutable_token();
+  ::std::string* release_token();
+  void set_allocated_token(::std::string* token);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.SignalListResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Signal > signals_;
+  ::google::protobuf::internal::ArenaStringPtr token_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fsignal_2eproto;
 };
@@ -914,49 +977,214 @@ inline void SignalGetOrCreateRequest::set_allocated_type(::flyteidl::core::Liter
 
 // SignalListRequest
 
-// .flyteidl.core.SignalIdentifier id = 1;
-inline bool SignalListRequest::has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
+// .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+inline bool SignalListRequest::has_workflow_execution_id() const {
+  return this != internal_default_instance() && workflow_execution_id_ != nullptr;
 }
-inline const ::flyteidl::core::SignalIdentifier& SignalListRequest::id() const {
-  const ::flyteidl::core::SignalIdentifier* p = id_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::SignalIdentifier*>(
-      &::flyteidl::core::_SignalIdentifier_default_instance_);
+inline const ::flyteidl::core::WorkflowExecutionIdentifier& SignalListRequest::workflow_execution_id() const {
+  const ::flyteidl::core::WorkflowExecutionIdentifier* p = workflow_execution_id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.workflow_execution_id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::WorkflowExecutionIdentifier*>(
+      &::flyteidl::core::_WorkflowExecutionIdentifier_default_instance_);
 }
-inline ::flyteidl::core::SignalIdentifier* SignalListRequest::release_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListRequest.id)
+inline ::flyteidl::core::WorkflowExecutionIdentifier* SignalListRequest::release_workflow_execution_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListRequest.workflow_execution_id)
   
-  ::flyteidl::core::SignalIdentifier* temp = id_;
-  id_ = nullptr;
+  ::flyteidl::core::WorkflowExecutionIdentifier* temp = workflow_execution_id_;
+  workflow_execution_id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::SignalIdentifier* SignalListRequest::mutable_id() {
+inline ::flyteidl::core::WorkflowExecutionIdentifier* SignalListRequest::mutable_workflow_execution_id() {
   
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::SignalIdentifier>(GetArenaNoVirtual());
-    id_ = p;
+  if (workflow_execution_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::WorkflowExecutionIdentifier>(GetArenaNoVirtual());
+    workflow_execution_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListRequest.id)
-  return id_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListRequest.workflow_execution_id)
+  return workflow_execution_id_;
 }
-inline void SignalListRequest::set_allocated_id(::flyteidl::core::SignalIdentifier* id) {
+inline void SignalListRequest::set_allocated_workflow_execution_id(::flyteidl::core::WorkflowExecutionIdentifier* workflow_execution_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(workflow_execution_id_);
   }
-  if (id) {
+  if (workflow_execution_id) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
+      workflow_execution_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, workflow_execution_id, submessage_arena);
     }
     
   } else {
     
   }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListRequest.id)
+  workflow_execution_id_ = workflow_execution_id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListRequest.workflow_execution_id)
+}
+
+// uint32 limit = 2;
+inline void SignalListRequest::clear_limit() {
+  limit_ = 0u;
+}
+inline ::google::protobuf::uint32 SignalListRequest::limit() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.limit)
+  return limit_;
+}
+inline void SignalListRequest::set_limit(::google::protobuf::uint32 value) {
+  
+  limit_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalListRequest.limit)
+}
+
+// string token = 3;
+inline void SignalListRequest::clear_token() {
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignalListRequest::token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.token)
+  return token_.GetNoArena();
+}
+inline void SignalListRequest::set_token(const ::std::string& value) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalListRequest.token)
+}
+#if LANG_CXX11
+inline void SignalListRequest::set_token(::std::string&& value) {
+  
+  token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SignalListRequest.token)
+}
+#endif
+inline void SignalListRequest::set_token(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SignalListRequest.token)
+}
+inline void SignalListRequest::set_token(const char* value, size_t size) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SignalListRequest.token)
+}
+inline ::std::string* SignalListRequest::mutable_token() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListRequest.token)
+  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignalListRequest::release_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListRequest.token)
+  
+  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignalListRequest::set_allocated_token(::std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListRequest.token)
+}
+
+// string filters = 4;
+inline void SignalListRequest::clear_filters() {
+  filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignalListRequest::filters() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.filters)
+  return filters_.GetNoArena();
+}
+inline void SignalListRequest::set_filters(const ::std::string& value) {
+  
+  filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalListRequest.filters)
+}
+#if LANG_CXX11
+inline void SignalListRequest::set_filters(::std::string&& value) {
+  
+  filters_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SignalListRequest.filters)
+}
+#endif
+inline void SignalListRequest::set_filters(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SignalListRequest.filters)
+}
+inline void SignalListRequest::set_filters(const char* value, size_t size) {
+  
+  filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SignalListRequest.filters)
+}
+inline ::std::string* SignalListRequest::mutable_filters() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListRequest.filters)
+  return filters_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignalListRequest::release_filters() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListRequest.filters)
+  
+  return filters_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignalListRequest::set_allocated_filters(::std::string* filters) {
+  if (filters != nullptr) {
+    
+  } else {
+    
+  }
+  filters_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filters);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListRequest.filters)
+}
+
+// .flyteidl.admin.Sort sort_by = 5;
+inline bool SignalListRequest::has_sort_by() const {
+  return this != internal_default_instance() && sort_by_ != nullptr;
+}
+inline const ::flyteidl::admin::Sort& SignalListRequest::sort_by() const {
+  const ::flyteidl::admin::Sort* p = sort_by_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListRequest.sort_by)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Sort*>(
+      &::flyteidl::admin::_Sort_default_instance_);
+}
+inline ::flyteidl::admin::Sort* SignalListRequest::release_sort_by() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListRequest.sort_by)
+  
+  ::flyteidl::admin::Sort* temp = sort_by_;
+  sort_by_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::Sort* SignalListRequest::mutable_sort_by() {
+  
+  if (sort_by_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Sort>(GetArenaNoVirtual());
+    sort_by_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListRequest.sort_by)
+  return sort_by_;
+}
+inline void SignalListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* sort_by) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(sort_by_);
+  }
+  if (sort_by) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      sort_by = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, sort_by, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  sort_by_ = sort_by;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListRequest.sort_by)
 }
 
 // -------------------------------------------------------------------
@@ -991,6 +1219,59 @@ inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Signal >&
 SignalListResponse::signals() const {
   // @@protoc_insertion_point(field_list:flyteidl.admin.SignalListResponse.signals)
   return signals_;
+}
+
+// string token = 2;
+inline void SignalListResponse::clear_token() {
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignalListResponse::token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.SignalListResponse.token)
+  return token_.GetNoArena();
+}
+inline void SignalListResponse::set_token(const ::std::string& value) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.SignalListResponse.token)
+}
+#if LANG_CXX11
+inline void SignalListResponse::set_token(::std::string&& value) {
+  
+  token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SignalListResponse.token)
+}
+#endif
+inline void SignalListResponse::set_token(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SignalListResponse.token)
+}
+inline void SignalListResponse::set_token(const char* value, size_t size) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SignalListResponse.token)
+}
+inline ::std::string* SignalListResponse::mutable_token() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SignalListResponse.token)
+  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignalListResponse::release_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.SignalListResponse.token)
+  
+  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignalListResponse::set_allocated_token(::std::string* token) {
+  if (token != nullptr) {
+    
+  } else {
+    
+  }
+  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SignalListResponse.token)
 }
 
 // -------------------------------------------------------------------

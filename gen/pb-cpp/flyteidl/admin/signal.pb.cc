@@ -16,7 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fsignal_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Signal_flyteidl_2fadmin_2fsignal_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SignalIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<9> scc_info_Literal_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftypes_2eproto ::google::protobuf::internal::SCCInfo<6> scc_info_LiteralType_flyteidl_2fcore_2ftypes_2eproto;
@@ -75,9 +77,10 @@ static void InitDefaultsSignalListRequest_flyteidl_2fadmin_2fsignal_2eproto() {
   ::flyteidl::admin::SignalListRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SignalListRequest_flyteidl_2fadmin_2fsignal_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSignalListRequest_flyteidl_2fadmin_2fsignal_2eproto}, {
-      &scc_info_SignalIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_SignalListRequest_flyteidl_2fadmin_2fsignal_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSignalListRequest_flyteidl_2fadmin_2fsignal_2eproto}, {
+      &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
 static void InitDefaultsSignalListResponse_flyteidl_2fadmin_2fsignal_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -167,13 +170,18 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fsignal_2eproto::
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, workflow_execution_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, token_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, filters_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListRequest, sort_by_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, signals_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalListResponse, token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SignalSetRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -198,10 +206,10 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fsignal_2eproto::
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::SignalGetOrCreateRequest)},
   { 7, -1, sizeof(::flyteidl::admin::SignalListRequest)},
-  { 13, -1, sizeof(::flyteidl::admin::SignalListResponse)},
-  { 19, -1, sizeof(::flyteidl::admin::SignalSetRequest)},
-  { 26, -1, sizeof(::flyteidl::admin::SignalSetResponse)},
-  { 31, -1, sizeof(::flyteidl::admin::Signal)},
+  { 17, -1, sizeof(::flyteidl::admin::SignalListResponse)},
+  { 24, -1, sizeof(::flyteidl::admin::SignalSetRequest)},
+  { 31, -1, sizeof(::flyteidl::admin::SignalSetResponse)},
+  { 36, -1, sizeof(::flyteidl::admin::Signal)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -221,38 +229,43 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fsignal_2eproto[] =
   "\n\033flyteidl/admin/signal.proto\022\016flyteidl."
-  "admin\032\036flyteidl/core/identifier.proto\032\034f"
-  "lyteidl/core/literals.proto\032\031flyteidl/co"
-  "re/types.proto\"q\n\030SignalGetOrCreateReque"
-  "st\022+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIde"
-  "ntifier\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.Li"
-  "teralType\"@\n\021SignalListRequest\022+\n\002id\030\001 \001"
-  "(\0132\037.flyteidl.core.SignalIdentifier\"=\n\022S"
-  "ignalListResponse\022\'\n\007signals\030\001 \003(\0132\026.fly"
-  "teidl.admin.Signal\"f\n\020SignalSetRequest\022+"
-  "\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdentif"
-  "ier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Liter"
-  "al\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002id"
-  "\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier\022"
-  "(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTyp"
-  "e\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Literal"
-  "B7Z5github.com/flyteorg/flyteidl/gen/pb-"
-  "go/flyteidl/adminb\006proto3"
+  "admin\032\033flyteidl/admin/common.proto\032\036flyt"
+  "eidl/core/identifier.proto\032\034flyteidl/cor"
+  "e/literals.proto\032\031flyteidl/core/types.pr"
+  "oto\"q\n\030SignalGetOrCreateRequest\022+\n\002id\030\001 "
+  "\001(\0132\037.flyteidl.core.SignalIdentifier\022(\n\004"
+  "type\030\002 \001(\0132\032.flyteidl.core.LiteralType\"\264"
+  "\001\n\021SignalListRequest\022I\n\025workflow_executi"
+  "on_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec"
+  "utionIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030"
+  "\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132"
+  "\024.flyteidl.admin.Sort\"L\n\022SignalListRespo"
+  "nse\022\'\n\007signals\030\001 \003(\0132\026.flyteidl.admin.Si"
+  "gnal\022\r\n\005token\030\002 \001(\t\"f\n\020SignalSetRequest\022"
+  "+\n\002id\030\001 \001(\0132\037.flyteidl.core.SignalIdenti"
+  "fier\022%\n\005value\030\002 \001(\0132\026.flyteidl.core.Lite"
+  "ral\"\023\n\021SignalSetResponse\"\206\001\n\006Signal\022+\n\002i"
+  "d\030\001 \001(\0132\037.flyteidl.core.SignalIdentifier"
+  "\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.LiteralTy"
+  "pe\022%\n\005value\030\003 \001(\0132\026.flyteidl.core.Litera"
+  "lB7Z5github.com/flyteorg/flyteidl/gen/pb"
+  "-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fsignal_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fsignal_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fsignal_2eproto,
-  "flyteidl/admin/signal.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsignal_2eproto, 705,
+  "flyteidl/admin/signal.proto", &assign_descriptors_table_flyteidl_2fadmin_2fsignal_2eproto, 866,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fsignal_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
   {
+    ::AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2ftypes_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fsignal_2eproto, deps, 3);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fsignal_2eproto, deps, 4);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -630,26 +643,43 @@ void SignalGetOrCreateRequest::InternalSwap(SignalGetOrCreateRequest* other) {
 // ===================================================================
 
 void SignalListRequest::InitAsDefaultInstance() {
-  ::flyteidl::admin::_SignalListRequest_default_instance_._instance.get_mutable()->id_ = const_cast< ::flyteidl::core::SignalIdentifier*>(
-      ::flyteidl::core::SignalIdentifier::internal_default_instance());
+  ::flyteidl::admin::_SignalListRequest_default_instance_._instance.get_mutable()->workflow_execution_id_ = const_cast< ::flyteidl::core::WorkflowExecutionIdentifier*>(
+      ::flyteidl::core::WorkflowExecutionIdentifier::internal_default_instance());
+  ::flyteidl::admin::_SignalListRequest_default_instance_._instance.get_mutable()->sort_by_ = const_cast< ::flyteidl::admin::Sort*>(
+      ::flyteidl::admin::Sort::internal_default_instance());
 }
 class SignalListRequest::HasBitSetters {
  public:
-  static const ::flyteidl::core::SignalIdentifier& id(const SignalListRequest* msg);
+  static const ::flyteidl::core::WorkflowExecutionIdentifier& workflow_execution_id(const SignalListRequest* msg);
+  static const ::flyteidl::admin::Sort& sort_by(const SignalListRequest* msg);
 };
 
-const ::flyteidl::core::SignalIdentifier&
-SignalListRequest::HasBitSetters::id(const SignalListRequest* msg) {
-  return *msg->id_;
+const ::flyteidl::core::WorkflowExecutionIdentifier&
+SignalListRequest::HasBitSetters::workflow_execution_id(const SignalListRequest* msg) {
+  return *msg->workflow_execution_id_;
 }
-void SignalListRequest::clear_id() {
-  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
-    delete id_;
+const ::flyteidl::admin::Sort&
+SignalListRequest::HasBitSetters::sort_by(const SignalListRequest* msg) {
+  return *msg->sort_by_;
+}
+void SignalListRequest::clear_workflow_execution_id() {
+  if (GetArenaNoVirtual() == nullptr && workflow_execution_id_ != nullptr) {
+    delete workflow_execution_id_;
   }
-  id_ = nullptr;
+  workflow_execution_id_ = nullptr;
+}
+void SignalListRequest::clear_sort_by() {
+  if (GetArenaNoVirtual() == nullptr && sort_by_ != nullptr) {
+    delete sort_by_;
+  }
+  sort_by_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SignalListRequest::kIdFieldNumber;
+const int SignalListRequest::kWorkflowExecutionIdFieldNumber;
+const int SignalListRequest::kLimitFieldNumber;
+const int SignalListRequest::kTokenFieldNumber;
+const int SignalListRequest::kFiltersFieldNumber;
+const int SignalListRequest::kSortByFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SignalListRequest::SignalListRequest()
@@ -661,18 +691,36 @@ SignalListRequest::SignalListRequest(const SignalListRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_id()) {
-    id_ = new ::flyteidl::core::SignalIdentifier(*from.id_);
-  } else {
-    id_ = nullptr;
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.token().size() > 0) {
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
   }
+  filters_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.filters().size() > 0) {
+    filters_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filters_);
+  }
+  if (from.has_workflow_execution_id()) {
+    workflow_execution_id_ = new ::flyteidl::core::WorkflowExecutionIdentifier(*from.workflow_execution_id_);
+  } else {
+    workflow_execution_id_ = nullptr;
+  }
+  if (from.has_sort_by()) {
+    sort_by_ = new ::flyteidl::admin::Sort(*from.sort_by_);
+  } else {
+    sort_by_ = nullptr;
+  }
+  limit_ = from.limit_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SignalListRequest)
 }
 
 void SignalListRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_SignalListRequest_flyteidl_2fadmin_2fsignal_2eproto.base);
-  id_ = nullptr;
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filters_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&workflow_execution_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&limit_) -
+      reinterpret_cast<char*>(&workflow_execution_id_)) + sizeof(limit_));
 }
 
 SignalListRequest::~SignalListRequest() {
@@ -681,7 +729,10 @@ SignalListRequest::~SignalListRequest() {
 }
 
 void SignalListRequest::SharedDtor() {
-  if (this != internal_default_instance()) delete id_;
+  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filters_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete workflow_execution_id_;
+  if (this != internal_default_instance()) delete sort_by_;
 }
 
 void SignalListRequest::SetCachedSize(int size) const {
@@ -699,10 +750,17 @@ void SignalListRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
-    delete id_;
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && workflow_execution_id_ != nullptr) {
+    delete workflow_execution_id_;
   }
-  id_ = nullptr;
+  workflow_execution_id_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && sort_by_ != nullptr) {
+    delete sort_by_;
+  }
+  sort_by_ = nullptr;
+  limit_ = 0u;
   _internal_metadata_.Clear();
 }
 
@@ -719,13 +777,65 @@ const char* SignalListRequest::_InternalParse(const char* begin, const char* end
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.SignalIdentifier id = 1;
+      // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::SignalIdentifier::_InternalParse;
-        object = msg->mutable_id();
+        parser_till_end = ::flyteidl::core::WorkflowExecutionIdentifier::_InternalParse;
+        object = msg->mutable_workflow_execution_id();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // uint32 limit = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_limit(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // string token = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SignalListRequest.token");
+        object = msg->mutable_token();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string filters = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SignalListRequest.filters");
+        object = msg->mutable_filters();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // .flyteidl.admin.Sort sort_by = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::Sort::_InternalParse;
+        object = msg->mutable_sort_by();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -747,6 +857,10 @@ const char* SignalListRequest::_InternalParse(const char* begin, const char* end
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -762,11 +876,65 @@ bool SignalListRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.SignalIdentifier id = 1;
+      // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_id()));
+               input, mutable_workflow_execution_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 limit = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &limit_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string token = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_token()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->token().data(), static_cast<int>(this->token().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.SignalListRequest.token"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string filters = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_filters()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->filters().data(), static_cast<int>(this->filters().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.SignalListRequest.filters"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.admin.Sort sort_by = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_sort_by()));
         } else {
           goto handle_unusual;
         }
@@ -800,10 +968,41 @@ void SignalListRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.SignalIdentifier id = 1;
-  if (this->has_id()) {
+  // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+  if (this->has_workflow_execution_id()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::id(this), output);
+      1, HasBitSetters::workflow_execution_id(this), output);
+  }
+
+  // uint32 limit = 2;
+  if (this->limit() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->limit(), output);
+  }
+
+  // string token = 3;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListRequest.token");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->token(), output);
+  }
+
+  // string filters = 4;
+  if (this->filters().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->filters().data(), static_cast<int>(this->filters().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListRequest.filters");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->filters(), output);
+  }
+
+  // .flyteidl.admin.Sort sort_by = 5;
+  if (this->has_sort_by()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, HasBitSetters::sort_by(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -819,11 +1018,45 @@ void SignalListRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.SignalIdentifier id = 1;
-  if (this->has_id()) {
+  // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+  if (this->has_workflow_execution_id()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::id(this), target);
+        1, HasBitSetters::workflow_execution_id(this), target);
+  }
+
+  // uint32 limit = 2;
+  if (this->limit() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->limit(), target);
+  }
+
+  // string token = 3;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListRequest.token");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->token(), target);
+  }
+
+  // string filters = 4;
+  if (this->filters().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->filters().data(), static_cast<int>(this->filters().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListRequest.filters");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->filters(), target);
+  }
+
+  // .flyteidl.admin.Sort sort_by = 5;
+  if (this->has_sort_by()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, HasBitSetters::sort_by(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -847,11 +1080,39 @@ size_t SignalListRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.core.SignalIdentifier id = 1;
-  if (this->has_id()) {
+  // string token = 3;
+  if (this->token().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->token());
+  }
+
+  // string filters = 4;
+  if (this->filters().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->filters());
+  }
+
+  // .flyteidl.core.WorkflowExecutionIdentifier workflow_execution_id = 1;
+  if (this->has_workflow_execution_id()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *id_);
+        *workflow_execution_id_);
+  }
+
+  // .flyteidl.admin.Sort sort_by = 5;
+  if (this->has_sort_by()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *sort_by_);
+  }
+
+  // uint32 limit = 2;
+  if (this->limit() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->limit());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -881,8 +1142,22 @@ void SignalListRequest::MergeFrom(const SignalListRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_id()) {
-    mutable_id()->::flyteidl::core::SignalIdentifier::MergeFrom(from.id());
+  if (from.token().size() > 0) {
+
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
+  if (from.filters().size() > 0) {
+
+    filters_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filters_);
+  }
+  if (from.has_workflow_execution_id()) {
+    mutable_workflow_execution_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.workflow_execution_id());
+  }
+  if (from.has_sort_by()) {
+    mutable_sort_by()->::flyteidl::admin::Sort::MergeFrom(from.sort_by());
+  }
+  if (from.limit() != 0) {
+    set_limit(from.limit());
   }
 }
 
@@ -911,7 +1186,13 @@ void SignalListRequest::Swap(SignalListRequest* other) {
 void SignalListRequest::InternalSwap(SignalListRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  filters_.Swap(&other->filters_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(workflow_execution_id_, other->workflow_execution_id_);
+  swap(sort_by_, other->sort_by_);
+  swap(limit_, other->limit_);
 }
 
 ::google::protobuf::Metadata SignalListRequest::GetMetadata() const {
@@ -930,6 +1211,7 @@ class SignalListResponse::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SignalListResponse::kSignalsFieldNumber;
+const int SignalListResponse::kTokenFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SignalListResponse::SignalListResponse()
@@ -942,12 +1224,17 @@ SignalListResponse::SignalListResponse(const SignalListResponse& from)
       _internal_metadata_(nullptr),
       signals_(from.signals_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.token().size() > 0) {
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SignalListResponse)
 }
 
 void SignalListResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_SignalListResponse_flyteidl_2fadmin_2fsignal_2eproto.base);
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 SignalListResponse::~SignalListResponse() {
@@ -956,6 +1243,7 @@ SignalListResponse::~SignalListResponse() {
 }
 
 void SignalListResponse::SharedDtor() {
+  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void SignalListResponse::SetCachedSize(int size) const {
@@ -974,6 +1262,7 @@ void SignalListResponse::Clear() {
   (void) cached_has_bits;
 
   signals_.Clear();
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -1006,6 +1295,22 @@ const char* SignalListResponse::_InternalParse(const char* begin, const char* en
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
         break;
       }
+      // string token = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SignalListResponse.token");
+        object = msg->mutable_token();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1021,6 +1326,10 @@ const char* SignalListResponse::_InternalParse(const char* begin, const char* en
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -1041,6 +1350,21 @@ bool SignalListResponse::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_signals()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string token = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_token()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->token().data(), static_cast<int>(this->token().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.SignalListResponse.token"));
         } else {
           goto handle_unusual;
         }
@@ -1083,6 +1407,16 @@ void SignalListResponse::SerializeWithCachedSizes(
       output);
   }
 
+  // string token = 2;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListResponse.token");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->token(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1102,6 +1436,17 @@ void SignalListResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, this->signals(static_cast<int>(i)), target);
+  }
+
+  // string token = 2;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.SignalListResponse.token");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->token(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1136,6 +1481,13 @@ size_t SignalListResponse::ByteSizeLong() const {
     }
   }
 
+  // string token = 2;
+  if (this->token().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->token());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1164,6 +1516,10 @@ void SignalListResponse::MergeFrom(const SignalListResponse& from) {
   (void) cached_has_bits;
 
   signals_.MergeFrom(from.signals_);
+  if (from.token().size() > 0) {
+
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
 }
 
 void SignalListResponse::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1192,6 +1548,8 @@ void SignalListResponse::InternalSwap(SignalListResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&signals_)->InternalSwap(CastToBase(&other->signals_));
+  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata SignalListResponse::GetMetadata() const {

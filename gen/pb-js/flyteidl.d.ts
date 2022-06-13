@@ -14266,8 +14266,20 @@ export namespace flyteidl {
         /** Properties of a SignalListRequest. */
         interface ISignalListRequest {
 
-            /** SignalListRequest id */
-            id?: (flyteidl.core.ISignalIdentifier|null);
+            /** SignalListRequest workflowExecutionId */
+            workflowExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** SignalListRequest limit */
+            limit?: (number|null);
+
+            /** SignalListRequest token */
+            token?: (string|null);
+
+            /** SignalListRequest filters */
+            filters?: (string|null);
+
+            /** SignalListRequest sortBy */
+            sortBy?: (flyteidl.admin.ISort|null);
         }
 
         /** Represents a SignalListRequest. */
@@ -14279,8 +14291,20 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ISignalListRequest);
 
-            /** SignalListRequest id. */
-            public id?: (flyteidl.core.ISignalIdentifier|null);
+            /** SignalListRequest workflowExecutionId. */
+            public workflowExecutionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** SignalListRequest limit. */
+            public limit: number;
+
+            /** SignalListRequest token. */
+            public token: string;
+
+            /** SignalListRequest filters. */
+            public filters: string;
+
+            /** SignalListRequest sortBy. */
+            public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
              * Creates a new SignalListRequest instance using the specified properties.
@@ -14320,6 +14344,9 @@ export namespace flyteidl {
 
             /** SignalListResponse signals */
             signals?: (flyteidl.admin.ISignal[]|null);
+
+            /** SignalListResponse token */
+            token?: (string|null);
         }
 
         /** Represents a SignalListResponse. */
@@ -14333,6 +14360,9 @@ export namespace flyteidl {
 
             /** SignalListResponse signals. */
             public signals: flyteidl.admin.ISignal[];
+
+            /** SignalListResponse token. */
+            public token: string;
 
             /**
              * Creates a new SignalListResponse instance using the specified properties.

@@ -23,10 +23,7 @@ service SignalService {
   // Fetch a list of :ref:`ref_flyteidl.admin.Signal` definitions.
   rpc ListSignals (flyteidl.admin.SignalListRequest) returns (flyteidl.admin.SignalListRequest) {
     option (google.api.http) = {
-      get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.signal_id}"
-      additional_bindings {
-        get: "/api/v1/signals/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}"
-      }
+      get: "/api/v1/signals/{workflow_execution_id.project}/{workflow_execution_id.domain}/{workflow_execution_id.name}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Fetch existing signal definitions matching the input signal id filters."

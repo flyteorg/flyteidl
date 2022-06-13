@@ -131,10 +131,26 @@ func (m *SignalListRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetWorkflowExecutionId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return SignalListRequestValidationError{
-				field:  "Id",
+				field:  "WorkflowExecutionId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Limit
+
+	// no validation rules for Token
+
+	// no validation rules for Filters
+
+	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return SignalListRequestValidationError{
+				field:  "SortBy",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -222,6 +238,8 @@ func (m *SignalListResponse) Validate() error {
 		}
 
 	}
+
+	// no validation rules for Token
 
 	return nil
 }

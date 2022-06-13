@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 from flyteidl.core import types_pb2 as flyteidl_dot_core_dot_types__pb2
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\x1b\x66lyteidl/admin/signal.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\"q\n\x18SignalGetOrCreateRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"@\n\x11SignalListRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\"=\n\x12SignalListResponse\x12\'\n\x07signals\x18\x01 \x03(\x0b\x32\x16.flyteidl.admin.Signal\"f\n\x10SignalSetRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"\x13\n\x11SignalSetResponse\"\x86\x01\n\x06Signal\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12%\n\x05value\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/admin/signal.proto\x12\x0e\x66lyteidl.admin\x1a\x1b\x66lyteidl/admin/common.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/types.proto\"q\n\x18SignalGetOrCreateRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\"\xb4\x01\n\x11SignalListRequest\x12I\n\x15workflow_execution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.Sort\"L\n\x12SignalListResponse\x12\'\n\x07signals\x18\x01 \x03(\x0b\x32\x16.flyteidl.admin.Signal\x12\r\n\x05token\x18\x02 \x01(\t\"f\n\x10SignalSetRequest\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.Literal\"\x13\n\x11SignalSetResponse\"\x86\x01\n\x06Signal\x12+\n\x02id\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.SignalIdentifier\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12%\n\x05value\x18\x03 \x01(\x0b\x32\x16.flyteidl.core.LiteralB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
-  dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +64,8 @@ _SIGNALGETORCREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=136,
-  serialized_end=249,
+  serialized_start=165,
+  serialized_end=278,
 )
 
 
@@ -76,8 +77,36 @@ _SIGNALLISTREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='flyteidl.admin.SignalListRequest.id', index=0,
+      name='workflow_execution_id', full_name='flyteidl.admin.SignalListRequest.workflow_execution_id', index=0,
       number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='flyteidl.admin.SignalListRequest.limit', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token', full_name='flyteidl.admin.SignalListRequest.token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='filters', full_name='flyteidl.admin.SignalListRequest.filters', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sort_by', full_name='flyteidl.admin.SignalListRequest.sort_by', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -94,8 +123,8 @@ _SIGNALLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=315,
+  serialized_start=281,
+  serialized_end=461,
 )
 
 
@@ -113,6 +142,13 @@ _SIGNALLISTRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token', full_name='flyteidl.admin.SignalListResponse.token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -125,8 +161,8 @@ _SIGNALLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=317,
-  serialized_end=378,
+  serialized_start=463,
+  serialized_end=539,
 )
 
 
@@ -163,8 +199,8 @@ _SIGNALSETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=380,
-  serialized_end=482,
+  serialized_start=541,
+  serialized_end=643,
 )
 
 
@@ -187,8 +223,8 @@ _SIGNALSETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=503,
+  serialized_start=645,
+  serialized_end=664,
 )
 
 
@@ -232,13 +268,14 @@ _SIGNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=506,
-  serialized_end=640,
+  serialized_start=667,
+  serialized_end=801,
 )
 
 _SIGNALGETORCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
 _SIGNALGETORCREATEREQUEST.fields_by_name['type'].message_type = flyteidl_dot_core_dot_types__pb2._LITERALTYPE
-_SIGNALLISTREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
+_SIGNALLISTREQUEST.fields_by_name['workflow_execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
+_SIGNALLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
 _SIGNALLISTRESPONSE.fields_by_name['signals'].message_type = _SIGNAL
 _SIGNALSETREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._SIGNALIDENTIFIER
 _SIGNALSETREQUEST.fields_by_name['value'].message_type = flyteidl_dot_core_dot_literals__pb2._LITERAL
