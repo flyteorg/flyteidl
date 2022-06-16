@@ -35,7 +35,6 @@ message SignalListRequest {
     string token = 3;
 
     // Indicates a list of filters passed as string.
-    // More info on constructing filters : <Link>
     // +optional
     string filters = 4;
 

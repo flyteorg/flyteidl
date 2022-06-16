@@ -156,7 +156,7 @@ message Node {
         // Information about the branch node to evaluate in this node.
         BranchNode branch_node = 8;
 
-        // TODO hamersaw - document
+        // Information about the condition to evaluate in this node.
         GateNode gate_node = 9;
     }
 }
