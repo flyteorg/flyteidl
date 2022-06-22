@@ -283,6 +283,7 @@ class CoreNode(object):
     def gate_node(self):
         """Gets the gate_node of this CoreNode.  # noqa: E501
 
+        Information about the condition to evaluate in this node.  # noqa: E501
 
         :return: The gate_node of this CoreNode.  # noqa: E501
         :rtype: CoreGateNode
@@ -293,6 +294,7 @@ class CoreNode(object):
     def gate_node(self, gate_node):
         """Sets the gate_node of this CoreNode.
 
+        Information about the condition to evaluate in this node.  # noqa: E501
 
         :param gate_node: The gate_node of this CoreNode.  # noqa: E501
         :type: CoreGateNode

@@ -1127,6 +1127,9 @@ export namespace flyteidl {
 
             /** SignalCondition type */
             type?: (flyteidl.core.ILiteralType|null);
+
+            /** SignalCondition outputVariableName */
+            outputVariableName?: (string|null);
         }
 
         /** Represents a SignalCondition. */
@@ -1143,6 +1146,9 @@ export namespace flyteidl {
 
             /** SignalCondition type. */
             public type?: (flyteidl.core.ILiteralType|null);
+
+            /** SignalCondition outputVariableName. */
+            public outputVariableName: string;
 
             /**
              * Creates a new SignalCondition instance using the specified properties.

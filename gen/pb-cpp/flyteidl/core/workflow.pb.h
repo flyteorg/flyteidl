@@ -951,6 +951,20 @@ class SignalCondition final :
   ::std::string* release_signal_id();
   void set_allocated_signal_id(::std::string* signal_id);
 
+  // string output_variable_name = 3;
+  void clear_output_variable_name();
+  static const int kOutputVariableNameFieldNumber = 3;
+  const ::std::string& output_variable_name() const;
+  void set_output_variable_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_variable_name(::std::string&& value);
+  #endif
+  void set_output_variable_name(const char* value);
+  void set_output_variable_name(const char* value, size_t size);
+  ::std::string* mutable_output_variable_name();
+  ::std::string* release_output_variable_name();
+  void set_allocated_output_variable_name(::std::string* output_variable_name);
+
   // .flyteidl.core.LiteralType type = 2;
   bool has_type() const;
   void clear_type();
@@ -966,6 +980,7 @@ class SignalCondition final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr signal_id_;
+  ::google::protobuf::internal::ArenaStringPtr output_variable_name_;
   ::flyteidl::core::LiteralType* type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
@@ -2940,6 +2955,59 @@ inline void SignalCondition::set_allocated_type(::flyteidl::core::LiteralType* t
   }
   type_ = type;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.SignalCondition.type)
+}
+
+// string output_variable_name = 3;
+inline void SignalCondition::clear_output_variable_name() {
+  output_variable_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignalCondition::output_variable_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.SignalCondition.output_variable_name)
+  return output_variable_name_.GetNoArena();
+}
+inline void SignalCondition::set_output_variable_name(const ::std::string& value) {
+  
+  output_variable_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.SignalCondition.output_variable_name)
+}
+#if LANG_CXX11
+inline void SignalCondition::set_output_variable_name(::std::string&& value) {
+  
+  output_variable_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.SignalCondition.output_variable_name)
+}
+#endif
+inline void SignalCondition::set_output_variable_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_variable_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.SignalCondition.output_variable_name)
+}
+inline void SignalCondition::set_output_variable_name(const char* value, size_t size) {
+  
+  output_variable_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.SignalCondition.output_variable_name)
+}
+inline ::std::string* SignalCondition::mutable_output_variable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.SignalCondition.output_variable_name)
+  return output_variable_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignalCondition::release_output_variable_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.SignalCondition.output_variable_name)
+  
+  return output_variable_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignalCondition::set_allocated_output_variable_name(::std::string* output_variable_name) {
+  if (output_variable_name != nullptr) {
+    
+  } else {
+    
+  }
+  output_variable_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_variable_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.SignalCondition.output_variable_name)
 }
 
 // -------------------------------------------------------------------

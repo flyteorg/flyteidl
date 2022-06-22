@@ -5387,6 +5387,24 @@ public final class Workflow {
      * <code>.flyteidl.core.LiteralType type = 2;</code>
      */
     flyteidl.core.Types.LiteralTypeOrBuilder getTypeOrBuilder();
+
+    /**
+     * <pre>
+     * The variable name for the signal value in this nodes outputs.
+     * </pre>
+     *
+     * <code>string output_variable_name = 3;</code>
+     */
+    java.lang.String getOutputVariableName();
+    /**
+     * <pre>
+     * The variable name for the signal value in this nodes outputs.
+     * </pre>
+     *
+     * <code>string output_variable_name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getOutputVariableNameBytes();
   }
   /**
    * <pre>
@@ -5406,6 +5424,7 @@ public final class Workflow {
     }
     private SignalCondition() {
       signalId_ = "";
+      outputVariableName_ = "";
     }
 
     @java.lang.Override
@@ -5449,6 +5468,12 @@ public final class Workflow {
                 type_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              outputVariableName_ = s;
               break;
             }
             default: {
@@ -5558,6 +5583,48 @@ public final class Workflow {
       return getType();
     }
 
+    public static final int OUTPUT_VARIABLE_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object outputVariableName_;
+    /**
+     * <pre>
+     * The variable name for the signal value in this nodes outputs.
+     * </pre>
+     *
+     * <code>string output_variable_name = 3;</code>
+     */
+    public java.lang.String getOutputVariableName() {
+      java.lang.Object ref = outputVariableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputVariableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The variable name for the signal value in this nodes outputs.
+     * </pre>
+     *
+     * <code>string output_variable_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOutputVariableNameBytes() {
+      java.lang.Object ref = outputVariableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        outputVariableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5578,6 +5645,9 @@ public final class Workflow {
       if (type_ != null) {
         output.writeMessage(2, getType());
       }
+      if (!getOutputVariableNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputVariableName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5593,6 +5663,9 @@ public final class Workflow {
       if (type_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getType());
+      }
+      if (!getOutputVariableNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputVariableName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5616,6 +5689,8 @@ public final class Workflow {
         if (!getType()
             .equals(other.getType())) return false;
       }
+      if (!getOutputVariableName()
+          .equals(other.getOutputVariableName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5633,6 +5708,8 @@ public final class Workflow {
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getType().hashCode();
       }
+      hash = (37 * hash) + OUTPUT_VARIABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputVariableName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5778,6 +5855,8 @@ public final class Workflow {
           type_ = null;
           typeBuilder_ = null;
         }
+        outputVariableName_ = "";
+
         return this;
       }
 
@@ -5810,6 +5889,7 @@ public final class Workflow {
         } else {
           result.type_ = typeBuilder_.build();
         }
+        result.outputVariableName_ = outputVariableName_;
         onBuilt();
         return result;
       }
@@ -5864,6 +5944,10 @@ public final class Workflow {
         }
         if (other.hasType()) {
           mergeType(other.getType());
+        }
+        if (!other.getOutputVariableName().isEmpty()) {
+          outputVariableName_ = other.outputVariableName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6134,6 +6218,95 @@ public final class Workflow {
           type_ = null;
         }
         return typeBuilder_;
+      }
+
+      private java.lang.Object outputVariableName_ = "";
+      /**
+       * <pre>
+       * The variable name for the signal value in this nodes outputs.
+       * </pre>
+       *
+       * <code>string output_variable_name = 3;</code>
+       */
+      public java.lang.String getOutputVariableName() {
+        java.lang.Object ref = outputVariableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputVariableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The variable name for the signal value in this nodes outputs.
+       * </pre>
+       *
+       * <code>string output_variable_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOutputVariableNameBytes() {
+        java.lang.Object ref = outputVariableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          outputVariableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The variable name for the signal value in this nodes outputs.
+       * </pre>
+       *
+       * <code>string output_variable_name = 3;</code>
+       */
+      public Builder setOutputVariableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        outputVariableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The variable name for the signal value in this nodes outputs.
+       * </pre>
+       *
+       * <code>string output_variable_name = 3;</code>
+       */
+      public Builder clearOutputVariableName() {
+        
+        outputVariableName_ = getDefaultInstance().getOutputVariableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The variable name for the signal value in this nodes outputs.
+       * </pre>
+       *
+       * <code>string output_variable_name = 3;</code>
+       */
+      public Builder setOutputVariableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        outputVariableName_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10189,7 +10362,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -10197,7 +10370,7 @@ public final class Workflow {
     boolean hasGateNode();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -10205,7 +10378,7 @@ public final class Workflow {
     flyteidl.core.Workflow.GateNode getGateNode();
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -10820,7 +10993,7 @@ public final class Workflow {
     public static final int GATE_NODE_FIELD_NUMBER = 9;
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -10830,7 +11003,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -10843,7 +11016,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * TODO hamersaw - document
+     * Information about the condition to evaluate in this node.
      * </pre>
      *
      * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13069,7 +13242,7 @@ public final class Workflow {
           flyteidl.core.Workflow.GateNode, flyteidl.core.Workflow.GateNode.Builder, flyteidl.core.Workflow.GateNodeOrBuilder> gateNodeBuilder_;
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13079,7 +13252,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13099,7 +13272,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13119,7 +13292,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13137,7 +13310,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13163,7 +13336,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13186,7 +13359,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13196,7 +13369,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -13213,7 +13386,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * TODO hamersaw - document
+       * Information about the condition to evaluate in this node.
        * </pre>
        *
        * <code>.flyteidl.core.GateNode gate_node = 9;</code>
@@ -18370,47 +18543,48 @@ public final class Workflow {
       "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
       "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
       "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"N\n\017SignalCondition\022\021\n\tsignal" +
+      "\n\treference\"l\n\017SignalCondition\022\021\n\tsignal" +
       "_id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core." +
-      "LiteralType\"=\n\016SleepCondition\022+\n\010duratio" +
-      "n\030\004 \001(\0132\031.google.protobuf.Duration\"y\n\010Ga" +
-      "teNode\0220\n\006signal\030\002 \001(\0132\036.flyteidl.core.S" +
-      "ignalConditionH\000\022.\n\005sleep\030\001 \001(\0132\035.flytei" +
-      "dl.core.SleepConditionH\000B\013\n\tcondition\"\247\001" +
-      "\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030" +
-      "\004 \001(\0132\031.google.protobuf.Duration\022-\n\007retr" +
-      "ies\030\005 \001(\0132\034.flyteidl.core.RetryStrategy\022" +
-      "\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interruptibl" +
-      "e_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002" +
-      " \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 " +
-      "\001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006inpu" +
-      "ts\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021upst" +
-      "ream_node_ids\030\004 \003(\t\022,\n\016output_aliases\030\005 " +
-      "\003(\0132\024.flyteidl.core.Alias\022,\n\ttask_node\030\006" +
-      " \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rworkf" +
-      "low_node\030\007 \001(\0132\033.flyteidl.core.WorkflowN" +
-      "odeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl.co" +
-      "re.BranchNodeH\000\022,\n\tgate_node\030\t \001(\0132\027.fly" +
-      "teidl.core.GateNodeH\000B\010\n\006target\"\347\001\n\020Work" +
-      "flowMetadata\022;\n\022quality_of_service\030\001 \001(\013" +
-      "2\037.flyteidl.core.QualityOfService\022C\n\non_" +
-      "failure\030\002 \001(\0162/.flyteidl.core.WorkflowMe" +
-      "tadata.OnFailurePolicy\"Q\n\017OnFailurePolic" +
-      "y\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EX" +
-      "ECUTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowMet" +
-      "adataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n" +
-      "\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl" +
-      ".core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.fly" +
-      "teidl.core.WorkflowMetadata\0220\n\tinterface" +
-      "\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022\"\n" +
-      "\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007out" +
-      "puts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fa" +
-      "ilure_node\030\006 \001(\0132\023.flyteidl.core.Node\022B\n" +
-      "\021metadata_defaults\030\007 \001(\0132\'.flyteidl.core" +
-      ".WorkflowMetadataDefaults\"@\n\021TaskNodeOve" +
-      "rrides\022+\n\tresources\030\001 \001(\0132\030.flyteidl.cor" +
-      "e.ResourcesB6Z4github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/coreb\006proto3"
+      "LiteralType\022\034\n\024output_variable_name\030\003 \001(" +
+      "\t\"=\n\016SleepCondition\022+\n\010duration\030\004 \001(\0132\031." +
+      "google.protobuf.Duration\"y\n\010GateNode\0220\n\006" +
+      "signal\030\002 \001(\0132\036.flyteidl.core.SignalCondi" +
+      "tionH\000\022.\n\005sleep\030\001 \001(\0132\035.flyteidl.core.Sl" +
+      "eepConditionH\000B\013\n\tcondition\"\247\001\n\014NodeMeta" +
+      "data\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.go" +
+      "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132" +
+      "\034.flyteidl.core.RetryStrategy\022\027\n\rinterru" +
+      "ptible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n" +
+      "\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004N" +
+      "ode\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyt" +
+      "eidl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026" +
+      ".flyteidl.core.Binding\022\031\n\021upstream_node_" +
+      "ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyt" +
+      "eidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.fly" +
+      "teidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007" +
+      " \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013b" +
+      "ranch_node\030\010 \001(\0132\031.flyteidl.core.BranchN" +
+      "odeH\000\022,\n\tgate_node\030\t \001(\0132\027.flyteidl.core" +
+      ".GateNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMetada" +
+      "ta\022;\n\022quality_of_service\030\001 \001(\0132\037.flyteid" +
+      "l.core.QualityOfService\022C\n\non_failure\030\002 " +
+      "\001(\0162/.flyteidl.core.WorkflowMetadata.OnF" +
+      "ailurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_" +
+      "IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_N" +
+      "ODES_COMPLETE\020\001\"1\n\030WorkflowMetadataDefau" +
+      "lts\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowT" +
+      "emplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
+      "tifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core" +
+      ".WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035.f" +
+      "lyteidl.core.TypedInterface\022\"\n\005nodes\030\004 \003" +
+      "(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\013" +
+      "2\026.flyteidl.core.Binding\022)\n\014failure_node" +
+      "\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadata_" +
+      "defaults\030\007 \001(\0132\'.flyteidl.core.WorkflowM" +
+      "etadataDefaults\"@\n\021TaskNodeOverrides\022+\n\t" +
+      "resources\030\001 \001(\0132\030.flyteidl.core.Resource" +
+      "sB6Z4github.com/flyteorg/flyteidl/gen/pb" +
+      "-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18468,7 +18642,7 @@ public final class Workflow {
     internal_static_flyteidl_core_SignalCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SignalCondition_descriptor,
-        new java.lang.String[] { "SignalId", "Type", });
+        new java.lang.String[] { "SignalId", "Type", "OutputVariableName", });
     internal_static_flyteidl_core_SleepCondition_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_SleepCondition_fieldAccessorTable = new

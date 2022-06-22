@@ -15,4 +15,6 @@ type CoreSignalCondition struct {
 	SignalId string `json:"signal_id,omitempty"`
 	// A type denoting the required value type for this signal.
 	Type_ *CoreLiteralType `json:"type,omitempty"`
+	// The variable name for the signal value in this nodes outputs.
+	OutputVariableName string `json:"output_variable_name,omitempty"`
 }

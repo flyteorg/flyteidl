@@ -75,6 +75,9 @@ message SignalCondition {
 
     // A type denoting the required value type for this signal.
     LiteralType type = 2;
+
+    // The variable name for the signal value in this nodes outputs.
+    string output_variable_name = 3;
 }
 
 // SleepCondition represents a dependency on waiting for the specified duration.

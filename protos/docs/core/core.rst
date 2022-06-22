@@ -2959,7 +2959,7 @@ node.
    "task_node", ":ref:`ref_flyteidl.core.TaskNode`", "", "Information about the Task to execute in this node."
    "workflow_node", ":ref:`ref_flyteidl.core.WorkflowNode`", "", "Information about the Workflow to execute in this mode."
    "branch_node", ":ref:`ref_flyteidl.core.BranchNode`", "", "Information about the branch node to evaluate in this node."
-   "gate_node", ":ref:`ref_flyteidl.core.GateNode`", "", "TODO hamersaw - document"
+   "gate_node", ":ref:`ref_flyteidl.core.GateNode`", "", "Information about the condition to evaluate in this node."
 
 
 
@@ -3006,6 +3006,7 @@ SignalCondition represents a dependency on an existing signal.
 
    "signal_id", ":ref:`ref_string`", "", "A unique identifier for the requested signal."
    "type", ":ref:`ref_flyteidl.core.LiteralType`", "", "A type denoting the required value type for this signal."
+   "output_variable_name", ":ref:`ref_string`", "", "The variable name for the signal value in this nodes outputs."
 
 
 

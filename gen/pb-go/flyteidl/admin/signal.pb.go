@@ -86,7 +86,6 @@ type SignalListRequest struct {
 	// +optional
 	Token string `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
 	// Indicates a list of filters passed as string.
-	// More info on constructing filters : <Link>
 	// +optional
 	Filters string `protobuf:"bytes,4,opt,name=filters,proto3" json:"filters,omitempty"`
 	// Sort ordering.

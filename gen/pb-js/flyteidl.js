@@ -2651,6 +2651,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ISignalCondition
              * @property {string|null} [signalId] SignalCondition signalId
              * @property {flyteidl.core.ILiteralType|null} [type] SignalCondition type
+             * @property {string|null} [outputVariableName] SignalCondition outputVariableName
              */
 
             /**
@@ -2685,6 +2686,14 @@ export const flyteidl = $root.flyteidl = (() => {
             SignalCondition.prototype.type = null;
 
             /**
+             * SignalCondition outputVariableName.
+             * @member {string} outputVariableName
+             * @memberof flyteidl.core.SignalCondition
+             * @instance
+             */
+            SignalCondition.prototype.outputVariableName = "";
+
+            /**
              * Creates a new SignalCondition instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.SignalCondition
@@ -2712,6 +2721,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.signalId);
                 if (message.type != null && message.hasOwnProperty("type"))
                     $root.flyteidl.core.LiteralType.encode(message.type, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.outputVariableName != null && message.hasOwnProperty("outputVariableName"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputVariableName);
                 return writer;
             };
 
@@ -2738,6 +2749,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.type = $root.flyteidl.core.LiteralType.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.outputVariableName = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -2766,6 +2780,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "type." + error;
                 }
+                if (message.outputVariableName != null && message.hasOwnProperty("outputVariableName"))
+                    if (!$util.isString(message.outputVariableName))
+                        return "outputVariableName: string expected";
                 return null;
             };
 

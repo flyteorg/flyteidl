@@ -103,7 +103,7 @@
           },
           {
             "name": "filters",
-            "description": "Indicates a list of filters passed as string.\nMore info on constructing filters : \u003cLink\u003e\n+optional.",
+            "description": "Indicates a list of filters passed as string.\n+optional.",
             "in": "query",
             "required": false,
             "type": "string"

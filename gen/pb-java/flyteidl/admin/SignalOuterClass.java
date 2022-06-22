@@ -1011,7 +1011,6 @@ public final class SignalOuterClass {
     /**
      * <pre>
      * Indicates a list of filters passed as string.
-     * More info on constructing filters : &lt;Link&gt;
      * +optional
      * </pre>
      *
@@ -1021,7 +1020,6 @@ public final class SignalOuterClass {
     /**
      * <pre>
      * Indicates a list of filters passed as string.
-     * More info on constructing filters : &lt;Link&gt;
      * +optional
      * </pre>
      *
@@ -1280,7 +1278,6 @@ public final class SignalOuterClass {
     /**
      * <pre>
      * Indicates a list of filters passed as string.
-     * More info on constructing filters : &lt;Link&gt;
      * +optional
      * </pre>
      *
@@ -1301,7 +1298,6 @@ public final class SignalOuterClass {
     /**
      * <pre>
      * Indicates a list of filters passed as string.
-     * More info on constructing filters : &lt;Link&gt;
      * +optional
      * </pre>
      *
@@ -2064,7 +2060,6 @@ public final class SignalOuterClass {
       /**
        * <pre>
        * Indicates a list of filters passed as string.
-       * More info on constructing filters : &lt;Link&gt;
        * +optional
        * </pre>
        *
@@ -2085,7 +2080,6 @@ public final class SignalOuterClass {
       /**
        * <pre>
        * Indicates a list of filters passed as string.
-       * More info on constructing filters : &lt;Link&gt;
        * +optional
        * </pre>
        *
@@ -2107,7 +2101,6 @@ public final class SignalOuterClass {
       /**
        * <pre>
        * Indicates a list of filters passed as string.
-       * More info on constructing filters : &lt;Link&gt;
        * +optional
        * </pre>
        *
@@ -2126,7 +2119,6 @@ public final class SignalOuterClass {
       /**
        * <pre>
        * Indicates a list of filters passed as string.
-       * More info on constructing filters : &lt;Link&gt;
        * +optional
        * </pre>
        *
@@ -2141,7 +2133,6 @@ public final class SignalOuterClass {
       /**
        * <pre>
        * Indicates a list of filters passed as string.
-       * More info on constructing filters : &lt;Link&gt;
        * +optional
        * </pre>
        *

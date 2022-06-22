@@ -7828,6 +7828,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -8339,6 +8340,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -8849,6 +8851,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -9828,6 +9831,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -10339,6 +10343,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -10849,6 +10854,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -12330,6 +12336,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -12841,6 +12848,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -13351,6 +13359,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -16715,6 +16724,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -17226,6 +17236,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -17736,6 +17747,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -18715,6 +18727,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -19226,6 +19239,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -19736,6 +19750,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -21217,6 +21232,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -21728,6 +21744,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -22238,6 +22255,7 @@ definitions:
                   sleep:
                     duration: "duration"
                   signal:
+                    output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
                     type:
                       schema:
@@ -23532,6 +23550,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -24043,6 +24062,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -24553,6 +24573,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -25532,6 +25553,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -26043,6 +26065,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -26553,6 +26576,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -28034,6 +28058,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -28545,6 +28570,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -29055,6 +29081,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -30205,6 +30232,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -30716,6 +30744,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -31226,6 +31255,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -32205,6 +32235,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -32716,6 +32747,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -33226,6 +33258,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -34707,6 +34740,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -35218,6 +35252,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -35728,6 +35763,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -36717,6 +36753,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -37228,6 +37265,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -37738,6 +37776,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -38717,6 +38756,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -39228,6 +39268,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -39738,6 +39779,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -41219,6 +41261,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -41730,6 +41773,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -42240,6 +42284,7 @@ definitions:
                     sleep:
                       duration: "duration"
                     signal:
+                      output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
                       type:
                         schema:
@@ -44194,6 +44239,7 @@ definitions:
             sleep:
               duration: "duration"
             signal:
+              output_variable_name: "output_variable_name"
               signal_id: "signal_id"
               type:
                 schema:
@@ -44705,6 +44751,7 @@ definitions:
             sleep:
               duration: "duration"
             signal:
+              output_variable_name: "output_variable_name"
               signal_id: "signal_id"
               type:
                 schema:
@@ -45215,6 +45262,7 @@ definitions:
             sleep:
               duration: "duration"
             signal:
+              output_variable_name: "output_variable_name"
               signal_id: "signal_id"
               type:
                 schema:
@@ -46221,6 +46269,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -46732,6 +46781,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -47242,6 +47292,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -48221,6 +48272,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -48732,6 +48784,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -49242,6 +49295,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -50723,6 +50777,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -51234,6 +51289,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -51744,6 +51800,7 @@ definitions:
               sleep:
                 duration: "duration"
               signal:
+                output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
                 type:
                   schema:
@@ -52555,6 +52612,7 @@ definitions:
       sleep:
         duration: "duration"
       signal:
+        output_variable_name: "output_variable_name"
         signal_id: "signal_id"
         type:
           schema:
@@ -53157,7 +53215,7 @@ definitions:
         description: "Information about the branch node to evaluate in this node."
         $ref: "#/definitions/coreBranchNode"
       gate_node:
-        title: "TODO hamersaw - document"
+        description: "Information about the condition to evaluate in this node."
         $ref: "#/definitions/coreGateNode"
     description: "A Workflow graph Node. One unit of execution in the graph. Each\
       \ node can be linked to a Task, a Workflow or a branch\nnode."
@@ -53248,6 +53306,7 @@ definitions:
         sleep:
           duration: "duration"
         signal:
+          output_variable_name: "output_variable_name"
           signal_id: "signal_id"
           type:
             schema:
@@ -54566,8 +54625,12 @@ definitions:
       type:
         description: "A type denoting the required value type for this signal."
         $ref: "#/definitions/coreLiteralType"
+      output_variable_name:
+        type: "string"
+        description: "The variable name for the signal value in this nodes outputs."
     description: "SignalCondition represents a dependency on an existing signal."
     example:
+      output_variable_name: "output_variable_name"
       signal_id: "signal_id"
       type:
         schema:
@@ -56169,6 +56232,7 @@ definitions:
           sleep:
             duration: "duration"
           signal:
+            output_variable_name: "output_variable_name"
             signal_id: "signal_id"
             type:
               schema:
@@ -56680,6 +56744,7 @@ definitions:
           sleep:
             duration: "duration"
           signal:
+            output_variable_name: "output_variable_name"
             signal_id: "signal_id"
             type:
               schema:
@@ -57190,6 +57255,7 @@ definitions:
           sleep:
             duration: "duration"
           signal:
+            output_variable_name: "output_variable_name"
             signal_id: "signal_id"
             type:
               schema:
@@ -58484,6 +58550,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -58995,6 +59062,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -59505,6 +59573,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -60484,6 +60553,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -60995,6 +61065,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -61505,6 +61576,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -62986,6 +63058,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -63497,6 +63570,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:
@@ -64007,6 +64081,7 @@ definitions:
                 sleep:
                   duration: "duration"
                 signal:
+                  output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
                   type:
                     schema:

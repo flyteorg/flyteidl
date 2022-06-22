@@ -34,25 +34,30 @@ class CoreSignalCondition(object):
     """
     swagger_types = {
         'signal_id': 'str',
-        'type': 'CoreLiteralType'
+        'type': 'CoreLiteralType',
+        'output_variable_name': 'str'
     }
 
     attribute_map = {
         'signal_id': 'signal_id',
-        'type': 'type'
+        'type': 'type',
+        'output_variable_name': 'output_variable_name'
     }
 
-    def __init__(self, signal_id=None, type=None):  # noqa: E501
+    def __init__(self, signal_id=None, type=None, output_variable_name=None):  # noqa: E501
         """CoreSignalCondition - a model defined in Swagger"""  # noqa: E501
 
         self._signal_id = None
         self._type = None
+        self._output_variable_name = None
         self.discriminator = None
 
         if signal_id is not None:
             self.signal_id = signal_id
         if type is not None:
             self.type = type
+        if output_variable_name is not None:
+            self.output_variable_name = output_variable_name
 
     @property
     def signal_id(self):
@@ -99,6 +104,29 @@ class CoreSignalCondition(object):
         """
 
         self._type = type
+
+    @property
+    def output_variable_name(self):
+        """Gets the output_variable_name of this CoreSignalCondition.  # noqa: E501
+
+        The variable name for the signal value in this nodes outputs.  # noqa: E501
+
+        :return: The output_variable_name of this CoreSignalCondition.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_variable_name
+
+    @output_variable_name.setter
+    def output_variable_name(self, output_variable_name):
+        """Sets the output_variable_name of this CoreSignalCondition.
+
+        The variable name for the signal value in this nodes outputs.  # noqa: E501
+
+        :param output_variable_name: The output_variable_name of this CoreSignalCondition.  # noqa: E501
+        :type: str
+        """
+
+        self._output_variable_name = output_variable_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

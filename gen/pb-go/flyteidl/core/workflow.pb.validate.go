@@ -515,6 +515,8 @@ func (m *SignalCondition) Validate() error {
 		}
 	}
 
+	// no validation rules for OutputVariableName
+
 	return nil
 }
 
