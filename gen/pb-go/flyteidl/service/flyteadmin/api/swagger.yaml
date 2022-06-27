@@ -3110,6 +3110,9 @@ definitions:
   adminEntityDescription:
     type: "object"
     properties:
+      id:
+        description: "Indicates a unique version of resource."
+        $ref: "#/definitions/coreIdentifier"
       short_description:
         type: "string"
         description: "One-liner overview of the entity."
@@ -3126,7 +3129,7 @@ definitions:
         description: "User-defined free-form key-value pair attributes. These are\
           \ arbitrary\nand can be used for searching, filtering and discovering entities."
         $ref: "#/definitions/adminLabels"
-      source:
+      source_code:
         description: "Optional link to source code used to define this entity."
         $ref: "#/definitions/adminSourceCode"
     description: "EntityDescription contains detailed description for the task/workflow/launch\
@@ -3134,18 +3137,19 @@ definitions:
       \ case, etc."
     example:
       short_description: "short_description"
+      id:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
       long_description:
         values: "values"
         icon_link: "icon_link"
         uri: "uri"
         long_format: {}
-      source:
-        file: "file"
-        line_number: 5
-        repo: "repo"
+      source_code:
         link: "link"
-        language: "language"
-        branch: "branch"
       tags:
       - "tags"
       - "tags"
@@ -4736,18 +4740,19 @@ definitions:
             key: "values"
         entity_description:
           short_description: "short_description"
+          id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           long_description:
             values: "values"
             icon_link: "icon_link"
             uri: "uri"
             long_format: {}
-          source:
-            file: "file"
-            line_number: 5
-            repo: "repo"
+          source_code:
             link: "link"
-            language: "language"
-            branch: "branch"
           tags:
           - "tags"
           - "tags"
@@ -5554,18 +5559,19 @@ definitions:
               key: "values"
           entity_description:
             short_description: "short_description"
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             long_description:
               values: "values"
               icon_link: "icon_link"
               uri: "uri"
               long_format: {}
-            source:
-              file: "file"
-              line_number: 5
-              repo: "repo"
+            source_code:
               link: "link"
-              language: "language"
-              branch: "branch"
             tags:
             - "tags"
             - "tags"
@@ -6087,18 +6093,19 @@ definitions:
               key: "values"
           entity_description:
             short_description: "short_description"
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             long_description:
               values: "values"
               icon_link: "icon_link"
               uri: "uri"
               long_format: {}
-            source:
-              file: "file"
-              line_number: 5
-              repo: "repo"
+            source_code:
               link: "link"
-              language: "language"
-              branch: "branch"
             tags:
             - "tags"
             - "tags"
@@ -6506,18 +6513,19 @@ definitions:
           key: "values"
       entity_description:
         short_description: "short_description"
+        id:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
         long_description:
           values: "values"
           icon_link: "icon_link"
           uri: "uri"
           long_format: {}
-        source:
-          file: "file"
-          line_number: 5
-          repo: "repo"
+        source_code:
           link: "link"
-          language: "language"
-          branch: "branch"
         tags:
         - "tags"
         - "tags"
@@ -7052,7 +7060,7 @@ definitions:
           \ entire\ndescription proto altogether to an external data store, like S3\
           \ rather than store inline in the db"
       long_format:
-        title: "format of the long description"
+        title: "Format of the long description"
         $ref: "#/definitions/LongDescriptionDescriptionFormat"
       icon_link:
         type: "string"
@@ -7549,6 +7557,11 @@ definitions:
         $ref: "#/definitions/flyteidladminWorkflowNodeMetadata"
       task_node_metadata:
         $ref: "#/definitions/flyteidladminTaskNodeMetadata"
+      deck_uri:
+        type: "string"
+        title: "String location uniquely identifying where the deck HTML file is.\n\
+          NativeUrl specifies the url in the format of the configured storage provider\
+          \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
     description: "Container for node execution details and results."
     example:
       phase: {}
@@ -7595,6 +7608,7 @@ definitions:
         error_uri: "error_uri"
       output_data:
         literals: {}
+      deck_uri: "deck_uri"
   adminNodeExecutionEventRequest:
     type: "object"
     properties:
@@ -13724,6 +13738,7 @@ definitions:
             error_uri: "error_uri"
           output_data:
             literals: {}
+          deck_uri: "deck_uri"
       - metadata:
           retry_group: "retry_group"
           is_parent_node: true
@@ -13781,6 +13796,7 @@ definitions:
             error_uri: "error_uri"
           output_data:
             literals: {}
+          deck_uri: "deck_uri"
       token: "token"
   adminNodeExecutionMetaData:
     type: "object"
@@ -14440,34 +14456,11 @@ definitions:
   adminSourceCode:
     type: "object"
     properties:
-      file:
-        type: "string"
-        title: "File where the code is located"
-      line_number:
-        type: "integer"
-        format: "int64"
-        title: "Line number where the task definition, workflow definition, etc starts\
-          \ at"
-      repo:
-        type: "string"
-        title: "git repository"
-      branch:
-        type: "string"
-        title: "branch of the repository"
       link:
         type: "string"
-        title: "link to the original repository"
-      language:
-        type: "string"
-        title: "language of the code"
     title: "Link to source code used to define this entity"
     example:
-      file: "file"
-      line_number: 5
-      repo: "repo"
       link: "link"
-      language: "language"
-      branch: "branch"
   adminSystemMetadata:
     type: "object"
     properties:
@@ -49556,8 +49549,8 @@ definitions:
         type: "string"
         title: "File system path (start at root). This folder will contain all the\
           \ inputs exploded to a separate file.\nExample, if the input interface needs\
-          \ (x: int, y: blob, z: multipart_blob) and the input path is \"/var/flyte/inputs\"\
-          , then the file system will look like\n/var/flyte/inputs/inputs.<metadata\
+          \ (x: int, y: blob, z: multipart_blob) and the input path is '/var/flyte/inputs',\
+          \ then the file system will look like\n/var/flyte/inputs/inputs.<metadata\
           \ format dependent -> .pb .json .yaml> -> Format as defined previously.\
           \ The Blob and Multipart blob will reference local filesystem instead of\
           \ remote locations\n/var/flyte/inputs/x -> X is a file that contains the\
@@ -50151,8 +50144,8 @@ definitions:
       id:
         type: "string"
         description: "A workflow-level unique identifier that identifies this node\
-          \ in the workflow. \"inputs\" and \"outputs\" are reserved\nnode ids that\
-          \ cannot be used by other nodes."
+          \ in the workflow. 'inputs' and 'outputs' are reserved\nnode ids that cannot\
+          \ be used by other nodes."
       metadata:
         description: "Extra metadata about the node."
         $ref: "#/definitions/coreNodeMetadata"
@@ -52615,7 +52608,7 @@ definitions:
         $ref: "#/definitions/coreTypedInterface"
       nodes:
         type: "array"
-        description: "A list of nodes. In addition, \"globals\" is a special reserved\
+        description: "A list of nodes. In addition, 'globals' is a special reserved\
           \ node id that can be used to consume workflow inputs."
         items:
           $ref: "#/definitions/coreNode"
@@ -52636,7 +52629,7 @@ definitions:
         description: "+optional A catch-all node. This node is executed whenever the\
           \ execution engine determines the workflow has failed.\nThe interface of\
           \ this node must match the Workflow interface with an additional input named\
-          \ \"error\" of type\npb.lyft.flyte.core.Error."
+          \ 'error' of type\npb.lyft.flyte.core.Error."
         $ref: "#/definitions/coreNode"
       metadata_defaults:
         title: "workflow defaults"
@@ -54571,6 +54564,11 @@ definitions:
         type: "boolean"
         format: "boolean"
         description: "Whether this node yielded a dynamic workflow."
+      deck_uri:
+        type: "string"
+        title: "String location uniquely identifying where the deck HTML file is\n\
+          NativeUrl specifies the url in the format of the configured storage provider\
+          \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:
@@ -60867,6 +60865,7 @@ definitions:
           error_uri: "error_uri"
         output_data:
           literals: {}
+        deck_uri: "deck_uri"
   flyteidladminTaskExecution:
     type: "object"
     properties:

@@ -14893,6 +14893,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [eventVersion] NodeExecutionEvent eventVersion
              * @property {boolean|null} [isParent] NodeExecutionEvent isParent
              * @property {boolean|null} [isDynamic] NodeExecutionEvent isDynamic
+             * @property {string|null} [deckUri] NodeExecutionEvent deckUri
              */
 
             /**
@@ -15054,6 +15055,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionEvent.prototype.isDynamic = false;
 
+            /**
+             * NodeExecutionEvent deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.event.NodeExecutionEvent
+             * @instance
+             */
+            NodeExecutionEvent.prototype.deckUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -15139,6 +15148,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 17, wireType 0 =*/136).bool(message.isParent);
                 if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
                     writer.uint32(/* id 18, wireType 0 =*/144).bool(message.isDynamic);
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 19, wireType 2 =*/154).string(message.deckUri);
                 return writer;
             };
 
@@ -15213,6 +15224,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 18:
                         message.isDynamic = reader.bool();
+                        break;
+                    case 19:
+                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15338,6 +15352,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.isDynamic != null && message.hasOwnProperty("isDynamic"))
                     if (typeof message.isDynamic !== "boolean")
                         return "isDynamic: boolean expected";
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 return null;
             };
 
@@ -20727,11 +20744,12 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of an EntityDescription.
              * @memberof flyteidl.admin
              * @interface IEntityDescription
+             * @property {flyteidl.core.IIdentifier|null} [id] EntityDescription id
              * @property {string|null} [shortDescription] EntityDescription shortDescription
              * @property {flyteidl.admin.ILongDescription|null} [longDescription] EntityDescription longDescription
              * @property {Array.<string>|null} [tags] EntityDescription tags
              * @property {flyteidl.admin.ILabels|null} [labels] EntityDescription labels
-             * @property {flyteidl.admin.ISourceCode|null} [source] EntityDescription source
+             * @property {flyteidl.admin.ISourceCode|null} [sourceCode] EntityDescription sourceCode
              */
 
             /**
@@ -20749,6 +20767,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * EntityDescription id.
+             * @member {flyteidl.core.IIdentifier|null|undefined} id
+             * @memberof flyteidl.admin.EntityDescription
+             * @instance
+             */
+            EntityDescription.prototype.id = null;
 
             /**
              * EntityDescription shortDescription.
@@ -20783,12 +20809,12 @@ export const flyteidl = $root.flyteidl = (() => {
             EntityDescription.prototype.labels = null;
 
             /**
-             * EntityDescription source.
-             * @member {flyteidl.admin.ISourceCode|null|undefined} source
+             * EntityDescription sourceCode.
+             * @member {flyteidl.admin.ISourceCode|null|undefined} sourceCode
              * @memberof flyteidl.admin.EntityDescription
              * @instance
              */
-            EntityDescription.prototype.source = null;
+            EntityDescription.prototype.sourceCode = null;
 
             /**
              * Creates a new EntityDescription instance using the specified properties.
@@ -20814,17 +20840,19 @@ export const flyteidl = $root.flyteidl = (() => {
             EntityDescription.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.shortDescription);
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.shortDescription);
                 if (message.longDescription != null && message.hasOwnProperty("longDescription"))
-                    $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.tags != null && message.tags.length)
                     for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
                 if (message.labels != null && message.hasOwnProperty("labels"))
-                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.source != null && message.hasOwnProperty("source"))
-                    $root.flyteidl.admin.SourceCode.encode(message.source, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.sourceCode != null && message.hasOwnProperty("sourceCode"))
+                    $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
 
@@ -20847,21 +20875,24 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.shortDescription = reader.string();
+                        message.id = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.longDescription = $root.flyteidl.admin.LongDescription.decode(reader, reader.uint32());
+                        message.shortDescription = reader.string();
                         break;
                     case 3:
+                        message.longDescription = $root.flyteidl.admin.LongDescription.decode(reader, reader.uint32());
+                        break;
+                    case 4:
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
                         break;
-                    case 4:
+                    case 5:
                         message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
                         break;
-                    case 5:
-                        message.source = $root.flyteidl.admin.SourceCode.decode(reader, reader.uint32());
+                    case 6:
+                        message.sourceCode = $root.flyteidl.admin.SourceCode.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -20882,6 +20913,11 @@ export const flyteidl = $root.flyteidl = (() => {
             EntityDescription.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.id);
+                    if (error)
+                        return "id." + error;
+                }
                 if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
                     if (!$util.isString(message.shortDescription))
                         return "shortDescription: string expected";
@@ -20902,10 +20938,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "labels." + error;
                 }
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    let error = $root.flyteidl.admin.SourceCode.verify(message.source);
+                if (message.sourceCode != null && message.hasOwnProperty("sourceCode")) {
+                    let error = $root.flyteidl.admin.SourceCode.verify(message.sourceCode);
                     if (error)
-                        return "source." + error;
+                        return "sourceCode." + error;
                 }
                 return null;
             };
@@ -21105,12 +21141,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a SourceCode.
              * @memberof flyteidl.admin
              * @interface ISourceCode
-             * @property {string|null} [file] SourceCode file
-             * @property {number|null} [lineNumber] SourceCode lineNumber
-             * @property {string|null} [repo] SourceCode repo
-             * @property {string|null} [branch] SourceCode branch
              * @property {string|null} [link] SourceCode link
-             * @property {string|null} [language] SourceCode language
              */
 
             /**
@@ -21129,52 +21160,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * SourceCode file.
-             * @member {string} file
-             * @memberof flyteidl.admin.SourceCode
-             * @instance
-             */
-            SourceCode.prototype.file = "";
-
-            /**
-             * SourceCode lineNumber.
-             * @member {number} lineNumber
-             * @memberof flyteidl.admin.SourceCode
-             * @instance
-             */
-            SourceCode.prototype.lineNumber = 0;
-
-            /**
-             * SourceCode repo.
-             * @member {string} repo
-             * @memberof flyteidl.admin.SourceCode
-             * @instance
-             */
-            SourceCode.prototype.repo = "";
-
-            /**
-             * SourceCode branch.
-             * @member {string} branch
-             * @memberof flyteidl.admin.SourceCode
-             * @instance
-             */
-            SourceCode.prototype.branch = "";
-
-            /**
              * SourceCode link.
              * @member {string} link
              * @memberof flyteidl.admin.SourceCode
              * @instance
              */
             SourceCode.prototype.link = "";
-
-            /**
-             * SourceCode language.
-             * @member {string} language
-             * @memberof flyteidl.admin.SourceCode
-             * @instance
-             */
-            SourceCode.prototype.language = "";
 
             /**
              * Creates a new SourceCode instance using the specified properties.
@@ -21200,18 +21191,8 @@ export const flyteidl = $root.flyteidl = (() => {
             SourceCode.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.file != null && message.hasOwnProperty("file"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.file);
-                if (message.lineNumber != null && message.hasOwnProperty("lineNumber"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.lineNumber);
-                if (message.repo != null && message.hasOwnProperty("repo"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.repo);
-                if (message.branch != null && message.hasOwnProperty("branch"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.branch);
                 if (message.link != null && message.hasOwnProperty("link"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.link);
-                if (message.language != null && message.hasOwnProperty("language"))
-                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.language);
                 return writer;
             };
 
@@ -21233,23 +21214,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.file = reader.string();
-                        break;
-                    case 2:
-                        message.lineNumber = reader.uint32();
-                        break;
-                    case 3:
-                        message.repo = reader.string();
-                        break;
-                    case 4:
-                        message.branch = reader.string();
-                        break;
                     case 5:
                         message.link = reader.string();
-                        break;
-                    case 6:
-                        message.language = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21270,24 +21236,9 @@ export const flyteidl = $root.flyteidl = (() => {
             SourceCode.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.file != null && message.hasOwnProperty("file"))
-                    if (!$util.isString(message.file))
-                        return "file: string expected";
-                if (message.lineNumber != null && message.hasOwnProperty("lineNumber"))
-                    if (!$util.isInteger(message.lineNumber))
-                        return "lineNumber: integer expected";
-                if (message.repo != null && message.hasOwnProperty("repo"))
-                    if (!$util.isString(message.repo))
-                        return "repo: string expected";
-                if (message.branch != null && message.hasOwnProperty("branch"))
-                    if (!$util.isString(message.branch))
-                        return "branch: string expected";
                 if (message.link != null && message.hasOwnProperty("link"))
                     if (!$util.isString(message.link))
                         return "link: string expected";
-                if (message.language != null && message.hasOwnProperty("language"))
-                    if (!$util.isString(message.language))
-                        return "language: string expected";
                 return null;
             };
 
@@ -31007,6 +30958,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {google.protobuf.ITimestamp|null} [updatedAt] NodeExecutionClosure updatedAt
              * @property {flyteidl.admin.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionClosure workflowNodeMetadata
              * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
+             * @property {string|null} [deckUri] NodeExecutionClosure deckUri
              */
 
             /**
@@ -31104,6 +31056,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             NodeExecutionClosure.prototype.taskNodeMetadata = null;
 
+            /**
+             * NodeExecutionClosure deckUri.
+             * @member {string} deckUri
+             * @memberof flyteidl.admin.NodeExecutionClosure
+             * @instance
+             */
+            NodeExecutionClosure.prototype.deckUri = "";
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -31173,6 +31133,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.TaskNodeMetadata.encode(message.taskNodeMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.outputData != null && message.hasOwnProperty("outputData"))
                     $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
                 return writer;
             };
 
@@ -31223,6 +31185,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.taskNodeMetadata = $root.flyteidl.admin.TaskNodeMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 11:
+                        message.deckUri = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -31324,6 +31289,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "taskNodeMetadata." + error;
                     }
                 }
+                if (message.deckUri != null && message.hasOwnProperty("deckUri"))
+                    if (!$util.isString(message.deckUri))
+                        return "deckUri: string expected";
                 return null;
             };
 
@@ -40814,6 +40782,264 @@ export const flyteidl = $root.flyteidl = (() => {
             return CreateUploadLocationRequest;
         })();
 
+        service.CreateDownloadLocationRequest = (function() {
+
+            /**
+             * Properties of a CreateDownloadLocationRequest.
+             * @memberof flyteidl.service
+             * @interface ICreateDownloadLocationRequest
+             * @property {string|null} [nativeUrl] CreateDownloadLocationRequest nativeUrl
+             * @property {google.protobuf.IDuration|null} [expiresIn] CreateDownloadLocationRequest expiresIn
+             */
+
+            /**
+             * Constructs a new CreateDownloadLocationRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateDownloadLocationRequest.
+             * @implements ICreateDownloadLocationRequest
+             * @constructor
+             * @param {flyteidl.service.ICreateDownloadLocationRequest=} [properties] Properties to set
+             */
+            function CreateDownloadLocationRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateDownloadLocationRequest nativeUrl.
+             * @member {string} nativeUrl
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @instance
+             */
+            CreateDownloadLocationRequest.prototype.nativeUrl = "";
+
+            /**
+             * CreateDownloadLocationRequest expiresIn.
+             * @member {google.protobuf.IDuration|null|undefined} expiresIn
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @instance
+             */
+            CreateDownloadLocationRequest.prototype.expiresIn = null;
+
+            /**
+             * Creates a new CreateDownloadLocationRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLocationRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateDownloadLocationRequest} CreateDownloadLocationRequest instance
+             */
+            CreateDownloadLocationRequest.create = function create(properties) {
+                return new CreateDownloadLocationRequest(properties);
+            };
+
+            /**
+             * Encodes the specified CreateDownloadLocationRequest message. Does not implicitly {@link flyteidl.service.CreateDownloadLocationRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLocationRequest} message CreateDownloadLocationRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateDownloadLocationRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.nativeUrl);
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
+                    $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateDownloadLocationRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateDownloadLocationRequest} CreateDownloadLocationRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateDownloadLocationRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateDownloadLocationRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.nativeUrl = reader.string();
+                        break;
+                    case 2:
+                        message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateDownloadLocationRequest message.
+             * @function verify
+             * @memberof flyteidl.service.CreateDownloadLocationRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateDownloadLocationRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                    if (!$util.isString(message.nativeUrl))
+                        return "nativeUrl: string expected";
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
+                    let error = $root.google.protobuf.Duration.verify(message.expiresIn);
+                    if (error)
+                        return "expiresIn." + error;
+                }
+                return null;
+            };
+
+            return CreateDownloadLocationRequest;
+        })();
+
+        service.CreateDownloadLocationResponse = (function() {
+
+            /**
+             * Properties of a CreateDownloadLocationResponse.
+             * @memberof flyteidl.service
+             * @interface ICreateDownloadLocationResponse
+             * @property {string|null} [signedUrl] CreateDownloadLocationResponse signedUrl
+             * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateDownloadLocationResponse expiresAt
+             */
+
+            /**
+             * Constructs a new CreateDownloadLocationResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateDownloadLocationResponse.
+             * @implements ICreateDownloadLocationResponse
+             * @constructor
+             * @param {flyteidl.service.ICreateDownloadLocationResponse=} [properties] Properties to set
+             */
+            function CreateDownloadLocationResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateDownloadLocationResponse signedUrl.
+             * @member {string} signedUrl
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @instance
+             */
+            CreateDownloadLocationResponse.prototype.signedUrl = "";
+
+            /**
+             * CreateDownloadLocationResponse expiresAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @instance
+             */
+            CreateDownloadLocationResponse.prototype.expiresAt = null;
+
+            /**
+             * Creates a new CreateDownloadLocationResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLocationResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateDownloadLocationResponse} CreateDownloadLocationResponse instance
+             */
+            CreateDownloadLocationResponse.create = function create(properties) {
+                return new CreateDownloadLocationResponse(properties);
+            };
+
+            /**
+             * Encodes the specified CreateDownloadLocationResponse message. Does not implicitly {@link flyteidl.service.CreateDownloadLocationResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLocationResponse} message CreateDownloadLocationResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateDownloadLocationResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateDownloadLocationResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateDownloadLocationResponse} CreateDownloadLocationResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateDownloadLocationResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateDownloadLocationResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.signedUrl = reader.string();
+                        break;
+                    case 2:
+                        message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateDownloadLocationResponse message.
+             * @function verify
+             * @memberof flyteidl.service.CreateDownloadLocationResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateDownloadLocationResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    if (!$util.isString(message.signedUrl))
+                        return "signedUrl: string expected";
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                    if (error)
+                        return "expiresAt." + error;
+                }
+                return null;
+            };
+
+            return CreateDownloadLocationResponse;
+        })();
+
         service.DataProxyService = (function() {
 
             /**
@@ -40876,6 +41102,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.service.ICreateUploadLocationRequest} request CreateUploadLocationRequest message or plain object
              * @returns {Promise<flyteidl.service.CreateUploadLocationResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createDownloadLocation}.
+             * @memberof flyteidl.service.DataProxyService
+             * @typedef CreateDownloadLocationCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.CreateDownloadLocationResponse} [response] CreateDownloadLocationResponse
+             */
+
+            /**
+             * Calls CreateDownloadLocation.
+             * @function createDownloadLocation
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateDownloadLocationRequest} request CreateDownloadLocationRequest message or plain object
+             * @param {flyteidl.service.DataProxyService.CreateDownloadLocationCallback} callback Node-style callback called with the error, if any, and CreateDownloadLocationResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(DataProxyService.prototype.createDownloadLocation = function createDownloadLocation(request, callback) {
+                return this.rpcCall(createDownloadLocation, $root.flyteidl.service.CreateDownloadLocationRequest, $root.flyteidl.service.CreateDownloadLocationResponse, request, callback);
+            }, "name", { value: "CreateDownloadLocation" });
+
+            /**
+             * Calls CreateDownloadLocation.
+             * @function createDownloadLocation
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateDownloadLocationRequest} request CreateDownloadLocationRequest message or plain object
+             * @returns {Promise<flyteidl.service.CreateDownloadLocationResponse>} Promise
              * @variation 2
              */
 

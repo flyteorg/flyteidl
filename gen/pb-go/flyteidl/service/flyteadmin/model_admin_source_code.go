@@ -10,10 +10,5 @@
 package flyteadmin
 
 type AdminSourceCode struct {
-	File string `json:"file,omitempty"`
-	LineNumber int64 `json:"line_number,omitempty"`
-	Repo string `json:"repo,omitempty"`
-	Branch string `json:"branch,omitempty"`
 	Link string `json:"link,omitempty"`
-	Language string `json:"language,omitempty"`
 }

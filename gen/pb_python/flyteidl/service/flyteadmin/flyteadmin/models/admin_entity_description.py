@@ -19,6 +19,7 @@ import six
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_long_description import AdminLongDescription  # noqa: F401,E501
 from flyteadmin.models.admin_source_code import AdminSourceCode  # noqa: F401,E501
+from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 
 
 class AdminEntityDescription(object):
@@ -35,31 +36,36 @@ class AdminEntityDescription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'CoreIdentifier',
         'short_description': 'str',
         'long_description': 'AdminLongDescription',
         'tags': 'list[str]',
         'labels': 'AdminLabels',
-        'source': 'AdminSourceCode'
+        'source_code': 'AdminSourceCode'
     }
 
     attribute_map = {
+        'id': 'id',
         'short_description': 'short_description',
         'long_description': 'long_description',
         'tags': 'tags',
         'labels': 'labels',
-        'source': 'source'
+        'source_code': 'source_code'
     }
 
-    def __init__(self, short_description=None, long_description=None, tags=None, labels=None, source=None):  # noqa: E501
+    def __init__(self, id=None, short_description=None, long_description=None, tags=None, labels=None, source_code=None):  # noqa: E501
         """AdminEntityDescription - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
         self._short_description = None
         self._long_description = None
         self._tags = None
         self._labels = None
-        self._source = None
+        self._source_code = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if short_description is not None:
             self.short_description = short_description
         if long_description is not None:
@@ -68,8 +74,31 @@ class AdminEntityDescription(object):
             self.tags = tags
         if labels is not None:
             self.labels = labels
-        if source is not None:
-            self.source = source
+        if source_code is not None:
+            self.source_code = source_code
+
+    @property
+    def id(self):
+        """Gets the id of this AdminEntityDescription.  # noqa: E501
+
+        Indicates a unique version of resource.  # noqa: E501
+
+        :return: The id of this AdminEntityDescription.  # noqa: E501
+        :rtype: CoreIdentifier
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AdminEntityDescription.
+
+        Indicates a unique version of resource.  # noqa: E501
+
+        :param id: The id of this AdminEntityDescription.  # noqa: E501
+        :type: CoreIdentifier
+        """
+
+        self._id = id
 
     @property
     def short_description(self):
@@ -164,27 +193,27 @@ class AdminEntityDescription(object):
         self._labels = labels
 
     @property
-    def source(self):
-        """Gets the source of this AdminEntityDescription.  # noqa: E501
+    def source_code(self):
+        """Gets the source_code of this AdminEntityDescription.  # noqa: E501
 
         Optional link to source code used to define this entity.  # noqa: E501
 
-        :return: The source of this AdminEntityDescription.  # noqa: E501
+        :return: The source_code of this AdminEntityDescription.  # noqa: E501
         :rtype: AdminSourceCode
         """
-        return self._source
+        return self._source_code
 
-    @source.setter
-    def source(self, source):
-        """Sets the source of this AdminEntityDescription.
+    @source_code.setter
+    def source_code(self, source_code):
+        """Sets the source_code of this AdminEntityDescription.
 
         Optional link to source code used to define this entity.  # noqa: E501
 
-        :param source: The source of this AdminEntityDescription.  # noqa: E501
+        :param source_code: The source_code of this AdminEntityDescription.  # noqa: E501
         :type: AdminSourceCode
         """
 
-        self._source = source
+        self._source_code = source_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -9,18 +9,20 @@ import "flyteidl/admin/common.proto";
 // EntityDescription contains detailed description for the task/workflow/launch plan.
 // Documentation could provide insight into the algorithms, business use case, etc.
 message EntityDescription {
+  // Indicates a unique version of resource.
+  core.Identifier id = 1;
   // One-liner overview of the entity.
-  string short_description = 1;
+  string short_description = 2;
   // Full user description with formatting preserved.
-  LongDescription long_description = 2;
+  LongDescription long_description = 3;
   // User-specified tags. These are arbitrary and can be used for searching
   // filtering and discovering entities.
-  repeated string tags = 3;
+  repeated string tags = 4;
   // User-defined free-form key-value pair attributes. These are arbitrary
   // and can be used for searching, filtering and discovering entities.
-  Labels labels = 4;
+  Labels labels = 5;
   // Optional link to source code used to define this entity.
-  SourceCode source = 5;
+  SourceCode source_code = 6;
 }
 
 // Full user description with formatting preserved. This can be rendered
@@ -40,7 +42,7 @@ message LongDescription {
     // python default documentation - comments is rst
     RST = 3;
   }
-  // format of the long description
+  // Format of the long description
   DescriptionFormat long_format = 3;
   // Optional link to an icon for the entity
   string icon_link = 4;
@@ -48,16 +50,5 @@ message LongDescription {
 
 // Link to source code used to define this entity
 message SourceCode {
-  // File where the code is located
-  string file = 1;
-  // Line number where the task definition, workflow definition, etc starts at
-  uint32 line_number = 2;
-  // git repository
-  string repo = 3;
-  // branch of the repository
-  string branch = 4;
-  // link to the original repository
   string link = 5;
-  // language of the code
-  string language = 6;
 }

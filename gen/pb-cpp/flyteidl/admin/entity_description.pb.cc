@@ -19,6 +19,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fentity_5fdescription_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LongDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fentity_5fdescription_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SourceCode_flyteidl_2fadmin_2fentity_5fdescription_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 namespace flyteidl {
 namespace admin {
 class EntityDescriptionDefaultTypeInternal {
@@ -46,8 +47,9 @@ static void InitDefaultsEntityDescription_flyteidl_2fadmin_2fentity_5fdescriptio
   ::flyteidl::admin::EntityDescription::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_EntityDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsEntityDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto}, {
+::google::protobuf::internal::SCCInfo<4> scc_info_EntityDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsEntityDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto}, {
+      &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_LongDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto.base,
       &scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto.base,
       &scc_info_SourceCode_flyteidl_2fadmin_2fentity_5fdescription_2eproto.base,}};
@@ -96,11 +98,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fentity_5fdescrip
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, short_description_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, long_description_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, tags_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, labels_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, source_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EntityDescription, source_code_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LongDescription, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -115,17 +118,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fentity_5fdescrip
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, file_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, line_number_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, repo_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, branch_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, link_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::SourceCode, language_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::EntityDescription)},
-  { 10, -1, sizeof(::flyteidl::admin::LongDescription)},
-  { 19, -1, sizeof(::flyteidl::admin::SourceCode)},
+  { 11, -1, sizeof(::flyteidl::admin::LongDescription)},
+  { 20, -1, sizeof(::flyteidl::admin::SourceCode)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -143,27 +141,26 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fadmin_2fentity_5fdescription_2eproto[] =
   "\n\'flyteidl/admin/entity_description.prot"
   "o\022\016flyteidl.admin\032\036flyteidl/core/identif"
-  "ier.proto\032\033flyteidl/admin/common.proto\"\313"
-  "\001\n\021EntityDescription\022\031\n\021short_descriptio"
-  "n\030\001 \001(\t\0229\n\020long_description\030\002 \001(\0132\037.flyt"
-  "eidl.admin.LongDescription\022\014\n\004tags\030\003 \003(\t"
-  "\022&\n\006labels\030\004 \001(\0132\026.flyteidl.admin.Labels"
-  "\022*\n\006source\030\005 \001(\0132\032.flyteidl.admin.Source"
-  "Code\"\314\001\n\017LongDescription\022\016\n\006values\030\001 \001(\t"
-  "\022\013\n\003uri\030\002 \001(\t\022F\n\013long_format\030\003 \001(\01621.fly"
-  "teidl.admin.LongDescription.DescriptionF"
-  "ormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021DescriptionF"
-  "ormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML"
-  "\020\002\022\007\n\003RST\020\003\"m\n\nSourceCode\022\014\n\004file\030\001 \001(\t\022"
-  "\023\n\013line_number\030\002 \001(\r\022\014\n\004repo\030\003 \001(\t\022\016\n\006br"
-  "anch\030\004 \001(\t\022\014\n\004link\030\005 \001(\t\022\020\n\010language\030\006 \001"
-  "(\tB7Z5github.com/flyteorg/flyteidl/gen/p"
-  "b-go/flyteidl/adminb\006proto3"
+  "ier.proto\032\033flyteidl/admin/common.proto\"\367"
+  "\001\n\021EntityDescription\022%\n\002id\030\001 \001(\0132\031.flyte"
+  "idl.core.Identifier\022\031\n\021short_description"
+  "\030\002 \001(\t\0229\n\020long_description\030\003 \001(\0132\037.flyte"
+  "idl.admin.LongDescription\022\014\n\004tags\030\004 \003(\t\022"
+  "&\n\006labels\030\005 \001(\0132\026.flyteidl.admin.Labels\022"
+  "/\n\013source_code\030\006 \001(\0132\032.flyteidl.admin.So"
+  "urceCode\"\314\001\n\017LongDescription\022\016\n\006values\030\001"
+  " \001(\t\022\013\n\003uri\030\002 \001(\t\022F\n\013long_format\030\003 \001(\01621"
+  ".flyteidl.admin.LongDescription.Descript"
+  "ionFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descript"
+  "ionFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004"
+  "HTML\020\002\022\007\n\003RST\020\003\"\032\n\nSourceCode\022\014\n\004link\030\005 "
+  "\001(\tB7Z5github.com/flyteorg/flyteidl/gen/"
+  "pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fentity_5fdescription_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fentity_5fdescription_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fentity_5fdescription_2eproto,
-  "flyteidl/admin/entity_description.proto", &assign_descriptors_table_flyteidl_2fadmin_2fentity_5fdescription_2eproto, 707,
+  "flyteidl/admin/entity_description.proto", &assign_descriptors_table_flyteidl_2fadmin_2fentity_5fdescription_2eproto, 668,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fentity_5fdescription_2eproto() {
@@ -208,20 +205,27 @@ const int LongDescription::DescriptionFormat_ARRAYSIZE;
 // ===================================================================
 
 void EntityDescription::InitAsDefaultInstance() {
+  ::flyteidl::admin::_EntityDescription_default_instance_._instance.get_mutable()->id_ = const_cast< ::flyteidl::core::Identifier*>(
+      ::flyteidl::core::Identifier::internal_default_instance());
   ::flyteidl::admin::_EntityDescription_default_instance_._instance.get_mutable()->long_description_ = const_cast< ::flyteidl::admin::LongDescription*>(
       ::flyteidl::admin::LongDescription::internal_default_instance());
   ::flyteidl::admin::_EntityDescription_default_instance_._instance.get_mutable()->labels_ = const_cast< ::flyteidl::admin::Labels*>(
       ::flyteidl::admin::Labels::internal_default_instance());
-  ::flyteidl::admin::_EntityDescription_default_instance_._instance.get_mutable()->source_ = const_cast< ::flyteidl::admin::SourceCode*>(
+  ::flyteidl::admin::_EntityDescription_default_instance_._instance.get_mutable()->source_code_ = const_cast< ::flyteidl::admin::SourceCode*>(
       ::flyteidl::admin::SourceCode::internal_default_instance());
 }
 class EntityDescription::HasBitSetters {
  public:
+  static const ::flyteidl::core::Identifier& id(const EntityDescription* msg);
   static const ::flyteidl::admin::LongDescription& long_description(const EntityDescription* msg);
   static const ::flyteidl::admin::Labels& labels(const EntityDescription* msg);
-  static const ::flyteidl::admin::SourceCode& source(const EntityDescription* msg);
+  static const ::flyteidl::admin::SourceCode& source_code(const EntityDescription* msg);
 };
 
+const ::flyteidl::core::Identifier&
+EntityDescription::HasBitSetters::id(const EntityDescription* msg) {
+  return *msg->id_;
+}
 const ::flyteidl::admin::LongDescription&
 EntityDescription::HasBitSetters::long_description(const EntityDescription* msg) {
   return *msg->long_description_;
@@ -231,8 +235,14 @@ EntityDescription::HasBitSetters::labels(const EntityDescription* msg) {
   return *msg->labels_;
 }
 const ::flyteidl::admin::SourceCode&
-EntityDescription::HasBitSetters::source(const EntityDescription* msg) {
-  return *msg->source_;
+EntityDescription::HasBitSetters::source_code(const EntityDescription* msg) {
+  return *msg->source_code_;
+}
+void EntityDescription::clear_id() {
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
 }
 void EntityDescription::clear_labels() {
   if (GetArenaNoVirtual() == nullptr && labels_ != nullptr) {
@@ -241,11 +251,12 @@ void EntityDescription::clear_labels() {
   labels_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int EntityDescription::kIdFieldNumber;
 const int EntityDescription::kShortDescriptionFieldNumber;
 const int EntityDescription::kLongDescriptionFieldNumber;
 const int EntityDescription::kTagsFieldNumber;
 const int EntityDescription::kLabelsFieldNumber;
-const int EntityDescription::kSourceFieldNumber;
+const int EntityDescription::kSourceCodeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EntityDescription::EntityDescription()
@@ -262,6 +273,11 @@ EntityDescription::EntityDescription(const EntityDescription& from)
   if (from.short_description().size() > 0) {
     short_description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.short_description_);
   }
+  if (from.has_id()) {
+    id_ = new ::flyteidl::core::Identifier(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
   if (from.has_long_description()) {
     long_description_ = new ::flyteidl::admin::LongDescription(*from.long_description_);
   } else {
@@ -272,10 +288,10 @@ EntityDescription::EntityDescription(const EntityDescription& from)
   } else {
     labels_ = nullptr;
   }
-  if (from.has_source()) {
-    source_ = new ::flyteidl::admin::SourceCode(*from.source_);
+  if (from.has_source_code()) {
+    source_code_ = new ::flyteidl::admin::SourceCode(*from.source_code_);
   } else {
-    source_ = nullptr;
+    source_code_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.EntityDescription)
 }
@@ -284,9 +300,9 @@ void EntityDescription::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_EntityDescription_flyteidl_2fadmin_2fentity_5fdescription_2eproto.base);
   short_description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&long_description_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&source_) -
-      reinterpret_cast<char*>(&long_description_)) + sizeof(source_));
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&source_code_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(source_code_));
 }
 
 EntityDescription::~EntityDescription() {
@@ -296,9 +312,10 @@ EntityDescription::~EntityDescription() {
 
 void EntityDescription::SharedDtor() {
   short_description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete long_description_;
   if (this != internal_default_instance()) delete labels_;
-  if (this != internal_default_instance()) delete source_;
+  if (this != internal_default_instance()) delete source_code_;
 }
 
 void EntityDescription::SetCachedSize(int size) const {
@@ -318,6 +335,10 @@ void EntityDescription::Clear() {
 
   tags_.Clear();
   short_description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
   if (GetArenaNoVirtual() == nullptr && long_description_ != nullptr) {
     delete long_description_;
   }
@@ -326,10 +347,10 @@ void EntityDescription::Clear() {
     delete labels_;
   }
   labels_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && source_ != nullptr) {
-    delete source_;
+  if (GetArenaNoVirtual() == nullptr && source_code_ != nullptr) {
+    delete source_code_;
   }
-  source_ = nullptr;
+  source_code_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -346,9 +367,22 @@ const char* EntityDescription::_InternalParse(const char* begin, const char* end
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string short_description = 1;
+      // .flyteidl.core.Identifier id = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Identifier::_InternalParse;
+        object = msg->mutable_id();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // string short_description = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.EntityDescription.short_description");
@@ -362,9 +396,9 @@ const char* EntityDescription::_InternalParse(const char* begin, const char* end
         ptr += size;
         break;
       }
-      // .flyteidl.admin.LongDescription long_description = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+      // .flyteidl.admin.LongDescription long_description = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::LongDescription::_InternalParse;
@@ -375,9 +409,9 @@ const char* EntityDescription::_InternalParse(const char* begin, const char* end
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+      // repeated string tags = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -391,12 +425,12 @@ const char* EntityDescription::_InternalParse(const char* begin, const char* end
           ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
           ptr += size;
           if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
         break;
       }
-      // .flyteidl.admin.Labels labels = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+      // .flyteidl.admin.Labels labels = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::Labels::_InternalParse;
@@ -407,13 +441,13 @@ const char* EntityDescription::_InternalParse(const char* begin, const char* end
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.SourceCode source = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // .flyteidl.admin.SourceCode source_code = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::SourceCode::_InternalParse;
-        object = msg->mutable_source();
+        object = msg->mutable_source_code();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -454,9 +488,20 @@ bool EntityDescription::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string short_description = 1;
+      // .flyteidl.core.Identifier id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_id()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string short_description = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_short_description()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -469,9 +514,9 @@ bool EntityDescription::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.LongDescription long_description = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+      // .flyteidl.admin.LongDescription long_description = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_long_description()));
         } else {
@@ -480,9 +525,9 @@ bool EntityDescription::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+      // repeated string tags = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_tags()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -496,9 +541,9 @@ bool EntityDescription::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Labels labels = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+      // .flyteidl.admin.Labels labels = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_labels()));
         } else {
@@ -507,11 +552,11 @@ bool EntityDescription::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.SourceCode source = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+      // .flyteidl.admin.SourceCode source_code = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_source()));
+               input, mutable_source_code()));
         } else {
           goto handle_unusual;
         }
@@ -545,42 +590,48 @@ void EntityDescription::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string short_description = 1;
+  // .flyteidl.core.Identifier id = 1;
+  if (this->has_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, HasBitSetters::id(this), output);
+  }
+
+  // string short_description = 2;
   if (this->short_description().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->short_description().data(), static_cast<int>(this->short_description().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.EntityDescription.short_description");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->short_description(), output);
+      2, this->short_description(), output);
   }
 
-  // .flyteidl.admin.LongDescription long_description = 2;
+  // .flyteidl.admin.LongDescription long_description = 3;
   if (this->has_long_description()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::long_description(this), output);
+      3, HasBitSetters::long_description(this), output);
   }
 
-  // repeated string tags = 3;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.EntityDescription.tags");
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->tags(i), output);
+      4, this->tags(i), output);
   }
 
-  // .flyteidl.admin.Labels labels = 4;
+  // .flyteidl.admin.Labels labels = 5;
   if (this->has_labels()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, HasBitSetters::labels(this), output);
+      5, HasBitSetters::labels(this), output);
   }
 
-  // .flyteidl.admin.SourceCode source = 5;
-  if (this->has_source()) {
+  // .flyteidl.admin.SourceCode source_code = 6;
+  if (this->has_source_code()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::source(this), output);
+      6, HasBitSetters::source_code(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -596,7 +647,14 @@ void EntityDescription::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string short_description = 1;
+  // .flyteidl.core.Identifier id = 1;
+  if (this->has_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, HasBitSetters::id(this), target);
+  }
+
+  // string short_description = 2;
   if (this->short_description().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->short_description().data(), static_cast<int>(this->short_description().length()),
@@ -604,38 +662,38 @@ void EntityDescription::SerializeWithCachedSizes(
       "flyteidl.admin.EntityDescription.short_description");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->short_description(), target);
+        2, this->short_description(), target);
   }
 
-  // .flyteidl.admin.LongDescription long_description = 2;
+  // .flyteidl.admin.LongDescription long_description = 3;
   if (this->has_long_description()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, HasBitSetters::long_description(this), target);
+        3, HasBitSetters::long_description(this), target);
   }
 
-  // repeated string tags = 3;
+  // repeated string tags = 4;
   for (int i = 0, n = this->tags_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->tags(i).data(), static_cast<int>(this->tags(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.EntityDescription.tags");
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->tags(i), target);
+      WriteStringToArray(4, this->tags(i), target);
   }
 
-  // .flyteidl.admin.Labels labels = 4;
+  // .flyteidl.admin.Labels labels = 5;
   if (this->has_labels()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        4, HasBitSetters::labels(this), target);
+        5, HasBitSetters::labels(this), target);
   }
 
-  // .flyteidl.admin.SourceCode source = 5;
-  if (this->has_source()) {
+  // .flyteidl.admin.SourceCode source_code = 6;
+  if (this->has_source_code()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, HasBitSetters::source(this), target);
+        6, HasBitSetters::source_code(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -659,7 +717,7 @@ size_t EntityDescription::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string tags = 3;
+  // repeated string tags = 4;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->tags_size());
   for (int i = 0, n = this->tags_size(); i < n; i++) {
@@ -667,32 +725,39 @@ size_t EntityDescription::ByteSizeLong() const {
       this->tags(i));
   }
 
-  // string short_description = 1;
+  // string short_description = 2;
   if (this->short_description().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->short_description());
   }
 
-  // .flyteidl.admin.LongDescription long_description = 2;
+  // .flyteidl.core.Identifier id = 1;
+  if (this->has_id()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *id_);
+  }
+
+  // .flyteidl.admin.LongDescription long_description = 3;
   if (this->has_long_description()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *long_description_);
   }
 
-  // .flyteidl.admin.Labels labels = 4;
+  // .flyteidl.admin.Labels labels = 5;
   if (this->has_labels()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *labels_);
   }
 
-  // .flyteidl.admin.SourceCode source = 5;
-  if (this->has_source()) {
+  // .flyteidl.admin.SourceCode source_code = 6;
+  if (this->has_source_code()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *source_);
+        *source_code_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -727,14 +792,17 @@ void EntityDescription::MergeFrom(const EntityDescription& from) {
 
     short_description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.short_description_);
   }
+  if (from.has_id()) {
+    mutable_id()->::flyteidl::core::Identifier::MergeFrom(from.id());
+  }
   if (from.has_long_description()) {
     mutable_long_description()->::flyteidl::admin::LongDescription::MergeFrom(from.long_description());
   }
   if (from.has_labels()) {
     mutable_labels()->::flyteidl::admin::Labels::MergeFrom(from.labels());
   }
-  if (from.has_source()) {
-    mutable_source()->::flyteidl::admin::SourceCode::MergeFrom(from.source());
+  if (from.has_source_code()) {
+    mutable_source_code()->::flyteidl::admin::SourceCode::MergeFrom(from.source_code());
   }
 }
 
@@ -766,9 +834,10 @@ void EntityDescription::InternalSwap(EntityDescription* other) {
   tags_.InternalSwap(CastToBase(&other->tags_));
   short_description_.Swap(&other->short_description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(id_, other->id_);
   swap(long_description_, other->long_description_);
   swap(labels_, other->labels_);
-  swap(source_, other->source_);
+  swap(source_code_, other->source_code_);
 }
 
 ::google::protobuf::Metadata EntityDescription::GetMetadata() const {
@@ -1277,12 +1346,7 @@ class SourceCode::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SourceCode::kFileFieldNumber;
-const int SourceCode::kLineNumberFieldNumber;
-const int SourceCode::kRepoFieldNumber;
-const int SourceCode::kBranchFieldNumber;
 const int SourceCode::kLinkFieldNumber;
-const int SourceCode::kLanguageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SourceCode::SourceCode()
@@ -1294,39 +1358,17 @@ SourceCode::SourceCode(const SourceCode& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  file_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.file().size() > 0) {
-    file_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.file_);
-  }
-  repo_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.repo().size() > 0) {
-    repo_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.repo_);
-  }
-  branch_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.branch().size() > 0) {
-    branch_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.branch_);
-  }
   link_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.link().size() > 0) {
     link_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.link_);
   }
-  language_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.language().size() > 0) {
-    language_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.language_);
-  }
-  line_number_ = from.line_number_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.SourceCode)
 }
 
 void SourceCode::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_SourceCode_flyteidl_2fadmin_2fentity_5fdescription_2eproto.base);
-  file_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  repo_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  branch_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   link_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  language_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  line_number_ = 0u;
 }
 
 SourceCode::~SourceCode() {
@@ -1335,11 +1377,7 @@ SourceCode::~SourceCode() {
 }
 
 void SourceCode::SharedDtor() {
-  file_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  repo_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  branch_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   link_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  language_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void SourceCode::SetCachedSize(int size) const {
@@ -1357,12 +1395,7 @@ void SourceCode::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  file_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  repo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  branch_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   link_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  language_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  line_number_ = 0u;
   _internal_metadata_.Clear();
 }
 
@@ -1379,61 +1412,6 @@ const char* SourceCode::_InternalParse(const char* begin, const char* end, void*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string file = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.file");
-        object = msg->mutable_file();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // uint32 line_number = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_line_number(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // string repo = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.repo");
-        object = msg->mutable_repo();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string branch = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.branch");
-        object = msg->mutable_branch();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
       // string link = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
@@ -1441,22 +1419,6 @@ const char* SourceCode::_InternalParse(const char* begin, const char* end, void*
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.link");
         object = msg->mutable_link();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string language = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.language");
-        object = msg->mutable_language();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -1500,64 +1462,6 @@ bool SourceCode::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string file = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_file()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->file().data(), static_cast<int>(this->file().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.SourceCode.file"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 line_number = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &line_number_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string repo = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_repo()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->repo().data(), static_cast<int>(this->repo().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.SourceCode.repo"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string branch = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_branch()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->branch().data(), static_cast<int>(this->branch().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.SourceCode.branch"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       // string link = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
@@ -1567,21 +1471,6 @@ bool SourceCode::MergePartialFromCodedStream(
             this->link().data(), static_cast<int>(this->link().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "flyteidl.admin.SourceCode.link"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string language = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_language()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->language().data(), static_cast<int>(this->language().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.SourceCode.language"));
         } else {
           goto handle_unusual;
         }
@@ -1615,41 +1504,6 @@ void SourceCode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
-  if (this->file().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->file().data(), static_cast<int>(this->file().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.file");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->file(), output);
-  }
-
-  // uint32 line_number = 2;
-  if (this->line_number() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->line_number(), output);
-  }
-
-  // string repo = 3;
-  if (this->repo().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->repo().data(), static_cast<int>(this->repo().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.repo");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->repo(), output);
-  }
-
-  // string branch = 4;
-  if (this->branch().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->branch().data(), static_cast<int>(this->branch().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.branch");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->branch(), output);
-  }
-
   // string link = 5;
   if (this->link().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1658,16 +1512,6 @@ void SourceCode::SerializeWithCachedSizes(
       "flyteidl.admin.SourceCode.link");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       5, this->link(), output);
-  }
-
-  // string language = 6;
-  if (this->language().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.language");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      6, this->language(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1683,44 +1527,6 @@ void SourceCode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
-  if (this->file().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->file().data(), static_cast<int>(this->file().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.file");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->file(), target);
-  }
-
-  // uint32 line_number = 2;
-  if (this->line_number() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->line_number(), target);
-  }
-
-  // string repo = 3;
-  if (this->repo().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->repo().data(), static_cast<int>(this->repo().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.repo");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->repo(), target);
-  }
-
-  // string branch = 4;
-  if (this->branch().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->branch().data(), static_cast<int>(this->branch().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.branch");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->branch(), target);
-  }
-
   // string link = 5;
   if (this->link().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1730,17 +1536,6 @@ void SourceCode::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         5, this->link(), target);
-  }
-
-  // string language = 6;
-  if (this->language().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->language().data(), static_cast<int>(this->language().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.SourceCode.language");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->language(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1764,46 +1559,11 @@ size_t SourceCode::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string file = 1;
-  if (this->file().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->file());
-  }
-
-  // string repo = 3;
-  if (this->repo().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->repo());
-  }
-
-  // string branch = 4;
-  if (this->branch().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->branch());
-  }
-
   // string link = 5;
   if (this->link().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->link());
-  }
-
-  // string language = 6;
-  if (this->language().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->language());
-  }
-
-  // uint32 line_number = 2;
-  if (this->line_number() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->line_number());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1833,28 +1593,9 @@ void SourceCode::MergeFrom(const SourceCode& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.file().size() > 0) {
-
-    file_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.file_);
-  }
-  if (from.repo().size() > 0) {
-
-    repo_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.repo_);
-  }
-  if (from.branch().size() > 0) {
-
-    branch_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.branch_);
-  }
   if (from.link().size() > 0) {
 
     link_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.link_);
-  }
-  if (from.language().size() > 0) {
-
-    language_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.language_);
-  }
-  if (from.line_number() != 0) {
-    set_line_number(from.line_number());
   }
 }
 
@@ -1883,17 +1624,8 @@ void SourceCode::Swap(SourceCode* other) {
 void SourceCode::InternalSwap(SourceCode* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  file_.Swap(&other->file_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  repo_.Swap(&other->repo_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  branch_.Swap(&other->branch_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   link_.Swap(&other->link_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  language_.Swap(&other->language_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(line_number_, other->line_number_);
 }
 
 ::google::protobuf::Metadata SourceCode::GetMetadata() const {

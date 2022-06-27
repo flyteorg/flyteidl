@@ -99,7 +99,9 @@ Defines a set of specific label selectors that the execution can tolerate on a c
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -120,11 +122,17 @@ Defines how a label with a corresponding key and value is selected or excluded.
    "NOT_IN", "3", ""
    "EXISTS", "4", "A label key with any value"
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -682,7 +690,9 @@ Represents a string url and associated metadata used throughout the platform.
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -717,11 +727,17 @@ Sort.Direction
    "DESCENDING", "0", "By default, fields are sorted in descending order."
    "ASCENDING", "1", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -749,11 +765,12 @@ Documentation could provide insight into the algorithms, business use case, etc.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
+   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "Indicates a unique version of resource."
    "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
    "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
    "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities."
-   "source", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
+   "source_code", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
 
 
 
@@ -778,7 +795,7 @@ formatting.
 
    "values", ":ref:`ref_string`", "", "long description - no more than 4KB"
    "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
-   "long_format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "format of the long description"
+   "long_format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "Format of the long description"
    "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
 
 
@@ -800,18 +817,15 @@ Link to source code used to define this entity
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "file", ":ref:`ref_string`", "", "File where the code is located"
-   "line_number", ":ref:`ref_uint32`", "", "Line number where the task definition, workflow definition, etc starts at"
-   "repo", ":ref:`ref_string`", "", "git repository"
-   "branch", ":ref:`ref_string`", "", "branch of the repository"
-   "link", ":ref:`ref_string`", "", "link to the original repository"
-   "language", ":ref:`ref_string`", "", "language of the code"
+   "link", ":ref:`ref_string`", "", ""
 
 
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -831,11 +845,17 @@ LongDescription.DescriptionFormat
    "HTML", "2", ""
    "RST", "3", "python default documentation - comments is rst"
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -1022,13 +1042,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -1532,7 +1560,9 @@ See :ref:`ref_flyteidl.admin.Execution` for more details
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -1570,11 +1600,17 @@ The state of the execution is used to control its visibility in the UI/CLI.
    "EXECUTION_ACTIVE", "0", "By default, all executions are considered active."
    "EXECUTION_ARCHIVED", "1", "Archived executions are no longer visible in the UI."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -1867,7 +1903,9 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -1889,11 +1927,17 @@ group will be observed and trigger executions at a defined cadence.
    "INACTIVE", "0", ""
    "ACTIVE", "1", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2209,7 +2253,9 @@ Adds defaults for customizable workflow-execution specifications and overrides.
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -2250,11 +2296,17 @@ PluginOverride.MissingPluginBehavior
    "FAIL", "0", "By default, if this plugin is not enabled for a Flyte deployment then execution will fail."
    "USE_DEFAULT", "1", "Uses the system-configured default implementation."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2340,6 +2392,7 @@ Container for node execution details and results.
    "updated_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Time at which the node execution was last updated."
    "workflow_node_metadata", ":ref:`ref_flyteidl.admin.WorkflowNodeMetadata`", "", ""
    "task_node_metadata", ":ref:`ref_flyteidl.admin.TaskNodeMetadata`", "", ""
+   "deck_uri", ":ref:`ref_string`", "", "String location uniquely identifying where the deck HTML file is. NativeUrl specifies the url in the format of the configured storage provider (e.g. s3://my-bucket/randomstring/suffix.tar)"
 
 
 
@@ -2557,13 +2610,21 @@ Metadata for a WorkflowNode
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2601,13 +2662,21 @@ Note: This is internal to Admin and doesn't need to be exposed to other componen
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2767,7 +2836,9 @@ See :ref:`ref_flyteidl.admin.Project` for more details
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -2786,11 +2857,17 @@ The state of the project is used to control its visibility in the UI and validit
    "ARCHIVED", "1", "Archived projects are no longer visible in the UI and no longer valid."
    "SYSTEM_GENERATED", "2", "System generated projects that aren't explicitly created or managed by a user."
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -2946,13 +3023,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3032,7 +3117,9 @@ Defines complete set of information required to trigger an execution on a schedu
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -3051,11 +3138,17 @@ Represents a frequency at which to run a schedule.
    "HOUR", "1", ""
    "DAY", "2", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3198,13 +3291,21 @@ Represents a structure that encapsulates the user-configured specification of th
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3393,13 +3494,21 @@ See :ref:`ref_flyteidl.admin.TaskExecution` for more details
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3469,13 +3578,21 @@ Provides Version information for a component
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3616,13 +3733,21 @@ Represents a structure that encapsulates the specification of the workflow.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3780,13 +3905,21 @@ Purposefully empty, may be populated in the future.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -3877,13 +4010,21 @@ microsecond should be expressed in JSON format as "3.000001s".
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -4102,12 +4243,20 @@ The JSON representation for `UInt64Value` is JSON string.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 

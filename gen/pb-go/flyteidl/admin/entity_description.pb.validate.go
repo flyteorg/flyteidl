@@ -44,6 +44,16 @@ func (m *EntityDescription) Validate() error {
 		return nil
 	}
 
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return EntityDescriptionValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	// no validation rules for ShortDescription
 
 	if v, ok := interface{}(m.GetLongDescription()).(interface{ Validate() error }); ok {
@@ -66,10 +76,10 @@ func (m *EntityDescription) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetSource()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetSourceCode()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return EntityDescriptionValidationError{
-				field:  "Source",
+				field:  "SourceCode",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}
@@ -215,17 +225,7 @@ func (m *SourceCode) Validate() error {
 		return nil
 	}
 
-	// no validation rules for File
-
-	// no validation rules for LineNumber
-
-	// no validation rules for Repo
-
-	// no validation rules for Branch
-
 	// no validation rules for Link
-
-	// no validation rules for Language
 
 	return nil
 }

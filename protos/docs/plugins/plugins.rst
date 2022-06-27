@@ -37,13 +37,21 @@ will be executed concurrently.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -79,13 +87,21 @@ Custom proto for plugin that enables distributed training using https://github.c
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -122,13 +138,21 @@ of a Presto task's TaskTemplate
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -161,13 +185,21 @@ Custom proto for plugin that enables distributed training using https://github.c
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -248,101 +280,21 @@ of a hive task's TaskTemplate
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
-
- <!-- end HasExtensions -->
-
- <!-- end services -->
+..
+   end messages
 
 
+..
+   end enums
 
 
-.. _ref_flyteidl/plugins/sidecar.proto:
-
-flyteidl/plugins/sidecar.proto
-==================================================================
+..
+   end HasExtensions
 
 
-
-
-
-.. _ref_flyteidl.plugins.SidecarJob:
-
-SidecarJob
-------------------------------------------------------------------
-
-A sidecar job brings up the desired pod_spec.
-The plugin executor is responsible for keeping the pod alive until the primary container terminates
-or the task itself times out.
-
-
-
-.. csv-table:: SidecarJob type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "pod_spec", ":ref:`ref_k8s.io.api.core.v1.PodSpec`", "", ""
-   "primary_container_name", ":ref:`ref_string`", "", ""
-   "annotations", ":ref:`ref_flyteidl.plugins.SidecarJob.AnnotationsEntry`", "repeated", "Pod annotations"
-   "labels", ":ref:`ref_flyteidl.plugins.SidecarJob.LabelsEntry`", "repeated", "Pod labels"
-
-
-
-
-
-
-
-.. _ref_flyteidl.plugins.SidecarJob.AnnotationsEntry:
-
-SidecarJob.AnnotationsEntry
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: SidecarJob.AnnotationsEntry type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_string`", "", ""
-
-
-
-
-
-
-
-.. _ref_flyteidl.plugins.SidecarJob.LabelsEntry:
-
-SidecarJob.LabelsEntry
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: SidecarJob.LabelsEntry type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_string`", "", ""
-
-
-
-
-
- <!-- end messages -->
-
- <!-- end enums -->
-
- <!-- end HasExtensions -->
-
- <!-- end services -->
+..
+   end services
 
 
 
@@ -438,7 +390,9 @@ SparkJob.SparkConfEntry
 
 
 
- <!-- end messages -->
+
+..
+   end messages
 
 
 
@@ -458,11 +412,17 @@ SparkApplication.Type
    "SCALA", "2", ""
    "R", "3", ""
 
- <!-- end enums -->
 
- <!-- end HasExtensions -->
+..
+   end enums
 
- <!-- end services -->
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -497,13 +457,21 @@ Custom proto for plugin that enables distributed training using https://github.c
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 
 
@@ -538,12 +506,20 @@ Represents an Execution that was launched and could be waited on.
 
 
 
- <!-- end messages -->
 
- <!-- end enums -->
+..
+   end messages
 
- <!-- end HasExtensions -->
 
- <!-- end services -->
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
 
 

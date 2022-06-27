@@ -6254,6 +6254,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent isDynamic */
             isDynamic?: (boolean|null);
+
+            /** NodeExecutionEvent deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -6318,6 +6321,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent isDynamic. */
             public isDynamic: boolean;
+
+            /** NodeExecutionEvent deckUri. */
+            public deckUri: string;
 
             /** NodeExecutionEvent outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -8606,6 +8612,9 @@ export namespace flyteidl {
         /** Properties of an EntityDescription. */
         interface IEntityDescription {
 
+            /** EntityDescription id */
+            id?: (flyteidl.core.IIdentifier|null);
+
             /** EntityDescription shortDescription */
             shortDescription?: (string|null);
 
@@ -8618,8 +8627,8 @@ export namespace flyteidl {
             /** EntityDescription labels */
             labels?: (flyteidl.admin.ILabels|null);
 
-            /** EntityDescription source */
-            source?: (flyteidl.admin.ISourceCode|null);
+            /** EntityDescription sourceCode */
+            sourceCode?: (flyteidl.admin.ISourceCode|null);
         }
 
         /** Represents an EntityDescription. */
@@ -8630,6 +8639,9 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.IEntityDescription);
+
+            /** EntityDescription id. */
+            public id?: (flyteidl.core.IIdentifier|null);
 
             /** EntityDescription shortDescription. */
             public shortDescription: string;
@@ -8643,8 +8655,8 @@ export namespace flyteidl {
             /** EntityDescription labels. */
             public labels?: (flyteidl.admin.ILabels|null);
 
-            /** EntityDescription source. */
-            public source?: (flyteidl.admin.ISourceCode|null);
+            /** EntityDescription sourceCode. */
+            public sourceCode?: (flyteidl.admin.ISourceCode|null);
 
             /**
              * Creates a new EntityDescription instance using the specified properties.
@@ -8763,23 +8775,8 @@ export namespace flyteidl {
         /** Properties of a SourceCode. */
         interface ISourceCode {
 
-            /** SourceCode file */
-            file?: (string|null);
-
-            /** SourceCode lineNumber */
-            lineNumber?: (number|null);
-
-            /** SourceCode repo */
-            repo?: (string|null);
-
-            /** SourceCode branch */
-            branch?: (string|null);
-
             /** SourceCode link */
             link?: (string|null);
-
-            /** SourceCode language */
-            language?: (string|null);
         }
 
         /** Represents a SourceCode. */
@@ -8791,23 +8788,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ISourceCode);
 
-            /** SourceCode file. */
-            public file: string;
-
-            /** SourceCode lineNumber. */
-            public lineNumber: number;
-
-            /** SourceCode repo. */
-            public repo: string;
-
-            /** SourceCode branch. */
-            public branch: string;
-
             /** SourceCode link. */
             public link: string;
-
-            /** SourceCode language. */
-            public language: string;
 
             /**
              * Creates a new SourceCode instance using the specified properties.
@@ -12959,6 +12941,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure taskNodeMetadata */
             taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
+
+            /** NodeExecutionClosure deckUri */
+            deckUri?: (string|null);
         }
 
         /** Represents a NodeExecutionClosure. */
@@ -12999,6 +12984,9 @@ export namespace flyteidl {
 
             /** NodeExecutionClosure taskNodeMetadata. */
             public taskNodeMetadata?: (flyteidl.admin.ITaskNodeMetadata|null);
+
+            /** NodeExecutionClosure deckUri. */
+            public deckUri: string;
 
             /** NodeExecutionClosure outputResult. */
             public outputResult?: ("outputUri"|"error"|"outputData");
@@ -17488,6 +17476,122 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a CreateDownloadLocationRequest. */
+        interface ICreateDownloadLocationRequest {
+
+            /** CreateDownloadLocationRequest nativeUrl */
+            nativeUrl?: (string|null);
+
+            /** CreateDownloadLocationRequest expiresIn */
+            expiresIn?: (google.protobuf.IDuration|null);
+        }
+
+        /** Represents a CreateDownloadLocationRequest. */
+        class CreateDownloadLocationRequest implements ICreateDownloadLocationRequest {
+
+            /**
+             * Constructs a new CreateDownloadLocationRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateDownloadLocationRequest);
+
+            /** CreateDownloadLocationRequest nativeUrl. */
+            public nativeUrl: string;
+
+            /** CreateDownloadLocationRequest expiresIn. */
+            public expiresIn?: (google.protobuf.IDuration|null);
+
+            /**
+             * Creates a new CreateDownloadLocationRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateDownloadLocationRequest instance
+             */
+            public static create(properties?: flyteidl.service.ICreateDownloadLocationRequest): flyteidl.service.CreateDownloadLocationRequest;
+
+            /**
+             * Encodes the specified CreateDownloadLocationRequest message. Does not implicitly {@link flyteidl.service.CreateDownloadLocationRequest.verify|verify} messages.
+             * @param message CreateDownloadLocationRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateDownloadLocationRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateDownloadLocationRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateDownloadLocationRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateDownloadLocationRequest;
+
+            /**
+             * Verifies a CreateDownloadLocationRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateDownloadLocationResponse. */
+        interface ICreateDownloadLocationResponse {
+
+            /** CreateDownloadLocationResponse signedUrl */
+            signedUrl?: (string|null);
+
+            /** CreateDownloadLocationResponse expiresAt */
+            expiresAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a CreateDownloadLocationResponse. */
+        class CreateDownloadLocationResponse implements ICreateDownloadLocationResponse {
+
+            /**
+             * Constructs a new CreateDownloadLocationResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateDownloadLocationResponse);
+
+            /** CreateDownloadLocationResponse signedUrl. */
+            public signedUrl: string;
+
+            /** CreateDownloadLocationResponse expiresAt. */
+            public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new CreateDownloadLocationResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateDownloadLocationResponse instance
+             */
+            public static create(properties?: flyteidl.service.ICreateDownloadLocationResponse): flyteidl.service.CreateDownloadLocationResponse;
+
+            /**
+             * Encodes the specified CreateDownloadLocationResponse message. Does not implicitly {@link flyteidl.service.CreateDownloadLocationResponse.verify|verify} messages.
+             * @param message CreateDownloadLocationResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateDownloadLocationResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateDownloadLocationResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateDownloadLocationResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateDownloadLocationResponse;
+
+            /**
+             * Verifies a CreateDownloadLocationResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents a DataProxyService */
         class DataProxyService extends $protobuf.rpc.Service {
 
@@ -17521,6 +17625,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createUploadLocation(request: flyteidl.service.ICreateUploadLocationRequest): Promise<flyteidl.service.CreateUploadLocationResponse>;
+
+            /**
+             * Calls CreateDownloadLocation.
+             * @param request CreateDownloadLocationRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateDownloadLocationResponse
+             */
+            public createDownloadLocation(request: flyteidl.service.ICreateDownloadLocationRequest, callback: flyteidl.service.DataProxyService.CreateDownloadLocationCallback): void;
+
+            /**
+             * Calls CreateDownloadLocation.
+             * @param request CreateDownloadLocationRequest message or plain object
+             * @returns Promise
+             */
+            public createDownloadLocation(request: flyteidl.service.ICreateDownloadLocationRequest): Promise<flyteidl.service.CreateDownloadLocationResponse>;
         }
 
         namespace DataProxyService {
@@ -17531,6 +17649,13 @@ export namespace flyteidl {
              * @param [response] CreateUploadLocationResponse
              */
             type CreateUploadLocationCallback = (error: (Error|null), response?: flyteidl.service.CreateUploadLocationResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createDownloadLocation}.
+             * @param error Error, if any
+             * @param [response] CreateDownloadLocationResponse
+             */
+            type CreateDownloadLocationCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLocationResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */

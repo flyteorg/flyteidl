@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/entity_description.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\xcb\x01\n\x11\x45ntityDescription\x12\x19\n\x11short_description\x18\x01 \x01(\t\x12\x39\n\x10long_description\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12\x0c\n\x04tags\x18\x03 \x03(\t\x12&\n\x06labels\x18\x04 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12*\n\x06source\x18\x05 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xcc\x01\n\x0fLongDescription\x12\x0e\n\x06values\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\x12\x46\n\x0blong_format\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\"m\n\nSourceCode\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12\x13\n\x0bline_number\x18\x02 \x01(\r\x12\x0c\n\x04repo\x18\x03 \x01(\t\x12\x0e\n\x06\x62ranch\x18\x04 \x01(\t\x12\x0c\n\x04link\x18\x05 \x01(\t\x12\x10\n\x08language\x18\x06 \x01(\tB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/entity_description.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\xf7\x01\n\x11\x45ntityDescription\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x19\n\x11short_description\x18\x02 \x01(\t\x12\x39\n\x10long_description\x18\x03 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12&\n\x06labels\x18\x05 \x01(\x0b\x32\x16.flyteidl.admin.Labels\x12/\n\x0bsource_code\x18\x06 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xcc\x01\n\x0fLongDescription\x12\x0e\n\x06values\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\x12\x46\n\x0blong_format\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\"\x1a\n\nSourceCode\x12\x0c\n\x04link\x18\x05 \x01(\tB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -53,8 +53,8 @@ _LONGDESCRIPTION_DESCRIPTIONFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=466,
-  serialized_end=531,
+  serialized_start=510,
+  serialized_end=575,
 )
 _sym_db.RegisterEnumDescriptor(_LONGDESCRIPTION_DESCRIPTIONFORMAT)
 
@@ -67,36 +67,43 @@ _ENTITYDESCRIPTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='short_description', full_name='flyteidl.admin.EntityDescription.short_description', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='id', full_name='flyteidl.admin.EntityDescription.id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='short_description', full_name='flyteidl.admin.EntityDescription.short_description', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='long_description', full_name='flyteidl.admin.EntityDescription.long_description', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='long_description', full_name='flyteidl.admin.EntityDescription.long_description', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tags', full_name='flyteidl.admin.EntityDescription.tags', index=2,
-      number=3, type=9, cpp_type=9, label=3,
+      name='tags', full_name='flyteidl.admin.EntityDescription.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='flyteidl.admin.EntityDescription.labels', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='labels', full_name='flyteidl.admin.EntityDescription.labels', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='source', full_name='flyteidl.admin.EntityDescription.source', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='source_code', full_name='flyteidl.admin.EntityDescription.source_code', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -114,7 +121,7 @@ _ENTITYDESCRIPTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=121,
-  serialized_end=324,
+  serialized_end=368,
 )
 
 
@@ -166,8 +173,8 @@ _LONGDESCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=327,
-  serialized_end=531,
+  serialized_start=371,
+  serialized_end=575,
 )
 
 
@@ -179,43 +186,8 @@ _SOURCECODE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='file', full_name='flyteidl.admin.SourceCode.file', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='line_number', full_name='flyteidl.admin.SourceCode.line_number', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='repo', full_name='flyteidl.admin.SourceCode.repo', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='branch', full_name='flyteidl.admin.SourceCode.branch', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='link', full_name='flyteidl.admin.SourceCode.link', index=4,
+      name='link', full_name='flyteidl.admin.SourceCode.link', index=0,
       number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='language', full_name='flyteidl.admin.SourceCode.language', index=5,
-      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -232,13 +204,14 @@ _SOURCECODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=533,
-  serialized_end=642,
+  serialized_start=577,
+  serialized_end=603,
 )
 
+_ENTITYDESCRIPTION.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
 _ENTITYDESCRIPTION.fields_by_name['long_description'].message_type = _LONGDESCRIPTION
 _ENTITYDESCRIPTION.fields_by_name['labels'].message_type = flyteidl_dot_admin_dot_common__pb2._LABELS
-_ENTITYDESCRIPTION.fields_by_name['source'].message_type = _SOURCECODE
+_ENTITYDESCRIPTION.fields_by_name['source_code'].message_type = _SOURCECODE
 _LONGDESCRIPTION.fields_by_name['long_format'].enum_type = _LONGDESCRIPTION_DESCRIPTIONFORMAT
 _LONGDESCRIPTION_DESCRIPTIONFORMAT.containing_type = _LONGDESCRIPTION
 DESCRIPTOR.message_types_by_name['EntityDescription'] = _ENTITYDESCRIPTION

@@ -194,10 +194,10 @@ class EntityDescription final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string tags = 3;
+  // repeated string tags = 4;
   int tags_size() const;
   void clear_tags();
-  static const int kTagsFieldNumber = 3;
+  static const int kTagsFieldNumber = 4;
   const ::std::string& tags(int index) const;
   ::std::string* mutable_tags(int index);
   void set_tags(int index, const ::std::string& value);
@@ -216,9 +216,9 @@ class EntityDescription final :
   const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
   ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
 
-  // string short_description = 1;
+  // string short_description = 2;
   void clear_short_description();
-  static const int kShortDescriptionFieldNumber = 1;
+  static const int kShortDescriptionFieldNumber = 2;
   const ::std::string& short_description() const;
   void set_short_description(const ::std::string& value);
   #if LANG_CXX11
@@ -230,32 +230,41 @@ class EntityDescription final :
   ::std::string* release_short_description();
   void set_allocated_short_description(::std::string* short_description);
 
-  // .flyteidl.admin.LongDescription long_description = 2;
+  // .flyteidl.core.Identifier id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::flyteidl::core::Identifier& id() const;
+  ::flyteidl::core::Identifier* release_id();
+  ::flyteidl::core::Identifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::Identifier* id);
+
+  // .flyteidl.admin.LongDescription long_description = 3;
   bool has_long_description() const;
   void clear_long_description();
-  static const int kLongDescriptionFieldNumber = 2;
+  static const int kLongDescriptionFieldNumber = 3;
   const ::flyteidl::admin::LongDescription& long_description() const;
   ::flyteidl::admin::LongDescription* release_long_description();
   ::flyteidl::admin::LongDescription* mutable_long_description();
   void set_allocated_long_description(::flyteidl::admin::LongDescription* long_description);
 
-  // .flyteidl.admin.Labels labels = 4;
+  // .flyteidl.admin.Labels labels = 5;
   bool has_labels() const;
   void clear_labels();
-  static const int kLabelsFieldNumber = 4;
+  static const int kLabelsFieldNumber = 5;
   const ::flyteidl::admin::Labels& labels() const;
   ::flyteidl::admin::Labels* release_labels();
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
-  // .flyteidl.admin.SourceCode source = 5;
-  bool has_source() const;
-  void clear_source();
-  static const int kSourceFieldNumber = 5;
-  const ::flyteidl::admin::SourceCode& source() const;
-  ::flyteidl::admin::SourceCode* release_source();
-  ::flyteidl::admin::SourceCode* mutable_source();
-  void set_allocated_source(::flyteidl::admin::SourceCode* source);
+  // .flyteidl.admin.SourceCode source_code = 6;
+  bool has_source_code() const;
+  void clear_source_code();
+  static const int kSourceCodeFieldNumber = 6;
+  const ::flyteidl::admin::SourceCode& source_code() const;
+  ::flyteidl::admin::SourceCode* release_source_code();
+  ::flyteidl::admin::SourceCode* mutable_source_code();
+  void set_allocated_source_code(::flyteidl::admin::SourceCode* source_code);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.EntityDescription)
  private:
@@ -264,9 +273,10 @@ class EntityDescription final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr short_description_;
+  ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::LongDescription* long_description_;
   ::flyteidl::admin::Labels* labels_;
-  ::flyteidl::admin::SourceCode* source_;
+  ::flyteidl::admin::SourceCode* source_code_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fentity_5fdescription_2eproto;
 };
@@ -554,48 +564,6 @@ class SourceCode final :
 
   // accessors -------------------------------------------------------
 
-  // string file = 1;
-  void clear_file();
-  static const int kFileFieldNumber = 1;
-  const ::std::string& file() const;
-  void set_file(const ::std::string& value);
-  #if LANG_CXX11
-  void set_file(::std::string&& value);
-  #endif
-  void set_file(const char* value);
-  void set_file(const char* value, size_t size);
-  ::std::string* mutable_file();
-  ::std::string* release_file();
-  void set_allocated_file(::std::string* file);
-
-  // string repo = 3;
-  void clear_repo();
-  static const int kRepoFieldNumber = 3;
-  const ::std::string& repo() const;
-  void set_repo(const ::std::string& value);
-  #if LANG_CXX11
-  void set_repo(::std::string&& value);
-  #endif
-  void set_repo(const char* value);
-  void set_repo(const char* value, size_t size);
-  ::std::string* mutable_repo();
-  ::std::string* release_repo();
-  void set_allocated_repo(::std::string* repo);
-
-  // string branch = 4;
-  void clear_branch();
-  static const int kBranchFieldNumber = 4;
-  const ::std::string& branch() const;
-  void set_branch(const ::std::string& value);
-  #if LANG_CXX11
-  void set_branch(::std::string&& value);
-  #endif
-  void set_branch(const char* value);
-  void set_branch(const char* value, size_t size);
-  ::std::string* mutable_branch();
-  ::std::string* release_branch();
-  void set_allocated_branch(::std::string* branch);
-
   // string link = 5;
   void clear_link();
   static const int kLinkFieldNumber = 5;
@@ -610,37 +578,12 @@ class SourceCode final :
   ::std::string* release_link();
   void set_allocated_link(::std::string* link);
 
-  // string language = 6;
-  void clear_language();
-  static const int kLanguageFieldNumber = 6;
-  const ::std::string& language() const;
-  void set_language(const ::std::string& value);
-  #if LANG_CXX11
-  void set_language(::std::string&& value);
-  #endif
-  void set_language(const char* value);
-  void set_language(const char* value, size_t size);
-  ::std::string* mutable_language();
-  ::std::string* release_language();
-  void set_allocated_language(::std::string* language);
-
-  // uint32 line_number = 2;
-  void clear_line_number();
-  static const int kLineNumberFieldNumber = 2;
-  ::google::protobuf::uint32 line_number() const;
-  void set_line_number(::google::protobuf::uint32 value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.SourceCode)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr file_;
-  ::google::protobuf::internal::ArenaStringPtr repo_;
-  ::google::protobuf::internal::ArenaStringPtr branch_;
   ::google::protobuf::internal::ArenaStringPtr link_;
-  ::google::protobuf::internal::ArenaStringPtr language_;
-  ::google::protobuf::uint32 line_number_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fentity_5fdescription_2eproto;
 };
@@ -655,7 +598,52 @@ class SourceCode final :
 #endif  // __GNUC__
 // EntityDescription
 
-// string short_description = 1;
+// .flyteidl.core.Identifier id = 1;
+inline bool EntityDescription::has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline const ::flyteidl::core::Identifier& EntityDescription::id() const {
+  const ::flyteidl::core::Identifier* p = id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.EntityDescription.id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
+      &::flyteidl::core::_Identifier_default_instance_);
+}
+inline ::flyteidl::core::Identifier* EntityDescription::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.EntityDescription.id)
+  
+  ::flyteidl::core::Identifier* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Identifier* EntityDescription::mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.EntityDescription.id)
+  return id_;
+}
+inline void EntityDescription::set_allocated_id(::flyteidl::core::Identifier* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.id)
+}
+
+// string short_description = 2;
 inline void EntityDescription::clear_short_description() {
   short_description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -708,7 +696,7 @@ inline void EntityDescription::set_allocated_short_description(::std::string* sh
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.short_description)
 }
 
-// .flyteidl.admin.LongDescription long_description = 2;
+// .flyteidl.admin.LongDescription long_description = 3;
 inline bool EntityDescription::has_long_description() const {
   return this != internal_default_instance() && long_description_ != nullptr;
 }
@@ -759,7 +747,7 @@ inline void EntityDescription::set_allocated_long_description(::flyteidl::admin:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.long_description)
 }
 
-// repeated string tags = 3;
+// repeated string tags = 4;
 inline int EntityDescription::tags_size() const {
   return tags_.size();
 }
@@ -828,7 +816,7 @@ EntityDescription::mutable_tags() {
   return &tags_;
 }
 
-// .flyteidl.admin.Labels labels = 4;
+// .flyteidl.admin.Labels labels = 5;
 inline bool EntityDescription::has_labels() const {
   return this != internal_default_instance() && labels_ != nullptr;
 }
@@ -873,55 +861,55 @@ inline void EntityDescription::set_allocated_labels(::flyteidl::admin::Labels* l
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.labels)
 }
 
-// .flyteidl.admin.SourceCode source = 5;
-inline bool EntityDescription::has_source() const {
-  return this != internal_default_instance() && source_ != nullptr;
+// .flyteidl.admin.SourceCode source_code = 6;
+inline bool EntityDescription::has_source_code() const {
+  return this != internal_default_instance() && source_code_ != nullptr;
 }
-inline void EntityDescription::clear_source() {
-  if (GetArenaNoVirtual() == nullptr && source_ != nullptr) {
-    delete source_;
+inline void EntityDescription::clear_source_code() {
+  if (GetArenaNoVirtual() == nullptr && source_code_ != nullptr) {
+    delete source_code_;
   }
-  source_ = nullptr;
+  source_code_ = nullptr;
 }
-inline const ::flyteidl::admin::SourceCode& EntityDescription::source() const {
-  const ::flyteidl::admin::SourceCode* p = source_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.EntityDescription.source)
+inline const ::flyteidl::admin::SourceCode& EntityDescription::source_code() const {
+  const ::flyteidl::admin::SourceCode* p = source_code_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.EntityDescription.source_code)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::SourceCode*>(
       &::flyteidl::admin::_SourceCode_default_instance_);
 }
-inline ::flyteidl::admin::SourceCode* EntityDescription::release_source() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.EntityDescription.source)
+inline ::flyteidl::admin::SourceCode* EntityDescription::release_source_code() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.EntityDescription.source_code)
   
-  ::flyteidl::admin::SourceCode* temp = source_;
-  source_ = nullptr;
+  ::flyteidl::admin::SourceCode* temp = source_code_;
+  source_code_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::SourceCode* EntityDescription::mutable_source() {
+inline ::flyteidl::admin::SourceCode* EntityDescription::mutable_source_code() {
   
-  if (source_ == nullptr) {
+  if (source_code_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::admin::SourceCode>(GetArenaNoVirtual());
-    source_ = p;
+    source_code_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.EntityDescription.source)
-  return source_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.EntityDescription.source_code)
+  return source_code_;
 }
-inline void EntityDescription::set_allocated_source(::flyteidl::admin::SourceCode* source) {
+inline void EntityDescription::set_allocated_source_code(::flyteidl::admin::SourceCode* source_code) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete source_;
+    delete source_code_;
   }
-  if (source) {
+  if (source_code) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      source = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, source, submessage_arena);
+      source_code = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, source_code, submessage_arena);
     }
     
   } else {
     
   }
-  source_ = source;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.source)
+  source_code_ = source_code;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.EntityDescription.source_code)
 }
 
 // -------------------------------------------------------------------
@@ -1105,179 +1093,6 @@ inline void LongDescription::set_allocated_icon_link(::std::string* icon_link) {
 
 // SourceCode
 
-// string file = 1;
-inline void SourceCode::clear_file() {
-  file_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SourceCode::file() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SourceCode.file)
-  return file_.GetNoArena();
-}
-inline void SourceCode::set_file(const ::std::string& value) {
-  
-  file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SourceCode.file)
-}
-#if LANG_CXX11
-inline void SourceCode::set_file(::std::string&& value) {
-  
-  file_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SourceCode.file)
-}
-#endif
-inline void SourceCode::set_file(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SourceCode.file)
-}
-inline void SourceCode::set_file(const char* value, size_t size) {
-  
-  file_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SourceCode.file)
-}
-inline ::std::string* SourceCode::mutable_file() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SourceCode.file)
-  return file_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SourceCode::release_file() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SourceCode.file)
-  
-  return file_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SourceCode::set_allocated_file(::std::string* file) {
-  if (file != nullptr) {
-    
-  } else {
-    
-  }
-  file_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), file);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SourceCode.file)
-}
-
-// uint32 line_number = 2;
-inline void SourceCode::clear_line_number() {
-  line_number_ = 0u;
-}
-inline ::google::protobuf::uint32 SourceCode::line_number() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SourceCode.line_number)
-  return line_number_;
-}
-inline void SourceCode::set_line_number(::google::protobuf::uint32 value) {
-  
-  line_number_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SourceCode.line_number)
-}
-
-// string repo = 3;
-inline void SourceCode::clear_repo() {
-  repo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SourceCode::repo() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SourceCode.repo)
-  return repo_.GetNoArena();
-}
-inline void SourceCode::set_repo(const ::std::string& value) {
-  
-  repo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SourceCode.repo)
-}
-#if LANG_CXX11
-inline void SourceCode::set_repo(::std::string&& value) {
-  
-  repo_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SourceCode.repo)
-}
-#endif
-inline void SourceCode::set_repo(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  repo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SourceCode.repo)
-}
-inline void SourceCode::set_repo(const char* value, size_t size) {
-  
-  repo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SourceCode.repo)
-}
-inline ::std::string* SourceCode::mutable_repo() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SourceCode.repo)
-  return repo_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SourceCode::release_repo() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SourceCode.repo)
-  
-  return repo_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SourceCode::set_allocated_repo(::std::string* repo) {
-  if (repo != nullptr) {
-    
-  } else {
-    
-  }
-  repo_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), repo);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SourceCode.repo)
-}
-
-// string branch = 4;
-inline void SourceCode::clear_branch() {
-  branch_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SourceCode::branch() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SourceCode.branch)
-  return branch_.GetNoArena();
-}
-inline void SourceCode::set_branch(const ::std::string& value) {
-  
-  branch_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SourceCode.branch)
-}
-#if LANG_CXX11
-inline void SourceCode::set_branch(::std::string&& value) {
-  
-  branch_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SourceCode.branch)
-}
-#endif
-inline void SourceCode::set_branch(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  branch_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SourceCode.branch)
-}
-inline void SourceCode::set_branch(const char* value, size_t size) {
-  
-  branch_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SourceCode.branch)
-}
-inline ::std::string* SourceCode::mutable_branch() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SourceCode.branch)
-  return branch_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SourceCode::release_branch() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SourceCode.branch)
-  
-  return branch_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SourceCode::set_allocated_branch(::std::string* branch) {
-  if (branch != nullptr) {
-    
-  } else {
-    
-  }
-  branch_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), branch);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SourceCode.branch)
-}
-
 // string link = 5;
 inline void SourceCode::clear_link() {
   link_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1329,59 +1144,6 @@ inline void SourceCode::set_allocated_link(::std::string* link) {
   }
   link_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), link);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SourceCode.link)
-}
-
-// string language = 6;
-inline void SourceCode::clear_language() {
-  language_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SourceCode::language() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.SourceCode.language)
-  return language_.GetNoArena();
-}
-inline void SourceCode::set_language(const ::std::string& value) {
-  
-  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.SourceCode.language)
-}
-#if LANG_CXX11
-inline void SourceCode::set_language(::std::string&& value) {
-  
-  language_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.SourceCode.language)
-}
-#endif
-inline void SourceCode::set_language(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.SourceCode.language)
-}
-inline void SourceCode::set_language(const char* value, size_t size) {
-  
-  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.SourceCode.language)
-}
-inline ::std::string* SourceCode::mutable_language() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.SourceCode.language)
-  return language_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SourceCode::release_language() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.SourceCode.language)
-  
-  return language_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SourceCode::set_allocated_language(::std::string* language) {
-  if (language != nullptr) {
-    
-  } else {
-    
-  }
-  language_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), language);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.SourceCode.language)
 }
 
 #ifdef __GNUC__

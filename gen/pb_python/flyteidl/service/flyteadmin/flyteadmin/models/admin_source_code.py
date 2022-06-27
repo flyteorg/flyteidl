@@ -31,130 +31,21 @@ class AdminSourceCode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'file': 'str',
-        'line_number': 'int',
-        'repo': 'str',
-        'branch': 'str',
-        'link': 'str',
-        'language': 'str'
+        'link': 'str'
     }
 
     attribute_map = {
-        'file': 'file',
-        'line_number': 'line_number',
-        'repo': 'repo',
-        'branch': 'branch',
-        'link': 'link',
-        'language': 'language'
+        'link': 'link'
     }
 
-    def __init__(self, file=None, line_number=None, repo=None, branch=None, link=None, language=None):  # noqa: E501
+    def __init__(self, link=None):  # noqa: E501
         """AdminSourceCode - a model defined in Swagger"""  # noqa: E501
 
-        self._file = None
-        self._line_number = None
-        self._repo = None
-        self._branch = None
         self._link = None
-        self._language = None
         self.discriminator = None
 
-        if file is not None:
-            self.file = file
-        if line_number is not None:
-            self.line_number = line_number
-        if repo is not None:
-            self.repo = repo
-        if branch is not None:
-            self.branch = branch
         if link is not None:
             self.link = link
-        if language is not None:
-            self.language = language
-
-    @property
-    def file(self):
-        """Gets the file of this AdminSourceCode.  # noqa: E501
-
-
-        :return: The file of this AdminSourceCode.  # noqa: E501
-        :rtype: str
-        """
-        return self._file
-
-    @file.setter
-    def file(self, file):
-        """Sets the file of this AdminSourceCode.
-
-
-        :param file: The file of this AdminSourceCode.  # noqa: E501
-        :type: str
-        """
-
-        self._file = file
-
-    @property
-    def line_number(self):
-        """Gets the line_number of this AdminSourceCode.  # noqa: E501
-
-
-        :return: The line_number of this AdminSourceCode.  # noqa: E501
-        :rtype: int
-        """
-        return self._line_number
-
-    @line_number.setter
-    def line_number(self, line_number):
-        """Sets the line_number of this AdminSourceCode.
-
-
-        :param line_number: The line_number of this AdminSourceCode.  # noqa: E501
-        :type: int
-        """
-
-        self._line_number = line_number
-
-    @property
-    def repo(self):
-        """Gets the repo of this AdminSourceCode.  # noqa: E501
-
-
-        :return: The repo of this AdminSourceCode.  # noqa: E501
-        :rtype: str
-        """
-        return self._repo
-
-    @repo.setter
-    def repo(self, repo):
-        """Sets the repo of this AdminSourceCode.
-
-
-        :param repo: The repo of this AdminSourceCode.  # noqa: E501
-        :type: str
-        """
-
-        self._repo = repo
-
-    @property
-    def branch(self):
-        """Gets the branch of this AdminSourceCode.  # noqa: E501
-
-
-        :return: The branch of this AdminSourceCode.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch
-
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this AdminSourceCode.
-
-
-        :param branch: The branch of this AdminSourceCode.  # noqa: E501
-        :type: str
-        """
-
-        self._branch = branch
 
     @property
     def link(self):
@@ -176,27 +67,6 @@ class AdminSourceCode(object):
         """
 
         self._link = link
-
-    @property
-    def language(self):
-        """Gets the language of this AdminSourceCode.  # noqa: E501
-
-
-        :return: The language of this AdminSourceCode.  # noqa: E501
-        :rtype: str
-        """
-        return self._language
-
-    @language.setter
-    def language(self, language):
-        """Sets the language of this AdminSourceCode.
-
-
-        :param language: The language of this AdminSourceCode.  # noqa: E501
-        :type: str
-        """
-
-        self._language = language
 
     def to_dict(self):
         """Returns the model properties as a dict"""
