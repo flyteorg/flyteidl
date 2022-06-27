@@ -429,7 +429,7 @@ type AdminServiceServer_GetDescription struct {
 	*mock.Call
 }
 
-func (_m AdminServiceServer_GetDescription) Return(_a0 *admin.EntityDescription, _a1 error) *AdminServiceServer_GetDescription {
+func (_m AdminServiceServer_GetDescription) Return(_a0 *admin.DescriptionEntity, _a1 error) *AdminServiceServer_GetDescription {
 	return &AdminServiceServer_GetDescription{Call: _m.Call.Return(_a0, _a1)}
 }
 
@@ -444,15 +444,15 @@ func (_m *AdminServiceServer) OnGetDescriptionMatch(matchers ...interface{}) *Ad
 }
 
 // GetDescription provides a mock function with given fields: _a0, _a1
-func (_m *AdminServiceServer) GetDescription(_a0 context.Context, _a1 *admin.ObjectGetRequest) (*admin.EntityDescription, error) {
+func (_m *AdminServiceServer) GetDescription(_a0 context.Context, _a1 *admin.ObjectGetRequest) (*admin.DescriptionEntity, error) {
 	ret := _m.Called(_a0, _a1)
 
-	var r0 *admin.EntityDescription
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.ObjectGetRequest) *admin.EntityDescription); ok {
+	var r0 *admin.DescriptionEntity
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ObjectGetRequest) *admin.DescriptionEntity); ok {
 		r0 = rf(_a0, _a1)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.EntityDescription)
+			r0 = ret.Get(0).(*admin.DescriptionEntity)
 		}
 	}
 

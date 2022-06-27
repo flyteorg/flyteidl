@@ -501,7 +501,7 @@ type AdminServiceClient_GetDescription struct {
 	*mock.Call
 }
 
-func (_m AdminServiceClient_GetDescription) Return(_a0 *admin.EntityDescription, _a1 error) *AdminServiceClient_GetDescription {
+func (_m AdminServiceClient_GetDescription) Return(_a0 *admin.DescriptionEntity, _a1 error) *AdminServiceClient_GetDescription {
 	return &AdminServiceClient_GetDescription{Call: _m.Call.Return(_a0, _a1)}
 }
 
@@ -516,7 +516,7 @@ func (_m *AdminServiceClient) OnGetDescriptionMatch(matchers ...interface{}) *Ad
 }
 
 // GetDescription provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) GetDescription(ctx context.Context, in *admin.ObjectGetRequest, opts ...grpc.CallOption) (*admin.EntityDescription, error) {
+func (_m *AdminServiceClient) GetDescription(ctx context.Context, in *admin.ObjectGetRequest, opts ...grpc.CallOption) (*admin.DescriptionEntity, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -526,12 +526,12 @@ func (_m *AdminServiceClient) GetDescription(ctx context.Context, in *admin.Obje
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *admin.EntityDescription
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.ObjectGetRequest, ...grpc.CallOption) *admin.EntityDescription); ok {
+	var r0 *admin.DescriptionEntity
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.ObjectGetRequest, ...grpc.CallOption) *admin.DescriptionEntity); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.EntityDescription)
+			r0 = ret.Get(0).(*admin.DescriptionEntity)
 		}
 	}
 

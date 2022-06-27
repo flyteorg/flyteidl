@@ -10,7 +10,7 @@ import "flyteidl/core/interface.proto";
 import "flyteidl/core/security.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
-import "flyteidl/admin/entity_description.proto";
+import "flyteidl/admin/description_entity.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
@@ -127,8 +127,8 @@ message LaunchPlanSpec {
     // around the bool field.
     google.protobuf.BoolValue interruptible = 19;
 
-    // EntityDescription encapsulates all the detailed documentation for the launch plan.
-    EntityDescription entity_description = 20;
+    // DescriptionEntity encapsulates all the detailed documentation for the launch plan.
+    DescriptionEntity description_entity = 20;
 }
 
 // Values computed by the flyte platform after launch plan registration.

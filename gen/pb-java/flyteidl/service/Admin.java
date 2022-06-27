@@ -36,7 +36,7 @@ public final class Admin {
       "l/admin/node_execution.proto\032#flyteidl/a" +
       "dmin/task_execution.proto\032\034flyteidl/admi" +
       "n/version.proto\032\033flyteidl/admin/common.p" +
-      "roto\032\'flyteidl/admin/entity_description." +
+      "roto\032\'flyteidl/admin/description_entity." +
       "proto\032,protoc-gen-swagger/options/annota" +
       "tions.proto2\367i\n\014AdminService\022\305\002\n\nCreateT" +
       "ask\022!.flyteidl.admin.TaskCreateRequest\032\"" +
@@ -373,8 +373,8 @@ public final class Admin {
       "trieve the Version (including the Build " +
       " information) for FlyteAdmin service\022\326\001\n" +
       "\016GetDescription\022 .flyteidl.admin.ObjectG" +
-      "etRequest\032!.flyteidl.admin.EntityDescrip" +
-      "tion\"\177\202\323\344\223\002L\022J/api/v1/entity_description" +
+      "etRequest\032!.flyteidl.admin.DescriptionEn" +
+      "tity\"\177\202\323\344\223\002L\022J/api/v1/entity_description" +
       "/{id.project}/{id.domain}/{id.name}/{id." +
       "version}\222A*\032(Retrieve an existing entity" +
       " description.B9Z7github.com/flyteorg/fly" +
@@ -405,7 +405,7 @@ public final class Admin {
           flyteidl.admin.TaskExecutionOuterClass.getDescriptor(),
           flyteidl.admin.VersionOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
-          flyteidl.admin.EntityDescriptionOuterClass.getDescriptor(),
+          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
           grpc.gateway.protoc_gen_swagger.options.Annotations.getDescriptor(),
         }, assigner);
     com.google.protobuf.ExtensionRegistry registry =
@@ -428,7 +428,7 @@ public final class Admin {
     flyteidl.admin.TaskExecutionOuterClass.getDescriptor();
     flyteidl.admin.VersionOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
-    flyteidl.admin.EntityDescriptionOuterClass.getDescriptor();
+    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
     grpc.gateway.protoc_gen_swagger.options.Annotations.getDescriptor();
   }
 

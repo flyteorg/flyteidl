@@ -456,7 +456,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminEntityDescription"
+              "$ref": "#/definitions/adminDescriptionEntity"
             }
           }
         },
@@ -3343,34 +3343,7 @@
       },
       "description": "Options for schedules to run according to a cron expression."
     },
-    "adminDomain": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Globally unique domain name."
-        },
-        "name": {
-          "type": "string",
-          "description": "Display name."
-        }
-      },
-      "description": "Namespace within a project commonly used to differentiate between different service instances.\ne.g. \"production\", \"development\", etc."
-    },
-    "adminEmailNotification": {
-      "type": "object",
-      "properties": {
-        "recipients_email": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "The list of email addresses recipients for this notification.\n+required"
-        }
-      },
-      "description": "Defines an email notification specification."
-    },
-    "adminEntityDescription": {
+    "adminDescriptionEntity": {
       "type": "object",
       "properties": {
         "id": {
@@ -3401,7 +3374,34 @@
           "description": "Optional link to source code used to define this entity."
         }
       },
-      "description": "EntityDescription contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
+      "description": "DescriptionEntity contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
+    },
+    "adminDomain": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique domain name."
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name."
+        }
+      },
+      "description": "Namespace within a project commonly used to differentiate between different service instances.\ne.g. \"production\", \"development\", etc."
+    },
+    "adminEmailNotification": {
+      "type": "object",
+      "properties": {
+        "recipients_email": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "The list of email addresses recipients for this notification.\n+required"
+        }
+      },
+      "description": "Defines an email notification specification."
     },
     "adminExecution": {
       "type": "object",
@@ -3966,8 +3966,8 @@
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
         },
-        "entity_description": {
-          "$ref": "#/definitions/adminEntityDescription",
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
           "description": "EntityDescription encapsulates all the detailed documentation for the launch plan."
         }
       },
@@ -4910,8 +4910,8 @@
           "$ref": "#/definitions/coreTaskTemplate",
           "description": "Template of the task that encapsulates all the metadata of the task."
         },
-        "entity_description": {
-          "$ref": "#/definitions/adminEntityDescription",
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
           "description": "EntityDescription encapsulates all the detailed documentation for the task."
         }
       },
@@ -5180,8 +5180,8 @@
           },
           "description": "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the\npropeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out\nto Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered."
         },
-        "entity_description": {
-          "$ref": "#/definitions/adminEntityDescription",
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
           "description": "EntityDescription encapsulates all the detailed documentation for the workflow."
         }
       },

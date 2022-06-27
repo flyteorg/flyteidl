@@ -1016,20 +1016,20 @@ Retrieve an existing entity description.
  * @param optional nil or *GetDescriptionOpts - Optional Parameters:
      * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
 
-@return AdminEntityDescription
+@return AdminDescriptionEntity
 */
 
 type GetDescriptionOpts struct { 
 	IdResourceType optional.String
 }
 
-func (a *AdminServiceApiService) GetDescription(ctx context.Context, idProject string, idDomain string, idName string, idVersion string, localVarOptionals *GetDescriptionOpts) (AdminEntityDescription, *http.Response, error) {
+func (a *AdminServiceApiService) GetDescription(ctx context.Context, idProject string, idDomain string, idName string, idVersion string, localVarOptionals *GetDescriptionOpts) (AdminDescriptionEntity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AdminEntityDescription
+		localVarReturnValue AdminDescriptionEntity
 	)
 
 	// create path and map variables
@@ -1094,7 +1094,7 @@ func (a *AdminServiceApiService) GetDescription(ctx context.Context, idProject s
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AdminEntityDescription
+			var v AdminDescriptionEntity
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

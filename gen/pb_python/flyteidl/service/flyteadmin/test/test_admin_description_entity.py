@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_entity_description import AdminEntityDescription  # noqa: E501
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminEntityDescription(unittest.TestCase):
-    """AdminEntityDescription unit test stubs"""
+class TestAdminDescriptionEntity(unittest.TestCase):
+    """AdminDescriptionEntity unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminEntityDescription(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminEntityDescription(self):
-        """Test AdminEntityDescription"""
+    def testAdminDescriptionEntity(self):
+        """Test AdminDescriptionEntity"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_entity_description.AdminEntityDescription()  # noqa: E501
+        # model = flyteadmin.models.admin_description_entity.AdminDescriptionEntity()  # noqa: E501
         pass
 
 

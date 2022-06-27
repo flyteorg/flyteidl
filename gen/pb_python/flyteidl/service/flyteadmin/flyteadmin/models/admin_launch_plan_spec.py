@@ -19,7 +19,7 @@ import six
 from flyteadmin.models.admin_annotations import AdminAnnotations  # noqa: F401,E501
 from flyteadmin.models.admin_auth import AdminAuth  # noqa: F401,E501
 from flyteadmin.models.admin_auth_role import AdminAuthRole  # noqa: F401,E501
-from flyteadmin.models.admin_entity_description import AdminEntityDescription  # noqa: F401,E501
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_launch_plan_metadata import AdminLaunchPlanMetadata  # noqa: F401,E501
 from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig  # noqa: F401,E501
@@ -58,7 +58,7 @@ class AdminLaunchPlanSpec(object):
         'raw_output_data_config': 'AdminRawOutputDataConfig',
         'max_parallelism': 'int',
         'interruptible': 'bool',
-        'entity_description': 'AdminEntityDescription'
+        'description_entity': 'AdminDescriptionEntity'
     }
 
     attribute_map = {
@@ -76,10 +76,10 @@ class AdminLaunchPlanSpec(object):
         'raw_output_data_config': 'raw_output_data_config',
         'max_parallelism': 'max_parallelism',
         'interruptible': 'interruptible',
-        'entity_description': 'entity_description'
+        'description_entity': 'description_entity'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, quality_of_service=None, raw_output_data_config=None, max_parallelism=None, interruptible=None, entity_description=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, quality_of_service=None, raw_output_data_config=None, max_parallelism=None, interruptible=None, description_entity=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -96,7 +96,7 @@ class AdminLaunchPlanSpec(object):
         self._raw_output_data_config = None
         self._max_parallelism = None
         self._interruptible = None
-        self._entity_description = None
+        self._description_entity = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -127,8 +127,8 @@ class AdminLaunchPlanSpec(object):
             self.max_parallelism = max_parallelism
         if interruptible is not None:
             self.interruptible = interruptible
-        if entity_description is not None:
-            self.entity_description = entity_description
+        if description_entity is not None:
+            self.description_entity = description_entity
 
     @property
     def workflow_id(self):
@@ -443,27 +443,27 @@ class AdminLaunchPlanSpec(object):
         self._interruptible = interruptible
 
     @property
-    def entity_description(self):
-        """Gets the entity_description of this AdminLaunchPlanSpec.  # noqa: E501
+    def description_entity(self):
+        """Gets the description_entity of this AdminLaunchPlanSpec.  # noqa: E501
 
         EntityDescription encapsulates all the detailed documentation for the launch plan.  # noqa: E501
 
-        :return: The entity_description of this AdminLaunchPlanSpec.  # noqa: E501
-        :rtype: AdminEntityDescription
+        :return: The description_entity of this AdminLaunchPlanSpec.  # noqa: E501
+        :rtype: AdminDescriptionEntity
         """
-        return self._entity_description
+        return self._description_entity
 
-    @entity_description.setter
-    def entity_description(self, entity_description):
-        """Sets the entity_description of this AdminLaunchPlanSpec.
+    @description_entity.setter
+    def description_entity(self, description_entity):
+        """Sets the description_entity of this AdminLaunchPlanSpec.
 
         EntityDescription encapsulates all the detailed documentation for the launch plan.  # noqa: E501
 
-        :param entity_description: The entity_description of this AdminLaunchPlanSpec.  # noqa: E501
-        :type: AdminEntityDescription
+        :param description_entity: The description_entity of this AdminLaunchPlanSpec.  # noqa: E501
+        :type: AdminDescriptionEntity
         """
 
-        self._entity_description = entity_description
+        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -8609,82 +8609,82 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of an EntityDescription. */
-        interface IEntityDescription {
+        /** Properties of a DescriptionEntity. */
+        interface IDescriptionEntity {
 
-            /** EntityDescription id */
+            /** DescriptionEntity id */
             id?: (flyteidl.core.IIdentifier|null);
 
-            /** EntityDescription shortDescription */
+            /** DescriptionEntity shortDescription */
             shortDescription?: (string|null);
 
-            /** EntityDescription longDescription */
+            /** DescriptionEntity longDescription */
             longDescription?: (flyteidl.admin.ILongDescription|null);
 
-            /** EntityDescription tags */
+            /** DescriptionEntity tags */
             tags?: (string[]|null);
 
-            /** EntityDescription labels */
+            /** DescriptionEntity labels */
             labels?: (flyteidl.admin.ILabels|null);
 
-            /** EntityDescription sourceCode */
+            /** DescriptionEntity sourceCode */
             sourceCode?: (flyteidl.admin.ISourceCode|null);
         }
 
-        /** Represents an EntityDescription. */
-        class EntityDescription implements IEntityDescription {
+        /** Represents a DescriptionEntity. */
+        class DescriptionEntity implements IDescriptionEntity {
 
             /**
-             * Constructs a new EntityDescription.
+             * Constructs a new DescriptionEntity.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IEntityDescription);
+            constructor(properties?: flyteidl.admin.IDescriptionEntity);
 
-            /** EntityDescription id. */
+            /** DescriptionEntity id. */
             public id?: (flyteidl.core.IIdentifier|null);
 
-            /** EntityDescription shortDescription. */
+            /** DescriptionEntity shortDescription. */
             public shortDescription: string;
 
-            /** EntityDescription longDescription. */
+            /** DescriptionEntity longDescription. */
             public longDescription?: (flyteidl.admin.ILongDescription|null);
 
-            /** EntityDescription tags. */
+            /** DescriptionEntity tags. */
             public tags: string[];
 
-            /** EntityDescription labels. */
+            /** DescriptionEntity labels. */
             public labels?: (flyteidl.admin.ILabels|null);
 
-            /** EntityDescription sourceCode. */
+            /** DescriptionEntity sourceCode. */
             public sourceCode?: (flyteidl.admin.ISourceCode|null);
 
             /**
-             * Creates a new EntityDescription instance using the specified properties.
+             * Creates a new DescriptionEntity instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns EntityDescription instance
+             * @returns DescriptionEntity instance
              */
-            public static create(properties?: flyteidl.admin.IEntityDescription): flyteidl.admin.EntityDescription;
+            public static create(properties?: flyteidl.admin.IDescriptionEntity): flyteidl.admin.DescriptionEntity;
 
             /**
-             * Encodes the specified EntityDescription message. Does not implicitly {@link flyteidl.admin.EntityDescription.verify|verify} messages.
-             * @param message EntityDescription message or plain object to encode
+             * Encodes the specified DescriptionEntity message. Does not implicitly {@link flyteidl.admin.DescriptionEntity.verify|verify} messages.
+             * @param message DescriptionEntity message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IEntityDescription, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IDescriptionEntity, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes an EntityDescription message from the specified reader or buffer.
+             * Decodes a DescriptionEntity message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns EntityDescription
+             * @returns DescriptionEntity
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.EntityDescription;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntity;
 
             /**
-             * Verifies an EntityDescription message.
+             * Verifies a DescriptionEntity message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8818,6 +8818,110 @@ export namespace flyteidl {
 
             /**
              * Verifies a SourceCode message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DescriptionEntityCreateRequest. */
+        interface IDescriptionEntityCreateRequest {
+
+            /** DescriptionEntityCreateRequest id */
+            id?: (flyteidl.core.IIdentifier|null);
+
+            /** DescriptionEntityCreateRequest descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+        }
+
+        /** Represents a DescriptionEntityCreateRequest. */
+        class DescriptionEntityCreateRequest implements IDescriptionEntityCreateRequest {
+
+            /**
+             * Constructs a new DescriptionEntityCreateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IDescriptionEntityCreateRequest);
+
+            /** DescriptionEntityCreateRequest id. */
+            public id?: (flyteidl.core.IIdentifier|null);
+
+            /** DescriptionEntityCreateRequest descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+
+            /**
+             * Creates a new DescriptionEntityCreateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DescriptionEntityCreateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IDescriptionEntityCreateRequest): flyteidl.admin.DescriptionEntityCreateRequest;
+
+            /**
+             * Encodes the specified DescriptionEntityCreateRequest message. Does not implicitly {@link flyteidl.admin.DescriptionEntityCreateRequest.verify|verify} messages.
+             * @param message DescriptionEntityCreateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IDescriptionEntityCreateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DescriptionEntityCreateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DescriptionEntityCreateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityCreateRequest;
+
+            /**
+             * Verifies a DescriptionEntityCreateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DescriptionEntityCreateResponse. */
+        interface IDescriptionEntityCreateResponse {
+        }
+
+        /** Represents a DescriptionEntityCreateResponse. */
+        class DescriptionEntityCreateResponse implements IDescriptionEntityCreateResponse {
+
+            /**
+             * Constructs a new DescriptionEntityCreateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IDescriptionEntityCreateResponse);
+
+            /**
+             * Creates a new DescriptionEntityCreateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DescriptionEntityCreateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IDescriptionEntityCreateResponse): flyteidl.admin.DescriptionEntityCreateResponse;
+
+            /**
+             * Encodes the specified DescriptionEntityCreateResponse message. Does not implicitly {@link flyteidl.admin.DescriptionEntityCreateResponse.verify|verify} messages.
+             * @param message DescriptionEntityCreateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IDescriptionEntityCreateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DescriptionEntityCreateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DescriptionEntityCreateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityCreateResponse;
+
+            /**
+             * Verifies a DescriptionEntityCreateResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -11062,8 +11166,8 @@ export namespace flyteidl {
             /** LaunchPlanSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
 
-            /** LaunchPlanSpec entityDescription */
-            entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** LaunchPlanSpec descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -11117,8 +11221,8 @@ export namespace flyteidl {
             /** LaunchPlanSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
 
-            /** LaunchPlanSpec entityDescription. */
-            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** LaunchPlanSpec descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -14435,8 +14539,8 @@ export namespace flyteidl {
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec entityDescription */
-            entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** TaskSpec descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14451,8 +14555,8 @@ export namespace flyteidl {
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec entityDescription. */
-            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** TaskSpec descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15447,8 +15551,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
 
-            /** WorkflowSpec entityDescription */
-            entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** WorkflowSpec descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15466,8 +15570,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
 
-            /** WorkflowSpec entityDescription. */
-            public entityDescription?: (flyteidl.admin.IEntityDescription|null);
+            /** WorkflowSpec descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -16651,7 +16755,7 @@ export namespace flyteidl {
             /**
              * Calls GetDescription.
              * @param request ObjectGetRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and EntityDescription
+             * @param callback Node-style callback called with the error, if any, and DescriptionEntity
              */
             public getDescription(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetDescriptionCallback): void;
 
@@ -16660,7 +16764,7 @@ export namespace flyteidl {
              * @param request ObjectGetRequest message or plain object
              * @returns Promise
              */
-            public getDescription(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.EntityDescription>;
+            public getDescription(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.DescriptionEntity>;
         }
 
         namespace AdminService {
@@ -16997,9 +17101,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getDescription}.
              * @param error Error, if any
-             * @param [response] EntityDescription
+             * @param [response] DescriptionEntity
              */
-            type GetDescriptionCallback = (error: (Error|null), response?: flyteidl.admin.EntityDescription) => void;
+            type GetDescriptionCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntity) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

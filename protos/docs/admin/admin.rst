@@ -742,26 +742,26 @@ Sort.Direction
 
 
 
-.. _ref_flyteidl/admin/entity_description.proto:
+.. _ref_flyteidl/admin/description_entity.proto:
 
-flyteidl/admin/entity_description.proto
+flyteidl/admin/description_entity.proto
 ==================================================================
 
 
 
 
 
-.. _ref_flyteidl.admin.EntityDescription:
+.. _ref_flyteidl.admin.DescriptionEntity:
 
-EntityDescription
+DescriptionEntity
 ------------------------------------------------------------------
 
-EntityDescription contains detailed description for the task/workflow/launch plan.
+DescriptionEntity contains detailed description for the task/workflow/launch plan.
 Documentation could provide insight into the algorithms, business use case, etc.
 
 
 
-.. csv-table:: EntityDescription type fields
+.. csv-table:: DescriptionEntity type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
@@ -771,6 +771,45 @@ Documentation could provide insight into the algorithms, business use case, etc.
    "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities."
    "source_code", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DescriptionEntityCreateRequest:
+
+DescriptionEntityCreateRequest
+------------------------------------------------------------------
+
+Represents a request structure to create a revision of a task.
+See :ref:`ref_flyteidl.admin.Task` for more details
+
+
+
+.. csv-table:: DescriptionEntityCreateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task. +required"
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description. +required"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DescriptionEntityCreateResponse:
+
+DescriptionEntityCreateResponse
+------------------------------------------------------------------
+
+Represents a response structure if task creation succeeds.
+
+Purposefully empty, may be populated in the future.
+
 
 
 
@@ -1860,7 +1899,7 @@ User-provided launch plan definition and configuration values.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
-   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the launch plan."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the launch plan."
 
 
 
@@ -3285,7 +3324,7 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
-   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the task."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the task."
 
 
 
@@ -3727,7 +3766,7 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
-   "entity_description", ":ref:`ref_flyteidl.admin.EntityDescription`", "", "EntityDescription encapsulates all the detailed documentation for the workflow."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the workflow."
 
 
 

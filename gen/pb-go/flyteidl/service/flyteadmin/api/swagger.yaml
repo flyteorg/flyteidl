@@ -456,7 +456,7 @@ paths:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminEntityDescription"
+            $ref: "#/definitions/adminDescriptionEntity"
   /api/v1/events/nodes:
     post:
       tags:
@@ -3080,6 +3080,55 @@ definitions:
     example:
       schedule: "schedule"
       offset: "offset"
+  adminDescriptionEntity:
+    type: "object"
+    properties:
+      id:
+        description: "Indicates a unique version of resource."
+        $ref: "#/definitions/coreIdentifier"
+      short_description:
+        type: "string"
+        description: "One-liner overview of the entity."
+      long_description:
+        description: "Full user description with formatting preserved."
+        $ref: "#/definitions/adminLongDescription"
+      tags:
+        type: "array"
+        description: "User-specified tags. These are arbitrary and can be used for\
+          \ searching\nfiltering and discovering entities."
+        items:
+          type: "string"
+      labels:
+        description: "User-defined free-form key-value pair attributes. These are\
+          \ arbitrary\nand can be used for searching, filtering and discovering entities."
+        $ref: "#/definitions/adminLabels"
+      source_code:
+        description: "Optional link to source code used to define this entity."
+        $ref: "#/definitions/adminSourceCode"
+    description: "DescriptionEntity contains detailed description for the task/workflow/launch\
+      \ plan.\nDocumentation could provide insight into the algorithms, business use\
+      \ case, etc."
+    example:
+      short_description: "short_description"
+      id:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
+      long_description:
+        values: "values"
+        icon_link: "icon_link"
+        uri: "uri"
+        long_format: {}
+      source_code:
+        link: "link"
+      tags:
+      - "tags"
+      - "tags"
+      labels:
+        values:
+          key: "values"
   adminDomain:
     type: "object"
     properties:
@@ -3107,55 +3156,6 @@ definitions:
       recipients_email:
       - "recipients_email"
       - "recipients_email"
-  adminEntityDescription:
-    type: "object"
-    properties:
-      id:
-        description: "Indicates a unique version of resource."
-        $ref: "#/definitions/coreIdentifier"
-      short_description:
-        type: "string"
-        description: "One-liner overview of the entity."
-      long_description:
-        description: "Full user description with formatting preserved."
-        $ref: "#/definitions/adminLongDescription"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering entities."
-        items:
-          type: "string"
-      labels:
-        description: "User-defined free-form key-value pair attributes. These are\
-          \ arbitrary\nand can be used for searching, filtering and discovering entities."
-        $ref: "#/definitions/adminLabels"
-      source_code:
-        description: "Optional link to source code used to define this entity."
-        $ref: "#/definitions/adminSourceCode"
-    description: "EntityDescription contains detailed description for the task/workflow/launch\
-      \ plan.\nDocumentation could provide insight into the algorithms, business use\
-      \ case, etc."
-    example:
-      short_description: "short_description"
-      id:
-        domain: "domain"
-        resource_type: {}
-        name: "name"
-        project: "project"
-        version: "version"
-      long_description:
-        values: "values"
-        icon_link: "icon_link"
-        uri: "uri"
-        long_format: {}
-      source_code:
-        link: "link"
-      tags:
-      - "tags"
-      - "tags"
-      labels:
-        values:
-          key: "values"
   adminExecution:
     type: "object"
     properties:
@@ -4738,7 +4738,7 @@ definitions:
         labels:
           values:
             key: "values"
-        entity_description:
+        description_entity:
           short_description: "short_description"
           id:
             domain: "domain"
@@ -5557,7 +5557,7 @@ definitions:
           labels:
             values:
               key: "values"
-          entity_description:
+          description_entity:
             short_description: "short_description"
             id:
               domain: "domain"
@@ -6091,7 +6091,7 @@ definitions:
           labels:
             values:
               key: "values"
-          entity_description:
+          description_entity:
             short_description: "short_description"
             id:
               domain: "domain"
@@ -6444,10 +6444,10 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
-      entity_description:
+      description_entity:
         description: "EntityDescription encapsulates all the detailed documentation\
           \ for the launch plan."
-        $ref: "#/definitions/adminEntityDescription"
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6511,7 +6511,7 @@ definitions:
       labels:
         values:
           key: "values"
-      entity_description:
+      description_entity:
         short_description: "short_description"
         id:
           domain: "domain"
@@ -15982,10 +15982,10 @@ definitions:
         description: "Template of the task that encapsulates all the metadata of the\
           \ task."
         $ref: "#/definitions/coreTaskTemplate"
-      entity_description:
+      description_entity:
         description: "EntityDescription encapsulates all the detailed documentation\
           \ for the task."
-        $ref: "#/definitions/adminEntityDescription"
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the user-configured specification\
       \ of the task."
   adminToleration:
@@ -40572,10 +40572,10 @@ definitions:
           \ do not even need to be registered."
         items:
           $ref: "#/definitions/coreWorkflowTemplate"
-      entity_description:
+      description_entity:
         description: "EntityDescription encapsulates all the detailed documentation\
           \ for the workflow."
-        $ref: "#/definitions/adminEntityDescription"
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the specification of the\
       \ workflow."
   coreAlias:

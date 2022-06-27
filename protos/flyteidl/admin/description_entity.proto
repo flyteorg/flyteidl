@@ -6,9 +6,9 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/admin/common.proto";
 
-// EntityDescription contains detailed description for the task/workflow/launch plan.
+// DescriptionEntity contains detailed description for the task/workflow/launch plan.
 // Documentation could provide insight into the algorithms, business use case, etc.
-message EntityDescription {
+message DescriptionEntity {
   // Indicates a unique version of resource.
   core.Identifier id = 1;
   // One-liner overview of the entity.
@@ -51,4 +51,21 @@ message LongDescription {
 // Link to source code used to define this entity
 message SourceCode {
   string link = 5;
+}
+
+// Represents a request structure to create a revision of a task.
+// See :ref:`ref_flyteidl.admin.Task` for more details
+message DescriptionEntityCreateRequest {
+  // id represents the unique identifier of the task.
+  // +required
+  core.Identifier id           = 1;
+
+  // Represents the specification for Description.
+  // +required
+  DescriptionEntity description_entity        = 2;
+}
+
+// Represents a response structure if task creation succeeds.
+message DescriptionEntityCreateResponse {
+  // Purposefully empty, may be populated in the future.
 }

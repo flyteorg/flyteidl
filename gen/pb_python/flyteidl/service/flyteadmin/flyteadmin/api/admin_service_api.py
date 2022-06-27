@@ -1094,7 +1094,7 @@ class AdminServiceApi(object):
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
         :param str id_resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :return: AdminEntityDescription
+        :return: AdminDescriptionEntity
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1120,7 +1120,7 @@ class AdminServiceApi(object):
         :param str id_name: User provided value for the resource. (required)
         :param str id_version: Specific version of the resource. (required)
         :param str id_resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :return: AdminEntityDescription
+        :return: AdminDescriptionEntity
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1198,7 +1198,7 @@ class AdminServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AdminEntityDescription',  # noqa: E501
+            response_type='AdminDescriptionEntity',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

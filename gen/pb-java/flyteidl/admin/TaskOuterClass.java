@@ -3444,28 +3444,28 @@ public final class TaskOuterClass {
 
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    boolean hasEntityDescription();
+    boolean hasDescriptionEntity();
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -3524,14 +3524,14 @@ public final class TaskOuterClass {
               break;
             }
             case 18: {
-              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder subBuilder = null;
-              if (entityDescription_ != null) {
-                subBuilder = entityDescription_.toBuilder();
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
+              if (descriptionEntity_ != null) {
+                subBuilder = descriptionEntity_.toBuilder();
               }
-              entityDescription_ = input.readMessage(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.parser(), extensionRegistry);
+              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(entityDescription_);
-                entityDescription_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(descriptionEntity_);
+                descriptionEntity_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3601,37 +3601,37 @@ public final class TaskOuterClass {
       return getTemplate();
     }
 
-    public static final int ENTITY_DESCRIPTION_FIELD_NUMBER = 2;
-    private flyteidl.admin.EntityDescriptionOuterClass.EntityDescription entityDescription_;
+    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 2;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public boolean hasEntityDescription() {
-      return entityDescription_ != null;
+    public boolean hasDescriptionEntity() {
+      return descriptionEntity_ != null;
     }
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription() {
-      return entityDescription_ == null ? flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
     }
     /**
      * <pre>
-     * EntityDescription encapsulates all the detailed documentation for the task.
+     * DescriptionEntity encapsulates all the detailed documentation for the task.
      * </pre>
      *
-     * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder() {
-      return getEntityDescription();
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+      return getDescriptionEntity();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3651,8 +3651,8 @@ public final class TaskOuterClass {
       if (template_ != null) {
         output.writeMessage(1, getTemplate());
       }
-      if (entityDescription_ != null) {
-        output.writeMessage(2, getEntityDescription());
+      if (descriptionEntity_ != null) {
+        output.writeMessage(2, getDescriptionEntity());
       }
       unknownFields.writeTo(output);
     }
@@ -3667,9 +3667,9 @@ public final class TaskOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTemplate());
       }
-      if (entityDescription_ != null) {
+      if (descriptionEntity_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getEntityDescription());
+          .computeMessageSize(2, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3691,10 +3691,10 @@ public final class TaskOuterClass {
         if (!getTemplate()
             .equals(other.getTemplate())) return false;
       }
-      if (hasEntityDescription() != other.hasEntityDescription()) return false;
-      if (hasEntityDescription()) {
-        if (!getEntityDescription()
-            .equals(other.getEntityDescription())) return false;
+      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
+      if (hasDescriptionEntity()) {
+        if (!getDescriptionEntity()
+            .equals(other.getDescriptionEntity())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3711,9 +3711,9 @@ public final class TaskOuterClass {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getTemplate().hashCode();
       }
-      if (hasEntityDescription()) {
-        hash = (37 * hash) + ENTITY_DESCRIPTION_FIELD_NUMBER;
-        hash = (53 * hash) + getEntityDescription().hashCode();
+      if (hasDescriptionEntity()) {
+        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntity().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3858,11 +3858,11 @@ public final class TaskOuterClass {
           template_ = null;
           templateBuilder_ = null;
         }
-        if (entityDescriptionBuilder_ == null) {
-          entityDescription_ = null;
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
         } else {
-          entityDescription_ = null;
-          entityDescriptionBuilder_ = null;
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
         }
         return this;
       }
@@ -3895,10 +3895,10 @@ public final class TaskOuterClass {
         } else {
           result.template_ = templateBuilder_.build();
         }
-        if (entityDescriptionBuilder_ == null) {
-          result.entityDescription_ = entityDescription_;
+        if (descriptionEntityBuilder_ == null) {
+          result.descriptionEntity_ = descriptionEntity_;
         } else {
-          result.entityDescription_ = entityDescriptionBuilder_.build();
+          result.descriptionEntity_ = descriptionEntityBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3951,8 +3951,8 @@ public final class TaskOuterClass {
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
         }
-        if (other.hasEntityDescription()) {
-          mergeEntityDescription(other.getEntityDescription());
+        if (other.hasDescriptionEntity()) {
+          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4136,157 +4136,157 @@ public final class TaskOuterClass {
         return templateBuilder_;
       }
 
-      private flyteidl.admin.EntityDescriptionOuterClass.EntityDescription entityDescription_;
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder> entityDescriptionBuilder_;
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public boolean hasEntityDescription() {
-        return entityDescriptionBuilder_ != null || entityDescription_ != null;
+      public boolean hasDescriptionEntity() {
+        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription getEntityDescription() {
-        if (entityDescriptionBuilder_ == null) {
-          return entityDescription_ == null ? flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
         } else {
-          return entityDescriptionBuilder_.getMessage();
+          return descriptionEntityBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder setEntityDescription(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription value) {
-        if (entityDescriptionBuilder_ == null) {
+      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          entityDescription_ = value;
+          descriptionEntity_ = value;
           onChanged();
         } else {
-          entityDescriptionBuilder_.setMessage(value);
+          descriptionEntityBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder setEntityDescription(
-          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder builderForValue) {
-        if (entityDescriptionBuilder_ == null) {
-          entityDescription_ = builderForValue.build();
+      public Builder setDescriptionEntity(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = builderForValue.build();
           onChanged();
         } else {
-          entityDescriptionBuilder_.setMessage(builderForValue.build());
+          descriptionEntityBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder mergeEntityDescription(flyteidl.admin.EntityDescriptionOuterClass.EntityDescription value) {
-        if (entityDescriptionBuilder_ == null) {
-          if (entityDescription_ != null) {
-            entityDescription_ =
-              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.newBuilder(entityDescription_).mergeFrom(value).buildPartial();
+      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (descriptionEntity_ != null) {
+            descriptionEntity_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
           } else {
-            entityDescription_ = value;
+            descriptionEntity_ = value;
           }
           onChanged();
         } else {
-          entityDescriptionBuilder_.mergeFrom(value);
+          descriptionEntityBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder clearEntityDescription() {
-        if (entityDescriptionBuilder_ == null) {
-          entityDescription_ = null;
+      public Builder clearDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
           onChanged();
         } else {
-          entityDescription_ = null;
-          entityDescriptionBuilder_ = null;
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder getEntityDescriptionBuilder() {
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
         
         onChanged();
-        return getEntityDescriptionFieldBuilder().getBuilder();
+        return getDescriptionEntityFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder getEntityDescriptionOrBuilder() {
-        if (entityDescriptionBuilder_ != null) {
-          return entityDescriptionBuilder_.getMessageOrBuilder();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+        if (descriptionEntityBuilder_ != null) {
+          return descriptionEntityBuilder_.getMessageOrBuilder();
         } else {
-          return entityDescription_ == null ?
-              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.getDefaultInstance() : entityDescription_;
+          return descriptionEntity_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
         }
       }
       /**
        * <pre>
-       * EntityDescription encapsulates all the detailed documentation for the task.
+       * DescriptionEntity encapsulates all the detailed documentation for the task.
        * </pre>
        *
-       * <code>.flyteidl.admin.EntityDescription entity_description = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder> 
-          getEntityDescriptionFieldBuilder() {
-        if (entityDescriptionBuilder_ == null) {
-          entityDescriptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.EntityDescriptionOuterClass.EntityDescription, flyteidl.admin.EntityDescriptionOuterClass.EntityDescription.Builder, flyteidl.admin.EntityDescriptionOuterClass.EntityDescriptionOrBuilder>(
-                  getEntityDescription(),
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+          getDescriptionEntityFieldBuilder() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
+                  getDescriptionEntity(),
                   getParentForChildren(),
                   isClean());
-          entityDescription_ = null;
+          descriptionEntity_ = null;
         }
-        return entityDescriptionBuilder_;
+        return descriptionEntityBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5314,7 +5314,7 @@ public final class TaskOuterClass {
       "min\032\036flyteidl/core/identifier.proto\032\031fly" +
       "teidl/core/tasks.proto\032\034flyteidl/core/co" +
       "mpiler.proto\032\037google/protobuf/timestamp." +
-      "proto\032\'flyteidl/admin/entity_description" +
+      "proto\032\'flyteidl/admin/description_entity" +
       ".proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132" +
       "\031.flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\013" +
       "2\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreate" +
@@ -5323,9 +5323,9 @@ public final class TaskOuterClass {
       "idl.admin.TaskClosure\">\n\010TaskList\022#\n\005tas" +
       "ks\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030" +
       "\002 \001(\t\"x\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fl" +
-      "yteidl.core.TaskTemplate\022=\n\022entity_descr" +
-      "iption\030\002 \001(\0132!.flyteidl.admin.EntityDesc" +
-      "ription\"q\n\013TaskClosure\0222\n\rcompiled_task\030" +
+      "yteidl.core.TaskTemplate\022=\n\022description_" +
+      "entity\030\002 \001(\0132!.flyteidl.admin.Descriptio" +
+      "nEntity\"q\n\013TaskClosure\0222\n\rcompiled_task\030" +
       "\001 \001(\0132\033.flyteidl.core.CompiledTask\022.\n\ncr" +
       "eated_at\030\002 \001(\0132\032.google.protobuf.Timesta" +
       "mpB7Z5github.com/flyteorg/flyteidl/gen/p" +
@@ -5346,7 +5346,7 @@ public final class TaskOuterClass {
           flyteidl.core.Tasks.getDescriptor(),
           flyteidl.core.Compiler.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          flyteidl.admin.EntityDescriptionOuterClass.getDescriptor(),
+          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_TaskCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5377,7 +5377,7 @@ public final class TaskOuterClass {
     internal_static_flyteidl_admin_TaskSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskSpec_descriptor,
-        new java.lang.String[] { "Template", "EntityDescription", });
+        new java.lang.String[] { "Template", "DescriptionEntity", });
     internal_static_flyteidl_admin_TaskClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_TaskClosure_fieldAccessorTable = new
@@ -5388,7 +5388,7 @@ public final class TaskOuterClass {
     flyteidl.core.Tasks.getDescriptor();
     flyteidl.core.Compiler.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    flyteidl.admin.EntityDescriptionOuterClass.getDescriptor();
+    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

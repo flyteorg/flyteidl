@@ -50,7 +50,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "l/admin/node_execution.proto\032#flyteidl/a"
   "dmin/task_execution.proto\032\034flyteidl/admi"
   "n/version.proto\032\033flyteidl/admin/common.p"
-  "roto\032\'flyteidl/admin/entity_description."
+  "roto\032\'flyteidl/admin/description_entity."
   "proto\032,protoc-gen-swagger/options/annota"
   "tions.proto2\367i\n\014AdminService\022\305\002\n\nCreateT"
   "ask\022!.flyteidl.admin.TaskCreateRequest\032\""
@@ -387,8 +387,8 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "trieve the Version (including the Build "
   " information) for FlyteAdmin service\022\326\001\n"
   "\016GetDescription\022 .flyteidl.admin.ObjectG"
-  "etRequest\032!.flyteidl.admin.EntityDescrip"
-  "tion\"\177\202\323\344\223\002L\022J/api/v1/entity_description"
+  "etRequest\032!.flyteidl.admin.DescriptionEn"
+  "tity\"\177\202\323\344\223\002L\022J/api/v1/entity_description"
   "/{id.project}/{id.domain}/{id.name}/{id."
   "version}\222A*\032(Retrieve an existing entity"
   " description.B9Z7github.com/flyteorg/fly"
@@ -417,7 +417,7 @@ void AddDescriptors_flyteidl_2fservice_2fadmin_2eproto() {
     ::AddDescriptors_flyteidl_2fadmin_2ftask_5fexecution_2eproto,
     ::AddDescriptors_flyteidl_2fadmin_2fversion_2eproto,
     ::AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto,
-    ::AddDescriptors_flyteidl_2fadmin_2fentity_5fdescription_2eproto,
+    ::AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto,
     ::AddDescriptors_protoc_2dgen_2dswagger_2foptions_2fannotations_2eproto,
   };
  ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fservice_2fadmin_2eproto, deps, 16);
