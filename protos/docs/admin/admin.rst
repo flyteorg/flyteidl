@@ -765,7 +765,6 @@ Documentation could provide insight into the algorithms, business use case, etc.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "Indicates a unique version of resource."
    "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
    "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
    "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."

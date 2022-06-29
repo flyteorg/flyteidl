@@ -9,20 +9,18 @@ import "flyteidl/admin/common.proto";
 // DescriptionEntity contains detailed description for the task/workflow/launch plan.
 // Documentation could provide insight into the algorithms, business use case, etc.
 message DescriptionEntity {
-  // Indicates a unique version of resource.
-  core.Identifier id = 1;
   // One-liner overview of the entity.
-  string short_description = 2;
+  string short_description = 1;
   // Full user description with formatting preserved.
-  LongDescription long_description = 3;
+  LongDescription long_description = 2;
   // User-specified tags. These are arbitrary and can be used for searching
   // filtering and discovering entities.
-  repeated string tags = 4;
+  repeated string tags = 3;
   // User-defined free-form key-value pair attributes. These are arbitrary
   // and can be used for searching, filtering and discovering entities.
-  Labels labels = 5;
+  Labels labels = 4;
   // Optional link to source code used to define this entity.
-  SourceCode source_code = 6;
+  SourceCode source_code = 5;
 }
 
 // Full user description with formatting preserved. This can be rendered

@@ -446,7 +446,7 @@ class AdminLaunchPlanSpec(object):
     def description_entity(self):
         """Gets the description_entity of this AdminLaunchPlanSpec.  # noqa: E501
 
-        EntityDescription encapsulates all the detailed documentation for the launch plan.  # noqa: E501
+        DescriptionEntity encapsulates all the detailed documentation for the launch plan.  # noqa: E501
 
         :return: The description_entity of this AdminLaunchPlanSpec.  # noqa: E501
         :rtype: AdminDescriptionEntity
@@ -457,7 +457,7 @@ class AdminLaunchPlanSpec(object):
     def description_entity(self, description_entity):
         """Sets the description_entity of this AdminLaunchPlanSpec.
 
-        EntityDescription encapsulates all the detailed documentation for the launch plan.  # noqa: E501
+        DescriptionEntity encapsulates all the detailed documentation for the launch plan.  # noqa: E501
 
         :param description_entity: The description_entity of this AdminLaunchPlanSpec.  # noqa: E501
         :type: AdminDescriptionEntity

@@ -1079,13 +1079,13 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_description(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.  # noqa: E501
+    def get_description_entity(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
 
         Retrieve an existing entity description.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_description(id_project, id_domain, id_name, id_version, async_req=True)
+        >>> thread = api.get_description_entity(id_project, id_domain, id_name, id_version, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1100,18 +1100,18 @@ class AdminServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_description_with_http_info(id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
+            return self.get_description_entity_with_http_info(id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_description_with_http_info(id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
+            (data) = self.get_description_entity_with_http_info(id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
             return data
 
-    def get_description_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
-        """Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.  # noqa: E501
+    def get_description_entity_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
 
         Retrieve an existing entity description.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_description_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
+        >>> thread = api.get_description_entity_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1136,26 +1136,26 @@ class AdminServiceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_description" % key
+                    " to method get_description_entity" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id_project' is set
         if ('id_project' not in params or
                 params['id_project'] is None):
-            raise ValueError("Missing the required parameter `id_project` when calling `get_description`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id_project` when calling `get_description_entity`")  # noqa: E501
         # verify the required parameter 'id_domain' is set
         if ('id_domain' not in params or
                 params['id_domain'] is None):
-            raise ValueError("Missing the required parameter `id_domain` when calling `get_description`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id_domain` when calling `get_description_entity`")  # noqa: E501
         # verify the required parameter 'id_name' is set
         if ('id_name' not in params or
                 params['id_name'] is None):
-            raise ValueError("Missing the required parameter `id_name` when calling `get_description`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id_name` when calling `get_description_entity`")  # noqa: E501
         # verify the required parameter 'id_version' is set
         if ('id_version' not in params or
                 params['id_version'] is None):
-            raise ValueError("Missing the required parameter `id_version` when calling `get_description`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id_version` when calling `get_description_entity`")  # noqa: E501
 
         collection_formats = {}
 

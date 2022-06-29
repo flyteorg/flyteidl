@@ -191,6 +191,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "TaskExecutionIdTaskIdResourceType"
         x-optionalDataType: "String"
       - name: "limit"
@@ -392,6 +393,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -403,9 +405,9 @@ paths:
     get:
       tags:
       - "AdminService"
-      summary: "Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition."
+      summary: "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
       description: "Retrieve an existing entity description."
-      operationId: "GetDescription"
+      operationId: "GetDescriptionEntity"
       parameters:
       - name: "id.project"
         in: "path"
@@ -450,6 +452,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1074,6 +1077,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1193,6 +1197,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1238,6 +1243,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1292,6 +1298,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "project"
         in: "path"
@@ -1778,6 +1785,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2170,6 +2178,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2637,6 +2646,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
+        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -3083,9 +3093,6 @@ definitions:
   adminDescriptionEntity:
     type: "object"
     properties:
-      id:
-        description: "Indicates a unique version of resource."
-        $ref: "#/definitions/coreIdentifier"
       short_description:
         type: "string"
         description: "One-liner overview of the entity."
@@ -3110,12 +3117,6 @@ definitions:
       \ case, etc."
     example:
       short_description: "short_description"
-      id:
-        domain: "domain"
-        resource_type: {}
-        name: "name"
-        project: "project"
-        version: "version"
       long_description:
         values: "values"
         icon_link: "icon_link"
@@ -3129,6 +3130,9 @@ definitions:
       labels:
         values:
           key: "values"
+  adminDescriptionEntityCreateResponse:
+    type: "object"
+    description: "Represents a response structure if task creation succeeds."
   adminDomain:
     type: "object"
     properties:
@@ -4740,12 +4744,6 @@ definitions:
             key: "values"
         description_entity:
           short_description: "short_description"
-          id:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           long_description:
             values: "values"
             icon_link: "icon_link"
@@ -5559,12 +5557,6 @@ definitions:
               key: "values"
           description_entity:
             short_description: "short_description"
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             long_description:
               values: "values"
               icon_link: "icon_link"
@@ -6093,12 +6085,6 @@ definitions:
               key: "values"
           description_entity:
             short_description: "short_description"
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             long_description:
               values: "values"
               icon_link: "icon_link"
@@ -6445,7 +6431,7 @@ definitions:
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
       description_entity:
-        description: "EntityDescription encapsulates all the detailed documentation\
+        description: "DescriptionEntity encapsulates all the detailed documentation\
           \ for the launch plan."
         $ref: "#/definitions/adminDescriptionEntity"
     description: "User-provided launch plan definition and configuration values."
@@ -6513,12 +6499,6 @@ definitions:
           key: "values"
       description_entity:
         short_description: "short_description"
-        id:
-          domain: "domain"
-          resource_type: {}
-          name: "name"
-          project: "project"
-          version: "version"
         long_description:
           values: "values"
           icon_link: "icon_link"
@@ -15983,7 +15963,7 @@ definitions:
           \ task."
         $ref: "#/definitions/coreTaskTemplate"
       description_entity:
-        description: "EntityDescription encapsulates all the detailed documentation\
+        description: "DescriptionEntity encapsulates all the detailed documentation\
           \ for the task."
         $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the user-configured specification\
@@ -40573,7 +40553,7 @@ definitions:
         items:
           $ref: "#/definitions/coreWorkflowTemplate"
       description_entity:
-        description: "EntityDescription encapsulates all the detailed documentation\
+        description: "DescriptionEntity encapsulates all the detailed documentation\
           \ for the workflow."
         $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the specification of the\
@@ -51211,6 +51191,7 @@ definitions:
     - "WORKFLOW"
     - "LAUNCH_PLAN"
     - "DATASET"
+    - "DESCRIPTION_ENTITY"
     default: "UNSPECIFIED"
   coreResources:
     type: "object"

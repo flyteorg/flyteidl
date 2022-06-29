@@ -204,7 +204,8 @@ export namespace flyteidl {
             TASK = 1,
             WORKFLOW = 2,
             LAUNCH_PLAN = 3,
-            DATASET = 4
+            DATASET = 4,
+            DESCRIPTION_ENTITY = 5
         }
 
         /** Properties of an Identifier. */
@@ -8612,9 +8613,6 @@ export namespace flyteidl {
         /** Properties of a DescriptionEntity. */
         interface IDescriptionEntity {
 
-            /** DescriptionEntity id */
-            id?: (flyteidl.core.IIdentifier|null);
-
             /** DescriptionEntity shortDescription */
             shortDescription?: (string|null);
 
@@ -8639,9 +8637,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.admin.IDescriptionEntity);
-
-            /** DescriptionEntity id. */
-            public id?: (flyteidl.core.IIdentifier|null);
 
             /** DescriptionEntity shortDescription. */
             public shortDescription: string;
@@ -16753,18 +16748,32 @@ export namespace flyteidl {
             public getVersion(request: flyteidl.admin.IGetVersionRequest): Promise<flyteidl.admin.GetVersionResponse>;
 
             /**
-             * Calls GetDescription.
+             * Calls CreateDescriptionEntity.
+             * @param request DescriptionEntityCreateRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and DescriptionEntityCreateResponse
+             */
+            public createDescriptionEntity(request: flyteidl.admin.IDescriptionEntityCreateRequest, callback: flyteidl.service.AdminService.CreateDescriptionEntityCallback): void;
+
+            /**
+             * Calls CreateDescriptionEntity.
+             * @param request DescriptionEntityCreateRequest message or plain object
+             * @returns Promise
+             */
+            public createDescriptionEntity(request: flyteidl.admin.IDescriptionEntityCreateRequest): Promise<flyteidl.admin.DescriptionEntityCreateResponse>;
+
+            /**
+             * Calls GetDescriptionEntity.
              * @param request ObjectGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and DescriptionEntity
              */
-            public getDescription(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetDescriptionCallback): void;
+            public getDescriptionEntity(request: flyteidl.admin.IObjectGetRequest, callback: flyteidl.service.AdminService.GetDescriptionEntityCallback): void;
 
             /**
-             * Calls GetDescription.
+             * Calls GetDescriptionEntity.
              * @param request ObjectGetRequest message or plain object
              * @returns Promise
              */
-            public getDescription(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.DescriptionEntity>;
+            public getDescriptionEntity(request: flyteidl.admin.IObjectGetRequest): Promise<flyteidl.admin.DescriptionEntity>;
         }
 
         namespace AdminService {
@@ -17099,11 +17108,18 @@ export namespace flyteidl {
             type GetVersionCallback = (error: (Error|null), response?: flyteidl.admin.GetVersionResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.AdminService#getDescription}.
+             * Callback as used by {@link flyteidl.service.AdminService#createDescriptionEntity}.
+             * @param error Error, if any
+             * @param [response] DescriptionEntityCreateResponse
+             */
+            type CreateDescriptionEntityCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntityCreateResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getDescriptionEntity}.
              * @param error Error, if any
              * @param [response] DescriptionEntity
              */
-            type GetDescriptionCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntity) => void;
+            type GetDescriptionEntityCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntity) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

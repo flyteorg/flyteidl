@@ -38,7 +38,7 @@ public final class Admin {
       "n/version.proto\032\033flyteidl/admin/common.p" +
       "roto\032\'flyteidl/admin/description_entity." +
       "proto\032,protoc-gen-swagger/options/annota" +
-      "tions.proto2\367i\n\014AdminService\022\305\002\n\nCreateT" +
+      "tions.proto2\373k\n\014AdminService\022\305\002\n\nCreateT" +
       "ask\022!.flyteidl.admin.TaskCreateRequest\032\"" +
       ".flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344" +
       "\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and re" +
@@ -371,14 +371,21 @@ public final class Admin {
       "rsionRequest\032\".flyteidl.admin.GetVersion" +
       "Response\"j\202\323\344\223\002\021\022\017/api/v1/version\222AP\032NRe" +
       "trieve the Version (including the Build " +
-      " information) for FlyteAdmin service\022\326\001\n" +
-      "\016GetDescription\022 .flyteidl.admin.ObjectG" +
-      "etRequest\032!.flyteidl.admin.DescriptionEn" +
-      "tity\"\177\202\323\344\223\002L\022J/api/v1/entity_description" +
-      "/{id.project}/{id.domain}/{id.name}/{id." +
-      "version}\222A*\032(Retrieve an existing entity" +
-      " description.B9Z7github.com/flyteorg/fly" +
-      "teidl/gen/pb-go/flyteidl/serviceb\006proto3"
+      " information) for FlyteAdmin service\022\373\001\n" +
+      "\027CreateDescriptionEntity\022..flyteidl.admi" +
+      "n.DescriptionEntityCreateRequest\032/.flyte" +
+      "idl.admin.DescriptionEntityCreateRespons" +
+      "e\"\177\202\323\344\223\002L\022J/api/v1/entity_description/{i" +
+      "d.project}/{id.domain}/{id.name}/{id.ver" +
+      "sion}\222A*\032(Retrieve an existing entity de" +
+      "scription.\022\334\001\n\024GetDescriptionEntity\022 .fl" +
+      "yteidl.admin.ObjectGetRequest\032!.flyteidl" +
+      ".admin.DescriptionEntity\"\177\202\323\344\223\002L\022J/api/v" +
+      "1/entity_description/{id.project}/{id.do" +
+      "main}/{id.name}/{id.version}\222A*\032(Retriev" +
+      "e an existing entity description.B9Z7git" +
+      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
+      "eidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

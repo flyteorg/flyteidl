@@ -464,6 +464,7 @@ export const flyteidl = $root.flyteidl = (() => {
          * @property {number} WORKFLOW=2 WORKFLOW value
          * @property {number} LAUNCH_PLAN=3 LAUNCH_PLAN value
          * @property {number} DATASET=4 DATASET value
+         * @property {number} DESCRIPTION_ENTITY=5 DESCRIPTION_ENTITY value
          */
         core.ResourceType = (function() {
             const valuesById = {}, values = Object.create(valuesById);
@@ -472,6 +473,7 @@ export const flyteidl = $root.flyteidl = (() => {
             values[valuesById[2] = "WORKFLOW"] = 2;
             values[valuesById[3] = "LAUNCH_PLAN"] = 3;
             values[valuesById[4] = "DATASET"] = 4;
+            values[valuesById[5] = "DESCRIPTION_ENTITY"] = 5;
             return values;
         })();
 
@@ -641,6 +643,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
+                    case 5:
                         break;
                     }
                 if (message.project != null && message.hasOwnProperty("project"))
@@ -18015,6 +18018,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
+                    case 5:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {
@@ -18570,6 +18574,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
+                    case 5:
                         break;
                     }
                 if (message.project != null && message.hasOwnProperty("project"))
@@ -18996,6 +19001,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
+                    case 5:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {
@@ -19147,6 +19153,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                     case 3:
                     case 4:
+                    case 5:
                         break;
                     }
                 if (message.id != null && message.hasOwnProperty("id")) {
@@ -20744,7 +20751,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a DescriptionEntity.
              * @memberof flyteidl.admin
              * @interface IDescriptionEntity
-             * @property {flyteidl.core.IIdentifier|null} [id] DescriptionEntity id
              * @property {string|null} [shortDescription] DescriptionEntity shortDescription
              * @property {flyteidl.admin.ILongDescription|null} [longDescription] DescriptionEntity longDescription
              * @property {Array.<string>|null} [tags] DescriptionEntity tags
@@ -20767,14 +20773,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * DescriptionEntity id.
-             * @member {flyteidl.core.IIdentifier|null|undefined} id
-             * @memberof flyteidl.admin.DescriptionEntity
-             * @instance
-             */
-            DescriptionEntity.prototype.id = null;
 
             /**
              * DescriptionEntity shortDescription.
@@ -20840,19 +20838,17 @@ export const flyteidl = $root.flyteidl = (() => {
             DescriptionEntity.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
-                    $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.shortDescription);
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.shortDescription);
                 if (message.longDescription != null && message.hasOwnProperty("longDescription"))
-                    $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.tags != null && message.tags.length)
                     for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.tags[i]);
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                 if (message.labels != null && message.hasOwnProperty("labels"))
-                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.sourceCode != null && message.hasOwnProperty("sourceCode"))
-                    $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -20875,23 +20871,20 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.id = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    case 2:
                         message.shortDescription = reader.string();
                         break;
-                    case 3:
+                    case 2:
                         message.longDescription = $root.flyteidl.admin.LongDescription.decode(reader, reader.uint32());
                         break;
-                    case 4:
+                    case 3:
                         if (!(message.tags && message.tags.length))
                             message.tags = [];
                         message.tags.push(reader.string());
                         break;
-                    case 5:
+                    case 4:
                         message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
                         break;
-                    case 6:
+                    case 5:
                         message.sourceCode = $root.flyteidl.admin.SourceCode.decode(reader, reader.uint32());
                         break;
                     default:
@@ -20913,11 +20906,6 @@ export const flyteidl = $root.flyteidl = (() => {
             DescriptionEntity.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.id != null && message.hasOwnProperty("id")) {
-                    let error = $root.flyteidl.core.Identifier.verify(message.id);
-                    if (error)
-                        return "id." + error;
-                }
                 if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
                     if (!$util.isString(message.shortDescription))
                         return "shortDescription: string expected";
@@ -39886,31 +39874,64 @@ export const flyteidl = $root.flyteidl = (() => {
              */
 
             /**
-             * Callback as used by {@link flyteidl.service.AdminService#getDescription}.
+             * Callback as used by {@link flyteidl.service.AdminService#createDescriptionEntity}.
              * @memberof flyteidl.service.AdminService
-             * @typedef GetDescriptionCallback
+             * @typedef CreateDescriptionEntityCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.DescriptionEntityCreateResponse} [response] DescriptionEntityCreateResponse
+             */
+
+            /**
+             * Calls CreateDescriptionEntity.
+             * @function createDescriptionEntity
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IDescriptionEntityCreateRequest} request DescriptionEntityCreateRequest message or plain object
+             * @param {flyteidl.service.AdminService.CreateDescriptionEntityCallback} callback Node-style callback called with the error, if any, and DescriptionEntityCreateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.createDescriptionEntity = function createDescriptionEntity(request, callback) {
+                return this.rpcCall(createDescriptionEntity, $root.flyteidl.admin.DescriptionEntityCreateRequest, $root.flyteidl.admin.DescriptionEntityCreateResponse, request, callback);
+            }, "name", { value: "CreateDescriptionEntity" });
+
+            /**
+             * Calls CreateDescriptionEntity.
+             * @function createDescriptionEntity
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IDescriptionEntityCreateRequest} request DescriptionEntityCreateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.DescriptionEntityCreateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getDescriptionEntity}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetDescriptionEntityCallback
              * @type {function}
              * @param {Error|null} error Error, if any
              * @param {flyteidl.admin.DescriptionEntity} [response] DescriptionEntity
              */
 
             /**
-             * Calls GetDescription.
-             * @function getDescription
+             * Calls GetDescriptionEntity.
+             * @function getDescriptionEntity
              * @memberof flyteidl.service.AdminService
              * @instance
              * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
-             * @param {flyteidl.service.AdminService.GetDescriptionCallback} callback Node-style callback called with the error, if any, and DescriptionEntity
+             * @param {flyteidl.service.AdminService.GetDescriptionEntityCallback} callback Node-style callback called with the error, if any, and DescriptionEntity
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty(AdminService.prototype.getDescription = function getDescription(request, callback) {
-                return this.rpcCall(getDescription, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.DescriptionEntity, request, callback);
-            }, "name", { value: "GetDescription" });
+            Object.defineProperty(AdminService.prototype.getDescriptionEntity = function getDescriptionEntity(request, callback) {
+                return this.rpcCall(getDescriptionEntity, $root.flyteidl.admin.ObjectGetRequest, $root.flyteidl.admin.DescriptionEntity, request, callback);
+            }, "name", { value: "GetDescriptionEntity" });
 
             /**
-             * Calls GetDescription.
-             * @function getDescription
+             * Calls GetDescriptionEntity.
+             * @function getDescriptionEntity
              * @memberof flyteidl.service.AdminService
              * @instance
              * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object

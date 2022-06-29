@@ -44,16 +44,6 @@ func (m *DescriptionEntity) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return DescriptionEntityValidationError{
-				field:  "Id",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	// no validation rules for ShortDescription
 
 	if v, ok := interface{}(m.GetLongDescription()).(interface{ Validate() error }); ok {

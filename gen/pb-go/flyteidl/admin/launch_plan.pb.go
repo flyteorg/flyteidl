@@ -339,7 +339,7 @@ type LaunchPlanSpec struct {
 	// As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
 	// around the bool field.
 	Interruptible *wrappers.BoolValue `protobuf:"bytes,19,opt,name=interruptible,proto3" json:"interruptible,omitempty"`
-	// EntityDescription encapsulates all the detailed documentation for the launch plan.
+	// DescriptionEntity encapsulates all the detailed documentation for the launch plan.
 	DescriptionEntity    *DescriptionEntity `protobuf:"bytes,20,opt,name=description_entity,json=descriptionEntity,proto3" json:"description_entity,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`

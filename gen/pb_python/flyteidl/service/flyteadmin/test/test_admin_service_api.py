@@ -99,10 +99,10 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_get_description(self):
-        """Test case for get_description
+    def test_get_description_entity(self):
+        """Test case for get_description_entity
 
-        Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.  # noqa: E501
+        Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
         """
         pass
 

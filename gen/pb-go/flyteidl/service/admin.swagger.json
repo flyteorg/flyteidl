@@ -211,7 +211,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           },
@@ -437,7 +438,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -449,9 +451,9 @@
     },
     "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
-        "summary": "Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.",
+        "summary": "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
         "description": "Retrieve an existing entity description.",
-        "operationId": "GetDescription",
+        "operationId": "GetDescriptionEntity",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -500,7 +502,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -1223,7 +1226,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -1350,7 +1354,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ]
           },
           {
@@ -1403,7 +1408,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ]
           },
           {
@@ -1466,7 +1472,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ]
           },
           {
@@ -2008,7 +2015,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -2434,7 +2442,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -2944,7 +2953,8 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET"
+              "DATASET",
+              "DESCRIPTION_ENTITY"
             ],
             "default": "UNSPECIFIED"
           }
@@ -3346,10 +3356,6 @@
     "adminDescriptionEntity": {
       "type": "object",
       "properties": {
-        "id": {
-          "$ref": "#/definitions/coreIdentifier",
-          "description": "Indicates a unique version of resource."
-        },
         "short_description": {
           "type": "string",
           "description": "One-liner overview of the entity."
@@ -3375,6 +3381,10 @@
         }
       },
       "description": "DescriptionEntity contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
+    },
+    "adminDescriptionEntityCreateResponse": {
+      "type": "object",
+      "description": "Represents a response structure if task creation succeeds."
     },
     "adminDomain": {
       "type": "object",
@@ -3968,7 +3978,7 @@
         },
         "description_entity": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "EntityDescription encapsulates all the detailed documentation for the launch plan."
+          "description": "DescriptionEntity encapsulates all the detailed documentation for the launch plan."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -4912,7 +4922,7 @@
         },
         "description_entity": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "EntityDescription encapsulates all the detailed documentation for the task."
+          "description": "DescriptionEntity encapsulates all the detailed documentation for the task."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5182,7 +5192,7 @@
         },
         "description_entity": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "EntityDescription encapsulates all the detailed documentation for the workflow."
+          "description": "DescriptionEntity encapsulates all the detailed documentation for the workflow."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."
@@ -6131,7 +6141,8 @@
         "TASK",
         "WORKFLOW",
         "LAUNCH_PLAN",
-        "DATASET"
+        "DATASET",
+        "DESCRIPTION_ENTITY"
       ],
       "default": "UNSPECIFIED",
       "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"

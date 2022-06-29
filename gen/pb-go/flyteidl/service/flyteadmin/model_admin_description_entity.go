@@ -11,8 +11,6 @@ package flyteadmin
 
 // DescriptionEntity contains detailed description for the task/workflow/launch plan. Documentation could provide insight into the algorithms, business use case, etc.
 type AdminDescriptionEntity struct {
-	// Indicates a unique version of resource.
-	Id *CoreIdentifier `json:"id,omitempty"`
 	// One-liner overview of the entity.
 	ShortDescription string `json:"short_description,omitempty"`
 	// Full user description with formatting preserved.

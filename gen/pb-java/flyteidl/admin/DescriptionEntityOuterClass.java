@@ -20,35 +20,10 @@ public final class DescriptionEntityOuterClass {
 
     /**
      * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    boolean hasId();
-    /**
-     * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.Identifier getId();
-    /**
-     * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder();
-
-    /**
-     * <pre>
      * One-liner overview of the entity.
      * </pre>
      *
-     * <code>string short_description = 2;</code>
+     * <code>string short_description = 1;</code>
      */
     java.lang.String getShortDescription();
     /**
@@ -56,7 +31,7 @@ public final class DescriptionEntityOuterClass {
      * One-liner overview of the entity.
      * </pre>
      *
-     * <code>string short_description = 2;</code>
+     * <code>string short_description = 1;</code>
      */
     com.google.protobuf.ByteString
         getShortDescriptionBytes();
@@ -66,7 +41,7 @@ public final class DescriptionEntityOuterClass {
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     boolean hasLongDescription();
     /**
@@ -74,7 +49,7 @@ public final class DescriptionEntityOuterClass {
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.LongDescription getLongDescription();
     /**
@@ -82,7 +57,7 @@ public final class DescriptionEntityOuterClass {
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.LongDescriptionOrBuilder getLongDescriptionOrBuilder();
 
@@ -92,7 +67,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     java.util.List<java.lang.String>
         getTagsList();
@@ -102,7 +77,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     int getTagsCount();
     /**
@@ -111,7 +86,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     java.lang.String getTags(int index);
     /**
@@ -120,7 +95,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
@@ -131,7 +106,7 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     boolean hasLabels();
     /**
@@ -140,7 +115,7 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     flyteidl.admin.Common.Labels getLabels();
     /**
@@ -149,7 +124,7 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
 
@@ -158,7 +133,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     boolean hasSourceCode();
     /**
@@ -166,7 +141,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode();
     /**
@@ -174,7 +149,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder();
   }
@@ -225,25 +200,12 @@ public final class DescriptionEntityOuterClass {
               done = true;
               break;
             case 10: {
-              flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
-              if (id_ != null) {
-                subBuilder = id_.toBuilder();
-              }
-              id_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(id_);
-                id_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               shortDescription_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               flyteidl.admin.DescriptionEntityOuterClass.LongDescription.Builder subBuilder = null;
               if (longDescription_ != null) {
                 subBuilder = longDescription_.toBuilder();
@@ -256,16 +218,16 @@ public final class DescriptionEntityOuterClass {
 
               break;
             }
-            case 34: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000004;
               }
               tags_.add(s);
               break;
             }
-            case 42: {
+            case 34: {
               flyteidl.admin.Common.Labels.Builder subBuilder = null;
               if (labels_ != null) {
                 subBuilder = labels_.toBuilder();
@@ -278,7 +240,7 @@ public final class DescriptionEntityOuterClass {
 
               break;
             }
-            case 50: {
+            case 42: {
               flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder subBuilder = null;
               if (sourceCode_ != null) {
                 subBuilder = sourceCode_.toBuilder();
@@ -306,7 +268,7 @@ public final class DescriptionEntityOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -327,47 +289,14 @@ public final class DescriptionEntityOuterClass {
     }
 
     private int bitField0_;
-    public static final int ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.Identifier id_;
-    /**
-     * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    public boolean hasId() {
-      return id_ != null;
-    }
-    /**
-     * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.Identifier getId() {
-      return id_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
-    }
-    /**
-     * <pre>
-     * Indicates a unique version of resource.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder() {
-      return getId();
-    }
-
-    public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 2;
+    public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object shortDescription_;
     /**
      * <pre>
      * One-liner overview of the entity.
      * </pre>
      *
-     * <code>string short_description = 2;</code>
+     * <code>string short_description = 1;</code>
      */
     public java.lang.String getShortDescription() {
       java.lang.Object ref = shortDescription_;
@@ -386,7 +315,7 @@ public final class DescriptionEntityOuterClass {
      * One-liner overview of the entity.
      * </pre>
      *
-     * <code>string short_description = 2;</code>
+     * <code>string short_description = 1;</code>
      */
     public com.google.protobuf.ByteString
         getShortDescriptionBytes() {
@@ -402,14 +331,14 @@ public final class DescriptionEntityOuterClass {
       }
     }
 
-    public static final int LONG_DESCRIPTION_FIELD_NUMBER = 3;
+    public static final int LONG_DESCRIPTION_FIELD_NUMBER = 2;
     private flyteidl.admin.DescriptionEntityOuterClass.LongDescription longDescription_;
     /**
      * <pre>
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     public boolean hasLongDescription() {
       return longDescription_ != null;
@@ -419,7 +348,7 @@ public final class DescriptionEntityOuterClass {
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.LongDescription getLongDescription() {
       return longDescription_ == null ? flyteidl.admin.DescriptionEntityOuterClass.LongDescription.getDefaultInstance() : longDescription_;
@@ -429,13 +358,13 @@ public final class DescriptionEntityOuterClass {
      * Full user description with formatting preserved.
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+     * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.LongDescriptionOrBuilder getLongDescriptionOrBuilder() {
       return getLongDescription();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 4;
+    public static final int TAGS_FIELD_NUMBER = 3;
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <pre>
@@ -443,7 +372,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -455,7 +384,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     public int getTagsCount() {
       return tags_.size();
@@ -466,7 +395,7 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -477,14 +406,14 @@ public final class DescriptionEntityOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 4;</code>
+     * <code>repeated string tags = 3;</code>
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
 
-    public static final int LABELS_FIELD_NUMBER = 5;
+    public static final int LABELS_FIELD_NUMBER = 4;
     private flyteidl.admin.Common.Labels labels_;
     /**
      * <pre>
@@ -492,7 +421,7 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public boolean hasLabels() {
       return labels_ != null;
@@ -503,7 +432,7 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public flyteidl.admin.Common.Labels getLabels() {
       return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
@@ -514,20 +443,20 @@ public final class DescriptionEntityOuterClass {
      * and can be used for searching, filtering and discovering entities.
      * </pre>
      *
-     * <code>.flyteidl.admin.Labels labels = 5;</code>
+     * <code>.flyteidl.admin.Labels labels = 4;</code>
      */
     public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
       return getLabels();
     }
 
-    public static final int SOURCE_CODE_FIELD_NUMBER = 6;
+    public static final int SOURCE_CODE_FIELD_NUMBER = 5;
     private flyteidl.admin.DescriptionEntityOuterClass.SourceCode sourceCode_;
     /**
      * <pre>
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     public boolean hasSourceCode() {
       return sourceCode_ != null;
@@ -537,7 +466,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode() {
       return sourceCode_ == null ? flyteidl.admin.DescriptionEntityOuterClass.SourceCode.getDefaultInstance() : sourceCode_;
@@ -547,7 +476,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder() {
       return getSourceCode();
@@ -567,23 +496,20 @@ public final class DescriptionEntityOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != null) {
-        output.writeMessage(1, getId());
-      }
       if (!getShortDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shortDescription_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, shortDescription_);
       }
       if (longDescription_ != null) {
-        output.writeMessage(3, getLongDescription());
+        output.writeMessage(2, getLongDescription());
       }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tags_.getRaw(i));
       }
       if (labels_ != null) {
-        output.writeMessage(5, getLabels());
+        output.writeMessage(4, getLabels());
       }
       if (sourceCode_ != null) {
-        output.writeMessage(6, getSourceCode());
+        output.writeMessage(5, getSourceCode());
       }
       unknownFields.writeTo(output);
     }
@@ -594,16 +520,12 @@ public final class DescriptionEntityOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getId());
-      }
       if (!getShortDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shortDescription_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, shortDescription_);
       }
       if (longDescription_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getLongDescription());
+          .computeMessageSize(2, getLongDescription());
       }
       {
         int dataSize = 0;
@@ -615,11 +537,11 @@ public final class DescriptionEntityOuterClass {
       }
       if (labels_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getLabels());
+          .computeMessageSize(4, getLabels());
       }
       if (sourceCode_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getSourceCode());
+          .computeMessageSize(5, getSourceCode());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -636,11 +558,6 @@ public final class DescriptionEntityOuterClass {
       }
       flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity) obj;
 
-      if (hasId() != other.hasId()) return false;
-      if (hasId()) {
-        if (!getId()
-            .equals(other.getId())) return false;
-      }
       if (!getShortDescription()
           .equals(other.getShortDescription())) return false;
       if (hasLongDescription() != other.hasLongDescription()) return false;
@@ -671,10 +588,6 @@ public final class DescriptionEntityOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId().hashCode();
-      }
       hash = (37 * hash) + SHORT_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getShortDescription().hashCode();
       if (hasLongDescription()) {
@@ -831,12 +744,6 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (idBuilder_ == null) {
-          id_ = null;
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
         shortDescription_ = "";
 
         if (longDescriptionBuilder_ == null) {
@@ -846,7 +753,7 @@ public final class DescriptionEntityOuterClass {
           longDescriptionBuilder_ = null;
         }
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (labelsBuilder_ == null) {
           labels_ = null;
         } else {
@@ -887,20 +794,15 @@ public final class DescriptionEntityOuterClass {
         flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (idBuilder_ == null) {
-          result.id_ = id_;
-        } else {
-          result.id_ = idBuilder_.build();
-        }
         result.shortDescription_ = shortDescription_;
         if (longDescriptionBuilder_ == null) {
           result.longDescription_ = longDescription_;
         } else {
           result.longDescription_ = longDescriptionBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.tags_ = tags_;
         if (labelsBuilder_ == null) {
@@ -962,9 +864,6 @@ public final class DescriptionEntityOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity other) {
         if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          mergeId(other.getId());
-        }
         if (!other.getShortDescription().isEmpty()) {
           shortDescription_ = other.shortDescription_;
           onChanged();
@@ -975,7 +874,7 @@ public final class DescriptionEntityOuterClass {
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -1018,166 +917,13 @@ public final class DescriptionEntityOuterClass {
       }
       private int bitField0_;
 
-      private flyteidl.core.IdentifierOuterClass.Identifier id_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> idBuilder_;
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public boolean hasId() {
-        return idBuilder_ != null || id_ != null;
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.Identifier getId() {
-        if (idBuilder_ == null) {
-          return id_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
-        } else {
-          return idBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public Builder setId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (idBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          id_ = value;
-          onChanged();
-        } else {
-          idBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public Builder setId(
-          flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
-        if (idBuilder_ == null) {
-          id_ = builderForValue.build();
-          onChanged();
-        } else {
-          idBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public Builder mergeId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (idBuilder_ == null) {
-          if (id_ != null) {
-            id_ =
-              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(id_).mergeFrom(value).buildPartial();
-          } else {
-            id_ = value;
-          }
-          onChanged();
-        } else {
-          idBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public Builder clearId() {
-        if (idBuilder_ == null) {
-          id_ = null;
-          onChanged();
-        } else {
-          id_ = null;
-          idBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getIdBuilder() {
-        
-        onChanged();
-        return getIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getIdOrBuilder() {
-        if (idBuilder_ != null) {
-          return idBuilder_.getMessageOrBuilder();
-        } else {
-          return id_ == null ?
-              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : id_;
-        }
-      }
-      /**
-       * <pre>
-       * Indicates a unique version of resource.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
-          getIdFieldBuilder() {
-        if (idBuilder_ == null) {
-          idBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
-                  getId(),
-                  getParentForChildren(),
-                  isClean());
-          id_ = null;
-        }
-        return idBuilder_;
-      }
-
       private java.lang.Object shortDescription_ = "";
       /**
        * <pre>
        * One-liner overview of the entity.
        * </pre>
        *
-       * <code>string short_description = 2;</code>
+       * <code>string short_description = 1;</code>
        */
       public java.lang.String getShortDescription() {
         java.lang.Object ref = shortDescription_;
@@ -1196,7 +942,7 @@ public final class DescriptionEntityOuterClass {
        * One-liner overview of the entity.
        * </pre>
        *
-       * <code>string short_description = 2;</code>
+       * <code>string short_description = 1;</code>
        */
       public com.google.protobuf.ByteString
           getShortDescriptionBytes() {
@@ -1216,7 +962,7 @@ public final class DescriptionEntityOuterClass {
        * One-liner overview of the entity.
        * </pre>
        *
-       * <code>string short_description = 2;</code>
+       * <code>string short_description = 1;</code>
        */
       public Builder setShortDescription(
           java.lang.String value) {
@@ -1233,7 +979,7 @@ public final class DescriptionEntityOuterClass {
        * One-liner overview of the entity.
        * </pre>
        *
-       * <code>string short_description = 2;</code>
+       * <code>string short_description = 1;</code>
        */
       public Builder clearShortDescription() {
         
@@ -1246,7 +992,7 @@ public final class DescriptionEntityOuterClass {
        * One-liner overview of the entity.
        * </pre>
        *
-       * <code>string short_description = 2;</code>
+       * <code>string short_description = 1;</code>
        */
       public Builder setShortDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -1268,7 +1014,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public boolean hasLongDescription() {
         return longDescriptionBuilder_ != null || longDescription_ != null;
@@ -1278,7 +1024,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.LongDescription getLongDescription() {
         if (longDescriptionBuilder_ == null) {
@@ -1292,7 +1038,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public Builder setLongDescription(flyteidl.admin.DescriptionEntityOuterClass.LongDescription value) {
         if (longDescriptionBuilder_ == null) {
@@ -1312,7 +1058,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public Builder setLongDescription(
           flyteidl.admin.DescriptionEntityOuterClass.LongDescription.Builder builderForValue) {
@@ -1330,7 +1076,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public Builder mergeLongDescription(flyteidl.admin.DescriptionEntityOuterClass.LongDescription value) {
         if (longDescriptionBuilder_ == null) {
@@ -1352,7 +1098,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public Builder clearLongDescription() {
         if (longDescriptionBuilder_ == null) {
@@ -1370,7 +1116,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.Builder getLongDescriptionBuilder() {
         
@@ -1382,7 +1128,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.LongDescriptionOrBuilder getLongDescriptionOrBuilder() {
         if (longDescriptionBuilder_ != null) {
@@ -1397,7 +1143,7 @@ public final class DescriptionEntityOuterClass {
        * Full user description with formatting preserved.
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription long_description = 3;</code>
+       * <code>.flyteidl.admin.LongDescription long_description = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.DescriptionEntityOuterClass.LongDescription, flyteidl.admin.DescriptionEntityOuterClass.LongDescription.Builder, flyteidl.admin.DescriptionEntityOuterClass.LongDescriptionOrBuilder> 
@@ -1415,9 +1161,9 @@ public final class DescriptionEntityOuterClass {
 
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
          }
       }
       /**
@@ -1426,7 +1172,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -1438,7 +1184,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public int getTagsCount() {
         return tags_.size();
@@ -1449,7 +1195,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
@@ -1460,7 +1206,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -1472,7 +1218,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -1490,7 +1236,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public Builder addTags(
           java.lang.String value) {
@@ -1508,7 +1254,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -1524,11 +1270,11 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1538,7 +1284,7 @@ public final class DescriptionEntityOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 3;</code>
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -1561,7 +1307,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public boolean hasLabels() {
         return labelsBuilder_ != null || labels_ != null;
@@ -1572,7 +1318,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.Labels getLabels() {
         if (labelsBuilder_ == null) {
@@ -1587,7 +1333,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder setLabels(flyteidl.admin.Common.Labels value) {
         if (labelsBuilder_ == null) {
@@ -1608,7 +1354,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder setLabels(
           flyteidl.admin.Common.Labels.Builder builderForValue) {
@@ -1627,7 +1373,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder mergeLabels(flyteidl.admin.Common.Labels value) {
         if (labelsBuilder_ == null) {
@@ -1650,7 +1396,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public Builder clearLabels() {
         if (labelsBuilder_ == null) {
@@ -1669,7 +1415,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.Labels.Builder getLabelsBuilder() {
         
@@ -1682,7 +1428,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
         if (labelsBuilder_ != null) {
@@ -1698,7 +1444,7 @@ public final class DescriptionEntityOuterClass {
        * and can be used for searching, filtering and discovering entities.
        * </pre>
        *
-       * <code>.flyteidl.admin.Labels labels = 5;</code>
+       * <code>.flyteidl.admin.Labels labels = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> 
@@ -1722,7 +1468,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public boolean hasSourceCode() {
         return sourceCodeBuilder_ != null || sourceCode_ != null;
@@ -1732,7 +1478,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode() {
         if (sourceCodeBuilder_ == null) {
@@ -1746,7 +1492,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public Builder setSourceCode(flyteidl.admin.DescriptionEntityOuterClass.SourceCode value) {
         if (sourceCodeBuilder_ == null) {
@@ -1766,7 +1512,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public Builder setSourceCode(
           flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder builderForValue) {
@@ -1784,7 +1530,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public Builder mergeSourceCode(flyteidl.admin.DescriptionEntityOuterClass.SourceCode value) {
         if (sourceCodeBuilder_ == null) {
@@ -1806,7 +1552,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public Builder clearSourceCode() {
         if (sourceCodeBuilder_ == null) {
@@ -1824,7 +1570,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder getSourceCodeBuilder() {
         
@@ -1836,7 +1582,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder() {
         if (sourceCodeBuilder_ != null) {
@@ -1851,7 +1597,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 6;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.DescriptionEntityOuterClass.SourceCode, flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder, flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder> 
@@ -5097,25 +4843,25 @@ public final class DescriptionEntityOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'flyteidl/admin/description_entity.prot" +
       "o\022\016flyteidl.admin\032\036flyteidl/core/identif" +
-      "ier.proto\032\033flyteidl/admin/common.proto\"\367" +
-      "\001\n\021DescriptionEntity\022%\n\002id\030\001 \001(\0132\031.flyte" +
-      "idl.core.Identifier\022\031\n\021short_description" +
-      "\030\002 \001(\t\0229\n\020long_description\030\003 \001(\0132\037.flyte" +
-      "idl.admin.LongDescription\022\014\n\004tags\030\004 \003(\t\022" +
-      "&\n\006labels\030\005 \001(\0132\026.flyteidl.admin.Labels\022" +
-      "/\n\013source_code\030\006 \001(\0132\032.flyteidl.admin.So" +
-      "urceCode\"\314\001\n\017LongDescription\022\016\n\006values\030\001" +
-      " \001(\t\022\013\n\003uri\030\002 \001(\t\022F\n\013long_format\030\003 \001(\01621" +
-      ".flyteidl.admin.LongDescription.Descript" +
-      "ionFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descript" +
-      "ionFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004" +
-      "HTML\020\002\022\007\n\003RST\020\003\"\032\n\nSourceCode\022\014\n\004link\030\005 " +
-      "\001(\t\"\206\001\n\036DescriptionEntityCreateRequest\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022=\n" +
-      "\022description_entity\030\002 \001(\0132!.flyteidl.adm" +
-      "in.DescriptionEntity\"!\n\037DescriptionEntit" +
-      "yCreateResponseB7Z5github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "ier.proto\032\033flyteidl/admin/common.proto\"\320" +
+      "\001\n\021DescriptionEntity\022\031\n\021short_descriptio" +
+      "n\030\001 \001(\t\0229\n\020long_description\030\002 \001(\0132\037.flyt" +
+      "eidl.admin.LongDescription\022\014\n\004tags\030\003 \003(\t" +
+      "\022&\n\006labels\030\004 \001(\0132\026.flyteidl.admin.Labels" +
+      "\022/\n\013source_code\030\005 \001(\0132\032.flyteidl.admin.S" +
+      "ourceCode\"\314\001\n\017LongDescription\022\016\n\006values\030" +
+      "\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022F\n\013long_format\030\003 \001(\0162" +
+      "1.flyteidl.admin.LongDescription.Descrip" +
+      "tionFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descrip" +
+      "tionFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n" +
+      "\004HTML\020\002\022\007\n\003RST\020\003\"\032\n\nSourceCode\022\014\n\004link\030\005" +
+      " \001(\t\"\206\001\n\036DescriptionEntityCreateRequest\022" +
+      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022=" +
+      "\n\022description_entity\030\002 \001(\0132!.flyteidl.ad" +
+      "min.DescriptionEntity\"!\n\037DescriptionEnti" +
+      "tyCreateResponseB7Z5github.com/flyteorg/" +
+      "flyteidl/gen/pb-go/flyteidl/adminb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5136,7 +4882,7 @@ public final class DescriptionEntityOuterClass {
     internal_static_flyteidl_admin_DescriptionEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DescriptionEntity_descriptor,
-        new java.lang.String[] { "Id", "ShortDescription", "LongDescription", "Tags", "Labels", "SourceCode", });
+        new java.lang.String[] { "ShortDescription", "LongDescription", "Tags", "Labels", "SourceCode", });
     internal_static_flyteidl_admin_LongDescription_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_LongDescription_fieldAccessorTable = new

@@ -215,7 +215,7 @@ func (m *TaskList) GetToken() string {
 type TaskSpec struct {
 	// Template of the task that encapsulates all the metadata of the task.
 	Template *core.TaskTemplate `protobuf:"bytes,1,opt,name=template,proto3" json:"template,omitempty"`
-	// EntityDescription encapsulates all the detailed documentation for the task.
+	// DescriptionEntity encapsulates all the detailed documentation for the task.
 	DescriptionEntity    *DescriptionEntity `protobuf:"bytes,2,opt,name=description_entity,json=descriptionEntity,proto3" json:"description_entity,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`

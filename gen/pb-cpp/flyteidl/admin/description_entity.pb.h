@@ -202,10 +202,10 @@ class DescriptionEntity final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string tags = 4;
+  // repeated string tags = 3;
   int tags_size() const;
   void clear_tags();
-  static const int kTagsFieldNumber = 4;
+  static const int kTagsFieldNumber = 3;
   const ::std::string& tags(int index) const;
   ::std::string* mutable_tags(int index);
   void set_tags(int index, const ::std::string& value);
@@ -224,9 +224,9 @@ class DescriptionEntity final :
   const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
   ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
 
-  // string short_description = 2;
+  // string short_description = 1;
   void clear_short_description();
-  static const int kShortDescriptionFieldNumber = 2;
+  static const int kShortDescriptionFieldNumber = 1;
   const ::std::string& short_description() const;
   void set_short_description(const ::std::string& value);
   #if LANG_CXX11
@@ -238,37 +238,28 @@ class DescriptionEntity final :
   ::std::string* release_short_description();
   void set_allocated_short_description(::std::string* short_description);
 
-  // .flyteidl.core.Identifier id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  const ::flyteidl::core::Identifier& id() const;
-  ::flyteidl::core::Identifier* release_id();
-  ::flyteidl::core::Identifier* mutable_id();
-  void set_allocated_id(::flyteidl::core::Identifier* id);
-
-  // .flyteidl.admin.LongDescription long_description = 3;
+  // .flyteidl.admin.LongDescription long_description = 2;
   bool has_long_description() const;
   void clear_long_description();
-  static const int kLongDescriptionFieldNumber = 3;
+  static const int kLongDescriptionFieldNumber = 2;
   const ::flyteidl::admin::LongDescription& long_description() const;
   ::flyteidl::admin::LongDescription* release_long_description();
   ::flyteidl::admin::LongDescription* mutable_long_description();
   void set_allocated_long_description(::flyteidl::admin::LongDescription* long_description);
 
-  // .flyteidl.admin.Labels labels = 5;
+  // .flyteidl.admin.Labels labels = 4;
   bool has_labels() const;
   void clear_labels();
-  static const int kLabelsFieldNumber = 5;
+  static const int kLabelsFieldNumber = 4;
   const ::flyteidl::admin::Labels& labels() const;
   ::flyteidl::admin::Labels* release_labels();
   ::flyteidl::admin::Labels* mutable_labels();
   void set_allocated_labels(::flyteidl::admin::Labels* labels);
 
-  // .flyteidl.admin.SourceCode source_code = 6;
+  // .flyteidl.admin.SourceCode source_code = 5;
   bool has_source_code() const;
   void clear_source_code();
-  static const int kSourceCodeFieldNumber = 6;
+  static const int kSourceCodeFieldNumber = 5;
   const ::flyteidl::admin::SourceCode& source_code() const;
   ::flyteidl::admin::SourceCode* release_source_code();
   ::flyteidl::admin::SourceCode* mutable_source_code();
@@ -281,7 +272,6 @@ class DescriptionEntity final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr short_description_;
-  ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::LongDescription* long_description_;
   ::flyteidl::admin::Labels* labels_;
   ::flyteidl::admin::SourceCode* source_code_;
@@ -836,52 +826,7 @@ class DescriptionEntityCreateResponse final :
 #endif  // __GNUC__
 // DescriptionEntity
 
-// .flyteidl.core.Identifier id = 1;
-inline bool DescriptionEntity::has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline const ::flyteidl::core::Identifier& DescriptionEntity::id() const {
-  const ::flyteidl::core::Identifier* p = id_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntity.id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
-      &::flyteidl::core::_Identifier_default_instance_);
-}
-inline ::flyteidl::core::Identifier* DescriptionEntity::release_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntity.id)
-  
-  ::flyteidl::core::Identifier* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::Identifier* DescriptionEntity::mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
-    id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntity.id)
-  return id_;
-}
-inline void DescriptionEntity::set_allocated_id(::flyteidl::core::Identifier* id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
-  }
-  if (id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.id)
-}
-
-// string short_description = 2;
+// string short_description = 1;
 inline void DescriptionEntity::clear_short_description() {
   short_description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -934,7 +879,7 @@ inline void DescriptionEntity::set_allocated_short_description(::std::string* sh
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.short_description)
 }
 
-// .flyteidl.admin.LongDescription long_description = 3;
+// .flyteidl.admin.LongDescription long_description = 2;
 inline bool DescriptionEntity::has_long_description() const {
   return this != internal_default_instance() && long_description_ != nullptr;
 }
@@ -985,7 +930,7 @@ inline void DescriptionEntity::set_allocated_long_description(::flyteidl::admin:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.long_description)
 }
 
-// repeated string tags = 4;
+// repeated string tags = 3;
 inline int DescriptionEntity::tags_size() const {
   return tags_.size();
 }
@@ -1054,7 +999,7 @@ DescriptionEntity::mutable_tags() {
   return &tags_;
 }
 
-// .flyteidl.admin.Labels labels = 5;
+// .flyteidl.admin.Labels labels = 4;
 inline bool DescriptionEntity::has_labels() const {
   return this != internal_default_instance() && labels_ != nullptr;
 }
@@ -1099,7 +1044,7 @@ inline void DescriptionEntity::set_allocated_labels(::flyteidl::admin::Labels* l
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.labels)
 }
 
-// .flyteidl.admin.SourceCode source_code = 6;
+// .flyteidl.admin.SourceCode source_code = 5;
 inline bool DescriptionEntity::has_source_code() const {
   return this != internal_default_instance() && source_code_ != nullptr;
 }

@@ -263,8 +263,13 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_version__pb2.GetVersionRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_version__pb2.GetVersionResponse.FromString,
         )
-    self.GetDescription = channel.unary_unary(
-        '/flyteidl.service.AdminService/GetDescription',
+    self.CreateDescriptionEntity = channel.unary_unary(
+        '/flyteidl.service.AdminService/CreateDescriptionEntity',
+        request_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityCreateRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityCreateResponse.FromString,
+        )
+    self.GetDescriptionEntity = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetDescriptionEntity',
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntity.FromString,
         )
@@ -610,8 +615,15 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetDescription(self, request, context):
-    """Fetch a :ref:`ref_flyteidl.admin.EntityDescription` definition.
+  def CreateDescriptionEntity(self, request, context):
+    """Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetDescriptionEntity(self, request, context):
+    """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -855,8 +867,13 @@ def add_AdminServiceServicer_to_server(servicer, server):
           request_deserializer=flyteidl_dot_admin_dot_version__pb2.GetVersionRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_version__pb2.GetVersionResponse.SerializeToString,
       ),
-      'GetDescription': grpc.unary_unary_rpc_method_handler(
-          servicer.GetDescription,
+      'CreateDescriptionEntity': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateDescriptionEntity,
+          request_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityCreateRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityCreateResponse.SerializeToString,
+      ),
+      'GetDescriptionEntity': grpc.unary_unary_rpc_method_handler(
+          servicer.GetDescriptionEntity,
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntity.SerializeToString,
       ),
