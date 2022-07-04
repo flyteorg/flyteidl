@@ -1745,7 +1745,7 @@ ClusterSpec
    :widths: auto
 
    "head_group_spec", ":ref:`ref_flyteidl.core.HeadGroupSpec`", "", "The head group configuration"
-   "worker_group_sepc", ":ref:`ref_flyteidl.core.WorkerGroupSpec`", "repeated", "The worker group configurations"
+   "worker_group_spec", ":ref:`ref_flyteidl.core.WorkerGroupSpec`", "repeated", "The worker group configurations"
 
 
 
@@ -1769,7 +1769,7 @@ HeadGroupSpec
    "compute_template", ":ref:`ref_string`", "", "Optional. The computeTemplate of head node group"
    "image", ":ref:`ref_string`", "", "Optional field. This field will be used to retrieve right ray container"
    "service_type", ":ref:`ref_string`", "", "Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node"
-   "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start parames of head node group"
+   "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
 
 
 
@@ -1861,7 +1861,7 @@ WorkerGroupSpec
    "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
    "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
    "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
-   "ray_start_params", ":ref:`ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start parames of worker node group"
+   "ray_start_params", ":ref:`ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of worker node group"
 
 
 

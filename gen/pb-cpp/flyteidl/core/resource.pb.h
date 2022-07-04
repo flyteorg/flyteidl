@@ -449,17 +449,17 @@ class ClusterSpec final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
-  int worker_group_sepc_size() const;
-  void clear_worker_group_sepc();
-  static const int kWorkerGroupSepcFieldNumber = 2;
-  ::flyteidl::core::WorkerGroupSpec* mutable_worker_group_sepc(int index);
+  // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
+  int worker_group_spec_size() const;
+  void clear_worker_group_spec();
+  static const int kWorkerGroupSpecFieldNumber = 2;
+  ::flyteidl::core::WorkerGroupSpec* mutable_worker_group_spec(int index);
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec >*
-      mutable_worker_group_sepc();
-  const ::flyteidl::core::WorkerGroupSpec& worker_group_sepc(int index) const;
-  ::flyteidl::core::WorkerGroupSpec* add_worker_group_sepc();
+      mutable_worker_group_spec();
+  const ::flyteidl::core::WorkerGroupSpec& worker_group_spec(int index) const;
+  ::flyteidl::core::WorkerGroupSpec* add_worker_group_spec();
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec >&
-      worker_group_sepc() const;
+      worker_group_spec() const;
 
   // .flyteidl.core.HeadGroupSpec head_group_spec = 1;
   bool has_head_group_spec() const;
@@ -475,7 +475,7 @@ class ClusterSpec final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec > worker_group_sepc_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec > worker_group_spec_;
   ::flyteidl::core::HeadGroupSpec* head_group_spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fcore_2fresource_2eproto;
@@ -1105,34 +1105,34 @@ inline void ClusterSpec::set_allocated_head_group_spec(::flyteidl::core::HeadGro
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ClusterSpec.head_group_spec)
 }
 
-// repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
-inline int ClusterSpec::worker_group_sepc_size() const {
-  return worker_group_sepc_.size();
+// repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
+inline int ClusterSpec::worker_group_spec_size() const {
+  return worker_group_spec_.size();
 }
-inline void ClusterSpec::clear_worker_group_sepc() {
-  worker_group_sepc_.Clear();
+inline void ClusterSpec::clear_worker_group_spec() {
+  worker_group_spec_.Clear();
 }
-inline ::flyteidl::core::WorkerGroupSpec* ClusterSpec::mutable_worker_group_sepc(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.ClusterSpec.worker_group_sepc)
-  return worker_group_sepc_.Mutable(index);
+inline ::flyteidl::core::WorkerGroupSpec* ClusterSpec::mutable_worker_group_spec(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ClusterSpec.worker_group_spec)
+  return worker_group_spec_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec >*
-ClusterSpec::mutable_worker_group_sepc() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.ClusterSpec.worker_group_sepc)
-  return &worker_group_sepc_;
+ClusterSpec::mutable_worker_group_spec() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.ClusterSpec.worker_group_spec)
+  return &worker_group_spec_;
 }
-inline const ::flyteidl::core::WorkerGroupSpec& ClusterSpec::worker_group_sepc(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.ClusterSpec.worker_group_sepc)
-  return worker_group_sepc_.Get(index);
+inline const ::flyteidl::core::WorkerGroupSpec& ClusterSpec::worker_group_spec(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ClusterSpec.worker_group_spec)
+  return worker_group_spec_.Get(index);
 }
-inline ::flyteidl::core::WorkerGroupSpec* ClusterSpec::add_worker_group_sepc() {
-  // @@protoc_insertion_point(field_add:flyteidl.core.ClusterSpec.worker_group_sepc)
-  return worker_group_sepc_.Add();
+inline ::flyteidl::core::WorkerGroupSpec* ClusterSpec::add_worker_group_spec() {
+  // @@protoc_insertion_point(field_add:flyteidl.core.ClusterSpec.worker_group_spec)
+  return worker_group_spec_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkerGroupSpec >&
-ClusterSpec::worker_group_sepc() const {
-  // @@protoc_insertion_point(field_list:flyteidl.core.ClusterSpec.worker_group_sepc)
-  return worker_group_sepc_;
+ClusterSpec::worker_group_spec() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.ClusterSpec.worker_group_spec)
+  return worker_group_spec_;
 }
 
 // -------------------------------------------------------------------

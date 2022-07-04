@@ -1600,43 +1600,43 @@ public final class ResourceOuterClass {
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
     java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> 
-        getWorkerGroupSepcList();
+        getWorkerGroupSpecList();
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index);
+    flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSpec(int index);
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    int getWorkerGroupSepcCount();
+    int getWorkerGroupSpecCount();
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
     java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
-        getWorkerGroupSepcOrBuilderList();
+        getWorkerGroupSpecOrBuilderList();
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+    flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
         int index);
   }
   /**
@@ -1652,7 +1652,7 @@ public final class ResourceOuterClass {
       super(builder);
     }
     private ClusterSpec() {
-      workerGroupSepc_ = java.util.Collections.emptyList();
+      workerGroupSpec_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1694,10 +1694,10 @@ public final class ResourceOuterClass {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>();
+                workerGroupSpec_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              workerGroupSepc_.add(
+              workerGroupSpec_.add(
                   input.readMessage(flyteidl.core.ResourceOuterClass.WorkerGroupSpec.parser(), extensionRegistry));
               break;
             }
@@ -1717,7 +1717,7 @@ public final class ResourceOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          workerGroupSepc_ = java.util.Collections.unmodifiableList(workerGroupSepc_);
+          workerGroupSpec_ = java.util.Collections.unmodifiableList(workerGroupSpec_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1770,59 +1770,59 @@ public final class ResourceOuterClass {
       return getHeadGroupSpec();
     }
 
-    public static final int WORKER_GROUP_SEPC_FIELD_NUMBER = 2;
-    private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSepc_;
+    public static final int WORKER_GROUP_SPEC_FIELD_NUMBER = 2;
+    private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSpec_;
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSepcList() {
-      return workerGroupSepc_;
+    public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSpecList() {
+      return workerGroupSpec_;
     }
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
     public java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
-        getWorkerGroupSepcOrBuilderList() {
-      return workerGroupSepc_;
+        getWorkerGroupSpecOrBuilderList() {
+      return workerGroupSpec_;
     }
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    public int getWorkerGroupSepcCount() {
-      return workerGroupSepc_.size();
+    public int getWorkerGroupSpecCount() {
+      return workerGroupSpec_.size();
     }
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index) {
-      return workerGroupSepc_.get(index);
+    public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSpec(int index) {
+      return workerGroupSpec_.get(index);
     }
     /**
      * <pre>
      * The worker group configurations
      * </pre>
      *
-     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+     * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
      */
-    public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+    public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
         int index) {
-      return workerGroupSepc_.get(index);
+      return workerGroupSpec_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1842,8 +1842,8 @@ public final class ResourceOuterClass {
       if (headGroupSpec_ != null) {
         output.writeMessage(1, getHeadGroupSpec());
       }
-      for (int i = 0; i < workerGroupSepc_.size(); i++) {
-        output.writeMessage(2, workerGroupSepc_.get(i));
+      for (int i = 0; i < workerGroupSpec_.size(); i++) {
+        output.writeMessage(2, workerGroupSpec_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1858,9 +1858,9 @@ public final class ResourceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getHeadGroupSpec());
       }
-      for (int i = 0; i < workerGroupSepc_.size(); i++) {
+      for (int i = 0; i < workerGroupSpec_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, workerGroupSepc_.get(i));
+          .computeMessageSize(2, workerGroupSpec_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1882,8 +1882,8 @@ public final class ResourceOuterClass {
         if (!getHeadGroupSpec()
             .equals(other.getHeadGroupSpec())) return false;
       }
-      if (!getWorkerGroupSepcList()
-          .equals(other.getWorkerGroupSepcList())) return false;
+      if (!getWorkerGroupSpecList()
+          .equals(other.getWorkerGroupSpecList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1899,9 +1899,9 @@ public final class ResourceOuterClass {
         hash = (37 * hash) + HEAD_GROUP_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getHeadGroupSpec().hashCode();
       }
-      if (getWorkerGroupSepcCount() > 0) {
-        hash = (37 * hash) + WORKER_GROUP_SEPC_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkerGroupSepcList().hashCode();
+      if (getWorkerGroupSpecCount() > 0) {
+        hash = (37 * hash) + WORKER_GROUP_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkerGroupSpecList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2031,7 +2031,7 @@ public final class ResourceOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getWorkerGroupSepcFieldBuilder();
+          getWorkerGroupSpecFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2043,11 +2043,11 @@ public final class ResourceOuterClass {
           headGroupSpec_ = null;
           headGroupSpecBuilder_ = null;
         }
-        if (workerGroupSepcBuilder_ == null) {
-          workerGroupSepc_ = java.util.Collections.emptyList();
+        if (workerGroupSpecBuilder_ == null) {
+          workerGroupSpec_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          workerGroupSepcBuilder_.clear();
+          workerGroupSpecBuilder_.clear();
         }
         return this;
       }
@@ -2082,14 +2082,14 @@ public final class ResourceOuterClass {
         } else {
           result.headGroupSpec_ = headGroupSpecBuilder_.build();
         }
-        if (workerGroupSepcBuilder_ == null) {
+        if (workerGroupSpecBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            workerGroupSepc_ = java.util.Collections.unmodifiableList(workerGroupSepc_);
+            workerGroupSpec_ = java.util.Collections.unmodifiableList(workerGroupSpec_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.workerGroupSepc_ = workerGroupSepc_;
+          result.workerGroupSpec_ = workerGroupSpec_;
         } else {
-          result.workerGroupSepc_ = workerGroupSepcBuilder_.build();
+          result.workerGroupSpec_ = workerGroupSpecBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -2143,29 +2143,29 @@ public final class ResourceOuterClass {
         if (other.hasHeadGroupSpec()) {
           mergeHeadGroupSpec(other.getHeadGroupSpec());
         }
-        if (workerGroupSepcBuilder_ == null) {
-          if (!other.workerGroupSepc_.isEmpty()) {
-            if (workerGroupSepc_.isEmpty()) {
-              workerGroupSepc_ = other.workerGroupSepc_;
+        if (workerGroupSpecBuilder_ == null) {
+          if (!other.workerGroupSpec_.isEmpty()) {
+            if (workerGroupSpec_.isEmpty()) {
+              workerGroupSpec_ = other.workerGroupSpec_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureWorkerGroupSepcIsMutable();
-              workerGroupSepc_.addAll(other.workerGroupSepc_);
+              ensureWorkerGroupSpecIsMutable();
+              workerGroupSpec_.addAll(other.workerGroupSpec_);
             }
             onChanged();
           }
         } else {
-          if (!other.workerGroupSepc_.isEmpty()) {
-            if (workerGroupSepcBuilder_.isEmpty()) {
-              workerGroupSepcBuilder_.dispose();
-              workerGroupSepcBuilder_ = null;
-              workerGroupSepc_ = other.workerGroupSepc_;
+          if (!other.workerGroupSpec_.isEmpty()) {
+            if (workerGroupSpecBuilder_.isEmpty()) {
+              workerGroupSpecBuilder_.dispose();
+              workerGroupSpecBuilder_ = null;
+              workerGroupSpec_ = other.workerGroupSpec_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              workerGroupSepcBuilder_ = 
+              workerGroupSpecBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getWorkerGroupSepcFieldBuilder() : null;
+                   getWorkerGroupSpecFieldBuilder() : null;
             } else {
-              workerGroupSepcBuilder_.addAllMessages(other.workerGroupSepc_);
+              workerGroupSpecBuilder_.addAllMessages(other.workerGroupSpec_);
             }
           }
         }
@@ -2352,30 +2352,30 @@ public final class ResourceOuterClass {
         return headGroupSpecBuilder_;
       }
 
-      private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSepc_ =
+      private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSpec_ =
         java.util.Collections.emptyList();
-      private void ensureWorkerGroupSepcIsMutable() {
+      private void ensureWorkerGroupSpecIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>(workerGroupSepc_);
+          workerGroupSpec_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>(workerGroupSpec_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> workerGroupSepcBuilder_;
+          flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> workerGroupSpecBuilder_;
 
       /**
        * <pre>
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSepcList() {
-        if (workerGroupSepcBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(workerGroupSepc_);
+      public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSpecList() {
+        if (workerGroupSpecBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(workerGroupSpec_);
         } else {
-          return workerGroupSepcBuilder_.getMessageList();
+          return workerGroupSpecBuilder_.getMessageList();
         }
       }
       /**
@@ -2383,13 +2383,13 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public int getWorkerGroupSepcCount() {
-        if (workerGroupSepcBuilder_ == null) {
-          return workerGroupSepc_.size();
+      public int getWorkerGroupSpecCount() {
+        if (workerGroupSpecBuilder_ == null) {
+          return workerGroupSpec_.size();
         } else {
-          return workerGroupSepcBuilder_.getCount();
+          return workerGroupSpecBuilder_.getCount();
         }
       }
       /**
@@ -2397,13 +2397,13 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index) {
-        if (workerGroupSepcBuilder_ == null) {
-          return workerGroupSepc_.get(index);
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSpec(int index) {
+        if (workerGroupSpecBuilder_ == null) {
+          return workerGroupSpec_.get(index);
         } else {
-          return workerGroupSepcBuilder_.getMessage(index);
+          return workerGroupSpecBuilder_.getMessage(index);
         }
       }
       /**
@@ -2411,19 +2411,19 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder setWorkerGroupSepc(
+      public Builder setWorkerGroupSpec(
           int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
-        if (workerGroupSepcBuilder_ == null) {
+        if (workerGroupSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.set(index, value);
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.set(index, value);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.setMessage(index, value);
+          workerGroupSpecBuilder_.setMessage(index, value);
         }
         return this;
       }
@@ -2432,16 +2432,16 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder setWorkerGroupSepc(
+      public Builder setWorkerGroupSpec(
           int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
-        if (workerGroupSepcBuilder_ == null) {
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.set(index, builderForValue.build());
+        if (workerGroupSpecBuilder_ == null) {
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.set(index, builderForValue.build());
           onChanged();
         } else {
-          workerGroupSepcBuilder_.setMessage(index, builderForValue.build());
+          workerGroupSpecBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -2450,18 +2450,18 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder addWorkerGroupSepc(flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
-        if (workerGroupSepcBuilder_ == null) {
+      public Builder addWorkerGroupSpec(flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
+        if (workerGroupSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.add(value);
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.add(value);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.addMessage(value);
+          workerGroupSpecBuilder_.addMessage(value);
         }
         return this;
       }
@@ -2470,19 +2470,19 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder addWorkerGroupSepc(
+      public Builder addWorkerGroupSpec(
           int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
-        if (workerGroupSepcBuilder_ == null) {
+        if (workerGroupSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.add(index, value);
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.add(index, value);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.addMessage(index, value);
+          workerGroupSpecBuilder_.addMessage(index, value);
         }
         return this;
       }
@@ -2491,16 +2491,16 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder addWorkerGroupSepc(
+      public Builder addWorkerGroupSpec(
           flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
-        if (workerGroupSepcBuilder_ == null) {
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.add(builderForValue.build());
+        if (workerGroupSpecBuilder_ == null) {
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.add(builderForValue.build());
           onChanged();
         } else {
-          workerGroupSepcBuilder_.addMessage(builderForValue.build());
+          workerGroupSpecBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -2509,16 +2509,16 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder addWorkerGroupSepc(
+      public Builder addWorkerGroupSpec(
           int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
-        if (workerGroupSepcBuilder_ == null) {
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.add(index, builderForValue.build());
+        if (workerGroupSpecBuilder_ == null) {
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.add(index, builderForValue.build());
           onChanged();
         } else {
-          workerGroupSepcBuilder_.addMessage(index, builderForValue.build());
+          workerGroupSpecBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -2527,17 +2527,17 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder addAllWorkerGroupSepc(
+      public Builder addAllWorkerGroupSpec(
           java.lang.Iterable<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpec> values) {
-        if (workerGroupSepcBuilder_ == null) {
-          ensureWorkerGroupSepcIsMutable();
+        if (workerGroupSpecBuilder_ == null) {
+          ensureWorkerGroupSpecIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, workerGroupSepc_);
+              values, workerGroupSpec_);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.addAllMessages(values);
+          workerGroupSpecBuilder_.addAllMessages(values);
         }
         return this;
       }
@@ -2546,15 +2546,15 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder clearWorkerGroupSepc() {
-        if (workerGroupSepcBuilder_ == null) {
-          workerGroupSepc_ = java.util.Collections.emptyList();
+      public Builder clearWorkerGroupSpec() {
+        if (workerGroupSpecBuilder_ == null) {
+          workerGroupSpec_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.clear();
+          workerGroupSpecBuilder_.clear();
         }
         return this;
       }
@@ -2563,15 +2563,15 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public Builder removeWorkerGroupSepc(int index) {
-        if (workerGroupSepcBuilder_ == null) {
-          ensureWorkerGroupSepcIsMutable();
-          workerGroupSepc_.remove(index);
+      public Builder removeWorkerGroupSpec(int index) {
+        if (workerGroupSpecBuilder_ == null) {
+          ensureWorkerGroupSpecIsMutable();
+          workerGroupSpec_.remove(index);
           onChanged();
         } else {
-          workerGroupSepcBuilder_.remove(index);
+          workerGroupSpecBuilder_.remove(index);
         }
         return this;
       }
@@ -2580,24 +2580,24 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder getWorkerGroupSepcBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder getWorkerGroupSpecBuilder(
           int index) {
-        return getWorkerGroupSepcFieldBuilder().getBuilder(index);
+        return getWorkerGroupSpecFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
           int index) {
-        if (workerGroupSepcBuilder_ == null) {
-          return workerGroupSepc_.get(index);  } else {
-          return workerGroupSepcBuilder_.getMessageOrBuilder(index);
+        if (workerGroupSpecBuilder_ == null) {
+          return workerGroupSpec_.get(index);  } else {
+          return workerGroupSpecBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -2605,14 +2605,14 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
       public java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
-           getWorkerGroupSepcOrBuilderList() {
-        if (workerGroupSepcBuilder_ != null) {
-          return workerGroupSepcBuilder_.getMessageOrBuilderList();
+           getWorkerGroupSpecOrBuilderList() {
+        if (workerGroupSpecBuilder_ != null) {
+          return workerGroupSpecBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(workerGroupSepc_);
+          return java.util.Collections.unmodifiableList(workerGroupSpec_);
         }
       }
       /**
@@ -2620,10 +2620,10 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder() {
-        return getWorkerGroupSepcFieldBuilder().addBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSpecBuilder() {
+        return getWorkerGroupSpecFieldBuilder().addBuilder(
             flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance());
       }
       /**
@@ -2631,11 +2631,11 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
-      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSpecBuilder(
           int index) {
-        return getWorkerGroupSepcFieldBuilder().addBuilder(
+        return getWorkerGroupSpecFieldBuilder().addBuilder(
             index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance());
       }
       /**
@@ -2643,25 +2643,25 @@ public final class ResourceOuterClass {
        * The worker group configurations
        * </pre>
        *
-       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
+       * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;</code>
        */
       public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder> 
-           getWorkerGroupSepcBuilderList() {
-        return getWorkerGroupSepcFieldBuilder().getBuilderList();
+           getWorkerGroupSpecBuilderList() {
+        return getWorkerGroupSpecFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
-          getWorkerGroupSepcFieldBuilder() {
-        if (workerGroupSepcBuilder_ == null) {
-          workerGroupSepcBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getWorkerGroupSpecFieldBuilder() {
+        if (workerGroupSpecBuilder_ == null) {
+          workerGroupSpecBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder>(
-                  workerGroupSepc_,
+                  workerGroupSpec_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          workerGroupSepc_ = null;
+          workerGroupSpec_ = null;
         }
-        return workerGroupSepcBuilder_;
+        return workerGroupSpecBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2776,7 +2776,7 @@ public final class ResourceOuterClass {
 
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -2784,7 +2784,7 @@ public final class ResourceOuterClass {
     int getRayStartParamsCount();
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -2799,7 +2799,7 @@ public final class ResourceOuterClass {
     getRayStartParams();
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -2808,7 +2808,7 @@ public final class ResourceOuterClass {
     getRayStartParamsMap();
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -2819,7 +2819,7 @@ public final class ResourceOuterClass {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3100,7 +3100,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3120,7 +3120,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3131,7 +3131,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3147,7 +3147,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of head node group
+     * Optional. The ray start params of head node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3848,7 +3848,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3868,7 +3868,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3879,7 +3879,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3895,7 +3895,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3919,7 +3919,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3942,7 +3942,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -3958,7 +3958,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of head node group
+       * Optional. The ray start params of head node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
@@ -4110,7 +4110,7 @@ public final class ResourceOuterClass {
 
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4118,7 +4118,7 @@ public final class ResourceOuterClass {
     int getRayStartParamsCount();
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4133,7 +4133,7 @@ public final class ResourceOuterClass {
     getRayStartParams();
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4142,7 +4142,7 @@ public final class ResourceOuterClass {
     getRayStartParamsMap();
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4153,7 +4153,7 @@ public final class ResourceOuterClass {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4488,7 +4488,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4508,7 +4508,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4519,7 +4519,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -4535,7 +4535,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Optional. The ray start parames of worker node group
+     * Optional. The ray start params of worker node group
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5401,7 +5401,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5421,7 +5421,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5432,7 +5432,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5448,7 +5448,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5472,7 +5472,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5495,7 +5495,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5511,7 +5511,7 @@ public final class ResourceOuterClass {
       }
       /**
        * <pre>
-       * Optional. The ray start parames of worker node group
+       * Optional. The ray start params of worker node group
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
@@ -5627,7 +5627,7 @@ public final class ResourceOuterClass {
       "ame\030\001 \001(\t\0220\n\014cluster_spec\030\002 \001(\0132\032.flytei" +
       "dl.core.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017he" +
       "ad_group_spec\030\001 \001(\0132\034.flyteidl.core.Head" +
-      "GroupSpec\0229\n\021worker_group_sepc\030\002 \003(\0132\036.f" +
+      "GroupSpec\0229\n\021worker_group_spec\030\002 \003(\0132\036.f" +
       "lyteidl.core.WorkerGroupSpec\"\321\001\n\rHeadGro" +
       "upSpec\022\030\n\020compute_template\030\001 \001(\t\022\r\n\005imag" +
       "e\030\002 \001(\t\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_sta" +
@@ -5674,7 +5674,7 @@ public final class ResourceOuterClass {
     internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ClusterSpec_descriptor,
-        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSepc", });
+        new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", });
     internal_static_flyteidl_core_HeadGroupSpec_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable = new

@@ -11,5 +11,5 @@ package flyteadmin
 
 type CoreClusterSpec struct {
 	HeadGroupSpec *CoreHeadGroupSpec `json:"head_group_spec,omitempty"`
-	WorkerGroupSepc []CoreWorkerGroupSpec `json:"worker_group_sepc,omitempty"`
+	WorkerGroupSpec []CoreWorkerGroupSpec `json:"worker_group_spec,omitempty"`
 }

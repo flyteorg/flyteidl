@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x08Resource\x12(\n\x03ray\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayClusterH\x00\x42\x07\n\x05value\"L\n\nRayCluster\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0c\x63luster_spec\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_sepc\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\xd1\x01\n\rHeadGroupSpec\x12\x18\n\x10\x63ompute_template\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x14\n\x0cservice_type\x18\x03 \x01(\t\x12J\n\x10ray_start_params\x18\x04 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x02\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x18\n\x10\x63ompute_template\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x05 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x06 \x01(\x05\x12L\n\x10ray_start_params\x18\x07 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x08Resource\x12(\n\x03ray\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayClusterH\x00\x42\x07\n\x05value\"L\n\nRayCluster\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0c\x63luster_spec\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_spec\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\xd1\x01\n\rHeadGroupSpec\x12\x18\n\x10\x63ompute_template\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x14\n\x0cservice_type\x18\x03 \x01(\t\x12J\n\x10ray_start_params\x18\x04 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x02\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x18\n\x10\x63ompute_template\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x05 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x06 \x01(\x05\x12L\n\x10ray_start_params\x18\x07 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -115,7 +115,7 @@ _CLUSTERSPEC = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='worker_group_sepc', full_name='flyteidl.core.ClusterSpec.worker_group_sepc', index=1,
+      name='worker_group_spec', full_name='flyteidl.core.ClusterSpec.worker_group_spec', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -342,7 +342,7 @@ _RESOURCE.oneofs_by_name['value'].fields.append(
 _RESOURCE.fields_by_name['ray'].containing_oneof = _RESOURCE.oneofs_by_name['value']
 _RAYCLUSTER.fields_by_name['cluster_spec'].message_type = _CLUSTERSPEC
 _CLUSTERSPEC.fields_by_name['head_group_spec'].message_type = _HEADGROUPSPEC
-_CLUSTERSPEC.fields_by_name['worker_group_sepc'].message_type = _WORKERGROUPSPEC
+_CLUSTERSPEC.fields_by_name['worker_group_spec'].message_type = _WORKERGROUPSPEC
 _HEADGROUPSPEC_RAYSTARTPARAMSENTRY.containing_type = _HEADGROUPSPEC
 _HEADGROUPSPEC.fields_by_name['ray_start_params'].message_type = _HEADGROUPSPEC_RAYSTARTPARAMSENTRY
 _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY.containing_type = _WORKERGROUPSPEC

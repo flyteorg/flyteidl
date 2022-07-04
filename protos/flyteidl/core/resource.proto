@@ -27,7 +27,7 @@ message ClusterSpec {
   // The head group configuration
   HeadGroupSpec head_group_spec = 1;
   // The worker group configurations
-  repeated WorkerGroupSpec worker_group_sepc = 2;
+  repeated WorkerGroupSpec worker_group_spec = 2;
 }
 
 message HeadGroupSpec {
@@ -37,7 +37,7 @@ message HeadGroupSpec {
   string image = 2;
   // Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
   string service_type = 3;
-  // Optional. The ray start parames of head node group
+  // Optional. The ray start params of head node group
   map<string, string> ray_start_params = 4;
 }
 
@@ -54,6 +54,6 @@ message WorkerGroupSpec {
   int32 min_replicas = 5;
   // Optional. Max replicas of the worker group
   int32 max_replicas = 6;
-  // Optional. The ray start parames of worker node group
+  // Optional. The ray start params of worker node group
   map<string, string> ray_start_params = 7;
 }

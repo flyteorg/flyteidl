@@ -35,25 +35,25 @@ class CoreClusterSpec(object):
     """
     swagger_types = {
         'head_group_spec': 'CoreHeadGroupSpec',
-        'worker_group_sepc': 'list[CoreWorkerGroupSpec]'
+        'worker_group_spec': 'list[CoreWorkerGroupSpec]'
     }
 
     attribute_map = {
         'head_group_spec': 'head_group_spec',
-        'worker_group_sepc': 'worker_group_sepc'
+        'worker_group_spec': 'worker_group_spec'
     }
 
-    def __init__(self, head_group_spec=None, worker_group_sepc=None):  # noqa: E501
+    def __init__(self, head_group_spec=None, worker_group_spec=None):  # noqa: E501
         """CoreClusterSpec - a model defined in Swagger"""  # noqa: E501
 
         self._head_group_spec = None
-        self._worker_group_sepc = None
+        self._worker_group_spec = None
         self.discriminator = None
 
         if head_group_spec is not None:
             self.head_group_spec = head_group_spec
-        if worker_group_sepc is not None:
-            self.worker_group_sepc = worker_group_sepc
+        if worker_group_spec is not None:
+            self.worker_group_spec = worker_group_spec
 
     @property
     def head_group_spec(self):
@@ -77,25 +77,25 @@ class CoreClusterSpec(object):
         self._head_group_spec = head_group_spec
 
     @property
-    def worker_group_sepc(self):
-        """Gets the worker_group_sepc of this CoreClusterSpec.  # noqa: E501
+    def worker_group_spec(self):
+        """Gets the worker_group_spec of this CoreClusterSpec.  # noqa: E501
 
 
-        :return: The worker_group_sepc of this CoreClusterSpec.  # noqa: E501
+        :return: The worker_group_spec of this CoreClusterSpec.  # noqa: E501
         :rtype: list[CoreWorkerGroupSpec]
         """
-        return self._worker_group_sepc
+        return self._worker_group_spec
 
-    @worker_group_sepc.setter
-    def worker_group_sepc(self, worker_group_sepc):
-        """Sets the worker_group_sepc of this CoreClusterSpec.
+    @worker_group_spec.setter
+    def worker_group_spec(self, worker_group_spec):
+        """Sets the worker_group_spec of this CoreClusterSpec.
 
 
-        :param worker_group_sepc: The worker_group_sepc of this CoreClusterSpec.  # noqa: E501
+        :param worker_group_spec: The worker_group_spec of this CoreClusterSpec.  # noqa: E501
         :type: list[CoreWorkerGroupSpec]
         """
 
-        self._worker_group_sepc = worker_group_sepc
+        self._worker_group_spec = worker_group_spec
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -5619,8 +5619,8 @@ export namespace flyteidl {
             /** ClusterSpec headGroupSpec */
             headGroupSpec?: (flyteidl.core.IHeadGroupSpec|null);
 
-            /** ClusterSpec workerGroupSepc */
-            workerGroupSepc?: (flyteidl.core.IWorkerGroupSpec[]|null);
+            /** ClusterSpec workerGroupSpec */
+            workerGroupSpec?: (flyteidl.core.IWorkerGroupSpec[]|null);
         }
 
         /** Represents a ClusterSpec. */
@@ -5635,8 +5635,8 @@ export namespace flyteidl {
             /** ClusterSpec headGroupSpec. */
             public headGroupSpec?: (flyteidl.core.IHeadGroupSpec|null);
 
-            /** ClusterSpec workerGroupSepc. */
-            public workerGroupSepc: flyteidl.core.IWorkerGroupSpec[];
+            /** ClusterSpec workerGroupSpec. */
+            public workerGroupSpec: flyteidl.core.IWorkerGroupSpec[];
 
             /**
              * Creates a new ClusterSpec instance using the specified properties.

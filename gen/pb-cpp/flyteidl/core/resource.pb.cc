@@ -192,7 +192,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fresource_2eproto:
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ClusterSpec, head_group_spec_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ClusterSpec, worker_group_sepc_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::ClusterSpec, worker_group_spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -267,7 +267,7 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fresource_2eproto[] =
   "ame\030\001 \001(\t\0220\n\014cluster_spec\030\002 \001(\0132\032.flytei"
   "dl.core.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017he"
   "ad_group_spec\030\001 \001(\0132\034.flyteidl.core.Head"
-  "GroupSpec\0229\n\021worker_group_sepc\030\002 \003(\0132\036.f"
+  "GroupSpec\0229\n\021worker_group_spec\030\002 \003(\0132\036.f"
   "lyteidl.core.WorkerGroupSpec\"\321\001\n\rHeadGro"
   "upSpec\022\030\n\020compute_template\030\001 \001(\t\022\r\n\005imag"
   "e\030\002 \001(\t\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_sta"
@@ -1016,7 +1016,7 @@ ClusterSpec::HasBitSetters::head_group_spec(const ClusterSpec* msg) {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ClusterSpec::kHeadGroupSpecFieldNumber;
-const int ClusterSpec::kWorkerGroupSepcFieldNumber;
+const int ClusterSpec::kWorkerGroupSpecFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ClusterSpec::ClusterSpec()
@@ -1027,7 +1027,7 @@ ClusterSpec::ClusterSpec()
 ClusterSpec::ClusterSpec(const ClusterSpec& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
-      worker_group_sepc_(from.worker_group_sepc_) {
+      worker_group_spec_(from.worker_group_spec_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_head_group_spec()) {
     head_group_spec_ = new ::flyteidl::core::HeadGroupSpec(*from.head_group_spec_);
@@ -1067,7 +1067,7 @@ void ClusterSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  worker_group_sepc_.Clear();
+  worker_group_spec_.Clear();
   if (GetArenaNoVirtual() == nullptr && head_group_spec_ != nullptr) {
     delete head_group_spec_;
   }
@@ -1101,14 +1101,14 @@ const char* ClusterSpec::_InternalParse(const char* begin, const char* end, void
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
+      // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
           parser_till_end = ::flyteidl::core::WorkerGroupSpec::_InternalParse;
-          object = msg->add_worker_group_sepc();
+          object = msg->add_worker_group_spec();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1158,11 +1158,11 @@ bool ClusterSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
+      // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_worker_group_sepc()));
+                input, add_worker_group_spec()));
         } else {
           goto handle_unusual;
         }
@@ -1202,12 +1202,12 @@ void ClusterSpec::SerializeWithCachedSizes(
       1, HasBitSetters::head_group_spec(this), output);
   }
 
-  // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
+  // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->worker_group_sepc_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->worker_group_spec_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2,
-      this->worker_group_sepc(static_cast<int>(i)),
+      this->worker_group_spec(static_cast<int>(i)),
       output);
   }
 
@@ -1231,12 +1231,12 @@ void ClusterSpec::SerializeWithCachedSizes(
         1, HasBitSetters::head_group_spec(this), target);
   }
 
-  // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
+  // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->worker_group_sepc_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->worker_group_spec_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->worker_group_sepc(static_cast<int>(i)), target);
+        2, this->worker_group_spec(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1260,14 +1260,14 @@ size_t ClusterSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;
+  // repeated .flyteidl.core.WorkerGroupSpec worker_group_spec = 2;
   {
-    unsigned int count = static_cast<unsigned int>(this->worker_group_sepc_size());
+    unsigned int count = static_cast<unsigned int>(this->worker_group_spec_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->worker_group_sepc(static_cast<int>(i)));
+          this->worker_group_spec(static_cast<int>(i)));
     }
   }
 
@@ -1305,7 +1305,7 @@ void ClusterSpec::MergeFrom(const ClusterSpec& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  worker_group_sepc_.MergeFrom(from.worker_group_sepc_);
+  worker_group_spec_.MergeFrom(from.worker_group_spec_);
   if (from.has_head_group_spec()) {
     mutable_head_group_spec()->::flyteidl::core::HeadGroupSpec::MergeFrom(from.head_group_spec());
   }
@@ -1336,7 +1336,7 @@ void ClusterSpec::Swap(ClusterSpec* other) {
 void ClusterSpec::InternalSwap(ClusterSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&worker_group_sepc_)->InternalSwap(CastToBase(&other->worker_group_sepc_));
+  CastToBase(&worker_group_spec_)->InternalSwap(CastToBase(&other->worker_group_spec_));
   swap(head_group_spec_, other->head_group_spec_);
 }
 

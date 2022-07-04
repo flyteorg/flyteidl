@@ -210,13 +210,13 @@ func (m *ClusterSpec) Validate() error {
 		}
 	}
 
-	for idx, item := range m.GetWorkerGroupSepc() {
+	for idx, item := range m.GetWorkerGroupSpec() {
 		_, _ = idx, item
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return ClusterSpecValidationError{
-					field:  fmt.Sprintf("WorkerGroupSepc[%v]", idx),
+					field:  fmt.Sprintf("WorkerGroupSpec[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

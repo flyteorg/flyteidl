@@ -13454,7 +13454,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IClusterSpec
              * @property {flyteidl.core.IHeadGroupSpec|null} [headGroupSpec] ClusterSpec headGroupSpec
-             * @property {Array.<flyteidl.core.IWorkerGroupSpec>|null} [workerGroupSepc] ClusterSpec workerGroupSepc
+             * @property {Array.<flyteidl.core.IWorkerGroupSpec>|null} [workerGroupSpec] ClusterSpec workerGroupSpec
              */
 
             /**
@@ -13466,7 +13466,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.core.IClusterSpec=} [properties] Properties to set
              */
             function ClusterSpec(properties) {
-                this.workerGroupSepc = [];
+                this.workerGroupSpec = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -13482,12 +13482,12 @@ export const flyteidl = $root.flyteidl = (() => {
             ClusterSpec.prototype.headGroupSpec = null;
 
             /**
-             * ClusterSpec workerGroupSepc.
-             * @member {Array.<flyteidl.core.IWorkerGroupSpec>} workerGroupSepc
+             * ClusterSpec workerGroupSpec.
+             * @member {Array.<flyteidl.core.IWorkerGroupSpec>} workerGroupSpec
              * @memberof flyteidl.core.ClusterSpec
              * @instance
              */
-            ClusterSpec.prototype.workerGroupSepc = $util.emptyArray;
+            ClusterSpec.prototype.workerGroupSpec = $util.emptyArray;
 
             /**
              * Creates a new ClusterSpec instance using the specified properties.
@@ -13515,9 +13515,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.headGroupSpec != null && message.hasOwnProperty("headGroupSpec"))
                     $root.flyteidl.core.HeadGroupSpec.encode(message.headGroupSpec, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.workerGroupSepc != null && message.workerGroupSepc.length)
-                    for (let i = 0; i < message.workerGroupSepc.length; ++i)
-                        $root.flyteidl.core.WorkerGroupSpec.encode(message.workerGroupSepc[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.workerGroupSpec != null && message.workerGroupSpec.length)
+                    for (let i = 0; i < message.workerGroupSpec.length; ++i)
+                        $root.flyteidl.core.WorkerGroupSpec.encode(message.workerGroupSpec[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -13543,9 +13543,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.headGroupSpec = $root.flyteidl.core.HeadGroupSpec.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        if (!(message.workerGroupSepc && message.workerGroupSepc.length))
-                            message.workerGroupSepc = [];
-                        message.workerGroupSepc.push($root.flyteidl.core.WorkerGroupSpec.decode(reader, reader.uint32()));
+                        if (!(message.workerGroupSpec && message.workerGroupSpec.length))
+                            message.workerGroupSpec = [];
+                        message.workerGroupSpec.push($root.flyteidl.core.WorkerGroupSpec.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13571,13 +13571,13 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "headGroupSpec." + error;
                 }
-                if (message.workerGroupSepc != null && message.hasOwnProperty("workerGroupSepc")) {
-                    if (!Array.isArray(message.workerGroupSepc))
-                        return "workerGroupSepc: array expected";
-                    for (let i = 0; i < message.workerGroupSepc.length; ++i) {
-                        let error = $root.flyteidl.core.WorkerGroupSpec.verify(message.workerGroupSepc[i]);
+                if (message.workerGroupSpec != null && message.hasOwnProperty("workerGroupSpec")) {
+                    if (!Array.isArray(message.workerGroupSpec))
+                        return "workerGroupSpec: array expected";
+                    for (let i = 0; i < message.workerGroupSpec.length; ++i) {
+                        let error = $root.flyteidl.core.WorkerGroupSpec.verify(message.workerGroupSpec[i]);
                         if (error)
-                            return "workerGroupSepc." + error;
+                            return "workerGroupSpec." + error;
                     }
                 }
                 return null;

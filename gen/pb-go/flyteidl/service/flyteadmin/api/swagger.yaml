@@ -4597,29 +4597,29 @@ definitions:
           key:
             ray:
               cluster_spec:
+                worker_group_spec:
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
                 head_group_spec:
                   image: "image"
                   service_type: "service_type"
                   ray_start_params:
                     key: "ray_start_params"
                   compute_template: "compute_template"
-                worker_group_sepc:
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
               name: "name"
         interruptible: true
         labels:
@@ -5423,29 +5423,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           interruptible: true
           labels:
@@ -5964,29 +5964,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           interruptible: true
           labels:
@@ -6393,29 +6393,29 @@ definitions:
         key:
           ray:
             cluster_spec:
+              worker_group_spec:
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
               head_group_spec:
                 image: "image"
                 service_type: "service_type"
                 ray_start_params:
                   key: "ray_start_params"
                 compute_template: "compute_template"
-              worker_group_sepc:
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
             name: "name"
       interruptible: true
       labels:
@@ -9229,29 +9229,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -11089,29 +11089,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -11330,29 +11330,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -11608,29 +11608,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -13507,29 +13507,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -14564,29 +14564,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -14858,29 +14858,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -15548,29 +15548,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -15835,29 +15835,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -17864,29 +17864,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -19724,29 +19724,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -19965,29 +19965,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -20243,29 +20243,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -22142,29 +22142,29 @@ definitions:
                 key:
                   ray:
                     cluster_spec:
+                      worker_group_spec:
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
+                      - image: "image"
+                        ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        compute_template: "compute_template"
+                        max_replicas: 7
                       head_group_spec:
                         image: "image"
                         service_type: "service_type"
                         ray_start_params:
                           key: "ray_start_params"
                         compute_template: "compute_template"
-                      worker_group_sepc:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
                     name: "name"
               id:
                 domain: "domain"
@@ -24317,29 +24317,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -26177,29 +26177,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -26418,29 +26418,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -26696,29 +26696,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -28595,29 +28595,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -30626,29 +30626,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -32486,29 +32486,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -32727,29 +32727,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -33005,29 +33005,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -34904,29 +34904,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -36774,29 +36774,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -38634,29 +38634,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -38875,29 +38875,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -39153,29 +39153,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -41052,29 +41052,29 @@ definitions:
                   key:
                     ray:
                       cluster_spec:
+                        worker_group_spec:
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
+                        - image: "image"
+                          ray_start_params:
+                            key: "ray_start_params"
+                          group_name: "group_name"
+                          replicas: 5
+                          min_replicas: 2
+                          compute_template: "compute_template"
+                          max_replicas: 7
                         head_group_spec:
                           image: "image"
                           service_type: "service_type"
                           ray_start_params:
                             key: "ray_start_params"
                           compute_template: "compute_template"
-                        worker_group_sepc:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
                       name: "name"
                 id:
                   domain: "domain"
@@ -41869,35 +41869,35 @@ definitions:
       head_group_spec:
         title: "The head group configuration"
         $ref: "#/definitions/coreHeadGroupSpec"
-      worker_group_sepc:
+      worker_group_spec:
         type: "array"
         title: "The worker group configurations"
         items:
           $ref: "#/definitions/coreWorkerGroupSpec"
     example:
+      worker_group_spec:
+      - image: "image"
+        ray_start_params:
+          key: "ray_start_params"
+        group_name: "group_name"
+        replicas: 5
+        min_replicas: 2
+        compute_template: "compute_template"
+        max_replicas: 7
+      - image: "image"
+        ray_start_params:
+          key: "ray_start_params"
+        group_name: "group_name"
+        replicas: 5
+        min_replicas: 2
+        compute_template: "compute_template"
+        max_replicas: 7
       head_group_spec:
         image: "image"
         service_type: "service_type"
         ray_start_params:
           key: "ray_start_params"
         compute_template: "compute_template"
-      worker_group_sepc:
-      - image: "image"
-        ray_start_params:
-          key: "ray_start_params"
-        group_name: "group_name"
-        replicas: 5
-        min_replicas: 2
-        compute_template: "compute_template"
-        max_replicas: 7
-      - image: "image"
-        ray_start_params:
-          key: "ray_start_params"
-        group_name: "group_name"
-        replicas: 5
-        min_replicas: 2
-        compute_template: "compute_template"
-        max_replicas: 7
   coreComparisonExpression:
     type: "object"
     properties:
@@ -42039,29 +42039,29 @@ definitions:
           key:
             ray:
               cluster_spec:
+                worker_group_spec:
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
                 head_group_spec:
                   image: "image"
                   service_type: "service_type"
                   ray_start_params:
                     key: "ray_start_params"
                   compute_template: "compute_template"
-                worker_group_sepc:
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
               name: "name"
         id:
           domain: "domain"
@@ -43950,29 +43950,29 @@ definitions:
           key:
             ray:
               cluster_spec:
+                worker_group_spec:
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
+                - image: "image"
+                  ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  compute_template: "compute_template"
+                  max_replicas: 7
                 head_group_spec:
                   image: "image"
                   service_type: "service_type"
                   ray_start_params:
                     key: "ray_start_params"
                   compute_template: "compute_template"
-                worker_group_sepc:
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
               name: "name"
         id:
           domain: "domain"
@@ -45837,29 +45837,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -47697,29 +47697,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -47938,29 +47938,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -48216,29 +48216,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -50115,29 +50115,29 @@ definitions:
             key:
               ray:
                 cluster_spec:
+                  worker_group_spec:
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
+                  - image: "image"
+                    ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    compute_template: "compute_template"
+                    max_replicas: 7
                   head_group_spec:
                     image: "image"
                     service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
                     compute_template: "compute_template"
-                  worker_group_sepc:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
                 name: "name"
           id:
             domain: "domain"
@@ -50523,7 +50523,7 @@ definitions:
           \ the head node"
       ray_start_params:
         type: "object"
-        title: "Optional. The ray start parames of head node group"
+        title: "Optional. The ray start params of head node group"
         additionalProperties:
           type: "string"
     example:
@@ -52110,29 +52110,29 @@ definitions:
     title: "Define Ray cluster spec"
     example:
       cluster_spec:
+        worker_group_spec:
+        - image: "image"
+          ray_start_params:
+            key: "ray_start_params"
+          group_name: "group_name"
+          replicas: 5
+          min_replicas: 2
+          compute_template: "compute_template"
+          max_replicas: 7
+        - image: "image"
+          ray_start_params:
+            key: "ray_start_params"
+          group_name: "group_name"
+          replicas: 5
+          min_replicas: 2
+          compute_template: "compute_template"
+          max_replicas: 7
         head_group_spec:
           image: "image"
           service_type: "service_type"
           ray_start_params:
             key: "ray_start_params"
           compute_template: "compute_template"
-        worker_group_sepc:
-        - image: "image"
-          ray_start_params:
-            key: "ray_start_params"
-          group_name: "group_name"
-          replicas: 5
-          min_replicas: 2
-          compute_template: "compute_template"
-          max_replicas: 7
-        - image: "image"
-          ray_start_params:
-            key: "ray_start_params"
-          group_name: "group_name"
-          replicas: 5
-          min_replicas: 2
-          compute_template: "compute_template"
-          max_replicas: 7
       name: "name"
   coreResource:
     type: "object"
@@ -52143,29 +52143,29 @@ definitions:
     example:
       ray:
         cluster_spec:
+          worker_group_spec:
+          - image: "image"
+            ray_start_params:
+              key: "ray_start_params"
+            group_name: "group_name"
+            replicas: 5
+            min_replicas: 2
+            compute_template: "compute_template"
+            max_replicas: 7
+          - image: "image"
+            ray_start_params:
+              key: "ray_start_params"
+            group_name: "group_name"
+            replicas: 5
+            min_replicas: 2
+            compute_template: "compute_template"
+            max_replicas: 7
           head_group_spec:
             image: "image"
             service_type: "service_type"
             ray_start_params:
               key: "ray_start_params"
             compute_template: "compute_template"
-          worker_group_sepc:
-          - image: "image"
-            ray_start_params:
-              key: "ray_start_params"
-            group_name: "group_name"
-            replicas: 5
-            min_replicas: 2
-            compute_template: "compute_template"
-            max_replicas: 7
-          - image: "image"
-            ray_start_params:
-              key: "ray_start_params"
-            group_name: "group_name"
-            replicas: 5
-            min_replicas: 2
-            compute_template: "compute_template"
-            max_replicas: 7
         name: "name"
   coreResourceType:
     type: "string"
@@ -52894,29 +52894,29 @@ definitions:
         key:
           ray:
             cluster_spec:
+              worker_group_spec:
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
               head_group_spec:
                 image: "image"
                 service_type: "service_type"
                 ray_start_params:
                   key: "ray_start_params"
                 compute_template: "compute_template"
-              worker_group_sepc:
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
             name: "name"
       id:
         domain: "domain"
@@ -53531,7 +53531,7 @@ definitions:
         title: "Optional. Max replicas of the worker group"
       ray_start_params:
         type: "object"
-        title: "Optional. The ray start parames of worker node group"
+        title: "Optional. The ray start params of worker node group"
         additionalProperties:
           type: "string"
     example:
@@ -55392,29 +55392,29 @@ definitions:
         key:
           ray:
             cluster_spec:
+              worker_group_spec:
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
+              - image: "image"
+                ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                compute_template: "compute_template"
+                max_replicas: 7
               head_group_spec:
                 image: "image"
                 service_type: "service_type"
                 ray_start_params:
                   key: "ray_start_params"
                 compute_template: "compute_template"
-              worker_group_sepc:
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
             name: "name"
       id:
         domain: "domain"
@@ -57567,29 +57567,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -59427,29 +59427,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -59668,29 +59668,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -59946,29 +59946,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
@@ -61845,29 +61845,29 @@ definitions:
               key:
                 ray:
                   cluster_spec:
+                    worker_group_spec:
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
+                    - image: "image"
+                      ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      compute_template: "compute_template"
+                      max_replicas: 7
                     head_group_spec:
                       image: "image"
                       service_type: "service_type"
                       ray_start_params:
                         key: "ray_start_params"
                       compute_template: "compute_template"
-                    worker_group_sepc:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
                   name: "name"
             id:
               domain: "domain"
