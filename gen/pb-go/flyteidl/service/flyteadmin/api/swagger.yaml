@@ -2737,15 +2737,6 @@ definitions:
     - "MEDIUM"
     - "LOW"
     default: "UNDEFINED"
-  RayClusterEnvironment:
-    type: "string"
-    description: "Optional field."
-    enum:
-    - "DEV"
-    - "TESTING"
-    - "STAGING"
-    - "PRODUCTION"
-    default: "DEV"
   ResourcesResourceEntry:
     type: "object"
     properties:
@@ -4605,7 +4596,6 @@ definitions:
         resources:
           key:
             ray:
-              environment: {}
               cluster_spec:
                 head_group_spec:
                   image: "image"
@@ -4631,12 +4621,6 @@ definitions:
                   compute_template: "compute_template"
                   max_replicas: 7
               name: "name"
-              namespace: "namespace"
-              created_at: "2000-01-23T04:56:07.000+00:00"
-              cluster_state: "cluster_state"
-              user: "user"
-              version: "version"
-              deleted_at: "2000-01-23T04:56:07.000+00:00"
         interruptible: true
         labels:
           values:
@@ -5438,7 +5422,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -5464,12 +5447,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           interruptible: true
           labels:
             values:
@@ -5986,7 +5963,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -6012,12 +5988,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           interruptible: true
           labels:
             values:
@@ -6422,7 +6392,6 @@ definitions:
       resources:
         key:
           ray:
-            environment: {}
             cluster_spec:
               head_group_spec:
                 image: "image"
@@ -6448,12 +6417,6 @@ definitions:
                 compute_template: "compute_template"
                 max_replicas: 7
             name: "name"
-            namespace: "namespace"
-            created_at: "2000-01-23T04:56:07.000+00:00"
-            cluster_state: "cluster_state"
-            user: "user"
-            version: "version"
-            deleted_at: "2000-01-23T04:56:07.000+00:00"
       interruptible: true
       labels:
         values:
@@ -9265,7 +9228,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -9291,12 +9253,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11132,7 +11088,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -11158,12 +11113,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11380,7 +11329,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -11406,12 +11354,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11665,7 +11607,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -11691,12 +11632,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -13571,7 +13506,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -13597,12 +13531,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -14635,7 +14563,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -14661,12 +14588,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -14936,7 +14857,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -14962,12 +14882,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -15633,7 +15547,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -15659,12 +15572,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -15927,7 +15834,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -15953,12 +15859,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -17963,7 +17863,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -17989,12 +17888,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -19830,7 +19723,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -19856,12 +19748,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -20078,7 +19964,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -20104,12 +19989,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -20363,7 +20242,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -20389,12 +20267,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -22269,7 +22141,6 @@ definitions:
               resources:
                 key:
                   ray:
-                    environment: {}
                     cluster_spec:
                       head_group_spec:
                         image: "image"
@@ -22295,12 +22166,6 @@ definitions:
                         compute_template: "compute_template"
                         max_replicas: 7
                     name: "name"
-                    namespace: "namespace"
-                    created_at: "2000-01-23T04:56:07.000+00:00"
-                    cluster_state: "cluster_state"
-                    user: "user"
-                    version: "version"
-                    deleted_at: "2000-01-23T04:56:07.000+00:00"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -24451,7 +24316,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -24477,12 +24341,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -26318,7 +26176,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -26344,12 +26201,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -26566,7 +26417,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -26592,12 +26442,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -26851,7 +26695,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -26877,12 +26720,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -28757,7 +28594,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -28783,12 +28619,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -30795,7 +30625,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -30821,12 +30650,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -32662,7 +32485,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -32688,12 +32510,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -32910,7 +32726,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -32936,12 +32751,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -33195,7 +33004,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -33221,12 +33029,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -35101,7 +34903,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -35127,12 +34928,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -36978,7 +36773,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -37004,12 +36798,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -38845,7 +38633,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -38871,12 +38658,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -39093,7 +38874,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -39119,12 +38899,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -39378,7 +39152,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -39404,12 +39177,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -41284,7 +41051,6 @@ definitions:
                 resources:
                   key:
                     ray:
-                      environment: {}
                       cluster_spec:
                         head_group_spec:
                           image: "image"
@@ -41310,12 +41076,6 @@ definitions:
                           compute_template: "compute_template"
                           max_replicas: 7
                       name: "name"
-                      namespace: "namespace"
-                      created_at: "2000-01-23T04:56:07.000+00:00"
-                      cluster_state: "cluster_state"
-                      user: "user"
-                      version: "version"
-                      deleted_at: "2000-01-23T04:56:07.000+00:00"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -42278,7 +42038,6 @@ definitions:
         resources:
           key:
             ray:
-              environment: {}
               cluster_spec:
                 head_group_spec:
                   image: "image"
@@ -42304,12 +42063,6 @@ definitions:
                   compute_template: "compute_template"
                   max_replicas: 7
               name: "name"
-              namespace: "namespace"
-              created_at: "2000-01-23T04:56:07.000+00:00"
-              cluster_state: "cluster_state"
-              user: "user"
-              version: "version"
-              deleted_at: "2000-01-23T04:56:07.000+00:00"
         id:
           domain: "domain"
           resource_type: {}
@@ -44196,7 +43949,6 @@ definitions:
         resources:
           key:
             ray:
-              environment: {}
               cluster_spec:
                 head_group_spec:
                   image: "image"
@@ -44222,12 +43974,6 @@ definitions:
                   compute_template: "compute_template"
                   max_replicas: 7
               name: "name"
-              namespace: "namespace"
-              created_at: "2000-01-23T04:56:07.000+00:00"
-              cluster_state: "cluster_state"
-              user: "user"
-              version: "version"
-              deleted_at: "2000-01-23T04:56:07.000+00:00"
         id:
           domain: "domain"
           resource_type: {}
@@ -46090,7 +45836,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -46116,12 +45861,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -47957,7 +47696,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -47983,12 +47721,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -48205,7 +47937,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -48231,12 +47962,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -48490,7 +48215,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -48516,12 +48240,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -50396,7 +50114,6 @@ definitions:
           resources:
             key:
               ray:
-                environment: {}
                 cluster_spec:
                   head_group_spec:
                     image: "image"
@@ -50422,12 +50139,6 @@ definitions:
                     compute_template: "compute_template"
                     max_replicas: 7
                 name: "name"
-                namespace: "namespace"
-                created_at: "2000-01-23T04:56:07.000+00:00"
-                cluster_state: "cluster_state"
-                user: "user"
-                version: "version"
-                deleted_at: "2000-01-23T04:56:07.000+00:00"
           id:
             domain: "domain"
             resource_type: {}
@@ -52393,34 +52104,11 @@ definitions:
       name:
         type: "string"
         description: "Required input field. Unique cluster name provided by user."
-      namespace:
-        type: "string"
-        title: "Required input field. Cluster's namespace provided by user"
-      user:
-        type: "string"
-        description: "Required field. This field indicates the user who owns the cluster."
-      version:
-        type: "string"
-        title: "Optional input field. Ray cluster version"
-      environment:
-        $ref: "#/definitions/RayClusterEnvironment"
       cluster_spec:
         title: "Required field. This field indicates ray cluster configuration"
         $ref: "#/definitions/coreClusterSpec"
-      created_at:
-        type: "string"
-        format: "date-time"
-        description: "Output. The time that the cluster created."
-      deleted_at:
-        type: "string"
-        format: "date-time"
-        description: "Output. The time that the cluster deleted."
-      cluster_state:
-        type: "string"
-        title: "Output. The status to show the cluster status.state"
-    title: "Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125"
+    title: "Define Ray cluster spec"
     example:
-      environment: {}
       cluster_spec:
         head_group_spec:
           image: "image"
@@ -52446,12 +52134,6 @@ definitions:
           compute_template: "compute_template"
           max_replicas: 7
       name: "name"
-      namespace: "namespace"
-      created_at: "2000-01-23T04:56:07.000+00:00"
-      cluster_state: "cluster_state"
-      user: "user"
-      version: "version"
-      deleted_at: "2000-01-23T04:56:07.000+00:00"
   coreResource:
     type: "object"
     properties:
@@ -52460,7 +52142,6 @@ definitions:
     title: "Cluster resource that task and workflow will run on"
     example:
       ray:
-        environment: {}
         cluster_spec:
           head_group_spec:
             image: "image"
@@ -52486,12 +52167,6 @@ definitions:
             compute_template: "compute_template"
             max_replicas: 7
         name: "name"
-        namespace: "namespace"
-        created_at: "2000-01-23T04:56:07.000+00:00"
-        cluster_state: "cluster_state"
-        user: "user"
-        version: "version"
-        deleted_at: "2000-01-23T04:56:07.000+00:00"
   coreResourceType:
     type: "string"
     description: "Indicates a resource type within Flyte.\n\n - DATASET: A dataset\
@@ -53218,7 +52893,6 @@ definitions:
       resources:
         key:
           ray:
-            environment: {}
             cluster_spec:
               head_group_spec:
                 image: "image"
@@ -53244,12 +52918,6 @@ definitions:
                 compute_template: "compute_template"
                 max_replicas: 7
             name: "name"
-            namespace: "namespace"
-            created_at: "2000-01-23T04:56:07.000+00:00"
-            cluster_state: "cluster_state"
-            user: "user"
-            version: "version"
-            deleted_at: "2000-01-23T04:56:07.000+00:00"
       id:
         domain: "domain"
         resource_type: {}
@@ -55723,7 +55391,6 @@ definitions:
       resources:
         key:
           ray:
-            environment: {}
             cluster_spec:
               head_group_spec:
                 image: "image"
@@ -55749,12 +55416,6 @@ definitions:
                 compute_template: "compute_template"
                 max_replicas: 7
             name: "name"
-            namespace: "namespace"
-            created_at: "2000-01-23T04:56:07.000+00:00"
-            cluster_state: "cluster_state"
-            user: "user"
-            version: "version"
-            deleted_at: "2000-01-23T04:56:07.000+00:00"
       id:
         domain: "domain"
         resource_type: {}
@@ -57905,7 +57566,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -57931,12 +57591,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -59772,7 +59426,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -59798,12 +59451,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -60020,7 +59667,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -60046,12 +59692,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -60305,7 +59945,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -60331,12 +59970,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}
@@ -62211,7 +61844,6 @@ definitions:
             resources:
               key:
                 ray:
-                  environment: {}
                   cluster_spec:
                     head_group_spec:
                       image: "image"
@@ -62237,12 +61869,6 @@ definitions:
                       compute_template: "compute_template"
                       max_replicas: 7
                   name: "name"
-                  namespace: "namespace"
-                  created_at: "2000-01-23T04:56:07.000+00:00"
-                  cluster_state: "cluster_state"
-                  user: "user"
-                  version: "version"
-                  deleted_at: "2000-01-23T04:56:07.000+00:00"
             id:
               domain: "domain"
               resource_type: {}

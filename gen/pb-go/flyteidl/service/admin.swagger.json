@@ -3032,17 +3032,6 @@
       "default": "UNDEFINED",
       "description": " - UNDEFINED: Default: no quality of service specified."
     },
-    "RayClusterEnvironment": {
-      "type": "string",
-      "enum": [
-        "DEV",
-        "TESTING",
-        "STAGING",
-        "PRODUCTION"
-      ],
-      "default": "DEV",
-      "description": "Optional field."
-    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -6021,41 +6010,12 @@
           "type": "string",
           "description": "Required input field. Unique cluster name provided by user."
         },
-        "namespace": {
-          "type": "string",
-          "title": "Required input field. Cluster's namespace provided by user"
-        },
-        "user": {
-          "type": "string",
-          "description": "Required field. This field indicates the user who owns the cluster."
-        },
-        "version": {
-          "type": "string",
-          "title": "Optional input field. Ray cluster version"
-        },
-        "environment": {
-          "$ref": "#/definitions/RayClusterEnvironment"
-        },
         "cluster_spec": {
           "$ref": "#/definitions/coreClusterSpec",
           "title": "Required field. This field indicates ray cluster configuration"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Output. The time that the cluster created."
-        },
-        "deleted_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Output. The time that the cluster deleted."
-        },
-        "cluster_state": {
-          "type": "string",
-          "title": "Output. The status to show the cluster status.state"
         }
       },
-      "title": "Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125"
+      "title": "Define Ray cluster spec"
     },
     "coreResource": {
       "type": "object",

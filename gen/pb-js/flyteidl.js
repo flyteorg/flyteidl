@@ -13325,14 +13325,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IRayCluster
              * @property {string|null} [name] RayCluster name
-             * @property {string|null} [namespace] RayCluster namespace
-             * @property {string|null} [user] RayCluster user
-             * @property {string|null} [version] RayCluster version
-             * @property {flyteidl.core.RayCluster.Environment|null} [environment] RayCluster environment
              * @property {flyteidl.core.IClusterSpec|null} [clusterSpec] RayCluster clusterSpec
-             * @property {google.protobuf.ITimestamp|null} [createdAt] RayCluster createdAt
-             * @property {google.protobuf.ITimestamp|null} [deletedAt] RayCluster deletedAt
-             * @property {string|null} [clusterState] RayCluster clusterState
              */
 
             /**
@@ -13359,68 +13352,12 @@ export const flyteidl = $root.flyteidl = (() => {
             RayCluster.prototype.name = "";
 
             /**
-             * RayCluster namespace.
-             * @member {string} namespace
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.namespace = "";
-
-            /**
-             * RayCluster user.
-             * @member {string} user
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.user = "";
-
-            /**
-             * RayCluster version.
-             * @member {string} version
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.version = "";
-
-            /**
-             * RayCluster environment.
-             * @member {flyteidl.core.RayCluster.Environment} environment
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.environment = 0;
-
-            /**
              * RayCluster clusterSpec.
              * @member {flyteidl.core.IClusterSpec|null|undefined} clusterSpec
              * @memberof flyteidl.core.RayCluster
              * @instance
              */
             RayCluster.prototype.clusterSpec = null;
-
-            /**
-             * RayCluster createdAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} createdAt
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.createdAt = null;
-
-            /**
-             * RayCluster deletedAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} deletedAt
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.deletedAt = null;
-
-            /**
-             * RayCluster clusterState.
-             * @member {string} clusterState
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.clusterState = "";
 
             /**
              * Creates a new RayCluster instance using the specified properties.
@@ -13448,22 +13385,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.name != null && message.hasOwnProperty("name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.namespace != null && message.hasOwnProperty("namespace"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
-                if (message.user != null && message.hasOwnProperty("user"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.user);
-                if (message.version != null && message.hasOwnProperty("version"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.version);
-                if (message.environment != null && message.hasOwnProperty("environment"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.environment);
                 if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec"))
-                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
-                    $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.deletedAt != null && message.hasOwnProperty("deletedAt"))
-                    $root.google.protobuf.Timestamp.encode(message.deletedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
-                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.clusterState);
+                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -13489,28 +13412,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.name = reader.string();
                         break;
                     case 2:
-                        message.namespace = reader.string();
-                        break;
-                    case 3:
-                        message.user = reader.string();
-                        break;
-                    case 4:
-                        message.version = reader.string();
-                        break;
-                    case 5:
-                        message.environment = reader.int32();
-                        break;
-                    case 6:
                         message.clusterSpec = $root.flyteidl.core.ClusterSpec.decode(reader, reader.uint32());
-                        break;
-                    case 7:
-                        message.createdAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 8:
-                        message.deletedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 9:
-                        message.clusterState = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13534,63 +13436,13 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
                         return "name: string expected";
-                if (message.namespace != null && message.hasOwnProperty("namespace"))
-                    if (!$util.isString(message.namespace))
-                        return "namespace: string expected";
-                if (message.user != null && message.hasOwnProperty("user"))
-                    if (!$util.isString(message.user))
-                        return "user: string expected";
-                if (message.version != null && message.hasOwnProperty("version"))
-                    if (!$util.isString(message.version))
-                        return "version: string expected";
-                if (message.environment != null && message.hasOwnProperty("environment"))
-                    switch (message.environment) {
-                    default:
-                        return "environment: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
                 if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec")) {
                     let error = $root.flyteidl.core.ClusterSpec.verify(message.clusterSpec);
                     if (error)
                         return "clusterSpec." + error;
                 }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.createdAt);
-                    if (error)
-                        return "createdAt." + error;
-                }
-                if (message.deletedAt != null && message.hasOwnProperty("deletedAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.deletedAt);
-                    if (error)
-                        return "deletedAt." + error;
-                }
-                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
-                    if (!$util.isString(message.clusterState))
-                        return "clusterState: string expected";
                 return null;
             };
-
-            /**
-             * Environment enum.
-             * @name flyteidl.core.RayCluster.Environment
-             * @enum {string}
-             * @property {number} DEV=0 DEV value
-             * @property {number} TESTING=1 TESTING value
-             * @property {number} STAGING=2 STAGING value
-             * @property {number} PRODUCTION=3 PRODUCTION value
-             */
-            RayCluster.Environment = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "DEV"] = 0;
-                values[valuesById[1] = "TESTING"] = 1;
-                values[valuesById[2] = "STAGING"] = 2;
-                values[valuesById[3] = "PRODUCTION"] = 3;
-                return values;
-            })();
 
             return RayCluster;
         })();

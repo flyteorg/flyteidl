@@ -125,14 +125,6 @@ func (m *RayCluster) Validate() error {
 
 	// no validation rules for Name
 
-	// no validation rules for Namespace
-
-	// no validation rules for User
-
-	// no validation rules for Version
-
-	// no validation rules for Environment
-
 	if v, ok := interface{}(m.GetClusterSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return RayClusterValidationError{
@@ -142,28 +134,6 @@ func (m *RayCluster) Validate() error {
 			}
 		}
 	}
-
-	if v, ok := interface{}(m.GetCreatedAt()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return RayClusterValidationError{
-				field:  "CreatedAt",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	if v, ok := interface{}(m.GetDeletedAt()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return RayClusterValidationError{
-				field:  "DeletedAt",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	// no validation rules for ClusterState
 
 	return nil
 }

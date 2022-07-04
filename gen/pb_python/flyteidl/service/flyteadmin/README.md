@@ -366,7 +366,6 @@ Class | Method | HTTP request | Description
  - [ProtobufStruct](docs/ProtobufStruct.md)
  - [ProtobufValue](docs/ProtobufValue.md)
  - [QualityOfServiceTier](docs/QualityOfServiceTier.md)
- - [RayClusterEnvironment](docs/RayClusterEnvironment.md)
  - [ResourcesResourceEntry](docs/ResourcesResourceEntry.md)
  - [ResourcesResourceName](docs/ResourcesResourceName.md)
  - [RuntimeMetadataRuntimeType](docs/RuntimeMetadataRuntimeType.md)

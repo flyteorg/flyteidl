@@ -5561,29 +5561,8 @@ export namespace flyteidl {
             /** RayCluster name */
             name?: (string|null);
 
-            /** RayCluster namespace */
-            namespace?: (string|null);
-
-            /** RayCluster user */
-            user?: (string|null);
-
-            /** RayCluster version */
-            version?: (string|null);
-
-            /** RayCluster environment */
-            environment?: (flyteidl.core.RayCluster.Environment|null);
-
             /** RayCluster clusterSpec */
             clusterSpec?: (flyteidl.core.IClusterSpec|null);
-
-            /** RayCluster createdAt */
-            createdAt?: (google.protobuf.ITimestamp|null);
-
-            /** RayCluster deletedAt */
-            deletedAt?: (google.protobuf.ITimestamp|null);
-
-            /** RayCluster clusterState */
-            clusterState?: (string|null);
         }
 
         /** Represents a RayCluster. */
@@ -5598,29 +5577,8 @@ export namespace flyteidl {
             /** RayCluster name. */
             public name: string;
 
-            /** RayCluster namespace. */
-            public namespace: string;
-
-            /** RayCluster user. */
-            public user: string;
-
-            /** RayCluster version. */
-            public version: string;
-
-            /** RayCluster environment. */
-            public environment: flyteidl.core.RayCluster.Environment;
-
             /** RayCluster clusterSpec. */
             public clusterSpec?: (flyteidl.core.IClusterSpec|null);
-
-            /** RayCluster createdAt. */
-            public createdAt?: (google.protobuf.ITimestamp|null);
-
-            /** RayCluster deletedAt. */
-            public deletedAt?: (google.protobuf.ITimestamp|null);
-
-            /** RayCluster clusterState. */
-            public clusterState: string;
 
             /**
              * Creates a new RayCluster instance using the specified properties.
@@ -5653,17 +5611,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace RayCluster {
-
-            /** Environment enum. */
-            enum Environment {
-                DEV = 0,
-                TESTING = 1,
-                STAGING = 2,
-                PRODUCTION = 3
-            }
         }
 
         /** Properties of a ClusterSpec. */

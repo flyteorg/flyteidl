@@ -9,22 +9,8 @@
 
 package flyteadmin
 
-import (
-	"time"
-)
-
 type CoreRayCluster struct {
 	// Required input field. Unique cluster name provided by user.
 	Name string `json:"name,omitempty"`
-	Namespace string `json:"namespace,omitempty"`
-	// Required field. This field indicates the user who owns the cluster.
-	User string `json:"user,omitempty"`
-	Version string `json:"version,omitempty"`
-	Environment *RayClusterEnvironment `json:"environment,omitempty"`
 	ClusterSpec *CoreClusterSpec `json:"cluster_spec,omitempty"`
-	// Output. The time that the cluster created.
-	CreatedAt time.Time `json:"created_at,omitempty"`
-	// Output. The time that the cluster deleted.
-	DeletedAt time.Time `json:"deleted_at,omitempty"`
-	ClusterState string `json:"cluster_state,omitempty"`
 }

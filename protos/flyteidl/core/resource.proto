@@ -14,40 +14,13 @@ message Resource {
 }
 
 
-// Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
+// Define Ray cluster spec
 message RayCluster {
   // Required input field. Unique cluster name provided by user.
   string name = 1;
 
-  // Required input field. Cluster's namespace provided by user
-  string namespace = 2;
-
-  // Required field. This field indicates the user who owns the cluster.
-  string user = 3;
-
-  // Optional input field. Ray cluster version
-  string version = 4;
-
-  // Optional field.
-  enum Environment {
-    DEV = 0;
-    TESTING = 1;
-    STAGING = 2;
-    PRODUCTION = 3;
-  }
-  Environment environment = 5;
-
   // Required field. This field indicates ray cluster configuration
-  ClusterSpec cluster_spec = 6;
-
-  // Output. The time that the cluster created.
-  google.protobuf.Timestamp created_at = 7;
-
-  // Output. The time that the cluster deleted.
-  google.protobuf.Timestamp deleted_at = 8;
-
-  // Output. The status to show the cluster status.state
-  string cluster_state = 9;
+  ClusterSpec cluster_spec = 2;
 }
 
 message ClusterSpec {

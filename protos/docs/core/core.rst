@@ -1804,7 +1804,7 @@ HeadGroupSpec.RayStartParamsEntry
 RayCluster
 ------------------------------------------------------------------
 
-Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
+Define Ray cluster spec
 
 
 
@@ -1813,14 +1813,7 @@ Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/maste
    :widths: auto
 
    "name", ":ref:`ref_string`", "", "Required input field. Unique cluster name provided by user."
-   "namespace", ":ref:`ref_string`", "", "Required input field. Cluster's namespace provided by user"
-   "user", ":ref:`ref_string`", "", "Required field. This field indicates the user who owns the cluster."
-   "version", ":ref:`ref_string`", "", "Optional input field. Ray cluster version"
-   "environment", ":ref:`ref_flyteidl.core.RayCluster.Environment`", "", ""
    "cluster_spec", ":ref:`ref_flyteidl.core.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
-   "created_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Output. The time that the cluster created."
-   "deleted_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Output. The time that the cluster deleted."
-   "cluster_state", ":ref:`ref_string`", "", "Output. The status to show the cluster status.state"
 
 
 
@@ -1899,24 +1892,6 @@ WorkerGroupSpec.RayStartParamsEntry
 
 ..
    end messages
-
-
-
-.. _ref_flyteidl.core.RayCluster.Environment:
-
-RayCluster.Environment
-------------------------------------------------------------------
-
-Optional field.
-
-.. csv-table:: Enum RayCluster.Environment values
-   :header: "Name", "Number", "Description"
-   :widths: auto
-
-   "DEV", "0", ""
-   "TESTING", "1", ""
-   "STAGING", "2", ""
-   "PRODUCTION", "3", ""
 
 
 ..

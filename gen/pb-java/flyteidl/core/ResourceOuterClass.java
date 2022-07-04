@@ -743,73 +743,10 @@ public final class ResourceOuterClass {
 
     /**
      * <pre>
-     * Required input field. Cluster's namespace provided by user
-     * </pre>
-     *
-     * <code>string namespace = 2;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * Required input field. Cluster's namespace provided by user
-     * </pre>
-     *
-     * <code>string namespace = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
-
-    /**
-     * <pre>
-     * Required field. This field indicates the user who owns the cluster.
-     * </pre>
-     *
-     * <code>string user = 3;</code>
-     */
-    java.lang.String getUser();
-    /**
-     * <pre>
-     * Required field. This field indicates the user who owns the cluster.
-     * </pre>
-     *
-     * <code>string user = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getUserBytes();
-
-    /**
-     * <pre>
-     * Optional input field. Ray cluster version
-     * </pre>
-     *
-     * <code>string version = 4;</code>
-     */
-    java.lang.String getVersion();
-    /**
-     * <pre>
-     * Optional input field. Ray cluster version
-     * </pre>
-     *
-     * <code>string version = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getVersionBytes();
-
-    /**
-     * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-     */
-    int getEnvironmentValue();
-    /**
-     * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-     */
-    flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment();
-
-    /**
-     * <pre>
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     boolean hasClusterSpec();
     /**
@@ -817,7 +754,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec();
     /**
@@ -825,81 +762,13 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder();
-
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    boolean hasCreatedAt();
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    com.google.protobuf.Timestamp getCreatedAt();
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
-
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    boolean hasDeletedAt();
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    com.google.protobuf.Timestamp getDeletedAt();
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder();
-
-    /**
-     * <pre>
-     * Output. The status to show the cluster status.state
-     * </pre>
-     *
-     * <code>string cluster_state = 9;</code>
-     */
-    java.lang.String getClusterState();
-    /**
-     * <pre>
-     * Output. The status to show the cluster status.state
-     * </pre>
-     *
-     * <code>string cluster_state = 9;</code>
-     */
-    com.google.protobuf.ByteString
-        getClusterStateBytes();
   }
   /**
    * <pre>
-   * Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
+   * Define Ray cluster spec
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.RayCluster}
@@ -915,11 +784,6 @@ public final class ResourceOuterClass {
     }
     private RayCluster() {
       name_ = "";
-      namespace_ = "";
-      user_ = "";
-      version_ = "";
-      environment_ = 0;
-      clusterState_ = "";
     }
 
     @java.lang.Override
@@ -953,30 +817,6 @@ public final class ResourceOuterClass {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              user_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              version_ = s;
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              environment_ = rawValue;
-              break;
-            }
-            case 50: {
               flyteidl.core.ResourceOuterClass.ClusterSpec.Builder subBuilder = null;
               if (clusterSpec_ != null) {
                 subBuilder = clusterSpec_.toBuilder();
@@ -987,38 +827,6 @@ public final class ResourceOuterClass {
                 clusterSpec_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 58: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (createdAt_ != null) {
-                subBuilder = createdAt_.toBuilder();
-              }
-              createdAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(createdAt_);
-                createdAt_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (deletedAt_ != null) {
-                subBuilder = deletedAt_.toBuilder();
-              }
-              deletedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(deletedAt_);
-                deletedAt_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clusterState_ = s;
               break;
             }
             default: {
@@ -1051,126 +859,6 @@ public final class ResourceOuterClass {
       return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.core.ResourceOuterClass.RayCluster.class, flyteidl.core.ResourceOuterClass.RayCluster.Builder.class);
-    }
-
-    /**
-     * <pre>
-     * Optional field.
-     * </pre>
-     *
-     * Protobuf enum {@code flyteidl.core.RayCluster.Environment}
-     */
-    public enum Environment
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>DEV = 0;</code>
-       */
-      DEV(0),
-      /**
-       * <code>TESTING = 1;</code>
-       */
-      TESTING(1),
-      /**
-       * <code>STAGING = 2;</code>
-       */
-      STAGING(2),
-      /**
-       * <code>PRODUCTION = 3;</code>
-       */
-      PRODUCTION(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>DEV = 0;</code>
-       */
-      public static final int DEV_VALUE = 0;
-      /**
-       * <code>TESTING = 1;</code>
-       */
-      public static final int TESTING_VALUE = 1;
-      /**
-       * <code>STAGING = 2;</code>
-       */
-      public static final int STAGING_VALUE = 2;
-      /**
-       * <code>PRODUCTION = 3;</code>
-       */
-      public static final int PRODUCTION_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static Environment valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static Environment forNumber(int value) {
-        switch (value) {
-          case 0: return DEV;
-          case 1: return TESTING;
-          case 2: return STAGING;
-          case 3: return PRODUCTION;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Environment>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Environment> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Environment>() {
-              public Environment findValueByNumber(int number) {
-                return Environment.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.core.ResourceOuterClass.RayCluster.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Environment[] VALUES = values();
-
-      public static Environment valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Environment(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.core.RayCluster.Environment)
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -1215,157 +903,14 @@ public final class ResourceOuterClass {
       }
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * Required input field. Cluster's namespace provided by user
-     * </pre>
-     *
-     * <code>string namespace = 2;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Required input field. Cluster's namespace provided by user
-     * </pre>
-     *
-     * <code>string namespace = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object user_;
-    /**
-     * <pre>
-     * Required field. This field indicates the user who owns the cluster.
-     * </pre>
-     *
-     * <code>string user = 3;</code>
-     */
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Required field. This field indicates the user who owns the cluster.
-     * </pre>
-     *
-     * <code>string user = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object version_;
-    /**
-     * <pre>
-     * Optional input field. Ray cluster version
-     * </pre>
-     *
-     * <code>string version = 4;</code>
-     */
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        version_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional input field. Ray cluster version
-     * </pre>
-     *
-     * <code>string version = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        version_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENVIRONMENT_FIELD_NUMBER = 5;
-    private int environment_;
-    /**
-     * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-     */
-    public int getEnvironmentValue() {
-      return environment_;
-    }
-    /**
-     * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-     */
-    public flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment() {
-      @SuppressWarnings("deprecation")
-      flyteidl.core.ResourceOuterClass.RayCluster.Environment result = flyteidl.core.ResourceOuterClass.RayCluster.Environment.valueOf(environment_);
-      return result == null ? flyteidl.core.ResourceOuterClass.RayCluster.Environment.UNRECOGNIZED : result;
-    }
-
-    public static final int CLUSTER_SPEC_FIELD_NUMBER = 6;
+    public static final int CLUSTER_SPEC_FIELD_NUMBER = 2;
     private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
     /**
      * <pre>
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     public boolean hasClusterSpec() {
       return clusterSpec_ != null;
@@ -1375,7 +920,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
       return clusterSpec_ == null ? flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance() : clusterSpec_;
@@ -1385,118 +930,10 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
      */
     public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
       return getClusterSpec();
-    }
-
-    public static final int CREATED_AT_FIELD_NUMBER = 7;
-    private com.google.protobuf.Timestamp createdAt_;
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    public boolean hasCreatedAt() {
-      return createdAt_ != null;
-    }
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    public com.google.protobuf.Timestamp getCreatedAt() {
-      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
-    }
-    /**
-     * <pre>
-     * Output. The time that the cluster created.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp created_at = 7;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
-      return getCreatedAt();
-    }
-
-    public static final int DELETED_AT_FIELD_NUMBER = 8;
-    private com.google.protobuf.Timestamp deletedAt_;
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    public boolean hasDeletedAt() {
-      return deletedAt_ != null;
-    }
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    public com.google.protobuf.Timestamp getDeletedAt() {
-      return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
-    }
-    /**
-     * <pre>
-     * Output. The time that the cluster deleted.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
-      return getDeletedAt();
-    }
-
-    public static final int CLUSTER_STATE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object clusterState_;
-    /**
-     * <pre>
-     * Output. The status to show the cluster status.state
-     * </pre>
-     *
-     * <code>string cluster_state = 9;</code>
-     */
-    public java.lang.String getClusterState() {
-      java.lang.Object ref = clusterState_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        clusterState_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Output. The status to show the cluster status.state
-     * </pre>
-     *
-     * <code>string cluster_state = 9;</code>
-     */
-    public com.google.protobuf.ByteString
-        getClusterStateBytes() {
-      java.lang.Object ref = clusterState_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        clusterState_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1516,29 +953,8 @@ public final class ResourceOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, namespace_);
-      }
-      if (!getUserBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, user_);
-      }
-      if (!getVersionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
-      }
-      if (environment_ != flyteidl.core.ResourceOuterClass.RayCluster.Environment.DEV.getNumber()) {
-        output.writeEnum(5, environment_);
-      }
       if (clusterSpec_ != null) {
-        output.writeMessage(6, getClusterSpec());
-      }
-      if (createdAt_ != null) {
-        output.writeMessage(7, getCreatedAt());
-      }
-      if (deletedAt_ != null) {
-        output.writeMessage(8, getDeletedAt());
-      }
-      if (!getClusterStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, clusterState_);
+        output.writeMessage(2, getClusterSpec());
       }
       unknownFields.writeTo(output);
     }
@@ -1552,33 +968,9 @@ public final class ResourceOuterClass {
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, namespace_);
-      }
-      if (!getUserBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, user_);
-      }
-      if (!getVersionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
-      }
-      if (environment_ != flyteidl.core.ResourceOuterClass.RayCluster.Environment.DEV.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, environment_);
-      }
       if (clusterSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getClusterSpec());
-      }
-      if (createdAt_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getCreatedAt());
-      }
-      if (deletedAt_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getDeletedAt());
-      }
-      if (!getClusterStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterState_);
+          .computeMessageSize(2, getClusterSpec());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1597,30 +989,11 @@ public final class ResourceOuterClass {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getNamespace()
-          .equals(other.getNamespace())) return false;
-      if (!getUser()
-          .equals(other.getUser())) return false;
-      if (!getVersion()
-          .equals(other.getVersion())) return false;
-      if (environment_ != other.environment_) return false;
       if (hasClusterSpec() != other.hasClusterSpec()) return false;
       if (hasClusterSpec()) {
         if (!getClusterSpec()
             .equals(other.getClusterSpec())) return false;
       }
-      if (hasCreatedAt() != other.hasCreatedAt()) return false;
-      if (hasCreatedAt()) {
-        if (!getCreatedAt()
-            .equals(other.getCreatedAt())) return false;
-      }
-      if (hasDeletedAt() != other.hasDeletedAt()) return false;
-      if (hasDeletedAt()) {
-        if (!getDeletedAt()
-            .equals(other.getDeletedAt())) return false;
-      }
-      if (!getClusterState()
-          .equals(other.getClusterState())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1634,28 +1007,10 @@ public final class ResourceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion().hashCode();
-      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-      hash = (53 * hash) + environment_;
       if (hasClusterSpec()) {
         hash = (37 * hash) + CLUSTER_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getClusterSpec().hashCode();
       }
-      if (hasCreatedAt()) {
-        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getCreatedAt().hashCode();
-      }
-      if (hasDeletedAt()) {
-        hash = (37 * hash) + DELETED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getDeletedAt().hashCode();
-      }
-      hash = (37 * hash) + CLUSTER_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getClusterState().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1753,7 +1108,7 @@ public final class ResourceOuterClass {
     }
     /**
      * <pre>
-     * Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
+     * Define Ray cluster spec
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.RayCluster}
@@ -1795,34 +1150,12 @@ public final class ResourceOuterClass {
         super.clear();
         name_ = "";
 
-        namespace_ = "";
-
-        user_ = "";
-
-        version_ = "";
-
-        environment_ = 0;
-
         if (clusterSpecBuilder_ == null) {
           clusterSpec_ = null;
         } else {
           clusterSpec_ = null;
           clusterSpecBuilder_ = null;
         }
-        if (createdAtBuilder_ == null) {
-          createdAt_ = null;
-        } else {
-          createdAt_ = null;
-          createdAtBuilder_ = null;
-        }
-        if (deletedAtBuilder_ == null) {
-          deletedAt_ = null;
-        } else {
-          deletedAt_ = null;
-          deletedAtBuilder_ = null;
-        }
-        clusterState_ = "";
-
         return this;
       }
 
@@ -1850,26 +1183,11 @@ public final class ResourceOuterClass {
       public flyteidl.core.ResourceOuterClass.RayCluster buildPartial() {
         flyteidl.core.ResourceOuterClass.RayCluster result = new flyteidl.core.ResourceOuterClass.RayCluster(this);
         result.name_ = name_;
-        result.namespace_ = namespace_;
-        result.user_ = user_;
-        result.version_ = version_;
-        result.environment_ = environment_;
         if (clusterSpecBuilder_ == null) {
           result.clusterSpec_ = clusterSpec_;
         } else {
           result.clusterSpec_ = clusterSpecBuilder_.build();
         }
-        if (createdAtBuilder_ == null) {
-          result.createdAt_ = createdAt_;
-        } else {
-          result.createdAt_ = createdAtBuilder_.build();
-        }
-        if (deletedAtBuilder_ == null) {
-          result.deletedAt_ = deletedAt_;
-        } else {
-          result.deletedAt_ = deletedAtBuilder_.build();
-        }
-        result.clusterState_ = clusterState_;
         onBuilt();
         return result;
       }
@@ -1922,33 +1240,8 @@ public final class ResourceOuterClass {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
-        if (!other.getUser().isEmpty()) {
-          user_ = other.user_;
-          onChanged();
-        }
-        if (!other.getVersion().isEmpty()) {
-          version_ = other.version_;
-          onChanged();
-        }
-        if (other.environment_ != 0) {
-          setEnvironmentValue(other.getEnvironmentValue());
-        }
         if (other.hasClusterSpec()) {
           mergeClusterSpec(other.getClusterSpec());
-        }
-        if (other.hasCreatedAt()) {
-          mergeCreatedAt(other.getCreatedAt());
-        }
-        if (other.hasDeletedAt()) {
-          mergeDeletedAt(other.getDeletedAt());
-        }
-        if (!other.getClusterState().isEmpty()) {
-          clusterState_ = other.clusterState_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2068,318 +1361,6 @@ public final class ResourceOuterClass {
         return this;
       }
 
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * Required input field. Cluster's namespace provided by user
-       * </pre>
-       *
-       * <code>string namespace = 2;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required input field. Cluster's namespace provided by user
-       * </pre>
-       *
-       * <code>string namespace = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required input field. Cluster's namespace provided by user
-       * </pre>
-       *
-       * <code>string namespace = 2;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required input field. Cluster's namespace provided by user
-       * </pre>
-       *
-       * <code>string namespace = 2;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required input field. Cluster's namespace provided by user
-       * </pre>
-       *
-       * <code>string namespace = 2;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object user_ = "";
-      /**
-       * <pre>
-       * Required field. This field indicates the user who owns the cluster.
-       * </pre>
-       *
-       * <code>string user = 3;</code>
-       */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates the user who owns the cluster.
-       * </pre>
-       *
-       * <code>string user = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates the user who owns the cluster.
-       * </pre>
-       *
-       * <code>string user = 3;</code>
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates the user who owns the cluster.
-       * </pre>
-       *
-       * <code>string user = 3;</code>
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates the user who owns the cluster.
-       * </pre>
-       *
-       * <code>string user = 3;</code>
-       */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object version_ = "";
-      /**
-       * <pre>
-       * Optional input field. Ray cluster version
-       * </pre>
-       *
-       * <code>string version = 4;</code>
-       */
-      public java.lang.String getVersion() {
-        java.lang.Object ref = version_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          version_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional input field. Ray cluster version
-       * </pre>
-       *
-       * <code>string version = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getVersionBytes() {
-        java.lang.Object ref = version_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          version_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional input field. Ray cluster version
-       * </pre>
-       *
-       * <code>string version = 4;</code>
-       */
-      public Builder setVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional input field. Ray cluster version
-       * </pre>
-       *
-       * <code>string version = 4;</code>
-       */
-      public Builder clearVersion() {
-        
-        version_ = getDefaultInstance().getVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional input field. Ray cluster version
-       * </pre>
-       *
-       * <code>string version = 4;</code>
-       */
-      public Builder setVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        version_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int environment_ = 0;
-      /**
-       * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-       */
-      public int getEnvironmentValue() {
-        return environment_;
-      }
-      /**
-       * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-       */
-      public Builder setEnvironmentValue(int value) {
-        environment_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-       */
-      public flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment() {
-        @SuppressWarnings("deprecation")
-        flyteidl.core.ResourceOuterClass.RayCluster.Environment result = flyteidl.core.ResourceOuterClass.RayCluster.Environment.valueOf(environment_);
-        return result == null ? flyteidl.core.ResourceOuterClass.RayCluster.Environment.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-       */
-      public Builder setEnvironment(flyteidl.core.ResourceOuterClass.RayCluster.Environment value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        environment_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
-       */
-      public Builder clearEnvironment() {
-        
-        environment_ = 0;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> clusterSpecBuilder_;
@@ -2388,7 +1369,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public boolean hasClusterSpec() {
         return clusterSpecBuilder_ != null || clusterSpec_ != null;
@@ -2398,7 +1379,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
         if (clusterSpecBuilder_ == null) {
@@ -2412,7 +1393,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public Builder setClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
@@ -2432,7 +1413,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public Builder setClusterSpec(
           flyteidl.core.ResourceOuterClass.ClusterSpec.Builder builderForValue) {
@@ -2450,7 +1431,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public Builder mergeClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
@@ -2472,7 +1453,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public Builder clearClusterSpec() {
         if (clusterSpecBuilder_ == null) {
@@ -2490,7 +1471,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpec.Builder getClusterSpecBuilder() {
         
@@ -2502,7 +1483,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
         if (clusterSpecBuilder_ != null) {
@@ -2517,7 +1498,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> 
@@ -2531,401 +1512,6 @@ public final class ResourceOuterClass {
           clusterSpec_ = null;
         }
         return clusterSpecBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp createdAt_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public boolean hasCreatedAt() {
-        return createdAtBuilder_ != null || createdAt_ != null;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public com.google.protobuf.Timestamp getCreatedAt() {
-        if (createdAtBuilder_ == null) {
-          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
-        } else {
-          return createdAtBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
-        if (createdAtBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          createdAt_ = value;
-          onChanged();
-        } else {
-          createdAtBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public Builder setCreatedAt(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (createdAtBuilder_ == null) {
-          createdAt_ = builderForValue.build();
-          onChanged();
-        } else {
-          createdAtBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
-        if (createdAtBuilder_ == null) {
-          if (createdAt_ != null) {
-            createdAt_ =
-              com.google.protobuf.Timestamp.newBuilder(createdAt_).mergeFrom(value).buildPartial();
-          } else {
-            createdAt_ = value;
-          }
-          onChanged();
-        } else {
-          createdAtBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public Builder clearCreatedAt() {
-        if (createdAtBuilder_ == null) {
-          createdAt_ = null;
-          onChanged();
-        } else {
-          createdAt_ = null;
-          createdAtBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
-        
-        onChanged();
-        return getCreatedAtFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
-        if (createdAtBuilder_ != null) {
-          return createdAtBuilder_.getMessageOrBuilder();
-        } else {
-          return createdAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
-        }
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster created.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp created_at = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getCreatedAtFieldBuilder() {
-        if (createdAtBuilder_ == null) {
-          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getCreatedAt(),
-                  getParentForChildren(),
-                  isClean());
-          createdAt_ = null;
-        }
-        return createdAtBuilder_;
-      }
-
-      private com.google.protobuf.Timestamp deletedAt_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deletedAtBuilder_;
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public boolean hasDeletedAt() {
-        return deletedAtBuilder_ != null || deletedAt_ != null;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public com.google.protobuf.Timestamp getDeletedAt() {
-        if (deletedAtBuilder_ == null) {
-          return deletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
-        } else {
-          return deletedAtBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public Builder setDeletedAt(com.google.protobuf.Timestamp value) {
-        if (deletedAtBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          deletedAt_ = value;
-          onChanged();
-        } else {
-          deletedAtBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public Builder setDeletedAt(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (deletedAtBuilder_ == null) {
-          deletedAt_ = builderForValue.build();
-          onChanged();
-        } else {
-          deletedAtBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public Builder mergeDeletedAt(com.google.protobuf.Timestamp value) {
-        if (deletedAtBuilder_ == null) {
-          if (deletedAt_ != null) {
-            deletedAt_ =
-              com.google.protobuf.Timestamp.newBuilder(deletedAt_).mergeFrom(value).buildPartial();
-          } else {
-            deletedAt_ = value;
-          }
-          onChanged();
-        } else {
-          deletedAtBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public Builder clearDeletedAt() {
-        if (deletedAtBuilder_ == null) {
-          deletedAt_ = null;
-          onChanged();
-        } else {
-          deletedAt_ = null;
-          deletedAtBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getDeletedAtBuilder() {
-        
-        onChanged();
-        return getDeletedAtFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getDeletedAtOrBuilder() {
-        if (deletedAtBuilder_ != null) {
-          return deletedAtBuilder_.getMessageOrBuilder();
-        } else {
-          return deletedAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : deletedAt_;
-        }
-      }
-      /**
-       * <pre>
-       * Output. The time that the cluster deleted.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp deleted_at = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getDeletedAtFieldBuilder() {
-        if (deletedAtBuilder_ == null) {
-          deletedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getDeletedAt(),
-                  getParentForChildren(),
-                  isClean());
-          deletedAt_ = null;
-        }
-        return deletedAtBuilder_;
-      }
-
-      private java.lang.Object clusterState_ = "";
-      /**
-       * <pre>
-       * Output. The status to show the cluster status.state
-       * </pre>
-       *
-       * <code>string cluster_state = 9;</code>
-       */
-      public java.lang.String getClusterState() {
-        java.lang.Object ref = clusterState_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          clusterState_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Output. The status to show the cluster status.state
-       * </pre>
-       *
-       * <code>string cluster_state = 9;</code>
-       */
-      public com.google.protobuf.ByteString
-          getClusterStateBytes() {
-        java.lang.Object ref = clusterState_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          clusterState_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Output. The status to show the cluster status.state
-       * </pre>
-       *
-       * <code>string cluster_state = 9;</code>
-       */
-      public Builder setClusterState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clusterState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The status to show the cluster status.state
-       * </pre>
-       *
-       * <code>string cluster_state = 9;</code>
-       */
-      public Builder clearClusterState() {
-        
-        clusterState_ = getDefaultInstance().getClusterState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output. The status to show the cluster status.state
-       * </pre>
-       *
-       * <code>string cluster_state = 9;</code>
-       */
-      public Builder setClusterStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        clusterState_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7037,33 +5623,26 @@ public final class ResourceOuterClass {
       "\n\034flyteidl/core/resource.proto\022\rflyteidl" +
       ".core\032\037google/protobuf/timestamp.proto\"=" +
       "\n\010Resource\022(\n\003ray\030\001 \001(\0132\031.flyteidl.core." +
-      "RayClusterH\000B\007\n\005value\"\363\002\n\nRayCluster\022\014\n\004" +
-      "name\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\022\014\n\004user\030\003 " +
-      "\001(\t\022\017\n\007version\030\004 \001(\t\022:\n\013environment\030\005 \001(" +
-      "\0162%.flyteidl.core.RayCluster.Environment" +
-      "\0220\n\014cluster_spec\030\006 \001(\0132\032.flyteidl.core.C" +
-      "lusterSpec\022.\n\ncreated_at\030\007 \001(\0132\032.google." +
-      "protobuf.Timestamp\022.\n\ndeleted_at\030\010 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022\025\n\rcluster_st" +
-      "ate\030\t \001(\t\"@\n\013Environment\022\007\n\003DEV\020\000\022\013\n\007TES" +
-      "TING\020\001\022\013\n\007STAGING\020\002\022\016\n\nPRODUCTION\020\003\"\177\n\013C" +
-      "lusterSpec\0225\n\017head_group_spec\030\001 \001(\0132\034.fl" +
-      "yteidl.core.HeadGroupSpec\0229\n\021worker_grou" +
-      "p_sepc\030\002 \003(\0132\036.flyteidl.core.WorkerGroup" +
-      "Spec\"\321\001\n\rHeadGroupSpec\022\030\n\020compute_templa" +
-      "te\030\001 \001(\t\022\r\n\005image\030\002 \001(\t\022\024\n\014service_type\030" +
-      "\003 \001(\t\022J\n\020ray_start_params\030\004 \003(\01320.flytei" +
-      "dl.core.HeadGroupSpec.RayStartParamsEntr" +
-      "y\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\"\221\002\n\017WorkerGroupSpec\022\022\n\n" +
-      "group_name\030\001 \001(\t\022\030\n\020compute_template\030\002 \001" +
-      "(\t\022\r\n\005image\030\003 \001(\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014m" +
-      "in_replicas\030\005 \001(\005\022\024\n\014max_replicas\030\006 \001(\005\022" +
-      "L\n\020ray_start_params\030\007 \003(\01322.flyteidl.cor" +
-      "e.WorkerGroupSpec.RayStartParamsEntry\0325\n" +
-      "\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001B6Z4github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/coreb\006proto3"
+      "RayClusterH\000B\007\n\005value\"L\n\nRayCluster\022\014\n\004n" +
+      "ame\030\001 \001(\t\0220\n\014cluster_spec\030\002 \001(\0132\032.flytei" +
+      "dl.core.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017he" +
+      "ad_group_spec\030\001 \001(\0132\034.flyteidl.core.Head" +
+      "GroupSpec\0229\n\021worker_group_sepc\030\002 \003(\0132\036.f" +
+      "lyteidl.core.WorkerGroupSpec\"\321\001\n\rHeadGro" +
+      "upSpec\022\030\n\020compute_template\030\001 \001(\t\022\r\n\005imag" +
+      "e\030\002 \001(\t\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_sta" +
+      "rt_params\030\004 \003(\01320.flyteidl.core.HeadGrou" +
+      "pSpec.RayStartParamsEntry\0325\n\023RayStartPar" +
+      "amsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"\221\002\n\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t" +
+      "\022\030\n\020compute_template\030\002 \001(\t\022\r\n\005image\030\003 \001(" +
+      "\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014min_replicas\030\005 \001(" +
+      "\005\022\024\n\014max_replicas\030\006 \001(\005\022L\n\020ray_start_par" +
+      "ams\030\007 \003(\01322.flyteidl.core.WorkerGroupSpe" +
+      "c.RayStartParamsEntry\0325\n\023RayStartParamsE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7089,7 +5668,7 @@ public final class ResourceOuterClass {
     internal_static_flyteidl_core_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RayCluster_descriptor,
-        new java.lang.String[] { "Name", "Namespace", "User", "Version", "Environment", "ClusterSpec", "CreatedAt", "DeletedAt", "ClusterState", });
+        new java.lang.String[] { "Name", "ClusterSpec", });
     internal_static_flyteidl_core_ClusterSpec_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable = new

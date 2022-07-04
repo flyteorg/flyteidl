@@ -19,10 +19,9 @@
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HeadGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fcore_2fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkerGroupSpec_RayStartParamsEntry_DoNotUse_flyteidl_2fcore_2fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_HeadGroupSpec_flyteidl_2fcore_2fresource_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_RayCluster_flyteidl_2fcore_2fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkerGroupSpec_flyteidl_2fcore_2fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_ClusterSpec_flyteidl_2fcore_2fresource_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_RayCluster_flyteidl_2fcore_2fresource_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2ftimestamp_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto;
 namespace flyteidl {
 namespace core {
 class ResourceDefaultTypeInternal {
@@ -82,10 +81,9 @@ static void InitDefaultsRayCluster_flyteidl_2fcore_2fresource_2eproto() {
   ::flyteidl::core::RayCluster::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_RayCluster_flyteidl_2fcore_2fresource_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsRayCluster_flyteidl_2fcore_2fresource_2eproto}, {
-      &scc_info_ClusterSpec_flyteidl_2fcore_2fresource_2eproto.base,
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_RayCluster_flyteidl_2fcore_2fresource_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsRayCluster_flyteidl_2fcore_2fresource_2eproto}, {
+      &scc_info_ClusterSpec_flyteidl_2fcore_2fresource_2eproto.base,}};
 
 static void InitDefaultsClusterSpec_flyteidl_2fcore_2fresource_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -170,7 +168,7 @@ void InitDefaults_flyteidl_2fcore_2fresource_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fcore_2fresource_2eproto[7];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fcore_2fresource_2eproto[1];
+constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fcore_2fresource_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fcore_2fresource_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fresource_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -187,14 +185,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fresource_2eproto:
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, name_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, namespace__),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, user_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, version_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, environment_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, cluster_spec_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, created_at_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, deleted_at_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, cluster_state_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ClusterSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -245,11 +236,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2fresource_2eproto:
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::core::Resource)},
   { 7, -1, sizeof(::flyteidl::core::RayCluster)},
-  { 21, -1, sizeof(::flyteidl::core::ClusterSpec)},
-  { 28, 35, sizeof(::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 37, -1, sizeof(::flyteidl::core::HeadGroupSpec)},
-  { 46, 53, sizeof(::flyteidl::core::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 55, -1, sizeof(::flyteidl::core::WorkerGroupSpec)},
+  { 14, -1, sizeof(::flyteidl::core::ClusterSpec)},
+  { 21, 28, sizeof(::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 30, -1, sizeof(::flyteidl::core::HeadGroupSpec)},
+  { 39, 46, sizeof(::flyteidl::core::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 48, -1, sizeof(::flyteidl::core::WorkerGroupSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -272,38 +263,31 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fresource_2eproto[] =
   "\n\034flyteidl/core/resource.proto\022\rflyteidl"
   ".core\032\037google/protobuf/timestamp.proto\"="
   "\n\010Resource\022(\n\003ray\030\001 \001(\0132\031.flyteidl.core."
-  "RayClusterH\000B\007\n\005value\"\363\002\n\nRayCluster\022\014\n\004"
-  "name\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\022\014\n\004user\030\003 "
-  "\001(\t\022\017\n\007version\030\004 \001(\t\022:\n\013environment\030\005 \001("
-  "\0162%.flyteidl.core.RayCluster.Environment"
-  "\0220\n\014cluster_spec\030\006 \001(\0132\032.flyteidl.core.C"
-  "lusterSpec\022.\n\ncreated_at\030\007 \001(\0132\032.google."
-  "protobuf.Timestamp\022.\n\ndeleted_at\030\010 \001(\0132\032"
-  ".google.protobuf.Timestamp\022\025\n\rcluster_st"
-  "ate\030\t \001(\t\"@\n\013Environment\022\007\n\003DEV\020\000\022\013\n\007TES"
-  "TING\020\001\022\013\n\007STAGING\020\002\022\016\n\nPRODUCTION\020\003\"\177\n\013C"
-  "lusterSpec\0225\n\017head_group_spec\030\001 \001(\0132\034.fl"
-  "yteidl.core.HeadGroupSpec\0229\n\021worker_grou"
-  "p_sepc\030\002 \003(\0132\036.flyteidl.core.WorkerGroup"
-  "Spec\"\321\001\n\rHeadGroupSpec\022\030\n\020compute_templa"
-  "te\030\001 \001(\t\022\r\n\005image\030\002 \001(\t\022\024\n\014service_type\030"
-  "\003 \001(\t\022J\n\020ray_start_params\030\004 \003(\01320.flytei"
-  "dl.core.HeadGroupSpec.RayStartParamsEntr"
-  "y\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-  "\005value\030\002 \001(\t:\0028\001\"\221\002\n\017WorkerGroupSpec\022\022\n\n"
-  "group_name\030\001 \001(\t\022\030\n\020compute_template\030\002 \001"
-  "(\t\022\r\n\005image\030\003 \001(\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014m"
-  "in_replicas\030\005 \001(\005\022\024\n\014max_replicas\030\006 \001(\005\022"
-  "L\n\020ray_start_params\030\007 \003(\01322.flyteidl.cor"
-  "e.WorkerGroupSpec.RayStartParamsEntry\0325\n"
-  "\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-  "ue\030\002 \001(\t:\0028\001B6Z4github.com/flyteorg/flyt"
-  "eidl/gen/pb-go/flyteidl/coreb\006proto3"
+  "RayClusterH\000B\007\n\005value\"L\n\nRayCluster\022\014\n\004n"
+  "ame\030\001 \001(\t\0220\n\014cluster_spec\030\002 \001(\0132\032.flytei"
+  "dl.core.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017he"
+  "ad_group_spec\030\001 \001(\0132\034.flyteidl.core.Head"
+  "GroupSpec\0229\n\021worker_group_sepc\030\002 \003(\0132\036.f"
+  "lyteidl.core.WorkerGroupSpec\"\321\001\n\rHeadGro"
+  "upSpec\022\030\n\020compute_template\030\001 \001(\t\022\r\n\005imag"
+  "e\030\002 \001(\t\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_sta"
+  "rt_params\030\004 \003(\01320.flyteidl.core.HeadGrou"
+  "pSpec.RayStartParamsEntry\0325\n\023RayStartPar"
+  "amsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+  "\"\221\002\n\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t"
+  "\022\030\n\020compute_template\030\002 \001(\t\022\r\n\005image\030\003 \001("
+  "\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014min_replicas\030\005 \001("
+  "\005\022\024\n\014max_replicas\030\006 \001(\005\022L\n\020ray_start_par"
+  "ams\030\007 \003(\01322.flyteidl.core.WorkerGroupSpe"
+  "c.RayStartParamsEntry\0325\n\023RayStartParamsE"
+  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fresource_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fresource_2eproto,
-  "flyteidl/core/resource.proto", &assign_descriptors_table_flyteidl_2fcore_2fresource_2eproto, 1196,
+  "flyteidl/core/resource.proto", &assign_descriptors_table_flyteidl_2fcore_2fresource_2eproto, 900,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fresource_2eproto() {
@@ -318,31 +302,6 @@ void AddDescriptors_flyteidl_2fcore_2fresource_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fcore_2fresource_2eproto = []() { AddDescriptors_flyteidl_2fcore_2fresource_2eproto(); return true; }();
 namespace flyteidl {
 namespace core {
-const ::google::protobuf::EnumDescriptor* RayCluster_Environment_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fcore_2fresource_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fcore_2fresource_2eproto[0];
-}
-bool RayCluster_Environment_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-      return true;
-    default:
-      return false;
-  }
-}
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const RayCluster_Environment RayCluster::DEV;
-const RayCluster_Environment RayCluster::TESTING;
-const RayCluster_Environment RayCluster::STAGING;
-const RayCluster_Environment RayCluster::PRODUCTION;
-const RayCluster_Environment RayCluster::Environment_MIN;
-const RayCluster_Environment RayCluster::Environment_MAX;
-const int RayCluster::Environment_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -681,52 +640,19 @@ void Resource::InternalSwap(Resource* other) {
 void RayCluster::InitAsDefaultInstance() {
   ::flyteidl::core::_RayCluster_default_instance_._instance.get_mutable()->cluster_spec_ = const_cast< ::flyteidl::core::ClusterSpec*>(
       ::flyteidl::core::ClusterSpec::internal_default_instance());
-  ::flyteidl::core::_RayCluster_default_instance_._instance.get_mutable()->created_at_ = const_cast< ::google::protobuf::Timestamp*>(
-      ::google::protobuf::Timestamp::internal_default_instance());
-  ::flyteidl::core::_RayCluster_default_instance_._instance.get_mutable()->deleted_at_ = const_cast< ::google::protobuf::Timestamp*>(
-      ::google::protobuf::Timestamp::internal_default_instance());
 }
 class RayCluster::HasBitSetters {
  public:
   static const ::flyteidl::core::ClusterSpec& cluster_spec(const RayCluster* msg);
-  static const ::google::protobuf::Timestamp& created_at(const RayCluster* msg);
-  static const ::google::protobuf::Timestamp& deleted_at(const RayCluster* msg);
 };
 
 const ::flyteidl::core::ClusterSpec&
 RayCluster::HasBitSetters::cluster_spec(const RayCluster* msg) {
   return *msg->cluster_spec_;
 }
-const ::google::protobuf::Timestamp&
-RayCluster::HasBitSetters::created_at(const RayCluster* msg) {
-  return *msg->created_at_;
-}
-const ::google::protobuf::Timestamp&
-RayCluster::HasBitSetters::deleted_at(const RayCluster* msg) {
-  return *msg->deleted_at_;
-}
-void RayCluster::clear_created_at() {
-  if (GetArenaNoVirtual() == nullptr && created_at_ != nullptr) {
-    delete created_at_;
-  }
-  created_at_ = nullptr;
-}
-void RayCluster::clear_deleted_at() {
-  if (GetArenaNoVirtual() == nullptr && deleted_at_ != nullptr) {
-    delete deleted_at_;
-  }
-  deleted_at_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RayCluster::kNameFieldNumber;
-const int RayCluster::kNamespaceFieldNumber;
-const int RayCluster::kUserFieldNumber;
-const int RayCluster::kVersionFieldNumber;
-const int RayCluster::kEnvironmentFieldNumber;
 const int RayCluster::kClusterSpecFieldNumber;
-const int RayCluster::kCreatedAtFieldNumber;
-const int RayCluster::kDeletedAtFieldNumber;
-const int RayCluster::kClusterStateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RayCluster::RayCluster()
@@ -742,38 +668,11 @@ RayCluster::RayCluster(const RayCluster& from)
   if (from.name().size() > 0) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.namespace_().size() > 0) {
-    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
-  }
-  user_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.user().size() > 0) {
-    user_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_);
-  }
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.version().size() > 0) {
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
-  }
-  cluster_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.cluster_state().size() > 0) {
-    cluster_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cluster_state_);
-  }
   if (from.has_cluster_spec()) {
     cluster_spec_ = new ::flyteidl::core::ClusterSpec(*from.cluster_spec_);
   } else {
     cluster_spec_ = nullptr;
   }
-  if (from.has_created_at()) {
-    created_at_ = new ::google::protobuf::Timestamp(*from.created_at_);
-  } else {
-    created_at_ = nullptr;
-  }
-  if (from.has_deleted_at()) {
-    deleted_at_ = new ::google::protobuf::Timestamp(*from.deleted_at_);
-  } else {
-    deleted_at_ = nullptr;
-  }
-  environment_ = from.environment_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.RayCluster)
 }
 
@@ -781,13 +680,7 @@ void RayCluster::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_RayCluster_flyteidl_2fcore_2fresource_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  namespace__.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  user_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cluster_state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&cluster_spec_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&environment_) -
-      reinterpret_cast<char*>(&cluster_spec_)) + sizeof(environment_));
+  cluster_spec_ = nullptr;
 }
 
 RayCluster::~RayCluster() {
@@ -797,13 +690,7 @@ RayCluster::~RayCluster() {
 
 void RayCluster::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  namespace__.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  user_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cluster_state_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete cluster_spec_;
-  if (this != internal_default_instance()) delete created_at_;
-  if (this != internal_default_instance()) delete deleted_at_;
 }
 
 void RayCluster::SetCachedSize(int size) const {
@@ -822,23 +709,10 @@ void RayCluster::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  user_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  version_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cluster_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && cluster_spec_ != nullptr) {
     delete cluster_spec_;
   }
   cluster_spec_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && created_at_ != nullptr) {
-    delete created_at_;
-  }
-  created_at_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && deleted_at_ != nullptr) {
-    delete deleted_at_;
-  }
-  deleted_at_ = nullptr;
-  environment_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -871,65 +745,9 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
         ptr += size;
         break;
       }
-      // string namespace = 2;
+      // .flyteidl.core.ClusterSpec cluster_spec = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayCluster.namespace");
-        object = msg->mutable_namespace_();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string user = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayCluster.user");
-        object = msg->mutable_user();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // string version = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayCluster.version");
-        object = msg->mutable_version();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // .flyteidl.core.RayCluster.Environment environment = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_environment(static_cast<::flyteidl::core::RayCluster_Environment>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // .flyteidl.core.ClusterSpec cluster_spec = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::ClusterSpec::_InternalParse;
@@ -938,48 +756,6 @@ const char* RayCluster::_InternalParse(const char* begin, const char* end, void*
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .google.protobuf.Timestamp created_at = 7;
-      case 7: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
-        object = msg->mutable_created_at();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .google.protobuf.Timestamp deleted_at = 8;
-      case 8: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 66) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
-        object = msg->mutable_deleted_at();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // string cluster_state = 9;
-      case 9: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayCluster.cluster_state");
-        object = msg->mutable_cluster_state();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
         break;
       }
       default: {
@@ -1031,107 +807,11 @@ bool RayCluster::MergePartialFromCodedStream(
         break;
       }
 
-      // string namespace = 2;
+      // .flyteidl.core.ClusterSpec cluster_spec = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_namespace_()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->namespace_().data(), static_cast<int>(this->namespace_().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.RayCluster.namespace"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string user = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_user()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->user().data(), static_cast<int>(this->user().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.RayCluster.user"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string version = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_version()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->version().data(), static_cast<int>(this->version().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.RayCluster.version"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.RayCluster.Environment environment = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_environment(static_cast< ::flyteidl::core::RayCluster_Environment >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .flyteidl.core.ClusterSpec cluster_spec = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_cluster_spec()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Timestamp created_at = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_created_at()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .google.protobuf.Timestamp deleted_at = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (66 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_deleted_at()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string cluster_state = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (74 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_cluster_state()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->cluster_state().data(), static_cast<int>(this->cluster_state().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.RayCluster.cluster_state"));
         } else {
           goto handle_unusual;
         }
@@ -1175,68 +855,10 @@ void RayCluster::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // string namespace = 2;
-  if (this->namespace_().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.namespace");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->namespace_(), output);
-  }
-
-  // string user = 3;
-  if (this->user().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->user().data(), static_cast<int>(this->user().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.user");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->user(), output);
-  }
-
-  // string version = 4;
-  if (this->version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.version");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->version(), output);
-  }
-
-  // .flyteidl.core.RayCluster.Environment environment = 5;
-  if (this->environment() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      5, this->environment(), output);
-  }
-
-  // .flyteidl.core.ClusterSpec cluster_spec = 6;
+  // .flyteidl.core.ClusterSpec cluster_spec = 2;
   if (this->has_cluster_spec()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, HasBitSetters::cluster_spec(this), output);
-  }
-
-  // .google.protobuf.Timestamp created_at = 7;
-  if (this->has_created_at()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, HasBitSetters::created_at(this), output);
-  }
-
-  // .google.protobuf.Timestamp deleted_at = 8;
-  if (this->has_deleted_at()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, HasBitSetters::deleted_at(this), output);
-  }
-
-  // string cluster_state = 9;
-  if (this->cluster_state().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_state().data(), static_cast<int>(this->cluster_state().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.cluster_state");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      9, this->cluster_state(), output);
+      2, HasBitSetters::cluster_spec(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1263,75 +885,11 @@ void RayCluster::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // string namespace = 2;
-  if (this->namespace_().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->namespace_().data(), static_cast<int>(this->namespace_().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.namespace");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->namespace_(), target);
-  }
-
-  // string user = 3;
-  if (this->user().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->user().data(), static_cast<int>(this->user().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.user");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->user(), target);
-  }
-
-  // string version = 4;
-  if (this->version().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->version().data(), static_cast<int>(this->version().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.version");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->version(), target);
-  }
-
-  // .flyteidl.core.RayCluster.Environment environment = 5;
-  if (this->environment() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      5, this->environment(), target);
-  }
-
-  // .flyteidl.core.ClusterSpec cluster_spec = 6;
+  // .flyteidl.core.ClusterSpec cluster_spec = 2;
   if (this->has_cluster_spec()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        6, HasBitSetters::cluster_spec(this), target);
-  }
-
-  // .google.protobuf.Timestamp created_at = 7;
-  if (this->has_created_at()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        7, HasBitSetters::created_at(this), target);
-  }
-
-  // .google.protobuf.Timestamp deleted_at = 8;
-  if (this->has_deleted_at()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        8, HasBitSetters::deleted_at(this), target);
-  }
-
-  // string cluster_state = 9;
-  if (this->cluster_state().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cluster_state().data(), static_cast<int>(this->cluster_state().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayCluster.cluster_state");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        9, this->cluster_state(), target);
+        2, HasBitSetters::cluster_spec(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1362,59 +920,11 @@ size_t RayCluster::ByteSizeLong() const {
         this->name());
   }
 
-  // string namespace = 2;
-  if (this->namespace_().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->namespace_());
-  }
-
-  // string user = 3;
-  if (this->user().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->user());
-  }
-
-  // string version = 4;
-  if (this->version().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->version());
-  }
-
-  // string cluster_state = 9;
-  if (this->cluster_state().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->cluster_state());
-  }
-
-  // .flyteidl.core.ClusterSpec cluster_spec = 6;
+  // .flyteidl.core.ClusterSpec cluster_spec = 2;
   if (this->has_cluster_spec()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *cluster_spec_);
-  }
-
-  // .google.protobuf.Timestamp created_at = 7;
-  if (this->has_created_at()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *created_at_);
-  }
-
-  // .google.protobuf.Timestamp deleted_at = 8;
-  if (this->has_deleted_at()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *deleted_at_);
-  }
-
-  // .flyteidl.core.RayCluster.Environment environment = 5;
-  if (this->environment() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->environment());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1448,33 +958,8 @@ void RayCluster::MergeFrom(const RayCluster& from) {
 
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.namespace_().size() > 0) {
-
-    namespace__.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.namespace__);
-  }
-  if (from.user().size() > 0) {
-
-    user_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_);
-  }
-  if (from.version().size() > 0) {
-
-    version_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.version_);
-  }
-  if (from.cluster_state().size() > 0) {
-
-    cluster_state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cluster_state_);
-  }
   if (from.has_cluster_spec()) {
     mutable_cluster_spec()->::flyteidl::core::ClusterSpec::MergeFrom(from.cluster_spec());
-  }
-  if (from.has_created_at()) {
-    mutable_created_at()->::google::protobuf::Timestamp::MergeFrom(from.created_at());
-  }
-  if (from.has_deleted_at()) {
-    mutable_deleted_at()->::google::protobuf::Timestamp::MergeFrom(from.deleted_at());
-  }
-  if (from.environment() != 0) {
-    set_environment(from.environment());
   }
 }
 
@@ -1505,18 +990,7 @@ void RayCluster::InternalSwap(RayCluster* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  namespace__.Swap(&other->namespace__, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  user_.Swap(&other->user_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  version_.Swap(&other->version_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  cluster_state_.Swap(&other->cluster_state_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   swap(cluster_spec_, other->cluster_spec_);
-  swap(created_at_, other->created_at_);
-  swap(deleted_at_, other->deleted_at_);
-  swap(environment_, other->environment_);
 }
 
 ::google::protobuf::Metadata RayCluster::GetMetadata() const {

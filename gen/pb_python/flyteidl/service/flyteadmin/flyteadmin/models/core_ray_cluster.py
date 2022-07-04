@@ -17,7 +17,6 @@ import re  # noqa: F401
 import six
 
 from flyteadmin.models.core_cluster_spec import CoreClusterSpec  # noqa: F401,E501
-from flyteadmin.models.ray_cluster_environment import RayClusterEnvironment  # noqa: F401,E501
 
 
 class CoreRayCluster(object):
@@ -35,60 +34,25 @@ class CoreRayCluster(object):
     """
     swagger_types = {
         'name': 'str',
-        'namespace': 'str',
-        'user': 'str',
-        'version': 'str',
-        'environment': 'RayClusterEnvironment',
-        'cluster_spec': 'CoreClusterSpec',
-        'created_at': 'datetime',
-        'deleted_at': 'datetime',
-        'cluster_state': 'str'
+        'cluster_spec': 'CoreClusterSpec'
     }
 
     attribute_map = {
         'name': 'name',
-        'namespace': 'namespace',
-        'user': 'user',
-        'version': 'version',
-        'environment': 'environment',
-        'cluster_spec': 'cluster_spec',
-        'created_at': 'created_at',
-        'deleted_at': 'deleted_at',
-        'cluster_state': 'cluster_state'
+        'cluster_spec': 'cluster_spec'
     }
 
-    def __init__(self, name=None, namespace=None, user=None, version=None, environment=None, cluster_spec=None, created_at=None, deleted_at=None, cluster_state=None):  # noqa: E501
+    def __init__(self, name=None, cluster_spec=None):  # noqa: E501
         """CoreRayCluster - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
-        self._namespace = None
-        self._user = None
-        self._version = None
-        self._environment = None
         self._cluster_spec = None
-        self._created_at = None
-        self._deleted_at = None
-        self._cluster_state = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
-        if namespace is not None:
-            self.namespace = namespace
-        if user is not None:
-            self.user = user
-        if version is not None:
-            self.version = version
-        if environment is not None:
-            self.environment = environment
         if cluster_spec is not None:
             self.cluster_spec = cluster_spec
-        if created_at is not None:
-            self.created_at = created_at
-        if deleted_at is not None:
-            self.deleted_at = deleted_at
-        if cluster_state is not None:
-            self.cluster_state = cluster_state
 
     @property
     def name(self):
@@ -114,92 +78,6 @@ class CoreRayCluster(object):
         self._name = name
 
     @property
-    def namespace(self):
-        """Gets the namespace of this CoreRayCluster.  # noqa: E501
-
-
-        :return: The namespace of this CoreRayCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this CoreRayCluster.
-
-
-        :param namespace: The namespace of this CoreRayCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._namespace = namespace
-
-    @property
-    def user(self):
-        """Gets the user of this CoreRayCluster.  # noqa: E501
-
-        Required field. This field indicates the user who owns the cluster.  # noqa: E501
-
-        :return: The user of this CoreRayCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._user
-
-    @user.setter
-    def user(self, user):
-        """Sets the user of this CoreRayCluster.
-
-        Required field. This field indicates the user who owns the cluster.  # noqa: E501
-
-        :param user: The user of this CoreRayCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._user = user
-
-    @property
-    def version(self):
-        """Gets the version of this CoreRayCluster.  # noqa: E501
-
-
-        :return: The version of this CoreRayCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this CoreRayCluster.
-
-
-        :param version: The version of this CoreRayCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
-    def environment(self):
-        """Gets the environment of this CoreRayCluster.  # noqa: E501
-
-
-        :return: The environment of this CoreRayCluster.  # noqa: E501
-        :rtype: RayClusterEnvironment
-        """
-        return self._environment
-
-    @environment.setter
-    def environment(self, environment):
-        """Sets the environment of this CoreRayCluster.
-
-
-        :param environment: The environment of this CoreRayCluster.  # noqa: E501
-        :type: RayClusterEnvironment
-        """
-
-        self._environment = environment
-
-    @property
     def cluster_spec(self):
         """Gets the cluster_spec of this CoreRayCluster.  # noqa: E501
 
@@ -219,73 +97,6 @@ class CoreRayCluster(object):
         """
 
         self._cluster_spec = cluster_spec
-
-    @property
-    def created_at(self):
-        """Gets the created_at of this CoreRayCluster.  # noqa: E501
-
-        Output. The time that the cluster created.  # noqa: E501
-
-        :return: The created_at of this CoreRayCluster.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """Sets the created_at of this CoreRayCluster.
-
-        Output. The time that the cluster created.  # noqa: E501
-
-        :param created_at: The created_at of this CoreRayCluster.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_at = created_at
-
-    @property
-    def deleted_at(self):
-        """Gets the deleted_at of this CoreRayCluster.  # noqa: E501
-
-        Output. The time that the cluster deleted.  # noqa: E501
-
-        :return: The deleted_at of this CoreRayCluster.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._deleted_at
-
-    @deleted_at.setter
-    def deleted_at(self, deleted_at):
-        """Sets the deleted_at of this CoreRayCluster.
-
-        Output. The time that the cluster deleted.  # noqa: E501
-
-        :param deleted_at: The deleted_at of this CoreRayCluster.  # noqa: E501
-        :type: datetime
-        """
-
-        self._deleted_at = deleted_at
-
-    @property
-    def cluster_state(self):
-        """Gets the cluster_state of this CoreRayCluster.  # noqa: E501
-
-
-        :return: The cluster_state of this CoreRayCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_state
-
-    @cluster_state.setter
-    def cluster_state(self, cluster_state):
-        """Sets the cluster_state of this CoreRayCluster.
-
-
-        :param cluster_state: The cluster_state of this CoreRayCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_state = cluster_state
 
     def to_dict(self):
         """Returns the model properties as a dict"""
