@@ -6045,6 +6045,333 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a RayCluster. */
+        interface IRayCluster {
+
+            /** RayCluster name */
+            name?: (string|null);
+
+            /** RayCluster namespace */
+            namespace?: (string|null);
+
+            /** RayCluster user */
+            user?: (string|null);
+
+            /** RayCluster version */
+            version?: (string|null);
+
+            /** RayCluster environment */
+            environment?: (flyteidl.core.RayCluster.Environment|null);
+
+            /** RayCluster clusterSpec */
+            clusterSpec?: (flyteidl.core.IClusterSpec|null);
+
+            /** RayCluster createdAt */
+            createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** RayCluster deletedAt */
+            deletedAt?: (google.protobuf.ITimestamp|null);
+
+            /** RayCluster clusterState */
+            clusterState?: (string|null);
+        }
+
+        /** Represents a RayCluster. */
+        class RayCluster implements IRayCluster {
+
+            /**
+             * Constructs a new RayCluster.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IRayCluster);
+
+            /** RayCluster name. */
+            public name: string;
+
+            /** RayCluster namespace. */
+            public namespace: string;
+
+            /** RayCluster user. */
+            public user: string;
+
+            /** RayCluster version. */
+            public version: string;
+
+            /** RayCluster environment. */
+            public environment: flyteidl.core.RayCluster.Environment;
+
+            /** RayCluster clusterSpec. */
+            public clusterSpec?: (flyteidl.core.IClusterSpec|null);
+
+            /** RayCluster createdAt. */
+            public createdAt?: (google.protobuf.ITimestamp|null);
+
+            /** RayCluster deletedAt. */
+            public deletedAt?: (google.protobuf.ITimestamp|null);
+
+            /** RayCluster clusterState. */
+            public clusterState: string;
+
+            /**
+             * Creates a new RayCluster instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RayCluster instance
+             */
+            public static create(properties?: flyteidl.core.IRayCluster): flyteidl.core.RayCluster;
+
+            /**
+             * Encodes the specified RayCluster message. Does not implicitly {@link flyteidl.core.RayCluster.verify|verify} messages.
+             * @param message RayCluster message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IRayCluster, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RayCluster message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RayCluster
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.RayCluster;
+
+            /**
+             * Verifies a RayCluster message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        namespace RayCluster {
+
+            /** Environment enum. */
+            enum Environment {
+                DEV = 0,
+                TESTING = 1,
+                STAGING = 2,
+                PRODUCTION = 3
+            }
+        }
+
+        /** Properties of a ClusterSpec. */
+        interface IClusterSpec {
+
+            /** ClusterSpec headGroupSpec */
+            headGroupSpec?: (flyteidl.core.IHeadGroupSpec|null);
+
+            /** ClusterSpec workerGroupSepc */
+            workerGroupSepc?: (flyteidl.core.IWorkerGroupSpec[]|null);
+        }
+
+        /** Represents a ClusterSpec. */
+        class ClusterSpec implements IClusterSpec {
+
+            /**
+             * Constructs a new ClusterSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IClusterSpec);
+
+            /** ClusterSpec headGroupSpec. */
+            public headGroupSpec?: (flyteidl.core.IHeadGroupSpec|null);
+
+            /** ClusterSpec workerGroupSepc. */
+            public workerGroupSepc: flyteidl.core.IWorkerGroupSpec[];
+
+            /**
+             * Creates a new ClusterSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ClusterSpec instance
+             */
+            public static create(properties?: flyteidl.core.IClusterSpec): flyteidl.core.ClusterSpec;
+
+            /**
+             * Encodes the specified ClusterSpec message. Does not implicitly {@link flyteidl.core.ClusterSpec.verify|verify} messages.
+             * @param message ClusterSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IClusterSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ClusterSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ClusterSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ClusterSpec;
+
+            /**
+             * Verifies a ClusterSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a HeadGroupSpec. */
+        interface IHeadGroupSpec {
+
+            /** HeadGroupSpec computeTemplate */
+            computeTemplate?: (string|null);
+
+            /** HeadGroupSpec image */
+            image?: (string|null);
+
+            /** HeadGroupSpec serviceType */
+            serviceType?: (string|null);
+
+            /** HeadGroupSpec rayStartParams */
+            rayStartParams?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents a HeadGroupSpec. */
+        class HeadGroupSpec implements IHeadGroupSpec {
+
+            /**
+             * Constructs a new HeadGroupSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IHeadGroupSpec);
+
+            /** HeadGroupSpec computeTemplate. */
+            public computeTemplate: string;
+
+            /** HeadGroupSpec image. */
+            public image: string;
+
+            /** HeadGroupSpec serviceType. */
+            public serviceType: string;
+
+            /** HeadGroupSpec rayStartParams. */
+            public rayStartParams: { [k: string]: string };
+
+            /**
+             * Creates a new HeadGroupSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns HeadGroupSpec instance
+             */
+            public static create(properties?: flyteidl.core.IHeadGroupSpec): flyteidl.core.HeadGroupSpec;
+
+            /**
+             * Encodes the specified HeadGroupSpec message. Does not implicitly {@link flyteidl.core.HeadGroupSpec.verify|verify} messages.
+             * @param message HeadGroupSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IHeadGroupSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a HeadGroupSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns HeadGroupSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.HeadGroupSpec;
+
+            /**
+             * Verifies a HeadGroupSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkerGroupSpec. */
+        interface IWorkerGroupSpec {
+
+            /** WorkerGroupSpec groupName */
+            groupName?: (string|null);
+
+            /** WorkerGroupSpec computeTemplate */
+            computeTemplate?: (string|null);
+
+            /** WorkerGroupSpec image */
+            image?: (string|null);
+
+            /** WorkerGroupSpec replicas */
+            replicas?: (number|null);
+
+            /** WorkerGroupSpec minReplicas */
+            minReplicas?: (number|null);
+
+            /** WorkerGroupSpec maxReplicas */
+            maxReplicas?: (number|null);
+
+            /** WorkerGroupSpec rayStartParams */
+            rayStartParams?: ({ [k: string]: string }|null);
+        }
+
+        /** Represents a WorkerGroupSpec. */
+        class WorkerGroupSpec implements IWorkerGroupSpec {
+
+            /**
+             * Constructs a new WorkerGroupSpec.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IWorkerGroupSpec);
+
+            /** WorkerGroupSpec groupName. */
+            public groupName: string;
+
+            /** WorkerGroupSpec computeTemplate. */
+            public computeTemplate: string;
+
+            /** WorkerGroupSpec image. */
+            public image: string;
+
+            /** WorkerGroupSpec replicas. */
+            public replicas: number;
+
+            /** WorkerGroupSpec minReplicas. */
+            public minReplicas: number;
+
+            /** WorkerGroupSpec maxReplicas. */
+            public maxReplicas: number;
+
+            /** WorkerGroupSpec rayStartParams. */
+            public rayStartParams: { [k: string]: string };
+
+            /**
+             * Creates a new WorkerGroupSpec instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkerGroupSpec instance
+             */
+            public static create(properties?: flyteidl.core.IWorkerGroupSpec): flyteidl.core.WorkerGroupSpec;
+
+            /**
+             * Encodes the specified WorkerGroupSpec message. Does not implicitly {@link flyteidl.core.WorkerGroupSpec.verify|verify} messages.
+             * @param message WorkerGroupSpec message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IWorkerGroupSpec, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkerGroupSpec message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkerGroupSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.WorkerGroupSpec;
+
+            /**
+             * Verifies a WorkerGroupSpec message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a WorkflowClosure. */
         interface IWorkflowClosure {
 

@@ -1722,6 +1722,196 @@ undefined since it can be assigned to a scalar of any LiteralType.
 
 
 
+.. _ref_flyteidl/core/resource.proto:
+
+flyteidl/core/resource.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.core.ClusterSpec:
+
+ClusterSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ClusterSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "head_group_spec", ":ref:`ref_flyteidl.core.HeadGroupSpec`", "", "The head group configuration"
+   "worker_group_sepc", ":ref:`ref_flyteidl.core.WorkerGroupSpec`", "repeated", "The worker group configurations"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.HeadGroupSpec:
+
+HeadGroupSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: HeadGroupSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "compute_template", ":ref:`ref_string`", "", "Optional. The computeTemplate of head node group"
+   "image", ":ref:`ref_string`", "", "Optional field. This field will be used to retrieve right ray container"
+   "service_type", ":ref:`ref_string`", "", "Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node"
+   "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start parames of head node group"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry:
+
+HeadGroupSpec.RayStartParamsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: HeadGroupSpec.RayStartParamsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.RayCluster:
+
+RayCluster
+------------------------------------------------------------------
+
+Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
+
+
+
+.. csv-table:: RayCluster type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "name", ":ref:`ref_string`", "", "Required input field. Unique cluster name provided by user."
+   "namespace", ":ref:`ref_string`", "", "Required input field. Cluster's namespace provided by user"
+   "user", ":ref:`ref_string`", "", "Required field. This field indicates the user who owns the cluster."
+   "version", ":ref:`ref_string`", "", "Optional input field. Ray cluster version"
+   "environment", ":ref:`ref_flyteidl.core.RayCluster.Environment`", "", ""
+   "cluster_spec", ":ref:`ref_flyteidl.core.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
+   "created_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Output. The time that the cluster created."
+   "deleted_at", ":ref:`ref_google.protobuf.Timestamp`", "", "Output. The time that the cluster deleted."
+   "cluster_state", ":ref:`ref_string`", "", "Output. The status to show the cluster status.state"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.WorkerGroupSpec:
+
+WorkerGroupSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkerGroupSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "group_name", ":ref:`ref_string`", "", "Required. Group name of the current worker group"
+   "compute_template", ":ref:`ref_string`", "", "Optional. The computeTemplate of head node group"
+   "image", ":ref:`ref_string`", "", "Optional field. This field will be used to retrieve right ray container"
+   "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
+   "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
+   "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
+   "ray_start_params", ":ref:`ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start parames of worker node group"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry:
+
+WorkerGroupSpec.RayStartParamsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkerGroupSpec.RayStartParamsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+..
+   end messages
+
+
+
+.. _ref_flyteidl.core.RayCluster.Environment:
+
+RayCluster.Environment
+------------------------------------------------------------------
+
+Optional field.
+
+.. csv-table:: Enum RayCluster.Environment values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "DEV", "0", ""
+   "TESTING", "1", ""
+   "STAGING", "2", ""
+   "PRODUCTION", "3", ""
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
 .. _ref_flyteidl/core/security.proto:
 
 flyteidl/core/security.proto
