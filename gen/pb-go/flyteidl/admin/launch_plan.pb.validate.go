@@ -566,6 +566,23 @@ func (m *LaunchPlanSpec) Validate() error {
 		}
 	}
 
+	for key, val := range m.GetResources() {
+		_ = val
+
+		// no validation rules for Resources[key]
+
+		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return LaunchPlanSpecValidationError{
+					field:  fmt.Sprintf("Resources[%v]", key),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
 	return nil
 }
 

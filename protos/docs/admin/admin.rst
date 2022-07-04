@@ -1740,6 +1740,29 @@ User-provided launch plan definition and configuration values.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
+   "resources", ":ref:`ref_flyteidl.admin.LaunchPlanSpec.ResourcesEntry`", "repeated", "Cluster resources (Ray or Dask) that will be attached to launch plan spec."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchPlanSpec.ResourcesEntry:
+
+LaunchPlanSpec.ResourcesEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: LaunchPlanSpec.ResourcesEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.core.Resource`", "", ""
 
 
 

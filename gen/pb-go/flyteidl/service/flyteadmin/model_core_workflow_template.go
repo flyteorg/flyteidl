@@ -24,4 +24,6 @@ type CoreWorkflowTemplate struct {
 	// +optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed. The interface of this node must match the Workflow interface with an additional input named 'error' of type pb.lyft.flyte.core.Error.
 	FailureNode *CoreNode `json:"failure_node,omitempty"`
 	MetadataDefaults *CoreWorkflowMetadataDefaults `json:"metadata_defaults,omitempty"`
+	// Cluster resources (Ray or Dask) that will be attached to workflow template.
+	Resources map[string]CoreResource `json:"resources,omitempty"`
 }

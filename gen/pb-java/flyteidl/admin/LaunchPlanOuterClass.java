@@ -4740,6 +4740,60 @@ public final class LaunchPlanOuterClass {
      * <code>.google.protobuf.BoolValue interruptible = 19;</code>
      */
     com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder();
+
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+    int getResourcesCount();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+    boolean containsResources(
+        java.lang.String key);
+    /**
+     * Use {@link #getResourcesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    getResources();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    getResourcesMap();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+        java.lang.String key,
+        flyteidl.core.ResourceOuterClass.Resource defaultValue);
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -4952,6 +5006,19 @@ public final class LaunchPlanOuterClass {
 
               break;
             }
+            case 162: {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
+                resources_ = com.google.protobuf.MapField.newMapField(
+                    ResourcesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00004000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+              resources__ = input.readMessage(
+                  ResourcesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              resources_.getMutableMap().put(
+                  resources__.getKey(), resources__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4976,6 +5043,18 @@ public final class LaunchPlanOuterClass {
       return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 20:
+          return internalGetResources();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -4984,6 +5063,7 @@ public final class LaunchPlanOuterClass {
               flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec.class, flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int WORKFLOW_ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.Identifier workflowId_;
     /**
@@ -5440,6 +5520,98 @@ public final class LaunchPlanOuterClass {
       return getInterruptible();
     }
 
+    public static final int RESOURCES_FIELD_NUMBER = 20;
+    private static final class ResourcesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>newDefaultInstance(
+                  flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
+    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    internalGetResources() {
+      if (resources_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourcesDefaultEntryHolder.defaultEntry);
+      }
+      return resources_;
+    }
+
+    public int getResourcesCount() {
+      return internalGetResources().getMap().size();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    public boolean containsResources(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetResources().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getResourcesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
+      return getResourcesMap();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
+      return internalGetResources().getMap();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+        java.lang.String key,
+        flyteidl.core.ResourceOuterClass.Resource defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+          internalGetResources().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     */
+
+    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+          internalGetResources().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5496,6 +5668,12 @@ public final class LaunchPlanOuterClass {
       if (interruptible_ != null) {
         output.writeMessage(19, getInterruptible());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetResources(),
+          ResourcesDefaultEntryHolder.defaultEntry,
+          20);
       unknownFields.writeTo(output);
     }
 
@@ -5559,6 +5737,16 @@ public final class LaunchPlanOuterClass {
       if (interruptible_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(19, getInterruptible());
+      }
+      for (java.util.Map.Entry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> entry
+           : internalGetResources().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+        resources__ = ResourcesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(20, resources__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5639,6 +5827,8 @@ public final class LaunchPlanOuterClass {
         if (!getInterruptible()
             .equals(other.getInterruptible())) return false;
       }
+      if (!internalGetResources().equals(
+          other.internalGetResources())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5701,6 +5891,10 @@ public final class LaunchPlanOuterClass {
       if (hasInterruptible()) {
         hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
         hash = (53 * hash) + getInterruptible().hashCode();
+      }
+      if (!internalGetResources().getMap().isEmpty()) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetResources().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5813,6 +6007,28 @@ public final class LaunchPlanOuterClass {
         return flyteidl.admin.LaunchPlanOuterClass.internal_static_flyteidl_admin_LaunchPlanSpec_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 20:
+            return internalGetResources();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 20:
+            return internalGetMutableResources();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -5915,6 +6131,7 @@ public final class LaunchPlanOuterClass {
           interruptible_ = null;
           interruptibleBuilder_ = null;
         }
+        internalGetMutableResources().clear();
         return this;
       }
 
@@ -5941,6 +6158,8 @@ public final class LaunchPlanOuterClass {
       @java.lang.Override
       public flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec buildPartial() {
         flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec result = new flyteidl.admin.LaunchPlanOuterClass.LaunchPlanSpec(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (workflowIdBuilder_ == null) {
           result.workflowId_ = workflowId_;
         } else {
@@ -6003,6 +6222,9 @@ public final class LaunchPlanOuterClass {
         } else {
           result.interruptible_ = interruptibleBuilder_.build();
         }
+        result.resources_ = internalGetResources();
+        result.resources_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6094,6 +6316,8 @@ public final class LaunchPlanOuterClass {
         if (other.hasInterruptible()) {
           mergeInterruptible(other.getInterruptible());
         }
+        internalGetMutableResources().mergeFrom(
+            other.internalGetResources());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -6122,6 +6346,7 @@ public final class LaunchPlanOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier workflowId_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -8099,6 +8324,157 @@ public final class LaunchPlanOuterClass {
           interruptible_ = null;
         }
         return interruptibleBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      internalGetResources() {
+        if (resources_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResourcesDefaultEntryHolder.defaultEntry);
+        }
+        return resources_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      internalGetMutableResources() {
+        onChanged();;
+        if (resources_ == null) {
+          resources_ = com.google.protobuf.MapField.newMapField(
+              ResourcesDefaultEntryHolder.defaultEntry);
+        }
+        if (!resources_.isMutable()) {
+          resources_ = resources_.copy();
+        }
+        return resources_;
+      }
+
+      public int getResourcesCount() {
+        return internalGetResources().getMap().size();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public boolean containsResources(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetResources().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResourcesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
+        return getResourcesMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
+        return internalGetResources().getMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+          java.lang.String key,
+          flyteidl.core.ResourceOuterClass.Resource defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+            internalGetResources().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+            internalGetResources().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearResources() {
+        internalGetMutableResources().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public Builder removeResources(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableResources().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      getMutableResources() {
+        return internalGetMutableResources().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+      public Builder putResources(
+          java.lang.String key,
+          flyteidl.core.ResourceOuterClass.Resource value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableResources().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to launch plan spec.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       */
+
+      public Builder putAllResources(
+          java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> values) {
+        internalGetMutableResources().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14172,6 +14548,11 @@ public final class LaunchPlanOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -14214,61 +14595,65 @@ public final class LaunchPlanOuterClass {
       "eidl.admin\032\035flyteidl/core/execution.prot" +
       "o\032\034flyteidl/core/literals.proto\032\036flyteid" +
       "l/core/identifier.proto\032\035flyteidl/core/i" +
-      "nterface.proto\032\034flyteidl/core/security.p" +
-      "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
-      "teidl/admin/common.proto\032\037google/protobu" +
-      "f/timestamp.proto\032\036google/protobuf/wrapp" +
-      "ers.proto\"n\n\027LaunchPlanCreateRequest\022%\n\002" +
-      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004s" +
-      "pec\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpe" +
-      "c\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nLaunch" +
-      "Plan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
-      "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
-      "hPlanSpec\0222\n\007closure\030\003 \001(\0132!.flyteidl.ad" +
-      "min.LaunchPlanClosure\"Q\n\016LaunchPlanList\022" +
-      "0\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin.L" +
-      "aunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assu" +
-      "mable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_servi" +
-      "ce_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec\022" +
-      ".\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
-      "ntifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyte" +
-      "idl.admin.LaunchPlanMetadata\0223\n\016default_" +
-      "inputs\030\003 \001(\0132\033.flyteidl.core.ParameterMa" +
-      "p\022/\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core." +
-      "LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006" +
-      " \001(\0132\026.flyteidl.admin.Labels\0220\n\013annotati" +
-      "ons\030\007 \001(\0132\033.flyteidl.admin.Annotations\022&" +
-      "\n\004auth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022/" +
-      "\n\tauth_role\030\t \001(\0132\030.flyteidl.admin.AuthR" +
-      "oleB\002\030\001\0228\n\020security_context\030\n \001(\0132\036.flyt" +
-      "eidl.core.SecurityContext\022;\n\022quality_of_" +
-      "service\030\020 \001(\0132\037.flyteidl.core.QualityOfS" +
-      "ervice\022C\n\026raw_output_data_config\030\021 \001(\0132#" +
-      ".flyteidl.admin.RawOutputDataConfig\022\027\n\017m" +
-      "ax_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023 " +
-      "\001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Laun" +
-      "chPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl." +
-      "admin.LaunchPlanState\0224\n\017expected_inputs" +
-      "\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020e" +
-      "xpected_outputs\030\003 \001(\0132\032.flyteidl.core.Va" +
-      "riableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032." +
-      "google.protobuf.Timestamp\"u\n\022LaunchPlanM" +
-      "etadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.adm" +
-      "in.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fly" +
-      "teidl.admin.Notification\"p\n\027LaunchPlanUp" +
-      "dateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core." +
-      "Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.adm" +
-      "in.LaunchPlanState\"\032\n\030LaunchPlanUpdateRe" +
-      "sponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id\030" +
-      "\001 \001(\0132%.flyteidl.admin.NamedEntityIdenti" +
-      "fier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n\007" +
-      "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003" +
-      " \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f" +
-      "lyteidl.admin.Sort*+\n\017LaunchPlanState\022\014\n" +
-      "\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/fl" +
-      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
-      "b\006proto3"
+      "nterface.proto\032\034flyteidl/core/resource.p" +
+      "roto\032\034flyteidl/core/security.proto\032\035flyt" +
+      "eidl/admin/schedule.proto\032\033flyteidl/admi" +
+      "n/common.proto\032\037google/protobuf/timestam" +
+      "p.proto\032\036google/protobuf/wrappers.proto\"" +
+      "n\n\027LaunchPlanCreateRequest\022%\n\002id\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\022,\n\004spec\030\002 \001(\0132" +
+      "\036.flyteidl.admin.LaunchPlanSpec\"\032\n\030Launc" +
+      "hPlanCreateResponse\"\225\001\n\nLaunchPlan\022%\n\002id" +
+      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004spe" +
+      "c\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpec\022" +
+      "2\n\007closure\030\003 \001(\0132!.flyteidl.admin.Launch" +
+      "PlanClosure\"Q\n\016LaunchPlanList\0220\n\014launch_" +
+      "plans\030\001 \003(\0132\032.flyteidl.admin.LaunchPlan\022" +
+      "\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assumable_iam_" +
+      "role\030\001 \001(\t\022\"\n\032kubernetes_service_account" +
+      "\030\002 \001(\t:\002\030\001\"\275\006\n\016LaunchPlanSpec\022.\n\013workflo" +
+      "w_id\030\001 \001(\0132\031.flyteidl.core.Identifier\022;\n" +
+      "\017entity_metadata\030\002 \001(\0132\".flyteidl.admin." +
+      "LaunchPlanMetadata\0223\n\016default_inputs\030\003 \001" +
+      "(\0132\033.flyteidl.core.ParameterMap\022/\n\014fixed" +
+      "_inputs\030\004 \001(\0132\031.flyteidl.core.LiteralMap" +
+      "\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006 \001(\0132\026.fly" +
+      "teidl.admin.Labels\0220\n\013annotations\030\007 \001(\0132" +
+      "\033.flyteidl.admin.Annotations\022&\n\004auth\030\010 \001" +
+      "(\0132\024.flyteidl.admin.AuthB\002\030\001\022/\n\tauth_rol" +
+      "e\030\t \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\0228\n" +
+      "\020security_context\030\n \001(\0132\036.flyteidl.core." +
+      "SecurityContext\022;\n\022quality_of_service\030\020 " +
+      "\001(\0132\037.flyteidl.core.QualityOfService\022C\n\026" +
+      "raw_output_data_config\030\021 \001(\0132#.flyteidl." +
+      "admin.RawOutputDataConfig\022\027\n\017max_paralle" +
+      "lism\030\022 \001(\005\0221\n\rinterruptible\030\023 \001(\0132\032.goog" +
+      "le.protobuf.BoolValue\022@\n\tresources\030\024 \003(\013" +
+      "2-.flyteidl.admin.LaunchPlanSpec.Resourc" +
+      "esEntry\032I\n\016ResourcesEntry\022\013\n\003key\030\001 \001(\t\022&" +
+      "\n\005value\030\002 \001(\0132\027.flyteidl.core.Resource:\002" +
+      "8\001\"\217\002\n\021LaunchPlanClosure\022.\n\005state\030\001 \001(\0162" +
+      "\037.flyteidl.admin.LaunchPlanState\0224\n\017expe" +
+      "cted_inputs\030\002 \001(\0132\033.flyteidl.core.Parame" +
+      "terMap\0224\n\020expected_outputs\030\003 \001(\0132\032.flyte" +
+      "idl.core.VariableMap\022.\n\ncreated_at\030\004 \001(\013" +
+      "2\032.google.protobuf.Timestamp\022.\n\nupdated_" +
+      "at\030\005 \001(\0132\032.google.protobuf.Timestamp\"u\n\022" +
+      "LaunchPlanMetadata\022*\n\010schedule\030\001 \001(\0132\030.f" +
+      "lyteidl.admin.Schedule\0223\n\rnotifications\030" +
+      "\002 \003(\0132\034.flyteidl.admin.Notification\"p\n\027L" +
+      "aunchPlanUpdateRequest\022%\n\002id\030\001 \001(\0132\031.fly" +
+      "teidl.core.Identifier\022.\n\005state\030\002 \001(\0162\037.f" +
+      "lyteidl.admin.LaunchPlanState\"\032\n\030LaunchP" +
+      "lanUpdateResponse\"L\n\027ActiveLaunchPlanReq" +
+      "uest\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedE" +
+      "ntityIdentifier\"\203\001\n\033ActiveLaunchPlanList" +
+      "Request\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t" +
+      "\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_b" +
+      "y\030\005 \001(\0132\024.flyteidl.admin.Sort*+\n\017LaunchP" +
+      "lanState\022\014\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5gi" +
+      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
+      "teidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14285,6 +14670,7 @@ public final class LaunchPlanOuterClass {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Interface.getDescriptor(),
+          flyteidl.core.ResourceOuterClass.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
@@ -14326,7 +14712,13 @@ public final class LaunchPlanOuterClass {
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanSpec_descriptor,
-        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", });
+        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", "Resources", });
+    internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_descriptor =
+      internal_static_flyteidl_admin_LaunchPlanSpec_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_LaunchPlanSpec_ResourcesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanClosure_fieldAccessorTable = new
@@ -14367,6 +14759,7 @@ public final class LaunchPlanOuterClass {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Interface.getDescriptor();
+    flyteidl.core.ResourceOuterClass.getDescriptor();
     flyteidl.core.Security.getDescriptor();
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();

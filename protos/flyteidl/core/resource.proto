@@ -6,6 +6,13 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
 import "google/protobuf/timestamp.proto";
 
+// Cluster resource that task and workflow will run on
+message Resource {
+  oneof value {
+    RayCluster ray = 1;
+  }
+}
+
 
 // Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125
 message RayCluster {

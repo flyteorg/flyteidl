@@ -3,6 +3,7 @@ syntax = "proto3";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
+import "flyteidl/core/resource.proto";
 import "flyteidl/core/security.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/struct.proto";
@@ -138,6 +139,8 @@ message TaskTemplate {
     // reserve the field numbers 1 through 15 for very frequently occurring message elements
     map<string, string> config = 16;
 
+    // Cluster resources (Ray or Dask) that will be attached to task spec.
+    map<string, Resource> resources = 20;
 }
 
 // ----------------- First class Plugins

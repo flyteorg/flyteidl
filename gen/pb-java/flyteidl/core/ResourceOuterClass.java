@@ -3,8 +3,8 @@
 
 package flyteidl.core;
 
-public final class Resource {
-  private Resource() {}
+public final class ResourceOuterClass {
+  private ResourceOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -14,6 +14,711 @@ public final class Resource {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ResourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.Resource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    boolean hasRay();
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    flyteidl.core.ResourceOuterClass.RayCluster getRay();
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayOrBuilder();
+
+    public flyteidl.core.ResourceOuterClass.Resource.ValueCase getValueCase();
+  }
+  /**
+   * <pre>
+   * Cluster resource that task and workflow will run on
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.Resource}
+   */
+  public  static final class Resource extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.Resource)
+      ResourceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Resource.newBuilder() to construct.
+    private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Resource() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Resource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.ResourceOuterClass.RayCluster.Builder subBuilder = null;
+              if (valueCase_ == 1) {
+                subBuilder = ((flyteidl.core.ResourceOuterClass.RayCluster) value_).toBuilder();
+              }
+              value_ =
+                  input.readMessage(flyteidl.core.ResourceOuterClass.RayCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.ResourceOuterClass.RayCluster) value_);
+                value_ = subBuilder.buildPartial();
+              }
+              valueCase_ = 1;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_Resource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_Resource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.ResourceOuterClass.Resource.class, flyteidl.core.ResourceOuterClass.Resource.Builder.class);
+    }
+
+    private int valueCase_ = 0;
+    private java.lang.Object value_;
+    public enum ValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      RAY(1),
+      VALUE_NOT_SET(0);
+      private final int value;
+      private ValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ValueCase forNumber(int value) {
+        switch (value) {
+          case 1: return RAY;
+          case 0: return VALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ValueCase
+    getValueCase() {
+      return ValueCase.forNumber(
+          valueCase_);
+    }
+
+    public static final int RAY_FIELD_NUMBER = 1;
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    public boolean hasRay() {
+      return valueCase_ == 1;
+    }
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    public flyteidl.core.ResourceOuterClass.RayCluster getRay() {
+      if (valueCase_ == 1) {
+         return (flyteidl.core.ResourceOuterClass.RayCluster) value_;
+      }
+      return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+    }
+    /**
+     * <code>.flyteidl.core.RayCluster ray = 1;</code>
+     */
+    public flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayOrBuilder() {
+      if (valueCase_ == 1) {
+         return (flyteidl.core.ResourceOuterClass.RayCluster) value_;
+      }
+      return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (valueCase_ == 1) {
+        output.writeMessage(1, (flyteidl.core.ResourceOuterClass.RayCluster) value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (valueCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (flyteidl.core.ResourceOuterClass.RayCluster) value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.Resource)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.ResourceOuterClass.Resource other = (flyteidl.core.ResourceOuterClass.Resource) obj;
+
+      if (!getValueCase().equals(other.getValueCase())) return false;
+      switch (valueCase_) {
+        case 1:
+          if (!getRay()
+              .equals(other.getRay())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (valueCase_) {
+        case 1:
+          hash = (37 * hash) + RAY_FIELD_NUMBER;
+          hash = (53 * hash) + getRay().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.Resource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.Resource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Cluster resource that task and workflow will run on
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.Resource}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.Resource)
+        flyteidl.core.ResourceOuterClass.ResourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_Resource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_Resource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.ResourceOuterClass.Resource.class, flyteidl.core.ResourceOuterClass.Resource.Builder.class);
+      }
+
+      // Construct using flyteidl.core.ResourceOuterClass.Resource.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        valueCase_ = 0;
+        value_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_Resource_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.Resource getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.Resource build() {
+        flyteidl.core.ResourceOuterClass.Resource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.Resource buildPartial() {
+        flyteidl.core.ResourceOuterClass.Resource result = new flyteidl.core.ResourceOuterClass.Resource(this);
+        if (valueCase_ == 1) {
+          if (rayBuilder_ == null) {
+            result.value_ = value_;
+          } else {
+            result.value_ = rayBuilder_.build();
+          }
+        }
+        result.valueCase_ = valueCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.ResourceOuterClass.Resource) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.Resource)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.Resource other) {
+        if (other == flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance()) return this;
+        switch (other.getValueCase()) {
+          case RAY: {
+            mergeRay(other.getRay());
+            break;
+          }
+          case VALUE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.ResourceOuterClass.Resource parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.ResourceOuterClass.Resource) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int valueCase_ = 0;
+      private java.lang.Object value_;
+      public ValueCase
+          getValueCase() {
+        return ValueCase.forNumber(
+            valueCase_);
+      }
+
+      public Builder clearValue() {
+        valueCase_ = 0;
+        value_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder> rayBuilder_;
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public boolean hasRay() {
+        return valueCase_ == 1;
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayCluster getRay() {
+        if (rayBuilder_ == null) {
+          if (valueCase_ == 1) {
+            return (flyteidl.core.ResourceOuterClass.RayCluster) value_;
+          }
+          return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+        } else {
+          if (valueCase_ == 1) {
+            return rayBuilder_.getMessage();
+          }
+          return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public Builder setRay(flyteidl.core.ResourceOuterClass.RayCluster value) {
+        if (rayBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          onChanged();
+        } else {
+          rayBuilder_.setMessage(value);
+        }
+        valueCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public Builder setRay(
+          flyteidl.core.ResourceOuterClass.RayCluster.Builder builderForValue) {
+        if (rayBuilder_ == null) {
+          value_ = builderForValue.build();
+          onChanged();
+        } else {
+          rayBuilder_.setMessage(builderForValue.build());
+        }
+        valueCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public Builder mergeRay(flyteidl.core.ResourceOuterClass.RayCluster value) {
+        if (rayBuilder_ == null) {
+          if (valueCase_ == 1 &&
+              value_ != flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance()) {
+            value_ = flyteidl.core.ResourceOuterClass.RayCluster.newBuilder((flyteidl.core.ResourceOuterClass.RayCluster) value_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            value_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueCase_ == 1) {
+            rayBuilder_.mergeFrom(value);
+          }
+          rayBuilder_.setMessage(value);
+        }
+        valueCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public Builder clearRay() {
+        if (rayBuilder_ == null) {
+          if (valueCase_ == 1) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueCase_ == 1) {
+            valueCase_ = 0;
+            value_ = null;
+          }
+          rayBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayCluster.Builder getRayBuilder() {
+        return getRayFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayOrBuilder() {
+        if ((valueCase_ == 1) && (rayBuilder_ != null)) {
+          return rayBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueCase_ == 1) {
+            return (flyteidl.core.ResourceOuterClass.RayCluster) value_;
+          }
+          return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.flyteidl.core.RayCluster ray = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder> 
+          getRayFieldBuilder() {
+        if (rayBuilder_ == null) {
+          if (!(valueCase_ == 1)) {
+            value_ = flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
+          }
+          rayBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder>(
+                  (flyteidl.core.ResourceOuterClass.RayCluster) value_,
+                  getParentForChildren(),
+                  isClean());
+          value_ = null;
+        }
+        valueCase_ = 1;
+        onChanged();;
+        return rayBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.Resource)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.Resource)
+    private static final flyteidl.core.ResourceOuterClass.Resource DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.Resource();
+    }
+
+    public static flyteidl.core.ResourceOuterClass.Resource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Resource>
+        PARSER = new com.google.protobuf.AbstractParser<Resource>() {
+      @java.lang.Override
+      public Resource parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Resource(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Resource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Resource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.ResourceOuterClass.Resource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RayClusterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.RayCluster)
       com.google.protobuf.MessageOrBuilder {
@@ -97,7 +802,7 @@ public final class Resource {
     /**
      * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
      */
-    flyteidl.core.Resource.RayCluster.Environment getEnvironment();
+    flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment();
 
     /**
      * <pre>
@@ -114,7 +819,7 @@ public final class Resource {
      *
      * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
      */
-    flyteidl.core.Resource.ClusterSpec getClusterSpec();
+    flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec();
     /**
      * <pre>
      * Required field. This field indicates ray cluster configuration
@@ -122,7 +827,7 @@ public final class Resource {
      *
      * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
      */
-    flyteidl.core.Resource.ClusterSpecOrBuilder getClusterSpecOrBuilder();
+    flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder();
 
     /**
      * <pre>
@@ -272,11 +977,11 @@ public final class Resource {
               break;
             }
             case 50: {
-              flyteidl.core.Resource.ClusterSpec.Builder subBuilder = null;
+              flyteidl.core.ResourceOuterClass.ClusterSpec.Builder subBuilder = null;
               if (clusterSpec_ != null) {
                 subBuilder = clusterSpec_.toBuilder();
               }
-              clusterSpec_ = input.readMessage(flyteidl.core.Resource.ClusterSpec.parser(), extensionRegistry);
+              clusterSpec_ = input.readMessage(flyteidl.core.ResourceOuterClass.ClusterSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(clusterSpec_);
                 clusterSpec_ = subBuilder.buildPartial();
@@ -337,15 +1042,15 @@ public final class Resource {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_RayCluster_descriptor;
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_RayCluster_fieldAccessorTable
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Resource.RayCluster.class, flyteidl.core.Resource.RayCluster.Builder.class);
+              flyteidl.core.ResourceOuterClass.RayCluster.class, flyteidl.core.ResourceOuterClass.RayCluster.Builder.class);
     }
 
     /**
@@ -442,7 +1147,7 @@ public final class Resource {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return flyteidl.core.Resource.RayCluster.getDescriptor().getEnumTypes().get(0);
+        return flyteidl.core.ResourceOuterClass.RayCluster.getDescriptor().getEnumTypes().get(0);
       }
 
       private static final Environment[] VALUES = values();
@@ -647,14 +1352,14 @@ public final class Resource {
     /**
      * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
      */
-    public flyteidl.core.Resource.RayCluster.Environment getEnvironment() {
+    public flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment() {
       @SuppressWarnings("deprecation")
-      flyteidl.core.Resource.RayCluster.Environment result = flyteidl.core.Resource.RayCluster.Environment.valueOf(environment_);
-      return result == null ? flyteidl.core.Resource.RayCluster.Environment.UNRECOGNIZED : result;
+      flyteidl.core.ResourceOuterClass.RayCluster.Environment result = flyteidl.core.ResourceOuterClass.RayCluster.Environment.valueOf(environment_);
+      return result == null ? flyteidl.core.ResourceOuterClass.RayCluster.Environment.UNRECOGNIZED : result;
     }
 
     public static final int CLUSTER_SPEC_FIELD_NUMBER = 6;
-    private flyteidl.core.Resource.ClusterSpec clusterSpec_;
+    private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
     /**
      * <pre>
      * Required field. This field indicates ray cluster configuration
@@ -672,8 +1377,8 @@ public final class Resource {
      *
      * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
      */
-    public flyteidl.core.Resource.ClusterSpec getClusterSpec() {
-      return clusterSpec_ == null ? flyteidl.core.Resource.ClusterSpec.getDefaultInstance() : clusterSpec_;
+    public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
+      return clusterSpec_ == null ? flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance() : clusterSpec_;
     }
     /**
      * <pre>
@@ -682,7 +1387,7 @@ public final class Resource {
      *
      * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
      */
-    public flyteidl.core.Resource.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
+    public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
       return getClusterSpec();
     }
 
@@ -820,7 +1525,7 @@ public final class Resource {
       if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
       }
-      if (environment_ != flyteidl.core.Resource.RayCluster.Environment.DEV.getNumber()) {
+      if (environment_ != flyteidl.core.ResourceOuterClass.RayCluster.Environment.DEV.getNumber()) {
         output.writeEnum(5, environment_);
       }
       if (clusterSpec_ != null) {
@@ -856,7 +1561,7 @@ public final class Resource {
       if (!getVersionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
       }
-      if (environment_ != flyteidl.core.Resource.RayCluster.Environment.DEV.getNumber()) {
+      if (environment_ != flyteidl.core.ResourceOuterClass.RayCluster.Environment.DEV.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, environment_);
       }
@@ -885,10 +1590,10 @@ public final class Resource {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Resource.RayCluster)) {
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.RayCluster)) {
         return super.equals(obj);
       }
-      flyteidl.core.Resource.RayCluster other = (flyteidl.core.Resource.RayCluster) obj;
+      flyteidl.core.ResourceOuterClass.RayCluster other = (flyteidl.core.ResourceOuterClass.RayCluster) obj;
 
       if (!getName()
           .equals(other.getName())) return false;
@@ -956,69 +1661,69 @@ public final class Resource {
       return hash;
     }
 
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(byte[] data)
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.RayCluster parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.RayCluster parseDelimitedFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.RayCluster parseFrom(
+    public static flyteidl.core.ResourceOuterClass.RayCluster parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1031,7 +1736,7 @@ public final class Resource {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Resource.RayCluster prototype) {
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.RayCluster prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1056,21 +1761,21 @@ public final class Resource {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:flyteidl.core.RayCluster)
-        flyteidl.core.Resource.RayClusterOrBuilder {
+        flyteidl.core.ResourceOuterClass.RayClusterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_RayCluster_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_RayCluster_fieldAccessorTable
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Resource.RayCluster.class, flyteidl.core.Resource.RayCluster.Builder.class);
+                flyteidl.core.ResourceOuterClass.RayCluster.class, flyteidl.core.ResourceOuterClass.RayCluster.Builder.class);
       }
 
-      // Construct using flyteidl.core.Resource.RayCluster.newBuilder()
+      // Construct using flyteidl.core.ResourceOuterClass.RayCluster.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1124,17 +1829,17 @@ public final class Resource {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_RayCluster_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayCluster_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.RayCluster getDefaultInstanceForType() {
-        return flyteidl.core.Resource.RayCluster.getDefaultInstance();
+      public flyteidl.core.ResourceOuterClass.RayCluster getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.RayCluster build() {
-        flyteidl.core.Resource.RayCluster result = buildPartial();
+      public flyteidl.core.ResourceOuterClass.RayCluster build() {
+        flyteidl.core.ResourceOuterClass.RayCluster result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1142,8 +1847,8 @@ public final class Resource {
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.RayCluster buildPartial() {
-        flyteidl.core.Resource.RayCluster result = new flyteidl.core.Resource.RayCluster(this);
+      public flyteidl.core.ResourceOuterClass.RayCluster buildPartial() {
+        flyteidl.core.ResourceOuterClass.RayCluster result = new flyteidl.core.ResourceOuterClass.RayCluster(this);
         result.name_ = name_;
         result.namespace_ = namespace_;
         result.user_ = user_;
@@ -1203,16 +1908,16 @@ public final class Resource {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Resource.RayCluster) {
-          return mergeFrom((flyteidl.core.Resource.RayCluster)other);
+        if (other instanceof flyteidl.core.ResourceOuterClass.RayCluster) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.RayCluster)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Resource.RayCluster other) {
-        if (other == flyteidl.core.Resource.RayCluster.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.RayCluster other) {
+        if (other == flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -1260,11 +1965,11 @@ public final class Resource {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Resource.RayCluster parsedMessage = null;
+        flyteidl.core.ResourceOuterClass.RayCluster parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Resource.RayCluster) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.ResourceOuterClass.RayCluster) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1648,15 +2353,15 @@ public final class Resource {
       /**
        * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
        */
-      public flyteidl.core.Resource.RayCluster.Environment getEnvironment() {
+      public flyteidl.core.ResourceOuterClass.RayCluster.Environment getEnvironment() {
         @SuppressWarnings("deprecation")
-        flyteidl.core.Resource.RayCluster.Environment result = flyteidl.core.Resource.RayCluster.Environment.valueOf(environment_);
-        return result == null ? flyteidl.core.Resource.RayCluster.Environment.UNRECOGNIZED : result;
+        flyteidl.core.ResourceOuterClass.RayCluster.Environment result = flyteidl.core.ResourceOuterClass.RayCluster.Environment.valueOf(environment_);
+        return result == null ? flyteidl.core.ResourceOuterClass.RayCluster.Environment.UNRECOGNIZED : result;
       }
       /**
        * <code>.flyteidl.core.RayCluster.Environment environment = 5;</code>
        */
-      public Builder setEnvironment(flyteidl.core.Resource.RayCluster.Environment value) {
+      public Builder setEnvironment(flyteidl.core.ResourceOuterClass.RayCluster.Environment value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1675,9 +2380,9 @@ public final class Resource {
         return this;
       }
 
-      private flyteidl.core.Resource.ClusterSpec clusterSpec_;
+      private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Resource.ClusterSpec, flyteidl.core.Resource.ClusterSpec.Builder, flyteidl.core.Resource.ClusterSpecOrBuilder> clusterSpecBuilder_;
+          flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> clusterSpecBuilder_;
       /**
        * <pre>
        * Required field. This field indicates ray cluster configuration
@@ -1695,9 +2400,9 @@ public final class Resource {
        *
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
-      public flyteidl.core.Resource.ClusterSpec getClusterSpec() {
+      public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
         if (clusterSpecBuilder_ == null) {
-          return clusterSpec_ == null ? flyteidl.core.Resource.ClusterSpec.getDefaultInstance() : clusterSpec_;
+          return clusterSpec_ == null ? flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance() : clusterSpec_;
         } else {
           return clusterSpecBuilder_.getMessage();
         }
@@ -1709,7 +2414,7 @@ public final class Resource {
        *
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
-      public Builder setClusterSpec(flyteidl.core.Resource.ClusterSpec value) {
+      public Builder setClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1730,7 +2435,7 @@ public final class Resource {
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
       public Builder setClusterSpec(
-          flyteidl.core.Resource.ClusterSpec.Builder builderForValue) {
+          flyteidl.core.ResourceOuterClass.ClusterSpec.Builder builderForValue) {
         if (clusterSpecBuilder_ == null) {
           clusterSpec_ = builderForValue.build();
           onChanged();
@@ -1747,11 +2452,11 @@ public final class Resource {
        *
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
-      public Builder mergeClusterSpec(flyteidl.core.Resource.ClusterSpec value) {
+      public Builder mergeClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
           if (clusterSpec_ != null) {
             clusterSpec_ =
-              flyteidl.core.Resource.ClusterSpec.newBuilder(clusterSpec_).mergeFrom(value).buildPartial();
+              flyteidl.core.ResourceOuterClass.ClusterSpec.newBuilder(clusterSpec_).mergeFrom(value).buildPartial();
           } else {
             clusterSpec_ = value;
           }
@@ -1787,7 +2492,7 @@ public final class Resource {
        *
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
-      public flyteidl.core.Resource.ClusterSpec.Builder getClusterSpecBuilder() {
+      public flyteidl.core.ResourceOuterClass.ClusterSpec.Builder getClusterSpecBuilder() {
         
         onChanged();
         return getClusterSpecFieldBuilder().getBuilder();
@@ -1799,12 +2504,12 @@ public final class Resource {
        *
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
-      public flyteidl.core.Resource.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
+      public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
         if (clusterSpecBuilder_ != null) {
           return clusterSpecBuilder_.getMessageOrBuilder();
         } else {
           return clusterSpec_ == null ?
-              flyteidl.core.Resource.ClusterSpec.getDefaultInstance() : clusterSpec_;
+              flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance() : clusterSpec_;
         }
       }
       /**
@@ -1815,11 +2520,11 @@ public final class Resource {
        * <code>.flyteidl.core.ClusterSpec cluster_spec = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Resource.ClusterSpec, flyteidl.core.Resource.ClusterSpec.Builder, flyteidl.core.Resource.ClusterSpecOrBuilder> 
+          flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> 
           getClusterSpecFieldBuilder() {
         if (clusterSpecBuilder_ == null) {
           clusterSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Resource.ClusterSpec, flyteidl.core.Resource.ClusterSpec.Builder, flyteidl.core.Resource.ClusterSpecOrBuilder>(
+              flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder>(
                   getClusterSpec(),
                   getParentForChildren(),
                   isClean());
@@ -2239,12 +2944,12 @@ public final class Resource {
     }
 
     // @@protoc_insertion_point(class_scope:flyteidl.core.RayCluster)
-    private static final flyteidl.core.Resource.RayCluster DEFAULT_INSTANCE;
+    private static final flyteidl.core.ResourceOuterClass.RayCluster DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Resource.RayCluster();
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.RayCluster();
     }
 
-    public static flyteidl.core.Resource.RayCluster getDefaultInstance() {
+    public static flyteidl.core.ResourceOuterClass.RayCluster getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2269,7 +2974,7 @@ public final class Resource {
     }
 
     @java.lang.Override
-    public flyteidl.core.Resource.RayCluster getDefaultInstanceForType() {
+    public flyteidl.core.ResourceOuterClass.RayCluster getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2294,7 +2999,7 @@ public final class Resource {
      *
      * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
      */
-    flyteidl.core.Resource.HeadGroupSpec getHeadGroupSpec();
+    flyteidl.core.ResourceOuterClass.HeadGroupSpec getHeadGroupSpec();
     /**
      * <pre>
      * The head group configuration
@@ -2302,7 +3007,7 @@ public final class Resource {
      *
      * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
      */
-    flyteidl.core.Resource.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder();
+    flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder();
 
     /**
      * <pre>
@@ -2311,7 +3016,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    java.util.List<flyteidl.core.Resource.WorkerGroupSpec> 
+    java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> 
         getWorkerGroupSepcList();
     /**
      * <pre>
@@ -2320,7 +3025,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    flyteidl.core.Resource.WorkerGroupSpec getWorkerGroupSepc(int index);
+    flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index);
     /**
      * <pre>
      * The worker group configurations
@@ -2336,7 +3041,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    java.util.List<? extends flyteidl.core.Resource.WorkerGroupSpecOrBuilder> 
+    java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
         getWorkerGroupSepcOrBuilderList();
     /**
      * <pre>
@@ -2345,7 +3050,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    flyteidl.core.Resource.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+    flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
         int index);
   }
   /**
@@ -2389,11 +3094,11 @@ public final class Resource {
               done = true;
               break;
             case 10: {
-              flyteidl.core.Resource.HeadGroupSpec.Builder subBuilder = null;
+              flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder subBuilder = null;
               if (headGroupSpec_ != null) {
                 subBuilder = headGroupSpec_.toBuilder();
               }
-              headGroupSpec_ = input.readMessage(flyteidl.core.Resource.HeadGroupSpec.parser(), extensionRegistry);
+              headGroupSpec_ = input.readMessage(flyteidl.core.ResourceOuterClass.HeadGroupSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(headGroupSpec_);
                 headGroupSpec_ = subBuilder.buildPartial();
@@ -2403,11 +3108,11 @@ public final class Resource {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.Resource.WorkerGroupSpec>();
+                workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>();
                 mutable_bitField0_ |= 0x00000002;
               }
               workerGroupSepc_.add(
-                  input.readMessage(flyteidl.core.Resource.WorkerGroupSpec.parser(), extensionRegistry));
+                  input.readMessage(flyteidl.core.ResourceOuterClass.WorkerGroupSpec.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -2434,20 +3139,20 @@ public final class Resource {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_ClusterSpec_descriptor;
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_ClusterSpec_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Resource.ClusterSpec.class, flyteidl.core.Resource.ClusterSpec.Builder.class);
+              flyteidl.core.ResourceOuterClass.ClusterSpec.class, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder.class);
     }
 
     private int bitField0_;
     public static final int HEAD_GROUP_SPEC_FIELD_NUMBER = 1;
-    private flyteidl.core.Resource.HeadGroupSpec headGroupSpec_;
+    private flyteidl.core.ResourceOuterClass.HeadGroupSpec headGroupSpec_;
     /**
      * <pre>
      * The head group configuration
@@ -2465,8 +3170,8 @@ public final class Resource {
      *
      * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
      */
-    public flyteidl.core.Resource.HeadGroupSpec getHeadGroupSpec() {
-      return headGroupSpec_ == null ? flyteidl.core.Resource.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
+    public flyteidl.core.ResourceOuterClass.HeadGroupSpec getHeadGroupSpec() {
+      return headGroupSpec_ == null ? flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
     }
     /**
      * <pre>
@@ -2475,12 +3180,12 @@ public final class Resource {
      *
      * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
      */
-    public flyteidl.core.Resource.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
+    public flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
       return getHeadGroupSpec();
     }
 
     public static final int WORKER_GROUP_SEPC_FIELD_NUMBER = 2;
-    private java.util.List<flyteidl.core.Resource.WorkerGroupSpec> workerGroupSepc_;
+    private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSepc_;
     /**
      * <pre>
      * The worker group configurations
@@ -2488,7 +3193,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    public java.util.List<flyteidl.core.Resource.WorkerGroupSpec> getWorkerGroupSepcList() {
+    public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSepcList() {
       return workerGroupSepc_;
     }
     /**
@@ -2498,7 +3203,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    public java.util.List<? extends flyteidl.core.Resource.WorkerGroupSpecOrBuilder> 
+    public java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
         getWorkerGroupSepcOrBuilderList() {
       return workerGroupSepc_;
     }
@@ -2519,7 +3224,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    public flyteidl.core.Resource.WorkerGroupSpec getWorkerGroupSepc(int index) {
+    public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index) {
       return workerGroupSepc_.get(index);
     }
     /**
@@ -2529,7 +3234,7 @@ public final class Resource {
      *
      * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
      */
-    public flyteidl.core.Resource.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+    public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
         int index) {
       return workerGroupSepc_.get(index);
     }
@@ -2581,10 +3286,10 @@ public final class Resource {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Resource.ClusterSpec)) {
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.ClusterSpec)) {
         return super.equals(obj);
       }
-      flyteidl.core.Resource.ClusterSpec other = (flyteidl.core.Resource.ClusterSpec) obj;
+      flyteidl.core.ResourceOuterClass.ClusterSpec other = (flyteidl.core.ResourceOuterClass.ClusterSpec) obj;
 
       if (hasHeadGroupSpec() != other.hasHeadGroupSpec()) return false;
       if (hasHeadGroupSpec()) {
@@ -2617,69 +3322,69 @@ public final class Resource {
       return hash;
     }
 
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(byte[] data)
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseDelimitedFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.ClusterSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2692,7 +3397,7 @@ public final class Resource {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Resource.ClusterSpec prototype) {
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.ClusterSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2713,21 +3418,21 @@ public final class Resource {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:flyteidl.core.ClusterSpec)
-        flyteidl.core.Resource.ClusterSpecOrBuilder {
+        flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_ClusterSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_ClusterSpec_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Resource.ClusterSpec.class, flyteidl.core.Resource.ClusterSpec.Builder.class);
+                flyteidl.core.ResourceOuterClass.ClusterSpec.class, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder.class);
       }
 
-      // Construct using flyteidl.core.Resource.ClusterSpec.newBuilder()
+      // Construct using flyteidl.core.ResourceOuterClass.ClusterSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2764,17 +3469,17 @@ public final class Resource {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_ClusterSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_ClusterSpec_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.ClusterSpec getDefaultInstanceForType() {
-        return flyteidl.core.Resource.ClusterSpec.getDefaultInstance();
+      public flyteidl.core.ResourceOuterClass.ClusterSpec getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.ClusterSpec build() {
-        flyteidl.core.Resource.ClusterSpec result = buildPartial();
+      public flyteidl.core.ResourceOuterClass.ClusterSpec build() {
+        flyteidl.core.ResourceOuterClass.ClusterSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2782,8 +3487,8 @@ public final class Resource {
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.ClusterSpec buildPartial() {
-        flyteidl.core.Resource.ClusterSpec result = new flyteidl.core.Resource.ClusterSpec(this);
+      public flyteidl.core.ResourceOuterClass.ClusterSpec buildPartial() {
+        flyteidl.core.ResourceOuterClass.ClusterSpec result = new flyteidl.core.ResourceOuterClass.ClusterSpec(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (headGroupSpecBuilder_ == null) {
@@ -2839,16 +3544,16 @@ public final class Resource {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Resource.ClusterSpec) {
-          return mergeFrom((flyteidl.core.Resource.ClusterSpec)other);
+        if (other instanceof flyteidl.core.ResourceOuterClass.ClusterSpec) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.ClusterSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Resource.ClusterSpec other) {
-        if (other == flyteidl.core.Resource.ClusterSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.ClusterSpec other) {
+        if (other == flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance()) return this;
         if (other.hasHeadGroupSpec()) {
           mergeHeadGroupSpec(other.getHeadGroupSpec());
         }
@@ -2893,11 +3598,11 @@ public final class Resource {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Resource.ClusterSpec parsedMessage = null;
+        flyteidl.core.ResourceOuterClass.ClusterSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Resource.ClusterSpec) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.ResourceOuterClass.ClusterSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2908,9 +3613,9 @@ public final class Resource {
       }
       private int bitField0_;
 
-      private flyteidl.core.Resource.HeadGroupSpec headGroupSpec_;
+      private flyteidl.core.ResourceOuterClass.HeadGroupSpec headGroupSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Resource.HeadGroupSpec, flyteidl.core.Resource.HeadGroupSpec.Builder, flyteidl.core.Resource.HeadGroupSpecOrBuilder> headGroupSpecBuilder_;
+          flyteidl.core.ResourceOuterClass.HeadGroupSpec, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder, flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder> headGroupSpecBuilder_;
       /**
        * <pre>
        * The head group configuration
@@ -2928,9 +3633,9 @@ public final class Resource {
        *
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
-      public flyteidl.core.Resource.HeadGroupSpec getHeadGroupSpec() {
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpec getHeadGroupSpec() {
         if (headGroupSpecBuilder_ == null) {
-          return headGroupSpec_ == null ? flyteidl.core.Resource.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
+          return headGroupSpec_ == null ? flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
         } else {
           return headGroupSpecBuilder_.getMessage();
         }
@@ -2942,7 +3647,7 @@ public final class Resource {
        *
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
-      public Builder setHeadGroupSpec(flyteidl.core.Resource.HeadGroupSpec value) {
+      public Builder setHeadGroupSpec(flyteidl.core.ResourceOuterClass.HeadGroupSpec value) {
         if (headGroupSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2963,7 +3668,7 @@ public final class Resource {
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
       public Builder setHeadGroupSpec(
-          flyteidl.core.Resource.HeadGroupSpec.Builder builderForValue) {
+          flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder builderForValue) {
         if (headGroupSpecBuilder_ == null) {
           headGroupSpec_ = builderForValue.build();
           onChanged();
@@ -2980,11 +3685,11 @@ public final class Resource {
        *
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
-      public Builder mergeHeadGroupSpec(flyteidl.core.Resource.HeadGroupSpec value) {
+      public Builder mergeHeadGroupSpec(flyteidl.core.ResourceOuterClass.HeadGroupSpec value) {
         if (headGroupSpecBuilder_ == null) {
           if (headGroupSpec_ != null) {
             headGroupSpec_ =
-              flyteidl.core.Resource.HeadGroupSpec.newBuilder(headGroupSpec_).mergeFrom(value).buildPartial();
+              flyteidl.core.ResourceOuterClass.HeadGroupSpec.newBuilder(headGroupSpec_).mergeFrom(value).buildPartial();
           } else {
             headGroupSpec_ = value;
           }
@@ -3020,7 +3725,7 @@ public final class Resource {
        *
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
-      public flyteidl.core.Resource.HeadGroupSpec.Builder getHeadGroupSpecBuilder() {
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder getHeadGroupSpecBuilder() {
         
         onChanged();
         return getHeadGroupSpecFieldBuilder().getBuilder();
@@ -3032,12 +3737,12 @@ public final class Resource {
        *
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
-      public flyteidl.core.Resource.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
         if (headGroupSpecBuilder_ != null) {
           return headGroupSpecBuilder_.getMessageOrBuilder();
         } else {
           return headGroupSpec_ == null ?
-              flyteidl.core.Resource.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
+              flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
         }
       }
       /**
@@ -3048,11 +3753,11 @@ public final class Resource {
        * <code>.flyteidl.core.HeadGroupSpec head_group_spec = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Resource.HeadGroupSpec, flyteidl.core.Resource.HeadGroupSpec.Builder, flyteidl.core.Resource.HeadGroupSpecOrBuilder> 
+          flyteidl.core.ResourceOuterClass.HeadGroupSpec, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder, flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder> 
           getHeadGroupSpecFieldBuilder() {
         if (headGroupSpecBuilder_ == null) {
           headGroupSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Resource.HeadGroupSpec, flyteidl.core.Resource.HeadGroupSpec.Builder, flyteidl.core.Resource.HeadGroupSpecOrBuilder>(
+              flyteidl.core.ResourceOuterClass.HeadGroupSpec, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder, flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder>(
                   getHeadGroupSpec(),
                   getParentForChildren(),
                   isClean());
@@ -3061,17 +3766,17 @@ public final class Resource {
         return headGroupSpecBuilder_;
       }
 
-      private java.util.List<flyteidl.core.Resource.WorkerGroupSpec> workerGroupSepc_ =
+      private java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> workerGroupSepc_ =
         java.util.Collections.emptyList();
       private void ensureWorkerGroupSepcIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.Resource.WorkerGroupSpec>(workerGroupSepc_);
+          workerGroupSepc_ = new java.util.ArrayList<flyteidl.core.ResourceOuterClass.WorkerGroupSpec>(workerGroupSepc_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Resource.WorkerGroupSpec, flyteidl.core.Resource.WorkerGroupSpec.Builder, flyteidl.core.Resource.WorkerGroupSpecOrBuilder> workerGroupSepcBuilder_;
+          flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> workerGroupSepcBuilder_;
 
       /**
        * <pre>
@@ -3080,7 +3785,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public java.util.List<flyteidl.core.Resource.WorkerGroupSpec> getWorkerGroupSepcList() {
+      public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec> getWorkerGroupSepcList() {
         if (workerGroupSepcBuilder_ == null) {
           return java.util.Collections.unmodifiableList(workerGroupSepc_);
         } else {
@@ -3108,7 +3813,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public flyteidl.core.Resource.WorkerGroupSpec getWorkerGroupSepc(int index) {
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getWorkerGroupSepc(int index) {
         if (workerGroupSepcBuilder_ == null) {
           return workerGroupSepc_.get(index);
         } else {
@@ -3123,7 +3828,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder setWorkerGroupSepc(
-          int index, flyteidl.core.Resource.WorkerGroupSpec value) {
+          int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
         if (workerGroupSepcBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3144,7 +3849,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder setWorkerGroupSepc(
-          int index, flyteidl.core.Resource.WorkerGroupSpec.Builder builderForValue) {
+          int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
         if (workerGroupSepcBuilder_ == null) {
           ensureWorkerGroupSepcIsMutable();
           workerGroupSepc_.set(index, builderForValue.build());
@@ -3161,7 +3866,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public Builder addWorkerGroupSepc(flyteidl.core.Resource.WorkerGroupSpec value) {
+      public Builder addWorkerGroupSepc(flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
         if (workerGroupSepcBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3182,7 +3887,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder addWorkerGroupSepc(
-          int index, flyteidl.core.Resource.WorkerGroupSpec value) {
+          int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec value) {
         if (workerGroupSepcBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3203,7 +3908,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder addWorkerGroupSepc(
-          flyteidl.core.Resource.WorkerGroupSpec.Builder builderForValue) {
+          flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
         if (workerGroupSepcBuilder_ == null) {
           ensureWorkerGroupSepcIsMutable();
           workerGroupSepc_.add(builderForValue.build());
@@ -3221,7 +3926,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder addWorkerGroupSepc(
-          int index, flyteidl.core.Resource.WorkerGroupSpec.Builder builderForValue) {
+          int index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder builderForValue) {
         if (workerGroupSepcBuilder_ == null) {
           ensureWorkerGroupSepcIsMutable();
           workerGroupSepc_.add(index, builderForValue.build());
@@ -3239,7 +3944,7 @@ public final class Resource {
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
       public Builder addAllWorkerGroupSepc(
-          java.lang.Iterable<? extends flyteidl.core.Resource.WorkerGroupSpec> values) {
+          java.lang.Iterable<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpec> values) {
         if (workerGroupSepcBuilder_ == null) {
           ensureWorkerGroupSepcIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3291,7 +3996,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public flyteidl.core.Resource.WorkerGroupSpec.Builder getWorkerGroupSepcBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder getWorkerGroupSepcBuilder(
           int index) {
         return getWorkerGroupSepcFieldBuilder().getBuilder(index);
       }
@@ -3302,7 +4007,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public flyteidl.core.Resource.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder getWorkerGroupSepcOrBuilder(
           int index) {
         if (workerGroupSepcBuilder_ == null) {
           return workerGroupSepc_.get(index);  } else {
@@ -3316,7 +4021,7 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public java.util.List<? extends flyteidl.core.Resource.WorkerGroupSpecOrBuilder> 
+      public java.util.List<? extends flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
            getWorkerGroupSepcOrBuilderList() {
         if (workerGroupSepcBuilder_ != null) {
           return workerGroupSepcBuilder_.getMessageOrBuilderList();
@@ -3331,9 +4036,9 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public flyteidl.core.Resource.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder() {
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder() {
         return getWorkerGroupSepcFieldBuilder().addBuilder(
-            flyteidl.core.Resource.WorkerGroupSpec.getDefaultInstance());
+            flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3342,10 +4047,10 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public flyteidl.core.Resource.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder(
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder addWorkerGroupSepcBuilder(
           int index) {
         return getWorkerGroupSepcFieldBuilder().addBuilder(
-            index, flyteidl.core.Resource.WorkerGroupSpec.getDefaultInstance());
+            index, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3354,16 +4059,16 @@ public final class Resource {
        *
        * <code>repeated .flyteidl.core.WorkerGroupSpec worker_group_sepc = 2;</code>
        */
-      public java.util.List<flyteidl.core.Resource.WorkerGroupSpec.Builder> 
+      public java.util.List<flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder> 
            getWorkerGroupSepcBuilderList() {
         return getWorkerGroupSepcFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.core.Resource.WorkerGroupSpec, flyteidl.core.Resource.WorkerGroupSpec.Builder, flyteidl.core.Resource.WorkerGroupSpecOrBuilder> 
+          flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder> 
           getWorkerGroupSepcFieldBuilder() {
         if (workerGroupSepcBuilder_ == null) {
           workerGroupSepcBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              flyteidl.core.Resource.WorkerGroupSpec, flyteidl.core.Resource.WorkerGroupSpec.Builder, flyteidl.core.Resource.WorkerGroupSpecOrBuilder>(
+              flyteidl.core.ResourceOuterClass.WorkerGroupSpec, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder, flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder>(
                   workerGroupSepc_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -3389,12 +4094,12 @@ public final class Resource {
     }
 
     // @@protoc_insertion_point(class_scope:flyteidl.core.ClusterSpec)
-    private static final flyteidl.core.Resource.ClusterSpec DEFAULT_INSTANCE;
+    private static final flyteidl.core.ResourceOuterClass.ClusterSpec DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Resource.ClusterSpec();
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.ClusterSpec();
     }
 
-    public static flyteidl.core.Resource.ClusterSpec getDefaultInstance() {
+    public static flyteidl.core.ResourceOuterClass.ClusterSpec getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3419,7 +4124,7 @@ public final class Resource {
     }
 
     @java.lang.Override
-    public flyteidl.core.Resource.ClusterSpec getDefaultInstanceForType() {
+    public flyteidl.core.ResourceOuterClass.ClusterSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3631,7 +4336,7 @@ public final class Resource {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -3649,9 +4354,9 @@ public final class Resource {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Resource.HeadGroupSpec.class, flyteidl.core.Resource.HeadGroupSpec.Builder.class);
+              flyteidl.core.ResourceOuterClass.HeadGroupSpec.class, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder.class);
     }
 
     private int bitField0_;
@@ -3787,7 +4492,7 @@ public final class Resource {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_descriptor, 
+                  flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -3940,10 +4645,10 @@ public final class Resource {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Resource.HeadGroupSpec)) {
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.HeadGroupSpec)) {
         return super.equals(obj);
       }
-      flyteidl.core.Resource.HeadGroupSpec other = (flyteidl.core.Resource.HeadGroupSpec) obj;
+      flyteidl.core.ResourceOuterClass.HeadGroupSpec other = (flyteidl.core.ResourceOuterClass.HeadGroupSpec) obj;
 
       if (!getComputeTemplate()
           .equals(other.getComputeTemplate())) return false;
@@ -3979,69 +4684,69 @@ public final class Resource {
       return hash;
     }
 
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(byte[] data)
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseDelimitedFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.HeadGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4054,7 +4759,7 @@ public final class Resource {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Resource.HeadGroupSpec prototype) {
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.HeadGroupSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -4075,10 +4780,10 @@ public final class Resource {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:flyteidl.core.HeadGroupSpec)
-        flyteidl.core.Resource.HeadGroupSpecOrBuilder {
+        flyteidl.core.ResourceOuterClass.HeadGroupSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -4106,12 +4811,12 @@ public final class Resource {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Resource.HeadGroupSpec.class, flyteidl.core.Resource.HeadGroupSpec.Builder.class);
+                flyteidl.core.ResourceOuterClass.HeadGroupSpec.class, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder.class);
       }
 
-      // Construct using flyteidl.core.Resource.HeadGroupSpec.newBuilder()
+      // Construct using flyteidl.core.ResourceOuterClass.HeadGroupSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4142,17 +4847,17 @@ public final class Resource {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_HeadGroupSpec_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.HeadGroupSpec getDefaultInstanceForType() {
-        return flyteidl.core.Resource.HeadGroupSpec.getDefaultInstance();
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpec getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.HeadGroupSpec build() {
-        flyteidl.core.Resource.HeadGroupSpec result = buildPartial();
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpec build() {
+        flyteidl.core.ResourceOuterClass.HeadGroupSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4160,8 +4865,8 @@ public final class Resource {
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.HeadGroupSpec buildPartial() {
-        flyteidl.core.Resource.HeadGroupSpec result = new flyteidl.core.Resource.HeadGroupSpec(this);
+      public flyteidl.core.ResourceOuterClass.HeadGroupSpec buildPartial() {
+        flyteidl.core.ResourceOuterClass.HeadGroupSpec result = new flyteidl.core.ResourceOuterClass.HeadGroupSpec(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.computeTemplate_ = computeTemplate_;
@@ -4208,16 +4913,16 @@ public final class Resource {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Resource.HeadGroupSpec) {
-          return mergeFrom((flyteidl.core.Resource.HeadGroupSpec)other);
+        if (other instanceof flyteidl.core.ResourceOuterClass.HeadGroupSpec) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.HeadGroupSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Resource.HeadGroupSpec other) {
-        if (other == flyteidl.core.Resource.HeadGroupSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.HeadGroupSpec other) {
+        if (other == flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance()) return this;
         if (!other.getComputeTemplate().isEmpty()) {
           computeTemplate_ = other.computeTemplate_;
           onChanged();
@@ -4247,11 +4952,11 @@ public final class Resource {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Resource.HeadGroupSpec parsedMessage = null;
+        flyteidl.core.ResourceOuterClass.HeadGroupSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Resource.HeadGroupSpec) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.ResourceOuterClass.HeadGroupSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4696,12 +5401,12 @@ public final class Resource {
     }
 
     // @@protoc_insertion_point(class_scope:flyteidl.core.HeadGroupSpec)
-    private static final flyteidl.core.Resource.HeadGroupSpec DEFAULT_INSTANCE;
+    private static final flyteidl.core.ResourceOuterClass.HeadGroupSpec DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Resource.HeadGroupSpec();
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.HeadGroupSpec();
     }
 
-    public static flyteidl.core.Resource.HeadGroupSpec getDefaultInstance() {
+    public static flyteidl.core.ResourceOuterClass.HeadGroupSpec getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4726,7 +5431,7 @@ public final class Resource {
     }
 
     @java.lang.Override
-    public flyteidl.core.Resource.HeadGroupSpec getDefaultInstanceForType() {
+    public flyteidl.core.ResourceOuterClass.HeadGroupSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4980,7 +5685,7 @@ public final class Resource {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -4998,9 +5703,9 @@ public final class Resource {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.core.Resource.WorkerGroupSpec.class, flyteidl.core.Resource.WorkerGroupSpec.Builder.class);
+              flyteidl.core.ResourceOuterClass.WorkerGroupSpec.class, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder.class);
     }
 
     private int bitField0_;
@@ -5175,7 +5880,7 @@ public final class Resource {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_RayStartParamsEntry_descriptor, 
+                  flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_RayStartParamsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -5349,10 +6054,10 @@ public final class Resource {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.core.Resource.WorkerGroupSpec)) {
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.WorkerGroupSpec)) {
         return super.equals(obj);
       }
-      flyteidl.core.Resource.WorkerGroupSpec other = (flyteidl.core.Resource.WorkerGroupSpec) obj;
+      flyteidl.core.ResourceOuterClass.WorkerGroupSpec other = (flyteidl.core.ResourceOuterClass.WorkerGroupSpec) obj;
 
       if (!getGroupName()
           .equals(other.getGroupName())) return false;
@@ -5400,69 +6105,69 @@ public final class Resource {
       return hash;
     }
 
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(byte[] data)
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseDelimitedFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.core.Resource.WorkerGroupSpec parseFrom(
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5475,7 +6180,7 @@ public final class Resource {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.core.Resource.WorkerGroupSpec prototype) {
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.WorkerGroupSpec prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5496,10 +6201,10 @@ public final class Resource {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:flyteidl.core.WorkerGroupSpec)
-        flyteidl.core.Resource.WorkerGroupSpecOrBuilder {
+        flyteidl.core.ResourceOuterClass.WorkerGroupSpecOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -5527,12 +6232,12 @@ public final class Resource {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.core.Resource.WorkerGroupSpec.class, flyteidl.core.Resource.WorkerGroupSpec.Builder.class);
+                flyteidl.core.ResourceOuterClass.WorkerGroupSpec.class, flyteidl.core.ResourceOuterClass.WorkerGroupSpec.Builder.class);
       }
 
-      // Construct using flyteidl.core.Resource.WorkerGroupSpec.newBuilder()
+      // Construct using flyteidl.core.ResourceOuterClass.WorkerGroupSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5569,17 +6274,17 @@ public final class Resource {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.core.Resource.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_WorkerGroupSpec_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.WorkerGroupSpec getDefaultInstanceForType() {
-        return flyteidl.core.Resource.WorkerGroupSpec.getDefaultInstance();
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.WorkerGroupSpec build() {
-        flyteidl.core.Resource.WorkerGroupSpec result = buildPartial();
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec build() {
+        flyteidl.core.ResourceOuterClass.WorkerGroupSpec result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5587,8 +6292,8 @@ public final class Resource {
       }
 
       @java.lang.Override
-      public flyteidl.core.Resource.WorkerGroupSpec buildPartial() {
-        flyteidl.core.Resource.WorkerGroupSpec result = new flyteidl.core.Resource.WorkerGroupSpec(this);
+      public flyteidl.core.ResourceOuterClass.WorkerGroupSpec buildPartial() {
+        flyteidl.core.ResourceOuterClass.WorkerGroupSpec result = new flyteidl.core.ResourceOuterClass.WorkerGroupSpec(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.groupName_ = groupName_;
@@ -5638,16 +6343,16 @@ public final class Resource {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.core.Resource.WorkerGroupSpec) {
-          return mergeFrom((flyteidl.core.Resource.WorkerGroupSpec)other);
+        if (other instanceof flyteidl.core.ResourceOuterClass.WorkerGroupSpec) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.WorkerGroupSpec)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.core.Resource.WorkerGroupSpec other) {
-        if (other == flyteidl.core.Resource.WorkerGroupSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.WorkerGroupSpec other) {
+        if (other == flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance()) return this;
         if (!other.getGroupName().isEmpty()) {
           groupName_ = other.groupName_;
           onChanged();
@@ -5686,11 +6391,11 @@ public final class Resource {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.core.Resource.WorkerGroupSpec parsedMessage = null;
+        flyteidl.core.ResourceOuterClass.WorkerGroupSpec parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.core.Resource.WorkerGroupSpec) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.core.ResourceOuterClass.WorkerGroupSpec) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6249,12 +6954,12 @@ public final class Resource {
     }
 
     // @@protoc_insertion_point(class_scope:flyteidl.core.WorkerGroupSpec)
-    private static final flyteidl.core.Resource.WorkerGroupSpec DEFAULT_INSTANCE;
+    private static final flyteidl.core.ResourceOuterClass.WorkerGroupSpec DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.core.Resource.WorkerGroupSpec();
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.WorkerGroupSpec();
     }
 
-    public static flyteidl.core.Resource.WorkerGroupSpec getDefaultInstance() {
+    public static flyteidl.core.ResourceOuterClass.WorkerGroupSpec getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6279,12 +6984,17 @@ public final class Resource {
     }
 
     @java.lang.Override
-    public flyteidl.core.Resource.WorkerGroupSpec getDefaultInstanceForType() {
+    public flyteidl.core.ResourceOuterClass.WorkerGroupSpec getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_Resource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_Resource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_RayCluster_descriptor;
   private static final 
@@ -6325,34 +7035,35 @@ public final class Resource {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/core/resource.proto\022\rflyteidl" +
-      ".core\032\037google/protobuf/timestamp.proto\"\363" +
-      "\002\n\nRayCluster\022\014\n\004name\030\001 \001(\t\022\021\n\tnamespace" +
-      "\030\002 \001(\t\022\014\n\004user\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022:\n" +
-      "\013environment\030\005 \001(\0162%.flyteidl.core.RayCl" +
-      "uster.Environment\0220\n\014cluster_spec\030\006 \001(\0132" +
-      "\032.flyteidl.core.ClusterSpec\022.\n\ncreated_a" +
-      "t\030\007 \001(\0132\032.google.protobuf.Timestamp\022.\n\nd" +
-      "eleted_at\030\010 \001(\0132\032.google.protobuf.Timest" +
-      "amp\022\025\n\rcluster_state\030\t \001(\t\"@\n\013Environmen" +
-      "t\022\007\n\003DEV\020\000\022\013\n\007TESTING\020\001\022\013\n\007STAGING\020\002\022\016\n\n" +
-      "PRODUCTION\020\003\"\177\n\013ClusterSpec\0225\n\017head_grou" +
-      "p_spec\030\001 \001(\0132\034.flyteidl.core.HeadGroupSp" +
-      "ec\0229\n\021worker_group_sepc\030\002 \003(\0132\036.flyteidl" +
-      ".core.WorkerGroupSpec\"\321\001\n\rHeadGroupSpec\022" +
-      "\030\n\020compute_template\030\001 \001(\t\022\r\n\005image\030\002 \001(\t" +
-      "\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_start_para" +
-      "ms\030\004 \003(\01320.flyteidl.core.HeadGroupSpec.R" +
-      "ayStartParamsEntry\0325\n\023RayStartParamsEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\002\n\017Wo" +
-      "rkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t\022\030\n\020com" +
-      "pute_template\030\002 \001(\t\022\r\n\005image\030\003 \001(\t\022\020\n\010re" +
-      "plicas\030\004 \001(\005\022\024\n\014min_replicas\030\005 \001(\005\022\024\n\014ma" +
-      "x_replicas\030\006 \001(\005\022L\n\020ray_start_params\030\007 \003" +
-      "(\01322.flyteidl.core.WorkerGroupSpec.RaySt" +
-      "artParamsEntry\0325\n\023RayStartParamsEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/coreb\006proto3"
+      ".core\032\037google/protobuf/timestamp.proto\"=" +
+      "\n\010Resource\022(\n\003ray\030\001 \001(\0132\031.flyteidl.core." +
+      "RayClusterH\000B\007\n\005value\"\363\002\n\nRayCluster\022\014\n\004" +
+      "name\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\022\014\n\004user\030\003 " +
+      "\001(\t\022\017\n\007version\030\004 \001(\t\022:\n\013environment\030\005 \001(" +
+      "\0162%.flyteidl.core.RayCluster.Environment" +
+      "\0220\n\014cluster_spec\030\006 \001(\0132\032.flyteidl.core.C" +
+      "lusterSpec\022.\n\ncreated_at\030\007 \001(\0132\032.google." +
+      "protobuf.Timestamp\022.\n\ndeleted_at\030\010 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022\025\n\rcluster_st" +
+      "ate\030\t \001(\t\"@\n\013Environment\022\007\n\003DEV\020\000\022\013\n\007TES" +
+      "TING\020\001\022\013\n\007STAGING\020\002\022\016\n\nPRODUCTION\020\003\"\177\n\013C" +
+      "lusterSpec\0225\n\017head_group_spec\030\001 \001(\0132\034.fl" +
+      "yteidl.core.HeadGroupSpec\0229\n\021worker_grou" +
+      "p_sepc\030\002 \003(\0132\036.flyteidl.core.WorkerGroup" +
+      "Spec\"\321\001\n\rHeadGroupSpec\022\030\n\020compute_templa" +
+      "te\030\001 \001(\t\022\r\n\005image\030\002 \001(\t\022\024\n\014service_type\030" +
+      "\003 \001(\t\022J\n\020ray_start_params\030\004 \003(\01320.flytei" +
+      "dl.core.HeadGroupSpec.RayStartParamsEntr" +
+      "y\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"\221\002\n\017WorkerGroupSpec\022\022\n\n" +
+      "group_name\030\001 \001(\t\022\030\n\020compute_template\030\002 \001" +
+      "(\t\022\r\n\005image\030\003 \001(\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014m" +
+      "in_replicas\030\005 \001(\005\022\024\n\014max_replicas\030\006 \001(\005\022" +
+      "L\n\020ray_start_params\030\007 \003(\01322.flyteidl.cor" +
+      "e.WorkerGroupSpec.RayStartParamsEntry\0325\n" +
+      "\023RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001B6Z4github.com/flyteorg/flyt" +
+      "eidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6367,20 +7078,26 @@ public final class Resource {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
-    internal_static_flyteidl_core_RayCluster_descriptor =
+    internal_static_flyteidl_core_Resource_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_core_Resource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_Resource_descriptor,
+        new java.lang.String[] { "Ray", "Value", });
+    internal_static_flyteidl_core_RayCluster_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RayCluster_descriptor,
         new java.lang.String[] { "Name", "Namespace", "User", "Version", "Environment", "ClusterSpec", "CreatedAt", "DeletedAt", "ClusterState", });
     internal_static_flyteidl_core_ClusterSpec_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ClusterSpec_descriptor,
         new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSepc", });
     internal_static_flyteidl_core_HeadGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_HeadGroupSpec_descriptor,
@@ -6392,7 +7109,7 @@ public final class Resource {
         internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_WorkerGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkerGroupSpec_descriptor,

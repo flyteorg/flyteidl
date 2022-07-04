@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x02\n\nRayCluster\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12:\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32%.flyteidl.core.RayCluster.Environment\x12\x30\n\x0c\x63luster_spec\x18\x06 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ndeleted_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\rcluster_state\x18\t \x01(\t\"@\n\x0b\x45nvironment\x12\x07\n\x03\x44\x45V\x10\x00\x12\x0b\n\x07TESTING\x10\x01\x12\x0b\n\x07STAGING\x10\x02\x12\x0e\n\nPRODUCTION\x10\x03\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_sepc\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\xd1\x01\n\rHeadGroupSpec\x12\x18\n\x10\x63ompute_template\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x14\n\x0cservice_type\x18\x03 \x01(\t\x12J\n\x10ray_start_params\x18\x04 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x02\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x18\n\x10\x63ompute_template\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x05 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x06 \x01(\x05\x12L\n\x10ray_start_params\x18\x07 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x08Resource\x12(\n\x03ray\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayClusterH\x00\x42\x07\n\x05value\"\xf3\x02\n\nRayCluster\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\x12:\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32%.flyteidl.core.RayCluster.Environment\x12\x30\n\x0c\x63luster_spec\x18\x06 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ndeleted_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\rcluster_state\x18\t \x01(\t\"@\n\x0b\x45nvironment\x12\x07\n\x03\x44\x45V\x10\x00\x12\x0b\n\x07TESTING\x10\x01\x12\x0b\n\x07STAGING\x10\x02\x12\x0e\n\nPRODUCTION\x10\x03\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_sepc\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\xd1\x01\n\rHeadGroupSpec\x12\x18\n\x10\x63ompute_template\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x14\n\x0cservice_type\x18\x03 \x01(\t\x12J\n\x10ray_start_params\x18\x04 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x02\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x18\n\x10\x63ompute_template\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x05 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x06 \x01(\x05\x12L\n\x10ray_start_params\x18\x07 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -52,10 +52,44 @@ _RAYCLUSTER_ENVIRONMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=388,
-  serialized_end=452,
+  serialized_start=451,
+  serialized_end=515,
 )
 _sym_db.RegisterEnumDescriptor(_RAYCLUSTER_ENVIRONMENT)
+
+
+_RESOURCE = _descriptor.Descriptor(
+  name='Resource',
+  full_name='flyteidl.core.Resource',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ray', full_name='flyteidl.core.Resource.ray', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='value', full_name='flyteidl.core.Resource.value',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=80,
+  serialized_end=141,
+)
 
 
 _RAYCLUSTER = _descriptor.Descriptor(
@@ -141,8 +175,8 @@ _RAYCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=81,
-  serialized_end=452,
+  serialized_start=144,
+  serialized_end=515,
 )
 
 
@@ -179,8 +213,8 @@ _CLUSTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=454,
-  serialized_end=581,
+  serialized_start=517,
+  serialized_end=644,
 )
 
 
@@ -217,8 +251,8 @@ _HEADGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=740,
-  serialized_end=793,
+  serialized_start=803,
+  serialized_end=856,
 )
 
 _HEADGROUPSPEC = _descriptor.Descriptor(
@@ -268,8 +302,8 @@ _HEADGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=584,
-  serialized_end=793,
+  serialized_start=647,
+  serialized_end=856,
 )
 
 
@@ -306,8 +340,8 @@ _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=740,
-  serialized_end=793,
+  serialized_start=803,
+  serialized_end=856,
 )
 
 _WORKERGROUPSPEC = _descriptor.Descriptor(
@@ -378,10 +412,14 @@ _WORKERGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=796,
-  serialized_end=1069,
+  serialized_start=859,
+  serialized_end=1132,
 )
 
+_RESOURCE.fields_by_name['ray'].message_type = _RAYCLUSTER
+_RESOURCE.oneofs_by_name['value'].fields.append(
+  _RESOURCE.fields_by_name['ray'])
+_RESOURCE.fields_by_name['ray'].containing_oneof = _RESOURCE.oneofs_by_name['value']
 _RAYCLUSTER.fields_by_name['environment'].enum_type = _RAYCLUSTER_ENVIRONMENT
 _RAYCLUSTER.fields_by_name['cluster_spec'].message_type = _CLUSTERSPEC
 _RAYCLUSTER.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -393,11 +431,19 @@ _HEADGROUPSPEC_RAYSTARTPARAMSENTRY.containing_type = _HEADGROUPSPEC
 _HEADGROUPSPEC.fields_by_name['ray_start_params'].message_type = _HEADGROUPSPEC_RAYSTARTPARAMSENTRY
 _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY.containing_type = _WORKERGROUPSPEC
 _WORKERGROUPSPEC.fields_by_name['ray_start_params'].message_type = _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY
+DESCRIPTOR.message_types_by_name['Resource'] = _RESOURCE
 DESCRIPTOR.message_types_by_name['RayCluster'] = _RAYCLUSTER
 DESCRIPTOR.message_types_by_name['ClusterSpec'] = _CLUSTERSPEC
 DESCRIPTOR.message_types_by_name['HeadGroupSpec'] = _HEADGROUPSPEC
 DESCRIPTOR.message_types_by_name['WorkerGroupSpec'] = _WORKERGROUPSPEC
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Resource = _reflection.GeneratedProtocolMessageType('Resource', (_message.Message,), dict(
+  DESCRIPTOR = _RESOURCE,
+  __module__ = 'flyteidl.core.resource_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.Resource)
+  ))
+_sym_db.RegisterMessage(Resource)
 
 RayCluster = _reflection.GeneratedProtocolMessageType('RayCluster', (_message.Message,), dict(
   DESCRIPTOR = _RAYCLUSTER,

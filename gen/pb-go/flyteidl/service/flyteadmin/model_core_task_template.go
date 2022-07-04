@@ -29,4 +29,6 @@ type CoreTaskTemplate struct {
 	// security_context encapsulates security attributes requested to run this task.
 	SecurityContext *CoreSecurityContext `json:"security_context,omitempty"`
 	Config map[string]string `json:"config,omitempty"`
+	// Cluster resources (Ray or Dask) that will be attached to task spec.
+	Resources map[string]CoreResource `json:"resources,omitempty"`
 }

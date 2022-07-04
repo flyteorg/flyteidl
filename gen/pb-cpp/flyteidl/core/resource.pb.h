@@ -46,7 +46,7 @@ struct TableStruct_flyteidl_2fcore_2fresource_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -67,6 +67,9 @@ extern HeadGroupSpec_RayStartParamsEntry_DoNotUseDefaultTypeInternal _HeadGroupS
 class RayCluster;
 class RayClusterDefaultTypeInternal;
 extern RayClusterDefaultTypeInternal _RayCluster_default_instance_;
+class Resource;
+class ResourceDefaultTypeInternal;
+extern ResourceDefaultTypeInternal _Resource_default_instance_;
 class WorkerGroupSpec;
 class WorkerGroupSpecDefaultTypeInternal;
 extern WorkerGroupSpecDefaultTypeInternal _WorkerGroupSpec_default_instance_;
@@ -81,6 +84,7 @@ template<> ::flyteidl::core::ClusterSpec* Arena::CreateMaybeMessage<::flyteidl::
 template<> ::flyteidl::core::HeadGroupSpec* Arena::CreateMaybeMessage<::flyteidl::core::HeadGroupSpec>(Arena*);
 template<> ::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::HeadGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::RayCluster* Arena::CreateMaybeMessage<::flyteidl::core::RayCluster>(Arena*);
+template<> ::flyteidl::core::Resource* Arena::CreateMaybeMessage<::flyteidl::core::Resource>(Arena*);
 template<> ::flyteidl::core::WorkerGroupSpec* Arena::CreateMaybeMessage<::flyteidl::core::WorkerGroupSpec>(Arena*);
 template<> ::flyteidl::core::WorkerGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::WorkerGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
@@ -112,6 +116,137 @@ inline bool RayCluster_Environment_Parse(
     RayCluster_Environment_descriptor(), name, value);
 }
 // ===================================================================
+
+class Resource final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.Resource) */ {
+ public:
+  Resource();
+  virtual ~Resource();
+
+  Resource(const Resource& from);
+
+  inline Resource& operator=(const Resource& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Resource(Resource&& from) noexcept
+    : Resource() {
+    *this = ::std::move(from);
+  }
+
+  inline Resource& operator=(Resource&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Resource& default_instance();
+
+  enum ValueCase {
+    kRay = 1,
+    VALUE_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Resource* internal_default_instance() {
+    return reinterpret_cast<const Resource*>(
+               &_Resource_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(Resource* other);
+  friend void swap(Resource& a, Resource& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Resource* New() const final {
+    return CreateMaybeMessage<Resource>(nullptr);
+  }
+
+  Resource* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Resource>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Resource& from);
+  void MergeFrom(const Resource& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Resource* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.RayCluster ray = 1;
+  bool has_ray() const;
+  void clear_ray();
+  static const int kRayFieldNumber = 1;
+  const ::flyteidl::core::RayCluster& ray() const;
+  ::flyteidl::core::RayCluster* release_ray();
+  ::flyteidl::core::RayCluster* mutable_ray();
+  void set_allocated_ray(::flyteidl::core::RayCluster* ray);
+
+  void clear_value();
+  ValueCase value_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.core.Resource)
+ private:
+  class HasBitSetters;
+  void set_has_ray();
+
+  inline bool has_value() const;
+  inline void clear_has_value();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union ValueUnion {
+    ValueUnion() {}
+    ::flyteidl::core::RayCluster* ray_;
+  } value_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fcore_2fresource_2eproto;
+};
+// -------------------------------------------------------------------
 
 class RayCluster final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.RayCluster) */ {
@@ -151,7 +286,7 @@ class RayCluster final :
                &_RayCluster_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(RayCluster* other);
   friend void swap(RayCluster& a, RayCluster& b) {
@@ -398,7 +533,7 @@ class ClusterSpec final :
                &_ClusterSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(ClusterSpec* other);
   friend void swap(ClusterSpec& a, ClusterSpec& b) {
@@ -550,7 +685,7 @@ class HeadGroupSpec final :
                &_HeadGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(HeadGroupSpec* other);
   friend void swap(HeadGroupSpec& a, HeadGroupSpec& b) {
@@ -740,7 +875,7 @@ class WorkerGroupSpec final :
                &_WorkerGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(WorkerGroupSpec* other);
   friend void swap(WorkerGroupSpec& a, WorkerGroupSpec& b) {
@@ -896,6 +1031,60 @@ class WorkerGroupSpec final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Resource
+
+// .flyteidl.core.RayCluster ray = 1;
+inline bool Resource::has_ray() const {
+  return value_case() == kRay;
+}
+inline void Resource::set_has_ray() {
+  _oneof_case_[0] = kRay;
+}
+inline void Resource::clear_ray() {
+  if (has_ray()) {
+    delete value_.ray_;
+    clear_has_value();
+  }
+}
+inline ::flyteidl::core::RayCluster* Resource::release_ray() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.Resource.ray)
+  if (has_ray()) {
+    clear_has_value();
+      ::flyteidl::core::RayCluster* temp = value_.ray_;
+    value_.ray_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::RayCluster& Resource::ray() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.Resource.ray)
+  return has_ray()
+      ? *value_.ray_
+      : *reinterpret_cast< ::flyteidl::core::RayCluster*>(&::flyteidl::core::_RayCluster_default_instance_);
+}
+inline ::flyteidl::core::RayCluster* Resource::mutable_ray() {
+  if (!has_ray()) {
+    clear_value();
+    set_has_ray();
+    value_.ray_ = CreateMaybeMessage< ::flyteidl::core::RayCluster >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.Resource.ray)
+  return value_.ray_;
+}
+
+inline bool Resource::has_value() const {
+  return value_case() != VALUE_NOT_SET;
+}
+inline void Resource::clear_has_value() {
+  _oneof_case_[0] = VALUE_NOT_SET;
+}
+inline Resource::ValueCase Resource::value_case() const {
+  return Resource::ValueCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
 // RayCluster
 
 // string name = 1;
@@ -1816,6 +2005,8 @@ WorkerGroupSpec::mutable_ray_start_params() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

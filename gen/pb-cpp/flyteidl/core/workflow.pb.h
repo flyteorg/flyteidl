@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/condition.pb.h"
@@ -39,6 +42,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/tasks.pb.h"
 #include "flyteidl/core/types.pb.h"
+#include "flyteidl/core/resource.pb.h"
 #include "flyteidl/core/security.pb.h"
 #include <google/protobuf/duration.pb.h>
 // @@protoc_insertion_point(includes)
@@ -51,7 +55,7 @@ struct TableStruct_flyteidl_2fcore_2fworkflow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[12]
+  static const ::google::protobuf::internal::ParseTable schema[13]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -96,6 +100,9 @@ extern WorkflowNodeDefaultTypeInternal _WorkflowNode_default_instance_;
 class WorkflowTemplate;
 class WorkflowTemplateDefaultTypeInternal;
 extern WorkflowTemplateDefaultTypeInternal _WorkflowTemplate_default_instance_;
+class WorkflowTemplate_ResourcesEntry_DoNotUse;
+class WorkflowTemplate_ResourcesEntry_DoNotUseDefaultTypeInternal;
+extern WorkflowTemplate_ResourcesEntry_DoNotUseDefaultTypeInternal _WorkflowTemplate_ResourcesEntry_DoNotUse_default_instance_;
 }  // namespace core
 }  // namespace flyteidl
 namespace google {
@@ -112,6 +119,7 @@ template<> ::flyteidl::core::WorkflowMetadata* Arena::CreateMaybeMessage<::flyte
 template<> ::flyteidl::core::WorkflowMetadataDefaults* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowMetadataDefaults>(Arena*);
 template<> ::flyteidl::core::WorkflowNode* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowNode>(Arena*);
 template<> ::flyteidl::core::WorkflowTemplate* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowTemplate>(Arena*);
+template<> ::flyteidl::core::WorkflowTemplate_ResourcesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::WorkflowTemplate_ResourcesEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -1620,6 +1628,30 @@ class WorkflowMetadataDefaults final :
 };
 // -------------------------------------------------------------------
 
+class WorkflowTemplate_ResourcesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<WorkflowTemplate_ResourcesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::core::Resource,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<WorkflowTemplate_ResourcesEntry_DoNotUse, 
+    ::std::string, ::flyteidl::core::Resource,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  WorkflowTemplate_ResourcesEntry_DoNotUse();
+  WorkflowTemplate_ResourcesEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const WorkflowTemplate_ResourcesEntry_DoNotUse& other);
+  static const WorkflowTemplate_ResourcesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const WorkflowTemplate_ResourcesEntry_DoNotUse*>(&_WorkflowTemplate_ResourcesEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class WorkflowTemplate final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.WorkflowTemplate) */ {
  public:
@@ -1658,7 +1690,7 @@ class WorkflowTemplate final :
                &_WorkflowTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(WorkflowTemplate* other);
   friend void swap(WorkflowTemplate& a, WorkflowTemplate& b) {
@@ -1713,6 +1745,7 @@ class WorkflowTemplate final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   // repeated .flyteidl.core.Node nodes = 4;
@@ -1738,6 +1771,15 @@ class WorkflowTemplate final :
   ::flyteidl::core::Binding* add_outputs();
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Binding >&
       outputs() const;
+
+  // map<string, .flyteidl.core.Resource> resources = 8;
+  int resources_size() const;
+  void clear_resources();
+  static const int kResourcesFieldNumber = 8;
+  const ::google::protobuf::Map< ::std::string, ::flyteidl::core::Resource >&
+      resources() const;
+  ::google::protobuf::Map< ::std::string, ::flyteidl::core::Resource >*
+      mutable_resources();
 
   // .flyteidl.core.Identifier id = 1;
   bool has_id() const;
@@ -1791,6 +1833,12 @@ class WorkflowTemplate final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Node > nodes_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::Binding > outputs_;
+  ::google::protobuf::internal::MapField<
+      WorkflowTemplate_ResourcesEntry_DoNotUse,
+      ::std::string, ::flyteidl::core::Resource,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > resources_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::core::WorkflowMetadata* metadata_;
   ::flyteidl::core::TypedInterface* interface_;
@@ -1839,7 +1887,7 @@ class TaskNodeOverrides final :
                &_TaskNodeOverrides_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(TaskNodeOverrides* other);
   friend void swap(TaskNodeOverrides& a, TaskNodeOverrides& b) {
@@ -3173,6 +3221,8 @@ inline void WorkflowMetadataDefaults::set_interruptible(bool value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // WorkflowTemplate
 
 // .flyteidl.core.Identifier id = 1;
@@ -3475,6 +3525,21 @@ inline void WorkflowTemplate::set_allocated_metadata_defaults(::flyteidl::core::
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.WorkflowTemplate.metadata_defaults)
 }
 
+// map<string, .flyteidl.core.Resource> resources = 8;
+inline int WorkflowTemplate::resources_size() const {
+  return resources_.size();
+}
+inline const ::google::protobuf::Map< ::std::string, ::flyteidl::core::Resource >&
+WorkflowTemplate::resources() const {
+  // @@protoc_insertion_point(field_map:flyteidl.core.WorkflowTemplate.resources)
+  return resources_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::flyteidl::core::Resource >*
+WorkflowTemplate::mutable_resources() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.WorkflowTemplate.resources)
+  return resources_.MutableMap();
+}
+
 // -------------------------------------------------------------------
 
 // TaskNodeOverrides
@@ -3527,6 +3592,8 @@ inline void TaskNodeOverrides::set_allocated_resources(::flyteidl::core::Resourc
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

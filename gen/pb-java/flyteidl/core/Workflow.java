@@ -12148,6 +12148,60 @@ public final class Workflow {
      * <code>.flyteidl.core.WorkflowMetadataDefaults metadata_defaults = 7;</code>
      */
     flyteidl.core.Workflow.WorkflowMetadataDefaultsOrBuilder getMetadataDefaultsOrBuilder();
+
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+    int getResourcesCount();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+    boolean containsResources(
+        java.lang.String key);
+    /**
+     * Use {@link #getResourcesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    getResources();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    getResourcesMap();
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+        java.lang.String key,
+        flyteidl.core.ResourceOuterClass.Resource defaultValue);
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -12278,6 +12332,19 @@ public final class Workflow {
 
               break;
             }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                resources_ = com.google.protobuf.MapField.newMapField(
+                    ResourcesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+              resources__ = input.readMessage(
+                  ResourcesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              resources_.getMutableMap().put(
+                  resources__.getKey(), resources__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12308,6 +12375,18 @@ public final class Workflow {
       return flyteidl.core.Workflow.internal_static_flyteidl_core_WorkflowTemplate_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 8:
+          return internalGetResources();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -12628,6 +12707,98 @@ public final class Workflow {
       return getMetadataDefaults();
     }
 
+    public static final int RESOURCES_FIELD_NUMBER = 8;
+    private static final class ResourcesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>newDefaultInstance(
+                  flyteidl.core.Workflow.internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
+    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+    internalGetResources() {
+      if (resources_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourcesDefaultEntryHolder.defaultEntry);
+      }
+      return resources_;
+    }
+
+    public int getResourcesCount() {
+      return internalGetResources().getMap().size();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    public boolean containsResources(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetResources().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getResourcesMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
+      return getResourcesMap();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
+      return internalGetResources().getMap();
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+        java.lang.String key,
+        flyteidl.core.ResourceOuterClass.Resource defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+          internalGetResources().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to workflow template.
+     * </pre>
+     *
+     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+     */
+
+    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+          internalGetResources().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12663,6 +12834,12 @@ public final class Workflow {
       if (metadataDefaults_ != null) {
         output.writeMessage(7, getMetadataDefaults());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetResources(),
+          ResourcesDefaultEntryHolder.defaultEntry,
+          8);
       unknownFields.writeTo(output);
     }
 
@@ -12699,6 +12876,16 @@ public final class Workflow {
       if (metadataDefaults_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getMetadataDefaults());
+      }
+      for (java.util.Map.Entry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> entry
+           : internalGetResources().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+        resources__ = ResourcesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(8, resources__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12744,6 +12931,8 @@ public final class Workflow {
         if (!getMetadataDefaults()
             .equals(other.getMetadataDefaults())) return false;
       }
+      if (!internalGetResources().equals(
+          other.internalGetResources())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12782,6 +12971,10 @@ public final class Workflow {
       if (hasMetadataDefaults()) {
         hash = (37 * hash) + METADATA_DEFAULTS_FIELD_NUMBER;
         hash = (53 * hash) + getMetadataDefaults().hashCode();
+      }
+      if (!internalGetResources().getMap().isEmpty()) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetResources().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -12895,6 +13088,28 @@ public final class Workflow {
         return flyteidl.core.Workflow.internal_static_flyteidl_core_WorkflowTemplate_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 8:
+            return internalGetResources();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 8:
+            return internalGetMutableResources();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -12965,6 +13180,7 @@ public final class Workflow {
           metadataDefaults_ = null;
           metadataDefaultsBuilder_ = null;
         }
+        internalGetMutableResources().clear();
         return this;
       }
 
@@ -13036,6 +13252,8 @@ public final class Workflow {
         } else {
           result.metadataDefaults_ = metadataDefaultsBuilder_.build();
         }
+        result.resources_ = internalGetResources();
+        result.resources_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -13152,6 +13370,8 @@ public final class Workflow {
         if (other.hasMetadataDefaults()) {
           mergeMetadataDefaults(other.getMetadataDefaults());
         }
+        internalGetMutableResources().mergeFrom(
+            other.internalGetResources());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -14696,6 +14916,157 @@ public final class Workflow {
         }
         return metadataDefaultsBuilder_;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      internalGetResources() {
+        if (resources_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResourcesDefaultEntryHolder.defaultEntry);
+        }
+        return resources_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      internalGetMutableResources() {
+        onChanged();;
+        if (resources_ == null) {
+          resources_ = com.google.protobuf.MapField.newMapField(
+              ResourcesDefaultEntryHolder.defaultEntry);
+        }
+        if (!resources_.isMutable()) {
+          resources_ = resources_.copy();
+        }
+        return resources_;
+      }
+
+      public int getResourcesCount() {
+        return internalGetResources().getMap().size();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public boolean containsResources(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetResources().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResourcesMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
+        return getResourcesMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
+        return internalGetResources().getMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
+          java.lang.String key,
+          flyteidl.core.ResourceOuterClass.Resource defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+            internalGetResources().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
+            internalGetResources().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearResources() {
+        internalGetMutableResources().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public Builder removeResources(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableResources().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
+      getMutableResources() {
+        return internalGetMutableResources().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+      public Builder putResources(
+          java.lang.String key,
+          flyteidl.core.ResourceOuterClass.Resource value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableResources().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to workflow template.
+       * </pre>
+       *
+       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 8;</code>
+       */
+
+      public Builder putAllResources(
+          java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> values) {
+        internalGetMutableResources().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15479,6 +15850,11 @@ public final class Workflow {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_TaskNodeOverrides_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -15498,57 +15874,61 @@ public final class Workflow {
       "re/identifier.proto\032\035flyteidl/core/inter" +
       "face.proto\032\034flyteidl/core/literals.proto" +
       "\032\031flyteidl/core/tasks.proto\032\031flyteidl/co" +
-      "re/types.proto\032\034flyteidl/core/security.p" +
-      "roto\032\036google/protobuf/duration.proto\"f\n\007" +
-      "IfBlock\0223\n\tcondition\030\001 \001(\0132 .flyteidl.co" +
-      "re.BooleanExpression\022&\n\tthen_node\030\002 \001(\0132" +
-      "\023.flyteidl.core.Node\"\266\001\n\013IfElseBlock\022$\n\004" +
-      "case\030\001 \001(\0132\026.flyteidl.core.IfBlock\022%\n\005ot" +
-      "her\030\002 \003(\0132\026.flyteidl.core.IfBlock\022(\n\tels" +
-      "e_node\030\003 \001(\0132\023.flyteidl.core.NodeH\000\022%\n\005e" +
-      "rror\030\004 \001(\0132\024.flyteidl.core.ErrorH\000B\t\n\007de" +
-      "fault\"9\n\nBranchNode\022+\n\007if_else\030\001 \001(\0132\032.f" +
-      "lyteidl.core.IfElseBlock\"\177\n\010TaskNode\0221\n\014" +
-      "reference_id\030\001 \001(\0132\031.flyteidl.core.Ident" +
-      "ifierH\000\0223\n\toverrides\030\002 \001(\0132 .flyteidl.co" +
-      "re.TaskNodeOverridesB\013\n\treference\"\207\001\n\014Wo" +
-      "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
-      "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
-      "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001" +
-      "(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Du" +
-      "ration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core." +
-      "RetryStrategy\022\027\n\rinterruptible\030\006 \001(\010H\000B\025" +
-      "\n\023interruptible_value\"#\n\005Alias\022\013\n\003var\030\001 " +
-      "\001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022" +
-      "-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.NodeMe" +
-      "tadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.B" +
-      "inding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016out" +
-      "put_aliases\030\005 \003(\0132\024.flyteidl.core.Alias\022" +
-      ",\n\ttask_node\030\006 \001(\0132\027.flyteidl.core.TaskN" +
-      "odeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyteidl." +
-      "core.WorkflowNodeH\000\0220\n\013branch_node\030\010 \001(\013" +
-      "2\031.flyteidl.core.BranchNodeH\000B\010\n\006target\"" +
-      "\347\001\n\020WorkflowMetadata\022;\n\022quality_of_servi" +
-      "ce\030\001 \001(\0132\037.flyteidl.core.QualityOfServic" +
-      "e\022C\n\non_failure\030\002 \001(\0162/.flyteidl.core.Wo" +
-      "rkflowMetadata.OnFailurePolicy\"Q\n\017OnFail" +
-      "urePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_" +
-      "AFTER_EXECUTABLE_NODES_COMPLETE\020\001\"1\n\030Wor" +
-      "kflowMetadataDefaults\022\025\n\rinterruptible\030\001" +
-      " \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031." +
-      "flyteidl.core.Identifier\0221\n\010metadata\030\002 \001" +
-      "(\0132\037.flyteidl.core.WorkflowMetadata\0220\n\ti" +
-      "nterface\030\003 \001(\0132\035.flyteidl.core.TypedInte" +
-      "rface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.Nod" +
-      "e\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bindi" +
-      "ng\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core" +
-      ".Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyte" +
-      "idl.core.WorkflowMetadataDefaults\"@\n\021Tas" +
-      "kNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyt" +
-      "eidl.core.ResourcesB6Z4github.com/flyteo" +
-      "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro" +
-      "to3"
+      "re/types.proto\032\034flyteidl/core/resource.p" +
+      "roto\032\034flyteidl/core/security.proto\032\036goog" +
+      "le/protobuf/duration.proto\"f\n\007IfBlock\0223\n" +
+      "\tcondition\030\001 \001(\0132 .flyteidl.core.Boolean" +
+      "Expression\022&\n\tthen_node\030\002 \001(\0132\023.flyteidl" +
+      ".core.Node\"\266\001\n\013IfElseBlock\022$\n\004case\030\001 \001(\013" +
+      "2\026.flyteidl.core.IfBlock\022%\n\005other\030\002 \003(\0132" +
+      "\026.flyteidl.core.IfBlock\022(\n\telse_node\030\003 \001" +
+      "(\0132\023.flyteidl.core.NodeH\000\022%\n\005error\030\004 \001(\013" +
+      "2\024.flyteidl.core.ErrorH\000B\t\n\007default\"9\n\nB" +
+      "ranchNode\022+\n\007if_else\030\001 \001(\0132\032.flyteidl.co" +
+      "re.IfElseBlock\"\177\n\010TaskNode\0221\n\014reference_" +
+      "id\030\001 \001(\0132\031.flyteidl.core.IdentifierH\000\0223\n" +
+      "\toverrides\030\002 \001(\0132 .flyteidl.core.TaskNod" +
+      "eOverridesB\013\n\treference\"\207\001\n\014WorkflowNode" +
+      "\0223\n\016launchplan_ref\030\001 \001(\0132\031.flyteidl.core" +
+      ".IdentifierH\000\0225\n\020sub_workflow_ref\030\002 \001(\0132" +
+      "\031.flyteidl.core.IdentifierH\000B\013\n\treferenc" +
+      "e\"\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007time" +
+      "out\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007" +
+      "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat" +
+      "egy\022\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interrup" +
+      "tible_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005ali" +
+      "as\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadat" +
+      "a\030\002 \001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006" +
+      "inputs\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021" +
+      "upstream_node_ids\030\004 \003(\t\022,\n\016output_aliase" +
+      "s\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttask_no" +
+      "de\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rw" +
+      "orkflow_node\030\007 \001(\0132\033.flyteidl.core.Workf" +
+      "lowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteid" +
+      "l.core.BranchNodeH\000B\010\n\006target\"\347\001\n\020Workfl" +
+      "owMetadata\022;\n\022quality_of_service\030\001 \001(\0132\037" +
+      ".flyteidl.core.QualityOfService\022C\n\non_fa" +
+      "ilure\030\002 \001(\0162/.flyteidl.core.WorkflowMeta" +
+      "data.OnFailurePolicy\"Q\n\017OnFailurePolicy\022" +
+      "\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EXEC" +
+      "UTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowMetad" +
+      "ataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\350\003\n\020W" +
+      "orkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.c" +
+      "ore.Identifier\0221\n\010metadata\030\002 \001(\0132\037.flyte" +
+      "idl.core.WorkflowMetadata\0220\n\tinterface\030\003" +
+      " \001(\0132\035.flyteidl.core.TypedInterface\022\"\n\005n" +
+      "odes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007outpu" +
+      "ts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fail" +
+      "ure_node\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021m" +
+      "etadata_defaults\030\007 \001(\0132\'.flyteidl.core.W" +
+      "orkflowMetadataDefaults\022A\n\tresources\030\010 \003" +
+      "(\0132..flyteidl.core.WorkflowTemplate.Reso" +
+      "urcesEntry\032I\n\016ResourcesEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core.Resourc" +
+      "e:\0028\001\"@\n\021TaskNodeOverrides\022+\n\tresources\030" +
+      "\001 \001(\0132\030.flyteidl.core.ResourcesB6Z4githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15568,6 +15948,7 @@ public final class Workflow {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Tasks.getDescriptor(),
           flyteidl.core.Types.getDescriptor(),
+          flyteidl.core.ResourceOuterClass.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
         }, assigner);
@@ -15636,7 +16017,13 @@ public final class Workflow {
     internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowTemplate_descriptor,
-        new java.lang.String[] { "Id", "Metadata", "Interface", "Nodes", "Outputs", "FailureNode", "MetadataDefaults", });
+        new java.lang.String[] { "Id", "Metadata", "Interface", "Nodes", "Outputs", "FailureNode", "MetadataDefaults", "Resources", });
+    internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_descriptor =
+      internal_static_flyteidl_core_WorkflowTemplate_descriptor.getNestedTypes().get(0);
+    internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_WorkflowTemplate_ResourcesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_TaskNodeOverrides_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
@@ -15650,6 +16037,7 @@ public final class Workflow {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Tasks.getDescriptor();
     flyteidl.core.Types.getDescriptor();
+    flyteidl.core.ResourceOuterClass.getDescriptor();
     flyteidl.core.Security.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
   }

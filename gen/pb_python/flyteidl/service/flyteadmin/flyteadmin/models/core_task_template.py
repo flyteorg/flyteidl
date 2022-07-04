@@ -19,6 +19,7 @@ import six
 from flyteadmin.models.core_container import CoreContainer  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_k8s_pod import CoreK8sPod  # noqa: F401,E501
+from flyteadmin.models.core_resource import CoreResource  # noqa: F401,E501
 from flyteadmin.models.core_security_context import CoreSecurityContext  # noqa: F401,E501
 from flyteadmin.models.core_sql import CoreSql  # noqa: F401,E501
 from flyteadmin.models.core_task_metadata import CoreTaskMetadata  # noqa: F401,E501
@@ -50,7 +51,8 @@ class CoreTaskTemplate(object):
         'sql': 'CoreSql',
         'task_type_version': 'int',
         'security_context': 'CoreSecurityContext',
-        'config': 'dict(str, str)'
+        'config': 'dict(str, str)',
+        'resources': 'dict(str, CoreResource)'
     }
 
     attribute_map = {
@@ -64,10 +66,11 @@ class CoreTaskTemplate(object):
         'sql': 'sql',
         'task_type_version': 'task_type_version',
         'security_context': 'security_context',
-        'config': 'config'
+        'config': 'config',
+        'resources': 'resources'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, sql=None, task_type_version=None, security_context=None, config=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, sql=None, task_type_version=None, security_context=None, config=None, resources=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -81,6 +84,7 @@ class CoreTaskTemplate(object):
         self._task_type_version = None
         self._security_context = None
         self._config = None
+        self._resources = None
         self.discriminator = None
 
         if id is not None:
@@ -105,6 +109,8 @@ class CoreTaskTemplate(object):
             self.security_context = security_context
         if config is not None:
             self.config = config
+        if resources is not None:
+            self.resources = resources
 
     @property
     def id(self):
@@ -350,6 +356,29 @@ class CoreTaskTemplate(object):
         """
 
         self._config = config
+
+    @property
+    def resources(self):
+        """Gets the resources of this CoreTaskTemplate.  # noqa: E501
+
+        Cluster resources (Ray or Dask) that will be attached to task spec.  # noqa: E501
+
+        :return: The resources of this CoreTaskTemplate.  # noqa: E501
+        :rtype: dict(str, CoreResource)
+        """
+        return self._resources
+
+    @resources.setter
+    def resources(self, resources):
+        """Sets the resources of this CoreTaskTemplate.
+
+        Cluster resources (Ray or Dask) that will be attached to task spec.  # noqa: E501
+
+        :param resources: The resources of this CoreTaskTemplate.  # noqa: E501
+        :type: dict(str, CoreResource)
+        """
+
+        self._resources = resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -11,6 +11,7 @@ import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/types.proto";
+import "flyteidl/core/resource.proto";
 import "flyteidl/core/security.proto";
 import "google/protobuf/duration.proto";
 
@@ -198,6 +199,9 @@ message WorkflowTemplate {
 
     // workflow defaults
     WorkflowMetadataDefaults metadata_defaults = 7;
+
+    // Cluster resources (Ray or Dask) that will be attached to workflow template.
+    map<string, Resource> resources = 8;
 }
 
 // Optional task node overrides that will be applied at task execution time.

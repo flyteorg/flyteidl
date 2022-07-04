@@ -1828,6 +1828,27 @@ Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/maste
 
 
 
+.. _ref_flyteidl.core.Resource:
+
+Resource
+------------------------------------------------------------------
+
+Cluster resource that task and workflow will run on
+
+
+
+.. csv-table:: Resource type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "ray", ":ref:`ref_flyteidl.core.RayCluster`", "", ""
+
+
+
+
+
+
+
 .. _ref_flyteidl.core.WorkerGroupSpec:
 
 WorkerGroupSpec
@@ -2435,6 +2456,7 @@ Tasks are registered as a first step in the system.
    "task_type_version", ":ref:`ref_int32`", "", "This can be used to customize task handling at execution time for the same task type."
    "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "security_context encapsulates security attributes requested to run this task."
    "config", ":ref:`ref_flyteidl.core.TaskTemplate.ConfigEntry`", "repeated", "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system to use as required. reserve the field numbers 1 through 15 for very frequently occurring message elements"
+   "resources", ":ref:`ref_flyteidl.core.TaskTemplate.ResourcesEntry`", "repeated", "Cluster resources (Ray or Dask) that will be attached to task spec."
 
 
 
@@ -2457,6 +2479,28 @@ TaskTemplate.ConfigEntry
 
    "key", ":ref:`ref_string`", "", ""
    "value", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.TaskTemplate.ResourcesEntry:
+
+TaskTemplate.ResourcesEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskTemplate.ResourcesEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.core.Resource`", "", ""
 
 
 
@@ -3271,6 +3315,29 @@ directed acyclic graph.
    "outputs", ":ref:`ref_flyteidl.core.Binding`", "repeated", "A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or specify literals. All workflow outputs specified in the interface field must be bound in order for the workflow to be validated. A workflow has an implicit dependency on all of its nodes to execute successfully in order to bind final outputs. Most of these outputs will be Binding's with a BindingData of type OutputReference. That is, your workflow can just have an output of some constant (`Output(5)`), but usually, the workflow will be pulling outputs from the output of a task."
    "failure_node", ":ref:`ref_flyteidl.core.Node`", "", "+optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed. The interface of this node must match the Workflow interface with an additional input named 'error' of type pb.lyft.flyte.core.Error."
    "metadata_defaults", ":ref:`ref_flyteidl.core.WorkflowMetadataDefaults`", "", "workflow defaults"
+   "resources", ":ref:`ref_flyteidl.core.WorkflowTemplate.ResourcesEntry`", "repeated", "Cluster resources (Ray or Dask) that will be attached to workflow template."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.WorkflowTemplate.ResourcesEntry:
+
+WorkflowTemplate.ResourcesEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkflowTemplate.ResourcesEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.core.Resource`", "", ""
 
 
 

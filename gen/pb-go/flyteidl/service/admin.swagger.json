@@ -3032,6 +3032,17 @@
       "default": "UNDEFINED",
       "description": " - UNDEFINED: Default: no quality of service specified."
     },
+    "RayClusterEnvironment": {
+      "type": "string",
+      "enum": [
+        "DEV",
+        "TESTING",
+        "STAGING",
+        "PRODUCTION"
+      ],
+      "default": "DEV",
+      "description": "Optional field."
+    },
     "ResourcesResourceEntry": {
       "type": "object",
       "properties": {
@@ -3847,6 +3858,13 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreResource"
+          },
+          "description": "Cluster resources (Ray or Dask) that will be attached to launch plan spec."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -5209,6 +5227,22 @@
       },
       "title": "Catalog artifact information with specific metadata"
     },
+    "coreClusterSpec": {
+      "type": "object",
+      "properties": {
+        "head_group_spec": {
+          "$ref": "#/definitions/coreHeadGroupSpec",
+          "title": "The head group configuration"
+        },
+        "worker_group_sepc": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreWorkerGroupSpec"
+          },
+          "title": "The worker group configurations"
+        }
+      }
+    },
     "coreComparisonExpression": {
       "type": "object",
       "properties": {
@@ -5460,6 +5494,30 @@
         }
       },
       "description": "Represents the error message from the execution."
+    },
+    "coreHeadGroupSpec": {
+      "type": "object",
+      "properties": {
+        "compute_template": {
+          "type": "string",
+          "title": "Optional. The computeTemplate of head node group"
+        },
+        "image": {
+          "type": "string",
+          "title": "Optional field. This field will be used to retrieve right ray container"
+        },
+        "service_type": {
+          "type": "string",
+          "title": "Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node"
+        },
+        "ray_start_params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Optional. The ray start parames of head node group"
+        }
+      }
     },
     "coreIOStrategy": {
       "type": "object",
@@ -5956,6 +6014,58 @@
       },
       "description": "Represents customized execution run-time attributes."
     },
+    "coreRayCluster": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Required input field. Unique cluster name provided by user."
+        },
+        "namespace": {
+          "type": "string",
+          "title": "Required input field. Cluster's namespace provided by user"
+        },
+        "user": {
+          "type": "string",
+          "description": "Required field. This field indicates the user who owns the cluster."
+        },
+        "version": {
+          "type": "string",
+          "title": "Optional input field. Ray cluster version"
+        },
+        "environment": {
+          "$ref": "#/definitions/RayClusterEnvironment"
+        },
+        "cluster_spec": {
+          "$ref": "#/definitions/coreClusterSpec",
+          "title": "Required field. This field indicates ray cluster configuration"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Output. The time that the cluster created."
+        },
+        "deleted_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Output. The time that the cluster deleted."
+        },
+        "cluster_state": {
+          "type": "string",
+          "title": "Output. The status to show the cluster status.state"
+        }
+      },
+      "title": "Ray cluster proto is copy from https://github.com/ray-project/kuberay/blob/master/proto/cluster.proto#L125"
+    },
+    "coreResource": {
+      "type": "object",
+      "properties": {
+        "ray": {
+          "$ref": "#/definitions/coreRayCluster"
+        }
+      },
+      "title": "Cluster resource that task and workflow will run on"
+    },
     "coreResourceType": {
       "type": "string",
       "enum": [
@@ -6344,6 +6454,13 @@
             "type": "string"
           },
           "title": "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system\nto use as required.\nreserve the field numbers 1 through 15 for very frequently occurring message elements"
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreResource"
+          },
+          "description": "Cluster resources (Ray or Dask) that will be attached to task spec."
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
@@ -6443,6 +6560,45 @@
     "coreVoid": {
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
+    },
+    "coreWorkerGroupSpec": {
+      "type": "object",
+      "properties": {
+        "group_name": {
+          "type": "string",
+          "title": "Required. Group name of the current worker group"
+        },
+        "compute_template": {
+          "type": "string",
+          "title": "Optional. The computeTemplate of head node group"
+        },
+        "image": {
+          "type": "string",
+          "title": "Optional field. This field will be used to retrieve right ray container"
+        },
+        "replicas": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Required. Desired replicas of the worker group"
+        },
+        "min_replicas": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Optional. Min replicas of the worker group"
+        },
+        "max_replicas": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Optional. Max replicas of the worker group"
+        },
+        "ray_start_params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Optional. The ray start parames of worker node group"
+        }
+      }
     },
     "coreWorkflowExecutionIdentifier": {
       "type": "object",
@@ -6553,6 +6709,13 @@
         "metadata_defaults": {
           "$ref": "#/definitions/coreWorkflowMetadataDefaults",
           "title": "workflow defaults"
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreResource"
+          },
+          "description": "Cluster resources (Ray or Dask) that will be attached to workflow template."
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."

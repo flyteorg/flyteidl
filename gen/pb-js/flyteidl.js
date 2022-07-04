@@ -3387,6 +3387,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.core.IBinding>|null} [outputs] WorkflowTemplate outputs
              * @property {flyteidl.core.INode|null} [failureNode] WorkflowTemplate failureNode
              * @property {flyteidl.core.IWorkflowMetadataDefaults|null} [metadataDefaults] WorkflowTemplate metadataDefaults
+             * @property {Object.<string,flyteidl.core.IResource>|null} [resources] WorkflowTemplate resources
              */
 
             /**
@@ -3400,6 +3401,7 @@ export const flyteidl = $root.flyteidl = (() => {
             function WorkflowTemplate(properties) {
                 this.nodes = [];
                 this.outputs = [];
+                this.resources = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3463,6 +3465,14 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowTemplate.prototype.metadataDefaults = null;
 
             /**
+             * WorkflowTemplate resources.
+             * @member {Object.<string,flyteidl.core.IResource>} resources
+             * @memberof flyteidl.core.WorkflowTemplate
+             * @instance
+             */
+            WorkflowTemplate.prototype.resources = $util.emptyObject;
+
+            /**
              * Creates a new WorkflowTemplate instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.WorkflowTemplate
@@ -3502,6 +3512,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Node.encode(message.failureNode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.metadataDefaults != null && message.hasOwnProperty("metadataDefaults"))
                     $root.flyteidl.core.WorkflowMetadataDefaults.encode(message.metadataDefaults, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.resources != null && message.hasOwnProperty("resources"))
+                    for (let keys = Object.keys(message.resources), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 8, wireType 2 =*/66).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.core.Resource.encode(message.resources[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
                 return writer;
             };
 
@@ -3519,7 +3534,7 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowTemplate.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowTemplate();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowTemplate(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3547,6 +3562,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.metadataDefaults = $root.flyteidl.core.WorkflowMetadataDefaults.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        reader.skip().pos++;
+                        if (message.resources === $util.emptyObject)
+                            message.resources = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.resources[key] = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3609,6 +3632,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.WorkflowMetadataDefaults.verify(message.metadataDefaults);
                     if (error)
                         return "metadataDefaults." + error;
+                }
+                if (message.resources != null && message.hasOwnProperty("resources")) {
+                    if (!$util.isObject(message.resources))
+                        return "resources: object expected";
+                    let key = Object.keys(message.resources);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.core.Resource.verify(message.resources[key[i]]);
+                        if (error)
+                            return "resources." + error;
+                    }
                 }
                 return null;
             };
@@ -11562,6 +11595,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
              * @property {Object.<string,string>|null} [config] TaskTemplate config
+             * @property {Object.<string,flyteidl.core.IResource>|null} [resources] TaskTemplate resources
              */
 
             /**
@@ -11574,6 +11608,7 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             function TaskTemplate(properties) {
                 this.config = {};
+                this.resources = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -11668,6 +11703,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskTemplate.prototype.config = $util.emptyObject;
 
+            /**
+             * TaskTemplate resources.
+             * @member {Object.<string,flyteidl.core.IResource>} resources
+             * @memberof flyteidl.core.TaskTemplate
+             * @instance
+             */
+            TaskTemplate.prototype.resources = $util.emptyObject;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -11729,6 +11772,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.K8sPod.encode(message.k8sPod, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 if (message.sql != null && message.hasOwnProperty("sql"))
                     $root.flyteidl.core.Sql.encode(message.sql, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
+                if (message.resources != null && message.hasOwnProperty("resources"))
+                    for (let keys = Object.keys(message.resources), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 20, wireType 2 =*/162).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.core.Resource.encode(message.resources[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
                 return writer;
             };
 
@@ -11787,6 +11835,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         key = reader.string();
                         reader.pos++;
                         message.config[key] = reader.string();
+                        break;
+                    case 20:
+                        reader.skip().pos++;
+                        if (message.resources === $util.emptyObject)
+                            message.resources = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.resources[key] = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11874,6 +11930,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     for (let i = 0; i < key.length; ++i)
                         if (!$util.isString(message.config[key[i]]))
                             return "config: string{k:string} expected";
+                }
+                if (message.resources != null && message.hasOwnProperty("resources")) {
+                    if (!$util.isObject(message.resources))
+                        return "resources: object expected";
+                    let key = Object.keys(message.resources);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.core.Resource.verify(message.resources[key[i]]);
+                        if (error)
+                            return "resources." + error;
+                    }
                 }
                 return null;
             };
@@ -13120,6 +13186,949 @@ export const flyteidl = $root.flyteidl = (() => {
             })();
 
             return Sql;
+        })();
+
+        core.Resource = (function() {
+
+            /**
+             * Properties of a Resource.
+             * @memberof flyteidl.core
+             * @interface IResource
+             * @property {flyteidl.core.IRayCluster|null} [ray] Resource ray
+             */
+
+            /**
+             * Constructs a new Resource.
+             * @memberof flyteidl.core
+             * @classdesc Represents a Resource.
+             * @implements IResource
+             * @constructor
+             * @param {flyteidl.core.IResource=} [properties] Properties to set
+             */
+            function Resource(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Resource ray.
+             * @member {flyteidl.core.IRayCluster|null|undefined} ray
+             * @memberof flyteidl.core.Resource
+             * @instance
+             */
+            Resource.prototype.ray = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * Resource value.
+             * @member {"ray"|undefined} value
+             * @memberof flyteidl.core.Resource
+             * @instance
+             */
+            Object.defineProperty(Resource.prototype, "value", {
+                get: $util.oneOfGetter($oneOfFields = ["ray"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new Resource instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.Resource
+             * @static
+             * @param {flyteidl.core.IResource=} [properties] Properties to set
+             * @returns {flyteidl.core.Resource} Resource instance
+             */
+            Resource.create = function create(properties) {
+                return new Resource(properties);
+            };
+
+            /**
+             * Encodes the specified Resource message. Does not implicitly {@link flyteidl.core.Resource.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.Resource
+             * @static
+             * @param {flyteidl.core.IResource} message Resource message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Resource.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.ray != null && message.hasOwnProperty("ray"))
+                    $root.flyteidl.core.RayCluster.encode(message.ray, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Resource message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.Resource
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.Resource} Resource
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Resource.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Resource();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.ray = $root.flyteidl.core.RayCluster.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Resource message.
+             * @function verify
+             * @memberof flyteidl.core.Resource
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Resource.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.ray != null && message.hasOwnProperty("ray")) {
+                    properties.value = 1;
+                    {
+                        let error = $root.flyteidl.core.RayCluster.verify(message.ray);
+                        if (error)
+                            return "ray." + error;
+                    }
+                }
+                return null;
+            };
+
+            return Resource;
+        })();
+
+        core.RayCluster = (function() {
+
+            /**
+             * Properties of a RayCluster.
+             * @memberof flyteidl.core
+             * @interface IRayCluster
+             * @property {string|null} [name] RayCluster name
+             * @property {string|null} [namespace] RayCluster namespace
+             * @property {string|null} [user] RayCluster user
+             * @property {string|null} [version] RayCluster version
+             * @property {flyteidl.core.RayCluster.Environment|null} [environment] RayCluster environment
+             * @property {flyteidl.core.IClusterSpec|null} [clusterSpec] RayCluster clusterSpec
+             * @property {google.protobuf.ITimestamp|null} [createdAt] RayCluster createdAt
+             * @property {google.protobuf.ITimestamp|null} [deletedAt] RayCluster deletedAt
+             * @property {string|null} [clusterState] RayCluster clusterState
+             */
+
+            /**
+             * Constructs a new RayCluster.
+             * @memberof flyteidl.core
+             * @classdesc Represents a RayCluster.
+             * @implements IRayCluster
+             * @constructor
+             * @param {flyteidl.core.IRayCluster=} [properties] Properties to set
+             */
+            function RayCluster(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RayCluster name.
+             * @member {string} name
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.name = "";
+
+            /**
+             * RayCluster namespace.
+             * @member {string} namespace
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.namespace = "";
+
+            /**
+             * RayCluster user.
+             * @member {string} user
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.user = "";
+
+            /**
+             * RayCluster version.
+             * @member {string} version
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.version = "";
+
+            /**
+             * RayCluster environment.
+             * @member {flyteidl.core.RayCluster.Environment} environment
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.environment = 0;
+
+            /**
+             * RayCluster clusterSpec.
+             * @member {flyteidl.core.IClusterSpec|null|undefined} clusterSpec
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.clusterSpec = null;
+
+            /**
+             * RayCluster createdAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} createdAt
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.createdAt = null;
+
+            /**
+             * RayCluster deletedAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} deletedAt
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.deletedAt = null;
+
+            /**
+             * RayCluster clusterState.
+             * @member {string} clusterState
+             * @memberof flyteidl.core.RayCluster
+             * @instance
+             */
+            RayCluster.prototype.clusterState = "";
+
+            /**
+             * Creates a new RayCluster instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.RayCluster
+             * @static
+             * @param {flyteidl.core.IRayCluster=} [properties] Properties to set
+             * @returns {flyteidl.core.RayCluster} RayCluster instance
+             */
+            RayCluster.create = function create(properties) {
+                return new RayCluster(properties);
+            };
+
+            /**
+             * Encodes the specified RayCluster message. Does not implicitly {@link flyteidl.core.RayCluster.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.RayCluster
+             * @static
+             * @param {flyteidl.core.IRayCluster} message RayCluster message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RayCluster.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                if (message.namespace != null && message.hasOwnProperty("namespace"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
+                if (message.user != null && message.hasOwnProperty("user"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.user);
+                if (message.version != null && message.hasOwnProperty("version"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.version);
+                if (message.environment != null && message.hasOwnProperty("environment"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.environment);
+                if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec"))
+                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
+                    $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.deletedAt != null && message.hasOwnProperty("deletedAt"))
+                    $root.google.protobuf.Timestamp.encode(message.deletedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
+                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.clusterState);
+                return writer;
+            };
+
+            /**
+             * Decodes a RayCluster message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.RayCluster
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.RayCluster} RayCluster
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RayCluster.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.RayCluster();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    case 2:
+                        message.namespace = reader.string();
+                        break;
+                    case 3:
+                        message.user = reader.string();
+                        break;
+                    case 4:
+                        message.version = reader.string();
+                        break;
+                    case 5:
+                        message.environment = reader.int32();
+                        break;
+                    case 6:
+                        message.clusterSpec = $root.flyteidl.core.ClusterSpec.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.createdAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.deletedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.clusterState = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RayCluster message.
+             * @function verify
+             * @memberof flyteidl.core.RayCluster
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RayCluster.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                if (message.namespace != null && message.hasOwnProperty("namespace"))
+                    if (!$util.isString(message.namespace))
+                        return "namespace: string expected";
+                if (message.user != null && message.hasOwnProperty("user"))
+                    if (!$util.isString(message.user))
+                        return "user: string expected";
+                if (message.version != null && message.hasOwnProperty("version"))
+                    if (!$util.isString(message.version))
+                        return "version: string expected";
+                if (message.environment != null && message.hasOwnProperty("environment"))
+                    switch (message.environment) {
+                    default:
+                        return "environment: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        break;
+                    }
+                if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec")) {
+                    let error = $root.flyteidl.core.ClusterSpec.verify(message.clusterSpec);
+                    if (error)
+                        return "clusterSpec." + error;
+                }
+                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.createdAt);
+                    if (error)
+                        return "createdAt." + error;
+                }
+                if (message.deletedAt != null && message.hasOwnProperty("deletedAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.deletedAt);
+                    if (error)
+                        return "deletedAt." + error;
+                }
+                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
+                    if (!$util.isString(message.clusterState))
+                        return "clusterState: string expected";
+                return null;
+            };
+
+            /**
+             * Environment enum.
+             * @name flyteidl.core.RayCluster.Environment
+             * @enum {string}
+             * @property {number} DEV=0 DEV value
+             * @property {number} TESTING=1 TESTING value
+             * @property {number} STAGING=2 STAGING value
+             * @property {number} PRODUCTION=3 PRODUCTION value
+             */
+            RayCluster.Environment = (function() {
+                const valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "DEV"] = 0;
+                values[valuesById[1] = "TESTING"] = 1;
+                values[valuesById[2] = "STAGING"] = 2;
+                values[valuesById[3] = "PRODUCTION"] = 3;
+                return values;
+            })();
+
+            return RayCluster;
+        })();
+
+        core.ClusterSpec = (function() {
+
+            /**
+             * Properties of a ClusterSpec.
+             * @memberof flyteidl.core
+             * @interface IClusterSpec
+             * @property {flyteidl.core.IHeadGroupSpec|null} [headGroupSpec] ClusterSpec headGroupSpec
+             * @property {Array.<flyteidl.core.IWorkerGroupSpec>|null} [workerGroupSepc] ClusterSpec workerGroupSepc
+             */
+
+            /**
+             * Constructs a new ClusterSpec.
+             * @memberof flyteidl.core
+             * @classdesc Represents a ClusterSpec.
+             * @implements IClusterSpec
+             * @constructor
+             * @param {flyteidl.core.IClusterSpec=} [properties] Properties to set
+             */
+            function ClusterSpec(properties) {
+                this.workerGroupSepc = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ClusterSpec headGroupSpec.
+             * @member {flyteidl.core.IHeadGroupSpec|null|undefined} headGroupSpec
+             * @memberof flyteidl.core.ClusterSpec
+             * @instance
+             */
+            ClusterSpec.prototype.headGroupSpec = null;
+
+            /**
+             * ClusterSpec workerGroupSepc.
+             * @member {Array.<flyteidl.core.IWorkerGroupSpec>} workerGroupSepc
+             * @memberof flyteidl.core.ClusterSpec
+             * @instance
+             */
+            ClusterSpec.prototype.workerGroupSepc = $util.emptyArray;
+
+            /**
+             * Creates a new ClusterSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ClusterSpec
+             * @static
+             * @param {flyteidl.core.IClusterSpec=} [properties] Properties to set
+             * @returns {flyteidl.core.ClusterSpec} ClusterSpec instance
+             */
+            ClusterSpec.create = function create(properties) {
+                return new ClusterSpec(properties);
+            };
+
+            /**
+             * Encodes the specified ClusterSpec message. Does not implicitly {@link flyteidl.core.ClusterSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ClusterSpec
+             * @static
+             * @param {flyteidl.core.IClusterSpec} message ClusterSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ClusterSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.headGroupSpec != null && message.hasOwnProperty("headGroupSpec"))
+                    $root.flyteidl.core.HeadGroupSpec.encode(message.headGroupSpec, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.workerGroupSepc != null && message.workerGroupSepc.length)
+                    for (let i = 0; i < message.workerGroupSepc.length; ++i)
+                        $root.flyteidl.core.WorkerGroupSpec.encode(message.workerGroupSepc[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ClusterSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ClusterSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ClusterSpec} ClusterSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ClusterSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ClusterSpec();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.headGroupSpec = $root.flyteidl.core.HeadGroupSpec.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        if (!(message.workerGroupSepc && message.workerGroupSepc.length))
+                            message.workerGroupSepc = [];
+                        message.workerGroupSepc.push($root.flyteidl.core.WorkerGroupSpec.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ClusterSpec message.
+             * @function verify
+             * @memberof flyteidl.core.ClusterSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ClusterSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.headGroupSpec != null && message.hasOwnProperty("headGroupSpec")) {
+                    let error = $root.flyteidl.core.HeadGroupSpec.verify(message.headGroupSpec);
+                    if (error)
+                        return "headGroupSpec." + error;
+                }
+                if (message.workerGroupSepc != null && message.hasOwnProperty("workerGroupSepc")) {
+                    if (!Array.isArray(message.workerGroupSepc))
+                        return "workerGroupSepc: array expected";
+                    for (let i = 0; i < message.workerGroupSepc.length; ++i) {
+                        let error = $root.flyteidl.core.WorkerGroupSpec.verify(message.workerGroupSepc[i]);
+                        if (error)
+                            return "workerGroupSepc." + error;
+                    }
+                }
+                return null;
+            };
+
+            return ClusterSpec;
+        })();
+
+        core.HeadGroupSpec = (function() {
+
+            /**
+             * Properties of a HeadGroupSpec.
+             * @memberof flyteidl.core
+             * @interface IHeadGroupSpec
+             * @property {string|null} [computeTemplate] HeadGroupSpec computeTemplate
+             * @property {string|null} [image] HeadGroupSpec image
+             * @property {string|null} [serviceType] HeadGroupSpec serviceType
+             * @property {Object.<string,string>|null} [rayStartParams] HeadGroupSpec rayStartParams
+             */
+
+            /**
+             * Constructs a new HeadGroupSpec.
+             * @memberof flyteidl.core
+             * @classdesc Represents a HeadGroupSpec.
+             * @implements IHeadGroupSpec
+             * @constructor
+             * @param {flyteidl.core.IHeadGroupSpec=} [properties] Properties to set
+             */
+            function HeadGroupSpec(properties) {
+                this.rayStartParams = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * HeadGroupSpec computeTemplate.
+             * @member {string} computeTemplate
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @instance
+             */
+            HeadGroupSpec.prototype.computeTemplate = "";
+
+            /**
+             * HeadGroupSpec image.
+             * @member {string} image
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @instance
+             */
+            HeadGroupSpec.prototype.image = "";
+
+            /**
+             * HeadGroupSpec serviceType.
+             * @member {string} serviceType
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @instance
+             */
+            HeadGroupSpec.prototype.serviceType = "";
+
+            /**
+             * HeadGroupSpec rayStartParams.
+             * @member {Object.<string,string>} rayStartParams
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @instance
+             */
+            HeadGroupSpec.prototype.rayStartParams = $util.emptyObject;
+
+            /**
+             * Creates a new HeadGroupSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @static
+             * @param {flyteidl.core.IHeadGroupSpec=} [properties] Properties to set
+             * @returns {flyteidl.core.HeadGroupSpec} HeadGroupSpec instance
+             */
+            HeadGroupSpec.create = function create(properties) {
+                return new HeadGroupSpec(properties);
+            };
+
+            /**
+             * Encodes the specified HeadGroupSpec message. Does not implicitly {@link flyteidl.core.HeadGroupSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @static
+             * @param {flyteidl.core.IHeadGroupSpec} message HeadGroupSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            HeadGroupSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.computeTemplate);
+                if (message.image != null && message.hasOwnProperty("image"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.image);
+                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.serviceType);
+                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
+                    for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a HeadGroupSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.HeadGroupSpec} HeadGroupSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            HeadGroupSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.HeadGroupSpec(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.computeTemplate = reader.string();
+                        break;
+                    case 2:
+                        message.image = reader.string();
+                        break;
+                    case 3:
+                        message.serviceType = reader.string();
+                        break;
+                    case 4:
+                        reader.skip().pos++;
+                        if (message.rayStartParams === $util.emptyObject)
+                            message.rayStartParams = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.rayStartParams[key] = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a HeadGroupSpec message.
+             * @function verify
+             * @memberof flyteidl.core.HeadGroupSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            HeadGroupSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
+                    if (!$util.isString(message.computeTemplate))
+                        return "computeTemplate: string expected";
+                if (message.image != null && message.hasOwnProperty("image"))
+                    if (!$util.isString(message.image))
+                        return "image: string expected";
+                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
+                    if (!$util.isString(message.serviceType))
+                        return "serviceType: string expected";
+                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams")) {
+                    if (!$util.isObject(message.rayStartParams))
+                        return "rayStartParams: object expected";
+                    let key = Object.keys(message.rayStartParams);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.rayStartParams[key[i]]))
+                            return "rayStartParams: string{k:string} expected";
+                }
+                return null;
+            };
+
+            return HeadGroupSpec;
+        })();
+
+        core.WorkerGroupSpec = (function() {
+
+            /**
+             * Properties of a WorkerGroupSpec.
+             * @memberof flyteidl.core
+             * @interface IWorkerGroupSpec
+             * @property {string|null} [groupName] WorkerGroupSpec groupName
+             * @property {string|null} [computeTemplate] WorkerGroupSpec computeTemplate
+             * @property {string|null} [image] WorkerGroupSpec image
+             * @property {number|null} [replicas] WorkerGroupSpec replicas
+             * @property {number|null} [minReplicas] WorkerGroupSpec minReplicas
+             * @property {number|null} [maxReplicas] WorkerGroupSpec maxReplicas
+             * @property {Object.<string,string>|null} [rayStartParams] WorkerGroupSpec rayStartParams
+             */
+
+            /**
+             * Constructs a new WorkerGroupSpec.
+             * @memberof flyteidl.core
+             * @classdesc Represents a WorkerGroupSpec.
+             * @implements IWorkerGroupSpec
+             * @constructor
+             * @param {flyteidl.core.IWorkerGroupSpec=} [properties] Properties to set
+             */
+            function WorkerGroupSpec(properties) {
+                this.rayStartParams = {};
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * WorkerGroupSpec groupName.
+             * @member {string} groupName
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.groupName = "";
+
+            /**
+             * WorkerGroupSpec computeTemplate.
+             * @member {string} computeTemplate
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.computeTemplate = "";
+
+            /**
+             * WorkerGroupSpec image.
+             * @member {string} image
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.image = "";
+
+            /**
+             * WorkerGroupSpec replicas.
+             * @member {number} replicas
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.replicas = 0;
+
+            /**
+             * WorkerGroupSpec minReplicas.
+             * @member {number} minReplicas
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.minReplicas = 0;
+
+            /**
+             * WorkerGroupSpec maxReplicas.
+             * @member {number} maxReplicas
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.maxReplicas = 0;
+
+            /**
+             * WorkerGroupSpec rayStartParams.
+             * @member {Object.<string,string>} rayStartParams
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @instance
+             */
+            WorkerGroupSpec.prototype.rayStartParams = $util.emptyObject;
+
+            /**
+             * Creates a new WorkerGroupSpec instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @static
+             * @param {flyteidl.core.IWorkerGroupSpec=} [properties] Properties to set
+             * @returns {flyteidl.core.WorkerGroupSpec} WorkerGroupSpec instance
+             */
+            WorkerGroupSpec.create = function create(properties) {
+                return new WorkerGroupSpec(properties);
+            };
+
+            /**
+             * Encodes the specified WorkerGroupSpec message. Does not implicitly {@link flyteidl.core.WorkerGroupSpec.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @static
+             * @param {flyteidl.core.IWorkerGroupSpec} message WorkerGroupSpec message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WorkerGroupSpec.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.groupName != null && message.hasOwnProperty("groupName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.groupName);
+                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.computeTemplate);
+                if (message.image != null && message.hasOwnProperty("image"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.image);
+                if (message.replicas != null && message.hasOwnProperty("replicas"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.replicas);
+                if (message.minReplicas != null && message.hasOwnProperty("minReplicas"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.minReplicas);
+                if (message.maxReplicas != null && message.hasOwnProperty("maxReplicas"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.maxReplicas);
+                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
+                    for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 7, wireType 2 =*/58).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a WorkerGroupSpec message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.WorkerGroupSpec} WorkerGroupSpec
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WorkerGroupSpec.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkerGroupSpec(), key;
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.groupName = reader.string();
+                        break;
+                    case 2:
+                        message.computeTemplate = reader.string();
+                        break;
+                    case 3:
+                        message.image = reader.string();
+                        break;
+                    case 4:
+                        message.replicas = reader.int32();
+                        break;
+                    case 5:
+                        message.minReplicas = reader.int32();
+                        break;
+                    case 6:
+                        message.maxReplicas = reader.int32();
+                        break;
+                    case 7:
+                        reader.skip().pos++;
+                        if (message.rayStartParams === $util.emptyObject)
+                            message.rayStartParams = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.rayStartParams[key] = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a WorkerGroupSpec message.
+             * @function verify
+             * @memberof flyteidl.core.WorkerGroupSpec
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WorkerGroupSpec.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.groupName != null && message.hasOwnProperty("groupName"))
+                    if (!$util.isString(message.groupName))
+                        return "groupName: string expected";
+                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
+                    if (!$util.isString(message.computeTemplate))
+                        return "computeTemplate: string expected";
+                if (message.image != null && message.hasOwnProperty("image"))
+                    if (!$util.isString(message.image))
+                        return "image: string expected";
+                if (message.replicas != null && message.hasOwnProperty("replicas"))
+                    if (!$util.isInteger(message.replicas))
+                        return "replicas: integer expected";
+                if (message.minReplicas != null && message.hasOwnProperty("minReplicas"))
+                    if (!$util.isInteger(message.minReplicas))
+                        return "minReplicas: integer expected";
+                if (message.maxReplicas != null && message.hasOwnProperty("maxReplicas"))
+                    if (!$util.isInteger(message.maxReplicas))
+                        return "maxReplicas: integer expected";
+                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams")) {
+                    if (!$util.isObject(message.rayStartParams))
+                        return "rayStartParams: object expected";
+                    let key = Object.keys(message.rayStartParams);
+                    for (let i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.rayStartParams[key[i]]))
+                            return "rayStartParams: string{k:string} expected";
+                }
+                return null;
+            };
+
+            return WorkerGroupSpec;
         })();
 
         core.Secret = (function() {
@@ -14456,819 +15465,6 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ErrorDocument;
-        })();
-
-        core.RayCluster = (function() {
-
-            /**
-             * Properties of a RayCluster.
-             * @memberof flyteidl.core
-             * @interface IRayCluster
-             * @property {string|null} [name] RayCluster name
-             * @property {string|null} [namespace] RayCluster namespace
-             * @property {string|null} [user] RayCluster user
-             * @property {string|null} [version] RayCluster version
-             * @property {flyteidl.core.RayCluster.Environment|null} [environment] RayCluster environment
-             * @property {flyteidl.core.IClusterSpec|null} [clusterSpec] RayCluster clusterSpec
-             * @property {google.protobuf.ITimestamp|null} [createdAt] RayCluster createdAt
-             * @property {google.protobuf.ITimestamp|null} [deletedAt] RayCluster deletedAt
-             * @property {string|null} [clusterState] RayCluster clusterState
-             */
-
-            /**
-             * Constructs a new RayCluster.
-             * @memberof flyteidl.core
-             * @classdesc Represents a RayCluster.
-             * @implements IRayCluster
-             * @constructor
-             * @param {flyteidl.core.IRayCluster=} [properties] Properties to set
-             */
-            function RayCluster(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * RayCluster name.
-             * @member {string} name
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.name = "";
-
-            /**
-             * RayCluster namespace.
-             * @member {string} namespace
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.namespace = "";
-
-            /**
-             * RayCluster user.
-             * @member {string} user
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.user = "";
-
-            /**
-             * RayCluster version.
-             * @member {string} version
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.version = "";
-
-            /**
-             * RayCluster environment.
-             * @member {flyteidl.core.RayCluster.Environment} environment
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.environment = 0;
-
-            /**
-             * RayCluster clusterSpec.
-             * @member {flyteidl.core.IClusterSpec|null|undefined} clusterSpec
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.clusterSpec = null;
-
-            /**
-             * RayCluster createdAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} createdAt
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.createdAt = null;
-
-            /**
-             * RayCluster deletedAt.
-             * @member {google.protobuf.ITimestamp|null|undefined} deletedAt
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.deletedAt = null;
-
-            /**
-             * RayCluster clusterState.
-             * @member {string} clusterState
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.clusterState = "";
-
-            /**
-             * Creates a new RayCluster instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.RayCluster
-             * @static
-             * @param {flyteidl.core.IRayCluster=} [properties] Properties to set
-             * @returns {flyteidl.core.RayCluster} RayCluster instance
-             */
-            RayCluster.create = function create(properties) {
-                return new RayCluster(properties);
-            };
-
-            /**
-             * Encodes the specified RayCluster message. Does not implicitly {@link flyteidl.core.RayCluster.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.RayCluster
-             * @static
-             * @param {flyteidl.core.IRayCluster} message RayCluster message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            RayCluster.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.namespace != null && message.hasOwnProperty("namespace"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.namespace);
-                if (message.user != null && message.hasOwnProperty("user"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.user);
-                if (message.version != null && message.hasOwnProperty("version"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.version);
-                if (message.environment != null && message.hasOwnProperty("environment"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.environment);
-                if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec"))
-                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.createdAt != null && message.hasOwnProperty("createdAt"))
-                    $root.google.protobuf.Timestamp.encode(message.createdAt, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.deletedAt != null && message.hasOwnProperty("deletedAt"))
-                    $root.google.protobuf.Timestamp.encode(message.deletedAt, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
-                    writer.uint32(/* id 9, wireType 2 =*/74).string(message.clusterState);
-                return writer;
-            };
-
-            /**
-             * Decodes a RayCluster message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.RayCluster
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.RayCluster} RayCluster
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            RayCluster.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.RayCluster();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
-                        message.namespace = reader.string();
-                        break;
-                    case 3:
-                        message.user = reader.string();
-                        break;
-                    case 4:
-                        message.version = reader.string();
-                        break;
-                    case 5:
-                        message.environment = reader.int32();
-                        break;
-                    case 6:
-                        message.clusterSpec = $root.flyteidl.core.ClusterSpec.decode(reader, reader.uint32());
-                        break;
-                    case 7:
-                        message.createdAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 8:
-                        message.deletedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                        break;
-                    case 9:
-                        message.clusterState = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a RayCluster message.
-             * @function verify
-             * @memberof flyteidl.core.RayCluster
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            RayCluster.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
-                if (message.namespace != null && message.hasOwnProperty("namespace"))
-                    if (!$util.isString(message.namespace))
-                        return "namespace: string expected";
-                if (message.user != null && message.hasOwnProperty("user"))
-                    if (!$util.isString(message.user))
-                        return "user: string expected";
-                if (message.version != null && message.hasOwnProperty("version"))
-                    if (!$util.isString(message.version))
-                        return "version: string expected";
-                if (message.environment != null && message.hasOwnProperty("environment"))
-                    switch (message.environment) {
-                    default:
-                        return "environment: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec")) {
-                    let error = $root.flyteidl.core.ClusterSpec.verify(message.clusterSpec);
-                    if (error)
-                        return "clusterSpec." + error;
-                }
-                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.createdAt);
-                    if (error)
-                        return "createdAt." + error;
-                }
-                if (message.deletedAt != null && message.hasOwnProperty("deletedAt")) {
-                    let error = $root.google.protobuf.Timestamp.verify(message.deletedAt);
-                    if (error)
-                        return "deletedAt." + error;
-                }
-                if (message.clusterState != null && message.hasOwnProperty("clusterState"))
-                    if (!$util.isString(message.clusterState))
-                        return "clusterState: string expected";
-                return null;
-            };
-
-            /**
-             * Environment enum.
-             * @name flyteidl.core.RayCluster.Environment
-             * @enum {string}
-             * @property {number} DEV=0 DEV value
-             * @property {number} TESTING=1 TESTING value
-             * @property {number} STAGING=2 STAGING value
-             * @property {number} PRODUCTION=3 PRODUCTION value
-             */
-            RayCluster.Environment = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "DEV"] = 0;
-                values[valuesById[1] = "TESTING"] = 1;
-                values[valuesById[2] = "STAGING"] = 2;
-                values[valuesById[3] = "PRODUCTION"] = 3;
-                return values;
-            })();
-
-            return RayCluster;
-        })();
-
-        core.ClusterSpec = (function() {
-
-            /**
-             * Properties of a ClusterSpec.
-             * @memberof flyteidl.core
-             * @interface IClusterSpec
-             * @property {flyteidl.core.IHeadGroupSpec|null} [headGroupSpec] ClusterSpec headGroupSpec
-             * @property {Array.<flyteidl.core.IWorkerGroupSpec>|null} [workerGroupSepc] ClusterSpec workerGroupSepc
-             */
-
-            /**
-             * Constructs a new ClusterSpec.
-             * @memberof flyteidl.core
-             * @classdesc Represents a ClusterSpec.
-             * @implements IClusterSpec
-             * @constructor
-             * @param {flyteidl.core.IClusterSpec=} [properties] Properties to set
-             */
-            function ClusterSpec(properties) {
-                this.workerGroupSepc = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ClusterSpec headGroupSpec.
-             * @member {flyteidl.core.IHeadGroupSpec|null|undefined} headGroupSpec
-             * @memberof flyteidl.core.ClusterSpec
-             * @instance
-             */
-            ClusterSpec.prototype.headGroupSpec = null;
-
-            /**
-             * ClusterSpec workerGroupSepc.
-             * @member {Array.<flyteidl.core.IWorkerGroupSpec>} workerGroupSepc
-             * @memberof flyteidl.core.ClusterSpec
-             * @instance
-             */
-            ClusterSpec.prototype.workerGroupSepc = $util.emptyArray;
-
-            /**
-             * Creates a new ClusterSpec instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.ClusterSpec
-             * @static
-             * @param {flyteidl.core.IClusterSpec=} [properties] Properties to set
-             * @returns {flyteidl.core.ClusterSpec} ClusterSpec instance
-             */
-            ClusterSpec.create = function create(properties) {
-                return new ClusterSpec(properties);
-            };
-
-            /**
-             * Encodes the specified ClusterSpec message. Does not implicitly {@link flyteidl.core.ClusterSpec.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.ClusterSpec
-             * @static
-             * @param {flyteidl.core.IClusterSpec} message ClusterSpec message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ClusterSpec.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.headGroupSpec != null && message.hasOwnProperty("headGroupSpec"))
-                    $root.flyteidl.core.HeadGroupSpec.encode(message.headGroupSpec, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.workerGroupSepc != null && message.workerGroupSepc.length)
-                    for (let i = 0; i < message.workerGroupSepc.length; ++i)
-                        $root.flyteidl.core.WorkerGroupSpec.encode(message.workerGroupSepc[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a ClusterSpec message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.ClusterSpec
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.ClusterSpec} ClusterSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ClusterSpec.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ClusterSpec();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.headGroupSpec = $root.flyteidl.core.HeadGroupSpec.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        if (!(message.workerGroupSepc && message.workerGroupSepc.length))
-                            message.workerGroupSepc = [];
-                        message.workerGroupSepc.push($root.flyteidl.core.WorkerGroupSpec.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a ClusterSpec message.
-             * @function verify
-             * @memberof flyteidl.core.ClusterSpec
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ClusterSpec.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.headGroupSpec != null && message.hasOwnProperty("headGroupSpec")) {
-                    let error = $root.flyteidl.core.HeadGroupSpec.verify(message.headGroupSpec);
-                    if (error)
-                        return "headGroupSpec." + error;
-                }
-                if (message.workerGroupSepc != null && message.hasOwnProperty("workerGroupSepc")) {
-                    if (!Array.isArray(message.workerGroupSepc))
-                        return "workerGroupSepc: array expected";
-                    for (let i = 0; i < message.workerGroupSepc.length; ++i) {
-                        let error = $root.flyteidl.core.WorkerGroupSpec.verify(message.workerGroupSepc[i]);
-                        if (error)
-                            return "workerGroupSepc." + error;
-                    }
-                }
-                return null;
-            };
-
-            return ClusterSpec;
-        })();
-
-        core.HeadGroupSpec = (function() {
-
-            /**
-             * Properties of a HeadGroupSpec.
-             * @memberof flyteidl.core
-             * @interface IHeadGroupSpec
-             * @property {string|null} [computeTemplate] HeadGroupSpec computeTemplate
-             * @property {string|null} [image] HeadGroupSpec image
-             * @property {string|null} [serviceType] HeadGroupSpec serviceType
-             * @property {Object.<string,string>|null} [rayStartParams] HeadGroupSpec rayStartParams
-             */
-
-            /**
-             * Constructs a new HeadGroupSpec.
-             * @memberof flyteidl.core
-             * @classdesc Represents a HeadGroupSpec.
-             * @implements IHeadGroupSpec
-             * @constructor
-             * @param {flyteidl.core.IHeadGroupSpec=} [properties] Properties to set
-             */
-            function HeadGroupSpec(properties) {
-                this.rayStartParams = {};
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * HeadGroupSpec computeTemplate.
-             * @member {string} computeTemplate
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.computeTemplate = "";
-
-            /**
-             * HeadGroupSpec image.
-             * @member {string} image
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.image = "";
-
-            /**
-             * HeadGroupSpec serviceType.
-             * @member {string} serviceType
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.serviceType = "";
-
-            /**
-             * HeadGroupSpec rayStartParams.
-             * @member {Object.<string,string>} rayStartParams
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.rayStartParams = $util.emptyObject;
-
-            /**
-             * Creates a new HeadGroupSpec instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @static
-             * @param {flyteidl.core.IHeadGroupSpec=} [properties] Properties to set
-             * @returns {flyteidl.core.HeadGroupSpec} HeadGroupSpec instance
-             */
-            HeadGroupSpec.create = function create(properties) {
-                return new HeadGroupSpec(properties);
-            };
-
-            /**
-             * Encodes the specified HeadGroupSpec message. Does not implicitly {@link flyteidl.core.HeadGroupSpec.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @static
-             * @param {flyteidl.core.IHeadGroupSpec} message HeadGroupSpec message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            HeadGroupSpec.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.computeTemplate);
-                if (message.image != null && message.hasOwnProperty("image"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.image);
-                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.serviceType);
-                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
-                    for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a HeadGroupSpec message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.HeadGroupSpec} HeadGroupSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            HeadGroupSpec.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.HeadGroupSpec(), key;
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.computeTemplate = reader.string();
-                        break;
-                    case 2:
-                        message.image = reader.string();
-                        break;
-                    case 3:
-                        message.serviceType = reader.string();
-                        break;
-                    case 4:
-                        reader.skip().pos++;
-                        if (message.rayStartParams === $util.emptyObject)
-                            message.rayStartParams = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.rayStartParams[key] = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a HeadGroupSpec message.
-             * @function verify
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            HeadGroupSpec.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    if (!$util.isString(message.computeTemplate))
-                        return "computeTemplate: string expected";
-                if (message.image != null && message.hasOwnProperty("image"))
-                    if (!$util.isString(message.image))
-                        return "image: string expected";
-                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
-                    if (!$util.isString(message.serviceType))
-                        return "serviceType: string expected";
-                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams")) {
-                    if (!$util.isObject(message.rayStartParams))
-                        return "rayStartParams: object expected";
-                    let key = Object.keys(message.rayStartParams);
-                    for (let i = 0; i < key.length; ++i)
-                        if (!$util.isString(message.rayStartParams[key[i]]))
-                            return "rayStartParams: string{k:string} expected";
-                }
-                return null;
-            };
-
-            return HeadGroupSpec;
-        })();
-
-        core.WorkerGroupSpec = (function() {
-
-            /**
-             * Properties of a WorkerGroupSpec.
-             * @memberof flyteidl.core
-             * @interface IWorkerGroupSpec
-             * @property {string|null} [groupName] WorkerGroupSpec groupName
-             * @property {string|null} [computeTemplate] WorkerGroupSpec computeTemplate
-             * @property {string|null} [image] WorkerGroupSpec image
-             * @property {number|null} [replicas] WorkerGroupSpec replicas
-             * @property {number|null} [minReplicas] WorkerGroupSpec minReplicas
-             * @property {number|null} [maxReplicas] WorkerGroupSpec maxReplicas
-             * @property {Object.<string,string>|null} [rayStartParams] WorkerGroupSpec rayStartParams
-             */
-
-            /**
-             * Constructs a new WorkerGroupSpec.
-             * @memberof flyteidl.core
-             * @classdesc Represents a WorkerGroupSpec.
-             * @implements IWorkerGroupSpec
-             * @constructor
-             * @param {flyteidl.core.IWorkerGroupSpec=} [properties] Properties to set
-             */
-            function WorkerGroupSpec(properties) {
-                this.rayStartParams = {};
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * WorkerGroupSpec groupName.
-             * @member {string} groupName
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.groupName = "";
-
-            /**
-             * WorkerGroupSpec computeTemplate.
-             * @member {string} computeTemplate
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.computeTemplate = "";
-
-            /**
-             * WorkerGroupSpec image.
-             * @member {string} image
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.image = "";
-
-            /**
-             * WorkerGroupSpec replicas.
-             * @member {number} replicas
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.replicas = 0;
-
-            /**
-             * WorkerGroupSpec minReplicas.
-             * @member {number} minReplicas
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.minReplicas = 0;
-
-            /**
-             * WorkerGroupSpec maxReplicas.
-             * @member {number} maxReplicas
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.maxReplicas = 0;
-
-            /**
-             * WorkerGroupSpec rayStartParams.
-             * @member {Object.<string,string>} rayStartParams
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.rayStartParams = $util.emptyObject;
-
-            /**
-             * Creates a new WorkerGroupSpec instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @static
-             * @param {flyteidl.core.IWorkerGroupSpec=} [properties] Properties to set
-             * @returns {flyteidl.core.WorkerGroupSpec} WorkerGroupSpec instance
-             */
-            WorkerGroupSpec.create = function create(properties) {
-                return new WorkerGroupSpec(properties);
-            };
-
-            /**
-             * Encodes the specified WorkerGroupSpec message. Does not implicitly {@link flyteidl.core.WorkerGroupSpec.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @static
-             * @param {flyteidl.core.IWorkerGroupSpec} message WorkerGroupSpec message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            WorkerGroupSpec.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.groupName != null && message.hasOwnProperty("groupName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.groupName);
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.computeTemplate);
-                if (message.image != null && message.hasOwnProperty("image"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.image);
-                if (message.replicas != null && message.hasOwnProperty("replicas"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.replicas);
-                if (message.minReplicas != null && message.hasOwnProperty("minReplicas"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.minReplicas);
-                if (message.maxReplicas != null && message.hasOwnProperty("maxReplicas"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.maxReplicas);
-                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
-                    for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 7, wireType 2 =*/58).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a WorkerGroupSpec message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.core.WorkerGroupSpec} WorkerGroupSpec
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            WorkerGroupSpec.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkerGroupSpec(), key;
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.groupName = reader.string();
-                        break;
-                    case 2:
-                        message.computeTemplate = reader.string();
-                        break;
-                    case 3:
-                        message.image = reader.string();
-                        break;
-                    case 4:
-                        message.replicas = reader.int32();
-                        break;
-                    case 5:
-                        message.minReplicas = reader.int32();
-                        break;
-                    case 6:
-                        message.maxReplicas = reader.int32();
-                        break;
-                    case 7:
-                        reader.skip().pos++;
-                        if (message.rayStartParams === $util.emptyObject)
-                            message.rayStartParams = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.rayStartParams[key] = reader.string();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a WorkerGroupSpec message.
-             * @function verify
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            WorkerGroupSpec.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.groupName != null && message.hasOwnProperty("groupName"))
-                    if (!$util.isString(message.groupName))
-                        return "groupName: string expected";
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    if (!$util.isString(message.computeTemplate))
-                        return "computeTemplate: string expected";
-                if (message.image != null && message.hasOwnProperty("image"))
-                    if (!$util.isString(message.image))
-                        return "image: string expected";
-                if (message.replicas != null && message.hasOwnProperty("replicas"))
-                    if (!$util.isInteger(message.replicas))
-                        return "replicas: integer expected";
-                if (message.minReplicas != null && message.hasOwnProperty("minReplicas"))
-                    if (!$util.isInteger(message.minReplicas))
-                        return "minReplicas: integer expected";
-                if (message.maxReplicas != null && message.hasOwnProperty("maxReplicas"))
-                    if (!$util.isInteger(message.maxReplicas))
-                        return "maxReplicas: integer expected";
-                if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams")) {
-                    if (!$util.isObject(message.rayStartParams))
-                        return "rayStartParams: object expected";
-                    let key = Object.keys(message.rayStartParams);
-                    for (let i = 0; i < key.length; ++i)
-                        if (!$util.isString(message.rayStartParams[key[i]]))
-                            return "rayStartParams: string{k:string} expected";
-                }
-                return null;
-            };
-
-            return WorkerGroupSpec;
         })();
 
         core.WorkflowClosure = (function() {
@@ -26677,6 +26873,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] LaunchPlanSpec rawOutputDataConfig
              * @property {number|null} [maxParallelism] LaunchPlanSpec maxParallelism
              * @property {google.protobuf.IBoolValue|null} [interruptible] LaunchPlanSpec interruptible
+             * @property {Object.<string,flyteidl.core.IResource>|null} [resources] LaunchPlanSpec resources
              */
 
             /**
@@ -26688,6 +26885,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.ILaunchPlanSpec=} [properties] Properties to set
              */
             function LaunchPlanSpec(properties) {
+                this.resources = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -26807,6 +27005,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.prototype.interruptible = null;
 
             /**
+             * LaunchPlanSpec resources.
+             * @member {Object.<string,flyteidl.core.IResource>} resources
+             * @memberof flyteidl.admin.LaunchPlanSpec
+             * @instance
+             */
+            LaunchPlanSpec.prototype.resources = $util.emptyObject;
+
+            /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlanSpec
@@ -26858,6 +27064,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 18, wireType 0 =*/144).int32(message.maxParallelism);
                 if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                     $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                if (message.resources != null && message.hasOwnProperty("resources"))
+                    for (let keys = Object.keys(message.resources), i = 0; i < keys.length; ++i) {
+                        writer.uint32(/* id 20, wireType 2 =*/162).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
+                        $root.flyteidl.core.Resource.encode(message.resources[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
+                    }
                 return writer;
             };
 
@@ -26875,7 +27086,7 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlanSpec.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec();
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.LaunchPlanSpec(), key;
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -26920,6 +27131,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 19:
                         message.interruptible = $root.google.protobuf.BoolValue.decode(reader, reader.uint32());
+                        break;
+                    case 20:
+                        reader.skip().pos++;
+                        if (message.resources === $util.emptyObject)
+                            message.resources = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.resources[key] = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -27005,6 +27224,16 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.google.protobuf.BoolValue.verify(message.interruptible);
                     if (error)
                         return "interruptible." + error;
+                }
+                if (message.resources != null && message.hasOwnProperty("resources")) {
+                    if (!$util.isObject(message.resources))
+                        return "resources: object expected";
+                    let key = Object.keys(message.resources);
+                    for (let i = 0; i < key.length; ++i) {
+                        let error = $root.flyteidl.core.Resource.verify(message.resources[key[i]]);
+                        if (error)
+                            return "resources." + error;
+                    }
                 }
                 return null;
             };
