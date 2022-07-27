@@ -23,7 +23,7 @@ public final class Ray {
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     boolean hasRayCluster();
     /**
@@ -31,7 +31,7 @@ public final class Ray {
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     flyteidl.core.Ray.RayCluster getRayCluster();
     /**
@@ -39,48 +39,48 @@ public final class Ray {
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     flyteidl.core.Ray.RayClusterOrBuilder getRayClusterOrBuilder();
 
     /**
      * <pre>
-     * RuntimeEnv is base64 encoded.
+     * runtime_env is base64 encoded.
      * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
      * </pre>
      *
-     * <code>string RuntimeEnv = 2;</code>
+     * <code>string runtime_env = 2;</code>
      */
     java.lang.String getRuntimeEnv();
     /**
      * <pre>
-     * RuntimeEnv is base64 encoded.
+     * runtime_env is base64 encoded.
      * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
      * </pre>
      *
-     * <code>string RuntimeEnv = 2;</code>
+     * <code>string runtime_env = 2;</code>
      */
     com.google.protobuf.ByteString
         getRuntimeEnvBytes();
 
     /**
      * <pre>
-     * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+     * shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
      * </pre>
      *
-     * <code>bool ShutdownAfterJobFinishes = 3;</code>
+     * <code>bool shutdown_after_job_finishes = 3;</code>
      */
     boolean getShutdownAfterJobFinishes();
 
     /**
      * <pre>
-     * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+     * ttl_seconds_after_finished is the TTL to clean up RayCluster.
      * It's only working when ShutdownAfterJobFinishes set to true.
      * </pre>
      *
-     * <code>int32 TTLSecondsAfterFinished = 4;</code>
+     * <code>int32 ttl_seconds_after_finished = 4;</code>
      */
-    int getTTLSecondsAfterFinished();
+    int getTtlSecondsAfterFinished();
   }
   /**
    * <pre>
@@ -152,7 +152,7 @@ public final class Ray {
             }
             case 32: {
 
-              tTLSecondsAfterFinished_ = input.readInt32();
+              ttlSecondsAfterFinished_ = input.readInt32();
               break;
             }
             default: {
@@ -187,14 +187,14 @@ public final class Ray {
               flyteidl.core.Ray.RayJob.class, flyteidl.core.Ray.RayJob.Builder.class);
     }
 
-    public static final int RAYCLUSTER_FIELD_NUMBER = 1;
+    public static final int RAY_CLUSTER_FIELD_NUMBER = 1;
     private flyteidl.core.Ray.RayCluster rayCluster_;
     /**
      * <pre>
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     public boolean hasRayCluster() {
       return rayCluster_ != null;
@@ -204,7 +204,7 @@ public final class Ray {
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     public flyteidl.core.Ray.RayCluster getRayCluster() {
       return rayCluster_ == null ? flyteidl.core.Ray.RayCluster.getDefaultInstance() : rayCluster_;
@@ -214,21 +214,21 @@ public final class Ray {
      * RayClusterSpec is the cluster template to run the job
      * </pre>
      *
-     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
      */
     public flyteidl.core.Ray.RayClusterOrBuilder getRayClusterOrBuilder() {
       return getRayCluster();
     }
 
-    public static final int RUNTIMEENV_FIELD_NUMBER = 2;
+    public static final int RUNTIME_ENV_FIELD_NUMBER = 2;
     private volatile java.lang.Object runtimeEnv_;
     /**
      * <pre>
-     * RuntimeEnv is base64 encoded.
+     * runtime_env is base64 encoded.
      * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
      * </pre>
      *
-     * <code>string RuntimeEnv = 2;</code>
+     * <code>string runtime_env = 2;</code>
      */
     public java.lang.String getRuntimeEnv() {
       java.lang.Object ref = runtimeEnv_;
@@ -244,11 +244,11 @@ public final class Ray {
     }
     /**
      * <pre>
-     * RuntimeEnv is base64 encoded.
+     * runtime_env is base64 encoded.
      * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
      * </pre>
      *
-     * <code>string RuntimeEnv = 2;</code>
+     * <code>string runtime_env = 2;</code>
      */
     public com.google.protobuf.ByteString
         getRuntimeEnvBytes() {
@@ -264,31 +264,31 @@ public final class Ray {
       }
     }
 
-    public static final int SHUTDOWNAFTERJOBFINISHES_FIELD_NUMBER = 3;
+    public static final int SHUTDOWN_AFTER_JOB_FINISHES_FIELD_NUMBER = 3;
     private boolean shutdownAfterJobFinishes_;
     /**
      * <pre>
-     * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+     * shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
      * </pre>
      *
-     * <code>bool ShutdownAfterJobFinishes = 3;</code>
+     * <code>bool shutdown_after_job_finishes = 3;</code>
      */
     public boolean getShutdownAfterJobFinishes() {
       return shutdownAfterJobFinishes_;
     }
 
-    public static final int TTLSECONDSAFTERFINISHED_FIELD_NUMBER = 4;
-    private int tTLSecondsAfterFinished_;
+    public static final int TTL_SECONDS_AFTER_FINISHED_FIELD_NUMBER = 4;
+    private int ttlSecondsAfterFinished_;
     /**
      * <pre>
-     * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+     * ttl_seconds_after_finished is the TTL to clean up RayCluster.
      * It's only working when ShutdownAfterJobFinishes set to true.
      * </pre>
      *
-     * <code>int32 TTLSecondsAfterFinished = 4;</code>
+     * <code>int32 ttl_seconds_after_finished = 4;</code>
      */
-    public int getTTLSecondsAfterFinished() {
-      return tTLSecondsAfterFinished_;
+    public int getTtlSecondsAfterFinished() {
+      return ttlSecondsAfterFinished_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -314,8 +314,8 @@ public final class Ray {
       if (shutdownAfterJobFinishes_ != false) {
         output.writeBool(3, shutdownAfterJobFinishes_);
       }
-      if (tTLSecondsAfterFinished_ != 0) {
-        output.writeInt32(4, tTLSecondsAfterFinished_);
+      if (ttlSecondsAfterFinished_ != 0) {
+        output.writeInt32(4, ttlSecondsAfterFinished_);
       }
       unknownFields.writeTo(output);
     }
@@ -337,9 +337,9 @@ public final class Ray {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, shutdownAfterJobFinishes_);
       }
-      if (tTLSecondsAfterFinished_ != 0) {
+      if (ttlSecondsAfterFinished_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, tTLSecondsAfterFinished_);
+          .computeInt32Size(4, ttlSecondsAfterFinished_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -365,8 +365,8 @@ public final class Ray {
           .equals(other.getRuntimeEnv())) return false;
       if (getShutdownAfterJobFinishes()
           != other.getShutdownAfterJobFinishes()) return false;
-      if (getTTLSecondsAfterFinished()
-          != other.getTTLSecondsAfterFinished()) return false;
+      if (getTtlSecondsAfterFinished()
+          != other.getTtlSecondsAfterFinished()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -379,16 +379,16 @@ public final class Ray {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (hasRayCluster()) {
-        hash = (37 * hash) + RAYCLUSTER_FIELD_NUMBER;
+        hash = (37 * hash) + RAY_CLUSTER_FIELD_NUMBER;
         hash = (53 * hash) + getRayCluster().hashCode();
       }
-      hash = (37 * hash) + RUNTIMEENV_FIELD_NUMBER;
+      hash = (37 * hash) + RUNTIME_ENV_FIELD_NUMBER;
       hash = (53 * hash) + getRuntimeEnv().hashCode();
-      hash = (37 * hash) + SHUTDOWNAFTERJOBFINISHES_FIELD_NUMBER;
+      hash = (37 * hash) + SHUTDOWN_AFTER_JOB_FINISHES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getShutdownAfterJobFinishes());
-      hash = (37 * hash) + TTLSECONDSAFTERFINISHED_FIELD_NUMBER;
-      hash = (53 * hash) + getTTLSecondsAfterFinished();
+      hash = (37 * hash) + TTL_SECONDS_AFTER_FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + getTtlSecondsAfterFinished();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -536,7 +536,7 @@ public final class Ray {
 
         shutdownAfterJobFinishes_ = false;
 
-        tTLSecondsAfterFinished_ = 0;
+        ttlSecondsAfterFinished_ = 0;
 
         return this;
       }
@@ -571,7 +571,7 @@ public final class Ray {
         }
         result.runtimeEnv_ = runtimeEnv_;
         result.shutdownAfterJobFinishes_ = shutdownAfterJobFinishes_;
-        result.tTLSecondsAfterFinished_ = tTLSecondsAfterFinished_;
+        result.ttlSecondsAfterFinished_ = ttlSecondsAfterFinished_;
         onBuilt();
         return result;
       }
@@ -630,8 +630,8 @@ public final class Ray {
         if (other.getShutdownAfterJobFinishes() != false) {
           setShutdownAfterJobFinishes(other.getShutdownAfterJobFinishes());
         }
-        if (other.getTTLSecondsAfterFinished() != 0) {
-          setTTLSecondsAfterFinished(other.getTTLSecondsAfterFinished());
+        if (other.getTtlSecondsAfterFinished() != 0) {
+          setTtlSecondsAfterFinished(other.getTtlSecondsAfterFinished());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -670,7 +670,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public boolean hasRayCluster() {
         return rayClusterBuilder_ != null || rayCluster_ != null;
@@ -680,7 +680,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public flyteidl.core.Ray.RayCluster getRayCluster() {
         if (rayClusterBuilder_ == null) {
@@ -694,7 +694,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public Builder setRayCluster(flyteidl.core.Ray.RayCluster value) {
         if (rayClusterBuilder_ == null) {
@@ -714,7 +714,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public Builder setRayCluster(
           flyteidl.core.Ray.RayCluster.Builder builderForValue) {
@@ -732,7 +732,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public Builder mergeRayCluster(flyteidl.core.Ray.RayCluster value) {
         if (rayClusterBuilder_ == null) {
@@ -754,7 +754,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public Builder clearRayCluster() {
         if (rayClusterBuilder_ == null) {
@@ -772,7 +772,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public flyteidl.core.Ray.RayCluster.Builder getRayClusterBuilder() {
         
@@ -784,7 +784,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       public flyteidl.core.Ray.RayClusterOrBuilder getRayClusterOrBuilder() {
         if (rayClusterBuilder_ != null) {
@@ -799,7 +799,7 @@ public final class Ray {
        * RayClusterSpec is the cluster template to run the job
        * </pre>
        *
-       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       * <code>.flyteidl.core.RayCluster ray_cluster = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Ray.RayCluster, flyteidl.core.Ray.RayCluster.Builder, flyteidl.core.Ray.RayClusterOrBuilder> 
@@ -818,11 +818,11 @@ public final class Ray {
       private java.lang.Object runtimeEnv_ = "";
       /**
        * <pre>
-       * RuntimeEnv is base64 encoded.
+       * runtime_env is base64 encoded.
        * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
        * </pre>
        *
-       * <code>string RuntimeEnv = 2;</code>
+       * <code>string runtime_env = 2;</code>
        */
       public java.lang.String getRuntimeEnv() {
         java.lang.Object ref = runtimeEnv_;
@@ -838,11 +838,11 @@ public final class Ray {
       }
       /**
        * <pre>
-       * RuntimeEnv is base64 encoded.
+       * runtime_env is base64 encoded.
        * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
        * </pre>
        *
-       * <code>string RuntimeEnv = 2;</code>
+       * <code>string runtime_env = 2;</code>
        */
       public com.google.protobuf.ByteString
           getRuntimeEnvBytes() {
@@ -859,11 +859,11 @@ public final class Ray {
       }
       /**
        * <pre>
-       * RuntimeEnv is base64 encoded.
+       * runtime_env is base64 encoded.
        * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
        * </pre>
        *
-       * <code>string RuntimeEnv = 2;</code>
+       * <code>string runtime_env = 2;</code>
        */
       public Builder setRuntimeEnv(
           java.lang.String value) {
@@ -877,11 +877,11 @@ public final class Ray {
       }
       /**
        * <pre>
-       * RuntimeEnv is base64 encoded.
+       * runtime_env is base64 encoded.
        * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
        * </pre>
        *
-       * <code>string RuntimeEnv = 2;</code>
+       * <code>string runtime_env = 2;</code>
        */
       public Builder clearRuntimeEnv() {
         
@@ -891,11 +891,11 @@ public final class Ray {
       }
       /**
        * <pre>
-       * RuntimeEnv is base64 encoded.
+       * runtime_env is base64 encoded.
        * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
        * </pre>
        *
-       * <code>string RuntimeEnv = 2;</code>
+       * <code>string runtime_env = 2;</code>
        */
       public Builder setRuntimeEnvBytes(
           com.google.protobuf.ByteString value) {
@@ -912,20 +912,20 @@ public final class Ray {
       private boolean shutdownAfterJobFinishes_ ;
       /**
        * <pre>
-       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
        * </pre>
        *
-       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       * <code>bool shutdown_after_job_finishes = 3;</code>
        */
       public boolean getShutdownAfterJobFinishes() {
         return shutdownAfterJobFinishes_;
       }
       /**
        * <pre>
-       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
        * </pre>
        *
-       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       * <code>bool shutdown_after_job_finishes = 3;</code>
        */
       public Builder setShutdownAfterJobFinishes(boolean value) {
         
@@ -935,10 +935,10 @@ public final class Ray {
       }
       /**
        * <pre>
-       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
        * </pre>
        *
-       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       * <code>bool shutdown_after_job_finishes = 3;</code>
        */
       public Builder clearShutdownAfterJobFinishes() {
         
@@ -947,43 +947,43 @@ public final class Ray {
         return this;
       }
 
-      private int tTLSecondsAfterFinished_ ;
+      private int ttlSecondsAfterFinished_ ;
       /**
        * <pre>
-       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * ttl_seconds_after_finished is the TTL to clean up RayCluster.
        * It's only working when ShutdownAfterJobFinishes set to true.
        * </pre>
        *
-       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       * <code>int32 ttl_seconds_after_finished = 4;</code>
        */
-      public int getTTLSecondsAfterFinished() {
-        return tTLSecondsAfterFinished_;
+      public int getTtlSecondsAfterFinished() {
+        return ttlSecondsAfterFinished_;
       }
       /**
        * <pre>
-       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * ttl_seconds_after_finished is the TTL to clean up RayCluster.
        * It's only working when ShutdownAfterJobFinishes set to true.
        * </pre>
        *
-       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       * <code>int32 ttl_seconds_after_finished = 4;</code>
        */
-      public Builder setTTLSecondsAfterFinished(int value) {
+      public Builder setTtlSecondsAfterFinished(int value) {
         
-        tTLSecondsAfterFinished_ = value;
+        ttlSecondsAfterFinished_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * ttl_seconds_after_finished is the TTL to clean up RayCluster.
        * It's only working when ShutdownAfterJobFinishes set to true.
        * </pre>
        *
-       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       * <code>int32 ttl_seconds_after_finished = 4;</code>
        */
-      public Builder clearTTLSecondsAfterFinished() {
+      public Builder clearTtlSecondsAfterFinished() {
         
-        tTLSecondsAfterFinished_ = 0;
+        ttlSecondsAfterFinished_ = 0;
         onChanged();
         return this;
       }
@@ -4901,27 +4901,27 @@ public final class Ray {
   static {
     java.lang.String[] descriptorData = {
       "\n\032flyteidl/plugins/ray.proto\022\rflyteidl.c" +
-      "ore\032\037google/protobuf/timestamp.proto\"\216\001\n" +
-      "\006RayJob\022-\n\nrayCluster\030\001 \001(\0132\031.flyteidl.c" +
-      "ore.RayCluster\022\022\n\nRuntimeEnv\030\002 \001(\t\022 \n\030Sh" +
-      "utdownAfterJobFinishes\030\003 \001(\010\022\037\n\027TTLSecon" +
-      "dsAfterFinished\030\004 \001(\005\">\n\nRayCluster\0220\n\014c" +
-      "luster_spec\030\001 \001(\0132\032.flyteidl.core.Cluste" +
-      "rSpec\"\177\n\013ClusterSpec\0225\n\017head_group_spec\030" +
-      "\001 \001(\0132\034.flyteidl.core.HeadGroupSpec\0229\n\021w" +
-      "orker_group_spec\030\002 \003(\0132\036.flyteidl.core.W" +
-      "orkerGroupSpec\"\222\001\n\rHeadGroupSpec\022J\n\020ray_" +
-      "start_params\030\001 \003(\01320.flyteidl.core.HeadG" +
-      "roupSpec.RayStartParamsEntry\0325\n\023RayStart" +
-      "ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"\350\001\n\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 " +
-      "\001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min_replicas\030\003 " +
-      "\001(\005\022\024\n\014max_replicas\030\004 \001(\005\022L\n\020ray_start_p" +
-      "arams\030\005 \003(\01322.flyteidl.core.WorkerGroupS" +
-      "pec.RayStartParamsEntry\0325\n\023RayStartParam" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6" +
-      "Z4github.com/flyteorg/flyteidl/gen/pb-go" +
-      "/flyteidl/coreb\006proto3"
+      "ore\032\037google/protobuf/timestamp.proto\"\226\001\n" +
+      "\006RayJob\022.\n\013ray_cluster\030\001 \001(\0132\031.flyteidl." +
+      "core.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\022#\n\033" +
+      "shutdown_after_job_finishes\030\003 \001(\010\022\"\n\032ttl" +
+      "_seconds_after_finished\030\004 \001(\005\">\n\nRayClus" +
+      "ter\0220\n\014cluster_spec\030\001 \001(\0132\032.flyteidl.cor" +
+      "e.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017head_gro" +
+      "up_spec\030\001 \001(\0132\034.flyteidl.core.HeadGroupS" +
+      "pec\0229\n\021worker_group_spec\030\002 \003(\0132\036.flyteid" +
+      "l.core.WorkerGroupSpec\"\222\001\n\rHeadGroupSpec" +
+      "\022J\n\020ray_start_params\030\001 \003(\01320.flyteidl.co" +
+      "re.HeadGroupSpec.RayStartParamsEntry\0325\n\023" +
+      "RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\"\350\001\n\017WorkerGroupSpec\022\022\n\ngroup" +
+      "_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min_rep" +
+      "licas\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022L\n\020ray" +
+      "_start_params\030\005 \003(\01322.flyteidl.core.Work" +
+      "erGroupSpec.RayStartParamsEntry\0325\n\023RaySt" +
+      "artParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001B6Z4github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4941,7 +4941,7 @@ public final class Ray {
     internal_static_flyteidl_core_RayJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RayJob_descriptor,
-        new java.lang.String[] { "RayCluster", "RuntimeEnv", "ShutdownAfterJobFinishes", "TTLSecondsAfterFinished", });
+        new java.lang.String[] { "RayCluster", "RuntimeEnv", "ShutdownAfterJobFinishes", "TtlSecondsAfterFinished", });
     internal_static_flyteidl_core_RayCluster_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_core_RayCluster_fieldAccessorTable = new

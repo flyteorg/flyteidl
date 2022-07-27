@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1a\x66lyteidl/plugins/ray.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8e\x01\n\x06RayJob\x12-\n\nrayCluster\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayCluster\x12\x12\n\nRuntimeEnv\x18\x02 \x01(\t\x12 \n\x18ShutdownAfterJobFinishes\x18\x03 \x01(\x08\x12\x1f\n\x17TTLSecondsAfterFinished\x18\x04 \x01(\x05\">\n\nRayCluster\x12\x30\n\x0c\x63luster_spec\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_spec\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\x92\x01\n\rHeadGroupSpec\x12J\n\x10ray_start_params\x18\x01 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe8\x01\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x10\n\x08replicas\x18\x02 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x03 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x04 \x01(\x05\x12L\n\x10ray_start_params\x18\x05 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1a\x66lyteidl/plugins/ray.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"\x96\x01\n\x06RayJob\x12.\n\x0bray_cluster\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayCluster\x12\x13\n\x0bruntime_env\x18\x02 \x01(\t\x12#\n\x1bshutdown_after_job_finishes\x18\x03 \x01(\x08\x12\"\n\x1attl_seconds_after_finished\x18\x04 \x01(\x05\">\n\nRayCluster\x12\x30\n\x0c\x63luster_spec\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_spec\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\x92\x01\n\rHeadGroupSpec\x12J\n\x10ray_start_params\x18\x01 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe8\x01\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x10\n\x08replicas\x18\x02 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x03 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x04 \x01(\x05\x12L\n\x10ray_start_params\x18\x05 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -36,28 +36,28 @@ _RAYJOB = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rayCluster', full_name='flyteidl.core.RayJob.rayCluster', index=0,
+      name='ray_cluster', full_name='flyteidl.core.RayJob.ray_cluster', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='RuntimeEnv', full_name='flyteidl.core.RayJob.RuntimeEnv', index=1,
+      name='runtime_env', full_name='flyteidl.core.RayJob.runtime_env', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ShutdownAfterJobFinishes', full_name='flyteidl.core.RayJob.ShutdownAfterJobFinishes', index=2,
+      name='shutdown_after_job_finishes', full_name='flyteidl.core.RayJob.shutdown_after_job_finishes', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TTLSecondsAfterFinished', full_name='flyteidl.core.RayJob.TTLSecondsAfterFinished', index=3,
+      name='ttl_seconds_after_finished', full_name='flyteidl.core.RayJob.ttl_seconds_after_finished', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -76,7 +76,7 @@ _RAYJOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=79,
-  serialized_end=221,
+  serialized_end=229,
 )
 
 
@@ -106,8 +106,8 @@ _RAYCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=223,
-  serialized_end=285,
+  serialized_start=231,
+  serialized_end=293,
 )
 
 
@@ -144,8 +144,8 @@ _CLUSTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=287,
-  serialized_end=414,
+  serialized_start=295,
+  serialized_end=422,
 )
 
 
@@ -182,8 +182,8 @@ _HEADGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=510,
-  serialized_end=563,
+  serialized_start=518,
+  serialized_end=571,
 )
 
 _HEADGROUPSPEC = _descriptor.Descriptor(
@@ -212,8 +212,8 @@ _HEADGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=417,
-  serialized_end=563,
+  serialized_start=425,
+  serialized_end=571,
 )
 
 
@@ -250,8 +250,8 @@ _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=510,
-  serialized_end=563,
+  serialized_start=518,
+  serialized_end=571,
 )
 
 _WORKERGROUPSPEC = _descriptor.Descriptor(
@@ -308,11 +308,11 @@ _WORKERGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=566,
-  serialized_end=798,
+  serialized_start=574,
+  serialized_end=806,
 )
 
-_RAYJOB.fields_by_name['rayCluster'].message_type = _RAYCLUSTER
+_RAYJOB.fields_by_name['ray_cluster'].message_type = _RAYCLUSTER
 _RAYCLUSTER.fields_by_name['cluster_spec'].message_type = _CLUSTERSPEC
 _CLUSTERSPEC.fields_by_name['head_group_spec'].message_type = _HEADGROUPSPEC
 _CLUSTERSPEC.fields_by_name['worker_group_spec'].message_type = _WORKERGROUPSPEC

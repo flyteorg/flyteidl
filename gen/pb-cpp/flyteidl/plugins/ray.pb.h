@@ -188,50 +188,50 @@ class RayJob final :
 
   // accessors -------------------------------------------------------
 
-  // string RuntimeEnv = 2;
-  void clear_runtimeenv();
+  // string runtime_env = 2;
+  void clear_runtime_env();
   static const int kRuntimeEnvFieldNumber = 2;
-  const ::std::string& runtimeenv() const;
-  void set_runtimeenv(const ::std::string& value);
+  const ::std::string& runtime_env() const;
+  void set_runtime_env(const ::std::string& value);
   #if LANG_CXX11
-  void set_runtimeenv(::std::string&& value);
+  void set_runtime_env(::std::string&& value);
   #endif
-  void set_runtimeenv(const char* value);
-  void set_runtimeenv(const char* value, size_t size);
-  ::std::string* mutable_runtimeenv();
-  ::std::string* release_runtimeenv();
-  void set_allocated_runtimeenv(::std::string* runtimeenv);
+  void set_runtime_env(const char* value);
+  void set_runtime_env(const char* value, size_t size);
+  ::std::string* mutable_runtime_env();
+  ::std::string* release_runtime_env();
+  void set_allocated_runtime_env(::std::string* runtime_env);
 
-  // .flyteidl.core.RayCluster rayCluster = 1;
-  bool has_raycluster() const;
-  void clear_raycluster();
+  // .flyteidl.core.RayCluster ray_cluster = 1;
+  bool has_ray_cluster() const;
+  void clear_ray_cluster();
   static const int kRayClusterFieldNumber = 1;
-  const ::flyteidl::core::RayCluster& raycluster() const;
-  ::flyteidl::core::RayCluster* release_raycluster();
-  ::flyteidl::core::RayCluster* mutable_raycluster();
-  void set_allocated_raycluster(::flyteidl::core::RayCluster* raycluster);
+  const ::flyteidl::core::RayCluster& ray_cluster() const;
+  ::flyteidl::core::RayCluster* release_ray_cluster();
+  ::flyteidl::core::RayCluster* mutable_ray_cluster();
+  void set_allocated_ray_cluster(::flyteidl::core::RayCluster* ray_cluster);
 
-  // bool ShutdownAfterJobFinishes = 3;
-  void clear_shutdownafterjobfinishes();
+  // bool shutdown_after_job_finishes = 3;
+  void clear_shutdown_after_job_finishes();
   static const int kShutdownAfterJobFinishesFieldNumber = 3;
-  bool shutdownafterjobfinishes() const;
-  void set_shutdownafterjobfinishes(bool value);
+  bool shutdown_after_job_finishes() const;
+  void set_shutdown_after_job_finishes(bool value);
 
-  // int32 TTLSecondsAfterFinished = 4;
-  void clear_ttlsecondsafterfinished();
-  static const int kTTLSecondsAfterFinishedFieldNumber = 4;
-  ::google::protobuf::int32 ttlsecondsafterfinished() const;
-  void set_ttlsecondsafterfinished(::google::protobuf::int32 value);
+  // int32 ttl_seconds_after_finished = 4;
+  void clear_ttl_seconds_after_finished();
+  static const int kTtlSecondsAfterFinishedFieldNumber = 4;
+  ::google::protobuf::int32 ttl_seconds_after_finished() const;
+  void set_ttl_seconds_after_finished(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.core.RayJob)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr runtimeenv_;
-  ::flyteidl::core::RayCluster* raycluster_;
-  bool shutdownafterjobfinishes_;
-  ::google::protobuf::int32 ttlsecondsafterfinished_;
+  ::google::protobuf::internal::ArenaStringPtr runtime_env_;
+  ::flyteidl::core::RayCluster* ray_cluster_;
+  bool shutdown_after_job_finishes_;
+  ::google::protobuf::int32 ttl_seconds_after_finished_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fray_2eproto;
 };
@@ -815,136 +815,136 @@ class WorkerGroupSpec final :
 #endif  // __GNUC__
 // RayJob
 
-// .flyteidl.core.RayCluster rayCluster = 1;
-inline bool RayJob::has_raycluster() const {
-  return this != internal_default_instance() && raycluster_ != nullptr;
+// .flyteidl.core.RayCluster ray_cluster = 1;
+inline bool RayJob::has_ray_cluster() const {
+  return this != internal_default_instance() && ray_cluster_ != nullptr;
 }
-inline void RayJob::clear_raycluster() {
-  if (GetArenaNoVirtual() == nullptr && raycluster_ != nullptr) {
-    delete raycluster_;
+inline void RayJob::clear_ray_cluster() {
+  if (GetArenaNoVirtual() == nullptr && ray_cluster_ != nullptr) {
+    delete ray_cluster_;
   }
-  raycluster_ = nullptr;
+  ray_cluster_ = nullptr;
 }
-inline const ::flyteidl::core::RayCluster& RayJob::raycluster() const {
-  const ::flyteidl::core::RayCluster* p = raycluster_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.rayCluster)
+inline const ::flyteidl::core::RayCluster& RayJob::ray_cluster() const {
+  const ::flyteidl::core::RayCluster* p = ray_cluster_;
+  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.ray_cluster)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::RayCluster*>(
       &::flyteidl::core::_RayCluster_default_instance_);
 }
-inline ::flyteidl::core::RayCluster* RayJob::release_raycluster() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.RayJob.rayCluster)
+inline ::flyteidl::core::RayCluster* RayJob::release_ray_cluster() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.RayJob.ray_cluster)
   
-  ::flyteidl::core::RayCluster* temp = raycluster_;
-  raycluster_ = nullptr;
+  ::flyteidl::core::RayCluster* temp = ray_cluster_;
+  ray_cluster_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::RayCluster* RayJob::mutable_raycluster() {
+inline ::flyteidl::core::RayCluster* RayJob::mutable_ray_cluster() {
   
-  if (raycluster_ == nullptr) {
+  if (ray_cluster_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::RayCluster>(GetArenaNoVirtual());
-    raycluster_ = p;
+    ray_cluster_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.RayJob.rayCluster)
-  return raycluster_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.RayJob.ray_cluster)
+  return ray_cluster_;
 }
-inline void RayJob::set_allocated_raycluster(::flyteidl::core::RayCluster* raycluster) {
+inline void RayJob::set_allocated_ray_cluster(::flyteidl::core::RayCluster* ray_cluster) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete raycluster_;
+    delete ray_cluster_;
   }
-  if (raycluster) {
+  if (ray_cluster) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      raycluster = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, raycluster, submessage_arena);
+      ray_cluster = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, ray_cluster, submessage_arena);
     }
     
   } else {
     
   }
-  raycluster_ = raycluster;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.RayJob.rayCluster)
+  ray_cluster_ = ray_cluster;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.RayJob.ray_cluster)
 }
 
-// string RuntimeEnv = 2;
-inline void RayJob::clear_runtimeenv() {
-  runtimeenv_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string runtime_env = 2;
+inline void RayJob::clear_runtime_env() {
+  runtime_env_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& RayJob::runtimeenv() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.RuntimeEnv)
-  return runtimeenv_.GetNoArena();
+inline const ::std::string& RayJob::runtime_env() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.runtime_env)
+  return runtime_env_.GetNoArena();
 }
-inline void RayJob::set_runtimeenv(const ::std::string& value) {
+inline void RayJob::set_runtime_env(const ::std::string& value) {
   
-  runtimeenv_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.RuntimeEnv)
+  runtime_env_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.runtime_env)
 }
 #if LANG_CXX11
-inline void RayJob::set_runtimeenv(::std::string&& value) {
+inline void RayJob::set_runtime_env(::std::string&& value) {
   
-  runtimeenv_.SetNoArena(
+  runtime_env_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.RayJob.RuntimeEnv)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.RayJob.runtime_env)
 }
 #endif
-inline void RayJob::set_runtimeenv(const char* value) {
+inline void RayJob::set_runtime_env(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  runtimeenv_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.core.RayJob.RuntimeEnv)
+  runtime_env_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.RayJob.runtime_env)
 }
-inline void RayJob::set_runtimeenv(const char* value, size_t size) {
+inline void RayJob::set_runtime_env(const char* value, size_t size) {
   
-  runtimeenv_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  runtime_env_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.RayJob.RuntimeEnv)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.RayJob.runtime_env)
 }
-inline ::std::string* RayJob::mutable_runtimeenv() {
+inline ::std::string* RayJob::mutable_runtime_env() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.RayJob.RuntimeEnv)
-  return runtimeenv_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.RayJob.runtime_env)
+  return runtime_env_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* RayJob::release_runtimeenv() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.RayJob.RuntimeEnv)
+inline ::std::string* RayJob::release_runtime_env() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.RayJob.runtime_env)
   
-  return runtimeenv_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return runtime_env_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void RayJob::set_allocated_runtimeenv(::std::string* runtimeenv) {
-  if (runtimeenv != nullptr) {
+inline void RayJob::set_allocated_runtime_env(::std::string* runtime_env) {
+  if (runtime_env != nullptr) {
     
   } else {
     
   }
-  runtimeenv_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), runtimeenv);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.RayJob.RuntimeEnv)
+  runtime_env_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), runtime_env);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.RayJob.runtime_env)
 }
 
-// bool ShutdownAfterJobFinishes = 3;
-inline void RayJob::clear_shutdownafterjobfinishes() {
-  shutdownafterjobfinishes_ = false;
+// bool shutdown_after_job_finishes = 3;
+inline void RayJob::clear_shutdown_after_job_finishes() {
+  shutdown_after_job_finishes_ = false;
 }
-inline bool RayJob::shutdownafterjobfinishes() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.ShutdownAfterJobFinishes)
-  return shutdownafterjobfinishes_;
+inline bool RayJob::shutdown_after_job_finishes() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.shutdown_after_job_finishes)
+  return shutdown_after_job_finishes_;
 }
-inline void RayJob::set_shutdownafterjobfinishes(bool value) {
+inline void RayJob::set_shutdown_after_job_finishes(bool value) {
   
-  shutdownafterjobfinishes_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.ShutdownAfterJobFinishes)
+  shutdown_after_job_finishes_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.shutdown_after_job_finishes)
 }
 
-// int32 TTLSecondsAfterFinished = 4;
-inline void RayJob::clear_ttlsecondsafterfinished() {
-  ttlsecondsafterfinished_ = 0;
+// int32 ttl_seconds_after_finished = 4;
+inline void RayJob::clear_ttl_seconds_after_finished() {
+  ttl_seconds_after_finished_ = 0;
 }
-inline ::google::protobuf::int32 RayJob::ttlsecondsafterfinished() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.TTLSecondsAfterFinished)
-  return ttlsecondsafterfinished_;
+inline ::google::protobuf::int32 RayJob::ttl_seconds_after_finished() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.RayJob.ttl_seconds_after_finished)
+  return ttl_seconds_after_finished_;
 }
-inline void RayJob::set_ttlsecondsafterfinished(::google::protobuf::int32 value) {
+inline void RayJob::set_ttl_seconds_after_finished(::google::protobuf::int32 value) {
   
-  ttlsecondsafterfinished_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.TTLSecondsAfterFinished)
+  ttl_seconds_after_finished_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.core.RayJob.ttl_seconds_after_finished)
 }
 
 // -------------------------------------------------------------------

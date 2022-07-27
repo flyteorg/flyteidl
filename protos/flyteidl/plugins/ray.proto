@@ -9,15 +9,15 @@ import "google/protobuf/timestamp.proto";
 // RayJobSpec defines the desired state of RayJob
 message RayJob {
   // RayClusterSpec is the cluster template to run the job
-  RayCluster rayCluster = 1;
-  // RuntimeEnv is base64 encoded.
+  RayCluster ray_cluster = 1;
+  // runtime_env is base64 encoded.
   // Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
-  string RuntimeEnv = 2;
-  // ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
-  bool ShutdownAfterJobFinishes = 3;
-  // TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+  string runtime_env = 2;
+  // shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+  bool shutdown_after_job_finishes = 3;
+  // ttl_seconds_after_finished is the TTL to clean up RayCluster.
   // It's only working when ShutdownAfterJobFinishes set to true.
-  int32 TTLSecondsAfterFinished = 4;
+  int32 ttl_seconds_after_finished = 4;
 }
 
 // Define Ray cluster spec

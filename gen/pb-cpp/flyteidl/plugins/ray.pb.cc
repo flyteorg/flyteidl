@@ -176,10 +176,10 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, raycluster_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, runtimeenv_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, shutdownafterjobfinishes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, ttlsecondsafterfinished_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, ray_cluster_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, runtime_env_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, shutdown_after_job_finishes_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayJob, ttl_seconds_after_finished_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::RayCluster, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -256,32 +256,32 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto[] =
   "\n\032flyteidl/plugins/ray.proto\022\rflyteidl.c"
-  "ore\032\037google/protobuf/timestamp.proto\"\216\001\n"
-  "\006RayJob\022-\n\nrayCluster\030\001 \001(\0132\031.flyteidl.c"
-  "ore.RayCluster\022\022\n\nRuntimeEnv\030\002 \001(\t\022 \n\030Sh"
-  "utdownAfterJobFinishes\030\003 \001(\010\022\037\n\027TTLSecon"
-  "dsAfterFinished\030\004 \001(\005\">\n\nRayCluster\0220\n\014c"
-  "luster_spec\030\001 \001(\0132\032.flyteidl.core.Cluste"
-  "rSpec\"\177\n\013ClusterSpec\0225\n\017head_group_spec\030"
-  "\001 \001(\0132\034.flyteidl.core.HeadGroupSpec\0229\n\021w"
-  "orker_group_spec\030\002 \003(\0132\036.flyteidl.core.W"
-  "orkerGroupSpec\"\222\001\n\rHeadGroupSpec\022J\n\020ray_"
-  "start_params\030\001 \003(\01320.flyteidl.core.HeadG"
-  "roupSpec.RayStartParamsEntry\0325\n\023RayStart"
-  "ParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-  "\0028\001\"\350\001\n\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 "
-  "\001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min_replicas\030\003 "
-  "\001(\005\022\024\n\014max_replicas\030\004 \001(\005\022L\n\020ray_start_p"
-  "arams\030\005 \003(\01322.flyteidl.core.WorkerGroupS"
-  "pec.RayStartParamsEntry\0325\n\023RayStartParam"
-  "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6"
-  "Z4github.com/flyteorg/flyteidl/gen/pb-go"
-  "/flyteidl/coreb\006proto3"
+  "ore\032\037google/protobuf/timestamp.proto\"\226\001\n"
+  "\006RayJob\022.\n\013ray_cluster\030\001 \001(\0132\031.flyteidl."
+  "core.RayCluster\022\023\n\013runtime_env\030\002 \001(\t\022#\n\033"
+  "shutdown_after_job_finishes\030\003 \001(\010\022\"\n\032ttl"
+  "_seconds_after_finished\030\004 \001(\005\">\n\nRayClus"
+  "ter\0220\n\014cluster_spec\030\001 \001(\0132\032.flyteidl.cor"
+  "e.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017head_gro"
+  "up_spec\030\001 \001(\0132\034.flyteidl.core.HeadGroupS"
+  "pec\0229\n\021worker_group_spec\030\002 \003(\0132\036.flyteid"
+  "l.core.WorkerGroupSpec\"\222\001\n\rHeadGroupSpec"
+  "\022J\n\020ray_start_params\030\001 \003(\01320.flyteidl.co"
+  "re.HeadGroupSpec.RayStartParamsEntry\0325\n\023"
+  "RayStartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+  "e\030\002 \001(\t:\0028\001\"\350\001\n\017WorkerGroupSpec\022\022\n\ngroup"
+  "_name\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min_rep"
+  "licas\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022L\n\020ray"
+  "_start_params\030\005 \003(\01322.flyteidl.core.Work"
+  "erGroupSpec.RayStartParamsEntry\0325\n\023RaySt"
+  "artParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+  "(\t:\0028\001B6Z4github.com/flyteorg/flyteidl/g"
+  "en/pb-go/flyteidl/coreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fray_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fray_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto,
-  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 862,
+  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 870,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fray_2eproto() {
@@ -300,23 +300,23 @@ namespace core {
 // ===================================================================
 
 void RayJob::InitAsDefaultInstance() {
-  ::flyteidl::core::_RayJob_default_instance_._instance.get_mutable()->raycluster_ = const_cast< ::flyteidl::core::RayCluster*>(
+  ::flyteidl::core::_RayJob_default_instance_._instance.get_mutable()->ray_cluster_ = const_cast< ::flyteidl::core::RayCluster*>(
       ::flyteidl::core::RayCluster::internal_default_instance());
 }
 class RayJob::HasBitSetters {
  public:
-  static const ::flyteidl::core::RayCluster& raycluster(const RayJob* msg);
+  static const ::flyteidl::core::RayCluster& ray_cluster(const RayJob* msg);
 };
 
 const ::flyteidl::core::RayCluster&
-RayJob::HasBitSetters::raycluster(const RayJob* msg) {
-  return *msg->raycluster_;
+RayJob::HasBitSetters::ray_cluster(const RayJob* msg) {
+  return *msg->ray_cluster_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RayJob::kRayClusterFieldNumber;
 const int RayJob::kRuntimeEnvFieldNumber;
 const int RayJob::kShutdownAfterJobFinishesFieldNumber;
-const int RayJob::kTTLSecondsAfterFinishedFieldNumber;
+const int RayJob::kTtlSecondsAfterFinishedFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RayJob::RayJob()
@@ -328,28 +328,28 @@ RayJob::RayJob(const RayJob& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  runtimeenv_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.runtimeenv().size() > 0) {
-    runtimeenv_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.runtimeenv_);
+  runtime_env_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.runtime_env().size() > 0) {
+    runtime_env_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.runtime_env_);
   }
-  if (from.has_raycluster()) {
-    raycluster_ = new ::flyteidl::core::RayCluster(*from.raycluster_);
+  if (from.has_ray_cluster()) {
+    ray_cluster_ = new ::flyteidl::core::RayCluster(*from.ray_cluster_);
   } else {
-    raycluster_ = nullptr;
+    ray_cluster_ = nullptr;
   }
-  ::memcpy(&shutdownafterjobfinishes_, &from.shutdownafterjobfinishes_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ttlsecondsafterfinished_) -
-    reinterpret_cast<char*>(&shutdownafterjobfinishes_)) + sizeof(ttlsecondsafterfinished_));
+  ::memcpy(&shutdown_after_job_finishes_, &from.shutdown_after_job_finishes_,
+    static_cast<size_t>(reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
+    reinterpret_cast<char*>(&shutdown_after_job_finishes_)) + sizeof(ttl_seconds_after_finished_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.core.RayJob)
 }
 
 void RayJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_RayJob_flyteidl_2fplugins_2fray_2eproto.base);
-  runtimeenv_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&raycluster_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ttlsecondsafterfinished_) -
-      reinterpret_cast<char*>(&raycluster_)) + sizeof(ttlsecondsafterfinished_));
+  runtime_env_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&ray_cluster_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
+      reinterpret_cast<char*>(&ray_cluster_)) + sizeof(ttl_seconds_after_finished_));
 }
 
 RayJob::~RayJob() {
@@ -358,8 +358,8 @@ RayJob::~RayJob() {
 }
 
 void RayJob::SharedDtor() {
-  runtimeenv_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete raycluster_;
+  runtime_env_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete ray_cluster_;
 }
 
 void RayJob::SetCachedSize(int size) const {
@@ -377,14 +377,14 @@ void RayJob::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  runtimeenv_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && raycluster_ != nullptr) {
-    delete raycluster_;
+  runtime_env_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && ray_cluster_ != nullptr) {
+    delete ray_cluster_;
   }
-  raycluster_ = nullptr;
-  ::memset(&shutdownafterjobfinishes_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ttlsecondsafterfinished_) -
-      reinterpret_cast<char*>(&shutdownafterjobfinishes_)) + sizeof(ttlsecondsafterfinished_));
+  ray_cluster_ = nullptr;
+  ::memset(&shutdown_after_job_finishes_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
+      reinterpret_cast<char*>(&shutdown_after_job_finishes_)) + sizeof(ttl_seconds_after_finished_));
   _internal_metadata_.Clear();
 }
 
@@ -401,26 +401,26 @@ const char* RayJob::_InternalParse(const char* begin, const char* end, void* obj
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.core.RayCluster rayCluster = 1;
+      // .flyteidl.core.RayCluster ray_cluster = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::RayCluster::_InternalParse;
-        object = msg->mutable_raycluster();
+        object = msg->mutable_ray_cluster();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // string RuntimeEnv = 2;
+      // string runtime_env = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayJob.RuntimeEnv");
-        object = msg->mutable_runtimeenv();
+        ctx->extra_parse_data().SetFieldName("flyteidl.core.RayJob.runtime_env");
+        object = msg->mutable_runtime_env();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -430,17 +430,17 @@ const char* RayJob::_InternalParse(const char* begin, const char* end, void* obj
         ptr += size;
         break;
       }
-      // bool ShutdownAfterJobFinishes = 3;
+      // bool shutdown_after_job_finishes = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_shutdownafterjobfinishes(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_shutdown_after_job_finishes(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int32 TTLSecondsAfterFinished = 4;
+      // int32 ttl_seconds_after_finished = 4;
       case 4: {
         if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
-        msg->set_ttlsecondsafterfinished(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_ttl_seconds_after_finished(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -478,52 +478,52 @@ bool RayJob::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.core.RayCluster rayCluster = 1;
+      // .flyteidl.core.RayCluster ray_cluster = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_raycluster()));
+               input, mutable_ray_cluster()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string RuntimeEnv = 2;
+      // string runtime_env = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_runtimeenv()));
+                input, this->mutable_runtime_env()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->runtimeenv().data(), static_cast<int>(this->runtimeenv().length()),
+            this->runtime_env().data(), static_cast<int>(this->runtime_env().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.core.RayJob.RuntimeEnv"));
+            "flyteidl.core.RayJob.runtime_env"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // bool ShutdownAfterJobFinishes = 3;
+      // bool shutdown_after_job_finishes = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &shutdownafterjobfinishes_)));
+                 input, &shutdown_after_job_finishes_)));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // int32 TTLSecondsAfterFinished = 4;
+      // int32 ttl_seconds_after_finished = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &ttlsecondsafterfinished_)));
+                 input, &ttl_seconds_after_finished_)));
         } else {
           goto handle_unusual;
         }
@@ -557,30 +557,30 @@ void RayJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.RayCluster rayCluster = 1;
-  if (this->has_raycluster()) {
+  // .flyteidl.core.RayCluster ray_cluster = 1;
+  if (this->has_ray_cluster()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::raycluster(this), output);
+      1, HasBitSetters::ray_cluster(this), output);
   }
 
-  // string RuntimeEnv = 2;
-  if (this->runtimeenv().size() > 0) {
+  // string runtime_env = 2;
+  if (this->runtime_env().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->runtimeenv().data(), static_cast<int>(this->runtimeenv().length()),
+      this->runtime_env().data(), static_cast<int>(this->runtime_env().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayJob.RuntimeEnv");
+      "flyteidl.core.RayJob.runtime_env");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->runtimeenv(), output);
+      2, this->runtime_env(), output);
   }
 
-  // bool ShutdownAfterJobFinishes = 3;
-  if (this->shutdownafterjobfinishes() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->shutdownafterjobfinishes(), output);
+  // bool shutdown_after_job_finishes = 3;
+  if (this->shutdown_after_job_finishes() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->shutdown_after_job_finishes(), output);
   }
 
-  // int32 TTLSecondsAfterFinished = 4;
-  if (this->ttlsecondsafterfinished() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->ttlsecondsafterfinished(), output);
+  // int32 ttl_seconds_after_finished = 4;
+  if (this->ttl_seconds_after_finished() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->ttl_seconds_after_finished(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -596,32 +596,32 @@ void RayJob::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.core.RayCluster rayCluster = 1;
-  if (this->has_raycluster()) {
+  // .flyteidl.core.RayCluster ray_cluster = 1;
+  if (this->has_ray_cluster()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::raycluster(this), target);
+        1, HasBitSetters::ray_cluster(this), target);
   }
 
-  // string RuntimeEnv = 2;
-  if (this->runtimeenv().size() > 0) {
+  // string runtime_env = 2;
+  if (this->runtime_env().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->runtimeenv().data(), static_cast<int>(this->runtimeenv().length()),
+      this->runtime_env().data(), static_cast<int>(this->runtime_env().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.core.RayJob.RuntimeEnv");
+      "flyteidl.core.RayJob.runtime_env");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->runtimeenv(), target);
+        2, this->runtime_env(), target);
   }
 
-  // bool ShutdownAfterJobFinishes = 3;
-  if (this->shutdownafterjobfinishes() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->shutdownafterjobfinishes(), target);
+  // bool shutdown_after_job_finishes = 3;
+  if (this->shutdown_after_job_finishes() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->shutdown_after_job_finishes(), target);
   }
 
-  // int32 TTLSecondsAfterFinished = 4;
-  if (this->ttlsecondsafterfinished() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->ttlsecondsafterfinished(), target);
+  // int32 ttl_seconds_after_finished = 4;
+  if (this->ttl_seconds_after_finished() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->ttl_seconds_after_finished(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -645,30 +645,30 @@ size_t RayJob::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string RuntimeEnv = 2;
-  if (this->runtimeenv().size() > 0) {
+  // string runtime_env = 2;
+  if (this->runtime_env().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->runtimeenv());
+        this->runtime_env());
   }
 
-  // .flyteidl.core.RayCluster rayCluster = 1;
-  if (this->has_raycluster()) {
+  // .flyteidl.core.RayCluster ray_cluster = 1;
+  if (this->has_ray_cluster()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *raycluster_);
+        *ray_cluster_);
   }
 
-  // bool ShutdownAfterJobFinishes = 3;
-  if (this->shutdownafterjobfinishes() != 0) {
+  // bool shutdown_after_job_finishes = 3;
+  if (this->shutdown_after_job_finishes() != 0) {
     total_size += 1 + 1;
   }
 
-  // int32 TTLSecondsAfterFinished = 4;
-  if (this->ttlsecondsafterfinished() != 0) {
+  // int32 ttl_seconds_after_finished = 4;
+  if (this->ttl_seconds_after_finished() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->ttlsecondsafterfinished());
+        this->ttl_seconds_after_finished());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -698,18 +698,18 @@ void RayJob::MergeFrom(const RayJob& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.runtimeenv().size() > 0) {
+  if (from.runtime_env().size() > 0) {
 
-    runtimeenv_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.runtimeenv_);
+    runtime_env_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.runtime_env_);
   }
-  if (from.has_raycluster()) {
-    mutable_raycluster()->::flyteidl::core::RayCluster::MergeFrom(from.raycluster());
+  if (from.has_ray_cluster()) {
+    mutable_ray_cluster()->::flyteidl::core::RayCluster::MergeFrom(from.ray_cluster());
   }
-  if (from.shutdownafterjobfinishes() != 0) {
-    set_shutdownafterjobfinishes(from.shutdownafterjobfinishes());
+  if (from.shutdown_after_job_finishes() != 0) {
+    set_shutdown_after_job_finishes(from.shutdown_after_job_finishes());
   }
-  if (from.ttlsecondsafterfinished() != 0) {
-    set_ttlsecondsafterfinished(from.ttlsecondsafterfinished());
+  if (from.ttl_seconds_after_finished() != 0) {
+    set_ttl_seconds_after_finished(from.ttl_seconds_after_finished());
   }
 }
 
@@ -738,11 +738,11 @@ void RayJob::Swap(RayJob* other) {
 void RayJob::InternalSwap(RayJob* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  runtimeenv_.Swap(&other->runtimeenv_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  runtime_env_.Swap(&other->runtime_env_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(raycluster_, other->raycluster_);
-  swap(shutdownafterjobfinishes_, other->shutdownafterjobfinishes_);
-  swap(ttlsecondsafterfinished_, other->ttlsecondsafterfinished_);
+  swap(ray_cluster_, other->ray_cluster_);
+  swap(shutdown_after_job_finishes_, other->shutdown_after_job_finishes_);
+  swap(ttl_seconds_after_finished_, other->ttl_seconds_after_finished_);
 }
 
 ::google::protobuf::Metadata RayJob::GetMetadata() const {
