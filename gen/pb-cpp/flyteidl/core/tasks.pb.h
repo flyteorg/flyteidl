@@ -38,7 +38,6 @@
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/interface.pb.h"
 #include "flyteidl/core/literals.pb.h"
-#include "flyteidl/core/resource.pb.h"
 #include "flyteidl/core/security.pb.h"
 #include <google/protobuf/duration.pb.h>
 #include <google/protobuf/struct.pb.h>
@@ -1153,15 +1152,6 @@ class TaskTemplate final :
   ::flyteidl::core::SecurityContext* mutable_security_context();
   void set_allocated_security_context(::flyteidl::core::SecurityContext* security_context);
 
-  // .flyteidl.core.Resource resources = 20;
-  bool has_resources() const;
-  void clear_resources();
-  static const int kResourcesFieldNumber = 20;
-  const ::flyteidl::core::Resource& resources() const;
-  ::flyteidl::core::Resource* release_resources();
-  ::flyteidl::core::Resource* mutable_resources();
-  void set_allocated_resources(::flyteidl::core::Resource* resources);
-
   // int32 task_type_version = 7;
   void clear_task_type_version();
   static const int kTaskTypeVersionFieldNumber = 7;
@@ -1220,7 +1210,6 @@ class TaskTemplate final :
   ::flyteidl::core::TypedInterface* interface_;
   ::google::protobuf::Struct* custom_;
   ::flyteidl::core::SecurityContext* security_context_;
-  ::flyteidl::core::Resource* resources_;
   ::google::protobuf::int32 task_type_version_;
   union TargetUnion {
     TargetUnion() {}
@@ -3465,51 +3454,6 @@ inline ::google::protobuf::Map< ::std::string, ::std::string >*
 TaskTemplate::mutable_config() {
   // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskTemplate.config)
   return config_.MutableMap();
-}
-
-// .flyteidl.core.Resource resources = 20;
-inline bool TaskTemplate::has_resources() const {
-  return this != internal_default_instance() && resources_ != nullptr;
-}
-inline const ::flyteidl::core::Resource& TaskTemplate::resources() const {
-  const ::flyteidl::core::Resource* p = resources_;
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.resources)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resource*>(
-      &::flyteidl::core::_Resource_default_instance_);
-}
-inline ::flyteidl::core::Resource* TaskTemplate::release_resources() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.resources)
-  
-  ::flyteidl::core::Resource* temp = resources_;
-  resources_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::Resource* TaskTemplate::mutable_resources() {
-  
-  if (resources_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Resource>(GetArenaNoVirtual());
-    resources_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.resources)
-  return resources_;
-}
-inline void TaskTemplate::set_allocated_resources(::flyteidl::core::Resource* resources) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
-  }
-  if (resources) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      resources = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, resources, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  resources_ = resources;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.resources)
 }
 
 inline bool TaskTemplate::has_target() const {

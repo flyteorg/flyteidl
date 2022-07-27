@@ -20,7 +20,6 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::p
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2finterface_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_KeyValuePair_flyteidl_2fcore_2fliterals_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RetryStrategy_flyteidl_2fcore_2fliterals_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fresource_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resource_flyteidl_2fcore_2fresource_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fsecurity_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ContainerPort_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_IOStrategy_flyteidl_2fcore_2ftasks_2eproto;
@@ -190,8 +189,8 @@ static void InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto() {
   ::flyteidl::core::TaskTemplate::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<10> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 10, InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto}, {
+::google::protobuf::internal::SCCInfo<9> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 9, InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_TaskMetadata_flyteidl_2fcore_2ftasks_2eproto.base,
       &scc_info_TypedInterface_flyteidl_2fcore_2finterface_2eproto.base,
@@ -200,8 +199,7 @@ static void InitDefaultsTaskTemplate_flyteidl_2fcore_2ftasks_2eproto() {
       &scc_info_K8sPod_flyteidl_2fcore_2ftasks_2eproto.base,
       &scc_info_Sql_flyteidl_2fcore_2ftasks_2eproto.base,
       &scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto.base,
-      &scc_info_TaskTemplate_ConfigEntry_DoNotUse_flyteidl_2fcore_2ftasks_2eproto.base,
-      &scc_info_Resource_flyteidl_2fcore_2fresource_2eproto.base,}};
+      &scc_info_TaskTemplate_ConfigEntry_DoNotUse_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 static void InitDefaultsContainerPort_flyteidl_2fcore_2ftasks_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -420,7 +418,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fcore_2ftasks_2eproto::of
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, task_type_version_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, security_context_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, config_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, resources_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::TaskTemplate, target_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::core::ContainerPort, _internal_metadata_),
@@ -506,15 +503,15 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 22, -1, sizeof(::flyteidl::core::TaskMetadata)},
   { 36, 43, sizeof(::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse)},
   { 45, -1, sizeof(::flyteidl::core::TaskTemplate)},
-  { 63, -1, sizeof(::flyteidl::core::ContainerPort)},
-  { 69, -1, sizeof(::flyteidl::core::Container)},
-  { 83, -1, sizeof(::flyteidl::core::IOStrategy)},
-  { 90, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
-  { 100, -1, sizeof(::flyteidl::core::K8sPod)},
-  { 107, 114, sizeof(::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse)},
-  { 116, 123, sizeof(::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse)},
-  { 125, -1, sizeof(::flyteidl::core::K8sObjectMetadata)},
-  { 132, -1, sizeof(::flyteidl::core::Sql)},
+  { 62, -1, sizeof(::flyteidl::core::ContainerPort)},
+  { 68, -1, sizeof(::flyteidl::core::Container)},
+  { 82, -1, sizeof(::flyteidl::core::IOStrategy)},
+  { 89, -1, sizeof(::flyteidl::core::DataLoadingConfig)},
+  { 99, -1, sizeof(::flyteidl::core::K8sPod)},
+  { 106, 113, sizeof(::flyteidl::core::K8sObjectMetadata_LabelsEntry_DoNotUse)},
+  { 115, 122, sizeof(::flyteidl::core::K8sObjectMetadata_AnnotationsEntry_DoNotUse)},
+  { 124, -1, sizeof(::flyteidl::core::K8sObjectMetadata)},
+  { 131, -1, sizeof(::flyteidl::core::Sql)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -545,102 +542,99 @@ const char descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto[] =
   "\n\031flyteidl/core/tasks.proto\022\rflyteidl.co"
   "re\032\036flyteidl/core/identifier.proto\032\035flyt"
   "eidl/core/interface.proto\032\034flyteidl/core"
-  "/literals.proto\032\034flyteidl/core/resource."
-  "proto\032\034flyteidl/core/security.proto\032\036goo"
-  "gle/protobuf/duration.proto\032\034google/prot"
-  "obuf/struct.proto\"\261\002\n\tResources\0228\n\010reque"
-  "sts\030\001 \003(\0132&.flyteidl.core.Resources.Reso"
-  "urceEntry\0226\n\006limits\030\002 \003(\0132&.flyteidl.cor"
-  "e.Resources.ResourceEntry\032S\n\rResourceEnt"
-  "ry\0223\n\004name\030\001 \001(\0162%.flyteidl.core.Resourc"
-  "es.ResourceName\022\r\n\005value\030\002 \001(\t\"]\n\014Resour"
-  "ceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007\n\003GPU\020\002\022\n\n"
-  "\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n\021EPHEMERAL_STOR"
-  "AGE\020\005\"\225\001\n\017RuntimeMetadata\0228\n\004type\030\001 \001(\0162"
-  "*.flyteidl.core.RuntimeMetadata.RuntimeT"
-  "ype\022\017\n\007version\030\002 \001(\t\022\016\n\006flavor\030\003 \001(\t\"\'\n\013"
-  "RuntimeType\022\t\n\005OTHER\020\000\022\r\n\tFLYTE_SDK\020\001\"\271\002"
-  "\n\014TaskMetadata\022\024\n\014discoverable\030\001 \001(\010\022/\n\007"
-  "runtime\030\002 \001(\0132\036.flyteidl.core.RuntimeMet"
-  "adata\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf"
-  ".Duration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.co"
-  "re.RetryStrategy\022\031\n\021discovery_version\030\006 "
-  "\001(\t\022 \n\030deprecated_error_message\030\007 \001(\t\022\027\n"
-  "\rinterruptible\030\010 \001(\010H\000\022\032\n\022cache_serializ"
-  "able\030\t \001(\010B\025\n\023interruptible_value\"\274\004\n\014Ta"
-  "skTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I"
-  "dentifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001("
-  "\0132\033.flyteidl.core.TaskMetadata\0220\n\tinterf"
-  "ace\030\004 \001(\0132\035.flyteidl.core.TypedInterface"
-  "\022\'\n\006custom\030\005 \001(\0132\027.google.protobuf.Struc"
-  "t\022-\n\tcontainer\030\006 \001(\0132\030.flyteidl.core.Con"
-  "tainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.flyteidl.cor"
-  "e.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyteidl.core."
-  "SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020secu"
-  "rity_context\030\010 \001(\0132\036.flyteidl.core.Secur"
-  "ityContext\0227\n\006config\030\020 \003(\0132\'.flyteidl.co"
-  "re.TaskTemplate.ConfigEntry\022*\n\tresources"
-  "\030\024 \001(\0132\027.flyteidl.core.Resource\032-\n\013Confi"
-  "gEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010"
-  "\n\006target\"\'\n\rContainerPort\022\026\n\016container_p"
-  "ort\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017"
-  "\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresourc"
-  "es\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003en"
-  "v\030\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006"
-  "config\030\006 \003(\0132\033.flyteidl.core.KeyValuePai"
-  "rB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Con"
-  "tainerPort\0225\n\013data_config\030\t \001(\0132 .flytei"
-  "dl.core.DataLoadingConfig\022;\n\014architectur"
-  "e\030\n \001(\0162%.flyteidl.core.Container.Archit"
-  "ecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005A"
-  "MD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020"
-  "\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162"
-  "&.flyteidl.core.IOStrategy.DownloadMode\022"
-  "9\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.IOS"
-  "trategy.UploadMode\"L\n\014DownloadMode\022\022\n\016DO"
-  "WNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017D"
-  "O_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD"
-  "_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_U"
-  "PLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled"
-  "\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_pat"
-  "h\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core."
-  "DataLoadingConfig.LiteralMapFormat\022.\n\013io"
-  "_strategy\030\005 \001(\0132\031.flyteidl.core.IOStrate"
-  "gy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML"
-  "\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 \001("
-  "\0132 .flyteidl.core.K8sObjectMetadata\022)\n\010p"
-  "od_spec\030\002 \001(\0132\027.google.protobuf.Struct\"\374"
-  "\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.f"
-  "lyteidl.core.K8sObjectMetadata.LabelsEnt"
-  "ry\022F\n\013annotations\030\002 \003(\01321.flyteidl.core."
-  "K8sObjectMetadata.AnnotationsEntry\032-\n\013La"
-  "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-  "\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-  "lue\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022"
-  "+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Dia"
-  "lect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001"
-  "\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyt"
-  "eorg/flyteidl/gen/pb-go/flyteidl/coreb\006p"
-  "roto3"
+  "/literals.proto\032\034flyteidl/core/security."
+  "proto\032\036google/protobuf/duration.proto\032\034g"
+  "oogle/protobuf/struct.proto\"\261\002\n\tResource"
+  "s\0228\n\010requests\030\001 \003(\0132&.flyteidl.core.Reso"
+  "urces.ResourceEntry\0226\n\006limits\030\002 \003(\0132&.fl"
+  "yteidl.core.Resources.ResourceEntry\032S\n\rR"
+  "esourceEntry\0223\n\004name\030\001 \001(\0162%.flyteidl.co"
+  "re.Resources.ResourceName\022\r\n\005value\030\002 \001(\t"
+  "\"]\n\014ResourceName\022\013\n\007UNKNOWN\020\000\022\007\n\003CPU\020\001\022\007"
+  "\n\003GPU\020\002\022\n\n\006MEMORY\020\003\022\013\n\007STORAGE\020\004\022\025\n\021EPHE"
+  "MERAL_STORAGE\020\005\"\225\001\n\017RuntimeMetadata\0228\n\004t"
+  "ype\030\001 \001(\0162*.flyteidl.core.RuntimeMetadat"
+  "a.RuntimeType\022\017\n\007version\030\002 \001(\t\022\016\n\006flavor"
+  "\030\003 \001(\t\"\'\n\013RuntimeType\022\t\n\005OTHER\020\000\022\r\n\tFLYT"
+  "E_SDK\020\001\"\271\002\n\014TaskMetadata\022\024\n\014discoverable"
+  "\030\001 \001(\010\022/\n\007runtime\030\002 \001(\0132\036.flyteidl.core."
+  "RuntimeMetadata\022*\n\007timeout\030\004 \001(\0132\031.googl"
+  "e.protobuf.Duration\022-\n\007retries\030\005 \001(\0132\034.f"
+  "lyteidl.core.RetryStrategy\022\031\n\021discovery_"
+  "version\030\006 \001(\t\022 \n\030deprecated_error_messag"
+  "e\030\007 \001(\t\022\027\n\rinterruptible\030\010 \001(\010H\000\022\032\n\022cach"
+  "e_serializable\030\t \001(\010B\025\n\023interruptible_va"
+  "lue\"\220\004\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.flyte"
+  "idl.core.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010met"
+  "adata\030\003 \001(\0132\033.flyteidl.core.TaskMetadata"
+  "\0220\n\tinterface\030\004 \001(\0132\035.flyteidl.core.Type"
+  "dInterface\022\'\n\006custom\030\005 \001(\0132\027.google.prot"
+  "obuf.Struct\022-\n\tcontainer\030\006 \001(\0132\030.flyteid"
+  "l.core.ContainerH\000\022(\n\007k8s_pod\030\021 \001(\0132\025.fl"
+  "yteidl.core.K8sPodH\000\022!\n\003sql\030\022 \001(\0132\022.flyt"
+  "eidl.core.SqlH\000\022\031\n\021task_type_version\030\007 \001"
+  "(\005\0228\n\020security_context\030\010 \001(\0132\036.flyteidl."
+  "core.SecurityContext\0227\n\006config\030\020 \003(\0132\'.f"
+  "lyteidl.core.TaskTemplate.ConfigEntry\032-\n"
+  "\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+  ":\0028\001B\010\n\006target\"\'\n\rContainerPort\022\026\n\016conta"
+  "iner_port\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001"
+  " \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tr"
+  "esources\030\004 \001(\0132\030.flyteidl.core.Resources"
+  "\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.KeyValuePa"
+  "ir\022/\n\006config\030\006 \003(\0132\033.flyteidl.core.KeyVa"
+  "luePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.co"
+  "re.ContainerPort\0225\n\013data_config\030\t \001(\0132 ."
+  "flyteidl.core.DataLoadingConfig\022;\n\014archi"
+  "tecture\030\n \001(\0162%.flyteidl.core.Container."
+  "Architecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020"
+  "\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006A"
+  "RM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030"
+  "\001 \001(\0162&.flyteidl.core.IOStrategy.Downloa"
+  "dMode\0229\n\013upload_mode\030\002 \001(\0162$.flyteidl.co"
+  "re.IOStrategy.UploadMode\"L\n\014DownloadMode"
+  "\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020"
+  "\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016"
+  "UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO"
+  "_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007e"
+  "nabled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013outp"
+  "ut_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl"
+  ".core.DataLoadingConfig.LiteralMapFormat"
+  "\022.\n\013io_strategy\030\005 \001(\0132\031.flyteidl.core.IO"
+  "Strategy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010"
+  "\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadat"
+  "a\030\001 \001(\0132 .flyteidl.core.K8sObjectMetadat"
+  "a\022)\n\010pod_spec\030\002 \001(\0132\027.google.protobuf.St"
+  "ruct\"\374\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003"
+  "(\0132,.flyteidl.core.K8sObjectMetadata.Lab"
+  "elsEntry\022F\n\013annotations\030\002 \003(\01321.flyteidl"
+  ".core.K8sObjectMetadata.AnnotationsEntry"
+  "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+  "\001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t"
+  "\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030"
+  "\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.S"
+  "ql.Dialect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004"
+  "ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.co"
+  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/c"
+  "oreb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2ftasks_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2ftasks_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2ftasks_2eproto,
-  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3165,
+  "flyteidl/core/tasks.proto", &assign_descriptors_table_flyteidl_2fcore_2ftasks_2eproto, 3091,
 };
 
 void AddDescriptors_flyteidl_2fcore_2ftasks_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[7] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[6] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2finterface_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
-    ::AddDescriptors_flyteidl_2fcore_2fresource_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fstruct_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2ftasks_2eproto, deps, 7);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2ftasks_2eproto, deps, 6);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2735,8 +2729,6 @@ void TaskTemplate::InitAsDefaultInstance() {
       ::flyteidl::core::Sql::internal_default_instance());
   ::flyteidl::core::_TaskTemplate_default_instance_._instance.get_mutable()->security_context_ = const_cast< ::flyteidl::core::SecurityContext*>(
       ::flyteidl::core::SecurityContext::internal_default_instance());
-  ::flyteidl::core::_TaskTemplate_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resource*>(
-      ::flyteidl::core::Resource::internal_default_instance());
 }
 class TaskTemplate::HasBitSetters {
  public:
@@ -2748,7 +2740,6 @@ class TaskTemplate::HasBitSetters {
   static const ::flyteidl::core::K8sPod& k8s_pod(const TaskTemplate* msg);
   static const ::flyteidl::core::Sql& sql(const TaskTemplate* msg);
   static const ::flyteidl::core::SecurityContext& security_context(const TaskTemplate* msg);
-  static const ::flyteidl::core::Resource& resources(const TaskTemplate* msg);
 };
 
 const ::flyteidl::core::Identifier&
@@ -2782,10 +2773,6 @@ TaskTemplate::HasBitSetters::sql(const TaskTemplate* msg) {
 const ::flyteidl::core::SecurityContext&
 TaskTemplate::HasBitSetters::security_context(const TaskTemplate* msg) {
   return *msg->security_context_;
-}
-const ::flyteidl::core::Resource&
-TaskTemplate::HasBitSetters::resources(const TaskTemplate* msg) {
-  return *msg->resources_;
 }
 void TaskTemplate::clear_id() {
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
@@ -2853,12 +2840,6 @@ void TaskTemplate::clear_security_context() {
   }
   security_context_ = nullptr;
 }
-void TaskTemplate::clear_resources() {
-  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
-    delete resources_;
-  }
-  resources_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskTemplate::kIdFieldNumber;
 const int TaskTemplate::kTypeFieldNumber;
@@ -2871,7 +2852,6 @@ const int TaskTemplate::kSqlFieldNumber;
 const int TaskTemplate::kTaskTypeVersionFieldNumber;
 const int TaskTemplate::kSecurityContextFieldNumber;
 const int TaskTemplate::kConfigFieldNumber;
-const int TaskTemplate::kResourcesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskTemplate::TaskTemplate()
@@ -2912,11 +2892,6 @@ TaskTemplate::TaskTemplate(const TaskTemplate& from)
     security_context_ = new ::flyteidl::core::SecurityContext(*from.security_context_);
   } else {
     security_context_ = nullptr;
-  }
-  if (from.has_resources()) {
-    resources_ = new ::flyteidl::core::Resource(*from.resources_);
-  } else {
-    resources_ = nullptr;
   }
   task_type_version_ = from.task_type_version_;
   clear_has_target();
@@ -2962,7 +2937,6 @@ void TaskTemplate::SharedDtor() {
   if (this != internal_default_instance()) delete interface_;
   if (this != internal_default_instance()) delete custom_;
   if (this != internal_default_instance()) delete security_context_;
-  if (this != internal_default_instance()) delete resources_;
   if (has_target()) {
     clear_target();
   }
@@ -3028,10 +3002,6 @@ void TaskTemplate::Clear() {
     delete security_context_;
   }
   security_context_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
-    delete resources_;
-  }
-  resources_ = nullptr;
   task_type_version_ = 0;
   clear_target();
   _internal_metadata_.Clear();
@@ -3190,19 +3160,6 @@ const char* TaskTemplate::_InternalParse(const char* begin, const char* end, voi
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Sql::_InternalParse;
         object = msg->mutable_sql();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.core.Resource resources = 20;
-      case 20: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 162) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::core::Resource::_InternalParse;
-        object = msg->mutable_resources();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -3385,17 +3342,6 @@ bool TaskTemplate::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.core.Resource resources = 20;
-      case 20: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (162 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_resources()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3535,12 +3481,6 @@ void TaskTemplate::SerializeWithCachedSizes(
       18, HasBitSetters::sql(this), output);
   }
 
-  // .flyteidl.core.Resource resources = 20;
-  if (this->has_resources()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      20, HasBitSetters::resources(this), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -3675,13 +3615,6 @@ void TaskTemplate::SerializeWithCachedSizes(
         18, HasBitSetters::sql(this), target);
   }
 
-  // .flyteidl.core.Resource resources = 20;
-  if (this->has_resources()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        20, HasBitSetters::resources(this), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -3757,13 +3690,6 @@ size_t TaskTemplate::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *security_context_);
-  }
-
-  // .flyteidl.core.Resource resources = 20;
-  if (this->has_resources()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *resources_);
   }
 
   // int32 task_type_version = 7;
@@ -3846,9 +3772,6 @@ void TaskTemplate::MergeFrom(const TaskTemplate& from) {
   if (from.has_security_context()) {
     mutable_security_context()->::flyteidl::core::SecurityContext::MergeFrom(from.security_context());
   }
-  if (from.has_resources()) {
-    mutable_resources()->::flyteidl::core::Resource::MergeFrom(from.resources());
-  }
   if (from.task_type_version() != 0) {
     set_task_type_version(from.task_type_version());
   }
@@ -3904,7 +3827,6 @@ void TaskTemplate::InternalSwap(TaskTemplate* other) {
   swap(interface_, other->interface_);
   swap(custom_, other->custom_);
   swap(security_context_, other->security_context_);
-  swap(resources_, other->resources_);
   swap(task_type_version_, other->task_type_version_);
   swap(target_, other->target_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);

@@ -149,7 +149,6 @@ from flyteadmin.models.core_branch_node import CoreBranchNode
 from flyteadmin.models.core_catalog_artifact_tag import CoreCatalogArtifactTag
 from flyteadmin.models.core_catalog_cache_status import CoreCatalogCacheStatus
 from flyteadmin.models.core_catalog_metadata import CoreCatalogMetadata
-from flyteadmin.models.core_cluster_spec import CoreClusterSpec
 from flyteadmin.models.core_comparison_expression import CoreComparisonExpression
 from flyteadmin.models.core_comparison_expression_operator import CoreComparisonExpressionOperator
 from flyteadmin.models.core_compiled_task import CoreCompiledTask
@@ -163,7 +162,6 @@ from flyteadmin.models.core_data_loading_config import CoreDataLoadingConfig
 from flyteadmin.models.core_enum_type import CoreEnumType
 from flyteadmin.models.core_error import CoreError
 from flyteadmin.models.core_execution_error import CoreExecutionError
-from flyteadmin.models.core_head_group_spec import CoreHeadGroupSpec
 from flyteadmin.models.core_io_strategy import CoreIOStrategy
 from flyteadmin.models.core_identifier import CoreIdentifier
 from flyteadmin.models.core_identity import CoreIdentity
@@ -190,8 +188,6 @@ from flyteadmin.models.core_parameter_map import CoreParameterMap
 from flyteadmin.models.core_primitive import CorePrimitive
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService
 from flyteadmin.models.core_quality_of_service_spec import CoreQualityOfServiceSpec
-from flyteadmin.models.core_ray_cluster import CoreRayCluster
-from flyteadmin.models.core_resource import CoreResource
 from flyteadmin.models.core_resource_type import CoreResourceType
 from flyteadmin.models.core_resources import CoreResources
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy
@@ -221,7 +217,6 @@ from flyteadmin.models.core_union_type import CoreUnionType
 from flyteadmin.models.core_variable import CoreVariable
 from flyteadmin.models.core_variable_map import CoreVariableMap
 from flyteadmin.models.core_void import CoreVoid
-from flyteadmin.models.core_worker_group_spec import CoreWorkerGroupSpec
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier
 from flyteadmin.models.core_workflow_execution_phase import CoreWorkflowExecutionPhase
 from flyteadmin.models.core_workflow_metadata import CoreWorkflowMetadata

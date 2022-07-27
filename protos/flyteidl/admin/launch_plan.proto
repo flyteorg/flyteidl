@@ -7,7 +7,6 @@ import "flyteidl/core/execution.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/interface.proto";
-import "flyteidl/core/resource.proto";
 import "flyteidl/core/security.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
@@ -126,9 +125,6 @@ message LaunchPlanSpec {
     // As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
     // around the bool field.
     google.protobuf.BoolValue interruptible = 19;
-
-    // Cluster resources (Ray or Dask) that will be attached to launch plan spec.
-    map<string, core.Resource> resources = 20;
 }
 
 // Values computed by the flyte platform after launch plan registration.

@@ -299,6 +299,189 @@ of a hive task's TaskTemplate
 
 
 
+.. _ref_flyteidl/plugins/ray.proto:
+
+flyteidl/plugins/ray.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.core.ClusterSpec:
+
+ClusterSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ClusterSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "head_group_spec", ":ref:`ref_flyteidl.core.HeadGroupSpec`", "", "The head group configuration"
+   "worker_group_spec", ":ref:`ref_flyteidl.core.WorkerGroupSpec`", "repeated", "The worker group configurations"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.HeadGroupSpec:
+
+HeadGroupSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: HeadGroupSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry:
+
+HeadGroupSpec.RayStartParamsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: HeadGroupSpec.RayStartParamsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.RayCluster:
+
+RayCluster
+------------------------------------------------------------------
+
+Define Ray cluster spec
+
+
+
+.. csv-table:: RayCluster type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "cluster_spec", ":ref:`ref_flyteidl.core.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.RayJob:
+
+RayJob
+------------------------------------------------------------------
+
+RayJobSpec defines the desired state of RayJob
+
+
+
+.. csv-table:: RayJob type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "rayCluster", ":ref:`ref_flyteidl.core.RayCluster`", "", "RayClusterSpec is the cluster template to run the job"
+   "RuntimeEnv", ":ref:`ref_string`", "", "RuntimeEnv is base64 encoded. Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments"
+   "ShutdownAfterJobFinishes", ":ref:`ref_bool`", "", "ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed."
+   "TTLSecondsAfterFinished", ":ref:`ref_int32`", "", "TTLSecondsAfterFinished is the TTL to clean up RayCluster. It's only working when ShutdownAfterJobFinishes set to true."
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.WorkerGroupSpec:
+
+WorkerGroupSpec
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkerGroupSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "group_name", ":ref:`ref_string`", "", "Required. Group name of the current worker group"
+   "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
+   "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
+   "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
+   "ray_start_params", ":ref:`ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of worker node group"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry:
+
+WorkerGroupSpec.RayStartParamsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkerGroupSpec.RayStartParamsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+..
+   end messages
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
 .. _ref_flyteidl/plugins/spark.proto:
 
 flyteidl/plugins/spark.proto

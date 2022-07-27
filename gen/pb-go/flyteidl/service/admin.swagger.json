@@ -3847,13 +3847,6 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
-        },
-        "resources": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/coreResource"
-          },
-          "description": "Cluster resources (Ray or Dask) that will be attached to launch plan spec."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -5216,22 +5209,6 @@
       },
       "title": "Catalog artifact information with specific metadata"
     },
-    "coreClusterSpec": {
-      "type": "object",
-      "properties": {
-        "head_group_spec": {
-          "$ref": "#/definitions/coreHeadGroupSpec",
-          "title": "The head group configuration"
-        },
-        "worker_group_spec": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/coreWorkerGroupSpec"
-          },
-          "title": "The worker group configurations"
-        }
-      }
-    },
     "coreComparisonExpression": {
       "type": "object",
       "properties": {
@@ -5483,18 +5460,6 @@
         }
       },
       "description": "Represents the error message from the execution."
-    },
-    "coreHeadGroupSpec": {
-      "type": "object",
-      "properties": {
-        "ray_start_params": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "Optional. The ray start params of head node group"
-        }
-      }
     },
     "coreIOStrategy": {
       "type": "object",
@@ -5991,25 +5956,6 @@
       },
       "description": "Represents customized execution run-time attributes."
     },
-    "coreRayCluster": {
-      "type": "object",
-      "properties": {
-        "cluster_spec": {
-          "$ref": "#/definitions/coreClusterSpec",
-          "title": "Required field. This field indicates ray cluster configuration"
-        }
-      },
-      "title": "Define Ray cluster spec"
-    },
-    "coreResource": {
-      "type": "object",
-      "properties": {
-        "ray": {
-          "$ref": "#/definitions/coreRayCluster"
-        }
-      },
-      "title": "Cluster resource that task and workflow will run on"
-    },
     "coreResourceType": {
       "type": "string",
       "enum": [
@@ -6398,10 +6344,6 @@
             "type": "string"
           },
           "title": "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system\nto use as required.\nreserve the field numbers 1 through 15 for very frequently occurring message elements"
-        },
-        "resources": {
-          "$ref": "#/definitions/coreResource",
-          "description": "Cluster resources (Ray or Dask) that will be attached to task spec."
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
@@ -6501,37 +6443,6 @@
     "coreVoid": {
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
-    },
-    "coreWorkerGroupSpec": {
-      "type": "object",
-      "properties": {
-        "group_name": {
-          "type": "string",
-          "title": "Required. Group name of the current worker group"
-        },
-        "replicas": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Required. Desired replicas of the worker group"
-        },
-        "min_replicas": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Optional. Min replicas of the worker group"
-        },
-        "max_replicas": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Optional. Max replicas of the worker group"
-        },
-        "ray_start_params": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "title": "Optional. The ray start params of worker node group"
-        }
-      }
     },
     "coreWorkflowExecutionIdentifier": {
       "type": "object",

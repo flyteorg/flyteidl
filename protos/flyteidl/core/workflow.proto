@@ -11,7 +11,6 @@ import "flyteidl/core/interface.proto";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/types.proto";
-import "flyteidl/core/resource.proto";
 import "flyteidl/core/security.proto";
 import "google/protobuf/duration.proto";
 

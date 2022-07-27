@@ -4593,26 +4593,6 @@ definitions:
           values:
             key: "values"
         max_parallelism: 5
-        resources:
-          key:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                head_group_spec:
-                  ray_start_params:
-                    key: "ray_start_params"
         interruptible: true
         labels:
           values:
@@ -5411,26 +5391,6 @@ definitions:
             values:
               key: "values"
           max_parallelism: 5
-          resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
           interruptible: true
           labels:
             values:
@@ -5944,26 +5904,6 @@ definitions:
             values:
               key: "values"
           max_parallelism: 5
-          resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
           interruptible: true
           labels:
             values:
@@ -6300,12 +6240,6 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
-      resources:
-        type: "object"
-        description: "Cluster resources (Ray or Dask) that will be attached to launch\
-          \ plan spec."
-        additionalProperties:
-          $ref: "#/definitions/coreResource"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6365,26 +6299,6 @@ definitions:
         values:
           key: "values"
       max_parallelism: 5
-      resources:
-        key:
-          ray:
-            cluster_spec:
-              worker_group_spec:
-              - ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                max_replicas: 7
-              - ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                max_replicas: 7
-              head_group_spec:
-                ray_start_params:
-                  key: "ray_start_params"
       interruptible: true
       labels:
         values:
@@ -11238,25 +11152,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11507,25 +11402,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -14426,25 +14302,6 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
-            resources:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -14711,25 +14568,6 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
-          resources:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                head_group_spec:
-                  ray_start_params:
-                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -15392,25 +15230,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -15670,25 +15489,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -19735,25 +19535,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -20004,25 +19785,6 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
-              resources:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    - ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      max_replicas: 7
-                    head_group_spec:
-                      ray_start_params:
-                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -26086,25 +25848,6 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
-            resources:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -26355,25 +26098,6 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
-            resources:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -32293,25 +32017,6 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
-                resources:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      head_group_spec:
-                        ray_start_params:
-                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -32562,25 +32267,6 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
-                resources:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      head_group_spec:
-                        ray_start_params:
-                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -38339,25 +38025,6 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
-                resources:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      head_group_spec:
-                        ray_start_params:
-                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -38608,25 +38275,6 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
-                resources:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      - ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        max_replicas: 7
-                      head_group_spec:
-                        ray_start_params:
-                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -41285,34 +40933,6 @@ definitions:
       artifact_tag:
         name: "name"
         artifact_id: "artifact_id"
-  coreClusterSpec:
-    type: "object"
-    properties:
-      head_group_spec:
-        title: "The head group configuration"
-        $ref: "#/definitions/coreHeadGroupSpec"
-      worker_group_spec:
-        type: "array"
-        title: "The worker group configurations"
-        items:
-          $ref: "#/definitions/coreWorkerGroupSpec"
-    example:
-      worker_group_spec:
-      - ray_start_params:
-          key: "ray_start_params"
-        group_name: "group_name"
-        replicas: 5
-        min_replicas: 2
-        max_replicas: 7
-      - ray_start_params:
-          key: "ray_start_params"
-        group_name: "group_name"
-        replicas: 5
-        min_replicas: 2
-        max_replicas: 7
-      head_group_spec:
-        ray_start_params:
-          key: "ray_start_params"
   coreComparisonExpression:
     type: "object"
     properties:
@@ -41450,25 +41070,6 @@ definitions:
                 string_value: "string_value"
                 null_value: {}
                 bool_value: true
-        resources:
-          ray:
-            cluster_spec:
-              worker_group_spec:
-              - ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                max_replicas: 7
-              - ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                max_replicas: 7
-              head_group_spec:
-                ray_start_params:
-                  key: "ray_start_params"
         id:
           domain: "domain"
           resource_type: {}
@@ -47256,25 +46857,6 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
-          resources:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                head_group_spec:
-                  ray_start_params:
-                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -47525,25 +47107,6 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
-          resources:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                - ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  max_replicas: 7
-                head_group_spec:
-                  ray_start_params:
-                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -49784,17 +49347,6 @@ definitions:
       kind: {}
       message: "message"
       error_uri: "error_uri"
-  coreHeadGroupSpec:
-    type: "object"
-    properties:
-      ray_start_params:
-        type: "object"
-        title: "Optional. The ray start params of head node group"
-        additionalProperties:
-          type: "string"
-    example:
-      ray_start_params:
-        key: "ray_start_params"
   coreIOStrategy:
     type: "object"
     properties:
@@ -51361,56 +50913,6 @@ definitions:
     description: "Represents customized execution run-time attributes."
     example:
       queueing_budget: "queueing_budget"
-  coreRayCluster:
-    type: "object"
-    properties:
-      cluster_spec:
-        title: "Required field. This field indicates ray cluster configuration"
-        $ref: "#/definitions/coreClusterSpec"
-    title: "Define Ray cluster spec"
-    example:
-      cluster_spec:
-        worker_group_spec:
-        - ray_start_params:
-            key: "ray_start_params"
-          group_name: "group_name"
-          replicas: 5
-          min_replicas: 2
-          max_replicas: 7
-        - ray_start_params:
-            key: "ray_start_params"
-          group_name: "group_name"
-          replicas: 5
-          min_replicas: 2
-          max_replicas: 7
-        head_group_spec:
-          ray_start_params:
-            key: "ray_start_params"
-  coreResource:
-    type: "object"
-    properties:
-      ray:
-        $ref: "#/definitions/coreRayCluster"
-    title: "Cluster resource that task and workflow will run on"
-    example:
-      ray:
-        cluster_spec:
-          worker_group_spec:
-          - ray_start_params:
-              key: "ray_start_params"
-            group_name: "group_name"
-            replicas: 5
-            min_replicas: 2
-            max_replicas: 7
-          - ray_start_params:
-              key: "ray_start_params"
-            group_name: "group_name"
-            replicas: 5
-            min_replicas: 2
-            max_replicas: 7
-          head_group_spec:
-            ray_start_params:
-              key: "ray_start_params"
   coreResourceType:
     type: "string"
     description: "Indicates a resource type within Flyte.\n\n - DATASET: A dataset\
@@ -52042,10 +51544,6 @@ definitions:
           \ field numbers 1 through 15 for very frequently occurring message elements"
         additionalProperties:
           type: "string"
-      resources:
-        description: "Cluster resources (Ray or Dask) that will be attached to task\
-          \ spec."
-        $ref: "#/definitions/coreResource"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -52132,25 +51630,6 @@ definitions:
               string_value: "string_value"
               null_value: {}
               bool_value: true
-      resources:
-        ray:
-          cluster_spec:
-            worker_group_spec:
-            - ray_start_params:
-                key: "ray_start_params"
-              group_name: "group_name"
-              replicas: 5
-              min_replicas: 2
-              max_replicas: 7
-            - ray_start_params:
-                key: "ray_start_params"
-              group_name: "group_name"
-              replicas: 5
-              min_replicas: 2
-              max_replicas: 7
-            head_group_spec:
-              ray_start_params:
-                key: "ray_start_params"
       id:
         domain: "domain"
         resource_type: {}
@@ -52738,36 +52217,6 @@ definitions:
     description: "Used to denote a nil/null/None assignment to a scalar value. The\
       \ underlying LiteralType for Void is intentionally\nundefined since it can be\
       \ assigned to a scalar of any LiteralType."
-  coreWorkerGroupSpec:
-    type: "object"
-    properties:
-      group_name:
-        type: "string"
-        title: "Required. Group name of the current worker group"
-      replicas:
-        type: "integer"
-        format: "int32"
-        title: "Required. Desired replicas of the worker group"
-      min_replicas:
-        type: "integer"
-        format: "int32"
-        title: "Optional. Min replicas of the worker group"
-      max_replicas:
-        type: "integer"
-        format: "int32"
-        title: "Optional. Max replicas of the worker group"
-      ray_start_params:
-        type: "object"
-        title: "Optional. The ray start params of worker node group"
-        additionalProperties:
-          type: "string"
-    example:
-      ray_start_params:
-        key: "ray_start_params"
-      group_name: "group_name"
-      replicas: 5
-      min_replicas: 2
-      max_replicas: 7
   coreWorkflowExecutionIdentifier:
     type: "object"
     properties:
@@ -58799,25 +58248,6 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
-            resources:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -59068,25 +58498,6 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
-            resources:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  - ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    max_replicas: 7
-                  head_group_spec:
-                    ray_start_params:
-                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}

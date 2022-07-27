@@ -6,13 +6,6 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core";
 
 import "google/protobuf/timestamp.proto";
 
-// Cluster resource that task and workflow will run on
-message Resource {
-  oneof value {
-    RayCluster ray = 1;
-  }
-}
-
 // RayJobSpec defines the desired state of RayJob
 message RayJob {
   // RayClusterSpec is the cluster template to run the job

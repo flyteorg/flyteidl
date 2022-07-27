@@ -26,7 +26,6 @@ from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_literal_map import CoreLiteralMap  # noqa: F401,E501
 from flyteadmin.models.core_parameter_map import CoreParameterMap  # noqa: F401,E501
 from flyteadmin.models.core_quality_of_service import CoreQualityOfService  # noqa: F401,E501
-from flyteadmin.models.core_resource import CoreResource  # noqa: F401,E501
 from flyteadmin.models.core_security_context import CoreSecurityContext  # noqa: F401,E501
 
 
@@ -57,8 +56,7 @@ class AdminLaunchPlanSpec(object):
         'quality_of_service': 'CoreQualityOfService',
         'raw_output_data_config': 'AdminRawOutputDataConfig',
         'max_parallelism': 'int',
-        'interruptible': 'bool',
-        'resources': 'dict(str, CoreResource)'
+        'interruptible': 'bool'
     }
 
     attribute_map = {
@@ -75,11 +73,10 @@ class AdminLaunchPlanSpec(object):
         'quality_of_service': 'quality_of_service',
         'raw_output_data_config': 'raw_output_data_config',
         'max_parallelism': 'max_parallelism',
-        'interruptible': 'interruptible',
-        'resources': 'resources'
+        'interruptible': 'interruptible'
     }
 
-    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, quality_of_service=None, raw_output_data_config=None, max_parallelism=None, interruptible=None, resources=None):  # noqa: E501
+    def __init__(self, workflow_id=None, entity_metadata=None, default_inputs=None, fixed_inputs=None, role=None, labels=None, annotations=None, auth=None, auth_role=None, security_context=None, quality_of_service=None, raw_output_data_config=None, max_parallelism=None, interruptible=None):  # noqa: E501
         """AdminLaunchPlanSpec - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
@@ -96,7 +93,6 @@ class AdminLaunchPlanSpec(object):
         self._raw_output_data_config = None
         self._max_parallelism = None
         self._interruptible = None
-        self._resources = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -127,8 +123,6 @@ class AdminLaunchPlanSpec(object):
             self.max_parallelism = max_parallelism
         if interruptible is not None:
             self.interruptible = interruptible
-        if resources is not None:
-            self.resources = resources
 
     @property
     def workflow_id(self):
@@ -441,29 +435,6 @@ class AdminLaunchPlanSpec(object):
         """
 
         self._interruptible = interruptible
-
-    @property
-    def resources(self):
-        """Gets the resources of this AdminLaunchPlanSpec.  # noqa: E501
-
-        Cluster resources (Ray or Dask) that will be attached to launch plan spec.  # noqa: E501
-
-        :return: The resources of this AdminLaunchPlanSpec.  # noqa: E501
-        :rtype: dict(str, CoreResource)
-        """
-        return self._resources
-
-    @resources.setter
-    def resources(self, resources):
-        """Sets the resources of this AdminLaunchPlanSpec.
-
-        Cluster resources (Ray or Dask) that will be attached to launch plan spec.  # noqa: E501
-
-        :param resources: The resources of this AdminLaunchPlanSpec.  # noqa: E501
-        :type: dict(str, CoreResource)
-        """
-
-        self._resources = resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

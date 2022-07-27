@@ -420,66 +420,66 @@ const char descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto[] =
   "re/identifier.proto\032\035flyteidl/core/inter"
   "face.proto\032\034flyteidl/core/literals.proto"
   "\032\031flyteidl/core/tasks.proto\032\031flyteidl/co"
-  "re/types.proto\032\034flyteidl/core/resource.p"
-  "roto\032\034flyteidl/core/security.proto\032\036goog"
-  "le/protobuf/duration.proto\"f\n\007IfBlock\0223\n"
-  "\tcondition\030\001 \001(\0132 .flyteidl.core.Boolean"
-  "Expression\022&\n\tthen_node\030\002 \001(\0132\023.flyteidl"
-  ".core.Node\"\266\001\n\013IfElseBlock\022$\n\004case\030\001 \001(\013"
-  "2\026.flyteidl.core.IfBlock\022%\n\005other\030\002 \003(\0132"
-  "\026.flyteidl.core.IfBlock\022(\n\telse_node\030\003 \001"
-  "(\0132\023.flyteidl.core.NodeH\000\022%\n\005error\030\004 \001(\013"
-  "2\024.flyteidl.core.ErrorH\000B\t\n\007default\"9\n\nB"
-  "ranchNode\022+\n\007if_else\030\001 \001(\0132\032.flyteidl.co"
-  "re.IfElseBlock\"\177\n\010TaskNode\0221\n\014reference_"
-  "id\030\001 \001(\0132\031.flyteidl.core.IdentifierH\000\0223\n"
-  "\toverrides\030\002 \001(\0132 .flyteidl.core.TaskNod"
-  "eOverridesB\013\n\treference\"\207\001\n\014WorkflowNode"
-  "\0223\n\016launchplan_ref\030\001 \001(\0132\031.flyteidl.core"
-  ".IdentifierH\000\0225\n\020sub_workflow_ref\030\002 \001(\0132"
-  "\031.flyteidl.core.IdentifierH\000B\013\n\treferenc"
-  "e\"\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007time"
-  "out\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007"
-  "retries\030\005 \001(\0132\034.flyteidl.core.RetryStrat"
-  "egy\022\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interrup"
-  "tible_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005ali"
-  "as\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadat"
-  "a\030\002 \001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006"
-  "inputs\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021"
-  "upstream_node_ids\030\004 \003(\t\022,\n\016output_aliase"
-  "s\030\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttask_no"
-  "de\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rw"
-  "orkflow_node\030\007 \001(\0132\033.flyteidl.core.Workf"
-  "lowNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteid"
-  "l.core.BranchNodeH\000B\010\n\006target\"\347\001\n\020Workfl"
-  "owMetadata\022;\n\022quality_of_service\030\001 \001(\0132\037"
-  ".flyteidl.core.QualityOfService\022C\n\non_fa"
-  "ilure\030\002 \001(\0162/.flyteidl.core.WorkflowMeta"
-  "data.OnFailurePolicy\"Q\n\017OnFailurePolicy\022"
-  "\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EXEC"
-  "UTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowMetad"
-  "ataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020W"
-  "orkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.c"
-  "ore.Identifier\0221\n\010metadata\030\002 \001(\0132\037.flyte"
-  "idl.core.WorkflowMetadata\0220\n\tinterface\030\003"
-  " \001(\0132\035.flyteidl.core.TypedInterface\022\"\n\005n"
-  "odes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007outpu"
-  "ts\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014fail"
-  "ure_node\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021m"
-  "etadata_defaults\030\007 \001(\0132\'.flyteidl.core.W"
-  "orkflowMetadataDefaults\"@\n\021TaskNodeOverr"
-  "ides\022+\n\tresources\030\001 \001(\0132\030.flyteidl.core."
-  "ResourcesB6Z4github.com/flyteorg/flyteid"
-  "l/gen/pb-go/flyteidl/coreb\006proto3"
+  "re/types.proto\032\034flyteidl/core/security.p"
+  "roto\032\036google/protobuf/duration.proto\"f\n\007"
+  "IfBlock\0223\n\tcondition\030\001 \001(\0132 .flyteidl.co"
+  "re.BooleanExpression\022&\n\tthen_node\030\002 \001(\0132"
+  "\023.flyteidl.core.Node\"\266\001\n\013IfElseBlock\022$\n\004"
+  "case\030\001 \001(\0132\026.flyteidl.core.IfBlock\022%\n\005ot"
+  "her\030\002 \003(\0132\026.flyteidl.core.IfBlock\022(\n\tels"
+  "e_node\030\003 \001(\0132\023.flyteidl.core.NodeH\000\022%\n\005e"
+  "rror\030\004 \001(\0132\024.flyteidl.core.ErrorH\000B\t\n\007de"
+  "fault\"9\n\nBranchNode\022+\n\007if_else\030\001 \001(\0132\032.f"
+  "lyteidl.core.IfElseBlock\"\177\n\010TaskNode\0221\n\014"
+  "reference_id\030\001 \001(\0132\031.flyteidl.core.Ident"
+  "ifierH\000\0223\n\toverrides\030\002 \001(\0132 .flyteidl.co"
+  "re.TaskNodeOverridesB\013\n\treference\"\207\001\n\014Wo"
+  "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly"
+  "teidl.core.IdentifierH\000\0225\n\020sub_workflow_"
+  "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013"
+  "\n\treference\"\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001"
+  "(\t\022*\n\007timeout\030\004 \001(\0132\031.google.protobuf.Du"
+  "ration\022-\n\007retries\030\005 \001(\0132\034.flyteidl.core."
+  "RetryStrategy\022\027\n\rinterruptible\030\006 \001(\010H\000B\025"
+  "\n\023interruptible_value\"#\n\005Alias\022\013\n\003var\030\001 "
+  "\001(\t\022\r\n\005alias\030\002 \001(\t\"\322\002\n\004Node\022\n\n\002id\030\001 \001(\t\022"
+  "-\n\010metadata\030\002 \001(\0132\033.flyteidl.core.NodeMe"
+  "tadata\022&\n\006inputs\030\003 \003(\0132\026.flyteidl.core.B"
+  "inding\022\031\n\021upstream_node_ids\030\004 \003(\t\022,\n\016out"
+  "put_aliases\030\005 \003(\0132\024.flyteidl.core.Alias\022"
+  ",\n\ttask_node\030\006 \001(\0132\027.flyteidl.core.TaskN"
+  "odeH\000\0224\n\rworkflow_node\030\007 \001(\0132\033.flyteidl."
+  "core.WorkflowNodeH\000\0220\n\013branch_node\030\010 \001(\013"
+  "2\031.flyteidl.core.BranchNodeH\000B\010\n\006target\""
+  "\347\001\n\020WorkflowMetadata\022;\n\022quality_of_servi"
+  "ce\030\001 \001(\0132\037.flyteidl.core.QualityOfServic"
+  "e\022C\n\non_failure\030\002 \001(\0162/.flyteidl.core.Wo"
+  "rkflowMetadata.OnFailurePolicy\"Q\n\017OnFail"
+  "urePolicy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_"
+  "AFTER_EXECUTABLE_NODES_COMPLETE\020\001\"1\n\030Wor"
+  "kflowMetadataDefaults\022\025\n\rinterruptible\030\001"
+  " \001(\010\"\332\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031."
+  "flyteidl.core.Identifier\0221\n\010metadata\030\002 \001"
+  "(\0132\037.flyteidl.core.WorkflowMetadata\0220\n\ti"
+  "nterface\030\003 \001(\0132\035.flyteidl.core.TypedInte"
+  "rface\022\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.Nod"
+  "e\022\'\n\007outputs\030\005 \003(\0132\026.flyteidl.core.Bindi"
+  "ng\022)\n\014failure_node\030\006 \001(\0132\023.flyteidl.core"
+  ".Node\022B\n\021metadata_defaults\030\007 \001(\0132\'.flyte"
+  "idl.core.WorkflowMetadataDefaults\"@\n\021Tas"
+  "kNodeOverrides\022+\n\tresources\030\001 \001(\0132\030.flyt"
+  "eidl.core.ResourcesB6Z4github.com/flyteo"
+  "rg/flyteidl/gen/pb-go/flyteidl/coreb\006pro"
+  "to3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fcore_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fcore_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fcore_2fworkflow_2eproto,
-  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2273,
+  "flyteidl/core/workflow.proto", &assign_descriptors_table_flyteidl_2fcore_2fworkflow_2eproto, 2243,
 };
 
 void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[10] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[9] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fcondition_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
@@ -488,11 +488,10 @@ void AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto() {
     ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2ftypes_2eproto,
-    ::AddDescriptors_flyteidl_2fcore_2fresource_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fsecurity_2eproto,
     ::AddDescriptors_google_2fprotobuf_2fduration_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2fworkflow_2eproto, deps, 10);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fcore_2fworkflow_2eproto, deps, 9);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
