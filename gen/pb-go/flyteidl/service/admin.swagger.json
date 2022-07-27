@@ -5487,18 +5487,6 @@
     "coreHeadGroupSpec": {
       "type": "object",
       "properties": {
-        "compute_template": {
-          "type": "string",
-          "title": "Optional. The computeTemplate of head node group"
-        },
-        "image": {
-          "type": "string",
-          "title": "Optional field. This field will be used to retrieve right ray container"
-        },
-        "service_type": {
-          "type": "string",
-          "title": "Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node"
-        },
         "ray_start_params": {
           "type": "object",
           "additionalProperties": {
@@ -6006,10 +5994,6 @@
     "coreRayCluster": {
       "type": "object",
       "properties": {
-        "name": {
-          "type": "string",
-          "description": "Required input field. Unique cluster name provided by user."
-        },
         "cluster_spec": {
           "$ref": "#/definitions/coreClusterSpec",
           "title": "Required field. This field indicates ray cluster configuration"
@@ -6416,10 +6400,7 @@
           "title": "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system\nto use as required.\nreserve the field numbers 1 through 15 for very frequently occurring message elements"
         },
         "resources": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/coreResource"
-          },
+          "$ref": "#/definitions/coreResource",
           "description": "Cluster resources (Ray or Dask) that will be attached to task spec."
         }
       },
@@ -6527,14 +6508,6 @@
         "group_name": {
           "type": "string",
           "title": "Required. Group name of the current worker group"
-        },
-        "compute_template": {
-          "type": "string",
-          "title": "Optional. The computeTemplate of head node group"
-        },
-        "image": {
-          "type": "string",
-          "title": "Optional field. This field will be used to retrieve right ray container"
         },
         "replicas": {
           "type": "integer",
@@ -6669,13 +6642,6 @@
         "metadata_defaults": {
           "$ref": "#/definitions/coreWorkflowMetadataDefaults",
           "title": "workflow defaults"
-        },
-        "resources": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/coreResource"
-          },
-          "description": "Cluster resources (Ray or Dask) that will be attached to workflow template."
         }
       },
       "description": "Flyte Workflow Structure that encapsulates task, branch and subworkflow nodes to form a statically analyzable,\ndirected acyclic graph."

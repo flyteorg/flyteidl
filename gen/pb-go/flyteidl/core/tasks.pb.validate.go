@@ -375,21 +375,14 @@ func (m *TaskTemplate) Validate() error {
 
 	// no validation rules for Config
 
-	for key, val := range m.GetResources() {
-		_ = val
-
-		// no validation rules for Resources[key]
-
-		if v, ok := interface{}(val).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return TaskTemplateValidationError{
-					field:  fmt.Sprintf("Resources[%v]", key),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskTemplateValidationError{
+				field:  "Resources",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
-
 	}
 
 	switch m.Target.(type) {

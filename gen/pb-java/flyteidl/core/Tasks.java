@@ -5425,54 +5425,25 @@ public final class Tasks {
      * Cluster resources (Ray or Dask) that will be attached to task spec.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     * <code>.flyteidl.core.Resource resources = 20;</code>
      */
-    int getResourcesCount();
+    boolean hasResources();
     /**
      * <pre>
      * Cluster resources (Ray or Dask) that will be attached to task spec.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     * <code>.flyteidl.core.Resource resources = 20;</code>
      */
-    boolean containsResources(
-        java.lang.String key);
-    /**
-     * Use {@link #getResourcesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-    getResources();
+    flyteidl.core.ResourceOuterClass.Resource getResources();
     /**
      * <pre>
      * Cluster resources (Ray or Dask) that will be attached to task spec.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     * <code>.flyteidl.core.Resource resources = 20;</code>
      */
-    java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-    getResourcesMap();
-    /**
-     * <pre>
-     * Cluster resources (Ray or Dask) that will be attached to task spec.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-     */
-
-    flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
-        java.lang.String key,
-        flyteidl.core.ResourceOuterClass.Resource defaultValue);
-    /**
-     * <pre>
-     * Cluster resources (Ray or Dask) that will be attached to task spec.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-     */
-
-    flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
-        java.lang.String key);
+    flyteidl.core.ResourceOuterClass.ResourceOrBuilder getResourcesOrBuilder();
 
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
   }
@@ -5653,16 +5624,16 @@ public final class Tasks {
               break;
             }
             case 162: {
-              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
-                resources_ = com.google.protobuf.MapField.newMapField(
-                    ResourcesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000800;
+              flyteidl.core.ResourceOuterClass.Resource.Builder subBuilder = null;
+              if (resources_ != null) {
+                subBuilder = resources_.toBuilder();
               }
-              com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-              resources__ = input.readMessage(
-                  ResourcesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              resources_.getMutableMap().put(
-                  resources__.getKey(), resources__.getValue());
+              resources_ = input.readMessage(flyteidl.core.ResourceOuterClass.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resources_);
+                resources_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -5696,8 +5667,6 @@ public final class Tasks {
       switch (number) {
         case 16:
           return internalGetConfig();
-        case 20:
-          return internalGetResources();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -6158,95 +6127,36 @@ public final class Tasks {
     }
 
     public static final int RESOURCES_FIELD_NUMBER = 20;
-    private static final class ResourcesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>newDefaultInstance(
-                  flyteidl.core.Tasks.internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
-    private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-    internalGetResources() {
-      if (resources_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ResourcesDefaultEntryHolder.defaultEntry);
-      }
-      return resources_;
-    }
-
-    public int getResourcesCount() {
-      return internalGetResources().getMap().size();
+    private flyteidl.core.ResourceOuterClass.Resource resources_;
+    /**
+     * <pre>
+     * Cluster resources (Ray or Dask) that will be attached to task spec.
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resource resources = 20;</code>
+     */
+    public boolean hasResources() {
+      return resources_ != null;
     }
     /**
      * <pre>
      * Cluster resources (Ray or Dask) that will be attached to task spec.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     * <code>.flyteidl.core.Resource resources = 20;</code>
      */
-
-    public boolean containsResources(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetResources().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getResourcesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
-      return getResourcesMap();
+    public flyteidl.core.ResourceOuterClass.Resource getResources() {
+      return resources_ == null ? flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance() : resources_;
     }
     /**
      * <pre>
      * Cluster resources (Ray or Dask) that will be attached to task spec.
      * </pre>
      *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+     * <code>.flyteidl.core.Resource resources = 20;</code>
      */
-
-    public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
-      return internalGetResources().getMap();
-    }
-    /**
-     * <pre>
-     * Cluster resources (Ray or Dask) that will be attached to task spec.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-     */
-
-    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
-        java.lang.String key,
-        flyteidl.core.ResourceOuterClass.Resource defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
-          internalGetResources().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Cluster resources (Ray or Dask) that will be attached to task spec.
-     * </pre>
-     *
-     * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-     */
-
-    public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
-          internalGetResources().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public flyteidl.core.ResourceOuterClass.ResourceOrBuilder getResourcesOrBuilder() {
+      return getResources();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -6299,12 +6209,9 @@ public final class Tasks {
       if (targetCase_ == 18) {
         output.writeMessage(18, (flyteidl.core.Tasks.Sql) target_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetResources(),
-          ResourcesDefaultEntryHolder.defaultEntry,
-          20);
+      if (resources_ != null) {
+        output.writeMessage(20, getResources());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6363,15 +6270,9 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(18, (flyteidl.core.Tasks.Sql) target_);
       }
-      for (java.util.Map.Entry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> entry
-           : internalGetResources().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-        resources__ = ResourcesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(20, resources__);
+          .computeMessageSize(20, getResources());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6419,8 +6320,11 @@ public final class Tasks {
       }
       if (!internalGetConfig().equals(
           other.internalGetConfig())) return false;
-      if (!internalGetResources().equals(
-          other.internalGetResources())) return false;
+      if (hasResources() != other.hasResources()) return false;
+      if (hasResources()) {
+        if (!getResources()
+            .equals(other.getResources())) return false;
+      }
       if (!getTargetCase().equals(other.getTargetCase())) return false;
       switch (targetCase_) {
         case 6:
@@ -6477,9 +6381,9 @@ public final class Tasks {
         hash = (37 * hash) + CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + internalGetConfig().hashCode();
       }
-      if (!internalGetResources().getMap().isEmpty()) {
+      if (hasResources()) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetResources().hashCode();
+        hash = (53 * hash) + getResources().hashCode();
       }
       switch (targetCase_) {
         case 6:
@@ -6615,8 +6519,6 @@ public final class Tasks {
         switch (number) {
           case 16:
             return internalGetConfig();
-          case 20:
-            return internalGetResources();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -6628,8 +6530,6 @@ public final class Tasks {
         switch (number) {
           case 16:
             return internalGetMutableConfig();
-          case 20:
-            return internalGetMutableResources();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -6696,7 +6596,12 @@ public final class Tasks {
           securityContextBuilder_ = null;
         }
         internalGetMutableConfig().clear();
-        internalGetMutableResources().clear();
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
         targetCase_ = 0;
         target_ = null;
         return this;
@@ -6777,8 +6682,11 @@ public final class Tasks {
         }
         result.config_ = internalGetConfig();
         result.config_.makeImmutable();
-        result.resources_ = internalGetResources();
-        result.resources_.makeImmutable();
+        if (resourcesBuilder_ == null) {
+          result.resources_ = resources_;
+        } else {
+          result.resources_ = resourcesBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
         onBuilt();
@@ -6853,8 +6761,9 @@ public final class Tasks {
         }
         internalGetMutableConfig().mergeFrom(
             other.internalGetConfig());
-        internalGetMutableResources().mergeFrom(
-            other.internalGetResources());
+        if (other.hasResources()) {
+          mergeResources(other.getResources());
+        }
         switch (other.getTargetCase()) {
           case CONTAINER: {
             mergeContainer(other.getContainer());
@@ -8401,140 +8310,109 @@ public final class Tasks {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, flyteidl.core.ResourceOuterClass.Resource> resources_;
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-      internalGetResources() {
-        if (resources_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ResourcesDefaultEntryHolder.defaultEntry);
-        }
-        return resources_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-      internalGetMutableResources() {
-        onChanged();;
-        if (resources_ == null) {
-          resources_ = com.google.protobuf.MapField.newMapField(
-              ResourcesDefaultEntryHolder.defaultEntry);
-        }
-        if (!resources_.isMutable()) {
-          resources_ = resources_.copy();
-        }
-        return resources_;
-      }
-
-      public int getResourcesCount() {
-        return internalGetResources().getMap().size();
+      private flyteidl.core.ResourceOuterClass.Resource resources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.Resource, flyteidl.core.ResourceOuterClass.Resource.Builder, flyteidl.core.ResourceOuterClass.ResourceOrBuilder> resourcesBuilder_;
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      public boolean hasResources() {
+        return resourcesBuilder_ != null || resources_ != null;
       }
       /**
        * <pre>
        * Cluster resources (Ray or Dask) that will be attached to task spec.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       * <code>.flyteidl.core.Resource resources = 20;</code>
        */
-
-      public boolean containsResources(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetResources().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getResourcesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResources() {
-        return getResourcesMap();
-      }
-      /**
-       * <pre>
-       * Cluster resources (Ray or Dask) that will be attached to task spec.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-       */
-
-      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> getResourcesMap() {
-        return internalGetResources().getMap();
-      }
-      /**
-       * <pre>
-       * Cluster resources (Ray or Dask) that will be attached to task spec.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-       */
-
-      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrDefault(
-          java.lang.String key,
-          flyteidl.core.ResourceOuterClass.Resource defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
-            internalGetResources().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Cluster resources (Ray or Dask) that will be attached to task spec.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-       */
-
-      public flyteidl.core.ResourceOuterClass.Resource getResourcesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> map =
-            internalGetResources().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public flyteidl.core.ResourceOuterClass.Resource getResources() {
+        if (resourcesBuilder_ == null) {
+          return resources_ == null ? flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance() : resources_;
+        } else {
+          return resourcesBuilder_.getMessage();
         }
-        return map.get(key);
       }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      public Builder setResources(flyteidl.core.ResourceOuterClass.Resource value) {
+        if (resourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resources_ = value;
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(value);
+        }
 
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      public Builder setResources(
+          flyteidl.core.ResourceOuterClass.Resource.Builder builderForValue) {
+        if (resourcesBuilder_ == null) {
+          resources_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      public Builder mergeResources(flyteidl.core.ResourceOuterClass.Resource value) {
+        if (resourcesBuilder_ == null) {
+          if (resources_ != null) {
+            resources_ =
+              flyteidl.core.ResourceOuterClass.Resource.newBuilder(resources_).mergeFrom(value).buildPartial();
+          } else {
+            resources_ = value;
+          }
+          onChanged();
+        } else {
+          resourcesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
       public Builder clearResources() {
-        internalGetMutableResources().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <pre>
-       * Cluster resources (Ray or Dask) that will be attached to task spec.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-       */
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+          onChanged();
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
 
-      public Builder removeResources(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableResources().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource>
-      getMutableResources() {
-        return internalGetMutableResources().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Cluster resources (Ray or Dask) that will be attached to task spec.
-       * </pre>
-       *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
-       */
-      public Builder putResources(
-          java.lang.String key,
-          flyteidl.core.ResourceOuterClass.Resource value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableResources().getMutableMap()
-            .put(key, value);
         return this;
       }
       /**
@@ -8542,14 +8420,47 @@ public final class Tasks {
        * Cluster resources (Ray or Dask) that will be attached to task spec.
        * </pre>
        *
-       * <code>map&lt;string, .flyteidl.core.Resource&gt; resources = 20;</code>
+       * <code>.flyteidl.core.Resource resources = 20;</code>
        */
-
-      public Builder putAllResources(
-          java.util.Map<java.lang.String, flyteidl.core.ResourceOuterClass.Resource> values) {
-        internalGetMutableResources().getMutableMap()
-            .putAll(values);
-        return this;
+      public flyteidl.core.ResourceOuterClass.Resource.Builder getResourcesBuilder() {
+        
+        onChanged();
+        return getResourcesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.ResourceOrBuilder getResourcesOrBuilder() {
+        if (resourcesBuilder_ != null) {
+          return resourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return resources_ == null ?
+              flyteidl.core.ResourceOuterClass.Resource.getDefaultInstance() : resources_;
+        }
+      }
+      /**
+       * <pre>
+       * Cluster resources (Ray or Dask) that will be attached to task spec.
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resource resources = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.Resource, flyteidl.core.ResourceOuterClass.Resource.Builder, flyteidl.core.ResourceOuterClass.ResourceOrBuilder> 
+          getResourcesFieldBuilder() {
+        if (resourcesBuilder_ == null) {
+          resourcesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.ResourceOuterClass.Resource, flyteidl.core.ResourceOuterClass.Resource.Builder, flyteidl.core.ResourceOuterClass.ResourceOrBuilder>(
+                  getResources(),
+                  getParentForChildren(),
+                  isClean());
+          resources_ = null;
+        }
+        return resourcesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -17960,11 +17871,6 @@ public final class Tasks {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_ContainerPort_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18043,7 +17949,7 @@ public final class Tasks {
       "re.RetryStrategy\022\031\n\021discovery_version\030\006 " +
       "\001(\t\022 \n\030deprecated_error_message\030\007 \001(\t\022\027\n" +
       "\rinterruptible\030\010 \001(\010H\000\022\032\n\022cache_serializ" +
-      "able\030\t \001(\010B\025\n\023interruptible_value\"\232\005\n\014Ta" +
+      "able\030\t \001(\010B\025\n\023interruptible_value\"\274\004\n\014Ta" +
       "skTemplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.I" +
       "dentifier\022\014\n\004type\030\002 \001(\t\022-\n\010metadata\030\003 \001(" +
       "\0132\033.flyteidl.core.TaskMetadata\0220\n\tinterf" +
@@ -18055,51 +17961,49 @@ public final class Tasks {
       "SqlH\000\022\031\n\021task_type_version\030\007 \001(\005\0228\n\020secu" +
       "rity_context\030\010 \001(\0132\036.flyteidl.core.Secur" +
       "ityContext\0227\n\006config\030\020 \003(\0132\'.flyteidl.co" +
-      "re.TaskTemplate.ConfigEntry\022=\n\tresources" +
-      "\030\024 \003(\0132*.flyteidl.core.TaskTemplate.Reso" +
-      "urcesEntry\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\032I\n\016ResourcesEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.flyteidl.core." +
-      "Resource:\0028\001B\010\n\006target\"\'\n\rContainerPort\022" +
-      "\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContainer\022\r\n" +
-      "\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004args\030\003 " +
-      "\003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.core.R" +
-      "esources\022(\n\003env\030\005 \003(\0132\033.flyteidl.core.Ke" +
-      "yValuePair\022/\n\006config\030\006 \003(\0132\033.flyteidl.co" +
-      "re.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.fly" +
-      "teidl.core.ContainerPort\0225\n\013data_config\030" +
-      "\t \001(\0132 .flyteidl.core.DataLoadingConfig\022" +
-      ";\n\014architecture\030\n \001(\0162%.flyteidl.core.Co" +
-      "ntainer.Architecture\"I\n\014Architecture\022\013\n\007" +
-      "UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V" +
-      "6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\rdownlo" +
-      "ad_mode\030\001 \001(\0162&.flyteidl.core.IOStrategy" +
-      ".DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$.fly" +
-      "teidl.core.IOStrategy.UploadMode\"L\n\014Down" +
-      "loadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD" +
-      "_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUpload" +
-      "Mode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER" +
-      "\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadingCon" +
-      "fig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t" +
-      "\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(\01621." +
-      "flyteidl.core.DataLoadingConfig.LiteralM" +
-      "apFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyteidl" +
-      ".core.IOStrategy\"1\n\020LiteralMapFormat\022\010\n\004" +
-      "JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n" +
-      "\010metadata\030\001 \001(\0132 .flyteidl.core.K8sObjec" +
-      "tMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.google.pro" +
-      "tobuf.Struct\"\374\001\n\021K8sObjectMetadata\022<\n\006la" +
-      "bels\030\001 \003(\0132,.flyteidl.core.K8sObjectMeta" +
-      "data.LabelsEntry\022F\n\013annotations\030\002 \003(\01321." +
-      "flyteidl.core.K8sObjectMetadata.Annotati" +
-      "onsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tst" +
-      "atement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.flyteid" +
-      "l.core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUNDEFIN" +
-      "ED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/coreb\006proto3"
+      "re.TaskTemplate.ConfigEntry\022*\n\tresources" +
+      "\030\024 \001(\0132\027.flyteidl.core.Resource\032-\n\013Confi" +
+      "gEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\010" +
+      "\n\006target\"\'\n\rContainerPort\022\026\n\016container_p" +
+      "ort\030\001 \001(\r\"\255\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017" +
+      "\n\007command\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresourc" +
+      "es\030\004 \001(\0132\030.flyteidl.core.Resources\022(\n\003en" +
+      "v\030\005 \003(\0132\033.flyteidl.core.KeyValuePair\022/\n\006" +
+      "config\030\006 \003(\0132\033.flyteidl.core.KeyValuePai" +
+      "rB\002\030\001\022+\n\005ports\030\007 \003(\0132\034.flyteidl.core.Con" +
+      "tainerPort\0225\n\013data_config\030\t \001(\0132 .flytei" +
+      "dl.core.DataLoadingConfig\022;\n\014architectur" +
+      "e\030\n \001(\0162%.flyteidl.core.Container.Archit" +
+      "ecture\"I\n\014Architecture\022\013\n\007UNKNOWN\020\000\022\t\n\005A" +
+      "MD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020" +
+      "\004\"\233\002\n\nIOStrategy\022=\n\rdownload_mode\030\001 \001(\0162" +
+      "&.flyteidl.core.IOStrategy.DownloadMode\022" +
+      "9\n\013upload_mode\030\002 \001(\0162$.flyteidl.core.IOS" +
+      "trategy.UploadMode\"L\n\014DownloadMode\022\022\n\016DO" +
+      "WNLOAD_EAGER\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017D" +
+      "O_NOT_DOWNLOAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD" +
+      "_ON_EXIT\020\000\022\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_U" +
+      "PLOAD\020\002\"\363\001\n\021DataLoadingConfig\022\017\n\007enabled" +
+      "\030\001 \001(\010\022\022\n\ninput_path\030\002 \001(\t\022\023\n\013output_pat" +
+      "h\030\003 \001(\t\022A\n\006format\030\004 \001(\01621.flyteidl.core." +
+      "DataLoadingConfig.LiteralMapFormat\022.\n\013io" +
+      "_strategy\030\005 \001(\0132\031.flyteidl.core.IOStrate" +
+      "gy\"1\n\020LiteralMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML" +
+      "\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 \001(" +
+      "\0132 .flyteidl.core.K8sObjectMetadata\022)\n\010p" +
+      "od_spec\030\002 \001(\0132\027.google.protobuf.Struct\"\374" +
+      "\001\n\021K8sObjectMetadata\022<\n\006labels\030\001 \003(\0132,.f" +
+      "lyteidl.core.K8sObjectMetadata.LabelsEnt" +
+      "ry\022F\n\013annotations\030\002 \003(\01321.flyteidl.core." +
+      "K8sObjectMetadata.AnnotationsEntry\032-\n\013La" +
+      "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022" +
+      "+\n\007dialect\030\002 \001(\0162\032.flyteidl.core.Sql.Dia" +
+      "lect\"7\n\007Dialect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001" +
+      "\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B6Z4github.com/flyt" +
+      "eorg/flyteidl/gen/pb-go/flyteidl/coreb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18155,12 +18059,6 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_descriptor =
-      internal_static_flyteidl_core_TaskTemplate_descriptor.getNestedTypes().get(1);
-    internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_core_TaskTemplate_ResourcesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_ContainerPort_descriptor =
       getDescriptor().getMessageTypes().get(4);

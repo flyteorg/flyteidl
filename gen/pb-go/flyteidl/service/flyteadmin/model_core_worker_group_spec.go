@@ -11,8 +11,6 @@ package flyteadmin
 
 type CoreWorkerGroupSpec struct {
 	GroupName string `json:"group_name,omitempty"`
-	ComputeTemplate string `json:"compute_template,omitempty"`
-	Image string `json:"image,omitempty"`
 	Replicas int32 `json:"replicas,omitempty"`
 	MinReplicas int32 `json:"min_replicas,omitempty"`
 	MaxReplicas int32 `json:"max_replicas,omitempty"`

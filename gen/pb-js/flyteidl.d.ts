@@ -1431,9 +1431,6 @@ export namespace flyteidl {
 
             /** WorkflowTemplate metadataDefaults */
             metadataDefaults?: (flyteidl.core.IWorkflowMetadataDefaults|null);
-
-            /** WorkflowTemplate resources */
-            resources?: ({ [k: string]: flyteidl.core.IResource }|null);
         }
 
         /** Represents a WorkflowTemplate. */
@@ -1465,9 +1462,6 @@ export namespace flyteidl {
 
             /** WorkflowTemplate metadataDefaults. */
             public metadataDefaults?: (flyteidl.core.IWorkflowMetadataDefaults|null);
-
-            /** WorkflowTemplate resources. */
-            public resources: { [k: string]: flyteidl.core.IResource };
 
             /**
              * Creates a new WorkflowTemplate instance using the specified properties.
@@ -4906,7 +4900,7 @@ export namespace flyteidl {
             config?: ({ [k: string]: string }|null);
 
             /** TaskTemplate resources */
-            resources?: ({ [k: string]: flyteidl.core.IResource }|null);
+            resources?: (flyteidl.core.IResource|null);
         }
 
         /** Represents a TaskTemplate. */
@@ -4952,7 +4946,7 @@ export namespace flyteidl {
             public config: { [k: string]: string };
 
             /** TaskTemplate resources. */
-            public resources: { [k: string]: flyteidl.core.IResource };
+            public resources?: (flyteidl.core.IResource|null);
 
             /** TaskTemplate target. */
             public target?: ("container"|"k8sPod"|"sql");
@@ -5555,11 +5549,78 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a RayJob. */
+        interface IRayJob {
+
+            /** RayJob rayCluster */
+            rayCluster?: (flyteidl.core.IRayCluster|null);
+
+            /** RayJob RuntimeEnv */
+            RuntimeEnv?: (string|null);
+
+            /** RayJob ShutdownAfterJobFinishes */
+            ShutdownAfterJobFinishes?: (boolean|null);
+
+            /** RayJob TTLSecondsAfterFinished */
+            TTLSecondsAfterFinished?: (number|null);
+        }
+
+        /** Represents a RayJob. */
+        class RayJob implements IRayJob {
+
+            /**
+             * Constructs a new RayJob.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IRayJob);
+
+            /** RayJob rayCluster. */
+            public rayCluster?: (flyteidl.core.IRayCluster|null);
+
+            /** RayJob RuntimeEnv. */
+            public RuntimeEnv: string;
+
+            /** RayJob ShutdownAfterJobFinishes. */
+            public ShutdownAfterJobFinishes: boolean;
+
+            /** RayJob TTLSecondsAfterFinished. */
+            public TTLSecondsAfterFinished: number;
+
+            /**
+             * Creates a new RayJob instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns RayJob instance
+             */
+            public static create(properties?: flyteidl.core.IRayJob): flyteidl.core.RayJob;
+
+            /**
+             * Encodes the specified RayJob message. Does not implicitly {@link flyteidl.core.RayJob.verify|verify} messages.
+             * @param message RayJob message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IRayJob, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a RayJob message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns RayJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.RayJob;
+
+            /**
+             * Verifies a RayJob message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a RayCluster. */
         interface IRayCluster {
-
-            /** RayCluster name */
-            name?: (string|null);
 
             /** RayCluster clusterSpec */
             clusterSpec?: (flyteidl.core.IClusterSpec|null);
@@ -5573,9 +5634,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IRayCluster);
-
-            /** RayCluster name. */
-            public name: string;
 
             /** RayCluster clusterSpec. */
             public clusterSpec?: (flyteidl.core.IClusterSpec|null);
@@ -5674,15 +5732,6 @@ export namespace flyteidl {
         /** Properties of a HeadGroupSpec. */
         interface IHeadGroupSpec {
 
-            /** HeadGroupSpec computeTemplate */
-            computeTemplate?: (string|null);
-
-            /** HeadGroupSpec image */
-            image?: (string|null);
-
-            /** HeadGroupSpec serviceType */
-            serviceType?: (string|null);
-
             /** HeadGroupSpec rayStartParams */
             rayStartParams?: ({ [k: string]: string }|null);
         }
@@ -5695,15 +5744,6 @@ export namespace flyteidl {
              * @param [properties] Properties to set
              */
             constructor(properties?: flyteidl.core.IHeadGroupSpec);
-
-            /** HeadGroupSpec computeTemplate. */
-            public computeTemplate: string;
-
-            /** HeadGroupSpec image. */
-            public image: string;
-
-            /** HeadGroupSpec serviceType. */
-            public serviceType: string;
 
             /** HeadGroupSpec rayStartParams. */
             public rayStartParams: { [k: string]: string };
@@ -5747,12 +5787,6 @@ export namespace flyteidl {
             /** WorkerGroupSpec groupName */
             groupName?: (string|null);
 
-            /** WorkerGroupSpec computeTemplate */
-            computeTemplate?: (string|null);
-
-            /** WorkerGroupSpec image */
-            image?: (string|null);
-
             /** WorkerGroupSpec replicas */
             replicas?: (number|null);
 
@@ -5777,12 +5811,6 @@ export namespace flyteidl {
 
             /** WorkerGroupSpec groupName. */
             public groupName: string;
-
-            /** WorkerGroupSpec computeTemplate. */
-            public computeTemplate: string;
-
-            /** WorkerGroupSpec image. */
-            public image: string;
 
             /** WorkerGroupSpec replicas. */
             public replicas: number;

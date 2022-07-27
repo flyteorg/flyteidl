@@ -10,8 +10,5 @@
 package flyteadmin
 
 type CoreHeadGroupSpec struct {
-	ComputeTemplate string `json:"compute_template,omitempty"`
-	Image string `json:"image,omitempty"`
-	ServiceType string `json:"service_type,omitempty"`
 	RayStartParams map[string]string `json:"ray_start_params,omitempty"`
 }

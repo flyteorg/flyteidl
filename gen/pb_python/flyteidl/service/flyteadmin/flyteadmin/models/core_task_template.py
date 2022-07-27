@@ -52,7 +52,7 @@ class CoreTaskTemplate(object):
         'task_type_version': 'int',
         'security_context': 'CoreSecurityContext',
         'config': 'dict(str, str)',
-        'resources': 'dict(str, CoreResource)'
+        'resources': 'CoreResource'
     }
 
     attribute_map = {
@@ -364,7 +364,7 @@ class CoreTaskTemplate(object):
         Cluster resources (Ray or Dask) that will be attached to task spec.  # noqa: E501
 
         :return: The resources of this CoreTaskTemplate.  # noqa: E501
-        :rtype: dict(str, CoreResource)
+        :rtype: CoreResource
         """
         return self._resources
 
@@ -375,7 +375,7 @@ class CoreTaskTemplate(object):
         Cluster resources (Ray or Dask) that will be attached to task spec.  # noqa: E501
 
         :param resources: The resources of this CoreTaskTemplate.  # noqa: E501
-        :type: dict(str, CoreResource)
+        :type: CoreResource
         """
 
         self._resources = resources

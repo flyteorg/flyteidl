@@ -33,49 +33,21 @@ class CoreRayCluster(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'cluster_spec': 'CoreClusterSpec'
     }
 
     attribute_map = {
-        'name': 'name',
         'cluster_spec': 'cluster_spec'
     }
 
-    def __init__(self, name=None, cluster_spec=None):  # noqa: E501
+    def __init__(self, cluster_spec=None):  # noqa: E501
         """CoreRayCluster - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
         self._cluster_spec = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
         if cluster_spec is not None:
             self.cluster_spec = cluster_spec
-
-    @property
-    def name(self):
-        """Gets the name of this CoreRayCluster.  # noqa: E501
-
-        Required input field. Unique cluster name provided by user.  # noqa: E501
-
-        :return: The name of this CoreRayCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CoreRayCluster.
-
-        Required input field. Unique cluster name provided by user.  # noqa: E501
-
-        :param name: The name of this CoreRayCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def cluster_spec(self):

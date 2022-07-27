@@ -1766,9 +1766,6 @@ HeadGroupSpec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "compute_template", ":ref:`ref_string`", "", "Optional. The computeTemplate of head node group"
-   "image", ":ref:`ref_string`", "", "Optional field. This field will be used to retrieve right ray container"
-   "service_type", ":ref:`ref_string`", "", "Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node"
    "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
 
 
@@ -1812,8 +1809,31 @@ Define Ray cluster spec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "name", ":ref:`ref_string`", "", "Required input field. Unique cluster name provided by user."
    "cluster_spec", ":ref:`ref_flyteidl.core.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
+
+
+
+
+
+
+
+.. _ref_flyteidl.core.RayJob:
+
+RayJob
+------------------------------------------------------------------
+
+RayJobSpec defines the desired state of RayJob
+
+
+
+.. csv-table:: RayJob type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "rayCluster", ":ref:`ref_flyteidl.core.RayCluster`", "", "RayClusterSpec is the cluster template to run the job"
+   "RuntimeEnv", ":ref:`ref_string`", "", "RuntimeEnv is base64 encoded. Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments"
+   "ShutdownAfterJobFinishes", ":ref:`ref_bool`", "", "ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed."
+   "TTLSecondsAfterFinished", ":ref:`ref_int32`", "", "TTLSecondsAfterFinished is the TTL to clean up RayCluster. It's only working when ShutdownAfterJobFinishes set to true."
 
 
 
@@ -1856,8 +1876,6 @@ WorkerGroupSpec
    :widths: auto
 
    "group_name", ":ref:`ref_string`", "", "Required. Group name of the current worker group"
-   "compute_template", ":ref:`ref_string`", "", "Optional. The computeTemplate of head node group"
-   "image", ":ref:`ref_string`", "", "Optional field. This field will be used to retrieve right ray container"
    "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
    "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
    "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
@@ -2431,7 +2449,7 @@ Tasks are registered as a first step in the system.
    "task_type_version", ":ref:`ref_int32`", "", "This can be used to customize task handling at execution time for the same task type."
    "security_context", ":ref:`ref_flyteidl.core.SecurityContext`", "", "security_context encapsulates security attributes requested to run this task."
    "config", ":ref:`ref_flyteidl.core.TaskTemplate.ConfigEntry`", "repeated", "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system to use as required. reserve the field numbers 1 through 15 for very frequently occurring message elements"
-   "resources", ":ref:`ref_flyteidl.core.TaskTemplate.ResourcesEntry`", "repeated", "Cluster resources (Ray or Dask) that will be attached to task spec."
+   "resources", ":ref:`ref_flyteidl.core.Resource`", "", "Cluster resources (Ray or Dask) that will be attached to task spec."
 
 
 
@@ -2454,28 +2472,6 @@ TaskTemplate.ConfigEntry
 
    "key", ":ref:`ref_string`", "", ""
    "value", ":ref:`ref_string`", "", ""
-
-
-
-
-
-
-
-.. _ref_flyteidl.core.TaskTemplate.ResourcesEntry:
-
-TaskTemplate.ResourcesEntry
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: TaskTemplate.ResourcesEntry type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Resource`", "", ""
 
 
 
@@ -3290,29 +3286,6 @@ directed acyclic graph.
    "outputs", ":ref:`ref_flyteidl.core.Binding`", "repeated", "A list of output bindings that specify how to construct workflow outputs. Bindings can pull node outputs or specify literals. All workflow outputs specified in the interface field must be bound in order for the workflow to be validated. A workflow has an implicit dependency on all of its nodes to execute successfully in order to bind final outputs. Most of these outputs will be Binding's with a BindingData of type OutputReference. That is, your workflow can just have an output of some constant (`Output(5)`), but usually, the workflow will be pulling outputs from the output of a task."
    "failure_node", ":ref:`ref_flyteidl.core.Node`", "", "+optional A catch-all node. This node is executed whenever the execution engine determines the workflow has failed. The interface of this node must match the Workflow interface with an additional input named 'error' of type pb.lyft.flyte.core.Error."
    "metadata_defaults", ":ref:`ref_flyteidl.core.WorkflowMetadataDefaults`", "", "workflow defaults"
-   "resources", ":ref:`ref_flyteidl.core.WorkflowTemplate.ResourcesEntry`", "repeated", "Cluster resources (Ray or Dask) that will be attached to workflow template."
-
-
-
-
-
-
-
-.. _ref_flyteidl.core.WorkflowTemplate.ResourcesEntry:
-
-WorkflowTemplate.ResourcesEntry
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: WorkflowTemplate.ResourcesEntry type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "key", ":ref:`ref_string`", "", ""
-   "value", ":ref:`ref_flyteidl.core.Resource`", "", ""
 
 
 

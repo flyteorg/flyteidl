@@ -10,7 +10,5 @@
 package flyteadmin
 
 type CoreRayCluster struct {
-	// Required input field. Unique cluster name provided by user.
-	Name string `json:"name,omitempty"`
 	ClusterSpec *CoreClusterSpec `json:"cluster_spec,omitempty"`
 }

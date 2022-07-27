@@ -3387,7 +3387,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<flyteidl.core.IBinding>|null} [outputs] WorkflowTemplate outputs
              * @property {flyteidl.core.INode|null} [failureNode] WorkflowTemplate failureNode
              * @property {flyteidl.core.IWorkflowMetadataDefaults|null} [metadataDefaults] WorkflowTemplate metadataDefaults
-             * @property {Object.<string,flyteidl.core.IResource>|null} [resources] WorkflowTemplate resources
              */
 
             /**
@@ -3401,7 +3400,6 @@ export const flyteidl = $root.flyteidl = (() => {
             function WorkflowTemplate(properties) {
                 this.nodes = [];
                 this.outputs = [];
-                this.resources = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -3465,14 +3463,6 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowTemplate.prototype.metadataDefaults = null;
 
             /**
-             * WorkflowTemplate resources.
-             * @member {Object.<string,flyteidl.core.IResource>} resources
-             * @memberof flyteidl.core.WorkflowTemplate
-             * @instance
-             */
-            WorkflowTemplate.prototype.resources = $util.emptyObject;
-
-            /**
              * Creates a new WorkflowTemplate instance using the specified properties.
              * @function create
              * @memberof flyteidl.core.WorkflowTemplate
@@ -3512,11 +3502,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Node.encode(message.failureNode, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.metadataDefaults != null && message.hasOwnProperty("metadataDefaults"))
                     $root.flyteidl.core.WorkflowMetadataDefaults.encode(message.metadataDefaults, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.resources != null && message.hasOwnProperty("resources"))
-                    for (let keys = Object.keys(message.resources), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 8, wireType 2 =*/66).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.Resource.encode(message.resources[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
                 return writer;
             };
 
@@ -3534,7 +3519,7 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowTemplate.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowTemplate(), key;
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.WorkflowTemplate();
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3562,14 +3547,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 7:
                         message.metadataDefaults = $root.flyteidl.core.WorkflowMetadataDefaults.decode(reader, reader.uint32());
-                        break;
-                    case 8:
-                        reader.skip().pos++;
-                        if (message.resources === $util.emptyObject)
-                            message.resources = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.resources[key] = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3632,16 +3609,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.core.WorkflowMetadataDefaults.verify(message.metadataDefaults);
                     if (error)
                         return "metadataDefaults." + error;
-                }
-                if (message.resources != null && message.hasOwnProperty("resources")) {
-                    if (!$util.isObject(message.resources))
-                        return "resources: object expected";
-                    let key = Object.keys(message.resources);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.Resource.verify(message.resources[key[i]]);
-                        if (error)
-                            return "resources." + error;
-                    }
                 }
                 return null;
             };
@@ -11595,7 +11562,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
              * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
              * @property {Object.<string,string>|null} [config] TaskTemplate config
-             * @property {Object.<string,flyteidl.core.IResource>|null} [resources] TaskTemplate resources
+             * @property {flyteidl.core.IResource|null} [resources] TaskTemplate resources
              */
 
             /**
@@ -11608,7 +11575,6 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             function TaskTemplate(properties) {
                 this.config = {};
-                this.resources = {};
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -11705,11 +11671,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * TaskTemplate resources.
-             * @member {Object.<string,flyteidl.core.IResource>} resources
+             * @member {flyteidl.core.IResource|null|undefined} resources
              * @memberof flyteidl.core.TaskTemplate
              * @instance
              */
-            TaskTemplate.prototype.resources = $util.emptyObject;
+            TaskTemplate.prototype.resources = null;
 
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
@@ -11773,10 +11739,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.sql != null && message.hasOwnProperty("sql"))
                     $root.flyteidl.core.Sql.encode(message.sql, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 if (message.resources != null && message.hasOwnProperty("resources"))
-                    for (let keys = Object.keys(message.resources), i = 0; i < keys.length; ++i) {
-                        writer.uint32(/* id 20, wireType 2 =*/162).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]);
-                        $root.flyteidl.core.Resource.encode(message.resources[keys[i]], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim().ldelim();
-                    }
+                    $root.flyteidl.core.Resource.encode(message.resources, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                 return writer;
             };
 
@@ -11837,12 +11800,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.config[key] = reader.string();
                         break;
                     case 20:
-                        reader.skip().pos++;
-                        if (message.resources === $util.emptyObject)
-                            message.resources = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.resources[key] = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
+                        message.resources = $root.flyteidl.core.Resource.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11932,14 +11890,9 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "config: string{k:string} expected";
                 }
                 if (message.resources != null && message.hasOwnProperty("resources")) {
-                    if (!$util.isObject(message.resources))
-                        return "resources: object expected";
-                    let key = Object.keys(message.resources);
-                    for (let i = 0; i < key.length; ++i) {
-                        let error = $root.flyteidl.core.Resource.verify(message.resources[key[i]]);
-                        if (error)
-                            return "resources." + error;
-                    }
+                    let error = $root.flyteidl.core.Resource.verify(message.resources);
+                    if (error)
+                        return "resources." + error;
                 }
                 return null;
             };
@@ -13318,13 +13271,175 @@ export const flyteidl = $root.flyteidl = (() => {
             return Resource;
         })();
 
+        core.RayJob = (function() {
+
+            /**
+             * Properties of a RayJob.
+             * @memberof flyteidl.core
+             * @interface IRayJob
+             * @property {flyteidl.core.IRayCluster|null} [rayCluster] RayJob rayCluster
+             * @property {string|null} [RuntimeEnv] RayJob RuntimeEnv
+             * @property {boolean|null} [ShutdownAfterJobFinishes] RayJob ShutdownAfterJobFinishes
+             * @property {number|null} [TTLSecondsAfterFinished] RayJob TTLSecondsAfterFinished
+             */
+
+            /**
+             * Constructs a new RayJob.
+             * @memberof flyteidl.core
+             * @classdesc Represents a RayJob.
+             * @implements IRayJob
+             * @constructor
+             * @param {flyteidl.core.IRayJob=} [properties] Properties to set
+             */
+            function RayJob(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * RayJob rayCluster.
+             * @member {flyteidl.core.IRayCluster|null|undefined} rayCluster
+             * @memberof flyteidl.core.RayJob
+             * @instance
+             */
+            RayJob.prototype.rayCluster = null;
+
+            /**
+             * RayJob RuntimeEnv.
+             * @member {string} RuntimeEnv
+             * @memberof flyteidl.core.RayJob
+             * @instance
+             */
+            RayJob.prototype.RuntimeEnv = "";
+
+            /**
+             * RayJob ShutdownAfterJobFinishes.
+             * @member {boolean} ShutdownAfterJobFinishes
+             * @memberof flyteidl.core.RayJob
+             * @instance
+             */
+            RayJob.prototype.ShutdownAfterJobFinishes = false;
+
+            /**
+             * RayJob TTLSecondsAfterFinished.
+             * @member {number} TTLSecondsAfterFinished
+             * @memberof flyteidl.core.RayJob
+             * @instance
+             */
+            RayJob.prototype.TTLSecondsAfterFinished = 0;
+
+            /**
+             * Creates a new RayJob instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.RayJob
+             * @static
+             * @param {flyteidl.core.IRayJob=} [properties] Properties to set
+             * @returns {flyteidl.core.RayJob} RayJob instance
+             */
+            RayJob.create = function create(properties) {
+                return new RayJob(properties);
+            };
+
+            /**
+             * Encodes the specified RayJob message. Does not implicitly {@link flyteidl.core.RayJob.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.RayJob
+             * @static
+             * @param {flyteidl.core.IRayJob} message RayJob message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RayJob.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.rayCluster != null && message.hasOwnProperty("rayCluster"))
+                    $root.flyteidl.core.RayCluster.encode(message.rayCluster, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.RuntimeEnv != null && message.hasOwnProperty("RuntimeEnv"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.RuntimeEnv);
+                if (message.ShutdownAfterJobFinishes != null && message.hasOwnProperty("ShutdownAfterJobFinishes"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.ShutdownAfterJobFinishes);
+                if (message.TTLSecondsAfterFinished != null && message.hasOwnProperty("TTLSecondsAfterFinished"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.TTLSecondsAfterFinished);
+                return writer;
+            };
+
+            /**
+             * Decodes a RayJob message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.RayJob
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.RayJob} RayJob
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RayJob.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.RayJob();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.rayCluster = $root.flyteidl.core.RayCluster.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.RuntimeEnv = reader.string();
+                        break;
+                    case 3:
+                        message.ShutdownAfterJobFinishes = reader.bool();
+                        break;
+                    case 4:
+                        message.TTLSecondsAfterFinished = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a RayJob message.
+             * @function verify
+             * @memberof flyteidl.core.RayJob
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RayJob.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.rayCluster != null && message.hasOwnProperty("rayCluster")) {
+                    let error = $root.flyteidl.core.RayCluster.verify(message.rayCluster);
+                    if (error)
+                        return "rayCluster." + error;
+                }
+                if (message.RuntimeEnv != null && message.hasOwnProperty("RuntimeEnv"))
+                    if (!$util.isString(message.RuntimeEnv))
+                        return "RuntimeEnv: string expected";
+                if (message.ShutdownAfterJobFinishes != null && message.hasOwnProperty("ShutdownAfterJobFinishes"))
+                    if (typeof message.ShutdownAfterJobFinishes !== "boolean")
+                        return "ShutdownAfterJobFinishes: boolean expected";
+                if (message.TTLSecondsAfterFinished != null && message.hasOwnProperty("TTLSecondsAfterFinished"))
+                    if (!$util.isInteger(message.TTLSecondsAfterFinished))
+                        return "TTLSecondsAfterFinished: integer expected";
+                return null;
+            };
+
+            return RayJob;
+        })();
+
         core.RayCluster = (function() {
 
             /**
              * Properties of a RayCluster.
              * @memberof flyteidl.core
              * @interface IRayCluster
-             * @property {string|null} [name] RayCluster name
              * @property {flyteidl.core.IClusterSpec|null} [clusterSpec] RayCluster clusterSpec
              */
 
@@ -13342,14 +13457,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * RayCluster name.
-             * @member {string} name
-             * @memberof flyteidl.core.RayCluster
-             * @instance
-             */
-            RayCluster.prototype.name = "";
 
             /**
              * RayCluster clusterSpec.
@@ -13383,10 +13490,8 @@ export const flyteidl = $root.flyteidl = (() => {
             RayCluster.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec"))
-                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.flyteidl.core.ClusterSpec.encode(message.clusterSpec, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -13409,9 +13514,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.name = reader.string();
-                        break;
-                    case 2:
                         message.clusterSpec = $root.flyteidl.core.ClusterSpec.decode(reader, reader.uint32());
                         break;
                     default:
@@ -13433,9 +13535,6 @@ export const flyteidl = $root.flyteidl = (() => {
             RayCluster.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.name != null && message.hasOwnProperty("name"))
-                    if (!$util.isString(message.name))
-                        return "name: string expected";
                 if (message.clusterSpec != null && message.hasOwnProperty("clusterSpec")) {
                     let error = $root.flyteidl.core.ClusterSpec.verify(message.clusterSpec);
                     if (error)
@@ -13592,9 +13691,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a HeadGroupSpec.
              * @memberof flyteidl.core
              * @interface IHeadGroupSpec
-             * @property {string|null} [computeTemplate] HeadGroupSpec computeTemplate
-             * @property {string|null} [image] HeadGroupSpec image
-             * @property {string|null} [serviceType] HeadGroupSpec serviceType
              * @property {Object.<string,string>|null} [rayStartParams] HeadGroupSpec rayStartParams
              */
 
@@ -13613,30 +13709,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * HeadGroupSpec computeTemplate.
-             * @member {string} computeTemplate
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.computeTemplate = "";
-
-            /**
-             * HeadGroupSpec image.
-             * @member {string} image
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.image = "";
-
-            /**
-             * HeadGroupSpec serviceType.
-             * @member {string} serviceType
-             * @memberof flyteidl.core.HeadGroupSpec
-             * @instance
-             */
-            HeadGroupSpec.prototype.serviceType = "";
 
             /**
              * HeadGroupSpec rayStartParams.
@@ -13670,15 +13742,9 @@ export const flyteidl = $root.flyteidl = (() => {
             HeadGroupSpec.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.computeTemplate);
-                if (message.image != null && message.hasOwnProperty("image"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.image);
-                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.serviceType);
                 if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
                     for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 4, wireType 2 =*/34).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
                 return writer;
             };
 
@@ -13701,15 +13767,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.computeTemplate = reader.string();
-                        break;
-                    case 2:
-                        message.image = reader.string();
-                        break;
-                    case 3:
-                        message.serviceType = reader.string();
-                        break;
-                    case 4:
                         reader.skip().pos++;
                         if (message.rayStartParams === $util.emptyObject)
                             message.rayStartParams = {};
@@ -13736,15 +13793,6 @@ export const flyteidl = $root.flyteidl = (() => {
             HeadGroupSpec.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    if (!$util.isString(message.computeTemplate))
-                        return "computeTemplate: string expected";
-                if (message.image != null && message.hasOwnProperty("image"))
-                    if (!$util.isString(message.image))
-                        return "image: string expected";
-                if (message.serviceType != null && message.hasOwnProperty("serviceType"))
-                    if (!$util.isString(message.serviceType))
-                        return "serviceType: string expected";
                 if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams")) {
                     if (!$util.isObject(message.rayStartParams))
                         return "rayStartParams: object expected";
@@ -13766,8 +13814,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.core
              * @interface IWorkerGroupSpec
              * @property {string|null} [groupName] WorkerGroupSpec groupName
-             * @property {string|null} [computeTemplate] WorkerGroupSpec computeTemplate
-             * @property {string|null} [image] WorkerGroupSpec image
              * @property {number|null} [replicas] WorkerGroupSpec replicas
              * @property {number|null} [minReplicas] WorkerGroupSpec minReplicas
              * @property {number|null} [maxReplicas] WorkerGroupSpec maxReplicas
@@ -13797,22 +13843,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             WorkerGroupSpec.prototype.groupName = "";
-
-            /**
-             * WorkerGroupSpec computeTemplate.
-             * @member {string} computeTemplate
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.computeTemplate = "";
-
-            /**
-             * WorkerGroupSpec image.
-             * @member {string} image
-             * @memberof flyteidl.core.WorkerGroupSpec
-             * @instance
-             */
-            WorkerGroupSpec.prototype.image = "";
 
             /**
              * WorkerGroupSpec replicas.
@@ -13872,19 +13902,15 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.groupName != null && message.hasOwnProperty("groupName"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.groupName);
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.computeTemplate);
-                if (message.image != null && message.hasOwnProperty("image"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.image);
                 if (message.replicas != null && message.hasOwnProperty("replicas"))
-                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.replicas);
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.replicas);
                 if (message.minReplicas != null && message.hasOwnProperty("minReplicas"))
-                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.minReplicas);
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.minReplicas);
                 if (message.maxReplicas != null && message.hasOwnProperty("maxReplicas"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.maxReplicas);
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.maxReplicas);
                 if (message.rayStartParams != null && message.hasOwnProperty("rayStartParams"))
                     for (let keys = Object.keys(message.rayStartParams), i = 0; i < keys.length; ++i)
-                        writer.uint32(/* id 7, wireType 2 =*/58).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
+                        writer.uint32(/* id 5, wireType 2 =*/42).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.rayStartParams[keys[i]]).ldelim();
                 return writer;
             };
 
@@ -13910,21 +13936,15 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.groupName = reader.string();
                         break;
                     case 2:
-                        message.computeTemplate = reader.string();
-                        break;
-                    case 3:
-                        message.image = reader.string();
-                        break;
-                    case 4:
                         message.replicas = reader.int32();
                         break;
-                    case 5:
+                    case 3:
                         message.minReplicas = reader.int32();
                         break;
-                    case 6:
+                    case 4:
                         message.maxReplicas = reader.int32();
                         break;
-                    case 7:
+                    case 5:
                         reader.skip().pos++;
                         if (message.rayStartParams === $util.emptyObject)
                             message.rayStartParams = {};
@@ -13954,12 +13974,6 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.groupName != null && message.hasOwnProperty("groupName"))
                     if (!$util.isString(message.groupName))
                         return "groupName: string expected";
-                if (message.computeTemplate != null && message.hasOwnProperty("computeTemplate"))
-                    if (!$util.isString(message.computeTemplate))
-                        return "computeTemplate: string expected";
-                if (message.image != null && message.hasOwnProperty("image"))
-                    if (!$util.isString(message.image))
-                        return "image: string expected";
                 if (message.replicas != null && message.hasOwnProperty("replicas"))
                     if (!$util.isInteger(message.replicas))
                         return "replicas: integer expected";

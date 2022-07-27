@@ -32,8 +32,6 @@ class CoreWorkerGroupSpec(object):
     """
     swagger_types = {
         'group_name': 'str',
-        'compute_template': 'str',
-        'image': 'str',
         'replicas': 'int',
         'min_replicas': 'int',
         'max_replicas': 'int',
@@ -42,20 +40,16 @@ class CoreWorkerGroupSpec(object):
 
     attribute_map = {
         'group_name': 'group_name',
-        'compute_template': 'compute_template',
-        'image': 'image',
         'replicas': 'replicas',
         'min_replicas': 'min_replicas',
         'max_replicas': 'max_replicas',
         'ray_start_params': 'ray_start_params'
     }
 
-    def __init__(self, group_name=None, compute_template=None, image=None, replicas=None, min_replicas=None, max_replicas=None, ray_start_params=None):  # noqa: E501
+    def __init__(self, group_name=None, replicas=None, min_replicas=None, max_replicas=None, ray_start_params=None):  # noqa: E501
         """CoreWorkerGroupSpec - a model defined in Swagger"""  # noqa: E501
 
         self._group_name = None
-        self._compute_template = None
-        self._image = None
         self._replicas = None
         self._min_replicas = None
         self._max_replicas = None
@@ -64,10 +58,6 @@ class CoreWorkerGroupSpec(object):
 
         if group_name is not None:
             self.group_name = group_name
-        if compute_template is not None:
-            self.compute_template = compute_template
-        if image is not None:
-            self.image = image
         if replicas is not None:
             self.replicas = replicas
         if min_replicas is not None:
@@ -97,48 +87,6 @@ class CoreWorkerGroupSpec(object):
         """
 
         self._group_name = group_name
-
-    @property
-    def compute_template(self):
-        """Gets the compute_template of this CoreWorkerGroupSpec.  # noqa: E501
-
-
-        :return: The compute_template of this CoreWorkerGroupSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._compute_template
-
-    @compute_template.setter
-    def compute_template(self, compute_template):
-        """Sets the compute_template of this CoreWorkerGroupSpec.
-
-
-        :param compute_template: The compute_template of this CoreWorkerGroupSpec.  # noqa: E501
-        :type: str
-        """
-
-        self._compute_template = compute_template
-
-    @property
-    def image(self):
-        """Gets the image of this CoreWorkerGroupSpec.  # noqa: E501
-
-
-        :return: The image of this CoreWorkerGroupSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._image
-
-    @image.setter
-    def image(self, image):
-        """Sets the image of this CoreWorkerGroupSpec.
-
-
-        :param image: The image of this CoreWorkerGroupSpec.  # noqa: E501
-        :type: str
-        """
-
-        self._image = image
 
     @property
     def replicas(self):

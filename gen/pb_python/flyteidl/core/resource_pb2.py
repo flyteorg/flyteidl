@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x08Resource\x12(\n\x03ray\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayClusterH\x00\x42\x07\n\x05value\"L\n\nRayCluster\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x30\n\x0c\x63luster_spec\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_spec\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\xd1\x01\n\rHeadGroupSpec\x12\x18\n\x10\x63ompute_template\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x14\n\x0cservice_type\x18\x03 \x01(\t\x12J\n\x10ray_start_params\x18\x04 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x02\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x18\n\x10\x63ompute_template\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x05 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x06 \x01(\x05\x12L\n\x10ray_start_params\x18\x07 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/resource.proto\x12\rflyteidl.core\x1a\x1fgoogle/protobuf/timestamp.proto\"=\n\x08Resource\x12(\n\x03ray\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayClusterH\x00\x42\x07\n\x05value\"\x8e\x01\n\x06RayJob\x12-\n\nrayCluster\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.RayCluster\x12\x12\n\nRuntimeEnv\x18\x02 \x01(\t\x12 \n\x18ShutdownAfterJobFinishes\x18\x03 \x01(\x08\x12\x1f\n\x17TTLSecondsAfterFinished\x18\x04 \x01(\x05\">\n\nRayCluster\x12\x30\n\x0c\x63luster_spec\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.ClusterSpec\"\x7f\n\x0b\x43lusterSpec\x12\x35\n\x0fhead_group_spec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.core.HeadGroupSpec\x12\x39\n\x11worker_group_spec\x18\x02 \x03(\x0b\x32\x1e.flyteidl.core.WorkerGroupSpec\"\x92\x01\n\rHeadGroupSpec\x12J\n\x10ray_start_params\x18\x01 \x03(\x0b\x32\x30.flyteidl.core.HeadGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe8\x01\n\x0fWorkerGroupSpec\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x10\n\x08replicas\x18\x02 \x01(\x05\x12\x14\n\x0cmin_replicas\x18\x03 \x01(\x05\x12\x14\n\x0cmax_replicas\x18\x04 \x01(\x05\x12L\n\x10ray_start_params\x18\x05 \x03(\x0b\x32\x32.flyteidl.core.WorkerGroupSpec.RayStartParamsEntry\x1a\x35\n\x13RayStartParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -62,6 +62,58 @@ _RESOURCE = _descriptor.Descriptor(
 )
 
 
+_RAYJOB = _descriptor.Descriptor(
+  name='RayJob',
+  full_name='flyteidl.core.RayJob',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='rayCluster', full_name='flyteidl.core.RayJob.rayCluster', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RuntimeEnv', full_name='flyteidl.core.RayJob.RuntimeEnv', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ShutdownAfterJobFinishes', full_name='flyteidl.core.RayJob.ShutdownAfterJobFinishes', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TTLSecondsAfterFinished', full_name='flyteidl.core.RayJob.TTLSecondsAfterFinished', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=144,
+  serialized_end=286,
+)
+
+
 _RAYCLUSTER = _descriptor.Descriptor(
   name='RayCluster',
   full_name='flyteidl.core.RayCluster',
@@ -70,15 +122,8 @@ _RAYCLUSTER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='flyteidl.core.RayCluster.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='cluster_spec', full_name='flyteidl.core.RayCluster.cluster_spec', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='cluster_spec', full_name='flyteidl.core.RayCluster.cluster_spec', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -95,8 +140,8 @@ _RAYCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=143,
-  serialized_end=219,
+  serialized_start=288,
+  serialized_end=350,
 )
 
 
@@ -133,8 +178,8 @@ _CLUSTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=221,
-  serialized_end=348,
+  serialized_start=352,
+  serialized_end=479,
 )
 
 
@@ -171,8 +216,8 @@ _HEADGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=507,
-  serialized_end=560,
+  serialized_start=575,
+  serialized_end=628,
 )
 
 _HEADGROUPSPEC = _descriptor.Descriptor(
@@ -183,29 +228,8 @@ _HEADGROUPSPEC = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='compute_template', full_name='flyteidl.core.HeadGroupSpec.compute_template', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='image', full_name='flyteidl.core.HeadGroupSpec.image', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='service_type', full_name='flyteidl.core.HeadGroupSpec.service_type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ray_start_params', full_name='flyteidl.core.HeadGroupSpec.ray_start_params', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='ray_start_params', full_name='flyteidl.core.HeadGroupSpec.ray_start_params', index=0,
+      number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -222,8 +246,8 @@ _HEADGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=351,
-  serialized_end=560,
+  serialized_start=482,
+  serialized_end=628,
 )
 
 
@@ -260,8 +284,8 @@ _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=507,
-  serialized_end=560,
+  serialized_start=575,
+  serialized_end=628,
 )
 
 _WORKERGROUPSPEC = _descriptor.Descriptor(
@@ -279,43 +303,29 @@ _WORKERGROUPSPEC = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='compute_template', full_name='flyteidl.core.WorkerGroupSpec.compute_template', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='replicas', full_name='flyteidl.core.WorkerGroupSpec.replicas', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='image', full_name='flyteidl.core.WorkerGroupSpec.image', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='min_replicas', full_name='flyteidl.core.WorkerGroupSpec.min_replicas', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='replicas', full_name='flyteidl.core.WorkerGroupSpec.replicas', index=3,
+      name='max_replicas', full_name='flyteidl.core.WorkerGroupSpec.max_replicas', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='min_replicas', full_name='flyteidl.core.WorkerGroupSpec.min_replicas', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='max_replicas', full_name='flyteidl.core.WorkerGroupSpec.max_replicas', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ray_start_params', full_name='flyteidl.core.WorkerGroupSpec.ray_start_params', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='ray_start_params', full_name='flyteidl.core.WorkerGroupSpec.ray_start_params', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -332,14 +342,15 @@ _WORKERGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=836,
+  serialized_start=631,
+  serialized_end=863,
 )
 
 _RESOURCE.fields_by_name['ray'].message_type = _RAYCLUSTER
 _RESOURCE.oneofs_by_name['value'].fields.append(
   _RESOURCE.fields_by_name['ray'])
 _RESOURCE.fields_by_name['ray'].containing_oneof = _RESOURCE.oneofs_by_name['value']
+_RAYJOB.fields_by_name['rayCluster'].message_type = _RAYCLUSTER
 _RAYCLUSTER.fields_by_name['cluster_spec'].message_type = _CLUSTERSPEC
 _CLUSTERSPEC.fields_by_name['head_group_spec'].message_type = _HEADGROUPSPEC
 _CLUSTERSPEC.fields_by_name['worker_group_spec'].message_type = _WORKERGROUPSPEC
@@ -348,6 +359,7 @@ _HEADGROUPSPEC.fields_by_name['ray_start_params'].message_type = _HEADGROUPSPEC_
 _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY.containing_type = _WORKERGROUPSPEC
 _WORKERGROUPSPEC.fields_by_name['ray_start_params'].message_type = _WORKERGROUPSPEC_RAYSTARTPARAMSENTRY
 DESCRIPTOR.message_types_by_name['Resource'] = _RESOURCE
+DESCRIPTOR.message_types_by_name['RayJob'] = _RAYJOB
 DESCRIPTOR.message_types_by_name['RayCluster'] = _RAYCLUSTER
 DESCRIPTOR.message_types_by_name['ClusterSpec'] = _CLUSTERSPEC
 DESCRIPTOR.message_types_by_name['HeadGroupSpec'] = _HEADGROUPSPEC
@@ -360,6 +372,13 @@ Resource = _reflection.GeneratedProtocolMessageType('Resource', (_message.Messag
   # @@protoc_insertion_point(class_scope:flyteidl.core.Resource)
   ))
 _sym_db.RegisterMessage(Resource)
+
+RayJob = _reflection.GeneratedProtocolMessageType('RayJob', (_message.Message,), dict(
+  DESCRIPTOR = _RAYJOB,
+  __module__ = 'flyteidl.core.resource_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.core.RayJob)
+  ))
+_sym_db.RegisterMessage(RayJob)
 
 RayCluster = _reflection.GeneratedProtocolMessageType('RayCluster', (_message.Message,), dict(
   DESCRIPTOR = _RAYCLUSTER,

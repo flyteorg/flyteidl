@@ -19,7 +19,6 @@ import six
 from flyteadmin.models.core_binding import CoreBinding  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_node import CoreNode  # noqa: F401,E501
-from flyteadmin.models.core_resource import CoreResource  # noqa: F401,E501
 from flyteadmin.models.core_typed_interface import CoreTypedInterface  # noqa: F401,E501
 from flyteadmin.models.core_workflow_metadata import CoreWorkflowMetadata  # noqa: F401,E501
 from flyteadmin.models.core_workflow_metadata_defaults import CoreWorkflowMetadataDefaults  # noqa: F401,E501
@@ -45,8 +44,7 @@ class CoreWorkflowTemplate(object):
         'nodes': 'list[CoreNode]',
         'outputs': 'list[CoreBinding]',
         'failure_node': 'CoreNode',
-        'metadata_defaults': 'CoreWorkflowMetadataDefaults',
-        'resources': 'dict(str, CoreResource)'
+        'metadata_defaults': 'CoreWorkflowMetadataDefaults'
     }
 
     attribute_map = {
@@ -56,11 +54,10 @@ class CoreWorkflowTemplate(object):
         'nodes': 'nodes',
         'outputs': 'outputs',
         'failure_node': 'failure_node',
-        'metadata_defaults': 'metadata_defaults',
-        'resources': 'resources'
+        'metadata_defaults': 'metadata_defaults'
     }
 
-    def __init__(self, id=None, metadata=None, interface=None, nodes=None, outputs=None, failure_node=None, metadata_defaults=None, resources=None):  # noqa: E501
+    def __init__(self, id=None, metadata=None, interface=None, nodes=None, outputs=None, failure_node=None, metadata_defaults=None):  # noqa: E501
         """CoreWorkflowTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -70,7 +67,6 @@ class CoreWorkflowTemplate(object):
         self._outputs = None
         self._failure_node = None
         self._metadata_defaults = None
-        self._resources = None
         self.discriminator = None
 
         if id is not None:
@@ -87,8 +83,6 @@ class CoreWorkflowTemplate(object):
             self.failure_node = failure_node
         if metadata_defaults is not None:
             self.metadata_defaults = metadata_defaults
-        if resources is not None:
-            self.resources = resources
 
     @property
     def id(self):
@@ -248,29 +242,6 @@ class CoreWorkflowTemplate(object):
         """
 
         self._metadata_defaults = metadata_defaults
-
-    @property
-    def resources(self):
-        """Gets the resources of this CoreWorkflowTemplate.  # noqa: E501
-
-        Cluster resources (Ray or Dask) that will be attached to workflow template.  # noqa: E501
-
-        :return: The resources of this CoreWorkflowTemplate.  # noqa: E501
-        :rtype: dict(str, CoreResource)
-        """
-        return self._resources
-
-    @resources.setter
-    def resources(self, resources):
-        """Sets the resources of this CoreWorkflowTemplate.
-
-        Cluster resources (Ray or Dask) that will be attached to workflow template.  # noqa: E501
-
-        :param resources: The resources of this CoreWorkflowTemplate.  # noqa: E501
-        :type: dict(str, CoreResource)
-        """
-
-        self._resources = resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

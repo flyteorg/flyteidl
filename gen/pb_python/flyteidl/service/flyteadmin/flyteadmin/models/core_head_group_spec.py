@@ -31,99 +31,21 @@ class CoreHeadGroupSpec(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compute_template': 'str',
-        'image': 'str',
-        'service_type': 'str',
         'ray_start_params': 'dict(str, str)'
     }
 
     attribute_map = {
-        'compute_template': 'compute_template',
-        'image': 'image',
-        'service_type': 'service_type',
         'ray_start_params': 'ray_start_params'
     }
 
-    def __init__(self, compute_template=None, image=None, service_type=None, ray_start_params=None):  # noqa: E501
+    def __init__(self, ray_start_params=None):  # noqa: E501
         """CoreHeadGroupSpec - a model defined in Swagger"""  # noqa: E501
 
-        self._compute_template = None
-        self._image = None
-        self._service_type = None
         self._ray_start_params = None
         self.discriminator = None
 
-        if compute_template is not None:
-            self.compute_template = compute_template
-        if image is not None:
-            self.image = image
-        if service_type is not None:
-            self.service_type = service_type
         if ray_start_params is not None:
             self.ray_start_params = ray_start_params
-
-    @property
-    def compute_template(self):
-        """Gets the compute_template of this CoreHeadGroupSpec.  # noqa: E501
-
-
-        :return: The compute_template of this CoreHeadGroupSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._compute_template
-
-    @compute_template.setter
-    def compute_template(self, compute_template):
-        """Sets the compute_template of this CoreHeadGroupSpec.
-
-
-        :param compute_template: The compute_template of this CoreHeadGroupSpec.  # noqa: E501
-        :type: str
-        """
-
-        self._compute_template = compute_template
-
-    @property
-    def image(self):
-        """Gets the image of this CoreHeadGroupSpec.  # noqa: E501
-
-
-        :return: The image of this CoreHeadGroupSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._image
-
-    @image.setter
-    def image(self, image):
-        """Sets the image of this CoreHeadGroupSpec.
-
-
-        :param image: The image of this CoreHeadGroupSpec.  # noqa: E501
-        :type: str
-        """
-
-        self._image = image
-
-    @property
-    def service_type(self):
-        """Gets the service_type of this CoreHeadGroupSpec.  # noqa: E501
-
-
-        :return: The service_type of this CoreHeadGroupSpec.  # noqa: E501
-        :rtype: str
-        """
-        return self._service_type
-
-    @service_type.setter
-    def service_type(self, service_type):
-        """Sets the service_type of this CoreHeadGroupSpec.
-
-
-        :param service_type: The service_type of this CoreHeadGroupSpec.  # noqa: E501
-        :type: str
-        """
-
-        self._service_type = service_type
 
     @property
     def ray_start_params(self):

@@ -719,34 +719,1042 @@ public final class ResourceOuterClass {
 
   }
 
+  public interface RayJobOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.RayJob)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    boolean hasRayCluster();
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    flyteidl.core.ResourceOuterClass.RayCluster getRayCluster();
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayClusterOrBuilder();
+
+    /**
+     * <pre>
+     * RuntimeEnv is base64 encoded.
+     * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+     * </pre>
+     *
+     * <code>string RuntimeEnv = 2;</code>
+     */
+    java.lang.String getRuntimeEnv();
+    /**
+     * <pre>
+     * RuntimeEnv is base64 encoded.
+     * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+     * </pre>
+     *
+     * <code>string RuntimeEnv = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRuntimeEnvBytes();
+
+    /**
+     * <pre>
+     * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+     * </pre>
+     *
+     * <code>bool ShutdownAfterJobFinishes = 3;</code>
+     */
+    boolean getShutdownAfterJobFinishes();
+
+    /**
+     * <pre>
+     * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+     * It's only working when ShutdownAfterJobFinishes set to true.
+     * </pre>
+     *
+     * <code>int32 TTLSecondsAfterFinished = 4;</code>
+     */
+    int getTTLSecondsAfterFinished();
+  }
+  /**
+   * <pre>
+   * RayJobSpec defines the desired state of RayJob
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.RayJob}
+   */
+  public  static final class RayJob extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.RayJob)
+      RayJobOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RayJob.newBuilder() to construct.
+    private RayJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RayJob() {
+      runtimeEnv_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RayJob(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.ResourceOuterClass.RayCluster.Builder subBuilder = null;
+              if (rayCluster_ != null) {
+                subBuilder = rayCluster_.toBuilder();
+              }
+              rayCluster_ = input.readMessage(flyteidl.core.ResourceOuterClass.RayCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rayCluster_);
+                rayCluster_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              runtimeEnv_ = s;
+              break;
+            }
+            case 24: {
+
+              shutdownAfterJobFinishes_ = input.readBool();
+              break;
+            }
+            case 32: {
+
+              tTLSecondsAfterFinished_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayJob_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayJob_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.ResourceOuterClass.RayJob.class, flyteidl.core.ResourceOuterClass.RayJob.Builder.class);
+    }
+
+    public static final int RAYCLUSTER_FIELD_NUMBER = 1;
+    private flyteidl.core.ResourceOuterClass.RayCluster rayCluster_;
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    public boolean hasRayCluster() {
+      return rayCluster_ != null;
+    }
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    public flyteidl.core.ResourceOuterClass.RayCluster getRayCluster() {
+      return rayCluster_ == null ? flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance() : rayCluster_;
+    }
+    /**
+     * <pre>
+     * RayClusterSpec is the cluster template to run the job
+     * </pre>
+     *
+     * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+     */
+    public flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayClusterOrBuilder() {
+      return getRayCluster();
+    }
+
+    public static final int RUNTIMEENV_FIELD_NUMBER = 2;
+    private volatile java.lang.Object runtimeEnv_;
+    /**
+     * <pre>
+     * RuntimeEnv is base64 encoded.
+     * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+     * </pre>
+     *
+     * <code>string RuntimeEnv = 2;</code>
+     */
+    public java.lang.String getRuntimeEnv() {
+      java.lang.Object ref = runtimeEnv_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        runtimeEnv_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * RuntimeEnv is base64 encoded.
+     * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+     * </pre>
+     *
+     * <code>string RuntimeEnv = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRuntimeEnvBytes() {
+      java.lang.Object ref = runtimeEnv_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        runtimeEnv_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHUTDOWNAFTERJOBFINISHES_FIELD_NUMBER = 3;
+    private boolean shutdownAfterJobFinishes_;
+    /**
+     * <pre>
+     * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+     * </pre>
+     *
+     * <code>bool ShutdownAfterJobFinishes = 3;</code>
+     */
+    public boolean getShutdownAfterJobFinishes() {
+      return shutdownAfterJobFinishes_;
+    }
+
+    public static final int TTLSECONDSAFTERFINISHED_FIELD_NUMBER = 4;
+    private int tTLSecondsAfterFinished_;
+    /**
+     * <pre>
+     * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+     * It's only working when ShutdownAfterJobFinishes set to true.
+     * </pre>
+     *
+     * <code>int32 TTLSecondsAfterFinished = 4;</code>
+     */
+    public int getTTLSecondsAfterFinished() {
+      return tTLSecondsAfterFinished_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (rayCluster_ != null) {
+        output.writeMessage(1, getRayCluster());
+      }
+      if (!getRuntimeEnvBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runtimeEnv_);
+      }
+      if (shutdownAfterJobFinishes_ != false) {
+        output.writeBool(3, shutdownAfterJobFinishes_);
+      }
+      if (tTLSecondsAfterFinished_ != 0) {
+        output.writeInt32(4, tTLSecondsAfterFinished_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (rayCluster_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getRayCluster());
+      }
+      if (!getRuntimeEnvBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runtimeEnv_);
+      }
+      if (shutdownAfterJobFinishes_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, shutdownAfterJobFinishes_);
+      }
+      if (tTLSecondsAfterFinished_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, tTLSecondsAfterFinished_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.ResourceOuterClass.RayJob)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.ResourceOuterClass.RayJob other = (flyteidl.core.ResourceOuterClass.RayJob) obj;
+
+      if (hasRayCluster() != other.hasRayCluster()) return false;
+      if (hasRayCluster()) {
+        if (!getRayCluster()
+            .equals(other.getRayCluster())) return false;
+      }
+      if (!getRuntimeEnv()
+          .equals(other.getRuntimeEnv())) return false;
+      if (getShutdownAfterJobFinishes()
+          != other.getShutdownAfterJobFinishes()) return false;
+      if (getTTLSecondsAfterFinished()
+          != other.getTTLSecondsAfterFinished()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasRayCluster()) {
+        hash = (37 * hash) + RAYCLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getRayCluster().hashCode();
+      }
+      hash = (37 * hash) + RUNTIMEENV_FIELD_NUMBER;
+      hash = (53 * hash) + getRuntimeEnv().hashCode();
+      hash = (37 * hash) + SHUTDOWNAFTERJOBFINISHES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getShutdownAfterJobFinishes());
+      hash = (37 * hash) + TTLSECONDSAFTERFINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + getTTLSecondsAfterFinished();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.ResourceOuterClass.RayJob parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.ResourceOuterClass.RayJob prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * RayJobSpec defines the desired state of RayJob
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.RayJob}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.RayJob)
+        flyteidl.core.ResourceOuterClass.RayJobOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayJob_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayJob_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.ResourceOuterClass.RayJob.class, flyteidl.core.ResourceOuterClass.RayJob.Builder.class);
+      }
+
+      // Construct using flyteidl.core.ResourceOuterClass.RayJob.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rayClusterBuilder_ == null) {
+          rayCluster_ = null;
+        } else {
+          rayCluster_ = null;
+          rayClusterBuilder_ = null;
+        }
+        runtimeEnv_ = "";
+
+        shutdownAfterJobFinishes_ = false;
+
+        tTLSecondsAfterFinished_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.ResourceOuterClass.internal_static_flyteidl_core_RayJob_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.RayJob getDefaultInstanceForType() {
+        return flyteidl.core.ResourceOuterClass.RayJob.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.RayJob build() {
+        flyteidl.core.ResourceOuterClass.RayJob result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.ResourceOuterClass.RayJob buildPartial() {
+        flyteidl.core.ResourceOuterClass.RayJob result = new flyteidl.core.ResourceOuterClass.RayJob(this);
+        if (rayClusterBuilder_ == null) {
+          result.rayCluster_ = rayCluster_;
+        } else {
+          result.rayCluster_ = rayClusterBuilder_.build();
+        }
+        result.runtimeEnv_ = runtimeEnv_;
+        result.shutdownAfterJobFinishes_ = shutdownAfterJobFinishes_;
+        result.tTLSecondsAfterFinished_ = tTLSecondsAfterFinished_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.ResourceOuterClass.RayJob) {
+          return mergeFrom((flyteidl.core.ResourceOuterClass.RayJob)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.ResourceOuterClass.RayJob other) {
+        if (other == flyteidl.core.ResourceOuterClass.RayJob.getDefaultInstance()) return this;
+        if (other.hasRayCluster()) {
+          mergeRayCluster(other.getRayCluster());
+        }
+        if (!other.getRuntimeEnv().isEmpty()) {
+          runtimeEnv_ = other.runtimeEnv_;
+          onChanged();
+        }
+        if (other.getShutdownAfterJobFinishes() != false) {
+          setShutdownAfterJobFinishes(other.getShutdownAfterJobFinishes());
+        }
+        if (other.getTTLSecondsAfterFinished() != 0) {
+          setTTLSecondsAfterFinished(other.getTTLSecondsAfterFinished());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.ResourceOuterClass.RayJob parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.ResourceOuterClass.RayJob) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.core.ResourceOuterClass.RayCluster rayCluster_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder> rayClusterBuilder_;
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public boolean hasRayCluster() {
+        return rayClusterBuilder_ != null || rayCluster_ != null;
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayCluster getRayCluster() {
+        if (rayClusterBuilder_ == null) {
+          return rayCluster_ == null ? flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance() : rayCluster_;
+        } else {
+          return rayClusterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public Builder setRayCluster(flyteidl.core.ResourceOuterClass.RayCluster value) {
+        if (rayClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rayCluster_ = value;
+          onChanged();
+        } else {
+          rayClusterBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public Builder setRayCluster(
+          flyteidl.core.ResourceOuterClass.RayCluster.Builder builderForValue) {
+        if (rayClusterBuilder_ == null) {
+          rayCluster_ = builderForValue.build();
+          onChanged();
+        } else {
+          rayClusterBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public Builder mergeRayCluster(flyteidl.core.ResourceOuterClass.RayCluster value) {
+        if (rayClusterBuilder_ == null) {
+          if (rayCluster_ != null) {
+            rayCluster_ =
+              flyteidl.core.ResourceOuterClass.RayCluster.newBuilder(rayCluster_).mergeFrom(value).buildPartial();
+          } else {
+            rayCluster_ = value;
+          }
+          onChanged();
+        } else {
+          rayClusterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public Builder clearRayCluster() {
+        if (rayClusterBuilder_ == null) {
+          rayCluster_ = null;
+          onChanged();
+        } else {
+          rayCluster_ = null;
+          rayClusterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayCluster.Builder getRayClusterBuilder() {
+        
+        onChanged();
+        return getRayClusterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      public flyteidl.core.ResourceOuterClass.RayClusterOrBuilder getRayClusterOrBuilder() {
+        if (rayClusterBuilder_ != null) {
+          return rayClusterBuilder_.getMessageOrBuilder();
+        } else {
+          return rayCluster_ == null ?
+              flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance() : rayCluster_;
+        }
+      }
+      /**
+       * <pre>
+       * RayClusterSpec is the cluster template to run the job
+       * </pre>
+       *
+       * <code>.flyteidl.core.RayCluster rayCluster = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder> 
+          getRayClusterFieldBuilder() {
+        if (rayClusterBuilder_ == null) {
+          rayClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.ResourceOuterClass.RayCluster, flyteidl.core.ResourceOuterClass.RayCluster.Builder, flyteidl.core.ResourceOuterClass.RayClusterOrBuilder>(
+                  getRayCluster(),
+                  getParentForChildren(),
+                  isClean());
+          rayCluster_ = null;
+        }
+        return rayClusterBuilder_;
+      }
+
+      private java.lang.Object runtimeEnv_ = "";
+      /**
+       * <pre>
+       * RuntimeEnv is base64 encoded.
+       * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+       * </pre>
+       *
+       * <code>string RuntimeEnv = 2;</code>
+       */
+      public java.lang.String getRuntimeEnv() {
+        java.lang.Object ref = runtimeEnv_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          runtimeEnv_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * RuntimeEnv is base64 encoded.
+       * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+       * </pre>
+       *
+       * <code>string RuntimeEnv = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRuntimeEnvBytes() {
+        java.lang.Object ref = runtimeEnv_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          runtimeEnv_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * RuntimeEnv is base64 encoded.
+       * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+       * </pre>
+       *
+       * <code>string RuntimeEnv = 2;</code>
+       */
+      public Builder setRuntimeEnv(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        runtimeEnv_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RuntimeEnv is base64 encoded.
+       * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+       * </pre>
+       *
+       * <code>string RuntimeEnv = 2;</code>
+       */
+      public Builder clearRuntimeEnv() {
+        
+        runtimeEnv_ = getDefaultInstance().getRuntimeEnv();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * RuntimeEnv is base64 encoded.
+       * Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+       * </pre>
+       *
+       * <code>string RuntimeEnv = 2;</code>
+       */
+      public Builder setRuntimeEnvBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        runtimeEnv_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean shutdownAfterJobFinishes_ ;
+      /**
+       * <pre>
+       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * </pre>
+       *
+       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       */
+      public boolean getShutdownAfterJobFinishes() {
+        return shutdownAfterJobFinishes_;
+      }
+      /**
+       * <pre>
+       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * </pre>
+       *
+       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       */
+      public Builder setShutdownAfterJobFinishes(boolean value) {
+        
+        shutdownAfterJobFinishes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+       * </pre>
+       *
+       * <code>bool ShutdownAfterJobFinishes = 3;</code>
+       */
+      public Builder clearShutdownAfterJobFinishes() {
+        
+        shutdownAfterJobFinishes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int tTLSecondsAfterFinished_ ;
+      /**
+       * <pre>
+       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * It's only working when ShutdownAfterJobFinishes set to true.
+       * </pre>
+       *
+       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       */
+      public int getTTLSecondsAfterFinished() {
+        return tTLSecondsAfterFinished_;
+      }
+      /**
+       * <pre>
+       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * It's only working when ShutdownAfterJobFinishes set to true.
+       * </pre>
+       *
+       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       */
+      public Builder setTTLSecondsAfterFinished(int value) {
+        
+        tTLSecondsAfterFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+       * It's only working when ShutdownAfterJobFinishes set to true.
+       * </pre>
+       *
+       * <code>int32 TTLSecondsAfterFinished = 4;</code>
+       */
+      public Builder clearTTLSecondsAfterFinished() {
+        
+        tTLSecondsAfterFinished_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.RayJob)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.RayJob)
+    private static final flyteidl.core.ResourceOuterClass.RayJob DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.ResourceOuterClass.RayJob();
+    }
+
+    public static flyteidl.core.ResourceOuterClass.RayJob getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RayJob>
+        PARSER = new com.google.protobuf.AbstractParser<RayJob>() {
+      @java.lang.Override
+      public RayJob parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RayJob(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RayJob> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RayJob> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.ResourceOuterClass.RayJob getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RayClusterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.RayCluster)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Required input field. Unique cluster name provided by user.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <pre>
-     * Required input field. Unique cluster name provided by user.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <pre>
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     boolean hasClusterSpec();
     /**
@@ -754,7 +1762,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec();
     /**
@@ -762,7 +1770,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder();
   }
@@ -783,7 +1791,6 @@ public final class ResourceOuterClass {
       super(builder);
     }
     private RayCluster() {
-      name_ = "";
     }
 
     @java.lang.Override
@@ -811,12 +1818,6 @@ public final class ResourceOuterClass {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 18: {
               flyteidl.core.ResourceOuterClass.ClusterSpec.Builder subBuilder = null;
               if (clusterSpec_ != null) {
                 subBuilder = clusterSpec_.toBuilder();
@@ -861,56 +1862,14 @@ public final class ResourceOuterClass {
               flyteidl.core.ResourceOuterClass.RayCluster.class, flyteidl.core.ResourceOuterClass.RayCluster.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
-    /**
-     * <pre>
-     * Required input field. Unique cluster name provided by user.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Required input field. Unique cluster name provided by user.
-     * </pre>
-     *
-     * <code>string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CLUSTER_SPEC_FIELD_NUMBER = 2;
+    public static final int CLUSTER_SPEC_FIELD_NUMBER = 1;
     private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
     /**
      * <pre>
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     public boolean hasClusterSpec() {
       return clusterSpec_ != null;
@@ -920,7 +1879,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
       return clusterSpec_ == null ? flyteidl.core.ResourceOuterClass.ClusterSpec.getDefaultInstance() : clusterSpec_;
@@ -930,7 +1889,7 @@ public final class ResourceOuterClass {
      * Required field. This field indicates ray cluster configuration
      * </pre>
      *
-     * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+     * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
      */
     public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
       return getClusterSpec();
@@ -950,11 +1909,8 @@ public final class ResourceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
       if (clusterSpec_ != null) {
-        output.writeMessage(2, getClusterSpec());
+        output.writeMessage(1, getClusterSpec());
       }
       unknownFields.writeTo(output);
     }
@@ -965,12 +1921,9 @@ public final class ResourceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
       if (clusterSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getClusterSpec());
+          .computeMessageSize(1, getClusterSpec());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -987,8 +1940,6 @@ public final class ResourceOuterClass {
       }
       flyteidl.core.ResourceOuterClass.RayCluster other = (flyteidl.core.ResourceOuterClass.RayCluster) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
       if (hasClusterSpec() != other.hasClusterSpec()) return false;
       if (hasClusterSpec()) {
         if (!getClusterSpec()
@@ -1005,8 +1956,6 @@ public final class ResourceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
       if (hasClusterSpec()) {
         hash = (37 * hash) + CLUSTER_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getClusterSpec().hashCode();
@@ -1148,8 +2097,6 @@ public final class ResourceOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
-
         if (clusterSpecBuilder_ == null) {
           clusterSpec_ = null;
         } else {
@@ -1182,7 +2129,6 @@ public final class ResourceOuterClass {
       @java.lang.Override
       public flyteidl.core.ResourceOuterClass.RayCluster buildPartial() {
         flyteidl.core.ResourceOuterClass.RayCluster result = new flyteidl.core.ResourceOuterClass.RayCluster(this);
-        result.name_ = name_;
         if (clusterSpecBuilder_ == null) {
           result.clusterSpec_ = clusterSpec_;
         } else {
@@ -1236,10 +2182,6 @@ public final class ResourceOuterClass {
 
       public Builder mergeFrom(flyteidl.core.ResourceOuterClass.RayCluster other) {
         if (other == flyteidl.core.ResourceOuterClass.RayCluster.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
         if (other.hasClusterSpec()) {
           mergeClusterSpec(other.getClusterSpec());
         }
@@ -1272,95 +2214,6 @@ public final class ResourceOuterClass {
         return this;
       }
 
-      private java.lang.Object name_ = "";
-      /**
-       * <pre>
-       * Required input field. Unique cluster name provided by user.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required input field. Unique cluster name provided by user.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Required input field. Unique cluster name provided by user.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required input field. Unique cluster name provided by user.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Required input field. Unique cluster name provided by user.
-       * </pre>
-       *
-       * <code>string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.ResourceOuterClass.ClusterSpec clusterSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> clusterSpecBuilder_;
@@ -1369,7 +2222,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public boolean hasClusterSpec() {
         return clusterSpecBuilder_ != null || clusterSpec_ != null;
@@ -1379,7 +2232,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpec getClusterSpec() {
         if (clusterSpecBuilder_ == null) {
@@ -1393,7 +2246,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public Builder setClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
@@ -1413,7 +2266,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public Builder setClusterSpec(
           flyteidl.core.ResourceOuterClass.ClusterSpec.Builder builderForValue) {
@@ -1431,7 +2284,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public Builder mergeClusterSpec(flyteidl.core.ResourceOuterClass.ClusterSpec value) {
         if (clusterSpecBuilder_ == null) {
@@ -1453,7 +2306,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public Builder clearClusterSpec() {
         if (clusterSpecBuilder_ == null) {
@@ -1471,7 +2324,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpec.Builder getClusterSpecBuilder() {
         
@@ -1483,7 +2336,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       public flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
         if (clusterSpecBuilder_ != null) {
@@ -1498,7 +2351,7 @@ public final class ResourceOuterClass {
        * Required field. This field indicates ray cluster configuration
        * </pre>
        *
-       * <code>.flyteidl.core.ClusterSpec cluster_spec = 2;</code>
+       * <code>.flyteidl.core.ClusterSpec cluster_spec = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.ResourceOuterClass.ClusterSpec, flyteidl.core.ResourceOuterClass.ClusterSpec.Builder, flyteidl.core.ResourceOuterClass.ClusterSpecOrBuilder> 
@@ -2722,64 +3575,10 @@ public final class ResourceOuterClass {
 
     /**
      * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 1;</code>
-     */
-    java.lang.String getComputeTemplate();
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getComputeTemplateBytes();
-
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 2;</code>
-     */
-    java.lang.String getImage();
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getImageBytes();
-
-    /**
-     * <pre>
-     * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-     * </pre>
-     *
-     * <code>string service_type = 3;</code>
-     */
-    java.lang.String getServiceType();
-    /**
-     * <pre>
-     * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-     * </pre>
-     *
-     * <code>string service_type = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getServiceTypeBytes();
-
-    /**
-     * <pre>
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
     int getRayStartParamsCount();
     /**
@@ -2787,7 +3586,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
     boolean containsRayStartParams(
         java.lang.String key);
@@ -2802,7 +3601,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getRayStartParamsMap();
@@ -2811,7 +3610,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     java.lang.String getRayStartParamsOrDefault(
@@ -2822,7 +3621,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     java.lang.String getRayStartParamsOrThrow(
@@ -2841,9 +3640,6 @@ public final class ResourceOuterClass {
       super(builder);
     }
     private HeadGroupSpec() {
-      computeTemplate_ = "";
-      image_ = "";
-      serviceType_ = "";
     }
 
     @java.lang.Override
@@ -2871,28 +3667,10 @@ public final class ResourceOuterClass {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              computeTemplate_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              image_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceType_ = s;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 rayStartParams_ = com.google.protobuf.MapField.newMapField(
                     RayStartParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               rayStartParams__ = input.readMessage(
@@ -2930,7 +3708,7 @@ public final class ResourceOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 4:
+        case 1:
           return internalGetRayStartParams();
         default:
           throw new RuntimeException(
@@ -2945,134 +3723,7 @@ public final class ResourceOuterClass {
               flyteidl.core.ResourceOuterClass.HeadGroupSpec.class, flyteidl.core.ResourceOuterClass.HeadGroupSpec.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int COMPUTE_TEMPLATE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object computeTemplate_;
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 1;</code>
-     */
-    public java.lang.String getComputeTemplate() {
-      java.lang.Object ref = computeTemplate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        computeTemplate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getComputeTemplateBytes() {
-      java.lang.Object ref = computeTemplate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        computeTemplate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IMAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object image_;
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 2;</code>
-     */
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        image_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        image_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SERVICE_TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object serviceType_;
-    /**
-     * <pre>
-     * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-     * </pre>
-     *
-     * <code>string service_type = 3;</code>
-     */
-    public java.lang.String getServiceType() {
-      java.lang.Object ref = serviceType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serviceType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-     * </pre>
-     *
-     * <code>string service_type = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getServiceTypeBytes() {
-      java.lang.Object ref = serviceType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serviceType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RAY_START_PARAMS_FIELD_NUMBER = 4;
+    public static final int RAY_START_PARAMS_FIELD_NUMBER = 1;
     private static final class RayStartParamsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -3103,7 +3754,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     public boolean containsRayStartParams(
@@ -3123,7 +3774,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getRayStartParamsMap() {
@@ -3134,7 +3785,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     public java.lang.String getRayStartParamsOrDefault(
@@ -3150,7 +3801,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of head node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
      */
 
     public java.lang.String getRayStartParamsOrThrow(
@@ -3178,21 +3829,12 @@ public final class ResourceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getComputeTemplateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, computeTemplate_);
-      }
-      if (!getImageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, image_);
-      }
-      if (!getServiceTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceType_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetRayStartParams(),
           RayStartParamsDefaultEntryHolder.defaultEntry,
-          4);
+          1);
       unknownFields.writeTo(output);
     }
 
@@ -3202,15 +3844,6 @@ public final class ResourceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getComputeTemplateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, computeTemplate_);
-      }
-      if (!getImageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, image_);
-      }
-      if (!getServiceTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceType_);
-      }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetRayStartParams().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -3219,7 +3852,7 @@ public final class ResourceOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, rayStartParams__);
+            .computeMessageSize(1, rayStartParams__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3236,12 +3869,6 @@ public final class ResourceOuterClass {
       }
       flyteidl.core.ResourceOuterClass.HeadGroupSpec other = (flyteidl.core.ResourceOuterClass.HeadGroupSpec) obj;
 
-      if (!getComputeTemplate()
-          .equals(other.getComputeTemplate())) return false;
-      if (!getImage()
-          .equals(other.getImage())) return false;
-      if (!getServiceType()
-          .equals(other.getServiceType())) return false;
       if (!internalGetRayStartParams().equals(
           other.internalGetRayStartParams())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3255,12 +3882,6 @@ public final class ResourceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COMPUTE_TEMPLATE_FIELD_NUMBER;
-      hash = (53 * hash) + getComputeTemplate().hashCode();
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getServiceType().hashCode();
       if (!internalGetRayStartParams().getMap().isEmpty()) {
         hash = (37 * hash) + RAY_START_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetRayStartParams().hashCode();
@@ -3376,7 +3997,7 @@ public final class ResourceOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 1:
             return internalGetRayStartParams();
           default:
             throw new RuntimeException(
@@ -3387,7 +4008,7 @@ public final class ResourceOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 4:
+          case 1:
             return internalGetMutableRayStartParams();
           default:
             throw new RuntimeException(
@@ -3420,12 +4041,6 @@ public final class ResourceOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        computeTemplate_ = "";
-
-        image_ = "";
-
-        serviceType_ = "";
-
         internalGetMutableRayStartParams().clear();
         return this;
       }
@@ -3454,13 +4069,8 @@ public final class ResourceOuterClass {
       public flyteidl.core.ResourceOuterClass.HeadGroupSpec buildPartial() {
         flyteidl.core.ResourceOuterClass.HeadGroupSpec result = new flyteidl.core.ResourceOuterClass.HeadGroupSpec(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.computeTemplate_ = computeTemplate_;
-        result.image_ = image_;
-        result.serviceType_ = serviceType_;
         result.rayStartParams_ = internalGetRayStartParams();
         result.rayStartParams_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3509,18 +4119,6 @@ public final class ResourceOuterClass {
 
       public Builder mergeFrom(flyteidl.core.ResourceOuterClass.HeadGroupSpec other) {
         if (other == flyteidl.core.ResourceOuterClass.HeadGroupSpec.getDefaultInstance()) return this;
-        if (!other.getComputeTemplate().isEmpty()) {
-          computeTemplate_ = other.computeTemplate_;
-          onChanged();
-        }
-        if (!other.getImage().isEmpty()) {
-          image_ = other.image_;
-          onChanged();
-        }
-        if (!other.getServiceType().isEmpty()) {
-          serviceType_ = other.serviceType_;
-          onChanged();
-        }
         internalGetMutableRayStartParams().mergeFrom(
             other.internalGetRayStartParams());
         this.mergeUnknownFields(other.unknownFields);
@@ -3553,273 +4151,6 @@ public final class ResourceOuterClass {
       }
       private int bitField0_;
 
-      private java.lang.Object computeTemplate_ = "";
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 1;</code>
-       */
-      public java.lang.String getComputeTemplate() {
-        java.lang.Object ref = computeTemplate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          computeTemplate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getComputeTemplateBytes() {
-        java.lang.Object ref = computeTemplate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          computeTemplate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 1;</code>
-       */
-      public Builder setComputeTemplate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        computeTemplate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 1;</code>
-       */
-      public Builder clearComputeTemplate() {
-        
-        computeTemplate_ = getDefaultInstance().getComputeTemplate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 1;</code>
-       */
-      public Builder setComputeTemplateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        computeTemplate_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object image_ = "";
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 2;</code>
-       */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          image_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          image_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 2;</code>
-       */
-      public Builder setImage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        image_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 2;</code>
-       */
-      public Builder clearImage() {
-        
-        image_ = getDefaultInstance().getImage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 2;</code>
-       */
-      public Builder setImageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        image_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object serviceType_ = "";
-      /**
-       * <pre>
-       * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-       * </pre>
-       *
-       * <code>string service_type = 3;</code>
-       */
-      public java.lang.String getServiceType() {
-        java.lang.Object ref = serviceType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          serviceType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-       * </pre>
-       *
-       * <code>string service_type = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getServiceTypeBytes() {
-        java.lang.Object ref = serviceType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          serviceType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-       * </pre>
-       *
-       * <code>string service_type = 3;</code>
-       */
-      public Builder setServiceType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        serviceType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-       * </pre>
-       *
-       * <code>string service_type = 3;</code>
-       */
-      public Builder clearServiceType() {
-        
-        serviceType_ = getDefaultInstance().getServiceType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-       * </pre>
-       *
-       * <code>string service_type = 3;</code>
-       */
-      public Builder setServiceTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        serviceType_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> rayStartParams_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -3851,7 +4182,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public boolean containsRayStartParams(
@@ -3871,7 +4202,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getRayStartParamsMap() {
@@ -3882,7 +4213,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public java.lang.String getRayStartParamsOrDefault(
@@ -3898,7 +4229,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public java.lang.String getRayStartParamsOrThrow(
@@ -3922,7 +4253,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public Builder removeRayStartParams(
@@ -3945,7 +4276,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
       public Builder putRayStartParams(
           java.lang.String key,
@@ -3961,7 +4292,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of head node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 4;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
        */
 
       public Builder putAllRayStartParams(
@@ -4047,46 +4378,10 @@ public final class ResourceOuterClass {
 
     /**
      * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 2;</code>
-     */
-    java.lang.String getComputeTemplate();
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getComputeTemplateBytes();
-
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 3;</code>
-     */
-    java.lang.String getImage();
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getImageBytes();
-
-    /**
-     * <pre>
      * Required. Desired replicas of the worker group
      * </pre>
      *
-     * <code>int32 replicas = 4;</code>
+     * <code>int32 replicas = 2;</code>
      */
     int getReplicas();
 
@@ -4095,7 +4390,7 @@ public final class ResourceOuterClass {
      * Optional. Min replicas of the worker group
      * </pre>
      *
-     * <code>int32 min_replicas = 5;</code>
+     * <code>int32 min_replicas = 3;</code>
      */
     int getMinReplicas();
 
@@ -4104,7 +4399,7 @@ public final class ResourceOuterClass {
      * Optional. Max replicas of the worker group
      * </pre>
      *
-     * <code>int32 max_replicas = 6;</code>
+     * <code>int32 max_replicas = 4;</code>
      */
     int getMaxReplicas();
 
@@ -4113,7 +4408,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
     int getRayStartParamsCount();
     /**
@@ -4121,7 +4416,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
     boolean containsRayStartParams(
         java.lang.String key);
@@ -4136,7 +4431,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getRayStartParamsMap();
@@ -4145,7 +4440,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     java.lang.String getRayStartParamsOrDefault(
@@ -4156,7 +4451,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     java.lang.String getRayStartParamsOrThrow(
@@ -4176,8 +4471,6 @@ public final class ResourceOuterClass {
     }
     private WorkerGroupSpec() {
       groupName_ = "";
-      computeTemplate_ = "";
-      image_ = "";
     }
 
     @java.lang.Override
@@ -4210,38 +4503,26 @@ public final class ResourceOuterClass {
               groupName_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              computeTemplate_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              image_ = s;
-              break;
-            }
-            case 32: {
+            case 16: {
 
               replicas_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 24: {
 
               minReplicas_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 32: {
 
               maxReplicas_ = input.readInt32();
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 rayStartParams_ = com.google.protobuf.MapField.newMapField(
                     RayStartParamsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000010;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               rayStartParams__ = input.readMessage(
@@ -4279,7 +4560,7 @@ public final class ResourceOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 5:
           return internalGetRayStartParams();
         default:
           throw new RuntimeException(
@@ -4337,130 +4618,46 @@ public final class ResourceOuterClass {
       }
     }
 
-    public static final int COMPUTE_TEMPLATE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object computeTemplate_;
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 2;</code>
-     */
-    public java.lang.String getComputeTemplate() {
-      java.lang.Object ref = computeTemplate_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        computeTemplate_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional. The computeTemplate of head node group
-     * </pre>
-     *
-     * <code>string compute_template = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getComputeTemplateBytes() {
-      java.lang.Object ref = computeTemplate_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        computeTemplate_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IMAGE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object image_;
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 3;</code>
-     */
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        image_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional field. This field will be used to retrieve right ray container
-     * </pre>
-     *
-     * <code>string image = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        image_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int REPLICAS_FIELD_NUMBER = 4;
+    public static final int REPLICAS_FIELD_NUMBER = 2;
     private int replicas_;
     /**
      * <pre>
      * Required. Desired replicas of the worker group
      * </pre>
      *
-     * <code>int32 replicas = 4;</code>
+     * <code>int32 replicas = 2;</code>
      */
     public int getReplicas() {
       return replicas_;
     }
 
-    public static final int MIN_REPLICAS_FIELD_NUMBER = 5;
+    public static final int MIN_REPLICAS_FIELD_NUMBER = 3;
     private int minReplicas_;
     /**
      * <pre>
      * Optional. Min replicas of the worker group
      * </pre>
      *
-     * <code>int32 min_replicas = 5;</code>
+     * <code>int32 min_replicas = 3;</code>
      */
     public int getMinReplicas() {
       return minReplicas_;
     }
 
-    public static final int MAX_REPLICAS_FIELD_NUMBER = 6;
+    public static final int MAX_REPLICAS_FIELD_NUMBER = 4;
     private int maxReplicas_;
     /**
      * <pre>
      * Optional. Max replicas of the worker group
      * </pre>
      *
-     * <code>int32 max_replicas = 6;</code>
+     * <code>int32 max_replicas = 4;</code>
      */
     public int getMaxReplicas() {
       return maxReplicas_;
     }
 
-    public static final int RAY_START_PARAMS_FIELD_NUMBER = 7;
+    public static final int RAY_START_PARAMS_FIELD_NUMBER = 5;
     private static final class RayStartParamsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -4491,7 +4688,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     public boolean containsRayStartParams(
@@ -4511,7 +4708,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getRayStartParamsMap() {
@@ -4522,7 +4719,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     public java.lang.String getRayStartParamsOrDefault(
@@ -4538,7 +4735,7 @@ public final class ResourceOuterClass {
      * Optional. The ray start params of worker node group
      * </pre>
      *
-     * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+     * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
      */
 
     public java.lang.String getRayStartParamsOrThrow(
@@ -4569,27 +4766,21 @@ public final class ResourceOuterClass {
       if (!getGroupNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupName_);
       }
-      if (!getComputeTemplateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, computeTemplate_);
-      }
-      if (!getImageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, image_);
-      }
       if (replicas_ != 0) {
-        output.writeInt32(4, replicas_);
+        output.writeInt32(2, replicas_);
       }
       if (minReplicas_ != 0) {
-        output.writeInt32(5, minReplicas_);
+        output.writeInt32(3, minReplicas_);
       }
       if (maxReplicas_ != 0) {
-        output.writeInt32(6, maxReplicas_);
+        output.writeInt32(4, maxReplicas_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetRayStartParams(),
           RayStartParamsDefaultEntryHolder.defaultEntry,
-          7);
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -4602,23 +4793,17 @@ public final class ResourceOuterClass {
       if (!getGroupNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupName_);
       }
-      if (!getComputeTemplateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, computeTemplate_);
-      }
-      if (!getImageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, image_);
-      }
       if (replicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, replicas_);
+          .computeInt32Size(2, replicas_);
       }
       if (minReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, minReplicas_);
+          .computeInt32Size(3, minReplicas_);
       }
       if (maxReplicas_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, maxReplicas_);
+          .computeInt32Size(4, maxReplicas_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetRayStartParams().getMap().entrySet()) {
@@ -4628,7 +4813,7 @@ public final class ResourceOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, rayStartParams__);
+            .computeMessageSize(5, rayStartParams__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4647,10 +4832,6 @@ public final class ResourceOuterClass {
 
       if (!getGroupName()
           .equals(other.getGroupName())) return false;
-      if (!getComputeTemplate()
-          .equals(other.getComputeTemplate())) return false;
-      if (!getImage()
-          .equals(other.getImage())) return false;
       if (getReplicas()
           != other.getReplicas()) return false;
       if (getMinReplicas()
@@ -4672,10 +4853,6 @@ public final class ResourceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GROUP_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getGroupName().hashCode();
-      hash = (37 * hash) + COMPUTE_TEMPLATE_FIELD_NUMBER;
-      hash = (53 * hash) + getComputeTemplate().hashCode();
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
       hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
       hash = (53 * hash) + getReplicas();
       hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
@@ -4797,7 +4974,7 @@ public final class ResourceOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 5:
             return internalGetRayStartParams();
           default:
             throw new RuntimeException(
@@ -4808,7 +4985,7 @@ public final class ResourceOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 5:
             return internalGetMutableRayStartParams();
           default:
             throw new RuntimeException(
@@ -4842,10 +5019,6 @@ public final class ResourceOuterClass {
       public Builder clear() {
         super.clear();
         groupName_ = "";
-
-        computeTemplate_ = "";
-
-        image_ = "";
 
         replicas_ = 0;
 
@@ -4883,8 +5056,6 @@ public final class ResourceOuterClass {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.groupName_ = groupName_;
-        result.computeTemplate_ = computeTemplate_;
-        result.image_ = image_;
         result.replicas_ = replicas_;
         result.minReplicas_ = minReplicas_;
         result.maxReplicas_ = maxReplicas_;
@@ -4941,14 +5112,6 @@ public final class ResourceOuterClass {
         if (other == flyteidl.core.ResourceOuterClass.WorkerGroupSpec.getDefaultInstance()) return this;
         if (!other.getGroupName().isEmpty()) {
           groupName_ = other.groupName_;
-          onChanged();
-        }
-        if (!other.getComputeTemplate().isEmpty()) {
-          computeTemplate_ = other.computeTemplate_;
-          onChanged();
-        }
-        if (!other.getImage().isEmpty()) {
-          image_ = other.image_;
           onChanged();
         }
         if (other.getReplicas() != 0) {
@@ -5081,191 +5244,13 @@ public final class ResourceOuterClass {
         return this;
       }
 
-      private java.lang.Object computeTemplate_ = "";
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 2;</code>
-       */
-      public java.lang.String getComputeTemplate() {
-        java.lang.Object ref = computeTemplate_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          computeTemplate_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getComputeTemplateBytes() {
-        java.lang.Object ref = computeTemplate_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          computeTemplate_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 2;</code>
-       */
-      public Builder setComputeTemplate(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        computeTemplate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 2;</code>
-       */
-      public Builder clearComputeTemplate() {
-        
-        computeTemplate_ = getDefaultInstance().getComputeTemplate();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional. The computeTemplate of head node group
-       * </pre>
-       *
-       * <code>string compute_template = 2;</code>
-       */
-      public Builder setComputeTemplateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        computeTemplate_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object image_ = "";
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 3;</code>
-       */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          image_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          image_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 3;</code>
-       */
-      public Builder setImage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        image_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 3;</code>
-       */
-      public Builder clearImage() {
-        
-        image_ = getDefaultInstance().getImage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional field. This field will be used to retrieve right ray container
-       * </pre>
-       *
-       * <code>string image = 3;</code>
-       */
-      public Builder setImageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        image_ = value;
-        onChanged();
-        return this;
-      }
-
       private int replicas_ ;
       /**
        * <pre>
        * Required. Desired replicas of the worker group
        * </pre>
        *
-       * <code>int32 replicas = 4;</code>
+       * <code>int32 replicas = 2;</code>
        */
       public int getReplicas() {
         return replicas_;
@@ -5275,7 +5260,7 @@ public final class ResourceOuterClass {
        * Required. Desired replicas of the worker group
        * </pre>
        *
-       * <code>int32 replicas = 4;</code>
+       * <code>int32 replicas = 2;</code>
        */
       public Builder setReplicas(int value) {
         
@@ -5288,7 +5273,7 @@ public final class ResourceOuterClass {
        * Required. Desired replicas of the worker group
        * </pre>
        *
-       * <code>int32 replicas = 4;</code>
+       * <code>int32 replicas = 2;</code>
        */
       public Builder clearReplicas() {
         
@@ -5303,7 +5288,7 @@ public final class ResourceOuterClass {
        * Optional. Min replicas of the worker group
        * </pre>
        *
-       * <code>int32 min_replicas = 5;</code>
+       * <code>int32 min_replicas = 3;</code>
        */
       public int getMinReplicas() {
         return minReplicas_;
@@ -5313,7 +5298,7 @@ public final class ResourceOuterClass {
        * Optional. Min replicas of the worker group
        * </pre>
        *
-       * <code>int32 min_replicas = 5;</code>
+       * <code>int32 min_replicas = 3;</code>
        */
       public Builder setMinReplicas(int value) {
         
@@ -5326,7 +5311,7 @@ public final class ResourceOuterClass {
        * Optional. Min replicas of the worker group
        * </pre>
        *
-       * <code>int32 min_replicas = 5;</code>
+       * <code>int32 min_replicas = 3;</code>
        */
       public Builder clearMinReplicas() {
         
@@ -5341,7 +5326,7 @@ public final class ResourceOuterClass {
        * Optional. Max replicas of the worker group
        * </pre>
        *
-       * <code>int32 max_replicas = 6;</code>
+       * <code>int32 max_replicas = 4;</code>
        */
       public int getMaxReplicas() {
         return maxReplicas_;
@@ -5351,7 +5336,7 @@ public final class ResourceOuterClass {
        * Optional. Max replicas of the worker group
        * </pre>
        *
-       * <code>int32 max_replicas = 6;</code>
+       * <code>int32 max_replicas = 4;</code>
        */
       public Builder setMaxReplicas(int value) {
         
@@ -5364,7 +5349,7 @@ public final class ResourceOuterClass {
        * Optional. Max replicas of the worker group
        * </pre>
        *
-       * <code>int32 max_replicas = 6;</code>
+       * <code>int32 max_replicas = 4;</code>
        */
       public Builder clearMaxReplicas() {
         
@@ -5404,7 +5389,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public boolean containsRayStartParams(
@@ -5424,7 +5409,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getRayStartParamsMap() {
@@ -5435,7 +5420,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public java.lang.String getRayStartParamsOrDefault(
@@ -5451,7 +5436,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public java.lang.String getRayStartParamsOrThrow(
@@ -5475,7 +5460,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public Builder removeRayStartParams(
@@ -5498,7 +5483,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
       public Builder putRayStartParams(
           java.lang.String key,
@@ -5514,7 +5499,7 @@ public final class ResourceOuterClass {
        * Optional. The ray start params of worker node group
        * </pre>
        *
-       * <code>map&lt;string, string&gt; ray_start_params = 7;</code>
+       * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
        */
 
       public Builder putAllRayStartParams(
@@ -5582,6 +5567,11 @@ public final class ResourceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_Resource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_RayJob_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_RayJob_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_RayCluster_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5623,26 +5613,27 @@ public final class ResourceOuterClass {
       "\n\034flyteidl/core/resource.proto\022\rflyteidl" +
       ".core\032\037google/protobuf/timestamp.proto\"=" +
       "\n\010Resource\022(\n\003ray\030\001 \001(\0132\031.flyteidl.core." +
-      "RayClusterH\000B\007\n\005value\"L\n\nRayCluster\022\014\n\004n" +
-      "ame\030\001 \001(\t\0220\n\014cluster_spec\030\002 \001(\0132\032.flytei" +
-      "dl.core.ClusterSpec\"\177\n\013ClusterSpec\0225\n\017he" +
-      "ad_group_spec\030\001 \001(\0132\034.flyteidl.core.Head" +
-      "GroupSpec\0229\n\021worker_group_spec\030\002 \003(\0132\036.f" +
-      "lyteidl.core.WorkerGroupSpec\"\321\001\n\rHeadGro" +
-      "upSpec\022\030\n\020compute_template\030\001 \001(\t\022\r\n\005imag" +
-      "e\030\002 \001(\t\022\024\n\014service_type\030\003 \001(\t\022J\n\020ray_sta" +
-      "rt_params\030\004 \003(\01320.flyteidl.core.HeadGrou" +
-      "pSpec.RayStartParamsEntry\0325\n\023RayStartPar" +
-      "amsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"\221\002\n\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t" +
-      "\022\030\n\020compute_template\030\002 \001(\t\022\r\n\005image\030\003 \001(" +
-      "\t\022\020\n\010replicas\030\004 \001(\005\022\024\n\014min_replicas\030\005 \001(" +
-      "\005\022\024\n\014max_replicas\030\006 \001(\005\022L\n\020ray_start_par" +
-      "ams\030\007 \003(\01322.flyteidl.core.WorkerGroupSpe" +
-      "c.RayStartParamsEntry\0325\n\023RayStartParamsE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/coreb\006proto3"
+      "RayClusterH\000B\007\n\005value\"\216\001\n\006RayJob\022-\n\nrayC" +
+      "luster\030\001 \001(\0132\031.flyteidl.core.RayCluster\022" +
+      "\022\n\nRuntimeEnv\030\002 \001(\t\022 \n\030ShutdownAfterJobF" +
+      "inishes\030\003 \001(\010\022\037\n\027TTLSecondsAfterFinished" +
+      "\030\004 \001(\005\">\n\nRayCluster\0220\n\014cluster_spec\030\001 \001" +
+      "(\0132\032.flyteidl.core.ClusterSpec\"\177\n\013Cluste" +
+      "rSpec\0225\n\017head_group_spec\030\001 \001(\0132\034.flyteid" +
+      "l.core.HeadGroupSpec\0229\n\021worker_group_spe" +
+      "c\030\002 \003(\0132\036.flyteidl.core.WorkerGroupSpec\"" +
+      "\222\001\n\rHeadGroupSpec\022J\n\020ray_start_params\030\001 " +
+      "\003(\01320.flyteidl.core.HeadGroupSpec.RaySta" +
+      "rtParamsEntry\0325\n\023RayStartParamsEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\350\001\n\017WorkerG" +
+      "roupSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010replicas" +
+      "\030\002 \001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014max_repl" +
+      "icas\030\004 \001(\005\022L\n\020ray_start_params\030\005 \003(\01322.f" +
+      "lyteidl.core.WorkerGroupSpec.RayStartPar" +
+      "amsEntry\0325\n\023RayStartParamsEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B6Z4github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/coreb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5663,24 +5654,30 @@ public final class ResourceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Resource_descriptor,
         new java.lang.String[] { "Ray", "Value", });
-    internal_static_flyteidl_core_RayCluster_descriptor =
+    internal_static_flyteidl_core_RayJob_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_flyteidl_core_RayJob_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_RayJob_descriptor,
+        new java.lang.String[] { "RayCluster", "RuntimeEnv", "ShutdownAfterJobFinishes", "TTLSecondsAfterFinished", });
+    internal_static_flyteidl_core_RayCluster_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_core_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_RayCluster_descriptor,
-        new java.lang.String[] { "Name", "ClusterSpec", });
+        new java.lang.String[] { "ClusterSpec", });
     internal_static_flyteidl_core_ClusterSpec_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_core_ClusterSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_ClusterSpec_descriptor,
         new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", });
     internal_static_flyteidl_core_HeadGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_core_HeadGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_HeadGroupSpec_descriptor,
-        new java.lang.String[] { "ComputeTemplate", "Image", "ServiceType", "RayStartParams", });
+        new java.lang.String[] { "RayStartParams", });
     internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_descriptor =
       internal_static_flyteidl_core_HeadGroupSpec_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_fieldAccessorTable = new
@@ -5688,11 +5685,11 @@ public final class ResourceOuterClass {
         internal_static_flyteidl_core_HeadGroupSpec_RayStartParamsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_core_WorkerGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_core_WorkerGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkerGroupSpec_descriptor,
-        new java.lang.String[] { "GroupName", "ComputeTemplate", "Image", "Replicas", "MinReplicas", "MaxReplicas", "RayStartParams", });
+        new java.lang.String[] { "GroupName", "Replicas", "MinReplicas", "MaxReplicas", "RayStartParams", });
     internal_static_flyteidl_core_WorkerGroupSpec_RayStartParamsEntry_descriptor =
       internal_static_flyteidl_core_WorkerGroupSpec_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_WorkerGroupSpec_RayStartParamsEntry_fieldAccessorTable = new

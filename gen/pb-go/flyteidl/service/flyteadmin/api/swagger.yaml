@@ -4598,29 +4598,21 @@ definitions:
             ray:
               cluster_spec:
                 worker_group_spec:
-                - image: "image"
-                  ray_start_params:
+                - ray_start_params:
                     key: "ray_start_params"
                   group_name: "group_name"
                   replicas: 5
                   min_replicas: 2
-                  compute_template: "compute_template"
                   max_replicas: 7
-                - image: "image"
-                  ray_start_params:
+                - ray_start_params:
                     key: "ray_start_params"
                   group_name: "group_name"
                   replicas: 5
                   min_replicas: 2
-                  compute_template: "compute_template"
                   max_replicas: 7
                 head_group_spec:
-                  image: "image"
-                  service_type: "service_type"
                   ray_start_params:
                     key: "ray_start_params"
-                  compute_template: "compute_template"
-              name: "name"
         interruptible: true
         labels:
           values:
@@ -5424,29 +5416,21 @@ definitions:
               ray:
                 cluster_spec:
                   worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
+                  - ray_start_params:
                       key: "ray_start_params"
                     group_name: "group_name"
                     replicas: 5
                     min_replicas: 2
-                    compute_template: "compute_template"
                     max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
+                  - ray_start_params:
                       key: "ray_start_params"
                     group_name: "group_name"
                     replicas: 5
                     min_replicas: 2
-                    compute_template: "compute_template"
                     max_replicas: 7
                   head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
           interruptible: true
           labels:
             values:
@@ -5965,29 +5949,21 @@ definitions:
               ray:
                 cluster_spec:
                   worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
+                  - ray_start_params:
                       key: "ray_start_params"
                     group_name: "group_name"
                     replicas: 5
                     min_replicas: 2
-                    compute_template: "compute_template"
                     max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
+                  - ray_start_params:
                       key: "ray_start_params"
                     group_name: "group_name"
                     replicas: 5
                     min_replicas: 2
-                    compute_template: "compute_template"
                     max_replicas: 7
                   head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
                     ray_start_params:
                       key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
           interruptible: true
           labels:
             values:
@@ -6394,29 +6370,21 @@ definitions:
           ray:
             cluster_spec:
               worker_group_spec:
-              - image: "image"
-                ray_start_params:
+              - ray_start_params:
                   key: "ray_start_params"
                 group_name: "group_name"
                 replicas: 5
                 min_replicas: 2
-                compute_template: "compute_template"
                 max_replicas: 7
-              - image: "image"
-                ray_start_params:
+              - ray_start_params:
                   key: "ray_start_params"
                 group_name: "group_name"
                 replicas: 5
                 min_replicas: 2
-                compute_template: "compute_template"
                 max_replicas: 7
               head_group_spec:
-                image: "image"
-                service_type: "service_type"
                 ray_start_params:
                   key: "ray_start_params"
-                compute_template: "compute_template"
-            name: "name"
       interruptible: true
       labels:
         values:
@@ -9225,34 +9193,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11085,34 +11025,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11327,33 +11239,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -11605,33 +11508,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -13503,34 +13397,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -14561,33 +14427,24 @@ definitions:
                     null_value: {}
                     bool_value: true
             resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
+              ray:
+                cluster_spec:
+                  worker_group_spec:
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  head_group_spec:
+                    ray_start_params:
+                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -14855,33 +14712,24 @@ definitions:
                   null_value: {}
                   bool_value: true
           resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
+            ray:
+              cluster_spec:
+                worker_group_spec:
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                head_group_spec:
+                  ray_start_params:
+                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -15545,33 +15393,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -15832,33 +15671,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -17860,34 +17690,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -19720,34 +19522,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -19962,33 +19736,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -20240,33 +20005,24 @@ definitions:
                       null_value: {}
                       bool_value: true
               resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
+                ray:
+                  cluster_spec:
+                    worker_group_spec:
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    - ray_start_params:
+                        key: "ray_start_params"
+                      group_name: "group_name"
+                      replicas: 5
+                      min_replicas: 2
+                      max_replicas: 7
+                    head_group_spec:
+                      ray_start_params:
+                        key: "ray_start_params"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -22138,34 +21894,6 @@ definitions:
                     version: "version"
               metadata_defaults:
                 interruptible: true
-              resources:
-                key:
-                  ray:
-                    cluster_spec:
-                      worker_group_spec:
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      - image: "image"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        group_name: "group_name"
-                        replicas: 5
-                        min_replicas: 2
-                        compute_template: "compute_template"
-                        max_replicas: 7
-                      head_group_spec:
-                        image: "image"
-                        service_type: "service_type"
-                        ray_start_params:
-                          key: "ray_start_params"
-                        compute_template: "compute_template"
-                    name: "name"
               id:
                 domain: "domain"
                 resource_type: {}
@@ -24313,34 +24041,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
@@ -26173,34 +25873,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
@@ -26415,33 +26087,24 @@ definitions:
                     null_value: {}
                     bool_value: true
             resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
+              ray:
+                cluster_spec:
+                  worker_group_spec:
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  head_group_spec:
+                    ray_start_params:
+                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -26693,33 +26356,24 @@ definitions:
                     null_value: {}
                     bool_value: true
             resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
+              ray:
+                cluster_spec:
+                  worker_group_spec:
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  head_group_spec:
+                    ray_start_params:
+                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -28591,34 +28245,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
@@ -30622,34 +30248,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -32482,34 +32080,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -32724,33 +32294,24 @@ definitions:
                         null_value: {}
                         bool_value: true
                 resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
+                  ray:
+                    cluster_spec:
+                      worker_group_spec:
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      head_group_spec:
+                        ray_start_params:
+                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -33002,33 +32563,24 @@ definitions:
                         null_value: {}
                         bool_value: true
                 resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
+                  ray:
+                    cluster_spec:
+                      worker_group_spec:
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      head_group_spec:
+                        ray_start_params:
+                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -34900,34 +34452,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -36770,34 +36294,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -38630,34 +38126,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -38872,33 +38340,24 @@ definitions:
                         null_value: {}
                         bool_value: true
                 resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
+                  ray:
+                    cluster_spec:
+                      worker_group_spec:
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      head_group_spec:
+                        ray_start_params:
+                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -39150,33 +38609,24 @@ definitions:
                         null_value: {}
                         bool_value: true
                 resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
+                  ray:
+                    cluster_spec:
+                      worker_group_spec:
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      - ray_start_params:
+                          key: "ray_start_params"
+                        group_name: "group_name"
+                        replicas: 5
+                        min_replicas: 2
+                        max_replicas: 7
+                      head_group_spec:
+                        ray_start_params:
+                          key: "ray_start_params"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -41048,34 +40498,6 @@ definitions:
                       version: "version"
                 metadata_defaults:
                   interruptible: true
-                resources:
-                  key:
-                    ray:
-                      cluster_spec:
-                        worker_group_spec:
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        - image: "image"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          group_name: "group_name"
-                          replicas: 5
-                          min_replicas: 2
-                          compute_template: "compute_template"
-                          max_replicas: 7
-                        head_group_spec:
-                          image: "image"
-                          service_type: "service_type"
-                          ray_start_params:
-                            key: "ray_start_params"
-                          compute_template: "compute_template"
-                      name: "name"
                 id:
                   domain: "domain"
                   resource_type: {}
@@ -41876,28 +41298,21 @@ definitions:
           $ref: "#/definitions/coreWorkerGroupSpec"
     example:
       worker_group_spec:
-      - image: "image"
-        ray_start_params:
+      - ray_start_params:
           key: "ray_start_params"
         group_name: "group_name"
         replicas: 5
         min_replicas: 2
-        compute_template: "compute_template"
         max_replicas: 7
-      - image: "image"
-        ray_start_params:
+      - ray_start_params:
           key: "ray_start_params"
         group_name: "group_name"
         replicas: 5
         min_replicas: 2
-        compute_template: "compute_template"
         max_replicas: 7
       head_group_spec:
-        image: "image"
-        service_type: "service_type"
         ray_start_params:
           key: "ray_start_params"
-        compute_template: "compute_template"
   coreComparisonExpression:
     type: "object"
     properties:
@@ -42036,33 +41451,24 @@ definitions:
                 null_value: {}
                 bool_value: true
         resources:
-          key:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                head_group_spec:
-                  image: "image"
-                  service_type: "service_type"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  compute_template: "compute_template"
-              name: "name"
+          ray:
+            cluster_spec:
+              worker_group_spec:
+              - ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                max_replicas: 7
+              - ray_start_params:
+                  key: "ray_start_params"
+                group_name: "group_name"
+                replicas: 5
+                min_replicas: 2
+                max_replicas: 7
+              head_group_spec:
+                ray_start_params:
+                  key: "ray_start_params"
         id:
           domain: "domain"
           resource_type: {}
@@ -43946,34 +43352,6 @@ definitions:
               version: "version"
         metadata_defaults:
           interruptible: true
-        resources:
-          key:
-            ray:
-              cluster_spec:
-                worker_group_spec:
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                - image: "image"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  group_name: "group_name"
-                  replicas: 5
-                  min_replicas: 2
-                  compute_template: "compute_template"
-                  max_replicas: 7
-                head_group_spec:
-                  image: "image"
-                  service_type: "service_type"
-                  ray_start_params:
-                    key: "ray_start_params"
-                  compute_template: "compute_template"
-              name: "name"
         id:
           domain: "domain"
           resource_type: {}
@@ -45833,34 +45211,6 @@ definitions:
                 version: "version"
           metadata_defaults:
             interruptible: true
-          resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
           id:
             domain: "domain"
             resource_type: {}
@@ -47693,34 +47043,6 @@ definitions:
                 version: "version"
           metadata_defaults:
             interruptible: true
-          resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
           id:
             domain: "domain"
             resource_type: {}
@@ -47935,33 +47257,24 @@ definitions:
                   null_value: {}
                   bool_value: true
           resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
+            ray:
+              cluster_spec:
+                worker_group_spec:
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                head_group_spec:
+                  ray_start_params:
+                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -48213,33 +47526,24 @@ definitions:
                   null_value: {}
                   bool_value: true
           resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
+            ray:
+              cluster_spec:
+                worker_group_spec:
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                - ray_start_params:
+                    key: "ray_start_params"
+                  group_name: "group_name"
+                  replicas: 5
+                  min_replicas: 2
+                  max_replicas: 7
+                head_group_spec:
+                  ray_start_params:
+                    key: "ray_start_params"
           id:
             domain: "domain"
             resource_type: {}
@@ -50111,34 +49415,6 @@ definitions:
                 version: "version"
           metadata_defaults:
             interruptible: true
-          resources:
-            key:
-              ray:
-                cluster_spec:
-                  worker_group_spec:
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  - image: "image"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    group_name: "group_name"
-                    replicas: 5
-                    min_replicas: 2
-                    compute_template: "compute_template"
-                    max_replicas: 7
-                  head_group_spec:
-                    image: "image"
-                    service_type: "service_type"
-                    ray_start_params:
-                      key: "ray_start_params"
-                    compute_template: "compute_template"
-                name: "name"
           id:
             domain: "domain"
             resource_type: {}
@@ -50511,27 +49787,14 @@ definitions:
   coreHeadGroupSpec:
     type: "object"
     properties:
-      compute_template:
-        type: "string"
-        title: "Optional. The computeTemplate of head node group"
-      image:
-        type: "string"
-        title: "Optional field. This field will be used to retrieve right ray container"
-      service_type:
-        type: "string"
-        title: "Optional. The service type (ClusterIP, NodePort, Load balancer) of\
-          \ the head node"
       ray_start_params:
         type: "object"
         title: "Optional. The ray start params of head node group"
         additionalProperties:
           type: "string"
     example:
-      image: "image"
-      service_type: "service_type"
       ray_start_params:
         key: "ray_start_params"
-      compute_template: "compute_template"
   coreIOStrategy:
     type: "object"
     properties:
@@ -52101,9 +51364,6 @@ definitions:
   coreRayCluster:
     type: "object"
     properties:
-      name:
-        type: "string"
-        description: "Required input field. Unique cluster name provided by user."
       cluster_spec:
         title: "Required field. This field indicates ray cluster configuration"
         $ref: "#/definitions/coreClusterSpec"
@@ -52111,29 +51371,21 @@ definitions:
     example:
       cluster_spec:
         worker_group_spec:
-        - image: "image"
-          ray_start_params:
+        - ray_start_params:
             key: "ray_start_params"
           group_name: "group_name"
           replicas: 5
           min_replicas: 2
-          compute_template: "compute_template"
           max_replicas: 7
-        - image: "image"
-          ray_start_params:
+        - ray_start_params:
             key: "ray_start_params"
           group_name: "group_name"
           replicas: 5
           min_replicas: 2
-          compute_template: "compute_template"
           max_replicas: 7
         head_group_spec:
-          image: "image"
-          service_type: "service_type"
           ray_start_params:
             key: "ray_start_params"
-          compute_template: "compute_template"
-      name: "name"
   coreResource:
     type: "object"
     properties:
@@ -52144,29 +51396,21 @@ definitions:
       ray:
         cluster_spec:
           worker_group_spec:
-          - image: "image"
-            ray_start_params:
+          - ray_start_params:
               key: "ray_start_params"
             group_name: "group_name"
             replicas: 5
             min_replicas: 2
-            compute_template: "compute_template"
             max_replicas: 7
-          - image: "image"
-            ray_start_params:
+          - ray_start_params:
               key: "ray_start_params"
             group_name: "group_name"
             replicas: 5
             min_replicas: 2
-            compute_template: "compute_template"
             max_replicas: 7
           head_group_spec:
-            image: "image"
-            service_type: "service_type"
             ray_start_params:
               key: "ray_start_params"
-            compute_template: "compute_template"
-        name: "name"
   coreResourceType:
     type: "string"
     description: "Indicates a resource type within Flyte.\n\n - DATASET: A dataset\
@@ -52799,11 +52043,9 @@ definitions:
         additionalProperties:
           type: "string"
       resources:
-        type: "object"
         description: "Cluster resources (Ray or Dask) that will be attached to task\
           \ spec."
-        additionalProperties:
-          $ref: "#/definitions/coreResource"
+        $ref: "#/definitions/coreResource"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -52891,33 +52133,24 @@ definitions:
               null_value: {}
               bool_value: true
       resources:
-        key:
-          ray:
-            cluster_spec:
-              worker_group_spec:
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              head_group_spec:
-                image: "image"
-                service_type: "service_type"
-                ray_start_params:
-                  key: "ray_start_params"
-                compute_template: "compute_template"
-            name: "name"
+        ray:
+          cluster_spec:
+            worker_group_spec:
+            - ray_start_params:
+                key: "ray_start_params"
+              group_name: "group_name"
+              replicas: 5
+              min_replicas: 2
+              max_replicas: 7
+            - ray_start_params:
+                key: "ray_start_params"
+              group_name: "group_name"
+              replicas: 5
+              min_replicas: 2
+              max_replicas: 7
+            head_group_spec:
+              ray_start_params:
+                key: "ray_start_params"
       id:
         domain: "domain"
         resource_type: {}
@@ -53511,12 +52744,6 @@ definitions:
       group_name:
         type: "string"
         title: "Required. Group name of the current worker group"
-      compute_template:
-        type: "string"
-        title: "Optional. The computeTemplate of head node group"
-      image:
-        type: "string"
-        title: "Optional field. This field will be used to retrieve right ray container"
       replicas:
         type: "integer"
         format: "int32"
@@ -53535,13 +52762,11 @@ definitions:
         additionalProperties:
           type: "string"
     example:
-      image: "image"
       ray_start_params:
         key: "ray_start_params"
       group_name: "group_name"
       replicas: 5
       min_replicas: 2
-      compute_template: "compute_template"
       max_replicas: 7
   coreWorkflowExecutionIdentifier:
     type: "object"
@@ -53676,12 +52901,6 @@ definitions:
       metadata_defaults:
         title: "workflow defaults"
         $ref: "#/definitions/coreWorkflowMetadataDefaults"
-      resources:
-        type: "object"
-        description: "Cluster resources (Ray or Dask) that will be attached to workflow\
-          \ template."
-        additionalProperties:
-          $ref: "#/definitions/coreResource"
     description: "Flyte Workflow Structure that encapsulates task, branch and subworkflow\
       \ nodes to form a statically analyzable,\ndirected acyclic graph."
     example:
@@ -55388,34 +54607,6 @@ definitions:
             version: "version"
       metadata_defaults:
         interruptible: true
-      resources:
-        key:
-          ray:
-            cluster_spec:
-              worker_group_spec:
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              - image: "image"
-                ray_start_params:
-                  key: "ray_start_params"
-                group_name: "group_name"
-                replicas: 5
-                min_replicas: 2
-                compute_template: "compute_template"
-                max_replicas: 7
-              head_group_spec:
-                image: "image"
-                service_type: "service_type"
-                ray_start_params:
-                  key: "ray_start_params"
-                compute_template: "compute_template"
-            name: "name"
       id:
         domain: "domain"
         resource_type: {}
@@ -57563,34 +56754,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
@@ -59423,34 +58586,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
@@ -59665,33 +58800,24 @@ definitions:
                     null_value: {}
                     bool_value: true
             resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
+              ray:
+                cluster_spec:
+                  worker_group_spec:
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  head_group_spec:
+                    ray_start_params:
+                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -59943,33 +59069,24 @@ definitions:
                     null_value: {}
                     bool_value: true
             resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
+              ray:
+                cluster_spec:
+                  worker_group_spec:
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  - ray_start_params:
+                      key: "ray_start_params"
+                    group_name: "group_name"
+                    replicas: 5
+                    min_replicas: 2
+                    max_replicas: 7
+                  head_group_spec:
+                    ray_start_params:
+                      key: "ray_start_params"
             id:
               domain: "domain"
               resource_type: {}
@@ -61841,34 +60958,6 @@ definitions:
                   version: "version"
             metadata_defaults:
               interruptible: true
-            resources:
-              key:
-                ray:
-                  cluster_spec:
-                    worker_group_spec:
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    - image: "image"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      group_name: "group_name"
-                      replicas: 5
-                      min_replicas: 2
-                      compute_template: "compute_template"
-                      max_replicas: 7
-                    head_group_spec:
-                      image: "image"
-                      service_type: "service_type"
-                      ray_start_params:
-                        key: "ray_start_params"
-                      compute_template: "compute_template"
-                  name: "name"
             id:
               domain: "domain"
               resource_type: {}
