@@ -13,14 +13,25 @@ message Resource {
   }
 }
 
+// RayJobSpec defines the desired state of RayJob
+message RayJob {
+  // RayClusterSpec is the cluster template to run the job
+  RayCluster rayCluster = 1;
+  // RuntimeEnv is base64 encoded.
+  // Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments
+  string RuntimeEnv = 2;
+  // ShutdownAfterJobFinishes will determine whether to delete the ray cluster once rayJob succeed or failed.
+  bool ShutdownAfterJobFinishes = 3;
+  // TTLSecondsAfterFinished is the TTL to clean up RayCluster.
+  // It's only working when ShutdownAfterJobFinishes set to true.
+  int32 TTLSecondsAfterFinished = 4;
+}
 
 // Define Ray cluster spec
 message RayCluster {
-  // Required input field. Unique cluster name provided by user.
-  string name = 1;
-
   // Required field. This field indicates ray cluster configuration
-  ClusterSpec cluster_spec = 2;
+  ClusterSpec cluster_spec = 1;
+
 }
 
 message ClusterSpec {
@@ -31,29 +42,19 @@ message ClusterSpec {
 }
 
 message HeadGroupSpec {
-  // Optional. The computeTemplate of head node group
-  string compute_template = 1;
-  // Optional field. This field will be used to retrieve right ray container
-  string image = 2;
-  // Optional. The service type (ClusterIP, NodePort, Load balancer) of the head node
-  string service_type = 3;
   // Optional. The ray start params of head node group
-  map<string, string> ray_start_params = 4;
+  map<string, string> ray_start_params = 1;
 }
 
 message WorkerGroupSpec {
   // Required. Group name of the current worker group
   string group_name = 1;
-  // Optional. The computeTemplate of head node group
-  string compute_template = 2;
-  // Optional field. This field will be used to retrieve right ray container
-  string image = 3;
   // Required. Desired replicas of the worker group
-  int32 replicas = 4;
+  int32 replicas = 2;
   // Optional. Min replicas of the worker group
-  int32 min_replicas = 5;
+  int32 min_replicas = 3;
   // Optional. Max replicas of the worker group
-  int32 max_replicas = 6;
+  int32 max_replicas = 4;
   // Optional. The ray start params of worker node group
-  map<string, string> ray_start_params = 7;
+  map<string, string> ray_start_params = 5;
 }

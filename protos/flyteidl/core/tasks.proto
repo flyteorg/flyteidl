@@ -140,7 +140,7 @@ message TaskTemplate {
     map<string, string> config = 16;
 
     // Cluster resources (Ray or Dask) that will be attached to task spec.
-    map<string, Resource> resources = 20;
+    Resource resources = 20;
 }
 
 // ----------------- First class Plugins

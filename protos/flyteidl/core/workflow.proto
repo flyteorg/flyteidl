@@ -199,9 +199,6 @@ message WorkflowTemplate {
 
     // workflow defaults
     WorkflowMetadataDefaults metadata_defaults = 7;
-
-    // Cluster resources (Ray or Dask) that will be attached to workflow template.
-    map<string, Resource> resources = 8;
 }
 
 // Optional task node overrides that will be applied at task execution time.
