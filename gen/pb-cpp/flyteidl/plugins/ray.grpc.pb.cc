@@ -17,8 +17,8 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace flyteidl {
-namespace core {
+namespace plugins {
 
 }  // namespace flyteidl
-}  // namespace core
+}  // namespace plugins
 

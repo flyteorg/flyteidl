@@ -38,9 +38,9 @@ class ServerContext;
 }  // namespace grpc
 
 namespace flyteidl {
-namespace core {
+namespace plugins {
 
-}  // namespace core
+}  // namespace plugins
 }  // namespace flyteidl
 
 

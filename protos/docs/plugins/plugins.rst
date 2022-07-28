@@ -308,7 +308,7 @@ flyteidl/plugins/ray.proto
 
 
 
-.. _ref_flyteidl.core.ClusterSpec:
+.. _ref_flyteidl.plugins.ClusterSpec:
 
 ClusterSpec
 ------------------------------------------------------------------
@@ -321,8 +321,8 @@ ClusterSpec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "head_group_spec", ":ref:`ref_flyteidl.core.HeadGroupSpec`", "", "The head group configuration"
-   "worker_group_spec", ":ref:`ref_flyteidl.core.WorkerGroupSpec`", "repeated", "The worker group configurations"
+   "head_group_spec", ":ref:`ref_flyteidl.plugins.HeadGroupSpec`", "", "The head group configuration"
+   "worker_group_spec", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec`", "repeated", "The worker group configurations"
 
 
 
@@ -330,7 +330,7 @@ ClusterSpec
 
 
 
-.. _ref_flyteidl.core.HeadGroupSpec:
+.. _ref_flyteidl.plugins.HeadGroupSpec:
 
 HeadGroupSpec
 ------------------------------------------------------------------
@@ -343,7 +343,7 @@ HeadGroupSpec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "ray_start_params", ":ref:`ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
+   "ray_start_params", ":ref:`ref_flyteidl.plugins.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
 
 
 
@@ -351,7 +351,7 @@ HeadGroupSpec
 
 
 
-.. _ref_flyteidl.core.HeadGroupSpec.RayStartParamsEntry:
+.. _ref_flyteidl.plugins.HeadGroupSpec.RayStartParamsEntry:
 
 HeadGroupSpec.RayStartParamsEntry
 ------------------------------------------------------------------
@@ -373,7 +373,7 @@ HeadGroupSpec.RayStartParamsEntry
 
 
 
-.. _ref_flyteidl.core.RayCluster:
+.. _ref_flyteidl.plugins.RayCluster:
 
 RayCluster
 ------------------------------------------------------------------
@@ -386,7 +386,7 @@ Define Ray cluster spec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "cluster_spec", ":ref:`ref_flyteidl.core.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
+   "cluster_spec", ":ref:`ref_flyteidl.plugins.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
 
 
 
@@ -394,7 +394,7 @@ Define Ray cluster spec
 
 
 
-.. _ref_flyteidl.core.RayJob:
+.. _ref_flyteidl.plugins.RayJob:
 
 RayJob
 ------------------------------------------------------------------
@@ -407,7 +407,7 @@ RayJobSpec defines the desired state of RayJob
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "ray_cluster", ":ref:`ref_flyteidl.core.RayCluster`", "", "RayClusterSpec is the cluster template to run the job"
+   "ray_cluster", ":ref:`ref_flyteidl.plugins.RayCluster`", "", "RayClusterSpec is the cluster template to run the job"
    "runtime_env", ":ref:`ref_string`", "", "runtime_env is base64 encoded. Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments"
    "shutdown_after_job_finishes", ":ref:`ref_bool`", "", "shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed."
    "ttl_seconds_after_finished", ":ref:`ref_int32`", "", "ttl_seconds_after_finished is the TTL to clean up RayCluster. It's only working when ShutdownAfterJobFinishes set to true."
@@ -418,7 +418,7 @@ RayJobSpec defines the desired state of RayJob
 
 
 
-.. _ref_flyteidl.core.WorkerGroupSpec:
+.. _ref_flyteidl.plugins.WorkerGroupSpec:
 
 WorkerGroupSpec
 ------------------------------------------------------------------
@@ -435,7 +435,7 @@ WorkerGroupSpec
    "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
    "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
    "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
-   "ray_start_params", ":ref:`ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of worker node group"
+   "ray_start_params", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of worker node group"
 
 
 
@@ -443,7 +443,7 @@ WorkerGroupSpec
 
 
 
-.. _ref_flyteidl.core.WorkerGroupSpec.RayStartParamsEntry:
+.. _ref_flyteidl.plugins.WorkerGroupSpec.RayStartParamsEntry:
 
 WorkerGroupSpec.RayStartParamsEntry
 ------------------------------------------------------------------
