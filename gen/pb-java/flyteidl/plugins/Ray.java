@@ -876,32 +876,76 @@ public final class Ray {
 
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    boolean hasClusterSpec();
+    boolean hasHeadGroupSpec();
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    flyteidl.plugins.Ray.ClusterSpec getClusterSpec();
+    flyteidl.plugins.Ray.HeadGroupSpec getHeadGroupSpec();
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    flyteidl.plugins.Ray.ClusterSpecOrBuilder getClusterSpecOrBuilder();
+    flyteidl.plugins.Ray.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder();
+
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> 
+        getWorkerGroupSpecList();
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    flyteidl.plugins.Ray.WorkerGroupSpec getWorkerGroupSpec(int index);
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    int getWorkerGroupSpecCount();
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    java.util.List<? extends flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder> 
+        getWorkerGroupSpecOrBuilderList();
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * Define Ray cluster spec
+   * Define Ray cluster defines the desired state of RayCluster
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.RayCluster}
@@ -916,6 +960,7 @@ public final class Ray {
       super(builder);
     }
     private RayCluster() {
+      workerGroupSpec_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -943,16 +988,25 @@ public final class Ray {
               done = true;
               break;
             case 10: {
-              flyteidl.plugins.Ray.ClusterSpec.Builder subBuilder = null;
-              if (clusterSpec_ != null) {
-                subBuilder = clusterSpec_.toBuilder();
+              flyteidl.plugins.Ray.HeadGroupSpec.Builder subBuilder = null;
+              if (headGroupSpec_ != null) {
+                subBuilder = headGroupSpec_.toBuilder();
               }
-              clusterSpec_ = input.readMessage(flyteidl.plugins.Ray.ClusterSpec.parser(), extensionRegistry);
+              headGroupSpec_ = input.readMessage(flyteidl.plugins.Ray.HeadGroupSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(clusterSpec_);
-                clusterSpec_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(headGroupSpec_);
+                headGroupSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                workerGroupSpec_ = new java.util.ArrayList<flyteidl.plugins.Ray.WorkerGroupSpec>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              workerGroupSpec_.add(
+                  input.readMessage(flyteidl.plugins.Ray.WorkerGroupSpec.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -970,6 +1024,9 @@ public final class Ray {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          workerGroupSpec_ = java.util.Collections.unmodifiableList(workerGroupSpec_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -987,37 +1044,93 @@ public final class Ray {
               flyteidl.plugins.Ray.RayCluster.class, flyteidl.plugins.Ray.RayCluster.Builder.class);
     }
 
-    public static final int CLUSTER_SPEC_FIELD_NUMBER = 1;
-    private flyteidl.plugins.Ray.ClusterSpec clusterSpec_;
+    private int bitField0_;
+    public static final int HEAD_GROUP_SPEC_FIELD_NUMBER = 1;
+    private flyteidl.plugins.Ray.HeadGroupSpec headGroupSpec_;
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    public boolean hasClusterSpec() {
-      return clusterSpec_ != null;
+    public boolean hasHeadGroupSpec() {
+      return headGroupSpec_ != null;
     }
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    public flyteidl.plugins.Ray.ClusterSpec getClusterSpec() {
-      return clusterSpec_ == null ? flyteidl.plugins.Ray.ClusterSpec.getDefaultInstance() : clusterSpec_;
+    public flyteidl.plugins.Ray.HeadGroupSpec getHeadGroupSpec() {
+      return headGroupSpec_ == null ? flyteidl.plugins.Ray.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
     }
     /**
      * <pre>
-     * Required field. This field indicates ray cluster configuration
+     * HeadGroupSpecs are the spec for the head pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
+     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
      */
-    public flyteidl.plugins.Ray.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
-      return getClusterSpec();
+    public flyteidl.plugins.Ray.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
+      return getHeadGroupSpec();
+    }
+
+    public static final int WORKER_GROUP_SPEC_FIELD_NUMBER = 2;
+    private java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> workerGroupSpec_;
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    public java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> getWorkerGroupSpecList() {
+      return workerGroupSpec_;
+    }
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    public java.util.List<? extends flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder> 
+        getWorkerGroupSpecOrBuilderList() {
+      return workerGroupSpec_;
+    }
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    public int getWorkerGroupSpecCount() {
+      return workerGroupSpec_.size();
+    }
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    public flyteidl.plugins.Ray.WorkerGroupSpec getWorkerGroupSpec(int index) {
+      return workerGroupSpec_.get(index);
+    }
+    /**
+     * <pre>
+     * WorkerGroupSpecs are the specs for the worker pods
+     * </pre>
+     *
+     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
+     */
+    public flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
+        int index) {
+      return workerGroupSpec_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1034,8 +1147,11 @@ public final class Ray {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (clusterSpec_ != null) {
-        output.writeMessage(1, getClusterSpec());
+      if (headGroupSpec_ != null) {
+        output.writeMessage(1, getHeadGroupSpec());
+      }
+      for (int i = 0; i < workerGroupSpec_.size(); i++) {
+        output.writeMessage(2, workerGroupSpec_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1046,9 +1162,13 @@ public final class Ray {
       if (size != -1) return size;
 
       size = 0;
-      if (clusterSpec_ != null) {
+      if (headGroupSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getClusterSpec());
+          .computeMessageSize(1, getHeadGroupSpec());
+      }
+      for (int i = 0; i < workerGroupSpec_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, workerGroupSpec_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1065,11 +1185,13 @@ public final class Ray {
       }
       flyteidl.plugins.Ray.RayCluster other = (flyteidl.plugins.Ray.RayCluster) obj;
 
-      if (hasClusterSpec() != other.hasClusterSpec()) return false;
-      if (hasClusterSpec()) {
-        if (!getClusterSpec()
-            .equals(other.getClusterSpec())) return false;
+      if (hasHeadGroupSpec() != other.hasHeadGroupSpec()) return false;
+      if (hasHeadGroupSpec()) {
+        if (!getHeadGroupSpec()
+            .equals(other.getHeadGroupSpec())) return false;
       }
+      if (!getWorkerGroupSpecList()
+          .equals(other.getWorkerGroupSpecList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1081,9 +1203,13 @@ public final class Ray {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasClusterSpec()) {
-        hash = (37 * hash) + CLUSTER_SPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getClusterSpec().hashCode();
+      if (hasHeadGroupSpec()) {
+        hash = (37 * hash) + HEAD_GROUP_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getHeadGroupSpec().hashCode();
+      }
+      if (getWorkerGroupSpecCount() > 0) {
+        hash = (37 * hash) + WORKER_GROUP_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkerGroupSpecList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1182,7 +1308,7 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Define Ray cluster spec
+     * Define Ray cluster defines the desired state of RayCluster
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.RayCluster}
@@ -1205,798 +1331,6 @@ public final class Ray {
       }
 
       // Construct using flyteidl.plugins.Ray.RayCluster.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (clusterSpecBuilder_ == null) {
-          clusterSpec_ = null;
-        } else {
-          clusterSpec_ = null;
-          clusterSpecBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_RayCluster_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Ray.RayCluster getDefaultInstanceForType() {
-        return flyteidl.plugins.Ray.RayCluster.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Ray.RayCluster build() {
-        flyteidl.plugins.Ray.RayCluster result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Ray.RayCluster buildPartial() {
-        flyteidl.plugins.Ray.RayCluster result = new flyteidl.plugins.Ray.RayCluster(this);
-        if (clusterSpecBuilder_ == null) {
-          result.clusterSpec_ = clusterSpec_;
-        } else {
-          result.clusterSpec_ = clusterSpecBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Ray.RayCluster) {
-          return mergeFrom((flyteidl.plugins.Ray.RayCluster)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.plugins.Ray.RayCluster other) {
-        if (other == flyteidl.plugins.Ray.RayCluster.getDefaultInstance()) return this;
-        if (other.hasClusterSpec()) {
-          mergeClusterSpec(other.getClusterSpec());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.plugins.Ray.RayCluster parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Ray.RayCluster) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private flyteidl.plugins.Ray.ClusterSpec clusterSpec_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Ray.ClusterSpec, flyteidl.plugins.Ray.ClusterSpec.Builder, flyteidl.plugins.Ray.ClusterSpecOrBuilder> clusterSpecBuilder_;
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public boolean hasClusterSpec() {
-        return clusterSpecBuilder_ != null || clusterSpec_ != null;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public flyteidl.plugins.Ray.ClusterSpec getClusterSpec() {
-        if (clusterSpecBuilder_ == null) {
-          return clusterSpec_ == null ? flyteidl.plugins.Ray.ClusterSpec.getDefaultInstance() : clusterSpec_;
-        } else {
-          return clusterSpecBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public Builder setClusterSpec(flyteidl.plugins.Ray.ClusterSpec value) {
-        if (clusterSpecBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          clusterSpec_ = value;
-          onChanged();
-        } else {
-          clusterSpecBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public Builder setClusterSpec(
-          flyteidl.plugins.Ray.ClusterSpec.Builder builderForValue) {
-        if (clusterSpecBuilder_ == null) {
-          clusterSpec_ = builderForValue.build();
-          onChanged();
-        } else {
-          clusterSpecBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public Builder mergeClusterSpec(flyteidl.plugins.Ray.ClusterSpec value) {
-        if (clusterSpecBuilder_ == null) {
-          if (clusterSpec_ != null) {
-            clusterSpec_ =
-              flyteidl.plugins.Ray.ClusterSpec.newBuilder(clusterSpec_).mergeFrom(value).buildPartial();
-          } else {
-            clusterSpec_ = value;
-          }
-          onChanged();
-        } else {
-          clusterSpecBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public Builder clearClusterSpec() {
-        if (clusterSpecBuilder_ == null) {
-          clusterSpec_ = null;
-          onChanged();
-        } else {
-          clusterSpec_ = null;
-          clusterSpecBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public flyteidl.plugins.Ray.ClusterSpec.Builder getClusterSpecBuilder() {
-        
-        onChanged();
-        return getClusterSpecFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      public flyteidl.plugins.Ray.ClusterSpecOrBuilder getClusterSpecOrBuilder() {
-        if (clusterSpecBuilder_ != null) {
-          return clusterSpecBuilder_.getMessageOrBuilder();
-        } else {
-          return clusterSpec_ == null ?
-              flyteidl.plugins.Ray.ClusterSpec.getDefaultInstance() : clusterSpec_;
-        }
-      }
-      /**
-       * <pre>
-       * Required field. This field indicates ray cluster configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.ClusterSpec cluster_spec = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Ray.ClusterSpec, flyteidl.plugins.Ray.ClusterSpec.Builder, flyteidl.plugins.Ray.ClusterSpecOrBuilder> 
-          getClusterSpecFieldBuilder() {
-        if (clusterSpecBuilder_ == null) {
-          clusterSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.Ray.ClusterSpec, flyteidl.plugins.Ray.ClusterSpec.Builder, flyteidl.plugins.Ray.ClusterSpecOrBuilder>(
-                  getClusterSpec(),
-                  getParentForChildren(),
-                  isClean());
-          clusterSpec_ = null;
-        }
-        return clusterSpecBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.RayCluster)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.RayCluster)
-    private static final flyteidl.plugins.Ray.RayCluster DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Ray.RayCluster();
-    }
-
-    public static flyteidl.plugins.Ray.RayCluster getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RayCluster>
-        PARSER = new com.google.protobuf.AbstractParser<RayCluster>() {
-      @java.lang.Override
-      public RayCluster parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RayCluster(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RayCluster> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RayCluster> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.plugins.Ray.RayCluster getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ClusterSpecOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.ClusterSpec)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    boolean hasHeadGroupSpec();
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    flyteidl.plugins.Ray.HeadGroupSpec getHeadGroupSpec();
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    flyteidl.plugins.Ray.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder();
-
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> 
-        getWorkerGroupSpecList();
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    flyteidl.plugins.Ray.WorkerGroupSpec getWorkerGroupSpec(int index);
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    int getWorkerGroupSpecCount();
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    java.util.List<? extends flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder> 
-        getWorkerGroupSpecOrBuilderList();
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code flyteidl.plugins.ClusterSpec}
-   */
-  public  static final class ClusterSpec extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.ClusterSpec)
-      ClusterSpecOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ClusterSpec.newBuilder() to construct.
-    private ClusterSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ClusterSpec() {
-      workerGroupSpec_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ClusterSpec(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              flyteidl.plugins.Ray.HeadGroupSpec.Builder subBuilder = null;
-              if (headGroupSpec_ != null) {
-                subBuilder = headGroupSpec_.toBuilder();
-              }
-              headGroupSpec_ = input.readMessage(flyteidl.plugins.Ray.HeadGroupSpec.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(headGroupSpec_);
-                headGroupSpec_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                workerGroupSpec_ = new java.util.ArrayList<flyteidl.plugins.Ray.WorkerGroupSpec>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              workerGroupSpec_.add(
-                  input.readMessage(flyteidl.plugins.Ray.WorkerGroupSpec.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          workerGroupSpec_ = java.util.Collections.unmodifiableList(workerGroupSpec_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_ClusterSpec_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_ClusterSpec_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.Ray.ClusterSpec.class, flyteidl.plugins.Ray.ClusterSpec.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int HEAD_GROUP_SPEC_FIELD_NUMBER = 1;
-    private flyteidl.plugins.Ray.HeadGroupSpec headGroupSpec_;
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    public boolean hasHeadGroupSpec() {
-      return headGroupSpec_ != null;
-    }
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    public flyteidl.plugins.Ray.HeadGroupSpec getHeadGroupSpec() {
-      return headGroupSpec_ == null ? flyteidl.plugins.Ray.HeadGroupSpec.getDefaultInstance() : headGroupSpec_;
-    }
-    /**
-     * <pre>
-     * The head group configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
-     */
-    public flyteidl.plugins.Ray.HeadGroupSpecOrBuilder getHeadGroupSpecOrBuilder() {
-      return getHeadGroupSpec();
-    }
-
-    public static final int WORKER_GROUP_SPEC_FIELD_NUMBER = 2;
-    private java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> workerGroupSpec_;
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    public java.util.List<flyteidl.plugins.Ray.WorkerGroupSpec> getWorkerGroupSpecList() {
-      return workerGroupSpec_;
-    }
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    public java.util.List<? extends flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder> 
-        getWorkerGroupSpecOrBuilderList() {
-      return workerGroupSpec_;
-    }
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    public int getWorkerGroupSpecCount() {
-      return workerGroupSpec_.size();
-    }
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    public flyteidl.plugins.Ray.WorkerGroupSpec getWorkerGroupSpec(int index) {
-      return workerGroupSpec_.get(index);
-    }
-    /**
-     * <pre>
-     * The worker group configurations
-     * </pre>
-     *
-     * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
-     */
-    public flyteidl.plugins.Ray.WorkerGroupSpecOrBuilder getWorkerGroupSpecOrBuilder(
-        int index) {
-      return workerGroupSpec_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (headGroupSpec_ != null) {
-        output.writeMessage(1, getHeadGroupSpec());
-      }
-      for (int i = 0; i < workerGroupSpec_.size(); i++) {
-        output.writeMessage(2, workerGroupSpec_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (headGroupSpec_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getHeadGroupSpec());
-      }
-      for (int i = 0; i < workerGroupSpec_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, workerGroupSpec_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.plugins.Ray.ClusterSpec)) {
-        return super.equals(obj);
-      }
-      flyteidl.plugins.Ray.ClusterSpec other = (flyteidl.plugins.Ray.ClusterSpec) obj;
-
-      if (hasHeadGroupSpec() != other.hasHeadGroupSpec()) return false;
-      if (hasHeadGroupSpec()) {
-        if (!getHeadGroupSpec()
-            .equals(other.getHeadGroupSpec())) return false;
-      }
-      if (!getWorkerGroupSpecList()
-          .equals(other.getWorkerGroupSpecList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasHeadGroupSpec()) {
-        hash = (37 * hash) + HEAD_GROUP_SPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getHeadGroupSpec().hashCode();
-      }
-      if (getWorkerGroupSpecCount() > 0) {
-        hash = (37 * hash) + WORKER_GROUP_SPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getWorkerGroupSpecList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Ray.ClusterSpec parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.plugins.Ray.ClusterSpec prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code flyteidl.plugins.ClusterSpec}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.ClusterSpec)
-        flyteidl.plugins.Ray.ClusterSpecOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_ClusterSpec_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_ClusterSpec_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.Ray.ClusterSpec.class, flyteidl.plugins.Ray.ClusterSpec.Builder.class);
-      }
-
-      // Construct using flyteidl.plugins.Ray.ClusterSpec.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2033,17 +1367,17 @@ public final class Ray {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_ClusterSpec_descriptor;
+        return flyteidl.plugins.Ray.internal_static_flyteidl_plugins_RayCluster_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Ray.ClusterSpec getDefaultInstanceForType() {
-        return flyteidl.plugins.Ray.ClusterSpec.getDefaultInstance();
+      public flyteidl.plugins.Ray.RayCluster getDefaultInstanceForType() {
+        return flyteidl.plugins.Ray.RayCluster.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Ray.ClusterSpec build() {
-        flyteidl.plugins.Ray.ClusterSpec result = buildPartial();
+      public flyteidl.plugins.Ray.RayCluster build() {
+        flyteidl.plugins.Ray.RayCluster result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2051,8 +1385,8 @@ public final class Ray {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Ray.ClusterSpec buildPartial() {
-        flyteidl.plugins.Ray.ClusterSpec result = new flyteidl.plugins.Ray.ClusterSpec(this);
+      public flyteidl.plugins.Ray.RayCluster buildPartial() {
+        flyteidl.plugins.Ray.RayCluster result = new flyteidl.plugins.Ray.RayCluster(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (headGroupSpecBuilder_ == null) {
@@ -2108,16 +1442,16 @@ public final class Ray {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Ray.ClusterSpec) {
-          return mergeFrom((flyteidl.plugins.Ray.ClusterSpec)other);
+        if (other instanceof flyteidl.plugins.Ray.RayCluster) {
+          return mergeFrom((flyteidl.plugins.Ray.RayCluster)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.Ray.ClusterSpec other) {
-        if (other == flyteidl.plugins.Ray.ClusterSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.Ray.RayCluster other) {
+        if (other == flyteidl.plugins.Ray.RayCluster.getDefaultInstance()) return this;
         if (other.hasHeadGroupSpec()) {
           mergeHeadGroupSpec(other.getHeadGroupSpec());
         }
@@ -2162,11 +1496,11 @@ public final class Ray {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.Ray.ClusterSpec parsedMessage = null;
+        flyteidl.plugins.Ray.RayCluster parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Ray.ClusterSpec) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.Ray.RayCluster) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2182,7 +1516,7 @@ public final class Ray {
           flyteidl.plugins.Ray.HeadGroupSpec, flyteidl.plugins.Ray.HeadGroupSpec.Builder, flyteidl.plugins.Ray.HeadGroupSpecOrBuilder> headGroupSpecBuilder_;
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2192,7 +1526,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2206,7 +1540,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2226,7 +1560,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2244,7 +1578,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2266,7 +1600,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2284,7 +1618,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2296,7 +1630,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2311,7 +1645,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The head group configuration
+       * HeadGroupSpecs are the spec for the head pod
        * </pre>
        *
        * <code>.flyteidl.plugins.HeadGroupSpec head_group_spec = 1;</code>
@@ -2344,7 +1678,7 @@ public final class Ray {
 
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2358,7 +1692,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2372,7 +1706,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2386,7 +1720,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2407,7 +1741,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2425,7 +1759,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2445,7 +1779,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2466,7 +1800,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2484,7 +1818,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2502,7 +1836,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2521,7 +1855,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2538,7 +1872,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2555,7 +1889,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2566,7 +1900,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2580,7 +1914,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2595,7 +1929,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2606,7 +1940,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2618,7 +1952,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * The worker group configurations
+       * WorkerGroupSpecs are the specs for the worker pods
        * </pre>
        *
        * <code>repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;</code>
@@ -2654,41 +1988,41 @@ public final class Ray {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.ClusterSpec)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.RayCluster)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.ClusterSpec)
-    private static final flyteidl.plugins.Ray.ClusterSpec DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.RayCluster)
+    private static final flyteidl.plugins.Ray.RayCluster DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Ray.ClusterSpec();
+      DEFAULT_INSTANCE = new flyteidl.plugins.Ray.RayCluster();
     }
 
-    public static flyteidl.plugins.Ray.ClusterSpec getDefaultInstance() {
+    public static flyteidl.plugins.Ray.RayCluster getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ClusterSpec>
-        PARSER = new com.google.protobuf.AbstractParser<ClusterSpec>() {
+    private static final com.google.protobuf.Parser<RayCluster>
+        PARSER = new com.google.protobuf.AbstractParser<RayCluster>() {
       @java.lang.Override
-      public ClusterSpec parsePartialFrom(
+      public RayCluster parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClusterSpec(input, extensionRegistry);
+        return new RayCluster(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ClusterSpec> parser() {
+    public static com.google.protobuf.Parser<RayCluster> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ClusterSpec> getParserForType() {
+    public com.google.protobuf.Parser<RayCluster> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.Ray.ClusterSpec getDefaultInstanceForType() {
+    public flyteidl.plugins.Ray.RayCluster getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2700,7 +2034,8 @@ public final class Ray {
 
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2708,7 +2043,8 @@ public final class Ray {
     int getRayStartParamsCount();
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2723,7 +2059,8 @@ public final class Ray {
     getRayStartParams();
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2732,7 +2069,8 @@ public final class Ray {
     getRayStartParamsMap();
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2743,7 +2081,8 @@ public final class Ray {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2753,6 +2092,10 @@ public final class Ray {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * HeadGroupSpec are the spec for the head pod
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.HeadGroupSpec}
    */
   public  static final class HeadGroupSpec extends
@@ -2876,7 +2219,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2896,7 +2240,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2907,7 +2252,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -2923,7 +2269,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of head node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3107,6 +2454,10 @@ public final class Ray {
       return builder;
     }
     /**
+     * <pre>
+     * HeadGroupSpec are the spec for the head pod
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.HeadGroupSpec}
      */
     public static final class Builder extends
@@ -3304,7 +2655,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3324,7 +2676,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3335,7 +2688,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3351,7 +2705,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3375,7 +2730,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3398,7 +2754,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3414,7 +2771,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of head node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 1;</code>
@@ -3485,7 +2843,7 @@ public final class Ray {
 
     /**
      * <pre>
-     * Required. Group name of the current worker group
+     * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
      * </pre>
      *
      * <code>string group_name = 1;</code>
@@ -3493,7 +2851,7 @@ public final class Ray {
     java.lang.String getGroupName();
     /**
      * <pre>
-     * Required. Group name of the current worker group
+     * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
      * </pre>
      *
      * <code>string group_name = 1;</code>
@@ -3503,7 +2861,7 @@ public final class Ray {
 
     /**
      * <pre>
-     * Required. Desired replicas of the worker group
+     * Required. Desired replicas of the worker group. Defaults to 1.
      * </pre>
      *
      * <code>int32 replicas = 2;</code>
@@ -3512,7 +2870,7 @@ public final class Ray {
 
     /**
      * <pre>
-     * Optional. Min replicas of the worker group
+     * Optional. Min replicas of the worker group. MinReplicas defaults to 1.
      * </pre>
      *
      * <code>int32 min_replicas = 3;</code>
@@ -3521,7 +2879,7 @@ public final class Ray {
 
     /**
      * <pre>
-     * Optional. Max replicas of the worker group
+     * Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
      * </pre>
      *
      * <code>int32 max_replicas = 4;</code>
@@ -3530,7 +2888,8 @@ public final class Ray {
 
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3538,7 +2897,8 @@ public final class Ray {
     int getRayStartParamsCount();
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3553,7 +2913,8 @@ public final class Ray {
     getRayStartParams();
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3562,7 +2923,8 @@ public final class Ray {
     getRayStartParamsMap();
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3573,7 +2935,8 @@ public final class Ray {
         java.lang.String defaultValue);
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3583,6 +2946,10 @@ public final class Ray {
         java.lang.String key);
   }
   /**
+   * <pre>
+   * WorkerGroupSpec are the specs for the worker pods
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.WorkerGroupSpec}
    */
   public  static final class WorkerGroupSpec extends
@@ -3705,7 +3072,7 @@ public final class Ray {
     private volatile java.lang.Object groupName_;
     /**
      * <pre>
-     * Required. Group name of the current worker group
+     * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
      * </pre>
      *
      * <code>string group_name = 1;</code>
@@ -3724,7 +3091,7 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Required. Group name of the current worker group
+     * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
      * </pre>
      *
      * <code>string group_name = 1;</code>
@@ -3747,7 +3114,7 @@ public final class Ray {
     private int replicas_;
     /**
      * <pre>
-     * Required. Desired replicas of the worker group
+     * Required. Desired replicas of the worker group. Defaults to 1.
      * </pre>
      *
      * <code>int32 replicas = 2;</code>
@@ -3760,7 +3127,7 @@ public final class Ray {
     private int minReplicas_;
     /**
      * <pre>
-     * Optional. Min replicas of the worker group
+     * Optional. Min replicas of the worker group. MinReplicas defaults to 1.
      * </pre>
      *
      * <code>int32 min_replicas = 3;</code>
@@ -3773,7 +3140,7 @@ public final class Ray {
     private int maxReplicas_;
     /**
      * <pre>
-     * Optional. Max replicas of the worker group
+     * Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
      * </pre>
      *
      * <code>int32 max_replicas = 4;</code>
@@ -3810,7 +3177,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3830,7 +3198,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3841,7 +3210,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -3857,7 +3227,8 @@ public final class Ray {
     }
     /**
      * <pre>
-     * Optional. The ray start params of worker node group
+     * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+     * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
      * </pre>
      *
      * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4084,6 +3455,10 @@ public final class Ray {
       return builder;
     }
     /**
+     * <pre>
+     * WorkerGroupSpec are the specs for the worker pods
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.WorkerGroupSpec}
      */
     public static final class Builder extends
@@ -4283,7 +3658,7 @@ public final class Ray {
       private java.lang.Object groupName_ = "";
       /**
        * <pre>
-       * Required. Group name of the current worker group
+       * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
        * </pre>
        *
        * <code>string group_name = 1;</code>
@@ -4302,7 +3677,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Group name of the current worker group
+       * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
        * </pre>
        *
        * <code>string group_name = 1;</code>
@@ -4322,7 +3697,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Group name of the current worker group
+       * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
        * </pre>
        *
        * <code>string group_name = 1;</code>
@@ -4339,7 +3714,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Group name of the current worker group
+       * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
        * </pre>
        *
        * <code>string group_name = 1;</code>
@@ -4352,7 +3727,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Group name of the current worker group
+       * Required. RayCluster can have multiple worker groups, and it distinguishes them by name
        * </pre>
        *
        * <code>string group_name = 1;</code>
@@ -4372,7 +3747,7 @@ public final class Ray {
       private int replicas_ ;
       /**
        * <pre>
-       * Required. Desired replicas of the worker group
+       * Required. Desired replicas of the worker group. Defaults to 1.
        * </pre>
        *
        * <code>int32 replicas = 2;</code>
@@ -4382,7 +3757,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Desired replicas of the worker group
+       * Required. Desired replicas of the worker group. Defaults to 1.
        * </pre>
        *
        * <code>int32 replicas = 2;</code>
@@ -4395,7 +3770,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Required. Desired replicas of the worker group
+       * Required. Desired replicas of the worker group. Defaults to 1.
        * </pre>
        *
        * <code>int32 replicas = 2;</code>
@@ -4410,7 +3785,7 @@ public final class Ray {
       private int minReplicas_ ;
       /**
        * <pre>
-       * Optional. Min replicas of the worker group
+       * Optional. Min replicas of the worker group. MinReplicas defaults to 1.
        * </pre>
        *
        * <code>int32 min_replicas = 3;</code>
@@ -4420,7 +3795,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. Min replicas of the worker group
+       * Optional. Min replicas of the worker group. MinReplicas defaults to 1.
        * </pre>
        *
        * <code>int32 min_replicas = 3;</code>
@@ -4433,7 +3808,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. Min replicas of the worker group
+       * Optional. Min replicas of the worker group. MinReplicas defaults to 1.
        * </pre>
        *
        * <code>int32 min_replicas = 3;</code>
@@ -4448,7 +3823,7 @@ public final class Ray {
       private int maxReplicas_ ;
       /**
        * <pre>
-       * Optional. Max replicas of the worker group
+       * Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
        * </pre>
        *
        * <code>int32 max_replicas = 4;</code>
@@ -4458,7 +3833,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. Max replicas of the worker group
+       * Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
        * </pre>
        *
        * <code>int32 max_replicas = 4;</code>
@@ -4471,7 +3846,7 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. Max replicas of the worker group
+       * Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
        * </pre>
        *
        * <code>int32 max_replicas = 4;</code>
@@ -4511,7 +3886,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4531,7 +3907,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4542,7 +3919,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4558,7 +3936,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4582,7 +3961,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4605,7 +3985,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4621,7 +4002,8 @@ public final class Ray {
       }
       /**
        * <pre>
-       * Optional. The ray start params of worker node group
+       * Optional. RayStartParams are the params of the start command: address, object-store-memory.
+       * Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
        * </pre>
        *
        * <code>map&lt;string, string&gt; ray_start_params = 5;</code>
@@ -4697,11 +4079,6 @@ public final class Ray {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_RayCluster_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_ClusterSpec_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_ClusterSpec_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_HeadGroupSpec_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4734,23 +4111,21 @@ public final class Ray {
       "lugins\032\037google/protobuf/timestamp.proto\"" +
       "P\n\006RayJob\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteid" +
       "l.plugins.RayCluster\022\023\n\013runtime_env\030\002 \001(" +
-      "\t\"A\n\nRayCluster\0223\n\014cluster_spec\030\001 \001(\0132\035." +
-      "flyteidl.plugins.ClusterSpec\"\205\001\n\013Cluster" +
-      "Spec\0228\n\017head_group_spec\030\001 \001(\0132\037.flyteidl" +
-      ".plugins.HeadGroupSpec\022<\n\021worker_group_s" +
-      "pec\030\002 \003(\0132!.flyteidl.plugins.WorkerGroup" +
-      "Spec\"\225\001\n\rHeadGroupSpec\022M\n\020ray_start_para" +
-      "ms\030\001 \003(\01323.flyteidl.plugins.HeadGroupSpe" +
-      "c.RayStartParamsEntry\0325\n\023RayStartParamsE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\353\001\n" +
-      "\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010" +
-      "replicas\030\002 \001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014" +
-      "max_replicas\030\004 \001(\005\022O\n\020ray_start_params\030\005" +
-      " \003(\01325.flyteidl.plugins.WorkerGroupSpec." +
-      "RayStartParamsEntry\0325\n\023RayStartParamsEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7gi" +
-      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
-      "teidl/pluginsb\006proto3"
+      "\t\"\204\001\n\nRayCluster\0228\n\017head_group_spec\030\001 \001(" +
+      "\0132\037.flyteidl.plugins.HeadGroupSpec\022<\n\021wo" +
+      "rker_group_spec\030\002 \003(\0132!.flyteidl.plugins" +
+      ".WorkerGroupSpec\"\225\001\n\rHeadGroupSpec\022M\n\020ra" +
+      "y_start_params\030\001 \003(\01323.flyteidl.plugins." +
+      "HeadGroupSpec.RayStartParamsEntry\0325\n\023Ray" +
+      "StartParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
+      " \001(\t:\0028\001\"\353\001\n\017WorkerGroupSpec\022\022\n\ngroup_na" +
+      "me\030\001 \001(\t\022\020\n\010replicas\030\002 \001(\005\022\024\n\014min_replic" +
+      "as\030\003 \001(\005\022\024\n\014max_replicas\030\004 \001(\005\022O\n\020ray_st" +
+      "art_params\030\005 \003(\01325.flyteidl.plugins.Work" +
+      "erGroupSpec.RayStartParamsEntry\0325\n\023RaySt" +
+      "artParamsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001B9Z7github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4776,15 +4151,9 @@ public final class Ray {
     internal_static_flyteidl_plugins_RayCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_RayCluster_descriptor,
-        new java.lang.String[] { "ClusterSpec", });
-    internal_static_flyteidl_plugins_ClusterSpec_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_plugins_ClusterSpec_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_ClusterSpec_descriptor,
         new java.lang.String[] { "HeadGroupSpec", "WorkerGroupSpec", });
     internal_static_flyteidl_plugins_HeadGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_HeadGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_HeadGroupSpec_descriptor,
@@ -4796,7 +4165,7 @@ public final class Ray {
         internal_static_flyteidl_plugins_HeadGroupSpec_RayStartParamsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_plugins_WorkerGroupSpec_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_plugins_WorkerGroupSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_WorkerGroupSpec_descriptor,

@@ -15,34 +15,32 @@ message RayJob {
   string runtime_env = 2;
 }
 
-// Define Ray cluster spec
+// Define Ray cluster defines the desired state of RayCluster
 message RayCluster {
-  // Required field. This field indicates ray cluster configuration
-  ClusterSpec cluster_spec = 1;
-
-}
-
-message ClusterSpec {
-  // The head group configuration
+  // HeadGroupSpecs are the spec for the head pod
   HeadGroupSpec head_group_spec = 1;
-  // The worker group configurations
+  // WorkerGroupSpecs are the specs for the worker pods
   repeated WorkerGroupSpec worker_group_spec = 2;
 }
 
+// HeadGroupSpec are the spec for the head pod
 message HeadGroupSpec {
-  // Optional. The ray start params of head node group
+  // Optional. RayStartParams are the params of the start command: address, object-store-memory.
+  // Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
   map<string, string> ray_start_params = 1;
 }
 
+// WorkerGroupSpec are the specs for the worker pods
 message WorkerGroupSpec {
-  // Required. Group name of the current worker group
+  // Required. RayCluster can have multiple worker groups, and it distinguishes them by name
   string group_name = 1;
-  // Required. Desired replicas of the worker group
+  // Required. Desired replicas of the worker group. Defaults to 1.
   int32 replicas = 2;
-  // Optional. Min replicas of the worker group
+  // Optional. Min replicas of the worker group. MinReplicas defaults to 1.
   int32 min_replicas = 3;
-  // Optional. Max replicas of the worker group
+  // Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32
   int32 max_replicas = 4;
-  // Optional. The ray start params of worker node group
+  // Optional. RayStartParams are the params of the start command: address, object-store-memory.
+  // Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start
   map<string, string> ray_start_params = 5;
 }

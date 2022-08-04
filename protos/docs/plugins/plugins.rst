@@ -308,34 +308,12 @@ flyteidl/plugins/ray.proto
 
 
 
-.. _ref_flyteidl.plugins.ClusterSpec:
-
-ClusterSpec
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: ClusterSpec type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "head_group_spec", ":ref:`ref_flyteidl.plugins.HeadGroupSpec`", "", "The head group configuration"
-   "worker_group_spec", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec`", "repeated", "The worker group configurations"
-
-
-
-
-
-
-
 .. _ref_flyteidl.plugins.HeadGroupSpec:
 
 HeadGroupSpec
 ------------------------------------------------------------------
 
-
+HeadGroupSpec are the spec for the head pod
 
 
 
@@ -343,7 +321,7 @@ HeadGroupSpec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "ray_start_params", ":ref:`ref_flyteidl.plugins.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of head node group"
+   "ray_start_params", ":ref:`ref_flyteidl.plugins.HeadGroupSpec.RayStartParamsEntry`", "repeated", "Optional. RayStartParams are the params of the start command: address, object-store-memory. Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start"
 
 
 
@@ -378,7 +356,7 @@ HeadGroupSpec.RayStartParamsEntry
 RayCluster
 ------------------------------------------------------------------
 
-Define Ray cluster spec
+Define Ray cluster defines the desired state of RayCluster
 
 
 
@@ -386,7 +364,8 @@ Define Ray cluster spec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "cluster_spec", ":ref:`ref_flyteidl.plugins.ClusterSpec`", "", "Required field. This field indicates ray cluster configuration"
+   "head_group_spec", ":ref:`ref_flyteidl.plugins.HeadGroupSpec`", "", "HeadGroupSpecs are the spec for the head pod"
+   "worker_group_spec", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec`", "repeated", "WorkerGroupSpecs are the specs for the worker pods"
 
 
 
@@ -421,7 +400,7 @@ RayJobSpec defines the desired state of RayJob
 WorkerGroupSpec
 ------------------------------------------------------------------
 
-
+WorkerGroupSpec are the specs for the worker pods
 
 
 
@@ -429,11 +408,11 @@ WorkerGroupSpec
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "group_name", ":ref:`ref_string`", "", "Required. Group name of the current worker group"
-   "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group"
-   "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group"
-   "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group"
-   "ray_start_params", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. The ray start params of worker node group"
+   "group_name", ":ref:`ref_string`", "", "Required. RayCluster can have multiple worker groups, and it distinguishes them by name"
+   "replicas", ":ref:`ref_int32`", "", "Required. Desired replicas of the worker group. Defaults to 1."
+   "min_replicas", ":ref:`ref_int32`", "", "Optional. Min replicas of the worker group. MinReplicas defaults to 1."
+   "max_replicas", ":ref:`ref_int32`", "", "Optional. Max replicas of the worker group. MaxReplicas defaults to maxInt32"
+   "ray_start_params", ":ref:`ref_flyteidl.plugins.WorkerGroupSpec.RayStartParamsEntry`", "repeated", "Optional. RayStartParams are the params of the start command: address, object-store-memory. Refer to https://docs.ray.io/en/latest/ray-core/package-ref.html#ray-start"
 
 
 

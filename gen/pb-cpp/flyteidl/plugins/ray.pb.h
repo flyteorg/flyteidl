@@ -45,7 +45,7 @@ struct TableStruct_flyteidl_2fplugins_2fray_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -54,9 +54,6 @@ struct TableStruct_flyteidl_2fplugins_2fray_2eproto {
 void AddDescriptors_flyteidl_2fplugins_2fray_2eproto();
 namespace flyteidl {
 namespace plugins {
-class ClusterSpec;
-class ClusterSpecDefaultTypeInternal;
-extern ClusterSpecDefaultTypeInternal _ClusterSpec_default_instance_;
 class HeadGroupSpec;
 class HeadGroupSpecDefaultTypeInternal;
 extern HeadGroupSpecDefaultTypeInternal _HeadGroupSpec_default_instance_;
@@ -79,7 +76,6 @@ extern WorkerGroupSpec_RayStartParamsEntry_DoNotUseDefaultTypeInternal _WorkerGr
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
-template<> ::flyteidl::plugins::ClusterSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::ClusterSpec>(Arena*);
 template<> ::flyteidl::plugins::HeadGroupSpec* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec>(Arena*);
 template<> ::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::plugins::RayCluster* Arena::CreateMaybeMessage<::flyteidl::plugins::RayCluster>(Arena*);
@@ -318,121 +314,6 @@ class RayCluster final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.plugins.ClusterSpec cluster_spec = 1;
-  bool has_cluster_spec() const;
-  void clear_cluster_spec();
-  static const int kClusterSpecFieldNumber = 1;
-  const ::flyteidl::plugins::ClusterSpec& cluster_spec() const;
-  ::flyteidl::plugins::ClusterSpec* release_cluster_spec();
-  ::flyteidl::plugins::ClusterSpec* mutable_cluster_spec();
-  void set_allocated_cluster_spec(::flyteidl::plugins::ClusterSpec* cluster_spec);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.RayCluster)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::plugins::ClusterSpec* cluster_spec_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fplugins_2fray_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ClusterSpec final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.ClusterSpec) */ {
- public:
-  ClusterSpec();
-  virtual ~ClusterSpec();
-
-  ClusterSpec(const ClusterSpec& from);
-
-  inline ClusterSpec& operator=(const ClusterSpec& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  ClusterSpec(ClusterSpec&& from) noexcept
-    : ClusterSpec() {
-    *this = ::std::move(from);
-  }
-
-  inline ClusterSpec& operator=(ClusterSpec&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const ClusterSpec& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ClusterSpec* internal_default_instance() {
-    return reinterpret_cast<const ClusterSpec*>(
-               &_ClusterSpec_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  void Swap(ClusterSpec* other);
-  friend void swap(ClusterSpec& a, ClusterSpec& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ClusterSpec* New() const final {
-    return CreateMaybeMessage<ClusterSpec>(nullptr);
-  }
-
-  ClusterSpec* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ClusterSpec>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ClusterSpec& from);
-  void MergeFrom(const ClusterSpec& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ClusterSpec* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
   // repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;
   int worker_group_spec_size() const;
   void clear_worker_group_spec();
@@ -454,7 +335,7 @@ class ClusterSpec final :
   ::flyteidl::plugins::HeadGroupSpec* mutable_head_group_spec();
   void set_allocated_head_group_spec(::flyteidl::plugins::HeadGroupSpec* head_group_spec);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.ClusterSpec)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.RayCluster)
  private:
   class HasBitSetters;
 
@@ -528,7 +409,7 @@ class HeadGroupSpec final :
                &_HeadGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(HeadGroupSpec* other);
   friend void swap(HeadGroupSpec& a, HeadGroupSpec& b) {
@@ -673,7 +554,7 @@ class WorkerGroupSpec final :
                &_WorkerGroupSpec_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(WorkerGroupSpec* other);
   friend void swap(WorkerGroupSpec& a, WorkerGroupSpec& b) {
@@ -909,94 +790,39 @@ inline void RayJob::set_allocated_runtime_env(::std::string* runtime_env) {
 
 // RayCluster
 
-// .flyteidl.plugins.ClusterSpec cluster_spec = 1;
-inline bool RayCluster::has_cluster_spec() const {
-  return this != internal_default_instance() && cluster_spec_ != nullptr;
-}
-inline void RayCluster::clear_cluster_spec() {
-  if (GetArenaNoVirtual() == nullptr && cluster_spec_ != nullptr) {
-    delete cluster_spec_;
-  }
-  cluster_spec_ = nullptr;
-}
-inline const ::flyteidl::plugins::ClusterSpec& RayCluster::cluster_spec() const {
-  const ::flyteidl::plugins::ClusterSpec* p = cluster_spec_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.RayCluster.cluster_spec)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::ClusterSpec*>(
-      &::flyteidl::plugins::_ClusterSpec_default_instance_);
-}
-inline ::flyteidl::plugins::ClusterSpec* RayCluster::release_cluster_spec() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.RayCluster.cluster_spec)
-  
-  ::flyteidl::plugins::ClusterSpec* temp = cluster_spec_;
-  cluster_spec_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::plugins::ClusterSpec* RayCluster::mutable_cluster_spec() {
-  
-  if (cluster_spec_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::ClusterSpec>(GetArenaNoVirtual());
-    cluster_spec_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.RayCluster.cluster_spec)
-  return cluster_spec_;
-}
-inline void RayCluster::set_allocated_cluster_spec(::flyteidl::plugins::ClusterSpec* cluster_spec) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete cluster_spec_;
-  }
-  if (cluster_spec) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      cluster_spec = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, cluster_spec, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  cluster_spec_ = cluster_spec;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.RayCluster.cluster_spec)
-}
-
-// -------------------------------------------------------------------
-
-// ClusterSpec
-
 // .flyteidl.plugins.HeadGroupSpec head_group_spec = 1;
-inline bool ClusterSpec::has_head_group_spec() const {
+inline bool RayCluster::has_head_group_spec() const {
   return this != internal_default_instance() && head_group_spec_ != nullptr;
 }
-inline void ClusterSpec::clear_head_group_spec() {
+inline void RayCluster::clear_head_group_spec() {
   if (GetArenaNoVirtual() == nullptr && head_group_spec_ != nullptr) {
     delete head_group_spec_;
   }
   head_group_spec_ = nullptr;
 }
-inline const ::flyteidl::plugins::HeadGroupSpec& ClusterSpec::head_group_spec() const {
+inline const ::flyteidl::plugins::HeadGroupSpec& RayCluster::head_group_spec() const {
   const ::flyteidl::plugins::HeadGroupSpec* p = head_group_spec_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.ClusterSpec.head_group_spec)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.RayCluster.head_group_spec)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::HeadGroupSpec*>(
       &::flyteidl::plugins::_HeadGroupSpec_default_instance_);
 }
-inline ::flyteidl::plugins::HeadGroupSpec* ClusterSpec::release_head_group_spec() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.ClusterSpec.head_group_spec)
+inline ::flyteidl::plugins::HeadGroupSpec* RayCluster::release_head_group_spec() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.RayCluster.head_group_spec)
   
   ::flyteidl::plugins::HeadGroupSpec* temp = head_group_spec_;
   head_group_spec_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::HeadGroupSpec* ClusterSpec::mutable_head_group_spec() {
+inline ::flyteidl::plugins::HeadGroupSpec* RayCluster::mutable_head_group_spec() {
   
   if (head_group_spec_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::plugins::HeadGroupSpec>(GetArenaNoVirtual());
     head_group_spec_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.ClusterSpec.head_group_spec)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.RayCluster.head_group_spec)
   return head_group_spec_;
 }
-inline void ClusterSpec::set_allocated_head_group_spec(::flyteidl::plugins::HeadGroupSpec* head_group_spec) {
+inline void RayCluster::set_allocated_head_group_spec(::flyteidl::plugins::HeadGroupSpec* head_group_spec) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete head_group_spec_;
@@ -1012,36 +838,36 @@ inline void ClusterSpec::set_allocated_head_group_spec(::flyteidl::plugins::Head
     
   }
   head_group_spec_ = head_group_spec;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.ClusterSpec.head_group_spec)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.RayCluster.head_group_spec)
 }
 
 // repeated .flyteidl.plugins.WorkerGroupSpec worker_group_spec = 2;
-inline int ClusterSpec::worker_group_spec_size() const {
+inline int RayCluster::worker_group_spec_size() const {
   return worker_group_spec_.size();
 }
-inline void ClusterSpec::clear_worker_group_spec() {
+inline void RayCluster::clear_worker_group_spec() {
   worker_group_spec_.Clear();
 }
-inline ::flyteidl::plugins::WorkerGroupSpec* ClusterSpec::mutable_worker_group_spec(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.ClusterSpec.worker_group_spec)
+inline ::flyteidl::plugins::WorkerGroupSpec* RayCluster::mutable_worker_group_spec(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.RayCluster.worker_group_spec)
   return worker_group_spec_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec >*
-ClusterSpec::mutable_worker_group_spec() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.ClusterSpec.worker_group_spec)
+RayCluster::mutable_worker_group_spec() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.RayCluster.worker_group_spec)
   return &worker_group_spec_;
 }
-inline const ::flyteidl::plugins::WorkerGroupSpec& ClusterSpec::worker_group_spec(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.ClusterSpec.worker_group_spec)
+inline const ::flyteidl::plugins::WorkerGroupSpec& RayCluster::worker_group_spec(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.RayCluster.worker_group_spec)
   return worker_group_spec_.Get(index);
 }
-inline ::flyteidl::plugins::WorkerGroupSpec* ClusterSpec::add_worker_group_spec() {
-  // @@protoc_insertion_point(field_add:flyteidl.plugins.ClusterSpec.worker_group_spec)
+inline ::flyteidl::plugins::WorkerGroupSpec* RayCluster::add_worker_group_spec() {
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.RayCluster.worker_group_spec)
   return worker_group_spec_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::plugins::WorkerGroupSpec >&
-ClusterSpec::worker_group_spec() const {
-  // @@protoc_insertion_point(field_list:flyteidl.plugins.ClusterSpec.worker_group_spec)
+RayCluster::worker_group_spec() const {
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.RayCluster.worker_group_spec)
   return worker_group_spec_;
 }
 
@@ -1191,8 +1017,6 @@ WorkerGroupSpec::mutable_ray_start_params() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
