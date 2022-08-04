@@ -178,8 +178,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, ray_cluster_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, runtime_env_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, shutdown_after_job_finishes_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayJob, ttl_seconds_after_finished_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::RayCluster, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -230,12 +228,12 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fray_2eproto::o
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::RayJob)},
-  { 9, -1, sizeof(::flyteidl::plugins::RayCluster)},
-  { 15, -1, sizeof(::flyteidl::plugins::ClusterSpec)},
-  { 22, 29, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 31, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
-  { 37, 44, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
-  { 46, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
+  { 7, -1, sizeof(::flyteidl::plugins::RayCluster)},
+  { 13, -1, sizeof(::flyteidl::plugins::ClusterSpec)},
+  { 20, 27, sizeof(::flyteidl::plugins::HeadGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 29, -1, sizeof(::flyteidl::plugins::HeadGroupSpec)},
+  { 35, 42, sizeof(::flyteidl::plugins::WorkerGroupSpec_RayStartParamsEntry_DoNotUse)},
+  { 44, -1, sizeof(::flyteidl::plugins::WorkerGroupSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -257,32 +255,30 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 const char descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto[] =
   "\n\032flyteidl/plugins/ray.proto\022\020flyteidl.p"
   "lugins\032\037google/protobuf/timestamp.proto\""
-  "\231\001\n\006RayJob\0221\n\013ray_cluster\030\001 \001(\0132\034.flytei"
-  "dl.plugins.RayCluster\022\023\n\013runtime_env\030\002 \001"
-  "(\t\022#\n\033shutdown_after_job_finishes\030\003 \001(\010\022"
-  "\"\n\032ttl_seconds_after_finished\030\004 \001(\005\"A\n\nR"
-  "ayCluster\0223\n\014cluster_spec\030\001 \001(\0132\035.flytei"
-  "dl.plugins.ClusterSpec\"\205\001\n\013ClusterSpec\0228"
-  "\n\017head_group_spec\030\001 \001(\0132\037.flyteidl.plugi"
-  "ns.HeadGroupSpec\022<\n\021worker_group_spec\030\002 "
-  "\003(\0132!.flyteidl.plugins.WorkerGroupSpec\"\225"
-  "\001\n\rHeadGroupSpec\022M\n\020ray_start_params\030\001 \003"
-  "(\01323.flyteidl.plugins.HeadGroupSpec.RayS"
-  "tartParamsEntry\0325\n\023RayStartParamsEntry\022\013"
-  "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\353\001\n\017Worke"
-  "rGroupSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010replic"
-  "as\030\002 \001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014max_re"
-  "plicas\030\004 \001(\005\022O\n\020ray_start_params\030\005 \003(\01325"
-  ".flyteidl.plugins.WorkerGroupSpec.RaySta"
-  "rtParamsEntry\0325\n\023RayStartParamsEntry\022\013\n\003"
-  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7github.c"
-  "om/flyteorg/flyteidl/gen/pb-go/flyteidl/"
-  "pluginsb\006proto3"
+  "P\n\006RayJob\0221\n\013ray_cluster\030\001 \001(\0132\034.flyteid"
+  "l.plugins.RayCluster\022\023\n\013runtime_env\030\002 \001("
+  "\t\"A\n\nRayCluster\0223\n\014cluster_spec\030\001 \001(\0132\035."
+  "flyteidl.plugins.ClusterSpec\"\205\001\n\013Cluster"
+  "Spec\0228\n\017head_group_spec\030\001 \001(\0132\037.flyteidl"
+  ".plugins.HeadGroupSpec\022<\n\021worker_group_s"
+  "pec\030\002 \003(\0132!.flyteidl.plugins.WorkerGroup"
+  "Spec\"\225\001\n\rHeadGroupSpec\022M\n\020ray_start_para"
+  "ms\030\001 \003(\01323.flyteidl.plugins.HeadGroupSpe"
+  "c.RayStartParamsEntry\0325\n\023RayStartParamsE"
+  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\353\001\n"
+  "\017WorkerGroupSpec\022\022\n\ngroup_name\030\001 \001(\t\022\020\n\010"
+  "replicas\030\002 \001(\005\022\024\n\014min_replicas\030\003 \001(\005\022\024\n\014"
+  "max_replicas\030\004 \001(\005\022O\n\020ray_start_params\030\005"
+  " \003(\01325.flyteidl.plugins.WorkerGroupSpec."
+  "RayStartParamsEntry\0325\n\023RayStartParamsEnt"
+  "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7gi"
+  "thub.com/flyteorg/flyteidl/gen/pb-go/fly"
+  "teidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fray_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fray_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fray_2eproto,
-  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 895,
+  "flyteidl/plugins/ray.proto", &assign_descriptors_table_flyteidl_2fplugins_2fray_2eproto, 821,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fray_2eproto() {
@@ -316,8 +312,6 @@ RayJob::HasBitSetters::ray_cluster(const RayJob* msg) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RayJob::kRayClusterFieldNumber;
 const int RayJob::kRuntimeEnvFieldNumber;
-const int RayJob::kShutdownAfterJobFinishesFieldNumber;
-const int RayJob::kTtlSecondsAfterFinishedFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RayJob::RayJob()
@@ -338,9 +332,6 @@ RayJob::RayJob(const RayJob& from)
   } else {
     ray_cluster_ = nullptr;
   }
-  ::memcpy(&shutdown_after_job_finishes_, &from.shutdown_after_job_finishes_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
-    reinterpret_cast<char*>(&shutdown_after_job_finishes_)) + sizeof(ttl_seconds_after_finished_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.RayJob)
 }
 
@@ -348,9 +339,7 @@ void RayJob::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_RayJob_flyteidl_2fplugins_2fray_2eproto.base);
   runtime_env_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ray_cluster_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
-      reinterpret_cast<char*>(&ray_cluster_)) + sizeof(ttl_seconds_after_finished_));
+  ray_cluster_ = nullptr;
 }
 
 RayJob::~RayJob() {
@@ -383,9 +372,6 @@ void RayJob::Clear() {
     delete ray_cluster_;
   }
   ray_cluster_ = nullptr;
-  ::memset(&shutdown_after_job_finishes_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ttl_seconds_after_finished_) -
-      reinterpret_cast<char*>(&shutdown_after_job_finishes_)) + sizeof(ttl_seconds_after_finished_));
   _internal_metadata_.Clear();
 }
 
@@ -429,20 +415,6 @@ const char* RayJob::_InternalParse(const char* begin, const char* end, void* obj
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
-        break;
-      }
-      // bool shutdown_after_job_finishes = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_shutdown_after_job_finishes(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // int32 ttl_seconds_after_finished = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
-        msg->set_ttl_seconds_after_finished(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -505,32 +477,6 @@ bool RayJob::MergePartialFromCodedStream(
         break;
       }
 
-      // bool shutdown_after_job_finishes = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &shutdown_after_job_finishes_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int32 ttl_seconds_after_finished = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &ttl_seconds_after_finished_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -574,16 +520,6 @@ void RayJob::SerializeWithCachedSizes(
       2, this->runtime_env(), output);
   }
 
-  // bool shutdown_after_job_finishes = 3;
-  if (this->shutdown_after_job_finishes() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->shutdown_after_job_finishes(), output);
-  }
-
-  // int32 ttl_seconds_after_finished = 4;
-  if (this->ttl_seconds_after_finished() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->ttl_seconds_after_finished(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -613,16 +549,6 @@ void RayJob::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->runtime_env(), target);
-  }
-
-  // bool shutdown_after_job_finishes = 3;
-  if (this->shutdown_after_job_finishes() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->shutdown_after_job_finishes(), target);
-  }
-
-  // int32 ttl_seconds_after_finished = 4;
-  if (this->ttl_seconds_after_finished() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->ttl_seconds_after_finished(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -660,18 +586,6 @@ size_t RayJob::ByteSizeLong() const {
         *ray_cluster_);
   }
 
-  // bool shutdown_after_job_finishes = 3;
-  if (this->shutdown_after_job_finishes() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // int32 ttl_seconds_after_finished = 4;
-  if (this->ttl_seconds_after_finished() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->ttl_seconds_after_finished());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -706,12 +620,6 @@ void RayJob::MergeFrom(const RayJob& from) {
   if (from.has_ray_cluster()) {
     mutable_ray_cluster()->::flyteidl::plugins::RayCluster::MergeFrom(from.ray_cluster());
   }
-  if (from.shutdown_after_job_finishes() != 0) {
-    set_shutdown_after_job_finishes(from.shutdown_after_job_finishes());
-  }
-  if (from.ttl_seconds_after_finished() != 0) {
-    set_ttl_seconds_after_finished(from.ttl_seconds_after_finished());
-  }
 }
 
 void RayJob::CopyFrom(const ::google::protobuf::Message& from) {
@@ -742,8 +650,6 @@ void RayJob::InternalSwap(RayJob* other) {
   runtime_env_.Swap(&other->runtime_env_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(ray_cluster_, other->ray_cluster_);
-  swap(shutdown_after_job_finishes_, other->shutdown_after_job_finishes_);
-  swap(ttl_seconds_after_finished_, other->ttl_seconds_after_finished_);
 }
 
 ::google::protobuf::Metadata RayJob::GetMetadata() const {

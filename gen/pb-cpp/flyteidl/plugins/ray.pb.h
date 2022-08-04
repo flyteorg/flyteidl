@@ -211,18 +211,6 @@ class RayJob final :
   ::flyteidl::plugins::RayCluster* mutable_ray_cluster();
   void set_allocated_ray_cluster(::flyteidl::plugins::RayCluster* ray_cluster);
 
-  // bool shutdown_after_job_finishes = 3;
-  void clear_shutdown_after_job_finishes();
-  static const int kShutdownAfterJobFinishesFieldNumber = 3;
-  bool shutdown_after_job_finishes() const;
-  void set_shutdown_after_job_finishes(bool value);
-
-  // int32 ttl_seconds_after_finished = 4;
-  void clear_ttl_seconds_after_finished();
-  static const int kTtlSecondsAfterFinishedFieldNumber = 4;
-  ::google::protobuf::int32 ttl_seconds_after_finished() const;
-  void set_ttl_seconds_after_finished(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.RayJob)
  private:
   class HasBitSetters;
@@ -230,8 +218,6 @@ class RayJob final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr runtime_env_;
   ::flyteidl::plugins::RayCluster* ray_cluster_;
-  bool shutdown_after_job_finishes_;
-  ::google::protobuf::int32 ttl_seconds_after_finished_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fray_2eproto;
 };
@@ -917,34 +903,6 @@ inline void RayJob::set_allocated_runtime_env(::std::string* runtime_env) {
   }
   runtime_env_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), runtime_env);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.RayJob.runtime_env)
-}
-
-// bool shutdown_after_job_finishes = 3;
-inline void RayJob::clear_shutdown_after_job_finishes() {
-  shutdown_after_job_finishes_ = false;
-}
-inline bool RayJob::shutdown_after_job_finishes() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.RayJob.shutdown_after_job_finishes)
-  return shutdown_after_job_finishes_;
-}
-inline void RayJob::set_shutdown_after_job_finishes(bool value) {
-  
-  shutdown_after_job_finishes_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.RayJob.shutdown_after_job_finishes)
-}
-
-// int32 ttl_seconds_after_finished = 4;
-inline void RayJob::clear_ttl_seconds_after_finished() {
-  ttl_seconds_after_finished_ = 0;
-}
-inline ::google::protobuf::int32 RayJob::ttl_seconds_after_finished() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.RayJob.ttl_seconds_after_finished)
-  return ttl_seconds_after_finished_;
-}
-inline void RayJob::set_ttl_seconds_after_finished(::google::protobuf::int32 value) {
-  
-  ttl_seconds_after_finished_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.RayJob.ttl_seconds_after_finished)
 }
 
 // -------------------------------------------------------------------

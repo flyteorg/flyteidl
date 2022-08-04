@@ -409,8 +409,6 @@ RayJobSpec defines the desired state of RayJob
 
    "ray_cluster", ":ref:`ref_flyteidl.plugins.RayCluster`", "", "RayClusterSpec is the cluster template to run the job"
    "runtime_env", ":ref:`ref_string`", "", "runtime_env is base64 encoded. Ray runtime environments: https://docs.ray.io/en/latest/ray-core/handling-dependencies.html#runtime-environments"
-   "shutdown_after_job_finishes", ":ref:`ref_bool`", "", "shutdown_after_job_finishes will determine whether to delete the ray cluster once rayJob succeed or failed."
-   "ttl_seconds_after_finished", ":ref:`ref_int32`", "", "ttl_seconds_after_finished is the TTL to clean up RayCluster. It's only working when ShutdownAfterJobFinishes set to true."
 
 
 
