@@ -11,6 +11,6 @@ package flyteadmin
 
 // Encapsulates specifications for routing an execution onto a specific cluster.
 type AdminClusterAssignment struct {
-	Affinity *AdminAffinity `json:"affinity,omitempty"`
+	Affinity   *AdminAffinity   `json:"affinity,omitempty"`
 	Toleration *AdminToleration `json:"toleration,omitempty"`
 }

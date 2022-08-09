@@ -14,6 +14,6 @@ type AdminSelector struct {
 	// The label key.
 	Key string `json:"key,omitempty"`
 	// One or more values used to match labels. For equality (or inequality) requirements, values must contain a single element. For set-based requirements, values may contain one or more elements.
-	Value []string `json:"value,omitempty"`
+	Value    []string               `json:"value,omitempty"`
 	Operator *AdminSelectorOperator `json:"operator,omitempty"`
 }

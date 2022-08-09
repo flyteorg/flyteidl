@@ -12,5 +12,5 @@ package flyteadmin
 // Defines an operand to a comparison expression.
 type CoreOperand struct {
 	Primitive *CorePrimitive `json:"primitive,omitempty"`
-	Var_ string `json:"var,omitempty"`
+	Var_      string         `json:"var,omitempty"`
 }

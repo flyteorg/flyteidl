@@ -142,10 +142,11 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config,
 			logger.Errorf(ctx, "Error reading secret from location %s", cfg.ClientSecretLocation)
 			return nil, err
 		}
-		secret = strings.TrimSpace(string(secretBytes))
+		secret = string(secretBytes)
 	} else if len(cfg.ClientSecretEnvVar) > 0 {
 		secret = os.Getenv(cfg.ClientSecretEnvVar)
 	}
+	secret = strings.TrimSpace(secret)
 
 	scopes := cfg.Scopes
 	if len(scopes) == 0 {

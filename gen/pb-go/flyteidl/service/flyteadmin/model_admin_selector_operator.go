@@ -8,14 +8,15 @@
  */
 
 package flyteadmin
+
 // AdminSelectorOperator : Defines how a label with a corresponding key and value is selected or excluded.
 type AdminSelectorOperator string
 
 // List of adminSelectorOperator
 const (
-	AdminSelectorOperatorEQUALS AdminSelectorOperator = "EQUALS"
+	AdminSelectorOperatorEQUALS     AdminSelectorOperator = "EQUALS"
 	AdminSelectorOperatorNOT_EQUALS AdminSelectorOperator = "NOT_EQUALS"
-	AdminSelectorOperatorIN AdminSelectorOperator = "IN"
-	AdminSelectorOperatorNOT_IN AdminSelectorOperator = "NOT_IN"
-	AdminSelectorOperatorEXISTS AdminSelectorOperator = "EXISTS"
+	AdminSelectorOperatorIN         AdminSelectorOperator = "IN"
+	AdminSelectorOperatorNOT_IN     AdminSelectorOperator = "NOT_IN"
+	AdminSelectorOperatorEXISTS     AdminSelectorOperator = "EXISTS"
 )
