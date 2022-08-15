@@ -11,7 +11,7 @@ package flyteadmin
 
 // GateNode refers to the condition that is required for the gate to successfully complete.
 type CoreGateNode struct {
-	// SignalCondition represents a dependency on an existing signal.
+	// SignalCondition represents a dependency on an signal.
 	Signal *CoreSignalCondition `json:"signal,omitempty"`
 	// SleepCondition represents a dependency on waiting for the specified duration.
 	Sleep *CoreSleepCondition `json:"sleep,omitempty"`

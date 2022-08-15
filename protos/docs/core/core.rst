@@ -2881,7 +2881,7 @@ GateNode refers to the condition that is required for the gate to successfully c
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "SignalCondition represents a dependency on an existing signal."
+   "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "SignalCondition represents a dependency on an signal."
    "sleep", ":ref:`ref_flyteidl.core.SleepCondition`", "", "SleepCondition represents a dependency on waiting for the specified duration."
 
 
@@ -2996,7 +2996,7 @@ Defines extra information about the Node.
 SignalCondition
 ------------------------------------------------------------------
 
-SignalCondition represents a dependency on an existing signal.
+SignalCondition represents a dependency on an signal.
 
 
 

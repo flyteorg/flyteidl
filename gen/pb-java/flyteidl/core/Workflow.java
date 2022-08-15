@@ -5408,7 +5408,7 @@ public final class Workflow {
   }
   /**
    * <pre>
-   * SignalCondition represents a dependency on an existing signal.
+   * SignalCondition represents a dependency on an signal.
    * </pre>
    *
    * Protobuf type {@code flyteidl.core.SignalCondition}
@@ -5807,7 +5807,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * Protobuf type {@code flyteidl.core.SignalCondition}
@@ -7041,7 +7041,7 @@ public final class Workflow {
 
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7049,7 +7049,7 @@ public final class Workflow {
     boolean hasSignal();
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7057,7 +7057,7 @@ public final class Workflow {
     flyteidl.core.Workflow.SignalCondition getSignal();
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7235,7 +7235,7 @@ public final class Workflow {
     public static final int SIGNAL_FIELD_NUMBER = 2;
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7245,7 +7245,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7258,7 +7258,7 @@ public final class Workflow {
     }
     /**
      * <pre>
-     * SignalCondition represents a dependency on an existing signal.
+     * SignalCondition represents a dependency on an signal.
      * </pre>
      *
      * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7685,7 +7685,7 @@ public final class Workflow {
           flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder> signalBuilder_;
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7695,7 +7695,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7715,7 +7715,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7735,7 +7735,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7753,7 +7753,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7779,7 +7779,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7802,7 +7802,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7812,7 +7812,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>
@@ -7829,7 +7829,7 @@ public final class Workflow {
       }
       /**
        * <pre>
-       * SignalCondition represents a dependency on an existing signal.
+       * SignalCondition represents a dependency on an signal.
        * </pre>
        *
        * <code>.flyteidl.core.SignalCondition signal = 2;</code>

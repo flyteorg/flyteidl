@@ -68,7 +68,7 @@ message WorkflowNode {
     }
 }
 
-// SignalCondition represents a dependency on an existing signal.
+// SignalCondition represents a dependency on an signal.
 message SignalCondition {
     // A unique identifier for the requested signal.
     string signal_id = 1;
@@ -89,7 +89,7 @@ message SleepCondition {
 // GateNode refers to the condition that is required for the gate to successfully complete.
 message GateNode {
     oneof condition {
-        // SignalCondition represents a dependency on an existing signal.
+        // SignalCondition represents a dependency on an signal.
         SignalCondition signal = 2;
 
         // SleepCondition represents a dependency on waiting for the specified duration.

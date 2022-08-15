@@ -59,7 +59,7 @@ class CoreGateNode(object):
     def signal(self):
         """Gets the signal of this CoreGateNode.  # noqa: E501
 
-        SignalCondition represents a dependency on an existing signal.  # noqa: E501
+        SignalCondition represents a dependency on an signal.  # noqa: E501
 
         :return: The signal of this CoreGateNode.  # noqa: E501
         :rtype: CoreSignalCondition
@@ -70,7 +70,7 @@ class CoreGateNode(object):
     def signal(self, signal):
         """Sets the signal of this CoreGateNode.
 
-        SignalCondition represents a dependency on an existing signal.  # noqa: E501
+        SignalCondition represents a dependency on an signal.  # noqa: E501
 
         :param signal: The signal of this CoreGateNode.  # noqa: E501
         :type: CoreSignalCondition

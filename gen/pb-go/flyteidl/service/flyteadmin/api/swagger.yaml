@@ -52600,7 +52600,7 @@ definitions:
     type: "object"
     properties:
       signal:
-        description: "SignalCondition represents a dependency on an existing signal."
+        description: "SignalCondition represents a dependency on an signal."
         $ref: "#/definitions/coreSignalCondition"
       sleep:
         description: "SleepCondition represents a dependency on waiting for the specified\
@@ -54628,7 +54628,7 @@ definitions:
       output_variable_name:
         type: "string"
         description: "The variable name for the signal value in this nodes outputs."
-    description: "SignalCondition represents a dependency on an existing signal."
+    description: "SignalCondition represents a dependency on an signal."
     example:
       output_variable_name: "output_variable_name"
       signal_id: "signal_id"

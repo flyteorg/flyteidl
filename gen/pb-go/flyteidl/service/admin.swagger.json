@@ -5466,7 +5466,7 @@
       "properties": {
         "signal": {
           "$ref": "#/definitions/coreSignalCondition",
-          "description": "SignalCondition represents a dependency on an existing signal."
+          "description": "SignalCondition represents a dependency on an signal."
         },
         "sleep": {
           "$ref": "#/definitions/coreSleepCondition",
@@ -6142,7 +6142,7 @@
           "description": "The variable name for the signal value in this nodes outputs."
         }
       },
-      "description": "SignalCondition represents a dependency on an existing signal."
+      "description": "SignalCondition represents a dependency on an signal."
     },
     "coreSimpleType": {
       "type": "string",

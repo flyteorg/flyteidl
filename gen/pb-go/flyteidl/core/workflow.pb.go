@@ -402,7 +402,7 @@ func (*WorkflowNode) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// SignalCondition represents a dependency on an existing signal.
+// SignalCondition represents a dependency on an signal.
 type SignalCondition struct {
 	// A unique identifier for the requested signal.
 	SignalId string `protobuf:"bytes,1,opt,name=signal_id,json=signalId,proto3" json:"signal_id,omitempty"`
