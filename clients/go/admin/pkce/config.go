@@ -6,4 +6,5 @@ import "github.com/flyteorg/flytestdlib/config"
 type Config struct {
 	BrowserSessionTimeout   config.Duration `json:"timeout"`
 	TokenRefreshGracePeriod config.Duration `json:"refreshTime"`
+	SkipBrowserOpen         bool            `json:"skipBrowserOpen"`
 }

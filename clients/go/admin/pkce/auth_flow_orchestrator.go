@@ -9,9 +9,16 @@ import (
 
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
-
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
+)
+
+const (
+	stateKey               = "state"
+	nonceKey               = "nonce"
+	codeChallengeKey       = "code_challenge"
+	codeChallengeMethodKey = "code_challenge_method"
+	codeChallengeMethodVal = "S256"
 )
 
 // TokenOrchestrator implements the main logic to initiate Pkce flow to issue access token and refresh token as well as
@@ -106,10 +113,12 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	tokenChannel := make(chan *oauth2.Token, 1)
 	errorChannel := make(chan error, 1)
 
-	// Replace S256 with one from cient config and provide a support to generate code challenge using the passed
-	// in method.
-	urlToOpen := f.clientConfig.AuthCodeURL(stateString) + "&nonce=" + nonces + "&code_challenge=" +
-		pkceCodeChallenge + "&code_challenge_method=S256"
+	values := url.Values{}
+	values.Add(stateKey, stateString)
+	values.Add(nonceKey, nonces)
+	values.Add(codeChallengeKey, pkceCodeChallenge)
+	values.Add(codeChallengeMethodKey, codeChallengeMethodVal)
+	urlToOpen := fmt.Sprintf("%s&%s", f.clientConfig.AuthCodeURL(""), values.Encode())
 
 	serveMux := http.NewServeMux()
 	server := &http.Server{Addr: redirectURL.Host, Handler: serveMux, ReadHeaderTimeout: 0}
@@ -125,9 +134,13 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		}
 	}()
 
-	logger.Infof(ctx, "Opening the browser at "+urlToOpen)
-	if err = browser.OpenURL(urlToOpen); err != nil {
-		return nil, err
+	if !f.cfg.SkipBrowserOpen {
+		logger.Infof(ctx, "Opening the browser at %s", urlToOpen)
+		if err = browser.OpenURL(urlToOpen); err != nil {
+			return nil, err
+		}
+	} else {
+		fmt.Printf("Open the browser at %s", urlToOpen)
 	}
 
 	ctx, cancelNow := context.WithTimeout(ctx, f.cfg.BrowserSessionTimeout.Duration)

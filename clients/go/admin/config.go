@@ -87,6 +87,7 @@ var (
 		PkceConfig: pkce.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
 			BrowserSessionTimeout:   config.Duration{Duration: 15 * time.Second},
+			SkipBrowserOpen:         false,
 		},
 		TokenRefreshWindow: config.Duration{Duration: 0},
 	}
