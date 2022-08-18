@@ -67,9 +67,9 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "authorizationServerUrl"), defaultConfig.DeprecatedAuthorizationServerURL, "This is the URL to your IdP's authorization server. It'll default to Endpoint")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "tokenUrl"), defaultConfig.TokenURL, "OPTIONAL: Your IdP's token endpoint. It'll be discovered from flyte admin's OAuth Metadata endpoint if not provided.")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "authorizationHeader"), defaultConfig.DeprecatedAuthorizationHeader, "Custom metadata header to pass JWT")
-	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.timeout"), defaultConfig.PkceConfig.BrowserSessionTimeout.String(), "")
-	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.refreshTime"), defaultConfig.PkceConfig.TokenRefreshGracePeriod.String(), "")
-	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "pkceConfig.skipBrowserOpen"), defaultConfig.PkceConfig.SkipBrowserOpen, "")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.timeout"), defaultConfig.PkceConfig.BrowserSessionTimeout.String(), "Amount of time the browser session would be active for authentication from client app.")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.refreshTime"), defaultConfig.PkceConfig.TokenRefreshGracePeriod.String(), "grace period from the token expiry after which it would refresh the token.")
+	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "pkceConfig.skipBrowserOpen"), defaultConfig.PkceConfig.SkipBrowserOpen, "skips opening the browser for auth and instead print the url to use.")
 	cmdFlags.StringSlice(fmt.Sprintf("%v%v", prefix, "command"), defaultConfig.Command, "Command for external authentication token generation")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "defaultServiceConfig"), defaultConfig.DefaultServiceConfig, "")
 	return cmdFlags
