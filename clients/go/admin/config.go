@@ -86,7 +86,7 @@ var (
 		ClientSecretLocation: DefaultClientSecretLocation,
 		PkceConfig: pkce.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
-			BrowserSessionTimeout:   config.Duration{Duration: 15 * time.Second},
+			BrowserSessionTimeout:   config.Duration{Duration: 2 * time.Minute},
 			SkipBrowserOpen:         false,
 		},
 		TokenRefreshWindow: config.Duration{Duration: 0},
