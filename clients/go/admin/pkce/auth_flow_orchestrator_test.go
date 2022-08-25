@@ -6,18 +6,22 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
-
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"golang.org/x/oauth2"
+
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 )
 
 func TestRefreshTheToken(t *testing.T) {
 	ctx := context.Background()
-	clientConf := &oauth2.Config{
-		ClientID: "dummyClient",
+	clientConf := &oauth.Config{
+		Config: &oauth2.Config{
+			ClientID: "dummyClient",
+		},
 	}
 	orchestrator := TokenOrchestrator{
 		clientConfig: clientConf,
@@ -46,7 +50,7 @@ func TestFetchFromCache(t *testing.T) {
 	mockAuthClient := new(mocks.AuthMetadataServiceClient)
 	mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 	mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
-	orchestrator, err := NewTokenOrchestrator(ctx, Config{}, &TokenCacheInMemoryProvider{}, mockAuthClient)
+	orchestrator, err := NewTokenOrchestrator(ctx, Config{}, &cache.TokenCacheInMemoryProvider{}, mockAuthClient)
 	assert.NoError(t, err)
 
 	t.Run("no token in cache", func(t *testing.T) {
@@ -71,7 +75,7 @@ func TestFetchFromAuthFlow(t *testing.T) {
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
 		mockAuthClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(metatdata, nil)
 		mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
-		tokenCache := &TokenCacheInMemoryProvider{}
+		tokenCache := &cache.TokenCacheInMemoryProvider{}
 		orchestrator, err := NewTokenOrchestrator(ctx, Config{}, tokenCache, mockAuthClient)
 		assert.NoError(t, err)
 		refreshedToken, err := orchestrator.FetchTokenFromAuthFlow(ctx)

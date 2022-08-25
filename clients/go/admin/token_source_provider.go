@@ -9,15 +9,18 @@ import (
 	"sync"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+
 	"k8s.io/apimachinery/pkg/util/wait"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/clientcredentials"
+
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
-	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/clientcredentials"
 )
 
 // TokenSourceProvider defines the interface needed to provide a TokenSource that is used to
@@ -26,7 +29,7 @@ type TokenSourceProvider interface {
 	GetTokenSource(ctx context.Context) (oauth2.TokenSource, error)
 }
 
-func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache,
+func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.TokenCache,
 	authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
 
 	var tokenProvider TokenSourceProvider
@@ -93,7 +96,7 @@ type PKCETokenSourceProvider struct {
 	tokenOrchestrator pkce.TokenOrchestrator
 }
 
-func NewPKCETokenSourceProvider(ctx context.Context, pkceCfg pkce.Config, tokenCache pkce.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
+func NewPKCETokenSourceProvider(ctx context.Context, pkceCfg pkce.Config, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
 
 	tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, pkceCfg, tokenCache, authClient)
 	if err != nil {

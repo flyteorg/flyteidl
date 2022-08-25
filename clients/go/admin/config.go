@@ -27,12 +27,14 @@ var DefaultClientSecretLocation = filepath.Join(string(filepath.Separator), "etc
 type AuthType uint8
 
 const (
-	// Chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
+	// AuthTypeClientSecret Chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
 	AuthTypeClientSecret AuthType = iota
-	// Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
+	// AuthTypePkce Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
 	AuthTypePkce
-	// Chooses an external authentication process
+	// AuthTypeExternalCommand Chooses an external authentication process
 	AuthTypeExternalCommand
+	// AuthTypeDeviceFlow Uses device flow to authenticate in a constrained environment with no access to browser
+	AuthTypeDeviceFlow
 )
 
 type Config struct {

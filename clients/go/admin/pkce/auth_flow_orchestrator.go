@@ -7,10 +7,13 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
-	"github.com/flyteorg/flytestdlib/logger"
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
+
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/logger"
 )
 
 const (
@@ -25,8 +28,8 @@ const (
 // refreshing the access token if a refresh token is present.
 type TokenOrchestrator struct {
 	cfg          Config
-	clientConfig *oauth2.Config
-	tokenCache   TokenCache
+	clientConfig *oauth.Config
+	tokenCache   cache.TokenCache
 }
 
 // RefreshToken attempts to refresh the access token if a refresh token is provided.
@@ -163,8 +166,8 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 
 // NewTokenOrchestrator creates a new TokenOrchestrator that implements the main logic to initiate Pkce flow to issue
 // access token and refresh token as well as refreshing the access token if a refresh token is present.
-func NewTokenOrchestrator(ctx context.Context, cfg Config, tokenCache TokenCache, authMetadataClient service.AuthMetadataServiceClient) (TokenOrchestrator, error) {
-	clientConf, err := BuildClientConfig(ctx, authMetadataClient)
+func NewTokenOrchestrator(ctx context.Context, cfg Config, tokenCache cache.TokenCache, authMetadataClient service.AuthMetadataServiceClient) (TokenOrchestrator, error) {
+	clientConf, err := oauth.BuildConfigFromMetadataService(ctx, authMetadataClient)
 	if err != nil {
 		return TokenOrchestrator{}, err
 	}

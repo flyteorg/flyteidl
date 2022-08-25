@@ -10,17 +10,18 @@ import (
 	"testing"
 	"time"
 
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
+	"golang.org/x/oauth2"
+	_ "google.golang.org/grpc/balancer/roundrobin" //nolint
+
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	pkcemocks "github.com/flyteorg/flyteidl/clients/go/admin/pkce/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
-
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/mock"
-	"golang.org/x/oauth2"
-	_ "google.golang.org/grpc/balancer/roundrobin" //nolint
 )
 
 func TestInitializeAndGetAdminClient(t *testing.T) {
@@ -250,7 +251,7 @@ func Test_getPkceAuthTokenSource(t *testing.T) {
 		assert.NoError(t, err)
 
 		// populate the cache
-		tokenCache := &pkce.TokenCacheInMemoryProvider{}
+		tokenCache := &cache.TokenCacheInMemoryProvider{}
 		assert.NoError(t, tokenCache.SaveToken(&tokenData))
 
 		orchestrator, err := pkce.NewTokenOrchestrator(ctx, pkce.Config{}, tokenCache, mockAuthClient)

@@ -116,7 +116,7 @@ func (m *OAuth2Client) Validate() error {
 		return nil
 	}
 
-	// no validation rules for ClientId
+	// no validation rules for ClientID
 
 	if v, ok := interface{}(m.GetClientSecret()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
