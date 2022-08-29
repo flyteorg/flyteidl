@@ -9,15 +9,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
-
-	"k8s.io/apimachinery/pkg/util/wait"
-
-	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
-
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
+	"k8s.io/apimachinery/pkg/util/wait"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	"github.com/flyteorg/flyteidl/clients/go/admin/deviceflow"
+	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
@@ -62,6 +60,11 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 		}
 	case AuthTypeExternalCommand:
 		tokenProvider, err = NewExternalTokenSourceProvider(cfg.Command)
+		if err != nil {
+			return nil, err
+		}
+	case AuthTypeDeviceFlow:
+		tokenProvider, err = NewDeviceFlowTokenSourceProvider(ctx, cfg.DeviceFlowConfig, tokenCache, authClient)
 		if err != nil {
 			return nil, err
 		}
@@ -218,4 +221,43 @@ func getRandomDuration(maxDuration time.Duration) time.Duration {
 	// d is 1.0 to 2.0 times maxDuration
 	d := wait.Jitter(maxDuration, 1)
 	return d - maxDuration
+}
+
+type DeviceFlowTokenSourceProvider struct {
+	tokenOrchestrator deviceflow.DeviceFlowTokenOrchestrator
+}
+
+func NewDeviceFlowTokenSourceProvider(ctx context.Context, deviceFlowConfig deviceflow.Config, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
+
+	tokenOrchestrator, err := deviceflow.NewDeviceFlowTokenOrchestrator(ctx, deviceFlowConfig, tokenCache, authClient)
+	if err != nil {
+		return nil, err
+	}
+
+	return DeviceFlowTokenSourceProvider{tokenOrchestrator: tokenOrchestrator}, nil
+}
+
+func (p DeviceFlowTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
+	return GetDeviceFlowAuthTokenSource(ctx, p.tokenOrchestrator)
+}
+
+// GetDeviceFlowAuthTokenSource Returns the token source which would be used for device auth flow
+func GetDeviceFlowAuthTokenSource(ctx context.Context, deviceFlowOrchestrator deviceflow.DeviceFlowTokenOrchestrator) (oauth2.TokenSource, error) {
+	// explicitly ignore error while fetching token from cache.
+	authToken, err := deviceFlowOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	if err != nil {
+		logger.Warnf(ctx, "Failed fetching from cache. Will restart the flow. Error: %v", err)
+	}
+
+	if authToken == nil {
+		// Fetch using auth flow
+		if authToken, err = deviceFlowOrchestrator.FetchTokenFromAuthFlow(ctx); err != nil {
+			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
+			return nil, err
+		}
+	}
+
+	return &pkce.SimpleTokenSource{
+		CachedToken: authToken,
+	}, nil
 }

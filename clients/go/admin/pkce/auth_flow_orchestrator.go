@@ -70,10 +70,11 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (
 	}
 
 	// If token doesn't need to be refreshed, return it.
-	if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
+	if time.Now().Before(token.Expiry.Add(-f.cfg.TokenRefreshGracePeriod.Duration)) {
+		//if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
 		return token, nil
 	}
-
+	token.Expiry = token.Expiry.Add(-f.cfg.TokenRefreshGracePeriod.Duration)
 	token, err = f.RefreshToken(ctx, token)
 	if err != nil {
 		return nil, fmt.Errorf("failed to refresh token using cached token. Error: %w", err)
@@ -137,13 +138,9 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		}
 	}()
 
-	if !f.cfg.SkipBrowserOpen {
-		logger.Infof(ctx, "Opening the browser at %s", urlToOpen)
-		if err = browser.OpenURL(urlToOpen); err != nil {
-			return nil, err
-		}
-	} else {
-		fmt.Printf("Open the browser at %s", urlToOpen)
+	logger.Infof(ctx, "Opening the browser at %s", urlToOpen)
+	if err = browser.OpenURL(urlToOpen); err != nil {
+		return nil, err
 	}
 
 	ctx, cancelNow := context.WithTimeout(ctx, f.cfg.BrowserSessionTimeout.Duration)

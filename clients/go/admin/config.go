@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/deviceflow"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
-
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
 )
@@ -69,6 +69,8 @@ type Config struct {
 
 	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
 
+	DeviceFlowConfig deviceflow.Config `json:"deviceFlowConfig" pflag:",Config for Device authentication flow."`
+
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
 	// Set the gRPC service config formatted as a json string https://github.com/grpc/grpc/blob/master/doc/service_config.md
@@ -89,7 +91,10 @@ var (
 		PkceConfig: pkce.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
 			BrowserSessionTimeout:   config.Duration{Duration: 2 * time.Minute},
-			SkipBrowserOpen:         false,
+		},
+		DeviceFlowConfig: deviceflow.Config{
+			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
+			DeviceFlowTimeout:       config.Duration{Duration: 10 * time.Minute},
 		},
 		TokenRefreshWindow: config.Duration{Duration: 0},
 	}

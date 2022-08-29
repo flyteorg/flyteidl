@@ -365,14 +365,28 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
-	t.Run("Test_pkceConfig.skipBrowserOpen", func(t *testing.T) {
+	t.Run("Test_deviceFlowConfig.refreshTime", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := "1"
+			testValue := defaultConfig.DeviceFlowConfig.TokenRefreshGracePeriod.String()
 
-			cmdFlags.Set("pkceConfig.skipBrowserOpen", testValue)
-			if vBool, err := cmdFlags.GetBool("pkceConfig.skipBrowserOpen"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vBool), &actual.PkceConfig.SkipBrowserOpen)
+			cmdFlags.Set("deviceFlowConfig.refreshTime", testValue)
+			if vString, err := cmdFlags.GetString("deviceFlowConfig.refreshTime"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.TokenRefreshGracePeriod)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_deviceFlowConfig.deviceFlowTimeout", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.DeviceFlowConfig.DeviceFlowTimeout.String()
+
+			cmdFlags.Set("deviceFlowConfig.deviceFlowTimeout", testValue)
+			if vString, err := cmdFlags.GetString("deviceFlowConfig.deviceFlowTimeout"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.DeviceFlowTimeout)
 
 			} else {
 				assert.FailNow(t, err.Error())

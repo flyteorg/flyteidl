@@ -69,7 +69,8 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "authorizationHeader"), defaultConfig.DeprecatedAuthorizationHeader, "Custom metadata header to pass JWT")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.timeout"), defaultConfig.PkceConfig.BrowserSessionTimeout.String(), "Amount of time the browser session would be active for authentication from client app.")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "pkceConfig.refreshTime"), defaultConfig.PkceConfig.TokenRefreshGracePeriod.String(), "grace period from the token expiry after which it would refresh the token.")
-	cmdFlags.Bool(fmt.Sprintf("%v%v", prefix, "pkceConfig.skipBrowserOpen"), defaultConfig.PkceConfig.SkipBrowserOpen, "skips opening the browser for auth and instead print the url to use.")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "deviceFlowConfig.refreshTime"), defaultConfig.DeviceFlowConfig.TokenRefreshGracePeriod.String(), "grace period from the token expiry after which it would refresh the token.")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "deviceFlowConfig.deviceFlowTimeout"), defaultConfig.DeviceFlowConfig.DeviceFlowTimeout.String(), "amount of time the device flow should complete or else it will be cancelled.")
 	cmdFlags.StringSlice(fmt.Sprintf("%v%v", prefix, "command"), defaultConfig.Command, "Command for external authentication token generation")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "defaultServiceConfig"), defaultConfig.DefaultServiceConfig, "")
 	return cmdFlags

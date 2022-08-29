@@ -18,10 +18,12 @@ type DeviceAuthorizationResponse struct {
 	// UserCode unique code generated for the user to enter on another device
 	UserCode string `json:"user_code"`
 	// VerificationURL url endpoint of the authorization server which host the device and app verification
-	VerificationURL string `json:"verification_url"`
+	VerificationURL string `json:"verification_uri"`
+	// VerificationURL url endpoint of the authorization server which host the device and app verification along with user code
+	VerificationURLComplete string `json:"verification_uri_complete"`
 	// ExpiresIn  lifetime in seconds of the "device_code" and "user_code"
 	ExpiresIn int64 `json:"expires_in"`
-	// Interval minimum amount of time the client app should wait between polling requests to the token endpoint.
+	// Interval minimum amount of time in secs the client app should wait between polling requests to the token endpoint.
 	Interval int64 `json:"interval"`
 }
 
@@ -36,4 +38,5 @@ type DeviceAccessTokenRequest struct {
 
 type DeviceAccessTokenResponse struct {
 	oauth2.Token
+	Error string `json:"error"`
 }
