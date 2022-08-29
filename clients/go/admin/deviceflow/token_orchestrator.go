@@ -84,7 +84,7 @@ func (t TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (
 
 	// If token doesn't need to be refreshed, return it.
 	if time.Now().Before(token.Expiry.Add(-t.cfg.TokenRefreshGracePeriod.Duration)) {
-		//if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
+		logger.Infof(ctx, "found the token in the cache")
 		return token, nil
 	}
 	token.Expiry = token.Expiry.Add(-t.cfg.TokenRefreshGracePeriod.Duration)
