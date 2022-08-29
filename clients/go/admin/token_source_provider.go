@@ -224,7 +224,7 @@ func getRandomDuration(maxDuration time.Duration) time.Duration {
 }
 
 type DeviceFlowTokenSourceProvider struct {
-	tokenOrchestrator deviceflow.DeviceFlowTokenOrchestrator
+	tokenOrchestrator deviceflow.TokenOrchestrator
 }
 
 func NewDeviceFlowTokenSourceProvider(ctx context.Context, deviceFlowConfig deviceflow.Config, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
@@ -242,7 +242,7 @@ func (p DeviceFlowTokenSourceProvider) GetTokenSource(ctx context.Context) (oaut
 }
 
 // GetDeviceFlowAuthTokenSource Returns the token source which would be used for device auth flow
-func GetDeviceFlowAuthTokenSource(ctx context.Context, deviceFlowOrchestrator deviceflow.DeviceFlowTokenOrchestrator) (oauth2.TokenSource, error) {
+func GetDeviceFlowAuthTokenSource(ctx context.Context, deviceFlowOrchestrator deviceflow.TokenOrchestrator) (oauth2.TokenSource, error) {
 	// explicitly ignore error while fetching token from cache.
 	authToken, err := deviceFlowOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
 	if err != nil {
