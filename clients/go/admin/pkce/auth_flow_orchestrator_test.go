@@ -89,7 +89,7 @@ func TestFetchFromCache(t *testing.T) {
 		var tokenData oauth2.Token
 		err = json.Unmarshal(fileData, &tokenData)
 		assert.Nil(t, err)
-		tokenData.Expiry = time.Now().Add(20 * time.Minute)
+		tokenData.Expiry = time.Now().Add(-20 * time.Minute)
 		err = tokenCacheProvider.SaveToken(&tokenData)
 		assert.Nil(t, err)
 		_, err = orchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
