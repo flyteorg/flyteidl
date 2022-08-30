@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"os"
 	"testing"
 	"time"
 
@@ -16,10 +17,10 @@ import (
 	_ "google.golang.org/grpc/balancer/roundrobin" //nolint
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	cachemocks "github.com/flyteorg/flyteidl/clients/go/admin/cache/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
-	pkcemocks "github.com/flyteorg/flyteidl/clients/go/admin/pkce/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
@@ -196,13 +197,13 @@ func TestGetAuthenticationDialOptionPkce(t *testing.T) {
 		RedirectUri:              "http://localhost:54545/callback",
 	}
 	http.DefaultServeMux = http.NewServeMux()
-	plan, _ := ioutil.ReadFile("pkce/testdata/token.json")
+	plan, _ := os.ReadFile("tokenorchestrator/testdata/token.json")
 	var tokenData oauth2.Token
 	err := json.Unmarshal(plan, &tokenData)
 	assert.NoError(t, err)
 	tokenData.Expiry = time.Now().Add(time.Minute)
 	t.Run("cache hit", func(t *testing.T) {
-		mockTokenCache := new(pkcemocks.TokenCache)
+		mockTokenCache := new(cachemocks.TokenCache)
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
 		mockTokenCache.OnGetTokenMatch().Return(&tokenData, nil)
 		mockTokenCache.OnSaveTokenMatch(mock.Anything).Return(nil)
@@ -216,7 +217,7 @@ func TestGetAuthenticationDialOptionPkce(t *testing.T) {
 	})
 	tokenData.Expiry = time.Now().Add(-time.Minute)
 	t.Run("cache miss auth failure", func(t *testing.T) {
-		mockTokenCache := new(pkcemocks.TokenCache)
+		mockTokenCache := new(cachemocks.TokenCache)
 		mockAuthClient := new(mocks.AuthMetadataServiceClient)
 		mockTokenCache.OnGetTokenMatch().Return(&tokenData, nil)
 		mockTokenCache.OnSaveTokenMatch(mock.Anything).Return(nil)
