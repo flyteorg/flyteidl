@@ -94,7 +94,8 @@ var (
 		},
 		DeviceFlowConfig: deviceflow.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
-			DeviceFlowTimeout:       config.Duration{Duration: 10 * time.Minute},
+			Timeout:                 config.Duration{Duration: 10 * time.Minute},
+			PollInterval:            config.Duration{Duration: 5 * time.Second},
 		},
 		TokenRefreshWindow: config.Duration{Duration: 0},
 	}

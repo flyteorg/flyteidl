@@ -382,11 +382,11 @@ func TestConfig_SetFlags(t *testing.T) {
 	t.Run("Test_deviceFlowConfig.deviceFlowTimeout", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
-			testValue := defaultConfig.DeviceFlowConfig.DeviceFlowTimeout.String()
+			testValue := defaultConfig.DeviceFlowConfig.Timeout.String()
 
 			cmdFlags.Set("deviceFlowConfig.deviceFlowTimeout", testValue)
 			if vString, err := cmdFlags.GetString("deviceFlowConfig.deviceFlowTimeout"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.DeviceFlowTimeout)
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.Timeout)
 
 			} else {
 				assert.FailNow(t, err.Error())

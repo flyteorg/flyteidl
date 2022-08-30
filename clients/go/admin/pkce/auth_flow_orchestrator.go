@@ -5,14 +5,11 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"time"
 
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
-	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
 	"github.com/flyteorg/flytestdlib/logger"
 )
 
@@ -27,69 +24,8 @@ const (
 // TokenOrchestrator implements the main logic to initiate Pkce flow to issue access token and refresh token as well as
 // refreshing the access token if a refresh token is present.
 type TokenOrchestrator struct {
-	cfg          Config
-	clientConfig *oauth.Config
-	tokenCache   cache.TokenCache
-}
-
-// RefreshToken attempts to refresh the access token if a refresh token is provided.
-func (f TokenOrchestrator) RefreshToken(ctx context.Context, token *oauth2.Token) (*oauth2.Token, error) {
-	ts := f.clientConfig.TokenSource(ctx, token)
-	var refreshedToken *oauth2.Token
-	var err error
-	refreshedToken, err = ts.Token()
-	if err != nil {
-		logger.Warnf(ctx, "failed to refresh the token due to %v and will be doing re-auth", err)
-		return nil, err
-	}
-
-	if refreshedToken != nil {
-		logger.Debugf(ctx, "got a response from the refresh grant for old expiry %v with new expiry %v",
-			token.Expiry, refreshedToken.Expiry)
-		if refreshedToken.AccessToken != token.AccessToken {
-			if err = f.tokenCache.SaveToken(refreshedToken); err != nil {
-				logger.Errorf(ctx, "unable to save the new token due to %v", err)
-				return nil, err
-			}
-		}
-	}
-
-	return refreshedToken, nil
-}
-
-// FetchTokenFromCacheOrRefreshIt fetches the token from cache and refreshes it if it'll expire within the
-// Config.TokenRefreshGracePeriod period.
-func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (token *oauth2.Token, err error) {
-	token, err = f.tokenCache.GetToken()
-	if err != nil {
-		return nil, err
-	}
-
-	if !token.Valid() {
-		return nil, fmt.Errorf("token from cache is invalid")
-	}
-
-	// If token doesn't need to be refreshed, return it.
-	if time.Now().Before(token.Expiry.Add(-f.cfg.TokenRefreshGracePeriod.Duration)) {
-		//if token.Expiry.Add(f.cfg.TokenRefreshGracePeriod.Duration).Before(time.Now()) {
-		return token, nil
-	}
-	token.Expiry = token.Expiry.Add(-f.cfg.TokenRefreshGracePeriod.Duration)
-	token, err = f.RefreshToken(ctx, token)
-	if err != nil {
-		return nil, fmt.Errorf("failed to refresh token using cached token. Error: %w", err)
-	}
-
-	if !token.Valid() {
-		return nil, fmt.Errorf("refreshed token is invalid")
-	}
-
-	err = f.tokenCache.SaveToken(token)
-	if err != nil {
-		return nil, fmt.Errorf("failed to save token in the token cache. Error: %w", err)
-	}
-
-	return token, nil
+	tokenorchestrator.BaseTokenOrchestrator
+	Config Config
 }
 
 // FetchTokenFromAuthFlow starts a webserver to listen to redirect callback from the authorization server at the end
@@ -97,7 +33,7 @@ func (f TokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Context) (
 func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.Token, error) {
 	var err error
 	var redirectURL *url.URL
-	if redirectURL, err = url.Parse(f.clientConfig.RedirectURL); err != nil {
+	if redirectURL, err = url.Parse(f.ClientConfig.RedirectURL); err != nil {
 		return nil, err
 	}
 
@@ -122,12 +58,12 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	values.Add(nonceKey, nonces)
 	values.Add(codeChallengeKey, pkceCodeChallenge)
 	values.Add(codeChallengeMethodKey, codeChallengeMethodVal)
-	urlToOpen := fmt.Sprintf("%s&%s", f.clientConfig.AuthCodeURL(""), values.Encode())
+	urlToOpen := fmt.Sprintf("%s&%s", f.ClientConfig.AuthCodeURL(""), values.Encode())
 
 	serveMux := http.NewServeMux()
 	server := &http.Server{Addr: redirectURL.Host, Handler: serveMux, ReadHeaderTimeout: 0}
 	// Register the call back handler
-	serveMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.clientConfig, pkceCodeVerifier,
+	serveMux.HandleFunc(redirectURL.Path, getAuthServerCallbackHandler(f.ClientConfig, pkceCodeVerifier,
 		tokenChannel, errorChannel, stateString)) // the oauth2 callback endpoint
 	defer server.Close()
 
@@ -143,7 +79,7 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		return nil, err
 	}
 
-	ctx, cancelNow := context.WithTimeout(ctx, f.cfg.BrowserSessionTimeout.Duration)
+	ctx, cancelNow := context.WithTimeout(ctx, f.Config.BrowserSessionTimeout.Duration)
 	defer cancelNow()
 
 	var token *oauth2.Token
@@ -153,7 +89,7 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	case <-ctx.Done():
 		return nil, fmt.Errorf("context was canceled during auth flow")
 	case token = <-tokenChannel:
-		if err = f.tokenCache.SaveToken(token); err != nil {
+		if err = f.TokenCache.SaveToken(token); err != nil {
 			logger.Errorf(ctx, "unable to save the new token due to. Will ignore the error and use the issued token. Error: %v", err)
 		}
 
@@ -163,15 +99,9 @@ func (f TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 
 // NewTokenOrchestrator creates a new TokenOrchestrator that implements the main logic to initiate Pkce flow to issue
 // access token and refresh token as well as refreshing the access token if a refresh token is present.
-func NewTokenOrchestrator(ctx context.Context, cfg Config, tokenCache cache.TokenCache, authMetadataClient service.AuthMetadataServiceClient) (TokenOrchestrator, error) {
-	clientConf, err := oauth.BuildConfigFromMetadataService(ctx, authMetadataClient)
-	if err != nil {
-		return TokenOrchestrator{}, err
-	}
-
+func NewTokenOrchestrator(baseOrchestrator tokenorchestrator.BaseTokenOrchestrator, cfg Config) (TokenOrchestrator, error) {
 	return TokenOrchestrator{
-		cfg:          cfg,
-		clientConfig: clientConf,
-		tokenCache:   tokenCache,
+		BaseTokenOrchestrator: baseOrchestrator,
+		Config:                cfg,
 	}, nil
 }

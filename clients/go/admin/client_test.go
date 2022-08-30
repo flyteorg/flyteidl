@@ -17,8 +17,10 @@ import (
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	pkcemocks "github.com/flyteorg/flyteidl/clients/go/admin/pkce/mocks"
+	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
@@ -245,7 +247,7 @@ func Test_getPkceAuthTokenSource(t *testing.T) {
 	mockAuthClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(clientMetatadata, nil)
 
 	t.Run("cached token expired", func(t *testing.T) {
-		plan, _ := ioutil.ReadFile("pkce/testdata/token.json")
+		plan, _ := ioutil.ReadFile("tokenorchestrator/testdata/token.json")
 		var tokenData oauth2.Token
 		err := json.Unmarshal(plan, &tokenData)
 		assert.NoError(t, err)
@@ -254,7 +256,17 @@ func Test_getPkceAuthTokenSource(t *testing.T) {
 		tokenCache := &cache.TokenCacheInMemoryProvider{}
 		assert.NoError(t, tokenCache.SaveToken(&tokenData))
 
-		orchestrator, err := pkce.NewTokenOrchestrator(ctx, pkce.Config{}, tokenCache, mockAuthClient)
+		baseOrchestrator := tokenorchestrator.BaseTokenOrchestrator{
+			ClientConfig: &oauth.Config{
+				Config: &oauth2.Config{
+					RedirectURL: "http://localhost:8089/redirect",
+					Scopes:      []string{"code", "all"},
+				},
+			},
+			TokenCache: tokenCache,
+		}
+
+		orchestrator, err := pkce.NewTokenOrchestrator(baseOrchestrator, pkce.Config{})
 		assert.NoError(t, err)
 
 		http.DefaultServeMux = http.NewServeMux()

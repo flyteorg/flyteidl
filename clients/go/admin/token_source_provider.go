@@ -17,6 +17,7 @@ import (
 	"github.com/flyteorg/flyteidl/clients/go/admin/deviceflow"
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
+	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 )
@@ -54,7 +55,12 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 			return nil, err
 		}
 	case AuthTypePkce:
-		tokenProvider, err = NewPKCETokenSourceProvider(ctx, cfg.PkceConfig, tokenCache, authClient)
+		baseTokenOrchestrator, err := tokenorchestrator.NewBaseTokenOrchestrator(ctx, tokenCache, authClient)
+		if err != nil {
+			return nil, err
+		}
+
+		tokenProvider, err = NewPKCETokenSourceProvider(baseTokenOrchestrator, cfg.PkceConfig)
 		if err != nil {
 			return nil, err
 		}
@@ -64,7 +70,12 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 			return nil, err
 		}
 	case AuthTypeDeviceFlow:
-		tokenProvider, err = NewDeviceFlowTokenSourceProvider(ctx, cfg.DeviceFlowConfig, tokenCache, authClient)
+		baseTokenOrchestrator, err := tokenorchestrator.NewBaseTokenOrchestrator(ctx, tokenCache, authClient)
+		if err != nil {
+			return nil, err
+		}
+
+		tokenProvider, err = NewDeviceFlowTokenSourceProvider(baseTokenOrchestrator, cfg.DeviceFlowConfig)
 		if err != nil {
 			return nil, err
 		}
@@ -99,13 +110,11 @@ type PKCETokenSourceProvider struct {
 	tokenOrchestrator pkce.TokenOrchestrator
 }
 
-func NewPKCETokenSourceProvider(ctx context.Context, pkceCfg pkce.Config, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
-
-	tokenOrchestrator, err := pkce.NewTokenOrchestrator(ctx, pkceCfg, tokenCache, authClient)
+func NewPKCETokenSourceProvider(baseTokenOrchestrator tokenorchestrator.BaseTokenOrchestrator, pkceCfg pkce.Config) (TokenSourceProvider, error) {
+	tokenOrchestrator, err := pkce.NewTokenOrchestrator(baseTokenOrchestrator, pkceCfg)
 	if err != nil {
 		return nil, err
 	}
-
 	return PKCETokenSourceProvider{tokenOrchestrator: tokenOrchestrator}, nil
 }
 
@@ -114,16 +123,16 @@ func (p PKCETokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.Tok
 }
 
 // Returns the token source which would be used for three legged oauth. eg : for admin to authorize access to flytectl
-func GetPKCEAuthTokenSource(ctx context.Context, tokenOrchestrator pkce.TokenOrchestrator) (oauth2.TokenSource, error) {
+func GetPKCEAuthTokenSource(ctx context.Context, pkceTokenOrchestrator pkce.TokenOrchestrator) (oauth2.TokenSource, error) {
 	// explicitly ignore error while fetching token from cache.
-	authToken, err := tokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	authToken, err := pkceTokenOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, pkceTokenOrchestrator.Config.BrowserSessionTimeout)
 	if err != nil {
 		logger.Warnf(ctx, "Failed fetching from cache. Will restart the flow. Error: %v", err)
 	}
 
 	if authToken == nil {
 		// Fetch using auth flow
-		if authToken, err = tokenOrchestrator.FetchTokenFromAuthFlow(ctx); err != nil {
+		if authToken, err = pkceTokenOrchestrator.FetchTokenFromAuthFlow(ctx); err != nil {
 			logger.Errorf(ctx, "Error fetching token using auth flow due to %v", err)
 			return nil, err
 		}
@@ -227,9 +236,9 @@ type DeviceFlowTokenSourceProvider struct {
 	tokenOrchestrator deviceflow.TokenOrchestrator
 }
 
-func NewDeviceFlowTokenSourceProvider(ctx context.Context, deviceFlowConfig deviceflow.Config, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
+func NewDeviceFlowTokenSourceProvider(baseTokenOrchestrator tokenorchestrator.BaseTokenOrchestrator, deviceFlowConfig deviceflow.Config) (TokenSourceProvider, error) {
 
-	tokenOrchestrator, err := deviceflow.NewDeviceFlowTokenOrchestrator(ctx, deviceFlowConfig, tokenCache, authClient)
+	tokenOrchestrator, err := deviceflow.NewDeviceFlowTokenOrchestrator(baseTokenOrchestrator, deviceFlowConfig)
 	if err != nil {
 		return nil, err
 	}
@@ -244,7 +253,7 @@ func (p DeviceFlowTokenSourceProvider) GetTokenSource(ctx context.Context) (oaut
 // GetDeviceFlowAuthTokenSource Returns the token source which would be used for device auth flow
 func GetDeviceFlowAuthTokenSource(ctx context.Context, deviceFlowOrchestrator deviceflow.TokenOrchestrator) (oauth2.TokenSource, error) {
 	// explicitly ignore error while fetching token from cache.
-	authToken, err := deviceFlowOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx)
+	authToken, err := deviceFlowOrchestrator.FetchTokenFromCacheOrRefreshIt(ctx, deviceFlowOrchestrator.Config.TokenRefreshGracePeriod)
 	if err != nil {
 		logger.Warnf(ctx, "Failed fetching from cache. Will restart the flow. Error: %v", err)
 	}
