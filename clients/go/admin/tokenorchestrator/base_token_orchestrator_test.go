@@ -12,9 +12,9 @@ import (
 	"golang.org/x/oauth2"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	cacheMocks "github.com/flyteorg/flyteidl/clients/go/admin/cache/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/clients/go/admin/oauth"
-	pkceMocks "github.com/flyteorg/flyteidl/clients/go/admin/pkce/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
 )
@@ -101,7 +101,7 @@ func TestFetchFromCache(t *testing.T) {
 	})
 
 	t.Run("token fetch before grace period", func(t *testing.T) {
-		mockTokenCacheProvider := new(pkceMocks.TokenCache)
+		mockTokenCacheProvider := new(cacheMocks.TokenCache)
 		orchestrator, err := NewBaseTokenOrchestrator(ctx, mockTokenCacheProvider, mockAuthClient)
 		assert.NoError(t, err)
 		fileData, _ := os.ReadFile("testdata/token.json")
@@ -119,7 +119,7 @@ func TestFetchFromCache(t *testing.T) {
 	})
 
 	t.Run("token fetch after grace period with refresh", func(t *testing.T) {
-		mockTokenCacheProvider := new(pkceMocks.TokenCache)
+		mockTokenCacheProvider := new(cacheMocks.TokenCache)
 		orchestrator, err := NewBaseTokenOrchestrator(ctx, mockTokenCacheProvider, mockAuthClient)
 		assert.NoError(t, err)
 		fileData, _ := os.ReadFile("testdata/token.json")
