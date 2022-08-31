@@ -56,7 +56,8 @@ func (t TokenOrchestrator) StartDeviceAuthorization(ctx context.Context, dareq D
 		return nil, err
 	}
 
-	body, err := io.ReadAll(httpResp.Body)
+	body, err := io.ReadAll(io.LimitReader(httpResp.Body, 1<<20))
+	httpResp.Body.Close()
 	if err != nil {
 		return nil, fmt.Errorf("device authorization request failed due to  %v", err)
 	}
@@ -103,7 +104,8 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 			return nil, err
 		}
 
-		body, err := io.ReadAll(httpResp.Body)
+		body, err := io.ReadAll(io.LimitReader(httpResp.Body, 1<<20))
+		httpResp.Body.Close()
 		if err != nil {
 			return nil, err
 		}
