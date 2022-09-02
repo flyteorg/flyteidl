@@ -34,6 +34,8 @@ type DeviceAccessTokenRequest struct {
 	DeviceCode string `json:"device_code"`
 	//  Value MUST be set to "urn:ietf:params:oauth:grant-type:device_code"
 	GrantType string `json:"grant_type"`
+	// Audience defines at which endpoints the token can be used.
+	Audience string `json:"audience"`
 }
 
 type DeviceAccessTokenResponse struct {
