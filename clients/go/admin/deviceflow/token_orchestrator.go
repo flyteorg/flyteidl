@@ -18,6 +18,7 @@ import (
 )
 
 const (
+	audience       = "audience"
 	cliendID       = "client_id"
 	deviceCode     = "device_code"
 	grantType      = "grant_type"
@@ -89,6 +90,7 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 		cliendID:   {tokReq.ClientID},
 		grantType:  {grantTypeValue},
 		deviceCode: {tokReq.DeviceCode},
+		audience:   {tokReq.Audience},
 	}
 
 	for {
@@ -161,7 +163,7 @@ func (t TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		pollInterval = time.Duration(daResp.Interval) * time.Second
 	}
 
-	tokReq := DeviceAccessTokenRequest{ClientID: t.ClientConfig.ClientID, DeviceCode: daResp.DeviceCode, GrantType: grantType}
+	tokReq := DeviceAccessTokenRequest{ClientID: t.ClientConfig.ClientID, DeviceCode: daResp.DeviceCode, GrantType: grantType, Audience: t.Config.Audience}
 	return t.PollTokenEndpoint(ctx, tokReq, pollInterval)
 }
 
