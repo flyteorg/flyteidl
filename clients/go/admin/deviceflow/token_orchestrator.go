@@ -22,6 +22,7 @@ const (
 	deviceCode     = "device_code"
 	grantType      = "grant_type"
 	scope          = "scope"
+	audience       = "audience"
 	grantTypeValue = "urn:ietf:params:oauth:grant-type:device_code"
 )
 
@@ -89,6 +90,7 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 		cliendID:   {tokReq.ClientID},
 		grantType:  {grantTypeValue},
 		deviceCode: {tokReq.DeviceCode},
+		audience:   {tokReq.Audience},
 	}
 
 	for {
