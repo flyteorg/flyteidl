@@ -30,11 +30,6 @@ type Clientset struct {
 	healthServiceClient       grpc_health_v1.HealthClient
 	identityServiceClient     service.IdentityServiceClient
 	dataProxyServiceClient    service.DataProxyServiceClient
-	authOpt                   grpc.DialOption
-}
-
-func (c Clientset) AuthOpt() grpc.DialOption {
-	return c.authOpt
 }
 
 // AdminClient retrieves the AdminServiceClient
@@ -173,24 +168,8 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 // initializeClients creates an AdminClient, AuthServiceClient and IdentityServiceClient with a shared Admin connection
 // for the process. Note that if called with different cfg/dialoptions, it will not refresh the connection.
 func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
-	authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
-	if err != nil {
-		logger.Panicf(ctx, "failed to initialize Auth Metadata Client. Error: %v", err)
-	}
-
-	tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, authMetadataClient)
-	if err != nil {
-		logger.Errorf(ctx, "failed to initialize token source provider. Err: %s", err.Error())
-	}
-
-	authOpt, err := getAuthenticationDialOption(ctx, cfg, tokenSourceProvider, authMetadataClient)
-	if err != nil {
-		logger.Warnf(ctx, "Starting an unauthenticated client because: %v", err)
-	}
-
-	if authOpt != nil {
-		opts = append(opts, authOpt)
-	}
+	tokenSource := NewDelayedCustomHeaderTokenSource()
+	opts = append(opts, grpc.WithUnaryInterceptor(newAuthInterceptor(cfg, tokenCache, tokenSource)), grpc.WithPerRPCCredentials(tokenSource))
 
 	if cfg.DefaultServiceConfig != "" {
 		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.DefaultServiceConfig))
@@ -207,9 +186,6 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenC
 	cs.identityServiceClient = service.NewIdentityServiceClient(adminConnection)
 	cs.healthServiceClient = grpc_health_v1.NewHealthClient(adminConnection)
 	cs.dataProxyServiceClient = service.NewDataProxyServiceClient(adminConnection)
-	if authOpt != nil {
-		cs.authOpt = authOpt
-	}
 
 	return &cs, nil
 }
