@@ -5,6 +5,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 
 import "flyteidl/admin/common.proto";
+import "flyteidl/admin/settings.proto";
 
 // Namespace within a project commonly used to differentiate between different service instances.
 // e.g. "production", "development", etc.
@@ -17,7 +18,7 @@ message Domain {
 }
 
 
-// Top-level namespace used to classify different entities like workflows and executions.
+// Toi'lp-level namespace used to classify different entities like workflows and executions.
 message Project {
     // Globally unique project name.
     string id               = 1;
@@ -45,6 +46,8 @@ message Project {
         SYSTEM_GENERATED = 2;
     }
     ProjectState state = 6;
+
+    Settings settings = 7;
 }
 
 // Represents a list of projects.
@@ -92,4 +95,12 @@ message ProjectRegisterResponse {
 
 // Purposefully empty, may be updated in the future.
 message ProjectUpdateResponse {
+}
+
+message GetProjectRequest {
+    string id = 1;
+}
+
+message GetProjectResponse {
+    Project project = 1;
 }

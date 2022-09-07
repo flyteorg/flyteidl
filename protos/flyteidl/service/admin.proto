@@ -370,6 +370,16 @@ service AdminService {
     };
   }
 
+  // Retrieve a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.
+  rpc GetProject (flyteidl.admin.GetProjectRequest) returns (flyteidl.admin.ProjectRegisterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/projects/{id}"
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Retrieve a project."
+    };
+  }
+
   // Updates an existing :ref:`ref_flyteidl.admin.Project` 
   // flyteidl.admin.Project should be passed but the domains property should be empty;
   // it will be ignored in the handler as domains cannot be updated via this API.

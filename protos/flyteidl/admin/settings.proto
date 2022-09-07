@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package flyteidl.admin;
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
+
+import "flyteidl/admin/cluster_assignment.proto";
+import "flyteidl/core/execution.proto";
+import "flyteidl/admin/matchable_resource.proto";
+
+
+// Defines settings collection for flyte resources
+message Settings {
+  WorkflowExecutionConfig workflow_execution_settings = 1;
+}
+
