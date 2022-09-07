@@ -33,57 +33,57 @@ class AdminLongDescription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'values': 'str',
+        'value': 'str',
         'uri': 'str',
-        'long_format': 'LongDescriptionDescriptionFormat',
+        'format': 'LongDescriptionDescriptionFormat',
         'icon_link': 'str'
     }
 
     attribute_map = {
-        'values': 'values',
+        'value': 'value',
         'uri': 'uri',
-        'long_format': 'long_format',
+        'format': 'format',
         'icon_link': 'icon_link'
     }
 
-    def __init__(self, values=None, uri=None, long_format=None, icon_link=None):  # noqa: E501
+    def __init__(self, value=None, uri=None, format=None, icon_link=None):  # noqa: E501
         """AdminLongDescription - a model defined in Swagger"""  # noqa: E501
 
-        self._values = None
+        self._value = None
         self._uri = None
-        self._long_format = None
+        self._format = None
         self._icon_link = None
         self.discriminator = None
 
-        if values is not None:
-            self.values = values
+        if value is not None:
+            self.value = value
         if uri is not None:
             self.uri = uri
-        if long_format is not None:
-            self.long_format = long_format
+        if format is not None:
+            self.format = format
         if icon_link is not None:
             self.icon_link = icon_link
 
     @property
-    def values(self):
-        """Gets the values of this AdminLongDescription.  # noqa: E501
+    def value(self):
+        """Gets the value of this AdminLongDescription.  # noqa: E501
 
 
-        :return: The values of this AdminLongDescription.  # noqa: E501
+        :return: The value of this AdminLongDescription.  # noqa: E501
         :rtype: str
         """
-        return self._values
+        return self._value
 
-    @values.setter
-    def values(self, values):
-        """Sets the values of this AdminLongDescription.
+    @value.setter
+    def value(self, value):
+        """Sets the value of this AdminLongDescription.
 
 
-        :param values: The values of this AdminLongDescription.  # noqa: E501
+        :param value: The value of this AdminLongDescription.  # noqa: E501
         :type: str
         """
 
-        self._values = values
+        self._value = value
 
     @property
     def uri(self):
@@ -107,25 +107,25 @@ class AdminLongDescription(object):
         self._uri = uri
 
     @property
-    def long_format(self):
-        """Gets the long_format of this AdminLongDescription.  # noqa: E501
+    def format(self):
+        """Gets the format of this AdminLongDescription.  # noqa: E501
 
 
-        :return: The long_format of this AdminLongDescription.  # noqa: E501
+        :return: The format of this AdminLongDescription.  # noqa: E501
         :rtype: LongDescriptionDescriptionFormat
         """
-        return self._long_format
+        return self._format
 
-    @long_format.setter
-    def long_format(self, long_format):
-        """Sets the long_format of this AdminLongDescription.
+    @format.setter
+    def format(self, format):
+        """Sets the format of this AdminLongDescription.
 
 
-        :param long_format: The long_format of this AdminLongDescription.  # noqa: E501
+        :param format: The format of this AdminLongDescription.  # noqa: E501
         :type: LongDescriptionDescriptionFormat
         """
 
-        self._long_format = long_format
+        self._format = format
 
     @property
     def icon_link(self):

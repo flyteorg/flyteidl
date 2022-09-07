@@ -3118,10 +3118,10 @@ definitions:
     example:
       short_description: "short_description"
       long_description:
-        values: "values"
+        format: {}
         icon_link: "icon_link"
+        value: "value"
         uri: "uri"
-        long_format: {}
       source_code:
         link: "link"
       tags:
@@ -4745,10 +4745,10 @@ definitions:
         description_entity:
           short_description: "short_description"
           long_description:
-            values: "values"
+            format: {}
             icon_link: "icon_link"
+            value: "value"
             uri: "uri"
-            long_format: {}
           source_code:
             link: "link"
           tags:
@@ -5558,10 +5558,10 @@ definitions:
           description_entity:
             short_description: "short_description"
             long_description:
-              values: "values"
+              format: {}
               icon_link: "icon_link"
+              value: "value"
               uri: "uri"
-              long_format: {}
             source_code:
               link: "link"
             tags:
@@ -6086,10 +6086,10 @@ definitions:
           description_entity:
             short_description: "short_description"
             long_description:
-              values: "values"
+              format: {}
               icon_link: "icon_link"
+              value: "value"
               uri: "uri"
-              long_format: {}
             source_code:
               link: "link"
             tags:
@@ -6500,10 +6500,10 @@ definitions:
       description_entity:
         short_description: "short_description"
         long_description:
-          values: "values"
+          format: {}
           icon_link: "icon_link"
+          value: "value"
           uri: "uri"
-          long_format: {}
         source_code:
           link: "link"
         tags:
@@ -7031,15 +7031,14 @@ definitions:
   adminLongDescription:
     type: "object"
     properties:
-      values:
+      value:
         type: "string"
-        title: "long description - no more than 4KB"
       uri:
         type: "string"
         title: "if the description sizes exceed some threshold we can offload the\
           \ entire\ndescription proto altogether to an external data store, like S3\
           \ rather than store inline in the db"
-      long_format:
+      format:
         title: "Format of the long description"
         $ref: "#/definitions/LongDescriptionDescriptionFormat"
       icon_link:
@@ -7048,10 +7047,10 @@ definitions:
     description: "Full user description with formatting preserved. This can be rendered\n\
       by clients, such as the console or command line tools with in-tact\nformatting."
     example:
-      values: "values"
+      format: {}
       icon_link: "icon_link"
+      value: "value"
       uri: "uri"
-      long_format: {}
   adminMatchableAttributesConfiguration:
     type: "object"
     properties:

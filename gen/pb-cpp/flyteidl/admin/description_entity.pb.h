@@ -312,6 +312,12 @@ class LongDescription final :
   }
   static const LongDescription& default_instance();
 
+  enum ContentCase {
+    kValue = 1,
+    kUri = 2,
+    CONTENT_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const LongDescription* internal_default_instance() {
     return reinterpret_cast<const LongDescription*>(
@@ -405,34 +411,6 @@ class LongDescription final :
 
   // accessors -------------------------------------------------------
 
-  // string values = 1;
-  void clear_values();
-  static const int kValuesFieldNumber = 1;
-  const ::std::string& values() const;
-  void set_values(const ::std::string& value);
-  #if LANG_CXX11
-  void set_values(::std::string&& value);
-  #endif
-  void set_values(const char* value);
-  void set_values(const char* value, size_t size);
-  ::std::string* mutable_values();
-  ::std::string* release_values();
-  void set_allocated_values(::std::string* values);
-
-  // string uri = 2;
-  void clear_uri();
-  static const int kUriFieldNumber = 2;
-  const ::std::string& uri() const;
-  void set_uri(const ::std::string& value);
-  #if LANG_CXX11
-  void set_uri(::std::string&& value);
-  #endif
-  void set_uri(const char* value);
-  void set_uri(const char* value, size_t size);
-  ::std::string* mutable_uri();
-  ::std::string* release_uri();
-  void set_allocated_uri(::std::string* uri);
-
   // string icon_link = 4;
   void clear_icon_link();
   static const int kIconLinkFieldNumber = 4;
@@ -447,22 +425,68 @@ class LongDescription final :
   ::std::string* release_icon_link();
   void set_allocated_icon_link(::std::string* icon_link);
 
-  // .flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;
-  void clear_long_format();
-  static const int kLongFormatFieldNumber = 3;
-  ::flyteidl::admin::LongDescription_DescriptionFormat long_format() const;
-  void set_long_format(::flyteidl::admin::LongDescription_DescriptionFormat value);
+  // .flyteidl.admin.LongDescription.DescriptionFormat format = 3;
+  void clear_format();
+  static const int kFormatFieldNumber = 3;
+  ::flyteidl::admin::LongDescription_DescriptionFormat format() const;
+  void set_format(::flyteidl::admin::LongDescription_DescriptionFormat value);
 
+  // string value = 1;
+  private:
+  bool has_value() const;
+  public:
+  void clear_value();
+  static const int kValueFieldNumber = 1;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // string uri = 2;
+  private:
+  bool has_uri() const;
+  public:
+  void clear_uri();
+  static const int kUriFieldNumber = 2;
+  const ::std::string& uri() const;
+  void set_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_uri(::std::string&& value);
+  #endif
+  void set_uri(const char* value);
+  void set_uri(const char* value, size_t size);
+  ::std::string* mutable_uri();
+  ::std::string* release_uri();
+  void set_allocated_uri(::std::string* uri);
+
+  void clear_content();
+  ContentCase content_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LongDescription)
  private:
   class HasBitSetters;
+  void set_has_value();
+  void set_has_uri();
+
+  inline bool has_content() const;
+  inline void clear_has_content();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr values_;
-  ::google::protobuf::internal::ArenaStringPtr uri_;
   ::google::protobuf::internal::ArenaStringPtr icon_link_;
-  int long_format_;
+  int format_;
+  union ContentUnion {
+    ContentUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr value_;
+    ::google::protobuf::internal::ArenaStringPtr uri_;
+  } content_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1099,124 +1123,202 @@ inline void DescriptionEntity::set_allocated_source_code(::flyteidl::admin::Sour
 
 // LongDescription
 
-// string values = 1;
-inline void LongDescription::clear_values() {
-  values_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string value = 1;
+inline bool LongDescription::has_value() const {
+  return content_case() == kValue;
 }
-inline const ::std::string& LongDescription::values() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.LongDescription.values)
-  return values_.GetNoArena();
+inline void LongDescription::set_has_value() {
+  _oneof_case_[0] = kValue;
 }
-inline void LongDescription::set_values(const ::std::string& value) {
-  
-  values_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.values)
+inline void LongDescription::clear_value() {
+  if (has_value()) {
+    content_.value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_content();
+  }
+}
+inline const ::std::string& LongDescription::value() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.LongDescription.value)
+  if (has_value()) {
+    return content_.value_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void LongDescription::set_value(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.value)
+  if (!has_value()) {
+    clear_content();
+    set_has_value();
+    content_.value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.value)
 }
 #if LANG_CXX11
-inline void LongDescription::set_values(::std::string&& value) {
-  
-  values_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.LongDescription.values)
+inline void LongDescription::set_value(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.value)
+  if (!has_value()) {
+    clear_content();
+    set_has_value();
+    content_.value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.LongDescription.value)
 }
 #endif
-inline void LongDescription::set_values(const char* value) {
+inline void LongDescription::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  values_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.LongDescription.values)
-}
-inline void LongDescription::set_values(const char* value, size_t size) {
-  
-  values_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.LongDescription.values)
-}
-inline ::std::string* LongDescription::mutable_values() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LongDescription.values)
-  return values_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* LongDescription::release_values() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.LongDescription.values)
-  
-  return values_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void LongDescription::set_allocated_values(::std::string* values) {
-  if (values != nullptr) {
-    
-  } else {
-    
+  if (!has_value()) {
+    clear_content();
+    set_has_value();
+    content_.value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  values_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), values);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LongDescription.values)
+  content_.value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.LongDescription.value)
+}
+inline void LongDescription::set_value(const char* value, size_t size) {
+  if (!has_value()) {
+    clear_content();
+    set_has_value();
+    content_.value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.LongDescription.value)
+}
+inline ::std::string* LongDescription::mutable_value() {
+  if (!has_value()) {
+    clear_content();
+    set_has_value();
+    content_.value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LongDescription.value)
+  return content_.value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* LongDescription::release_value() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.LongDescription.value)
+  if (has_value()) {
+    clear_has_content();
+    return content_.value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void LongDescription::set_allocated_value(::std::string* value) {
+  if (has_content()) {
+    clear_content();
+  }
+  if (value != nullptr) {
+    set_has_value();
+    content_.value_.UnsafeSetDefault(value);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LongDescription.value)
 }
 
 // string uri = 2;
+inline bool LongDescription::has_uri() const {
+  return content_case() == kUri;
+}
+inline void LongDescription::set_has_uri() {
+  _oneof_case_[0] = kUri;
+}
 inline void LongDescription::clear_uri() {
-  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_uri()) {
+    content_.uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_content();
+  }
 }
 inline const ::std::string& LongDescription::uri() const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.LongDescription.uri)
-  return uri_.GetNoArena();
+  if (has_uri()) {
+    return content_.uri_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
 inline void LongDescription::set_uri(const ::std::string& value) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.uri)
+  if (!has_uri()) {
+    clear_content();
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.uri)
 }
 #if LANG_CXX11
 inline void LongDescription::set_uri(::std::string&& value) {
-  
-  uri_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.uri)
+  if (!has_uri()) {
+    clear_content();
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.LongDescription.uri)
 }
 #endif
 inline void LongDescription::set_uri(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  if (!has_uri()) {
+    clear_content();
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.admin.LongDescription.uri)
 }
 inline void LongDescription::set_uri(const char* value, size_t size) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+  if (!has_uri()) {
+    clear_content();
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  content_.uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.LongDescription.uri)
 }
 inline ::std::string* LongDescription::mutable_uri() {
-  
+  if (!has_uri()) {
+    clear_content();
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.LongDescription.uri)
-  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return content_.uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* LongDescription::release_uri() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.LongDescription.uri)
-  
-  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_uri()) {
+    clear_has_content();
+    return content_.uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
 }
 inline void LongDescription::set_allocated_uri(::std::string* uri) {
-  if (uri != nullptr) {
-    
-  } else {
-    
+  if (has_content()) {
+    clear_content();
   }
-  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
+  if (uri != nullptr) {
+    set_has_uri();
+    content_.uri_.UnsafeSetDefault(uri);
+  }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LongDescription.uri)
 }
 
-// .flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;
-inline void LongDescription::clear_long_format() {
-  long_format_ = 0;
+// .flyteidl.admin.LongDescription.DescriptionFormat format = 3;
+inline void LongDescription::clear_format() {
+  format_ = 0;
 }
-inline ::flyteidl::admin::LongDescription_DescriptionFormat LongDescription::long_format() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.LongDescription.long_format)
-  return static_cast< ::flyteidl::admin::LongDescription_DescriptionFormat >(long_format_);
+inline ::flyteidl::admin::LongDescription_DescriptionFormat LongDescription::format() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.LongDescription.format)
+  return static_cast< ::flyteidl::admin::LongDescription_DescriptionFormat >(format_);
 }
-inline void LongDescription::set_long_format(::flyteidl::admin::LongDescription_DescriptionFormat value) {
+inline void LongDescription::set_format(::flyteidl::admin::LongDescription_DescriptionFormat value) {
   
-  long_format_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.long_format)
+  format_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LongDescription.format)
 }
 
 // string icon_link = 4;
@@ -1272,6 +1374,15 @@ inline void LongDescription::set_allocated_icon_link(::std::string* icon_link) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LongDescription.icon_link)
 }
 
+inline bool LongDescription::has_content() const {
+  return content_case() != CONTENT_NOT_SET;
+}
+inline void LongDescription::clear_has_content() {
+  _oneof_case_[0] = CONTENT_NOT_SET;
+}
+inline LongDescription::ContentCase LongDescription::content_case() const {
+  return LongDescription::ContentCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // SourceCode

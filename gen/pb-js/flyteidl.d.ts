@@ -8689,14 +8689,14 @@ export namespace flyteidl {
         /** Properties of a LongDescription. */
         interface ILongDescription {
 
-            /** LongDescription values */
-            values?: (string|null);
+            /** LongDescription value */
+            value?: (string|null);
 
             /** LongDescription uri */
             uri?: (string|null);
 
-            /** LongDescription longFormat */
-            longFormat?: (flyteidl.admin.LongDescription.DescriptionFormat|null);
+            /** LongDescription format */
+            format?: (flyteidl.admin.LongDescription.DescriptionFormat|null);
 
             /** LongDescription iconLink */
             iconLink?: (string|null);
@@ -8711,17 +8711,20 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.ILongDescription);
 
-            /** LongDescription values. */
-            public values: string;
+            /** LongDescription value. */
+            public value: string;
 
             /** LongDescription uri. */
             public uri: string;
 
-            /** LongDescription longFormat. */
-            public longFormat: flyteidl.admin.LongDescription.DescriptionFormat;
+            /** LongDescription format. */
+            public format: flyteidl.admin.LongDescription.DescriptionFormat;
 
             /** LongDescription iconLink. */
             public iconLink: string;
+
+            /** LongDescription content. */
+            public content?: ("value"|"uri");
 
             /**
              * Creates a new LongDescription instance using the specified properties.

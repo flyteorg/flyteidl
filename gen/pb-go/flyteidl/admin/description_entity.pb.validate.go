@@ -143,13 +143,19 @@ func (m *LongDescription) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Values
-
-	// no validation rules for Uri
-
-	// no validation rules for LongFormat
+	// no validation rules for Format
 
 	// no validation rules for IconLink
+
+	switch m.Content.(type) {
+
+	case *LongDescription_Value:
+		// no validation rules for Value
+
+	case *LongDescription_Uri:
+		// no validation rules for Uri
+
+	}
 
 	return nil
 }

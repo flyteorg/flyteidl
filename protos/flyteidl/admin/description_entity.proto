@@ -28,10 +28,12 @@ message DescriptionEntity {
 // formatting.
 message LongDescription {
   // long description - no more than 4KB
-  string values = 1;
-  // if the description sizes exceed some threshold we can offload the entire
-  // description proto altogether to an external data store, like S3 rather than store inline in the db
-  string uri = 2;
+  oneof content {
+    string value = 1;
+    // if the description sizes exceed some threshold we can offload the entire
+    // description proto altogether to an external data store, like S3 rather than store inline in the db
+    string uri = 2;
+  }
 
   enum DescriptionFormat {
     UNKNOWN = 0;
@@ -41,7 +43,7 @@ message LongDescription {
     RST = 3;
   }
   // Format of the long description
-  DescriptionFormat long_format = 3;
+  DescriptionFormat format = 3;
   // Optional link to an icon for the entity
   string icon_link = 4;
 }
@@ -54,7 +56,7 @@ message SourceCode {
 // Represents a request structure to create a revision of a task.
 // See :ref:`ref_flyteidl.admin.Task` for more details
 message DescriptionEntityCreateRequest {
-  // id represents the unique identifier of the task.
+  // id represents the unique identifier of the entity.
   // +required
   core.Identifier id           = 1;
 

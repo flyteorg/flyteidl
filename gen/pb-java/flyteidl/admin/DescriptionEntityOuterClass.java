@@ -1670,22 +1670,14 @@ public final class DescriptionEntityOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * long description - no more than 4KB
-     * </pre>
-     *
-     * <code>string values = 1;</code>
+     * <code>string value = 1;</code>
      */
-    java.lang.String getValues();
+    java.lang.String getValue();
     /**
-     * <pre>
-     * long description - no more than 4KB
-     * </pre>
-     *
-     * <code>string values = 1;</code>
+     * <code>string value = 1;</code>
      */
     com.google.protobuf.ByteString
-        getValuesBytes();
+        getValueBytes();
 
     /**
      * <pre>
@@ -1712,17 +1704,17 @@ public final class DescriptionEntityOuterClass {
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+     * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
      */
-    int getLongFormatValue();
+    int getFormatValue();
     /**
      * <pre>
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+     * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
      */
-    flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getLongFormat();
+    flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getFormat();
 
     /**
      * <pre>
@@ -1741,6 +1733,8 @@ public final class DescriptionEntityOuterClass {
      */
     com.google.protobuf.ByteString
         getIconLinkBytes();
+
+    public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.ContentCase getContentCase();
   }
   /**
    * <pre>
@@ -1761,9 +1755,7 @@ public final class DescriptionEntityOuterClass {
       super(builder);
     }
     private LongDescription() {
-      values_ = "";
-      uri_ = "";
-      longFormat_ = 0;
+      format_ = 0;
       iconLink_ = "";
     }
 
@@ -1793,20 +1785,20 @@ public final class DescriptionEntityOuterClass {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              values_ = s;
+              contentCase_ = 1;
+              content_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              uri_ = s;
+              contentCase_ = 2;
+              content_ = s;
               break;
             }
             case 24: {
               int rawValue = input.readEnum();
 
-              longFormat_ = rawValue;
+              format_ = rawValue;
               break;
             }
             case 34: {
@@ -1971,42 +1963,81 @@ public final class DescriptionEntityOuterClass {
       // @@protoc_insertion_point(enum_scope:flyteidl.admin.LongDescription.DescriptionFormat)
     }
 
-    public static final int VALUES_FIELD_NUMBER = 1;
-    private volatile java.lang.Object values_;
+    private int contentCase_ = 0;
+    private java.lang.Object content_;
+    public enum ContentCase
+        implements com.google.protobuf.Internal.EnumLite {
+      VALUE(1),
+      URI(2),
+      CONTENT_NOT_SET(0);
+      private final int value;
+      private ContentCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ContentCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ContentCase forNumber(int value) {
+        switch (value) {
+          case 1: return VALUE;
+          case 2: return URI;
+          case 0: return CONTENT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ContentCase
+    getContentCase() {
+      return ContentCase.forNumber(
+          contentCase_);
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 1;
     /**
-     * <pre>
-     * long description - no more than 4KB
-     * </pre>
-     *
-     * <code>string values = 1;</code>
+     * <code>string value = 1;</code>
      */
-    public java.lang.String getValues() {
-      java.lang.Object ref = values_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = "";
+      if (contentCase_ == 1) {
+        ref = content_;
+      }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        values_ = s;
+        if (contentCase_ == 1) {
+          content_ = s;
+        }
         return s;
       }
     }
     /**
-     * <pre>
-     * long description - no more than 4KB
-     * </pre>
-     *
-     * <code>string values = 1;</code>
+     * <code>string value = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getValuesBytes() {
-      java.lang.Object ref = values_;
+        getValueBytes() {
+      java.lang.Object ref = "";
+      if (contentCase_ == 1) {
+        ref = content_;
+      }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        values_ = b;
+        if (contentCase_ == 1) {
+          content_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2014,7 +2045,6 @@ public final class DescriptionEntityOuterClass {
     }
 
     public static final int URI_FIELD_NUMBER = 2;
-    private volatile java.lang.Object uri_;
     /**
      * <pre>
      * if the description sizes exceed some threshold we can offload the entire
@@ -2024,14 +2054,19 @@ public final class DescriptionEntityOuterClass {
      * <code>string uri = 2;</code>
      */
     public java.lang.String getUri() {
-      java.lang.Object ref = uri_;
+      java.lang.Object ref = "";
+      if (contentCase_ == 2) {
+        ref = content_;
+      }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        uri_ = s;
+        if (contentCase_ == 2) {
+          content_ = s;
+        }
         return s;
       }
     }
@@ -2045,40 +2080,45 @@ public final class DescriptionEntityOuterClass {
      */
     public com.google.protobuf.ByteString
         getUriBytes() {
-      java.lang.Object ref = uri_;
+      java.lang.Object ref = "";
+      if (contentCase_ == 2) {
+        ref = content_;
+      }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        uri_ = b;
+        if (contentCase_ == 2) {
+          content_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int LONG_FORMAT_FIELD_NUMBER = 3;
-    private int longFormat_;
+    public static final int FORMAT_FIELD_NUMBER = 3;
+    private int format_;
     /**
      * <pre>
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+     * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
      */
-    public int getLongFormatValue() {
-      return longFormat_;
+    public int getFormatValue() {
+      return format_;
     }
     /**
      * <pre>
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+     * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
      */
-    public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getLongFormat() {
+    public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getFormat() {
       @SuppressWarnings("deprecation")
-      flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.valueOf(longFormat_);
+      flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.valueOf(format_);
       return result == null ? flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNRECOGNIZED : result;
     }
 
@@ -2138,14 +2178,14 @@ public final class DescriptionEntityOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getValuesBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, values_);
+      if (contentCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
-      if (!getUriBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
+      if (contentCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
       }
-      if (longFormat_ != flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNKNOWN.getNumber()) {
-        output.writeEnum(3, longFormat_);
+      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNKNOWN.getNumber()) {
+        output.writeEnum(3, format_);
       }
       if (!getIconLinkBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, iconLink_);
@@ -2159,15 +2199,15 @@ public final class DescriptionEntityOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getValuesBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, values_);
+      if (contentCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
       }
-      if (!getUriBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
+      if (contentCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
       }
-      if (longFormat_ != flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNKNOWN.getNumber()) {
+      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, longFormat_);
+          .computeEnumSize(3, format_);
       }
       if (!getIconLinkBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, iconLink_);
@@ -2187,13 +2227,22 @@ public final class DescriptionEntityOuterClass {
       }
       flyteidl.admin.DescriptionEntityOuterClass.LongDescription other = (flyteidl.admin.DescriptionEntityOuterClass.LongDescription) obj;
 
-      if (!getValues()
-          .equals(other.getValues())) return false;
-      if (!getUri()
-          .equals(other.getUri())) return false;
-      if (longFormat_ != other.longFormat_) return false;
+      if (format_ != other.format_) return false;
       if (!getIconLink()
           .equals(other.getIconLink())) return false;
+      if (!getContentCase().equals(other.getContentCase())) return false;
+      switch (contentCase_) {
+        case 1:
+          if (!getValue()
+              .equals(other.getValue())) return false;
+          break;
+        case 2:
+          if (!getUri()
+              .equals(other.getUri())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2205,14 +2254,22 @@ public final class DescriptionEntityOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUES_FIELD_NUMBER;
-      hash = (53 * hash) + getValues().hashCode();
-      hash = (37 * hash) + URI_FIELD_NUMBER;
-      hash = (53 * hash) + getUri().hashCode();
-      hash = (37 * hash) + LONG_FORMAT_FIELD_NUMBER;
-      hash = (53 * hash) + longFormat_;
+      hash = (37 * hash) + FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + format_;
       hash = (37 * hash) + ICON_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getIconLink().hashCode();
+      switch (contentCase_) {
+        case 1:
+          hash = (37 * hash) + VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getValue().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + URI_FIELD_NUMBER;
+          hash = (53 * hash) + getUri().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2352,14 +2409,12 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        values_ = "";
-
-        uri_ = "";
-
-        longFormat_ = 0;
+        format_ = 0;
 
         iconLink_ = "";
 
+        contentCase_ = 0;
+        content_ = null;
         return this;
       }
 
@@ -2386,10 +2441,15 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public flyteidl.admin.DescriptionEntityOuterClass.LongDescription buildPartial() {
         flyteidl.admin.DescriptionEntityOuterClass.LongDescription result = new flyteidl.admin.DescriptionEntityOuterClass.LongDescription(this);
-        result.values_ = values_;
-        result.uri_ = uri_;
-        result.longFormat_ = longFormat_;
+        if (contentCase_ == 1) {
+          result.content_ = content_;
+        }
+        if (contentCase_ == 2) {
+          result.content_ = content_;
+        }
+        result.format_ = format_;
         result.iconLink_ = iconLink_;
+        result.contentCase_ = contentCase_;
         onBuilt();
         return result;
       }
@@ -2438,20 +2498,29 @@ public final class DescriptionEntityOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.LongDescription other) {
         if (other == flyteidl.admin.DescriptionEntityOuterClass.LongDescription.getDefaultInstance()) return this;
-        if (!other.getValues().isEmpty()) {
-          values_ = other.values_;
-          onChanged();
-        }
-        if (!other.getUri().isEmpty()) {
-          uri_ = other.uri_;
-          onChanged();
-        }
-        if (other.longFormat_ != 0) {
-          setLongFormatValue(other.getLongFormatValue());
+        if (other.format_ != 0) {
+          setFormatValue(other.getFormatValue());
         }
         if (!other.getIconLink().isEmpty()) {
           iconLink_ = other.iconLink_;
           onChanged();
+        }
+        switch (other.getContentCase()) {
+          case VALUE: {
+            contentCase_ = 1;
+            content_ = other.content_;
+            onChanged();
+            break;
+          }
+          case URI: {
+            contentCase_ = 2;
+            content_ = other.content_;
+            onChanged();
+            break;
+          }
+          case CONTENT_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2481,97 +2550,102 @@ public final class DescriptionEntityOuterClass {
         }
         return this;
       }
+      private int contentCase_ = 0;
+      private java.lang.Object content_;
+      public ContentCase
+          getContentCase() {
+        return ContentCase.forNumber(
+            contentCase_);
+      }
 
-      private java.lang.Object values_ = "";
+      public Builder clearContent() {
+        contentCase_ = 0;
+        content_ = null;
+        onChanged();
+        return this;
+      }
+
+
       /**
-       * <pre>
-       * long description - no more than 4KB
-       * </pre>
-       *
-       * <code>string values = 1;</code>
+       * <code>string value = 1;</code>
        */
-      public java.lang.String getValues() {
-        java.lang.Object ref = values_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 1) {
+          ref = content_;
+        }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          values_ = s;
+          if (contentCase_ == 1) {
+            content_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * long description - no more than 4KB
-       * </pre>
-       *
-       * <code>string values = 1;</code>
+       * <code>string value = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getValuesBytes() {
-        java.lang.Object ref = values_;
+          getValueBytes() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 1) {
+          ref = content_;
+        }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          values_ = b;
+          if (contentCase_ == 1) {
+            content_ = b;
+          }
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * long description - no more than 4KB
-       * </pre>
-       *
-       * <code>string values = 1;</code>
+       * <code>string value = 1;</code>
        */
-      public Builder setValues(
+      public Builder setValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        values_ = value;
+  contentCase_ = 1;
+        content_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * long description - no more than 4KB
-       * </pre>
-       *
-       * <code>string values = 1;</code>
+       * <code>string value = 1;</code>
        */
-      public Builder clearValues() {
-        
-        values_ = getDefaultInstance().getValues();
-        onChanged();
+      public Builder clearValue() {
+        if (contentCase_ == 1) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
         return this;
       }
       /**
-       * <pre>
-       * long description - no more than 4KB
-       * </pre>
-       *
-       * <code>string values = 1;</code>
+       * <code>string value = 1;</code>
        */
-      public Builder setValuesBytes(
+      public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        values_ = value;
+        contentCase_ = 1;
+        content_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object uri_ = "";
       /**
        * <pre>
        * if the description sizes exceed some threshold we can offload the entire
@@ -2581,12 +2655,17 @@ public final class DescriptionEntityOuterClass {
        * <code>string uri = 2;</code>
        */
       public java.lang.String getUri() {
-        java.lang.Object ref = uri_;
+        java.lang.Object ref = "";
+        if (contentCase_ == 2) {
+          ref = content_;
+        }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          uri_ = s;
+          if (contentCase_ == 2) {
+            content_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2602,12 +2681,17 @@ public final class DescriptionEntityOuterClass {
        */
       public com.google.protobuf.ByteString
           getUriBytes() {
-        java.lang.Object ref = uri_;
+        java.lang.Object ref = "";
+        if (contentCase_ == 2) {
+          ref = content_;
+        }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          uri_ = b;
+          if (contentCase_ == 2) {
+            content_ = b;
+          }
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2626,8 +2710,8 @@ public final class DescriptionEntityOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        uri_ = value;
+  contentCase_ = 2;
+        content_ = value;
         onChanged();
         return this;
       }
@@ -2640,9 +2724,11 @@ public final class DescriptionEntityOuterClass {
        * <code>string uri = 2;</code>
        */
       public Builder clearUri() {
-        
-        uri_ = getDefaultInstance().getUri();
-        onChanged();
+        if (contentCase_ == 2) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
         return this;
       }
       /**
@@ -2659,32 +2745,32 @@ public final class DescriptionEntityOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        uri_ = value;
+        contentCase_ = 2;
+        content_ = value;
         onChanged();
         return this;
       }
 
-      private int longFormat_ = 0;
+      private int format_ = 0;
       /**
        * <pre>
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+       * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
        */
-      public int getLongFormatValue() {
-        return longFormat_;
+      public int getFormatValue() {
+        return format_;
       }
       /**
        * <pre>
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+       * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
        */
-      public Builder setLongFormatValue(int value) {
-        longFormat_ = value;
+      public Builder setFormatValue(int value) {
+        format_ = value;
         onChanged();
         return this;
       }
@@ -2693,11 +2779,11 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+       * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
        */
-      public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getLongFormat() {
+      public flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat getFormat() {
         @SuppressWarnings("deprecation")
-        flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.valueOf(longFormat_);
+        flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.valueOf(format_);
         return result == null ? flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat.UNRECOGNIZED : result;
       }
       /**
@@ -2705,14 +2791,14 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+       * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
        */
-      public Builder setLongFormat(flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat value) {
+      public Builder setFormat(flyteidl.admin.DescriptionEntityOuterClass.LongDescription.DescriptionFormat value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        longFormat_ = value.getNumber();
+        format_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -2721,11 +2807,11 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.LongDescription.DescriptionFormat long_format = 3;</code>
+       * <code>.flyteidl.admin.LongDescription.DescriptionFormat format = 3;</code>
        */
-      public Builder clearLongFormat() {
+      public Builder clearFormat() {
         
-        longFormat_ = 0;
+        format_ = 0;
         onChanged();
         return this;
       }
@@ -3434,7 +3520,7 @@ public final class DescriptionEntityOuterClass {
 
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -3443,7 +3529,7 @@ public final class DescriptionEntityOuterClass {
     boolean hasId();
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -3452,7 +3538,7 @@ public final class DescriptionEntityOuterClass {
     flyteidl.core.IdentifierOuterClass.Identifier getId();
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -3594,7 +3680,7 @@ public final class DescriptionEntityOuterClass {
     private flyteidl.core.IdentifierOuterClass.Identifier id_;
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -3605,7 +3691,7 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -3616,7 +3702,7 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * id represents the unique identifier of the task.
+     * id represents the unique identifier of the entity.
      * +required
      * </pre>
      *
@@ -4017,7 +4103,7 @@ public final class DescriptionEntityOuterClass {
           flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4028,7 +4114,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4043,7 +4129,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4064,7 +4150,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4083,7 +4169,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4106,7 +4192,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4125,7 +4211,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4138,7 +4224,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4154,7 +4240,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the task.
+       * id represents the unique identifier of the entity.
        * +required
        * </pre>
        *
@@ -4849,19 +4935,19 @@ public final class DescriptionEntityOuterClass {
       "eidl.admin.LongDescription\022\014\n\004tags\030\003 \003(\t" +
       "\022&\n\006labels\030\004 \001(\0132\026.flyteidl.admin.Labels" +
       "\022/\n\013source_code\030\005 \001(\0132\032.flyteidl.admin.S" +
-      "ourceCode\"\314\001\n\017LongDescription\022\016\n\006values\030" +
-      "\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022F\n\013long_format\030\003 \001(\0162" +
-      "1.flyteidl.admin.LongDescription.Descrip" +
-      "tionFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descrip" +
-      "tionFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n" +
-      "\004HTML\020\002\022\007\n\003RST\020\003\"\032\n\nSourceCode\022\014\n\004link\030\005" +
-      " \001(\t\"\206\001\n\036DescriptionEntityCreateRequest\022" +
-      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022=" +
-      "\n\022description_entity\030\002 \001(\0132!.flyteidl.ad" +
-      "min.DescriptionEntity\"!\n\037DescriptionEnti" +
-      "tyCreateResponseB7Z5github.com/flyteorg/" +
-      "flyteidl/gen/pb-go/flyteidl/adminb\006proto" +
-      "3"
+      "ourceCode\"\325\001\n\017LongDescription\022\017\n\005value\030\001" +
+      " \001(\tH\000\022\r\n\003uri\030\002 \001(\tH\000\022A\n\006format\030\003 \001(\01621." +
+      "flyteidl.admin.LongDescription.Descripti" +
+      "onFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descripti" +
+      "onFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004H" +
+      "TML\020\002\022\007\n\003RST\020\003B\t\n\007content\"\032\n\nSourceCode\022" +
+      "\014\n\004link\030\005 \001(\t\"\206\001\n\036DescriptionEntityCreat" +
+      "eRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ide" +
+      "ntifier\022=\n\022description_entity\030\002 \001(\0132!.fl" +
+      "yteidl.admin.DescriptionEntity\"!\n\037Descri" +
+      "ptionEntityCreateResponseB7Z5github.com/" +
+      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
+      "inb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4888,7 +4974,7 @@ public final class DescriptionEntityOuterClass {
     internal_static_flyteidl_admin_LongDescription_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LongDescription_descriptor,
-        new java.lang.String[] { "Values", "Uri", "LongFormat", "IconLink", });
+        new java.lang.String[] { "Value", "Uri", "Format", "IconLink", "Content", });
     internal_static_flyteidl_admin_SourceCode_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_SourceCode_fieldAccessorTable = new

@@ -4039,15 +4039,14 @@
     "adminLongDescription": {
       "type": "object",
       "properties": {
-        "values": {
-          "type": "string",
-          "title": "long description - no more than 4KB"
+        "value": {
+          "type": "string"
         },
         "uri": {
           "type": "string",
           "title": "if the description sizes exceed some threshold we can offload the entire\ndescription proto altogether to an external data store, like S3 rather than store inline in the db"
         },
-        "long_format": {
+        "format": {
           "$ref": "#/definitions/LongDescriptionDescriptionFormat",
           "title": "Format of the long description"
         },

@@ -20943,9 +20943,9 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a LongDescription.
              * @memberof flyteidl.admin
              * @interface ILongDescription
-             * @property {string|null} [values] LongDescription values
+             * @property {string|null} [value] LongDescription value
              * @property {string|null} [uri] LongDescription uri
-             * @property {flyteidl.admin.LongDescription.DescriptionFormat|null} [longFormat] LongDescription longFormat
+             * @property {flyteidl.admin.LongDescription.DescriptionFormat|null} [format] LongDescription format
              * @property {string|null} [iconLink] LongDescription iconLink
              */
 
@@ -20965,12 +20965,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * LongDescription values.
-             * @member {string} values
+             * LongDescription value.
+             * @member {string} value
              * @memberof flyteidl.admin.LongDescription
              * @instance
              */
-            LongDescription.prototype.values = "";
+            LongDescription.prototype.value = "";
 
             /**
              * LongDescription uri.
@@ -20981,12 +20981,12 @@ export const flyteidl = $root.flyteidl = (() => {
             LongDescription.prototype.uri = "";
 
             /**
-             * LongDescription longFormat.
-             * @member {flyteidl.admin.LongDescription.DescriptionFormat} longFormat
+             * LongDescription format.
+             * @member {flyteidl.admin.LongDescription.DescriptionFormat} format
              * @memberof flyteidl.admin.LongDescription
              * @instance
              */
-            LongDescription.prototype.longFormat = 0;
+            LongDescription.prototype.format = 0;
 
             /**
              * LongDescription iconLink.
@@ -20995,6 +20995,20 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             LongDescription.prototype.iconLink = "";
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * LongDescription content.
+             * @member {"value"|"uri"|undefined} content
+             * @memberof flyteidl.admin.LongDescription
+             * @instance
+             */
+            Object.defineProperty(LongDescription.prototype, "content", {
+                get: $util.oneOfGetter($oneOfFields = ["value", "uri"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
 
             /**
              * Creates a new LongDescription instance using the specified properties.
@@ -21020,12 +21034,12 @@ export const flyteidl = $root.flyteidl = (() => {
             LongDescription.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.values != null && message.hasOwnProperty("values"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.values);
+                if (message.value != null && message.hasOwnProperty("value"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
                 if (message.uri != null && message.hasOwnProperty("uri"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.uri);
-                if (message.longFormat != null && message.hasOwnProperty("longFormat"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.longFormat);
+                if (message.format != null && message.hasOwnProperty("format"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.format);
                 if (message.iconLink != null && message.hasOwnProperty("iconLink"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.iconLink);
                 return writer;
@@ -21050,13 +21064,13 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.values = reader.string();
+                        message.value = reader.string();
                         break;
                     case 2:
                         message.uri = reader.string();
                         break;
                     case 3:
-                        message.longFormat = reader.int32();
+                        message.format = reader.int32();
                         break;
                     case 4:
                         message.iconLink = reader.string();
@@ -21080,16 +21094,23 @@ export const flyteidl = $root.flyteidl = (() => {
             LongDescription.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.values != null && message.hasOwnProperty("values"))
-                    if (!$util.isString(message.values))
-                        return "values: string expected";
-                if (message.uri != null && message.hasOwnProperty("uri"))
+                let properties = {};
+                if (message.value != null && message.hasOwnProperty("value")) {
+                    properties.content = 1;
+                    if (!$util.isString(message.value))
+                        return "value: string expected";
+                }
+                if (message.uri != null && message.hasOwnProperty("uri")) {
+                    if (properties.content === 1)
+                        return "content: multiple values";
+                    properties.content = 1;
                     if (!$util.isString(message.uri))
                         return "uri: string expected";
-                if (message.longFormat != null && message.hasOwnProperty("longFormat"))
-                    switch (message.longFormat) {
+                }
+                if (message.format != null && message.hasOwnProperty("format"))
+                    switch (message.format) {
                     default:
-                        return "longFormat: enum value expected";
+                        return "format: enum value expected";
                     case 0:
                     case 1:
                     case 2:

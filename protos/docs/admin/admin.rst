@@ -791,7 +791,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task. +required"
+   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the entity. +required"
    "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description. +required"
 
 
@@ -831,9 +831,9 @@ formatting.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "values", ":ref:`ref_string`", "", "long description - no more than 4KB"
+   "value", ":ref:`ref_string`", "", ""
    "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
-   "long_format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "Format of the long description"
+   "format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "Format of the long description"
    "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
 
 
