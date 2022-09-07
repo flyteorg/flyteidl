@@ -97,13 +97,13 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourcePr
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
 
-	tSource, err := tokenSourceProvider.GetTokenSource(ctx)
+	tokenSource, err := tokenSourceProvider.GetTokenSource(ctx)
 	if err != nil {
 		return nil, err
 	}
 
-	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
-	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+	wrappedTokenSource := NewCustomHeaderTokenSource(tokenSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
+	return grpc.WithPerRPCCredentials(wrappedTokenSource), nil
 }
 
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
@@ -111,7 +111,7 @@ func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client serv
 	// Create an unauthenticated connection to fetch AuthMetadata
 	authMetadataConnection, err := NewAdminConnection(ctx, cfg)
 	if err != nil {
-		return nil, fmt.Errorf("failed to initialize admin connection. Error: %w", err)
+		return nil, fmt.Errorf("failed to initialized admin connection. Error: %w", err)
 	}
 
 	return service.NewAuthMetadataServiceClient(authMetadataConnection), nil
@@ -158,7 +158,7 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOption) service.AdminServiceClient {
 	set, err := initializeClients(ctx, cfg, nil, opts...)
 	if err != nil {
-		logger.Panicf(ctx, "Failed to initialize client. Error: %v", err)
+		logger.Panicf(ctx, "Failed to initialized client. Error: %v", err)
 		return nil
 	}
 
@@ -168,8 +168,10 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 // initializeClients creates an AdminClient, AuthServiceClient and IdentityServiceClient with a shared Admin connection
 // for the process. Note that if called with different cfg/dialoptions, it will not refresh the connection.
 func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
-	tokenSource := NewDelayedCustomHeaderTokenSource()
-	opts = append(opts, grpc.WithUnaryInterceptor(newAuthInterceptor(cfg, tokenCache, tokenSource)), grpc.WithPerRPCCredentials(tokenSource))
+	credentialsFuture := NewPerRPCCredentialsFuture()
+	opts = append(opts,
+		grpc.WithUnaryInterceptor(newAuthInterceptor(cfg, tokenCache, credentialsFuture)),
+		grpc.WithPerRPCCredentials(credentialsFuture))
 
 	if cfg.DefaultServiceConfig != "" {
 		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.DefaultServiceConfig))
@@ -177,7 +179,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenC
 
 	adminConnection, err := NewAdminConnection(ctx, cfg, opts...)
 	if err != nil {
-		logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
+		logger.Panicf(ctx, "failed to initialized Admin connection. Err: %s", err.Error())
 	}
 
 	var cs Clientset
