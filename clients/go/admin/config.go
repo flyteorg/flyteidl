@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/flyteorg/flyteidl/clients/go/admin/deviceflow"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
-
 	"github.com/flyteorg/flytestdlib/config"
 	"github.com/flyteorg/flytestdlib/logger"
 )
@@ -27,12 +27,14 @@ var DefaultClientSecretLocation = filepath.Join(string(filepath.Separator), "etc
 type AuthType uint8
 
 const (
-	// Chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
+	// AuthTypeClientSecret Chooses Client Secret OAuth2 protocol (ref: https://tools.ietf.org/html/rfc6749#section-4.4)
 	AuthTypeClientSecret AuthType = iota
-	// Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
+	// AuthTypePkce Chooses Proof Key Code Exchange OAuth2 extension protocol (ref: https://tools.ietf.org/html/rfc7636)
 	AuthTypePkce
-	// Chooses an external authentication process
+	// AuthTypeExternalCommand Chooses an external authentication process
 	AuthTypeExternalCommand
+	// AuthTypeDeviceFlow Uses device flow to authenticate in a constrained environment with no access to browser
+	AuthTypeDeviceFlow
 )
 
 type Config struct {
@@ -49,6 +51,7 @@ type Config struct {
 	DeprecatedUseAuth    bool     `json:"useAuth" pflag:",Deprecated: Auth will be enabled/disabled based on admin's dynamically discovered information."`
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
+	ClientSecretEnvVar   string   `json:"clientSecretEnvVar" pflag:",Environment variable containing the client secret"`
 	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
 
 	// There are two ways to get the token URL. If the authorization server url is provided, the client will try to use RFC 8414 to
@@ -65,6 +68,8 @@ type Config struct {
 	DeprecatedAuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
 
 	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
+
+	DeviceFlowConfig deviceflow.Config `json:"deviceFlowConfig" pflag:",Config for Device authentication flow."`
 
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
 
@@ -85,7 +90,12 @@ var (
 		ClientSecretLocation: DefaultClientSecretLocation,
 		PkceConfig: pkce.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
-			BrowserSessionTimeout:   config.Duration{Duration: 15 * time.Second},
+			BrowserSessionTimeout:   config.Duration{Duration: 2 * time.Minute},
+		},
+		DeviceFlowConfig: deviceflow.Config{
+			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
+			Timeout:                 config.Duration{Duration: 10 * time.Minute},
+			PollInterval:            config.Duration{Duration: 5 * time.Second},
 		},
 		TokenRefreshWindow: config.Duration{Duration: 0},
 	}
