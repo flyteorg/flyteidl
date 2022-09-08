@@ -167,6 +167,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.FromString,
         )
+    self.GetProject = channel.unary_unary(
+        '/flyteidl.service.AdminService/GetProject',
+        request_serializer=flyteidl_dot_admin_dot_project__pb2.GetProjectRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.FromString,
+        )
     self.UpdateProject = channel.unary_unary(
         '/flyteidl.service.AdminService/UpdateProject',
         request_serializer=flyteidl_dot_admin_dot_project__pb2.Project.SerializeToString,
@@ -469,6 +474,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetProject(self, request, context):
+    """Retrieve a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def UpdateProject(self, request, context):
     """Updates an existing :ref:`ref_flyteidl.admin.Project` 
     flyteidl.admin.Project should be passed but the domains property should be empty;
@@ -745,6 +757,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
       'RegisterProject': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterProject,
           request_deserializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.SerializeToString,
+      ),
+      'GetProject': grpc.unary_unary_rpc_method_handler(
+          servicer.GetProject,
+          request_deserializer=flyteidl_dot_admin_dot_project__pb2.GetProjectRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_project__pb2.ProjectRegisterResponse.SerializeToString,
       ),
       'UpdateProject': grpc.unary_unary_rpc_method_handler(

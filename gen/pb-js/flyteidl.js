@@ -31719,6 +31719,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
              * @property {flyteidl.admin.Project.ProjectState|null} [state] Project state
+             * @property {flyteidl.admin.ISettings|null} [settings] Project settings
              */
 
             /**
@@ -31786,6 +31787,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Project.prototype.state = 0;
 
             /**
+             * Project settings.
+             * @member {flyteidl.admin.ISettings|null|undefined} settings
+             * @memberof flyteidl.admin.Project
+             * @instance
+             */
+            Project.prototype.settings = null;
+
+            /**
              * Creates a new Project instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.Project
@@ -31822,6 +31831,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.state != null && message.hasOwnProperty("state"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.state);
+                if (message.settings != null && message.hasOwnProperty("settings"))
+                    $root.flyteidl.admin.Settings.encode(message.settings, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 return writer;
             };
 
@@ -31862,6 +31873,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.state = reader.int32();
+                        break;
+                    case 7:
+                        message.settings = $root.flyteidl.admin.Settings.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -31914,6 +31928,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         break;
                     }
+                if (message.settings != null && message.hasOwnProperty("settings")) {
+                    let error = $root.flyteidl.admin.Settings.verify(message.settings);
+                    if (error)
+                        return "settings." + error;
+                }
                 return null;
             };
 
@@ -32532,6 +32551,340 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return ProjectUpdateResponse;
+        })();
+
+        admin.GetProjectRequest = (function() {
+
+            /**
+             * Properties of a GetProjectRequest.
+             * @memberof flyteidl.admin
+             * @interface IGetProjectRequest
+             * @property {string|null} [id] GetProjectRequest id
+             */
+
+            /**
+             * Constructs a new GetProjectRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a GetProjectRequest.
+             * @implements IGetProjectRequest
+             * @constructor
+             * @param {flyteidl.admin.IGetProjectRequest=} [properties] Properties to set
+             */
+            function GetProjectRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * GetProjectRequest id.
+             * @member {string} id
+             * @memberof flyteidl.admin.GetProjectRequest
+             * @instance
+             */
+            GetProjectRequest.prototype.id = "";
+
+            /**
+             * Creates a new GetProjectRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.GetProjectRequest
+             * @static
+             * @param {flyteidl.admin.IGetProjectRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.GetProjectRequest} GetProjectRequest instance
+             */
+            GetProjectRequest.create = function create(properties) {
+                return new GetProjectRequest(properties);
+            };
+
+            /**
+             * Encodes the specified GetProjectRequest message. Does not implicitly {@link flyteidl.admin.GetProjectRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.GetProjectRequest
+             * @static
+             * @param {flyteidl.admin.IGetProjectRequest} message GetProjectRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GetProjectRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                return writer;
+            };
+
+            /**
+             * Decodes a GetProjectRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.GetProjectRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.GetProjectRequest} GetProjectRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GetProjectRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetProjectRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a GetProjectRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.GetProjectRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GetProjectRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                return null;
+            };
+
+            return GetProjectRequest;
+        })();
+
+        admin.GetProjectResponse = (function() {
+
+            /**
+             * Properties of a GetProjectResponse.
+             * @memberof flyteidl.admin
+             * @interface IGetProjectResponse
+             * @property {flyteidl.admin.IProject|null} [project] GetProjectResponse project
+             */
+
+            /**
+             * Constructs a new GetProjectResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a GetProjectResponse.
+             * @implements IGetProjectResponse
+             * @constructor
+             * @param {flyteidl.admin.IGetProjectResponse=} [properties] Properties to set
+             */
+            function GetProjectResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * GetProjectResponse project.
+             * @member {flyteidl.admin.IProject|null|undefined} project
+             * @memberof flyteidl.admin.GetProjectResponse
+             * @instance
+             */
+            GetProjectResponse.prototype.project = null;
+
+            /**
+             * Creates a new GetProjectResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.GetProjectResponse
+             * @static
+             * @param {flyteidl.admin.IGetProjectResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.GetProjectResponse} GetProjectResponse instance
+             */
+            GetProjectResponse.create = function create(properties) {
+                return new GetProjectResponse(properties);
+            };
+
+            /**
+             * Encodes the specified GetProjectResponse message. Does not implicitly {@link flyteidl.admin.GetProjectResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.GetProjectResponse
+             * @static
+             * @param {flyteidl.admin.IGetProjectResponse} message GetProjectResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GetProjectResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    $root.flyteidl.admin.Project.encode(message.project, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a GetProjectResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.GetProjectResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.GetProjectResponse} GetProjectResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GetProjectResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.GetProjectResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = $root.flyteidl.admin.Project.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a GetProjectResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.GetProjectResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GetProjectResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project")) {
+                    let error = $root.flyteidl.admin.Project.verify(message.project);
+                    if (error)
+                        return "project." + error;
+                }
+                return null;
+            };
+
+            return GetProjectResponse;
+        })();
+
+        admin.Settings = (function() {
+
+            /**
+             * Properties of a Settings.
+             * @memberof flyteidl.admin
+             * @interface ISettings
+             * @property {flyteidl.admin.IWorkflowExecutionConfig|null} [workflowExecutionSettings] Settings workflowExecutionSettings
+             */
+
+            /**
+             * Constructs a new Settings.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a Settings.
+             * @implements ISettings
+             * @constructor
+             * @param {flyteidl.admin.ISettings=} [properties] Properties to set
+             */
+            function Settings(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Settings workflowExecutionSettings.
+             * @member {flyteidl.admin.IWorkflowExecutionConfig|null|undefined} workflowExecutionSettings
+             * @memberof flyteidl.admin.Settings
+             * @instance
+             */
+            Settings.prototype.workflowExecutionSettings = null;
+
+            /**
+             * Creates a new Settings instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {flyteidl.admin.ISettings=} [properties] Properties to set
+             * @returns {flyteidl.admin.Settings} Settings instance
+             */
+            Settings.create = function create(properties) {
+                return new Settings(properties);
+            };
+
+            /**
+             * Encodes the specified Settings message. Does not implicitly {@link flyteidl.admin.Settings.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {flyteidl.admin.ISettings} message Settings message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Settings.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings"))
+                    $root.flyteidl.admin.WorkflowExecutionConfig.encode(message.workflowExecutionSettings, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a Settings message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.Settings} Settings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Settings.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Settings();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.workflowExecutionSettings = $root.flyteidl.admin.WorkflowExecutionConfig.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a Settings message.
+             * @function verify
+             * @memberof flyteidl.admin.Settings
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Settings.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.workflowExecutionSettings != null && message.hasOwnProperty("workflowExecutionSettings")) {
+                    let error = $root.flyteidl.admin.WorkflowExecutionConfig.verify(message.workflowExecutionSettings);
+                    if (error)
+                        return "workflowExecutionSettings." + error;
+                }
+                return null;
+            };
+
+            return Settings;
         })();
 
         admin.ProjectDomainAttributes = (function() {
@@ -38399,6 +38752,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.service.AdminService
              * @instance
              * @param {flyteidl.admin.IProjectRegisterRequest} request ProjectRegisterRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ProjectRegisterResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getProject}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetProjectCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ProjectRegisterResponse} [response] ProjectRegisterResponse
+             */
+
+            /**
+             * Calls GetProject.
+             * @function getProject
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IGetProjectRequest} request GetProjectRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetProjectCallback} callback Node-style callback called with the error, if any, and ProjectRegisterResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getProject = function getProject(request, callback) {
+                return this.rpcCall(getProject, $root.flyteidl.admin.GetProjectRequest, $root.flyteidl.admin.ProjectRegisterResponse, request, callback);
+            }, "name", { value: "GetProject" });
+
+            /**
+             * Calls GetProject.
+             * @function getProject
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IGetProjectRequest} request GetProjectRequest message or plain object
              * @returns {Promise<flyteidl.admin.ProjectRegisterResponse>} Promise
              * @variation 2
              */

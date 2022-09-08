@@ -18,6 +18,7 @@ import six
 
 from flyteadmin.models.admin_domain import AdminDomain  # noqa: F401,E501
 from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
+from flyteadmin.models.admin_settings import AdminSettings  # noqa: F401,E501
 from flyteadmin.models.project_project_state import ProjectProjectState  # noqa: F401,E501
 
 
@@ -40,7 +41,8 @@ class AdminProject(object):
         'domains': 'list[AdminDomain]',
         'description': 'str',
         'labels': 'AdminLabels',
-        'state': 'ProjectProjectState'
+        'state': 'ProjectProjectState',
+        'settings': 'AdminSettings'
     }
 
     attribute_map = {
@@ -49,10 +51,11 @@ class AdminProject(object):
         'domains': 'domains',
         'description': 'description',
         'labels': 'labels',
-        'state': 'state'
+        'state': 'state',
+        'settings': 'settings'
     }
 
-    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, state=None):  # noqa: E501
+    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, state=None, settings=None):  # noqa: E501
         """AdminProject - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -61,6 +64,7 @@ class AdminProject(object):
         self._description = None
         self._labels = None
         self._state = None
+        self._settings = None
         self.discriminator = None
 
         if id is not None:
@@ -75,6 +79,8 @@ class AdminProject(object):
             self.labels = labels
         if state is not None:
             self.state = state
+        if settings is not None:
+            self.settings = settings
 
     @property
     def id(self):
@@ -207,6 +213,27 @@ class AdminProject(object):
         """
 
         self._state = state
+
+    @property
+    def settings(self):
+        """Gets the settings of this AdminProject.  # noqa: E501
+
+
+        :return: The settings of this AdminProject.  # noqa: E501
+        :rtype: AdminSettings
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """Sets the settings of this AdminProject.
+
+
+        :param settings: The settings of this AdminProject.  # noqa: E501
+        :type: AdminSettings
+        """
+
+        self._settings = settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

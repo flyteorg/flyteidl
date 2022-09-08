@@ -1824,6 +1824,30 @@
       }
     },
     "/api/v1/projects/{id}": {
+      "get": {
+        "summary": "Retrieve a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.",
+        "description": "Retrieve a project.",
+        "operationId": "GetProject",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminProjectRegisterResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      },
       "put": {
         "summary": "Updates an existing :ref:`ref_flyteidl.admin.Project` \nflyteidl.admin.Project should be passed but the domains property should be empty;\nit will be ignored in the handler as domains cannot be updated via this API.",
         "description": "Update a project.",
@@ -4323,9 +4347,12 @@
         },
         "state": {
           "$ref": "#/definitions/ProjectProjectState"
+        },
+        "settings": {
+          "$ref": "#/definitions/adminSettings"
         }
       },
-      "description": "Top-level namespace used to classify different entities like workflows and executions."
+      "description": "Toi'lp-level namespace used to classify different entities like workflows and executions."
     },
     "adminProjectDomainAttributes": {
       "type": "object",
@@ -4484,6 +4511,15 @@
       ],
       "default": "EQUALS",
       "description": "Defines how a label with a corresponding key and value is selected or excluded."
+    },
+    "adminSettings": {
+      "type": "object",
+      "properties": {
+        "workflow_execution_settings": {
+          "$ref": "#/definitions/adminWorkflowExecutionConfig"
+        }
+      },
+      "title": "Defines settings collection for flyte resources"
     },
     "adminSlackNotification": {
       "type": "object",

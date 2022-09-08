@@ -1613,6 +1613,23 @@ paths:
           schema:
             $ref: "#/definitions/adminProjectRegisterResponse"
   /api/v1/projects/{id}:
+    get:
+      tags:
+      - "AdminService"
+      summary: "Retrieve a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment."
+      description: "Retrieve a project."
+      operationId: "GetProject"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+        x-exportParamName: "Id"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminProjectRegisterResponse"
     put:
       tags:
       - "AdminService"
@@ -13728,9 +13745,66 @@ definitions:
         $ref: "#/definitions/adminLabels"
       state:
         $ref: "#/definitions/ProjectProjectState"
-    description: "Top-level namespace used to classify different entities like workflows\
-      \ and executions."
+      settings:
+        $ref: "#/definitions/adminSettings"
+    description: "Toi'lp-level namespace used to classify different entities like\
+      \ workflows and executions."
     example:
+      settings:
+        workflow_execution_settings:
+          raw_output_data_config:
+            output_location_prefix: "output_location_prefix"
+          max_parallelism: 0
+          annotations:
+            values:
+              key: "values"
+          interruptible: true
+          security_context:
+            run_as:
+              iam_role: "iam_role"
+              oauth2_client:
+                client_secret:
+                  mount_requirement: {}
+                  group_version: "group_version"
+                  key: "key"
+                  group: "group"
+                client_id: "client_id"
+              k8s_service_account: "k8s_service_account"
+            tokens:
+            - idp_discovery_endpoint: "idp_discovery_endpoint"
+              name: "name"
+              client:
+                client_secret:
+                  mount_requirement: {}
+                  group_version: "group_version"
+                  key: "key"
+                  group: "group"
+                client_id: "client_id"
+              type: {}
+              token_endpoint: "token_endpoint"
+            - idp_discovery_endpoint: "idp_discovery_endpoint"
+              name: "name"
+              client:
+                client_secret:
+                  mount_requirement: {}
+                  group_version: "group_version"
+                  key: "key"
+                  group: "group"
+                client_id: "client_id"
+              type: {}
+              token_endpoint: "token_endpoint"
+            secrets:
+            - mount_requirement: {}
+              group_version: "group_version"
+              key: "key"
+              group: "group"
+            - mount_requirement: {}
+              group_version: "group_version"
+              key: "key"
+              group: "group"
+          labels:
+            values:
+              key: "values"
       name: "name"
       domains:
       - name: "name"
@@ -14064,7 +14138,62 @@ definitions:
       \ for more details"
     example:
       projects:
-      - name: "name"
+      - settings:
+          workflow_execution_settings:
+            raw_output_data_config:
+              output_location_prefix: "output_location_prefix"
+            max_parallelism: 0
+            annotations:
+              values:
+                key: "values"
+            interruptible: true
+            security_context:
+              run_as:
+                iam_role: "iam_role"
+                oauth2_client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                k8s_service_account: "k8s_service_account"
+              tokens:
+              - idp_discovery_endpoint: "idp_discovery_endpoint"
+                name: "name"
+                client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                type: {}
+                token_endpoint: "token_endpoint"
+              - idp_discovery_endpoint: "idp_discovery_endpoint"
+                name: "name"
+                client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                type: {}
+                token_endpoint: "token_endpoint"
+              secrets:
+              - mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+              - mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+            labels:
+              values:
+                key: "values"
+        name: "name"
         domains:
         - name: "name"
           id: "id"
@@ -14076,7 +14205,62 @@ definitions:
         labels:
           values:
             key: "values"
-      - name: "name"
+      - settings:
+          workflow_execution_settings:
+            raw_output_data_config:
+              output_location_prefix: "output_location_prefix"
+            max_parallelism: 0
+            annotations:
+              values:
+                key: "values"
+            interruptible: true
+            security_context:
+              run_as:
+                iam_role: "iam_role"
+                oauth2_client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                k8s_service_account: "k8s_service_account"
+              tokens:
+              - idp_discovery_endpoint: "idp_discovery_endpoint"
+                name: "name"
+                client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                type: {}
+                token_endpoint: "token_endpoint"
+              - idp_discovery_endpoint: "idp_discovery_endpoint"
+                name: "name"
+                client:
+                  client_secret:
+                    mount_requirement: {}
+                    group_version: "group_version"
+                    key: "key"
+                    group: "group"
+                  client_id: "client_id"
+                type: {}
+                token_endpoint: "token_endpoint"
+              secrets:
+              - mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+              - mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+            labels:
+              values:
+                key: "values"
+        name: "name"
         domains:
         - name: "name"
           id: "id"
@@ -14161,6 +14345,67 @@ definitions:
     - "NOT_IN"
     - "EXISTS"
     default: "EQUALS"
+  adminSettings:
+    type: "object"
+    properties:
+      workflow_execution_settings:
+        $ref: "#/definitions/adminWorkflowExecutionConfig"
+    title: "Defines settings collection for flyte resources"
+    example:
+      workflow_execution_settings:
+        raw_output_data_config:
+          output_location_prefix: "output_location_prefix"
+        max_parallelism: 0
+        annotations:
+          values:
+            key: "values"
+        interruptible: true
+        security_context:
+          run_as:
+            iam_role: "iam_role"
+            oauth2_client:
+              client_secret:
+                mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+              client_id: "client_id"
+            k8s_service_account: "k8s_service_account"
+          tokens:
+          - idp_discovery_endpoint: "idp_discovery_endpoint"
+            name: "name"
+            client:
+              client_secret:
+                mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+              client_id: "client_id"
+            type: {}
+            token_endpoint: "token_endpoint"
+          - idp_discovery_endpoint: "idp_discovery_endpoint"
+            name: "name"
+            client:
+              client_secret:
+                mount_requirement: {}
+                group_version: "group_version"
+                key: "key"
+                group: "group"
+              client_id: "client_id"
+            type: {}
+            token_endpoint: "token_endpoint"
+          secrets:
+          - mount_requirement: {}
+            group_version: "group_version"
+            key: "key"
+            group: "group"
+          - mount_requirement: {}
+            group_version: "group_version"
+            key: "key"
+            group: "group"
+        labels:
+          values:
+            key: "values"
   adminSlackNotification:
     type: "object"
     properties:

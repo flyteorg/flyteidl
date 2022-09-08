@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// Top-level namespace used to classify different entities like workflows and executions.
+// Toi'lp-level namespace used to classify different entities like workflows and executions.
 type AdminProject struct {
 	// Globally unique project name.
 	Id string `json:"id,omitempty"`
@@ -20,4 +20,5 @@ type AdminProject struct {
 	// Leverage Labels from flyteidel.admin.common.proto to tag projects with ownership information.
 	Labels *AdminLabels `json:"labels,omitempty"`
 	State *ProjectProjectState `json:"state,omitempty"`
+	Settings *AdminSettings `json:"settings,omitempty"`
 }

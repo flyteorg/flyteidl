@@ -13238,6 +13238,9 @@ export namespace flyteidl {
 
             /** Project state */
             state?: (flyteidl.admin.Project.ProjectState|null);
+
+            /** Project settings */
+            settings?: (flyteidl.admin.ISettings|null);
         }
 
         /** Represents a Project. */
@@ -13266,6 +13269,9 @@ export namespace flyteidl {
 
             /** Project state. */
             public state: flyteidl.admin.Project.ProjectState;
+
+            /** Project settings. */
+            public settings?: (flyteidl.admin.ISettings|null);
 
             /**
              * Creates a new Project instance using the specified properties.
@@ -13576,6 +13582,162 @@ export namespace flyteidl {
 
             /**
              * Verifies a ProjectUpdateResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetProjectRequest. */
+        interface IGetProjectRequest {
+
+            /** GetProjectRequest id */
+            id?: (string|null);
+        }
+
+        /** Represents a GetProjectRequest. */
+        class GetProjectRequest implements IGetProjectRequest {
+
+            /**
+             * Constructs a new GetProjectRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IGetProjectRequest);
+
+            /** GetProjectRequest id. */
+            public id: string;
+
+            /**
+             * Creates a new GetProjectRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetProjectRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IGetProjectRequest): flyteidl.admin.GetProjectRequest;
+
+            /**
+             * Encodes the specified GetProjectRequest message. Does not implicitly {@link flyteidl.admin.GetProjectRequest.verify|verify} messages.
+             * @param message GetProjectRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IGetProjectRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetProjectRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetProjectRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetProjectRequest;
+
+            /**
+             * Verifies a GetProjectRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetProjectResponse. */
+        interface IGetProjectResponse {
+
+            /** GetProjectResponse project */
+            project?: (flyteidl.admin.IProject|null);
+        }
+
+        /** Represents a GetProjectResponse. */
+        class GetProjectResponse implements IGetProjectResponse {
+
+            /**
+             * Constructs a new GetProjectResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IGetProjectResponse);
+
+            /** GetProjectResponse project. */
+            public project?: (flyteidl.admin.IProject|null);
+
+            /**
+             * Creates a new GetProjectResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetProjectResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IGetProjectResponse): flyteidl.admin.GetProjectResponse;
+
+            /**
+             * Encodes the specified GetProjectResponse message. Does not implicitly {@link flyteidl.admin.GetProjectResponse.verify|verify} messages.
+             * @param message GetProjectResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IGetProjectResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetProjectResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetProjectResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GetProjectResponse;
+
+            /**
+             * Verifies a GetProjectResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Settings. */
+        interface ISettings {
+
+            /** Settings workflowExecutionSettings */
+            workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
+        }
+
+        /** Represents a Settings. */
+        class Settings implements ISettings {
+
+            /**
+             * Constructs a new Settings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettings);
+
+            /** Settings workflowExecutionSettings. */
+            public workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
+
+            /**
+             * Creates a new Settings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Settings instance
+             */
+            public static create(properties?: flyteidl.admin.ISettings): flyteidl.admin.Settings;
+
+            /**
+             * Encodes the specified Settings message. Does not implicitly {@link flyteidl.admin.Settings.verify|verify} messages.
+             * @param message Settings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Settings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Settings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Settings;
+
+            /**
+             * Verifies a Settings message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -16132,6 +16294,20 @@ export namespace flyteidl {
             public registerProject(request: flyteidl.admin.IProjectRegisterRequest): Promise<flyteidl.admin.ProjectRegisterResponse>;
 
             /**
+             * Calls GetProject.
+             * @param request GetProjectRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ProjectRegisterResponse
+             */
+            public getProject(request: flyteidl.admin.IGetProjectRequest, callback: flyteidl.service.AdminService.GetProjectCallback): void;
+
+            /**
+             * Calls GetProject.
+             * @param request GetProjectRequest message or plain object
+             * @returns Promise
+             */
+            public getProject(request: flyteidl.admin.IGetProjectRequest): Promise<flyteidl.admin.ProjectRegisterResponse>;
+
+            /**
              * Calls UpdateProject.
              * @param request Project message or plain object
              * @param callback Node-style callback called with the error, if any, and ProjectUpdateResponse
@@ -16595,6 +16771,13 @@ export namespace flyteidl {
              * @param [response] ProjectRegisterResponse
              */
             type RegisterProjectCallback = (error: (Error|null), response?: flyteidl.admin.ProjectRegisterResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getProject}.
+             * @param error Error, if any
+             * @param [response] ProjectRegisterResponse
+             */
+            type GetProjectCallback = (error: (Error|null), response?: flyteidl.admin.ProjectRegisterResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#updateProject}.

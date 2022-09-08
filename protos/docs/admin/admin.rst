@@ -2592,12 +2592,54 @@ e.g. "production", "development", etc.
 
 
 
+.. _ref_flyteidl.admin.GetProjectRequest:
+
+GetProjectRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: GetProjectRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "id", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.GetProjectResponse:
+
+GetProjectResponse
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: GetProjectResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_flyteidl.admin.Project`", "", ""
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.Project:
 
 Project
 ------------------------------------------------------------------
 
-Top-level namespace used to classify different entities like workflows and executions.
+Toi'lp-level namespace used to classify different entities like workflows and executions.
 
 
 
@@ -2611,6 +2653,7 @@ Top-level namespace used to classify different entities like workflows and execu
    "description", ":ref:`ref_string`", "", ""
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Leverage Labels from flyteidel.admin.common.proto to tag projects with ownership information."
    "state", ":ref:`ref_flyteidl.admin.Project.ProjectState`", "", ""
+   "settings", ":ref:`ref_flyteidl.admin.Settings`", "", ""
 
 
 
@@ -3015,6 +3058,53 @@ Represents a frequency at which to run a schedule.
    "MINUTE", "0", ""
    "HOUR", "1", ""
    "DAY", "2", ""
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
+.. _ref_flyteidl/admin/settings.proto:
+
+flyteidl/admin/settings.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.Settings:
+
+Settings
+------------------------------------------------------------------
+
+Defines settings collection for flyte resources
+
+
+
+.. csv-table:: Settings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "workflow_execution_settings", ":ref:`ref_flyteidl.admin.WorkflowExecutionConfig`", "", ""
+
+
+
+
+
+
+..
+   end messages
 
 
 ..

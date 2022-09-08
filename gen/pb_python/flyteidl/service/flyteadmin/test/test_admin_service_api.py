@@ -141,6 +141,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_get_project(self):
+        """Test case for get_project
+
+        Retrieve a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.  # noqa: E501
+        """
+        pass
+
     def test_get_project_domain_attributes(self):
         """Test case for get_project_domain_attributes
 

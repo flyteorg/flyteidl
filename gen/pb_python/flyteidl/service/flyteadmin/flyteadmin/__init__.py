@@ -102,6 +102,7 @@ from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataCon
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_selector import AdminSelector
 from flyteadmin.models.admin_selector_operator import AdminSelectorOperator
+from flyteadmin.models.admin_settings import AdminSettings
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
 from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
