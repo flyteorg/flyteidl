@@ -44,12 +44,16 @@ func MaterializeCredentials(ctx context.Context, cfg *Config, tokenCache cache.T
 	return nil
 }
 
+func shouldAttemptToAuthenticate(errorCode codes.Code) bool {
+	return errorCode == codes.Unauthenticated
+}
+
 // newAuthInterceptor creates a new grpc.UnaryClientInterceptor that forwards the grpc call and inspects the error.
-// If an auth error is detected, it'll panic the process. This is useful for scenarios when auth is enabled after the client
-// has been up or if a client was inadvertently (due to transient network failures... etc.) built without auth credentials.
 // It will first invoke the grpc pipeline (to proceed with the request) with no modifications. It's expected for the grpc
 // pipeline to already have a grpc.WithPerRPCCredentials() DialOption. If the perRPCCredentials has already been initialized,
-// it'll take care of refreshing when it expires... etc.
+// it'll take care of refreshing when tokens expire... etc.
+// If the first invocation succeeds (either due to grpc.PerRPCCredentials setting the right tokens or the server not
+// requiring authentication), the interceptor will be no-op.
 // If the first invocation fails with an auth error, this interceptor will then attempt to establish a token source once
 // more. It'll fail hard if it couldn't do so (i.e. it will no longer attempt to send an unauthenticated request). Once
 // a token source has been created, it'll invoke the grpc pipeline again, this time the grpc.PerRPCCredentials should
@@ -60,7 +64,7 @@ func newAuthInterceptor(cfg *Config, tokenCache cache.TokenCache, credentialsFut
 		logger.Debugf(ctx, "Request failed due to [%v]. If it's an unauthenticated error, we will attempt to establish an authenticated context.", err)
 		if st, ok := status.FromError(err); ok {
 			// If the error we receive from executing the request expects
-			if st.Code() == codes.PermissionDenied || st.Code() == codes.Unauthenticated {
+			if shouldAttemptToAuthenticate(st.Code()) {
 				logger.Debugf(ctx, "Request failed due to [%v]. Attempting to establish an authenticated connection and trying again.", st.Code())
 				newErr := MaterializeCredentials(ctx, cfg, tokenCache, credentialsFuture)
 				if newErr != nil {
