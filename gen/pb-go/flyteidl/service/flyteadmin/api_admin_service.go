@@ -44,7 +44,7 @@ func (a *AdminServiceApiService) CreateDescriptionEntity(ctx context.Context, bo
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entity"
+	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1119,7 +1119,7 @@ func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProj
 
 /* 
 AdminServiceApiService Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
-Retrieve an existing entity description.
+Retrieve an existing description entity description.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
@@ -1145,7 +1145,7 @@ func (a *AdminServiceApiService) GetDescriptionEntity(ctx context.Context, idPro
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}"
+	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id.project"+"}", fmt.Sprintf("%v", idProject), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id.domain"+"}", fmt.Sprintf("%v", idDomain), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id.name"+"}", fmt.Sprintf("%v", idName), -1)

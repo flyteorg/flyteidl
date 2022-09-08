@@ -449,7 +449,7 @@
         ]
       }
     },
-    "/api/v1/description_entity": {
+    "/api/v1/description_entities": {
       "post": {
         "summary": "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
         "description": "Create and register a description entity definition.",
@@ -485,10 +485,10 @@
         ]
       }
     },
-    "/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "summary": "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
-        "description": "Retrieve an existing entity description.",
+        "description": "Retrieve an existing description entity description.",
         "operationId": "GetDescriptionEntity",
         "responses": {
           "200": {

@@ -117,7 +117,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/description_entity', 'POST',
+            '/api/v1/description_entities', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1181,7 +1181,7 @@ class AdminServiceApi(object):
     def get_description_entity(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
 
-        Retrieve an existing entity description.  # noqa: E501
+        Retrieve an existing description entity description.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_description_entity(id_project, id_domain, id_name, id_version, async_req=True)
@@ -1207,7 +1207,7 @@ class AdminServiceApi(object):
     def get_description_entity_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
 
-        Retrieve an existing entity description.  # noqa: E501
+        Retrieve an existing description entity description.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_description_entity_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
@@ -1290,7 +1290,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}', 'GET',
+            '/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}', 'GET',
             path_params,
             query_params,
             header_params,

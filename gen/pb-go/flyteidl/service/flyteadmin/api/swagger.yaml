@@ -401,7 +401,7 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminTaskExecutionGetDataResponse"
-  /api/v1/description_entity:
+  /api/v1/description_entities:
     post:
       tags:
       - "AdminService"
@@ -427,12 +427,12 @@ paths:
           description: "Returned for a request that references an identical entity\
             \ that has already been registered."
           schema: {}
-  /api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}:
+  /api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}:
     get:
       tags:
       - "AdminService"
       summary: "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
-      description: "Retrieve an existing entity description."
+      description: "Retrieve an existing description entity description."
       operationId: "GetDescriptionEntity"
       parameters:
       - name: "id.project"

@@ -575,7 +575,7 @@ service AdminService {
   // Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
   rpc CreateDescriptionEntity (flyteidl.admin.DescriptionEntityCreateRequest) returns (flyteidl.admin.DescriptionEntityCreateResponse) {
     option (google.api.http) = {
-      post: "/api/v1/description_entity"
+      post: "/api/v1/description_entities"
       body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
@@ -598,10 +598,10 @@ service AdminService {
   // Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
   rpc GetDescriptionEntity (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.DescriptionEntity) {
     option (google.api.http) = {
-      get: "/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}"
+      get: "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Retrieve an existing entity description."
+      description: "Retrieve an existing description entity description."
     };
   }
 }

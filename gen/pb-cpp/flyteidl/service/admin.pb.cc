@@ -52,7 +52,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "n/version.proto\032\033flyteidl/admin/common.p"
   "roto\032\'flyteidl/admin/description_entity."
   "proto\032,protoc-gen-swagger/options/annota"
-  "tions.proto2\207m\n\014AdminService\022\305\002\n\nCreateT"
+  "tions.proto2\230m\n\014AdminService\022\305\002\n\nCreateT"
   "ask\022!.flyteidl.admin.TaskCreateRequest\032\""
   ".flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344"
   "\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and re"
@@ -385,29 +385,30 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "rsionRequest\032\".flyteidl.admin.GetVersion"
   "Response\"j\202\323\344\223\002\021\022\017/api/v1/version\222AP\032NRe"
   "trieve the Version (including the Build "
-  " information) for FlyteAdmin service\022\207\003\n"
+  " information) for FlyteAdmin service\022\211\003\n"
   "\027CreateDescriptionEntity\022..flyteidl.admi"
   "n.DescriptionEntityCreateRequest\032/.flyte"
   "idl.admin.DescriptionEntityCreateRespons"
-  "e\"\212\002\202\323\344\223\002\037\"\032/api/v1/description_entity:\001"
-  "*\222A\341\001\0324Create and register a description"
-  " entity definition.JB\n\003400\022;\n9Returned f"
-  "or bad request that may have failed vali"
-  "dation.Je\n\003409\022^\n\\Returned for a request"
-  " that references an identical entity tha"
-  "t has already been registered.\022\334\001\n\024GetDe"
-  "scriptionEntity\022 .flyteidl.admin.ObjectG"
-  "etRequest\032!.flyteidl.admin.DescriptionEn"
-  "tity\"\177\202\323\344\223\002L\022J/api/v1/description_entity"
-  "/{id.project}/{id.domain}/{id.name}/{id."
-  "version}\222A*\032(Retrieve an existing entity"
-  " description.B9Z7github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/serviceb\006proto3"
+  "e\"\214\002\202\323\344\223\002!\"\034/api/v1/description_entities"
+  ":\001*\222A\341\001\0324Create and register a descripti"
+  "on entity definition.JB\n\003400\022;\n9Returned"
+  " for bad request that may have failed va"
+  "lidation.Je\n\003409\022^\n\\Returned for a reque"
+  "st that references an identical entity t"
+  "hat has already been registered.\022\353\001\n\024Get"
+  "DescriptionEntity\022 .flyteidl.admin.Objec"
+  "tGetRequest\032!.flyteidl.admin.Description"
+  "Entity\"\215\001\202\323\344\223\002N\022L/api/v1/description_ent"
+  "ities/{id.project}/{id.domain}/{id.name}"
+  "/{id.version}\222A6\0324Retrieve an existing d"
+  "escription entity description.B9Z7github"
+  ".com/flyteorg/flyteidl/gen/pb-go/flyteid"
+  "l/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fadmin_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fadmin_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto,
-  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 14640,
+  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 14657,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fadmin_2eproto() {

@@ -70,7 +70,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminServiceApi* | [**create_description_entity**](docs/AdminServiceApi.md#create_description_entity) | **POST** /api/v1/description_entity | Create a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
+*AdminServiceApi* | [**create_description_entity**](docs/AdminServiceApi.md#create_description_entity) | **POST** /api/v1/description_entities | Create a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 *AdminServiceApi* | [**create_execution**](docs/AdminServiceApi.md#create_execution) | **POST** /api/v1/executions | Triggers the creation of a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 *AdminServiceApi* | [**create_launch_plan**](docs/AdminServiceApi.md#create_launch_plan) | **POST** /api/v1/launch_plans | Create and upload a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition
 *AdminServiceApi* | [**create_node_event**](docs/AdminServiceApi.md#create_node_event) | **POST** /api/v1/events/nodes | Indicates a :ref:&#x60;ref_flyteidl.event.NodeExecutionEvent&#x60; has occurred.
@@ -81,7 +81,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**delete_project_domain_attributes**](docs/AdminServiceApi.md#delete_project_domain_attributes) | **DELETE** /api/v1/project_domain_attributes/{project}/{domain} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**delete_workflow_attributes**](docs/AdminServiceApi.md#delete_workflow_attributes) | **DELETE** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**get_active_launch_plan**](docs/AdminServiceApi.md#get_active_launch_plan) | **GET** /api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name} | Fetch the active version of a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
-*AdminServiceApi* | [**get_description_entity**](docs/AdminServiceApi.md#get_description_entity) | **GET** /api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
+*AdminServiceApi* | [**get_description_entity**](docs/AdminServiceApi.md#get_description_entity) | **GET** /api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
