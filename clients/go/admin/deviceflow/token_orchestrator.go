@@ -52,6 +52,8 @@ func (t TokenOrchestrator) StartDeviceAuthorization(ctx context.Context, dareq D
 	}
 	httpReq.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
+	logger.Infof(ctx, "Sending the following request to start device authorization %v with body %v", httpReq.URL, v.Encode())
+
 	httpResp, err := ctxhttp.Do(ctx, nil, httpReq)
 	if err != nil {
 		return nil, err
@@ -100,6 +102,8 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 			return nil, err
 		}
 		httpReq.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
+		logger.Infof(ctx, "Sending the following request to fetch the token %v with body %v", httpReq.URL, v.Encode())
 
 		httpResp, err := ctxhttp.Do(ctx, nil, httpReq)
 		if err != nil {

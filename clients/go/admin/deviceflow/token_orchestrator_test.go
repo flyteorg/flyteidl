@@ -92,7 +92,8 @@ func TestFetchFromAuthFlow(t *testing.T) {
 			},
 			TokenCache: tokenCache,
 		}, Config{
-			Timeout: config.Duration{Duration: 1 * time.Minute},
+			Timeout:  config.Duration{Duration: 1 * time.Minute},
+			Audience: "abcd",
 		})
 		assert.NoError(t, err)
 		authToken, err := orchestrator.FetchTokenFromAuthFlow(ctx)
