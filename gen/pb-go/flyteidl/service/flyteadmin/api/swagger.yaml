@@ -401,7 +401,33 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminTaskExecutionGetDataResponse"
-  /api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}:
+  /api/v1/description_entity:
+    post:
+      tags:
+      - "AdminService"
+      summary: "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
+      description: "Create and register a description entity definition."
+      operationId: "CreateDescriptionEntity"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/adminDescriptionEntityCreateRequest"
+        x-exportParamName: "Body"
+      responses:
+        200:
+          description: "A successful response."
+          schema:
+            $ref: "#/definitions/adminDescriptionEntityCreateResponse"
+        400:
+          description: "Returned for bad request that may have failed validation."
+          schema: {}
+        409:
+          description: "Returned for a request that references an identical entity\
+            \ that has already been registered."
+          schema: {}
+  /api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}:
     get:
       tags:
       - "AdminService"
@@ -3130,6 +3156,17 @@ definitions:
       labels:
         values:
           key: "values"
+  adminDescriptionEntityCreateRequest:
+    type: "object"
+    properties:
+      id:
+        title: "id represents the unique identifier of the entity.\n+required"
+        $ref: "#/definitions/coreIdentifier"
+      description_entity:
+        title: "Represents the specification for Description.\n+required"
+        $ref: "#/definitions/adminDescriptionEntity"
+    title: "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task`\
+      \ for more details"
   adminDescriptionEntityCreateResponse:
     type: "object"
     description: "Represents a response structure if task creation succeeds."

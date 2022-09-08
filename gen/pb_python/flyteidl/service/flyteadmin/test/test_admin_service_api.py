@@ -29,6 +29,13 @@ class TestAdminServiceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_create_description_entity(self):
+        """Test case for create_description_entity
+
+        Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
+        """
+        pass
+
     def test_create_execution(self):
         """Test case for create_execution
 

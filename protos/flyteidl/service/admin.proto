@@ -575,17 +575,30 @@ service AdminService {
   // Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
   rpc CreateDescriptionEntity (flyteidl.admin.DescriptionEntityCreateRequest) returns (flyteidl.admin.DescriptionEntityCreateResponse) {
     option (google.api.http) = {
-      get: "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}"
+      post: "/api/v1/description_entity"
+      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Retrieve an existing entity description."
+      description: "Create and register a description entity definition."
+      responses: {
+        key: "400"
+        value: {
+          description: "Returned for bad request that may have failed validation."
+        }
+      }
+      responses: {
+        key: "409"
+        value: {
+          description: "Returned for a request that references an identical entity that has already been registered."
+        }
+      }
     };
   }
 
   // Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
   rpc GetDescriptionEntity (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.DescriptionEntity) {
     option (google.api.http) = {
-      get: "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}"
+      get: "/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve an existing entity description."

@@ -449,7 +449,43 @@
         ]
       }
     },
-    "/api/v1/entity_description/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/description_entity": {
+      "post": {
+        "summary": "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
+        "description": "Create and register a description entity definition.",
+        "operationId": "CreateDescriptionEntity",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminDescriptionEntityCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Returned for bad request that may have failed validation.",
+            "schema": {}
+          },
+          "409": {
+            "description": "Returned for a request that references an identical entity that has already been registered.",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/adminDescriptionEntityCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/description_entity/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "summary": "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
         "description": "Retrieve an existing entity description.",
@@ -3381,6 +3417,20 @@
         }
       },
       "description": "DescriptionEntity contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
+    },
+    "adminDescriptionEntityCreateRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "title": "id represents the unique identifier of the entity.\n+required"
+        },
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "title": "Represents the specification for Description.\n+required"
+        }
+      },
+      "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
     },
     "adminDescriptionEntityCreateResponse": {
       "type": "object",
