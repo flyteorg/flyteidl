@@ -7,7 +7,6 @@ import (
 	"errors"
 	"fmt"
 
-	grpcMiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"google.golang.org/grpc"
@@ -70,16 +69,11 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 
 	timeoutDialOption := grpcRetry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
 	maxRetriesOption := grpcRetry.WithMax(uint(cfg.MaxRetries))
-
 	retryInterceptor := grpcRetry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
-	finalUnaryInterceptor := grpcMiddleware.ChainUnaryClient(
-		grpcPrometheus.UnaryClientInterceptor,
-		retryInterceptor,
-	)
 
 	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
 	// ever has those endpoints
-	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
+	opts = append(opts, grpc.WithChainUnaryInterceptor(grpcPrometheus.UnaryClientInterceptor, retryInterceptor))
 
 	return opts
 }
@@ -170,7 +164,7 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
 	credentialsFuture := NewPerRPCCredentialsFuture()
 	opts = append(opts,
-		grpc.WithUnaryInterceptor(newAuthInterceptor(cfg, tokenCache, credentialsFuture)),
+		grpc.WithChainUnaryInterceptor(newAuthInterceptor(cfg, tokenCache, credentialsFuture)),
 		grpc.WithPerRPCCredentials(credentialsFuture))
 
 	if cfg.DefaultServiceConfig != "" {
