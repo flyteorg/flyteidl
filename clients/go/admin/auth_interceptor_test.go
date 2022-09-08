@@ -143,6 +143,7 @@ func Test_newAuthInterceptor(t *testing.T) {
 		interceptor := newAuthInterceptor(&Config{
 			Endpoint:              config.URL{URL: *u},
 			UseInsecureConnection: true,
+			AuthType:              AuthTypeClientSecret,
 		}, &mocks.TokenCache{}, f)
 		unauthenticated := func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, opts ...grpc.CallOption) error {
 			return status.New(codes.Unauthenticated, "").Err()
@@ -164,6 +165,7 @@ func Test_newAuthInterceptor(t *testing.T) {
 		m.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service2.PublicClientAuthConfigResponse{
 			Scopes: []string{"all"},
 		}, nil)
+
 		s := newAuthMetadataServer(t, m)
 		ctx := context.Background()
 		assert.NoError(t, s.Start(ctx))
@@ -176,6 +178,7 @@ func Test_newAuthInterceptor(t *testing.T) {
 		interceptor := newAuthInterceptor(&Config{
 			Endpoint:              config.URL{URL: *u},
 			UseInsecureConnection: true,
+			AuthType:              AuthTypeClientSecret,
 		}, &mocks.TokenCache{}, f)
 		unauthenticated := func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, opts ...grpc.CallOption) error {
 			return status.New(codes.Aborted, "").Err()
