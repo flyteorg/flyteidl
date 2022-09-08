@@ -19,8 +19,6 @@ import (
 func MaterializeCredentials(ctx context.Context, cfg *Config, tokenCache cache.TokenCache, perRPCCredentials *PerRPCCredentialsFuture) error {
 	authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
 	if err != nil {
-		// EngHabu: I don't know why did we use to panic here. Generally speaking, libraries should error on the side of
-		// 	returning errors instead.
 		return fmt.Errorf("failed to initialized Auth Metadata Client. Error: %w", err)
 	}
 

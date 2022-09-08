@@ -125,7 +125,7 @@ func Test_newAuthInterceptor(t *testing.T) {
 		assert.Error(t, interceptor(context.Background(), "POST", nil, nil, nil, otherError))
 	})
 
-	t.Run("Unauthenticated first time, succeed", func(t *testing.T) {
+	t.Run("Unauthenticated first time, succeed the second time", func(t *testing.T) {
 		assert.NoError(t, logger.SetConfig(&logger.Config{
 			Level: logger.DebugLevel,
 		}))
@@ -162,6 +162,36 @@ func Test_newAuthInterceptor(t *testing.T) {
 		assert.Error(t, err)
 		assert.Truef(t, f.IsInitialized(), "PerRPCCredentialFuture should be initialized")
 		assert.False(t, f.Get().RequireTransportSecurity(), "Insecure should be true leading to RequireTLS false")
+	})
+
+	t.Run("Already authenticated", func(t *testing.T) {
+		assert.NoError(t, logger.SetConfig(&logger.Config{
+			Level: logger.DebugLevel,
+		}))
+
+		port := rand.IntnRange(10000, 60000)
+		m := &mocks2.AuthMetadataServiceServer{}
+		s := newAuthMetadataServer(t, port, m)
+		ctx := context.Background()
+		assert.NoError(t, s.Start(ctx))
+		defer s.Close()
+
+		u, err := url.Parse(fmt.Sprintf("dns:///localhost:%d", port))
+		assert.NoError(t, err)
+
+		f := NewPerRPCCredentialsFuture()
+		interceptor := newAuthInterceptor(&Config{
+			Endpoint:              config.URL{URL: *u},
+			UseInsecureConnection: true,
+			AuthType:              AuthTypeClientSecret,
+		}, &mocks.TokenCache{}, f)
+		authenticated := func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, opts ...grpc.CallOption) error {
+			return nil
+		}
+
+		err = interceptor(ctx, "POST", nil, nil, nil, authenticated)
+		assert.NoError(t, err)
+		assert.Falsef(t, f.IsInitialized(), "PerRPCCredentialFuture should not need to be initialized")
 	})
 
 	t.Run("Other error, doesn't authenticate", func(t *testing.T) {
