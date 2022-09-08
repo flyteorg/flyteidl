@@ -12,6 +12,8 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/flyteorg/flytestdlib/logger"
+
 	"k8s.io/apimachinery/pkg/util/rand"
 
 	mocks2 "github.com/flyteorg/flyteidl/clients/go/admin/mocks"
@@ -75,7 +77,7 @@ func (s *authMetadataServer) Start(_ context.Context) error {
 	defer s.lck.Unlock()
 
 	/***** Set up the server serving channelz service. *****/
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", s.port))
+	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", s.port))
 	if err != nil {
 		return fmt.Errorf("failed to listen on port [%v]: %w", s.port, err)
 	}
@@ -124,6 +126,10 @@ func Test_newAuthInterceptor(t *testing.T) {
 	})
 
 	t.Run("Unauthenticated first time, succeed", func(t *testing.T) {
+		assert.NoError(t, logger.SetConfig(&logger.Config{
+			Level: logger.DebugLevel,
+		}))
+
 		port := rand.IntnRange(10000, 60000)
 		m := &mocks2.AuthMetadataServiceServer{}
 		m.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service2.OAuth2MetadataResponse{
@@ -159,6 +165,10 @@ func Test_newAuthInterceptor(t *testing.T) {
 	})
 
 	t.Run("Other error, doesn't authenticate", func(t *testing.T) {
+		assert.NoError(t, logger.SetConfig(&logger.Config{
+			Level: logger.DebugLevel,
+		}))
+
 		port := rand.IntnRange(10000, 60000)
 		m := &mocks2.AuthMetadataServiceServer{}
 		m.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service2.OAuth2MetadataResponse{
