@@ -12,6 +12,8 @@ import (
 	"sync"
 	"testing"
 
+	"k8s.io/apimachinery/pkg/util/rand"
+
 	mocks2 "github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/stretchr/testify/mock"
 
@@ -26,13 +28,12 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-const authServerPort = "50051"
-
 // authMetadataServer is a fake AuthMetadataServer that takes in an AuthMetadataServer implementation (usually one
 // initialized through mockery) and starts a local server that uses it to respond to grpc requests.
 type authMetadataServer struct {
 	s           *httptest.Server
 	t           testing.TB
+	port        int
 	grpcServer  *grpc.Server
 	netListener net.Listener
 	impl        service2.AuthMetadataServiceServer
@@ -74,9 +75,9 @@ func (s *authMetadataServer) Start(_ context.Context) error {
 	defer s.lck.Unlock()
 
 	/***** Set up the server serving channelz service. *****/
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%s", authServerPort))
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", s.port))
 	if err != nil {
-		return fmt.Errorf("failed to listen: %w", err)
+		return fmt.Errorf("failed to listen on port [%v]: %w", s.port, err)
 	}
 
 	grpcS := grpc.NewServer()
@@ -102,8 +103,9 @@ func (s *authMetadataServer) Close() {
 	s.s.Close()
 }
 
-func newAuthMetadataServer(t testing.TB, impl service2.AuthMetadataServiceServer) *authMetadataServer {
+func newAuthMetadataServer(t testing.TB, port int, impl service2.AuthMetadataServiceServer) *authMetadataServer {
 	return &authMetadataServer{
+		port: port,
 		t:    t,
 		impl: impl,
 		lck:  &sync.RWMutex{},
@@ -122,21 +124,22 @@ func Test_newAuthInterceptor(t *testing.T) {
 	})
 
 	t.Run("Unauthenticated first time, succeed", func(t *testing.T) {
+		port := rand.IntnRange(10000, 60000)
 		m := &mocks2.AuthMetadataServiceServer{}
 		m.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service2.OAuth2MetadataResponse{
-			AuthorizationEndpoint: fmt.Sprintf("http://localhost:%s/oauth2/authorize", authServerPort),
-			TokenEndpoint:         fmt.Sprintf("http://localhost:%s/oauth2/token", authServerPort),
-			JwksUri:               fmt.Sprintf("http://localhost:%s/oauth2/jwks", authServerPort),
+			AuthorizationEndpoint: fmt.Sprintf("http://localhost:%d/oauth2/authorize", port),
+			TokenEndpoint:         fmt.Sprintf("http://localhost:%d/oauth2/token", port),
+			JwksUri:               fmt.Sprintf("http://localhost:%d/oauth2/jwks", port),
 		}, nil)
 		m.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service2.PublicClientAuthConfigResponse{
 			Scopes: []string{"all"},
 		}, nil)
-		s := newAuthMetadataServer(t, m)
+		s := newAuthMetadataServer(t, port, m)
 		ctx := context.Background()
 		assert.NoError(t, s.Start(ctx))
 		defer s.Close()
 
-		u, err := url.Parse("dns:///localhost:50051")
+		u, err := url.Parse(fmt.Sprintf("dns:///localhost:%d", port))
 		assert.NoError(t, err)
 
 		f := NewPerRPCCredentialsFuture()
@@ -156,22 +159,23 @@ func Test_newAuthInterceptor(t *testing.T) {
 	})
 
 	t.Run("Other error, doesn't authenticate", func(t *testing.T) {
+		port := rand.IntnRange(10000, 60000)
 		m := &mocks2.AuthMetadataServiceServer{}
 		m.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service2.OAuth2MetadataResponse{
-			AuthorizationEndpoint: fmt.Sprintf("http://localhost:%s/oauth2/authorize", authServerPort),
-			TokenEndpoint:         fmt.Sprintf("http://localhost:%s/oauth2/token", authServerPort),
-			JwksUri:               fmt.Sprintf("http://localhost:%s/oauth2/jwks", authServerPort),
+			AuthorizationEndpoint: fmt.Sprintf("http://localhost:%d/oauth2/authorize", port),
+			TokenEndpoint:         fmt.Sprintf("http://localhost:%d/oauth2/token", port),
+			JwksUri:               fmt.Sprintf("http://localhost:%d/oauth2/jwks", port),
 		}, nil)
 		m.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service2.PublicClientAuthConfigResponse{
 			Scopes: []string{"all"},
 		}, nil)
 
-		s := newAuthMetadataServer(t, m)
+		s := newAuthMetadataServer(t, port, m)
 		ctx := context.Background()
 		assert.NoError(t, s.Start(ctx))
 		defer s.Close()
 
-		u, err := url.Parse("dns:///localhost:50051")
+		u, err := url.Parse(fmt.Sprintf("dns:///localhost:%d", port))
 		assert.NoError(t, err)
 
 		f := NewPerRPCCredentialsFuture()
