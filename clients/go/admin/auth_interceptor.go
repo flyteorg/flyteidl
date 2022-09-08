@@ -59,17 +59,20 @@ func shouldAttemptToAuthenticate(errorCode codes.Code) bool {
 func newAuthInterceptor(cfg *Config, tokenCache cache.TokenCache, credentialsFuture *PerRPCCredentialsFuture) grpc.UnaryClientInterceptor {
 	return func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
 		err := invoker(ctx, method, req, reply, cc, opts...)
-		logger.Debugf(ctx, "Request failed due to [%v]. If it's an unauthenticated error, we will attempt to establish an authenticated context.", err)
-		if st, ok := status.FromError(err); ok {
-			// If the error we receive from executing the request expects
-			if shouldAttemptToAuthenticate(st.Code()) {
-				logger.Debugf(ctx, "Request failed due to [%v]. Attempting to establish an authenticated connection and trying again.", st.Code())
-				newErr := MaterializeCredentials(ctx, cfg, tokenCache, credentialsFuture)
-				if newErr != nil {
-					return fmt.Errorf("authentication error! Original Error: %v, Auth Error: %w", err, newErr)
-				}
+		if err != nil {
+			logger.Debugf(ctx, "Request failed due to [%v]. If it's an unauthenticated error, we will attempt to establish an authenticated context.", err)
 
-				return invoker(ctx, method, req, reply, cc, opts...)
+			if st, ok := status.FromError(err); ok {
+				// If the error we receive from executing the request expects
+				if shouldAttemptToAuthenticate(st.Code()) {
+					logger.Debugf(ctx, "Request failed due to [%v]. Attempting to establish an authenticated connection and trying again.", st.Code())
+					newErr := MaterializeCredentials(ctx, cfg, tokenCache, credentialsFuture)
+					if newErr != nil {
+						return fmt.Errorf("authentication error! Original Error: %v, Auth Error: %w", err, newErr)
+					}
+
+					return invoker(ctx, method, req, reply, cc, opts...)
+				}
 			}
 		}
 
