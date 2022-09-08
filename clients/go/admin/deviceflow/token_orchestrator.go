@@ -45,7 +45,7 @@ type TokenOrchestrator struct {
 
 // StartDeviceAuthorization will initiate the OAuth2 device authorization flow.
 func (t TokenOrchestrator) StartDeviceAuthorization(ctx context.Context, dareq DeviceAuthorizationRequest) (*DeviceAuthorizationResponse, error) {
-	v := url.Values{cliendID: {dareq.ClientID}, scope: {dareq.Scope}}
+	v := url.Values{cliendID: {dareq.ClientID}, scope: {dareq.Scope}, audience: {dareq.Audience}}
 	httpReq, err := http.NewRequest("POST", t.ClientConfig.DeviceEndpoint, strings.NewReader(v.Encode()))
 	if err != nil {
 		return nil, err
