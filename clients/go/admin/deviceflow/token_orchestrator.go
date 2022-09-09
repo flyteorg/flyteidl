@@ -45,7 +45,7 @@ type TokenOrchestrator struct {
 
 // StartDeviceAuthorization will initiate the OAuth2 device authorization flow.
 func (t TokenOrchestrator) StartDeviceAuthorization(ctx context.Context, dareq DeviceAuthorizationRequest) (*DeviceAuthorizationResponse, error) {
-	v := url.Values{cliendID: {dareq.ClientID}, scope: {dareq.Scope}}
+	v := url.Values{cliendID: {dareq.ClientID}, scope: {dareq.Scope}, audience: {dareq.Audience}}
 	httpReq, err := http.NewRequest("POST", t.ClientConfig.DeviceEndpoint, strings.NewReader(v.Encode()))
 	if err != nil {
 		return nil, err
@@ -92,7 +92,6 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 		cliendID:   {tokReq.ClientID},
 		grantType:  {grantTypeValue},
 		deviceCode: {tokReq.DeviceCode},
-		audience:   {tokReq.Audience},
 	}
 
 	for {
@@ -156,7 +155,7 @@ func (t TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 	if len(t.ClientConfig.Scopes) > 0 {
 		scopes = strings.Join(t.ClientConfig.Scopes, " ")
 	}
-	daReq := DeviceAuthorizationRequest{ClientID: t.ClientConfig.ClientID, Scope: scopes}
+	daReq := DeviceAuthorizationRequest{ClientID: t.ClientConfig.ClientID, Scope: scopes, Audience: t.Config.Audience}
 	daResp, err := t.StartDeviceAuthorization(ctx, daReq)
 	if err != nil {
 		return nil, err
@@ -167,7 +166,7 @@ func (t TokenOrchestrator) FetchTokenFromAuthFlow(ctx context.Context) (*oauth2.
 		pollInterval = time.Duration(daResp.Interval) * time.Second
 	}
 
-	tokReq := DeviceAccessTokenRequest{ClientID: t.ClientConfig.ClientID, DeviceCode: daResp.DeviceCode, GrantType: grantType, Audience: t.Config.Audience}
+	tokReq := DeviceAccessTokenRequest{ClientID: t.ClientConfig.ClientID, DeviceCode: daResp.DeviceCode, GrantType: grantType}
 	return t.PollTokenEndpoint(ctx, tokReq, pollInterval)
 }
 

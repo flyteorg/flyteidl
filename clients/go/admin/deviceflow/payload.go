@@ -8,6 +8,8 @@ type DeviceAuthorizationRequest struct {
 	ClientID string `json:"client_id"`
 	// Scope is the scope parameter of the access request
 	Scope string `json:"scope"`
+	// Audience defines at which endpoints the token can be used.
+	Audience string `json:"audience"`
 }
 
 // DeviceAuthorizationResponse contains the information that the end user would use to authorize the app requesting the
@@ -34,8 +36,7 @@ type DeviceAccessTokenRequest struct {
 	DeviceCode string `json:"device_code"`
 	//  Value MUST be set to "urn:ietf:params:oauth:grant-type:device_code"
 	GrantType string `json:"grant_type"`
-	// Audience defines at which endpoints the token can be used.
-	Audience string `json:"audience"`
+
 }
 
 type DeviceAccessTokenResponse struct {
