@@ -85,8 +85,8 @@ func (s *authMetadataServer) Start(_ context.Context) error {
 	grpcS := grpc.NewServer()
 	service2.RegisterAuthMetadataServiceServer(grpcS, s)
 	go func() {
-		err := grpcS.Serve(lis)
-		assert.NoError(s.t, err)
+		_ = grpcS.Serve(lis)
+		//assert.NoError(s.t, err)
 	}()
 
 	s.grpcServer = grpcS
