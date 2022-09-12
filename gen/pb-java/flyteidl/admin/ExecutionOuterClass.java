@@ -16901,29 +16901,11 @@ public final class ExecutionOuterClass {
 
     /**
      * <pre>
-     * One-liner overview of the execution.
-     * </pre>
-     *
-     * <code>string description = 22;</code>
-     */
-    java.lang.String getDescription();
-    /**
-     * <pre>
-     * One-liner overview of the execution.
-     * </pre>
-     *
-     * <code>string description = 22;</code>
-     */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
-
-    /**
-     * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     java.util.List<java.lang.String>
         getTagsList();
@@ -16933,7 +16915,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     int getTagsCount();
     /**
@@ -16942,7 +16924,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     java.lang.String getTags(int index);
     /**
@@ -16951,7 +16933,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     com.google.protobuf.ByteString
         getTagsBytes(int index);
@@ -16976,7 +16958,6 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private ExecutionSpec() {
-      description_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -17173,15 +17154,9 @@ public final class ExecutionOuterClass {
             }
             case 178: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-            case 186: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00008000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
                 tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00004000;
               }
               tags_.add(s);
               break;
@@ -17201,7 +17176,7 @@ public final class ExecutionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00008000) != 0)) {
+        if (((mutable_bitField0_ & 0x00004000) != 0)) {
           tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -17709,49 +17684,7 @@ public final class ExecutionOuterClass {
       return getInterruptible();
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 22;
-    private volatile java.lang.Object description_;
-    /**
-     * <pre>
-     * One-liner overview of the execution.
-     * </pre>
-     *
-     * <code>string description = 22;</code>
-     */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * One-liner overview of the execution.
-     * </pre>
-     *
-     * <code>string description = 22;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TAGS_FIELD_NUMBER = 23;
+    public static final int TAGS_FIELD_NUMBER = 22;
     private com.google.protobuf.LazyStringList tags_;
     /**
      * <pre>
@@ -17759,7 +17692,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getTagsList() {
@@ -17771,7 +17704,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     public int getTagsCount() {
       return tags_.size();
@@ -17782,7 +17715,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     public java.lang.String getTags(int index) {
       return tags_.get(index);
@@ -17793,7 +17726,7 @@ public final class ExecutionOuterClass {
      * filtering and discovering entities.
      * </pre>
      *
-     * <code>repeated string tags = 23;</code>
+     * <code>repeated string tags = 22;</code>
      */
     public com.google.protobuf.ByteString
         getTagsBytes(int index) {
@@ -17857,11 +17790,8 @@ public final class ExecutionOuterClass {
       if (interruptible_ != null) {
         output.writeMessage(21, getInterruptible());
       }
-      if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, description_);
-      }
       for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, tags_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, tags_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -17928,9 +17858,6 @@ public final class ExecutionOuterClass {
       if (interruptible_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, getInterruptible());
-      }
-      if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, description_);
       }
       {
         int dataSize = 0;
@@ -18012,8 +17939,6 @@ public final class ExecutionOuterClass {
         if (!getInterruptible()
             .equals(other.getInterruptible())) return false;
       }
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
       if (!getTagsList()
           .equals(other.getTagsList())) return false;
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
@@ -18086,8 +18011,6 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
         hash = (53 * hash) + getInterruptible().hashCode();
       }
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
       if (getTagsCount() > 0) {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
         hash = (53 * hash) + getTagsList().hashCode();
@@ -18311,10 +18234,8 @@ public final class ExecutionOuterClass {
           interruptible_ = null;
           interruptibleBuilder_ = null;
         }
-        description_ = "";
-
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -18411,10 +18332,9 @@ public final class ExecutionOuterClass {
         } else {
           result.interruptible_ = interruptibleBuilder_.build();
         }
-        result.description_ = description_;
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
@@ -18503,14 +18423,10 @@ public final class ExecutionOuterClass {
         if (other.hasInterruptible()) {
           mergeInterruptible(other.getInterruptible());
         }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
-          onChanged();
-        }
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -20570,100 +20486,11 @@ public final class ExecutionOuterClass {
         return interruptibleBuilder_;
       }
 
-      private java.lang.Object description_ = "";
-      /**
-       * <pre>
-       * One-liner overview of the execution.
-       * </pre>
-       *
-       * <code>string description = 22;</code>
-       */
-      public java.lang.String getDescription() {
-        java.lang.Object ref = description_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          description_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * One-liner overview of the execution.
-       * </pre>
-       *
-       * <code>string description = 22;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          description_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * One-liner overview of the execution.
-       * </pre>
-       *
-       * <code>string description = 22;</code>
-       */
-      public Builder setDescription(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        description_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * One-liner overview of the execution.
-       * </pre>
-       *
-       * <code>string description = 22;</code>
-       */
-      public Builder clearDescription() {
-        
-        description_ = getDefaultInstance().getDescription();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * One-liner overview of the execution.
-       * </pre>
-       *
-       * <code>string description = 22;</code>
-       */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        description_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00008000) != 0)) {
+        if (!((bitField0_ & 0x00004000) != 0)) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00004000;
          }
       }
       /**
@@ -20672,7 +20499,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getTagsList() {
@@ -20684,7 +20511,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public int getTagsCount() {
         return tags_.size();
@@ -20695,7 +20522,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public java.lang.String getTags(int index) {
         return tags_.get(index);
@@ -20706,7 +20533,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public com.google.protobuf.ByteString
           getTagsBytes(int index) {
@@ -20718,7 +20545,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public Builder setTags(
           int index, java.lang.String value) {
@@ -20736,7 +20563,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public Builder addTags(
           java.lang.String value) {
@@ -20754,7 +20581,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public Builder addAllTags(
           java.lang.Iterable<java.lang.String> values) {
@@ -20770,11 +20597,11 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public Builder clearTags() {
         tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -20784,7 +20611,7 @@ public final class ExecutionOuterClass {
        * filtering and discovering entities.
        * </pre>
        *
-       * <code>repeated string tags = 23;</code>
+       * <code>repeated string tags = 22;</code>
        */
       public Builder addTagsBytes(
           com.google.protobuf.ByteString value) {
@@ -26622,7 +26449,7 @@ public final class ExecutionOuterClass {
       "\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WOR" +
       "KFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020NotificationLi" +
       "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm" +
-      "in.Notification\"\212\006\n\rExecutionSpec\022.\n\013lau" +
+      "in.Notification\"\365\005\n\rExecutionSpec\022.\n\013lau" +
       "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie" +
       "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera" +
       "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad" +
@@ -26640,30 +26467,30 @@ public final class ExecutionOuterClass {
       "utputDataConfig\022=\n\022cluster_assignment\030\024 " +
       "\001(\0132!.flyteidl.admin.ClusterAssignment\0221" +
       "\n\rinterruptible\030\025 \001(\0132\032.google.protobuf." +
-      "BoolValue\022\023\n\013description\030\026 \001(\t\022\014\n\004tags\030\027" +
-      " \003(\tB\030\n\026notification_overridesJ\004\010\004\020\005\"b\n\031" +
-      "ExecutionTerminateRequest\0226\n\002id\030\001 \001(\0132*." +
-      "flyteidl.core.WorkflowExecutionIdentifie" +
-      "r\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTerminateRe" +
-      "sponse\"Y\n\037WorkflowExecutionGetDataReques" +
-      "t\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowEx" +
-      "ecutionIdentifier\"\336\001\n WorkflowExecutionG" +
-      "etDataResponse\022,\n\007outputs\030\001 \001(\0132\027.flytei" +
-      "dl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.f" +
-      "lyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_inputs" +
-      "\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/\n\014ful" +
-      "l_outputs\030\004 \001(\0132\031.flyteidl.core.LiteralM" +
-      "ap\"\177\n\026ExecutionUpdateRequest\0226\n\002id\030\001 \001(\013" +
-      "2*.flyteidl.core.WorkflowExecutionIdenti" +
-      "fier\022-\n\005state\030\002 \001(\0162\036.flyteidl.admin.Exe" +
-      "cutionState\"\220\001\n\033ExecutionStateChangeDeta" +
-      "ils\022-\n\005state\030\001 \001(\0162\036.flyteidl.admin.Exec" +
-      "utionState\022/\n\013occurred_at\030\002 \001(\0132\032.google" +
-      ".protobuf.Timestamp\022\021\n\tprincipal\030\003 \001(\t\"\031" +
-      "\n\027ExecutionUpdateResponse*>\n\016ExecutionSt" +
-      "ate\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_A" +
-      "RCHIVED\020\001B7Z5github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/adminb\006proto3"
+      "BoolValue\022\014\n\004tags\030\026 \003(\tB\030\n\026notification_" +
+      "overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateReq" +
+      "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
+      "wExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032E" +
+      "xecutionTerminateResponse\"Y\n\037WorkflowExe" +
+      "cutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyte" +
+      "idl.core.WorkflowExecutionIdentifier\"\336\001\n" +
+      " WorkflowExecutionGetDataResponse\022,\n\007out" +
+      "puts\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022" +
+      "+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob" +
+      "B\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.cor" +
+      "e.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132\031.fly" +
+      "teidl.core.LiteralMap\"\177\n\026ExecutionUpdate" +
+      "Request\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Work" +
+      "flowExecutionIdentifier\022-\n\005state\030\002 \001(\0162\036" +
+      ".flyteidl.admin.ExecutionState\"\220\001\n\033Execu" +
+      "tionStateChangeDetails\022-\n\005state\030\001 \001(\0162\036." +
+      "flyteidl.admin.ExecutionState\022/\n\013occurre" +
+      "d_at\030\002 \001(\0132\032.google.protobuf.Timestamp\022\021" +
+      "\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpdateResp" +
+      "onse*>\n\016ExecutionState\022\024\n\020EXECUTION_ACTI" +
+      "VE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7Z5github.c" +
+      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
+      "adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26769,7 +26596,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "Description", "Tags", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "Tags", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

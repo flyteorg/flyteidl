@@ -297,12 +297,9 @@ message ExecutionSpec {
     // around the bool field.
     google.protobuf.BoolValue interruptible = 21;
 
-    // One-liner overview of the execution.
-    string description = 22;
-
     // User-specified tags. These are arbitrary and can be used for searching
     // filtering and discovering entities.
-    repeated string tags = 23;
+    repeated string tags = 22;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

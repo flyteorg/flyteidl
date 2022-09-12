@@ -35,6 +35,8 @@ message Task {
 
     // closure encapsulates all the fields that maps to a compiled version of the task.
     TaskClosure closure      = 2;
+
+    DescriptionEntity description_entity = 3;
 }
 
 // Represents a list of tasks returned from the admin.
@@ -52,9 +54,6 @@ message TaskList {
 message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
-
-    // DescriptionEntity encapsulates all the detailed documentation for the task.
-    DescriptionEntity description_entity = 2;
 }
 
 // Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data

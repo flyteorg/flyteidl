@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.core_task_template import CoreTaskTemplate  # noqa: F401,E501
 
 
@@ -34,26 +33,21 @@ class AdminTaskSpec(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'template': 'CoreTaskTemplate',
-        'description_entity': 'AdminDescriptionEntity'
+        'template': 'CoreTaskTemplate'
     }
 
     attribute_map = {
-        'template': 'template',
-        'description_entity': 'description_entity'
+        'template': 'template'
     }
 
-    def __init__(self, template=None, description_entity=None):  # noqa: E501
+    def __init__(self, template=None):  # noqa: E501
         """AdminTaskSpec - a model defined in Swagger"""  # noqa: E501
 
         self._template = None
-        self._description_entity = None
         self.discriminator = None
 
         if template is not None:
             self.template = template
-        if description_entity is not None:
-            self.description_entity = description_entity
 
     @property
     def template(self):
@@ -77,29 +71,6 @@ class AdminTaskSpec(object):
         """
 
         self._template = template
-
-    @property
-    def description_entity(self):
-        """Gets the description_entity of this AdminTaskSpec.  # noqa: E501
-
-        DescriptionEntity encapsulates all the detailed documentation for the task.  # noqa: E501
-
-        :return: The description_entity of this AdminTaskSpec.  # noqa: E501
-        :rtype: AdminDescriptionEntity
-        """
-        return self._description_entity
-
-    @description_entity.setter
-    def description_entity(self, description_entity):
-        """Sets the description_entity of this AdminTaskSpec.
-
-        DescriptionEntity encapsulates all the detailed documentation for the task.  # noqa: E501
-
-        :param description_entity: The description_entity of this AdminTaskSpec.  # noqa: E501
-        :type: AdminDescriptionEntity
-        """
-
-        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

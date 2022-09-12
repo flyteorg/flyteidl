@@ -4740,31 +4740,6 @@ public final class LaunchPlanOuterClass {
      * <code>.google.protobuf.BoolValue interruptible = 19;</code>
      */
     com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder();
-
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    boolean hasDescriptionEntity();
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -4973,19 +4948,6 @@ public final class LaunchPlanOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(interruptible_);
                 interruptible_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 162: {
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
-              if (descriptionEntity_ != null) {
-                subBuilder = descriptionEntity_.toBuilder();
-              }
-              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(descriptionEntity_);
-                descriptionEntity_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5478,39 +5440,6 @@ public final class LaunchPlanOuterClass {
       return getInterruptible();
     }
 
-    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 20;
-    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    public boolean hasDescriptionEntity() {
-      return descriptionEntity_ != null;
-    }
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-    }
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-     */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-      return getDescriptionEntity();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5566,9 +5495,6 @@ public final class LaunchPlanOuterClass {
       }
       if (interruptible_ != null) {
         output.writeMessage(19, getInterruptible());
-      }
-      if (descriptionEntity_ != null) {
-        output.writeMessage(20, getDescriptionEntity());
       }
       unknownFields.writeTo(output);
     }
@@ -5633,10 +5559,6 @@ public final class LaunchPlanOuterClass {
       if (interruptible_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(19, getInterruptible());
-      }
-      if (descriptionEntity_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5717,11 +5639,6 @@ public final class LaunchPlanOuterClass {
         if (!getInterruptible()
             .equals(other.getInterruptible())) return false;
       }
-      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
-      if (hasDescriptionEntity()) {
-        if (!getDescriptionEntity()
-            .equals(other.getDescriptionEntity())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5784,10 +5701,6 @@ public final class LaunchPlanOuterClass {
       if (hasInterruptible()) {
         hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
         hash = (53 * hash) + getInterruptible().hashCode();
-      }
-      if (hasDescriptionEntity()) {
-        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
-        hash = (53 * hash) + getDescriptionEntity().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6002,12 +5915,6 @@ public final class LaunchPlanOuterClass {
           interruptible_ = null;
           interruptibleBuilder_ = null;
         }
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
-        } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
-        }
         return this;
       }
 
@@ -6095,11 +6002,6 @@ public final class LaunchPlanOuterClass {
           result.interruptible_ = interruptible_;
         } else {
           result.interruptible_ = interruptibleBuilder_.build();
-        }
-        if (descriptionEntityBuilder_ == null) {
-          result.descriptionEntity_ = descriptionEntity_;
-        } else {
-          result.descriptionEntity_ = descriptionEntityBuilder_.build();
         }
         onBuilt();
         return result;
@@ -6191,9 +6093,6 @@ public final class LaunchPlanOuterClass {
         }
         if (other.hasInterruptible()) {
           mergeInterruptible(other.getInterruptible());
-        }
-        if (other.hasDescriptionEntity()) {
-          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8200,159 +8099,6 @@ public final class LaunchPlanOuterClass {
           interruptible_ = null;
         }
         return interruptibleBuilder_;
-      }
-
-      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public boolean hasDescriptionEntity() {
-        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-        } else {
-          return descriptionEntityBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          descriptionEntity_ = value;
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public Builder setDescriptionEntity(
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = builderForValue.build();
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
-          if (descriptionEntity_ != null) {
-            descriptionEntity_ =
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
-          } else {
-            descriptionEntity_ = value;
-          }
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public Builder clearDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
-          onChanged();
-        } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
-        
-        onChanged();
-        return getDescriptionEntityFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-        if (descriptionEntityBuilder_ != null) {
-          return descriptionEntityBuilder_.getMessageOrBuilder();
-        } else {
-          return descriptionEntity_ == null ?
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-        }
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 20;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
-          getDescriptionEntityFieldBuilder() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
-                  getDescriptionEntity(),
-                  getParentForChildren(),
-                  isClean());
-          descriptionEntity_ = null;
-        }
-        return descriptionEntityBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14484,7 +14230,7 @@ public final class LaunchPlanOuterClass {
       "\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin." +
       "LaunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022ass" +
       "umable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_serv" +
-      "ice_account\030\002 \001(\t:\002\030\001\"\357\005\n\016LaunchPlanSpec" +
+      "ice_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec" +
       "\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Id" +
       "entifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyt" +
       "eidl.admin.LaunchPlanMetadata\0223\n\016default" +
@@ -14501,30 +14247,29 @@ public final class LaunchPlanOuterClass {
       "Service\022C\n\026raw_output_data_config\030\021 \001(\0132" +
       "#.flyteidl.admin.RawOutputDataConfig\022\027\n\017" +
       "max_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023" +
-      " \001(\0132\032.google.protobuf.BoolValue\022=\n\022desc" +
-      "ription_entity\030\024 \001(\0132!.flyteidl.admin.De" +
-      "scriptionEntity\"\217\002\n\021LaunchPlanClosure\022.\n" +
-      "\005state\030\001 \001(\0162\037.flyteidl.admin.LaunchPlan" +
-      "State\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteid" +
-      "l.core.ParameterMap\0224\n\020expected_outputs\030" +
-      "\003 \001(\0132\032.flyteidl.core.VariableMap\022.\n\ncre" +
-      "ated_at\030\004 \001(\0132\032.google.protobuf.Timestam" +
-      "p\022.\n\nupdated_at\030\005 \001(\0132\032.google.protobuf." +
-      "Timestamp\"u\n\022LaunchPlanMetadata\022*\n\010sched" +
-      "ule\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rn" +
-      "otifications\030\002 \003(\0132\034.flyteidl.admin.Noti" +
-      "fication\"p\n\027LaunchPlanUpdateRequest\022%\n\002i" +
-      "d\030\001 \001(\0132\031.flyteidl.core.Identifier\022.\n\005st" +
-      "ate\030\002 \001(\0162\037.flyteidl.admin.LaunchPlanSta" +
-      "te\"\032\n\030LaunchPlanUpdateResponse\"L\n\027Active" +
-      "LaunchPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl" +
-      ".admin.NamedEntityIdentifier\"\203\001\n\033ActiveL" +
-      "aunchPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n" +
-      "\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 " +
-      "\001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.So" +
-      "rt*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006A" +
-      "CTIVE\020\001B7Z5github.com/flyteorg/flyteidl/" +
-      "gen/pb-go/flyteidl/adminb\006proto3"
+      " \001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Lau" +
+      "nchPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl" +
+      ".admin.LaunchPlanState\0224\n\017expected_input" +
+      "s\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020" +
+      "expected_outputs\030\003 \001(\0132\032.flyteidl.core.V" +
+      "ariableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google." +
+      "protobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032" +
+      ".google.protobuf.Timestamp\"u\n\022LaunchPlan" +
+      "Metadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.ad" +
+      "min.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fl" +
+      "yteidl.admin.Notification\"p\n\027LaunchPlanU" +
+      "pdateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
+      ".Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.ad" +
+      "min.LaunchPlanState\"\032\n\030LaunchPlanUpdateR" +
+      "esponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id" +
+      "\030\001 \001(\0132%.flyteidl.admin.NamedEntityIdent" +
+      "ifier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n" +
+      "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030" +
+      "\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024." +
+      "flyteidl.admin.Sort*+\n\017LaunchPlanState\022\014" +
+      "\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/f" +
+      "lyteorg/flyteidl/gen/pb-go/flyteidl/admi" +
+      "nb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14583,7 +14328,7 @@ public final class LaunchPlanOuterClass {
     internal_static_flyteidl_admin_LaunchPlanSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_LaunchPlanSpec_descriptor,
-        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", "DescriptionEntity", });
+        new java.lang.String[] { "WorkflowId", "EntityMetadata", "DefaultInputs", "FixedInputs", "Role", "Labels", "Annotations", "Auth", "AuthRole", "SecurityContext", "QualityOfService", "RawOutputDataConfig", "MaxParallelism", "Interruptible", });
     internal_static_flyteidl_admin_LaunchPlanClosure_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_LaunchPlanClosure_fieldAccessorTable = new

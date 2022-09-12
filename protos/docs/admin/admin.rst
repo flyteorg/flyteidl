@@ -1360,7 +1360,6 @@ of an execution as it progresses across phase changes.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
-   "description", ":ref:`ref_string`", "", "One-liner overview of the execution."
    "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
@@ -1898,7 +1897,6 @@ User-provided launch plan definition and configuration values.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.)."
    "max_parallelism", ":ref:`ref_int32`", "", "Controls the maximum number of tasknodes that can be run in parallel for the entire workflow. This is useful to achieve fairness. Note: MapTasks are regarded as one unit, and parallelism/concurrency of MapTasks is independent from this."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the launch plan."
 
 
 
@@ -3217,6 +3215,7 @@ Tasks can come in many varieties tuned for specialized behavior.
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task."
    "closure", ":ref:`ref_flyteidl.admin.TaskClosure`", "", "closure encapsulates all the fields that maps to a compiled version of the task."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", ""
 
 
 
@@ -3323,7 +3322,6 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the task."
 
 
 
@@ -3743,6 +3741,7 @@ See :ref:`ref_flyteidl.admin.Workflow` for more details
 
    "workflows", ":ref:`ref_flyteidl.admin.Workflow`", "repeated", "A list of workflows returned based on the request."
    "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. If there are no more results, this value will be empty."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", ""
 
 
 
@@ -3765,7 +3764,6 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity encapsulates all the detailed documentation for the workflow."
 
 
 

@@ -10329,9 +10329,6 @@ export namespace flyteidl {
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
 
-            /** ExecutionSpec description */
-            description?: (string|null);
-
             /** ExecutionSpec tags */
             tags?: (string[]|null);
         }
@@ -10386,9 +10383,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** ExecutionSpec description. */
-            public description: string;
 
             /** ExecutionSpec tags. */
             public tags: string[];
@@ -11163,9 +11157,6 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** LaunchPlanSpec descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -11218,9 +11209,6 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** LaunchPlanSpec descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -14423,6 +14411,9 @@ export namespace flyteidl {
 
             /** Task closure */
             closure?: (flyteidl.admin.ITaskClosure|null);
+
+            /** Task descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a Task. */
@@ -14439,6 +14430,9 @@ export namespace flyteidl {
 
             /** Task closure. */
             public closure?: (flyteidl.admin.ITaskClosure|null);
+
+            /** Task descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new Task instance using the specified properties.
@@ -14536,9 +14530,6 @@ export namespace flyteidl {
 
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
-
-            /** TaskSpec descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14552,9 +14543,6 @@ export namespace flyteidl {
 
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
-
-            /** TaskSpec descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15490,6 +15478,9 @@ export namespace flyteidl {
 
             /** WorkflowList token */
             token?: (string|null);
+
+            /** WorkflowList descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowList. */
@@ -15506,6 +15497,9 @@ export namespace flyteidl {
 
             /** WorkflowList token. */
             public token: string;
+
+            /** WorkflowList descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowList instance using the specified properties.
@@ -15548,9 +15542,6 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
-
-            /** WorkflowSpec descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15567,9 +15558,6 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
-
-            /** WorkflowSpec descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.

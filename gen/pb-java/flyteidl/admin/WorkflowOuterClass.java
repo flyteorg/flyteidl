@@ -2392,6 +2392,19 @@ public final class WorkflowOuterClass {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    boolean hasDescriptionEntity();
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -2452,6 +2465,19 @@ public final class WorkflowOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            case 26: {
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
+              if (descriptionEntity_ != null) {
+                subBuilder = descriptionEntity_.toBuilder();
+              }
+              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(descriptionEntity_);
+                descriptionEntity_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -2589,6 +2615,27 @@ public final class WorkflowOuterClass {
       }
     }
 
+    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 3;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    public boolean hasDescriptionEntity() {
+      return descriptionEntity_ != null;
+    }
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+    }
+    /**
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+      return getDescriptionEntity();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2609,6 +2656,9 @@ public final class WorkflowOuterClass {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
       }
+      if (descriptionEntity_ != null) {
+        output.writeMessage(3, getDescriptionEntity());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2624,6 +2674,10 @@ public final class WorkflowOuterClass {
       }
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      if (descriptionEntity_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2644,6 +2698,11 @@ public final class WorkflowOuterClass {
           .equals(other.getWorkflowsList())) return false;
       if (!getToken()
           .equals(other.getToken())) return false;
+      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
+      if (hasDescriptionEntity()) {
+        if (!getDescriptionEntity()
+            .equals(other.getDescriptionEntity())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2661,6 +2720,10 @@ public final class WorkflowOuterClass {
       }
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      if (hasDescriptionEntity()) {
+        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntity().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2808,6 +2871,12 @@ public final class WorkflowOuterClass {
         }
         token_ = "";
 
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
         return this;
       }
 
@@ -2846,6 +2915,11 @@ public final class WorkflowOuterClass {
           result.workflows_ = workflowsBuilder_.build();
         }
         result.token_ = token_;
+        if (descriptionEntityBuilder_ == null) {
+          result.descriptionEntity_ = descriptionEntity_;
+        } else {
+          result.descriptionEntity_ = descriptionEntityBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2924,6 +2998,9 @@ public final class WorkflowOuterClass {
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
+        }
+        if (other.hasDescriptionEntity()) {
+          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3360,6 +3437,123 @@ public final class WorkflowOuterClass {
         onChanged();
         return this;
       }
+
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public boolean hasDescriptionEntity() {
+        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        } else {
+          return descriptionEntityBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          descriptionEntity_ = value;
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public Builder setDescriptionEntity(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = builderForValue.build();
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (descriptionEntity_ != null) {
+            descriptionEntity_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
+          } else {
+            descriptionEntity_ = value;
+          }
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public Builder clearDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+          onChanged();
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
+        
+        onChanged();
+        return getDescriptionEntityFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+        if (descriptionEntityBuilder_ != null) {
+          return descriptionEntityBuilder_.getMessageOrBuilder();
+        } else {
+          return descriptionEntity_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        }
+      }
+      /**
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+          getDescriptionEntityFieldBuilder() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
+                  getDescriptionEntity(),
+                  getParentForChildren(),
+                  isClean());
+          descriptionEntity_ = null;
+        }
+        return descriptionEntityBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3495,31 +3689,6 @@ public final class WorkflowOuterClass {
      */
     flyteidl.core.Workflow.WorkflowTemplateOrBuilder getSubWorkflowsOrBuilder(
         int index);
-
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    boolean hasDescriptionEntity();
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -3585,19 +3754,6 @@ public final class WorkflowOuterClass {
               }
               subWorkflows_.add(
                   input.readMessage(flyteidl.core.Workflow.WorkflowTemplate.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
-              if (descriptionEntity_ != null) {
-                subBuilder = descriptionEntity_.toBuilder();
-              }
-              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(descriptionEntity_);
-                descriptionEntity_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -3734,39 +3890,6 @@ public final class WorkflowOuterClass {
       return subWorkflows_.get(index);
     }
 
-    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 3;
-    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    public boolean hasDescriptionEntity() {
-      return descriptionEntity_ != null;
-    }
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-    }
-    /**
-     * <pre>
-     * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-     */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-      return getDescriptionEntity();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3787,9 +3910,6 @@ public final class WorkflowOuterClass {
       for (int i = 0; i < subWorkflows_.size(); i++) {
         output.writeMessage(2, subWorkflows_.get(i));
       }
-      if (descriptionEntity_ != null) {
-        output.writeMessage(3, getDescriptionEntity());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -3806,10 +3926,6 @@ public final class WorkflowOuterClass {
       for (int i = 0; i < subWorkflows_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, subWorkflows_.get(i));
-      }
-      if (descriptionEntity_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3833,11 +3949,6 @@ public final class WorkflowOuterClass {
       }
       if (!getSubWorkflowsList()
           .equals(other.getSubWorkflowsList())) return false;
-      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
-      if (hasDescriptionEntity()) {
-        if (!getDescriptionEntity()
-            .equals(other.getDescriptionEntity())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3856,10 +3967,6 @@ public final class WorkflowOuterClass {
       if (getSubWorkflowsCount() > 0) {
         hash = (37 * hash) + SUB_WORKFLOWS_FIELD_NUMBER;
         hash = (53 * hash) + getSubWorkflowsList().hashCode();
-      }
-      if (hasDescriptionEntity()) {
-        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
-        hash = (53 * hash) + getDescriptionEntity().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4011,12 +4118,6 @@ public final class WorkflowOuterClass {
         } else {
           subWorkflowsBuilder_.clear();
         }
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
-        } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
-        }
         return this;
       }
 
@@ -4058,11 +4159,6 @@ public final class WorkflowOuterClass {
           result.subWorkflows_ = subWorkflows_;
         } else {
           result.subWorkflows_ = subWorkflowsBuilder_.build();
-        }
-        if (descriptionEntityBuilder_ == null) {
-          result.descriptionEntity_ = descriptionEntity_;
-        } else {
-          result.descriptionEntity_ = descriptionEntityBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -4141,9 +4237,6 @@ public final class WorkflowOuterClass {
               subWorkflowsBuilder_.addAllMessages(other.subWorkflows_);
             }
           }
-        }
-        if (other.hasDescriptionEntity()) {
-          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4674,159 +4767,6 @@ public final class WorkflowOuterClass {
           subWorkflows_ = null;
         }
         return subWorkflowsBuilder_;
-      }
-
-      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public boolean hasDescriptionEntity() {
-        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-        } else {
-          return descriptionEntityBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          descriptionEntity_ = value;
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public Builder setDescriptionEntity(
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = builderForValue.build();
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
-          if (descriptionEntity_ != null) {
-            descriptionEntity_ =
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
-          } else {
-            descriptionEntity_ = value;
-          }
-          onChanged();
-        } else {
-          descriptionEntityBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public Builder clearDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
-          onChanged();
-        } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
-        
-        onChanged();
-        return getDescriptionEntityFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-        if (descriptionEntityBuilder_ != null) {
-          return descriptionEntityBuilder_.getMessageOrBuilder();
-        } else {
-          return descriptionEntity_ == null ?
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
-        }
-      }
-      /**
-       * <pre>
-       * DescriptionEntity encapsulates all the detailed documentation for the workflow.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
-          getDescriptionEntityFieldBuilder() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
-                  getDescriptionEntity(),
-                  getParentForChildren(),
-                  isClean());
-          descriptionEntity_ = null;
-        }
-        return descriptionEntityBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5859,13 +5799,13 @@ public final class WorkflowOuterClass {
       "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
       "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
       "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
-      "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 " +
-      "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002" +
-      " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132" +
-      "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_" +
-      "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow" +
-      "Template\022=\n\022description_entity\030\003 \001(\0132!.f" +
-      "lyteidl.admin.DescriptionEntity\"\204\001\n\017Work" +
+      "wClosure\"\211\001\n\014WorkflowList\022+\n\tworkflows\030\001" +
+      " \003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030" +
+      "\002 \001(\t\022=\n\022description_entity\030\003 \001(\0132!.flyt" +
+      "eidl.admin.DescriptionEntity\"y\n\014Workflow" +
+      "Spec\0221\n\010template\030\001 \001(\0132\037.flyteidl.core.W" +
+      "orkflowTemplate\0226\n\rsub_workflows\030\002 \003(\0132\037" +
+      ".flyteidl.core.WorkflowTemplate\"\204\001\n\017Work" +
       "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&" +
       ".flyteidl.core.CompiledWorkflowClosure\022." +
       "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim" +
@@ -5912,13 +5852,13 @@ public final class WorkflowOuterClass {
     internal_static_flyteidl_admin_WorkflowList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowList_descriptor,
-        new java.lang.String[] { "Workflows", "Token", });
+        new java.lang.String[] { "Workflows", "Token", "DescriptionEntity", });
     internal_static_flyteidl_admin_WorkflowSpec_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_WorkflowSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowSpec_descriptor,
-        new java.lang.String[] { "Template", "SubWorkflows", "DescriptionEntity", });
+        new java.lang.String[] { "Template", "SubWorkflows", });
     internal_static_flyteidl_admin_WorkflowClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_WorkflowClosure_fieldAccessorTable = new

@@ -1372,8 +1372,6 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
-	// no validation rules for Description
-
 	switch m.NotificationOverrides.(type) {
 
 	case *ExecutionSpec_Notifications:

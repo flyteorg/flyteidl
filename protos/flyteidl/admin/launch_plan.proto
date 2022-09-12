@@ -126,9 +126,6 @@ message LaunchPlanSpec {
     // As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
     // around the bool field.
     google.protobuf.BoolValue interruptible = 19;
-
-    // DescriptionEntity encapsulates all the detailed documentation for the launch plan.
-    DescriptionEntity description_entity = 20;
 }
 
 // Values computed by the flyte platform after launch plan registration.

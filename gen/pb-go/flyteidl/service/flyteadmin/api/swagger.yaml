@@ -3307,7 +3307,6 @@ definitions:
           values:
             key: "values"
         max_parallelism: 6
-        description: "description"
         interruptible: true
         labels:
           values:
@@ -3707,7 +3706,6 @@ definitions:
             values:
               key: "values"
           max_parallelism: 6
-          description: "description"
           interruptible: true
           labels:
             values:
@@ -3923,7 +3921,6 @@ definitions:
             values:
               key: "values"
           max_parallelism: 6
-          description: "description"
           interruptible: true
           labels:
             values:
@@ -4202,9 +4199,6 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
-      description:
-        type: "string"
-        description: "One-liner overview of the execution."
       tags:
         type: "array"
         description: "User-specified tags. These are arbitrary and can be used for\
@@ -4239,7 +4233,6 @@ definitions:
         values:
           key: "values"
       max_parallelism: 6
-      description: "description"
       interruptible: true
       labels:
         values:
@@ -4779,21 +4772,6 @@ definitions:
         labels:
           values:
             key: "values"
-        description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-          tags:
-          - "tags"
-          - "tags"
-          labels:
-            values:
-              key: "values"
         quality_of_service:
           tier: {}
           spec:
@@ -5592,21 +5570,6 @@ definitions:
           labels:
             values:
               key: "values"
-          description_entity:
-            short_description: "short_description"
-            long_description:
-              format: {}
-              icon_link: "icon_link"
-              value: "value"
-              uri: "uri"
-            source_code:
-              link: "link"
-            tags:
-            - "tags"
-            - "tags"
-            labels:
-              values:
-                key: "values"
           quality_of_service:
             tier: {}
             spec:
@@ -6120,21 +6083,6 @@ definitions:
           labels:
             values:
               key: "values"
-          description_entity:
-            short_description: "short_description"
-            long_description:
-              format: {}
-              icon_link: "icon_link"
-              value: "value"
-              uri: "uri"
-            source_code:
-              link: "link"
-            tags:
-            - "tags"
-            - "tags"
-            labels:
-              values:
-                key: "values"
           quality_of_service:
             tier: {}
             spec:
@@ -6467,10 +6415,6 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
-      description_entity:
-        description: "DescriptionEntity encapsulates all the detailed documentation\
-          \ for the launch plan."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6534,21 +6478,6 @@ definitions:
       labels:
         values:
           key: "values"
-      description_entity:
-        short_description: "short_description"
-        long_description:
-          format: {}
-          icon_link: "icon_link"
-          value: "value"
-          uri: "uri"
-        source_code:
-          link: "link"
-        tags:
-        - "tags"
-        - "tags"
-        labels:
-          values:
-            key: "values"
       quality_of_service:
         tier: {}
         spec:
@@ -14496,11 +14425,28 @@ definitions:
         description: "closure encapsulates all the fields that maps to a compiled\
           \ version of the task."
         $ref: "#/definitions/adminTaskClosure"
+      description_entity:
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "Flyte workflows are composed of many ordered tasks. That is small,\
       \ reusable, self-contained logical blocks\narranged to process workflow inputs\
       \ and produce a deterministic set of outputs.\nTasks can come in many varieties\
       \ tuned for specialized behavior."
     example:
+      description_entity:
+        short_description: "short_description"
+        long_description:
+          format: {}
+          icon_link: "icon_link"
+          value: "value"
+          uri: "uri"
+        source_code:
+          link: "link"
+        tags:
+        - "tags"
+        - "tags"
+        labels:
+          values:
+            key: "values"
       id:
         domain: "domain"
         resource_type: {}
@@ -15429,7 +15375,22 @@ definitions:
       \ for more details"
     example:
       tasks:
-      - id:
+      - description_entity:
+          short_description: "short_description"
+          long_description:
+            format: {}
+            icon_link: "icon_link"
+            value: "value"
+            uri: "uri"
+          source_code:
+            link: "link"
+          tags:
+          - "tags"
+          - "tags"
+          labels:
+            values:
+              key: "values"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -15688,7 +15649,22 @@ definitions:
               sql:
                 dialect: {}
                 statement: "statement"
-      - id:
+      - description_entity:
+          short_description: "short_description"
+          long_description:
+            format: {}
+            icon_link: "icon_link"
+            value: "value"
+            uri: "uri"
+          source_code:
+            link: "link"
+          tags:
+          - "tags"
+          - "tags"
+          labels:
+            values:
+              key: "values"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -15998,10 +15974,6 @@ definitions:
         description: "Template of the task that encapsulates all the metadata of the\
           \ task."
         $ref: "#/definitions/coreTaskTemplate"
-      description_entity:
-        description: "DescriptionEntity encapsulates all the detailed documentation\
-          \ for the task."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the user-configured specification\
       \ of the task."
   adminToleration:
@@ -28551,9 +28523,26 @@ definitions:
         description: "In the case of multiple pages of results, the server-provided\
           \ token can be used to fetch the next page\nin a query. If there are no\
           \ more results, this value will be empty."
+      description_entity:
+        $ref: "#/definitions/adminDescriptionEntity"
     title: "Represents a list of workflows returned from the admin.\nSee :ref:`ref_flyteidl.admin.Workflow`\
       \ for more details"
     example:
+      description_entity:
+        short_description: "short_description"
+        long_description:
+          format: {}
+          icon_link: "icon_link"
+          value: "value"
+          uri: "uri"
+        source_code:
+          link: "link"
+        tags:
+        - "tags"
+        - "tags"
+        labels:
+          values:
+            key: "values"
       workflows:
       - id:
           domain: "domain"
@@ -40588,10 +40577,6 @@ definitions:
           \ do not even need to be registered."
         items:
           $ref: "#/definitions/coreWorkflowTemplate"
-      description_entity:
-        description: "DescriptionEntity encapsulates all the detailed documentation\
-          \ for the workflow."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the specification of the\
       \ workflow."
   coreAlias:

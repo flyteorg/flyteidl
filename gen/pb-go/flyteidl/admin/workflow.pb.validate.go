@@ -299,6 +299,16 @@ func (m *WorkflowList) Validate() error {
 
 	// no validation rules for Token
 
+	if v, ok := interface{}(m.GetDescriptionEntity()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowListValidationError{
+				field:  "DescriptionEntity",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 
@@ -387,16 +397,6 @@ func (m *WorkflowSpec) Validate() error {
 			}
 		}
 
-	}
-
-	if v, ok := interface{}(m.GetDescriptionEntity()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return WorkflowSpecValidationError{
-				field:  "DescriptionEntity",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
 	}
 
 	return nil

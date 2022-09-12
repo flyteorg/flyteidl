@@ -3750,10 +3750,6 @@
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
         },
-        "description": {
-          "type": "string",
-          "description": "One-liner overview of the execution."
-        },
         "tags": {
           "type": "array",
           "items": {
@@ -4025,10 +4021,6 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity encapsulates all the detailed documentation for the launch plan."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -4751,6 +4743,9 @@
         "closure": {
           "$ref": "#/definitions/adminTaskClosure",
           "description": "closure encapsulates all the fields that maps to a compiled version of the task."
+        },
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity"
         }
       },
       "description": "Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks\narranged to process workflow inputs and produce a deterministic set of outputs.\nTasks can come in many varieties tuned for specialized behavior."
@@ -4968,10 +4963,6 @@
         "template": {
           "$ref": "#/definitions/coreTaskTemplate",
           "description": "Template of the task that encapsulates all the metadata of the task."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity encapsulates all the detailed documentation for the task."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5221,6 +5212,9 @@
         "token": {
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
+        },
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity"
         }
       },
       "title": "Represents a list of workflows returned from the admin.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
@@ -5238,10 +5232,6 @@
             "$ref": "#/definitions/coreWorkflowTemplate"
           },
           "description": "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the\npropeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out\nto Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity encapsulates all the detailed documentation for the workflow."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."

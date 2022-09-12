@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.admin_workflow import AdminWorkflow  # noqa: F401,E501
 
 
@@ -34,25 +35,30 @@ class AdminWorkflowList(object):
     """
     swagger_types = {
         'workflows': 'list[AdminWorkflow]',
-        'token': 'str'
+        'token': 'str',
+        'description_entity': 'AdminDescriptionEntity'
     }
 
     attribute_map = {
         'workflows': 'workflows',
-        'token': 'token'
+        'token': 'token',
+        'description_entity': 'description_entity'
     }
 
-    def __init__(self, workflows=None, token=None):  # noqa: E501
+    def __init__(self, workflows=None, token=None, description_entity=None):  # noqa: E501
         """AdminWorkflowList - a model defined in Swagger"""  # noqa: E501
 
         self._workflows = None
         self._token = None
+        self._description_entity = None
         self.discriminator = None
 
         if workflows is not None:
             self.workflows = workflows
         if token is not None:
             self.token = token
+        if description_entity is not None:
+            self.description_entity = description_entity
 
     @property
     def workflows(self):
@@ -99,6 +105,27 @@ class AdminWorkflowList(object):
         """
 
         self._token = token
+
+    @property
+    def description_entity(self):
+        """Gets the description_entity of this AdminWorkflowList.  # noqa: E501
+
+
+        :return: The description_entity of this AdminWorkflowList.  # noqa: E501
+        :rtype: AdminDescriptionEntity
+        """
+        return self._description_entity
+
+    @description_entity.setter
+    def description_entity(self, description_entity):
+        """Sets the description_entity of this AdminWorkflowList.
+
+
+        :param description_entity: The description_entity of this AdminWorkflowList.  # noqa: E501
+        :type: AdminDescriptionEntity
+        """
+
+        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

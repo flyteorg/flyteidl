@@ -566,6 +566,15 @@ class WorkflowList final :
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
+  // .flyteidl.admin.DescriptionEntity description_entity = 3;
+  bool has_description_entity() const;
+  void clear_description_entity();
+  static const int kDescriptionEntityFieldNumber = 3;
+  const ::flyteidl::admin::DescriptionEntity& description_entity() const;
+  ::flyteidl::admin::DescriptionEntity* release_description_entity();
+  ::flyteidl::admin::DescriptionEntity* mutable_description_entity();
+  void set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowList)
  private:
   class HasBitSetters;
@@ -573,6 +582,7 @@ class WorkflowList final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Workflow > workflows_;
   ::google::protobuf::internal::ArenaStringPtr token_;
+  ::flyteidl::admin::DescriptionEntity* description_entity_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_2eproto;
 };
@@ -694,15 +704,6 @@ class WorkflowSpec final :
   ::flyteidl::core::WorkflowTemplate* mutable_template_();
   void set_allocated_template_(::flyteidl::core::WorkflowTemplate* template_);
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 3;
-  bool has_description_entity() const;
-  void clear_description_entity();
-  static const int kDescriptionEntityFieldNumber = 3;
-  const ::flyteidl::admin::DescriptionEntity& description_entity() const;
-  ::flyteidl::admin::DescriptionEntity* release_description_entity();
-  ::flyteidl::admin::DescriptionEntity* mutable_description_entity();
-  void set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowSpec)
  private:
   class HasBitSetters;
@@ -710,7 +711,6 @@ class WorkflowSpec final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkflowTemplate > sub_workflows_;
   ::flyteidl::core::WorkflowTemplate* template__;
-  ::flyteidl::admin::DescriptionEntity* description_entity_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_2eproto;
 };
@@ -1137,6 +1137,51 @@ inline void WorkflowList::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowList.token)
 }
 
+// .flyteidl.admin.DescriptionEntity description_entity = 3;
+inline bool WorkflowList::has_description_entity() const {
+  return this != internal_default_instance() && description_entity_ != nullptr;
+}
+inline const ::flyteidl::admin::DescriptionEntity& WorkflowList::description_entity() const {
+  const ::flyteidl::admin::DescriptionEntity* p = description_entity_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowList.description_entity)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntity*>(
+      &::flyteidl::admin::_DescriptionEntity_default_instance_);
+}
+inline ::flyteidl::admin::DescriptionEntity* WorkflowList::release_description_entity() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowList.description_entity)
+  
+  ::flyteidl::admin::DescriptionEntity* temp = description_entity_;
+  description_entity_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::DescriptionEntity* WorkflowList::mutable_description_entity() {
+  
+  if (description_entity_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(GetArenaNoVirtual());
+    description_entity_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowList.description_entity)
+  return description_entity_;
+}
+inline void WorkflowList::set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(description_entity_);
+  }
+  if (description_entity) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      description_entity = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, description_entity, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  description_entity_ = description_entity;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowList.description_entity)
+}
+
 // -------------------------------------------------------------------
 
 // WorkflowSpec
@@ -1211,51 +1256,6 @@ inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkflowTem
 WorkflowSpec::sub_workflows() const {
   // @@protoc_insertion_point(field_list:flyteidl.admin.WorkflowSpec.sub_workflows)
   return sub_workflows_;
-}
-
-// .flyteidl.admin.DescriptionEntity description_entity = 3;
-inline bool WorkflowSpec::has_description_entity() const {
-  return this != internal_default_instance() && description_entity_ != nullptr;
-}
-inline const ::flyteidl::admin::DescriptionEntity& WorkflowSpec::description_entity() const {
-  const ::flyteidl::admin::DescriptionEntity* p = description_entity_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowSpec.description_entity)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntity*>(
-      &::flyteidl::admin::_DescriptionEntity_default_instance_);
-}
-inline ::flyteidl::admin::DescriptionEntity* WorkflowSpec::release_description_entity() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowSpec.description_entity)
-  
-  ::flyteidl::admin::DescriptionEntity* temp = description_entity_;
-  description_entity_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::DescriptionEntity* WorkflowSpec::mutable_description_entity() {
-  
-  if (description_entity_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(GetArenaNoVirtual());
-    description_entity_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowSpec.description_entity)
-  return description_entity_;
-}
-inline void WorkflowSpec::set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(description_entity_);
-  }
-  if (description_entity) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      description_entity = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, description_entity, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  description_entity_ = description_entity;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowSpec.description_entity)
 }
 
 // -------------------------------------------------------------------

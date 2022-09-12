@@ -23,9 +23,8 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Notification_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fdescription_5fentity_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Auth_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<13> scc_info_LaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<12> scc_info_LaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_LaunchPlanMetadata_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_LaunchPlanClosure_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2flaunch_5fplan_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_LaunchPlan_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
@@ -177,8 +176,8 @@ static void InitDefaultsLaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto(
   ::flyteidl::admin::LaunchPlanSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<13> scc_info_LaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 13, InitDefaultsLaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto}, {
+::google::protobuf::internal::SCCInfo<12> scc_info_LaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 12, InitDefaultsLaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_LaunchPlanMetadata_flyteidl_2fadmin_2flaunch_5fplan_2eproto.base,
       &scc_info_ParameterMap_flyteidl_2fcore_2finterface_2eproto.base,
@@ -190,8 +189,7 @@ static void InitDefaultsLaunchPlanSpec_flyteidl_2fadmin_2flaunch_5fplan_2eproto(
       &scc_info_SecurityContext_flyteidl_2fcore_2fsecurity_2eproto.base,
       &scc_info_QualityOfService_flyteidl_2fcore_2fexecution_2eproto.base,
       &scc_info_RawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto.base,
-      &scc_info_BoolValue_google_2fprotobuf_2fwrappers_2eproto.base,
-      &scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto.base,}};
+      &scc_info_BoolValue_google_2fprotobuf_2fwrappers_2eproto.base,}};
 
 static void InitDefaultsLaunchPlanClosure_flyteidl_2fadmin_2flaunch_5fplan_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -358,7 +356,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2e
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanSpec, raw_output_data_config_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanSpec, max_parallelism_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanSpec, interruptible_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanSpec, description_entity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::LaunchPlanClosure, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -412,12 +409,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 20, -1, sizeof(::flyteidl::admin::LaunchPlanList)},
   { 27, -1, sizeof(::flyteidl::admin::Auth)},
   { 34, -1, sizeof(::flyteidl::admin::LaunchPlanSpec)},
-  { 54, -1, sizeof(::flyteidl::admin::LaunchPlanClosure)},
-  { 64, -1, sizeof(::flyteidl::admin::LaunchPlanMetadata)},
-  { 71, -1, sizeof(::flyteidl::admin::LaunchPlanUpdateRequest)},
-  { 78, -1, sizeof(::flyteidl::admin::LaunchPlanUpdateResponse)},
-  { 83, -1, sizeof(::flyteidl::admin::ActiveLaunchPlanRequest)},
-  { 89, -1, sizeof(::flyteidl::admin::ActiveLaunchPlanListRequest)},
+  { 53, -1, sizeof(::flyteidl::admin::LaunchPlanClosure)},
+  { 63, -1, sizeof(::flyteidl::admin::LaunchPlanMetadata)},
+  { 70, -1, sizeof(::flyteidl::admin::LaunchPlanUpdateRequest)},
+  { 77, -1, sizeof(::flyteidl::admin::LaunchPlanUpdateResponse)},
+  { 82, -1, sizeof(::flyteidl::admin::ActiveLaunchPlanRequest)},
+  { 88, -1, sizeof(::flyteidl::admin::ActiveLaunchPlanListRequest)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -462,7 +459,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto[] 
   "\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin."
   "LaunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022ass"
   "umable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_serv"
-  "ice_account\030\002 \001(\t:\002\030\001\"\357\005\n\016LaunchPlanSpec"
+  "ice_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec"
   "\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Id"
   "entifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyt"
   "eidl.admin.LaunchPlanMetadata\0223\n\016default"
@@ -479,35 +476,34 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto[] 
   "Service\022C\n\026raw_output_data_config\030\021 \001(\0132"
   "#.flyteidl.admin.RawOutputDataConfig\022\027\n\017"
   "max_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023"
-  " \001(\0132\032.google.protobuf.BoolValue\022=\n\022desc"
-  "ription_entity\030\024 \001(\0132!.flyteidl.admin.De"
-  "scriptionEntity\"\217\002\n\021LaunchPlanClosure\022.\n"
-  "\005state\030\001 \001(\0162\037.flyteidl.admin.LaunchPlan"
-  "State\0224\n\017expected_inputs\030\002 \001(\0132\033.flyteid"
-  "l.core.ParameterMap\0224\n\020expected_outputs\030"
-  "\003 \001(\0132\032.flyteidl.core.VariableMap\022.\n\ncre"
-  "ated_at\030\004 \001(\0132\032.google.protobuf.Timestam"
-  "p\022.\n\nupdated_at\030\005 \001(\0132\032.google.protobuf."
-  "Timestamp\"u\n\022LaunchPlanMetadata\022*\n\010sched"
-  "ule\030\001 \001(\0132\030.flyteidl.admin.Schedule\0223\n\rn"
-  "otifications\030\002 \003(\0132\034.flyteidl.admin.Noti"
-  "fication\"p\n\027LaunchPlanUpdateRequest\022%\n\002i"
-  "d\030\001 \001(\0132\031.flyteidl.core.Identifier\022.\n\005st"
-  "ate\030\002 \001(\0162\037.flyteidl.admin.LaunchPlanSta"
-  "te\"\032\n\030LaunchPlanUpdateResponse\"L\n\027Active"
-  "LaunchPlanRequest\0221\n\002id\030\001 \001(\0132%.flyteidl"
-  ".admin.NamedEntityIdentifier\"\203\001\n\033ActiveL"
-  "aunchPlanListRequest\022\017\n\007project\030\001 \001(\t\022\016\n"
-  "\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 "
-  "\001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.So"
-  "rt*+\n\017LaunchPlanState\022\014\n\010INACTIVE\020\000\022\n\n\006A"
-  "CTIVE\020\001B7Z5github.com/flyteorg/flyteidl/"
-  "gen/pb-go/flyteidl/adminb\006proto3"
+  " \001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Lau"
+  "nchPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl"
+  ".admin.LaunchPlanState\0224\n\017expected_input"
+  "s\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020"
+  "expected_outputs\030\003 \001(\0132\032.flyteidl.core.V"
+  "ariableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google."
+  "protobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032"
+  ".google.protobuf.Timestamp\"u\n\022LaunchPlan"
+  "Metadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.ad"
+  "min.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fl"
+  "yteidl.admin.Notification\"p\n\027LaunchPlanU"
+  "pdateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core"
+  ".Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.ad"
+  "min.LaunchPlanState\"\032\n\030LaunchPlanUpdateR"
+  "esponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id"
+  "\030\001 \001(\0132%.flyteidl.admin.NamedEntityIdent"
+  "ifier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n"
+  "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030"
+  "\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024."
+  "flyteidl.admin.Sort*+\n\017LaunchPlanState\022\014"
+  "\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/f"
+  "lyteorg/flyteidl/gen/pb-go/flyteidl/admi"
+  "nb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2flaunch_5fplan_2eproto,
-  "flyteidl/admin/launch_plan.proto", &assign_descriptors_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 2432,
+  "flyteidl/admin/launch_plan.proto", &assign_descriptors_table_flyteidl_2fadmin_2flaunch_5fplan_2eproto, 2369,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2flaunch_5fplan_2eproto() {
@@ -2297,8 +2293,6 @@ void LaunchPlanSpec::InitAsDefaultInstance() {
       ::flyteidl::admin::RawOutputDataConfig::internal_default_instance());
   ::flyteidl::admin::_LaunchPlanSpec_default_instance_._instance.get_mutable()->interruptible_ = const_cast< ::google::protobuf::BoolValue*>(
       ::google::protobuf::BoolValue::internal_default_instance());
-  ::flyteidl::admin::_LaunchPlanSpec_default_instance_._instance.get_mutable()->description_entity_ = const_cast< ::flyteidl::admin::DescriptionEntity*>(
-      ::flyteidl::admin::DescriptionEntity::internal_default_instance());
 }
 class LaunchPlanSpec::HasBitSetters {
  public:
@@ -2314,7 +2308,6 @@ class LaunchPlanSpec::HasBitSetters {
   static const ::flyteidl::core::QualityOfService& quality_of_service(const LaunchPlanSpec* msg);
   static const ::flyteidl::admin::RawOutputDataConfig& raw_output_data_config(const LaunchPlanSpec* msg);
   static const ::google::protobuf::BoolValue& interruptible(const LaunchPlanSpec* msg);
-  static const ::flyteidl::admin::DescriptionEntity& description_entity(const LaunchPlanSpec* msg);
 };
 
 const ::flyteidl::core::Identifier&
@@ -2364,10 +2357,6 @@ LaunchPlanSpec::HasBitSetters::raw_output_data_config(const LaunchPlanSpec* msg)
 const ::google::protobuf::BoolValue&
 LaunchPlanSpec::HasBitSetters::interruptible(const LaunchPlanSpec* msg) {
   return *msg->interruptible_;
-}
-const ::flyteidl::admin::DescriptionEntity&
-LaunchPlanSpec::HasBitSetters::description_entity(const LaunchPlanSpec* msg) {
-  return *msg->description_entity_;
 }
 void LaunchPlanSpec::clear_workflow_id() {
   if (GetArenaNoVirtual() == nullptr && workflow_id_ != nullptr) {
@@ -2429,12 +2418,6 @@ void LaunchPlanSpec::clear_interruptible() {
   }
   interruptible_ = nullptr;
 }
-void LaunchPlanSpec::clear_description_entity() {
-  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
-    delete description_entity_;
-  }
-  description_entity_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int LaunchPlanSpec::kWorkflowIdFieldNumber;
 const int LaunchPlanSpec::kEntityMetadataFieldNumber;
@@ -2450,7 +2433,6 @@ const int LaunchPlanSpec::kQualityOfServiceFieldNumber;
 const int LaunchPlanSpec::kRawOutputDataConfigFieldNumber;
 const int LaunchPlanSpec::kMaxParallelismFieldNumber;
 const int LaunchPlanSpec::kInterruptibleFieldNumber;
-const int LaunchPlanSpec::kDescriptionEntityFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 LaunchPlanSpec::LaunchPlanSpec()
@@ -2526,11 +2508,6 @@ LaunchPlanSpec::LaunchPlanSpec(const LaunchPlanSpec& from)
   } else {
     interruptible_ = nullptr;
   }
-  if (from.has_description_entity()) {
-    description_entity_ = new ::flyteidl::admin::DescriptionEntity(*from.description_entity_);
-  } else {
-    description_entity_ = nullptr;
-  }
   max_parallelism_ = from.max_parallelism_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.LaunchPlanSpec)
 }
@@ -2563,7 +2540,6 @@ void LaunchPlanSpec::SharedDtor() {
   if (this != internal_default_instance()) delete quality_of_service_;
   if (this != internal_default_instance()) delete raw_output_data_config_;
   if (this != internal_default_instance()) delete interruptible_;
-  if (this != internal_default_instance()) delete description_entity_;
 }
 
 void LaunchPlanSpec::SetCachedSize(int size) const {
@@ -2630,10 +2606,6 @@ void LaunchPlanSpec::Clear() {
     delete interruptible_;
   }
   interruptible_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
-    delete description_entity_;
-  }
-  description_entity_ = nullptr;
   max_parallelism_ = 0;
   _internal_metadata_.Clear();
 }
@@ -2824,19 +2796,6 @@ const char* LaunchPlanSpec::_InternalParse(const char* begin, const char* end, v
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::google::protobuf::BoolValue::_InternalParse;
         object = msg->mutable_interruptible();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.admin.DescriptionEntity description_entity = 20;
-      case 20: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 162) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::DescriptionEntity::_InternalParse;
-        object = msg->mutable_description_entity();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -3037,17 +2996,6 @@ bool LaunchPlanSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.DescriptionEntity description_entity = 20;
-      case 20: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (162 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_description_entity()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -3160,12 +3108,6 @@ void LaunchPlanSpec::SerializeWithCachedSizes(
   if (this->has_interruptible()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       19, HasBitSetters::interruptible(this), output);
-  }
-
-  // .flyteidl.admin.DescriptionEntity description_entity = 20;
-  if (this->has_description_entity()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      20, HasBitSetters::description_entity(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -3281,13 +3223,6 @@ void LaunchPlanSpec::SerializeWithCachedSizes(
         19, HasBitSetters::interruptible(this), target);
   }
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 20;
-  if (this->has_description_entity()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        20, HasBitSetters::description_entity(this), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -3400,13 +3335,6 @@ size_t LaunchPlanSpec::ByteSizeLong() const {
         *interruptible_);
   }
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 20;
-  if (this->has_description_entity()) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *description_entity_);
-  }
-
   // int32 max_parallelism = 18;
   if (this->max_parallelism() != 0) {
     total_size += 2 +
@@ -3481,9 +3409,6 @@ void LaunchPlanSpec::MergeFrom(const LaunchPlanSpec& from) {
   if (from.has_interruptible()) {
     mutable_interruptible()->::google::protobuf::BoolValue::MergeFrom(from.interruptible());
   }
-  if (from.has_description_entity()) {
-    mutable_description_entity()->::flyteidl::admin::DescriptionEntity::MergeFrom(from.description_entity());
-  }
   if (from.max_parallelism() != 0) {
     set_max_parallelism(from.max_parallelism());
   }
@@ -3528,7 +3453,6 @@ void LaunchPlanSpec::InternalSwap(LaunchPlanSpec* other) {
   swap(quality_of_service_, other->quality_of_service_);
   swap(raw_output_data_config_, other->raw_output_data_config_);
   swap(interruptible_, other->interruptible_);
-  swap(description_entity_, other->description_entity_);
   swap(max_parallelism_, other->max_parallelism_);
 }
 

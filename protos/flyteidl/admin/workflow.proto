@@ -45,6 +45,8 @@ message WorkflowList {
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query. If there are no more results, this value will be empty.
     string token                = 2;
+
+    DescriptionEntity description_entity = 3;
 }
 
 // Represents a structure that encapsulates the specification of the workflow.
@@ -56,9 +58,6 @@ message WorkflowSpec {
     // propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out
     // to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
     repeated core.WorkflowTemplate sub_workflows = 2;
-
-    // DescriptionEntity encapsulates all the detailed documentation for the workflow.
-    DescriptionEntity description_entity = 3;
 }
 
 // A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.
