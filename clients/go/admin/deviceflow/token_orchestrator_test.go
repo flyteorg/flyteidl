@@ -47,7 +47,7 @@ func TestFetchFromAuthFlow(t *testing.T) {
 			body, err := io.ReadAll(r.Body)
 			assert.Nil(t, err)
 			isDeviceReq := strings.Contains(string(body), scope)
-			isTokReq := strings.Contains(string(body), deviceCode) && strings.Contains(string(body), grantType) && strings.Contains(string(body), cliendID)
+			isTokReq := strings.Contains(string(body), deviceCode) && strings.Contains(string(body), grantType) && strings.Contains(string(body), clientID)
 
 			if isDeviceReq {
 				for _, urlParm := range strings.Split(string(body), "&") {
@@ -55,8 +55,8 @@ func TestFetchFromAuthFlow(t *testing.T) {
 					switch paramKeyValue[0] {
 					case audience:
 						assert.Equal(t, "abcd", paramKeyValue[1])
-					case cliendID:
-						assert.Equal(t, cliendID, paramKeyValue[1])
+					case clientID:
+						assert.Equal(t, clientID, paramKeyValue[1])
 					}
 				}
 				dar := DeviceAuthorizationResponse{
@@ -79,8 +79,8 @@ func TestFetchFromAuthFlow(t *testing.T) {
 						assert.Equal(t, url.QueryEscape(grantTypeValue), paramKeyValue[1])
 					case deviceCode:
 						assert.Equal(t, "e1db31fe-3b23-4fce-b759-82bf8ea323d6", paramKeyValue[1])
-					case cliendID:
-						assert.Equal(t, cliendID, paramKeyValue[1])
+					case clientID:
+						assert.Equal(t, clientID, paramKeyValue[1])
 					}
 				}
 				dar := DeviceAccessTokenResponse{
@@ -102,7 +102,7 @@ func TestFetchFromAuthFlow(t *testing.T) {
 		orchestrator, err := NewDeviceFlowTokenOrchestrator(tokenorchestrator.BaseTokenOrchestrator{
 			ClientConfig: &oauth.Config{
 				Config: &oauth2.Config{
-					ClientID:    cliendID,
+					ClientID:    clientID,
 					RedirectURL: "http://localhost:8089/redirect",
 					Scopes:      []string{"code", "all"},
 					Endpoint: oauth2.Endpoint{
@@ -110,11 +110,11 @@ func TestFetchFromAuthFlow(t *testing.T) {
 					},
 				},
 				DeviceEndpoint: fakeServer.URL,
+				Audience:       "abcd",
 			},
 			TokenCache: tokenCache,
 		}, Config{
-			Timeout:  config.Duration{Duration: 1 * time.Minute},
-			Audience: "abcd",
+			Timeout: config.Duration{Duration: 1 * time.Minute},
 		})
 		assert.NoError(t, err)
 		authToken, err := orchestrator.FetchTokenFromAuthFlow(ctx)
