@@ -9,7 +9,7 @@ import "flyteidl/admin/matchable_resource.proto";
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 message ProjectAttributes {
     // Unique project id for which this set of attributes will be applied.
-    string project                 = 1;
+    string project = 1;
 
     MatchingAttributes matching_attributes = 2;
 }
@@ -30,7 +30,7 @@ message ProjectAttributesUpdateResponse {
 message ProjectAttributesGetRequest {
     // Unique project id which this set of attributes references.
     // +required
-    string project                 = 1;
+    string project = 1;
 
     // Which type of matchable attributes to return.
     // +required
@@ -48,7 +48,7 @@ message ProjectAttributesGetResponse {
 message ProjectAttributesDeleteRequest {
     // Unique project id which this set of attributes references.
     // +required
-    string project                 = 1;
+    string project = 1;
 
     // Which type of matchable attributes to delete.
     // +required
