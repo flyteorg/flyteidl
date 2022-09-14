@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_labels import AdminLabels  # noqa: F401,E501
 from flyteadmin.models.admin_long_description import AdminLongDescription  # noqa: F401,E501
 from flyteadmin.models.admin_source_code import AdminSourceCode  # noqa: F401,E501
 
@@ -37,26 +36,20 @@ class AdminDescriptionEntity(object):
     swagger_types = {
         'short_description': 'str',
         'long_description': 'AdminLongDescription',
-        'tags': 'list[str]',
-        'labels': 'AdminLabels',
         'source_code': 'AdminSourceCode'
     }
 
     attribute_map = {
         'short_description': 'short_description',
         'long_description': 'long_description',
-        'tags': 'tags',
-        'labels': 'labels',
         'source_code': 'source_code'
     }
 
-    def __init__(self, short_description=None, long_description=None, tags=None, labels=None, source_code=None):  # noqa: E501
+    def __init__(self, short_description=None, long_description=None, source_code=None):  # noqa: E501
         """AdminDescriptionEntity - a model defined in Swagger"""  # noqa: E501
 
         self._short_description = None
         self._long_description = None
-        self._tags = None
-        self._labels = None
         self._source_code = None
         self.discriminator = None
 
@@ -64,10 +57,6 @@ class AdminDescriptionEntity(object):
             self.short_description = short_description
         if long_description is not None:
             self.long_description = long_description
-        if tags is not None:
-            self.tags = tags
-        if labels is not None:
-            self.labels = labels
         if source_code is not None:
             self.source_code = source_code
 
@@ -116,52 +105,6 @@ class AdminDescriptionEntity(object):
         """
 
         self._long_description = long_description
-
-    @property
-    def tags(self):
-        """Gets the tags of this AdminDescriptionEntity.  # noqa: E501
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
-
-        :return: The tags of this AdminDescriptionEntity.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this AdminDescriptionEntity.
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
-
-        :param tags: The tags of this AdminDescriptionEntity.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
-
-    @property
-    def labels(self):
-        """Gets the labels of this AdminDescriptionEntity.  # noqa: E501
-
-        User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities.  # noqa: E501
-
-        :return: The labels of this AdminDescriptionEntity.  # noqa: E501
-        :rtype: AdminLabels
-        """
-        return self._labels
-
-    @labels.setter
-    def labels(self, labels):
-        """Sets the labels of this AdminDescriptionEntity.
-
-        User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities.  # noqa: E501
-
-        :param labels: The labels of this AdminDescriptionEntity.  # noqa: E501
-        :type: AdminLabels
-        """
-
-        self._labels = labels
 
     @property
     def source_code(self):

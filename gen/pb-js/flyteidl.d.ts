@@ -8619,12 +8619,6 @@ export namespace flyteidl {
             /** DescriptionEntity longDescription */
             longDescription?: (flyteidl.admin.ILongDescription|null);
 
-            /** DescriptionEntity tags */
-            tags?: (string[]|null);
-
-            /** DescriptionEntity labels */
-            labels?: (flyteidl.admin.ILabels|null);
-
             /** DescriptionEntity sourceCode */
             sourceCode?: (flyteidl.admin.ISourceCode|null);
         }
@@ -8643,12 +8637,6 @@ export namespace flyteidl {
 
             /** DescriptionEntity longDescription. */
             public longDescription?: (flyteidl.admin.ILongDescription|null);
-
-            /** DescriptionEntity tags. */
-            public tags: string[];
-
-            /** DescriptionEntity labels. */
-            public labels?: (flyteidl.admin.ILabels|null);
 
             /** DescriptionEntity sourceCode. */
             public sourceCode?: (flyteidl.admin.ISourceCode|null);
@@ -10944,6 +10932,9 @@ export namespace flyteidl {
 
             /** LaunchPlan closure */
             closure?: (flyteidl.admin.ILaunchPlanClosure|null);
+
+            /** LaunchPlan descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a LaunchPlan. */
@@ -10963,6 +10954,9 @@ export namespace flyteidl {
 
             /** LaunchPlan closure. */
             public closure?: (flyteidl.admin.ILaunchPlanClosure|null);
+
+            /** LaunchPlan descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new LaunchPlan instance using the specified properties.
@@ -13561,9 +13555,6 @@ export namespace flyteidl {
 
             /** Project state */
             state?: (flyteidl.admin.Project.ProjectState|null);
-
-            /** Project tags */
-            tags?: (string[]|null);
         }
 
         /** Represents a Project. */
@@ -13592,9 +13583,6 @@ export namespace flyteidl {
 
             /** Project state. */
             public state: flyteidl.admin.Project.ProjectState;
-
-            /** Project tags. */
-            public tags: string[];
 
             /**
              * Creates a new Project instance using the specified properties.
@@ -14307,6 +14295,9 @@ export namespace flyteidl {
 
             /** TaskCreateRequest spec */
             spec?: (flyteidl.admin.ITaskSpec|null);
+
+            /** TaskCreateRequest tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a TaskCreateRequest. */
@@ -14323,6 +14314,9 @@ export namespace flyteidl {
 
             /** TaskCreateRequest spec. */
             public spec?: (flyteidl.admin.ITaskSpec|null);
+
+            /** TaskCreateRequest tags. */
+            public tags: string[];
 
             /**
              * Creates a new TaskCreateRequest instance using the specified properties.
@@ -15420,6 +15414,9 @@ export namespace flyteidl {
 
             /** Workflow closure */
             closure?: (flyteidl.admin.IWorkflowClosure|null);
+
+            /** Workflow tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a Workflow. */
@@ -15436,6 +15433,9 @@ export namespace flyteidl {
 
             /** Workflow closure. */
             public closure?: (flyteidl.admin.IWorkflowClosure|null);
+
+            /** Workflow tags. */
+            public tags: string[];
 
             /**
              * Creates a new Workflow instance using the specified properties.

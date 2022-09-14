@@ -56,16 +56,6 @@ func (m *DescriptionEntity) Validate() error {
 		}
 	}
 
-	if v, ok := interface{}(m.GetLabels()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return DescriptionEntityValidationError{
-				field:  "Labels",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
 	if v, ok := interface{}(m.GetSourceCode()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return DescriptionEntityValidationError{

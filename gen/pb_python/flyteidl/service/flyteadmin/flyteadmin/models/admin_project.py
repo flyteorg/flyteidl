@@ -40,8 +40,7 @@ class AdminProject(object):
         'domains': 'list[AdminDomain]',
         'description': 'str',
         'labels': 'AdminLabels',
-        'state': 'ProjectProjectState',
-        'tags': 'list[str]'
+        'state': 'ProjectProjectState'
     }
 
     attribute_map = {
@@ -50,11 +49,10 @@ class AdminProject(object):
         'domains': 'domains',
         'description': 'description',
         'labels': 'labels',
-        'state': 'state',
-        'tags': 'tags'
+        'state': 'state'
     }
 
-    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, state=None, tags=None):  # noqa: E501
+    def __init__(self, id=None, name=None, domains=None, description=None, labels=None, state=None):  # noqa: E501
         """AdminProject - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -63,7 +61,6 @@ class AdminProject(object):
         self._description = None
         self._labels = None
         self._state = None
-        self._tags = None
         self.discriminator = None
 
         if id is not None:
@@ -78,8 +75,6 @@ class AdminProject(object):
             self.labels = labels
         if state is not None:
             self.state = state
-        if tags is not None:
-            self.tags = tags
 
     @property
     def id(self):
@@ -212,29 +207,6 @@ class AdminProject(object):
         """
 
         self._state = state
-
-    @property
-    def tags(self):
-        """Gets the tags of this AdminProject.  # noqa: E501
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
-
-        :return: The tags of this AdminProject.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this AdminProject.
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
-
-        :param tags: The tags of this AdminProject.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

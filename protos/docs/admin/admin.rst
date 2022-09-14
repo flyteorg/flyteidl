@@ -767,8 +767,6 @@ Documentation could provide insight into the algorithms, business use case, etc.
 
    "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
    "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
-   "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities."
    "source_code", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
 
 
@@ -1752,6 +1750,7 @@ definition doesn't necessarily have a default value for said input.
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "Uniquely identifies a launch plan entity."
    "spec", ":ref:`ref_flyteidl.admin.LaunchPlanSpec`", "", "User-provided launch plan details, including reference workflow, inputs and other metadata."
    "closure", ":ref:`ref_flyteidl.admin.LaunchPlanClosure`", "", "Values computed by the flyte platform after launch plan registration."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity contains detailed description for the task."
 
 
 
@@ -2768,7 +2767,6 @@ Top-level namespace used to classify different entities like workflows and execu
    "description", ":ref:`ref_string`", "", ""
    "labels", ":ref:`ref_flyteidl.admin.Labels`", "", "Leverage Labels from flyteidel.admin.common.proto to tag projects with ownership information."
    "state", ":ref:`ref_flyteidl.admin.Project.ProjectState`", "", ""
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
 
@@ -3215,7 +3213,7 @@ Tasks can come in many varieties tuned for specialized behavior.
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task."
    "closure", ":ref:`ref_flyteidl.admin.TaskClosure`", "", "closure encapsulates all the fields that maps to a compiled version of the task."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", ""
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "DescriptionEntity contains detailed description for the task."
 
 
 
@@ -3262,6 +3260,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task. +required"
    "spec", ":ref:`ref_flyteidl.admin.TaskSpec`", "", "Represents the specification for task. +required"
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
 
@@ -3659,6 +3658,7 @@ in order to produce a directed-acyclic execution graph.
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the workflow."
    "closure", ":ref:`ref_flyteidl.admin.WorkflowClosure`", "", "closure encapsulates all the fields that maps to a compiled version of the workflow."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
 
 
 

@@ -63,73 +63,6 @@ public final class DescriptionEntityOuterClass {
 
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    java.util.List<java.lang.String>
-        getTagsList();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    int getTagsCount();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
-
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    boolean hasLabels();
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    flyteidl.admin.Common.Labels getLabels();
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder();
-
-    /**
-     * <pre>
      * Optional link to source code used to define this entity.
      * </pre>
      *
@@ -172,7 +105,6 @@ public final class DescriptionEntityOuterClass {
     }
     private DescriptionEntity() {
       shortDescription_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -218,28 +150,6 @@ public final class DescriptionEntityOuterClass {
 
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              tags_.add(s);
-              break;
-            }
-            case 34: {
-              flyteidl.admin.Common.Labels.Builder subBuilder = null;
-              if (labels_ != null) {
-                subBuilder = labels_.toBuilder();
-              }
-              labels_ = input.readMessage(flyteidl.admin.Common.Labels.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(labels_);
-                labels_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
             case 42: {
               flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder subBuilder = null;
               if (sourceCode_ != null) {
@@ -268,9 +178,6 @@ public final class DescriptionEntityOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -288,7 +195,6 @@ public final class DescriptionEntityOuterClass {
               flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder.class);
     }
 
-    private int bitField0_;
     public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 1;
     private volatile java.lang.Object shortDescription_;
     /**
@@ -364,91 +270,6 @@ public final class DescriptionEntityOuterClass {
       return getLongDescription();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList tags_;
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    public int getTagsCount() {
-      return tags_.size();
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
-    public static final int LABELS_FIELD_NUMBER = 4;
-    private flyteidl.admin.Common.Labels labels_;
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    public boolean hasLabels() {
-      return labels_ != null;
-    }
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    public flyteidl.admin.Common.Labels getLabels() {
-      return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
-    }
-    /**
-     * <pre>
-     * User-defined free-form key-value pair attributes. These are arbitrary
-     * and can be used for searching, filtering and discovering entities.
-     * </pre>
-     *
-     * <code>.flyteidl.admin.Labels labels = 4;</code>
-     */
-    public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
-      return getLabels();
-    }
-
     public static final int SOURCE_CODE_FIELD_NUMBER = 5;
     private flyteidl.admin.DescriptionEntityOuterClass.SourceCode sourceCode_;
     /**
@@ -502,12 +323,6 @@ public final class DescriptionEntityOuterClass {
       if (longDescription_ != null) {
         output.writeMessage(2, getLongDescription());
       }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tags_.getRaw(i));
-      }
-      if (labels_ != null) {
-        output.writeMessage(4, getLabels());
-      }
       if (sourceCode_ != null) {
         output.writeMessage(5, getSourceCode());
       }
@@ -526,18 +341,6 @@ public final class DescriptionEntityOuterClass {
       if (longDescription_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getLongDescription());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
-      }
-      if (labels_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getLabels());
       }
       if (sourceCode_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -565,13 +368,6 @@ public final class DescriptionEntityOuterClass {
         if (!getLongDescription()
             .equals(other.getLongDescription())) return false;
       }
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
-      if (hasLabels() != other.hasLabels()) return false;
-      if (hasLabels()) {
-        if (!getLabels()
-            .equals(other.getLabels())) return false;
-      }
       if (hasSourceCode() != other.hasSourceCode()) return false;
       if (hasSourceCode()) {
         if (!getSourceCode()
@@ -593,14 +389,6 @@ public final class DescriptionEntityOuterClass {
       if (hasLongDescription()) {
         hash = (37 * hash) + LONG_DESCRIPTION_FIELD_NUMBER;
         hash = (53 * hash) + getLongDescription().hashCode();
-      }
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
-      }
-      if (hasLabels()) {
-        hash = (37 * hash) + LABELS_FIELD_NUMBER;
-        hash = (53 * hash) + getLabels().hashCode();
       }
       if (hasSourceCode()) {
         hash = (37 * hash) + SOURCE_CODE_FIELD_NUMBER;
@@ -752,14 +540,6 @@ public final class DescriptionEntityOuterClass {
           longDescription_ = null;
           longDescriptionBuilder_ = null;
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        if (labelsBuilder_ == null) {
-          labels_ = null;
-        } else {
-          labels_ = null;
-          labelsBuilder_ = null;
-        }
         if (sourceCodeBuilder_ == null) {
           sourceCode_ = null;
         } else {
@@ -792,30 +572,17 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity buildPartial() {
         flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.shortDescription_ = shortDescription_;
         if (longDescriptionBuilder_ == null) {
           result.longDescription_ = longDescription_;
         } else {
           result.longDescription_ = longDescriptionBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.tags_ = tags_;
-        if (labelsBuilder_ == null) {
-          result.labels_ = labels_;
-        } else {
-          result.labels_ = labelsBuilder_.build();
-        }
         if (sourceCodeBuilder_ == null) {
           result.sourceCode_ = sourceCode_;
         } else {
           result.sourceCode_ = sourceCodeBuilder_.build();
         }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -871,19 +638,6 @@ public final class DescriptionEntityOuterClass {
         if (other.hasLongDescription()) {
           mergeLongDescription(other.getLongDescription());
         }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
-        }
-        if (other.hasLabels()) {
-          mergeLabels(other.getLabels());
-        }
         if (other.hasSourceCode()) {
           mergeSourceCode(other.getSourceCode());
         }
@@ -915,7 +669,6 @@ public final class DescriptionEntityOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object shortDescription_ = "";
       /**
@@ -1157,307 +910,6 @@ public final class DescriptionEntityOuterClass {
           longDescription_ = null;
         }
         return longDescriptionBuilder_;
-      }
-
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private flyteidl.admin.Common.Labels labels_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> labelsBuilder_;
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public boolean hasLabels() {
-        return labelsBuilder_ != null || labels_ != null;
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public flyteidl.admin.Common.Labels getLabels() {
-        if (labelsBuilder_ == null) {
-          return labels_ == null ? flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
-        } else {
-          return labelsBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public Builder setLabels(flyteidl.admin.Common.Labels value) {
-        if (labelsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          labels_ = value;
-          onChanged();
-        } else {
-          labelsBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public Builder setLabels(
-          flyteidl.admin.Common.Labels.Builder builderForValue) {
-        if (labelsBuilder_ == null) {
-          labels_ = builderForValue.build();
-          onChanged();
-        } else {
-          labelsBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public Builder mergeLabels(flyteidl.admin.Common.Labels value) {
-        if (labelsBuilder_ == null) {
-          if (labels_ != null) {
-            labels_ =
-              flyteidl.admin.Common.Labels.newBuilder(labels_).mergeFrom(value).buildPartial();
-          } else {
-            labels_ = value;
-          }
-          onChanged();
-        } else {
-          labelsBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public Builder clearLabels() {
-        if (labelsBuilder_ == null) {
-          labels_ = null;
-          onChanged();
-        } else {
-          labels_ = null;
-          labelsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public flyteidl.admin.Common.Labels.Builder getLabelsBuilder() {
-        
-        onChanged();
-        return getLabelsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      public flyteidl.admin.Common.LabelsOrBuilder getLabelsOrBuilder() {
-        if (labelsBuilder_ != null) {
-          return labelsBuilder_.getMessageOrBuilder();
-        } else {
-          return labels_ == null ?
-              flyteidl.admin.Common.Labels.getDefaultInstance() : labels_;
-        }
-      }
-      /**
-       * <pre>
-       * User-defined free-form key-value pair attributes. These are arbitrary
-       * and can be used for searching, filtering and discovering entities.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.Labels labels = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder> 
-          getLabelsFieldBuilder() {
-        if (labelsBuilder_ == null) {
-          labelsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.Labels, flyteidl.admin.Common.Labels.Builder, flyteidl.admin.Common.LabelsOrBuilder>(
-                  getLabels(),
-                  getParentForChildren(),
-                  isClean());
-          labels_ = null;
-        }
-        return labelsBuilder_;
       }
 
       private flyteidl.admin.DescriptionEntityOuterClass.SourceCode sourceCode_;
@@ -4929,25 +4381,23 @@ public final class DescriptionEntityOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'flyteidl/admin/description_entity.prot" +
       "o\022\016flyteidl.admin\032\036flyteidl/core/identif" +
-      "ier.proto\032\033flyteidl/admin/common.proto\"\320" +
+      "ier.proto\032\033flyteidl/admin/common.proto\"\232" +
       "\001\n\021DescriptionEntity\022\031\n\021short_descriptio" +
       "n\030\001 \001(\t\0229\n\020long_description\030\002 \001(\0132\037.flyt" +
-      "eidl.admin.LongDescription\022\014\n\004tags\030\003 \003(\t" +
-      "\022&\n\006labels\030\004 \001(\0132\026.flyteidl.admin.Labels" +
-      "\022/\n\013source_code\030\005 \001(\0132\032.flyteidl.admin.S" +
-      "ourceCode\"\325\001\n\017LongDescription\022\017\n\005value\030\001" +
-      " \001(\tH\000\022\r\n\003uri\030\002 \001(\tH\000\022A\n\006format\030\003 \001(\01621." +
-      "flyteidl.admin.LongDescription.Descripti" +
-      "onFormat\022\021\n\ticon_link\030\004 \001(\t\"A\n\021Descripti" +
-      "onFormat\022\013\n\007UNKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004H" +
-      "TML\020\002\022\007\n\003RST\020\003B\t\n\007content\"\032\n\nSourceCode\022" +
-      "\014\n\004link\030\005 \001(\t\"\206\001\n\036DescriptionEntityCreat" +
-      "eRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ide" +
-      "ntifier\022=\n\022description_entity\030\002 \001(\0132!.fl" +
-      "yteidl.admin.DescriptionEntity\"!\n\037Descri" +
-      "ptionEntityCreateResponseB7Z5github.com/" +
-      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
-      "inb\006proto3"
+      "eidl.admin.LongDescription\022/\n\013source_cod" +
+      "e\030\005 \001(\0132\032.flyteidl.admin.SourceCode\"\325\001\n\017" +
+      "LongDescription\022\017\n\005value\030\001 \001(\tH\000\022\r\n\003uri\030" +
+      "\002 \001(\tH\000\022A\n\006format\030\003 \001(\01621.flyteidl.admin" +
+      ".LongDescription.DescriptionFormat\022\021\n\tic" +
+      "on_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007UN" +
+      "KNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020\003" +
+      "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\005 \001(\t\"" +
+      "\206\001\n\036DescriptionEntityCreateRequest\022%\n\002id" +
+      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022=\n\022des" +
+      "cription_entity\030\002 \001(\0132!.flyteidl.admin.D" +
+      "escriptionEntity\"!\n\037DescriptionEntityCre" +
+      "ateResponseB7Z5github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4968,7 +4418,7 @@ public final class DescriptionEntityOuterClass {
     internal_static_flyteidl_admin_DescriptionEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DescriptionEntity_descriptor,
-        new java.lang.String[] { "ShortDescription", "LongDescription", "Tags", "Labels", "SourceCode", });
+        new java.lang.String[] { "ShortDescription", "LongDescription", "SourceCode", });
     internal_static_flyteidl_admin_LongDescription_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_admin_LongDescription_fieldAccessorTable = new

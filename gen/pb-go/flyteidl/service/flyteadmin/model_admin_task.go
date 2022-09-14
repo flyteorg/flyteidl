@@ -15,5 +15,6 @@ type AdminTask struct {
 	Id *CoreIdentifier `json:"id,omitempty"`
 	// closure encapsulates all the fields that maps to a compiled version of the task.
 	Closure *AdminTaskClosure `json:"closure,omitempty"`
+	// DescriptionEntity contains detailed description for the task.
 	DescriptionEntity *AdminDescriptionEntity `json:"description_entity,omitempty"`
 }

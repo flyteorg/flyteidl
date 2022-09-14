@@ -1446,6 +1446,45 @@ public final class WorkflowOuterClass {
      * <code>.flyteidl.admin.WorkflowClosure closure = 2;</code>
      */
     flyteidl.admin.WorkflowOuterClass.WorkflowClosureOrBuilder getClosureOrBuilder();
+
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    java.util.List<java.lang.String>
+        getTagsList();
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    int getTagsCount();
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    java.lang.String getTags(int index);
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTagsBytes(int index);
   }
   /**
    * <pre>
@@ -1466,6 +1505,7 @@ public final class WorkflowOuterClass {
       super(builder);
     }
     private Workflow() {
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1518,6 +1558,15 @@ public final class WorkflowOuterClass {
 
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              tags_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1533,6 +1582,9 @@ public final class WorkflowOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1550,6 +1602,7 @@ public final class WorkflowOuterClass {
               flyteidl.admin.WorkflowOuterClass.Workflow.class, flyteidl.admin.WorkflowOuterClass.Workflow.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.Identifier id_;
     /**
@@ -1616,6 +1669,55 @@ public final class WorkflowOuterClass {
       return getClosure();
     }
 
+    public static final int TAGS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList tags_;
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_;
+    }
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <pre>
+     * User-specified tags. These are arbitrary and can be used for searching
+     * filtering and discovering entities.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1636,6 +1738,9 @@ public final class WorkflowOuterClass {
       if (closure_ != null) {
         output.writeMessage(2, getClosure());
       }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tags_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1652,6 +1757,14 @@ public final class WorkflowOuterClass {
       if (closure_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getClosure());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1678,6 +1791,8 @@ public final class WorkflowOuterClass {
         if (!getClosure()
             .equals(other.getClosure())) return false;
       }
+      if (!getTagsList()
+          .equals(other.getTagsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1696,6 +1811,10 @@ public final class WorkflowOuterClass {
       if (hasClosure()) {
         hash = (37 * hash) + CLOSURE_FIELD_NUMBER;
         hash = (53 * hash) + getClosure().hashCode();
+      }
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1848,6 +1967,8 @@ public final class WorkflowOuterClass {
           closure_ = null;
           closureBuilder_ = null;
         }
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1874,6 +1995,8 @@ public final class WorkflowOuterClass {
       @java.lang.Override
       public flyteidl.admin.WorkflowOuterClass.Workflow buildPartial() {
         flyteidl.admin.WorkflowOuterClass.Workflow result = new flyteidl.admin.WorkflowOuterClass.Workflow(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (idBuilder_ == null) {
           result.id_ = id_;
         } else {
@@ -1884,6 +2007,12 @@ public final class WorkflowOuterClass {
         } else {
           result.closure_ = closureBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          tags_ = tags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.tags_ = tags_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1938,6 +2067,16 @@ public final class WorkflowOuterClass {
         if (other.hasClosure()) {
           mergeClosure(other.getClosure());
         }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1966,6 +2105,7 @@ public final class WorkflowOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier id_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2271,6 +2411,145 @@ public final class WorkflowOuterClass {
           closure_ = null;
         }
         return closureBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTagsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTagsList() {
+        return tags_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public Builder setTags(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public Builder addTags(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public Builder addAllTags(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tags_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User-specified tags. These are arbitrary and can be used for searching
+       * filtering and discovering entities.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       */
+      public Builder addTagsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5796,21 +6075,22 @@ public final class WorkflowOuterClass {
       "_entity.proto\"j\n\025WorkflowCreateRequest\022%" +
       "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n" +
       "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe" +
-      "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
+      "c\"\030\n\026WorkflowCreateResponse\"q\n\010Workflow\022" +
       "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
       "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
-      "wClosure\"\211\001\n\014WorkflowList\022+\n\tworkflows\030\001" +
-      " \003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030" +
-      "\002 \001(\t\022=\n\022description_entity\030\003 \001(\0132!.flyt" +
-      "eidl.admin.DescriptionEntity\"y\n\014Workflow" +
-      "Spec\0221\n\010template\030\001 \001(\0132\037.flyteidl.core.W" +
-      "orkflowTemplate\0226\n\rsub_workflows\030\002 \003(\0132\037" +
-      ".flyteidl.core.WorkflowTemplate\"\204\001\n\017Work" +
-      "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&" +
-      ".flyteidl.core.CompiledWorkflowClosure\022." +
-      "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim" +
-      "estampB7Z5github.com/flyteorg/flyteidl/g" +
-      "en/pb-go/flyteidl/adminb\006proto3"
+      "wClosure\022\014\n\004tags\030\003 \003(\t\"\211\001\n\014WorkflowList\022" +
+      "+\n\tworkflows\030\001 \003(\0132\030.flyteidl.admin.Work" +
+      "flow\022\r\n\005token\030\002 \001(\t\022=\n\022description_entit" +
+      "y\030\003 \001(\0132!.flyteidl.admin.DescriptionEnti" +
+      "ty\"y\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037.f" +
+      "lyteidl.core.WorkflowTemplate\0226\n\rsub_wor" +
+      "kflows\030\002 \003(\0132\037.flyteidl.core.WorkflowTem" +
+      "plate\"\204\001\n\017WorkflowClosure\022A\n\021compiled_wo" +
+      "rkflow\030\001 \001(\0132&.flyteidl.core.CompiledWor" +
+      "kflowClosure\022.\n\ncreated_at\030\002 \001(\0132\032.googl" +
+      "e.protobuf.TimestampB7Z5github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5846,7 +6126,7 @@ public final class WorkflowOuterClass {
     internal_static_flyteidl_admin_Workflow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Workflow_descriptor,
-        new java.lang.String[] { "Id", "Closure", });
+        new java.lang.String[] { "Id", "Closure", "Tags", });
     internal_static_flyteidl_admin_WorkflowList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_WorkflowList_fieldAccessorTable = new

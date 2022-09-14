@@ -3400,17 +3400,6 @@
           "$ref": "#/definitions/adminLongDescription",
           "description": "Full user description with formatting preserved."
         },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
-        },
-        "labels": {
-          "$ref": "#/definitions/adminLabels",
-          "description": "User-defined free-form key-value pair attributes. These are arbitrary\nand can be used for searching, filtering and discovering entities."
-        },
         "source_code": {
           "$ref": "#/definitions/adminSourceCode",
           "description": "Optional link to source code used to define this entity."
@@ -3880,6 +3869,10 @@
         "closure": {
           "$ref": "#/definitions/adminLaunchPlanClosure",
           "description": "Values computed by the flyte platform after launch plan registration."
+        },
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "description": "DescriptionEntity contains detailed description for the task."
         }
       },
       "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
@@ -4518,13 +4511,6 @@
         },
         "state": {
           "$ref": "#/definitions/ProjectProjectState"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "Top-level namespace used to classify different entities like workflows and executions."
@@ -4745,7 +4731,8 @@
           "description": "closure encapsulates all the fields that maps to a compiled version of the task."
         },
         "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity"
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "description": "DescriptionEntity contains detailed description for the task."
         }
       },
       "description": "Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks\narranged to process workflow inputs and produce a deterministic set of outputs.\nTasks can come in many varieties tuned for specialized behavior."
@@ -4775,6 +4762,13 @@
         "spec": {
           "$ref": "#/definitions/adminTaskSpec",
           "title": "Represents the specification for task.\n+required"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
@@ -5023,6 +5017,13 @@
         "closure": {
           "$ref": "#/definitions/adminWorkflowClosure",
           "description": "closure encapsulates all the fields that maps to a compiled version of the workflow."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "Represents the workflow structure stored in the Admin\nA workflow is created by ordering tasks and associating outputs to inputs\nin order to produce a directed-acyclic execution graph."

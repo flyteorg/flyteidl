@@ -185,6 +185,28 @@ class TaskCreateRequest final :
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 3;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 3;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // .flyteidl.core.Identifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -208,6 +230,7 @@ class TaskCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::TaskSpec* spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -931,6 +954,75 @@ inline void TaskCreateRequest::set_allocated_spec(::flyteidl::admin::TaskSpec* s
   }
   spec_ = spec;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskCreateRequest.spec)
+}
+
+// repeated string tags = 3;
+inline int TaskCreateRequest::tags_size() const {
+  return tags_.size();
+}
+inline void TaskCreateRequest::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& TaskCreateRequest::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskCreateRequest.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* TaskCreateRequest::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskCreateRequest.tags)
+  return tags_.Mutable(index);
+}
+inline void TaskCreateRequest::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskCreateRequest.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void TaskCreateRequest::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.TaskCreateRequest.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void TaskCreateRequest::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.TaskCreateRequest.tags)
+}
+inline void TaskCreateRequest::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.TaskCreateRequest.tags)
+}
+inline ::std::string* TaskCreateRequest::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.TaskCreateRequest.tags)
+  return tags_.Add();
+}
+inline void TaskCreateRequest::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.TaskCreateRequest.tags)
+}
+#if LANG_CXX11
+inline void TaskCreateRequest::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.TaskCreateRequest.tags)
+}
+#endif
+inline void TaskCreateRequest::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.TaskCreateRequest.tags)
+}
+inline void TaskCreateRequest::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.TaskCreateRequest.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+TaskCreateRequest::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.TaskCreateRequest.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+TaskCreateRequest::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.TaskCreateRequest.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

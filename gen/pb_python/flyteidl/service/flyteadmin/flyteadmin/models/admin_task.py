@@ -111,6 +111,7 @@ class AdminTask(object):
     def description_entity(self):
         """Gets the description_entity of this AdminTask.  # noqa: E501
 
+        DescriptionEntity contains detailed description for the task.  # noqa: E501
 
         :return: The description_entity of this AdminTask.  # noqa: E501
         :rtype: AdminDescriptionEntity
@@ -121,6 +122,7 @@ class AdminTask(object):
     def description_entity(self, description_entity):
         """Sets the description_entity of this AdminTask.
 
+        DescriptionEntity contains detailed description for the task.  # noqa: E501
 
         :param description_entity: The description_entity of this AdminTask.  # noqa: E501
         :type: AdminDescriptionEntity

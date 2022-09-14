@@ -13,12 +13,6 @@ message DescriptionEntity {
   string short_description = 1;
   // Full user description with formatting preserved.
   LongDescription long_description = 2;
-  // User-specified tags. These are arbitrary and can be used for searching
-  // filtering and discovering entities.
-  repeated string tags = 3;
-  // User-defined free-form key-value pair attributes. These are arbitrary
-  // and can be used for searching, filtering and discovering entities.
-  Labels labels = 4;
   // Optional link to source code used to define this entity.
   SourceCode source_code = 5;
 }

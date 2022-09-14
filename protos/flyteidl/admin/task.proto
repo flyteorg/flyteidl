@@ -19,6 +19,10 @@ message TaskCreateRequest {
     // Represents the specification for task.
     // +required
     TaskSpec spec                = 2;
+
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering entities.
+    repeated string tags = 3;
 }
 
 // Represents a response structure if task creation succeeds.
@@ -36,6 +40,7 @@ message Task {
     // closure encapsulates all the fields that maps to a compiled version of the task.
     TaskClosure closure      = 2;
 
+    // DescriptionEntity contains detailed description for the task.
     DescriptionEntity description_entity = 3;
 }
 

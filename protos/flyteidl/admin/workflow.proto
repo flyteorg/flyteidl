@@ -34,6 +34,10 @@ message Workflow {
     
     // closure encapsulates all the fields that maps to a compiled version of the workflow.
     WorkflowClosure closure  = 2;
+
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering entities.
+    repeated string tags = 3;
 }
 
 // Represents a list of workflows returned from the admin.

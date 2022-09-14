@@ -892,45 +892,6 @@ public final class ProjectOuterClass {
      * <code>.flyteidl.admin.Project.ProjectState state = 6;</code>
      */
     flyteidl.admin.ProjectOuterClass.Project.ProjectState getState();
-
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    java.util.List<java.lang.String>
-        getTagsList();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    int getTagsCount();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
   }
   /**
    * <pre>
@@ -954,7 +915,6 @@ public final class ProjectOuterClass {
       domains_ = java.util.Collections.emptyList();
       description_ = "";
       state_ = 0;
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1027,15 +987,6 @@ public final class ProjectOuterClass {
               state_ = rawValue;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              tags_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1053,9 +1004,6 @@ public final class ProjectOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           domains_ = java.util.Collections.unmodifiableList(domains_);
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1416,55 +1364,6 @@ public final class ProjectOuterClass {
       return result == null ? flyteidl.admin.ProjectOuterClass.Project.ProjectState.UNRECOGNIZED : result;
     }
 
-    public static final int TAGS_FIELD_NUMBER = 7;
-    private com.google.protobuf.LazyStringList tags_;
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    public int getTagsCount() {
-      return tags_.size();
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
-     * </pre>
-     *
-     * <code>repeated string tags = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1497,9 +1396,6 @@ public final class ProjectOuterClass {
       if (state_ != flyteidl.admin.ProjectOuterClass.Project.ProjectState.ACTIVE.getNumber()) {
         output.writeEnum(6, state_);
       }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tags_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -1530,14 +1426,6 @@ public final class ProjectOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, state_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1567,8 +1455,6 @@ public final class ProjectOuterClass {
             .equals(other.getLabels())) return false;
       }
       if (state_ != other.state_) return false;
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1596,10 +1482,6 @@ public final class ProjectOuterClass {
       }
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1758,8 +1640,6 @@ public final class ProjectOuterClass {
         }
         state_ = 0;
 
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -1806,11 +1686,6 @@ public final class ProjectOuterClass {
           result.labels_ = labelsBuilder_.build();
         }
         result.state_ = state_;
-        if (((bitField0_ & 0x00000040) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1903,16 +1778,6 @@ public final class ProjectOuterClass {
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
-        }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000040);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2634,145 +2499,6 @@ public final class ProjectOuterClass {
       public Builder clearState() {
         
         state_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000040;
-         }
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
-       * </pre>
-       *
-       * <code>repeated string tags = 7;</code>
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
         onChanged();
         return this;
       }
@@ -6525,23 +6251,23 @@ public final class ProjectOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/admin/project.proto\022\016flyteidl" +
       ".admin\032\033flyteidl/admin/common.proto\"\"\n\006D" +
-      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\214\002\n\007Proj" +
+      "omain\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\376\001\n\007Proj" +
       "ect\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\'\n\007domains" +
       "\030\003 \003(\0132\026.flyteidl.admin.Domain\022\023\n\013descri" +
       "ption\030\004 \001(\t\022&\n\006labels\030\005 \001(\0132\026.flyteidl.a" +
       "dmin.Labels\0223\n\005state\030\006 \001(\0162$.flyteidl.ad" +
-      "min.Project.ProjectState\022\014\n\004tags\030\007 \003(\t\">" +
-      "\n\014ProjectState\022\n\n\006ACTIVE\020\000\022\014\n\010ARCHIVED\020\001" +
-      "\022\024\n\020SYSTEM_GENERATED\020\002\"D\n\010Projects\022)\n\010pr" +
-      "ojects\030\001 \003(\0132\027.flyteidl.admin.Project\022\r\n" +
-      "\005token\030\002 \001(\t\"j\n\022ProjectListRequest\022\r\n\005li" +
-      "mit\030\001 \001(\r\022\r\n\005token\030\002 \001(\t\022\017\n\007filters\030\003 \001(" +
-      "\t\022%\n\007sort_by\030\004 \001(\0132\024.flyteidl.admin.Sort" +
-      "\"B\n\026ProjectRegisterRequest\022(\n\007project\030\001 " +
-      "\001(\0132\027.flyteidl.admin.Project\"\031\n\027ProjectR" +
-      "egisterResponse\"\027\n\025ProjectUpdateResponse" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "min.Project.ProjectState\">\n\014ProjectState" +
+      "\022\n\n\006ACTIVE\020\000\022\014\n\010ARCHIVED\020\001\022\024\n\020SYSTEM_GEN" +
+      "ERATED\020\002\"D\n\010Projects\022)\n\010projects\030\001 \003(\0132\027" +
+      ".flyteidl.admin.Project\022\r\n\005token\030\002 \001(\t\"j" +
+      "\n\022ProjectListRequest\022\r\n\005limit\030\001 \001(\r\022\r\n\005t" +
+      "oken\030\002 \001(\t\022\017\n\007filters\030\003 \001(\t\022%\n\007sort_by\030\004" +
+      " \001(\0132\024.flyteidl.admin.Sort\"B\n\026ProjectReg" +
+      "isterRequest\022(\n\007project\030\001 \001(\0132\027.flyteidl" +
+      ".admin.Project\"\031\n\027ProjectRegisterRespons" +
+      "e\"\027\n\025ProjectUpdateResponseB7Z5github.com" +
+      "/flyteorg/flyteidl/gen/pb-go/flyteidl/ad" +
+      "minb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6567,7 +6293,7 @@ public final class ProjectOuterClass {
     internal_static_flyteidl_admin_Project_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Project_descriptor,
-        new java.lang.String[] { "Id", "Name", "Domains", "Description", "Labels", "State", "Tags", });
+        new java.lang.String[] { "Id", "Name", "Domains", "Description", "Labels", "State", });
     internal_static_flyteidl_admin_Projects_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_Projects_fieldAccessorTable = new

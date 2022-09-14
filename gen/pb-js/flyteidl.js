@@ -20753,8 +20753,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IDescriptionEntity
              * @property {string|null} [shortDescription] DescriptionEntity shortDescription
              * @property {flyteidl.admin.ILongDescription|null} [longDescription] DescriptionEntity longDescription
-             * @property {Array.<string>|null} [tags] DescriptionEntity tags
-             * @property {flyteidl.admin.ILabels|null} [labels] DescriptionEntity labels
              * @property {flyteidl.admin.ISourceCode|null} [sourceCode] DescriptionEntity sourceCode
              */
 
@@ -20767,7 +20765,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IDescriptionEntity=} [properties] Properties to set
              */
             function DescriptionEntity(properties) {
-                this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -20789,22 +20786,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             DescriptionEntity.prototype.longDescription = null;
-
-            /**
-             * DescriptionEntity tags.
-             * @member {Array.<string>} tags
-             * @memberof flyteidl.admin.DescriptionEntity
-             * @instance
-             */
-            DescriptionEntity.prototype.tags = $util.emptyArray;
-
-            /**
-             * DescriptionEntity labels.
-             * @member {flyteidl.admin.ILabels|null|undefined} labels
-             * @memberof flyteidl.admin.DescriptionEntity
-             * @instance
-             */
-            DescriptionEntity.prototype.labels = null;
 
             /**
              * DescriptionEntity sourceCode.
@@ -20842,11 +20823,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.shortDescription);
                 if (message.longDescription != null && message.hasOwnProperty("longDescription"))
                     $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.tags != null && message.tags.length)
-                    for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
-                if (message.labels != null && message.hasOwnProperty("labels"))
-                    $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.sourceCode != null && message.hasOwnProperty("sourceCode"))
                     $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
@@ -20875,14 +20851,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.longDescription = $root.flyteidl.admin.LongDescription.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        if (!(message.tags && message.tags.length))
-                            message.tags = [];
-                        message.tags.push(reader.string());
-                        break;
-                    case 4:
-                        message.labels = $root.flyteidl.admin.Labels.decode(reader, reader.uint32());
                         break;
                     case 5:
                         message.sourceCode = $root.flyteidl.admin.SourceCode.decode(reader, reader.uint32());
@@ -20913,18 +20881,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.LongDescription.verify(message.longDescription);
                     if (error)
                         return "longDescription." + error;
-                }
-                if (message.tags != null && message.hasOwnProperty("tags")) {
-                    if (!Array.isArray(message.tags))
-                        return "tags: array expected";
-                    for (let i = 0; i < message.tags.length; ++i)
-                        if (!$util.isString(message.tags[i]))
-                            return "tags: string[] expected";
-                }
-                if (message.labels != null && message.hasOwnProperty("labels")) {
-                    let error = $root.flyteidl.admin.Labels.verify(message.labels);
-                    if (error)
-                        return "labels." + error;
                 }
                 if (message.sourceCode != null && message.hasOwnProperty("sourceCode")) {
                     let error = $root.flyteidl.admin.SourceCode.verify(message.sourceCode);
@@ -26204,6 +26160,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {flyteidl.core.IIdentifier|null} [id] LaunchPlan id
              * @property {flyteidl.admin.ILaunchPlanSpec|null} [spec] LaunchPlan spec
              * @property {flyteidl.admin.ILaunchPlanClosure|null} [closure] LaunchPlan closure
+             * @property {flyteidl.admin.IDescriptionEntity|null} [descriptionEntity] LaunchPlan descriptionEntity
              */
 
             /**
@@ -26246,6 +26203,14 @@ export const flyteidl = $root.flyteidl = (() => {
             LaunchPlan.prototype.closure = null;
 
             /**
+             * LaunchPlan descriptionEntity.
+             * @member {flyteidl.admin.IDescriptionEntity|null|undefined} descriptionEntity
+             * @memberof flyteidl.admin.LaunchPlan
+             * @instance
+             */
+            LaunchPlan.prototype.descriptionEntity = null;
+
+            /**
              * Creates a new LaunchPlan instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.LaunchPlan
@@ -26275,6 +26240,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.LaunchPlanSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.closure != null && message.hasOwnProperty("closure"))
                     $root.flyteidl.admin.LaunchPlanClosure.encode(message.closure, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity"))
+                    $root.flyteidl.admin.DescriptionEntity.encode(message.descriptionEntity, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
 
@@ -26304,6 +26271,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 3:
                         message.closure = $root.flyteidl.admin.LaunchPlanClosure.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.descriptionEntity = $root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -26338,6 +26308,11 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.LaunchPlanClosure.verify(message.closure);
                     if (error)
                         return "closure." + error;
+                }
+                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity")) {
+                    let error = $root.flyteidl.admin.DescriptionEntity.verify(message.descriptionEntity);
+                    if (error)
+                        return "descriptionEntity." + error;
                 }
                 return null;
             };
@@ -32484,7 +32459,6 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [description] Project description
              * @property {flyteidl.admin.ILabels|null} [labels] Project labels
              * @property {flyteidl.admin.Project.ProjectState|null} [state] Project state
-             * @property {Array.<string>|null} [tags] Project tags
              */
 
             /**
@@ -32497,7 +32471,6 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             function Project(properties) {
                 this.domains = [];
-                this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -32553,14 +32526,6 @@ export const flyteidl = $root.flyteidl = (() => {
             Project.prototype.state = 0;
 
             /**
-             * Project tags.
-             * @member {Array.<string>} tags
-             * @memberof flyteidl.admin.Project
-             * @instance
-             */
-            Project.prototype.tags = $util.emptyArray;
-
-            /**
              * Creates a new Project instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.Project
@@ -32597,9 +32562,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.admin.Labels.encode(message.labels, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.state != null && message.hasOwnProperty("state"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.state);
-                if (message.tags != null && message.tags.length)
-                    for (let i = 0; i < message.tags.length; ++i)
-                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.tags[i]);
                 return writer;
             };
 
@@ -32640,11 +32602,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 6:
                         message.state = reader.int32();
-                        break;
-                    case 7:
-                        if (!(message.tags && message.tags.length))
-                            message.tags = [];
-                        message.tags.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -32697,13 +32654,6 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         break;
                     }
-                if (message.tags != null && message.hasOwnProperty("tags")) {
-                    if (!Array.isArray(message.tags))
-                        return "tags: array expected";
-                    for (let i = 0; i < message.tags.length; ++i)
-                        if (!$util.isString(message.tags[i]))
-                            return "tags: string[] expected";
-                }
                 return null;
             };
 
@@ -34198,6 +34148,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITaskCreateRequest
              * @property {flyteidl.core.IIdentifier|null} [id] TaskCreateRequest id
              * @property {flyteidl.admin.ITaskSpec|null} [spec] TaskCreateRequest spec
+             * @property {Array.<string>|null} [tags] TaskCreateRequest tags
              */
 
             /**
@@ -34209,6 +34160,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.ITaskCreateRequest=} [properties] Properties to set
              */
             function TaskCreateRequest(properties) {
+                this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -34230,6 +34182,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             TaskCreateRequest.prototype.spec = null;
+
+            /**
+             * TaskCreateRequest tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.admin.TaskCreateRequest
+             * @instance
+             */
+            TaskCreateRequest.prototype.tags = $util.emptyArray;
 
             /**
              * Creates a new TaskCreateRequest instance using the specified properties.
@@ -34259,6 +34219,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.spec != null && message.hasOwnProperty("spec"))
                     $root.flyteidl.admin.TaskSpec.encode(message.spec, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                 return writer;
             };
 
@@ -34285,6 +34248,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.spec = $root.flyteidl.admin.TaskSpec.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -34314,6 +34282,13 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.TaskSpec.verify(message.spec);
                     if (error)
                         return "spec." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
                 }
                 return null;
             };
@@ -36797,6 +36772,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IWorkflow
              * @property {flyteidl.core.IIdentifier|null} [id] Workflow id
              * @property {flyteidl.admin.IWorkflowClosure|null} [closure] Workflow closure
+             * @property {Array.<string>|null} [tags] Workflow tags
              */
 
             /**
@@ -36808,6 +36784,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.admin.IWorkflow=} [properties] Properties to set
              */
             function Workflow(properties) {
+                this.tags = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -36829,6 +36806,14 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              */
             Workflow.prototype.closure = null;
+
+            /**
+             * Workflow tags.
+             * @member {Array.<string>} tags
+             * @memberof flyteidl.admin.Workflow
+             * @instance
+             */
+            Workflow.prototype.tags = $util.emptyArray;
 
             /**
              * Creates a new Workflow instance using the specified properties.
@@ -36858,6 +36843,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.closure != null && message.hasOwnProperty("closure"))
                     $root.flyteidl.admin.WorkflowClosure.encode(message.closure, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.tags != null && message.tags.length)
+                    for (let i = 0; i < message.tags.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.tags[i]);
                 return writer;
             };
 
@@ -36884,6 +36872,11 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.closure = $root.flyteidl.admin.WorkflowClosure.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        if (!(message.tags && message.tags.length))
+                            message.tags = [];
+                        message.tags.push(reader.string());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -36913,6 +36906,13 @@ export const flyteidl = $root.flyteidl = (() => {
                     let error = $root.flyteidl.admin.WorkflowClosure.verify(message.closure);
                     if (error)
                         return "closure." + error;
+                }
+                if (message.tags != null && message.hasOwnProperty("tags")) {
+                    if (!Array.isArray(message.tags))
+                        return "tags: array expected";
+                    for (let i = 0; i < message.tags.length; ++i)
+                        if (!$util.isString(message.tags[i]))
+                            return "tags: string[] expected";
                 }
                 return null;
             };

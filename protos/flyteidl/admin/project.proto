@@ -45,10 +45,6 @@ message Project {
         SYSTEM_GENERATED = 2;
     }
     ProjectState state = 6;
-
-    // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering entities.
-    repeated string tags = 7;
 }
 
 // Represents a list of projects.

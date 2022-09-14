@@ -15,10 +15,6 @@ type AdminDescriptionEntity struct {
 	ShortDescription string `json:"short_description,omitempty"`
 	// Full user description with formatting preserved.
 	LongDescription *AdminLongDescription `json:"long_description,omitempty"`
-	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.
-	Tags []string `json:"tags,omitempty"`
-	// User-defined free-form key-value pair attributes. These are arbitrary and can be used for searching, filtering and discovering entities.
-	Labels *AdminLabels `json:"labels,omitempty"`
 	// Optional link to source code used to define this entity.
 	SourceCode *AdminSourceCode `json:"source_code,omitempty"`
 }
