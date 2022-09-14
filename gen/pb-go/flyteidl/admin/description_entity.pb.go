@@ -117,8 +117,6 @@ func (m *DescriptionEntity) GetSourceCode() *SourceCode {
 // by clients, such as the console or command line tools with in-tact
 // formatting.
 type LongDescription struct {
-	// long description - no more than 4KB
-	//
 	// Types that are valid to be assigned to Content:
 	//	*LongDescription_Value
 	//	*LongDescription_Uri
@@ -256,10 +254,10 @@ func (m *SourceCode) GetLink() string {
 	return ""
 }
 
-// Represents a request structure to create a revision of a task.
-// See :ref:`ref_flyteidl.admin.Task` for more details
+// Represents a request structure to create a revision of a description entity.
+// See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 type DescriptionEntityCreateRequest struct {
-	// id represents the unique identifier of the entity.
+	// id represents the unique identifier of the description entity.
 	// +required
 	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// Represents the specification for Description.
@@ -309,7 +307,7 @@ func (m *DescriptionEntityCreateRequest) GetDescriptionEntity() *DescriptionEnti
 	return nil
 }
 
-// Represents a response structure if task creation succeeds.
+// Represents a response structure if description entity creation succeeds.
 type DescriptionEntityCreateResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

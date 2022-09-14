@@ -780,8 +780,8 @@ Documentation could provide insight into the algorithms, business use case, etc.
 DescriptionEntityCreateRequest
 ------------------------------------------------------------------
 
-Represents a request structure to create a revision of a task.
-See :ref:`ref_flyteidl.admin.Task` for more details
+Represents a request structure to create a revision of a description entity.
+See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 
 
 
@@ -789,7 +789,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the entity. +required"
+   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the description entity. +required"
    "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description. +required"
 
 
@@ -803,7 +803,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
 DescriptionEntityCreateResponse
 ------------------------------------------------------------------
 
-Represents a response structure if task creation succeeds.
+Represents a response structure if description entity creation succeeds.
 
 Purposefully empty, may be populated in the future.
 
@@ -829,7 +829,7 @@ formatting.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "value", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_string`", "", "long description - no more than 4KB"
    "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
    "format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "Format of the long description"
    "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"

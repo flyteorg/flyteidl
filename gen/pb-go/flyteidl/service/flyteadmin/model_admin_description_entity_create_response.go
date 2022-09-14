@@ -9,6 +9,6 @@
 
 package flyteadmin
 
-// Represents a response structure if task creation succeeds.
+// Represents a response structure if description entity creation succeeds.
 type AdminDescriptionEntityCreateResponse struct {
 }

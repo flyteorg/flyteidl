@@ -3412,18 +3412,18 @@
       "properties": {
         "id": {
           "$ref": "#/definitions/coreIdentifier",
-          "title": "id represents the unique identifier of the entity.\n+required"
+          "title": "id represents the unique identifier of the description entity.\n+required"
         },
         "description_entity": {
           "$ref": "#/definitions/adminDescriptionEntity",
           "title": "Represents the specification for Description.\n+required"
         }
       },
-      "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
+      "title": "Represents a request structure to create a revision of a description entity.\nSee :ref:`ref_flyteidl.admin.DescriptionEntity` for more details"
     },
     "adminDescriptionEntityCreateResponse": {
       "type": "object",
-      "description": "Represents a response structure if task creation succeeds."
+      "description": "Represents a response structure if description entity creation succeeds."
     },
     "adminDomain": {
       "type": "object",
@@ -4075,7 +4075,8 @@
       "type": "object",
       "properties": {
         "value": {
-          "type": "string"
+          "type": "string",
+          "title": "long description - no more than 4KB"
         },
         "uri": {
           "type": "string",

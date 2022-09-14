@@ -21,8 +21,8 @@ message DescriptionEntity {
 // by clients, such as the console or command line tools with in-tact
 // formatting.
 message LongDescription {
-  // long description - no more than 4KB
   oneof content {
+    // long description - no more than 4KB
     string value = 1;
     // if the description sizes exceed some threshold we can offload the entire
     // description proto altogether to an external data store, like S3 rather than store inline in the db
@@ -47,10 +47,10 @@ message SourceCode {
   string link = 5;
 }
 
-// Represents a request structure to create a revision of a task.
-// See :ref:`ref_flyteidl.admin.Task` for more details
+// Represents a request structure to create a revision of a description entity.
+// See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 message DescriptionEntityCreateRequest {
-  // id represents the unique identifier of the entity.
+  // id represents the unique identifier of the description entity.
   // +required
   core.Identifier id           = 1;
 
@@ -59,7 +59,7 @@ message DescriptionEntityCreateRequest {
   DescriptionEntity description_entity        = 2;
 }
 
-// Represents a response structure if task creation succeeds.
+// Represents a response structure if description entity creation succeeds.
 message DescriptionEntityCreateResponse {
   // Purposefully empty, may be populated in the future.
 }

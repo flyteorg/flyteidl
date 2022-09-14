@@ -1122,10 +1122,18 @@ public final class DescriptionEntityOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * long description - no more than 4KB
+     * </pre>
+     *
      * <code>string value = 1;</code>
      */
     java.lang.String getValue();
     /**
+     * <pre>
+     * long description - no more than 4KB
+     * </pre>
+     *
      * <code>string value = 1;</code>
      */
     com.google.protobuf.ByteString
@@ -1455,6 +1463,10 @@ public final class DescriptionEntityOuterClass {
 
     public static final int VALUE_FIELD_NUMBER = 1;
     /**
+     * <pre>
+     * long description - no more than 4KB
+     * </pre>
+     *
      * <code>string value = 1;</code>
      */
     public java.lang.String getValue() {
@@ -1475,6 +1487,10 @@ public final class DescriptionEntityOuterClass {
       }
     }
     /**
+     * <pre>
+     * long description - no more than 4KB
+     * </pre>
+     *
      * <code>string value = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -2019,6 +2035,10 @@ public final class DescriptionEntityOuterClass {
 
 
       /**
+       * <pre>
+       * long description - no more than 4KB
+       * </pre>
+       *
        * <code>string value = 1;</code>
        */
       public java.lang.String getValue() {
@@ -2039,6 +2059,10 @@ public final class DescriptionEntityOuterClass {
         }
       }
       /**
+       * <pre>
+       * long description - no more than 4KB
+       * </pre>
+       *
        * <code>string value = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -2060,6 +2084,10 @@ public final class DescriptionEntityOuterClass {
         }
       }
       /**
+       * <pre>
+       * long description - no more than 4KB
+       * </pre>
+       *
        * <code>string value = 1;</code>
        */
       public Builder setValue(
@@ -2073,6 +2101,10 @@ public final class DescriptionEntityOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * long description - no more than 4KB
+       * </pre>
+       *
        * <code>string value = 1;</code>
        */
       public Builder clearValue() {
@@ -2084,6 +2116,10 @@ public final class DescriptionEntityOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * long description - no more than 4KB
+       * </pre>
+       *
        * <code>string value = 1;</code>
        */
       public Builder setValueBytes(
@@ -2972,7 +3008,7 @@ public final class DescriptionEntityOuterClass {
 
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -2981,7 +3017,7 @@ public final class DescriptionEntityOuterClass {
     boolean hasId();
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -2990,7 +3026,7 @@ public final class DescriptionEntityOuterClass {
     flyteidl.core.IdentifierOuterClass.Identifier getId();
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -3028,8 +3064,8 @@ public final class DescriptionEntityOuterClass {
   }
   /**
    * <pre>
-   * Represents a request structure to create a revision of a task.
-   * See :ref:`ref_flyteidl.admin.Task` for more details
+   * Represents a request structure to create a revision of a description entity.
+   * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.DescriptionEntityCreateRequest}
@@ -3132,7 +3168,7 @@ public final class DescriptionEntityOuterClass {
     private flyteidl.core.IdentifierOuterClass.Identifier id_;
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -3143,7 +3179,7 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -3154,7 +3190,7 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * id represents the unique identifier of the entity.
+     * id represents the unique identifier of the description entity.
      * +required
      * </pre>
      *
@@ -3378,8 +3414,8 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * Represents a request structure to create a revision of a task.
-     * See :ref:`ref_flyteidl.admin.Task` for more details
+     * Represents a request structure to create a revision of a description entity.
+     * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.DescriptionEntityCreateRequest}
@@ -3555,7 +3591,7 @@ public final class DescriptionEntityOuterClass {
           flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> idBuilder_;
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3566,7 +3602,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3581,7 +3617,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3602,7 +3638,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3621,7 +3657,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3644,7 +3680,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3663,7 +3699,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3676,7 +3712,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3692,7 +3728,7 @@ public final class DescriptionEntityOuterClass {
       }
       /**
        * <pre>
-       * id represents the unique identifier of the entity.
+       * id represents the unique identifier of the description entity.
        * +required
        * </pre>
        *
@@ -3932,7 +3968,7 @@ public final class DescriptionEntityOuterClass {
   }
   /**
    * <pre>
-   * Represents a response structure if task creation succeeds.
+   * Represents a response structure if description entity creation succeeds.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.DescriptionEntityCreateResponse}
@@ -4150,7 +4186,7 @@ public final class DescriptionEntityOuterClass {
     }
     /**
      * <pre>
-     * Represents a response structure if task creation succeeds.
+     * Represents a response structure if description entity creation succeeds.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.DescriptionEntityCreateResponse}
