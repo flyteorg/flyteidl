@@ -106,7 +106,7 @@ class AdminTaskCreateRequest(object):
     def tags(self):
         """Gets the tags of this AdminTaskCreateRequest.  # noqa: E501
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
 
         :return: The tags of this AdminTaskCreateRequest.  # noqa: E501
         :rtype: list[str]
@@ -117,7 +117,7 @@ class AdminTaskCreateRequest(object):
     def tags(self, tags):
         """Sets the tags of this AdminTaskCreateRequest.
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
 
         :param tags: The tags of this AdminTaskCreateRequest.  # noqa: E501
         :type: list[str]

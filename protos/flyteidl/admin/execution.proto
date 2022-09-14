@@ -39,7 +39,7 @@ message ExecutionCreateRequest {
     core.LiteralMap inputs = 5;
 
     // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering entities.
+    // filtering and discovering executions.
     repeated string tags = 6;
 }
 

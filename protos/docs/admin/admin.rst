@@ -1205,7 +1205,7 @@ Request to launch an execution with the given project, domain and optionally-ass
    "name", ":ref:`ref_string`", "", "User provided value for the resource. If none is provided the system will generate a unique string. +optional"
    "spec", ":ref:`ref_flyteidl.admin.ExecutionSpec`", "", "Additional fields necessary to launch the execution. +optional"
    "inputs", ":ref:`ref_flyteidl.core.LiteralMap`", "", "The inputs required to start the execution. All required inputs must be included in this map. If not required and not provided, defaults apply. +optional"
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering executions."
 
 
 
@@ -3260,7 +3260,7 @@ See :ref:`ref_flyteidl.admin.Task` for more details
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task. +required"
    "spec", ":ref:`ref_flyteidl.admin.TaskSpec`", "", "Represents the specification for task. +required"
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks."
 
 
 
@@ -3704,7 +3704,7 @@ See :ref:`ref_flyteidl.admin.Workflow` for more details
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the workflow. +required"
    "spec", ":ref:`ref_flyteidl.admin.WorkflowSpec`", "", "Represents the specification for workflow. +required"
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows."
 
 
 

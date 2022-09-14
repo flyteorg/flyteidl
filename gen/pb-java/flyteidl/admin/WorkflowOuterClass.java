@@ -77,7 +77,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -87,7 +87,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -96,7 +96,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -105,7 +105,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -306,7 +306,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -318,7 +318,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -329,7 +329,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -340,7 +340,7 @@ public final class WorkflowOuterClass {
     /**
      * <pre>
      * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering entities.
+     * filtering and discovering workflows.
      * </pre>
      *
      * <code>repeated string tags = 3;</code>
@@ -1072,7 +1072,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1084,7 +1084,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1095,7 +1095,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1106,7 +1106,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1118,7 +1118,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1136,7 +1136,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1154,7 +1154,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1170,7 +1170,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>
@@ -1184,7 +1184,7 @@ public final class WorkflowOuterClass {
       /**
        * <pre>
        * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering entities.
+       * filtering and discovering workflows.
        * </pre>
        *
        * <code>repeated string tags = 3;</code>

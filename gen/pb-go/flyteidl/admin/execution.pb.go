@@ -117,7 +117,7 @@ type ExecutionCreateRequest struct {
 	// +optional
 	Inputs *core.LiteralMap `protobuf:"bytes,5,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	// User-specified tags. These are arbitrary and can be used for searching
-	// filtering and discovering entities.
+	// filtering and discovering executions.
 	Tags                 []string `protobuf:"bytes,6,rep,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

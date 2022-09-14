@@ -32,7 +32,7 @@ type WorkflowCreateRequest struct {
 	// +required
 	Spec *WorkflowSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
 	// User-specified tags. These are arbitrary and can be used for searching
-	// filtering and discovering entities.
+	// filtering and discovering workflows.
 	Tags                 []string `protobuf:"bytes,3,rep,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

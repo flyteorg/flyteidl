@@ -3575,7 +3575,7 @@
           "items": {
             "type": "string"
           },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering executions."
         }
       },
       "description": "Request to launch an execution with the given project, domain and optionally-assigned name."
@@ -4768,7 +4768,7 @@
           "items": {
             "type": "string"
           },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
         }
       },
       "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
@@ -5125,7 +5125,7 @@
           "items": {
             "type": "string"
           },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering workflows."
         }
       },
       "title": "Represents a request structure to create a revision of a workflow.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"

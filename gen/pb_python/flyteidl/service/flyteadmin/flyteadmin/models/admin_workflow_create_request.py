@@ -106,7 +106,7 @@ class AdminWorkflowCreateRequest(object):
     def tags(self):
         """Gets the tags of this AdminWorkflowCreateRequest.  # noqa: E501
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows.  # noqa: E501
 
         :return: The tags of this AdminWorkflowCreateRequest.  # noqa: E501
         :rtype: list[str]
@@ -117,7 +117,7 @@ class AdminWorkflowCreateRequest(object):
     def tags(self, tags):
         """Sets the tags of this AdminWorkflowCreateRequest.
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows.  # noqa: E501
 
         :param tags: The tags of this AdminWorkflowCreateRequest.  # noqa: E501
         :type: list[str]

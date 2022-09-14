@@ -21,7 +21,7 @@ message TaskCreateRequest {
     TaskSpec spec                = 2;
 
     // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering entities.
+    // filtering and discovering tasks.
     repeated string tags = 3;
 }
 

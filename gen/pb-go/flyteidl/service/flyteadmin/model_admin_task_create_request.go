@@ -12,6 +12,6 @@ package flyteadmin
 type AdminTaskCreateRequest struct {
 	Id *CoreIdentifier `json:"id,omitempty"`
 	Spec *AdminTaskSpec `json:"spec,omitempty"`
-	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.
+	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.
 	Tags []string `json:"tags,omitempty"`
 }
