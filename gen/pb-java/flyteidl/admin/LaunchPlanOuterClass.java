@@ -1552,7 +1552,7 @@ public final class LaunchPlanOuterClass {
 
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -1560,7 +1560,7 @@ public final class LaunchPlanOuterClass {
     boolean hasDescriptionEntity();
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -1568,7 +1568,7 @@ public final class LaunchPlanOuterClass {
     flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -1808,7 +1808,7 @@ public final class LaunchPlanOuterClass {
     private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -1818,7 +1818,7 @@ public final class LaunchPlanOuterClass {
     }
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -1828,7 +1828,7 @@ public final class LaunchPlanOuterClass {
     }
     /**
      * <pre>
-     * DescriptionEntity contains detailed description for the task.
+     * DescriptionEntity contains detailed description for the launch plan.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2713,7 +2713,7 @@ public final class LaunchPlanOuterClass {
           flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2723,7 +2723,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2737,7 +2737,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2757,7 +2757,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2775,7 +2775,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2797,7 +2797,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2815,7 +2815,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2827,7 +2827,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>
@@ -2842,7 +2842,7 @@ public final class LaunchPlanOuterClass {
       }
       /**
        * <pre>
-       * DescriptionEntity contains detailed description for the task.
+       * DescriptionEntity contains detailed description for the launch plan.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description_entity = 4;</code>

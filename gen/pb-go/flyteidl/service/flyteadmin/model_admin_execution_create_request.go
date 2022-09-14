@@ -16,4 +16,6 @@ type AdminExecutionCreateRequest struct {
 	Name string `json:"name,omitempty"`
 	Spec *AdminExecutionSpec `json:"spec,omitempty"`
 	Inputs *CoreLiteralMap `json:"inputs,omitempty"`
+	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.
+	Tags []string `json:"tags,omitempty"`
 }

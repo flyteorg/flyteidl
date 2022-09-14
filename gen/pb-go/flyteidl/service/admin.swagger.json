@@ -3569,6 +3569,13 @@
         "inputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "title": "The inputs required to start the execution. All required inputs must be\nincluded in this map. If not required and not provided, defaults apply.\n+optional"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "Request to launch an execution with the given project, domain and optionally-assigned name."
@@ -3738,13 +3745,6 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -3872,7 +3872,7 @@
         },
         "description_entity": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity contains detailed description for the task."
+          "description": "DescriptionEntity contains detailed description for the launch plan."
         }
       },
       "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
@@ -5018,12 +5018,9 @@
           "$ref": "#/definitions/adminWorkflowClosure",
           "description": "closure encapsulates all the fields that maps to a compiled version of the workflow."
         },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "description": "DescriptionEntity contains detailed description for the workflow."
         }
       },
       "description": "Represents the workflow structure stored in the Admin\nA workflow is created by ordering tasks and associating outputs to inputs\nin order to produce a directed-acyclic execution graph."
@@ -5122,6 +5119,13 @@
         "spec": {
           "$ref": "#/definitions/adminWorkflowSpec",
           "title": "Represents the specification for workflow.\n+required"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering entities."
         }
       },
       "title": "Represents a request structure to create a revision of a workflow.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
@@ -5213,9 +5217,6 @@
         "token": {
           "type": "string",
           "description": "In the case of multiple pages of results, the server-provided token can be used to fetch the next page\nin a query. If there are no more results, this value will be empty."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity"
         }
       },
       "title": "Represents a list of workflows returned from the admin.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"

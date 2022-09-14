@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.admin_workflow_closure import AdminWorkflowClosure  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 
@@ -36,29 +37,29 @@ class AdminWorkflow(object):
     swagger_types = {
         'id': 'CoreIdentifier',
         'closure': 'AdminWorkflowClosure',
-        'tags': 'list[str]'
+        'description_entity': 'AdminDescriptionEntity'
     }
 
     attribute_map = {
         'id': 'id',
         'closure': 'closure',
-        'tags': 'tags'
+        'description_entity': 'description_entity'
     }
 
-    def __init__(self, id=None, closure=None, tags=None):  # noqa: E501
+    def __init__(self, id=None, closure=None, description_entity=None):  # noqa: E501
         """AdminWorkflow - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._closure = None
-        self._tags = None
+        self._description_entity = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if closure is not None:
             self.closure = closure
-        if tags is not None:
-            self.tags = tags
+        if description_entity is not None:
+            self.description_entity = description_entity
 
     @property
     def id(self):
@@ -107,27 +108,27 @@ class AdminWorkflow(object):
         self._closure = closure
 
     @property
-    def tags(self):
-        """Gets the tags of this AdminWorkflow.  # noqa: E501
+    def description_entity(self):
+        """Gets the description_entity of this AdminWorkflow.  # noqa: E501
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        DescriptionEntity contains detailed description for the workflow.  # noqa: E501
 
-        :return: The tags of this AdminWorkflow.  # noqa: E501
-        :rtype: list[str]
+        :return: The description_entity of this AdminWorkflow.  # noqa: E501
+        :rtype: AdminDescriptionEntity
         """
-        return self._tags
+        return self._description_entity
 
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this AdminWorkflow.
+    @description_entity.setter
+    def description_entity(self, description_entity):
+        """Sets the description_entity of this AdminWorkflow.
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering entities.  # noqa: E501
+        DescriptionEntity contains detailed description for the workflow.  # noqa: E501
 
-        :param tags: The tags of this AdminWorkflow.  # noqa: E501
-        :type: list[str]
+        :param description_entity: The description_entity of this AdminWorkflow.  # noqa: E501
+        :type: AdminDescriptionEntity
         """
 
-        self._tags = tags
+        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

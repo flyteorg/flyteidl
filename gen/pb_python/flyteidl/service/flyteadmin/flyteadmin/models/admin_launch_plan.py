@@ -140,7 +140,7 @@ class AdminLaunchPlan(object):
     def description_entity(self):
         """Gets the description_entity of this AdminLaunchPlan.  # noqa: E501
 
-        DescriptionEntity contains detailed description for the task.  # noqa: E501
+        DescriptionEntity contains detailed description for the launch plan.  # noqa: E501
 
         :return: The description_entity of this AdminLaunchPlan.  # noqa: E501
         :rtype: AdminDescriptionEntity
@@ -151,7 +151,7 @@ class AdminLaunchPlan(object):
     def description_entity(self, description_entity):
         """Sets the description_entity of this AdminLaunchPlan.
 
-        DescriptionEntity contains detailed description for the task.  # noqa: E501
+        DescriptionEntity contains detailed description for the launch plan.  # noqa: E501
 
         :param description_entity: The description_entity of this AdminLaunchPlan.  # noqa: E501
         :type: AdminDescriptionEntity

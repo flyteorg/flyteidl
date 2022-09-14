@@ -17,6 +17,6 @@ type AdminLaunchPlan struct {
 	Spec *AdminLaunchPlanSpec `json:"spec,omitempty"`
 	// Values computed by the flyte platform after launch plan registration.
 	Closure *AdminLaunchPlanClosure `json:"closure,omitempty"`
-	// DescriptionEntity contains detailed description for the task.
+	// DescriptionEntity contains detailed description for the launch plan.
 	DescriptionEntity *AdminDescriptionEntity `json:"description_entity,omitempty"`
 }

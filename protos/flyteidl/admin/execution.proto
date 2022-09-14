@@ -37,6 +37,10 @@ message ExecutionCreateRequest {
     // included in this map. If not required and not provided, defaults apply.
     // +optional
     core.LiteralMap inputs = 5;
+
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering entities.
+    repeated string tags = 6;
 }
 
 // Request to relaunch the referenced execution.
@@ -296,10 +300,6 @@ message ExecutionSpec {
     // As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
     // around the bool field.
     google.protobuf.BoolValue interruptible = 21;
-
-    // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering entities.
-    repeated string tags = 22;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

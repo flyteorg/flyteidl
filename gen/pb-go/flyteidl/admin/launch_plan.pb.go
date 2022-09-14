@@ -147,7 +147,7 @@ type LaunchPlan struct {
 	Spec *LaunchPlanSpec `protobuf:"bytes,2,opt,name=spec,proto3" json:"spec,omitempty"`
 	// Values computed by the flyte platform after launch plan registration.
 	Closure *LaunchPlanClosure `protobuf:"bytes,3,opt,name=closure,proto3" json:"closure,omitempty"`
-	// DescriptionEntity contains detailed description for the task.
+	// DescriptionEntity contains detailed description for the launch plan.
 	DescriptionEntity    *DescriptionEntity `protobuf:"bytes,4,opt,name=description_entity,json=descriptionEntity,proto3" json:"description_entity,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`

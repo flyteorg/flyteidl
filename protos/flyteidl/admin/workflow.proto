@@ -19,6 +19,11 @@ message WorkflowCreateRequest {
     // Represents the specification for workflow.
     // +required
     WorkflowSpec spec      = 2;
+
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering entities.
+    repeated string tags = 3;
+
 }
 
 message WorkflowCreateResponse {
@@ -35,9 +40,8 @@ message Workflow {
     // closure encapsulates all the fields that maps to a compiled version of the workflow.
     WorkflowClosure closure  = 2;
 
-    // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering entities.
-    repeated string tags = 3;
+    // DescriptionEntity contains detailed description for the workflow.
+    DescriptionEntity description_entity = 3;
 }
 
 // Represents a list of workflows returned from the admin.
@@ -49,8 +53,6 @@ message WorkflowList {
     // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
     // in a query. If there are no more results, this value will be empty.
     string token                = 2;
-
-    DescriptionEntity description_entity = 3;
 }
 
 // Represents a structure that encapsulates the specification of the workflow.

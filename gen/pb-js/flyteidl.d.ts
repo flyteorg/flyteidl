@@ -9408,6 +9408,9 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs */
             inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionCreateRequest tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionCreateRequest. */
@@ -9433,6 +9436,9 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs. */
             public inputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** ExecutionCreateRequest tags. */
+            public tags: string[];
 
             /**
              * Creates a new ExecutionCreateRequest instance using the specified properties.
@@ -10316,9 +10322,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** ExecutionSpec tags */
-            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10371,9 +10374,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** ExecutionSpec tags. */
-            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -15310,6 +15310,9 @@ export namespace flyteidl {
 
             /** WorkflowCreateRequest spec */
             spec?: (flyteidl.admin.IWorkflowSpec|null);
+
+            /** WorkflowCreateRequest tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a WorkflowCreateRequest. */
@@ -15326,6 +15329,9 @@ export namespace flyteidl {
 
             /** WorkflowCreateRequest spec. */
             public spec?: (flyteidl.admin.IWorkflowSpec|null);
+
+            /** WorkflowCreateRequest tags. */
+            public tags: string[];
 
             /**
              * Creates a new WorkflowCreateRequest instance using the specified properties.
@@ -15415,8 +15421,8 @@ export namespace flyteidl {
             /** Workflow closure */
             closure?: (flyteidl.admin.IWorkflowClosure|null);
 
-            /** Workflow tags */
-            tags?: (string[]|null);
+            /** Workflow descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a Workflow. */
@@ -15434,8 +15440,8 @@ export namespace flyteidl {
             /** Workflow closure. */
             public closure?: (flyteidl.admin.IWorkflowClosure|null);
 
-            /** Workflow tags. */
-            public tags: string[];
+            /** Workflow descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new Workflow instance using the specified properties.
@@ -15478,9 +15484,6 @@ export namespace flyteidl {
 
             /** WorkflowList token */
             token?: (string|null);
-
-            /** WorkflowList descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowList. */
@@ -15497,9 +15500,6 @@ export namespace flyteidl {
 
             /** WorkflowList token. */
             public token: string;
-
-            /** WorkflowList descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowList instance using the specified properties.
