@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/description_entity.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x9a\x01\n\x11\x44\x65scriptionEntity\x12\x19\n\x11short_description\x18\x01 \x01(\t\x12\x39\n\x10long_description\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12/\n\x0bsource_code\x18\x05 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xd5\x01\n\x0fLongDescription\x12\x0f\n\x05value\x18\x01 \x01(\tH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x12\x41\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\x42\t\n\x07\x63ontent\"\x1a\n\nSourceCode\x12\x0c\n\x04link\x18\x05 \x01(\t\"\x86\x01\n\x1e\x44\x65scriptionEntityCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12=\n\x12\x64\x65scription_entity\x18\x02 \x01(\x0b\x32!.flyteidl.admin.DescriptionEntity\"!\n\x1f\x44\x65scriptionEntityCreateResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/description_entity.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x9a\x01\n\x11\x44\x65scriptionEntity\x12\x19\n\x11short_description\x18\x01 \x01(\t\x12\x39\n\x10long_description\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12/\n\x0bsource_code\x18\x05 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xd5\x01\n\x0fLongDescription\x12\x0f\n\x05value\x18\x01 \x01(\tH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x12\x41\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\x42\t\n\x07\x63ontent\"\x1a\n\nSourceCode\x12\x0c\n\x04link\x18\x01 \x01(\t\"\x86\x01\n\x1e\x44\x65scriptionEntityCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12=\n\x12\x64\x65scription_entity\x18\x02 \x01(\x0b\x32!.flyteidl.admin.DescriptionEntity\"!\n\x1f\x44\x65scriptionEntityCreateResponseB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -169,7 +169,7 @@ _SOURCECODE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='link', full_name='flyteidl.admin.SourceCode.link', index=0,
-      number=5, type=9, cpp_type=9, label=1,
+      number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,

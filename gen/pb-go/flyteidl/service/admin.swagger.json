@@ -211,8 +211,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           },
@@ -438,8 +437,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -538,8 +536,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -1262,8 +1259,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -1390,8 +1386,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ]
           },
           {
@@ -1444,8 +1439,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ]
           },
           {
@@ -1508,8 +1502,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ]
           },
           {
@@ -2051,8 +2044,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -2478,8 +2470,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -2989,8 +2980,7 @@
               "TASK",
               "WORKFLOW",
               "LAUNCH_PLAN",
-              "DATASET",
-              "DESCRIPTION_ENTITY"
+              "DATASET"
             ],
             "default": "UNSPECIFIED"
           }
@@ -3569,13 +3559,6 @@
         "inputs": {
           "$ref": "#/definitions/coreLiteralMap",
           "title": "The inputs required to start the execution. All required inputs must be\nincluded in this map. If not required and not provided, defaults apply.\n+optional"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering executions."
         }
       },
       "description": "Request to launch an execution with the given project, domain and optionally-assigned name."
@@ -3745,6 +3728,13 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering executions."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -3869,10 +3859,6 @@
         "closure": {
           "$ref": "#/definitions/adminLaunchPlanClosure",
           "description": "Values computed by the flyte platform after launch plan registration."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity contains detailed description for the launch plan."
         }
       },
       "description": "A LaunchPlan provides the capability to templatize workflow executions.\nLaunch plans simplify associating one or more schedules, inputs and notifications with your workflows.\nLaunch plans can be shared and used to trigger executions with predefined inputs even when a workflow\ndefinition doesn't necessarily have a default value for said input."
@@ -4730,10 +4716,6 @@
         "closure": {
           "$ref": "#/definitions/adminTaskClosure",
           "description": "closure encapsulates all the fields that maps to a compiled version of the task."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity contains detailed description for the task."
         }
       },
       "description": "Flyte workflows are composed of many ordered tasks. That is small, reusable, self-contained logical blocks\narranged to process workflow inputs and produce a deterministic set of outputs.\nTasks can come in many varieties tuned for specialized behavior."
@@ -4763,13 +4745,6 @@
         "spec": {
           "$ref": "#/definitions/adminTaskSpec",
           "title": "Represents the specification for task.\n+required"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
         }
       },
       "title": "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task` for more details"
@@ -4958,6 +4933,13 @@
         "template": {
           "$ref": "#/definitions/coreTaskTemplate",
           "description": "Template of the task that encapsulates all the metadata of the task."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5018,10 +5000,6 @@
         "closure": {
           "$ref": "#/definitions/adminWorkflowClosure",
           "description": "closure encapsulates all the fields that maps to a compiled version of the workflow."
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "DescriptionEntity contains detailed description for the workflow."
         }
       },
       "description": "Represents the workflow structure stored in the Admin\nA workflow is created by ordering tasks and associating outputs to inputs\nin order to produce a directed-acyclic execution graph."
@@ -5120,13 +5098,6 @@
         "spec": {
           "$ref": "#/definitions/adminWorkflowSpec",
           "title": "Represents the specification for workflow.\n+required"
-        },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering workflows."
         }
       },
       "title": "Represents a request structure to create a revision of a workflow.\nSee :ref:`ref_flyteidl.admin.Workflow` for more details"
@@ -5235,6 +5206,13 @@
             "$ref": "#/definitions/coreWorkflowTemplate"
           },
           "description": "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the\npropeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out\nto Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering workflows."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."
@@ -6183,8 +6161,7 @@
         "TASK",
         "WORKFLOW",
         "LAUNCH_PLAN",
-        "DATASET",
-        "DESCRIPTION_ENTITY"
+        "DATASET"
       ],
       "default": "UNSPECIFIED",
       "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"

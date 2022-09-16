@@ -16,7 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.admin_workflow_closure import AdminWorkflowClosure  # noqa: F401,E501
 from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 
@@ -36,30 +35,25 @@ class AdminWorkflow(object):
     """
     swagger_types = {
         'id': 'CoreIdentifier',
-        'closure': 'AdminWorkflowClosure',
-        'description_entity': 'AdminDescriptionEntity'
+        'closure': 'AdminWorkflowClosure'
     }
 
     attribute_map = {
         'id': 'id',
-        'closure': 'closure',
-        'description_entity': 'description_entity'
+        'closure': 'closure'
     }
 
-    def __init__(self, id=None, closure=None, description_entity=None):  # noqa: E501
+    def __init__(self, id=None, closure=None):  # noqa: E501
         """AdminWorkflow - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._closure = None
-        self._description_entity = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if closure is not None:
             self.closure = closure
-        if description_entity is not None:
-            self.description_entity = description_entity
 
     @property
     def id(self):
@@ -106,29 +100,6 @@ class AdminWorkflow(object):
         """
 
         self._closure = closure
-
-    @property
-    def description_entity(self):
-        """Gets the description_entity of this AdminWorkflow.  # noqa: E501
-
-        DescriptionEntity contains detailed description for the workflow.  # noqa: E501
-
-        :return: The description_entity of this AdminWorkflow.  # noqa: E501
-        :rtype: AdminDescriptionEntity
-        """
-        return self._description_entity
-
-    @description_entity.setter
-    def description_entity(self, description_entity):
-        """Sets the description_entity of this AdminWorkflow.
-
-        DescriptionEntity contains detailed description for the workflow.  # noqa: E501
-
-        :param description_entity: The description_entity of this AdminWorkflow.  # noqa: E501
-        :type: AdminDescriptionEntity
-        """
-
-        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -185,28 +185,6 @@ class WorkflowCreateRequest final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string tags = 3;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 3;
-  const ::std::string& tags(int index) const;
-  ::std::string* mutable_tags(int index);
-  void set_tags(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_tags(int index, ::std::string&& value);
-  #endif
-  void set_tags(int index, const char* value);
-  void set_tags(int index, const char* value, size_t size);
-  ::std::string* add_tags();
-  void add_tags(const ::std::string& value);
-  #if LANG_CXX11
-  void add_tags(::std::string&& value);
-  #endif
-  void add_tags(const char* value);
-  void add_tags(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
-
   // .flyteidl.core.Identifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -230,7 +208,6 @@ class WorkflowCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::WorkflowSpec* spec_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -456,15 +433,6 @@ class Workflow final :
   ::flyteidl::admin::WorkflowClosure* mutable_closure();
   void set_allocated_closure(::flyteidl::admin::WorkflowClosure* closure);
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 3;
-  bool has_description_entity() const;
-  void clear_description_entity();
-  static const int kDescriptionEntityFieldNumber = 3;
-  const ::flyteidl::admin::DescriptionEntity& description_entity() const;
-  ::flyteidl::admin::DescriptionEntity* release_description_entity();
-  ::flyteidl::admin::DescriptionEntity* mutable_description_entity();
-  void set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Workflow)
  private:
   class HasBitSetters;
@@ -472,7 +440,6 @@ class Workflow final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::WorkflowClosure* closure_;
-  ::flyteidl::admin::DescriptionEntity* description_entity_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_2eproto;
 };
@@ -718,6 +685,28 @@ class WorkflowSpec final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkflowTemplate >&
       sub_workflows() const;
 
+  // repeated string tags = 3;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 3;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // .flyteidl.core.WorkflowTemplate template = 1;
   bool has_template_() const;
   void clear_template_();
@@ -733,6 +722,7 @@ class WorkflowSpec final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkflowTemplate > sub_workflows_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::flyteidl::core::WorkflowTemplate* template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fworkflow_2eproto;
@@ -969,75 +959,6 @@ inline void WorkflowCreateRequest::set_allocated_spec(::flyteidl::admin::Workflo
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowCreateRequest.spec)
 }
 
-// repeated string tags = 3;
-inline int WorkflowCreateRequest::tags_size() const {
-  return tags_.size();
-}
-inline void WorkflowCreateRequest::clear_tags() {
-  tags_.Clear();
-}
-inline const ::std::string& WorkflowCreateRequest::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowCreateRequest.tags)
-  return tags_.Get(index);
-}
-inline ::std::string* WorkflowCreateRequest::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowCreateRequest.tags)
-  return tags_.Mutable(index);
-}
-inline void WorkflowCreateRequest::set_tags(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowCreateRequest.tags)
-  tags_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void WorkflowCreateRequest::set_tags(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowCreateRequest.tags)
-  tags_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void WorkflowCreateRequest::set_tags(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-inline void WorkflowCreateRequest::set_tags(int index, const char* value, size_t size) {
-  tags_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-inline ::std::string* WorkflowCreateRequest::add_tags() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.WorkflowCreateRequest.tags)
-  return tags_.Add();
-}
-inline void WorkflowCreateRequest::add_tags(const ::std::string& value) {
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-#if LANG_CXX11
-inline void WorkflowCreateRequest::add_tags(::std::string&& value) {
-  tags_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-#endif
-inline void WorkflowCreateRequest::add_tags(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-inline void WorkflowCreateRequest::add_tags(const char* value, size_t size) {
-  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.WorkflowCreateRequest.tags)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-WorkflowCreateRequest::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.WorkflowCreateRequest.tags)
-  return tags_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-WorkflowCreateRequest::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.WorkflowCreateRequest.tags)
-  return &tags_;
-}
-
 // -------------------------------------------------------------------
 
 // WorkflowCreateResponse
@@ -1140,51 +1061,6 @@ inline void Workflow::set_allocated_closure(::flyteidl::admin::WorkflowClosure* 
   }
   closure_ = closure;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Workflow.closure)
-}
-
-// .flyteidl.admin.DescriptionEntity description_entity = 3;
-inline bool Workflow::has_description_entity() const {
-  return this != internal_default_instance() && description_entity_ != nullptr;
-}
-inline const ::flyteidl::admin::DescriptionEntity& Workflow::description_entity() const {
-  const ::flyteidl::admin::DescriptionEntity* p = description_entity_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Workflow.description_entity)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntity*>(
-      &::flyteidl::admin::_DescriptionEntity_default_instance_);
-}
-inline ::flyteidl::admin::DescriptionEntity* Workflow::release_description_entity() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Workflow.description_entity)
-  
-  ::flyteidl::admin::DescriptionEntity* temp = description_entity_;
-  description_entity_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::DescriptionEntity* Workflow::mutable_description_entity() {
-  
-  if (description_entity_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(GetArenaNoVirtual());
-    description_entity_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Workflow.description_entity)
-  return description_entity_;
-}
-inline void Workflow::set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(description_entity_);
-  }
-  if (description_entity) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      description_entity = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, description_entity, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  description_entity_ = description_entity;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Workflow.description_entity)
 }
 
 // -------------------------------------------------------------------
@@ -1348,6 +1224,75 @@ inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::WorkflowTem
 WorkflowSpec::sub_workflows() const {
   // @@protoc_insertion_point(field_list:flyteidl.admin.WorkflowSpec.sub_workflows)
   return sub_workflows_;
+}
+
+// repeated string tags = 3;
+inline int WorkflowSpec::tags_size() const {
+  return tags_.size();
+}
+inline void WorkflowSpec::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& WorkflowSpec::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowSpec.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* WorkflowSpec::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowSpec.tags)
+  return tags_.Mutable(index);
+}
+inline void WorkflowSpec::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowSpec.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void WorkflowSpec::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowSpec.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void WorkflowSpec::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.WorkflowSpec.tags)
+}
+inline void WorkflowSpec::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.WorkflowSpec.tags)
+}
+inline ::std::string* WorkflowSpec::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.WorkflowSpec.tags)
+  return tags_.Add();
+}
+inline void WorkflowSpec::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowSpec.tags)
+}
+#if LANG_CXX11
+inline void WorkflowSpec::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.WorkflowSpec.tags)
+}
+#endif
+inline void WorkflowSpec::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.WorkflowSpec.tags)
+}
+inline void WorkflowSpec::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.WorkflowSpec.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+WorkflowSpec::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.WorkflowSpec.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+WorkflowSpec::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.WorkflowSpec.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

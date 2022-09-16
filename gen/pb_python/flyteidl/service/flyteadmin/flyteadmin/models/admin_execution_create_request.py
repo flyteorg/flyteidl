@@ -38,8 +38,7 @@ class AdminExecutionCreateRequest(object):
         'domain': 'str',
         'name': 'str',
         'spec': 'AdminExecutionSpec',
-        'inputs': 'CoreLiteralMap',
-        'tags': 'list[str]'
+        'inputs': 'CoreLiteralMap'
     }
 
     attribute_map = {
@@ -47,11 +46,10 @@ class AdminExecutionCreateRequest(object):
         'domain': 'domain',
         'name': 'name',
         'spec': 'spec',
-        'inputs': 'inputs',
-        'tags': 'tags'
+        'inputs': 'inputs'
     }
 
-    def __init__(self, project=None, domain=None, name=None, spec=None, inputs=None, tags=None):  # noqa: E501
+    def __init__(self, project=None, domain=None, name=None, spec=None, inputs=None):  # noqa: E501
         """AdminExecutionCreateRequest - a model defined in Swagger"""  # noqa: E501
 
         self._project = None
@@ -59,7 +57,6 @@ class AdminExecutionCreateRequest(object):
         self._name = None
         self._spec = None
         self._inputs = None
-        self._tags = None
         self.discriminator = None
 
         if project is not None:
@@ -72,8 +69,6 @@ class AdminExecutionCreateRequest(object):
             self.spec = spec
         if inputs is not None:
             self.inputs = inputs
-        if tags is not None:
-            self.tags = tags
 
     @property
     def project(self):
@@ -179,29 +174,6 @@ class AdminExecutionCreateRequest(object):
         """
 
         self._inputs = inputs
-
-    @property
-    def tags(self):
-        """Gets the tags of this AdminExecutionCreateRequest.  # noqa: E501
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering executions.  # noqa: E501
-
-        :return: The tags of this AdminExecutionCreateRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this AdminExecutionCreateRequest.
-
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering executions.  # noqa: E501
-
-        :param tags: The tags of this AdminExecutionCreateRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

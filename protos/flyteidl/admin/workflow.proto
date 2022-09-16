@@ -19,10 +19,6 @@ message WorkflowCreateRequest {
     // Represents the specification for workflow.
     // +required
     WorkflowSpec spec      = 2;
-
-    // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering workflows.
-    repeated string tags = 3;
 }
 
 message WorkflowCreateResponse {
@@ -38,9 +34,6 @@ message Workflow {
     
     // closure encapsulates all the fields that maps to a compiled version of the workflow.
     WorkflowClosure closure  = 2;
-
-    // DescriptionEntity contains detailed description for the workflow.
-    DescriptionEntity description_entity = 3;
 }
 
 // Represents a list of workflows returned from the admin.
@@ -63,6 +56,10 @@ message WorkflowSpec {
     // propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out
     // to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
     repeated core.WorkflowTemplate sub_workflows = 2;
+
+    // User-specified tags. These are arbitrary and can be used for searching
+    // filtering and discovering workflows.
+    repeated string tags = 3;
 }
 
 // A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.

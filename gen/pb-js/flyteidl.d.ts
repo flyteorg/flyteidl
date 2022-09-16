@@ -204,8 +204,7 @@ export namespace flyteidl {
             TASK = 1,
             WORKFLOW = 2,
             LAUNCH_PLAN = 3,
-            DATASET = 4,
-            DESCRIPTION_ENTITY = 5
+            DATASET = 4
         }
 
         /** Properties of an Identifier. */
@@ -9408,9 +9407,6 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs */
             inputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** ExecutionCreateRequest tags */
-            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionCreateRequest. */
@@ -9436,9 +9432,6 @@ export namespace flyteidl {
 
             /** ExecutionCreateRequest inputs. */
             public inputs?: (flyteidl.core.ILiteralMap|null);
-
-            /** ExecutionCreateRequest tags. */
-            public tags: string[];
 
             /**
              * Creates a new ExecutionCreateRequest instance using the specified properties.
@@ -10322,6 +10315,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10374,6 +10370,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec tags. */
+            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -10932,9 +10931,6 @@ export namespace flyteidl {
 
             /** LaunchPlan closure */
             closure?: (flyteidl.admin.ILaunchPlanClosure|null);
-
-            /** LaunchPlan descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a LaunchPlan. */
@@ -10954,9 +10950,6 @@ export namespace flyteidl {
 
             /** LaunchPlan closure. */
             public closure?: (flyteidl.admin.ILaunchPlanClosure|null);
-
-            /** LaunchPlan descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new LaunchPlan instance using the specified properties.
@@ -14295,9 +14288,6 @@ export namespace flyteidl {
 
             /** TaskCreateRequest spec */
             spec?: (flyteidl.admin.ITaskSpec|null);
-
-            /** TaskCreateRequest tags */
-            tags?: (string[]|null);
         }
 
         /** Represents a TaskCreateRequest. */
@@ -14314,9 +14304,6 @@ export namespace flyteidl {
 
             /** TaskCreateRequest spec. */
             public spec?: (flyteidl.admin.ITaskSpec|null);
-
-            /** TaskCreateRequest tags. */
-            public tags: string[];
 
             /**
              * Creates a new TaskCreateRequest instance using the specified properties.
@@ -14405,9 +14392,6 @@ export namespace flyteidl {
 
             /** Task closure */
             closure?: (flyteidl.admin.ITaskClosure|null);
-
-            /** Task descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a Task. */
@@ -14424,9 +14408,6 @@ export namespace flyteidl {
 
             /** Task closure. */
             public closure?: (flyteidl.admin.ITaskClosure|null);
-
-            /** Task descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new Task instance using the specified properties.
@@ -14524,6 +14505,9 @@ export namespace flyteidl {
 
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14537,6 +14521,9 @@ export namespace flyteidl {
 
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskSpec tags. */
+            public tags: string[];
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15310,9 +15297,6 @@ export namespace flyteidl {
 
             /** WorkflowCreateRequest spec */
             spec?: (flyteidl.admin.IWorkflowSpec|null);
-
-            /** WorkflowCreateRequest tags */
-            tags?: (string[]|null);
         }
 
         /** Represents a WorkflowCreateRequest. */
@@ -15329,9 +15313,6 @@ export namespace flyteidl {
 
             /** WorkflowCreateRequest spec. */
             public spec?: (flyteidl.admin.IWorkflowSpec|null);
-
-            /** WorkflowCreateRequest tags. */
-            public tags: string[];
 
             /**
              * Creates a new WorkflowCreateRequest instance using the specified properties.
@@ -15420,9 +15401,6 @@ export namespace flyteidl {
 
             /** Workflow closure */
             closure?: (flyteidl.admin.IWorkflowClosure|null);
-
-            /** Workflow descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a Workflow. */
@@ -15439,9 +15417,6 @@ export namespace flyteidl {
 
             /** Workflow closure. */
             public closure?: (flyteidl.admin.IWorkflowClosure|null);
-
-            /** Workflow descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new Workflow instance using the specified properties.
@@ -15542,6 +15517,9 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
+
+            /** WorkflowSpec tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15558,6 +15536,9 @@ export namespace flyteidl {
 
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
+
+            /** WorkflowSpec tags. */
+            public tags: string[];
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.

@@ -14,7 +14,6 @@ enum ResourceType {
   // Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects 
   // in a similar manner to other Flyte objects
   DATASET            = 4;
-  DESCRIPTION_ENTITY = 5;
 }
 
 // Encapsulation of fields that uniquely identifies a Flyte resource.

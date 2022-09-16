@@ -205,7 +205,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fdescription_5fentity_2ep
   ".LongDescription.DescriptionFormat\022\021\n\tic"
   "on_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007UN"
   "KNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020\003"
-  "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\005 \001(\t\""
+  "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t\""
   "\206\001\n\036DescriptionEntityCreateRequest\022%\n\002id"
   "\030\001 \001(\0132\031.flyteidl.core.Identifier\022=\n\022des"
   "cription_entity\030\002 \001(\0132!.flyteidl.admin.D"
@@ -1292,9 +1292,9 @@ const char* SourceCode::_InternalParse(const char* begin, const char* end, void*
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string link = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // string link = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.SourceCode.link");
@@ -1342,9 +1342,9 @@ bool SourceCode::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string link = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+      // string link = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_link()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1384,14 +1384,14 @@ void SourceCode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string link = 5;
+  // string link = 1;
   if (this->link().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->link().data(), static_cast<int>(this->link().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.SourceCode.link");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->link(), output);
+      1, this->link(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1407,7 +1407,7 @@ void SourceCode::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string link = 5;
+  // string link = 1;
   if (this->link().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->link().data(), static_cast<int>(this->link().length()),
@@ -1415,7 +1415,7 @@ void SourceCode::SerializeWithCachedSizes(
       "flyteidl.admin.SourceCode.link");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->link(), target);
+        1, this->link(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1439,7 +1439,7 @@ size_t SourceCode::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string link = 5;
+  // string link = 1;
   if (this->link().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(

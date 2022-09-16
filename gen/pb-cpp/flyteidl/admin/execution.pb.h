@@ -296,28 +296,6 @@ class ExecutionCreateRequest final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string tags = 6;
-  int tags_size() const;
-  void clear_tags();
-  static const int kTagsFieldNumber = 6;
-  const ::std::string& tags(int index) const;
-  ::std::string* mutable_tags(int index);
-  void set_tags(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_tags(int index, ::std::string&& value);
-  #endif
-  void set_tags(int index, const char* value);
-  void set_tags(int index, const char* value, size_t size);
-  ::std::string* add_tags();
-  void add_tags(const ::std::string& value);
-  #if LANG_CXX11
-  void add_tags(::std::string&& value);
-  #endif
-  void add_tags(const char* value);
-  void add_tags(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
-
   // string project = 1;
   void clear_project();
   static const int kProjectFieldNumber = 1;
@@ -383,7 +361,6 @@ class ExecutionCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr project_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -2272,6 +2249,28 @@ class ExecutionSpec final :
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 22;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 22;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // .flyteidl.core.Identifier launch_plan = 1;
   bool has_launch_plan() const;
   void clear_launch_plan();
@@ -2407,6 +2406,7 @@ class ExecutionSpec final :
   inline void clear_has_notification_overrides();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::flyteidl::core::Identifier* launch_plan_;
   ::flyteidl::core::LiteralMap* inputs_;
   ::flyteidl::admin::ExecutionMetadata* metadata_;
@@ -3552,75 +3552,6 @@ inline void ExecutionCreateRequest::set_allocated_inputs(::flyteidl::core::Liter
   }
   inputs_ = inputs;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionCreateRequest.inputs)
-}
-
-// repeated string tags = 6;
-inline int ExecutionCreateRequest::tags_size() const {
-  return tags_.size();
-}
-inline void ExecutionCreateRequest::clear_tags() {
-  tags_.Clear();
-}
-inline const ::std::string& ExecutionCreateRequest::tags(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionCreateRequest.tags)
-  return tags_.Get(index);
-}
-inline ::std::string* ExecutionCreateRequest::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionCreateRequest.tags)
-  return tags_.Mutable(index);
-}
-inline void ExecutionCreateRequest::set_tags(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionCreateRequest.tags)
-  tags_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void ExecutionCreateRequest::set_tags(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionCreateRequest.tags)
-  tags_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void ExecutionCreateRequest::set_tags(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-inline void ExecutionCreateRequest::set_tags(int index, const char* value, size_t size) {
-  tags_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-inline ::std::string* ExecutionCreateRequest::add_tags() {
-  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.ExecutionCreateRequest.tags)
-  return tags_.Add();
-}
-inline void ExecutionCreateRequest::add_tags(const ::std::string& value) {
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-#if LANG_CXX11
-inline void ExecutionCreateRequest::add_tags(::std::string&& value) {
-  tags_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-#endif
-inline void ExecutionCreateRequest::add_tags(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-inline void ExecutionCreateRequest::add_tags(const char* value, size_t size) {
-  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.ExecutionCreateRequest.tags)
-}
-inline const ::google::protobuf::RepeatedPtrField<::std::string>&
-ExecutionCreateRequest::tags() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.ExecutionCreateRequest.tags)
-  return tags_;
-}
-inline ::google::protobuf::RepeatedPtrField<::std::string>*
-ExecutionCreateRequest::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ExecutionCreateRequest.tags)
-  return &tags_;
 }
 
 // -------------------------------------------------------------------
@@ -6035,6 +5966,75 @@ inline void ExecutionSpec::set_allocated_interruptible(::google::protobuf::BoolV
   }
   interruptible_ = interruptible;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.interruptible)
+}
+
+// repeated string tags = 22;
+inline int ExecutionSpec::tags_size() const {
+  return tags_.size();
+}
+inline void ExecutionSpec::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& ExecutionSpec::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* ExecutionSpec::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ExecutionSpec.tags)
+  return tags_.Mutable(index);
+}
+inline void ExecutionSpec::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void ExecutionSpec::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void ExecutionSpec::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.ExecutionSpec.tags)
+}
+inline void ExecutionSpec::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.ExecutionSpec.tags)
+}
+inline ::std::string* ExecutionSpec::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.ExecutionSpec.tags)
+  return tags_.Add();
+}
+inline void ExecutionSpec::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ExecutionSpec.tags)
+}
+#if LANG_CXX11
+inline void ExecutionSpec::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ExecutionSpec.tags)
+}
+#endif
+inline void ExecutionSpec::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.ExecutionSpec.tags)
+}
+inline void ExecutionSpec::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.ExecutionSpec.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ExecutionSpec::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.ExecutionSpec.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+ExecutionSpec::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ExecutionSpec.tags)
+  return &tags_;
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

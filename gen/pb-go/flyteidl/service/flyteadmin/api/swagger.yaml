@@ -191,7 +191,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "TaskExecutionIdTaskIdResourceType"
         x-optionalDataType: "String"
       - name: "limit"
@@ -393,7 +392,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -478,7 +476,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1103,7 +1100,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -1223,7 +1219,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1269,7 +1264,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "id.project"
         in: "path"
@@ -1324,7 +1318,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "ResourceType"
       - name: "project"
         in: "path"
@@ -1811,7 +1804,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdTaskIdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2204,7 +2196,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -2672,7 +2663,6 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        - "DESCRIPTION_ENTITY"
         x-exportParamName: "IdResourceType"
         x-optionalDataType: "String"
       responses:
@@ -3295,6 +3285,9 @@ definitions:
         labels:
           values:
             key: "values"
+        tags:
+        - "tags"
+        - "tags"
         launch_plan:
           domain: "domain"
           resource_type: {}
@@ -3563,12 +3556,6 @@ definitions:
           \ be\nincluded in this map. If not required and not provided, defaults apply.\n\
           +optional"
         $ref: "#/definitions/coreLiteralMap"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering executions."
-        items:
-          type: "string"
     description: "Request to launch an execution with the given project, domain and\
       \ optionally-assigned name."
   adminExecutionCreateResponse:
@@ -3697,6 +3684,9 @@ definitions:
           labels:
             values:
               key: "values"
+          tags:
+          - "tags"
+          - "tags"
           launch_plan:
             domain: "domain"
             resource_type: {}
@@ -3909,6 +3899,9 @@ definitions:
           labels:
             values:
               key: "values"
+          tags:
+          - "tags"
+          - "tags"
           launch_plan:
             domain: "domain"
             resource_type: {}
@@ -4180,6 +4173,12 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      tags:
+        type: "array"
+        description: "User-specified tags. These are arbitrary and can be used for\
+          \ searching\nfiltering and discovering executions."
+        items:
+          type: "string"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4212,6 +4211,9 @@ definitions:
       labels:
         values:
           key: "values"
+      tags:
+      - "tags"
+      - "tags"
       launch_plan:
         domain: "domain"
         resource_type: {}
@@ -4444,25 +4446,12 @@ definitions:
       closure:
         description: "Values computed by the flyte platform after launch plan registration."
         $ref: "#/definitions/adminLaunchPlanClosure"
-      description_entity:
-        description: "DescriptionEntity contains detailed description for the launch\
-          \ plan."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "A LaunchPlan provides the capability to templatize workflow executions.\n\
       Launch plans simplify associating one or more schedules, inputs and notifications\
       \ with your workflows.\nLaunch plans can be shared and used to trigger executions\
       \ with predefined inputs even when a workflow\ndefinition doesn't necessarily\
       \ have a default value for said input."
     example:
-      description_entity:
-        short_description: "short_description"
-        long_description:
-          format: {}
-          icon_link: "icon_link"
-          value: "value"
-          uri: "uri"
-        source_code:
-          link: "link"
       id:
         domain: "domain"
         resource_type: {}
@@ -5261,16 +5250,7 @@ definitions:
       \ for more details"
     example:
       launch_plans:
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -5783,16 +5763,7 @@ definitions:
           auth_role:
             kubernetes_service_account: "kubernetes_service_account"
             assumable_iam_role: "assumable_iam_role"
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -14414,23 +14385,11 @@ definitions:
         description: "closure encapsulates all the fields that maps to a compiled\
           \ version of the task."
         $ref: "#/definitions/adminTaskClosure"
-      description_entity:
-        description: "DescriptionEntity contains detailed description for the task."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "Flyte workflows are composed of many ordered tasks. That is small,\
       \ reusable, self-contained logical blocks\narranged to process workflow inputs\
       \ and produce a deterministic set of outputs.\nTasks can come in many varieties\
       \ tuned for specialized behavior."
     example:
-      description_entity:
-        short_description: "short_description"
-        long_description:
-          format: {}
-          icon_link: "icon_link"
-          value: "value"
-          uri: "uri"
-        source_code:
-          link: "link"
       id:
         domain: "domain"
         resource_type: {}
@@ -14965,12 +14924,6 @@ definitions:
       spec:
         title: "Represents the specification for task.\n+required"
         $ref: "#/definitions/adminTaskSpec"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering tasks."
-        items:
-          type: "string"
     title: "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task`\
       \ for more details"
   adminTaskCreateResponse:
@@ -15365,16 +15318,7 @@ definitions:
       \ for more details"
     example:
       tasks:
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -15633,16 +15577,7 @@ definitions:
               sql:
                 dialect: {}
                 statement: "statement"
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -15952,6 +15887,12 @@ definitions:
         description: "Template of the task that encapsulates all the metadata of the\
           \ task."
         $ref: "#/definitions/coreTaskTemplate"
+      tags:
+        type: "array"
+        description: "User-specified tags. These are arbitrary and can be used for\
+          \ searching\nfiltering and discovering tasks."
+        items:
+          type: "string"
     description: "Represents a structure that encapsulates the user-configured specification\
       \ of the task."
   adminToleration:
@@ -16019,22 +15960,10 @@ definitions:
         description: "closure encapsulates all the fields that maps to a compiled\
           \ version of the workflow."
         $ref: "#/definitions/adminWorkflowClosure"
-      description_entity:
-        description: "DescriptionEntity contains detailed description for the workflow."
-        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents the workflow structure stored in the Admin\nA workflow\
       \ is created by ordering tasks and associating outputs to inputs\nin order to\
       \ produce a directed-acyclic execution graph."
     example:
-      description_entity:
-        short_description: "short_description"
-        long_description:
-          format: {}
-          icon_link: "icon_link"
-          value: "value"
-          uri: "uri"
-        source_code:
-          link: "link"
       id:
         domain: "domain"
         resource_type: {}
@@ -28365,12 +28294,6 @@ definitions:
       spec:
         title: "Represents the specification for workflow.\n+required"
         $ref: "#/definitions/adminWorkflowSpec"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering workflows."
-        items:
-          type: "string"
     title: "Represents a request structure to create a revision of a workflow.\nSee\
       \ :ref:`ref_flyteidl.admin.Workflow` for more details"
   adminWorkflowCreateResponse:
@@ -28523,16 +28446,7 @@ definitions:
       \ for more details"
     example:
       workflows:
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -34540,16 +34454,7 @@ definitions:
                     - "ids"
                     - "ids"
           created_at: "2000-01-23T04:56:07.000+00:00"
-      - description_entity:
-          short_description: "short_description"
-          long_description:
-            format: {}
-            icon_link: "icon_link"
-            value: "value"
-            uri: "uri"
-          source_code:
-            link: "link"
-        id:
+      - id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -40574,6 +40479,12 @@ definitions:
           \ do not even need to be registered."
         items:
           $ref: "#/definitions/coreWorkflowTemplate"
+      tags:
+        type: "array"
+        description: "User-specified tags. These are arbitrary and can be used for\
+          \ searching\nfiltering and discovering workflows."
+        items:
+          type: "string"
     description: "Represents a structure that encapsulates the specification of the\
       \ workflow."
   coreAlias:
@@ -51209,7 +51120,6 @@ definitions:
     - "WORKFLOW"
     - "LAUNCH_PLAN"
     - "DATASET"
-    - "DESCRIPTION_ENTITY"
     default: "UNSPECIFIED"
   coreResources:
     type: "object"

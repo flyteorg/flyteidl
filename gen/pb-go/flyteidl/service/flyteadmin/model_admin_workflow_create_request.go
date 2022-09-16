@@ -12,6 +12,4 @@ package flyteadmin
 type AdminWorkflowCreateRequest struct {
 	Id *CoreIdentifier `json:"id,omitempty"`
 	Spec *AdminWorkflowSpec `json:"spec,omitempty"`
-	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows.
-	Tags []string `json:"tags,omitempty"`
 }

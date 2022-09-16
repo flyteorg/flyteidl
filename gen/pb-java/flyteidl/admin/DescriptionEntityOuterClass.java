@@ -2450,11 +2450,11 @@ public final class DescriptionEntityOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string link = 5;</code>
+     * <code>string link = 1;</code>
      */
     java.lang.String getLink();
     /**
-     * <code>string link = 5;</code>
+     * <code>string link = 1;</code>
      */
     com.google.protobuf.ByteString
         getLinkBytes();
@@ -2503,7 +2503,7 @@ public final class DescriptionEntityOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               link_ = s;
@@ -2541,10 +2541,10 @@ public final class DescriptionEntityOuterClass {
               flyteidl.admin.DescriptionEntityOuterClass.SourceCode.class, flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder.class);
     }
 
-    public static final int LINK_FIELD_NUMBER = 5;
+    public static final int LINK_FIELD_NUMBER = 1;
     private volatile java.lang.Object link_;
     /**
-     * <code>string link = 5;</code>
+     * <code>string link = 1;</code>
      */
     public java.lang.String getLink() {
       java.lang.Object ref = link_;
@@ -2559,7 +2559,7 @@ public final class DescriptionEntityOuterClass {
       }
     }
     /**
-     * <code>string link = 5;</code>
+     * <code>string link = 1;</code>
      */
     public com.google.protobuf.ByteString
         getLinkBytes() {
@@ -2590,7 +2590,7 @@ public final class DescriptionEntityOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getLinkBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, link_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, link_);
       }
       unknownFields.writeTo(output);
     }
@@ -2602,7 +2602,7 @@ public final class DescriptionEntityOuterClass {
 
       size = 0;
       if (!getLinkBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, link_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, link_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2883,7 +2883,7 @@ public final class DescriptionEntityOuterClass {
 
       private java.lang.Object link_ = "";
       /**
-       * <code>string link = 5;</code>
+       * <code>string link = 1;</code>
        */
       public java.lang.String getLink() {
         java.lang.Object ref = link_;
@@ -2898,7 +2898,7 @@ public final class DescriptionEntityOuterClass {
         }
       }
       /**
-       * <code>string link = 5;</code>
+       * <code>string link = 1;</code>
        */
       public com.google.protobuf.ByteString
           getLinkBytes() {
@@ -2914,7 +2914,7 @@ public final class DescriptionEntityOuterClass {
         }
       }
       /**
-       * <code>string link = 5;</code>
+       * <code>string link = 1;</code>
        */
       public Builder setLink(
           java.lang.String value) {
@@ -2927,7 +2927,7 @@ public final class DescriptionEntityOuterClass {
         return this;
       }
       /**
-       * <code>string link = 5;</code>
+       * <code>string link = 1;</code>
        */
       public Builder clearLink() {
         
@@ -2936,7 +2936,7 @@ public final class DescriptionEntityOuterClass {
         return this;
       }
       /**
-       * <code>string link = 5;</code>
+       * <code>string link = 1;</code>
        */
       public Builder setLinkBytes(
           com.google.protobuf.ByteString value) {
@@ -4427,7 +4427,7 @@ public final class DescriptionEntityOuterClass {
       ".LongDescription.DescriptionFormat\022\021\n\tic" +
       "on_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007UN" +
       "KNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020\003" +
-      "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\005 \001(\t\"" +
+      "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t\"" +
       "\206\001\n\036DescriptionEntityCreateRequest\022%\n\002id" +
       "\030\001 \001(\0132\031.flyteidl.core.Identifier\022=\n\022des" +
       "cription_entity\030\002 \001(\0132!.flyteidl.admin.D" +

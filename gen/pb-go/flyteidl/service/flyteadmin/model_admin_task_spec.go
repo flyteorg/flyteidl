@@ -13,4 +13,6 @@ package flyteadmin
 type AdminTaskSpec struct {
 	// Template of the task that encapsulates all the metadata of the task.
 	Template *CoreTaskTemplate `json:"template,omitempty"`
+	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.
+	Tags []string `json:"tags,omitempty"`
 }

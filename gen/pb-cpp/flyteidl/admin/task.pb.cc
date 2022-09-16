@@ -16,10 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fdescription_5fentity_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2ftask_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskSpec_flyteidl_2fadmin_2ftask_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2ftask_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_TaskClosure_flyteidl_2fadmin_2ftask_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2ftask_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Task_flyteidl_2fadmin_2ftask_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2ftask_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Task_flyteidl_2fadmin_2ftask_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fcompiler_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_CompiledTask_flyteidl_2fcore_2fcompiler_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<9> scc_info_TaskTemplate_flyteidl_2fcore_2ftasks_2eproto;
@@ -93,11 +92,10 @@ static void InitDefaultsTask_flyteidl_2fadmin_2ftask_2eproto() {
   ::flyteidl::admin::Task::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_Task_flyteidl_2fadmin_2ftask_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsTask_flyteidl_2fadmin_2ftask_2eproto}, {
+::google::protobuf::internal::SCCInfo<2> scc_info_Task_flyteidl_2fadmin_2ftask_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsTask_flyteidl_2fadmin_2ftask_2eproto}, {
       &scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_TaskClosure_flyteidl_2fadmin_2ftask_2eproto.base,
-      &scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto.base,}};
+      &scc_info_TaskClosure_flyteidl_2fadmin_2ftask_2eproto.base,}};
 
 static void InitDefaultsTaskList_flyteidl_2fadmin_2ftask_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -166,7 +164,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_2eproto::of
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskCreateRequest, id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskCreateRequest, spec_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskCreateRequest, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskCreateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -179,7 +176,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_2eproto::of
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Task, id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Task, closure_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Task, description_entity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -193,6 +189,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_2eproto::of
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskSpec, template__),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskSpec, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskClosure, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -203,11 +200,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_2eproto::of
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::TaskCreateRequest)},
-  { 8, -1, sizeof(::flyteidl::admin::TaskCreateResponse)},
-  { 13, -1, sizeof(::flyteidl::admin::Task)},
-  { 21, -1, sizeof(::flyteidl::admin::TaskList)},
-  { 28, -1, sizeof(::flyteidl::admin::TaskSpec)},
-  { 34, -1, sizeof(::flyteidl::admin::TaskClosure)},
+  { 7, -1, sizeof(::flyteidl::admin::TaskCreateResponse)},
+  { 12, -1, sizeof(::flyteidl::admin::Task)},
+  { 19, -1, sizeof(::flyteidl::admin::TaskList)},
+  { 26, -1, sizeof(::flyteidl::admin::TaskSpec)},
+  { 33, -1, sizeof(::flyteidl::admin::TaskClosure)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -231,27 +228,25 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2ftask_2eproto[] =
   "teidl/core/tasks.proto\032\034flyteidl/core/co"
   "mpiler.proto\032\037google/protobuf/timestamp."
   "proto\032\'flyteidl/admin/description_entity"
-  ".proto\"p\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132"
+  ".proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132"
   "\031.flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\013"
-  "2\030.flyteidl.admin.TaskSpec\022\014\n\004tags\030\003 \003(\t"
-  "\"\024\n\022TaskCreateResponse\"\232\001\n\004Task\022%\n\002id\030\001 "
-  "\001(\0132\031.flyteidl.core.Identifier\022,\n\007closur"
-  "e\030\002 \001(\0132\033.flyteidl.admin.TaskClosure\022=\n\022"
-  "description_entity\030\003 \001(\0132!.flyteidl.admi"
-  "n.DescriptionEntity\">\n\010TaskList\022#\n\005tasks"
-  "\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030\002 "
-  "\001(\t\"9\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.flyt"
-  "eidl.core.TaskTemplate\"q\n\013TaskClosure\0222\n"
-  "\rcompiled_task\030\001 \001(\0132\033.flyteidl.core.Com"
-  "piledTask\022.\n\ncreated_at\030\002 \001(\0132\032.google.p"
-  "rotobuf.TimestampB7Z5github.com/flyteorg"
-  "/flyteidl/gen/pb-go/flyteidl/adminb\006prot"
-  "o3"
+  "2\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreate"
+  "Response\"[\n\004Task\022%\n\002id\030\001 \001(\0132\031.flyteidl."
+  "core.Identifier\022,\n\007closure\030\002 \001(\0132\033.flyte"
+  "idl.admin.TaskClosure\">\n\010TaskList\022#\n\005tas"
+  "ks\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030"
+  "\002 \001(\t\"G\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fl"
+  "yteidl.core.TaskTemplate\022\014\n\004tags\030\002 \003(\t\"q"
+  "\n\013TaskClosure\0222\n\rcompiled_task\030\001 \001(\0132\033.f"
+  "lyteidl.core.CompiledTask\022.\n\ncreated_at\030"
+  "\002 \001(\0132\032.google.protobuf.TimestampB7Z5git"
+  "hub.com/flyteorg/flyteidl/gen/pb-go/flyt"
+  "eidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2ftask_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2ftask_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2ftask_2eproto,
-  "flyteidl/admin/task.proto", &assign_descriptors_table_flyteidl_2fadmin_2ftask_2eproto, 802,
+  "flyteidl/admin/task.proto", &assign_descriptors_table_flyteidl_2fadmin_2ftask_2eproto, 738,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2ftask_2eproto() {
@@ -302,7 +297,6 @@ void TaskCreateRequest::clear_id() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskCreateRequest::kIdFieldNumber;
 const int TaskCreateRequest::kSpecFieldNumber;
-const int TaskCreateRequest::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskCreateRequest::TaskCreateRequest()
@@ -312,8 +306,7 @@ TaskCreateRequest::TaskCreateRequest()
 }
 TaskCreateRequest::TaskCreateRequest(const TaskCreateRequest& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      tags_(from.tags_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_id()) {
     id_ = new ::flyteidl::core::Identifier(*from.id_);
@@ -361,7 +354,6 @@ void TaskCreateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  tags_.Clear();
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
     delete id_;
   }
@@ -412,25 +404,6 @@ const char* TaskCreateRequest::_InternalParse(const char* begin, const char* end
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.TaskCreateRequest.tags");
-          object = msg->add_tags();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
-        break;
-      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -446,10 +419,6 @@ const char* TaskCreateRequest::_InternalParse(const char* begin, const char* end
     }  // switch
   }  // while
   return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -481,22 +450,6 @@ bool TaskCreateRequest::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_spec()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string tags = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_tags()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->tags(this->tags_size() - 1).data(),
-            static_cast<int>(this->tags(this->tags_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.TaskCreateRequest.tags"));
         } else {
           goto handle_unusual;
         }
@@ -542,16 +495,6 @@ void TaskCreateRequest::SerializeWithCachedSizes(
       2, HasBitSetters::spec(this), output);
   }
 
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.TaskCreateRequest.tags");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->tags(i), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -579,16 +522,6 @@ void TaskCreateRequest::SerializeWithCachedSizes(
         2, HasBitSetters::spec(this), target);
   }
 
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.TaskCreateRequest.tags");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->tags(i), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -609,14 +542,6 @@ size_t TaskCreateRequest::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // repeated string tags = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tags_size());
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->tags(i));
-  }
 
   // .flyteidl.core.Identifier id = 1;
   if (this->has_id()) {
@@ -659,7 +584,6 @@ void TaskCreateRequest::MergeFrom(const TaskCreateRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  tags_.MergeFrom(from.tags_);
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::Identifier::MergeFrom(from.id());
   }
@@ -693,7 +617,6 @@ void TaskCreateRequest::Swap(TaskCreateRequest* other) {
 void TaskCreateRequest::InternalSwap(TaskCreateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  tags_.InternalSwap(CastToBase(&other->tags_));
   swap(id_, other->id_);
   swap(spec_, other->spec_);
 }
@@ -920,14 +843,11 @@ void Task::InitAsDefaultInstance() {
       ::flyteidl::core::Identifier::internal_default_instance());
   ::flyteidl::admin::_Task_default_instance_._instance.get_mutable()->closure_ = const_cast< ::flyteidl::admin::TaskClosure*>(
       ::flyteidl::admin::TaskClosure::internal_default_instance());
-  ::flyteidl::admin::_Task_default_instance_._instance.get_mutable()->description_entity_ = const_cast< ::flyteidl::admin::DescriptionEntity*>(
-      ::flyteidl::admin::DescriptionEntity::internal_default_instance());
 }
 class Task::HasBitSetters {
  public:
   static const ::flyteidl::core::Identifier& id(const Task* msg);
   static const ::flyteidl::admin::TaskClosure& closure(const Task* msg);
-  static const ::flyteidl::admin::DescriptionEntity& description_entity(const Task* msg);
 };
 
 const ::flyteidl::core::Identifier&
@@ -938,26 +858,15 @@ const ::flyteidl::admin::TaskClosure&
 Task::HasBitSetters::closure(const Task* msg) {
   return *msg->closure_;
 }
-const ::flyteidl::admin::DescriptionEntity&
-Task::HasBitSetters::description_entity(const Task* msg) {
-  return *msg->description_entity_;
-}
 void Task::clear_id() {
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
     delete id_;
   }
   id_ = nullptr;
 }
-void Task::clear_description_entity() {
-  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
-    delete description_entity_;
-  }
-  description_entity_ = nullptr;
-}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Task::kIdFieldNumber;
 const int Task::kClosureFieldNumber;
-const int Task::kDescriptionEntityFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Task::Task()
@@ -979,11 +888,6 @@ Task::Task(const Task& from)
   } else {
     closure_ = nullptr;
   }
-  if (from.has_description_entity()) {
-    description_entity_ = new ::flyteidl::admin::DescriptionEntity(*from.description_entity_);
-  } else {
-    description_entity_ = nullptr;
-  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.Task)
 }
 
@@ -991,8 +895,8 @@ void Task::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Task_flyteidl_2fadmin_2ftask_2eproto.base);
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&description_entity_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(description_entity_));
+      reinterpret_cast<char*>(&closure_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(closure_));
 }
 
 Task::~Task() {
@@ -1003,7 +907,6 @@ Task::~Task() {
 void Task::SharedDtor() {
   if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete closure_;
-  if (this != internal_default_instance()) delete description_entity_;
 }
 
 void Task::SetCachedSize(int size) const {
@@ -1029,10 +932,6 @@ void Task::Clear() {
     delete closure_;
   }
   closure_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
-    delete description_entity_;
-  }
-  description_entity_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1069,19 +968,6 @@ const char* Task::_InternalParse(const char* begin, const char* end, void* objec
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::TaskClosure::_InternalParse;
         object = msg->mutable_closure();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.admin.DescriptionEntity description_entity = 3;
-      case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::admin::DescriptionEntity::_InternalParse;
-        object = msg->mutable_description_entity();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1140,17 +1026,6 @@ bool Task::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.DescriptionEntity description_entity = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_description_entity()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1190,12 +1065,6 @@ void Task::SerializeWithCachedSizes(
       2, HasBitSetters::closure(this), output);
   }
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 3;
-  if (this->has_description_entity()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, HasBitSetters::description_entity(this), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1221,13 +1090,6 @@ void Task::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::closure(this), target);
-  }
-
-  // .flyteidl.admin.DescriptionEntity description_entity = 3;
-  if (this->has_description_entity()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, HasBitSetters::description_entity(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1265,13 +1127,6 @@ size_t Task::ByteSizeLong() const {
         *closure_);
   }
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 3;
-  if (this->has_description_entity()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *description_entity_);
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1305,9 +1160,6 @@ void Task::MergeFrom(const Task& from) {
   if (from.has_closure()) {
     mutable_closure()->::flyteidl::admin::TaskClosure::MergeFrom(from.closure());
   }
-  if (from.has_description_entity()) {
-    mutable_description_entity()->::flyteidl::admin::DescriptionEntity::MergeFrom(from.description_entity());
-  }
 }
 
 void Task::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1337,7 +1189,6 @@ void Task::InternalSwap(Task* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(id_, other->id_);
   swap(closure_, other->closure_);
-  swap(description_entity_, other->description_entity_);
 }
 
 ::google::protobuf::Metadata Task::GetMetadata() const {
@@ -1726,6 +1577,7 @@ void TaskSpec::clear_template_() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskSpec::kTemplateFieldNumber;
+const int TaskSpec::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskSpec::TaskSpec()
@@ -1735,7 +1587,8 @@ TaskSpec::TaskSpec()
 }
 TaskSpec::TaskSpec(const TaskSpec& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_template_()) {
     template__ = new ::flyteidl::core::TaskTemplate(*from.template__);
@@ -1775,6 +1628,7 @@ void TaskSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  tags_.Clear();
   if (GetArenaNoVirtual() == nullptr && template__ != nullptr) {
     delete template__;
   }
@@ -1808,6 +1662,25 @@ const char* TaskSpec::_InternalParse(const char* begin, const char* end, void* o
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // repeated string tags = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("flyteidl.admin.TaskSpec.tags");
+          object = msg->add_tags();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -1823,6 +1696,10 @@ const char* TaskSpec::_InternalParse(const char* begin, const char* end, void* o
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -1843,6 +1720,22 @@ bool TaskSpec::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_template_()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string tags = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.TaskSpec.tags"));
         } else {
           goto handle_unusual;
         }
@@ -1882,6 +1775,16 @@ void TaskSpec::SerializeWithCachedSizes(
       1, HasBitSetters::template_(this), output);
   }
 
+  // repeated string tags = 2;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.TaskSpec.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->tags(i), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1900,6 +1803,16 @@ void TaskSpec::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, HasBitSetters::template_(this), target);
+  }
+
+  // repeated string tags = 2;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.TaskSpec.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(2, this->tags(i), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1922,6 +1835,14 @@ size_t TaskSpec::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string tags = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
 
   // .flyteidl.core.TaskTemplate template = 1;
   if (this->has_template_()) {
@@ -1957,6 +1878,7 @@ void TaskSpec::MergeFrom(const TaskSpec& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  tags_.MergeFrom(from.tags_);
   if (from.has_template_()) {
     mutable_template_()->::flyteidl::core::TaskTemplate::MergeFrom(from.template_());
   }
@@ -1987,6 +1909,7 @@ void TaskSpec::Swap(TaskSpec* other) {
 void TaskSpec::InternalSwap(TaskSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  tags_.InternalSwap(CastToBase(&other->tags_));
   swap(template__, other->template__);
 }
 

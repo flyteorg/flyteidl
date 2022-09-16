@@ -18,5 +18,4 @@ const (
 	CoreResourceTypeWORKFLOW CoreResourceType = "WORKFLOW"
 	CoreResourceTypeLAUNCH_PLAN CoreResourceType = "LAUNCH_PLAN"
 	CoreResourceTypeDATASET CoreResourceType = "DATASET"
-	CoreResourceTypeDESCRIPTION_ENTITY CoreResourceType = "DESCRIPTION_ENTITY"
 )

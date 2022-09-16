@@ -516,7 +516,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionCreateRequest, name_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionCreateRequest, spec_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionCreateRequest, inputs_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionCreateRequest, tags_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionRelaunchRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -637,6 +636,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, raw_output_data_config_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, cluster_assignment_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, interruptible_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, tags_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionSpec, notification_overrides_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ExecutionTerminateRequest, _internal_metadata_),
@@ -688,19 +688,19 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fexecution_2eprot
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::ExecutionCreateRequest)},
-  { 11, -1, sizeof(::flyteidl::admin::ExecutionRelaunchRequest)},
-  { 18, -1, sizeof(::flyteidl::admin::ExecutionRecoverRequest)},
-  { 26, -1, sizeof(::flyteidl::admin::ExecutionCreateResponse)},
-  { 32, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetRequest)},
-  { 38, -1, sizeof(::flyteidl::admin::Execution)},
-  { 46, -1, sizeof(::flyteidl::admin::ExecutionList)},
-  { 53, -1, sizeof(::flyteidl::admin::LiteralMapBlob)},
-  { 61, -1, sizeof(::flyteidl::admin::AbortMetadata)},
-  { 68, -1, sizeof(::flyteidl::admin::ExecutionClosure)},
-  { 88, -1, sizeof(::flyteidl::admin::SystemMetadata)},
-  { 94, -1, sizeof(::flyteidl::admin::ExecutionMetadata)},
-  { 106, -1, sizeof(::flyteidl::admin::NotificationList)},
-  { 112, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
+  { 10, -1, sizeof(::flyteidl::admin::ExecutionRelaunchRequest)},
+  { 17, -1, sizeof(::flyteidl::admin::ExecutionRecoverRequest)},
+  { 25, -1, sizeof(::flyteidl::admin::ExecutionCreateResponse)},
+  { 31, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetRequest)},
+  { 37, -1, sizeof(::flyteidl::admin::Execution)},
+  { 45, -1, sizeof(::flyteidl::admin::ExecutionList)},
+  { 52, -1, sizeof(::flyteidl::admin::LiteralMapBlob)},
+  { 60, -1, sizeof(::flyteidl::admin::AbortMetadata)},
+  { 67, -1, sizeof(::flyteidl::admin::ExecutionClosure)},
+  { 87, -1, sizeof(::flyteidl::admin::SystemMetadata)},
+  { 93, -1, sizeof(::flyteidl::admin::ExecutionMetadata)},
+  { 105, -1, sizeof(::flyteidl::admin::NotificationList)},
+  { 111, -1, sizeof(::flyteidl::admin::ExecutionSpec)},
   { 132, -1, sizeof(::flyteidl::admin::ExecutionTerminateRequest)},
   { 139, -1, sizeof(::flyteidl::admin::ExecutionTerminateResponse)},
   { 144, -1, sizeof(::flyteidl::admin::WorkflowExecutionGetDataRequest)},
@@ -749,83 +749,83 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fexecution_2eproto[] =
   "ifier.proto\032\034flyteidl/core/security.prot"
   "o\032\036google/protobuf/duration.proto\032\037googl"
   "e/protobuf/timestamp.proto\032\036google/proto"
-  "buf/wrappers.proto\"\255\001\n\026ExecutionCreateRe"
+  "buf/wrappers.proto\"\237\001\n\026ExecutionCreateRe"
   "quest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014"
   "\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035.flyteidl.ad"
   "min.ExecutionSpec\022)\n\006inputs\030\005 \001(\0132\031.flyt"
-  "eidl.core.LiteralMap\022\014\n\004tags\030\006 \003(\t\"`\n\030Ex"
-  "ecutionRelaunchRequest\0226\n\002id\030\001 \001(\0132*.fly"
-  "teidl.core.WorkflowExecutionIdentifier\022\014"
-  "\n\004name\030\003 \001(\t\"\224\001\n\027ExecutionRecoverRequest"
-  "\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExe"
-  "cutionIdentifier\022\014\n\004name\030\002 \001(\t\0223\n\010metada"
-  "ta\030\003 \001(\0132!.flyteidl.admin.ExecutionMetad"
-  "ata\"Q\n\027ExecutionCreateResponse\0226\n\002id\030\001 \001"
-  "(\0132*.flyteidl.core.WorkflowExecutionIden"
-  "tifier\"U\n\033WorkflowExecutionGetRequest\0226\n"
-  "\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecut"
-  "ionIdentifier\"\243\001\n\tExecution\0226\n\002id\030\001 \001(\0132"
-  "*.flyteidl.core.WorkflowExecutionIdentif"
-  "ier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin.Execu"
-  "tionSpec\0221\n\007closure\030\003 \001(\0132 .flyteidl.adm"
-  "in.ExecutionClosure\"M\n\rExecutionList\022-\n\n"
-  "executions\030\001 \003(\0132\031.flyteidl.admin.Execut"
-  "ion\022\r\n\005token\030\002 \001(\t\"X\n\016LiteralMapBlob\022/\n\006"
-  "values\030\001 \001(\0132\031.flyteidl.core.LiteralMapB"
-  "\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAbortMet"
-  "adata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\""
-  "\360\005\n\020ExecutionClosure\0225\n\007outputs\030\001 \001(\0132\036."
-  "flyteidl.admin.LiteralMapBlobB\002\030\001H\000\022.\n\005e"
-  "rror\030\002 \001(\0132\035.flyteidl.core.ExecutionErro"
-  "rH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_"
-  "metadata\030\014 \001(\0132\035.flyteidl.admin.AbortMet"
-  "adataH\000\0224\n\013output_data\030\r \001(\0132\031.flyteidl."
-  "core.LiteralMapB\002\030\001H\000\0226\n\017computed_inputs"
-  "\030\003 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0225\n"
-  "\005phase\030\004 \001(\0162&.flyteidl.core.WorkflowExe"
-  "cution.Phase\022.\n\nstarted_at\030\005 \001(\0132\032.googl"
-  "e.protobuf.Timestamp\022+\n\010duration\030\006 \001(\0132\031"
-  ".google.protobuf.Duration\022.\n\ncreated_at\030"
-  "\007 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd"
-  "ated_at\030\010 \001(\0132\032.google.protobuf.Timestam"
-  "p\0223\n\rnotifications\030\t \003(\0132\034.flyteidl.admi"
-  "n.Notification\022.\n\013workflow_id\030\013 \001(\0132\031.fl"
-  "yteidl.core.Identifier\022I\n\024state_change_d"
-  "etails\030\016 \001(\0132+.flyteidl.admin.ExecutionS"
-  "tateChangeDetailsB\017\n\routput_result\"+\n\016Sy"
-  "stemMetadata\022\031\n\021execution_cluster\030\001 \001(\t\""
-  "\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(\0162/.fl"
-  "yteidl.admin.ExecutionMetadata.Execution"
-  "Mode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r"
-  "\0220\n\014scheduled_at\030\004 \001(\0132\032.google.protobuf"
-  ".Timestamp\022E\n\025parent_node_execution\030\005 \001("
-  "\0132&.flyteidl.core.NodeExecutionIdentifie"
-  "r\022G\n\023reference_execution\030\020 \001(\0132*.flyteid"
-  "l.core.WorkflowExecutionIdentifier\0227\n\017sy"
-  "stem_metadata\030\021 \001(\0132\036.flyteidl.admin.Sys"
-  "temMetadata\"g\n\rExecutionMode\022\n\n\006MANUAL\020\000"
-  "\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020"
-  "\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020"
-  "NotificationList\0223\n\rnotifications\030\001 \003(\0132"
-  "\034.flyteidl.admin.Notification\"\347\005\n\rExecut"
-  "ionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.flyteidl."
-  "core.Identifier\022-\n\006inputs\030\002 \001(\0132\031.flytei"
-  "dl.core.LiteralMapB\002\030\001\0223\n\010metadata\030\003 \001(\013"
-  "2!.flyteidl.admin.ExecutionMetadata\0229\n\rn"
-  "otifications\030\005 \001(\0132 .flyteidl.admin.Noti"
-  "ficationListH\000\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n"
-  "\006labels\030\007 \001(\0132\026.flyteidl.admin.Labels\0220\n"
-  "\013annotations\030\010 \001(\0132\033.flyteidl.admin.Anno"
-  "tations\0228\n\020security_context\030\n \001(\0132\036.flyt"
-  "eidl.core.SecurityContext\022/\n\tauth_role\030\020"
-  " \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001\022;\n\022qu"
-  "ality_of_service\030\021 \001(\0132\037.flyteidl.core.Q"
-  "ualityOfService\022\027\n\017max_parallelism\030\022 \001(\005"
-  "\022C\n\026raw_output_data_config\030\023 \001(\0132#.flyte"
-  "idl.admin.RawOutputDataConfig\022=\n\022cluster"
-  "_assignment\030\024 \001(\0132!.flyteidl.admin.Clust"
-  "erAssignment\0221\n\rinterruptible\030\025 \001(\0132\032.go"
-  "ogle.protobuf.BoolValueB\030\n\026notification_"
+  "eidl.core.LiteralMap\"`\n\030ExecutionRelaunc"
+  "hRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor"
+  "kflowExecutionIdentifier\022\014\n\004name\030\003 \001(\t\"\224"
+  "\001\n\027ExecutionRecoverRequest\0226\n\002id\030\001 \001(\0132*"
+  ".flyteidl.core.WorkflowExecutionIdentifi"
+  "er\022\014\n\004name\030\002 \001(\t\0223\n\010metadata\030\003 \001(\0132!.fly"
+  "teidl.admin.ExecutionMetadata\"Q\n\027Executi"
+  "onCreateResponse\0226\n\002id\030\001 \001(\0132*.flyteidl."
+  "core.WorkflowExecutionIdentifier\"U\n\033Work"
+  "flowExecutionGetRequest\0226\n\002id\030\001 \001(\0132*.fl"
+  "yteidl.core.WorkflowExecutionIdentifier\""
+  "\243\001\n\tExecution\0226\n\002id\030\001 \001(\0132*.flyteidl.cor"
+  "e.WorkflowExecutionIdentifier\022+\n\004spec\030\002 "
+  "\001(\0132\035.flyteidl.admin.ExecutionSpec\0221\n\007cl"
+  "osure\030\003 \001(\0132 .flyteidl.admin.ExecutionCl"
+  "osure\"M\n\rExecutionList\022-\n\nexecutions\030\001 \003"
+  "(\0132\031.flyteidl.admin.Execution\022\r\n\005token\030\002"
+  " \001(\t\"X\n\016LiteralMapBlob\022/\n\006values\030\001 \001(\0132\031"
+  ".flyteidl.core.LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002"
+  " \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata\022\r\n\005cause"
+  "\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\360\005\n\020ExecutionC"
+  "losure\0225\n\007outputs\030\001 \001(\0132\036.flyteidl.admin"
+  ".LiteralMapBlobB\002\030\001H\000\022.\n\005error\030\002 \001(\0132\035.f"
+  "lyteidl.core.ExecutionErrorH\000\022\031\n\013abort_c"
+  "ause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_metadata\030\014 \001(\013"
+  "2\035.flyteidl.admin.AbortMetadataH\000\0224\n\013out"
+  "put_data\030\r \001(\0132\031.flyteidl.core.LiteralMa"
+  "pB\002\030\001H\000\0226\n\017computed_inputs\030\003 \001(\0132\031.flyte"
+  "idl.core.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&"
+  ".flyteidl.core.WorkflowExecution.Phase\022."
+  "\n\nstarted_at\030\005 \001(\0132\032.google.protobuf.Tim"
+  "estamp\022+\n\010duration\030\006 \001(\0132\031.google.protob"
+  "uf.Duration\022.\n\ncreated_at\030\007 \001(\0132\032.google"
+  ".protobuf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132"
+  "\032.google.protobuf.Timestamp\0223\n\rnotificat"
+  "ions\030\t \003(\0132\034.flyteidl.admin.Notification"
+  "\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl.core.Id"
+  "entifier\022I\n\024state_change_details\030\016 \001(\0132+"
+  ".flyteidl.admin.ExecutionStateChangeDeta"
+  "ilsB\017\n\routput_result\"+\n\016SystemMetadata\022\031"
+  "\n\021execution_cluster\030\001 \001(\t\"\332\003\n\021ExecutionM"
+  "etadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.E"
+  "xecutionMetadata.ExecutionMode\022\021\n\tprinci"
+  "pal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_"
+  "at\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n\025"
+  "parent_node_execution\030\005 \001(\0132&.flyteidl.c"
+  "ore.NodeExecutionIdentifier\022G\n\023reference"
+  "_execution\030\020 \001(\0132*.flyteidl.core.Workflo"
+  "wExecutionIdentifier\0227\n\017system_metadata\030"
+  "\021 \001(\0132\036.flyteidl.admin.SystemMetadata\"g\n"
+  "\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020"
+  "\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WOR"
+  "KFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020NotificationLi"
+  "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm"
+  "in.Notification\"\365\005\n\rExecutionSpec\022.\n\013lau"
+  "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie"
+  "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera"
+  "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad"
+  "min.ExecutionMetadata\0229\n\rnotifications\030\005"
+  " \001(\0132 .flyteidl.admin.NotificationListH\000"
+  "\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132"
+  "\026.flyteidl.admin.Labels\0220\n\013annotations\030\010"
+  " \001(\0132\033.flyteidl.admin.Annotations\0228\n\020sec"
+  "urity_context\030\n \001(\0132\036.flyteidl.core.Secu"
+  "rityContext\022/\n\tauth_role\030\020 \001(\0132\030.flyteid"
+  "l.admin.AuthRoleB\002\030\001\022;\n\022quality_of_servi"
+  "ce\030\021 \001(\0132\037.flyteidl.core.QualityOfServic"
+  "e\022\027\n\017max_parallelism\030\022 \001(\005\022C\n\026raw_output"
+  "_data_config\030\023 \001(\0132#.flyteidl.admin.RawO"
+  "utputDataConfig\022=\n\022cluster_assignment\030\024 "
+  "\001(\0132!.flyteidl.admin.ClusterAssignment\0221"
+  "\n\rinterruptible\030\025 \001(\0132\032.google.protobuf."
+  "BoolValue\022\014\n\004tags\030\026 \003(\tB\030\n\026notification_"
   "overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateReq"
   "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo"
   "wExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032E"
@@ -954,7 +954,6 @@ const int ExecutionCreateRequest::kDomainFieldNumber;
 const int ExecutionCreateRequest::kNameFieldNumber;
 const int ExecutionCreateRequest::kSpecFieldNumber;
 const int ExecutionCreateRequest::kInputsFieldNumber;
-const int ExecutionCreateRequest::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionCreateRequest::ExecutionCreateRequest()
@@ -964,8 +963,7 @@ ExecutionCreateRequest::ExecutionCreateRequest()
 }
 ExecutionCreateRequest::ExecutionCreateRequest(const ExecutionCreateRequest& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      tags_(from.tags_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   project_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.project().size() > 0) {
@@ -1031,7 +1029,6 @@ void ExecutionCreateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  tags_.Clear();
   project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1131,25 +1128,6 @@ const char* ExecutionCreateRequest::_InternalParse(const char* begin, const char
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // repeated string tags = 6;
-      case 6: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.ExecutionCreateRequest.tags");
-          object = msg->add_tags();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 50 && (ptr += 1));
         break;
       }
       default: {
@@ -1253,22 +1231,6 @@ bool ExecutionCreateRequest::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated string tags = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_tags()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->tags(this->tags_size() - 1).data(),
-            static_cast<int>(this->tags(this->tags_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.ExecutionCreateRequest.tags"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1338,16 +1300,6 @@ void ExecutionCreateRequest::SerializeWithCachedSizes(
       5, HasBitSetters::inputs(this), output);
   }
 
-  // repeated string tags = 6;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ExecutionCreateRequest.tags");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->tags(i), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1408,16 +1360,6 @@ void ExecutionCreateRequest::SerializeWithCachedSizes(
         5, HasBitSetters::inputs(this), target);
   }
 
-  // repeated string tags = 6;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.ExecutionCreateRequest.tags");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(6, this->tags(i), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1438,14 +1380,6 @@ size_t ExecutionCreateRequest::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // repeated string tags = 6;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tags_size());
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->tags(i));
-  }
 
   // string project = 1;
   if (this->project().size() > 0) {
@@ -1509,7 +1443,6 @@ void ExecutionCreateRequest::MergeFrom(const ExecutionCreateRequest& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  tags_.MergeFrom(from.tags_);
   if (from.project().size() > 0) {
 
     project_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.project_);
@@ -1555,7 +1488,6 @@ void ExecutionCreateRequest::Swap(ExecutionCreateRequest* other) {
 void ExecutionCreateRequest::InternalSwap(ExecutionCreateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  tags_.InternalSwap(CastToBase(&other->tags_));
   project_.Swap(&other->project_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -7240,6 +7172,7 @@ const int ExecutionSpec::kMaxParallelismFieldNumber;
 const int ExecutionSpec::kRawOutputDataConfigFieldNumber;
 const int ExecutionSpec::kClusterAssignmentFieldNumber;
 const int ExecutionSpec::kInterruptibleFieldNumber;
+const int ExecutionSpec::kTagsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ExecutionSpec::ExecutionSpec()
@@ -7249,7 +7182,8 @@ ExecutionSpec::ExecutionSpec()
 }
 ExecutionSpec::ExecutionSpec(const ExecutionSpec& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_launch_plan()) {
     launch_plan_ = new ::flyteidl::core::Identifier(*from.launch_plan_);
@@ -7389,6 +7323,7 @@ void ExecutionSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  tags_.Clear();
   if (GetArenaNoVirtual() == nullptr && launch_plan_ != nullptr) {
     delete launch_plan_;
   }
@@ -7621,6 +7556,25 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // repeated string tags = 22;
+      case 22: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 178) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("flyteidl.admin.ExecutionSpec.tags");
+          object = msg->add_tags();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 65535) == 434 && (ptr += 2));
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -7636,6 +7590,10 @@ const char* ExecutionSpec::_InternalParse(const char* begin, const char* end, vo
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -7810,6 +7768,22 @@ bool ExecutionSpec::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string tags = 22;
+      case 22: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (178 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.ExecutionSpec.tags"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -7919,6 +7893,16 @@ void ExecutionSpec::SerializeWithCachedSizes(
       21, HasBitSetters::interruptible(this), output);
   }
 
+  // repeated string tags = 22;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.ExecutionSpec.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      22, this->tags(i), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -8026,6 +8010,16 @@ void ExecutionSpec::SerializeWithCachedSizes(
         21, HasBitSetters::interruptible(this), target);
   }
 
+  // repeated string tags = 22;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.ExecutionSpec.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(22, this->tags(i), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -8046,6 +8040,14 @@ size_t ExecutionSpec::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string tags = 22;
+  total_size += 2 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
 
   // .flyteidl.core.Identifier launch_plan = 1;
   if (this->has_launch_plan()) {
@@ -8175,6 +8177,7 @@ void ExecutionSpec::MergeFrom(const ExecutionSpec& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  tags_.MergeFrom(from.tags_);
   if (from.has_launch_plan()) {
     mutable_launch_plan()->::flyteidl::core::Identifier::MergeFrom(from.launch_plan());
   }
@@ -8251,6 +8254,7 @@ void ExecutionSpec::Swap(ExecutionSpec* other) {
 void ExecutionSpec::InternalSwap(ExecutionSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  tags_.InternalSwap(CastToBase(&other->tags_));
   swap(launch_plan_, other->launch_plan_);
   swap(inputs_, other->inputs_);
   swap(metadata_, other->metadata_);

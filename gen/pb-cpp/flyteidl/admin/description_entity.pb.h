@@ -553,9 +553,9 @@ class SourceCode final :
 
   // accessors -------------------------------------------------------
 
-  // string link = 5;
+  // string link = 1;
   void clear_link();
-  static const int kLinkFieldNumber = 5;
+  static const int kLinkFieldNumber = 1;
   const ::std::string& link() const;
   void set_link(const ::std::string& value);
   #if LANG_CXX11
@@ -1240,7 +1240,7 @@ inline LongDescription::ContentCase LongDescription::content_case() const {
 
 // SourceCode
 
-// string link = 5;
+// string link = 1;
 inline void SourceCode::clear_link() {
   link_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

@@ -52,9 +52,6 @@ message LaunchPlan {
 
     // Values computed by the flyte platform after launch plan registration.
     LaunchPlanClosure closure = 3;
-
-    // DescriptionEntity contains detailed description for the launch plan.
-    DescriptionEntity description_entity = 4;
 }
 
 // Response object for list launch plan requests.

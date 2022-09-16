@@ -15,6 +15,4 @@ type AdminWorkflow struct {
 	Id *CoreIdentifier `json:"id,omitempty"`
 	// closure encapsulates all the fields that maps to a compiled version of the workflow.
 	Closure *AdminWorkflowClosure `json:"closure,omitempty"`
-	// DescriptionEntity contains detailed description for the workflow.
-	DescriptionEntity *AdminDescriptionEntity `json:"description_entity,omitempty"`
 }

@@ -493,15 +493,6 @@ class LaunchPlan final :
   ::flyteidl::admin::LaunchPlanClosure* mutable_closure();
   void set_allocated_closure(::flyteidl::admin::LaunchPlanClosure* closure);
 
-  // .flyteidl.admin.DescriptionEntity description_entity = 4;
-  bool has_description_entity() const;
-  void clear_description_entity();
-  static const int kDescriptionEntityFieldNumber = 4;
-  const ::flyteidl::admin::DescriptionEntity& description_entity() const;
-  ::flyteidl::admin::DescriptionEntity* release_description_entity();
-  ::flyteidl::admin::DescriptionEntity* mutable_description_entity();
-  void set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity);
-
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlan)
  private:
   class HasBitSetters;
@@ -510,7 +501,6 @@ class LaunchPlan final :
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::LaunchPlanSpec* spec_;
   ::flyteidl::admin::LaunchPlanClosure* closure_;
-  ::flyteidl::admin::DescriptionEntity* description_entity_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -2078,51 +2068,6 @@ inline void LaunchPlan::set_allocated_closure(::flyteidl::admin::LaunchPlanClosu
   }
   closure_ = closure;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlan.closure)
-}
-
-// .flyteidl.admin.DescriptionEntity description_entity = 4;
-inline bool LaunchPlan::has_description_entity() const {
-  return this != internal_default_instance() && description_entity_ != nullptr;
-}
-inline const ::flyteidl::admin::DescriptionEntity& LaunchPlan::description_entity() const {
-  const ::flyteidl::admin::DescriptionEntity* p = description_entity_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlan.description_entity)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntity*>(
-      &::flyteidl::admin::_DescriptionEntity_default_instance_);
-}
-inline ::flyteidl::admin::DescriptionEntity* LaunchPlan::release_description_entity() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.LaunchPlan.description_entity)
-  
-  ::flyteidl::admin::DescriptionEntity* temp = description_entity_;
-  description_entity_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::DescriptionEntity* LaunchPlan::mutable_description_entity() {
-  
-  if (description_entity_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(GetArenaNoVirtual());
-    description_entity_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.LaunchPlan.description_entity)
-  return description_entity_;
-}
-inline void LaunchPlan::set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(description_entity_);
-  }
-  if (description_entity) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      description_entity = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, description_entity, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  description_entity_ = description_entity;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlan.description_entity)
 }
 
 // -------------------------------------------------------------------

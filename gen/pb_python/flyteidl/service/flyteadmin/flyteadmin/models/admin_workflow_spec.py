@@ -34,25 +34,30 @@ class AdminWorkflowSpec(object):
     """
     swagger_types = {
         'template': 'CoreWorkflowTemplate',
-        'sub_workflows': 'list[CoreWorkflowTemplate]'
+        'sub_workflows': 'list[CoreWorkflowTemplate]',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
         'template': 'template',
-        'sub_workflows': 'sub_workflows'
+        'sub_workflows': 'sub_workflows',
+        'tags': 'tags'
     }
 
-    def __init__(self, template=None, sub_workflows=None):  # noqa: E501
+    def __init__(self, template=None, sub_workflows=None, tags=None):  # noqa: E501
         """AdminWorkflowSpec - a model defined in Swagger"""  # noqa: E501
 
         self._template = None
         self._sub_workflows = None
+        self._tags = None
         self.discriminator = None
 
         if template is not None:
             self.template = template
         if sub_workflows is not None:
             self.sub_workflows = sub_workflows
+        if tags is not None:
+            self.tags = tags
 
     @property
     def template(self):
@@ -99,6 +104,29 @@ class AdminWorkflowSpec(object):
         """
 
         self._sub_workflows = sub_workflows
+
+    @property
+    def tags(self):
+        """Gets the tags of this AdminWorkflowSpec.  # noqa: E501
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows.  # noqa: E501
+
+        :return: The tags of this AdminWorkflowSpec.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this AdminWorkflowSpec.
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows.  # noqa: E501
+
+        :param tags: The tags of this AdminWorkflowSpec.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -44,7 +44,7 @@ message LongDescription {
 
 // Link to source code used to define this entity
 message SourceCode {
-  string link = 5;
+  string link = 1;
 }
 
 // Represents a request structure to create a revision of a description entity.

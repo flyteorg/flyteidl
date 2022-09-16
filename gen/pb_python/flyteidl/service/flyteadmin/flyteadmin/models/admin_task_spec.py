@@ -33,21 +33,26 @@ class AdminTaskSpec(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'template': 'CoreTaskTemplate'
+        'template': 'CoreTaskTemplate',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
-        'template': 'template'
+        'template': 'template',
+        'tags': 'tags'
     }
 
-    def __init__(self, template=None):  # noqa: E501
+    def __init__(self, template=None, tags=None):  # noqa: E501
         """AdminTaskSpec - a model defined in Swagger"""  # noqa: E501
 
         self._template = None
+        self._tags = None
         self.discriminator = None
 
         if template is not None:
             self.template = template
+        if tags is not None:
+            self.tags = tags
 
     @property
     def template(self):
@@ -71,6 +76,29 @@ class AdminTaskSpec(object):
         """
 
         self._template = template
+
+    @property
+    def tags(self):
+        """Gets the tags of this AdminTaskSpec.  # noqa: E501
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+
+        :return: The tags of this AdminTaskSpec.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this AdminTaskSpec.
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+
+        :param tags: The tags of this AdminTaskSpec.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

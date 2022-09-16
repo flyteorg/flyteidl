@@ -31,7 +31,6 @@ class CoreResourceType(object):
     WORKFLOW = "WORKFLOW"
     LAUNCH_PLAN = "LAUNCH_PLAN"
     DATASET = "DATASET"
-    DESCRIPTION_ENTITY = "DESCRIPTION_ENTITY"
 
     """
     Attributes:
