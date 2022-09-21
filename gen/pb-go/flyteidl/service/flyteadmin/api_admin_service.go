@@ -29,8 +29,8 @@ type AdminServiceApiService service
 /*
 AdminServiceApiService Triggers the creation of a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 Create a workflow execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminExecutionCreateResponse
 */
@@ -119,8 +119,8 @@ func (a *AdminServiceApiService) CreateExecution(ctx context.Context, body Admin
 /*
 AdminServiceApiService Create and upload a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition
 Create and register a launch plan definition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminLaunchPlanCreateResponse
 */
@@ -231,8 +231,8 @@ func (a *AdminServiceApiService) CreateLaunchPlan(ctx context.Context, body Admi
 /*
 AdminServiceApiService Indicates a :ref:&#x60;ref_flyteidl.event.NodeExecutionEvent&#x60; has occurred.
 Create a node execution event recording a phase transition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminNodeExecutionEventResponse
 */
@@ -321,8 +321,8 @@ func (a *AdminServiceApiService) CreateNodeEvent(ctx context.Context, body Admin
 /*
 AdminServiceApiService Create and upload a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition
 Create and register a task definition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminTaskCreateResponse
 */
@@ -433,8 +433,8 @@ func (a *AdminServiceApiService) CreateTask(ctx context.Context, body AdminTaskC
 /*
 AdminServiceApiService Indicates a :ref:&#x60;ref_flyteidl.event.TaskExecutionEvent&#x60; has occurred.
 Create a task execution event recording a phase transition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminTaskExecutionEventResponse
 */
@@ -523,8 +523,8 @@ func (a *AdminServiceApiService) CreateTaskEvent(ctx context.Context, body Admin
 /*
 AdminServiceApiService Create and upload a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition
 Create and register a workflow definition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminWorkflowCreateResponse
 */
@@ -635,8 +635,8 @@ func (a *AdminServiceApiService) CreateWorkflow(ctx context.Context, body AdminW
 /*
 AdminServiceApiService Indicates a :ref:&#x60;ref_flyteidl.event.WorkflowExecutionEvent&#x60; has occurred.
 Create a workflow execution event recording a phase transition.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminWorkflowExecutionEventResponse
 */
@@ -725,10 +725,10 @@ func (a *AdminServiceApiService) CreateWorkflowEvent(ctx context.Context, body A
 /*
 AdminServiceApiService Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 Delete the customized resource attributes associated with a project-domain combination
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param project Unique project id which this set of attributes references. +required
-  - @param domain Unique domain id which this set of attributes references. +required
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param project Unique project id which this set of attributes references. +required
+ * @param domain Unique domain id which this set of attributes references. +required
+ * @param body
 
 @return AdminProjectDomainAttributesDeleteResponse
 */
@@ -819,11 +819,11 @@ func (a *AdminServiceApiService) DeleteProjectDomainAttributes(ctx context.Conte
 /*
 AdminServiceApiService Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 Delete the customized resource attributes associated with a project, domain and workflow combination
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param project Unique project id which this set of attributes references. +required
-  - @param domain Unique domain id which this set of attributes references. +required
-  - @param workflow Workflow name which this set of attributes references. +required
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param project Unique project id which this set of attributes references. +required
+ * @param domain Unique domain id which this set of attributes references. +required
+ * @param workflow Workflow name which this set of attributes references. +required
+ * @param body
 
 @return AdminWorkflowAttributesDeleteResponse
 */
@@ -915,10 +915,10 @@ func (a *AdminServiceApiService) DeleteWorkflowAttributes(ctx context.Context, p
 /*
 AdminServiceApiService Fetch the active version of a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
 Retrieve the active launch plan version specified by input request filters.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
 
 @return AdminLaunchPlan
 */
@@ -1008,10 +1008,10 @@ func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProj
 /*
 AdminServiceApiService Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 Retrieve an existing workflow execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User or system provided value for the resource.
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User or system provided value for the resource.
 
 @return AdminExecution
 */
@@ -1101,10 +1101,10 @@ func (a *AdminServiceApiService) GetExecution(ctx context.Context, idProject str
 /*
 AdminServiceApiService Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 Retrieve input and output data from an existing workflow execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User or system provided value for the resource.
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User or system provided value for the resource.
 
 @return AdminWorkflowExecutionGetDataResponse
 */
@@ -1299,11 +1299,11 @@ func (a *AdminServiceApiService) GetLaunchPlan(ctx context.Context, idProject st
 /*
 AdminServiceApiService Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 Retrieve a NamedEntity object.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param resourceType Resource type of the metadata to get. One of Task, Workflow or LaunchPlan. +required
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param resourceType Resource type of the metadata to get. One of Task, Workflow or LaunchPlan. +required
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
 
 @return AdminNamedEntity
 */
@@ -1394,11 +1394,11 @@ func (a *AdminServiceApiService) GetNamedEntity(ctx context.Context, resourceTyp
 /*
 AdminServiceApiService Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 Retrieve an existing node execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idExecutionIdProject Name of the project the resource belongs to.
-  - @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idExecutionIdName User or system provided value for the resource.
-  - @param idNodeId
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idExecutionIdProject Name of the project the resource belongs to.
+ * @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idExecutionIdName User or system provided value for the resource.
+ * @param idNodeId
 
 @return FlyteidladminNodeExecution
 */
@@ -1489,11 +1489,11 @@ func (a *AdminServiceApiService) GetNodeExecution(ctx context.Context, idExecuti
 /*
 AdminServiceApiService Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 Retrieve input and output data from an existing node execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idExecutionIdProject Name of the project the resource belongs to.
-  - @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idExecutionIdName User or system provided value for the resource.
-  - @param idNodeId
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idExecutionIdProject Name of the project the resource belongs to.
+ * @param idExecutionIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idExecutionIdName User or system provided value for the resource.
+ * @param idNodeId
 
 @return AdminNodeExecutionGetDataResponse
 */
@@ -2020,7 +2020,7 @@ func (a *AdminServiceApiService) GetTaskExecutionData(ctx context.Context, idNod
 /*
 AdminServiceApiService
 Retrieve the Version (including the Build  information) for FlyteAdmin service
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return AdminGetVersionResponse
 */
@@ -4397,8 +4397,8 @@ func (a *AdminServiceApiService) ListWorkflows2(ctx context.Context, idProject s
 /*
 AdminServiceApiService Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:&#x60;ref_flyteidl.admin.ExecutionRecoverRequest&#x60; for more details.
 Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminExecutionCreateResponse
 */
@@ -4487,8 +4487,8 @@ func (a *AdminServiceApiService) RecoverExecution(ctx context.Context, body Admi
 /*
 AdminServiceApiService Registers a :ref:&#x60;ref_flyteidl.admin.Project&#x60; with the Flyte deployment.
 Register a project.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminProjectRegisterResponse
 */
@@ -4577,8 +4577,8 @@ func (a *AdminServiceApiService) RegisterProject(ctx context.Context, body Admin
 /*
 AdminServiceApiService Triggers the creation of an identical :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 Relaunch a workflow execution.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param body
 
 @return AdminExecutionCreateResponse
 */
@@ -4667,11 +4667,11 @@ func (a *AdminServiceApiService) RelaunchExecution(ctx context.Context, body Adm
 /*
 AdminServiceApiService Terminates an in-progress :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 Terminate the active workflow execution specified in the request.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User or system provided value for the resource.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User or system provided value for the resource.
+ * @param body
 
 @return AdminExecutionTerminateResponse
 */
@@ -4763,11 +4763,11 @@ func (a *AdminServiceApiService) TerminateExecution(ctx context.Context, idProje
 /*
 AdminServiceApiService Update execution belonging to project domain :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 Update execution belonging to project domain.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User or system provided value for the resource.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User or system provided value for the resource.
+ * @param body
 
 @return AdminExecutionUpdateResponse
 */
@@ -4859,12 +4859,12 @@ func (a *AdminServiceApiService) UpdateExecution(ctx context.Context, idProject 
 /*
 AdminServiceApiService Updates the status of a registered :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
 Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User provided value for the resource.
-  - @param idVersion Specific version of the resource.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User provided value for the resource.
+ * @param idVersion Specific version of the resource.
+ * @param body
 
 @return AdminLaunchPlanUpdateResponse
 */
@@ -4957,12 +4957,12 @@ func (a *AdminServiceApiService) UpdateLaunchPlan(ctx context.Context, idProject
 /*
 AdminServiceApiService Updates a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 Update the fields associated with a NamedEntity
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param resourceType Resource type of the metadata to update +required
-  - @param idProject Name of the project the resource belongs to.
-  - @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
-  - @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param resourceType Resource type of the metadata to update +required
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
+ * @param body
 
 @return AdminNamedEntityUpdateResponse
 */
@@ -5055,9 +5055,9 @@ func (a *AdminServiceApiService) UpdateNamedEntity(ctx context.Context, resource
 /*
 AdminServiceApiService Updates an existing :ref:&#x60;ref_flyteidl.admin.Project&#x60;  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
 Update a project.
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param id Globally unique project name.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param id Globally unique project name.
+ * @param body
 
 @return AdminProjectUpdateResponse
 */
@@ -5147,10 +5147,10 @@ func (a *AdminServiceApiService) UpdateProject(ctx context.Context, id string, b
 /*
 AdminServiceApiService Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 Update the customized resource attributes associated with a project-domain combination
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param attributesProject Unique project id for which this set of attributes will be applied.
-  - @param attributesDomain Unique domain id for which this set of attributes will be applied.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param attributesProject Unique project id for which this set of attributes will be applied.
+ * @param attributesDomain Unique domain id for which this set of attributes will be applied.
+ * @param body
 
 @return AdminProjectDomainAttributesUpdateResponse
 */
@@ -5241,11 +5241,11 @@ func (a *AdminServiceApiService) UpdateProjectDomainAttributes(ctx context.Conte
 /*
 AdminServiceApiService Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 Update the customized resource attributes associated with a project, domain and workflow combination
-  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-  - @param attributesProject Unique project id for which this set of attributes will be applied.
-  - @param attributesDomain Unique domain id for which this set of attributes will be applied.
-  - @param attributesWorkflow Workflow name for which this set of attributes will be applied.
-  - @param body
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param attributesProject Unique project id for which this set of attributes will be applied.
+ * @param attributesDomain Unique domain id for which this set of attributes will be applied.
+ * @param attributesWorkflow Workflow name for which this set of attributes will be applied.
+ * @param body
 
 @return AdminWorkflowAttributesUpdateResponse
 */
