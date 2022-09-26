@@ -2643,6 +2643,116 @@ export const flyteidl = $root.flyteidl = (() => {
             return WorkflowNode;
         })();
 
+        core.ApproveCondition = (function() {
+
+            /**
+             * Properties of an ApproveCondition.
+             * @memberof flyteidl.core
+             * @interface IApproveCondition
+             * @property {string|null} [signalId] ApproveCondition signalId
+             */
+
+            /**
+             * Constructs a new ApproveCondition.
+             * @memberof flyteidl.core
+             * @classdesc Represents an ApproveCondition.
+             * @implements IApproveCondition
+             * @constructor
+             * @param {flyteidl.core.IApproveCondition=} [properties] Properties to set
+             */
+            function ApproveCondition(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ApproveCondition signalId.
+             * @member {string} signalId
+             * @memberof flyteidl.core.ApproveCondition
+             * @instance
+             */
+            ApproveCondition.prototype.signalId = "";
+
+            /**
+             * Creates a new ApproveCondition instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.core.ApproveCondition
+             * @static
+             * @param {flyteidl.core.IApproveCondition=} [properties] Properties to set
+             * @returns {flyteidl.core.ApproveCondition} ApproveCondition instance
+             */
+            ApproveCondition.create = function create(properties) {
+                return new ApproveCondition(properties);
+            };
+
+            /**
+             * Encodes the specified ApproveCondition message. Does not implicitly {@link flyteidl.core.ApproveCondition.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.core.ApproveCondition
+             * @static
+             * @param {flyteidl.core.IApproveCondition} message ApproveCondition message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ApproveCondition.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.signalId != null && message.hasOwnProperty("signalId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signalId);
+                return writer;
+            };
+
+            /**
+             * Decodes an ApproveCondition message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.core.ApproveCondition
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.core.ApproveCondition} ApproveCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ApproveCondition.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.ApproveCondition();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.signalId = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies an ApproveCondition message.
+             * @function verify
+             * @memberof flyteidl.core.ApproveCondition
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ApproveCondition.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.signalId != null && message.hasOwnProperty("signalId"))
+                    if (!$util.isString(message.signalId))
+                        return "signalId: string expected";
+                return null;
+            };
+
+            return ApproveCondition;
+        })();
+
         core.SignalCondition = (function() {
 
             /**
@@ -2846,7 +2956,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.duration != null && message.hasOwnProperty("duration"))
-                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.google.protobuf.Duration.encode(message.duration, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
 
@@ -2868,7 +2978,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 4:
+                    case 1:
                         message.duration = $root.google.protobuf.Duration.decode(reader, reader.uint32());
                         break;
                     default:
@@ -2907,6 +3017,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a GateNode.
              * @memberof flyteidl.core
              * @interface IGateNode
+             * @property {flyteidl.core.IApproveCondition|null} [approve] GateNode approve
              * @property {flyteidl.core.ISignalCondition|null} [signal] GateNode signal
              * @property {flyteidl.core.ISleepCondition|null} [sleep] GateNode sleep
              */
@@ -2925,6 +3036,14 @@ export const flyteidl = $root.flyteidl = (() => {
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+
+            /**
+             * GateNode approve.
+             * @member {flyteidl.core.IApproveCondition|null|undefined} approve
+             * @memberof flyteidl.core.GateNode
+             * @instance
+             */
+            GateNode.prototype.approve = null;
 
             /**
              * GateNode signal.
@@ -2947,12 +3066,12 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * GateNode condition.
-             * @member {"signal"|"sleep"|undefined} condition
+             * @member {"approve"|"signal"|"sleep"|undefined} condition
              * @memberof flyteidl.core.GateNode
              * @instance
              */
             Object.defineProperty(GateNode.prototype, "condition", {
-                get: $util.oneOfGetter($oneOfFields = ["signal", "sleep"]),
+                get: $util.oneOfGetter($oneOfFields = ["approve", "signal", "sleep"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -2980,10 +3099,12 @@ export const flyteidl = $root.flyteidl = (() => {
             GateNode.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.sleep != null && message.hasOwnProperty("sleep"))
-                    $root.flyteidl.core.SleepCondition.encode(message.sleep, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.approve != null && message.hasOwnProperty("approve"))
+                    $root.flyteidl.core.ApproveCondition.encode(message.approve, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.signal != null && message.hasOwnProperty("signal"))
                     $root.flyteidl.core.SignalCondition.encode(message.signal, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.sleep != null && message.hasOwnProperty("sleep"))
+                    $root.flyteidl.core.SleepCondition.encode(message.sleep, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -3005,10 +3126,13 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 1:
+                        message.approve = $root.flyteidl.core.ApproveCondition.decode(reader, reader.uint32());
+                        break;
                     case 2:
                         message.signal = $root.flyteidl.core.SignalCondition.decode(reader, reader.uint32());
                         break;
-                    case 1:
+                    case 3:
                         message.sleep = $root.flyteidl.core.SleepCondition.decode(reader, reader.uint32());
                         break;
                     default:
@@ -3031,7 +3155,17 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 let properties = {};
+                if (message.approve != null && message.hasOwnProperty("approve")) {
+                    properties.condition = 1;
+                    {
+                        let error = $root.flyteidl.core.ApproveCondition.verify(message.approve);
+                        if (error)
+                            return "approve." + error;
+                    }
+                }
                 if (message.signal != null && message.hasOwnProperty("signal")) {
+                    if (properties.condition === 1)
+                        return "condition: multiple values";
                     properties.condition = 1;
                     {
                         let error = $root.flyteidl.core.SignalCondition.verify(message.signal);

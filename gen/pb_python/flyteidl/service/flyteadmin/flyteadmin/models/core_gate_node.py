@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.core_approve_condition import CoreApproveCondition  # noqa: F401,E501
 from flyteadmin.models.core_signal_condition import CoreSignalCondition  # noqa: F401,E501
 from flyteadmin.models.core_sleep_condition import CoreSleepCondition  # noqa: F401,E501
 
@@ -34,26 +35,54 @@ class CoreGateNode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'approve': 'CoreApproveCondition',
         'signal': 'CoreSignalCondition',
         'sleep': 'CoreSleepCondition'
     }
 
     attribute_map = {
+        'approve': 'approve',
         'signal': 'signal',
         'sleep': 'sleep'
     }
 
-    def __init__(self, signal=None, sleep=None):  # noqa: E501
+    def __init__(self, approve=None, signal=None, sleep=None):  # noqa: E501
         """CoreGateNode - a model defined in Swagger"""  # noqa: E501
 
+        self._approve = None
         self._signal = None
         self._sleep = None
         self.discriminator = None
 
+        if approve is not None:
+            self.approve = approve
         if signal is not None:
             self.signal = signal
         if sleep is not None:
             self.sleep = sleep
+
+    @property
+    def approve(self):
+        """Gets the approve of this CoreGateNode.  # noqa: E501
+
+        ApproveCondition represents a dependency on an external approval provided by a boolean signal.  # noqa: E501
+
+        :return: The approve of this CoreGateNode.  # noqa: E501
+        :rtype: CoreApproveCondition
+        """
+        return self._approve
+
+    @approve.setter
+    def approve(self, approve):
+        """Sets the approve of this CoreGateNode.
+
+        ApproveCondition represents a dependency on an external approval provided by a boolean signal.  # noqa: E501
+
+        :param approve: The approve of this CoreGateNode.  # noqa: E501
+        :type: CoreApproveCondition
+        """
+
+        self._approve = approve
 
     @property
     def signal(self):

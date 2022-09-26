@@ -7827,6 +7827,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -8339,6 +8341,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -8850,6 +8854,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -9830,6 +9836,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -10342,6 +10350,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -10853,6 +10863,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -12335,6 +12347,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -12847,6 +12861,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -13358,6 +13374,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -16723,6 +16741,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -17235,6 +17255,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -17746,6 +17768,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -18726,6 +18750,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -19238,6 +19264,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -19749,6 +19777,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -21231,6 +21261,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -21743,6 +21775,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -22254,6 +22288,8 @@ definitions:
                 gate_node:
                   sleep:
                     duration: "duration"
+                  approve:
+                    signal_id: "signal_id"
                   signal:
                     output_variable_name: "output_variable_name"
                     signal_id: "signal_id"
@@ -23549,6 +23585,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -24061,6 +24099,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -24572,6 +24612,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -25552,6 +25594,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -26064,6 +26108,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -26575,6 +26621,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -28057,6 +28105,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -28569,6 +28619,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -29080,6 +29132,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -30231,6 +30285,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -30743,6 +30799,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -31254,6 +31312,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -32234,6 +32294,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -32746,6 +32808,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -33257,6 +33321,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -34739,6 +34805,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -35251,6 +35319,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -35762,6 +35832,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -36752,6 +36824,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -37264,6 +37338,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -37775,6 +37851,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -38755,6 +38833,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -39267,6 +39347,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -39778,6 +39860,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -41260,6 +41344,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -41772,6 +41858,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -42283,6 +42371,8 @@ definitions:
                   gate_node:
                     sleep:
                       duration: "duration"
+                    approve:
+                      signal_id: "signal_id"
                     signal:
                       output_variable_name: "output_variable_name"
                       signal_id: "signal_id"
@@ -42873,6 +42963,17 @@ definitions:
     example:
       var: "var"
       alias: "alias"
+  coreApproveCondition:
+    type: "object"
+    properties:
+      signal_id:
+        type: "string"
+        description: "A unique identifier for the requested boolean signal."
+    description: "ApproveCondition represents a dependency on an external approval.\
+      \ During execution, this will manifest as a boolean\nsignal with the provided\
+      \ signal_id."
+    example:
+      signal_id: "signal_id"
   coreBinary:
     type: "object"
     properties:
@@ -44238,6 +44339,8 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
+            approve:
+              signal_id: "signal_id"
             signal:
               output_variable_name: "output_variable_name"
               signal_id: "signal_id"
@@ -44750,6 +44853,8 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
+            approve:
+              signal_id: "signal_id"
             signal:
               output_variable_name: "output_variable_name"
               signal_id: "signal_id"
@@ -45261,6 +45366,8 @@ definitions:
           gate_node:
             sleep:
               duration: "duration"
+            approve:
+              signal_id: "signal_id"
             signal:
               output_variable_name: "output_variable_name"
               signal_id: "signal_id"
@@ -46268,6 +46375,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -46780,6 +46889,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -47291,6 +47402,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -48271,6 +48384,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -48783,6 +48898,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -49294,6 +49411,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -50776,6 +50895,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -51288,6 +51409,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -51799,6 +51922,8 @@ definitions:
             gate_node:
               sleep:
                 duration: "duration"
+              approve:
+                signal_id: "signal_id"
               signal:
                 output_variable_name: "output_variable_name"
                 signal_id: "signal_id"
@@ -52599,6 +52724,10 @@ definitions:
   coreGateNode:
     type: "object"
     properties:
+      approve:
+        description: "ApproveCondition represents a dependency on an external approval\
+          \ provided by a boolean signal."
+        $ref: "#/definitions/coreApproveCondition"
       signal:
         description: "SignalCondition represents a dependency on an signal."
         $ref: "#/definitions/coreSignalCondition"
@@ -52611,6 +52740,8 @@ definitions:
     example:
       sleep:
         duration: "duration"
+      approve:
+        signal_id: "signal_id"
       signal:
         output_variable_name: "output_variable_name"
         signal_id: "signal_id"
@@ -53305,6 +53436,8 @@ definitions:
       gate_node:
         sleep:
           duration: "duration"
+        approve:
+          signal_id: "signal_id"
         signal:
           output_variable_name: "output_variable_name"
           signal_id: "signal_id"
@@ -56231,6 +56364,8 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
+          approve:
+            signal_id: "signal_id"
           signal:
             output_variable_name: "output_variable_name"
             signal_id: "signal_id"
@@ -56743,6 +56878,8 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
+          approve:
+            signal_id: "signal_id"
           signal:
             output_variable_name: "output_variable_name"
             signal_id: "signal_id"
@@ -57254,6 +57391,8 @@ definitions:
         gate_node:
           sleep:
             duration: "duration"
+          approve:
+            signal_id: "signal_id"
           signal:
             output_variable_name: "output_variable_name"
             signal_id: "signal_id"
@@ -58549,6 +58688,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -59061,6 +59202,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -59572,6 +59715,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -60552,6 +60697,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -61064,6 +61211,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -61575,6 +61724,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -63057,6 +63208,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -63569,6 +63722,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"
@@ -64080,6 +64235,8 @@ definitions:
               gate_node:
                 sleep:
                   duration: "duration"
+                approve:
+                  signal_id: "signal_id"
                 signal:
                   output_variable_name: "output_variable_name"
                   signal_id: "signal_id"

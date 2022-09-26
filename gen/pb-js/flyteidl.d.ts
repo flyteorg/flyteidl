@@ -1119,6 +1119,58 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of an ApproveCondition. */
+        interface IApproveCondition {
+
+            /** ApproveCondition signalId */
+            signalId?: (string|null);
+        }
+
+        /** Represents an ApproveCondition. */
+        class ApproveCondition implements IApproveCondition {
+
+            /**
+             * Constructs a new ApproveCondition.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.IApproveCondition);
+
+            /** ApproveCondition signalId. */
+            public signalId: string;
+
+            /**
+             * Creates a new ApproveCondition instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ApproveCondition instance
+             */
+            public static create(properties?: flyteidl.core.IApproveCondition): flyteidl.core.ApproveCondition;
+
+            /**
+             * Encodes the specified ApproveCondition message. Does not implicitly {@link flyteidl.core.ApproveCondition.verify|verify} messages.
+             * @param message ApproveCondition message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.IApproveCondition, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes an ApproveCondition message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ApproveCondition
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.ApproveCondition;
+
+            /**
+             * Verifies an ApproveCondition message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a SignalCondition. */
         interface ISignalCondition {
 
@@ -1238,6 +1290,9 @@ export namespace flyteidl {
         /** Properties of a GateNode. */
         interface IGateNode {
 
+            /** GateNode approve */
+            approve?: (flyteidl.core.IApproveCondition|null);
+
             /** GateNode signal */
             signal?: (flyteidl.core.ISignalCondition|null);
 
@@ -1254,6 +1309,9 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.core.IGateNode);
 
+            /** GateNode approve. */
+            public approve?: (flyteidl.core.IApproveCondition|null);
+
             /** GateNode signal. */
             public signal?: (flyteidl.core.ISignalCondition|null);
 
@@ -1261,7 +1319,7 @@ export namespace flyteidl {
             public sleep?: (flyteidl.core.ISleepCondition|null);
 
             /** GateNode condition. */
-            public condition?: ("signal"|"sleep");
+            public condition?: ("approve"|"signal"|"sleep");
 
             /**
              * Creates a new GateNode instance using the specified properties.

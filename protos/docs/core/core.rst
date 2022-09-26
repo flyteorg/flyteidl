@@ -2846,6 +2846,28 @@ Links a variable to an alias.
 
 
 
+.. _ref_flyteidl.core.ApproveCondition:
+
+ApproveCondition
+------------------------------------------------------------------
+
+ApproveCondition represents a dependency on an external approval. During execution, this will manifest as a boolean
+signal with the provided signal_id.
+
+
+
+.. csv-table:: ApproveCondition type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "signal_id", ":ref:`ref_string`", "", "A unique identifier for the requested boolean signal."
+
+
+
+
+
+
+
 .. _ref_flyteidl.core.BranchNode:
 
 BranchNode
@@ -2881,6 +2903,7 @@ GateNode refers to the condition that is required for the gate to successfully c
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
+   "approve", ":ref:`ref_flyteidl.core.ApproveCondition`", "", "ApproveCondition represents a dependency on an external approval provided by a boolean signal."
    "signal", ":ref:`ref_flyteidl.core.SignalCondition`", "", "SignalCondition represents a dependency on an signal."
    "sleep", ":ref:`ref_flyteidl.core.SleepCondition`", "", "SleepCondition represents a dependency on waiting for the specified duration."
 

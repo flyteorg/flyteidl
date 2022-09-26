@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2fworkflow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[15]
+  static const ::google::protobuf::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -63,6 +63,9 @@ namespace core {
 class Alias;
 class AliasDefaultTypeInternal;
 extern AliasDefaultTypeInternal _Alias_default_instance_;
+class ApproveCondition;
+class ApproveConditionDefaultTypeInternal;
+extern ApproveConditionDefaultTypeInternal _ApproveCondition_default_instance_;
 class BranchNode;
 class BranchNodeDefaultTypeInternal;
 extern BranchNodeDefaultTypeInternal _BranchNode_default_instance_;
@@ -110,6 +113,7 @@ extern WorkflowTemplateDefaultTypeInternal _WorkflowTemplate_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::core::Alias* Arena::CreateMaybeMessage<::flyteidl::core::Alias>(Arena*);
+template<> ::flyteidl::core::ApproveCondition* Arena::CreateMaybeMessage<::flyteidl::core::ApproveCondition>(Arena*);
 template<> ::flyteidl::core::BranchNode* Arena::CreateMaybeMessage<::flyteidl::core::BranchNode>(Arena*);
 template<> ::flyteidl::core::GateNode* Arena::CreateMaybeMessage<::flyteidl::core::GateNode>(Arena*);
 template<> ::flyteidl::core::IfBlock* Arena::CreateMaybeMessage<::flyteidl::core::IfBlock>(Arena*);
@@ -842,6 +846,126 @@ class WorkflowNode final :
 };
 // -------------------------------------------------------------------
 
+class ApproveCondition final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.ApproveCondition) */ {
+ public:
+  ApproveCondition();
+  virtual ~ApproveCondition();
+
+  ApproveCondition(const ApproveCondition& from);
+
+  inline ApproveCondition& operator=(const ApproveCondition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ApproveCondition(ApproveCondition&& from) noexcept
+    : ApproveCondition() {
+    *this = ::std::move(from);
+  }
+
+  inline ApproveCondition& operator=(ApproveCondition&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ApproveCondition& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ApproveCondition* internal_default_instance() {
+    return reinterpret_cast<const ApproveCondition*>(
+               &_ApproveCondition_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(ApproveCondition* other);
+  friend void swap(ApproveCondition& a, ApproveCondition& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ApproveCondition* New() const final {
+    return CreateMaybeMessage<ApproveCondition>(nullptr);
+  }
+
+  ApproveCondition* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ApproveCondition>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ApproveCondition& from);
+  void MergeFrom(const ApproveCondition& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ApproveCondition* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string signal_id = 1;
+  void clear_signal_id();
+  static const int kSignalIdFieldNumber = 1;
+  const ::std::string& signal_id() const;
+  void set_signal_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signal_id(::std::string&& value);
+  #endif
+  void set_signal_id(const char* value);
+  void set_signal_id(const char* value, size_t size);
+  ::std::string* mutable_signal_id();
+  ::std::string* release_signal_id();
+  void set_allocated_signal_id(::std::string* signal_id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.core.ApproveCondition)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr signal_id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fcore_2fworkflow_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SignalCondition final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.SignalCondition) */ {
  public:
@@ -880,7 +1004,7 @@ class SignalCondition final :
                &_SignalCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(SignalCondition* other);
   friend void swap(SignalCondition& a, SignalCondition& b) {
@@ -1025,7 +1149,7 @@ class SleepCondition final :
                &_SleepCondition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(SleepCondition* other);
   friend void swap(SleepCondition& a, SleepCondition& b) {
@@ -1082,10 +1206,10 @@ class SleepCondition final :
 
   // accessors -------------------------------------------------------
 
-  // .google.protobuf.Duration duration = 4;
+  // .google.protobuf.Duration duration = 1;
   bool has_duration() const;
   void clear_duration();
-  static const int kDurationFieldNumber = 4;
+  static const int kDurationFieldNumber = 1;
   const ::google::protobuf::Duration& duration() const;
   ::google::protobuf::Duration* release_duration();
   ::google::protobuf::Duration* mutable_duration();
@@ -1135,8 +1259,9 @@ class GateNode final :
   static const GateNode& default_instance();
 
   enum ConditionCase {
+    kApprove = 1,
     kSignal = 2,
-    kSleep = 1,
+    kSleep = 3,
     CONDITION_NOT_SET = 0,
   };
 
@@ -1146,7 +1271,7 @@ class GateNode final :
                &_GateNode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(GateNode* other);
   friend void swap(GateNode& a, GateNode& b) {
@@ -1203,6 +1328,15 @@ class GateNode final :
 
   // accessors -------------------------------------------------------
 
+  // .flyteidl.core.ApproveCondition approve = 1;
+  bool has_approve() const;
+  void clear_approve();
+  static const int kApproveFieldNumber = 1;
+  const ::flyteidl::core::ApproveCondition& approve() const;
+  ::flyteidl::core::ApproveCondition* release_approve();
+  ::flyteidl::core::ApproveCondition* mutable_approve();
+  void set_allocated_approve(::flyteidl::core::ApproveCondition* approve);
+
   // .flyteidl.core.SignalCondition signal = 2;
   bool has_signal() const;
   void clear_signal();
@@ -1212,10 +1346,10 @@ class GateNode final :
   ::flyteidl::core::SignalCondition* mutable_signal();
   void set_allocated_signal(::flyteidl::core::SignalCondition* signal);
 
-  // .flyteidl.core.SleepCondition sleep = 1;
+  // .flyteidl.core.SleepCondition sleep = 3;
   bool has_sleep() const;
   void clear_sleep();
-  static const int kSleepFieldNumber = 1;
+  static const int kSleepFieldNumber = 3;
   const ::flyteidl::core::SleepCondition& sleep() const;
   ::flyteidl::core::SleepCondition* release_sleep();
   ::flyteidl::core::SleepCondition* mutable_sleep();
@@ -1226,6 +1360,7 @@ class GateNode final :
   // @@protoc_insertion_point(class_scope:flyteidl.core.GateNode)
  private:
   class HasBitSetters;
+  void set_has_approve();
   void set_has_signal();
   void set_has_sleep();
 
@@ -1235,6 +1370,7 @@ class GateNode final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   union ConditionUnion {
     ConditionUnion() {}
+    ::flyteidl::core::ApproveCondition* approve_;
     ::flyteidl::core::SignalCondition* signal_;
     ::flyteidl::core::SleepCondition* sleep_;
   } condition_;
@@ -1288,7 +1424,7 @@ class NodeMetadata final :
                &_NodeMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(NodeMetadata* other);
   friend void swap(NodeMetadata& a, NodeMetadata& b) {
@@ -1449,7 +1585,7 @@ class Alias final :
                &_Alias_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Alias* other);
   friend void swap(Alias& a, Alias& b) {
@@ -1592,7 +1728,7 @@ class Node final :
                &_Node_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Node* other);
   friend void swap(Node& a, Node& b) {
@@ -1825,7 +1961,7 @@ class WorkflowMetadata final :
                &_WorkflowMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(WorkflowMetadata* other);
   friend void swap(WorkflowMetadata& a, WorkflowMetadata& b) {
@@ -1973,7 +2109,7 @@ class WorkflowMetadataDefaults final :
                &_WorkflowMetadataDefaults_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(WorkflowMetadataDefaults* other);
   friend void swap(WorkflowMetadataDefaults& a, WorkflowMetadataDefaults& b) {
@@ -2085,7 +2221,7 @@ class WorkflowTemplate final :
                &_WorkflowTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(WorkflowTemplate* other);
   friend void swap(WorkflowTemplate& a, WorkflowTemplate& b) {
@@ -2266,7 +2402,7 @@ class TaskNodeOverrides final :
                &_TaskNodeOverrides_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(TaskNodeOverrides* other);
   friend void swap(TaskNodeOverrides& a, TaskNodeOverrides& b) {
@@ -2857,6 +2993,63 @@ inline WorkflowNode::ReferenceCase WorkflowNode::reference_case() const {
 }
 // -------------------------------------------------------------------
 
+// ApproveCondition
+
+// string signal_id = 1;
+inline void ApproveCondition::clear_signal_id() {
+  signal_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ApproveCondition::signal_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.ApproveCondition.signal_id)
+  return signal_id_.GetNoArena();
+}
+inline void ApproveCondition::set_signal_id(const ::std::string& value) {
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.ApproveCondition.signal_id)
+}
+#if LANG_CXX11
+inline void ApproveCondition::set_signal_id(::std::string&& value) {
+  
+  signal_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.ApproveCondition.signal_id)
+}
+#endif
+inline void ApproveCondition::set_signal_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.ApproveCondition.signal_id)
+}
+inline void ApproveCondition::set_signal_id(const char* value, size_t size) {
+  
+  signal_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.ApproveCondition.signal_id)
+}
+inline ::std::string* ApproveCondition::mutable_signal_id() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.ApproveCondition.signal_id)
+  return signal_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ApproveCondition::release_signal_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.ApproveCondition.signal_id)
+  
+  return signal_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ApproveCondition::set_allocated_signal_id(::std::string* signal_id) {
+  if (signal_id != nullptr) {
+    
+  } else {
+    
+  }
+  signal_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signal_id);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.ApproveCondition.signal_id)
+}
+
+// -------------------------------------------------------------------
+
 // SignalCondition
 
 // string signal_id = 1;
@@ -3014,7 +3207,7 @@ inline void SignalCondition::set_allocated_output_variable_name(::std::string* o
 
 // SleepCondition
 
-// .google.protobuf.Duration duration = 4;
+// .google.protobuf.Duration duration = 1;
 inline bool SleepCondition::has_duration() const {
   return this != internal_default_instance() && duration_ != nullptr;
 }
@@ -3064,6 +3257,47 @@ inline void SleepCondition::set_allocated_duration(::google::protobuf::Duration*
 
 // GateNode
 
+// .flyteidl.core.ApproveCondition approve = 1;
+inline bool GateNode::has_approve() const {
+  return condition_case() == kApprove;
+}
+inline void GateNode::set_has_approve() {
+  _oneof_case_[0] = kApprove;
+}
+inline void GateNode::clear_approve() {
+  if (has_approve()) {
+    delete condition_.approve_;
+    clear_has_condition();
+  }
+}
+inline ::flyteidl::core::ApproveCondition* GateNode::release_approve() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.GateNode.approve)
+  if (has_approve()) {
+    clear_has_condition();
+      ::flyteidl::core::ApproveCondition* temp = condition_.approve_;
+    condition_.approve_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::ApproveCondition& GateNode::approve() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.GateNode.approve)
+  return has_approve()
+      ? *condition_.approve_
+      : *reinterpret_cast< ::flyteidl::core::ApproveCondition*>(&::flyteidl::core::_ApproveCondition_default_instance_);
+}
+inline ::flyteidl::core::ApproveCondition* GateNode::mutable_approve() {
+  if (!has_approve()) {
+    clear_condition();
+    set_has_approve();
+    condition_.approve_ = CreateMaybeMessage< ::flyteidl::core::ApproveCondition >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.GateNode.approve)
+  return condition_.approve_;
+}
+
 // .flyteidl.core.SignalCondition signal = 2;
 inline bool GateNode::has_signal() const {
   return condition_case() == kSignal;
@@ -3105,7 +3339,7 @@ inline ::flyteidl::core::SignalCondition* GateNode::mutable_signal() {
   return condition_.signal_;
 }
 
-// .flyteidl.core.SleepCondition sleep = 1;
+// .flyteidl.core.SleepCondition sleep = 3;
 inline bool GateNode::has_sleep() const {
   return condition_case() == kSleep;
 }
@@ -4295,6 +4529,8 @@ inline void TaskNodeOverrides::set_allocated_resources(::flyteidl::core::Resourc
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

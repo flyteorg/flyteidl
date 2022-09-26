@@ -245,6 +245,7 @@ Class | Method | HTTP request | Description
  - [ConnectionSetIdList](docs/ConnectionSetIdList.md)
  - [ContainerArchitecture](docs/ContainerArchitecture.md)
  - [CoreAlias](docs/CoreAlias.md)
+ - [CoreApproveCondition](docs/CoreApproveCondition.md)
  - [CoreBinary](docs/CoreBinary.md)
  - [CoreBinding](docs/CoreBinding.md)
  - [CoreBindingData](docs/CoreBindingData.md)

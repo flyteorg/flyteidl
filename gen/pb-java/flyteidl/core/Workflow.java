@@ -5341,6 +5341,601 @@ public final class Workflow {
 
   }
 
+  public interface ApproveConditionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.core.ApproveCondition)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A unique identifier for the requested boolean signal.
+     * </pre>
+     *
+     * <code>string signal_id = 1;</code>
+     */
+    java.lang.String getSignalId();
+    /**
+     * <pre>
+     * A unique identifier for the requested boolean signal.
+     * </pre>
+     *
+     * <code>string signal_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSignalIdBytes();
+  }
+  /**
+   * <pre>
+   * ApproveCondition represents a dependency on an external approval. During execution, this will manifest as a boolean
+   * signal with the provided signal_id.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.core.ApproveCondition}
+   */
+  public  static final class ApproveCondition extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.core.ApproveCondition)
+      ApproveConditionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ApproveCondition.newBuilder() to construct.
+    private ApproveCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ApproveCondition() {
+      signalId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ApproveCondition(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signalId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_ApproveCondition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.core.Workflow.internal_static_flyteidl_core_ApproveCondition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.core.Workflow.ApproveCondition.class, flyteidl.core.Workflow.ApproveCondition.Builder.class);
+    }
+
+    public static final int SIGNAL_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object signalId_;
+    /**
+     * <pre>
+     * A unique identifier for the requested boolean signal.
+     * </pre>
+     *
+     * <code>string signal_id = 1;</code>
+     */
+    public java.lang.String getSignalId() {
+      java.lang.Object ref = signalId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        signalId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A unique identifier for the requested boolean signal.
+     * </pre>
+     *
+     * <code>string signal_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSignalIdBytes() {
+      java.lang.Object ref = signalId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        signalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSignalIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signalId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSignalIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signalId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.core.Workflow.ApproveCondition)) {
+        return super.equals(obj);
+      }
+      flyteidl.core.Workflow.ApproveCondition other = (flyteidl.core.Workflow.ApproveCondition) obj;
+
+      if (!getSignalId()
+          .equals(other.getSignalId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SIGNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSignalId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.core.Workflow.ApproveCondition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.core.Workflow.ApproveCondition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval. During execution, this will manifest as a boolean
+     * signal with the provided signal_id.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.core.ApproveCondition}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.core.ApproveCondition)
+        flyteidl.core.Workflow.ApproveConditionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ApproveCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ApproveCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.core.Workflow.ApproveCondition.class, flyteidl.core.Workflow.ApproveCondition.Builder.class);
+      }
+
+      // Construct using flyteidl.core.Workflow.ApproveCondition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        signalId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.core.Workflow.internal_static_flyteidl_core_ApproveCondition_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ApproveCondition getDefaultInstanceForType() {
+        return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ApproveCondition build() {
+        flyteidl.core.Workflow.ApproveCondition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.core.Workflow.ApproveCondition buildPartial() {
+        flyteidl.core.Workflow.ApproveCondition result = new flyteidl.core.Workflow.ApproveCondition(this);
+        result.signalId_ = signalId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.core.Workflow.ApproveCondition) {
+          return mergeFrom((flyteidl.core.Workflow.ApproveCondition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.core.Workflow.ApproveCondition other) {
+        if (other == flyteidl.core.Workflow.ApproveCondition.getDefaultInstance()) return this;
+        if (!other.getSignalId().isEmpty()) {
+          signalId_ = other.signalId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.core.Workflow.ApproveCondition parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.core.Workflow.ApproveCondition) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object signalId_ = "";
+      /**
+       * <pre>
+       * A unique identifier for the requested boolean signal.
+       * </pre>
+       *
+       * <code>string signal_id = 1;</code>
+       */
+      public java.lang.String getSignalId() {
+        java.lang.Object ref = signalId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          signalId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested boolean signal.
+       * </pre>
+       *
+       * <code>string signal_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSignalIdBytes() {
+        java.lang.Object ref = signalId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          signalId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested boolean signal.
+       * </pre>
+       *
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder setSignalId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        signalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested boolean signal.
+       * </pre>
+       *
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder clearSignalId() {
+        
+        signalId_ = getDefaultInstance().getSignalId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A unique identifier for the requested boolean signal.
+       * </pre>
+       *
+       * <code>string signal_id = 1;</code>
+       */
+      public Builder setSignalIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        signalId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.core.ApproveCondition)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.core.ApproveCondition)
+    private static final flyteidl.core.Workflow.ApproveCondition DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.core.Workflow.ApproveCondition();
+    }
+
+    public static flyteidl.core.Workflow.ApproveCondition getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApproveCondition>
+        PARSER = new com.google.protobuf.AbstractParser<ApproveCondition>() {
+      @java.lang.Override
+      public ApproveCondition parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ApproveCondition(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApproveCondition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApproveCondition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.core.Workflow.ApproveCondition getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface SignalConditionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.core.SignalCondition)
       com.google.protobuf.MessageOrBuilder {
@@ -6370,7 +6965,7 @@ public final class Workflow {
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     boolean hasDuration();
     /**
@@ -6378,7 +6973,7 @@ public final class Workflow {
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     com.google.protobuf.Duration getDuration();
     /**
@@ -6386,7 +6981,7 @@ public final class Workflow {
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
   }
@@ -6433,7 +7028,7 @@ public final class Workflow {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 10: {
               com.google.protobuf.Duration.Builder subBuilder = null;
               if (duration_ != null) {
                 subBuilder = duration_.toBuilder();
@@ -6478,14 +7073,14 @@ public final class Workflow {
               flyteidl.core.Workflow.SleepCondition.class, flyteidl.core.Workflow.SleepCondition.Builder.class);
     }
 
-    public static final int DURATION_FIELD_NUMBER = 4;
+    public static final int DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration duration_;
     /**
      * <pre>
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public boolean hasDuration() {
       return duration_ != null;
@@ -6495,7 +7090,7 @@ public final class Workflow {
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
@@ -6505,7 +7100,7 @@ public final class Workflow {
      * The overall duration for this sleep.
      * </pre>
      *
-     * <code>.google.protobuf.Duration duration = 4;</code>
+     * <code>.google.protobuf.Duration duration = 1;</code>
      */
     public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
       return getDuration();
@@ -6526,7 +7121,7 @@ public final class Workflow {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (duration_ != null) {
-        output.writeMessage(4, getDuration());
+        output.writeMessage(1, getDuration());
       }
       unknownFields.writeTo(output);
     }
@@ -6539,7 +7134,7 @@ public final class Workflow {
       size = 0;
       if (duration_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDuration());
+          .computeMessageSize(1, getDuration());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6838,7 +7433,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public boolean hasDuration() {
         return durationBuilder_ != null || duration_ != null;
@@ -6848,7 +7443,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public com.google.protobuf.Duration getDuration() {
         if (durationBuilder_ == null) {
@@ -6862,7 +7457,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public Builder setDuration(com.google.protobuf.Duration value) {
         if (durationBuilder_ == null) {
@@ -6882,7 +7477,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public Builder setDuration(
           com.google.protobuf.Duration.Builder builderForValue) {
@@ -6900,7 +7495,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public Builder mergeDuration(com.google.protobuf.Duration value) {
         if (durationBuilder_ == null) {
@@ -6922,7 +7517,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public Builder clearDuration() {
         if (durationBuilder_ == null) {
@@ -6940,7 +7535,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public com.google.protobuf.Duration.Builder getDurationBuilder() {
         
@@ -6952,7 +7547,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
         if (durationBuilder_ != null) {
@@ -6967,7 +7562,7 @@ public final class Workflow {
        * The overall duration for this sleep.
        * </pre>
        *
-       * <code>.google.protobuf.Duration duration = 4;</code>
+       * <code>.google.protobuf.Duration duration = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
@@ -7041,6 +7636,31 @@ public final class Workflow {
 
     /**
      * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    boolean hasApprove();
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    flyteidl.core.Workflow.ApproveCondition getApprove();
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    flyteidl.core.Workflow.ApproveConditionOrBuilder getApproveOrBuilder();
+
+    /**
+     * <pre>
      * SignalCondition represents a dependency on an signal.
      * </pre>
      *
@@ -7069,7 +7689,7 @@ public final class Workflow {
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     boolean hasSleep();
     /**
@@ -7077,7 +7697,7 @@ public final class Workflow {
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     flyteidl.core.Workflow.SleepCondition getSleep();
     /**
@@ -7085,7 +7705,7 @@ public final class Workflow {
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder();
 
@@ -7135,14 +7755,14 @@ public final class Workflow {
               done = true;
               break;
             case 10: {
-              flyteidl.core.Workflow.SleepCondition.Builder subBuilder = null;
+              flyteidl.core.Workflow.ApproveCondition.Builder subBuilder = null;
               if (conditionCase_ == 1) {
-                subBuilder = ((flyteidl.core.Workflow.SleepCondition) condition_).toBuilder();
+                subBuilder = ((flyteidl.core.Workflow.ApproveCondition) condition_).toBuilder();
               }
               condition_ =
-                  input.readMessage(flyteidl.core.Workflow.SleepCondition.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.core.Workflow.ApproveCondition.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.core.Workflow.SleepCondition) condition_);
+                subBuilder.mergeFrom((flyteidl.core.Workflow.ApproveCondition) condition_);
                 condition_ = subBuilder.buildPartial();
               }
               conditionCase_ = 1;
@@ -7160,6 +7780,20 @@ public final class Workflow {
                 condition_ = subBuilder.buildPartial();
               }
               conditionCase_ = 2;
+              break;
+            }
+            case 26: {
+              flyteidl.core.Workflow.SleepCondition.Builder subBuilder = null;
+              if (conditionCase_ == 3) {
+                subBuilder = ((flyteidl.core.Workflow.SleepCondition) condition_).toBuilder();
+              }
+              condition_ =
+                  input.readMessage(flyteidl.core.Workflow.SleepCondition.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Workflow.SleepCondition) condition_);
+                condition_ = subBuilder.buildPartial();
+              }
+              conditionCase_ = 3;
               break;
             }
             default: {
@@ -7198,8 +7832,9 @@ public final class Workflow {
     private java.lang.Object condition_;
     public enum ConditionCase
         implements com.google.protobuf.Internal.EnumLite {
+      APPROVE(1),
       SIGNAL(2),
-      SLEEP(1),
+      SLEEP(3),
       CONDITION_NOT_SET(0);
       private final int value;
       private ConditionCase(int value) {
@@ -7215,8 +7850,9 @@ public final class Workflow {
 
       public static ConditionCase forNumber(int value) {
         switch (value) {
+          case 1: return APPROVE;
           case 2: return SIGNAL;
-          case 1: return SLEEP;
+          case 3: return SLEEP;
           case 0: return CONDITION_NOT_SET;
           default: return null;
         }
@@ -7230,6 +7866,44 @@ public final class Workflow {
     getConditionCase() {
       return ConditionCase.forNumber(
           conditionCase_);
+    }
+
+    public static final int APPROVE_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    public boolean hasApprove() {
+      return conditionCase_ == 1;
+    }
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    public flyteidl.core.Workflow.ApproveCondition getApprove() {
+      if (conditionCase_ == 1) {
+         return (flyteidl.core.Workflow.ApproveCondition) condition_;
+      }
+      return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+     */
+    public flyteidl.core.Workflow.ApproveConditionOrBuilder getApproveOrBuilder() {
+      if (conditionCase_ == 1) {
+         return (flyteidl.core.Workflow.ApproveCondition) condition_;
+      }
+      return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
     }
 
     public static final int SIGNAL_FIELD_NUMBER = 2;
@@ -7270,26 +7944,26 @@ public final class Workflow {
       return flyteidl.core.Workflow.SignalCondition.getDefaultInstance();
     }
 
-    public static final int SLEEP_FIELD_NUMBER = 1;
+    public static final int SLEEP_FIELD_NUMBER = 3;
     /**
      * <pre>
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     public boolean hasSleep() {
-      return conditionCase_ == 1;
+      return conditionCase_ == 3;
     }
     /**
      * <pre>
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     public flyteidl.core.Workflow.SleepCondition getSleep() {
-      if (conditionCase_ == 1) {
+      if (conditionCase_ == 3) {
          return (flyteidl.core.Workflow.SleepCondition) condition_;
       }
       return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
@@ -7299,10 +7973,10 @@ public final class Workflow {
      * SleepCondition represents a dependency on waiting for the specified duration.
      * </pre>
      *
-     * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+     * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
      */
     public flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder() {
-      if (conditionCase_ == 1) {
+      if (conditionCase_ == 3) {
          return (flyteidl.core.Workflow.SleepCondition) condition_;
       }
       return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
@@ -7323,10 +7997,13 @@ public final class Workflow {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (conditionCase_ == 1) {
-        output.writeMessage(1, (flyteidl.core.Workflow.SleepCondition) condition_);
+        output.writeMessage(1, (flyteidl.core.Workflow.ApproveCondition) condition_);
       }
       if (conditionCase_ == 2) {
         output.writeMessage(2, (flyteidl.core.Workflow.SignalCondition) condition_);
+      }
+      if (conditionCase_ == 3) {
+        output.writeMessage(3, (flyteidl.core.Workflow.SleepCondition) condition_);
       }
       unknownFields.writeTo(output);
     }
@@ -7339,11 +8016,15 @@ public final class Workflow {
       size = 0;
       if (conditionCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (flyteidl.core.Workflow.SleepCondition) condition_);
+          .computeMessageSize(1, (flyteidl.core.Workflow.ApproveCondition) condition_);
       }
       if (conditionCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (flyteidl.core.Workflow.SignalCondition) condition_);
+      }
+      if (conditionCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (flyteidl.core.Workflow.SleepCondition) condition_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7362,11 +8043,15 @@ public final class Workflow {
 
       if (!getConditionCase().equals(other.getConditionCase())) return false;
       switch (conditionCase_) {
+        case 1:
+          if (!getApprove()
+              .equals(other.getApprove())) return false;
+          break;
         case 2:
           if (!getSignal()
               .equals(other.getSignal())) return false;
           break;
-        case 1:
+        case 3:
           if (!getSleep()
               .equals(other.getSleep())) return false;
           break;
@@ -7385,11 +8070,15 @@ public final class Workflow {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       switch (conditionCase_) {
+        case 1:
+          hash = (37 * hash) + APPROVE_FIELD_NUMBER;
+          hash = (53 * hash) + getApprove().hashCode();
+          break;
         case 2:
           hash = (37 * hash) + SIGNAL_FIELD_NUMBER;
           hash = (53 * hash) + getSignal().hashCode();
           break;
-        case 1:
+        case 3:
           hash = (37 * hash) + SLEEP_FIELD_NUMBER;
           hash = (53 * hash) + getSleep().hashCode();
           break;
@@ -7561,6 +8250,13 @@ public final class Workflow {
       @java.lang.Override
       public flyteidl.core.Workflow.GateNode buildPartial() {
         flyteidl.core.Workflow.GateNode result = new flyteidl.core.Workflow.GateNode(this);
+        if (conditionCase_ == 1) {
+          if (approveBuilder_ == null) {
+            result.condition_ = condition_;
+          } else {
+            result.condition_ = approveBuilder_.build();
+          }
+        }
         if (conditionCase_ == 2) {
           if (signalBuilder_ == null) {
             result.condition_ = condition_;
@@ -7568,7 +8264,7 @@ public final class Workflow {
             result.condition_ = signalBuilder_.build();
           }
         }
-        if (conditionCase_ == 1) {
+        if (conditionCase_ == 3) {
           if (sleepBuilder_ == null) {
             result.condition_ = condition_;
           } else {
@@ -7625,6 +8321,10 @@ public final class Workflow {
       public Builder mergeFrom(flyteidl.core.Workflow.GateNode other) {
         if (other == flyteidl.core.Workflow.GateNode.getDefaultInstance()) return this;
         switch (other.getConditionCase()) {
+          case APPROVE: {
+            mergeApprove(other.getApprove());
+            break;
+          }
           case SIGNAL: {
             mergeSignal(other.getSignal());
             break;
@@ -7680,6 +8380,178 @@ public final class Workflow {
         return this;
       }
 
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.ApproveCondition, flyteidl.core.Workflow.ApproveCondition.Builder, flyteidl.core.Workflow.ApproveConditionOrBuilder> approveBuilder_;
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public boolean hasApprove() {
+        return conditionCase_ == 1;
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public flyteidl.core.Workflow.ApproveCondition getApprove() {
+        if (approveBuilder_ == null) {
+          if (conditionCase_ == 1) {
+            return (flyteidl.core.Workflow.ApproveCondition) condition_;
+          }
+          return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+        } else {
+          if (conditionCase_ == 1) {
+            return approveBuilder_.getMessage();
+          }
+          return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public Builder setApprove(flyteidl.core.Workflow.ApproveCondition value) {
+        if (approveBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          condition_ = value;
+          onChanged();
+        } else {
+          approveBuilder_.setMessage(value);
+        }
+        conditionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public Builder setApprove(
+          flyteidl.core.Workflow.ApproveCondition.Builder builderForValue) {
+        if (approveBuilder_ == null) {
+          condition_ = builderForValue.build();
+          onChanged();
+        } else {
+          approveBuilder_.setMessage(builderForValue.build());
+        }
+        conditionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public Builder mergeApprove(flyteidl.core.Workflow.ApproveCondition value) {
+        if (approveBuilder_ == null) {
+          if (conditionCase_ == 1 &&
+              condition_ != flyteidl.core.Workflow.ApproveCondition.getDefaultInstance()) {
+            condition_ = flyteidl.core.Workflow.ApproveCondition.newBuilder((flyteidl.core.Workflow.ApproveCondition) condition_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            condition_ = value;
+          }
+          onChanged();
+        } else {
+          if (conditionCase_ == 1) {
+            approveBuilder_.mergeFrom(value);
+          }
+          approveBuilder_.setMessage(value);
+        }
+        conditionCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public Builder clearApprove() {
+        if (approveBuilder_ == null) {
+          if (conditionCase_ == 1) {
+            conditionCase_ = 0;
+            condition_ = null;
+            onChanged();
+          }
+        } else {
+          if (conditionCase_ == 1) {
+            conditionCase_ = 0;
+            condition_ = null;
+          }
+          approveBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public flyteidl.core.Workflow.ApproveCondition.Builder getApproveBuilder() {
+        return getApproveFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      public flyteidl.core.Workflow.ApproveConditionOrBuilder getApproveOrBuilder() {
+        if ((conditionCase_ == 1) && (approveBuilder_ != null)) {
+          return approveBuilder_.getMessageOrBuilder();
+        } else {
+          if (conditionCase_ == 1) {
+            return (flyteidl.core.Workflow.ApproveCondition) condition_;
+          }
+          return flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ApproveCondition approve = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Workflow.ApproveCondition, flyteidl.core.Workflow.ApproveCondition.Builder, flyteidl.core.Workflow.ApproveConditionOrBuilder> 
+          getApproveFieldBuilder() {
+        if (approveBuilder_ == null) {
+          if (!(conditionCase_ == 1)) {
+            condition_ = flyteidl.core.Workflow.ApproveCondition.getDefaultInstance();
+          }
+          approveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Workflow.ApproveCondition, flyteidl.core.Workflow.ApproveCondition.Builder, flyteidl.core.Workflow.ApproveConditionOrBuilder>(
+                  (flyteidl.core.Workflow.ApproveCondition) condition_,
+                  getParentForChildren(),
+                  isClean());
+          condition_ = null;
+        }
+        conditionCase_ = 1;
+        onChanged();;
+        return approveBuilder_;
+      }
 
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Workflow.SignalCondition, flyteidl.core.Workflow.SignalCondition.Builder, flyteidl.core.Workflow.SignalConditionOrBuilder> signalBuilder_;
@@ -7860,26 +8732,26 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public boolean hasSleep() {
-        return conditionCase_ == 1;
+        return conditionCase_ == 3;
       }
       /**
        * <pre>
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public flyteidl.core.Workflow.SleepCondition getSleep() {
         if (sleepBuilder_ == null) {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             return (flyteidl.core.Workflow.SleepCondition) condition_;
           }
           return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
         } else {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             return sleepBuilder_.getMessage();
           }
           return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
@@ -7890,7 +8762,7 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public Builder setSleep(flyteidl.core.Workflow.SleepCondition value) {
         if (sleepBuilder_ == null) {
@@ -7902,7 +8774,7 @@ public final class Workflow {
         } else {
           sleepBuilder_.setMessage(value);
         }
-        conditionCase_ = 1;
+        conditionCase_ = 3;
         return this;
       }
       /**
@@ -7910,7 +8782,7 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public Builder setSleep(
           flyteidl.core.Workflow.SleepCondition.Builder builderForValue) {
@@ -7920,7 +8792,7 @@ public final class Workflow {
         } else {
           sleepBuilder_.setMessage(builderForValue.build());
         }
-        conditionCase_ = 1;
+        conditionCase_ = 3;
         return this;
       }
       /**
@@ -7928,11 +8800,11 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public Builder mergeSleep(flyteidl.core.Workflow.SleepCondition value) {
         if (sleepBuilder_ == null) {
-          if (conditionCase_ == 1 &&
+          if (conditionCase_ == 3 &&
               condition_ != flyteidl.core.Workflow.SleepCondition.getDefaultInstance()) {
             condition_ = flyteidl.core.Workflow.SleepCondition.newBuilder((flyteidl.core.Workflow.SleepCondition) condition_)
                 .mergeFrom(value).buildPartial();
@@ -7941,12 +8813,12 @@ public final class Workflow {
           }
           onChanged();
         } else {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             sleepBuilder_.mergeFrom(value);
           }
           sleepBuilder_.setMessage(value);
         }
-        conditionCase_ = 1;
+        conditionCase_ = 3;
         return this;
       }
       /**
@@ -7954,17 +8826,17 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public Builder clearSleep() {
         if (sleepBuilder_ == null) {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             conditionCase_ = 0;
             condition_ = null;
             onChanged();
           }
         } else {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             conditionCase_ = 0;
             condition_ = null;
           }
@@ -7977,7 +8849,7 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public flyteidl.core.Workflow.SleepCondition.Builder getSleepBuilder() {
         return getSleepFieldBuilder().getBuilder();
@@ -7987,13 +8859,13 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       public flyteidl.core.Workflow.SleepConditionOrBuilder getSleepOrBuilder() {
-        if ((conditionCase_ == 1) && (sleepBuilder_ != null)) {
+        if ((conditionCase_ == 3) && (sleepBuilder_ != null)) {
           return sleepBuilder_.getMessageOrBuilder();
         } else {
-          if (conditionCase_ == 1) {
+          if (conditionCase_ == 3) {
             return (flyteidl.core.Workflow.SleepCondition) condition_;
           }
           return flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
@@ -8004,13 +8876,13 @@ public final class Workflow {
        * SleepCondition represents a dependency on waiting for the specified duration.
        * </pre>
        *
-       * <code>.flyteidl.core.SleepCondition sleep = 1;</code>
+       * <code>.flyteidl.core.SleepCondition sleep = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Workflow.SleepCondition, flyteidl.core.Workflow.SleepCondition.Builder, flyteidl.core.Workflow.SleepConditionOrBuilder> 
           getSleepFieldBuilder() {
         if (sleepBuilder_ == null) {
-          if (!(conditionCase_ == 1)) {
+          if (!(conditionCase_ == 3)) {
             condition_ = flyteidl.core.Workflow.SleepCondition.getDefaultInstance();
           }
           sleepBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8020,7 +8892,7 @@ public final class Workflow {
                   isClean());
           condition_ = null;
         }
-        conditionCase_ = 1;
+        conditionCase_ = 3;
         onChanged();;
         return sleepBuilder_;
       }
@@ -18462,6 +19334,11 @@ public final class Workflow {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_core_WorkflowNode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_core_ApproveCondition_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_core_ApproveCondition_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_core_SignalCondition_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -18543,48 +19420,50 @@ public final class Workflow {
       "rkflowNode\0223\n\016launchplan_ref\030\001 \001(\0132\031.fly" +
       "teidl.core.IdentifierH\000\0225\n\020sub_workflow_" +
       "ref\030\002 \001(\0132\031.flyteidl.core.IdentifierH\000B\013" +
-      "\n\treference\"l\n\017SignalCondition\022\021\n\tsignal" +
-      "_id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core." +
-      "LiteralType\022\034\n\024output_variable_name\030\003 \001(" +
-      "\t\"=\n\016SleepCondition\022+\n\010duration\030\004 \001(\0132\031." +
-      "google.protobuf.Duration\"y\n\010GateNode\0220\n\006" +
-      "signal\030\002 \001(\0132\036.flyteidl.core.SignalCondi" +
-      "tionH\000\022.\n\005sleep\030\001 \001(\0132\035.flyteidl.core.Sl" +
-      "eepConditionH\000B\013\n\tcondition\"\247\001\n\014NodeMeta" +
-      "data\022\014\n\004name\030\001 \001(\t\022*\n\007timeout\030\004 \001(\0132\031.go" +
-      "ogle.protobuf.Duration\022-\n\007retries\030\005 \001(\0132" +
-      "\034.flyteidl.core.RetryStrategy\022\027\n\rinterru" +
-      "ptible\030\006 \001(\010H\000B\025\n\023interruptible_value\"#\n" +
-      "\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias\030\002 \001(\t\"\200\003\n\004N" +
-      "ode\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030\002 \001(\0132\033.flyt" +
-      "eidl.core.NodeMetadata\022&\n\006inputs\030\003 \003(\0132\026" +
-      ".flyteidl.core.Binding\022\031\n\021upstream_node_" +
-      "ids\030\004 \003(\t\022,\n\016output_aliases\030\005 \003(\0132\024.flyt" +
-      "eidl.core.Alias\022,\n\ttask_node\030\006 \001(\0132\027.fly" +
-      "teidl.core.TaskNodeH\000\0224\n\rworkflow_node\030\007" +
-      " \001(\0132\033.flyteidl.core.WorkflowNodeH\000\0220\n\013b" +
-      "ranch_node\030\010 \001(\0132\031.flyteidl.core.BranchN" +
-      "odeH\000\022,\n\tgate_node\030\t \001(\0132\027.flyteidl.core" +
-      ".GateNodeH\000B\010\n\006target\"\347\001\n\020WorkflowMetada" +
-      "ta\022;\n\022quality_of_service\030\001 \001(\0132\037.flyteid" +
-      "l.core.QualityOfService\022C\n\non_failure\030\002 " +
-      "\001(\0162/.flyteidl.core.WorkflowMetadata.OnF" +
-      "ailurePolicy\"Q\n\017OnFailurePolicy\022\024\n\020FAIL_" +
-      "IMMEDIATELY\020\000\022(\n$FAIL_AFTER_EXECUTABLE_N" +
-      "ODES_COMPLETE\020\001\"1\n\030WorkflowMetadataDefau" +
-      "lts\022\025\n\rinterruptible\030\001 \001(\010\"\332\002\n\020WorkflowT" +
-      "emplate\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Iden" +
-      "tifier\0221\n\010metadata\030\002 \001(\0132\037.flyteidl.core" +
-      ".WorkflowMetadata\0220\n\tinterface\030\003 \001(\0132\035.f" +
-      "lyteidl.core.TypedInterface\022\"\n\005nodes\030\004 \003" +
-      "(\0132\023.flyteidl.core.Node\022\'\n\007outputs\030\005 \003(\013" +
-      "2\026.flyteidl.core.Binding\022)\n\014failure_node" +
-      "\030\006 \001(\0132\023.flyteidl.core.Node\022B\n\021metadata_" +
-      "defaults\030\007 \001(\0132\'.flyteidl.core.WorkflowM" +
-      "etadataDefaults\"@\n\021TaskNodeOverrides\022+\n\t" +
-      "resources\030\001 \001(\0132\030.flyteidl.core.Resource" +
-      "sB6Z4github.com/flyteorg/flyteidl/gen/pb" +
-      "-go/flyteidl/coreb\006proto3"
+      "\n\treference\"%\n\020ApproveCondition\022\021\n\tsigna" +
+      "l_id\030\001 \001(\t\"l\n\017SignalCondition\022\021\n\tsignal_" +
+      "id\030\001 \001(\t\022(\n\004type\030\002 \001(\0132\032.flyteidl.core.L" +
+      "iteralType\022\034\n\024output_variable_name\030\003 \001(\t" +
+      "\"=\n\016SleepCondition\022+\n\010duration\030\001 \001(\0132\031.g" +
+      "oogle.protobuf.Duration\"\255\001\n\010GateNode\0222\n\007" +
+      "approve\030\001 \001(\0132\037.flyteidl.core.ApproveCon" +
+      "ditionH\000\0220\n\006signal\030\002 \001(\0132\036.flyteidl.core" +
+      ".SignalConditionH\000\022.\n\005sleep\030\003 \001(\0132\035.flyt" +
+      "eidl.core.SleepConditionH\000B\013\n\tcondition\"" +
+      "\247\001\n\014NodeMetadata\022\014\n\004name\030\001 \001(\t\022*\n\007timeou" +
+      "t\030\004 \001(\0132\031.google.protobuf.Duration\022-\n\007re" +
+      "tries\030\005 \001(\0132\034.flyteidl.core.RetryStrateg" +
+      "y\022\027\n\rinterruptible\030\006 \001(\010H\000B\025\n\023interrupti" +
+      "ble_value\"#\n\005Alias\022\013\n\003var\030\001 \001(\t\022\r\n\005alias" +
+      "\030\002 \001(\t\"\200\003\n\004Node\022\n\n\002id\030\001 \001(\t\022-\n\010metadata\030" +
+      "\002 \001(\0132\033.flyteidl.core.NodeMetadata\022&\n\006in" +
+      "puts\030\003 \003(\0132\026.flyteidl.core.Binding\022\031\n\021up" +
+      "stream_node_ids\030\004 \003(\t\022,\n\016output_aliases\030" +
+      "\005 \003(\0132\024.flyteidl.core.Alias\022,\n\ttask_node" +
+      "\030\006 \001(\0132\027.flyteidl.core.TaskNodeH\000\0224\n\rwor" +
+      "kflow_node\030\007 \001(\0132\033.flyteidl.core.Workflo" +
+      "wNodeH\000\0220\n\013branch_node\030\010 \001(\0132\031.flyteidl." +
+      "core.BranchNodeH\000\022,\n\tgate_node\030\t \001(\0132\027.f" +
+      "lyteidl.core.GateNodeH\000B\010\n\006target\"\347\001\n\020Wo" +
+      "rkflowMetadata\022;\n\022quality_of_service\030\001 \001" +
+      "(\0132\037.flyteidl.core.QualityOfService\022C\n\no" +
+      "n_failure\030\002 \001(\0162/.flyteidl.core.Workflow" +
+      "Metadata.OnFailurePolicy\"Q\n\017OnFailurePol" +
+      "icy\022\024\n\020FAIL_IMMEDIATELY\020\000\022(\n$FAIL_AFTER_" +
+      "EXECUTABLE_NODES_COMPLETE\020\001\"1\n\030WorkflowM" +
+      "etadataDefaults\022\025\n\rinterruptible\030\001 \001(\010\"\332" +
+      "\002\n\020WorkflowTemplate\022%\n\002id\030\001 \001(\0132\031.flytei" +
+      "dl.core.Identifier\0221\n\010metadata\030\002 \001(\0132\037.f" +
+      "lyteidl.core.WorkflowMetadata\0220\n\tinterfa" +
+      "ce\030\003 \001(\0132\035.flyteidl.core.TypedInterface\022" +
+      "\"\n\005nodes\030\004 \003(\0132\023.flyteidl.core.Node\022\'\n\007o" +
+      "utputs\030\005 \003(\0132\026.flyteidl.core.Binding\022)\n\014" +
+      "failure_node\030\006 \001(\0132\023.flyteidl.core.Node\022" +
+      "B\n\021metadata_defaults\030\007 \001(\0132\'.flyteidl.co" +
+      "re.WorkflowMetadataDefaults\"@\n\021TaskNodeO" +
+      "verrides\022+\n\tresources\030\001 \001(\0132\030.flyteidl.c" +
+      "ore.ResourcesB6Z4github.com/flyteorg/fly" +
+      "teidl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18637,62 +19516,68 @@ public final class Workflow {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowNode_descriptor,
         new java.lang.String[] { "LaunchplanRef", "SubWorkflowRef", "Reference", });
-    internal_static_flyteidl_core_SignalCondition_descriptor =
+    internal_static_flyteidl_core_ApproveCondition_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_flyteidl_core_ApproveCondition_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_core_ApproveCondition_descriptor,
+        new java.lang.String[] { "SignalId", });
+    internal_static_flyteidl_core_SignalCondition_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_core_SignalCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SignalCondition_descriptor,
         new java.lang.String[] { "SignalId", "Type", "OutputVariableName", });
     internal_static_flyteidl_core_SleepCondition_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_flyteidl_core_SleepCondition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_SleepCondition_descriptor,
         new java.lang.String[] { "Duration", });
     internal_static_flyteidl_core_GateNode_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_core_GateNode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_GateNode_descriptor,
-        new java.lang.String[] { "Signal", "Sleep", "Condition", });
+        new java.lang.String[] { "Approve", "Signal", "Sleep", "Condition", });
     internal_static_flyteidl_core_NodeMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_flyteidl_core_NodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_NodeMetadata_descriptor,
         new java.lang.String[] { "Name", "Timeout", "Retries", "Interruptible", "InterruptibleValue", });
     internal_static_flyteidl_core_Alias_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_flyteidl_core_Alias_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Alias_descriptor,
         new java.lang.String[] { "Var", "Alias", });
     internal_static_flyteidl_core_Node_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_flyteidl_core_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_Node_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Inputs", "UpstreamNodeIds", "OutputAliases", "TaskNode", "WorkflowNode", "BranchNode", "GateNode", "Target", });
     internal_static_flyteidl_core_WorkflowMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_flyteidl_core_WorkflowMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadata_descriptor,
         new java.lang.String[] { "QualityOfService", "OnFailure", });
     internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_core_WorkflowMetadataDefaults_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowMetadataDefaults_descriptor,
         new java.lang.String[] { "Interruptible", });
     internal_static_flyteidl_core_WorkflowTemplate_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_core_WorkflowTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_WorkflowTemplate_descriptor,
         new java.lang.String[] { "Id", "Metadata", "Interface", "Nodes", "Outputs", "FailureNode", "MetadataDefaults", });
     internal_static_flyteidl_core_TaskNodeOverrides_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_flyteidl_core_TaskNodeOverrides_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskNodeOverrides_descriptor,

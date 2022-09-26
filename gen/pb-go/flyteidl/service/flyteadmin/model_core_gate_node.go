@@ -11,6 +11,8 @@ package flyteadmin
 
 // GateNode refers to the condition that is required for the gate to successfully complete.
 type CoreGateNode struct {
+	// ApproveCondition represents a dependency on an external approval provided by a boolean signal.
+	Approve *CoreApproveCondition `json:"approve,omitempty"`
 	// SignalCondition represents a dependency on an signal.
 	Signal *CoreSignalCondition `json:"signal,omitempty"`
 	// SleepCondition represents a dependency on waiting for the specified duration.

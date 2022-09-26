@@ -5033,6 +5033,16 @@
       },
       "description": "Links a variable to an alias."
     },
+    "coreApproveCondition": {
+      "type": "object",
+      "properties": {
+        "signal_id": {
+          "type": "string",
+          "description": "A unique identifier for the requested boolean signal."
+        }
+      },
+      "description": "ApproveCondition represents a dependency on an external approval. During execution, this will manifest as a boolean\nsignal with the provided signal_id."
+    },
     "coreBinary": {
       "type": "object",
       "properties": {
@@ -5464,6 +5474,10 @@
     "coreGateNode": {
       "type": "object",
       "properties": {
+        "approve": {
+          "$ref": "#/definitions/coreApproveCondition",
+          "description": "ApproveCondition represents a dependency on an external approval provided by a boolean signal."
+        },
         "signal": {
           "$ref": "#/definitions/coreSignalCondition",
           "description": "SignalCondition represents a dependency on an signal."

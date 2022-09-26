@@ -495,6 +495,73 @@ var _ interface {
 	ErrorName() string
 } = WorkflowNodeValidationError{}
 
+// Validate checks the field values on ApproveCondition with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *ApproveCondition) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for SignalId
+
+	return nil
+}
+
+// ApproveConditionValidationError is the validation error returned by
+// ApproveCondition.Validate if the designated constraints aren't met.
+type ApproveConditionValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e ApproveConditionValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e ApproveConditionValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e ApproveConditionValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e ApproveConditionValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e ApproveConditionValidationError) ErrorName() string { return "ApproveConditionValidationError" }
+
+// Error satisfies the builtin error interface
+func (e ApproveConditionValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sApproveCondition.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = ApproveConditionValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = ApproveConditionValidationError{}
+
 // Validate checks the field values on SignalCondition with the rules defined
 // in the proto definition for this message. If any rules are violated, an
 // error is returned.
@@ -657,6 +724,18 @@ func (m *GateNode) Validate() error {
 	}
 
 	switch m.Condition.(type) {
+
+	case *GateNode_Approve:
+
+		if v, ok := interface{}(m.GetApprove()).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return GateNodeValidationError{
+					field:  "Approve",
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
 
 	case *GateNode_Signal:
 
