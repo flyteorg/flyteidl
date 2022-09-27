@@ -7,17 +7,16 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
-	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
-	"github.com/flyteorg/flytestdlib/logger"
-
-	grpcMiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpcRetry "github.com/grpc-ecosystem/go-grpc-middleware/retry"
 	grpcPrometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/health/grpc_health_v1"
+
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
+	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
+	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
+	"github.com/flyteorg/flytestdlib/logger"
 )
 
 // IDE "Go Generate File". This will create a mocks/AdminServiceClient.go file
@@ -30,8 +29,8 @@ type Clientset struct {
 	healthServiceClient       grpc_health_v1.HealthClient
 	identityServiceClient     service.IdentityServiceClient
 	dataProxyServiceClient    service.DataProxyServiceClient
-	authOpt                   grpc.DialOption
 	signalServiceClient       service.SignalServiceClient
+	authOpt                   grpc.DialOption
 }
 
 func (c Clientset) AuthOpt() grpc.DialOption {
@@ -80,16 +79,11 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 
 	timeoutDialOption := grpcRetry.WithPerRetryTimeout(cfg.PerRetryTimeout.Duration)
 	maxRetriesOption := grpcRetry.WithMax(uint(cfg.MaxRetries))
-
 	retryInterceptor := grpcRetry.UnaryClientInterceptor(timeoutDialOption, maxRetriesOption)
-	finalUnaryInterceptor := grpcMiddleware.ChainUnaryClient(
-		grpcPrometheus.UnaryClientInterceptor,
-		retryInterceptor,
-	)
 
 	// We only make unary calls in this client, no streaming calls.  We can add a streaming interceptor if admin
 	// ever has those endpoints
-	opts = append(opts, grpc.WithUnaryInterceptor(finalUnaryInterceptor))
+	opts = append(opts, grpc.WithChainUnaryInterceptor(grpcPrometheus.UnaryClientInterceptor, retryInterceptor))
 
 	return opts
 }
@@ -107,13 +101,13 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourcePr
 		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
 
-	tSource, err := tokenSourceProvider.GetTokenSource(ctx)
+	tokenSource, err := tokenSourceProvider.GetTokenSource(ctx)
 	if err != nil {
 		return nil, err
 	}
 
-	oauthTokenSource := NewCustomHeaderTokenSource(tSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
-	return grpc.WithPerRPCCredentials(oauthTokenSource), nil
+	wrappedTokenSource := NewCustomHeaderTokenSource(tokenSource, cfg.UseInsecureConnection, clientMetadata.AuthorizationMetadataKey)
+	return grpc.WithPerRPCCredentials(wrappedTokenSource), nil
 }
 
 // InitializeAuthMetadataClient creates a new anonymously Auth Metadata Service client.
@@ -121,7 +115,7 @@ func InitializeAuthMetadataClient(ctx context.Context, cfg *Config) (client serv
 	// Create an unauthenticated connection to fetch AuthMetadata
 	authMetadataConnection, err := NewAdminConnection(ctx, cfg)
 	if err != nil {
-		return nil, fmt.Errorf("failed to initialize admin connection. Error: %w", err)
+		return nil, fmt.Errorf("failed to initialized admin connection. Error: %w", err)
 	}
 
 	return service.NewAuthMetadataServiceClient(authMetadataConnection), nil
@@ -168,7 +162,7 @@ func NewAdminConnection(ctx context.Context, cfg *Config, opts ...grpc.DialOptio
 func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOption) service.AdminServiceClient {
 	set, err := initializeClients(ctx, cfg, nil, opts...)
 	if err != nil {
-		logger.Panicf(ctx, "Failed to initialize client. Error: %v", err)
+		logger.Panicf(ctx, "Failed to initialized client. Error: %v", err)
 		return nil
 	}
 
@@ -177,25 +171,11 @@ func InitializeAdminClient(ctx context.Context, cfg *Config, opts ...grpc.DialOp
 
 // initializeClients creates an AdminClient, AuthServiceClient and IdentityServiceClient with a shared Admin connection
 // for the process. Note that if called with different cfg/dialoptions, it will not refresh the connection.
-func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
-	authMetadataClient, err := InitializeAuthMetadataClient(ctx, cfg)
-	if err != nil {
-		logger.Panicf(ctx, "failed to initialize Auth Metadata Client. Error: %v", err)
-	}
-
-	tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, authMetadataClient)
-	if err != nil {
-		logger.Errorf(ctx, "failed to initialize token source provider. Err: %s", err.Error())
-	}
-
-	authOpt, err := getAuthenticationDialOption(ctx, cfg, tokenSourceProvider, authMetadataClient)
-	if err != nil {
-		logger.Warnf(ctx, "Starting an unauthenticated client because: %v", err)
-	}
-
-	if authOpt != nil {
-		opts = append(opts, authOpt)
-	}
+func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenCache, opts ...grpc.DialOption) (*Clientset, error) {
+	credentialsFuture := NewPerRPCCredentialsFuture()
+	opts = append(opts,
+		grpc.WithChainUnaryInterceptor(NewAuthInterceptor(cfg, tokenCache, credentialsFuture)),
+		grpc.WithPerRPCCredentials(credentialsFuture))
 
 	if cfg.DefaultServiceConfig != "" {
 		opts = append(opts, grpc.WithDefaultServiceConfig(cfg.DefaultServiceConfig))
@@ -203,7 +183,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 
 	adminConnection, err := NewAdminConnection(ctx, cfg, opts...)
 	if err != nil {
-		logger.Panicf(ctx, "failed to initialize Admin connection. Err: %s", err.Error())
+		logger.Panicf(ctx, "failed to initialized Admin connection. Err: %s", err.Error())
 	}
 
 	var cs Clientset
@@ -221,7 +201,7 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache pkce.TokenCa
 }
 
 // Deprecated: Please use NewClientsetBuilder() instead.
-func InitializeAdminClientFromConfig(ctx context.Context, tokenCache pkce.TokenCache, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
+func InitializeAdminClientFromConfig(ctx context.Context, tokenCache cache.TokenCache, opts ...grpc.DialOption) (service.AdminServiceClient, error) {
 	clientSet, err := initializeClients(ctx, GetConfig(ctx), tokenCache, opts...)
 	if err != nil {
 		return nil, err

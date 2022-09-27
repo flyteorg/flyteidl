@@ -267,6 +267,20 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_clientSecretEnvVar", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("clientSecretEnvVar", testValue)
+			if vString, err := cmdFlags.GetString("clientSecretEnvVar"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.ClientSecretEnvVar)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 	t.Run("Test_scopes", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
@@ -351,6 +365,48 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_deviceFlowConfig.refreshTime", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.DeviceFlowConfig.TokenRefreshGracePeriod.String()
+
+			cmdFlags.Set("deviceFlowConfig.refreshTime", testValue)
+			if vString, err := cmdFlags.GetString("deviceFlowConfig.refreshTime"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.TokenRefreshGracePeriod)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_deviceFlowConfig.timeout", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.DeviceFlowConfig.Timeout.String()
+
+			cmdFlags.Set("deviceFlowConfig.timeout", testValue)
+			if vString, err := cmdFlags.GetString("deviceFlowConfig.timeout"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.Timeout)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_deviceFlowConfig.pollInterval", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := defaultConfig.DeviceFlowConfig.PollInterval.String()
+
+			cmdFlags.Set("deviceFlowConfig.pollInterval", testValue)
+			if vString, err := cmdFlags.GetString("deviceFlowConfig.pollInterval"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeviceFlowConfig.PollInterval)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 	t.Run("Test_command", func(t *testing.T) {
 
 		t.Run("Override", func(t *testing.T) {
@@ -359,6 +415,20 @@ func TestConfig_SetFlags(t *testing.T) {
 			cmdFlags.Set("command", testValue)
 			if vStringSlice, err := cmdFlags.GetStringSlice("command"); err == nil {
 				testDecodeRaw_Config(t, join_Config(vStringSlice, ","), &actual.Command)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
+	t.Run("Test_defaultServiceConfig", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("defaultServiceConfig", testValue)
+			if vString, err := cmdFlags.GetString("defaultServiceConfig"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DefaultServiceConfig)
 
 			} else {
 				assert.FailNow(t, err.Error())
