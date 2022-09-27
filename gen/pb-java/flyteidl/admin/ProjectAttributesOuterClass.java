@@ -1943,7 +1943,7 @@ public final class ProjectAttributesOuterClass {
   }
   /**
    * <pre>
-   * Request to get an individual project domain attribute override.
+   * Request to get an individual project level attribute override.
    * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
    * </pre>
    *
@@ -2268,7 +2268,7 @@ public final class ProjectAttributesOuterClass {
     }
     /**
      * <pre>
-     * Request to get an individual project domain attribute override.
+     * Request to get an individual project level attribute override.
      * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
      * </pre>
      *
@@ -2660,7 +2660,7 @@ public final class ProjectAttributesOuterClass {
   }
   /**
    * <pre>
-   * Response to get an individual project domain attribute override.
+   * Response to get an individual project level attribute override.
    * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
    * </pre>
    *
@@ -2930,7 +2930,7 @@ public final class ProjectAttributesOuterClass {
     }
     /**
      * <pre>
-     * Response to get an individual project domain attribute override.
+     * Response to get an individual project level attribute override.
      * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
      * </pre>
      *
@@ -3302,7 +3302,7 @@ public final class ProjectAttributesOuterClass {
   }
   /**
    * <pre>
-   * Request to delete a set matchable project domain attribute override.
+   * Request to delete a set matchable project level attribute override.
    * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
    * </pre>
    *
@@ -3627,7 +3627,7 @@ public final class ProjectAttributesOuterClass {
     }
     /**
      * <pre>
-     * Request to delete a set matchable project domain attribute override.
+     * Request to delete a set matchable project level attribute override.
      * For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
      * </pre>
      *

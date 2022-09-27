@@ -25,7 +25,7 @@ message ProjectAttributesUpdateRequest {
 message ProjectAttributesUpdateResponse {
 }
 
-// Request to get an individual project domain attribute override.
+// Request to get an individual project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 message ProjectAttributesGetRequest {
     // Unique project id which this set of attributes references.
@@ -37,13 +37,13 @@ message ProjectAttributesGetRequest {
     MatchableResource resource_type = 2;
 }
 
-// Response to get an individual project domain attribute override.
+// Response to get an individual project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 message ProjectAttributesGetResponse {
   ProjectAttributes attributes = 1;
 }
 
-// Request to delete a set matchable project domain attribute override.
+// Request to delete a set matchable project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 message ProjectAttributesDeleteRequest {
     // Unique project id which this set of attributes references.

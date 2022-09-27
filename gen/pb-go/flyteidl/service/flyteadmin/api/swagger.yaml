@@ -13984,7 +13984,7 @@ definitions:
       resource_type:
         title: "Which type of matchable attributes to delete.\n+required"
         $ref: "#/definitions/adminMatchableResource"
-    title: "Request to delete a set matchable project domain attribute override.\n\
+    title: "Request to delete a set matchable project level attribute override.\n\
       For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
   adminProjectAttributesDeleteResponse:
     type: "object"
@@ -13994,8 +13994,8 @@ definitions:
     properties:
       attributes:
         $ref: "#/definitions/adminProjectAttributes"
-    title: "Response to get an individual project domain attribute override.\nFor\
-      \ more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+    title: "Response to get an individual project level attribute override.\nFor more\
+      \ info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     example:
       attributes:
         project: "project"

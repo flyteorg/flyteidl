@@ -4465,7 +4465,7 @@
           "title": "Which type of matchable attributes to delete.\n+required"
         }
       },
-      "title": "Request to delete a set matchable project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+      "title": "Request to delete a set matchable project level attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectAttributesDeleteResponse": {
       "type": "object",
@@ -4478,7 +4478,7 @@
           "$ref": "#/definitions/adminProjectAttributes"
         }
       },
-      "title": "Response to get an individual project domain attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
+      "title": "Response to get an individual project level attribute override.\nFor more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`"
     },
     "adminProjectAttributesUpdateRequest": {
       "type": "object",

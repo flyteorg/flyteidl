@@ -2787,7 +2787,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 ProjectAttributesDeleteRequest
 ------------------------------------------------------------------
 
-Request to delete a set matchable project domain attribute override.
+Request to delete a set matchable project level attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 
 
@@ -2824,7 +2824,7 @@ Purposefully empty, may be populated in the future.
 ProjectAttributesGetRequest
 ------------------------------------------------------------------
 
-Request to get an individual project domain attribute override.
+Request to get an individual project level attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 
 
@@ -2847,7 +2847,7 @@ For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAtt
 ProjectAttributesGetResponse
 ------------------------------------------------------------------
 
-Response to get an individual project domain attribute override.
+Response to get an individual project level attribute override.
 For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 
 

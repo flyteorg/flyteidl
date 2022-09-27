@@ -144,7 +144,7 @@ func (m *ProjectAttributesUpdateResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ProjectAttributesUpdateResponse proto.InternalMessageInfo
 
-// Request to get an individual project domain attribute override.
+// Request to get an individual project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 type ProjectAttributesGetRequest struct {
 	// Unique project id which this set of attributes references.
@@ -197,7 +197,7 @@ func (m *ProjectAttributesGetRequest) GetResourceType() MatchableResource {
 	return MatchableResource_TASK_RESOURCE
 }
 
-// Response to get an individual project domain attribute override.
+// Response to get an individual project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 type ProjectAttributesGetResponse struct {
 	Attributes           *ProjectAttributes `protobuf:"bytes,1,opt,name=attributes,proto3" json:"attributes,omitempty"`
@@ -238,7 +238,7 @@ func (m *ProjectAttributesGetResponse) GetAttributes() *ProjectAttributes {
 	return nil
 }
 
-// Request to delete a set matchable project domain attribute override.
+// Request to delete a set matchable project level attribute override.
 // For more info on matchable attributes, see :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration`
 type ProjectAttributesDeleteRequest struct {
 	// Unique project id which this set of attributes references.
