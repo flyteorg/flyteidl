@@ -30,11 +30,6 @@ type Clientset struct {
 	identityServiceClient     service.IdentityServiceClient
 	dataProxyServiceClient    service.DataProxyServiceClient
 	signalServiceClient       service.SignalServiceClient
-	authOpt                   grpc.DialOption
-}
-
-func (c Clientset) AuthOpt() grpc.DialOption {
-	return c.authOpt
 }
 
 // AdminClient retrieves the AdminServiceClient
@@ -193,9 +188,6 @@ func initializeClients(ctx context.Context, cfg *Config, tokenCache cache.TokenC
 	cs.healthServiceClient = grpc_health_v1.NewHealthClient(adminConnection)
 	cs.dataProxyServiceClient = service.NewDataProxyServiceClient(adminConnection)
 	cs.signalServiceClient = service.NewSignalServiceClient(adminConnection)
-	if authOpt != nil {
-		cs.authOpt = authOpt
-	}
 
 	return &cs, nil
 }
