@@ -195,7 +195,8 @@ message UpdateArtifactRequest {
  * Response message for updating an Artifact.
  */
 message UpdateArtifactResponse {
-
+    // The unique ID of the artifact updated
+    string artifact_id = 1;
 }
 
 /*

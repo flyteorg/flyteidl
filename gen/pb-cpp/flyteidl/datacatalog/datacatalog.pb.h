@@ -2255,11 +2255,26 @@ class UpdateArtifactResponse final :
 
   // accessors -------------------------------------------------------
 
+  // string artifact_id = 1;
+  void clear_artifact_id();
+  static const int kArtifactIdFieldNumber = 1;
+  const ::std::string& artifact_id() const;
+  void set_artifact_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_artifact_id(::std::string&& value);
+  #endif
+  void set_artifact_id(const char* value);
+  void set_artifact_id(const char* value, size_t size);
+  ::std::string* mutable_artifact_id();
+  ::std::string* release_artifact_id();
+  void set_allocated_artifact_id(::std::string* artifact_id);
+
   // @@protoc_insertion_point(class_scope:datacatalog.UpdateArtifactResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr artifact_id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fdatacatalog_2fdatacatalog_2eproto;
 };
@@ -6680,6 +6695,59 @@ inline UpdateArtifactRequest::QueryHandleCase UpdateArtifactRequest::query_handl
 // -------------------------------------------------------------------
 
 // UpdateArtifactResponse
+
+// string artifact_id = 1;
+inline void UpdateArtifactResponse::clear_artifact_id() {
+  artifact_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UpdateArtifactResponse::artifact_id() const {
+  // @@protoc_insertion_point(field_get:datacatalog.UpdateArtifactResponse.artifact_id)
+  return artifact_id_.GetNoArena();
+}
+inline void UpdateArtifactResponse::set_artifact_id(const ::std::string& value) {
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:datacatalog.UpdateArtifactResponse.artifact_id)
+}
+#if LANG_CXX11
+inline void UpdateArtifactResponse::set_artifact_id(::std::string&& value) {
+  
+  artifact_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:datacatalog.UpdateArtifactResponse.artifact_id)
+}
+#endif
+inline void UpdateArtifactResponse::set_artifact_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:datacatalog.UpdateArtifactResponse.artifact_id)
+}
+inline void UpdateArtifactResponse::set_artifact_id(const char* value, size_t size) {
+  
+  artifact_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:datacatalog.UpdateArtifactResponse.artifact_id)
+}
+inline ::std::string* UpdateArtifactResponse::mutable_artifact_id() {
+  
+  // @@protoc_insertion_point(field_mutable:datacatalog.UpdateArtifactResponse.artifact_id)
+  return artifact_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UpdateArtifactResponse::release_artifact_id() {
+  // @@protoc_insertion_point(field_release:datacatalog.UpdateArtifactResponse.artifact_id)
+  
+  return artifact_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UpdateArtifactResponse::set_allocated_artifact_id(::std::string* artifact_id) {
+  if (artifact_id != nullptr) {
+    
+  } else {
+    
+  }
+  artifact_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), artifact_id);
+  // @@protoc_insertion_point(field_set_allocated:datacatalog.UpdateArtifactResponse.artifact_id)
+}
 
 // -------------------------------------------------------------------
 

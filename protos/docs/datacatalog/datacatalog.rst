@@ -824,6 +824,13 @@ Response message for updating an Artifact.
 
 
 
+.. csv-table:: UpdateArtifactResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "artifact_id", ":ref:`ref_string`", "", "The unique ID of the artifact updated"
+
+
 
 
 

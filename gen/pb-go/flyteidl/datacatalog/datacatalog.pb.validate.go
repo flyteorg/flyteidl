@@ -1244,6 +1244,8 @@ func (m *UpdateArtifactResponse) Validate() error {
 		return nil
 	}
 
+	// no validation rules for ArtifactId
+
 	return nil
 }
 
