@@ -7446,6 +7446,7 @@ definitions:
           artifact_tag:
             name: "name"
             artifact_id: "artifact_id"
+        checkpoint_uri: "checkpoint_uri"
         cache_status: {}
       output_uri: "output_uri"
       started_at: "2000-01-23T04:56:07.000+00:00"
@@ -13576,6 +13577,7 @@ definitions:
               artifact_tag:
                 name: "name"
                 artifact_id: "artifact_id"
+            checkpoint_uri: "checkpoint_uri"
             cache_status: {}
           output_uri: "output_uri"
           started_at: "2000-01-23T04:56:07.000+00:00"
@@ -13634,6 +13636,7 @@ definitions:
               artifact_tag:
                 name: "name"
                 artifact_id: "artifact_id"
+            checkpoint_uri: "checkpoint_uri"
             cache_status: {}
           output_uri: "output_uri"
           started_at: "2000-01-23T04:56:07.000+00:00"
@@ -60955,6 +60958,7 @@ definitions:
             artifact_tag:
               name: "name"
               artifact_id: "artifact_id"
+          checkpoint_uri: "checkpoint_uri"
           cache_status: {}
         output_uri: "output_uri"
         started_at: "2000-01-23T04:56:07.000+00:00"
@@ -61086,6 +61090,9 @@ definitions:
       catalog_key:
         title: "This structure carries the catalog artifact information"
         $ref: "#/definitions/coreCatalogMetadata"
+      checkpoint_uri:
+        type: "string"
+        title: "The latest checkpoint location"
     title: "Metadata for the case in which the node is a TaskNode"
     example:
       catalog_key:
@@ -61112,6 +61119,7 @@ definitions:
         artifact_tag:
           name: "name"
           artifact_id: "artifact_id"
+      checkpoint_uri: "checkpoint_uri"
       cache_status: {}
   flyteidladminWorkflowNodeMetadata:
     type: "object"
@@ -61166,6 +61174,9 @@ definitions:
       reservation_status:
         description: "Captures the status of cache reservations for this execution."
         $ref: "#/definitions/CatalogReservationStatus"
+      checkpoint_uri:
+        type: "string"
+        title: "The latest checkpoint location"
       dynamic_workflow:
         description: "In the case this task launched a dynamic workflow we capture\
           \ its structure here."
