@@ -199,7 +199,7 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fdescription_5fentity_2ep
   "\001\n\021DescriptionEntity\022\031\n\021short_descriptio"
   "n\030\001 \001(\t\0229\n\020long_description\030\002 \001(\0132\037.flyt"
   "eidl.admin.LongDescription\022/\n\013source_cod"
-  "e\030\005 \001(\0132\032.flyteidl.admin.SourceCode\"\325\001\n\017"
+  "e\030\003 \001(\0132\032.flyteidl.admin.SourceCode\"\325\001\n\017"
   "LongDescription\022\017\n\005value\030\001 \001(\tH\000\022\r\n\003uri\030"
   "\002 \001(\tH\000\022A\n\006format\030\003 \001(\01621.flyteidl.admin"
   ".LongDescription.DescriptionFormat\022\021\n\tic"
@@ -401,9 +401,9 @@ const char* DescriptionEntity::_InternalParse(const char* begin, const char* end
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // .flyteidl.admin.SourceCode source_code = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+      // .flyteidl.admin.SourceCode source_code = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::SourceCode::_InternalParse;
@@ -474,9 +474,9 @@ bool DescriptionEntity::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.SourceCode source_code = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+      // .flyteidl.admin.SourceCode source_code = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_source_code()));
         } else {
@@ -528,10 +528,10 @@ void DescriptionEntity::SerializeWithCachedSizes(
       2, HasBitSetters::long_description(this), output);
   }
 
-  // .flyteidl.admin.SourceCode source_code = 5;
+  // .flyteidl.admin.SourceCode source_code = 3;
   if (this->has_source_code()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::source_code(this), output);
+      3, HasBitSetters::source_code(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -565,11 +565,11 @@ void DescriptionEntity::SerializeWithCachedSizes(
         2, HasBitSetters::long_description(this), target);
   }
 
-  // .flyteidl.admin.SourceCode source_code = 5;
+  // .flyteidl.admin.SourceCode source_code = 3;
   if (this->has_source_code()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, HasBitSetters::source_code(this), target);
+        3, HasBitSetters::source_code(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -607,7 +607,7 @@ size_t DescriptionEntity::ByteSizeLong() const {
         *long_description_);
   }
 
-  // .flyteidl.admin.SourceCode source_code = 5;
+  // .flyteidl.admin.SourceCode source_code = 3;
   if (this->has_source_code()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(

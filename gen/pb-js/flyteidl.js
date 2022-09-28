@@ -20817,7 +20817,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.longDescription != null && message.hasOwnProperty("longDescription"))
                     $root.flyteidl.admin.LongDescription.encode(message.longDescription, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.sourceCode != null && message.hasOwnProperty("sourceCode"))
-                    $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.flyteidl.admin.SourceCode.encode(message.sourceCode, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -20845,7 +20845,7 @@ export const flyteidl = $root.flyteidl = (() => {
                     case 2:
                         message.longDescription = $root.flyteidl.admin.LongDescription.decode(reader, reader.uint32());
                         break;
-                    case 5:
+                    case 3:
                         message.sourceCode = $root.flyteidl.admin.SourceCode.decode(reader, reader.uint32());
                         break;
                     default:

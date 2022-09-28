@@ -14,7 +14,7 @@ message DescriptionEntity {
   // Full user description with formatting preserved.
   LongDescription long_description = 2;
   // Optional link to source code used to define this entity.
-  SourceCode source_code = 5;
+  SourceCode source_code = 3;
 }
 
 // Full user description with formatting preserved. This can be rendered

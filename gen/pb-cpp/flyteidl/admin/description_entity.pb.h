@@ -225,10 +225,10 @@ class DescriptionEntity final :
   ::flyteidl::admin::LongDescription* mutable_long_description();
   void set_allocated_long_description(::flyteidl::admin::LongDescription* long_description);
 
-  // .flyteidl.admin.SourceCode source_code = 5;
+  // .flyteidl.admin.SourceCode source_code = 3;
   bool has_source_code() const;
   void clear_source_code();
-  static const int kSourceCodeFieldNumber = 5;
+  static const int kSourceCodeFieldNumber = 3;
   const ::flyteidl::admin::SourceCode& source_code() const;
   ::flyteidl::admin::SourceCode* release_source_code();
   ::flyteidl::admin::SourceCode* mutable_source_code();
@@ -921,7 +921,7 @@ inline void DescriptionEntity::set_allocated_long_description(::flyteidl::admin:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.long_description)
 }
 
-// .flyteidl.admin.SourceCode source_code = 5;
+// .flyteidl.admin.SourceCode source_code = 3;
 inline bool DescriptionEntity::has_source_code() const {
   return this != internal_default_instance() && source_code_ != nullptr;
 }

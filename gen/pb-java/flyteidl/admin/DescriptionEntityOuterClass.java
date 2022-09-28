@@ -66,7 +66,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     boolean hasSourceCode();
     /**
@@ -74,7 +74,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode();
     /**
@@ -82,7 +82,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder();
   }
@@ -150,7 +150,7 @@ public final class DescriptionEntityOuterClass {
 
               break;
             }
-            case 42: {
+            case 26: {
               flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder subBuilder = null;
               if (sourceCode_ != null) {
                 subBuilder = sourceCode_.toBuilder();
@@ -270,14 +270,14 @@ public final class DescriptionEntityOuterClass {
       return getLongDescription();
     }
 
-    public static final int SOURCE_CODE_FIELD_NUMBER = 5;
+    public static final int SOURCE_CODE_FIELD_NUMBER = 3;
     private flyteidl.admin.DescriptionEntityOuterClass.SourceCode sourceCode_;
     /**
      * <pre>
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     public boolean hasSourceCode() {
       return sourceCode_ != null;
@@ -287,7 +287,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode() {
       return sourceCode_ == null ? flyteidl.admin.DescriptionEntityOuterClass.SourceCode.getDefaultInstance() : sourceCode_;
@@ -297,7 +297,7 @@ public final class DescriptionEntityOuterClass {
      * Optional link to source code used to define this entity.
      * </pre>
      *
-     * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+     * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
      */
     public flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder() {
       return getSourceCode();
@@ -324,7 +324,7 @@ public final class DescriptionEntityOuterClass {
         output.writeMessage(2, getLongDescription());
       }
       if (sourceCode_ != null) {
-        output.writeMessage(5, getSourceCode());
+        output.writeMessage(3, getSourceCode());
       }
       unknownFields.writeTo(output);
     }
@@ -344,7 +344,7 @@ public final class DescriptionEntityOuterClass {
       }
       if (sourceCode_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getSourceCode());
+          .computeMessageSize(3, getSourceCode());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -920,7 +920,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public boolean hasSourceCode() {
         return sourceCodeBuilder_ != null || sourceCode_ != null;
@@ -930,7 +930,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCode getSourceCode() {
         if (sourceCodeBuilder_ == null) {
@@ -944,7 +944,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public Builder setSourceCode(flyteidl.admin.DescriptionEntityOuterClass.SourceCode value) {
         if (sourceCodeBuilder_ == null) {
@@ -964,7 +964,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public Builder setSourceCode(
           flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder builderForValue) {
@@ -982,7 +982,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public Builder mergeSourceCode(flyteidl.admin.DescriptionEntityOuterClass.SourceCode value) {
         if (sourceCodeBuilder_ == null) {
@@ -1004,7 +1004,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public Builder clearSourceCode() {
         if (sourceCodeBuilder_ == null) {
@@ -1022,7 +1022,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder getSourceCodeBuilder() {
         
@@ -1034,7 +1034,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       public flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder getSourceCodeOrBuilder() {
         if (sourceCodeBuilder_ != null) {
@@ -1049,7 +1049,7 @@ public final class DescriptionEntityOuterClass {
        * Optional link to source code used to define this entity.
        * </pre>
        *
-       * <code>.flyteidl.admin.SourceCode source_code = 5;</code>
+       * <code>.flyteidl.admin.SourceCode source_code = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.DescriptionEntityOuterClass.SourceCode, flyteidl.admin.DescriptionEntityOuterClass.SourceCode.Builder, flyteidl.admin.DescriptionEntityOuterClass.SourceCodeOrBuilder> 
@@ -4421,7 +4421,7 @@ public final class DescriptionEntityOuterClass {
       "\001\n\021DescriptionEntity\022\031\n\021short_descriptio" +
       "n\030\001 \001(\t\0229\n\020long_description\030\002 \001(\0132\037.flyt" +
       "eidl.admin.LongDescription\022/\n\013source_cod" +
-      "e\030\005 \001(\0132\032.flyteidl.admin.SourceCode\"\325\001\n\017" +
+      "e\030\003 \001(\0132\032.flyteidl.admin.SourceCode\"\325\001\n\017" +
       "LongDescription\022\017\n\005value\030\001 \001(\tH\000\022\r\n\003uri\030" +
       "\002 \001(\tH\000\022A\n\006format\030\003 \001(\01621.flyteidl.admin" +
       ".LongDescription.DescriptionFormat\022\021\n\tic" +
