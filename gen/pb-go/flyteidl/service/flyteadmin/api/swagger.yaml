@@ -3212,6 +3212,7 @@ definitions:
         disable_all: true
         inputs:
           literals: {}
+        skip_cache: true
         annotations:
           values:
             key: "values"
@@ -3585,6 +3586,7 @@ definitions:
           disable_all: true
           inputs:
             literals: {}
+          skip_cache: true
           annotations:
             values:
               key: "values"
@@ -3774,6 +3776,7 @@ definitions:
           disable_all: true
           inputs:
             literals: {}
+          skip_cache: true
           annotations:
             values:
               key: "values"
@@ -4030,6 +4033,13 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      skip_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be skipped for a single execution.\nIf enabled, all calculations are performed\
+          \ even if cached results would be available, overwriting the stored\ndata\
+          \ once execution finishes successfully."
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4054,6 +4064,7 @@ definitions:
       disable_all: true
       inputs:
         literals: {}
+      skip_cache: true
       annotations:
         values:
           key: "values"
@@ -4563,6 +4574,7 @@ definitions:
               recipients_email:
               - "recipients_email"
               - "recipients_email"
+        skip_cache: true
         annotations:
           values:
             key: "values"
@@ -5361,6 +5373,7 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+          skip_cache: true
           annotations:
             values:
               key: "values"
@@ -5874,6 +5887,7 @@ definitions:
                 recipients_email:
                 - "recipients_email"
                 - "recipients_email"
+          skip_cache: true
           annotations:
             values:
               key: "values"
@@ -6214,6 +6228,13 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      skip_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be skipped for a single execution.\nIf enabled, all calculations are performed\
+          \ even if cached results would be available, overwriting the stored\ndata\
+          \ once execution finishes successfully."
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6269,6 +6290,7 @@ definitions:
             recipients_email:
             - "recipients_email"
             - "recipients_email"
+      skip_cache: true
       annotations:
         values:
           key: "values"
@@ -6546,6 +6568,7 @@ definitions:
           workflow_execution_config:
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
+            skip_cache: true
             max_parallelism: 0
             annotations:
               values:
@@ -6645,6 +6668,7 @@ definitions:
           workflow_execution_config:
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
+            skip_cache: true
             max_parallelism: 0
             annotations:
               values:
@@ -6777,6 +6801,7 @@ definitions:
         workflow_execution_config:
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
+          skip_cache: true
           max_parallelism: 0
           annotations:
             values:
@@ -6916,6 +6941,7 @@ definitions:
       workflow_execution_config:
         raw_output_data_config:
           output_location_prefix: "output_location_prefix"
+        skip_cache: true
         max_parallelism: 0
         annotations:
           values:
@@ -14179,6 +14205,7 @@ definitions:
         workflow_execution_config:
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
+          skip_cache: true
           max_parallelism: 0
           annotations:
             values:
@@ -14298,6 +14325,7 @@ definitions:
           workflow_execution_config:
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
+            skip_cache: true
             max_parallelism: 0
             annotations:
               values:
@@ -14420,6 +14448,7 @@ definitions:
         workflow_execution_config:
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
+          skip_cache: true
           max_parallelism: 0
           annotations:
             values:
@@ -14543,6 +14572,7 @@ definitions:
           workflow_execution_config:
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
+            skip_cache: true
             max_parallelism: 0
             annotations:
               values:
@@ -22895,6 +22925,7 @@ definitions:
         workflow_execution_config:
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
+          skip_cache: true
           max_parallelism: 0
           annotations:
             values:
@@ -23021,6 +23052,7 @@ definitions:
           workflow_execution_config:
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
+            skip_cache: true
             max_parallelism: 0
             annotations:
               values:
@@ -29707,11 +29739,19 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      skip_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be skipped for a single execution.\nIf enabled, all calculations are performed\
+          \ even if cached results would be available, overwriting the stored\ndata\
+          \ once execution finishes successfully."
     description: "Adds defaults for customizable workflow-execution specifications\
       \ and overrides."
     example:
       raw_output_data_config:
         output_location_prefix: "output_location_prefix"
+      skip_cache: true
       max_parallelism: 0
       annotations:
         values:

@@ -3693,6 +3693,11 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "skip_cache": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Allows for all cached values of a workflow and its tasks to be skipped for a single execution.\nIf enabled, all calculations are performed even if cached results would be available, overwriting the stored\ndata once execution finishes successfully."
         }
       },
       "description": "An ExecutionSpec encompasses all data used to launch this execution. The Spec does not change over the lifetime\nof an execution as it progresses across phase changes."
@@ -3958,6 +3963,11 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "skip_cache": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Allows for all cached values of a workflow and its tasks to be skipped for a single execution.\nIf enabled, all calculations are performed even if cached results would be available, overwriting the stored\ndata once execution finishes successfully."
         }
       },
       "description": "User-provided launch plan definition and configuration values."
@@ -5062,6 +5072,11 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Allows for the interruptible flag of a workflow to be overwritten for a single execution.\nOmitting this field uses the workflow's value as a default.\nAs we need to distinguish between the field not being provided and its default value false, we have to use a wrapper\naround the bool field."
+        },
+        "skip_cache": {
+          "type": "boolean",
+          "format": "boolean",
+          "description": "Allows for all cached values of a workflow and its tasks to be skipped for a single execution.\nIf enabled, all calculations are performed even if cached results would be available, overwriting the stored\ndata once execution finishes successfully."
         }
       },
       "description": "Adds defaults for customizable workflow-execution specifications and overrides."

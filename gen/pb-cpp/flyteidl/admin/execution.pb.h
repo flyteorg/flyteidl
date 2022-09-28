@@ -2354,6 +2354,12 @@ class ExecutionSpec final :
   ::google::protobuf::int32 max_parallelism() const;
   void set_max_parallelism(::google::protobuf::int32 value);
 
+  // bool skip_cache = 22;
+  void clear_skip_cache();
+  static const int kSkipCacheFieldNumber = 22;
+  bool skip_cache() const;
+  void set_skip_cache(bool value);
+
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
   void clear_notifications();
@@ -2396,6 +2402,7 @@ class ExecutionSpec final :
   ::flyteidl::admin::ClusterAssignment* cluster_assignment_;
   ::google::protobuf::BoolValue* interruptible_;
   ::google::protobuf::int32 max_parallelism_;
+  bool skip_cache_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -5943,6 +5950,20 @@ inline void ExecutionSpec::set_allocated_interruptible(::google::protobuf::BoolV
   }
   interruptible_ = interruptible;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.interruptible)
+}
+
+// bool skip_cache = 22;
+inline void ExecutionSpec::clear_skip_cache() {
+  skip_cache_ = false;
+}
+inline bool ExecutionSpec::skip_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.skip_cache)
+  return skip_cache_;
+}
+inline void ExecutionSpec::set_skip_cache(bool value) {
+  
+  skip_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.skip_cache)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

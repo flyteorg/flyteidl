@@ -56,7 +56,8 @@ class AdminExecutionSpec(object):
         'max_parallelism': 'int',
         'raw_output_data_config': 'AdminRawOutputDataConfig',
         'cluster_assignment': 'AdminClusterAssignment',
-        'interruptible': 'bool'
+        'interruptible': 'bool',
+        'skip_cache': 'bool'
     }
 
     attribute_map = {
@@ -73,10 +74,11 @@ class AdminExecutionSpec(object):
         'max_parallelism': 'max_parallelism',
         'raw_output_data_config': 'raw_output_data_config',
         'cluster_assignment': 'cluster_assignment',
-        'interruptible': 'interruptible'
+        'interruptible': 'interruptible',
+        'skip_cache': 'skip_cache'
     }
 
-    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None):  # noqa: E501
+    def __init__(self, launch_plan=None, inputs=None, metadata=None, notifications=None, disable_all=None, labels=None, annotations=None, security_context=None, auth_role=None, quality_of_service=None, max_parallelism=None, raw_output_data_config=None, cluster_assignment=None, interruptible=None, skip_cache=None):  # noqa: E501
         """AdminExecutionSpec - a model defined in Swagger"""  # noqa: E501
 
         self._launch_plan = None
@@ -93,6 +95,7 @@ class AdminExecutionSpec(object):
         self._raw_output_data_config = None
         self._cluster_assignment = None
         self._interruptible = None
+        self._skip_cache = None
         self.discriminator = None
 
         if launch_plan is not None:
@@ -123,6 +126,8 @@ class AdminExecutionSpec(object):
             self.cluster_assignment = cluster_assignment
         if interruptible is not None:
             self.interruptible = interruptible
+        if skip_cache is not None:
+            self.skip_cache = skip_cache
 
     @property
     def launch_plan(self):
@@ -437,6 +442,29 @@ class AdminExecutionSpec(object):
         """
 
         self._interruptible = interruptible
+
+    @property
+    def skip_cache(self):
+        """Gets the skip_cache of this AdminExecutionSpec.  # noqa: E501
+
+        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+
+        :return: The skip_cache of this AdminExecutionSpec.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_cache
+
+    @skip_cache.setter
+    def skip_cache(self, skip_cache):
+        """Sets the skip_cache of this AdminExecutionSpec.
+
+        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+
+        :param skip_cache: The skip_cache of this AdminExecutionSpec.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_cache = skip_cache
 
     def to_dict(self):
         """Returns the model properties as a dict"""

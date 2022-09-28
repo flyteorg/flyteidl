@@ -296,6 +296,11 @@ message ExecutionSpec {
     // As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper
     // around the bool field.
     google.protobuf.BoolValue interruptible = 21;
+
+    // Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+    // If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+    // data once execution finishes successfully.
+    bool skip_cache = 22;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

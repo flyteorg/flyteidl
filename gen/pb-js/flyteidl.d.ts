@@ -10130,6 +10130,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec skipCache */
+            skipCache?: (boolean|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10182,6 +10185,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec skipCache. */
+            public skipCache: boolean;
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -10953,6 +10959,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec skipCache */
+            skipCache?: (boolean|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -11005,6 +11014,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec skipCache. */
+            public skipCache: boolean;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -12048,6 +12060,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** WorkflowExecutionConfig skipCache */
+            skipCache?: (boolean|null);
         }
 
         /** Represents a WorkflowExecutionConfig. */
@@ -12076,6 +12091,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** WorkflowExecutionConfig skipCache. */
+            public skipCache: boolean;
 
             /**
              * Creates a new WorkflowExecutionConfig instance using the specified properties.

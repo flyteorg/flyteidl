@@ -1372,6 +1372,8 @@ func (m *ExecutionSpec) Validate() error {
 		}
 	}
 
+	// no validation rules for SkipCache
+
 	switch m.NotificationOverrides.(type) {
 
 	case *ExecutionSpec_Notifications:

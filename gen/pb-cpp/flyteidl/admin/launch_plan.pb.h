@@ -996,6 +996,12 @@ class LaunchPlanSpec final :
   ::google::protobuf::int32 max_parallelism() const;
   void set_max_parallelism(::google::protobuf::int32 value);
 
+  // bool skip_cache = 20;
+  void clear_skip_cache();
+  static const int kSkipCacheFieldNumber = 20;
+  bool skip_cache() const;
+  void set_skip_cache(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.LaunchPlanSpec)
  private:
   class HasBitSetters;
@@ -1015,6 +1021,7 @@ class LaunchPlanSpec final :
   ::flyteidl::admin::RawOutputDataConfig* raw_output_data_config_;
   ::google::protobuf::BoolValue* interruptible_;
   ::google::protobuf::int32 max_parallelism_;
+  bool skip_cache_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2flaunch_5fplan_2eproto;
 };
@@ -2888,6 +2895,20 @@ inline void LaunchPlanSpec::set_allocated_interruptible(::google::protobuf::Bool
   }
   interruptible_ = interruptible;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.LaunchPlanSpec.interruptible)
+}
+
+// bool skip_cache = 20;
+inline void LaunchPlanSpec::clear_skip_cache() {
+  skip_cache_ = false;
+}
+inline bool LaunchPlanSpec::skip_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.LaunchPlanSpec.skip_cache)
+  return skip_cache_;
+}
+inline void LaunchPlanSpec::set_skip_cache(bool value) {
+  
+  skip_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.LaunchPlanSpec.skip_cache)
 }
 
 // -------------------------------------------------------------------
