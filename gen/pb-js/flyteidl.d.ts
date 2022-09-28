@@ -12,7 +12,8 @@ export namespace flyteidl {
             CACHE_HIT = 2,
             CACHE_POPULATED = 3,
             CACHE_LOOKUP_FAILURE = 4,
-            CACHE_PUT_FAILURE = 5
+            CACHE_PUT_FAILURE = 5,
+            CACHE_SKIPPED = 6
         }
 
         /** Properties of a CatalogArtifactTag. */
