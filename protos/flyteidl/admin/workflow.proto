@@ -7,7 +7,6 @@ import "flyteidl/core/compiler.proto";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/workflow.proto";
 import "google/protobuf/timestamp.proto";
-import "flyteidl/admin/description_entity.proto";
 
 // Represents a request structure to create a revision of a workflow.
 // See :ref:`ref_flyteidl.admin.Workflow` for more details

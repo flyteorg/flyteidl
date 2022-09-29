@@ -608,9 +608,9 @@ service AdminService {
   // Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
   rpc ListDescriptionEntities (flyteidl.admin.DescriptionListRequest) returns (flyteidl.admin.DescriptionList) {
     option (google.api.http) = {
-      get: "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}"
+      get: "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}/{description_entity_id.name}"
       additional_bindings {
-        get: "/api/v1/description_entities/{id.project}/{id.domain}"
+        get: "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}"
       }
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {

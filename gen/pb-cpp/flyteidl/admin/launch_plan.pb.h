@@ -39,7 +39,6 @@
 #include "flyteidl/core/security.pb.h"
 #include "flyteidl/admin/schedule.pb.h"
 #include "flyteidl/admin/common.pb.h"
-#include "flyteidl/admin/description_entity.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 #include <google/protobuf/wrappers.pb.h>
 // @@protoc_insertion_point(includes)

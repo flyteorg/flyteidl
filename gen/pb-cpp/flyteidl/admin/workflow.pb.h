@@ -35,7 +35,6 @@
 #include "flyteidl/core/identifier.pb.h"
 #include "flyteidl/core/workflow.pb.h"
 #include <google/protobuf/timestamp.pb.h>
-#include "flyteidl/admin/description_entity.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_2eproto

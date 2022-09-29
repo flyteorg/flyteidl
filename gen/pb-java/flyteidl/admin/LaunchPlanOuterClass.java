@@ -14216,60 +14216,59 @@ public final class LaunchPlanOuterClass {
       "l/core/identifier.proto\032\035flyteidl/core/i" +
       "nterface.proto\032\034flyteidl/core/security.p" +
       "roto\032\035flyteidl/admin/schedule.proto\032\033fly" +
-      "teidl/admin/common.proto\032\'flyteidl/admin" +
-      "/description_entity.proto\032\037google/protob" +
-      "uf/timestamp.proto\032\036google/protobuf/wrap" +
-      "pers.proto\"n\n\027LaunchPlanCreateRequest\022%\n" +
-      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004" +
-      "spec\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSp" +
-      "ec\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nLaunc" +
-      "hPlan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identi" +
-      "fier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Laun" +
-      "chPlanSpec\0222\n\007closure\030\003 \001(\0132!.flyteidl.a" +
-      "dmin.LaunchPlanClosure\"Q\n\016LaunchPlanList" +
-      "\0220\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin." +
-      "LaunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022ass" +
-      "umable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_serv" +
-      "ice_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec" +
-      "\022.\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Id" +
-      "entifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyt" +
-      "eidl.admin.LaunchPlanMetadata\0223\n\016default" +
-      "_inputs\030\003 \001(\0132\033.flyteidl.core.ParameterM" +
-      "ap\022/\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core" +
-      ".LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030" +
-      "\006 \001(\0132\026.flyteidl.admin.Labels\0220\n\013annotat" +
-      "ions\030\007 \001(\0132\033.flyteidl.admin.Annotations\022" +
-      "&\n\004auth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022" +
-      "/\n\tauth_role\030\t \001(\0132\030.flyteidl.admin.Auth" +
-      "RoleB\002\030\001\0228\n\020security_context\030\n \001(\0132\036.fly" +
-      "teidl.core.SecurityContext\022;\n\022quality_of" +
-      "_service\030\020 \001(\0132\037.flyteidl.core.QualityOf" +
-      "Service\022C\n\026raw_output_data_config\030\021 \001(\0132" +
-      "#.flyteidl.admin.RawOutputDataConfig\022\027\n\017" +
-      "max_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023" +
-      " \001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Lau" +
-      "nchPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl" +
-      ".admin.LaunchPlanState\0224\n\017expected_input" +
-      "s\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020" +
-      "expected_outputs\030\003 \001(\0132\032.flyteidl.core.V" +
-      "ariableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google." +
-      "protobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032" +
-      ".google.protobuf.Timestamp\"u\n\022LaunchPlan" +
-      "Metadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.ad" +
-      "min.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fl" +
-      "yteidl.admin.Notification\"p\n\027LaunchPlanU" +
-      "pdateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core" +
-      ".Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.ad" +
-      "min.LaunchPlanState\"\032\n\030LaunchPlanUpdateR" +
-      "esponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id" +
-      "\030\001 \001(\0132%.flyteidl.admin.NamedEntityIdent" +
-      "ifier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n" +
-      "\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030" +
-      "\003 \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024." +
-      "flyteidl.admin.Sort*+\n\017LaunchPlanState\022\014" +
-      "\n\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/f" +
-      "lyteorg/flyteidl/gen/pb-go/flyteidl/admi" +
-      "nb\006proto3"
+      "teidl/admin/common.proto\032\037google/protobu" +
+      "f/timestamp.proto\032\036google/protobuf/wrapp" +
+      "ers.proto\"n\n\027LaunchPlanCreateRequest\022%\n\002" +
+      "id\030\001 \001(\0132\031.flyteidl.core.Identifier\022,\n\004s" +
+      "pec\030\002 \001(\0132\036.flyteidl.admin.LaunchPlanSpe" +
+      "c\"\032\n\030LaunchPlanCreateResponse\"\225\001\n\nLaunch" +
+      "Plan\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identif" +
+      "ier\022,\n\004spec\030\002 \001(\0132\036.flyteidl.admin.Launc" +
+      "hPlanSpec\0222\n\007closure\030\003 \001(\0132!.flyteidl.ad" +
+      "min.LaunchPlanClosure\"Q\n\016LaunchPlanList\022" +
+      "0\n\014launch_plans\030\001 \003(\0132\032.flyteidl.admin.L" +
+      "aunchPlan\022\r\n\005token\030\002 \001(\t\"J\n\004Auth\022\032\n\022assu" +
+      "mable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_servi" +
+      "ce_account\030\002 \001(\t:\002\030\001\"\260\005\n\016LaunchPlanSpec\022" +
+      ".\n\013workflow_id\030\001 \001(\0132\031.flyteidl.core.Ide" +
+      "ntifier\022;\n\017entity_metadata\030\002 \001(\0132\".flyte" +
+      "idl.admin.LaunchPlanMetadata\0223\n\016default_" +
+      "inputs\030\003 \001(\0132\033.flyteidl.core.ParameterMa" +
+      "p\022/\n\014fixed_inputs\030\004 \001(\0132\031.flyteidl.core." +
+      "LiteralMap\022\020\n\004role\030\005 \001(\tB\002\030\001\022&\n\006labels\030\006" +
+      " \001(\0132\026.flyteidl.admin.Labels\0220\n\013annotati" +
+      "ons\030\007 \001(\0132\033.flyteidl.admin.Annotations\022&" +
+      "\n\004auth\030\010 \001(\0132\024.flyteidl.admin.AuthB\002\030\001\022/" +
+      "\n\tauth_role\030\t \001(\0132\030.flyteidl.admin.AuthR" +
+      "oleB\002\030\001\0228\n\020security_context\030\n \001(\0132\036.flyt" +
+      "eidl.core.SecurityContext\022;\n\022quality_of_" +
+      "service\030\020 \001(\0132\037.flyteidl.core.QualityOfS" +
+      "ervice\022C\n\026raw_output_data_config\030\021 \001(\0132#" +
+      ".flyteidl.admin.RawOutputDataConfig\022\027\n\017m" +
+      "ax_parallelism\030\022 \001(\005\0221\n\rinterruptible\030\023 " +
+      "\001(\0132\032.google.protobuf.BoolValue\"\217\002\n\021Laun" +
+      "chPlanClosure\022.\n\005state\030\001 \001(\0162\037.flyteidl." +
+      "admin.LaunchPlanState\0224\n\017expected_inputs" +
+      "\030\002 \001(\0132\033.flyteidl.core.ParameterMap\0224\n\020e" +
+      "xpected_outputs\030\003 \001(\0132\032.flyteidl.core.Va" +
+      "riableMap\022.\n\ncreated_at\030\004 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032." +
+      "google.protobuf.Timestamp\"u\n\022LaunchPlanM" +
+      "etadata\022*\n\010schedule\030\001 \001(\0132\030.flyteidl.adm" +
+      "in.Schedule\0223\n\rnotifications\030\002 \003(\0132\034.fly" +
+      "teidl.admin.Notification\"p\n\027LaunchPlanUp" +
+      "dateRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core." +
+      "Identifier\022.\n\005state\030\002 \001(\0162\037.flyteidl.adm" +
+      "in.LaunchPlanState\"\032\n\030LaunchPlanUpdateRe" +
+      "sponse\"L\n\027ActiveLaunchPlanRequest\0221\n\002id\030" +
+      "\001 \001(\0132%.flyteidl.admin.NamedEntityIdenti" +
+      "fier\"\203\001\n\033ActiveLaunchPlanListRequest\022\017\n\007" +
+      "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003" +
+      " \001(\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.f" +
+      "lyteidl.admin.Sort*+\n\017LaunchPlanState\022\014\n" +
+      "\010INACTIVE\020\000\022\n\n\006ACTIVE\020\001B7Z5github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -14289,7 +14288,6 @@ public final class LaunchPlanOuterClass {
           flyteidl.core.Security.getDescriptor(),
           flyteidl.admin.ScheduleOuterClass.getDescriptor(),
           flyteidl.admin.Common.getDescriptor(),
-          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
         }, assigner);
@@ -14372,7 +14370,6 @@ public final class LaunchPlanOuterClass {
     flyteidl.core.Security.getDescriptor();
     flyteidl.admin.ScheduleOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
-    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
   }

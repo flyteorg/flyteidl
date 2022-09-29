@@ -7,7 +7,6 @@ import "flyteidl/core/identifier.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
 import "google/protobuf/timestamp.proto";
-import "flyteidl/admin/description_entity.proto";
 
 // Represents a request structure to create a revision of a task.
 // See :ref:`ref_flyteidl.admin.Task` for more details

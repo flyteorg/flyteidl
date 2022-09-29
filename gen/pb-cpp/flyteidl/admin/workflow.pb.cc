@@ -228,41 +228,39 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto[] =
   "l.admin\032\034flyteidl/core/compiler.proto\032\036f"
   "lyteidl/core/identifier.proto\032\034flyteidl/"
   "core/workflow.proto\032\037google/protobuf/tim"
-  "estamp.proto\032\'flyteidl/admin/description"
-  "_entity.proto\"j\n\025WorkflowCreateRequest\022%"
-  "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n"
-  "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe"
-  "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022"
-  "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220"
-  "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo"
-  "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 "
-  "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002"
-  " \001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132"
-  "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_"
-  "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow"
-  "Template\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosu"
-  "re\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl"
-  ".core.CompiledWorkflowClosure\022.\n\ncreated"
-  "_at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z"
-  "5github.com/flyteorg/flyteidl/gen/pb-go/"
-  "flyteidl/adminb\006proto3"
+  "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n"
+  "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004"
+  "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec"
+  "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%"
+  "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n"
+  "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow"
+  "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003"
+  "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 "
+  "\001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037"
+  ".flyteidl.core.WorkflowTemplate\0226\n\rsub_w"
+  "orkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowT"
+  "emplate\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosur"
+  "e\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl."
+  "core.CompiledWorkflowClosure\022.\n\ncreated_"
+  "at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z5"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto,
-  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 862,
+  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 821,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fcompiler_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
-    ::AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto, deps, 5);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto, deps, 4);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.

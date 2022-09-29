@@ -5872,24 +5872,23 @@ public final class WorkflowOuterClass {
       "l.admin\032\034flyteidl/core/compiler.proto\032\036f" +
       "lyteidl/core/identifier.proto\032\034flyteidl/" +
       "core/workflow.proto\032\037google/protobuf/tim" +
-      "estamp.proto\032\'flyteidl/admin/description" +
-      "_entity.proto\"j\n\025WorkflowCreateRequest\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n" +
-      "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe" +
-      "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
-      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
-      "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
-      "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 " +
-      "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002" +
-      " \001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132" +
-      "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_" +
-      "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow" +
-      "Template\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosu" +
-      "re\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl" +
-      ".core.CompiledWorkflowClosure\022.\n\ncreated" +
-      "_at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z" +
-      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/adminb\006proto3"
+      "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n" +
+      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004" +
+      "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec" +
+      "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%" +
+      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n" +
+      "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow" +
+      "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003" +
+      "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 " +
+      "\001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037" +
+      ".flyteidl.core.WorkflowTemplate\0226\n\rsub_w" +
+      "orkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowT" +
+      "emplate\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosur" +
+      "e\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl." +
+      "core.CompiledWorkflowClosure\022.\n\ncreated_" +
+      "at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z5" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5906,7 +5905,6 @@ public final class WorkflowOuterClass {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Workflow.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5948,7 +5946,6 @@ public final class WorkflowOuterClass {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Workflow.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

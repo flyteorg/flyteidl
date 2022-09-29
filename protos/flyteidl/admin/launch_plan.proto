@@ -10,7 +10,6 @@ import "flyteidl/core/interface.proto";
 import "flyteidl/core/security.proto";
 import "flyteidl/admin/schedule.proto";
 import "flyteidl/admin/common.proto";
-import "flyteidl/admin/description_entity.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 

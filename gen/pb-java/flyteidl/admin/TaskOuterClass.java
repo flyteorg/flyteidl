@@ -5339,21 +5339,20 @@ public final class TaskOuterClass {
       "min\032\036flyteidl/core/identifier.proto\032\031fly" +
       "teidl/core/tasks.proto\032\034flyteidl/core/co" +
       "mpiler.proto\032\037google/protobuf/timestamp." +
-      "proto\032\'flyteidl/admin/description_entity" +
-      ".proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132" +
-      "\031.flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\013" +
-      "2\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreate" +
-      "Response\"[\n\004Task\022%\n\002id\030\001 \001(\0132\031.flyteidl." +
-      "core.Identifier\022,\n\007closure\030\002 \001(\0132\033.flyte" +
-      "idl.admin.TaskClosure\">\n\010TaskList\022#\n\005tas" +
-      "ks\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030" +
-      "\002 \001(\t\"G\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fl" +
-      "yteidl.core.TaskTemplate\022\014\n\004tags\030\002 \003(\t\"q" +
-      "\n\013TaskClosure\0222\n\rcompiled_task\030\001 \001(\0132\033.f" +
-      "lyteidl.core.CompiledTask\022.\n\ncreated_at\030" +
-      "\002 \001(\0132\032.google.protobuf.TimestampB7Z5git" +
-      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
-      "eidl/adminb\006proto3"
+      "proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132\031" +
+      ".flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\0132" +
+      "\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreateR" +
+      "esponse\"[\n\004Task\022%\n\002id\030\001 \001(\0132\031.flyteidl.c" +
+      "ore.Identifier\022,\n\007closure\030\002 \001(\0132\033.flytei" +
+      "dl.admin.TaskClosure\">\n\010TaskList\022#\n\005task" +
+      "s\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030\002" +
+      " \001(\t\"G\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fly" +
+      "teidl.core.TaskTemplate\022\014\n\004tags\030\002 \003(\t\"q\n" +
+      "\013TaskClosure\0222\n\rcompiled_task\030\001 \001(\0132\033.fl" +
+      "yteidl.core.CompiledTask\022.\n\ncreated_at\030\002" +
+      " \001(\0132\032.google.protobuf.TimestampB7Z5gith" +
+      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
+      "idl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5370,7 +5369,6 @@ public final class TaskOuterClass {
           flyteidl.core.Tasks.getDescriptor(),
           flyteidl.core.Compiler.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_TaskCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -5412,7 +5410,6 @@ public final class TaskOuterClass {
     flyteidl.core.Tasks.getDescriptor();
     flyteidl.core.Compiler.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

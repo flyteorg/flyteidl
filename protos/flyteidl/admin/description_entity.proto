@@ -50,7 +50,7 @@ message SourceCode {
 // Encapsulation of fields that uniquely identifies a Flyte description entity
 message DescriptionEntityIdentifier {
   // Identifies the specific type of resource that this identifier corresponds to.
-  flyteidl.core.ResourceType resource_type  = 1;
+  core.ResourceType resource_type  = 1;
 
   // Name of the project the resource belongs to.
   string project              = 2;
