@@ -160,9 +160,9 @@ class ClusterAssignment final :
 
   // accessors -------------------------------------------------------
 
-  // string cluster_pool_name = 1;
+  // string cluster_pool_name = 3;
   void clear_cluster_pool_name();
-  static const int kClusterPoolNameFieldNumber = 1;
+  static const int kClusterPoolNameFieldNumber = 3;
   const ::std::string& cluster_pool_name() const;
   void set_cluster_pool_name(const ::std::string& value);
   #if LANG_CXX11
@@ -194,7 +194,7 @@ class ClusterAssignment final :
 #endif  // __GNUC__
 // ClusterAssignment
 
-// string cluster_pool_name = 1;
+// string cluster_pool_name = 3;
 inline void ClusterAssignment::clear_cluster_pool_name() {
   cluster_pool_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

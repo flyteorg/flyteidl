@@ -17107,7 +17107,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.clusterPoolName != null && message.hasOwnProperty("clusterPoolName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.clusterPoolName);
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.clusterPoolName);
                 return writer;
             };
 
@@ -17129,7 +17129,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
+                    case 3:
                         message.clusterPoolName = reader.string();
                         break;
                     default:

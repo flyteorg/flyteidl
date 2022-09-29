@@ -6,5 +6,6 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 // Encapsulates specifications for routing an execution onto a specific cluster.
 message ClusterAssignment {
-  string cluster_pool_name = 1;
+  reserved 1, 2;
+  string cluster_pool_name = 3;
 }

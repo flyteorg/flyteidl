@@ -70,15 +70,15 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fcluster_5fassignment_2eproto[] =
   "\n\'flyteidl/admin/cluster_assignment.prot"
-  "o\022\016flyteidl.admin\".\n\021ClusterAssignment\022\031"
-  "\n\021cluster_pool_name\030\001 \001(\tB7Z5github.com/"
-  "flyteorg/flyteidl/gen/pb-go/flyteidl/adm"
-  "inb\006proto3"
+  "o\022\016flyteidl.admin\":\n\021ClusterAssignment\022\031"
+  "\n\021cluster_pool_name\030\003 \001(\tJ\004\010\001\020\002J\004\010\002\020\003B7Z"
+  "5github.com/flyteorg/flyteidl/gen/pb-go/"
+  "flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcluster_5fassignment_2eproto,
-  "flyteidl/admin/cluster_assignment.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 170,
+  "flyteidl/admin/cluster_assignment.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcluster_5fassignment_2eproto, 182,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcluster_5fassignment_2eproto() {
@@ -168,9 +168,9 @@ const char* ClusterAssignment::_InternalParse(const char* begin, const char* end
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // string cluster_pool_name = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+      // string cluster_pool_name = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("flyteidl.admin.ClusterAssignment.cluster_pool_name");
@@ -218,9 +218,9 @@ bool ClusterAssignment::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string cluster_pool_name = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+      // string cluster_pool_name = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_cluster_pool_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -260,14 +260,14 @@ void ClusterAssignment::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string cluster_pool_name = 1;
+  // string cluster_pool_name = 3;
   if (this->cluster_pool_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->cluster_pool_name().data(), static_cast<int>(this->cluster_pool_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "flyteidl.admin.ClusterAssignment.cluster_pool_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->cluster_pool_name(), output);
+      3, this->cluster_pool_name(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -283,7 +283,7 @@ void ClusterAssignment::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string cluster_pool_name = 1;
+  // string cluster_pool_name = 3;
   if (this->cluster_pool_name().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->cluster_pool_name().data(), static_cast<int>(this->cluster_pool_name().length()),
@@ -291,7 +291,7 @@ void ClusterAssignment::SerializeWithCachedSizes(
       "flyteidl.admin.ClusterAssignment.cluster_pool_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->cluster_pool_name(), target);
+        3, this->cluster_pool_name(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -315,7 +315,7 @@ size_t ClusterAssignment::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string cluster_pool_name = 1;
+  // string cluster_pool_name = 3;
   if (this->cluster_pool_name().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(

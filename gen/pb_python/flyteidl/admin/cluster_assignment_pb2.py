@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/cluster_assignment.proto\x12\x0e\x66lyteidl.admin\".\n\x11\x43lusterAssignment\x12\x19\n\x11\x63luster_pool_name\x18\x01 \x01(\tB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/cluster_assignment.proto\x12\x0e\x66lyteidl.admin\":\n\x11\x43lusterAssignment\x12\x19\n\x11\x63luster_pool_name\x18\x03 \x01(\tJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03\x42\x37Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
 )
 
 
@@ -35,7 +35,7 @@ _CLUSTERASSIGNMENT = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_pool_name', full_name='flyteidl.admin.ClusterAssignment.cluster_pool_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -53,7 +53,7 @@ _CLUSTERASSIGNMENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=59,
-  serialized_end=105,
+  serialized_end=117,
 )
 
 DESCRIPTOR.message_types_by_name['ClusterAssignment'] = _CLUSTERASSIGNMENT

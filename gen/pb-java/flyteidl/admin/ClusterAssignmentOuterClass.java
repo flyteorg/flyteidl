@@ -19,11 +19,11 @@ public final class ClusterAssignmentOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string cluster_pool_name = 1;</code>
+     * <code>string cluster_pool_name = 3;</code>
      */
     java.lang.String getClusterPoolName();
     /**
-     * <code>string cluster_pool_name = 1;</code>
+     * <code>string cluster_pool_name = 3;</code>
      */
     com.google.protobuf.ByteString
         getClusterPoolNameBytes();
@@ -72,7 +72,7 @@ public final class ClusterAssignmentOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               clusterPoolName_ = s;
@@ -110,10 +110,10 @@ public final class ClusterAssignmentOuterClass {
               flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.class, flyteidl.admin.ClusterAssignmentOuterClass.ClusterAssignment.Builder.class);
     }
 
-    public static final int CLUSTER_POOL_NAME_FIELD_NUMBER = 1;
+    public static final int CLUSTER_POOL_NAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object clusterPoolName_;
     /**
-     * <code>string cluster_pool_name = 1;</code>
+     * <code>string cluster_pool_name = 3;</code>
      */
     public java.lang.String getClusterPoolName() {
       java.lang.Object ref = clusterPoolName_;
@@ -128,7 +128,7 @@ public final class ClusterAssignmentOuterClass {
       }
     }
     /**
-     * <code>string cluster_pool_name = 1;</code>
+     * <code>string cluster_pool_name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getClusterPoolNameBytes() {
@@ -159,7 +159,7 @@ public final class ClusterAssignmentOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getClusterPoolNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterPoolName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clusterPoolName_);
       }
       unknownFields.writeTo(output);
     }
@@ -171,7 +171,7 @@ public final class ClusterAssignmentOuterClass {
 
       size = 0;
       if (!getClusterPoolNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clusterPoolName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clusterPoolName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -452,7 +452,7 @@ public final class ClusterAssignmentOuterClass {
 
       private java.lang.Object clusterPoolName_ = "";
       /**
-       * <code>string cluster_pool_name = 1;</code>
+       * <code>string cluster_pool_name = 3;</code>
        */
       public java.lang.String getClusterPoolName() {
         java.lang.Object ref = clusterPoolName_;
@@ -467,7 +467,7 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
-       * <code>string cluster_pool_name = 1;</code>
+       * <code>string cluster_pool_name = 3;</code>
        */
       public com.google.protobuf.ByteString
           getClusterPoolNameBytes() {
@@ -483,7 +483,7 @@ public final class ClusterAssignmentOuterClass {
         }
       }
       /**
-       * <code>string cluster_pool_name = 1;</code>
+       * <code>string cluster_pool_name = 3;</code>
        */
       public Builder setClusterPoolName(
           java.lang.String value) {
@@ -496,7 +496,7 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
-       * <code>string cluster_pool_name = 1;</code>
+       * <code>string cluster_pool_name = 3;</code>
        */
       public Builder clearClusterPoolName() {
         
@@ -505,7 +505,7 @@ public final class ClusterAssignmentOuterClass {
         return this;
       }
       /**
-       * <code>string cluster_pool_name = 1;</code>
+       * <code>string cluster_pool_name = 3;</code>
        */
       public Builder setClusterPoolNameBytes(
           com.google.protobuf.ByteString value) {
@@ -586,10 +586,10 @@ public final class ClusterAssignmentOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'flyteidl/admin/cluster_assignment.prot" +
-      "o\022\016flyteidl.admin\".\n\021ClusterAssignment\022\031" +
-      "\n\021cluster_pool_name\030\001 \001(\tB7Z5github.com/" +
-      "flyteorg/flyteidl/gen/pb-go/flyteidl/adm" +
-      "inb\006proto3"
+      "o\022\016flyteidl.admin\":\n\021ClusterAssignment\022\031" +
+      "\n\021cluster_pool_name\030\003 \001(\tJ\004\010\001\020\002J\004\010\002\020\003B7Z" +
+      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
+      "flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
