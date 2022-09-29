@@ -492,7 +492,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminDescriptionList"
+              "$ref": "#/definitions/adminDescriptionEntityList"
             }
           }
         },
@@ -589,7 +589,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/adminDescriptionList"
+              "$ref": "#/definitions/adminDescriptionEntityList"
             }
           }
         },
@@ -3631,7 +3631,7 @@
       },
       "title": "Encapsulation of fields that uniquely identifies a Flyte description entity"
     },
-    "adminDescriptionList": {
+    "adminDescriptionEntityList": {
       "type": "object",
       "properties": {
         "descriptionEntities": {

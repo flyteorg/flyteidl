@@ -521,7 +521,7 @@ paths:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminDescriptionList"
+            $ref: "#/definitions/adminDescriptionEntityList"
   /api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}/{description_entity_id.name}:
     get:
       tags:
@@ -617,7 +617,7 @@ paths:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminDescriptionList"
+            $ref: "#/definitions/adminDescriptionEntityList"
   /api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}:
     get:
       tags:
@@ -3355,7 +3355,7 @@ definitions:
         type: "string"
         description: "User or system provided value for the resource."
     title: "Encapsulation of fields that uniquely identifies a Flyte description entity"
-  adminDescriptionList:
+  adminDescriptionEntityList:
     type: "object"
     properties:
       descriptionEntities:

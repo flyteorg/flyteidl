@@ -140,7 +140,7 @@ Class | Method | HTTP request | Description
  - [AdminDescriptionEntityCreateRequest](docs/AdminDescriptionEntityCreateRequest.md)
  - [AdminDescriptionEntityCreateResponse](docs/AdminDescriptionEntityCreateResponse.md)
  - [AdminDescriptionEntityIdentifier](docs/AdminDescriptionEntityIdentifier.md)
- - [AdminDescriptionList](docs/AdminDescriptionList.md)
+ - [AdminDescriptionEntityList](docs/AdminDescriptionEntityList.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
  - [AdminExecution](docs/AdminExecution.md)

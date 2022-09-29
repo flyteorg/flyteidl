@@ -1269,11 +1269,11 @@ type AdminServiceClient_ListDescriptionEntities struct {
 	*mock.Call
 }
 
-func (_m AdminServiceClient_ListDescriptionEntities) Return(_a0 *admin.DescriptionList, _a1 error) *AdminServiceClient_ListDescriptionEntities {
+func (_m AdminServiceClient_ListDescriptionEntities) Return(_a0 *admin.DescriptionEntityList, _a1 error) *AdminServiceClient_ListDescriptionEntities {
 	return &AdminServiceClient_ListDescriptionEntities{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *AdminServiceClient) OnListDescriptionEntities(ctx context.Context, in *admin.DescriptionListRequest, opts ...grpc.CallOption) *AdminServiceClient_ListDescriptionEntities {
+func (_m *AdminServiceClient) OnListDescriptionEntities(ctx context.Context, in *admin.DescriptionEntityListRequest, opts ...grpc.CallOption) *AdminServiceClient_ListDescriptionEntities {
 	c_call := _m.On("ListDescriptionEntities", ctx, in, opts)
 	return &AdminServiceClient_ListDescriptionEntities{Call: c_call}
 }
@@ -1284,7 +1284,7 @@ func (_m *AdminServiceClient) OnListDescriptionEntitiesMatch(matchers ...interfa
 }
 
 // ListDescriptionEntities provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) ListDescriptionEntities(ctx context.Context, in *admin.DescriptionListRequest, opts ...grpc.CallOption) (*admin.DescriptionList, error) {
+func (_m *AdminServiceClient) ListDescriptionEntities(ctx context.Context, in *admin.DescriptionEntityListRequest, opts ...grpc.CallOption) (*admin.DescriptionEntityList, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -1294,17 +1294,17 @@ func (_m *AdminServiceClient) ListDescriptionEntities(ctx context.Context, in *a
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *admin.DescriptionList
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.DescriptionListRequest, ...grpc.CallOption) *admin.DescriptionList); ok {
+	var r0 *admin.DescriptionEntityList
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.DescriptionEntityListRequest, ...grpc.CallOption) *admin.DescriptionEntityList); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.DescriptionList)
+			r0 = ret.Get(0).(*admin.DescriptionEntityList)
 		}
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.DescriptionListRequest, ...grpc.CallOption) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.DescriptionEntityListRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

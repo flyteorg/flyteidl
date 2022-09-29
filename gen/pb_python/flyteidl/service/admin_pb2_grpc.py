@@ -275,8 +275,8 @@ class AdminServiceStub(object):
         )
     self.ListDescriptionEntities = channel.unary_unary(
         '/flyteidl.service.AdminService/ListDescriptionEntities',
-        request_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionListRequest.SerializeToString,
-        response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionList.FromString,
+        request_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityList.FromString,
         )
 
 
@@ -891,8 +891,8 @@ def add_AdminServiceServicer_to_server(servicer, server):
       ),
       'ListDescriptionEntities': grpc.unary_unary_rpc_method_handler(
           servicer.ListDescriptionEntities,
-          request_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionListRequest.FromString,
-          response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionList.SerializeToString,
+          request_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntityList.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

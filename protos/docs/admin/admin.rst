@@ -838,9 +838,9 @@ Encapsulation of fields that uniquely identifies a Flyte description entity
 
 
 
-.. _ref_flyteidl.admin.DescriptionList:
+.. _ref_flyteidl.admin.DescriptionEntityList:
 
-DescriptionList
+DescriptionEntityList
 ------------------------------------------------------------------
 
 Represents a list of DescriptionEntities returned from the admin.
@@ -848,7 +848,7 @@ See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 
 
 
-.. csv-table:: DescriptionList type fields
+.. csv-table:: DescriptionEntityList type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
@@ -861,9 +861,9 @@ See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 
 
 
-.. _ref_flyteidl.admin.DescriptionListRequest:
+.. _ref_flyteidl.admin.DescriptionEntityListRequest:
 
-DescriptionListRequest
+DescriptionEntityListRequest
 ------------------------------------------------------------------
 
 Represents a request structure to retrieve a list of DescriptionEntities.
@@ -871,7 +871,7 @@ See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 
 
 
-.. csv-table:: DescriptionListRequest type fields
+.. csv-table:: DescriptionEntityListRequest type fields
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 

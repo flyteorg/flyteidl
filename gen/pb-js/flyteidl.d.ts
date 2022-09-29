@@ -8989,134 +8989,134 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a DescriptionList. */
-        interface IDescriptionList {
+        /** Properties of a DescriptionEntityList. */
+        interface IDescriptionEntityList {
 
-            /** DescriptionList descriptionEntities */
+            /** DescriptionEntityList descriptionEntities */
             descriptionEntities?: (flyteidl.admin.IDescriptionEntity[]|null);
 
-            /** DescriptionList token */
+            /** DescriptionEntityList token */
             token?: (string|null);
         }
 
-        /** Represents a DescriptionList. */
-        class DescriptionList implements IDescriptionList {
+        /** Represents a DescriptionEntityList. */
+        class DescriptionEntityList implements IDescriptionEntityList {
 
             /**
-             * Constructs a new DescriptionList.
+             * Constructs a new DescriptionEntityList.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IDescriptionList);
+            constructor(properties?: flyteidl.admin.IDescriptionEntityList);
 
-            /** DescriptionList descriptionEntities. */
+            /** DescriptionEntityList descriptionEntities. */
             public descriptionEntities: flyteidl.admin.IDescriptionEntity[];
 
-            /** DescriptionList token. */
+            /** DescriptionEntityList token. */
             public token: string;
 
             /**
-             * Creates a new DescriptionList instance using the specified properties.
+             * Creates a new DescriptionEntityList instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns DescriptionList instance
+             * @returns DescriptionEntityList instance
              */
-            public static create(properties?: flyteidl.admin.IDescriptionList): flyteidl.admin.DescriptionList;
+            public static create(properties?: flyteidl.admin.IDescriptionEntityList): flyteidl.admin.DescriptionEntityList;
 
             /**
-             * Encodes the specified DescriptionList message. Does not implicitly {@link flyteidl.admin.DescriptionList.verify|verify} messages.
-             * @param message DescriptionList message or plain object to encode
+             * Encodes the specified DescriptionEntityList message. Does not implicitly {@link flyteidl.admin.DescriptionEntityList.verify|verify} messages.
+             * @param message DescriptionEntityList message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IDescriptionList, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IDescriptionEntityList, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a DescriptionList message from the specified reader or buffer.
+             * Decodes a DescriptionEntityList message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns DescriptionList
+             * @returns DescriptionEntityList
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionList;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityList;
 
             /**
-             * Verifies a DescriptionList message.
+             * Verifies a DescriptionEntityList message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a DescriptionListRequest. */
-        interface IDescriptionListRequest {
+        /** Properties of a DescriptionEntityListRequest. */
+        interface IDescriptionEntityListRequest {
 
-            /** DescriptionListRequest descriptionEntityId */
+            /** DescriptionEntityListRequest descriptionEntityId */
             descriptionEntityId?: (flyteidl.admin.IDescriptionEntityIdentifier|null);
 
-            /** DescriptionListRequest limit */
+            /** DescriptionEntityListRequest limit */
             limit?: (number|null);
 
-            /** DescriptionListRequest token */
+            /** DescriptionEntityListRequest token */
             token?: (string|null);
 
-            /** DescriptionListRequest filters */
+            /** DescriptionEntityListRequest filters */
             filters?: (string|null);
 
-            /** DescriptionListRequest sortBy */
+            /** DescriptionEntityListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
         }
 
-        /** Represents a DescriptionListRequest. */
-        class DescriptionListRequest implements IDescriptionListRequest {
+        /** Represents a DescriptionEntityListRequest. */
+        class DescriptionEntityListRequest implements IDescriptionEntityListRequest {
 
             /**
-             * Constructs a new DescriptionListRequest.
+             * Constructs a new DescriptionEntityListRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.IDescriptionListRequest);
+            constructor(properties?: flyteidl.admin.IDescriptionEntityListRequest);
 
-            /** DescriptionListRequest descriptionEntityId. */
+            /** DescriptionEntityListRequest descriptionEntityId. */
             public descriptionEntityId?: (flyteidl.admin.IDescriptionEntityIdentifier|null);
 
-            /** DescriptionListRequest limit. */
+            /** DescriptionEntityListRequest limit. */
             public limit: number;
 
-            /** DescriptionListRequest token. */
+            /** DescriptionEntityListRequest token. */
             public token: string;
 
-            /** DescriptionListRequest filters. */
+            /** DescriptionEntityListRequest filters. */
             public filters: string;
 
-            /** DescriptionListRequest sortBy. */
+            /** DescriptionEntityListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
 
             /**
-             * Creates a new DescriptionListRequest instance using the specified properties.
+             * Creates a new DescriptionEntityListRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns DescriptionListRequest instance
+             * @returns DescriptionEntityListRequest instance
              */
-            public static create(properties?: flyteidl.admin.IDescriptionListRequest): flyteidl.admin.DescriptionListRequest;
+            public static create(properties?: flyteidl.admin.IDescriptionEntityListRequest): flyteidl.admin.DescriptionEntityListRequest;
 
             /**
-             * Encodes the specified DescriptionListRequest message. Does not implicitly {@link flyteidl.admin.DescriptionListRequest.verify|verify} messages.
-             * @param message DescriptionListRequest message or plain object to encode
+             * Encodes the specified DescriptionEntityListRequest message. Does not implicitly {@link flyteidl.admin.DescriptionEntityListRequest.verify|verify} messages.
+             * @param message DescriptionEntityListRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.IDescriptionListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IDescriptionEntityListRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a DescriptionListRequest message from the specified reader or buffer.
+             * Decodes a DescriptionEntityListRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns DescriptionListRequest
+             * @returns DescriptionEntityListRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionListRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityListRequest;
 
             /**
-             * Verifies a DescriptionListRequest message.
+             * Verifies a DescriptionEntityListRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -16965,17 +16965,17 @@ export namespace flyteidl {
 
             /**
              * Calls ListDescriptionEntities.
-             * @param request DescriptionListRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and DescriptionList
+             * @param request DescriptionEntityListRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and DescriptionEntityList
              */
-            public listDescriptionEntities(request: flyteidl.admin.IDescriptionListRequest, callback: flyteidl.service.AdminService.ListDescriptionEntitiesCallback): void;
+            public listDescriptionEntities(request: flyteidl.admin.IDescriptionEntityListRequest, callback: flyteidl.service.AdminService.ListDescriptionEntitiesCallback): void;
 
             /**
              * Calls ListDescriptionEntities.
-             * @param request DescriptionListRequest message or plain object
+             * @param request DescriptionEntityListRequest message or plain object
              * @returns Promise
              */
-            public listDescriptionEntities(request: flyteidl.admin.IDescriptionListRequest): Promise<flyteidl.admin.DescriptionList>;
+            public listDescriptionEntities(request: flyteidl.admin.IDescriptionEntityListRequest): Promise<flyteidl.admin.DescriptionEntityList>;
         }
 
         namespace AdminService {
@@ -17326,9 +17326,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.service.AdminService#listDescriptionEntities}.
              * @param error Error, if any
-             * @param [response] DescriptionList
+             * @param [response] DescriptionEntityList
              */
-            type ListDescriptionEntitiesCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionList) => void;
+            type ListDescriptionEntitiesCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntityList) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

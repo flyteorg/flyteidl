@@ -65,12 +65,12 @@ extern DescriptionEntityCreateResponseDefaultTypeInternal _DescriptionEntityCrea
 class DescriptionEntityIdentifier;
 class DescriptionEntityIdentifierDefaultTypeInternal;
 extern DescriptionEntityIdentifierDefaultTypeInternal _DescriptionEntityIdentifier_default_instance_;
-class DescriptionList;
-class DescriptionListDefaultTypeInternal;
-extern DescriptionListDefaultTypeInternal _DescriptionList_default_instance_;
-class DescriptionListRequest;
-class DescriptionListRequestDefaultTypeInternal;
-extern DescriptionListRequestDefaultTypeInternal _DescriptionListRequest_default_instance_;
+class DescriptionEntityList;
+class DescriptionEntityListDefaultTypeInternal;
+extern DescriptionEntityListDefaultTypeInternal _DescriptionEntityList_default_instance_;
+class DescriptionEntityListRequest;
+class DescriptionEntityListRequestDefaultTypeInternal;
+extern DescriptionEntityListRequestDefaultTypeInternal _DescriptionEntityListRequest_default_instance_;
 class LongDescription;
 class LongDescriptionDefaultTypeInternal;
 extern LongDescriptionDefaultTypeInternal _LongDescription_default_instance_;
@@ -85,8 +85,8 @@ template<> ::flyteidl::admin::DescriptionEntity* Arena::CreateMaybeMessage<::fly
 template<> ::flyteidl::admin::DescriptionEntityCreateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityCreateRequest>(Arena*);
 template<> ::flyteidl::admin::DescriptionEntityCreateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityCreateResponse>(Arena*);
 template<> ::flyteidl::admin::DescriptionEntityIdentifier* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityIdentifier>(Arena*);
-template<> ::flyteidl::admin::DescriptionList* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionList>(Arena*);
-template<> ::flyteidl::admin::DescriptionListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionListRequest>(Arena*);
+template<> ::flyteidl::admin::DescriptionEntityList* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityList>(Arena*);
+template<> ::flyteidl::admin::DescriptionEntityListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityListRequest>(Arena*);
 template<> ::flyteidl::admin::LongDescription* Arena::CreateMaybeMessage<::flyteidl::admin::LongDescription>(Arena*);
 template<> ::flyteidl::admin::SourceCode* Arena::CreateMaybeMessage<::flyteidl::admin::SourceCode>(Arena*);
 }  // namespace protobuf
@@ -977,25 +977,25 @@ class DescriptionEntityCreateResponse final :
 };
 // -------------------------------------------------------------------
 
-class DescriptionList final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionList) */ {
+class DescriptionEntityList final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionEntityList) */ {
  public:
-  DescriptionList();
-  virtual ~DescriptionList();
+  DescriptionEntityList();
+  virtual ~DescriptionEntityList();
 
-  DescriptionList(const DescriptionList& from);
+  DescriptionEntityList(const DescriptionEntityList& from);
 
-  inline DescriptionList& operator=(const DescriptionList& from) {
+  inline DescriptionEntityList& operator=(const DescriptionEntityList& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  DescriptionList(DescriptionList&& from) noexcept
-    : DescriptionList() {
+  DescriptionEntityList(DescriptionEntityList&& from) noexcept
+    : DescriptionEntityList() {
     *this = ::std::move(from);
   }
 
-  inline DescriptionList& operator=(DescriptionList&& from) noexcept {
+  inline DescriptionEntityList& operator=(DescriptionEntityList&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1007,34 +1007,34 @@ class DescriptionList final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const DescriptionList& default_instance();
+  static const DescriptionEntityList& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DescriptionList* internal_default_instance() {
-    return reinterpret_cast<const DescriptionList*>(
-               &_DescriptionList_default_instance_);
+  static inline const DescriptionEntityList* internal_default_instance() {
+    return reinterpret_cast<const DescriptionEntityList*>(
+               &_DescriptionEntityList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  void Swap(DescriptionList* other);
-  friend void swap(DescriptionList& a, DescriptionList& b) {
+  void Swap(DescriptionEntityList* other);
+  friend void swap(DescriptionEntityList& a, DescriptionEntityList& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline DescriptionList* New() const final {
-    return CreateMaybeMessage<DescriptionList>(nullptr);
+  inline DescriptionEntityList* New() const final {
+    return CreateMaybeMessage<DescriptionEntityList>(nullptr);
   }
 
-  DescriptionList* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DescriptionList>(arena);
+  DescriptionEntityList* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DescriptionEntityList>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DescriptionList& from);
-  void MergeFrom(const DescriptionList& from);
+  void CopyFrom(const DescriptionEntityList& from);
+  void MergeFrom(const DescriptionEntityList& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1056,7 +1056,7 @@ class DescriptionList final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DescriptionList* other);
+  void InternalSwap(DescriptionEntityList* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1098,7 +1098,7 @@ class DescriptionList final :
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionList)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityList)
  private:
   class HasBitSetters;
 
@@ -1110,25 +1110,25 @@ class DescriptionList final :
 };
 // -------------------------------------------------------------------
 
-class DescriptionListRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionListRequest) */ {
+class DescriptionEntityListRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionEntityListRequest) */ {
  public:
-  DescriptionListRequest();
-  virtual ~DescriptionListRequest();
+  DescriptionEntityListRequest();
+  virtual ~DescriptionEntityListRequest();
 
-  DescriptionListRequest(const DescriptionListRequest& from);
+  DescriptionEntityListRequest(const DescriptionEntityListRequest& from);
 
-  inline DescriptionListRequest& operator=(const DescriptionListRequest& from) {
+  inline DescriptionEntityListRequest& operator=(const DescriptionEntityListRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  DescriptionListRequest(DescriptionListRequest&& from) noexcept
-    : DescriptionListRequest() {
+  DescriptionEntityListRequest(DescriptionEntityListRequest&& from) noexcept
+    : DescriptionEntityListRequest() {
     *this = ::std::move(from);
   }
 
-  inline DescriptionListRequest& operator=(DescriptionListRequest&& from) noexcept {
+  inline DescriptionEntityListRequest& operator=(DescriptionEntityListRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1140,34 +1140,34 @@ class DescriptionListRequest final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const DescriptionListRequest& default_instance();
+  static const DescriptionEntityListRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DescriptionListRequest* internal_default_instance() {
-    return reinterpret_cast<const DescriptionListRequest*>(
-               &_DescriptionListRequest_default_instance_);
+  static inline const DescriptionEntityListRequest* internal_default_instance() {
+    return reinterpret_cast<const DescriptionEntityListRequest*>(
+               &_DescriptionEntityListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  void Swap(DescriptionListRequest* other);
-  friend void swap(DescriptionListRequest& a, DescriptionListRequest& b) {
+  void Swap(DescriptionEntityListRequest* other);
+  friend void swap(DescriptionEntityListRequest& a, DescriptionEntityListRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline DescriptionListRequest* New() const final {
-    return CreateMaybeMessage<DescriptionListRequest>(nullptr);
+  inline DescriptionEntityListRequest* New() const final {
+    return CreateMaybeMessage<DescriptionEntityListRequest>(nullptr);
   }
 
-  DescriptionListRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DescriptionListRequest>(arena);
+  DescriptionEntityListRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DescriptionEntityListRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DescriptionListRequest& from);
-  void MergeFrom(const DescriptionListRequest& from);
+  void CopyFrom(const DescriptionEntityListRequest& from);
+  void MergeFrom(const DescriptionEntityListRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1189,7 +1189,7 @@ class DescriptionListRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DescriptionListRequest* other);
+  void InternalSwap(DescriptionEntityListRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1257,7 +1257,7 @@ class DescriptionListRequest final :
   ::google::protobuf::uint32 limit() const;
   void set_limit(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionListRequest)
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityListRequest)
  private:
   class HasBitSetters;
 
@@ -2040,128 +2040,128 @@ inline void DescriptionEntityCreateRequest::set_allocated_description_entity(::f
 
 // -------------------------------------------------------------------
 
-// DescriptionList
+// DescriptionEntityList
 
 // repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;
-inline int DescriptionList::descriptionentities_size() const {
+inline int DescriptionEntityList::descriptionentities_size() const {
   return descriptionentities_.size();
 }
-inline void DescriptionList::clear_descriptionentities() {
+inline void DescriptionEntityList::clear_descriptionentities() {
   descriptionentities_.Clear();
 }
-inline ::flyteidl::admin::DescriptionEntity* DescriptionList::mutable_descriptionentities(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionList.descriptionEntities)
+inline ::flyteidl::admin::DescriptionEntity* DescriptionEntityList::mutable_descriptionentities(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityList.descriptionEntities)
   return descriptionentities_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::DescriptionEntity >*
-DescriptionList::mutable_descriptionentities() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.DescriptionList.descriptionEntities)
+DescriptionEntityList::mutable_descriptionentities() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.DescriptionEntityList.descriptionEntities)
   return &descriptionentities_;
 }
-inline const ::flyteidl::admin::DescriptionEntity& DescriptionList::descriptionentities(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionList.descriptionEntities)
+inline const ::flyteidl::admin::DescriptionEntity& DescriptionEntityList::descriptionentities(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityList.descriptionEntities)
   return descriptionentities_.Get(index);
 }
-inline ::flyteidl::admin::DescriptionEntity* DescriptionList::add_descriptionentities() {
-  // @@protoc_insertion_point(field_add:flyteidl.admin.DescriptionList.descriptionEntities)
+inline ::flyteidl::admin::DescriptionEntity* DescriptionEntityList::add_descriptionentities() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.DescriptionEntityList.descriptionEntities)
   return descriptionentities_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::DescriptionEntity >&
-DescriptionList::descriptionentities() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.DescriptionList.descriptionEntities)
+DescriptionEntityList::descriptionentities() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.DescriptionEntityList.descriptionEntities)
   return descriptionentities_;
 }
 
 // string token = 2;
-inline void DescriptionList::clear_token() {
+inline void DescriptionEntityList::clear_token() {
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& DescriptionList::token() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionList.token)
+inline const ::std::string& DescriptionEntityList::token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityList.token)
   return token_.GetNoArena();
 }
-inline void DescriptionList::set_token(const ::std::string& value) {
+inline void DescriptionEntityList::set_token(const ::std::string& value) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntityList.token)
 }
 #if LANG_CXX11
-inline void DescriptionList::set_token(::std::string&& value) {
+inline void DescriptionEntityList::set_token(::std::string&& value) {
   
   token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionEntityList.token)
 }
 #endif
-inline void DescriptionList::set_token(const char* value) {
+inline void DescriptionEntityList::set_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionEntityList.token)
 }
-inline void DescriptionList::set_token(const char* value, size_t size) {
+inline void DescriptionEntityList::set_token(const char* value, size_t size) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionEntityList.token)
 }
-inline ::std::string* DescriptionList::mutable_token() {
+inline ::std::string* DescriptionEntityList::mutable_token() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityList.token)
   return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* DescriptionList::release_token() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionList.token)
+inline ::std::string* DescriptionEntityList::release_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityList.token)
   
   return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void DescriptionList::set_allocated_token(::std::string* token) {
+inline void DescriptionEntityList::set_allocated_token(::std::string* token) {
   if (token != nullptr) {
     
   } else {
     
   }
   token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionList.token)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityList.token)
 }
 
 // -------------------------------------------------------------------
 
-// DescriptionListRequest
+// DescriptionEntityListRequest
 
 // .flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;
-inline bool DescriptionListRequest::has_description_entity_id() const {
+inline bool DescriptionEntityListRequest::has_description_entity_id() const {
   return this != internal_default_instance() && description_entity_id_ != nullptr;
 }
-inline void DescriptionListRequest::clear_description_entity_id() {
+inline void DescriptionEntityListRequest::clear_description_entity_id() {
   if (GetArenaNoVirtual() == nullptr && description_entity_id_ != nullptr) {
     delete description_entity_id_;
   }
   description_entity_id_ = nullptr;
 }
-inline const ::flyteidl::admin::DescriptionEntityIdentifier& DescriptionListRequest::description_entity_id() const {
+inline const ::flyteidl::admin::DescriptionEntityIdentifier& DescriptionEntityListRequest::description_entity_id() const {
   const ::flyteidl::admin::DescriptionEntityIdentifier* p = description_entity_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionListRequest.description_entity_id)
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityListRequest.description_entity_id)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntityIdentifier*>(
       &::flyteidl::admin::_DescriptionEntityIdentifier_default_instance_);
 }
-inline ::flyteidl::admin::DescriptionEntityIdentifier* DescriptionListRequest::release_description_entity_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionListRequest.description_entity_id)
+inline ::flyteidl::admin::DescriptionEntityIdentifier* DescriptionEntityListRequest::release_description_entity_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityListRequest.description_entity_id)
   
   ::flyteidl::admin::DescriptionEntityIdentifier* temp = description_entity_id_;
   description_entity_id_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::DescriptionEntityIdentifier* DescriptionListRequest::mutable_description_entity_id() {
+inline ::flyteidl::admin::DescriptionEntityIdentifier* DescriptionEntityListRequest::mutable_description_entity_id() {
   
   if (description_entity_id_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntityIdentifier>(GetArenaNoVirtual());
     description_entity_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionListRequest.description_entity_id)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityListRequest.description_entity_id)
   return description_entity_id_;
 }
-inline void DescriptionListRequest::set_allocated_description_entity_id(::flyteidl::admin::DescriptionEntityIdentifier* description_entity_id) {
+inline void DescriptionEntityListRequest::set_allocated_description_entity_id(::flyteidl::admin::DescriptionEntityIdentifier* description_entity_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete description_entity_id_;
@@ -2177,156 +2177,156 @@ inline void DescriptionListRequest::set_allocated_description_entity_id(::flytei
     
   }
   description_entity_id_ = description_entity_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionListRequest.description_entity_id)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityListRequest.description_entity_id)
 }
 
 // uint32 limit = 2;
-inline void DescriptionListRequest::clear_limit() {
+inline void DescriptionEntityListRequest::clear_limit() {
   limit_ = 0u;
 }
-inline ::google::protobuf::uint32 DescriptionListRequest::limit() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionListRequest.limit)
+inline ::google::protobuf::uint32 DescriptionEntityListRequest::limit() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityListRequest.limit)
   return limit_;
 }
-inline void DescriptionListRequest::set_limit(::google::protobuf::uint32 value) {
+inline void DescriptionEntityListRequest::set_limit(::google::protobuf::uint32 value) {
   
   limit_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionListRequest.limit)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntityListRequest.limit)
 }
 
 // string token = 3;
-inline void DescriptionListRequest::clear_token() {
+inline void DescriptionEntityListRequest::clear_token() {
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& DescriptionListRequest::token() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionListRequest.token)
+inline const ::std::string& DescriptionEntityListRequest::token() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityListRequest.token)
   return token_.GetNoArena();
 }
-inline void DescriptionListRequest::set_token(const ::std::string& value) {
+inline void DescriptionEntityListRequest::set_token(const ::std::string& value) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntityListRequest.token)
 }
 #if LANG_CXX11
-inline void DescriptionListRequest::set_token(::std::string&& value) {
+inline void DescriptionEntityListRequest::set_token(::std::string&& value) {
   
   token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionEntityListRequest.token)
 }
 #endif
-inline void DescriptionListRequest::set_token(const char* value) {
+inline void DescriptionEntityListRequest::set_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionEntityListRequest.token)
 }
-inline void DescriptionListRequest::set_token(const char* value, size_t size) {
+inline void DescriptionEntityListRequest::set_token(const char* value, size_t size) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionEntityListRequest.token)
 }
-inline ::std::string* DescriptionListRequest::mutable_token() {
+inline ::std::string* DescriptionEntityListRequest::mutable_token() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityListRequest.token)
   return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* DescriptionListRequest::release_token() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionListRequest.token)
+inline ::std::string* DescriptionEntityListRequest::release_token() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityListRequest.token)
   
   return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void DescriptionListRequest::set_allocated_token(::std::string* token) {
+inline void DescriptionEntityListRequest::set_allocated_token(::std::string* token) {
   if (token != nullptr) {
     
   } else {
     
   }
   token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionListRequest.token)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityListRequest.token)
 }
 
 // string filters = 4;
-inline void DescriptionListRequest::clear_filters() {
+inline void DescriptionEntityListRequest::clear_filters() {
   filters_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& DescriptionListRequest::filters() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionListRequest.filters)
+inline const ::std::string& DescriptionEntityListRequest::filters() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityListRequest.filters)
   return filters_.GetNoArena();
 }
-inline void DescriptionListRequest::set_filters(const ::std::string& value) {
+inline void DescriptionEntityListRequest::set_filters(const ::std::string& value) {
   
   filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntityListRequest.filters)
 }
 #if LANG_CXX11
-inline void DescriptionListRequest::set_filters(::std::string&& value) {
+inline void DescriptionEntityListRequest::set_filters(::std::string&& value) {
   
   filters_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.DescriptionEntityListRequest.filters)
 }
 #endif
-inline void DescriptionListRequest::set_filters(const char* value) {
+inline void DescriptionEntityListRequest::set_filters(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionEntityListRequest.filters)
 }
-inline void DescriptionListRequest::set_filters(const char* value, size_t size) {
+inline void DescriptionEntityListRequest::set_filters(const char* value, size_t size) {
   
   filters_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionEntityListRequest.filters)
 }
-inline ::std::string* DescriptionListRequest::mutable_filters() {
+inline ::std::string* DescriptionEntityListRequest::mutable_filters() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityListRequest.filters)
   return filters_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* DescriptionListRequest::release_filters() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionListRequest.filters)
+inline ::std::string* DescriptionEntityListRequest::release_filters() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityListRequest.filters)
   
   return filters_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void DescriptionListRequest::set_allocated_filters(::std::string* filters) {
+inline void DescriptionEntityListRequest::set_allocated_filters(::std::string* filters) {
   if (filters != nullptr) {
     
   } else {
     
   }
   filters_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filters);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionListRequest.filters)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityListRequest.filters)
 }
 
 // .flyteidl.admin.Sort sort_by = 5;
-inline bool DescriptionListRequest::has_sort_by() const {
+inline bool DescriptionEntityListRequest::has_sort_by() const {
   return this != internal_default_instance() && sort_by_ != nullptr;
 }
-inline const ::flyteidl::admin::Sort& DescriptionListRequest::sort_by() const {
+inline const ::flyteidl::admin::Sort& DescriptionEntityListRequest::sort_by() const {
   const ::flyteidl::admin::Sort* p = sort_by_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionListRequest.sort_by)
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityListRequest.sort_by)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Sort*>(
       &::flyteidl::admin::_Sort_default_instance_);
 }
-inline ::flyteidl::admin::Sort* DescriptionListRequest::release_sort_by() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionListRequest.sort_by)
+inline ::flyteidl::admin::Sort* DescriptionEntityListRequest::release_sort_by() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityListRequest.sort_by)
   
   ::flyteidl::admin::Sort* temp = sort_by_;
   sort_by_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::Sort* DescriptionListRequest::mutable_sort_by() {
+inline ::flyteidl::admin::Sort* DescriptionEntityListRequest::mutable_sort_by() {
   
   if (sort_by_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::admin::Sort>(GetArenaNoVirtual());
     sort_by_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionListRequest.sort_by)
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityListRequest.sort_by)
   return sort_by_;
 }
-inline void DescriptionListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* sort_by) {
+inline void DescriptionEntityListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* sort_by) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(sort_by_);
@@ -2342,7 +2342,7 @@ inline void DescriptionListRequest::set_allocated_sort_by(::flyteidl::admin::Sor
     
   }
   sort_by_ = sort_by;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionListRequest.sort_by)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityListRequest.sort_by)
 }
 
 #ifdef __GNUC__

@@ -2660,7 +2660,7 @@ Fetch existing description entity definitions matching input filters.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
-@return AdminDescriptionList
+@return AdminDescriptionEntityList
 */
 
 type ListDescriptionEntitiesOpts struct { 
@@ -2672,13 +2672,13 @@ type ListDescriptionEntitiesOpts struct {
 	SortByDirection optional.String
 }
 
-func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, descriptionEntityIdName string, localVarOptionals *ListDescriptionEntitiesOpts) (AdminDescriptionList, *http.Response, error) {
+func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, descriptionEntityIdName string, localVarOptionals *ListDescriptionEntitiesOpts) (AdminDescriptionEntityList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AdminDescriptionList
+		localVarReturnValue AdminDescriptionEntityList
 	)
 
 	// create path and map variables
@@ -2757,7 +2757,7 @@ func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, de
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AdminDescriptionList
+			var v AdminDescriptionEntityList
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -2788,7 +2788,7 @@ Fetch existing description entity definitions matching input filters.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
 
-@return AdminDescriptionList
+@return AdminDescriptionEntityList
 */
 
 type ListDescriptionEntities2Opts struct { 
@@ -2801,13 +2801,13 @@ type ListDescriptionEntities2Opts struct {
 	SortByDirection optional.String
 }
 
-func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, localVarOptionals *ListDescriptionEntities2Opts) (AdminDescriptionList, *http.Response, error) {
+func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, localVarOptionals *ListDescriptionEntities2Opts) (AdminDescriptionEntityList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AdminDescriptionList
+		localVarReturnValue AdminDescriptionEntityList
 	)
 
 	// create path and map variables
@@ -2888,7 +2888,7 @@ func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, d
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AdminDescriptionList
+			var v AdminDescriptionEntityList
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

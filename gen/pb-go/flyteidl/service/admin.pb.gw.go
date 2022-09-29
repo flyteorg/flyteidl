@@ -2698,7 +2698,7 @@ var (
 )
 
 func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.DescriptionListRequest
+	var protoReq admin.DescriptionEntityListRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -2758,7 +2758,7 @@ var (
 )
 
 func request_AdminService_ListDescriptionEntities_1(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq admin.DescriptionListRequest
+	var protoReq admin.DescriptionEntityListRequest
 	var metadata runtime.ServerMetadata
 
 	var (

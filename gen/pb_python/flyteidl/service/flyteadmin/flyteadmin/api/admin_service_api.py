@@ -3082,7 +3082,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
-        :return: AdminDescriptionList
+        :return: AdminDescriptionEntityList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3112,7 +3112,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
-        :return: AdminDescriptionList
+        :return: AdminDescriptionEntityList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3194,7 +3194,7 @@ class AdminServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AdminDescriptionList',  # noqa: E501
+            response_type='AdminDescriptionEntityList',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3221,7 +3221,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
-        :return: AdminDescriptionList
+        :return: AdminDescriptionEntityList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3251,7 +3251,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
-        :return: AdminDescriptionList
+        :return: AdminDescriptionEntityList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3329,7 +3329,7 @@ class AdminServiceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AdminDescriptionList',  # noqa: E501
+            response_type='AdminDescriptionEntityList',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.admin',
   syntax='proto3',
   serialized_options=_b('Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin'),
-  serialized_pb=_b('\n\'flyteidl/admin/description_entity.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x9a\x01\n\x11\x44\x65scriptionEntity\x12\x19\n\x11short_description\x18\x01 \x01(\t\x12\x39\n\x10long_description\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12/\n\x0bsource_code\x18\x03 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xd5\x01\n\x0fLongDescription\x12\x0f\n\x05value\x18\x01 \x01(\tH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x12\x41\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\x42\t\n\x07\x63ontent\"\x1a\n\nSourceCode\x12\x0c\n\x04link\x18\x01 \x01(\t\"\x80\x01\n\x1b\x44\x65scriptionEntityIdentifier\x12\x32\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceType\x12\x0f\n\x07project\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"\x86\x01\n\x1e\x44\x65scriptionEntityCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12=\n\x12\x64\x65scription_entity\x18\x02 \x01(\x0b\x32!.flyteidl.admin.DescriptionEntity\"!\n\x1f\x44\x65scriptionEntityCreateResponse\"`\n\x0f\x44\x65scriptionList\x12>\n\x13\x64\x65scriptionEntities\x18\x01 \x03(\x0b\x32!.flyteidl.admin.DescriptionEntity\x12\r\n\x05token\x18\x02 \x01(\t\"\xba\x01\n\x16\x44\x65scriptionListRequest\x12J\n\x15\x64\x65scription_entity_id\x18\x01 \x01(\x0b\x32+.flyteidl.admin.DescriptionEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
+  serialized_pb=_b('\n\'flyteidl/admin/description_entity.proto\x12\x0e\x66lyteidl.admin\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1b\x66lyteidl/admin/common.proto\"\x9a\x01\n\x11\x44\x65scriptionEntity\x12\x19\n\x11short_description\x18\x01 \x01(\t\x12\x39\n\x10long_description\x18\x02 \x01(\x0b\x32\x1f.flyteidl.admin.LongDescription\x12/\n\x0bsource_code\x18\x03 \x01(\x0b\x32\x1a.flyteidl.admin.SourceCode\"\xd5\x01\n\x0fLongDescription\x12\x0f\n\x05value\x18\x01 \x01(\tH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x12\x41\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x31.flyteidl.admin.LongDescription.DescriptionFormat\x12\x11\n\ticon_link\x18\x04 \x01(\t\"A\n\x11\x44\x65scriptionFormat\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0c\n\x08MARKDOWN\x10\x01\x12\x08\n\x04HTML\x10\x02\x12\x07\n\x03RST\x10\x03\x42\t\n\x07\x63ontent\"\x1a\n\nSourceCode\x12\x0c\n\x04link\x18\x01 \x01(\t\"\x80\x01\n\x1b\x44\x65scriptionEntityIdentifier\x12\x32\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceType\x12\x0f\n\x07project\x18\x02 \x01(\t\x12\x0e\n\x06\x64omain\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"\x86\x01\n\x1e\x44\x65scriptionEntityCreateRequest\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12=\n\x12\x64\x65scription_entity\x18\x02 \x01(\x0b\x32!.flyteidl.admin.DescriptionEntity\"!\n\x1f\x44\x65scriptionEntityCreateResponse\"f\n\x15\x44\x65scriptionEntityList\x12>\n\x13\x64\x65scriptionEntities\x18\x01 \x03(\x0b\x32!.flyteidl.admin.DescriptionEntity\x12\r\n\x05token\x18\x02 \x01(\t\"\xc0\x01\n\x1c\x44\x65scriptionEntityListRequest\x12J\n\x15\x64\x65scription_entity_id\x18\x01 \x01(\x0b\x32+.flyteidl.admin.DescriptionEntityIdentifier\x12\r\n\x05limit\x18\x02 \x01(\r\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0f\n\x07\x66ilters\x18\x04 \x01(\t\x12%\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortB7Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/adminb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_admin_dot_common__pb2.DESCRIPTOR,])
 
@@ -305,22 +305,22 @@ _DESCRIPTIONENTITYCREATERESPONSE = _descriptor.Descriptor(
 )
 
 
-_DESCRIPTIONLIST = _descriptor.Descriptor(
-  name='DescriptionList',
-  full_name='flyteidl.admin.DescriptionList',
+_DESCRIPTIONENTITYLIST = _descriptor.Descriptor(
+  name='DescriptionEntityList',
+  full_name='flyteidl.admin.DescriptionEntityList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='descriptionEntities', full_name='flyteidl.admin.DescriptionList.descriptionEntities', index=0,
+      name='descriptionEntities', full_name='flyteidl.admin.DescriptionEntityList.descriptionEntities', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token', full_name='flyteidl.admin.DescriptionList.token', index=1,
+      name='token', full_name='flyteidl.admin.DescriptionEntityList.token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -339,47 +339,47 @@ _DESCRIPTIONLIST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=824,
-  serialized_end=920,
+  serialized_end=926,
 )
 
 
-_DESCRIPTIONLISTREQUEST = _descriptor.Descriptor(
-  name='DescriptionListRequest',
-  full_name='flyteidl.admin.DescriptionListRequest',
+_DESCRIPTIONENTITYLISTREQUEST = _descriptor.Descriptor(
+  name='DescriptionEntityListRequest',
+  full_name='flyteidl.admin.DescriptionEntityListRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='description_entity_id', full_name='flyteidl.admin.DescriptionListRequest.description_entity_id', index=0,
+      name='description_entity_id', full_name='flyteidl.admin.DescriptionEntityListRequest.description_entity_id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='flyteidl.admin.DescriptionListRequest.limit', index=1,
+      name='limit', full_name='flyteidl.admin.DescriptionEntityListRequest.limit', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token', full_name='flyteidl.admin.DescriptionListRequest.token', index=2,
+      name='token', full_name='flyteidl.admin.DescriptionEntityListRequest.token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='filters', full_name='flyteidl.admin.DescriptionListRequest.filters', index=3,
+      name='filters', full_name='flyteidl.admin.DescriptionEntityListRequest.filters', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sort_by', full_name='flyteidl.admin.DescriptionListRequest.sort_by', index=4,
+      name='sort_by', full_name='flyteidl.admin.DescriptionEntityListRequest.sort_by', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -397,8 +397,8 @@ _DESCRIPTIONLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=923,
-  serialized_end=1109,
+  serialized_start=929,
+  serialized_end=1121,
 )
 
 _DESCRIPTIONENTITY.fields_by_name['long_description'].message_type = _LONGDESCRIPTION
@@ -414,17 +414,17 @@ _LONGDESCRIPTION.fields_by_name['uri'].containing_oneof = _LONGDESCRIPTION.oneof
 _DESCRIPTIONENTITYIDENTIFIER.fields_by_name['resource_type'].enum_type = flyteidl_dot_core_dot_identifier__pb2._RESOURCETYPE
 _DESCRIPTIONENTITYCREATEREQUEST.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
 _DESCRIPTIONENTITYCREATEREQUEST.fields_by_name['description_entity'].message_type = _DESCRIPTIONENTITY
-_DESCRIPTIONLIST.fields_by_name['descriptionEntities'].message_type = _DESCRIPTIONENTITY
-_DESCRIPTIONLISTREQUEST.fields_by_name['description_entity_id'].message_type = _DESCRIPTIONENTITYIDENTIFIER
-_DESCRIPTIONLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
+_DESCRIPTIONENTITYLIST.fields_by_name['descriptionEntities'].message_type = _DESCRIPTIONENTITY
+_DESCRIPTIONENTITYLISTREQUEST.fields_by_name['description_entity_id'].message_type = _DESCRIPTIONENTITYIDENTIFIER
+_DESCRIPTIONENTITYLISTREQUEST.fields_by_name['sort_by'].message_type = flyteidl_dot_admin_dot_common__pb2._SORT
 DESCRIPTOR.message_types_by_name['DescriptionEntity'] = _DESCRIPTIONENTITY
 DESCRIPTOR.message_types_by_name['LongDescription'] = _LONGDESCRIPTION
 DESCRIPTOR.message_types_by_name['SourceCode'] = _SOURCECODE
 DESCRIPTOR.message_types_by_name['DescriptionEntityIdentifier'] = _DESCRIPTIONENTITYIDENTIFIER
 DESCRIPTOR.message_types_by_name['DescriptionEntityCreateRequest'] = _DESCRIPTIONENTITYCREATEREQUEST
 DESCRIPTOR.message_types_by_name['DescriptionEntityCreateResponse'] = _DESCRIPTIONENTITYCREATERESPONSE
-DESCRIPTOR.message_types_by_name['DescriptionList'] = _DESCRIPTIONLIST
-DESCRIPTOR.message_types_by_name['DescriptionListRequest'] = _DESCRIPTIONLISTREQUEST
+DESCRIPTOR.message_types_by_name['DescriptionEntityList'] = _DESCRIPTIONENTITYLIST
+DESCRIPTOR.message_types_by_name['DescriptionEntityListRequest'] = _DESCRIPTIONENTITYLISTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DescriptionEntity = _reflection.GeneratedProtocolMessageType('DescriptionEntity', (_message.Message,), dict(
@@ -469,19 +469,19 @@ DescriptionEntityCreateResponse = _reflection.GeneratedProtocolMessageType('Desc
   ))
 _sym_db.RegisterMessage(DescriptionEntityCreateResponse)
 
-DescriptionList = _reflection.GeneratedProtocolMessageType('DescriptionList', (_message.Message,), dict(
-  DESCRIPTOR = _DESCRIPTIONLIST,
+DescriptionEntityList = _reflection.GeneratedProtocolMessageType('DescriptionEntityList', (_message.Message,), dict(
+  DESCRIPTOR = _DESCRIPTIONENTITYLIST,
   __module__ = 'flyteidl.admin.description_entity_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionList)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityList)
   ))
-_sym_db.RegisterMessage(DescriptionList)
+_sym_db.RegisterMessage(DescriptionEntityList)
 
-DescriptionListRequest = _reflection.GeneratedProtocolMessageType('DescriptionListRequest', (_message.Message,), dict(
-  DESCRIPTOR = _DESCRIPTIONLISTREQUEST,
+DescriptionEntityListRequest = _reflection.GeneratedProtocolMessageType('DescriptionEntityListRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DESCRIPTIONENTITYLISTREQUEST,
   __module__ = 'flyteidl.admin.description_entity_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionListRequest)
+  # @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityListRequest)
   ))
-_sym_db.RegisterMessage(DescriptionListRequest)
+_sym_db.RegisterMessage(DescriptionEntityListRequest)
 
 
 DESCRIPTOR._options = None

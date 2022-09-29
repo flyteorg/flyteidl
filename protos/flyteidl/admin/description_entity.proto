@@ -82,7 +82,7 @@ message DescriptionEntityCreateResponse {
 
 // Represents a list of DescriptionEntities returned from the admin.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
-message DescriptionList {
+message DescriptionEntityList {
   // A list of DescriptionEntities returned based on the request.
   repeated DescriptionEntity descriptionEntities = 1;
 
@@ -93,7 +93,7 @@ message DescriptionList {
 
 // Represents a request structure to retrieve a list of DescriptionEntities.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
-message DescriptionListRequest {
+message DescriptionEntityListRequest {
   // Indicates the node execution to filter by.
   // +required
   DescriptionEntityIdentifier description_entity_id = 1;

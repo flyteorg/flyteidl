@@ -506,10 +506,10 @@ var _ interface {
 	ErrorName() string
 } = DescriptionEntityCreateResponseValidationError{}
 
-// Validate checks the field values on DescriptionList with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *DescriptionList) Validate() error {
+// Validate checks the field values on DescriptionEntityList with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *DescriptionEntityList) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -519,7 +519,7 @@ func (m *DescriptionList) Validate() error {
 
 		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
-				return DescriptionListValidationError{
+				return DescriptionEntityListValidationError{
 					field:  fmt.Sprintf("DescriptionEntities[%v]", idx),
 					reason: "embedded message failed validation",
 					cause:  err,
@@ -534,9 +534,9 @@ func (m *DescriptionList) Validate() error {
 	return nil
 }
 
-// DescriptionListValidationError is the validation error returned by
-// DescriptionList.Validate if the designated constraints aren't met.
-type DescriptionListValidationError struct {
+// DescriptionEntityListValidationError is the validation error returned by
+// DescriptionEntityList.Validate if the designated constraints aren't met.
+type DescriptionEntityListValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -544,22 +544,24 @@ type DescriptionListValidationError struct {
 }
 
 // Field function returns field value.
-func (e DescriptionListValidationError) Field() string { return e.field }
+func (e DescriptionEntityListValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e DescriptionListValidationError) Reason() string { return e.reason }
+func (e DescriptionEntityListValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e DescriptionListValidationError) Cause() error { return e.cause }
+func (e DescriptionEntityListValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e DescriptionListValidationError) Key() bool { return e.key }
+func (e DescriptionEntityListValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e DescriptionListValidationError) ErrorName() string { return "DescriptionListValidationError" }
+func (e DescriptionEntityListValidationError) ErrorName() string {
+	return "DescriptionEntityListValidationError"
+}
 
 // Error satisfies the builtin error interface
-func (e DescriptionListValidationError) Error() string {
+func (e DescriptionEntityListValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -571,14 +573,14 @@ func (e DescriptionListValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sDescriptionList.%s: %s%s",
+		"invalid %sDescriptionEntityList.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = DescriptionListValidationError{}
+var _ error = DescriptionEntityListValidationError{}
 
 var _ interface {
 	Field() string
@@ -586,19 +588,19 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = DescriptionListValidationError{}
+} = DescriptionEntityListValidationError{}
 
-// Validate checks the field values on DescriptionListRequest with the rules
-// defined in the proto definition for this message. If any rules are
+// Validate checks the field values on DescriptionEntityListRequest with the
+// rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
-func (m *DescriptionListRequest) Validate() error {
+func (m *DescriptionEntityListRequest) Validate() error {
 	if m == nil {
 		return nil
 	}
 
 	if v, ok := interface{}(m.GetDescriptionEntityId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return DescriptionListRequestValidationError{
+			return DescriptionEntityListRequestValidationError{
 				field:  "DescriptionEntityId",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -614,7 +616,7 @@ func (m *DescriptionListRequest) Validate() error {
 
 	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return DescriptionListRequestValidationError{
+			return DescriptionEntityListRequestValidationError{
 				field:  "SortBy",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -625,9 +627,10 @@ func (m *DescriptionListRequest) Validate() error {
 	return nil
 }
 
-// DescriptionListRequestValidationError is the validation error returned by
-// DescriptionListRequest.Validate if the designated constraints aren't met.
-type DescriptionListRequestValidationError struct {
+// DescriptionEntityListRequestValidationError is the validation error returned
+// by DescriptionEntityListRequest.Validate if the designated constraints
+// aren't met.
+type DescriptionEntityListRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -635,24 +638,24 @@ type DescriptionListRequestValidationError struct {
 }
 
 // Field function returns field value.
-func (e DescriptionListRequestValidationError) Field() string { return e.field }
+func (e DescriptionEntityListRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e DescriptionListRequestValidationError) Reason() string { return e.reason }
+func (e DescriptionEntityListRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e DescriptionListRequestValidationError) Cause() error { return e.cause }
+func (e DescriptionEntityListRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e DescriptionListRequestValidationError) Key() bool { return e.key }
+func (e DescriptionEntityListRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e DescriptionListRequestValidationError) ErrorName() string {
-	return "DescriptionListRequestValidationError"
+func (e DescriptionEntityListRequestValidationError) ErrorName() string {
+	return "DescriptionEntityListRequestValidationError"
 }
 
 // Error satisfies the builtin error interface
-func (e DescriptionListRequestValidationError) Error() string {
+func (e DescriptionEntityListRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -664,14 +667,14 @@ func (e DescriptionListRequestValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sDescriptionListRequest.%s: %s%s",
+		"invalid %sDescriptionEntityListRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = DescriptionListRequestValidationError{}
+var _ error = DescriptionEntityListRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -679,4 +682,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = DescriptionListRequestValidationError{}
+} = DescriptionEntityListRequestValidationError{}

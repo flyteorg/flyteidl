@@ -5459,8 +5459,8 @@ public final class DescriptionEntityOuterClass {
 
   }
 
-  public interface DescriptionListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionList)
+  public interface DescriptionEntityListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionEntityList)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5533,18 +5533,18 @@ public final class DescriptionEntityOuterClass {
    * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.DescriptionList}
+   * Protobuf type {@code flyteidl.admin.DescriptionEntityList}
    */
-  public  static final class DescriptionList extends
+  public  static final class DescriptionEntityList extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionList)
-      DescriptionListOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionEntityList)
+      DescriptionEntityListOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescriptionList.newBuilder() to construct.
-    private DescriptionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DescriptionEntityList.newBuilder() to construct.
+    private DescriptionEntityList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescriptionList() {
+    private DescriptionEntityList() {
       descriptionEntities_ = java.util.Collections.emptyList();
       token_ = "";
     }
@@ -5554,7 +5554,7 @@ public final class DescriptionEntityOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescriptionList(
+    private DescriptionEntityList(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5612,15 +5612,15 @@ public final class DescriptionEntityOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityList_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.Builder.class);
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.Builder.class);
     }
 
     private int bitField0_;
@@ -5769,10 +5769,10 @@ public final class DescriptionEntityOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionList)) {
+      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList)) {
         return super.equals(obj);
       }
-      flyteidl.admin.DescriptionEntityOuterClass.DescriptionList other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) obj;
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList) obj;
 
       if (!getDescriptionEntitiesList()
           .equals(other.getDescriptionEntitiesList())) return false;
@@ -5800,69 +5800,69 @@ public final class DescriptionEntityOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(byte[] data)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseDelimitedFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5875,7 +5875,7 @@ public final class DescriptionEntityOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionList prototype) {
+    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5896,26 +5896,26 @@ public final class DescriptionEntityOuterClass {
      * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.DescriptionList}
+     * Protobuf type {@code flyteidl.admin.DescriptionEntityList}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionList)
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionEntityList)
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.Builder.class);
+                flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.Builder.class);
       }
 
-      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.newBuilder()
+      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5948,17 +5948,17 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityList_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstanceForType() {
-        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.getDefaultInstance();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList getDefaultInstanceForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList build() {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList result = buildPartial();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList build() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5966,8 +5966,8 @@ public final class DescriptionEntityOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList buildPartial() {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionList(this);
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList buildPartial() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (descriptionEntitiesBuilder_ == null) {
@@ -6019,16 +6019,16 @@ public final class DescriptionEntityOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) {
-          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionList)other);
+        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList) {
+          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionList other) {
-        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList other) {
+        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList.getDefaultInstance()) return this;
         if (descriptionEntitiesBuilder_ == null) {
           if (!other.descriptionEntities_.isEmpty()) {
             if (descriptionEntities_.isEmpty()) {
@@ -6074,11 +6074,11 @@ public final class DescriptionEntityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parsedMessage = null;
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6507,48 +6507,48 @@ public final class DescriptionEntityOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionList)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionEntityList)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionList)
-    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityList)
+    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionList();
+      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList();
     }
 
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstance() {
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescriptionList>
-        PARSER = new com.google.protobuf.AbstractParser<DescriptionList>() {
+    private static final com.google.protobuf.Parser<DescriptionEntityList>
+        PARSER = new com.google.protobuf.AbstractParser<DescriptionEntityList>() {
       @java.lang.Override
-      public DescriptionList parsePartialFrom(
+      public DescriptionEntityList parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescriptionList(input, extensionRegistry);
+        return new DescriptionEntityList(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescriptionList> parser() {
+    public static com.google.protobuf.Parser<DescriptionEntityList> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescriptionList> getParserForType() {
+    public com.google.protobuf.Parser<DescriptionEntityList> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstanceForType() {
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityList getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DescriptionListRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionListRequest)
+  public interface DescriptionEntityListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionEntityListRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6667,18 +6667,18 @@ public final class DescriptionEntityOuterClass {
    * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
    * </pre>
    *
-   * Protobuf type {@code flyteidl.admin.DescriptionListRequest}
+   * Protobuf type {@code flyteidl.admin.DescriptionEntityListRequest}
    */
-  public  static final class DescriptionListRequest extends
+  public  static final class DescriptionEntityListRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionListRequest)
-      DescriptionListRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionEntityListRequest)
+      DescriptionEntityListRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescriptionListRequest.newBuilder() to construct.
-    private DescriptionListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DescriptionEntityListRequest.newBuilder() to construct.
+    private DescriptionEntityListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescriptionListRequest() {
+    private DescriptionEntityListRequest() {
       token_ = "";
       filters_ = "";
     }
@@ -6688,7 +6688,7 @@ public final class DescriptionEntityOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescriptionListRequest(
+    private DescriptionEntityListRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6771,15 +6771,15 @@ public final class DescriptionEntityOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityListRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.Builder.class);
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.Builder.class);
     }
 
     public static final int DESCRIPTION_ENTITY_ID_FIELD_NUMBER = 1;
@@ -7026,10 +7026,10 @@ public final class DescriptionEntityOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest)) {
+      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest)) {
         return super.equals(obj);
       }
-      flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) obj;
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest) obj;
 
       if (hasDescriptionEntityId() != other.hasDescriptionEntityId()) return false;
       if (hasDescriptionEntityId()) {
@@ -7077,69 +7077,69 @@ public final class DescriptionEntityOuterClass {
       return hash;
     }
 
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(byte[] data)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(java.io.InputStream input)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseDelimitedFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7152,7 +7152,7 @@ public final class DescriptionEntityOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest prototype) {
+    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -7173,26 +7173,26 @@ public final class DescriptionEntityOuterClass {
      * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
      * </pre>
      *
-     * Protobuf type {@code flyteidl.admin.DescriptionListRequest}
+     * Protobuf type {@code flyteidl.admin.DescriptionEntityListRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionListRequest)
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionEntityListRequest)
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityListRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.Builder.class);
+                flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.Builder.class);
       }
 
-      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.newBuilder()
+      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7234,17 +7234,17 @@ public final class DescriptionEntityOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstanceForType() {
-        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.getDefaultInstance();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest getDefaultInstanceForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest build() {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest result = buildPartial();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest build() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -7252,8 +7252,8 @@ public final class DescriptionEntityOuterClass {
       }
 
       @java.lang.Override
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest buildPartial() {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest(this);
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest buildPartial() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest(this);
         if (descriptionEntityIdBuilder_ == null) {
           result.descriptionEntityId_ = descriptionEntityId_;
         } else {
@@ -7305,16 +7305,16 @@ public final class DescriptionEntityOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) {
-          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest)other);
+        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest) {
+          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest other) {
-        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest other) {
+        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest.getDefaultInstance()) return this;
         if (other.hasDescriptionEntityId()) {
           mergeDescriptionEntityId(other.getDescriptionEntityId());
         }
@@ -7347,11 +7347,11 @@ public final class DescriptionEntityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parsedMessage = null;
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7936,41 +7936,41 @@ public final class DescriptionEntityOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionListRequest)
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionEntityListRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionListRequest)
-    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityListRequest)
+    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest();
+      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest();
     }
 
-    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstance() {
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescriptionListRequest>
-        PARSER = new com.google.protobuf.AbstractParser<DescriptionListRequest>() {
+    private static final com.google.protobuf.Parser<DescriptionEntityListRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DescriptionEntityListRequest>() {
       @java.lang.Override
-      public DescriptionListRequest parsePartialFrom(
+      public DescriptionEntityListRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescriptionListRequest(input, extensionRegistry);
+        return new DescriptionEntityListRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescriptionListRequest> parser() {
+    public static com.google.protobuf.Parser<DescriptionEntityListRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescriptionListRequest> getParserForType() {
+    public com.google.protobuf.Parser<DescriptionEntityListRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstanceForType() {
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityListRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8007,15 +8007,15 @@ public final class DescriptionEntityOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_DescriptionEntityCreateResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_DescriptionList_descriptor;
+    internal_static_flyteidl_admin_DescriptionEntityList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable;
+      internal_static_flyteidl_admin_DescriptionEntityList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+    internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable;
+      internal_static_flyteidl_admin_DescriptionEntityListRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8045,16 +8045,16 @@ public final class DescriptionEntityOuterClass {
       "quest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identi" +
       "fier\022=\n\022description_entity\030\002 \001(\0132!.flyte" +
       "idl.admin.DescriptionEntity\"!\n\037Descripti" +
-      "onEntityCreateResponse\"`\n\017DescriptionLis" +
-      "t\022>\n\023descriptionEntities\030\001 \003(\0132!.flyteid" +
-      "l.admin.DescriptionEntity\022\r\n\005token\030\002 \001(\t" +
-      "\"\272\001\n\026DescriptionListRequest\022J\n\025descripti" +
-      "on_entity_id\030\001 \001(\0132+.flyteidl.admin.Desc" +
-      "riptionEntityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r" +
-      "\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_b" +
-      "y\030\005 \001(\0132\024.flyteidl.admin.SortB7Z5github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/adminb\006proto3"
+      "onEntityCreateResponse\"f\n\025DescriptionEnt" +
+      "ityList\022>\n\023descriptionEntities\030\001 \003(\0132!.f" +
+      "lyteidl.admin.DescriptionEntity\022\r\n\005token" +
+      "\030\002 \001(\t\"\300\001\n\034DescriptionEntityListRequest\022" +
+      "J\n\025description_entity_id\030\001 \001(\0132+.flyteid" +
+      "l.admin.DescriptionEntityIdentifier\022\r\n\005l" +
+      "imit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001" +
+      "(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin.Sor" +
+      "tB7Z5github.com/flyteorg/flyteidl/gen/pb" +
+      "-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8106,17 +8106,17 @@ public final class DescriptionEntityOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DescriptionEntityCreateResponse_descriptor,
         new java.lang.String[] { });
-    internal_static_flyteidl_admin_DescriptionList_descriptor =
+    internal_static_flyteidl_admin_DescriptionEntityList_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable = new
+    internal_static_flyteidl_admin_DescriptionEntityList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_DescriptionList_descriptor,
+        internal_static_flyteidl_admin_DescriptionEntityList_descriptor,
         new java.lang.String[] { "DescriptionEntities", "Token", });
-    internal_static_flyteidl_admin_DescriptionListRequest_descriptor =
+    internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable = new
+    internal_static_flyteidl_admin_DescriptionEntityListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_DescriptionListRequest_descriptor,
+        internal_static_flyteidl_admin_DescriptionEntityListRequest_descriptor,
         new java.lang.String[] { "DescriptionEntityId", "Limit", "Token", "Filters", "SortBy", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
