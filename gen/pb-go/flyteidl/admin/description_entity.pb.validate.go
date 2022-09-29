@@ -16,6 +16,8 @@ import (
 	"unicode/utf8"
 
 	"github.com/golang/protobuf/ptypes"
+
+	core "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core"
 )
 
 // ensure the imports are used
@@ -31,6 +33,8 @@ var (
 	_ = (*url.URL)(nil)
 	_ = (*mail.Address)(nil)
 	_ = ptypes.DynamicAny{}
+
+	_ = core.ResourceType(0)
 )
 
 // define the regex for a UUID once up-front
@@ -270,6 +274,82 @@ var _ interface {
 	ErrorName() string
 } = SourceCodeValidationError{}
 
+// Validate checks the field values on DescriptionEntityIdentifier with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *DescriptionEntityIdentifier) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	// no validation rules for ResourceType
+
+	// no validation rules for Project
+
+	// no validation rules for Domain
+
+	// no validation rules for Name
+
+	return nil
+}
+
+// DescriptionEntityIdentifierValidationError is the validation error returned
+// by DescriptionEntityIdentifier.Validate if the designated constraints
+// aren't met.
+type DescriptionEntityIdentifierValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DescriptionEntityIdentifierValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DescriptionEntityIdentifierValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DescriptionEntityIdentifierValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DescriptionEntityIdentifierValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DescriptionEntityIdentifierValidationError) ErrorName() string {
+	return "DescriptionEntityIdentifierValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DescriptionEntityIdentifierValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDescriptionEntityIdentifier.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DescriptionEntityIdentifierValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DescriptionEntityIdentifierValidationError{}
+
 // Validate checks the field values on DescriptionEntityCreateRequest with the
 // rules defined in the proto definition for this message. If any rules are
 // violated, an error is returned.
@@ -425,3 +505,178 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = DescriptionEntityCreateResponseValidationError{}
+
+// Validate checks the field values on DescriptionList with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *DescriptionList) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetDescriptionEntities() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return DescriptionListValidationError{
+					field:  fmt.Sprintf("DescriptionEntities[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	// no validation rules for Token
+
+	return nil
+}
+
+// DescriptionListValidationError is the validation error returned by
+// DescriptionList.Validate if the designated constraints aren't met.
+type DescriptionListValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DescriptionListValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DescriptionListValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DescriptionListValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DescriptionListValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DescriptionListValidationError) ErrorName() string { return "DescriptionListValidationError" }
+
+// Error satisfies the builtin error interface
+func (e DescriptionListValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDescriptionList.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DescriptionListValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DescriptionListValidationError{}
+
+// Validate checks the field values on DescriptionListRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *DescriptionListRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetDescriptionEntityId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DescriptionListRequestValidationError{
+				field:  "DescriptionEntityId",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	// no validation rules for Limit
+
+	// no validation rules for Token
+
+	// no validation rules for Filters
+
+	if v, ok := interface{}(m.GetSortBy()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DescriptionListRequestValidationError{
+				field:  "SortBy",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// DescriptionListRequestValidationError is the validation error returned by
+// DescriptionListRequest.Validate if the designated constraints aren't met.
+type DescriptionListRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e DescriptionListRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e DescriptionListRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e DescriptionListRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e DescriptionListRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e DescriptionListRequestValidationError) ErrorName() string {
+	return "DescriptionListRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e DescriptionListRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sDescriptionListRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = DescriptionListRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = DescriptionListRequestValidationError{}

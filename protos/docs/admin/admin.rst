@@ -814,6 +814,79 @@ Purposefully empty, may be populated in the future.
 
 
 
+.. _ref_flyteidl.admin.DescriptionEntityIdentifier:
+
+DescriptionEntityIdentifier
+------------------------------------------------------------------
+
+Encapsulation of fields that uniquely identifies a Flyte description entity
+
+
+
+.. csv-table:: DescriptionEntityIdentifier type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "resource_type", ":ref:`ref_flyteidl.core.ResourceType`", "", "Identifies the specific type of resource that this identifier corresponds to."
+   "project", ":ref:`ref_string`", "", "Name of the project the resource belongs to."
+   "domain", ":ref:`ref_string`", "", "Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project."
+   "name", ":ref:`ref_string`", "", "User or system provided value for the resource."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DescriptionList:
+
+DescriptionList
+------------------------------------------------------------------
+
+Represents a list of DescriptionEntities returned from the admin.
+See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+
+
+
+.. csv-table:: DescriptionList type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "descriptionEntities", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "repeated", "A list of DescriptionEntities returned based on the request."
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. If there are no more results, this value will be empty."
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DescriptionListRequest:
+
+DescriptionListRequest
+------------------------------------------------------------------
+
+Represents a request structure to retrieve a list of DescriptionEntities.
+See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+
+
+
+.. csv-table:: DescriptionListRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "description_entity_id", ":ref:`ref_flyteidl.admin.DescriptionEntityIdentifier`", "", "Indicates the node execution to filter by. +required"
+   "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned. +required"
+   "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
+   "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
+   "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering for returned list. +optional"
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.LongDescription:
 
 LongDescription

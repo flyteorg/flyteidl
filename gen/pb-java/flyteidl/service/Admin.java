@@ -38,7 +38,7 @@ public final class Admin {
       "n/version.proto\032\033flyteidl/admin/common.p" +
       "roto\032\'flyteidl/admin/description_entity." +
       "proto\032,protoc-gen-swagger/options/annota" +
-      "tions.proto2\230m\n\014AdminService\022\305\002\n\nCreateT" +
+      "tions.proto2\312o\n\014AdminService\022\305\002\n\nCreateT" +
       "ask\022!.flyteidl.admin.TaskCreateRequest\032\"" +
       ".flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344" +
       "\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and re" +
@@ -387,9 +387,17 @@ public final class Admin {
       "Entity\"\215\001\202\323\344\223\002N\022L/api/v1/description_ent" +
       "ities/{id.project}/{id.domain}/{id.name}" +
       "/{id.version}\222A6\0324Retrieve an existing d" +
-      "escription entity description.B9Z7github" +
-      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
-      "l/serviceb\006proto3"
+      "escription entity description.\022\257\002\n\027ListD" +
+      "escriptionEntities\022&.flyteidl.admin.Desc" +
+      "riptionListRequest\032\037.flyteidl.admin.Desc" +
+      "riptionList\"\312\001\202\323\344\223\002z\022?/api/v1/descriptio" +
+      "n_entities/{id.project}/{id.domain}/{id." +
+      "name}Z7\0225/api/v1/description_entities/{i" +
+      "d.project}/{id.domain}\222AG\032EFetch existin" +
+      "g description entity definitions matchin" +
+      "g input filters.B9Z7github.com/flyteorg/" +
+      "flyteidl/gen/pb-go/flyteidl/serviceb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

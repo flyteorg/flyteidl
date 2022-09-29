@@ -47,6 +47,22 @@ message SourceCode {
   string link = 1;
 }
 
+// Encapsulation of fields that uniquely identifies a Flyte description entity
+message DescriptionEntityIdentifier {
+  // Identifies the specific type of resource that this identifier corresponds to.
+  flyteidl.core.ResourceType resource_type  = 1;
+
+  // Name of the project the resource belongs to.
+  string project              = 2;
+
+  // Name of the domain the resource belongs to.
+  // A domain can be considered as a subset within a specific project.
+  string domain               = 3;
+
+  // User or system provided value for the resource.
+  string name                 = 4;
+}
+
 // Represents a request structure to create a revision of a description entity.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 message DescriptionEntityCreateRequest {
@@ -62,4 +78,41 @@ message DescriptionEntityCreateRequest {
 // Represents a response structure if description entity creation succeeds.
 message DescriptionEntityCreateResponse {
   // Purposefully empty, may be populated in the future.
+}
+
+// Represents a list of DescriptionEntities returned from the admin.
+// See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+message DescriptionList {
+  // A list of DescriptionEntities returned based on the request.
+  repeated DescriptionEntity descriptionEntities = 1;
+
+  // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+  // in a query. If there are no more results, this value will be empty.
+  string token                = 2;
+}
+
+// Represents a request structure to retrieve a list of DescriptionEntities.
+// See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+message DescriptionListRequest {
+  // Indicates the node execution to filter by.
+  // +required
+  DescriptionEntityIdentifier description_entity_id = 1;
+
+  // Indicates the number of resources to be returned.
+  // +required
+  uint32 limit    = 2;
+
+  // In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+  // in a query.
+  // +optional
+  string token    = 3;
+
+  // Indicates a list of filters passed as string.
+  // More info on constructing filters : <Link>
+  // +optional
+  string filters  = 4;
+
+  // Sort ordering for returned list.
+  // +optional
+  Sort sort_by    = 5;
 }

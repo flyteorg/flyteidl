@@ -21203,6 +21203,175 @@ export const flyteidl = $root.flyteidl = (() => {
             return SourceCode;
         })();
 
+        admin.DescriptionEntityIdentifier = (function() {
+
+            /**
+             * Properties of a DescriptionEntityIdentifier.
+             * @memberof flyteidl.admin
+             * @interface IDescriptionEntityIdentifier
+             * @property {flyteidl.core.ResourceType|null} [resourceType] DescriptionEntityIdentifier resourceType
+             * @property {string|null} [project] DescriptionEntityIdentifier project
+             * @property {string|null} [domain] DescriptionEntityIdentifier domain
+             * @property {string|null} [name] DescriptionEntityIdentifier name
+             */
+
+            /**
+             * Constructs a new DescriptionEntityIdentifier.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a DescriptionEntityIdentifier.
+             * @implements IDescriptionEntityIdentifier
+             * @constructor
+             * @param {flyteidl.admin.IDescriptionEntityIdentifier=} [properties] Properties to set
+             */
+            function DescriptionEntityIdentifier(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DescriptionEntityIdentifier resourceType.
+             * @member {flyteidl.core.ResourceType} resourceType
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @instance
+             */
+            DescriptionEntityIdentifier.prototype.resourceType = 0;
+
+            /**
+             * DescriptionEntityIdentifier project.
+             * @member {string} project
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @instance
+             */
+            DescriptionEntityIdentifier.prototype.project = "";
+
+            /**
+             * DescriptionEntityIdentifier domain.
+             * @member {string} domain
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @instance
+             */
+            DescriptionEntityIdentifier.prototype.domain = "";
+
+            /**
+             * DescriptionEntityIdentifier name.
+             * @member {string} name
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @instance
+             */
+            DescriptionEntityIdentifier.prototype.name = "";
+
+            /**
+             * Creates a new DescriptionEntityIdentifier instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @static
+             * @param {flyteidl.admin.IDescriptionEntityIdentifier=} [properties] Properties to set
+             * @returns {flyteidl.admin.DescriptionEntityIdentifier} DescriptionEntityIdentifier instance
+             */
+            DescriptionEntityIdentifier.create = function create(properties) {
+                return new DescriptionEntityIdentifier(properties);
+            };
+
+            /**
+             * Encodes the specified DescriptionEntityIdentifier message. Does not implicitly {@link flyteidl.admin.DescriptionEntityIdentifier.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @static
+             * @param {flyteidl.admin.IDescriptionEntityIdentifier} message DescriptionEntityIdentifier message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DescriptionEntityIdentifier.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.resourceType);
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.project);
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.domain);
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
+                return writer;
+            };
+
+            /**
+             * Decodes a DescriptionEntityIdentifier message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.DescriptionEntityIdentifier} DescriptionEntityIdentifier
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DescriptionEntityIdentifier.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.DescriptionEntityIdentifier();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.resourceType = reader.int32();
+                        break;
+                    case 2:
+                        message.project = reader.string();
+                        break;
+                    case 3:
+                        message.domain = reader.string();
+                        break;
+                    case 4:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DescriptionEntityIdentifier message.
+             * @function verify
+             * @memberof flyteidl.admin.DescriptionEntityIdentifier
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DescriptionEntityIdentifier.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        break;
+                    }
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                return null;
+            };
+
+            return DescriptionEntityIdentifier;
+        })();
+
         admin.DescriptionEntityCreateRequest = (function() {
 
             /**
@@ -21425,6 +21594,325 @@ export const flyteidl = $root.flyteidl = (() => {
             };
 
             return DescriptionEntityCreateResponse;
+        })();
+
+        admin.DescriptionList = (function() {
+
+            /**
+             * Properties of a DescriptionList.
+             * @memberof flyteidl.admin
+             * @interface IDescriptionList
+             * @property {Array.<flyteidl.admin.IDescriptionEntity>|null} [descriptionEntities] DescriptionList descriptionEntities
+             * @property {string|null} [token] DescriptionList token
+             */
+
+            /**
+             * Constructs a new DescriptionList.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a DescriptionList.
+             * @implements IDescriptionList
+             * @constructor
+             * @param {flyteidl.admin.IDescriptionList=} [properties] Properties to set
+             */
+            function DescriptionList(properties) {
+                this.descriptionEntities = [];
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DescriptionList descriptionEntities.
+             * @member {Array.<flyteidl.admin.IDescriptionEntity>} descriptionEntities
+             * @memberof flyteidl.admin.DescriptionList
+             * @instance
+             */
+            DescriptionList.prototype.descriptionEntities = $util.emptyArray;
+
+            /**
+             * DescriptionList token.
+             * @member {string} token
+             * @memberof flyteidl.admin.DescriptionList
+             * @instance
+             */
+            DescriptionList.prototype.token = "";
+
+            /**
+             * Creates a new DescriptionList instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.DescriptionList
+             * @static
+             * @param {flyteidl.admin.IDescriptionList=} [properties] Properties to set
+             * @returns {flyteidl.admin.DescriptionList} DescriptionList instance
+             */
+            DescriptionList.create = function create(properties) {
+                return new DescriptionList(properties);
+            };
+
+            /**
+             * Encodes the specified DescriptionList message. Does not implicitly {@link flyteidl.admin.DescriptionList.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.DescriptionList
+             * @static
+             * @param {flyteidl.admin.IDescriptionList} message DescriptionList message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DescriptionList.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.descriptionEntities != null && message.descriptionEntities.length)
+                    for (let i = 0; i < message.descriptionEntities.length; ++i)
+                        $root.flyteidl.admin.DescriptionEntity.encode(message.descriptionEntities[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
+                return writer;
+            };
+
+            /**
+             * Decodes a DescriptionList message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.DescriptionList
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.DescriptionList} DescriptionList
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DescriptionList.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.DescriptionList();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.descriptionEntities && message.descriptionEntities.length))
+                            message.descriptionEntities = [];
+                        message.descriptionEntities.push($root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.token = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DescriptionList message.
+             * @function verify
+             * @memberof flyteidl.admin.DescriptionList
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DescriptionList.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.descriptionEntities != null && message.hasOwnProperty("descriptionEntities")) {
+                    if (!Array.isArray(message.descriptionEntities))
+                        return "descriptionEntities: array expected";
+                    for (let i = 0; i < message.descriptionEntities.length; ++i) {
+                        let error = $root.flyteidl.admin.DescriptionEntity.verify(message.descriptionEntities[i]);
+                        if (error)
+                            return "descriptionEntities." + error;
+                    }
+                }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                return null;
+            };
+
+            return DescriptionList;
+        })();
+
+        admin.DescriptionListRequest = (function() {
+
+            /**
+             * Properties of a DescriptionListRequest.
+             * @memberof flyteidl.admin
+             * @interface IDescriptionListRequest
+             * @property {flyteidl.admin.IDescriptionEntityIdentifier|null} [descriptionEntityId] DescriptionListRequest descriptionEntityId
+             * @property {number|null} [limit] DescriptionListRequest limit
+             * @property {string|null} [token] DescriptionListRequest token
+             * @property {string|null} [filters] DescriptionListRequest filters
+             * @property {flyteidl.admin.ISort|null} [sortBy] DescriptionListRequest sortBy
+             */
+
+            /**
+             * Constructs a new DescriptionListRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a DescriptionListRequest.
+             * @implements IDescriptionListRequest
+             * @constructor
+             * @param {flyteidl.admin.IDescriptionListRequest=} [properties] Properties to set
+             */
+            function DescriptionListRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * DescriptionListRequest descriptionEntityId.
+             * @member {flyteidl.admin.IDescriptionEntityIdentifier|null|undefined} descriptionEntityId
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @instance
+             */
+            DescriptionListRequest.prototype.descriptionEntityId = null;
+
+            /**
+             * DescriptionListRequest limit.
+             * @member {number} limit
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @instance
+             */
+            DescriptionListRequest.prototype.limit = 0;
+
+            /**
+             * DescriptionListRequest token.
+             * @member {string} token
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @instance
+             */
+            DescriptionListRequest.prototype.token = "";
+
+            /**
+             * DescriptionListRequest filters.
+             * @member {string} filters
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @instance
+             */
+            DescriptionListRequest.prototype.filters = "";
+
+            /**
+             * DescriptionListRequest sortBy.
+             * @member {flyteidl.admin.ISort|null|undefined} sortBy
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @instance
+             */
+            DescriptionListRequest.prototype.sortBy = null;
+
+            /**
+             * Creates a new DescriptionListRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @static
+             * @param {flyteidl.admin.IDescriptionListRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.DescriptionListRequest} DescriptionListRequest instance
+             */
+            DescriptionListRequest.create = function create(properties) {
+                return new DescriptionListRequest(properties);
+            };
+
+            /**
+             * Encodes the specified DescriptionListRequest message. Does not implicitly {@link flyteidl.admin.DescriptionListRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @static
+             * @param {flyteidl.admin.IDescriptionListRequest} message DescriptionListRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DescriptionListRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.descriptionEntityId != null && message.hasOwnProperty("descriptionEntityId"))
+                    $root.flyteidl.admin.DescriptionEntityIdentifier.encode(message.descriptionEntityId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.limit);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
+                if (message.sortBy != null && message.hasOwnProperty("sortBy"))
+                    $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a DescriptionListRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.DescriptionListRequest} DescriptionListRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DescriptionListRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.DescriptionListRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.descriptionEntityId = $root.flyteidl.admin.DescriptionEntityIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.limit = reader.uint32();
+                        break;
+                    case 3:
+                        message.token = reader.string();
+                        break;
+                    case 4:
+                        message.filters = reader.string();
+                        break;
+                    case 5:
+                        message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a DescriptionListRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.DescriptionListRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DescriptionListRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.descriptionEntityId != null && message.hasOwnProperty("descriptionEntityId")) {
+                    let error = $root.flyteidl.admin.DescriptionEntityIdentifier.verify(message.descriptionEntityId);
+                    if (error)
+                        return "descriptionEntityId." + error;
+                }
+                if (message.limit != null && message.hasOwnProperty("limit"))
+                    if (!$util.isInteger(message.limit))
+                        return "limit: integer expected";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.filters != null && message.hasOwnProperty("filters"))
+                    if (!$util.isString(message.filters))
+                        return "filters: string expected";
+                if (message.sortBy != null && message.hasOwnProperty("sortBy")) {
+                    let error = $root.flyteidl.admin.Sort.verify(message.sortBy);
+                    if (error)
+                        return "sortBy." + error;
+                }
+                return null;
+            };
+
+            return DescriptionListRequest;
         })();
 
         admin.EventErrorAlreadyInTerminalState = (function() {
@@ -39857,6 +40345,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IObjectGetRequest} request ObjectGetRequest message or plain object
              * @returns {Promise<flyteidl.admin.DescriptionEntity>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#listDescriptionEntities}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef ListDescriptionEntitiesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.DescriptionList} [response] DescriptionList
+             */
+
+            /**
+             * Calls ListDescriptionEntities.
+             * @function listDescriptionEntities
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IDescriptionListRequest} request DescriptionListRequest message or plain object
+             * @param {flyteidl.service.AdminService.ListDescriptionEntitiesCallback} callback Node-style callback called with the error, if any, and DescriptionList
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.listDescriptionEntities = function listDescriptionEntities(request, callback) {
+                return this.rpcCall(listDescriptionEntities, $root.flyteidl.admin.DescriptionListRequest, $root.flyteidl.admin.DescriptionList, request, callback);
+            }, "name", { value: "ListDescriptionEntities" });
+
+            /**
+             * Calls ListDescriptionEntities.
+             * @function listDescriptionEntities
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IDescriptionListRequest} request DescriptionListRequest message or plain object
+             * @returns {Promise<flyteidl.admin.DescriptionList>} Promise
              * @variation 2
              */
 

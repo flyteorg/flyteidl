@@ -3002,6 +3002,1084 @@ public final class DescriptionEntityOuterClass {
 
   }
 
+  public interface DescriptionEntityIdentifierOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionEntityIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Identifies the specific type of resource that this identifier corresponds to.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+     */
+    int getResourceTypeValue();
+    /**
+     * <pre>
+     * Identifies the specific type of resource that this identifier corresponds to.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+     */
+    flyteidl.core.IdentifierOuterClass.ResourceType getResourceType();
+
+    /**
+     * <pre>
+     * Name of the project the resource belongs to.
+     * </pre>
+     *
+     * <code>string project = 2;</code>
+     */
+    java.lang.String getProject();
+    /**
+     * <pre>
+     * Name of the project the resource belongs to.
+     * </pre>
+     *
+     * <code>string project = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getProjectBytes();
+
+    /**
+     * <pre>
+     * Name of the domain the resource belongs to.
+     * A domain can be considered as a subset within a specific project.
+     * </pre>
+     *
+     * <code>string domain = 3;</code>
+     */
+    java.lang.String getDomain();
+    /**
+     * <pre>
+     * Name of the domain the resource belongs to.
+     * A domain can be considered as a subset within a specific project.
+     * </pre>
+     *
+     * <code>string domain = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+
+    /**
+     * <pre>
+     * User or system provided value for the resource.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * User or system provided value for the resource.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * <pre>
+   * Encapsulation of fields that uniquely identifies a Flyte description entity
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.DescriptionEntityIdentifier}
+   */
+  public  static final class DescriptionEntityIdentifier extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionEntityIdentifier)
+      DescriptionEntityIdentifierOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescriptionEntityIdentifier.newBuilder() to construct.
+    private DescriptionEntityIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescriptionEntityIdentifier() {
+      resourceType_ = 0;
+      project_ = "";
+      domain_ = "";
+      name_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescriptionEntityIdentifier(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              resourceType_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder.class);
+    }
+
+    public static final int RESOURCE_TYPE_FIELD_NUMBER = 1;
+    private int resourceType_;
+    /**
+     * <pre>
+     * Identifies the specific type of resource that this identifier corresponds to.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+     */
+    public int getResourceTypeValue() {
+      return resourceType_;
+    }
+    /**
+     * <pre>
+     * Identifies the specific type of resource that this identifier corresponds to.
+     * </pre>
+     *
+     * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+     */
+    public flyteidl.core.IdentifierOuterClass.ResourceType getResourceType() {
+      @SuppressWarnings("deprecation")
+      flyteidl.core.IdentifierOuterClass.ResourceType result = flyteidl.core.IdentifierOuterClass.ResourceType.valueOf(resourceType_);
+      return result == null ? flyteidl.core.IdentifierOuterClass.ResourceType.UNRECOGNIZED : result;
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object project_;
+    /**
+     * <pre>
+     * Name of the project the resource belongs to.
+     * </pre>
+     *
+     * <code>string project = 2;</code>
+     */
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the project the resource belongs to.
+     * </pre>
+     *
+     * <code>string project = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object domain_;
+    /**
+     * <pre>
+     * Name of the domain the resource belongs to.
+     * A domain can be considered as a subset within a specific project.
+     * </pre>
+     *
+     * <code>string domain = 3;</code>
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the domain the resource belongs to.
+     * A domain can be considered as a subset within a specific project.
+     * </pre>
+     *
+     * <code>string domain = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * User or system provided value for the resource.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * User or system provided value for the resource.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resourceType_ != flyteidl.core.IdentifierOuterClass.ResourceType.UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, resourceType_);
+      }
+      if (!getProjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, project_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, domain_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resourceType_ != flyteidl.core.IdentifierOuterClass.ResourceType.UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, resourceType_);
+      }
+      if (!getProjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, project_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, domain_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier) obj;
+
+      if (resourceType_ != other.resourceType_) return false;
+      if (!getProject()
+          .equals(other.getProject())) return false;
+      if (!getDomain()
+          .equals(other.getDomain())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + resourceType_;
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Encapsulation of fields that uniquely identifies a Flyte description entity
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.DescriptionEntityIdentifier}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionEntityIdentifier)
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        resourceType_ = 0;
+
+        project_ = "";
+
+        domain_ = "";
+
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDefaultInstanceForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier build() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier buildPartial() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier(this);
+        result.resourceType_ = resourceType_;
+        result.project_ = project_;
+        result.domain_ = domain_;
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier) {
+          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier other) {
+        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.getDefaultInstance()) return this;
+        if (other.resourceType_ != 0) {
+          setResourceTypeValue(other.getResourceTypeValue());
+        }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          onChanged();
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int resourceType_ = 0;
+      /**
+       * <pre>
+       * Identifies the specific type of resource that this identifier corresponds to.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+       */
+      public int getResourceTypeValue() {
+        return resourceType_;
+      }
+      /**
+       * <pre>
+       * Identifies the specific type of resource that this identifier corresponds to.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+       */
+      public Builder setResourceTypeValue(int value) {
+        resourceType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the specific type of resource that this identifier corresponds to.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+       */
+      public flyteidl.core.IdentifierOuterClass.ResourceType getResourceType() {
+        @SuppressWarnings("deprecation")
+        flyteidl.core.IdentifierOuterClass.ResourceType result = flyteidl.core.IdentifierOuterClass.ResourceType.valueOf(resourceType_);
+        return result == null ? flyteidl.core.IdentifierOuterClass.ResourceType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Identifies the specific type of resource that this identifier corresponds to.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+       */
+      public Builder setResourceType(flyteidl.core.IdentifierOuterClass.ResourceType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        resourceType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the specific type of resource that this identifier corresponds to.
+       * </pre>
+       *
+       * <code>.flyteidl.core.ResourceType resource_type = 1;</code>
+       */
+      public Builder clearResourceType() {
+        
+        resourceType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object project_ = "";
+      /**
+       * <pre>
+       * Name of the project the resource belongs to.
+       * </pre>
+       *
+       * <code>string project = 2;</code>
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the project the resource belongs to.
+       * </pre>
+       *
+       * <code>string project = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the project the resource belongs to.
+       * </pre>
+       *
+       * <code>string project = 2;</code>
+       */
+      public Builder setProject(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        project_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the project the resource belongs to.
+       * </pre>
+       *
+       * <code>string project = 2;</code>
+       */
+      public Builder clearProject() {
+        
+        project_ = getDefaultInstance().getProject();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the project the resource belongs to.
+       * </pre>
+       *
+       * <code>string project = 2;</code>
+       */
+      public Builder setProjectBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        project_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <pre>
+       * Name of the domain the resource belongs to.
+       * A domain can be considered as a subset within a specific project.
+       * </pre>
+       *
+       * <code>string domain = 3;</code>
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the domain the resource belongs to.
+       * A domain can be considered as a subset within a specific project.
+       * </pre>
+       *
+       * <code>string domain = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the domain the resource belongs to.
+       * A domain can be considered as a subset within a specific project.
+       * </pre>
+       *
+       * <code>string domain = 3;</code>
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the domain the resource belongs to.
+       * A domain can be considered as a subset within a specific project.
+       * </pre>
+       *
+       * <code>string domain = 3;</code>
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the domain the resource belongs to.
+       * A domain can be considered as a subset within a specific project.
+       * </pre>
+       *
+       * <code>string domain = 3;</code>
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * User or system provided value for the resource.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User or system provided value for the resource.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * User or system provided value for the resource.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User or system provided value for the resource.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * User or system provided value for the resource.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionEntityIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityIdentifier)
+    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier();
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescriptionEntityIdentifier>
+        PARSER = new com.google.protobuf.AbstractParser<DescriptionEntityIdentifier>() {
+      @java.lang.Override
+      public DescriptionEntityIdentifier parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescriptionEntityIdentifier(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescriptionEntityIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescriptionEntityIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DescriptionEntityCreateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionEntityCreateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -4381,6 +5459,2523 @@ public final class DescriptionEntityOuterClass {
 
   }
 
+  public interface DescriptionListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> 
+        getDescriptionEntitiesList();
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntities(int index);
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    int getDescriptionEntitiesCount();
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    java.util.List<? extends flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+        getDescriptionEntitiesOrBuilderList();
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntitiesOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * <pre>
+   * Represents a list of DescriptionEntities returned from the admin.
+   * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.DescriptionList}
+   */
+  public  static final class DescriptionList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionList)
+      DescriptionListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescriptionList.newBuilder() to construct.
+    private DescriptionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescriptionList() {
+      descriptionEntities_ = java.util.Collections.emptyList();
+      token_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescriptionList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                descriptionEntities_ = new java.util.ArrayList<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              descriptionEntities_.add(
+                  input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          descriptionEntities_ = java.util.Collections.unmodifiableList(descriptionEntities_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DESCRIPTIONENTITIES_FIELD_NUMBER = 1;
+    private java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> descriptionEntities_;
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    public java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> getDescriptionEntitiesList() {
+      return descriptionEntities_;
+    }
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+        getDescriptionEntitiesOrBuilderList() {
+      return descriptionEntities_;
+    }
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    public int getDescriptionEntitiesCount() {
+      return descriptionEntities_.size();
+    }
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntities(int index) {
+      return descriptionEntities_.get(index);
+    }
+    /**
+     * <pre>
+     * A list of DescriptionEntities returned based on the request.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntitiesOrBuilder(
+        int index) {
+      return descriptionEntities_.get(index);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object token_;
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query. If there are no more results, this value will be empty.
+     * </pre>
+     *
+     * <code>string token = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < descriptionEntities_.size(); i++) {
+        output.writeMessage(1, descriptionEntities_.get(i));
+      }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < descriptionEntities_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, descriptionEntities_.get(i));
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionList)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionList other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) obj;
+
+      if (!getDescriptionEntitiesList()
+          .equals(other.getDescriptionEntitiesList())) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDescriptionEntitiesCount() > 0) {
+        hash = (37 * hash) + DESCRIPTIONENTITIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntitiesList().hashCode();
+      }
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a list of DescriptionEntities returned from the admin.
+     * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.DescriptionList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionList)
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDescriptionEntitiesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (descriptionEntitiesBuilder_ == null) {
+          descriptionEntities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          descriptionEntitiesBuilder_.clear();
+        }
+        token_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionList_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstanceForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList build() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList buildPartial() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionList(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (descriptionEntitiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            descriptionEntities_ = java.util.Collections.unmodifiableList(descriptionEntities_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.descriptionEntities_ = descriptionEntities_;
+        } else {
+          result.descriptionEntities_ = descriptionEntitiesBuilder_.build();
+        }
+        result.token_ = token_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) {
+          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionList other) {
+        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionList.getDefaultInstance()) return this;
+        if (descriptionEntitiesBuilder_ == null) {
+          if (!other.descriptionEntities_.isEmpty()) {
+            if (descriptionEntities_.isEmpty()) {
+              descriptionEntities_ = other.descriptionEntities_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDescriptionEntitiesIsMutable();
+              descriptionEntities_.addAll(other.descriptionEntities_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.descriptionEntities_.isEmpty()) {
+            if (descriptionEntitiesBuilder_.isEmpty()) {
+              descriptionEntitiesBuilder_.dispose();
+              descriptionEntitiesBuilder_ = null;
+              descriptionEntities_ = other.descriptionEntities_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              descriptionEntitiesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDescriptionEntitiesFieldBuilder() : null;
+            } else {
+              descriptionEntitiesBuilder_.addAllMessages(other.descriptionEntities_);
+            }
+          }
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> descriptionEntities_ =
+        java.util.Collections.emptyList();
+      private void ensureDescriptionEntitiesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          descriptionEntities_ = new java.util.ArrayList<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity>(descriptionEntities_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntitiesBuilder_;
+
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> getDescriptionEntitiesList() {
+        if (descriptionEntitiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(descriptionEntities_);
+        } else {
+          return descriptionEntitiesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public int getDescriptionEntitiesCount() {
+        if (descriptionEntitiesBuilder_ == null) {
+          return descriptionEntities_.size();
+        } else {
+          return descriptionEntitiesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntities(int index) {
+        if (descriptionEntitiesBuilder_ == null) {
+          return descriptionEntities_.get(index);
+        } else {
+          return descriptionEntitiesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder setDescriptionEntities(
+          int index, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.set(index, value);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder setDescriptionEntities(
+          int index, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntitiesBuilder_ == null) {
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder addDescriptionEntities(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.add(value);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder addDescriptionEntities(
+          int index, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.add(index, value);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder addDescriptionEntities(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntitiesBuilder_ == null) {
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.add(builderForValue.build());
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder addDescriptionEntities(
+          int index, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntitiesBuilder_ == null) {
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder addAllDescriptionEntities(
+          java.lang.Iterable<? extends flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity> values) {
+        if (descriptionEntitiesBuilder_ == null) {
+          ensureDescriptionEntitiesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, descriptionEntities_);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder clearDescriptionEntities() {
+        if (descriptionEntitiesBuilder_ == null) {
+          descriptionEntities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public Builder removeDescriptionEntities(int index) {
+        if (descriptionEntitiesBuilder_ == null) {
+          ensureDescriptionEntitiesIsMutable();
+          descriptionEntities_.remove(index);
+          onChanged();
+        } else {
+          descriptionEntitiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntitiesBuilder(
+          int index) {
+        return getDescriptionEntitiesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntitiesOrBuilder(
+          int index) {
+        if (descriptionEntitiesBuilder_ == null) {
+          return descriptionEntities_.get(index);  } else {
+          return descriptionEntitiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+           getDescriptionEntitiesOrBuilderList() {
+        if (descriptionEntitiesBuilder_ != null) {
+          return descriptionEntitiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(descriptionEntities_);
+        }
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder addDescriptionEntitiesBuilder() {
+        return getDescriptionEntitiesFieldBuilder().addBuilder(
+            flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder addDescriptionEntitiesBuilder(
+          int index) {
+        return getDescriptionEntitiesFieldBuilder().addBuilder(
+            index, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * A list of DescriptionEntities returned based on the request.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;</code>
+       */
+      public java.util.List<flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder> 
+           getDescriptionEntitiesBuilderList() {
+        return getDescriptionEntitiesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+          getDescriptionEntitiesFieldBuilder() {
+        if (descriptionEntitiesBuilder_ == null) {
+          descriptionEntitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
+                  descriptionEntities_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          descriptionEntities_ = null;
+        }
+        return descriptionEntitiesBuilder_;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query. If there are no more results, this value will be empty.
+       * </pre>
+       *
+       * <code>string token = 2;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionList)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionList)
+    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionList();
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescriptionList>
+        PARSER = new com.google.protobuf.AbstractParser<DescriptionList>() {
+      @java.lang.Override
+      public DescriptionList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescriptionList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescriptionList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescriptionList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DescriptionListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionListRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    boolean hasDescriptionEntityId();
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDescriptionEntityId();
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder getDescriptionEntityIdOrBuilder();
+
+    /**
+     * <pre>
+     * Indicates the number of resources to be returned.
+     * +required
+     * </pre>
+     *
+     * <code>uint32 limit = 2;</code>
+     */
+    int getLimit();
+
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    java.lang.String getFilters();
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getFiltersBytes();
+
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    boolean hasSortBy();
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    flyteidl.admin.Common.Sort getSortBy();
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
+  }
+  /**
+   * <pre>
+   * Represents a request structure to retrieve a list of DescriptionEntities.
+   * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.DescriptionListRequest}
+   */
+  public  static final class DescriptionListRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.DescriptionListRequest)
+      DescriptionListRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescriptionListRequest.newBuilder() to construct.
+    private DescriptionListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescriptionListRequest() {
+      token_ = "";
+      filters_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescriptionListRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder subBuilder = null;
+              if (descriptionEntityId_ != null) {
+                subBuilder = descriptionEntityId_.toBuilder();
+              }
+              descriptionEntityId_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(descriptionEntityId_);
+                descriptionEntityId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              limit_ = input.readUInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filters_ = s;
+              break;
+            }
+            case 42: {
+              flyteidl.admin.Common.Sort.Builder subBuilder = null;
+              if (sortBy_ != null) {
+                subBuilder = sortBy_.toBuilder();
+              }
+              sortBy_ = input.readMessage(flyteidl.admin.Common.Sort.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sortBy_);
+                sortBy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.Builder.class);
+    }
+
+    public static final int DESCRIPTION_ENTITY_ID_FIELD_NUMBER = 1;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier descriptionEntityId_;
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    public boolean hasDescriptionEntityId() {
+      return descriptionEntityId_ != null;
+    }
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDescriptionEntityId() {
+      return descriptionEntityId_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.getDefaultInstance() : descriptionEntityId_;
+    }
+    /**
+     * <pre>
+     * Indicates the node execution to filter by.
+     * +required
+     * </pre>
+     *
+     * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+     */
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder getDescriptionEntityIdOrBuilder() {
+      return getDescriptionEntityId();
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
+    private int limit_;
+    /**
+     * <pre>
+     * Indicates the number of resources to be returned.
+     * +required
+     * </pre>
+     *
+     * <code>uint32 limit = 2;</code>
+     */
+    public int getLimit() {
+      return limit_;
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object token_;
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+     * in a query.
+     * +optional
+     * </pre>
+     *
+     * <code>string token = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILTERS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object filters_;
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    public java.lang.String getFilters() {
+      java.lang.Object ref = filters_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filters_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates a list of filters passed as string.
+     * More info on constructing filters : &lt;Link&gt;
+     * +optional
+     * </pre>
+     *
+     * <code>string filters = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFiltersBytes() {
+      java.lang.Object ref = filters_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filters_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SORT_BY_FIELD_NUMBER = 5;
+    private flyteidl.admin.Common.Sort sortBy_;
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public boolean hasSortBy() {
+      return sortBy_ != null;
+    }
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public flyteidl.admin.Common.Sort getSortBy() {
+      return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+    }
+    /**
+     * <pre>
+     * Sort ordering for returned list.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+     */
+    public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+      return getSortBy();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (descriptionEntityId_ != null) {
+        output.writeMessage(1, getDescriptionEntityId());
+      }
+      if (limit_ != 0) {
+        output.writeUInt32(2, limit_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
+      }
+      if (!getFiltersBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, filters_);
+      }
+      if (sortBy_ != null) {
+        output.writeMessage(5, getSortBy());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (descriptionEntityId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getDescriptionEntityId());
+      }
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, limit_);
+      }
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
+      }
+      if (!getFiltersBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filters_);
+      }
+      if (sortBy_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getSortBy());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest other = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) obj;
+
+      if (hasDescriptionEntityId() != other.hasDescriptionEntityId()) return false;
+      if (hasDescriptionEntityId()) {
+        if (!getDescriptionEntityId()
+            .equals(other.getDescriptionEntityId())) return false;
+      }
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (!getFilters()
+          .equals(other.getFilters())) return false;
+      if (hasSortBy() != other.hasSortBy()) return false;
+      if (hasSortBy()) {
+        if (!getSortBy()
+            .equals(other.getSortBy())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDescriptionEntityId()) {
+        hash = (37 * hash) + DESCRIPTION_ENTITY_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntityId().hashCode();
+      }
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getFilters().hashCode();
+      if (hasSortBy()) {
+        hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
+        hash = (53 * hash) + getSortBy().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Represents a request structure to retrieve a list of DescriptionEntities.
+     * See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.DescriptionListRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.DescriptionListRequest)
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.class, flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (descriptionEntityIdBuilder_ == null) {
+          descriptionEntityId_ = null;
+        } else {
+          descriptionEntityId_ = null;
+          descriptionEntityIdBuilder_ = null;
+        }
+        limit_ = 0;
+
+        token_ = "";
+
+        filters_ = "";
+
+        if (sortByBuilder_ == null) {
+          sortBy_ = null;
+        } else {
+          sortBy_ = null;
+          sortByBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstanceForType() {
+        return flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest build() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest buildPartial() {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest result = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest(this);
+        if (descriptionEntityIdBuilder_ == null) {
+          result.descriptionEntityId_ = descriptionEntityId_;
+        } else {
+          result.descriptionEntityId_ = descriptionEntityIdBuilder_.build();
+        }
+        result.limit_ = limit_;
+        result.token_ = token_;
+        result.filters_ = filters_;
+        if (sortByBuilder_ == null) {
+          result.sortBy_ = sortBy_;
+        } else {
+          result.sortBy_ = sortByBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) {
+          return mergeFrom((flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest other) {
+        if (other == flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest.getDefaultInstance()) return this;
+        if (other.hasDescriptionEntityId()) {
+          mergeDescriptionEntityId(other.getDescriptionEntityId());
+        }
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getFilters().isEmpty()) {
+          filters_ = other.filters_;
+          onChanged();
+        }
+        if (other.hasSortBy()) {
+          mergeSortBy(other.getSortBy());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier descriptionEntityId_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder> descriptionEntityIdBuilder_;
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public boolean hasDescriptionEntityId() {
+        return descriptionEntityIdBuilder_ != null || descriptionEntityId_ != null;
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier getDescriptionEntityId() {
+        if (descriptionEntityIdBuilder_ == null) {
+          return descriptionEntityId_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.getDefaultInstance() : descriptionEntityId_;
+        } else {
+          return descriptionEntityIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public Builder setDescriptionEntityId(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier value) {
+        if (descriptionEntityIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          descriptionEntityId_ = value;
+          onChanged();
+        } else {
+          descriptionEntityIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public Builder setDescriptionEntityId(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder builderForValue) {
+        if (descriptionEntityIdBuilder_ == null) {
+          descriptionEntityId_ = builderForValue.build();
+          onChanged();
+        } else {
+          descriptionEntityIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public Builder mergeDescriptionEntityId(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier value) {
+        if (descriptionEntityIdBuilder_ == null) {
+          if (descriptionEntityId_ != null) {
+            descriptionEntityId_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.newBuilder(descriptionEntityId_).mergeFrom(value).buildPartial();
+          } else {
+            descriptionEntityId_ = value;
+          }
+          onChanged();
+        } else {
+          descriptionEntityIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public Builder clearDescriptionEntityId() {
+        if (descriptionEntityIdBuilder_ == null) {
+          descriptionEntityId_ = null;
+          onChanged();
+        } else {
+          descriptionEntityId_ = null;
+          descriptionEntityIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder getDescriptionEntityIdBuilder() {
+        
+        onChanged();
+        return getDescriptionEntityIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder getDescriptionEntityIdOrBuilder() {
+        if (descriptionEntityIdBuilder_ != null) {
+          return descriptionEntityIdBuilder_.getMessageOrBuilder();
+        } else {
+          return descriptionEntityId_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.getDefaultInstance() : descriptionEntityId_;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates the node execution to filter by.
+       * +required
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntityIdentifier description_entity_id = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder> 
+          getDescriptionEntityIdFieldBuilder() {
+        if (descriptionEntityIdBuilder_ == null) {
+          descriptionEntityIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifier.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityIdentifierOrBuilder>(
+                  getDescriptionEntityId(),
+                  getParentForChildren(),
+                  isClean());
+          descriptionEntityId_ = null;
+        }
+        return descriptionEntityIdBuilder_;
+      }
+
+      private int limit_ ;
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public Builder setLimit(int value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates the number of resources to be returned.
+       * +required
+       * </pre>
+       *
+       * <code>uint32 limit = 2;</code>
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * In the case of multiple pages of results, the server-provided token can be used to fetch the next page
+       * in a query.
+       * +optional
+       * </pre>
+       *
+       * <code>string token = 3;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filters_ = "";
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public java.lang.String getFilters() {
+        java.lang.Object ref = filters_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filters_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFiltersBytes() {
+        java.lang.Object ref = filters_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filters_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder setFilters(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        filters_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder clearFilters() {
+        
+        filters_ = getDefaultInstance().getFilters();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Indicates a list of filters passed as string.
+       * More info on constructing filters : &lt;Link&gt;
+       * +optional
+       * </pre>
+       *
+       * <code>string filters = 4;</code>
+       */
+      public Builder setFiltersBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        filters_ = value;
+        onChanged();
+        return this;
+      }
+
+      private flyteidl.admin.Common.Sort sortBy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> sortByBuilder_;
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public boolean hasSortBy() {
+        return sortByBuilder_ != null || sortBy_ != null;
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.Sort getSortBy() {
+        if (sortByBuilder_ == null) {
+          return sortBy_ == null ? flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+        } else {
+          return sortByBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder setSortBy(flyteidl.admin.Common.Sort value) {
+        if (sortByBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          sortBy_ = value;
+          onChanged();
+        } else {
+          sortByBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder setSortBy(
+          flyteidl.admin.Common.Sort.Builder builderForValue) {
+        if (sortByBuilder_ == null) {
+          sortBy_ = builderForValue.build();
+          onChanged();
+        } else {
+          sortByBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder mergeSortBy(flyteidl.admin.Common.Sort value) {
+        if (sortByBuilder_ == null) {
+          if (sortBy_ != null) {
+            sortBy_ =
+              flyteidl.admin.Common.Sort.newBuilder(sortBy_).mergeFrom(value).buildPartial();
+          } else {
+            sortBy_ = value;
+          }
+          onChanged();
+        } else {
+          sortByBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public Builder clearSortBy() {
+        if (sortByBuilder_ == null) {
+          sortBy_ = null;
+          onChanged();
+        } else {
+          sortBy_ = null;
+          sortByBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.Sort.Builder getSortByBuilder() {
+        
+        onChanged();
+        return getSortByFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      public flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder() {
+        if (sortByBuilder_ != null) {
+          return sortByBuilder_.getMessageOrBuilder();
+        } else {
+          return sortBy_ == null ?
+              flyteidl.admin.Common.Sort.getDefaultInstance() : sortBy_;
+        }
+      }
+      /**
+       * <pre>
+       * Sort ordering for returned list.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.admin.Sort sort_by = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder> 
+          getSortByFieldBuilder() {
+        if (sortByBuilder_ == null) {
+          sortByBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.Common.Sort, flyteidl.admin.Common.Sort.Builder, flyteidl.admin.Common.SortOrBuilder>(
+                  getSortBy(),
+                  getParentForChildren(),
+                  isClean());
+          sortBy_ = null;
+        }
+        return sortByBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.DescriptionListRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionListRequest)
+    private static final flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest();
+    }
+
+    public static flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescriptionListRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DescriptionListRequest>() {
+      @java.lang.Override
+      public DescriptionListRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescriptionListRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescriptionListRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescriptionListRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionListRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_DescriptionEntity_descriptor;
   private static final 
@@ -4397,6 +7992,11 @@ public final class DescriptionEntityOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_SourceCode_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_DescriptionEntityIdentifier_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_DescriptionEntityCreateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4406,6 +8006,16 @@ public final class DescriptionEntityOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_DescriptionEntityCreateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_DescriptionList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_DescriptionListRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4428,12 +8038,23 @@ public final class DescriptionEntityOuterClass {
       "on_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007UN" +
       "KNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020\003" +
       "B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t\"" +
-      "\206\001\n\036DescriptionEntityCreateRequest\022%\n\002id" +
-      "\030\001 \001(\0132\031.flyteidl.core.Identifier\022=\n\022des" +
-      "cription_entity\030\002 \001(\0132!.flyteidl.admin.D" +
-      "escriptionEntity\"!\n\037DescriptionEntityCre" +
-      "ateResponseB7Z5github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/adminb\006proto3"
+      "\200\001\n\033DescriptionEntityIdentifier\0222\n\rresou" +
+      "rce_type\030\001 \001(\0162\033.flyteidl.core.ResourceT" +
+      "ype\022\017\n\007project\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\014\n\004" +
+      "name\030\004 \001(\t\"\206\001\n\036DescriptionEntityCreateRe" +
+      "quest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identi" +
+      "fier\022=\n\022description_entity\030\002 \001(\0132!.flyte" +
+      "idl.admin.DescriptionEntity\"!\n\037Descripti" +
+      "onEntityCreateResponse\"`\n\017DescriptionLis" +
+      "t\022>\n\023descriptionEntities\030\001 \003(\0132!.flyteid" +
+      "l.admin.DescriptionEntity\022\r\n\005token\030\002 \001(\t" +
+      "\"\272\001\n\026DescriptionListRequest\022J\n\025descripti" +
+      "on_entity_id\030\001 \001(\0132+.flyteidl.admin.Desc" +
+      "riptionEntityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r" +
+      "\n\005token\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_b" +
+      "y\030\005 \001(\0132\024.flyteidl.admin.SortB7Z5github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4467,18 +8088,36 @@ public final class DescriptionEntityOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_SourceCode_descriptor,
         new java.lang.String[] { "Link", });
-    internal_static_flyteidl_admin_DescriptionEntityCreateRequest_descriptor =
+    internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_flyteidl_admin_DescriptionEntityIdentifier_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_DescriptionEntityIdentifier_descriptor,
+        new java.lang.String[] { "ResourceType", "Project", "Domain", "Name", });
+    internal_static_flyteidl_admin_DescriptionEntityCreateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_admin_DescriptionEntityCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DescriptionEntityCreateRequest_descriptor,
         new java.lang.String[] { "Id", "DescriptionEntity", });
     internal_static_flyteidl_admin_DescriptionEntityCreateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_DescriptionEntityCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_DescriptionEntityCreateResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_flyteidl_admin_DescriptionList_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_admin_DescriptionList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_DescriptionList_descriptor,
+        new java.lang.String[] { "DescriptionEntities", "Token", });
+    internal_static_flyteidl_admin_DescriptionListRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_flyteidl_admin_DescriptionListRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_DescriptionListRequest_descriptor,
+        new java.lang.String[] { "DescriptionEntityId", "Limit", "Token", "Filters", "SortBy", });
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
   }

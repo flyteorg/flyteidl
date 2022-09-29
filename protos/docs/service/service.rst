@@ -87,6 +87,7 @@ Standard response codes for both are defined here: https://github.com/grpc-ecosy
    "GetVersion", ":ref:`ref_flyteidl.admin.GetVersionRequest`", ":ref:`ref_flyteidl.admin.GetVersionResponse`", ""
    "CreateDescriptionEntity", ":ref:`ref_flyteidl.admin.DescriptionEntityCreateRequest`", ":ref:`ref_flyteidl.admin.DescriptionEntityCreateResponse`", "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
    "GetDescriptionEntity", ":ref:`ref_flyteidl.admin.ObjectGetRequest`", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
+   "ListDescriptionEntities", ":ref:`ref_flyteidl.admin.DescriptionListRequest`", ":ref:`ref_flyteidl.admin.DescriptionList`", "Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions."
 
 ..
    end services

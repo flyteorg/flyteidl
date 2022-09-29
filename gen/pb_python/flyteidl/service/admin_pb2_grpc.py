@@ -273,6 +273,11 @@ class AdminServiceStub(object):
         request_serializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.SerializeToString,
         response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntity.FromString,
         )
+    self.ListDescriptionEntities = channel.unary_unary(
+        '/flyteidl.service.AdminService/ListDescriptionEntities',
+        request_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionListRequest.SerializeToString,
+        response_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionList.FromString,
+        )
 
 
 class AdminServiceServicer(object):
@@ -629,6 +634,13 @@ class AdminServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListDescriptionEntities(self, request, context):
+    """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -876,6 +888,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
           servicer.GetDescriptionEntity,
           request_deserializer=flyteidl_dot_admin_dot_common__pb2.ObjectGetRequest.FromString,
           response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionEntity.SerializeToString,
+      ),
+      'ListDescriptionEntities': grpc.unary_unary_rpc_method_handler(
+          servicer.ListDescriptionEntities,
+          request_deserializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionListRequest.FromString,
+          response_serializer=flyteidl_dot_admin_dot_description__entity__pb2.DescriptionList.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

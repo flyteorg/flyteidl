@@ -604,5 +604,18 @@ service AdminService {
       description: "Retrieve an existing description entity description."
     };
   }
+
+  // Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
+  rpc ListDescriptionEntities (flyteidl.admin.DescriptionListRequest) returns (flyteidl.admin.DescriptionList) {
+    option (google.api.http) = {
+      get: "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}"
+      additional_bindings {
+        get: "/api/v1/description_entities/{id.project}/{id.domain}"
+      }
+    };
+    option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+      description: "Fetch existing description entity definitions matching input filters."
+    };
+  }
 }
 
