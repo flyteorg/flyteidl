@@ -6,6 +6,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 import "flyteidl/core/identifier.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/compiler.proto";
+import "flyteidl/admin/description_entity.proto";
 import "google/protobuf/timestamp.proto";
 
 // Represents a request structure to create a revision of a task.
@@ -52,9 +53,8 @@ message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
 
-    // User-specified tags. These are arbitrary and can be used for searching
-    // filtering and discovering tasks.
-    repeated string tags = 2;
+    // Represents the specification for Description.
+    DescriptionEntity description_entity        = 2;
 }
 
 // Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data

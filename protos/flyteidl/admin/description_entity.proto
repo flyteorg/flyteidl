@@ -15,6 +15,9 @@ message DescriptionEntity {
   LongDescription long_description = 2;
   // Optional link to source code used to define this entity.
   SourceCode source_code = 3;
+  // User-specified tags. These are arbitrary and can be used for searching
+  // filtering and discovering tasks.
+  repeated string tags = 4;
 }
 
 // Full user description with formatting preserved. This can be rendered
