@@ -17,4 +17,6 @@ type AdminDescriptionEntity struct {
 	LongDescription *AdminLongDescription `json:"long_description,omitempty"`
 	// Optional link to source code used to define this entity.
 	SourceCode *AdminSourceCode `json:"source_code,omitempty"`
+	// User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.
+	Tags []string `json:"tags,omitempty"`
 }

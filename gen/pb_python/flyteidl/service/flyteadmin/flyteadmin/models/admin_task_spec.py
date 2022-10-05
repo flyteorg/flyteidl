@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity  # noqa: F401,E501
 from flyteadmin.models.core_task_template import CoreTaskTemplate  # noqa: F401,E501
 
 
@@ -34,25 +35,25 @@ class AdminTaskSpec(object):
     """
     swagger_types = {
         'template': 'CoreTaskTemplate',
-        'tags': 'list[str]'
+        'description_entity': 'AdminDescriptionEntity'
     }
 
     attribute_map = {
         'template': 'template',
-        'tags': 'tags'
+        'description_entity': 'description_entity'
     }
 
-    def __init__(self, template=None, tags=None):  # noqa: E501
+    def __init__(self, template=None, description_entity=None):  # noqa: E501
         """AdminTaskSpec - a model defined in Swagger"""  # noqa: E501
 
         self._template = None
-        self._tags = None
+        self._description_entity = None
         self.discriminator = None
 
         if template is not None:
             self.template = template
-        if tags is not None:
-            self.tags = tags
+        if description_entity is not None:
+            self.description_entity = description_entity
 
     @property
     def template(self):
@@ -78,27 +79,27 @@ class AdminTaskSpec(object):
         self._template = template
 
     @property
-    def tags(self):
-        """Gets the tags of this AdminTaskSpec.  # noqa: E501
+    def description_entity(self):
+        """Gets the description_entity of this AdminTaskSpec.  # noqa: E501
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+        Represents the specification for Description.  # noqa: E501
 
-        :return: The tags of this AdminTaskSpec.  # noqa: E501
-        :rtype: list[str]
+        :return: The description_entity of this AdminTaskSpec.  # noqa: E501
+        :rtype: AdminDescriptionEntity
         """
-        return self._tags
+        return self._description_entity
 
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this AdminTaskSpec.
+    @description_entity.setter
+    def description_entity(self, description_entity):
+        """Sets the description_entity of this AdminTaskSpec.
 
-        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+        Represents the specification for Description.  # noqa: E501
 
-        :param tags: The tags of this AdminTaskSpec.  # noqa: E501
-        :type: list[str]
+        :param description_entity: The description_entity of this AdminTaskSpec.  # noqa: E501
+        :type: AdminDescriptionEntity
         """
 
-        self._tags = tags
+        self._description_entity = description_entity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

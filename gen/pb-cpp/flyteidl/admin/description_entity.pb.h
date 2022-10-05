@@ -214,6 +214,28 @@ class DescriptionEntity final :
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 4;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 4;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // string short_description = 1;
   void clear_short_description();
   static const int kShortDescriptionFieldNumber = 1;
@@ -251,6 +273,7 @@ class DescriptionEntity final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr short_description_;
   ::flyteidl::admin::LongDescription* long_description_;
   ::flyteidl::admin::SourceCode* source_code_;
@@ -1434,6 +1457,75 @@ inline void DescriptionEntity::set_allocated_source_code(::flyteidl::admin::Sour
   }
   source_code_ = source_code;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntity.source_code)
+}
+
+// repeated string tags = 4;
+inline int DescriptionEntity::tags_size() const {
+  return tags_.size();
+}
+inline void DescriptionEntity::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& DescriptionEntity::tags(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntity.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* DescriptionEntity::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntity.tags)
+  return tags_.Mutable(index);
+}
+inline void DescriptionEntity::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntity.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void DescriptionEntity::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.admin.DescriptionEntity.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void DescriptionEntity::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.DescriptionEntity.tags)
+}
+inline void DescriptionEntity::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.DescriptionEntity.tags)
+}
+inline ::std::string* DescriptionEntity::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.admin.DescriptionEntity.tags)
+  return tags_.Add();
+}
+inline void DescriptionEntity::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.admin.DescriptionEntity.tags)
+}
+#if LANG_CXX11
+inline void DescriptionEntity::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.admin.DescriptionEntity.tags)
+}
+#endif
+inline void DescriptionEntity::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.admin.DescriptionEntity.tags)
+}
+inline void DescriptionEntity::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.admin.DescriptionEntity.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+DescriptionEntity::tags() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.DescriptionEntity.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+DescriptionEntity::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.DescriptionEntity.tags)
+  return &tags_;
 }
 
 // -------------------------------------------------------------------

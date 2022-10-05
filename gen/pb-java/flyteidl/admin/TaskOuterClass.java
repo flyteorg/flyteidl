@@ -3444,42 +3444,28 @@ public final class TaskOuterClass {
 
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    java.util.List<java.lang.String>
-        getTagsList();
+    boolean hasDescriptionEntity();
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    int getTagsCount();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -3498,7 +3484,6 @@ public final class TaskOuterClass {
       super(builder);
     }
     private TaskSpec() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -3539,12 +3524,16 @@ public final class TaskOuterClass {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
+              if (descriptionEntity_ != null) {
+                subBuilder = descriptionEntity_.toBuilder();
               }
-              tags_.add(s);
+              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(descriptionEntity_);
+                descriptionEntity_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3562,9 +3551,6 @@ public final class TaskOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3582,7 +3568,6 @@ public final class TaskOuterClass {
               flyteidl.admin.TaskOuterClass.TaskSpec.class, flyteidl.admin.TaskOuterClass.TaskSpec.Builder.class);
     }
 
-    private int bitField0_;
     public static final int TEMPLATE_FIELD_NUMBER = 1;
     private flyteidl.core.Tasks.TaskTemplate template_;
     /**
@@ -3616,53 +3601,37 @@ public final class TaskOuterClass {
       return getTemplate();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList tags_;
+    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 2;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
+    public boolean hasDescriptionEntity() {
+      return descriptionEntity_ != null;
     }
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public int getTagsCount() {
-      return tags_.size();
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
     }
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
      */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering tasks.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+      return getDescriptionEntity();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3682,8 +3651,8 @@ public final class TaskOuterClass {
       if (template_ != null) {
         output.writeMessage(1, getTemplate());
       }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tags_.getRaw(i));
+      if (descriptionEntity_ != null) {
+        output.writeMessage(2, getDescriptionEntity());
       }
       unknownFields.writeTo(output);
     }
@@ -3698,13 +3667,9 @@ public final class TaskOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTemplate());
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
+      if (descriptionEntity_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3726,8 +3691,11 @@ public final class TaskOuterClass {
         if (!getTemplate()
             .equals(other.getTemplate())) return false;
       }
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
+      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
+      if (hasDescriptionEntity()) {
+        if (!getDescriptionEntity()
+            .equals(other.getDescriptionEntity())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3743,9 +3711,9 @@ public final class TaskOuterClass {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getTemplate().hashCode();
       }
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
+      if (hasDescriptionEntity()) {
+        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntity().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3890,8 +3858,12 @@ public final class TaskOuterClass {
           template_ = null;
           templateBuilder_ = null;
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
         return this;
       }
 
@@ -3918,19 +3890,16 @@ public final class TaskOuterClass {
       @java.lang.Override
       public flyteidl.admin.TaskOuterClass.TaskSpec buildPartial() {
         flyteidl.admin.TaskOuterClass.TaskSpec result = new flyteidl.admin.TaskOuterClass.TaskSpec(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (templateBuilder_ == null) {
           result.template_ = template_;
         } else {
           result.template_ = templateBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+        if (descriptionEntityBuilder_ == null) {
+          result.descriptionEntity_ = descriptionEntity_;
+        } else {
+          result.descriptionEntity_ = descriptionEntityBuilder_.build();
         }
-        result.tags_ = tags_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3982,15 +3951,8 @@ public final class TaskOuterClass {
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
         }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
+        if (other.hasDescriptionEntity()) {
+          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4020,7 +3982,6 @@ public final class TaskOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private flyteidl.core.Tasks.TaskTemplate template_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4175,143 +4136,157 @@ public final class TaskOuterClass {
         return templateBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000002;
-         }
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       */
+      public boolean hasDescriptionEntity() {
+        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        } else {
+          return descriptionEntityBuilder_.getMessage();
+        }
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
+      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          descriptionEntity_ = value;
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
+      public Builder setDescriptionEntity(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = builderForValue.build();
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
+      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (descriptionEntity_ != null) {
+            descriptionEntity_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
+          } else {
+            descriptionEntity_ = value;
+          }
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
+      public Builder clearDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+          onChanged();
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering tasks.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
        */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
+        
         onChanged();
-        return this;
+        return getDescriptionEntityFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+        if (descriptionEntityBuilder_ != null) {
+          return descriptionEntityBuilder_.getMessageOrBuilder();
+        } else {
+          return descriptionEntity_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        }
+      }
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+          getDescriptionEntityFieldBuilder() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
+                  getDescriptionEntity(),
+                  getParentForChildren(),
+                  isClean());
+          descriptionEntity_ = null;
+        }
+        return descriptionEntityBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5338,21 +5313,23 @@ public final class TaskOuterClass {
       "\n\031flyteidl/admin/task.proto\022\016flyteidl.ad" +
       "min\032\036flyteidl/core/identifier.proto\032\031fly" +
       "teidl/core/tasks.proto\032\034flyteidl/core/co" +
-      "mpiler.proto\032\037google/protobuf/timestamp." +
-      "proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132\031" +
-      ".flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\0132" +
-      "\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreateR" +
-      "esponse\"[\n\004Task\022%\n\002id\030\001 \001(\0132\031.flyteidl.c" +
-      "ore.Identifier\022,\n\007closure\030\002 \001(\0132\033.flytei" +
-      "dl.admin.TaskClosure\">\n\010TaskList\022#\n\005task" +
-      "s\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030\002" +
-      " \001(\t\"G\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fly" +
-      "teidl.core.TaskTemplate\022\014\n\004tags\030\002 \003(\t\"q\n" +
-      "\013TaskClosure\0222\n\rcompiled_task\030\001 \001(\0132\033.fl" +
-      "yteidl.core.CompiledTask\022.\n\ncreated_at\030\002" +
-      " \001(\0132\032.google.protobuf.TimestampB7Z5gith" +
-      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
-      "idl/adminb\006proto3"
+      "mpiler.proto\032\'flyteidl/admin/description" +
+      "_entity.proto\032\037google/protobuf/timestamp" +
+      ".proto\"b\n\021TaskCreateRequest\022%\n\002id\030\001 \001(\0132" +
+      "\031.flyteidl.core.Identifier\022&\n\004spec\030\002 \001(\013" +
+      "2\030.flyteidl.admin.TaskSpec\"\024\n\022TaskCreate" +
+      "Response\"[\n\004Task\022%\n\002id\030\001 \001(\0132\031.flyteidl." +
+      "core.Identifier\022,\n\007closure\030\002 \001(\0132\033.flyte" +
+      "idl.admin.TaskClosure\">\n\010TaskList\022#\n\005tas" +
+      "ks\030\001 \003(\0132\024.flyteidl.admin.Task\022\r\n\005token\030" +
+      "\002 \001(\t\"x\n\010TaskSpec\022-\n\010template\030\001 \001(\0132\033.fl" +
+      "yteidl.core.TaskTemplate\022=\n\022description_" +
+      "entity\030\002 \001(\0132!.flyteidl.admin.Descriptio" +
+      "nEntity\"q\n\013TaskClosure\0222\n\rcompiled_task\030" +
+      "\001 \001(\0132\033.flyteidl.core.CompiledTask\022.\n\ncr" +
+      "eated_at\030\002 \001(\0132\032.google.protobuf.Timesta" +
+      "mpB7Z5github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5368,6 +5345,7 @@ public final class TaskOuterClass {
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Tasks.getDescriptor(),
           flyteidl.core.Compiler.getDescriptor(),
+          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_TaskCreateRequest_descriptor =
@@ -5399,7 +5377,7 @@ public final class TaskOuterClass {
     internal_static_flyteidl_admin_TaskSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskSpec_descriptor,
-        new java.lang.String[] { "Template", "Tags", });
+        new java.lang.String[] { "Template", "DescriptionEntity", });
     internal_static_flyteidl_admin_TaskClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_TaskClosure_fieldAccessorTable = new
@@ -5409,6 +5387,7 @@ public final class TaskOuterClass {
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Tasks.getDescriptor();
     flyteidl.core.Compiler.getDescriptor();
+    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

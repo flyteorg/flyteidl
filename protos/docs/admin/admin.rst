@@ -768,6 +768,7 @@ Documentation could provide insight into the algorithms, business use case, etc.
    "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
    "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
    "source_code", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
+   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks."
 
 
 
@@ -3392,7 +3393,7 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
 
 
 
@@ -3834,7 +3835,7 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering workflows."
+   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
 
 
 

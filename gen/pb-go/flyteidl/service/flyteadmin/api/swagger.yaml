@@ -399,32 +399,6 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminTaskExecutionGetDataResponse"
-  /api/v1/description_entities:
-    post:
-      tags:
-      - "AdminService"
-      summary: "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object."
-      description: "Create and register a description entity definition."
-      operationId: "CreateDescriptionEntity"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/adminDescriptionEntityCreateRequest"
-        x-exportParamName: "Body"
-      responses:
-        200:
-          description: "A successful response."
-          schema:
-            $ref: "#/definitions/adminDescriptionEntityCreateResponse"
-        400:
-          description: "Returned for bad request that may have failed validation."
-          schema: {}
-        409:
-          description: "Returned for a request that references an identical entity\
-            \ that has already been registered."
-          schema: {}
   /api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}:
     get:
       tags:
@@ -3311,6 +3285,12 @@ definitions:
       source_code:
         description: "Optional link to source code used to define this entity."
         $ref: "#/definitions/adminSourceCode"
+      tags:
+        type: "array"
+        description: "User-specified tags. These are arbitrary and can be used for\
+          \ searching\nfiltering and discovering tasks."
+        items:
+          type: "string"
     description: "DescriptionEntity contains detailed description for the task/workflow/launch\
       \ plan.\nDocumentation could provide insight into the algorithms, business use\
       \ case, etc."
@@ -3323,20 +3303,9 @@ definitions:
         uri: "uri"
       source_code:
         link: "link"
-  adminDescriptionEntityCreateRequest:
-    type: "object"
-    properties:
-      id:
-        title: "id represents the unique identifier of the description entity.\n+required"
-        $ref: "#/definitions/coreIdentifier"
-      description_entity:
-        title: "Represents the specification for Description.\n+required"
-        $ref: "#/definitions/adminDescriptionEntity"
-    title: "Represents a request structure to create a revision of a description entity.\n\
-      See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details"
-  adminDescriptionEntityCreateResponse:
-    type: "object"
-    description: "Represents a response structure if description entity creation succeeds."
+      tags:
+      - "tags"
+      - "tags"
   adminDescriptionEntityIdentifier:
     type: "object"
     properties:
@@ -3380,6 +3349,9 @@ definitions:
           uri: "uri"
         source_code:
           link: "link"
+        tags:
+        - "tags"
+        - "tags"
       - short_description: "short_description"
         long_description:
           format: {}
@@ -3388,6 +3360,9 @@ definitions:
           uri: "uri"
         source_code:
           link: "link"
+        tags:
+        - "tags"
+        - "tags"
       token: "token"
   adminDomain:
     type: "object"
@@ -16135,12 +16110,9 @@ definitions:
         description: "Template of the task that encapsulates all the metadata of the\
           \ task."
         $ref: "#/definitions/coreTaskTemplate"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering tasks."
-        items:
-          type: "string"
+      description_entity:
+        description: "Represents the specification for Description."
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the user-configured specification\
       \ of the task."
   adminToleration:
@@ -40727,12 +40699,9 @@ definitions:
           \ do not even need to be registered."
         items:
           $ref: "#/definitions/coreWorkflowTemplate"
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering workflows."
-        items:
-          type: "string"
+      description_entity:
+        description: "Represents the specification for Description."
+        $ref: "#/definitions/adminDescriptionEntity"
     description: "Represents a structure that encapsulates the specification of the\
       \ workflow."
   coreAlias:

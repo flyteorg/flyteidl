@@ -3498,42 +3498,28 @@ public final class WorkflowOuterClass {
 
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    java.util.List<java.lang.String>
-        getTagsList();
+    boolean hasDescriptionEntity();
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    int getTagsCount();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
   }
   /**
    * <pre>
@@ -3553,7 +3539,6 @@ public final class WorkflowOuterClass {
     }
     private WorkflowSpec() {
       subWorkflows_ = java.util.Collections.emptyList();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -3603,12 +3588,16 @@ public final class WorkflowOuterClass {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
+              if (descriptionEntity_ != null) {
+                subBuilder = descriptionEntity_.toBuilder();
               }
-              tags_.add(s);
+              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(descriptionEntity_);
+                descriptionEntity_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3628,9 +3617,6 @@ public final class WorkflowOuterClass {
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           subWorkflows_ = java.util.Collections.unmodifiableList(subWorkflows_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3748,53 +3734,37 @@ public final class WorkflowOuterClass {
       return subWorkflows_.get(index);
     }
 
-    public static final int TAGS_FIELD_NUMBER = 3;
-    private com.google.protobuf.LazyStringList tags_;
+    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 3;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
+    public boolean hasDescriptionEntity() {
+      return descriptionEntity_ != null;
     }
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    public int getTagsCount() {
-      return tags_.size();
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
     }
     /**
      * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
+     * Represents the specification for Description.
      * </pre>
      *
-     * <code>repeated string tags = 3;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
      */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering workflows.
-     * </pre>
-     *
-     * <code>repeated string tags = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+      return getDescriptionEntity();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3817,8 +3787,8 @@ public final class WorkflowOuterClass {
       for (int i = 0; i < subWorkflows_.size(); i++) {
         output.writeMessage(2, subWorkflows_.get(i));
       }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tags_.getRaw(i));
+      if (descriptionEntity_ != null) {
+        output.writeMessage(3, getDescriptionEntity());
       }
       unknownFields.writeTo(output);
     }
@@ -3837,13 +3807,9 @@ public final class WorkflowOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, subWorkflows_.get(i));
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
+      if (descriptionEntity_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDescriptionEntity());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3867,8 +3833,11 @@ public final class WorkflowOuterClass {
       }
       if (!getSubWorkflowsList()
           .equals(other.getSubWorkflowsList())) return false;
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
+      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
+      if (hasDescriptionEntity()) {
+        if (!getDescriptionEntity()
+            .equals(other.getDescriptionEntity())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3888,9 +3857,9 @@ public final class WorkflowOuterClass {
         hash = (37 * hash) + SUB_WORKFLOWS_FIELD_NUMBER;
         hash = (53 * hash) + getSubWorkflowsList().hashCode();
       }
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
+      if (hasDescriptionEntity()) {
+        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
+        hash = (53 * hash) + getDescriptionEntity().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4042,8 +4011,12 @@ public final class WorkflowOuterClass {
         } else {
           subWorkflowsBuilder_.clear();
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
         return this;
       }
 
@@ -4086,11 +4059,11 @@ public final class WorkflowOuterClass {
         } else {
           result.subWorkflows_ = subWorkflowsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+        if (descriptionEntityBuilder_ == null) {
+          result.descriptionEntity_ = descriptionEntity_;
+        } else {
+          result.descriptionEntity_ = descriptionEntityBuilder_.build();
         }
-        result.tags_ = tags_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4169,15 +4142,8 @@ public final class WorkflowOuterClass {
             }
           }
         }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
+        if (other.hasDescriptionEntity()) {
+          mergeDescriptionEntity(other.getDescriptionEntity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4710,143 +4676,157 @@ public final class WorkflowOuterClass {
         return subWorkflowsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000004;
-         }
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public boolean hasDescriptionEntity() {
+        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        } else {
+          return descriptionEntityBuilder_.getMessage();
+        }
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
-       * </pre>
-       *
-       * <code>repeated string tags = 3;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
+      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          descriptionEntity_ = value;
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
+      public Builder setDescriptionEntity(
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = builderForValue.build();
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
+      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionEntityBuilder_ == null) {
+          if (descriptionEntity_ != null) {
+            descriptionEntity_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
+          } else {
+            descriptionEntity_ = value;
+          }
+          onChanged();
+        } else {
+          descriptionEntityBuilder_.mergeFrom(value);
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
+      public Builder clearDescriptionEntity() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntity_ = null;
+          onChanged();
+        } else {
+          descriptionEntity_ = null;
+          descriptionEntityBuilder_ = null;
+        }
+
         return this;
       }
       /**
        * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering workflows.
+       * Represents the specification for Description.
        * </pre>
        *
-       * <code>repeated string tags = 3;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
        */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
+        
         onChanged();
-        return this;
+        return getDescriptionEntityFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
+        if (descriptionEntityBuilder_ != null) {
+          return descriptionEntityBuilder_.getMessageOrBuilder();
+        } else {
+          return descriptionEntity_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+        }
+      }
+      /**
+       * <pre>
+       * Represents the specification for Description.
+       * </pre>
+       *
+       * <code>.flyteidl.admin.DescriptionEntity description_entity = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
+          getDescriptionEntityFieldBuilder() {
+        if (descriptionEntityBuilder_ == null) {
+          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
+                  getDescriptionEntity(),
+                  getParentForChildren(),
+                  isClean());
+          descriptionEntity_ = null;
+        }
+        return descriptionEntityBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5871,24 +5851,26 @@ public final class WorkflowOuterClass {
       "\n\035flyteidl/admin/workflow.proto\022\016flyteid" +
       "l.admin\032\034flyteidl/core/compiler.proto\032\036f" +
       "lyteidl/core/identifier.proto\032\034flyteidl/" +
-      "core/workflow.proto\032\037google/protobuf/tim" +
-      "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n" +
-      "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004" +
-      "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec" +
-      "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%" +
-      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n" +
-      "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow" +
-      "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003" +
-      "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 " +
-      "\001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037" +
-      ".flyteidl.core.WorkflowTemplate\0226\n\rsub_w" +
-      "orkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowT" +
-      "emplate\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosur" +
-      "e\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl." +
-      "core.CompiledWorkflowClosure\022.\n\ncreated_" +
-      "at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z5" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/adminb\006proto3"
+      "core/workflow.proto\032\'flyteidl/admin/desc" +
+      "ription_entity.proto\032\037google/protobuf/ti" +
+      "mestamp.proto\"j\n\025WorkflowCreateRequest\022%" +
+      "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n" +
+      "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe" +
+      "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
+      "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
+      "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
+      "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 " +
+      "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002" +
+      " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132" +
+      "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_" +
+      "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow" +
+      "Template\022=\n\022description_entity\030\003 \001(\0132!.f" +
+      "lyteidl.admin.DescriptionEntity\"\204\001\n\017Work" +
+      "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&" +
+      ".flyteidl.core.CompiledWorkflowClosure\022." +
+      "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim" +
+      "estampB7Z5github.com/flyteorg/flyteidl/g" +
+      "en/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5904,6 +5886,7 @@ public final class WorkflowOuterClass {
           flyteidl.core.Compiler.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
           flyteidl.core.Workflow.getDescriptor(),
+          flyteidl.admin.DescriptionEntityOuterClass.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_WorkflowCreateRequest_descriptor =
@@ -5935,7 +5918,7 @@ public final class WorkflowOuterClass {
     internal_static_flyteidl_admin_WorkflowSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowSpec_descriptor,
-        new java.lang.String[] { "Template", "SubWorkflows", "Tags", });
+        new java.lang.String[] { "Template", "SubWorkflows", "DescriptionEntity", });
     internal_static_flyteidl_admin_WorkflowClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_WorkflowClosure_fieldAccessorTable = new
@@ -5945,6 +5928,7 @@ public final class WorkflowOuterClass {
     flyteidl.core.Compiler.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     flyteidl.core.Workflow.getDescriptor();
+    flyteidl.admin.DescriptionEntityOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

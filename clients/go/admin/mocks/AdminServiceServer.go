@@ -15,47 +15,6 @@ type AdminServiceServer struct {
 	mock.Mock
 }
 
-type AdminServiceServer_CreateDescriptionEntity struct {
-	*mock.Call
-}
-
-func (_m AdminServiceServer_CreateDescriptionEntity) Return(_a0 *admin.DescriptionEntityCreateResponse, _a1 error) *AdminServiceServer_CreateDescriptionEntity {
-	return &AdminServiceServer_CreateDescriptionEntity{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AdminServiceServer) OnCreateDescriptionEntity(_a0 context.Context, _a1 *admin.DescriptionEntityCreateRequest) *AdminServiceServer_CreateDescriptionEntity {
-	c_call := _m.On("CreateDescriptionEntity", _a0, _a1)
-	return &AdminServiceServer_CreateDescriptionEntity{Call: c_call}
-}
-
-func (_m *AdminServiceServer) OnCreateDescriptionEntityMatch(matchers ...interface{}) *AdminServiceServer_CreateDescriptionEntity {
-	c_call := _m.On("CreateDescriptionEntity", matchers...)
-	return &AdminServiceServer_CreateDescriptionEntity{Call: c_call}
-}
-
-// CreateDescriptionEntity provides a mock function with given fields: _a0, _a1
-func (_m *AdminServiceServer) CreateDescriptionEntity(_a0 context.Context, _a1 *admin.DescriptionEntityCreateRequest) (*admin.DescriptionEntityCreateResponse, error) {
-	ret := _m.Called(_a0, _a1)
-
-	var r0 *admin.DescriptionEntityCreateResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.DescriptionEntityCreateRequest) *admin.DescriptionEntityCreateResponse); ok {
-		r0 = rf(_a0, _a1)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.DescriptionEntityCreateResponse)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.DescriptionEntityCreateRequest) error); ok {
-		r1 = rf(_a0, _a1)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 type AdminServiceServer_CreateExecution struct {
 	*mock.Call
 }

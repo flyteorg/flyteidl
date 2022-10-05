@@ -21,7 +21,6 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminServiceApi* | [**CreateDescriptionEntity**](docs/AdminServiceApi.md#createdescriptionentity) | **Post** /api/v1/description_entities | Create a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 *AdminServiceApi* | [**CreateExecution**](docs/AdminServiceApi.md#createexecution) | **Post** /api/v1/executions | Triggers the creation of a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;
 *AdminServiceApi* | [**CreateLaunchPlan**](docs/AdminServiceApi.md#createlaunchplan) | **Post** /api/v1/launch_plans | Create and upload a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition
 *AdminServiceApi* | [**CreateNodeEvent**](docs/AdminServiceApi.md#createnodeevent) | **Post** /api/v1/events/nodes | Indicates a :ref:&#x60;ref_flyteidl.event.NodeExecutionEvent&#x60; has occurred.
@@ -88,8 +87,6 @@ Class | Method | HTTP request | Description
  - [AdminClusterResourceAttributes](docs/AdminClusterResourceAttributes.md)
  - [AdminCronSchedule](docs/AdminCronSchedule.md)
  - [AdminDescriptionEntity](docs/AdminDescriptionEntity.md)
- - [AdminDescriptionEntityCreateRequest](docs/AdminDescriptionEntityCreateRequest.md)
- - [AdminDescriptionEntityCreateResponse](docs/AdminDescriptionEntityCreateResponse.md)
  - [AdminDescriptionEntityIdentifier](docs/AdminDescriptionEntityIdentifier.md)
  - [AdminDescriptionEntityList](docs/AdminDescriptionEntityList.md)
  - [AdminDomain](docs/AdminDomain.md)

@@ -36,21 +36,24 @@ class AdminDescriptionEntity(object):
     swagger_types = {
         'short_description': 'str',
         'long_description': 'AdminLongDescription',
-        'source_code': 'AdminSourceCode'
+        'source_code': 'AdminSourceCode',
+        'tags': 'list[str]'
     }
 
     attribute_map = {
         'short_description': 'short_description',
         'long_description': 'long_description',
-        'source_code': 'source_code'
+        'source_code': 'source_code',
+        'tags': 'tags'
     }
 
-    def __init__(self, short_description=None, long_description=None, source_code=None):  # noqa: E501
+    def __init__(self, short_description=None, long_description=None, source_code=None, tags=None):  # noqa: E501
         """AdminDescriptionEntity - a model defined in Swagger"""  # noqa: E501
 
         self._short_description = None
         self._long_description = None
         self._source_code = None
+        self._tags = None
         self.discriminator = None
 
         if short_description is not None:
@@ -59,6 +62,8 @@ class AdminDescriptionEntity(object):
             self.long_description = long_description
         if source_code is not None:
             self.source_code = source_code
+        if tags is not None:
+            self.tags = tags
 
     @property
     def short_description(self):
@@ -128,6 +133,29 @@ class AdminDescriptionEntity(object):
         """
 
         self._source_code = source_code
+
+    @property
+    def tags(self):
+        """Gets the tags of this AdminDescriptionEntity.  # noqa: E501
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+
+        :return: The tags of this AdminDescriptionEntity.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this AdminDescriptionEntity.
+
+        User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks.  # noqa: E501
+
+        :param tags: The tags of this AdminDescriptionEntity.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

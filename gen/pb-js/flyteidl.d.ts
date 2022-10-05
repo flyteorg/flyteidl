@@ -8626,6 +8626,9 @@ export namespace flyteidl {
 
             /** DescriptionEntity sourceCode */
             sourceCode?: (flyteidl.admin.ISourceCode|null);
+
+            /** DescriptionEntity tags */
+            tags?: (string[]|null);
         }
 
         /** Represents a DescriptionEntity. */
@@ -8645,6 +8648,9 @@ export namespace flyteidl {
 
             /** DescriptionEntity sourceCode. */
             public sourceCode?: (flyteidl.admin.ISourceCode|null);
+
+            /** DescriptionEntity tags. */
+            public tags: string[];
 
             /**
              * Creates a new DescriptionEntity instance using the specified properties.
@@ -14722,8 +14728,8 @@ export namespace flyteidl {
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec tags */
-            tags?: (string[]|null);
+            /** TaskSpec descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14738,8 +14744,8 @@ export namespace flyteidl {
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec tags. */
-            public tags: string[];
+            /** TaskSpec descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15734,8 +15740,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
 
-            /** WorkflowSpec tags */
-            tags?: (string[]|null);
+            /** WorkflowSpec descriptionEntity */
+            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15753,8 +15759,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
 
-            /** WorkflowSpec tags. */
-            public tags: string[];
+            /** WorkflowSpec descriptionEntity. */
+            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -16936,20 +16942,6 @@ export namespace flyteidl {
             public getVersion(request: flyteidl.admin.IGetVersionRequest): Promise<flyteidl.admin.GetVersionResponse>;
 
             /**
-             * Calls CreateDescriptionEntity.
-             * @param request DescriptionEntityCreateRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and DescriptionEntityCreateResponse
-             */
-            public createDescriptionEntity(request: flyteidl.admin.IDescriptionEntityCreateRequest, callback: flyteidl.service.AdminService.CreateDescriptionEntityCallback): void;
-
-            /**
-             * Calls CreateDescriptionEntity.
-             * @param request DescriptionEntityCreateRequest message or plain object
-             * @returns Promise
-             */
-            public createDescriptionEntity(request: flyteidl.admin.IDescriptionEntityCreateRequest): Promise<flyteidl.admin.DescriptionEntityCreateResponse>;
-
-            /**
              * Calls GetDescriptionEntity.
              * @param request ObjectGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and DescriptionEntity
@@ -17308,13 +17300,6 @@ export namespace flyteidl {
              * @param [response] GetVersionResponse
              */
             type GetVersionCallback = (error: (Error|null), response?: flyteidl.admin.GetVersionResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#createDescriptionEntity}.
-             * @param error Error, if any
-             * @param [response] DescriptionEntityCreateResponse
-             */
-            type CreateDescriptionEntityCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntityCreateResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.AdminService#getDescriptionEntity}.

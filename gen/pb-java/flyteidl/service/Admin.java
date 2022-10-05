@@ -38,7 +38,7 @@ public final class Admin {
       "n/version.proto\032\033flyteidl/admin/common.p" +
       "roto\032\'flyteidl/admin/description_entity." +
       "proto\032,protoc-gen-swagger/options/annota" +
-      "tions.proto2\266p\n\014AdminService\022\305\002\n\nCreateT" +
+      "tions.proto2\252m\n\014AdminService\022\305\002\n\nCreateT" +
       "ask\022!.flyteidl.admin.TaskCreateRequest\032\"" +
       ".flyteidl.admin.TaskCreateResponse\"\357\001\202\323\344" +
       "\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and re" +
@@ -371,35 +371,25 @@ public final class Admin {
       "rsionRequest\032\".flyteidl.admin.GetVersion" +
       "Response\"j\202\323\344\223\002\021\022\017/api/v1/version\222AP\032NRe" +
       "trieve the Version (including the Build " +
-      " information) for FlyteAdmin service\022\211\003\n" +
-      "\027CreateDescriptionEntity\022..flyteidl.admi" +
-      "n.DescriptionEntityCreateRequest\032/.flyte" +
-      "idl.admin.DescriptionEntityCreateRespons" +
-      "e\"\214\002\202\323\344\223\002!\"\034/api/v1/description_entities" +
-      ":\001*\222A\341\001\0324Create and register a descripti" +
-      "on entity definition.JB\n\003400\022;\n9Returned" +
-      " for bad request that may have failed va" +
-      "lidation.Je\n\003409\022^\n\\Returned for a reque" +
-      "st that references an identical entity t" +
-      "hat has already been registered.\022\353\001\n\024Get" +
-      "DescriptionEntity\022 .flyteidl.admin.Objec" +
-      "tGetRequest\032!.flyteidl.admin.Description" +
-      "Entity\"\215\001\202\323\344\223\002N\022L/api/v1/description_ent" +
-      "ities/{id.project}/{id.domain}/{id.name}" +
-      "/{id.version}\222A6\0324Retrieve an existing d" +
-      "escription entity description.\022\233\003\n\027ListD" +
-      "escriptionEntities\022,.flyteidl.admin.Desc" +
-      "riptionEntityListRequest\032%.flyteidl.admi" +
-      "n.DescriptionEntityList\"\252\002\202\323\344\223\002\331\001\022x/api/" +
-      "v1/description_entities/{description_ent" +
-      "ity_id.project}/{description_entity_id.d" +
-      "omain}/{description_entity_id.name}Z]\022[/" +
+      " information) for FlyteAdmin service\022\353\001\n" +
+      "\024GetDescriptionEntity\022 .flyteidl.admin.O" +
+      "bjectGetRequest\032!.flyteidl.admin.Descrip" +
+      "tionEntity\"\215\001\202\323\344\223\002N\022L/api/v1/description" +
+      "_entities/{id.project}/{id.domain}/{id.n" +
+      "ame}/{id.version}\222A6\0324Retrieve an existi" +
+      "ng description entity description.\022\233\003\n\027L" +
+      "istDescriptionEntities\022,.flyteidl.admin." +
+      "DescriptionEntityListRequest\032%.flyteidl." +
+      "admin.DescriptionEntityList\"\252\002\202\323\344\223\002\331\001\022x/" +
       "api/v1/description_entities/{description" +
       "_entity_id.project}/{description_entity_" +
-      "id.domain}\222AG\032EFetch existing descriptio" +
-      "n entity definitions matching input filt" +
-      "ers.B9Z7github.com/flyteorg/flyteidl/gen" +
-      "/pb-go/flyteidl/serviceb\006proto3"
+      "id.domain}/{description_entity_id.name}Z" +
+      "]\022[/api/v1/description_entities/{descrip" +
+      "tion_entity_id.project}/{description_ent" +
+      "ity_id.domain}\222AG\032EFetch existing descri" +
+      "ption entity definitions matching input " +
+      "filters.B9Z7github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

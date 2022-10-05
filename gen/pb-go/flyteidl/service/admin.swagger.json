@@ -447,42 +447,6 @@
         ]
       }
     },
-    "/api/v1/description_entities": {
-      "post": {
-        "summary": "Create a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
-        "description": "Create and register a description entity definition.",
-        "operationId": "CreateDescriptionEntity",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminDescriptionEntityCreateResponse"
-            }
-          },
-          "400": {
-            "description": "Returned for bad request that may have failed validation.",
-            "schema": {}
-          },
-          "409": {
-            "description": "Returned for a request that references an identical entity that has already been registered.",
-            "schema": {}
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/adminDescriptionEntityCreateRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}": {
       "get": {
         "summary": "Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.",
@@ -3587,27 +3551,16 @@
         "source_code": {
           "$ref": "#/definitions/adminSourceCode",
           "description": "Optional link to source code used to define this entity."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
         }
       },
       "description": "DescriptionEntity contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
-    },
-    "adminDescriptionEntityCreateRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/coreIdentifier",
-          "title": "id represents the unique identifier of the description entity.\n+required"
-        },
-        "description_entity": {
-          "$ref": "#/definitions/adminDescriptionEntity",
-          "title": "Represents the specification for Description.\n+required"
-        }
-      },
-      "title": "Represents a request structure to create a revision of a description entity.\nSee :ref:`ref_flyteidl.admin.DescriptionEntity` for more details"
-    },
-    "adminDescriptionEntityCreateResponse": {
-      "type": "object",
-      "description": "Represents a response structure if description entity creation succeeds."
     },
     "adminDescriptionEntityIdentifier": {
       "type": "object",
@@ -5167,12 +5120,9 @@
           "$ref": "#/definitions/coreTaskTemplate",
           "description": "Template of the task that encapsulates all the metadata of the task."
         },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "description": "Represents the specification for Description."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5440,12 +5390,9 @@
           },
           "description": "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the\npropeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out\nto Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered."
         },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering workflows."
+        "description_entity": {
+          "$ref": "#/definitions/adminDescriptionEntity",
+          "description": "Represents the specification for Description."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."

@@ -389,6 +389,16 @@ func (m *WorkflowSpec) Validate() error {
 
 	}
 
+	if v, ok := interface{}(m.GetDescriptionEntity()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return WorkflowSpecValidationError{
+				field:  "DescriptionEntity",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

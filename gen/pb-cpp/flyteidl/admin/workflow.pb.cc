@@ -16,8 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fdescription_5fentity_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowClosure_flyteidl_2fadmin_2fworkflow_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fworkflow_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Workflow_flyteidl_2fadmin_2fworkflow_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fcompiler_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_CompiledWorkflowClosure_flyteidl_2fcore_2fcompiler_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
@@ -123,9 +124,10 @@ static void InitDefaultsWorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto() {
   ::flyteidl::admin::WorkflowSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsWorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto}, {
-      &scc_info_WorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_WorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsWorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto}, {
+      &scc_info_WorkflowTemplate_flyteidl_2fcore_2fworkflow_2eproto.base,
+      &scc_info_DescriptionEntity_flyteidl_2fadmin_2fdescription_5fentity_2eproto.base,}};
 
 static void InitDefaultsWorkflowClosure_flyteidl_2fadmin_2fworkflow_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -190,7 +192,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_2eproto
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowSpec, template__),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowSpec, sub_workflows_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowSpec, tags_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowSpec, description_entity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowClosure, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -227,40 +229,43 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto[] =
   "\n\035flyteidl/admin/workflow.proto\022\016flyteid"
   "l.admin\032\034flyteidl/core/compiler.proto\032\036f"
   "lyteidl/core/identifier.proto\032\034flyteidl/"
-  "core/workflow.proto\032\037google/protobuf/tim"
-  "estamp.proto\"j\n\025WorkflowCreateRequest\022%\n"
-  "\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n\004"
-  "spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpec"
-  "\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022%"
-  "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220\n"
-  "\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflow"
-  "Closure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 \003"
-  "(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002 "
-  "\001(\t\"\207\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132\037"
-  ".flyteidl.core.WorkflowTemplate\0226\n\rsub_w"
-  "orkflows\030\002 \003(\0132\037.flyteidl.core.WorkflowT"
-  "emplate\022\014\n\004tags\030\003 \003(\t\"\204\001\n\017WorkflowClosur"
-  "e\022A\n\021compiled_workflow\030\001 \001(\0132&.flyteidl."
-  "core.CompiledWorkflowClosure\022.\n\ncreated_"
-  "at\030\002 \001(\0132\032.google.protobuf.TimestampB7Z5"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/adminb\006proto3"
+  "core/workflow.proto\032\'flyteidl/admin/desc"
+  "ription_entity.proto\032\037google/protobuf/ti"
+  "mestamp.proto\"j\n\025WorkflowCreateRequest\022%"
+  "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n"
+  "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe"
+  "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022"
+  "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220"
+  "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo"
+  "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 "
+  "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002"
+  " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132"
+  "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_"
+  "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow"
+  "Template\022=\n\022description_entity\030\003 \001(\0132!.f"
+  "lyteidl.admin.DescriptionEntity\"\204\001\n\017Work"
+  "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&"
+  ".flyteidl.core.CompiledWorkflowClosure\022."
+  "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim"
+  "estampB7Z5github.com/flyteorg/flyteidl/g"
+  "en/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto,
-  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 821,
+  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 911,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[5] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fcompiler_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fworkflow_2eproto,
+    ::AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto, deps, 4);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto, deps, 5);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1561,15 +1566,22 @@ void WorkflowList::InternalSwap(WorkflowList* other) {
 void WorkflowSpec::InitAsDefaultInstance() {
   ::flyteidl::admin::_WorkflowSpec_default_instance_._instance.get_mutable()->template__ = const_cast< ::flyteidl::core::WorkflowTemplate*>(
       ::flyteidl::core::WorkflowTemplate::internal_default_instance());
+  ::flyteidl::admin::_WorkflowSpec_default_instance_._instance.get_mutable()->description_entity_ = const_cast< ::flyteidl::admin::DescriptionEntity*>(
+      ::flyteidl::admin::DescriptionEntity::internal_default_instance());
 }
 class WorkflowSpec::HasBitSetters {
  public:
   static const ::flyteidl::core::WorkflowTemplate& template_(const WorkflowSpec* msg);
+  static const ::flyteidl::admin::DescriptionEntity& description_entity(const WorkflowSpec* msg);
 };
 
 const ::flyteidl::core::WorkflowTemplate&
 WorkflowSpec::HasBitSetters::template_(const WorkflowSpec* msg) {
   return *msg->template__;
+}
+const ::flyteidl::admin::DescriptionEntity&
+WorkflowSpec::HasBitSetters::description_entity(const WorkflowSpec* msg) {
+  return *msg->description_entity_;
 }
 void WorkflowSpec::clear_template_() {
   if (GetArenaNoVirtual() == nullptr && template__ != nullptr) {
@@ -1580,10 +1592,16 @@ void WorkflowSpec::clear_template_() {
 void WorkflowSpec::clear_sub_workflows() {
   sub_workflows_.Clear();
 }
+void WorkflowSpec::clear_description_entity() {
+  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
+    delete description_entity_;
+  }
+  description_entity_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int WorkflowSpec::kTemplateFieldNumber;
 const int WorkflowSpec::kSubWorkflowsFieldNumber;
-const int WorkflowSpec::kTagsFieldNumber;
+const int WorkflowSpec::kDescriptionEntityFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 WorkflowSpec::WorkflowSpec()
@@ -1594,13 +1612,17 @@ WorkflowSpec::WorkflowSpec()
 WorkflowSpec::WorkflowSpec(const WorkflowSpec& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
-      sub_workflows_(from.sub_workflows_),
-      tags_(from.tags_) {
+      sub_workflows_(from.sub_workflows_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_template_()) {
     template__ = new ::flyteidl::core::WorkflowTemplate(*from.template__);
   } else {
     template__ = nullptr;
+  }
+  if (from.has_description_entity()) {
+    description_entity_ = new ::flyteidl::admin::DescriptionEntity(*from.description_entity_);
+  } else {
+    description_entity_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.WorkflowSpec)
 }
@@ -1608,7 +1630,9 @@ WorkflowSpec::WorkflowSpec(const WorkflowSpec& from)
 void WorkflowSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_WorkflowSpec_flyteidl_2fadmin_2fworkflow_2eproto.base);
-  template__ = nullptr;
+  ::memset(&template__, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&description_entity_) -
+      reinterpret_cast<char*>(&template__)) + sizeof(description_entity_));
 }
 
 WorkflowSpec::~WorkflowSpec() {
@@ -1618,6 +1642,7 @@ WorkflowSpec::~WorkflowSpec() {
 
 void WorkflowSpec::SharedDtor() {
   if (this != internal_default_instance()) delete template__;
+  if (this != internal_default_instance()) delete description_entity_;
 }
 
 void WorkflowSpec::SetCachedSize(int size) const {
@@ -1636,11 +1661,14 @@ void WorkflowSpec::Clear() {
   (void) cached_has_bits;
 
   sub_workflows_.Clear();
-  tags_.Clear();
   if (GetArenaNoVirtual() == nullptr && template__ != nullptr) {
     delete template__;
   }
   template__ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
+    delete description_entity_;
+  }
+  description_entity_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1686,23 +1714,17 @@ const char* WorkflowSpec::_InternalParse(const char* begin, const char* end, voi
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
         break;
       }
-      // repeated string tags = 3;
+      // .flyteidl.admin.DescriptionEntity description_entity = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          ctx->extra_parse_data().SetFieldName("flyteidl.admin.WorkflowSpec.tags");
-          object = msg->add_tags();
-          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-            goto string_till_end;
-          }
-          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-          ptr += size;
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 26 && (ptr += 1));
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::DescriptionEntity::_InternalParse;
+        object = msg->mutable_description_entity();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -1720,10 +1742,6 @@ const char* WorkflowSpec::_InternalParse(const char* begin, const char* end, voi
     }  // switch
   }  // while
   return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -1761,16 +1779,11 @@ bool WorkflowSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated string tags = 3;
+      // .flyteidl.admin.DescriptionEntity description_entity = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_tags()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->tags(this->tags_size() - 1).data(),
-            static_cast<int>(this->tags(this->tags_size() - 1).length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.WorkflowSpec.tags"));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_description_entity()));
         } else {
           goto handle_unusual;
         }
@@ -1819,14 +1832,10 @@ void WorkflowSpec::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.WorkflowSpec.tags");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->tags(i), output);
+  // .flyteidl.admin.DescriptionEntity description_entity = 3;
+  if (this->has_description_entity()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::description_entity(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1857,14 +1866,11 @@ void WorkflowSpec::SerializeWithCachedSizes(
         2, this->sub_workflows(static_cast<int>(i)), target);
   }
 
-  // repeated string tags = 3;
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.WorkflowSpec.tags");
+  // .flyteidl.admin.DescriptionEntity description_entity = 3;
+  if (this->has_description_entity()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->tags(i), target);
+      InternalWriteMessageToArray(
+        3, HasBitSetters::description_entity(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1899,19 +1905,18 @@ size_t WorkflowSpec::ByteSizeLong() const {
     }
   }
 
-  // repeated string tags = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tags_size());
-  for (int i = 0, n = this->tags_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->tags(i));
-  }
-
   // .flyteidl.core.WorkflowTemplate template = 1;
   if (this->has_template_()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *template__);
+  }
+
+  // .flyteidl.admin.DescriptionEntity description_entity = 3;
+  if (this->has_description_entity()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *description_entity_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1942,9 +1947,11 @@ void WorkflowSpec::MergeFrom(const WorkflowSpec& from) {
   (void) cached_has_bits;
 
   sub_workflows_.MergeFrom(from.sub_workflows_);
-  tags_.MergeFrom(from.tags_);
   if (from.has_template_()) {
     mutable_template_()->::flyteidl::core::WorkflowTemplate::MergeFrom(from.template_());
+  }
+  if (from.has_description_entity()) {
+    mutable_description_entity()->::flyteidl::admin::DescriptionEntity::MergeFrom(from.description_entity());
   }
 }
 
@@ -1974,8 +1981,8 @@ void WorkflowSpec::InternalSwap(WorkflowSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&sub_workflows_)->InternalSwap(CastToBase(&other->sub_workflows_));
-  tags_.InternalSwap(CastToBase(&other->tags_));
   swap(template__, other->template__);
+  swap(description_entity_, other->description_entity_);
 }
 
 ::google::protobuf::Metadata WorkflowSpec::GetMetadata() const {
