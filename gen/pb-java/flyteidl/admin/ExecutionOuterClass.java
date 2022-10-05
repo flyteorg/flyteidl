@@ -1722,6 +1722,17 @@ public final class ExecutionOuterClass {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <pre>
+     * Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+     * If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+     * data once execution finishes successfully.
+     * </pre>
+     *
+     * <code>bool skip_cache = 4;</code>
+     */
+    boolean getSkipCache();
   }
   /**
    * <pre>
@@ -1784,6 +1795,11 @@ public final class ExecutionOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 32: {
+
+              skipCache_ = input.readBool();
               break;
             }
             default: {
@@ -1900,6 +1916,21 @@ public final class ExecutionOuterClass {
       }
     }
 
+    public static final int SKIP_CACHE_FIELD_NUMBER = 4;
+    private boolean skipCache_;
+    /**
+     * <pre>
+     * Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+     * If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+     * data once execution finishes successfully.
+     * </pre>
+     *
+     * <code>bool skip_cache = 4;</code>
+     */
+    public boolean getSkipCache() {
+      return skipCache_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1920,6 +1951,9 @@ public final class ExecutionOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
+      if (skipCache_ != false) {
+        output.writeBool(4, skipCache_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1935,6 +1969,10 @@ public final class ExecutionOuterClass {
       }
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (skipCache_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, skipCache_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1958,6 +1996,8 @@ public final class ExecutionOuterClass {
       }
       if (!getName()
           .equals(other.getName())) return false;
+      if (getSkipCache()
+          != other.getSkipCache()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1975,6 +2015,9 @@ public final class ExecutionOuterClass {
       }
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SKIP_CACHE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSkipCache());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2120,6 +2163,8 @@ public final class ExecutionOuterClass {
         }
         name_ = "";
 
+        skipCache_ = false;
+
         return this;
       }
 
@@ -2152,6 +2197,7 @@ public final class ExecutionOuterClass {
           result.id_ = idBuilder_.build();
         }
         result.name_ = name_;
+        result.skipCache_ = skipCache_;
         onBuilt();
         return result;
       }
@@ -2206,6 +2252,9 @@ public final class ExecutionOuterClass {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
+        }
+        if (other.getSkipCache() != false) {
+          setSkipCache(other.getSkipCache());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2493,6 +2542,50 @@ public final class ExecutionOuterClass {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean skipCache_ ;
+      /**
+       * <pre>
+       * Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+       * If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+       * data once execution finishes successfully.
+       * </pre>
+       *
+       * <code>bool skip_cache = 4;</code>
+       */
+      public boolean getSkipCache() {
+        return skipCache_;
+      }
+      /**
+       * <pre>
+       * Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+       * If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+       * data once execution finishes successfully.
+       * </pre>
+       *
+       * <code>bool skip_cache = 4;</code>
+       */
+      public Builder setSkipCache(boolean value) {
+        
+        skipCache_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+       * If enabled, all calculations are performed even if cached results would be available, overwriting the stored
+       * data once execution finishes successfully.
+       * </pre>
+       *
+       * <code>bool skip_cache = 4;</code>
+       */
+      public Builder clearSkipCache() {
+        
+        skipCache_ = false;
         onChanged();
         return this;
       }
@@ -26209,102 +26302,103 @@ public final class ExecutionOuterClass {
       "quest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014" +
       "\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035.flyteidl.ad" +
       "min.ExecutionSpec\022)\n\006inputs\030\005 \001(\0132\031.flyt" +
-      "eidl.core.LiteralMap\"`\n\030ExecutionRelaunc" +
+      "eidl.core.LiteralMap\"z\n\030ExecutionRelaunc" +
       "hRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifier\022\014\n\004name\030\003 \001(\t\"\224" +
-      "\001\n\027ExecutionRecoverRequest\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\022\014\n\004name\030\002 \001(\t\0223\n\010metadata\030\003 \001(\0132!.fly" +
-      "teidl.admin.ExecutionMetadata\"Q\n\027Executi" +
-      "onCreateResponse\0226\n\002id\030\001 \001(\0132*.flyteidl." +
-      "core.WorkflowExecutionIdentifier\"U\n\033Work" +
-      "flowExecutionGetRequest\0226\n\002id\030\001 \001(\0132*.fl" +
-      "yteidl.core.WorkflowExecutionIdentifier\"" +
-      "\243\001\n\tExecution\0226\n\002id\030\001 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\022+\n\004spec\030\002 " +
-      "\001(\0132\035.flyteidl.admin.ExecutionSpec\0221\n\007cl" +
-      "osure\030\003 \001(\0132 .flyteidl.admin.ExecutionCl" +
-      "osure\"M\n\rExecutionList\022-\n\nexecutions\030\001 \003" +
-      "(\0132\031.flyteidl.admin.Execution\022\r\n\005token\030\002" +
-      " \001(\t\"X\n\016LiteralMapBlob\022/\n\006values\030\001 \001(\0132\031" +
-      ".flyteidl.core.LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002" +
-      " \001(\tH\000B\006\n\004data\"1\n\rAbortMetadata\022\r\n\005cause" +
-      "\030\001 \001(\t\022\021\n\tprincipal\030\002 \001(\t\"\360\005\n\020ExecutionC" +
-      "losure\0225\n\007outputs\030\001 \001(\0132\036.flyteidl.admin" +
-      ".LiteralMapBlobB\002\030\001H\000\022.\n\005error\030\002 \001(\0132\035.f" +
-      "lyteidl.core.ExecutionErrorH\000\022\031\n\013abort_c" +
-      "ause\030\n \001(\tB\002\030\001H\000\0227\n\016abort_metadata\030\014 \001(\013" +
-      "2\035.flyteidl.admin.AbortMetadataH\000\0224\n\013out" +
-      "put_data\030\r \001(\0132\031.flyteidl.core.LiteralMa" +
-      "pB\002\030\001H\000\0226\n\017computed_inputs\030\003 \001(\0132\031.flyte" +
-      "idl.core.LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&" +
-      ".flyteidl.core.WorkflowExecution.Phase\022." +
-      "\n\nstarted_at\030\005 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022+\n\010duration\030\006 \001(\0132\031.google.protob" +
-      "uf.Duration\022.\n\ncreated_at\030\007 \001(\0132\032.google" +
-      ".protobuf.Timestamp\022.\n\nupdated_at\030\010 \001(\0132" +
-      "\032.google.protobuf.Timestamp\0223\n\rnotificat" +
-      "ions\030\t \003(\0132\034.flyteidl.admin.Notification" +
-      "\022.\n\013workflow_id\030\013 \001(\0132\031.flyteidl.core.Id" +
-      "entifier\022I\n\024state_change_details\030\016 \001(\0132+" +
-      ".flyteidl.admin.ExecutionStateChangeDeta" +
-      "ilsB\017\n\routput_result\"+\n\016SystemMetadata\022\031" +
-      "\n\021execution_cluster\030\001 \001(\t\"\332\003\n\021ExecutionM" +
-      "etadata\022=\n\004mode\030\001 \001(\0162/.flyteidl.admin.E" +
-      "xecutionMetadata.ExecutionMode\022\021\n\tprinci" +
-      "pal\030\002 \001(\t\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_" +
-      "at\030\004 \001(\0132\032.google.protobuf.Timestamp\022E\n\025" +
-      "parent_node_execution\030\005 \001(\0132&.flyteidl.c" +
-      "ore.NodeExecutionIdentifier\022G\n\023reference" +
-      "_execution\030\020 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\0227\n\017system_metadata\030" +
-      "\021 \001(\0132\036.flyteidl.admin.SystemMetadata\"g\n" +
-      "\rExecutionMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020" +
-      "\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WOR" +
-      "KFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020NotificationLi" +
-      "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm" +
-      "in.Notification\"\373\005\n\rExecutionSpec\022.\n\013lau" +
-      "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie" +
-      "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera" +
-      "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad" +
-      "min.ExecutionMetadata\0229\n\rnotifications\030\005" +
-      " \001(\0132 .flyteidl.admin.NotificationListH\000" +
-      "\022\025\n\013disable_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132" +
-      "\026.flyteidl.admin.Labels\0220\n\013annotations\030\010" +
-      " \001(\0132\033.flyteidl.admin.Annotations\0228\n\020sec" +
-      "urity_context\030\n \001(\0132\036.flyteidl.core.Secu" +
-      "rityContext\022/\n\tauth_role\030\020 \001(\0132\030.flyteid" +
-      "l.admin.AuthRoleB\002\030\001\022;\n\022quality_of_servi" +
-      "ce\030\021 \001(\0132\037.flyteidl.core.QualityOfServic" +
-      "e\022\027\n\017max_parallelism\030\022 \001(\005\022C\n\026raw_output" +
-      "_data_config\030\023 \001(\0132#.flyteidl.admin.RawO" +
-      "utputDataConfig\022=\n\022cluster_assignment\030\024 " +
-      "\001(\0132!.flyteidl.admin.ClusterAssignment\0221" +
-      "\n\rinterruptible\030\025 \001(\0132\032.google.protobuf." +
-      "BoolValue\022\022\n\nskip_cache\030\026 \001(\010B\030\n\026notific" +
-      "ation_overridesJ\004\010\004\020\005\"b\n\031ExecutionTermin" +
-      "ateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.W" +
-      "orkflowExecutionIdentifier\022\r\n\005cause\030\002 \001(" +
-      "\t\"\034\n\032ExecutionTerminateResponse\"Y\n\037Workf" +
-      "lowExecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*" +
-      ".flyteidl.core.WorkflowExecutionIdentifi" +
-      "er\"\336\001\n WorkflowExecutionGetDataResponse\022" +
-      ",\n\007outputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlo" +
-      "bB\002\030\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.U" +
-      "rlBlobB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flytei" +
-      "dl.core.LiteralMap\022/\n\014full_outputs\030\004 \001(\013" +
-      "2\031.flyteidl.core.LiteralMap\"\177\n\026Execution" +
-      "UpdateRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.cor" +
-      "e.WorkflowExecutionIdentifier\022-\n\005state\030\002" +
-      " \001(\0162\036.flyteidl.admin.ExecutionState\"\220\001\n" +
-      "\033ExecutionStateChangeDetails\022-\n\005state\030\001 " +
-      "\001(\0162\036.flyteidl.admin.ExecutionState\022/\n\013o" +
-      "ccurred_at\030\002 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpda" +
-      "teResponse*>\n\016ExecutionState\022\024\n\020EXECUTIO" +
-      "N_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7Z5gi" +
-      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
-      "teidl/adminb\006proto3"
+      "kflowExecutionIdentifier\022\014\n\004name\030\003 \001(\t\022\022" +
+      "\n\nskip_cache\030\004 \001(\010J\004\010\002\020\003\"\224\001\n\027ExecutionRe" +
+      "coverRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\022\014\n\004name\030\002 \001" +
+      "(\t\0223\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Ex" +
+      "ecutionMetadata\"Q\n\027ExecutionCreateRespon" +
+      "se\0226\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowE" +
+      "xecutionIdentifier\"U\n\033WorkflowExecutionG" +
+      "etRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
+      "rkflowExecutionIdentifier\"\243\001\n\tExecution\022" +
+      "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
+      "utionIdentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl" +
+      ".admin.ExecutionSpec\0221\n\007closure\030\003 \001(\0132 ." +
+      "flyteidl.admin.ExecutionClosure\"M\n\rExecu" +
+      "tionList\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl." +
+      "admin.Execution\022\r\n\005token\030\002 \001(\t\"X\n\016Litera" +
+      "lMapBlob\022/\n\006values\030\001 \001(\0132\031.flyteidl.core" +
+      ".LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data" +
+      "\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprin" +
+      "cipal\030\002 \001(\t\"\360\005\n\020ExecutionClosure\0225\n\007outp" +
+      "uts\030\001 \001(\0132\036.flyteidl.admin.LiteralMapBlo" +
+      "bB\002\030\001H\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.E" +
+      "xecutionErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001" +
+      "H\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flyteidl.ad" +
+      "min.AbortMetadataH\000\0224\n\013output_data\030\r \001(\013" +
+      "2\031.flyteidl.core.LiteralMapB\002\030\001H\000\0226\n\017com" +
+      "puted_inputs\030\003 \001(\0132\031.flyteidl.core.Liter" +
+      "alMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyteidl.core" +
+      ".WorkflowExecution.Phase\022.\n\nstarted_at\030\005" +
+      " \001(\0132\032.google.protobuf.Timestamp\022+\n\010dura" +
+      "tion\030\006 \001(\0132\031.google.protobuf.Duration\022.\n" +
+      "\ncreated_at\030\007 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022.\n\nupdated_at\030\010 \001(\0132\032.google.proto" +
+      "buf.Timestamp\0223\n\rnotifications\030\t \003(\0132\034.f" +
+      "lyteidl.admin.Notification\022.\n\013workflow_i" +
+      "d\030\013 \001(\0132\031.flyteidl.core.Identifier\022I\n\024st" +
+      "ate_change_details\030\016 \001(\0132+.flyteidl.admi" +
+      "n.ExecutionStateChangeDetailsB\017\n\routput_" +
+      "result\"+\n\016SystemMetadata\022\031\n\021execution_cl" +
+      "uster\030\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mod" +
+      "e\030\001 \001(\0162/.flyteidl.admin.ExecutionMetada" +
+      "ta.ExecutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007n" +
+      "esting\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022E\n\025parent_node_ex" +
+      "ecution\030\005 \001(\0132&.flyteidl.core.NodeExecut" +
+      "ionIdentifier\022G\n\023reference_execution\030\020 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\0227\n\017system_metadata\030\021 \001(\0132\036.flytei" +
+      "dl.admin.SystemMetadata\"g\n\rExecutionMode" +
+      "\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022" +
+      "\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tREC" +
+      "OVERED\020\005\"G\n\020NotificationList\0223\n\rnotifica" +
+      "tions\030\001 \003(\0132\034.flyteidl.admin.Notificatio" +
+      "n\"\373\005\n\rExecutionSpec\022.\n\013launch_plan\030\001 \001(\013" +
+      "2\031.flyteidl.core.Identifier\022-\n\006inputs\030\002 " +
+      "\001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\0223\n\010me" +
+      "tadata\030\003 \001(\0132!.flyteidl.admin.ExecutionM" +
+      "etadata\0229\n\rnotifications\030\005 \001(\0132 .flyteid" +
+      "l.admin.NotificationListH\000\022\025\n\013disable_al" +
+      "l\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.adm" +
+      "in.Labels\0220\n\013annotations\030\010 \001(\0132\033.flyteid" +
+      "l.admin.Annotations\0228\n\020security_context\030" +
+      "\n \001(\0132\036.flyteidl.core.SecurityContext\022/\n" +
+      "\tauth_role\030\020 \001(\0132\030.flyteidl.admin.AuthRo" +
+      "leB\002\030\001\022;\n\022quality_of_service\030\021 \001(\0132\037.fly" +
+      "teidl.core.QualityOfService\022\027\n\017max_paral" +
+      "lelism\030\022 \001(\005\022C\n\026raw_output_data_config\030\023" +
+      " \001(\0132#.flyteidl.admin.RawOutputDataConfi" +
+      "g\022=\n\022cluster_assignment\030\024 \001(\0132!.flyteidl" +
+      ".admin.ClusterAssignment\0221\n\rinterruptibl" +
+      "e\030\025 \001(\0132\032.google.protobuf.BoolValue\022\022\n\ns" +
+      "kip_cache\030\026 \001(\010B\030\n\026notification_override" +
+      "sJ\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002" +
+      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032Execution" +
+      "TerminateResponse\"Y\n\037WorkflowExecutionGe" +
+      "tDataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core" +
+      ".WorkflowExecutionIdentifier\"\336\001\n Workflo" +
+      "wExecutionGetDataResponse\022,\n\007outputs\030\001 \001" +
+      "(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022+\n\006input" +
+      "s\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013" +
+      "full_inputs\030\003 \001(\0132\031.flyteidl.core.Litera" +
+      "lMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.co" +
+      "re.LiteralMap\"\177\n\026ExecutionUpdateRequest\022" +
+      "6\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
+      "utionIdentifier\022-\n\005state\030\002 \001(\0162\036.flyteid" +
+      "l.admin.ExecutionState\"\220\001\n\033ExecutionStat" +
+      "eChangeDetails\022-\n\005state\030\001 \001(\0162\036.flyteidl" +
+      ".admin.ExecutionState\022/\n\013occurred_at\030\002 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022\021\n\tprinci" +
+      "pal\030\003 \001(\t\"\031\n\027ExecutionUpdateResponse*>\n\016" +
+      "ExecutionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022" +
+      "EXECUTION_ARCHIVED\020\001B7Z5github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26338,7 +26432,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionRelaunchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionRelaunchRequest_descriptor,
-        new java.lang.String[] { "Id", "Name", });
+        new java.lang.String[] { "Id", "Name", "SkipCache", });
     internal_static_flyteidl_admin_ExecutionRecoverRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_admin_ExecutionRecoverRequest_fieldAccessorTable = new

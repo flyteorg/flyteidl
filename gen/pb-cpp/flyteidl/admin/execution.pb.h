@@ -489,6 +489,12 @@ class ExecutionRelaunchRequest final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::WorkflowExecutionIdentifier* id);
 
+  // bool skip_cache = 4;
+  void clear_skip_cache();
+  static const int kSkipCacheFieldNumber = 4;
+  bool skip_cache() const;
+  void set_skip_cache(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionRelaunchRequest)
  private:
   class HasBitSetters;
@@ -496,6 +502,7 @@ class ExecutionRelaunchRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
+  bool skip_cache_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -3638,6 +3645,20 @@ inline void ExecutionRelaunchRequest::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRelaunchRequest.name)
+}
+
+// bool skip_cache = 4;
+inline void ExecutionRelaunchRequest::clear_skip_cache() {
+  skip_cache_ = false;
+}
+inline bool ExecutionRelaunchRequest::skip_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRelaunchRequest.skip_cache)
+  return skip_cache_;
+}
+inline void ExecutionRelaunchRequest::set_skip_cache(bool value) {
+  
+  skip_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionRelaunchRequest.skip_cache)
 }
 
 // -------------------------------------------------------------------

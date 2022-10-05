@@ -34,25 +34,30 @@ class AdminExecutionRelaunchRequest(object):
     """
     swagger_types = {
         'id': 'CoreWorkflowExecutionIdentifier',
-        'name': 'str'
+        'name': 'str',
+        'skip_cache': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'skip_cache': 'skip_cache'
     }
 
-    def __init__(self, id=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, skip_cache=None):  # noqa: E501
         """AdminExecutionRelaunchRequest - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
+        self._skip_cache = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if skip_cache is not None:
+            self.skip_cache = skip_cache
 
     @property
     def id(self):
@@ -95,6 +100,29 @@ class AdminExecutionRelaunchRequest(object):
         """
 
         self._name = name
+
+    @property
+    def skip_cache(self):
+        """Gets the skip_cache of this AdminExecutionRelaunchRequest.  # noqa: E501
+
+        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+
+        :return: The skip_cache of this AdminExecutionRelaunchRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_cache
+
+    @skip_cache.setter
+    def skip_cache(self, skip_cache):
+        """Sets the skip_cache of this AdminExecutionRelaunchRequest.
+
+        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+
+        :param skip_cache: The skip_cache of this AdminExecutionRelaunchRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_cache = skip_cache
 
     def to_dict(self):
         """Returns the model properties as a dict"""

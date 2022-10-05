@@ -153,6 +153,8 @@ func (m *ExecutionRelaunchRequest) Validate() error {
 
 	// no validation rules for Name
 
+	// no validation rules for SkipCache
+
 	return nil
 }
 

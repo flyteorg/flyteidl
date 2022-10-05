@@ -1084,6 +1084,7 @@ Request to relaunch the referenced execution.
 
    "id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Identifier of the workflow execution to relaunch. +required"
    "name", ":ref:`ref_string`", "", "User provided value for the relaunched execution. If none is provided the system will generate a unique string. +optional"
+   "skip_cache", ":ref:`ref_bool`", "", "Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully."
 
 
 

@@ -3970,6 +3970,13 @@ definitions:
         type: "string"
         title: "User provided value for the relaunched execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
+      skip_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be skipped for a single execution.\nIf enabled, all calculations are performed\
+          \ even if cached results would be available, overwriting the stored\ndata\
+          \ once execution finishes successfully."
     description: "Request to relaunch the referenced execution."
   adminExecutionSpec:
     type: "object"

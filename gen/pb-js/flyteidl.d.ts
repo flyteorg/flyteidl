@@ -9290,6 +9290,9 @@ export namespace flyteidl {
 
             /** ExecutionRelaunchRequest name */
             name?: (string|null);
+
+            /** ExecutionRelaunchRequest skipCache */
+            skipCache?: (boolean|null);
         }
 
         /** Represents an ExecutionRelaunchRequest. */
@@ -9306,6 +9309,9 @@ export namespace flyteidl {
 
             /** ExecutionRelaunchRequest name. */
             public name: string;
+
+            /** ExecutionRelaunchRequest skipCache. */
+            public skipCache: boolean;
 
             /**
              * Creates a new ExecutionRelaunchRequest instance using the specified properties.
