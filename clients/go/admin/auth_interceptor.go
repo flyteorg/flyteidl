@@ -28,7 +28,6 @@ func MaterializeCredentials(ctx context.Context, cfg *Config, tokenCache cache.T
 	}
 
 	authorizationMetadataKey := cfg.AuthorizationMetadataKey
-	logger.Infof(ctx, "in auth interceptor, cfg.AuthorizationMetadataKey: %s", cfg.AuthorizationMetadataKey)
 	if len(authorizationMetadataKey) == 0 {
 		clientMetadata, err := authMetadataClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 		if err != nil {

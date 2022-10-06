@@ -46,7 +46,6 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 		}
 
 		scopes := cfg.Scopes
-		logger.Infof(ctx, "in token source provider, cfg.Scopes: %s", cfg.Scopes)
 		if len(scopes) == 0 {
 			clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 			if err != nil {
