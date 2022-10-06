@@ -8891,110 +8891,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a DescriptionEntityCreateRequest. */
-        interface IDescriptionEntityCreateRequest {
-
-            /** DescriptionEntityCreateRequest id */
-            id?: (flyteidl.core.IIdentifier|null);
-
-            /** DescriptionEntityCreateRequest descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
-        }
-
-        /** Represents a DescriptionEntityCreateRequest. */
-        class DescriptionEntityCreateRequest implements IDescriptionEntityCreateRequest {
-
-            /**
-             * Constructs a new DescriptionEntityCreateRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IDescriptionEntityCreateRequest);
-
-            /** DescriptionEntityCreateRequest id. */
-            public id?: (flyteidl.core.IIdentifier|null);
-
-            /** DescriptionEntityCreateRequest descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
-
-            /**
-             * Creates a new DescriptionEntityCreateRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns DescriptionEntityCreateRequest instance
-             */
-            public static create(properties?: flyteidl.admin.IDescriptionEntityCreateRequest): flyteidl.admin.DescriptionEntityCreateRequest;
-
-            /**
-             * Encodes the specified DescriptionEntityCreateRequest message. Does not implicitly {@link flyteidl.admin.DescriptionEntityCreateRequest.verify|verify} messages.
-             * @param message DescriptionEntityCreateRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IDescriptionEntityCreateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a DescriptionEntityCreateRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns DescriptionEntityCreateRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityCreateRequest;
-
-            /**
-             * Verifies a DescriptionEntityCreateRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a DescriptionEntityCreateResponse. */
-        interface IDescriptionEntityCreateResponse {
-        }
-
-        /** Represents a DescriptionEntityCreateResponse. */
-        class DescriptionEntityCreateResponse implements IDescriptionEntityCreateResponse {
-
-            /**
-             * Constructs a new DescriptionEntityCreateResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IDescriptionEntityCreateResponse);
-
-            /**
-             * Creates a new DescriptionEntityCreateResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns DescriptionEntityCreateResponse instance
-             */
-            public static create(properties?: flyteidl.admin.IDescriptionEntityCreateResponse): flyteidl.admin.DescriptionEntityCreateResponse;
-
-            /**
-             * Encodes the specified DescriptionEntityCreateResponse message. Does not implicitly {@link flyteidl.admin.DescriptionEntityCreateResponse.verify|verify} messages.
-             * @param message DescriptionEntityCreateResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IDescriptionEntityCreateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a DescriptionEntityCreateResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns DescriptionEntityCreateResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityCreateResponse;
-
-            /**
-             * Verifies a DescriptionEntityCreateResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a DescriptionEntityList. */
         interface IDescriptionEntityList {
 
@@ -10531,9 +10427,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** ExecutionSpec tags */
-            tags?: (string[]|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10586,9 +10479,6 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
-
-            /** ExecutionSpec tags. */
-            public tags: string[];
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");

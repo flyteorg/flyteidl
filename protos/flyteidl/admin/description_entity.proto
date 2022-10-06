@@ -66,23 +66,6 @@ message DescriptionEntityIdentifier {
   string name                 = 4;
 }
 
-// Represents a request structure to create a revision of a description entity.
-// See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
-message DescriptionEntityCreateRequest {
-  // id represents the unique identifier of the description entity.
-  // +required
-  core.Identifier id           = 1;
-
-  // Represents the specification for Description.
-  // +required
-  DescriptionEntity description_entity        = 2;
-}
-
-// Represents a response structure if description entity creation succeeds.
-message DescriptionEntityCreateResponse {
-  // Purposefully empty, may be populated in the future.
-}
-
 // Represents a list of DescriptionEntities returned from the admin.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 message DescriptionEntityList {

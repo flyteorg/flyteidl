@@ -776,45 +776,6 @@ Documentation could provide insight into the algorithms, business use case, etc.
 
 
 
-.. _ref_flyteidl.admin.DescriptionEntityCreateRequest:
-
-DescriptionEntityCreateRequest
-------------------------------------------------------------------
-
-Represents a request structure to create a revision of a description entity.
-See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
-
-
-
-.. csv-table:: DescriptionEntityCreateRequest type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the description entity. +required"
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description. +required"
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.DescriptionEntityCreateResponse:
-
-DescriptionEntityCreateResponse
-------------------------------------------------------------------
-
-Represents a response structure if description entity creation succeeds.
-
-Purposefully empty, may be populated in the future.
-
-
-
-
-
-
-
-
 .. _ref_flyteidl.admin.DescriptionEntityIdentifier:
 
 DescriptionEntityIdentifier
@@ -1432,7 +1393,6 @@ of an execution as it progresses across phase changes.
    "raw_output_data_config", ":ref:`ref_flyteidl.admin.RawOutputDataConfig`", "", "User setting to configure where to store offloaded data (i.e. Blobs, structured datasets, query data, etc.). This should be a prefix like s3://my-bucket/my-data"
    "cluster_assignment", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", "Controls how to select an available cluster on which this execution should run."
    "interruptible", ":ref:`ref_google.protobuf.BoolValue`", "", "Allows for the interruptible flag of a workflow to be overwritten for a single execution. Omitting this field uses the workflow's value as a default. As we need to distinguish between the field not being provided and its default value false, we have to use a wrapper around the bool field."
-   "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering executions."
 
 
 

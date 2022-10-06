@@ -3505,9 +3505,6 @@ definitions:
         labels:
           values:
             key: "values"
-        tags:
-        - "tags"
-        - "tags"
         launch_plan:
           domain: "domain"
           resource_type: {}
@@ -3904,9 +3901,6 @@ definitions:
           labels:
             values:
               key: "values"
-          tags:
-          - "tags"
-          - "tags"
           launch_plan:
             domain: "domain"
             resource_type: {}
@@ -4119,9 +4113,6 @@ definitions:
           labels:
             values:
               key: "values"
-          tags:
-          - "tags"
-          - "tags"
           launch_plan:
             domain: "domain"
             resource_type: {}
@@ -4393,12 +4384,6 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
-      tags:
-        type: "array"
-        description: "User-specified tags. These are arbitrary and can be used for\
-          \ searching\nfiltering and discovering executions."
-        items:
-          type: "string"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4431,9 +4416,6 @@ definitions:
       labels:
         values:
           key: "values"
-      tags:
-      - "tags"
-      - "tags"
       launch_plan:
         domain: "domain"
         resource_type: {}

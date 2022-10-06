@@ -16899,45 +16899,6 @@ public final class ExecutionOuterClass {
      */
     com.google.protobuf.BoolValueOrBuilder getInterruptibleOrBuilder();
 
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    java.util.List<java.lang.String>
-        getTagsList();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    int getTagsCount();
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
-
     public flyteidl.admin.ExecutionOuterClass.ExecutionSpec.NotificationOverridesCase getNotificationOverridesCase();
   }
   /**
@@ -16958,7 +16919,6 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private ExecutionSpec() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -17152,15 +17112,6 @@ public final class ExecutionOuterClass {
 
               break;
             }
-            case 178: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00004000) != 0)) {
-                tags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00004000;
-              }
-              tags_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -17176,9 +17127,6 @@ public final class ExecutionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00004000) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -17196,7 +17144,6 @@ public final class ExecutionOuterClass {
               flyteidl.admin.ExecutionOuterClass.ExecutionSpec.class, flyteidl.admin.ExecutionOuterClass.ExecutionSpec.Builder.class);
     }
 
-    private int bitField0_;
     private int notificationOverridesCase_ = 0;
     private java.lang.Object notificationOverrides_;
     public enum NotificationOverridesCase
@@ -17684,55 +17631,6 @@ public final class ExecutionOuterClass {
       return getInterruptible();
     }
 
-    public static final int TAGS_FIELD_NUMBER = 22;
-    private com.google.protobuf.LazyStringList tags_;
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    public int getTagsCount() {
-      return tags_.size();
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * User-specified tags. These are arbitrary and can be used for searching
-     * filtering and discovering executions.
-     * </pre>
-     *
-     * <code>repeated string tags = 22;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17789,9 +17687,6 @@ public final class ExecutionOuterClass {
       }
       if (interruptible_ != null) {
         output.writeMessage(21, getInterruptible());
-      }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, tags_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -17858,14 +17753,6 @@ public final class ExecutionOuterClass {
       if (interruptible_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, getInterruptible());
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 2 * getTagsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17939,8 +17826,6 @@ public final class ExecutionOuterClass {
         if (!getInterruptible()
             .equals(other.getInterruptible())) return false;
       }
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
       if (!getNotificationOverridesCase().equals(other.getNotificationOverridesCase())) return false;
       switch (notificationOverridesCase_) {
         case 5:
@@ -18010,10 +17895,6 @@ public final class ExecutionOuterClass {
       if (hasInterruptible()) {
         hash = (37 * hash) + INTERRUPTIBLE_FIELD_NUMBER;
         hash = (53 * hash) + getInterruptible().hashCode();
-      }
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
       }
       switch (notificationOverridesCase_) {
         case 5:
@@ -18234,8 +18115,6 @@ public final class ExecutionOuterClass {
           interruptible_ = null;
           interruptibleBuilder_ = null;
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00004000);
         notificationOverridesCase_ = 0;
         notificationOverrides_ = null;
         return this;
@@ -18264,8 +18143,6 @@ public final class ExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.ExecutionOuterClass.ExecutionSpec buildPartial() {
         flyteidl.admin.ExecutionOuterClass.ExecutionSpec result = new flyteidl.admin.ExecutionOuterClass.ExecutionSpec(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (launchPlanBuilder_ == null) {
           result.launchPlan_ = launchPlan_;
         } else {
@@ -18332,12 +18209,6 @@ public final class ExecutionOuterClass {
         } else {
           result.interruptible_ = interruptibleBuilder_.build();
         }
-        if (((bitField0_ & 0x00004000) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00004000);
-        }
-        result.tags_ = tags_;
-        result.bitField0_ = to_bitField0_;
         result.notificationOverridesCase_ = notificationOverridesCase_;
         onBuilt();
         return result;
@@ -18423,16 +18294,6 @@ public final class ExecutionOuterClass {
         if (other.hasInterruptible()) {
           mergeInterruptible(other.getInterruptible());
         }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00004000);
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
-        }
         switch (other.getNotificationOverridesCase()) {
           case NOTIFICATIONS: {
             mergeNotifications(other.getNotifications());
@@ -18489,7 +18350,6 @@ public final class ExecutionOuterClass {
         return this;
       }
 
-      private int bitField0_;
 
       private flyteidl.core.IdentifierOuterClass.Identifier launchPlan_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -20484,145 +20344,6 @@ public final class ExecutionOuterClass {
           interruptible_ = null;
         }
         return interruptibleBuilder_;
-      }
-
-      private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00004000) != 0)) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00004000;
-         }
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        return tags_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00004000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * User-specified tags. These are arbitrary and can be used for searching
-       * filtering and discovering executions.
-       * </pre>
-       *
-       * <code>repeated string tags = 22;</code>
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -26449,7 +26170,7 @@ public final class ExecutionOuterClass {
       "\001\022\n\n\006SYSTEM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WOR" +
       "KFLOW\020\004\022\r\n\tRECOVERED\020\005\"G\n\020NotificationLi" +
       "st\0223\n\rnotifications\030\001 \003(\0132\034.flyteidl.adm" +
-      "in.Notification\"\365\005\n\rExecutionSpec\022.\n\013lau" +
+      "in.Notification\"\347\005\n\rExecutionSpec\022.\n\013lau" +
       "nch_plan\030\001 \001(\0132\031.flyteidl.core.Identifie" +
       "r\022-\n\006inputs\030\002 \001(\0132\031.flyteidl.core.Litera" +
       "lMapB\002\030\001\0223\n\010metadata\030\003 \001(\0132!.flyteidl.ad" +
@@ -26467,30 +26188,29 @@ public final class ExecutionOuterClass {
       "utputDataConfig\022=\n\022cluster_assignment\030\024 " +
       "\001(\0132!.flyteidl.admin.ClusterAssignment\0221" +
       "\n\rinterruptible\030\025 \001(\0132\032.google.protobuf." +
-      "BoolValue\022\014\n\004tags\030\026 \003(\tB\030\n\026notification_" +
-      "overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateReq" +
-      "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032E" +
-      "xecutionTerminateResponse\"Y\n\037WorkflowExe" +
-      "cutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.flyte" +
-      "idl.core.WorkflowExecutionIdentifier\"\336\001\n" +
-      " WorkflowExecutionGetDataResponse\022,\n\007out" +
-      "puts\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022" +
-      "+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBlob" +
-      "B\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.cor" +
-      "e.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132\031.fly" +
-      "teidl.core.LiteralMap\"\177\n\026ExecutionUpdate" +
-      "Request\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\022-\n\005state\030\002 \001(\0162\036" +
-      ".flyteidl.admin.ExecutionState\"\220\001\n\033Execu" +
-      "tionStateChangeDetails\022-\n\005state\030\001 \001(\0162\036." +
-      "flyteidl.admin.ExecutionState\022/\n\013occurre" +
-      "d_at\030\002 \001(\0132\032.google.protobuf.Timestamp\022\021" +
-      "\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpdateResp" +
-      "onse*>\n\016ExecutionState\022\024\n\020EXECUTION_ACTI" +
-      "VE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001B7Z5github.c" +
-      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
-      "adminb\006proto3"
+      "BoolValueB\030\n\026notification_overridesJ\004\010\004\020" +
+      "\005\"b\n\031ExecutionTerminateRequest\0226\n\002id\030\001 \001" +
+      "(\0132*.flyteidl.core.WorkflowExecutionIden" +
+      "tifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionTermin" +
+      "ateResponse\"Y\n\037WorkflowExecutionGetDataR" +
+      "equest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
+      "lowExecutionIdentifier\"\336\001\n WorkflowExecu" +
+      "tionGetDataResponse\022,\n\007outputs\030\001 \001(\0132\027.f" +
+      "lyteidl.admin.UrlBlobB\002\030\001\022+\n\006inputs\030\002 \001(" +
+      "\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013full_i" +
+      "nputs\030\003 \001(\0132\031.flyteidl.core.LiteralMap\022/" +
+      "\n\014full_outputs\030\004 \001(\0132\031.flyteidl.core.Lit" +
+      "eralMap\"\177\n\026ExecutionUpdateRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022-\n\005state\030\002 \001(\0162\036.flyteidl.admi" +
+      "n.ExecutionState\"\220\001\n\033ExecutionStateChang" +
+      "eDetails\022-\n\005state\030\001 \001(\0162\036.flyteidl.admin" +
+      ".ExecutionState\022/\n\013occurred_at\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.Timestamp\022\021\n\tprincipal\030\003 " +
+      "\001(\t\"\031\n\027ExecutionUpdateResponse*>\n\016Execut" +
+      "ionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUT" +
+      "ION_ARCHIVED\020\001B7Z5github.com/flyteorg/fl" +
+      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26596,7 +26316,7 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_ExecutionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ExecutionSpec_descriptor,
-        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "Tags", "NotificationOverrides", });
+        new java.lang.String[] { "LaunchPlan", "Inputs", "Metadata", "Notifications", "DisableAll", "Labels", "Annotations", "SecurityContext", "AuthRole", "QualityOfService", "MaxParallelism", "RawOutputDataConfig", "ClusterAssignment", "Interruptible", "NotificationOverrides", });
     internal_static_flyteidl_admin_ExecutionTerminateRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_flyteidl_admin_ExecutionTerminateRequest_fieldAccessorTable = new

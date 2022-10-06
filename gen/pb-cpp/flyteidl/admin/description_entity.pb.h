@@ -44,7 +44,7 @@ struct TableStruct_flyteidl_2fadmin_2fdescription_5fentity_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -56,12 +56,6 @@ namespace admin {
 class DescriptionEntity;
 class DescriptionEntityDefaultTypeInternal;
 extern DescriptionEntityDefaultTypeInternal _DescriptionEntity_default_instance_;
-class DescriptionEntityCreateRequest;
-class DescriptionEntityCreateRequestDefaultTypeInternal;
-extern DescriptionEntityCreateRequestDefaultTypeInternal _DescriptionEntityCreateRequest_default_instance_;
-class DescriptionEntityCreateResponse;
-class DescriptionEntityCreateResponseDefaultTypeInternal;
-extern DescriptionEntityCreateResponseDefaultTypeInternal _DescriptionEntityCreateResponse_default_instance_;
 class DescriptionEntityIdentifier;
 class DescriptionEntityIdentifierDefaultTypeInternal;
 extern DescriptionEntityIdentifierDefaultTypeInternal _DescriptionEntityIdentifier_default_instance_;
@@ -82,8 +76,6 @@ extern SourceCodeDefaultTypeInternal _SourceCode_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::admin::DescriptionEntity* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(Arena*);
-template<> ::flyteidl::admin::DescriptionEntityCreateRequest* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityCreateRequest>(Arena*);
-template<> ::flyteidl::admin::DescriptionEntityCreateResponse* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityCreateResponse>(Arena*);
 template<> ::flyteidl::admin::DescriptionEntityIdentifier* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityIdentifier>(Arena*);
 template<> ::flyteidl::admin::DescriptionEntityList* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityList>(Arena*);
 template<> ::flyteidl::admin::DescriptionEntityListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::DescriptionEntityListRequest>(Arena*);
@@ -770,236 +762,6 @@ class DescriptionEntityIdentifier final :
 };
 // -------------------------------------------------------------------
 
-class DescriptionEntityCreateRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionEntityCreateRequest) */ {
- public:
-  DescriptionEntityCreateRequest();
-  virtual ~DescriptionEntityCreateRequest();
-
-  DescriptionEntityCreateRequest(const DescriptionEntityCreateRequest& from);
-
-  inline DescriptionEntityCreateRequest& operator=(const DescriptionEntityCreateRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  DescriptionEntityCreateRequest(DescriptionEntityCreateRequest&& from) noexcept
-    : DescriptionEntityCreateRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline DescriptionEntityCreateRequest& operator=(DescriptionEntityCreateRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const DescriptionEntityCreateRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DescriptionEntityCreateRequest* internal_default_instance() {
-    return reinterpret_cast<const DescriptionEntityCreateRequest*>(
-               &_DescriptionEntityCreateRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(DescriptionEntityCreateRequest* other);
-  friend void swap(DescriptionEntityCreateRequest& a, DescriptionEntityCreateRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DescriptionEntityCreateRequest* New() const final {
-    return CreateMaybeMessage<DescriptionEntityCreateRequest>(nullptr);
-  }
-
-  DescriptionEntityCreateRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DescriptionEntityCreateRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DescriptionEntityCreateRequest& from);
-  void MergeFrom(const DescriptionEntityCreateRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DescriptionEntityCreateRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .flyteidl.core.Identifier id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  const ::flyteidl::core::Identifier& id() const;
-  ::flyteidl::core::Identifier* release_id();
-  ::flyteidl::core::Identifier* mutable_id();
-  void set_allocated_id(::flyteidl::core::Identifier* id);
-
-  // .flyteidl.admin.DescriptionEntity description_entity = 2;
-  bool has_description_entity() const;
-  void clear_description_entity();
-  static const int kDescriptionEntityFieldNumber = 2;
-  const ::flyteidl::admin::DescriptionEntity& description_entity() const;
-  ::flyteidl::admin::DescriptionEntity* release_description_entity();
-  ::flyteidl::admin::DescriptionEntity* mutable_description_entity();
-  void set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityCreateRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::Identifier* id_;
-  ::flyteidl::admin::DescriptionEntity* description_entity_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
-};
-// -------------------------------------------------------------------
-
-class DescriptionEntityCreateResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionEntityCreateResponse) */ {
- public:
-  DescriptionEntityCreateResponse();
-  virtual ~DescriptionEntityCreateResponse();
-
-  DescriptionEntityCreateResponse(const DescriptionEntityCreateResponse& from);
-
-  inline DescriptionEntityCreateResponse& operator=(const DescriptionEntityCreateResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  DescriptionEntityCreateResponse(DescriptionEntityCreateResponse&& from) noexcept
-    : DescriptionEntityCreateResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline DescriptionEntityCreateResponse& operator=(DescriptionEntityCreateResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const DescriptionEntityCreateResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DescriptionEntityCreateResponse* internal_default_instance() {
-    return reinterpret_cast<const DescriptionEntityCreateResponse*>(
-               &_DescriptionEntityCreateResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  void Swap(DescriptionEntityCreateResponse* other);
-  friend void swap(DescriptionEntityCreateResponse& a, DescriptionEntityCreateResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline DescriptionEntityCreateResponse* New() const final {
-    return CreateMaybeMessage<DescriptionEntityCreateResponse>(nullptr);
-  }
-
-  DescriptionEntityCreateResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DescriptionEntityCreateResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DescriptionEntityCreateResponse& from);
-  void MergeFrom(const DescriptionEntityCreateResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(DescriptionEntityCreateResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:flyteidl.admin.DescriptionEntityCreateResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fadmin_2fdescription_5fentity_2eproto;
-};
-// -------------------------------------------------------------------
-
 class DescriptionEntityList final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.DescriptionEntityList) */ {
  public:
@@ -1038,7 +800,7 @@ class DescriptionEntityList final :
                &_DescriptionEntityList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    4;
 
   void Swap(DescriptionEntityList* other);
   friend void swap(DescriptionEntityList& a, DescriptionEntityList& b) {
@@ -1171,7 +933,7 @@ class DescriptionEntityListRequest final :
                &_DescriptionEntityListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    5;
 
   void Swap(DescriptionEntityListRequest* other);
   friend void swap(DescriptionEntityListRequest& a, DescriptionEntityListRequest& b) {
@@ -2028,110 +1790,6 @@ inline void DescriptionEntityIdentifier::set_allocated_name(::std::string* name)
 
 // -------------------------------------------------------------------
 
-// DescriptionEntityCreateRequest
-
-// .flyteidl.core.Identifier id = 1;
-inline bool DescriptionEntityCreateRequest::has_id() const {
-  return this != internal_default_instance() && id_ != nullptr;
-}
-inline const ::flyteidl::core::Identifier& DescriptionEntityCreateRequest::id() const {
-  const ::flyteidl::core::Identifier* p = id_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityCreateRequest.id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
-      &::flyteidl::core::_Identifier_default_instance_);
-}
-inline ::flyteidl::core::Identifier* DescriptionEntityCreateRequest::release_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityCreateRequest.id)
-  
-  ::flyteidl::core::Identifier* temp = id_;
-  id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::Identifier* DescriptionEntityCreateRequest::mutable_id() {
-  
-  if (id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
-    id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityCreateRequest.id)
-  return id_;
-}
-inline void DescriptionEntityCreateRequest::set_allocated_id(::flyteidl::core::Identifier* id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
-  }
-  if (id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityCreateRequest.id)
-}
-
-// .flyteidl.admin.DescriptionEntity description_entity = 2;
-inline bool DescriptionEntityCreateRequest::has_description_entity() const {
-  return this != internal_default_instance() && description_entity_ != nullptr;
-}
-inline void DescriptionEntityCreateRequest::clear_description_entity() {
-  if (GetArenaNoVirtual() == nullptr && description_entity_ != nullptr) {
-    delete description_entity_;
-  }
-  description_entity_ = nullptr;
-}
-inline const ::flyteidl::admin::DescriptionEntity& DescriptionEntityCreateRequest::description_entity() const {
-  const ::flyteidl::admin::DescriptionEntity* p = description_entity_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.DescriptionEntityCreateRequest.description_entity)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::DescriptionEntity*>(
-      &::flyteidl::admin::_DescriptionEntity_default_instance_);
-}
-inline ::flyteidl::admin::DescriptionEntity* DescriptionEntityCreateRequest::release_description_entity() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.DescriptionEntityCreateRequest.description_entity)
-  
-  ::flyteidl::admin::DescriptionEntity* temp = description_entity_;
-  description_entity_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::admin::DescriptionEntity* DescriptionEntityCreateRequest::mutable_description_entity() {
-  
-  if (description_entity_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::DescriptionEntity>(GetArenaNoVirtual());
-    description_entity_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.DescriptionEntityCreateRequest.description_entity)
-  return description_entity_;
-}
-inline void DescriptionEntityCreateRequest::set_allocated_description_entity(::flyteidl::admin::DescriptionEntity* description_entity) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete description_entity_;
-  }
-  if (description_entity) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      description_entity = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, description_entity, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  description_entity_ = description_entity;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.DescriptionEntityCreateRequest.description_entity)
-}
-
-// -------------------------------------------------------------------
-
-// DescriptionEntityCreateResponse
-
-// -------------------------------------------------------------------
-
 // DescriptionEntityList
 
 // repeated .flyteidl.admin.DescriptionEntity descriptionEntities = 1;
@@ -2440,10 +2098,6 @@ inline void DescriptionEntityListRequest::set_allocated_sort_by(::flyteidl::admi
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
