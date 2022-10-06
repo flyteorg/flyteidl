@@ -27,7 +27,7 @@ func MaterializeCredentials(ctx context.Context, cfg *Config, tokenCache cache.T
 		return fmt.Errorf("failed to initialized token source provider. Err: %w", err)
 	}
 
-	authorizationMetadataKey := cfg.AuthorizationMetadataKey
+	authorizationMetadataKey := cfg.AuthorizationHeader
 	if len(authorizationMetadataKey) == 0 {
 		clientMetadata, err := authMetadataClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 		if err != nil {

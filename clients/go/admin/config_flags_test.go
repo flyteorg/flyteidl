@@ -330,7 +330,7 @@ func TestConfig_SetFlags(t *testing.T) {
 
 			cmdFlags.Set("authorizationHeader", testValue)
 			if vString, err := cmdFlags.GetString("authorizationHeader"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DeprecatedAuthorizationHeader)
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.AuthorizationHeader)
 
 			} else {
 				assert.FailNow(t, err.Error())
@@ -429,20 +429,6 @@ func TestConfig_SetFlags(t *testing.T) {
 			cmdFlags.Set("defaultServiceConfig", testValue)
 			if vString, err := cmdFlags.GetString("defaultServiceConfig"); err == nil {
 				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.DefaultServiceConfig)
-
-			} else {
-				assert.FailNow(t, err.Error())
-			}
-		})
-	})
-	t.Run("Test_authorizationMetadataKey", func(t *testing.T) {
-
-		t.Run("Override", func(t *testing.T) {
-			testValue := "1"
-
-			cmdFlags.Set("authorizationMetadataKey", testValue)
-			if vString, err := cmdFlags.GetString("authorizationMetadataKey"); err == nil {
-				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.AuthorizationMetadataKey)
 
 			} else {
 				assert.FailNow(t, err.Error())

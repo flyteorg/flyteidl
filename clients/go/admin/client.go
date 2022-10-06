@@ -86,7 +86,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourcePr
 		return nil, errors.New("can't create authenticated channel without a TokenSourceProvider")
 	}
 
-	authorizationMetadataKey := cfg.AuthorizationMetadataKey
+	authorizationMetadataKey := cfg.AuthorizationHeader
 	if len(authorizationMetadataKey) == 0 {
 		clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 		if err != nil {

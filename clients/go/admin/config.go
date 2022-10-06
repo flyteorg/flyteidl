@@ -64,8 +64,7 @@ type Config struct {
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
 	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
 	// because things might be running in a service mesh (like Envoy) that already uses the default 'authorization' header
-	// Deprecated: It will automatically be discovered through an anonymously accessible auth metadata service.
-	DeprecatedAuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
+	AuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
 
 	PkceConfig pkce.Config `json:"pkceConfig" pflag:",Config for Pkce authentication flow."`
 
@@ -78,10 +77,6 @@ type Config struct {
 	// find the full schema here https://github.com/grpc/grpc-proto/blob/master/grpc/service_config/service_config.proto#L625
 	// Note that required packages may need to be preloaded to support certain service config. For example "google.golang.org/grpc/balancer/roundrobin" should be preloaded to have round-robin policy supported.
 	DefaultServiceConfig string `json:"defaultServiceConfig" pdflag:",Set the default service config for the admin gRPC client"`
-
-	// Authorization Header to use when passing Access Tokens to the server. If not provided, the client should use the
-	// value returned by the PublicClientConfig
-	AuthorizationMetadataKey string `json:"authorizationMetadataKey" pflag:",Authorization Header to use when passing Access Tokens to the server"`
 }
 
 var (
