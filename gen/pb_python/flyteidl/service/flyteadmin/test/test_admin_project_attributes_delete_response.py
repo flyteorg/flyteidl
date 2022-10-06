@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.core_comparison_expression_operator import CoreComparisonExpressionOperator  # noqa: E501
+from flyteadmin.models.admin_project_attributes_delete_response import AdminProjectAttributesDeleteResponse  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestCoreComparisonExpressionOperator(unittest.TestCase):
-    """CoreComparisonExpressionOperator unit test stubs"""
+class TestAdminProjectAttributesDeleteResponse(unittest.TestCase):
+    """AdminProjectAttributesDeleteResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCoreComparisonExpressionOperator(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCoreComparisonExpressionOperator(self):
-        """Test CoreComparisonExpressionOperator"""
+    def testAdminProjectAttributesDeleteResponse(self):
+        """Test AdminProjectAttributesDeleteResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.core_comparison_expression_operator.CoreComparisonExpressionOperator()  # noqa: E501
+        # model = flyteadmin.models.admin_project_attributes_delete_response.AdminProjectAttributesDeleteResponse()  # noqa: E501
         pass
 
 
