@@ -9,7 +9,8 @@
 
 package flyteadmin
 
-// Encapsulates specifications for routing an execution onto a specific cluster.
-type AdminClusterAssignment struct {
-	ClusterPoolName string `json:"cluster_pool_name,omitempty"`
+type AdminProjectAttributes struct {
+	// Unique project id for which this set of attributes will be applied.
+	Project string `json:"project,omitempty"`
+	MatchingAttributes *AdminMatchingAttributes `json:"matching_attributes,omitempty"`
 }

@@ -17056,8 +17056,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a ClusterAssignment.
              * @memberof flyteidl.admin
              * @interface IClusterAssignment
-             * @property {flyteidl.admin.IAffinity|null} [affinity] ClusterAssignment affinity
-             * @property {flyteidl.admin.IToleration|null} [toleration] ClusterAssignment toleration
+             * @property {string|null} [clusterPoolName] ClusterAssignment clusterPoolName
              */
 
             /**
@@ -17076,20 +17075,12 @@ export const flyteidl = $root.flyteidl = (() => {
             }
 
             /**
-             * ClusterAssignment affinity.
-             * @member {flyteidl.admin.IAffinity|null|undefined} affinity
+             * ClusterAssignment clusterPoolName.
+             * @member {string} clusterPoolName
              * @memberof flyteidl.admin.ClusterAssignment
              * @instance
              */
-            ClusterAssignment.prototype.affinity = null;
-
-            /**
-             * ClusterAssignment toleration.
-             * @member {flyteidl.admin.IToleration|null|undefined} toleration
-             * @memberof flyteidl.admin.ClusterAssignment
-             * @instance
-             */
-            ClusterAssignment.prototype.toleration = null;
+            ClusterAssignment.prototype.clusterPoolName = "";
 
             /**
              * Creates a new ClusterAssignment instance using the specified properties.
@@ -17115,10 +17106,8 @@ export const flyteidl = $root.flyteidl = (() => {
             ClusterAssignment.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.affinity != null && message.hasOwnProperty("affinity"))
-                    $root.flyteidl.admin.Affinity.encode(message.affinity, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.toleration != null && message.hasOwnProperty("toleration"))
-                    $root.flyteidl.admin.Toleration.encode(message.toleration, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.clusterPoolName != null && message.hasOwnProperty("clusterPoolName"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.clusterPoolName);
                 return writer;
             };
 
@@ -17140,11 +17129,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 while (reader.pos < end) {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.affinity = $root.flyteidl.admin.Affinity.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.toleration = $root.flyteidl.admin.Toleration.decode(reader, reader.uint32());
+                    case 3:
+                        message.clusterPoolName = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17165,440 +17151,13 @@ export const flyteidl = $root.flyteidl = (() => {
             ClusterAssignment.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.affinity != null && message.hasOwnProperty("affinity")) {
-                    let error = $root.flyteidl.admin.Affinity.verify(message.affinity);
-                    if (error)
-                        return "affinity." + error;
-                }
-                if (message.toleration != null && message.hasOwnProperty("toleration")) {
-                    let error = $root.flyteidl.admin.Toleration.verify(message.toleration);
-                    if (error)
-                        return "toleration." + error;
-                }
+                if (message.clusterPoolName != null && message.hasOwnProperty("clusterPoolName"))
+                    if (!$util.isString(message.clusterPoolName))
+                        return "clusterPoolName: string expected";
                 return null;
             };
 
             return ClusterAssignment;
-        })();
-
-        admin.Affinity = (function() {
-
-            /**
-             * Properties of an Affinity.
-             * @memberof flyteidl.admin
-             * @interface IAffinity
-             * @property {Array.<flyteidl.admin.ISelector>|null} [selectors] Affinity selectors
-             */
-
-            /**
-             * Constructs a new Affinity.
-             * @memberof flyteidl.admin
-             * @classdesc Represents an Affinity.
-             * @implements IAffinity
-             * @constructor
-             * @param {flyteidl.admin.IAffinity=} [properties] Properties to set
-             */
-            function Affinity(properties) {
-                this.selectors = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Affinity selectors.
-             * @member {Array.<flyteidl.admin.ISelector>} selectors
-             * @memberof flyteidl.admin.Affinity
-             * @instance
-             */
-            Affinity.prototype.selectors = $util.emptyArray;
-
-            /**
-             * Creates a new Affinity instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Affinity
-             * @static
-             * @param {flyteidl.admin.IAffinity=} [properties] Properties to set
-             * @returns {flyteidl.admin.Affinity} Affinity instance
-             */
-            Affinity.create = function create(properties) {
-                return new Affinity(properties);
-            };
-
-            /**
-             * Encodes the specified Affinity message. Does not implicitly {@link flyteidl.admin.Affinity.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Affinity
-             * @static
-             * @param {flyteidl.admin.IAffinity} message Affinity message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Affinity.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.selectors != null && message.selectors.length)
-                    for (let i = 0; i < message.selectors.length; ++i)
-                        $root.flyteidl.admin.Selector.encode(message.selectors[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes an Affinity message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Affinity
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Affinity} Affinity
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Affinity.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Affinity();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.selectors && message.selectors.length))
-                            message.selectors = [];
-                        message.selectors.push($root.flyteidl.admin.Selector.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies an Affinity message.
-             * @function verify
-             * @memberof flyteidl.admin.Affinity
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Affinity.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.selectors != null && message.hasOwnProperty("selectors")) {
-                    if (!Array.isArray(message.selectors))
-                        return "selectors: array expected";
-                    for (let i = 0; i < message.selectors.length; ++i) {
-                        let error = $root.flyteidl.admin.Selector.verify(message.selectors[i]);
-                        if (error)
-                            return "selectors." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Affinity;
-        })();
-
-        admin.Toleration = (function() {
-
-            /**
-             * Properties of a Toleration.
-             * @memberof flyteidl.admin
-             * @interface IToleration
-             * @property {Array.<flyteidl.admin.ISelector>|null} [selectors] Toleration selectors
-             */
-
-            /**
-             * Constructs a new Toleration.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a Toleration.
-             * @implements IToleration
-             * @constructor
-             * @param {flyteidl.admin.IToleration=} [properties] Properties to set
-             */
-            function Toleration(properties) {
-                this.selectors = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Toleration selectors.
-             * @member {Array.<flyteidl.admin.ISelector>} selectors
-             * @memberof flyteidl.admin.Toleration
-             * @instance
-             */
-            Toleration.prototype.selectors = $util.emptyArray;
-
-            /**
-             * Creates a new Toleration instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Toleration
-             * @static
-             * @param {flyteidl.admin.IToleration=} [properties] Properties to set
-             * @returns {flyteidl.admin.Toleration} Toleration instance
-             */
-            Toleration.create = function create(properties) {
-                return new Toleration(properties);
-            };
-
-            /**
-             * Encodes the specified Toleration message. Does not implicitly {@link flyteidl.admin.Toleration.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Toleration
-             * @static
-             * @param {flyteidl.admin.IToleration} message Toleration message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Toleration.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.selectors != null && message.selectors.length)
-                    for (let i = 0; i < message.selectors.length; ++i)
-                        $root.flyteidl.admin.Selector.encode(message.selectors[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Decodes a Toleration message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Toleration
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Toleration} Toleration
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Toleration.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Toleration();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.selectors && message.selectors.length))
-                            message.selectors = [];
-                        message.selectors.push($root.flyteidl.admin.Selector.decode(reader, reader.uint32()));
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Toleration message.
-             * @function verify
-             * @memberof flyteidl.admin.Toleration
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Toleration.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.selectors != null && message.hasOwnProperty("selectors")) {
-                    if (!Array.isArray(message.selectors))
-                        return "selectors: array expected";
-                    for (let i = 0; i < message.selectors.length; ++i) {
-                        let error = $root.flyteidl.admin.Selector.verify(message.selectors[i]);
-                        if (error)
-                            return "selectors." + error;
-                    }
-                }
-                return null;
-            };
-
-            return Toleration;
-        })();
-
-        admin.Selector = (function() {
-
-            /**
-             * Properties of a Selector.
-             * @memberof flyteidl.admin
-             * @interface ISelector
-             * @property {string|null} [key] Selector key
-             * @property {Array.<string>|null} [value] Selector value
-             * @property {flyteidl.admin.Selector.Operator|null} [operator] Selector operator
-             */
-
-            /**
-             * Constructs a new Selector.
-             * @memberof flyteidl.admin
-             * @classdesc Represents a Selector.
-             * @implements ISelector
-             * @constructor
-             * @param {flyteidl.admin.ISelector=} [properties] Properties to set
-             */
-            function Selector(properties) {
-                this.value = [];
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Selector key.
-             * @member {string} key
-             * @memberof flyteidl.admin.Selector
-             * @instance
-             */
-            Selector.prototype.key = "";
-
-            /**
-             * Selector value.
-             * @member {Array.<string>} value
-             * @memberof flyteidl.admin.Selector
-             * @instance
-             */
-            Selector.prototype.value = $util.emptyArray;
-
-            /**
-             * Selector operator.
-             * @member {flyteidl.admin.Selector.Operator} operator
-             * @memberof flyteidl.admin.Selector
-             * @instance
-             */
-            Selector.prototype.operator = 0;
-
-            /**
-             * Creates a new Selector instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.admin.Selector
-             * @static
-             * @param {flyteidl.admin.ISelector=} [properties] Properties to set
-             * @returns {flyteidl.admin.Selector} Selector instance
-             */
-            Selector.create = function create(properties) {
-                return new Selector(properties);
-            };
-
-            /**
-             * Encodes the specified Selector message. Does not implicitly {@link flyteidl.admin.Selector.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.admin.Selector
-             * @static
-             * @param {flyteidl.admin.ISelector} message Selector message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Selector.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.value != null && message.value.length)
-                    for (let i = 0; i < message.value.length; ++i)
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.value[i]);
-                if (message.operator != null && message.hasOwnProperty("operator"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.operator);
-                return writer;
-            };
-
-            /**
-             * Decodes a Selector message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.admin.Selector
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.admin.Selector} Selector
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Selector.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Selector();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.key = reader.string();
-                        break;
-                    case 2:
-                        if (!(message.value && message.value.length))
-                            message.value = [];
-                        message.value.push(reader.string());
-                        break;
-                    case 3:
-                        message.operator = reader.int32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a Selector message.
-             * @function verify
-             * @memberof flyteidl.admin.Selector
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Selector.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.key != null && message.hasOwnProperty("key"))
-                    if (!$util.isString(message.key))
-                        return "key: string expected";
-                if (message.value != null && message.hasOwnProperty("value")) {
-                    if (!Array.isArray(message.value))
-                        return "value: array expected";
-                    for (let i = 0; i < message.value.length; ++i)
-                        if (!$util.isString(message.value[i]))
-                            return "value: string[] expected";
-                }
-                if (message.operator != null && message.hasOwnProperty("operator"))
-                    switch (message.operator) {
-                    default:
-                        return "operator: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        break;
-                    }
-                return null;
-            };
-
-            /**
-             * Operator enum.
-             * @name flyteidl.admin.Selector.Operator
-             * @enum {string}
-             * @property {number} EQUALS=0 EQUALS value
-             * @property {number} NOT_EQUALS=1 NOT_EQUALS value
-             * @property {number} IN=2 IN value
-             * @property {number} NOT_IN=3 NOT_IN value
-             * @property {number} EXISTS=4 EXISTS value
-             */
-            Selector.Operator = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "EQUALS"] = 0;
-                values[valuesById[1] = "NOT_EQUALS"] = 1;
-                values[valuesById[2] = "IN"] = 2;
-                values[valuesById[3] = "NOT_IN"] = 3;
-                values[valuesById[4] = "EXISTS"] = 4;
-                return values;
-            })();
-
-            return Selector;
         })();
 
         admin.NamedEntityIdentifier = (function() {
@@ -33546,6 +33105,821 @@ export const flyteidl = $root.flyteidl = (() => {
             return ProjectUpdateResponse;
         })();
 
+        admin.ProjectAttributes = (function() {
+
+            /**
+             * Properties of a ProjectAttributes.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributes
+             * @property {string|null} [project] ProjectAttributes project
+             * @property {flyteidl.admin.IMatchingAttributes|null} [matchingAttributes] ProjectAttributes matchingAttributes
+             */
+
+            /**
+             * Constructs a new ProjectAttributes.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributes.
+             * @implements IProjectAttributes
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributes=} [properties] Properties to set
+             */
+            function ProjectAttributes(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributes project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.project = "";
+
+            /**
+             * ProjectAttributes matchingAttributes.
+             * @member {flyteidl.admin.IMatchingAttributes|null|undefined} matchingAttributes
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @instance
+             */
+            ProjectAttributes.prototype.matchingAttributes = null;
+
+            /**
+             * Creates a new ProjectAttributes instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {flyteidl.admin.IProjectAttributes=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributes} ProjectAttributes instance
+             */
+            ProjectAttributes.create = function create(properties) {
+                return new ProjectAttributes(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributes message. Does not implicitly {@link flyteidl.admin.ProjectAttributes.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {flyteidl.admin.IProjectAttributes} message ProjectAttributes message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributes.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.matchingAttributes != null && message.hasOwnProperty("matchingAttributes"))
+                    $root.flyteidl.admin.MatchingAttributes.encode(message.matchingAttributes, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributes message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributes} ProjectAttributes
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributes.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributes();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.matchingAttributes = $root.flyteidl.admin.MatchingAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributes message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributes
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributes.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.matchingAttributes != null && message.hasOwnProperty("matchingAttributes")) {
+                    let error = $root.flyteidl.admin.MatchingAttributes.verify(message.matchingAttributes);
+                    if (error)
+                        return "matchingAttributes." + error;
+                }
+                return null;
+            };
+
+            return ProjectAttributes;
+        })();
+
+        admin.ProjectAttributesUpdateRequest = (function() {
+
+            /**
+             * Properties of a ProjectAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesUpdateRequest
+             * @property {flyteidl.admin.IProjectAttributes|null} [attributes] ProjectAttributesUpdateRequest attributes
+             */
+
+            /**
+             * Constructs a new ProjectAttributesUpdateRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesUpdateRequest.
+             * @implements IProjectAttributesUpdateRequest
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest=} [properties] Properties to set
+             */
+            function ProjectAttributesUpdateRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributesUpdateRequest attributes.
+             * @member {flyteidl.admin.IProjectAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @instance
+             */
+            ProjectAttributesUpdateRequest.prototype.attributes = null;
+
+            /**
+             * Creates a new ProjectAttributesUpdateRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesUpdateRequest} ProjectAttributesUpdateRequest instance
+             */
+            ProjectAttributesUpdateRequest.create = function create(properties) {
+                return new ProjectAttributesUpdateRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesUpdateRequest message. Does not implicitly {@link flyteidl.admin.ProjectAttributesUpdateRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} message ProjectAttributesUpdateRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesUpdateRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.ProjectAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesUpdateRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesUpdateRequest} ProjectAttributesUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesUpdateRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesUpdateRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.ProjectAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesUpdateRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesUpdateRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesUpdateRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.ProjectAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return ProjectAttributesUpdateRequest;
+        })();
+
+        admin.ProjectAttributesUpdateResponse = (function() {
+
+            /**
+             * Properties of a ProjectAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesUpdateResponse
+             */
+
+            /**
+             * Constructs a new ProjectAttributesUpdateResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesUpdateResponse.
+             * @implements IProjectAttributesUpdateResponse
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse=} [properties] Properties to set
+             */
+            function ProjectAttributesUpdateResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new ProjectAttributesUpdateResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesUpdateResponse} ProjectAttributesUpdateResponse instance
+             */
+            ProjectAttributesUpdateResponse.create = function create(properties) {
+                return new ProjectAttributesUpdateResponse(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesUpdateResponse message. Does not implicitly {@link flyteidl.admin.ProjectAttributesUpdateResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesUpdateResponse} message ProjectAttributesUpdateResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesUpdateResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesUpdateResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesUpdateResponse} ProjectAttributesUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesUpdateResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesUpdateResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesUpdateResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesUpdateResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesUpdateResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return ProjectAttributesUpdateResponse;
+        })();
+
+        admin.ProjectAttributesGetRequest = (function() {
+
+            /**
+             * Properties of a ProjectAttributesGetRequest.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesGetRequest
+             * @property {string|null} [project] ProjectAttributesGetRequest project
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectAttributesGetRequest resourceType
+             */
+
+            /**
+             * Constructs a new ProjectAttributesGetRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesGetRequest.
+             * @implements IProjectAttributesGetRequest
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesGetRequest=} [properties] Properties to set
+             */
+            function ProjectAttributesGetRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributesGetRequest project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @instance
+             */
+            ProjectAttributesGetRequest.prototype.project = "";
+
+            /**
+             * ProjectAttributesGetRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @instance
+             */
+            ProjectAttributesGetRequest.prototype.resourceType = 0;
+
+            /**
+             * Creates a new ProjectAttributesGetRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesGetRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesGetRequest} ProjectAttributesGetRequest instance
+             */
+            ProjectAttributesGetRequest.create = function create(properties) {
+                return new ProjectAttributesGetRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesGetRequest message. Does not implicitly {@link flyteidl.admin.ProjectAttributesGetRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesGetRequest} message ProjectAttributesGetRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesGetRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesGetRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesGetRequest} ProjectAttributesGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesGetRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesGetRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.resourceType = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesGetRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesGetRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesGetRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        break;
+                    }
+                return null;
+            };
+
+            return ProjectAttributesGetRequest;
+        })();
+
+        admin.ProjectAttributesGetResponse = (function() {
+
+            /**
+             * Properties of a ProjectAttributesGetResponse.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesGetResponse
+             * @property {flyteidl.admin.IProjectAttributes|null} [attributes] ProjectAttributesGetResponse attributes
+             */
+
+            /**
+             * Constructs a new ProjectAttributesGetResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesGetResponse.
+             * @implements IProjectAttributesGetResponse
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesGetResponse=} [properties] Properties to set
+             */
+            function ProjectAttributesGetResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributesGetResponse attributes.
+             * @member {flyteidl.admin.IProjectAttributes|null|undefined} attributes
+             * @memberof flyteidl.admin.ProjectAttributesGetResponse
+             * @instance
+             */
+            ProjectAttributesGetResponse.prototype.attributes = null;
+
+            /**
+             * Creates a new ProjectAttributesGetResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesGetResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesGetResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesGetResponse} ProjectAttributesGetResponse instance
+             */
+            ProjectAttributesGetResponse.create = function create(properties) {
+                return new ProjectAttributesGetResponse(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesGetResponse message. Does not implicitly {@link flyteidl.admin.ProjectAttributesGetResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesGetResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesGetResponse} message ProjectAttributesGetResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesGetResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.attributes != null && message.hasOwnProperty("attributes"))
+                    $root.flyteidl.admin.ProjectAttributes.encode(message.attributes, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesGetResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesGetResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesGetResponse} ProjectAttributesGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesGetResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesGetResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.attributes = $root.flyteidl.admin.ProjectAttributes.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesGetResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesGetResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesGetResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.attributes != null && message.hasOwnProperty("attributes")) {
+                    let error = $root.flyteidl.admin.ProjectAttributes.verify(message.attributes);
+                    if (error)
+                        return "attributes." + error;
+                }
+                return null;
+            };
+
+            return ProjectAttributesGetResponse;
+        })();
+
+        admin.ProjectAttributesDeleteRequest = (function() {
+
+            /**
+             * Properties of a ProjectAttributesDeleteRequest.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesDeleteRequest
+             * @property {string|null} [project] ProjectAttributesDeleteRequest project
+             * @property {flyteidl.admin.MatchableResource|null} [resourceType] ProjectAttributesDeleteRequest resourceType
+             */
+
+            /**
+             * Constructs a new ProjectAttributesDeleteRequest.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesDeleteRequest.
+             * @implements IProjectAttributesDeleteRequest
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesDeleteRequest=} [properties] Properties to set
+             */
+            function ProjectAttributesDeleteRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ProjectAttributesDeleteRequest project.
+             * @member {string} project
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @instance
+             */
+            ProjectAttributesDeleteRequest.prototype.project = "";
+
+            /**
+             * ProjectAttributesDeleteRequest resourceType.
+             * @member {flyteidl.admin.MatchableResource} resourceType
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @instance
+             */
+            ProjectAttributesDeleteRequest.prototype.resourceType = 0;
+
+            /**
+             * Creates a new ProjectAttributesDeleteRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesDeleteRequest=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesDeleteRequest} ProjectAttributesDeleteRequest instance
+             */
+            ProjectAttributesDeleteRequest.create = function create(properties) {
+                return new ProjectAttributesDeleteRequest(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesDeleteRequest message. Does not implicitly {@link flyteidl.admin.ProjectAttributesDeleteRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesDeleteRequest} message ProjectAttributesDeleteRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesDeleteRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.project != null && message.hasOwnProperty("project"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.project);
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.resourceType);
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesDeleteRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesDeleteRequest} ProjectAttributesDeleteRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesDeleteRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesDeleteRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.project = reader.string();
+                        break;
+                    case 2:
+                        message.resourceType = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesDeleteRequest message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesDeleteRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesDeleteRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.project != null && message.hasOwnProperty("project"))
+                    if (!$util.isString(message.project))
+                        return "project: string expected";
+                if (message.resourceType != null && message.hasOwnProperty("resourceType"))
+                    switch (message.resourceType) {
+                    default:
+                        return "resourceType: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        break;
+                    }
+                return null;
+            };
+
+            return ProjectAttributesDeleteRequest;
+        })();
+
+        admin.ProjectAttributesDeleteResponse = (function() {
+
+            /**
+             * Properties of a ProjectAttributesDeleteResponse.
+             * @memberof flyteidl.admin
+             * @interface IProjectAttributesDeleteResponse
+             */
+
+            /**
+             * Constructs a new ProjectAttributesDeleteResponse.
+             * @memberof flyteidl.admin
+             * @classdesc Represents a ProjectAttributesDeleteResponse.
+             * @implements IProjectAttributesDeleteResponse
+             * @constructor
+             * @param {flyteidl.admin.IProjectAttributesDeleteResponse=} [properties] Properties to set
+             */
+            function ProjectAttributesDeleteResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Creates a new ProjectAttributesDeleteResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.admin.ProjectAttributesDeleteResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesDeleteResponse=} [properties] Properties to set
+             * @returns {flyteidl.admin.ProjectAttributesDeleteResponse} ProjectAttributesDeleteResponse instance
+             */
+            ProjectAttributesDeleteResponse.create = function create(properties) {
+                return new ProjectAttributesDeleteResponse(properties);
+            };
+
+            /**
+             * Encodes the specified ProjectAttributesDeleteResponse message. Does not implicitly {@link flyteidl.admin.ProjectAttributesDeleteResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.admin.ProjectAttributesDeleteResponse
+             * @static
+             * @param {flyteidl.admin.IProjectAttributesDeleteResponse} message ProjectAttributesDeleteResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ProjectAttributesDeleteResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+
+            /**
+             * Decodes a ProjectAttributesDeleteResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.admin.ProjectAttributesDeleteResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.admin.ProjectAttributesDeleteResponse} ProjectAttributesDeleteResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ProjectAttributesDeleteResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ProjectAttributesDeleteResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a ProjectAttributesDeleteResponse message.
+             * @function verify
+             * @memberof flyteidl.admin.ProjectAttributesDeleteResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ProjectAttributesDeleteResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+
+            return ProjectAttributesDeleteResponse;
+        })();
+
         admin.ProjectDomainAttributes = (function() {
 
             /**
@@ -39813,6 +40187,105 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.admin.IProjectDomainAttributesDeleteRequest} request ProjectDomainAttributesDeleteRequest message or plain object
              * @returns {Promise<flyteidl.admin.ProjectDomainAttributesDeleteResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#updateProjectAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef UpdateProjectAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ProjectAttributesUpdateResponse} [response] ProjectAttributesUpdateResponse
+             */
+
+            /**
+             * Calls UpdateProjectAttributes.
+             * @function updateProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} request ProjectAttributesUpdateRequest message or plain object
+             * @param {flyteidl.service.AdminService.UpdateProjectAttributesCallback} callback Node-style callback called with the error, if any, and ProjectAttributesUpdateResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.updateProjectAttributes = function updateProjectAttributes(request, callback) {
+                return this.rpcCall(updateProjectAttributes, $root.flyteidl.admin.ProjectAttributesUpdateRequest, $root.flyteidl.admin.ProjectAttributesUpdateResponse, request, callback);
+            }, "name", { value: "UpdateProjectAttributes" });
+
+            /**
+             * Calls UpdateProjectAttributes.
+             * @function updateProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesUpdateRequest} request ProjectAttributesUpdateRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ProjectAttributesUpdateResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getProjectAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef GetProjectAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ProjectAttributesGetResponse} [response] ProjectAttributesGetResponse
+             */
+
+            /**
+             * Calls GetProjectAttributes.
+             * @function getProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesGetRequest} request ProjectAttributesGetRequest message or plain object
+             * @param {flyteidl.service.AdminService.GetProjectAttributesCallback} callback Node-style callback called with the error, if any, and ProjectAttributesGetResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.getProjectAttributes = function getProjectAttributes(request, callback) {
+                return this.rpcCall(getProjectAttributes, $root.flyteidl.admin.ProjectAttributesGetRequest, $root.flyteidl.admin.ProjectAttributesGetResponse, request, callback);
+            }, "name", { value: "GetProjectAttributes" });
+
+            /**
+             * Calls GetProjectAttributes.
+             * @function getProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesGetRequest} request ProjectAttributesGetRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ProjectAttributesGetResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#deleteProjectAttributes}.
+             * @memberof flyteidl.service.AdminService
+             * @typedef DeleteProjectAttributesCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.admin.ProjectAttributesDeleteResponse} [response] ProjectAttributesDeleteResponse
+             */
+
+            /**
+             * Calls DeleteProjectAttributes.
+             * @function deleteProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesDeleteRequest} request ProjectAttributesDeleteRequest message or plain object
+             * @param {flyteidl.service.AdminService.DeleteProjectAttributesCallback} callback Node-style callback called with the error, if any, and ProjectAttributesDeleteResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(AdminService.prototype.deleteProjectAttributes = function deleteProjectAttributes(request, callback) {
+                return this.rpcCall(deleteProjectAttributes, $root.flyteidl.admin.ProjectAttributesDeleteRequest, $root.flyteidl.admin.ProjectAttributesDeleteResponse, request, callback);
+            }, "name", { value: "DeleteProjectAttributes" });
+
+            /**
+             * Calls DeleteProjectAttributes.
+             * @function deleteProjectAttributes
+             * @memberof flyteidl.service.AdminService
+             * @instance
+             * @param {flyteidl.admin.IProjectAttributesDeleteRequest} request ProjectAttributesDeleteRequest message or plain object
+             * @returns {Promise<flyteidl.admin.ProjectAttributesDeleteResponse>} Promise
              * @variation 2
              */
 
