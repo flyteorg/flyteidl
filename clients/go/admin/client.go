@@ -87,6 +87,7 @@ func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourcePr
 	}
 
 	authorizationMetadataKey := cfg.AuthorizationMetadataKey
+	logger.Infof(ctx, "in admin client, cfg.AuthorizationMetadataKey: %s", cfg.AuthorizationMetadataKey)
 	if len(authorizationMetadataKey) == 0 {
 		clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 		if err != nil {
