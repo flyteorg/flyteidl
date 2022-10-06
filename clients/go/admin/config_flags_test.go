@@ -435,4 +435,18 @@ func TestConfig_SetFlags(t *testing.T) {
 			}
 		})
 	})
+	t.Run("Test_authorizationMetadataKey", func(t *testing.T) {
+
+		t.Run("Override", func(t *testing.T) {
+			testValue := "1"
+
+			cmdFlags.Set("authorizationMetadataKey", testValue)
+			if vString, err := cmdFlags.GetString("authorizationMetadataKey"); err == nil {
+				testDecodeJson_Config(t, fmt.Sprintf("%v", vString), &actual.AuthorizationMetadataKey)
+
+			} else {
+				assert.FailNow(t, err.Error())
+			}
+		})
+	})
 }

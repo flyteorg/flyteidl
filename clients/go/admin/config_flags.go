@@ -74,5 +74,6 @@ func (cfg Config) GetPFlagSet(prefix string) *pflag.FlagSet {
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "deviceFlowConfig.pollInterval"), defaultConfig.DeviceFlowConfig.PollInterval.String(), "amount of time the device flow would poll the token endpoint if auth server doesn't return a polling interval. Okta and google IDP do return an interval'")
 	cmdFlags.StringSlice(fmt.Sprintf("%v%v", prefix, "command"), defaultConfig.Command, "Command for external authentication token generation")
 	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "defaultServiceConfig"), defaultConfig.DefaultServiceConfig, "")
+	cmdFlags.String(fmt.Sprintf("%v%v", prefix, "authorizationMetadataKey"), defaultConfig.AuthorizationMetadataKey, "Authorization Header to use when passing Access Tokens to the server")
 	return cmdFlags
 }
