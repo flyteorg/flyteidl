@@ -2,6 +2,7 @@ package oauth
 
 import (
 	"context"
+	"github.com/flyteorg/flyteidl/clients/go/admin"
 
 	"golang.org/x/oauth2"
 
@@ -17,14 +18,14 @@ type Config struct {
 }
 
 // BuildConfigFromMetadataService builds OAuth2 config from information retrieved through the anonymous auth metadata service.
-func BuildConfigFromMetadataService(ctx context.Context, authMetadataClient service.AuthMetadataServiceClient) (clientConf *Config, err error) {
+func BuildConfigFromMetadataService(ctx context.Context, authMetadataClient *admin.ConfigResolver) (clientConf *Config, err error) {
 	var clientResp *service.PublicClientAuthConfigResponse
-	if clientResp, err = authMetadataClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{}); err != nil {
+	if clientResp, err = authMetadataClient.GetPublicClientConfig(ctx); err != nil {
 		return nil, err
 	}
 
 	var oauthMetaResp *service.OAuth2MetadataResponse
-	if oauthMetaResp, err = authMetadataClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{}); err != nil {
+	if oauthMetaResp, err = authMetadataClient.GetOAuth2Metadata(ctx); err != nil {
 		return nil, err
 	}
 

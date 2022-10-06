@@ -62,7 +62,7 @@ type Config struct {
 	TokenURL string `json:"tokenUrl" pflag:",OPTIONAL: Your IdP's token endpoint. It'll be discovered from flyte admin's OAuth Metadata endpoint if not provided."`
 
 	// See the implementation of the 'grpcAuthorizationHeader' option in Flyte Admin for more information. But
-	// basically we want to be able to use a different string to pass the token from this client to the the Admin service
+	// basically we want to be able to use a different string to pass the token from this client to the Admin service
 	// because things might be running in a service mesh (like Envoy) that already uses the default 'authorization' header
 	// Deprecated: It will automatically be discovered through an anonymously accessible auth metadata service.
 	DeprecatedAuthorizationHeader string `json:"authorizationHeader" pflag:",Custom metadata header to pass JWT"`
@@ -72,6 +72,10 @@ type Config struct {
 	DeviceFlowConfig deviceflow.Config `json:"deviceFlowConfig" pflag:",Config for Device authentication flow."`
 
 	Command []string `json:"command" pflag:",Command for external authentication token generation"`
+
+	TokenAudience string `json:"tokenAudience" pflag:",OPTIONAL: Audience for token issuance requests. It'll be discovered from the flyte admin's OAuth Metadata endpoint if not provided."`
+
+	ServiceHttpEndpoint string `json:"serviceHttpEndpoint" pflag:",OPTIONAL: The http endpoint for FlyteAdmin if it's being served over a different port. It'll be discovered from the flyte admin's OAuth Metadata endpoint if not provided."`
 
 	// Set the gRPC service config formatted as a json string https://github.com/grpc/grpc/blob/master/doc/service_config.md
 	// eg. {"loadBalancingConfig": [{"round_robin":{}}], "methodConfig": [{"name":[{"service": "foo", "method": "bar"}, {"service": "baz"}], "timeout": "1.000000001s"}]}

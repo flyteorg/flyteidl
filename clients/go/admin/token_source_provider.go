@@ -18,7 +18,6 @@ import (
 	"github.com/flyteorg/flyteidl/clients/go/admin/externalprocess"
 	"github.com/flyteorg/flyteidl/clients/go/admin/pkce"
 	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 )
 
@@ -29,30 +28,24 @@ type TokenSourceProvider interface {
 }
 
 func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.TokenCache,
-	authClient service.AuthMetadataServiceClient) (TokenSourceProvider, error) {
+	authClient *ConfigResolver) (TokenSourceProvider, error) {
 
 	var tokenProvider TokenSourceProvider
 	var err error
 	switch cfg.AuthType {
 	case AuthTypeClientSecret:
-		tokenURL := cfg.TokenURL
-		if len(tokenURL) == 0 {
-			metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
-			if err != nil {
-				return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
-			}
-
-			tokenURL = metadata.TokenEndpoint
+		metadata, err := authClient.GetOAuth2Metadata(ctx)
+		if err != nil {
+			return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
 		}
 
-		scopes := cfg.Scopes
-		if len(scopes) == 0 {
-			clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-			if err != nil {
-				return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-			}
-			scopes = clientMetadata.Scopes
+		tokenURL := metadata.TokenEndpoint
+
+		clientMetadata, err := authClient.GetPublicClientConfig(ctx)
+		if err != nil {
+			return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 		}
+		scopes := clientMetadata.Scopes
 
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL)
 		if err != nil {
