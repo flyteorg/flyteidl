@@ -217,6 +217,8 @@ func (m *Workflow) Validate() error {
 		}
 	}
 
+	// no validation rules for ShortDescription
+
 	return nil
 }
 

@@ -14629,11 +14629,15 @@ definitions:
         description: "closure encapsulates all the fields that maps to a compiled\
           \ version of the task."
         $ref: "#/definitions/adminTaskClosure"
+      short_description:
+        type: "string"
+        description: "One-liner overview of the entity."
     description: "Flyte workflows are composed of many ordered tasks. That is small,\
       \ reusable, self-contained logical blocks\narranged to process workflow inputs\
       \ and produce a deterministic set of outputs.\nTasks can come in many varieties\
       \ tuned for specialized behavior."
     example:
+      short_description: "short_description"
       id:
         domain: "domain"
         resource_type: {}
@@ -15562,7 +15566,8 @@ definitions:
       \ for more details"
     example:
       tasks:
-      - id:
+      - short_description: "short_description"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -15821,7 +15826,8 @@ definitions:
               sql:
                 dialect: {}
                 statement: "statement"
-      - id:
+      - short_description: "short_description"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -16178,10 +16184,14 @@ definitions:
         description: "closure encapsulates all the fields that maps to a compiled\
           \ version of the workflow."
         $ref: "#/definitions/adminWorkflowClosure"
+      short_description:
+        type: "string"
+        description: "One-liner overview of the entity."
     description: "Represents the workflow structure stored in the Admin\nA workflow\
       \ is created by ordering tasks and associating outputs to inputs\nin order to\
       \ produce a directed-acyclic execution graph."
     example:
+      short_description: "short_description"
       id:
         domain: "domain"
         resource_type: {}
@@ -28618,7 +28628,8 @@ definitions:
       \ for more details"
     example:
       workflows:
-      - id:
+      - short_description: "short_description"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"
@@ -34626,7 +34637,8 @@ definitions:
                     - "ids"
                     - "ids"
           created_at: "2000-01-23T04:56:07.000+00:00"
-      - id:
+      - short_description: "short_description"
+        id:
           domain: "domain"
           resource_type: {}
           name: "name"

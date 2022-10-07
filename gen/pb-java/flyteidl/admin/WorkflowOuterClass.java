@@ -1446,6 +1446,24 @@ public final class WorkflowOuterClass {
      * <code>.flyteidl.admin.WorkflowClosure closure = 2;</code>
      */
     flyteidl.admin.WorkflowOuterClass.WorkflowClosureOrBuilder getClosureOrBuilder();
+
+    /**
+     * <pre>
+     * One-liner overview of the entity.
+     * </pre>
+     *
+     * <code>string short_description = 3;</code>
+     */
+    java.lang.String getShortDescription();
+    /**
+     * <pre>
+     * One-liner overview of the entity.
+     * </pre>
+     *
+     * <code>string short_description = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getShortDescriptionBytes();
   }
   /**
    * <pre>
@@ -1466,6 +1484,7 @@ public final class WorkflowOuterClass {
       super(builder);
     }
     private Workflow() {
+      shortDescription_ = "";
     }
 
     @java.lang.Override
@@ -1516,6 +1535,12 @@ public final class WorkflowOuterClass {
                 closure_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shortDescription_ = s;
               break;
             }
             default: {
@@ -1616,6 +1641,48 @@ public final class WorkflowOuterClass {
       return getClosure();
     }
 
+    public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 3;
+    private volatile java.lang.Object shortDescription_;
+    /**
+     * <pre>
+     * One-liner overview of the entity.
+     * </pre>
+     *
+     * <code>string short_description = 3;</code>
+     */
+    public java.lang.String getShortDescription() {
+      java.lang.Object ref = shortDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * One-liner overview of the entity.
+     * </pre>
+     *
+     * <code>string short_description = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortDescriptionBytes() {
+      java.lang.Object ref = shortDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1636,6 +1703,9 @@ public final class WorkflowOuterClass {
       if (closure_ != null) {
         output.writeMessage(2, getClosure());
       }
+      if (!getShortDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shortDescription_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1652,6 +1722,9 @@ public final class WorkflowOuterClass {
       if (closure_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getClosure());
+      }
+      if (!getShortDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shortDescription_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1678,6 +1751,8 @@ public final class WorkflowOuterClass {
         if (!getClosure()
             .equals(other.getClosure())) return false;
       }
+      if (!getShortDescription()
+          .equals(other.getShortDescription())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1697,6 +1772,8 @@ public final class WorkflowOuterClass {
         hash = (37 * hash) + CLOSURE_FIELD_NUMBER;
         hash = (53 * hash) + getClosure().hashCode();
       }
+      hash = (37 * hash) + SHORT_DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getShortDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1848,6 +1925,8 @@ public final class WorkflowOuterClass {
           closure_ = null;
           closureBuilder_ = null;
         }
+        shortDescription_ = "";
+
         return this;
       }
 
@@ -1884,6 +1963,7 @@ public final class WorkflowOuterClass {
         } else {
           result.closure_ = closureBuilder_.build();
         }
+        result.shortDescription_ = shortDescription_;
         onBuilt();
         return result;
       }
@@ -1937,6 +2017,10 @@ public final class WorkflowOuterClass {
         }
         if (other.hasClosure()) {
           mergeClosure(other.getClosure());
+        }
+        if (!other.getShortDescription().isEmpty()) {
+          shortDescription_ = other.shortDescription_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2271,6 +2355,95 @@ public final class WorkflowOuterClass {
           closure_ = null;
         }
         return closureBuilder_;
+      }
+
+      private java.lang.Object shortDescription_ = "";
+      /**
+       * <pre>
+       * One-liner overview of the entity.
+       * </pre>
+       *
+       * <code>string short_description = 3;</code>
+       */
+      public java.lang.String getShortDescription() {
+        java.lang.Object ref = shortDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          shortDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * One-liner overview of the entity.
+       * </pre>
+       *
+       * <code>string short_description = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShortDescriptionBytes() {
+        java.lang.Object ref = shortDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shortDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * One-liner overview of the entity.
+       * </pre>
+       *
+       * <code>string short_description = 3;</code>
+       */
+      public Builder setShortDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortDescription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * One-liner overview of the entity.
+       * </pre>
+       *
+       * <code>string short_description = 3;</code>
+       */
+      public Builder clearShortDescription() {
+        
+        shortDescription_ = getDefaultInstance().getShortDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * One-liner overview of the entity.
+       * </pre>
+       *
+       * <code>string short_description = 3;</code>
+       */
+      public Builder setShortDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        shortDescription_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5856,21 +6029,22 @@ public final class WorkflowOuterClass {
       "mestamp.proto\"j\n\025WorkflowCreateRequest\022%" +
       "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n" +
       "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe" +
-      "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022" +
+      "c\"\030\n\026WorkflowCreateResponse\"~\n\010Workflow\022" +
       "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220" +
       "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo" +
-      "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 " +
-      "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002" +
-      " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132" +
-      "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_" +
-      "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow" +
-      "Template\022=\n\022description_entity\030\003 \001(\0132!.f" +
-      "lyteidl.admin.DescriptionEntity\"\204\001\n\017Work" +
-      "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&" +
-      ".flyteidl.core.CompiledWorkflowClosure\022." +
-      "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim" +
-      "estampB7Z5github.com/flyteorg/flyteidl/g" +
-      "en/pb-go/flyteidl/adminb\006proto3"
+      "wClosure\022\031\n\021short_description\030\003 \001(\t\"J\n\014W" +
+      "orkflowList\022+\n\tworkflows\030\001 \003(\0132\030.flyteid" +
+      "l.admin.Workflow\022\r\n\005token\030\002 \001(\t\"\270\001\n\014Work" +
+      "flowSpec\0221\n\010template\030\001 \001(\0132\037.flyteidl.co" +
+      "re.WorkflowTemplate\0226\n\rsub_workflows\030\002 \003" +
+      "(\0132\037.flyteidl.core.WorkflowTemplate\022=\n\022d" +
+      "escription_entity\030\003 \001(\0132!.flyteidl.admin" +
+      ".DescriptionEntity\"\204\001\n\017WorkflowClosure\022A" +
+      "\n\021compiled_workflow\030\001 \001(\0132&.flyteidl.cor" +
+      "e.CompiledWorkflowClosure\022.\n\ncreated_at\030" +
+      "\002 \001(\0132\032.google.protobuf.TimestampB7Z5git" +
+      "hub.com/flyteorg/flyteidl/gen/pb-go/flyt" +
+      "eidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5906,7 +6080,7 @@ public final class WorkflowOuterClass {
     internal_static_flyteidl_admin_Workflow_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Workflow_descriptor,
-        new java.lang.String[] { "Id", "Closure", });
+        new java.lang.String[] { "Id", "Closure", "ShortDescription", });
     internal_static_flyteidl_admin_WorkflowList_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_admin_WorkflowList_fieldAccessorTable = new

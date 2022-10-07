@@ -178,6 +178,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fworkflow_2eproto
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Workflow, id_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Workflow, closure_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Workflow, short_description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::WorkflowList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -205,9 +206,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 0, -1, sizeof(::flyteidl::admin::WorkflowCreateRequest)},
   { 7, -1, sizeof(::flyteidl::admin::WorkflowCreateResponse)},
   { 12, -1, sizeof(::flyteidl::admin::Workflow)},
-  { 19, -1, sizeof(::flyteidl::admin::WorkflowList)},
-  { 26, -1, sizeof(::flyteidl::admin::WorkflowSpec)},
-  { 34, -1, sizeof(::flyteidl::admin::WorkflowClosure)},
+  { 20, -1, sizeof(::flyteidl::admin::WorkflowList)},
+  { 27, -1, sizeof(::flyteidl::admin::WorkflowSpec)},
+  { 35, -1, sizeof(::flyteidl::admin::WorkflowClosure)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -234,26 +235,27 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto[] =
   "mestamp.proto\"j\n\025WorkflowCreateRequest\022%"
   "\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\022*\n"
   "\004spec\030\002 \001(\0132\034.flyteidl.admin.WorkflowSpe"
-  "c\"\030\n\026WorkflowCreateResponse\"c\n\010Workflow\022"
+  "c\"\030\n\026WorkflowCreateResponse\"~\n\010Workflow\022"
   "%\n\002id\030\001 \001(\0132\031.flyteidl.core.Identifier\0220"
   "\n\007closure\030\002 \001(\0132\037.flyteidl.admin.Workflo"
-  "wClosure\"J\n\014WorkflowList\022+\n\tworkflows\030\001 "
-  "\003(\0132\030.flyteidl.admin.Workflow\022\r\n\005token\030\002"
-  " \001(\t\"\270\001\n\014WorkflowSpec\0221\n\010template\030\001 \001(\0132"
-  "\037.flyteidl.core.WorkflowTemplate\0226\n\rsub_"
-  "workflows\030\002 \003(\0132\037.flyteidl.core.Workflow"
-  "Template\022=\n\022description_entity\030\003 \001(\0132!.f"
-  "lyteidl.admin.DescriptionEntity\"\204\001\n\017Work"
-  "flowClosure\022A\n\021compiled_workflow\030\001 \001(\0132&"
-  ".flyteidl.core.CompiledWorkflowClosure\022."
-  "\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Tim"
-  "estampB7Z5github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  "wClosure\022\031\n\021short_description\030\003 \001(\t\"J\n\014W"
+  "orkflowList\022+\n\tworkflows\030\001 \003(\0132\030.flyteid"
+  "l.admin.Workflow\022\r\n\005token\030\002 \001(\t\"\270\001\n\014Work"
+  "flowSpec\0221\n\010template\030\001 \001(\0132\037.flyteidl.co"
+  "re.WorkflowTemplate\0226\n\rsub_workflows\030\002 \003"
+  "(\0132\037.flyteidl.core.WorkflowTemplate\022=\n\022d"
+  "escription_entity\030\003 \001(\0132!.flyteidl.admin"
+  ".DescriptionEntity\"\204\001\n\017WorkflowClosure\022A"
+  "\n\021compiled_workflow\030\001 \001(\0132&.flyteidl.cor"
+  "e.CompiledWorkflowClosure\022.\n\ncreated_at\030"
+  "\002 \001(\0132\032.google.protobuf.TimestampB7Z5git"
+  "hub.com/flyteorg/flyteidl/gen/pb-go/flyt"
+  "eidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fworkflow_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fworkflow_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fworkflow_2eproto,
-  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 911,
+  "flyteidl/admin/workflow.proto", &assign_descriptors_table_flyteidl_2fadmin_2fworkflow_2eproto, 938,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fworkflow_2eproto() {
@@ -874,6 +876,7 @@ void Workflow::clear_id() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Workflow::kIdFieldNumber;
 const int Workflow::kClosureFieldNumber;
+const int Workflow::kShortDescriptionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Workflow::Workflow()
@@ -885,6 +888,10 @@ Workflow::Workflow(const Workflow& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  short_description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.short_description().size() > 0) {
+    short_description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.short_description_);
+  }
   if (from.has_id()) {
     id_ = new ::flyteidl::core::Identifier(*from.id_);
   } else {
@@ -901,6 +908,7 @@ Workflow::Workflow(const Workflow& from)
 void Workflow::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Workflow_flyteidl_2fadmin_2fworkflow_2eproto.base);
+  short_description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&closure_) -
       reinterpret_cast<char*>(&id_)) + sizeof(closure_));
@@ -912,6 +920,7 @@ Workflow::~Workflow() {
 }
 
 void Workflow::SharedDtor() {
+  short_description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete closure_;
 }
@@ -931,6 +940,7 @@ void Workflow::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  short_description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
     delete id_;
   }
@@ -981,6 +991,22 @@ const char* Workflow::_InternalParse(const char* begin, const char* end, void* o
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
+      // string short_description = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.Workflow.short_description");
+        object = msg->mutable_short_description();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -996,6 +1022,10 @@ const char* Workflow::_InternalParse(const char* begin, const char* end, void* o
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
 len_delim_till_end:
   return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
                                {parser_till_end, object}, size);
@@ -1027,6 +1057,21 @@ bool Workflow::MergePartialFromCodedStream(
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_closure()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string short_description = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_short_description()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->short_description().data(), static_cast<int>(this->short_description().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.Workflow.short_description"));
         } else {
           goto handle_unusual;
         }
@@ -1072,6 +1117,16 @@ void Workflow::SerializeWithCachedSizes(
       2, HasBitSetters::closure(this), output);
   }
 
+  // string short_description = 3;
+  if (this->short_description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->short_description().data(), static_cast<int>(this->short_description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.Workflow.short_description");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->short_description(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1099,6 +1154,17 @@ void Workflow::SerializeWithCachedSizes(
         2, HasBitSetters::closure(this), target);
   }
 
+  // string short_description = 3;
+  if (this->short_description().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->short_description().data(), static_cast<int>(this->short_description().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.Workflow.short_description");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->short_description(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1119,6 +1185,13 @@ size_t Workflow::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string short_description = 3;
+  if (this->short_description().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->short_description());
+  }
 
   // .flyteidl.core.Identifier id = 1;
   if (this->has_id()) {
@@ -1161,6 +1234,10 @@ void Workflow::MergeFrom(const Workflow& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.short_description().size() > 0) {
+
+    short_description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.short_description_);
+  }
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::Identifier::MergeFrom(from.id());
   }
@@ -1194,6 +1271,8 @@ void Workflow::Swap(Workflow* other) {
 void Workflow::InternalSwap(Workflow* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  short_description_.Swap(&other->short_description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(id_, other->id_);
   swap(closure_, other->closure_);
 }

@@ -35018,6 +35018,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ITask
              * @property {flyteidl.core.IIdentifier|null} [id] Task id
              * @property {flyteidl.admin.ITaskClosure|null} [closure] Task closure
+             * @property {string|null} [shortDescription] Task shortDescription
              */
 
             /**
@@ -35052,6 +35053,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Task.prototype.closure = null;
 
             /**
+             * Task shortDescription.
+             * @member {string} shortDescription
+             * @memberof flyteidl.admin.Task
+             * @instance
+             */
+            Task.prototype.shortDescription = "";
+
+            /**
              * Creates a new Task instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.Task
@@ -35079,6 +35088,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.closure != null && message.hasOwnProperty("closure"))
                     $root.flyteidl.admin.TaskClosure.encode(message.closure, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.shortDescription);
                 return writer;
             };
 
@@ -35105,6 +35116,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.closure = $root.flyteidl.admin.TaskClosure.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.shortDescription = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -35135,6 +35149,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "closure." + error;
                 }
+                if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
+                    if (!$util.isString(message.shortDescription))
+                        return "shortDescription: string expected";
                 return null;
             };
 
@@ -37393,6 +37410,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IWorkflow
              * @property {flyteidl.core.IIdentifier|null} [id] Workflow id
              * @property {flyteidl.admin.IWorkflowClosure|null} [closure] Workflow closure
+             * @property {string|null} [shortDescription] Workflow shortDescription
              */
 
             /**
@@ -37427,6 +37445,14 @@ export const flyteidl = $root.flyteidl = (() => {
             Workflow.prototype.closure = null;
 
             /**
+             * Workflow shortDescription.
+             * @member {string} shortDescription
+             * @memberof flyteidl.admin.Workflow
+             * @instance
+             */
+            Workflow.prototype.shortDescription = "";
+
+            /**
              * Creates a new Workflow instance using the specified properties.
              * @function create
              * @memberof flyteidl.admin.Workflow
@@ -37454,6 +37480,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.closure != null && message.hasOwnProperty("closure"))
                     $root.flyteidl.admin.WorkflowClosure.encode(message.closure, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.shortDescription);
                 return writer;
             };
 
@@ -37480,6 +37508,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 2:
                         message.closure = $root.flyteidl.admin.WorkflowClosure.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.shortDescription = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -37510,6 +37541,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "closure." + error;
                 }
+                if (message.shortDescription != null && message.hasOwnProperty("shortDescription"))
+                    if (!$util.isString(message.shortDescription))
+                        return "shortDescription: string expected";
                 return null;
             };
 

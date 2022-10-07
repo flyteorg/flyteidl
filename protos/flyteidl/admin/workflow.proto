@@ -34,6 +34,9 @@ message Workflow {
     
     // closure encapsulates all the fields that maps to a compiled version of the workflow.
     WorkflowClosure closure  = 2;
+
+    // One-liner overview of the entity.
+    string short_description = 3;
 }
 
 // Represents a list of workflows returned from the admin.

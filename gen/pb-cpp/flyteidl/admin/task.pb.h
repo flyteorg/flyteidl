@@ -415,6 +415,20 @@ class Task final :
 
   // accessors -------------------------------------------------------
 
+  // string short_description = 3;
+  void clear_short_description();
+  static const int kShortDescriptionFieldNumber = 3;
+  const ::std::string& short_description() const;
+  void set_short_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_short_description(::std::string&& value);
+  #endif
+  void set_short_description(const char* value);
+  void set_short_description(const char* value, size_t size);
+  ::std::string* mutable_short_description();
+  ::std::string* release_short_description();
+  void set_allocated_short_description(::std::string* short_description);
+
   // .flyteidl.core.Identifier id = 1;
   bool has_id() const;
   void clear_id();
@@ -438,6 +452,7 @@ class Task final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr short_description_;
   ::flyteidl::core::Identifier* id_;
   ::flyteidl::admin::TaskClosure* closure_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1035,6 +1050,59 @@ inline void Task::set_allocated_closure(::flyteidl::admin::TaskClosure* closure)
   }
   closure_ = closure;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Task.closure)
+}
+
+// string short_description = 3;
+inline void Task::clear_short_description() {
+  short_description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Task::short_description() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Task.short_description)
+  return short_description_.GetNoArena();
+}
+inline void Task::set_short_description(const ::std::string& value) {
+  
+  short_description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.Task.short_description)
+}
+#if LANG_CXX11
+inline void Task::set_short_description(::std::string&& value) {
+  
+  short_description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.Task.short_description)
+}
+#endif
+inline void Task::set_short_description(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  short_description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.Task.short_description)
+}
+inline void Task::set_short_description(const char* value, size_t size) {
+  
+  short_description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.Task.short_description)
+}
+inline ::std::string* Task::mutable_short_description() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Task.short_description)
+  return short_description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Task::release_short_description() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Task.short_description)
+  
+  return short_description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Task::set_allocated_short_description(::std::string* short_description) {
+  if (short_description != nullptr) {
+    
+  } else {
+    
+  }
+  short_description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), short_description);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Task.short_description)
 }
 
 // -------------------------------------------------------------------

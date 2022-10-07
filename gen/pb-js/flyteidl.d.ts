@@ -14688,6 +14688,9 @@ export namespace flyteidl {
 
             /** Task closure */
             closure?: (flyteidl.admin.ITaskClosure|null);
+
+            /** Task shortDescription */
+            shortDescription?: (string|null);
         }
 
         /** Represents a Task. */
@@ -14704,6 +14707,9 @@ export namespace flyteidl {
 
             /** Task closure. */
             public closure?: (flyteidl.admin.ITaskClosure|null);
+
+            /** Task shortDescription. */
+            public shortDescription: string;
 
             /**
              * Creates a new Task instance using the specified properties.
@@ -15697,6 +15703,9 @@ export namespace flyteidl {
 
             /** Workflow closure */
             closure?: (flyteidl.admin.IWorkflowClosure|null);
+
+            /** Workflow shortDescription */
+            shortDescription?: (string|null);
         }
 
         /** Represents a Workflow. */
@@ -15713,6 +15722,9 @@ export namespace flyteidl {
 
             /** Workflow closure. */
             public closure?: (flyteidl.admin.IWorkflowClosure|null);
+
+            /** Workflow shortDescription. */
+            public shortDescription: string;
 
             /**
              * Creates a new Workflow instance using the specified properties.

@@ -3329,6 +3329,7 @@ Tasks can come in many varieties tuned for specialized behavior.
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the task."
    "closure", ":ref:`ref_flyteidl.admin.TaskClosure`", "", "closure encapsulates all the fields that maps to a compiled version of the task."
+   "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
 
 
 
@@ -3773,6 +3774,7 @@ in order to produce a directed-acyclic execution graph.
 
    "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the workflow."
    "closure", ":ref:`ref_flyteidl.admin.WorkflowClosure`", "", "closure encapsulates all the fields that maps to a compiled version of the workflow."
+   "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
 
 
 

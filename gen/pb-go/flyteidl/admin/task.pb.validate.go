@@ -217,6 +217,8 @@ func (m *Task) Validate() error {
 		}
 	}
 
+	// no validation rules for ShortDescription
+
 	return nil
 }
 
