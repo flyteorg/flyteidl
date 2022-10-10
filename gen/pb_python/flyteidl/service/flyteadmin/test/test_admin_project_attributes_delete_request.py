@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_selector import AdminSelector  # noqa: E501
+from flyteadmin.models.admin_project_attributes_delete_request import AdminProjectAttributesDeleteRequest  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminSelector(unittest.TestCase):
-    """AdminSelector unit test stubs"""
+class TestAdminProjectAttributesDeleteRequest(unittest.TestCase):
+    """AdminProjectAttributesDeleteRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminSelector(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminSelector(self):
-        """Test AdminSelector"""
+    def testAdminProjectAttributesDeleteRequest(self):
+        """Test AdminProjectAttributesDeleteRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_selector.AdminSelector()  # noqa: E501
+        # model = flyteadmin.models.admin_project_attributes_delete_request.AdminProjectAttributesDeleteRequest()  # noqa: E501
         pass
 
 

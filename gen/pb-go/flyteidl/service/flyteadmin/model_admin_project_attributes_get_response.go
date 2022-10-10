@@ -9,8 +9,6 @@
 
 package flyteadmin
 
-// Defines a set of constraints used to select eligible objects based on labels they possess.
-type AdminAffinity struct {
-	// Multiples selectors are 'and'-ed together to produce the list of matching, eligible objects.
-	Selectors []AdminSelector `json:"selectors,omitempty"`
+type AdminProjectAttributesGetResponse struct {
+	Attributes *AdminProjectAttributes `json:"attributes,omitempty"`
 }

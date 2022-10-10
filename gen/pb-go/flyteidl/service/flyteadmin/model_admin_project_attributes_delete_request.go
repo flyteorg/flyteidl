@@ -9,8 +9,7 @@
 
 package flyteadmin
 
-// Defines a set of specific label selectors that the execution can tolerate on a cluster.
-type AdminToleration struct {
-	// A toleration selector is similar to that of an affinity but the only valid operators are EQUALS AND EXISTS.
-	Selectors []AdminSelector `json:"selectors,omitempty"`
+type AdminProjectAttributesDeleteRequest struct {
+	Project string `json:"project,omitempty"`
+	ResourceType *AdminMatchableResource `json:"resource_type,omitempty"`
 }

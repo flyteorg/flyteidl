@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_selector_operator import AdminSelectorOperator  # noqa: E501
+from flyteadmin.models.comparison_expression_operator import ComparisonExpressionOperator  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminSelectorOperator(unittest.TestCase):
-    """AdminSelectorOperator unit test stubs"""
+class TestComparisonExpressionOperator(unittest.TestCase):
+    """ComparisonExpressionOperator unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminSelectorOperator(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminSelectorOperator(self):
-        """Test AdminSelectorOperator"""
+    def testComparisonExpressionOperator(self):
+        """Test ComparisonExpressionOperator"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_selector_operator.AdminSelectorOperator()  # noqa: E501
+        # model = flyteadmin.models.comparison_expression_operator.ComparisonExpressionOperator()  # noqa: E501
         pass
 
 

@@ -28,6 +28,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**CreateTaskEvent**](docs/AdminServiceApi.md#createtaskevent) | **Post** /api/v1/events/tasks | Indicates a :ref:&#x60;ref_flyteidl.event.TaskExecutionEvent&#x60; has occurred.
 *AdminServiceApi* | [**CreateWorkflow**](docs/AdminServiceApi.md#createworkflow) | **Post** /api/v1/workflows | Create and upload a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition
 *AdminServiceApi* | [**CreateWorkflowEvent**](docs/AdminServiceApi.md#createworkflowevent) | **Post** /api/v1/events/workflows | Indicates a :ref:&#x60;ref_flyteidl.event.WorkflowExecutionEvent&#x60; has occurred.
+*AdminServiceApi* | [**DeleteProjectAttributes**](docs/AdminServiceApi.md#deleteprojectattributes) | **Delete** /api/v1/project_attributes/{project} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**DeleteProjectDomainAttributes**](docs/AdminServiceApi.md#deleteprojectdomainattributes) | **Delete** /api/v1/project_domain_attributes/{project}/{domain} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**DeleteWorkflowAttributes**](docs/AdminServiceApi.md#deleteworkflowattributes) | **Delete** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Deletes custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**GetActiveLaunchPlan**](docs/AdminServiceApi.md#getactivelaunchplan) | **Get** /api/v1/active_launch_plans/{id.project}/{id.domain}/{id.name} | Fetch the active version of a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
@@ -37,6 +38,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**GetNamedEntity**](docs/AdminServiceApi.md#getnamedentity) | **Get** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**GetNodeExecution**](docs/AdminServiceApi.md#getnodeexecution) | **Get** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**GetNodeExecutionData**](docs/AdminServiceApi.md#getnodeexecutiondata) | **Get** /api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
+*AdminServiceApi* | [**GetProjectAttributes**](docs/AdminServiceApi.md#getprojectattributes) | **Get** /api/v1/project_attributes/{project} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**GetProjectDomainAttributes**](docs/AdminServiceApi.md#getprojectdomainattributes) | **Get** /api/v1/project_domain_attributes/{project}/{domain} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**GetTask**](docs/AdminServiceApi.md#gettask) | **Get** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**GetTaskExecution**](docs/AdminServiceApi.md#gettaskexecution) | **Get** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
@@ -69,6 +71,7 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**UpdateLaunchPlan**](docs/AdminServiceApi.md#updatelaunchplan) | **Put** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Updates the status of a registered :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
 *AdminServiceApi* | [**UpdateNamedEntity**](docs/AdminServiceApi.md#updatenamedentity) | **Put** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Updates a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**UpdateProject**](docs/AdminServiceApi.md#updateproject) | **Put** /api/v1/projects/{id} | Updates an existing :ref:&#x60;ref_flyteidl.admin.Project&#x60;  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
+*AdminServiceApi* | [**UpdateProjectAttributes**](docs/AdminServiceApi.md#updateprojectattributes) | **Put** /api/v1/project_attributes/{attributes.project} | Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; at the project level
 *AdminServiceApi* | [**UpdateProjectDomainAttributes**](docs/AdminServiceApi.md#updateprojectdomainattributes) | **Put** /api/v1/project_domain_attributes/{attributes.project}/{attributes.domain} | Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**UpdateWorkflowAttributes**](docs/AdminServiceApi.md#updateworkflowattributes) | **Put** /api/v1/workflow_attributes/{attributes.project}/{attributes.domain}/{attributes.workflow} | Creates or updates custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 
@@ -76,7 +79,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AdminAbortMetadata](docs/AdminAbortMetadata.md)
- - [AdminAffinity](docs/AdminAffinity.md)
  - [AdminAnnotations](docs/AdminAnnotations.md)
  - [AdminAuth](docs/AdminAuth.md)
  - [AdminAuthRole](docs/AdminAuthRole.md)
@@ -141,6 +143,12 @@ Class | Method | HTTP request | Description
  - [AdminPluginOverride](docs/AdminPluginOverride.md)
  - [AdminPluginOverrides](docs/AdminPluginOverrides.md)
  - [AdminProject](docs/AdminProject.md)
+ - [AdminProjectAttributes](docs/AdminProjectAttributes.md)
+ - [AdminProjectAttributesDeleteRequest](docs/AdminProjectAttributesDeleteRequest.md)
+ - [AdminProjectAttributesDeleteResponse](docs/AdminProjectAttributesDeleteResponse.md)
+ - [AdminProjectAttributesGetResponse](docs/AdminProjectAttributesGetResponse.md)
+ - [AdminProjectAttributesUpdateRequest](docs/AdminProjectAttributesUpdateRequest.md)
+ - [AdminProjectAttributesUpdateResponse](docs/AdminProjectAttributesUpdateResponse.md)
  - [AdminProjectDomainAttributes](docs/AdminProjectDomainAttributes.md)
  - [AdminProjectDomainAttributesDeleteRequest](docs/AdminProjectDomainAttributesDeleteRequest.md)
  - [AdminProjectDomainAttributesDeleteResponse](docs/AdminProjectDomainAttributesDeleteResponse.md)
@@ -153,8 +161,6 @@ Class | Method | HTTP request | Description
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminRawOutputDataConfig](docs/AdminRawOutputDataConfig.md)
  - [AdminSchedule](docs/AdminSchedule.md)
- - [AdminSelector](docs/AdminSelector.md)
- - [AdminSelectorOperator](docs/AdminSelectorOperator.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
  - [AdminSystemMetadata](docs/AdminSystemMetadata.md)
@@ -171,7 +177,6 @@ Class | Method | HTTP request | Description
  - [AdminTaskResourceAttributes](docs/AdminTaskResourceAttributes.md)
  - [AdminTaskResourceSpec](docs/AdminTaskResourceSpec.md)
  - [AdminTaskSpec](docs/AdminTaskSpec.md)
- - [AdminToleration](docs/AdminToleration.md)
  - [AdminUrlBlob](docs/AdminUrlBlob.md)
  - [AdminVersion](docs/AdminVersion.md)
  - [AdminWorkflow](docs/AdminWorkflow.md)
@@ -192,6 +197,7 @@ Class | Method | HTTP request | Description
  - [AdminWorkflowSpec](docs/AdminWorkflowSpec.md)
  - [BlobTypeBlobDimensionality](docs/BlobTypeBlobDimensionality.md)
  - [CatalogReservationStatus](docs/CatalogReservationStatus.md)
+ - [ComparisonExpressionOperator](docs/ComparisonExpressionOperator.md)
  - [ConjunctionExpressionLogicalOperator](docs/ConjunctionExpressionLogicalOperator.md)
  - [ConnectionSetIdList](docs/ConnectionSetIdList.md)
  - [ContainerArchitecture](docs/ContainerArchitecture.md)
@@ -211,7 +217,6 @@ Class | Method | HTTP request | Description
  - [CoreCatalogCacheStatus](docs/CoreCatalogCacheStatus.md)
  - [CoreCatalogMetadata](docs/CoreCatalogMetadata.md)
  - [CoreComparisonExpression](docs/CoreComparisonExpression.md)
- - [CoreComparisonExpressionOperator](docs/CoreComparisonExpressionOperator.md)
  - [CoreCompiledTask](docs/CoreCompiledTask.md)
  - [CoreCompiledWorkflow](docs/CoreCompiledWorkflow.md)
  - [CoreCompiledWorkflowClosure](docs/CoreCompiledWorkflowClosure.md)
