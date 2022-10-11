@@ -81,19 +81,17 @@ func GetAdditionalAdminClientConfigOptions(cfg *Config) []grpc.DialOption {
 // This retrieves a DialOption that contains a source for generating JWTs for authentication with Flyte Admin. If
 // the token endpoint is set in the config, that will be used, otherwise it'll attempt to make a metadata call.
 func getAuthenticationDialOption(ctx context.Context, cfg *Config, tokenSourceProvider TokenSourceProvider,
-	authClient service.AuthMetadataServiceClient) (grpc.DialOption, error) {
+	authClient *ConfigResolver) (grpc.DialOption, error) {
 	if tokenSourceProvider == nil {
 		return nil, errors.New("can't create authenticated channel without a TokenSourceProvider")
 	}
 
-	authorizationMetadataKey := cfg.AuthorizationHeader
-	if len(authorizationMetadataKey) == 0 {
-		clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-		if err != nil {
-			return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-		}
-		authorizationMetadataKey = clientMetadata.AuthorizationMetadataKey
+	clientMetadata, err := authClient.GetPublicClientConfig(ctx)
+	if err != nil {
+		return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
+
+	authorizationMetadataKey := clientMetadata.AuthorizationMetadataKey
 
 	tokenSource, err := tokenSourceProvider.GetTokenSource(ctx)
 	if err != nil {

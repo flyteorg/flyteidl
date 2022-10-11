@@ -5,7 +5,6 @@ import (
 	"fmt"
 
 	"github.com/flyteorg/flyteidl/clients/go/admin/cache"
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
 
 	"google.golang.org/grpc/codes"
@@ -22,19 +21,18 @@ func MaterializeCredentials(ctx context.Context, cfg *Config, tokenCache cache.T
 		return fmt.Errorf("failed to initialized Auth Metadata Client. Error: %w", err)
 	}
 
-	tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, authMetadataClient)
+	cfgResolver := NewConfigResolver(cfg, authMetadataClient)
+	tokenSourceProvider, err := NewTokenSourceProvider(ctx, cfg, tokenCache, cfgResolver)
 	if err != nil {
 		return fmt.Errorf("failed to initialized token source provider. Err: %w", err)
 	}
 
-	authorizationMetadataKey := cfg.AuthorizationHeader
-	if len(authorizationMetadataKey) == 0 {
-		clientMetadata, err := authMetadataClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-		if err != nil {
-			return fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-		}
-		authorizationMetadataKey = clientMetadata.AuthorizationMetadataKey
+	clientMetadata, err := cfgResolver.GetPublicClientConfig(ctx)
+	if err != nil {
+		return fmt.Errorf("failed to fetch client metadata. Error: %v", err)
 	}
+
+	authorizationMetadataKey := clientMetadata.AuthorizationMetadataKey
 
 	tokenSource, err := tokenSourceProvider.GetTokenSource(ctx)
 	if err != nil {

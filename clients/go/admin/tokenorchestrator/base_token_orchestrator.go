@@ -3,9 +3,8 @@ package tokenorchestrator
 import (
 	"context"
 	"fmt"
+	"github.com/flyteorg/flyteidl/clients/go/admin"
 	"time"
-
-	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 
 	"golang.org/x/oauth2"
 
@@ -82,7 +81,7 @@ func (t BaseTokenOrchestrator) FetchTokenFromCacheOrRefreshIt(ctx context.Contex
 	return token, nil
 }
 
-func NewBaseTokenOrchestrator(ctx context.Context, tokenCache cache.TokenCache, authClient service.AuthMetadataServiceClient) (BaseTokenOrchestrator, error) {
+func NewBaseTokenOrchestrator(ctx context.Context, tokenCache cache.TokenCache, authClient *admin.ConfigResolver) (BaseTokenOrchestrator, error) {
 	clientConfig, err := oauth.BuildConfigFromMetadataService(ctx, authClient)
 	if err != nil {
 		return BaseTokenOrchestrator{}, err
