@@ -17863,6 +17863,9 @@ export namespace flyteidl {
 
             /** PublicClientAuthConfigResponse serviceHttpEndpoint */
             serviceHttpEndpoint?: (string|null);
+
+            /** PublicClientAuthConfigResponse audience */
+            audience?: (string|null);
         }
 
         /** Represents a PublicClientAuthConfigResponse. */
@@ -17888,6 +17891,9 @@ export namespace flyteidl {
 
             /** PublicClientAuthConfigResponse serviceHttpEndpoint. */
             public serviceHttpEndpoint: string;
+
+            /** PublicClientAuthConfigResponse audience. */
+            public audience: string;
 
             /**
              * Creates a new PublicClientAuthConfigResponse instance using the specified properties.

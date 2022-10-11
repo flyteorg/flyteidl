@@ -41563,6 +41563,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {Array.<string>|null} [scopes] PublicClientAuthConfigResponse scopes
              * @property {string|null} [authorizationMetadataKey] PublicClientAuthConfigResponse authorizationMetadataKey
              * @property {string|null} [serviceHttpEndpoint] PublicClientAuthConfigResponse serviceHttpEndpoint
+             * @property {string|null} [audience] PublicClientAuthConfigResponse audience
              */
 
             /**
@@ -41622,6 +41623,14 @@ export const flyteidl = $root.flyteidl = (() => {
             PublicClientAuthConfigResponse.prototype.serviceHttpEndpoint = "";
 
             /**
+             * PublicClientAuthConfigResponse audience.
+             * @member {string} audience
+             * @memberof flyteidl.service.PublicClientAuthConfigResponse
+             * @instance
+             */
+            PublicClientAuthConfigResponse.prototype.audience = "";
+
+            /**
              * Creates a new PublicClientAuthConfigResponse instance using the specified properties.
              * @function create
              * @memberof flyteidl.service.PublicClientAuthConfigResponse
@@ -41656,6 +41665,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.authorizationMetadataKey);
                 if (message.serviceHttpEndpoint != null && message.hasOwnProperty("serviceHttpEndpoint"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.serviceHttpEndpoint);
+                if (message.audience != null && message.hasOwnProperty("audience"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.audience);
                 return writer;
             };
 
@@ -41693,6 +41704,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 5:
                         message.serviceHttpEndpoint = reader.string();
+                        break;
+                    case 6:
+                        message.audience = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -41732,6 +41746,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.serviceHttpEndpoint != null && message.hasOwnProperty("serviceHttpEndpoint"))
                     if (!$util.isString(message.serviceHttpEndpoint))
                         return "serviceHttpEndpoint: string expected";
+                if (message.audience != null && message.hasOwnProperty("audience"))
+                    if (!$util.isString(message.audience))
+                        return "audience: string expected";
                 return null;
             };
 
