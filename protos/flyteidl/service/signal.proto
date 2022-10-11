@@ -11,8 +11,8 @@ import "protoc-gen-swagger/options/annotations.proto";
 service SignalService {
   // Fetches or creates a :ref:`ref_flyteidl.admin.Signal`.
   rpc GetOrCreateSignal (flyteidl.admin.SignalGetOrCreateRequest) returns (flyteidl.admin.Signal) {
-    // Purposfully left out an HTTP API for this RPC call. This is meant to idempotently retrieve
-    // a signal, meaining the first call will create the signal and all subsequent calls will
+    // Purposefully left out an HTTP API for this RPC call. This is meant to idempotently retrieve
+    // a signal, meaning the first call will create the signal and all subsequent calls will
     // fetch the existing signal. This is only useful during Flyte Workflow execution and therefore
     // is not exposed to mitigate unintended behavior.
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
