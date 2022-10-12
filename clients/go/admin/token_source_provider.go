@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
+	"net/url"
 	"os"
 	"strings"
 	"sync"
@@ -20,6 +21,10 @@ import (
 	"github.com/flyteorg/flyteidl/clients/go/admin/tokenorchestrator"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/logger"
+)
+
+const (
+	audience = "audience"
 )
 
 // TokenSourceProvider defines the interface needed to provide a TokenSource that is used to
@@ -45,16 +50,21 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 			tokenURL = metadata.TokenEndpoint
 		}
 
+		clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
+		if err != nil {
+			return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
+		}
 		scopes := cfg.Scopes
 		if len(scopes) == 0 {
-			clientMetadata, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-			if err != nil {
-				return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-			}
 			scopes = clientMetadata.Scopes
 		}
 
-		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL)
+		audienceValue := cfg.Audience
+		if len(audienceValue) == 0 {
+			audienceValue = clientMetadata.Audience
+		}
+		
+		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL, audienceValue)
 		if err != nil {
 			return nil, err
 		}
@@ -152,7 +162,7 @@ type ClientCredentialsTokenSourceProvider struct {
 	TokenRefreshWindow time.Duration
 }
 
-func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, scopes []string, tokenURL string) (TokenSourceProvider, error) {
+func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, scopes []string, tokenURL string, audience string) (TokenSourceProvider, error) {
 	var secret string
 	if len(cfg.ClientSecretEnvVar) > 0 {
 		secret = os.Getenv(cfg.ClientSecretEnvVar)
@@ -164,13 +174,19 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 		}
 		secret = string(secretBytes)
 	}
+	endpointParams := url.Values{}
+	if len(audience) > 0 {
+		endpointParams = url.Values{audience: {audience}}
+	}
 	secret = strings.TrimSpace(secret)
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
-			ClientID:     cfg.ClientID,
-			ClientSecret: secret,
-			TokenURL:     tokenURL,
-			Scopes:       scopes},
+			ClientID:       cfg.ClientID,
+			ClientSecret:   secret,
+			TokenURL:       tokenURL,
+			Scopes:         scopes,
+			EndpointParams: endpointParams,
+		},
 		TokenRefreshWindow: cfg.TokenRefreshWindow.Duration}, nil
 }
 
