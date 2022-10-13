@@ -14166,6 +14166,1301 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a SettingsCollection. */
+        interface ISettingsCollection {
+
+            /** SettingsCollection taskResourceSettings */
+            taskResourceSettings?: (flyteidl.admin.ITaskResourceAttributes|null);
+
+            /** SettingsCollection clusterResourceSettings */
+            clusterResourceSettings?: (flyteidl.admin.IClusterResourceAttributes|null);
+
+            /** SettingsCollection executionQueueSettings */
+            executionQueueSettings?: (flyteidl.admin.IExecutionQueueAttributes|null);
+
+            /** SettingsCollection executionClusterLabelSettings */
+            executionClusterLabelSettings?: (flyteidl.admin.IExecutionClusterLabel|null);
+
+            /** SettingsCollection qualityOfServiceSettings */
+            qualityOfServiceSettings?: (flyteidl.core.IQualityOfService|null);
+
+            /** SettingsCollection pluginOverrideSettings */
+            pluginOverrideSettings?: (flyteidl.admin.IPluginOverride|null);
+
+            /** SettingsCollection workflowExecutionSettings */
+            workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
+
+            /** SettingsCollection clusterAssignmentSettings */
+            clusterAssignmentSettings?: (flyteidl.admin.IClusterAssignment|null);
+        }
+
+        /** Represents a SettingsCollection. */
+        class SettingsCollection implements ISettingsCollection {
+
+            /**
+             * Constructs a new SettingsCollection.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsCollection);
+
+            /** SettingsCollection taskResourceSettings. */
+            public taskResourceSettings?: (flyteidl.admin.ITaskResourceAttributes|null);
+
+            /** SettingsCollection clusterResourceSettings. */
+            public clusterResourceSettings?: (flyteidl.admin.IClusterResourceAttributes|null);
+
+            /** SettingsCollection executionQueueSettings. */
+            public executionQueueSettings?: (flyteidl.admin.IExecutionQueueAttributes|null);
+
+            /** SettingsCollection executionClusterLabelSettings. */
+            public executionClusterLabelSettings?: (flyteidl.admin.IExecutionClusterLabel|null);
+
+            /** SettingsCollection qualityOfServiceSettings. */
+            public qualityOfServiceSettings?: (flyteidl.core.IQualityOfService|null);
+
+            /** SettingsCollection pluginOverrideSettings. */
+            public pluginOverrideSettings?: (flyteidl.admin.IPluginOverride|null);
+
+            /** SettingsCollection workflowExecutionSettings. */
+            public workflowExecutionSettings?: (flyteidl.admin.IWorkflowExecutionConfig|null);
+
+            /** SettingsCollection clusterAssignmentSettings. */
+            public clusterAssignmentSettings?: (flyteidl.admin.IClusterAssignment|null);
+
+            /**
+             * Creates a new SettingsCollection instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsCollection instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsCollection): flyteidl.admin.SettingsCollection;
+
+            /**
+             * Encodes the specified SettingsCollection message. Does not implicitly {@link flyteidl.admin.SettingsCollection.verify|verify} messages.
+             * @param message SettingsCollection message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsCollection, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsCollection message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsCollection
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsCollection;
+
+            /**
+             * Verifies a SettingsCollection message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a Settings. */
+        interface ISettings {
+
+            /** Settings global */
+            global?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** Settings projectSettings */
+            projectSettings?: ({ [k: string]: flyteidl.admin.IProjectSettings }|null);
+        }
+
+        /** Represents a Settings. */
+        class Settings implements ISettings {
+
+            /**
+             * Constructs a new Settings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettings);
+
+            /** Settings global. */
+            public global?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** Settings projectSettings. */
+            public projectSettings: { [k: string]: flyteidl.admin.IProjectSettings };
+
+            /**
+             * Creates a new Settings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Settings instance
+             */
+            public static create(properties?: flyteidl.admin.ISettings): flyteidl.admin.Settings;
+
+            /**
+             * Encodes the specified Settings message. Does not implicitly {@link flyteidl.admin.Settings.verify|verify} messages.
+             * @param message Settings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Settings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Settings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Settings;
+
+            /**
+             * Verifies a Settings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ProjectSettings. */
+        interface IProjectSettings {
+
+            /** ProjectSettings project */
+            project?: (string|null);
+
+            /** ProjectSettings settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** ProjectSettings domainSettings */
+            domainSettings?: ({ [k: string]: flyteidl.admin.IDomainSettings }|null);
+        }
+
+        /** Represents a ProjectSettings. */
+        class ProjectSettings implements IProjectSettings {
+
+            /**
+             * Constructs a new ProjectSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProjectSettings);
+
+            /** ProjectSettings project. */
+            public project: string;
+
+            /** ProjectSettings settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** ProjectSettings domainSettings. */
+            public domainSettings: { [k: string]: flyteidl.admin.IDomainSettings };
+
+            /**
+             * Creates a new ProjectSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ProjectSettings instance
+             */
+            public static create(properties?: flyteidl.admin.IProjectSettings): flyteidl.admin.ProjectSettings;
+
+            /**
+             * Encodes the specified ProjectSettings message. Does not implicitly {@link flyteidl.admin.ProjectSettings.verify|verify} messages.
+             * @param message ProjectSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProjectSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ProjectSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ProjectSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ProjectSettings;
+
+            /**
+             * Verifies a ProjectSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DomainSettings. */
+        interface IDomainSettings {
+
+            /** DomainSettings domain */
+            domain?: (string|null);
+
+            /** DomainSettings settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** DomainSettings workflowSettings */
+            workflowSettings?: ({ [k: string]: flyteidl.admin.IWorkflowSettings }|null);
+        }
+
+        /** Represents a DomainSettings. */
+        class DomainSettings implements IDomainSettings {
+
+            /**
+             * Constructs a new DomainSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IDomainSettings);
+
+            /** DomainSettings domain. */
+            public domain: string;
+
+            /** DomainSettings settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** DomainSettings workflowSettings. */
+            public workflowSettings: { [k: string]: flyteidl.admin.IWorkflowSettings };
+
+            /**
+             * Creates a new DomainSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DomainSettings instance
+             */
+            public static create(properties?: flyteidl.admin.IDomainSettings): flyteidl.admin.DomainSettings;
+
+            /**
+             * Encodes the specified DomainSettings message. Does not implicitly {@link flyteidl.admin.DomainSettings.verify|verify} messages.
+             * @param message DomainSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IDomainSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DomainSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DomainSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DomainSettings;
+
+            /**
+             * Verifies a DomainSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowSettings. */
+        interface IWorkflowSettings {
+
+            /** WorkflowSettings workflow */
+            workflow?: (string|null);
+
+            /** WorkflowSettings settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** WorkflowSettings launchplanSettings */
+            launchplanSettings?: ({ [k: string]: flyteidl.admin.ILaunchplanSettings }|null);
+        }
+
+        /** Represents a WorkflowSettings. */
+        class WorkflowSettings implements IWorkflowSettings {
+
+            /**
+             * Constructs a new WorkflowSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowSettings);
+
+            /** WorkflowSettings workflow. */
+            public workflow: string;
+
+            /** WorkflowSettings settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** WorkflowSettings launchplanSettings. */
+            public launchplanSettings: { [k: string]: flyteidl.admin.ILaunchplanSettings };
+
+            /**
+             * Creates a new WorkflowSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowSettings instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowSettings): flyteidl.admin.WorkflowSettings;
+
+            /**
+             * Encodes the specified WorkflowSettings message. Does not implicitly {@link flyteidl.admin.WorkflowSettings.verify|verify} messages.
+             * @param message WorkflowSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowSettings;
+
+            /**
+             * Verifies a WorkflowSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchplanSettings. */
+        interface ILaunchplanSettings {
+
+            /** LaunchplanSettings launchplan */
+            launchplan?: (string|null);
+
+            /** LaunchplanSettings settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+        }
+
+        /** Represents a LaunchplanSettings. */
+        class LaunchplanSettings implements ILaunchplanSettings {
+
+            /**
+             * Constructs a new LaunchplanSettings.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchplanSettings);
+
+            /** LaunchplanSettings launchplan. */
+            public launchplan: string;
+
+            /** LaunchplanSettings settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /**
+             * Creates a new LaunchplanSettings instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchplanSettings instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchplanSettings): flyteidl.admin.LaunchplanSettings;
+
+            /**
+             * Encodes the specified LaunchplanSettings message. Does not implicitly {@link flyteidl.admin.LaunchplanSettings.verify|verify} messages.
+             * @param message LaunchplanSettings message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchplanSettings, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchplanSettings message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchplanSettings
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchplanSettings;
+
+            /**
+             * Verifies a LaunchplanSettings message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GlobalLevel. */
+        interface IGlobalLevel {
+        }
+
+        /** Represents a GlobalLevel. */
+        class GlobalLevel implements IGlobalLevel {
+
+            /**
+             * Constructs a new GlobalLevel.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IGlobalLevel);
+
+            /**
+             * Creates a new GlobalLevel instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GlobalLevel instance
+             */
+            public static create(properties?: flyteidl.admin.IGlobalLevel): flyteidl.admin.GlobalLevel;
+
+            /**
+             * Encodes the specified GlobalLevel message. Does not implicitly {@link flyteidl.admin.GlobalLevel.verify|verify} messages.
+             * @param message GlobalLevel message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IGlobalLevel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GlobalLevel message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GlobalLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.GlobalLevel;
+
+            /**
+             * Verifies a GlobalLevel message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ProjectLevel. */
+        interface IProjectLevel {
+
+            /** ProjectLevel project */
+            project?: (string|null);
+        }
+
+        /** Represents a ProjectLevel. */
+        class ProjectLevel implements IProjectLevel {
+
+            /**
+             * Constructs a new ProjectLevel.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IProjectLevel);
+
+            /** ProjectLevel project. */
+            public project: string;
+
+            /**
+             * Creates a new ProjectLevel instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ProjectLevel instance
+             */
+            public static create(properties?: flyteidl.admin.IProjectLevel): flyteidl.admin.ProjectLevel;
+
+            /**
+             * Encodes the specified ProjectLevel message. Does not implicitly {@link flyteidl.admin.ProjectLevel.verify|verify} messages.
+             * @param message ProjectLevel message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IProjectLevel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ProjectLevel message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ProjectLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ProjectLevel;
+
+            /**
+             * Verifies a ProjectLevel message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a DomainLevel. */
+        interface IDomainLevel {
+
+            /** DomainLevel project */
+            project?: (string|null);
+
+            /** DomainLevel domain */
+            domain?: (string|null);
+        }
+
+        /** Represents a DomainLevel. */
+        class DomainLevel implements IDomainLevel {
+
+            /**
+             * Constructs a new DomainLevel.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IDomainLevel);
+
+            /** DomainLevel project. */
+            public project: string;
+
+            /** DomainLevel domain. */
+            public domain: string;
+
+            /**
+             * Creates a new DomainLevel instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns DomainLevel instance
+             */
+            public static create(properties?: flyteidl.admin.IDomainLevel): flyteidl.admin.DomainLevel;
+
+            /**
+             * Encodes the specified DomainLevel message. Does not implicitly {@link flyteidl.admin.DomainLevel.verify|verify} messages.
+             * @param message DomainLevel message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IDomainLevel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a DomainLevel message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns DomainLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DomainLevel;
+
+            /**
+             * Verifies a DomainLevel message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a WorkflowLevel. */
+        interface IWorkflowLevel {
+
+            /** WorkflowLevel project */
+            project?: (string|null);
+
+            /** WorkflowLevel domain */
+            domain?: (string|null);
+
+            /** WorkflowLevel workflow */
+            workflow?: (string|null);
+        }
+
+        /** Represents a WorkflowLevel. */
+        class WorkflowLevel implements IWorkflowLevel {
+
+            /**
+             * Constructs a new WorkflowLevel.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IWorkflowLevel);
+
+            /** WorkflowLevel project. */
+            public project: string;
+
+            /** WorkflowLevel domain. */
+            public domain: string;
+
+            /** WorkflowLevel workflow. */
+            public workflow: string;
+
+            /**
+             * Creates a new WorkflowLevel instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns WorkflowLevel instance
+             */
+            public static create(properties?: flyteidl.admin.IWorkflowLevel): flyteidl.admin.WorkflowLevel;
+
+            /**
+             * Encodes the specified WorkflowLevel message. Does not implicitly {@link flyteidl.admin.WorkflowLevel.verify|verify} messages.
+             * @param message WorkflowLevel message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IWorkflowLevel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a WorkflowLevel message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns WorkflowLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.WorkflowLevel;
+
+            /**
+             * Verifies a WorkflowLevel message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a LaunchplanLevel. */
+        interface ILaunchplanLevel {
+
+            /** LaunchplanLevel project */
+            project?: (string|null);
+
+            /** LaunchplanLevel domain */
+            domain?: (string|null);
+
+            /** LaunchplanLevel workflow */
+            workflow?: (string|null);
+
+            /** LaunchplanLevel launchplan */
+            launchplan?: (string|null);
+        }
+
+        /** Represents a LaunchplanLevel. */
+        class LaunchplanLevel implements ILaunchplanLevel {
+
+            /**
+             * Constructs a new LaunchplanLevel.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ILaunchplanLevel);
+
+            /** LaunchplanLevel project. */
+            public project: string;
+
+            /** LaunchplanLevel domain. */
+            public domain: string;
+
+            /** LaunchplanLevel workflow. */
+            public workflow: string;
+
+            /** LaunchplanLevel launchplan. */
+            public launchplan: string;
+
+            /**
+             * Creates a new LaunchplanLevel instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns LaunchplanLevel instance
+             */
+            public static create(properties?: flyteidl.admin.ILaunchplanLevel): flyteidl.admin.LaunchplanLevel;
+
+            /**
+             * Encodes the specified LaunchplanLevel message. Does not implicitly {@link flyteidl.admin.LaunchplanLevel.verify|verify} messages.
+             * @param message LaunchplanLevel message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ILaunchplanLevel, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a LaunchplanLevel message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns LaunchplanLevel
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LaunchplanLevel;
+
+            /**
+             * Verifies a LaunchplanLevel message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SettingsUpdateRequest. */
+        interface ISettingsUpdateRequest {
+
+            /** SettingsUpdateRequest globalLevel */
+            globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsUpdateRequest projectLevel */
+            projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsUpdateRequest domainLevel */
+            domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsUpdateRequest workflowLevel */
+            workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsUpdateRequest launchplanLevel */
+            launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsUpdateRequest settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+        }
+
+        /** Represents a SettingsUpdateRequest. */
+        class SettingsUpdateRequest implements ISettingsUpdateRequest {
+
+            /**
+             * Constructs a new SettingsUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsUpdateRequest);
+
+            /** SettingsUpdateRequest globalLevel. */
+            public globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsUpdateRequest projectLevel. */
+            public projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsUpdateRequest domainLevel. */
+            public domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsUpdateRequest workflowLevel. */
+            public workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsUpdateRequest launchplanLevel. */
+            public launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsUpdateRequest settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** SettingsUpdateRequest level. */
+            public level?: ("globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel");
+
+            /**
+             * Creates a new SettingsUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsUpdateRequest): flyteidl.admin.SettingsUpdateRequest;
+
+            /**
+             * Encodes the specified SettingsUpdateRequest message. Does not implicitly {@link flyteidl.admin.SettingsUpdateRequest.verify|verify} messages.
+             * @param message SettingsUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsUpdateRequest;
+
+            /**
+             * Verifies a SettingsUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FullSettingsUpdateRequest. */
+        interface IFullSettingsUpdateRequest {
+
+            /** FullSettingsUpdateRequest globalLevel */
+            globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** FullSettingsUpdateRequest projectLevel */
+            projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** FullSettingsUpdateRequest domainLevel */
+            domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** FullSettingsUpdateRequest workflowLevel */
+            workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** FullSettingsUpdateRequest launchplanLevel */
+            launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** FullSettingsUpdateRequest settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+        }
+
+        /** Represents a FullSettingsUpdateRequest. */
+        class FullSettingsUpdateRequest implements IFullSettingsUpdateRequest {
+
+            /**
+             * Constructs a new FullSettingsUpdateRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFullSettingsUpdateRequest);
+
+            /** FullSettingsUpdateRequest globalLevel. */
+            public globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** FullSettingsUpdateRequest projectLevel. */
+            public projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** FullSettingsUpdateRequest domainLevel. */
+            public domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** FullSettingsUpdateRequest workflowLevel. */
+            public workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** FullSettingsUpdateRequest launchplanLevel. */
+            public launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** FullSettingsUpdateRequest settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** FullSettingsUpdateRequest level. */
+            public level?: ("globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel");
+
+            /**
+             * Creates a new FullSettingsUpdateRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FullSettingsUpdateRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IFullSettingsUpdateRequest): flyteidl.admin.FullSettingsUpdateRequest;
+
+            /**
+             * Encodes the specified FullSettingsUpdateRequest message. Does not implicitly {@link flyteidl.admin.FullSettingsUpdateRequest.verify|verify} messages.
+             * @param message FullSettingsUpdateRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFullSettingsUpdateRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FullSettingsUpdateRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FullSettingsUpdateRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FullSettingsUpdateRequest;
+
+            /**
+             * Verifies a FullSettingsUpdateRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FullSettingsUpdateResponse. */
+        interface IFullSettingsUpdateResponse {
+        }
+
+        /** Represents a FullSettingsUpdateResponse. */
+        class FullSettingsUpdateResponse implements IFullSettingsUpdateResponse {
+
+            /**
+             * Constructs a new FullSettingsUpdateResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFullSettingsUpdateResponse);
+
+            /**
+             * Creates a new FullSettingsUpdateResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FullSettingsUpdateResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IFullSettingsUpdateResponse): flyteidl.admin.FullSettingsUpdateResponse;
+
+            /**
+             * Encodes the specified FullSettingsUpdateResponse message. Does not implicitly {@link flyteidl.admin.FullSettingsUpdateResponse.verify|verify} messages.
+             * @param message FullSettingsUpdateResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFullSettingsUpdateResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FullSettingsUpdateResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FullSettingsUpdateResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FullSettingsUpdateResponse;
+
+            /**
+             * Verifies a FullSettingsUpdateResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SettingsGetRequest. */
+        interface ISettingsGetRequest {
+
+            /** SettingsGetRequest globalLevel */
+            globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsGetRequest projectLevel */
+            projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsGetRequest domainLevel */
+            domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsGetRequest workflowLevel */
+            workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsGetRequest launchplanLevel */
+            launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+        }
+
+        /** Represents a SettingsGetRequest. */
+        class SettingsGetRequest implements ISettingsGetRequest {
+
+            /**
+             * Constructs a new SettingsGetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsGetRequest);
+
+            /** SettingsGetRequest globalLevel. */
+            public globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsGetRequest projectLevel. */
+            public projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsGetRequest domainLevel. */
+            public domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsGetRequest workflowLevel. */
+            public workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsGetRequest launchplanLevel. */
+            public launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsGetRequest level. */
+            public level?: ("globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel");
+
+            /**
+             * Creates a new SettingsGetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsGetRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsGetRequest): flyteidl.admin.SettingsGetRequest;
+
+            /**
+             * Encodes the specified SettingsGetRequest message. Does not implicitly {@link flyteidl.admin.SettingsGetRequest.verify|verify} messages.
+             * @param message SettingsGetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsGetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsGetRequest;
+
+            /**
+             * Verifies a SettingsGetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SettingsGetResponse. */
+        interface ISettingsGetResponse {
+
+            /** SettingsGetResponse globalLevel */
+            globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsGetResponse projectLevel */
+            projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsGetResponse domainLevel */
+            domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsGetResponse workflowLevel */
+            workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsGetResponse launchplanLevel */
+            launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsGetResponse settings */
+            settings?: (flyteidl.admin.ISettingsCollection|null);
+        }
+
+        /** Represents a SettingsGetResponse. */
+        class SettingsGetResponse implements ISettingsGetResponse {
+
+            /**
+             * Constructs a new SettingsGetResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsGetResponse);
+
+            /** SettingsGetResponse globalLevel. */
+            public globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsGetResponse projectLevel. */
+            public projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsGetResponse domainLevel. */
+            public domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsGetResponse workflowLevel. */
+            public workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsGetResponse launchplanLevel. */
+            public launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsGetResponse settings. */
+            public settings?: (flyteidl.admin.ISettingsCollection|null);
+
+            /** SettingsGetResponse level. */
+            public level?: ("globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel");
+
+            /**
+             * Creates a new SettingsGetResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsGetResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsGetResponse): flyteidl.admin.SettingsGetResponse;
+
+            /**
+             * Encodes the specified SettingsGetResponse message. Does not implicitly {@link flyteidl.admin.SettingsGetResponse.verify|verify} messages.
+             * @param message SettingsGetResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsGetResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsGetResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsGetResponse;
+
+            /**
+             * Verifies a SettingsGetResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FullSettingsGetRequest. */
+        interface IFullSettingsGetRequest {
+        }
+
+        /** Represents a FullSettingsGetRequest. */
+        class FullSettingsGetRequest implements IFullSettingsGetRequest {
+
+            /**
+             * Constructs a new FullSettingsGetRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFullSettingsGetRequest);
+
+            /**
+             * Creates a new FullSettingsGetRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FullSettingsGetRequest instance
+             */
+            public static create(properties?: flyteidl.admin.IFullSettingsGetRequest): flyteidl.admin.FullSettingsGetRequest;
+
+            /**
+             * Encodes the specified FullSettingsGetRequest message. Does not implicitly {@link flyteidl.admin.FullSettingsGetRequest.verify|verify} messages.
+             * @param message FullSettingsGetRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFullSettingsGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FullSettingsGetRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FullSettingsGetRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FullSettingsGetRequest;
+
+            /**
+             * Verifies a FullSettingsGetRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a FullSettingsGetResponse. */
+        interface IFullSettingsGetResponse {
+
+            /** FullSettingsGetResponse settings */
+            settings?: (flyteidl.admin.ISettings|null);
+        }
+
+        /** Represents a FullSettingsGetResponse. */
+        class FullSettingsGetResponse implements IFullSettingsGetResponse {
+
+            /**
+             * Constructs a new FullSettingsGetResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFullSettingsGetResponse);
+
+            /** FullSettingsGetResponse settings. */
+            public settings?: (flyteidl.admin.ISettings|null);
+
+            /**
+             * Creates a new FullSettingsGetResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FullSettingsGetResponse instance
+             */
+            public static create(properties?: flyteidl.admin.IFullSettingsGetResponse): flyteidl.admin.FullSettingsGetResponse;
+
+            /**
+             * Encodes the specified FullSettingsGetResponse message. Does not implicitly {@link flyteidl.admin.FullSettingsGetResponse.verify|verify} messages.
+             * @param message FullSettingsGetResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFullSettingsGetResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FullSettingsGetResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FullSettingsGetResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FullSettingsGetResponse;
+
+            /**
+             * Verifies a FullSettingsGetResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SettingsDeleteRequest. */
+        interface ISettingsDeleteRequest {
+
+            /** SettingsDeleteRequest globalLevel */
+            globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsDeleteRequest projectLevel */
+            projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsDeleteRequest domainLevel */
+            domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsDeleteRequest workflowLevel */
+            workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsDeleteRequest launchplanLevel */
+            launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+        }
+
+        /** Represents a SettingsDeleteRequest. */
+        class SettingsDeleteRequest implements ISettingsDeleteRequest {
+
+            /**
+             * Constructs a new SettingsDeleteRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsDeleteRequest);
+
+            /** SettingsDeleteRequest globalLevel. */
+            public globalLevel?: (flyteidl.admin.IGlobalLevel|null);
+
+            /** SettingsDeleteRequest projectLevel. */
+            public projectLevel?: (flyteidl.admin.IProjectLevel|null);
+
+            /** SettingsDeleteRequest domainLevel. */
+            public domainLevel?: (flyteidl.admin.IDomainLevel|null);
+
+            /** SettingsDeleteRequest workflowLevel. */
+            public workflowLevel?: (flyteidl.admin.IWorkflowLevel|null);
+
+            /** SettingsDeleteRequest launchplanLevel. */
+            public launchplanLevel?: (flyteidl.admin.ILaunchplanLevel|null);
+
+            /** SettingsDeleteRequest level. */
+            public level?: ("globalLevel"|"projectLevel"|"domainLevel"|"workflowLevel"|"launchplanLevel");
+
+            /**
+             * Creates a new SettingsDeleteRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsDeleteRequest instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsDeleteRequest): flyteidl.admin.SettingsDeleteRequest;
+
+            /**
+             * Encodes the specified SettingsDeleteRequest message. Does not implicitly {@link flyteidl.admin.SettingsDeleteRequest.verify|verify} messages.
+             * @param message SettingsDeleteRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsDeleteRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsDeleteRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsDeleteRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsDeleteRequest;
+
+            /**
+             * Verifies a SettingsDeleteRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a SettingsDeleteResponse. */
+        interface ISettingsDeleteResponse {
+        }
+
+        /** Represents a SettingsDeleteResponse. */
+        class SettingsDeleteResponse implements ISettingsDeleteResponse {
+
+            /**
+             * Constructs a new SettingsDeleteResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.ISettingsDeleteResponse);
+
+            /**
+             * Creates a new SettingsDeleteResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns SettingsDeleteResponse instance
+             */
+            public static create(properties?: flyteidl.admin.ISettingsDeleteResponse): flyteidl.admin.SettingsDeleteResponse;
+
+            /**
+             * Encodes the specified SettingsDeleteResponse message. Does not implicitly {@link flyteidl.admin.SettingsDeleteResponse.verify|verify} messages.
+             * @param message SettingsDeleteResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.ISettingsDeleteResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a SettingsDeleteResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns SettingsDeleteResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.SettingsDeleteResponse;
+
+            /**
+             * Verifies a SettingsDeleteResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a TaskCreateRequest. */
         interface ITaskCreateRequest {
 

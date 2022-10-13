@@ -3114,6 +3114,553 @@ Represents a frequency at which to run a schedule.
 
 
 
+.. _ref_flyteidl/admin/settings.proto:
+
+flyteidl/admin/settings.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.admin.DomainLevel:
+
+DomainLevel
+------------------------------------------------------------------
+
+Defines domain level
+
+
+
+.. csv-table:: DomainLevel type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", ""
+   "domain", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DomainSettings:
+
+DomainSettings
+------------------------------------------------------------------
+
+Defines a domain level settings which contains it own settings and all the workflow settings registered in that domain
+
+
+
+.. csv-table:: DomainSettings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "domain", ":ref:`ref_string`", "", "Unique domain id for which these settings are defined in project"
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", "Domain settings applicable for current project domain"
+   "workflow_settings", ":ref:`ref_flyteidl.admin.DomainSettings.WorkflowSettingsEntry`", "repeated", "All workflow settings keyed on there name"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.DomainSettings.WorkflowSettingsEntry:
+
+DomainSettings.WorkflowSettingsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: DomainSettings.WorkflowSettingsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.admin.WorkflowSettings`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.FullSettingsGetRequest:
+
+FullSettingsGetRequest
+------------------------------------------------------------------
+
+Defines the full settings get request.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.FullSettingsGetResponse:
+
+FullSettingsGetResponse
+------------------------------------------------------------------
+
+Returns the full settings.
+
+
+
+.. csv-table:: FullSettingsGetResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "settings", ":ref:`ref_flyteidl.admin.Settings`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.FullSettingsUpdateRequest:
+
+FullSettingsUpdateRequest
+------------------------------------------------------------------
+
+Defines the full settings update request to be applied.
+
+
+
+.. csv-table:: FullSettingsUpdateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global_level", ":ref:`ref_flyteidl.admin.GlobalLevel`", "", ""
+   "project_level", ":ref:`ref_flyteidl.admin.ProjectLevel`", "", ""
+   "domain_level", ":ref:`ref_flyteidl.admin.DomainLevel`", "", ""
+   "workflow_level", ":ref:`ref_flyteidl.admin.WorkflowLevel`", "", ""
+   "launchplan_level", ":ref:`ref_flyteidl.admin.LaunchplanLevel`", "", ""
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.FullSettingsUpdateResponse:
+
+FullSettingsUpdateResponse
+------------------------------------------------------------------
+
+Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.GlobalLevel:
+
+GlobalLevel
+------------------------------------------------------------------
+
+Defines global level
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchplanLevel:
+
+LaunchplanLevel
+------------------------------------------------------------------
+
+Defines launchplan level
+
+
+
+.. csv-table:: LaunchplanLevel type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", ""
+   "domain", ":ref:`ref_string`", "", ""
+   "workflow", ":ref:`ref_string`", "", ""
+   "launchplan", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.LaunchplanSettings:
+
+LaunchplanSettings
+------------------------------------------------------------------
+
+Defines a launchplan level settings which contains it own settings
+
+
+
+.. csv-table:: LaunchplanSettings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "launchplan", ":ref:`ref_string`", "", "Launchplan name for which these settings are defined in the project domain workflow."
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ProjectLevel:
+
+ProjectLevel
+------------------------------------------------------------------
+
+Defines project level
+
+
+
+.. csv-table:: ProjectLevel type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ProjectSettings:
+
+ProjectSettings
+------------------------------------------------------------------
+
+Defines Project level setting which contains it own settings and all the domain settings registered project
+
+
+
+.. csv-table:: ProjectSettings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", "Unique project id for which these settings are defined"
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", "Project settings applicable for current project"
+   "domain_settings", ":ref:`ref_flyteidl.admin.ProjectSettings.DomainSettingsEntry`", "repeated", "All domain settings keyed on there name"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.ProjectSettings.DomainSettingsEntry:
+
+ProjectSettings.DomainSettingsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: ProjectSettings.DomainSettingsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.admin.DomainSettings`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.Settings:
+
+Settings
+------------------------------------------------------------------
+
+Defines settings at various levels
+Global : These are global settings which apply if no overrides are defined.
+Project : These are project level settings which get applied if they exist and no overrides exist at domain level
+Domain : These are domain level settings which get applied if they exist and no overrides exist at workflow level
+Workflow : These are workflow level settings which get applied if they exist
+Launchplan : These are launchplan level settings which get applied if they exist and no overrides exist at launchplan level
+
+
+
+.. csv-table:: Settings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", "Global settings applicable for all projects"
+   "project_settings", ":ref:`ref_flyteidl.admin.Settings.ProjectSettingsEntry`", "repeated", "All project settings keyed on there name"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.Settings.ProjectSettingsEntry:
+
+Settings.ProjectSettingsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: Settings.ProjectSettingsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.admin.ProjectSettings`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsCollection:
+
+SettingsCollection
+------------------------------------------------------------------
+
+Defines settings collection for flyte resources
+
+
+
+.. csv-table:: SettingsCollection type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "task_resource_settings", ":ref:`ref_flyteidl.admin.TaskResourceAttributes`", "", ""
+   "cluster_resource_settings", ":ref:`ref_flyteidl.admin.ClusterResourceAttributes`", "", ""
+   "execution_queue_settings", ":ref:`ref_flyteidl.admin.ExecutionQueueAttributes`", "", ""
+   "execution_cluster_label_settings", ":ref:`ref_flyteidl.admin.ExecutionClusterLabel`", "", ""
+   "quality_of_service_settings", ":ref:`ref_flyteidl.core.QualityOfService`", "", ""
+   "plugin_override_settings", ":ref:`ref_flyteidl.admin.PluginOverride`", "", ""
+   "workflow_execution_settings", ":ref:`ref_flyteidl.admin.WorkflowExecutionConfig`", "", ""
+   "cluster_assignment_settings", ":ref:`ref_flyteidl.admin.ClusterAssignment`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsDeleteRequest:
+
+SettingsDeleteRequest
+------------------------------------------------------------------
+
+Defines the settings delete request.
+
+
+
+.. csv-table:: SettingsDeleteRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global_level", ":ref:`ref_flyteidl.admin.GlobalLevel`", "", ""
+   "project_level", ":ref:`ref_flyteidl.admin.ProjectLevel`", "", ""
+   "domain_level", ":ref:`ref_flyteidl.admin.DomainLevel`", "", ""
+   "workflow_level", ":ref:`ref_flyteidl.admin.WorkflowLevel`", "", ""
+   "launchplan_level", ":ref:`ref_flyteidl.admin.LaunchplanLevel`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsDeleteResponse:
+
+SettingsDeleteResponse
+------------------------------------------------------------------
+
+Purposefully empty, may be populated in the future.
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsGetRequest:
+
+SettingsGetRequest
+------------------------------------------------------------------
+
+Defines the settings get request.
+
+
+
+.. csv-table:: SettingsGetRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global_level", ":ref:`ref_flyteidl.admin.GlobalLevel`", "", ""
+   "project_level", ":ref:`ref_flyteidl.admin.ProjectLevel`", "", ""
+   "domain_level", ":ref:`ref_flyteidl.admin.DomainLevel`", "", ""
+   "workflow_level", ":ref:`ref_flyteidl.admin.WorkflowLevel`", "", ""
+   "launchplan_level", ":ref:`ref_flyteidl.admin.LaunchplanLevel`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsGetResponse:
+
+SettingsGetResponse
+------------------------------------------------------------------
+
+Returns the settings for the provided level in SettingsGetRequest.
+
+
+
+.. csv-table:: SettingsGetResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global_level", ":ref:`ref_flyteidl.admin.GlobalLevel`", "", ""
+   "project_level", ":ref:`ref_flyteidl.admin.ProjectLevel`", "", ""
+   "domain_level", ":ref:`ref_flyteidl.admin.DomainLevel`", "", ""
+   "workflow_level", ":ref:`ref_flyteidl.admin.WorkflowLevel`", "", ""
+   "launchplan_level", ":ref:`ref_flyteidl.admin.LaunchplanLevel`", "", ""
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.SettingsUpdateRequest:
+
+SettingsUpdateRequest
+------------------------------------------------------------------
+
+Defines the settings update with level at which settings need to be applied.
+
+
+
+.. csv-table:: SettingsUpdateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "global_level", ":ref:`ref_flyteidl.admin.GlobalLevel`", "", ""
+   "project_level", ":ref:`ref_flyteidl.admin.ProjectLevel`", "", ""
+   "domain_level", ":ref:`ref_flyteidl.admin.DomainLevel`", "", ""
+   "workflow_level", ":ref:`ref_flyteidl.admin.WorkflowLevel`", "", ""
+   "launchplan_level", ":ref:`ref_flyteidl.admin.LaunchplanLevel`", "", ""
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.WorkflowLevel:
+
+WorkflowLevel
+------------------------------------------------------------------
+
+Defines workflow level
+
+
+
+.. csv-table:: WorkflowLevel type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "project", ":ref:`ref_string`", "", ""
+   "domain", ":ref:`ref_string`", "", ""
+   "workflow", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.WorkflowSettings:
+
+WorkflowSettings
+------------------------------------------------------------------
+
+Defines a workflow level settings which contains it own settings and all the launchplan settings registered in that domain
+
+
+
+.. csv-table:: WorkflowSettings type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "workflow", ":ref:`ref_string`", "", "Workflow name for which these settings are defined in the project domain."
+   "settings", ":ref:`ref_flyteidl.admin.SettingsCollection`", "", "Workflow settings applicable for current project domain workflow"
+   "launchplan_settings", ":ref:`ref_flyteidl.admin.WorkflowSettings.LaunchplanSettingsEntry`", "repeated", "All launchplan settings keyed on there name"
+
+
+
+
+
+
+
+.. _ref_flyteidl.admin.WorkflowSettings.LaunchplanSettingsEntry:
+
+WorkflowSettings.LaunchplanSettingsEntry
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: WorkflowSettings.LaunchplanSettingsEntry type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "key", ":ref:`ref_string`", "", ""
+   "value", ":ref:`ref_flyteidl.admin.LaunchplanSettings`", "", ""
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+
 .. _ref_flyteidl/admin/task.proto:
 
 flyteidl/admin/task.proto
