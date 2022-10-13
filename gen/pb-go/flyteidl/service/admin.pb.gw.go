@@ -2785,7 +2785,7 @@ func request_AdminService_GetDescriptionEntity_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_AdminService_ListDescriptionEntities_0 = &utilities.DoubleArray{Encoding: map[string]int{"description_entity_id": 0, "project": 1, "domain": 2, "name": 3}, Base: []int{1, 1, 1, 2, 3, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 3, 4, 5}}
+	filter_AdminService_ListDescriptionEntities_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3}, Base: []int{1, 1, 1, 2, 3, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 3, 4, 5}}
 )
 
 func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2799,37 +2799,37 @@ func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshal
 		_   = err
 	)
 
-	val, ok = pathParams["description_entity_id.project"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "description_entity_id.project")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "description_entity_id.project", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "description_entity_id.project", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
 	}
 
-	val, ok = pathParams["description_entity_id.domain"]
+	val, ok = pathParams["id.domain"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "description_entity_id.domain")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "description_entity_id.domain", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "description_entity_id.domain", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
 	}
 
-	val, ok = pathParams["description_entity_id.name"]
+	val, ok = pathParams["id.name"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "description_entity_id.name")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.name")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "description_entity_id.name", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.name", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "description_entity_id.name", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.name", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -2845,7 +2845,7 @@ func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshal
 }
 
 var (
-	filter_AdminService_ListDescriptionEntities_1 = &utilities.DoubleArray{Encoding: map[string]int{"description_entity_id": 0, "project": 1, "domain": 2}, Base: []int{1, 1, 1, 2, 0, 0}, Check: []int{0, 1, 2, 2, 3, 4}}
+	filter_AdminService_ListDescriptionEntities_1 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2}, Base: []int{1, 1, 1, 2, 0, 0}, Check: []int{0, 1, 2, 2, 3, 4}}
 )
 
 func request_AdminService_ListDescriptionEntities_1(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2859,26 +2859,26 @@ func request_AdminService_ListDescriptionEntities_1(ctx context.Context, marshal
 		_   = err
 	)
 
-	val, ok = pathParams["description_entity_id.project"]
+	val, ok = pathParams["id.project"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "description_entity_id.project")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.project")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "description_entity_id.project", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.project", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "description_entity_id.project", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.project", err)
 	}
 
-	val, ok = pathParams["description_entity_id.domain"]
+	val, ok = pathParams["id.domain"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "description_entity_id.domain")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.domain")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "description_entity_id.domain", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "id.domain", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "description_entity_id.domain", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.domain", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -4163,9 +4163,9 @@ var (
 
 	pattern_AdminService_GetDescriptionEntity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "description_entities", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
-	pattern_AdminService_ListDescriptionEntities_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "description_entities", "description_entity_id.project", "description_entity_id.domain", "description_entity_id.name"}, ""))
+	pattern_AdminService_ListDescriptionEntities_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "description_entities", "id.project", "id.domain", "id.name"}, ""))
 
-	pattern_AdminService_ListDescriptionEntities_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "description_entities", "description_entity_id.project", "description_entity_id.domain"}, ""))
+	pattern_AdminService_ListDescriptionEntities_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "description_entities", "id.project", "id.domain"}, ""))
 )
 
 var (

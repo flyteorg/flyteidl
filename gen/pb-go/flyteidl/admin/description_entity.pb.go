@@ -21,50 +21,52 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type LongDescription_DescriptionFormat int32
+type Description_DescriptionFormat int32
 
 const (
-	LongDescription_UNKNOWN  LongDescription_DescriptionFormat = 0
-	LongDescription_MARKDOWN LongDescription_DescriptionFormat = 1
-	LongDescription_HTML     LongDescription_DescriptionFormat = 2
+	Description_UNKNOWN  Description_DescriptionFormat = 0
+	Description_MARKDOWN Description_DescriptionFormat = 1
+	Description_HTML     Description_DescriptionFormat = 2
 	// python default documentation - comments is rst
-	LongDescription_RST LongDescription_DescriptionFormat = 3
+	Description_RST Description_DescriptionFormat = 3
 )
 
-var LongDescription_DescriptionFormat_name = map[int32]string{
+var Description_DescriptionFormat_name = map[int32]string{
 	0: "UNKNOWN",
 	1: "MARKDOWN",
 	2: "HTML",
 	3: "RST",
 }
 
-var LongDescription_DescriptionFormat_value = map[string]int32{
+var Description_DescriptionFormat_value = map[string]int32{
 	"UNKNOWN":  0,
 	"MARKDOWN": 1,
 	"HTML":     2,
 	"RST":      3,
 }
 
-func (x LongDescription_DescriptionFormat) String() string {
-	return proto.EnumName(LongDescription_DescriptionFormat_name, int32(x))
+func (x Description_DescriptionFormat) String() string {
+	return proto.EnumName(Description_DescriptionFormat_name, int32(x))
 }
 
-func (LongDescription_DescriptionFormat) EnumDescriptor() ([]byte, []int) {
+func (Description_DescriptionFormat) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_2715f55631fe48ea, []int{1, 0}
 }
 
-// DescriptionEntity contains detailed description for the task/workflow/launch plan.
+// DescriptionEntity contains detailed description for the task/workflow.
 // Documentation could provide insight into the algorithms, business use case, etc.
 type DescriptionEntity struct {
+	// id represents the unique identifier of the description entity.
+	Id *core.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	// One-liner overview of the entity.
-	ShortDescription string `protobuf:"bytes,1,opt,name=short_description,json=shortDescription,proto3" json:"short_description,omitempty"`
+	ShortDescription string `protobuf:"bytes,2,opt,name=short_description,json=shortDescription,proto3" json:"short_description,omitempty"`
 	// Full user description with formatting preserved.
-	LongDescription *LongDescription `protobuf:"bytes,2,opt,name=long_description,json=longDescription,proto3" json:"long_description,omitempty"`
+	LongDescription *Description `protobuf:"bytes,3,opt,name=long_description,json=longDescription,proto3" json:"long_description,omitempty"`
 	// Optional link to source code used to define this entity.
-	SourceCode *SourceCode `protobuf:"bytes,3,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	SourceCode *SourceCode `protobuf:"bytes,4,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
 	// User-specified tags. These are arbitrary and can be used for searching
 	// filtering and discovering tasks.
-	Tags                 []string `protobuf:"bytes,4,rep,name=tags,proto3" json:"tags,omitempty"`
+	Tags                 []string `protobuf:"bytes,5,rep,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -95,6 +97,13 @@ func (m *DescriptionEntity) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DescriptionEntity proto.InternalMessageInfo
 
+func (m *DescriptionEntity) GetId() *core.Identifier {
+	if m != nil {
+		return m.Id
+	}
+	return nil
+}
+
 func (m *DescriptionEntity) GetShortDescription() string {
 	if m != nil {
 		return m.ShortDescription
@@ -102,7 +111,7 @@ func (m *DescriptionEntity) GetShortDescription() string {
 	return ""
 }
 
-func (m *DescriptionEntity) GetLongDescription() *LongDescription {
+func (m *DescriptionEntity) GetLongDescription() *Description {
 	if m != nil {
 		return m.LongDescription
 	}
@@ -126,13 +135,13 @@ func (m *DescriptionEntity) GetTags() []string {
 // Full user description with formatting preserved. This can be rendered
 // by clients, such as the console or command line tools with in-tact
 // formatting.
-type LongDescription struct {
+type Description struct {
 	// Types that are valid to be assigned to Content:
-	//	*LongDescription_Value
-	//	*LongDescription_Uri
-	Content isLongDescription_Content `protobuf_oneof:"content"`
+	//	*Description_Value
+	//	*Description_Uri
+	Content isDescription_Content `protobuf_oneof:"content"`
 	// Format of the long description
-	Format LongDescription_DescriptionFormat `protobuf:"varint,3,opt,name=format,proto3,enum=flyteidl.admin.LongDescription_DescriptionFormat" json:"format,omitempty"`
+	Format Description_DescriptionFormat `protobuf:"varint,3,opt,name=format,proto3,enum=flyteidl.admin.Description_DescriptionFormat" json:"format,omitempty"`
 	// Optional link to an icon for the entity
 	IconLink             string   `protobuf:"bytes,4,opt,name=icon_link,json=iconLink,proto3" json:"icon_link,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -140,76 +149,76 @@ type LongDescription struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *LongDescription) Reset()         { *m = LongDescription{} }
-func (m *LongDescription) String() string { return proto.CompactTextString(m) }
-func (*LongDescription) ProtoMessage()    {}
-func (*LongDescription) Descriptor() ([]byte, []int) {
+func (m *Description) Reset()         { *m = Description{} }
+func (m *Description) String() string { return proto.CompactTextString(m) }
+func (*Description) ProtoMessage()    {}
+func (*Description) Descriptor() ([]byte, []int) {
 	return fileDescriptor_2715f55631fe48ea, []int{1}
 }
 
-func (m *LongDescription) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_LongDescription.Unmarshal(m, b)
+func (m *Description) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Description.Unmarshal(m, b)
 }
-func (m *LongDescription) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_LongDescription.Marshal(b, m, deterministic)
+func (m *Description) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Description.Marshal(b, m, deterministic)
 }
-func (m *LongDescription) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LongDescription.Merge(m, src)
+func (m *Description) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Description.Merge(m, src)
 }
-func (m *LongDescription) XXX_Size() int {
-	return xxx_messageInfo_LongDescription.Size(m)
+func (m *Description) XXX_Size() int {
+	return xxx_messageInfo_Description.Size(m)
 }
-func (m *LongDescription) XXX_DiscardUnknown() {
-	xxx_messageInfo_LongDescription.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LongDescription proto.InternalMessageInfo
-
-type isLongDescription_Content interface {
-	isLongDescription_Content()
+func (m *Description) XXX_DiscardUnknown() {
+	xxx_messageInfo_Description.DiscardUnknown(m)
 }
 
-type LongDescription_Value struct {
+var xxx_messageInfo_Description proto.InternalMessageInfo
+
+type isDescription_Content interface {
+	isDescription_Content()
+}
+
+type Description_Value struct {
 	Value string `protobuf:"bytes,1,opt,name=value,proto3,oneof"`
 }
 
-type LongDescription_Uri struct {
+type Description_Uri struct {
 	Uri string `protobuf:"bytes,2,opt,name=uri,proto3,oneof"`
 }
 
-func (*LongDescription_Value) isLongDescription_Content() {}
+func (*Description_Value) isDescription_Content() {}
 
-func (*LongDescription_Uri) isLongDescription_Content() {}
+func (*Description_Uri) isDescription_Content() {}
 
-func (m *LongDescription) GetContent() isLongDescription_Content {
+func (m *Description) GetContent() isDescription_Content {
 	if m != nil {
 		return m.Content
 	}
 	return nil
 }
 
-func (m *LongDescription) GetValue() string {
-	if x, ok := m.GetContent().(*LongDescription_Value); ok {
+func (m *Description) GetValue() string {
+	if x, ok := m.GetContent().(*Description_Value); ok {
 		return x.Value
 	}
 	return ""
 }
 
-func (m *LongDescription) GetUri() string {
-	if x, ok := m.GetContent().(*LongDescription_Uri); ok {
+func (m *Description) GetUri() string {
+	if x, ok := m.GetContent().(*Description_Uri); ok {
 		return x.Uri
 	}
 	return ""
 }
 
-func (m *LongDescription) GetFormat() LongDescription_DescriptionFormat {
+func (m *Description) GetFormat() Description_DescriptionFormat {
 	if m != nil {
 		return m.Format
 	}
-	return LongDescription_UNKNOWN
+	return Description_UNKNOWN
 }
 
-func (m *LongDescription) GetIconLink() string {
+func (m *Description) GetIconLink() string {
 	if m != nil {
 		return m.IconLink
 	}
@@ -217,10 +226,10 @@ func (m *LongDescription) GetIconLink() string {
 }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*LongDescription) XXX_OneofWrappers() []interface{} {
+func (*Description) XXX_OneofWrappers() []interface{} {
 	return []interface{}{
-		(*LongDescription_Value)(nil),
-		(*LongDescription_Uri)(nil),
+		(*Description_Value)(nil),
+		(*Description_Uri)(nil),
 	}
 }
 
@@ -264,75 +273,6 @@ func (m *SourceCode) GetLink() string {
 	return ""
 }
 
-// Encapsulation of fields that uniquely identifies a Flyte description entity
-type DescriptionEntityIdentifier struct {
-	// Identifies the specific type of resource that this identifier corresponds to.
-	ResourceType core.ResourceType `protobuf:"varint,1,opt,name=resource_type,json=resourceType,proto3,enum=flyteidl.core.ResourceType" json:"resource_type,omitempty"`
-	// Name of the project the resource belongs to.
-	Project string `protobuf:"bytes,2,opt,name=project,proto3" json:"project,omitempty"`
-	// Name of the domain the resource belongs to.
-	// A domain can be considered as a subset within a specific project.
-	Domain string `protobuf:"bytes,3,opt,name=domain,proto3" json:"domain,omitempty"`
-	// User or system provided value for the resource.
-	Name                 string   `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *DescriptionEntityIdentifier) Reset()         { *m = DescriptionEntityIdentifier{} }
-func (m *DescriptionEntityIdentifier) String() string { return proto.CompactTextString(m) }
-func (*DescriptionEntityIdentifier) ProtoMessage()    {}
-func (*DescriptionEntityIdentifier) Descriptor() ([]byte, []int) {
-	return fileDescriptor_2715f55631fe48ea, []int{3}
-}
-
-func (m *DescriptionEntityIdentifier) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DescriptionEntityIdentifier.Unmarshal(m, b)
-}
-func (m *DescriptionEntityIdentifier) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DescriptionEntityIdentifier.Marshal(b, m, deterministic)
-}
-func (m *DescriptionEntityIdentifier) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DescriptionEntityIdentifier.Merge(m, src)
-}
-func (m *DescriptionEntityIdentifier) XXX_Size() int {
-	return xxx_messageInfo_DescriptionEntityIdentifier.Size(m)
-}
-func (m *DescriptionEntityIdentifier) XXX_DiscardUnknown() {
-	xxx_messageInfo_DescriptionEntityIdentifier.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DescriptionEntityIdentifier proto.InternalMessageInfo
-
-func (m *DescriptionEntityIdentifier) GetResourceType() core.ResourceType {
-	if m != nil {
-		return m.ResourceType
-	}
-	return core.ResourceType_UNSPECIFIED
-}
-
-func (m *DescriptionEntityIdentifier) GetProject() string {
-	if m != nil {
-		return m.Project
-	}
-	return ""
-}
-
-func (m *DescriptionEntityIdentifier) GetDomain() string {
-	if m != nil {
-		return m.Domain
-	}
-	return ""
-}
-
-func (m *DescriptionEntityIdentifier) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
 // Represents a list of DescriptionEntities returned from the admin.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 type DescriptionEntityList struct {
@@ -350,7 +290,7 @@ func (m *DescriptionEntityList) Reset()         { *m = DescriptionEntityList{} }
 func (m *DescriptionEntityList) String() string { return proto.CompactTextString(m) }
 func (*DescriptionEntityList) ProtoMessage()    {}
 func (*DescriptionEntityList) Descriptor() ([]byte, []int) {
-	return fileDescriptor_2715f55631fe48ea, []int{4}
+	return fileDescriptor_2715f55631fe48ea, []int{3}
 }
 
 func (m *DescriptionEntityList) XXX_Unmarshal(b []byte) error {
@@ -388,23 +328,25 @@ func (m *DescriptionEntityList) GetToken() string {
 // Represents a request structure to retrieve a list of DescriptionEntities.
 // See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
 type DescriptionEntityListRequest struct {
-	// Indicates the node execution to filter by.
+	// Identifies the specific type of resource that this identifier corresponds to.
+	ResourceType core.ResourceType `protobuf:"varint,1,opt,name=resource_type,json=resourceType,proto3,enum=flyteidl.core.ResourceType" json:"resource_type,omitempty"`
+	// The identifier for the description entity.
 	// +required
-	DescriptionEntityId *DescriptionEntityIdentifier `protobuf:"bytes,1,opt,name=description_entity_id,json=descriptionEntityId,proto3" json:"description_entity_id,omitempty"`
+	Id *NamedEntityIdentifier `protobuf:"bytes,2,opt,name=id,proto3" json:"id,omitempty"`
 	// Indicates the number of resources to be returned.
 	// +required
-	Limit uint32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	Limit uint32 `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
 	// In the case of multiple pages of results, the server-provided token can be used to fetch the next page
 	// in a query.
 	// +optional
-	Token string `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+	Token string `protobuf:"bytes,4,opt,name=token,proto3" json:"token,omitempty"`
 	// Indicates a list of filters passed as string.
 	// More info on constructing filters : <Link>
 	// +optional
-	Filters string `protobuf:"bytes,4,opt,name=filters,proto3" json:"filters,omitempty"`
+	Filters string `protobuf:"bytes,5,opt,name=filters,proto3" json:"filters,omitempty"`
 	// Sort ordering for returned list.
 	// +optional
-	SortBy               *Sort    `protobuf:"bytes,5,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty"`
+	SortBy               *Sort    `protobuf:"bytes,6,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -414,7 +356,7 @@ func (m *DescriptionEntityListRequest) Reset()         { *m = DescriptionEntityL
 func (m *DescriptionEntityListRequest) String() string { return proto.CompactTextString(m) }
 func (*DescriptionEntityListRequest) ProtoMessage()    {}
 func (*DescriptionEntityListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_2715f55631fe48ea, []int{5}
+	return fileDescriptor_2715f55631fe48ea, []int{4}
 }
 
 func (m *DescriptionEntityListRequest) XXX_Unmarshal(b []byte) error {
@@ -435,9 +377,16 @@ func (m *DescriptionEntityListRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DescriptionEntityListRequest proto.InternalMessageInfo
 
-func (m *DescriptionEntityListRequest) GetDescriptionEntityId() *DescriptionEntityIdentifier {
+func (m *DescriptionEntityListRequest) GetResourceType() core.ResourceType {
 	if m != nil {
-		return m.DescriptionEntityId
+		return m.ResourceType
+	}
+	return core.ResourceType_UNSPECIFIED
+}
+
+func (m *DescriptionEntityListRequest) GetId() *NamedEntityIdentifier {
+	if m != nil {
+		return m.Id
 	}
 	return nil
 }
@@ -471,11 +420,10 @@ func (m *DescriptionEntityListRequest) GetSortBy() *Sort {
 }
 
 func init() {
-	proto.RegisterEnum("flyteidl.admin.LongDescription_DescriptionFormat", LongDescription_DescriptionFormat_name, LongDescription_DescriptionFormat_value)
+	proto.RegisterEnum("flyteidl.admin.Description_DescriptionFormat", Description_DescriptionFormat_name, Description_DescriptionFormat_value)
 	proto.RegisterType((*DescriptionEntity)(nil), "flyteidl.admin.DescriptionEntity")
-	proto.RegisterType((*LongDescription)(nil), "flyteidl.admin.LongDescription")
+	proto.RegisterType((*Description)(nil), "flyteidl.admin.Description")
 	proto.RegisterType((*SourceCode)(nil), "flyteidl.admin.SourceCode")
-	proto.RegisterType((*DescriptionEntityIdentifier)(nil), "flyteidl.admin.DescriptionEntityIdentifier")
 	proto.RegisterType((*DescriptionEntityList)(nil), "flyteidl.admin.DescriptionEntityList")
 	proto.RegisterType((*DescriptionEntityListRequest)(nil), "flyteidl.admin.DescriptionEntityListRequest")
 }
@@ -485,43 +433,41 @@ func init() {
 }
 
 var fileDescriptor_2715f55631fe48ea = []byte{
-	// 608 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x54, 0xdf, 0x6e, 0xd3, 0x3e,
-	0x14, 0x5e, 0x96, 0xae, 0x5d, 0x4f, 0xf7, 0xa7, 0xf3, 0x6f, 0x9b, 0xa2, 0xf5, 0x27, 0x28, 0xb9,
-	0xa1, 0xd2, 0xb4, 0x44, 0x14, 0x21, 0x2e, 0xb8, 0x61, 0x63, 0xa0, 0x8d, 0x75, 0x43, 0x72, 0x87,
-	0x90, 0xb8, 0x89, 0xd2, 0xc4, 0xcd, 0xcc, 0x12, 0x3b, 0x38, 0x2e, 0x52, 0x6e, 0x79, 0x17, 0x1e,
-	0x8b, 0xa7, 0x80, 0x07, 0x40, 0x71, 0xd2, 0x36, 0x69, 0x26, 0xed, 0xee, 0x7c, 0xf6, 0x77, 0xce,
-	0xf9, 0xfc, 0x1d, 0xdb, 0xf0, 0x7c, 0x1a, 0xa6, 0x92, 0x50, 0x3f, 0xb4, 0x5d, 0x3f, 0xa2, 0xcc,
-	0xf6, 0x49, 0xe2, 0x09, 0x1a, 0x4b, 0xca, 0x99, 0x43, 0x98, 0xa4, 0x32, 0xb5, 0x62, 0xc1, 0x25,
-	0x47, 0x3b, 0x73, 0xa2, 0xa5, 0x88, 0x47, 0x4f, 0x16, 0x89, 0x1e, 0x17, 0xc4, 0xa6, 0x7e, 0xc6,
-	0x9e, 0x52, 0x22, 0x72, 0xfe, 0x51, 0x6f, 0xa5, 0xb0, 0xc7, 0xa3, 0x88, 0xb3, 0x7c, 0xd3, 0xfc,
-	0xad, 0xc1, 0xde, 0xf9, 0xb2, 0xd3, 0x7b, 0xd5, 0x08, 0x1d, 0xc3, 0x5e, 0x72, 0xc7, 0x85, 0x74,
-	0x4a, 0x22, 0x0c, 0xad, 0xaf, 0x0d, 0xda, 0xb8, 0xab, 0x36, 0x4a, 0x29, 0xe8, 0x23, 0x74, 0x43,
-	0xce, 0x82, 0x0a, 0x77, 0xbd, 0xaf, 0x0d, 0x3a, 0xc3, 0xa7, 0x56, 0x55, 0xaa, 0x35, 0xe2, 0x2c,
-	0x28, 0xa5, 0xe2, 0xdd, 0xb0, 0xba, 0x80, 0xde, 0x40, 0x27, 0xe1, 0x33, 0xe1, 0x11, 0xc7, 0xe3,
-	0x3e, 0x31, 0x74, 0x55, 0xe6, 0x68, 0xb5, 0xcc, 0x58, 0x51, 0xde, 0x71, 0x9f, 0x60, 0x48, 0x16,
-	0x31, 0x42, 0xd0, 0x90, 0x6e, 0x90, 0x18, 0x8d, 0xbe, 0x3e, 0x68, 0x63, 0x15, 0x9b, 0x7f, 0x34,
-	0xd8, 0x5d, 0xe9, 0x8a, 0x0e, 0x61, 0xe3, 0x87, 0x1b, 0xce, 0x48, 0x7e, 0xa2, 0x8b, 0x35, 0x9c,
-	0x43, 0x84, 0x40, 0x9f, 0x09, 0xaa, 0xb4, 0x67, 0xab, 0x19, 0x40, 0x97, 0xd0, 0x9c, 0x72, 0x11,
-	0xb9, 0x52, 0x69, 0xd9, 0x19, 0xbe, 0x78, 0xe4, 0x48, 0x56, 0x29, 0xfe, 0xa0, 0x12, 0x71, 0x51,
-	0x00, 0xf5, 0xa0, 0x4d, 0x3d, 0xce, 0x9c, 0x90, 0xb2, 0x7b, 0xa3, 0xa1, 0xcc, 0xdc, 0xcc, 0x16,
-	0x46, 0x94, 0xdd, 0x9b, 0xa7, 0x95, 0x31, 0xe4, 0x99, 0xa8, 0x03, 0xad, 0xcf, 0x37, 0x57, 0x37,
-	0x9f, 0xbe, 0xdc, 0x74, 0xd7, 0xd0, 0x16, 0x6c, 0x5e, 0x9f, 0xe2, 0xab, 0xf3, 0x0c, 0x69, 0x68,
-	0x13, 0x1a, 0x17, 0xb7, 0xd7, 0xa3, 0xee, 0x3a, 0x6a, 0x81, 0x8e, 0xc7, 0xb7, 0x5d, 0xfd, 0xac,
-	0x0d, 0x2d, 0x8f, 0x33, 0x49, 0x98, 0x34, 0xfb, 0x00, 0xe3, 0x8a, 0x2f, 0xaa, 0x67, 0x3e, 0x40,
-	0x15, 0x9b, 0xbf, 0x34, 0xe8, 0xd5, 0xe6, 0x7e, 0xb9, 0xb8, 0x3a, 0xe8, 0x2d, 0x6c, 0x0b, 0x52,
-	0x8c, 0x42, 0xa6, 0x71, 0xee, 0xd5, 0xce, 0xb0, 0xb7, 0x3c, 0x7e, 0x76, 0xd9, 0x2c, 0x5c, 0x70,
-	0x6e, 0xd3, 0x98, 0xe0, 0x2d, 0x51, 0x42, 0xc8, 0x80, 0x56, 0x2c, 0xf8, 0x37, 0xe2, 0xc9, 0xdc,
-	0x51, 0x3c, 0x87, 0xe8, 0x10, 0x9a, 0x3e, 0x8f, 0x5c, 0xca, 0x94, 0xa7, 0x6d, 0x5c, 0xa0, 0x4c,
-	0x27, 0x73, 0x23, 0x52, 0x78, 0xa3, 0x62, 0xf3, 0xa7, 0x06, 0x07, 0x35, 0x9d, 0x23, 0x9a, 0x48,
-	0x34, 0x86, 0xff, 0xfc, 0x95, 0x0d, 0x4a, 0x12, 0x43, 0xeb, 0xeb, 0x83, 0xce, 0xf0, 0xd9, 0xea,
-	0x98, 0x6a, 0x35, 0xf0, 0x43, 0xd9, 0x68, 0x1f, 0x36, 0x24, 0xbf, 0x27, 0xac, 0x90, 0x9c, 0x03,
-	0xf3, 0xaf, 0x06, 0xff, 0x3f, 0x28, 0x02, 0x93, 0xef, 0x33, 0x92, 0x48, 0xe4, 0xc0, 0x41, 0xfd,
-	0xb9, 0x3a, 0xd4, 0x57, 0xae, 0x75, 0x86, 0xc7, 0x8f, 0xaa, 0x59, 0x3a, 0x5f, 0xd7, 0x95, 0x5e,
-	0xfa, 0x99, 0xae, 0x90, 0x46, 0x34, 0xb7, 0x72, 0x1b, 0xe7, 0x60, 0xa9, 0x56, 0x2f, 0xa9, 0xcd,
-	0x8c, 0x9f, 0xd2, 0x50, 0x12, 0x91, 0x14, 0x4e, 0xce, 0x21, 0x3a, 0x81, 0x56, 0x92, 0xbd, 0xea,
-	0x49, 0x6a, 0x6c, 0x28, 0x61, 0xfb, 0xf5, 0x97, 0x25, 0x24, 0x6e, 0x66, 0xa4, 0xb3, 0xf4, 0xec,
-	0xf5, 0xd7, 0x57, 0x01, 0x95, 0x77, 0xb3, 0x89, 0xe5, 0xf1, 0xc8, 0x56, 0x4c, 0x2e, 0x02, 0x7b,
-	0xf1, 0x9d, 0x04, 0x84, 0xd9, 0xf1, 0xe4, 0x24, 0xe0, 0x76, 0xf5, 0x87, 0x99, 0x34, 0xd5, 0xdf,
-	0xf2, 0xf2, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xab, 0x1f, 0x2f, 0x9c, 0xd3, 0x04, 0x00, 0x00,
+	// 575 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x53, 0x5f, 0x6f, 0xda, 0x3e,
+	0x14, 0x6d, 0x12, 0xfe, 0xe5, 0xd2, 0xf2, 0xa3, 0xfe, 0xb1, 0x29, 0x83, 0x69, 0x62, 0x91, 0xa6,
+	0x31, 0x4d, 0x24, 0x12, 0x53, 0xb5, 0x87, 0xbd, 0xac, 0xac, 0xad, 0x98, 0x4a, 0x99, 0x64, 0x98,
+	0x26, 0xed, 0x05, 0x41, 0x62, 0x52, 0x8b, 0x24, 0x66, 0x8e, 0x99, 0x94, 0xd7, 0x69, 0x8f, 0xfb,
+	0xa6, 0xfb, 0x12, 0x53, 0x6c, 0xa0, 0x81, 0x56, 0x7d, 0xbb, 0xd7, 0x3e, 0xf7, 0xdc, 0x7b, 0xec,
+	0x73, 0xe1, 0xf5, 0x22, 0x4c, 0x05, 0xa1, 0x7e, 0xe8, 0xce, 0xfc, 0x88, 0xc6, 0xae, 0x4f, 0x12,
+	0x8f, 0xd3, 0x95, 0xa0, 0x2c, 0x9e, 0x92, 0x58, 0x50, 0x91, 0x3a, 0x2b, 0xce, 0x04, 0x43, 0xb5,
+	0x2d, 0xd0, 0x91, 0xc0, 0xe6, 0x8b, 0x5d, 0xa1, 0xc7, 0x38, 0x71, 0xa9, 0x9f, 0xa1, 0x17, 0x94,
+	0x70, 0x85, 0x6f, 0xb6, 0x0e, 0x88, 0x3d, 0x16, 0x45, 0x2c, 0x56, 0x97, 0xf6, 0x6f, 0x1d, 0x4e,
+	0x2f, 0xee, 0x3a, 0x5d, 0xca, 0x46, 0xe8, 0x0d, 0xe8, 0xd4, 0xb7, 0xb4, 0xb6, 0xd6, 0xa9, 0xf6,
+	0x9e, 0x39, 0xbb, 0x7e, 0x19, 0xbf, 0xf3, 0x79, 0xc7, 0x8f, 0x75, 0xea, 0xa3, 0xb7, 0x70, 0x9a,
+	0xdc, 0x32, 0x2e, 0xa6, 0xb9, 0x79, 0x2d, 0xbd, 0xad, 0x75, 0x4c, 0x5c, 0x97, 0x17, 0x39, 0x76,
+	0x74, 0x05, 0xf5, 0x90, 0xc5, 0xc1, 0x1e, 0xd6, 0x90, 0x5d, 0x5a, 0xce, 0xbe, 0x2a, 0x27, 0x57,
+	0x86, 0xff, 0xcb, 0x8a, 0xf2, 0x3c, 0x1f, 0xa0, 0x9a, 0xb0, 0x35, 0xf7, 0xc8, 0xd4, 0x63, 0x3e,
+	0xb1, 0x0a, 0x92, 0xa2, 0x79, 0x48, 0x31, 0x96, 0x90, 0x4f, 0xcc, 0x27, 0x18, 0x92, 0x5d, 0x8c,
+	0x10, 0x14, 0xc4, 0x2c, 0x48, 0xac, 0x62, 0xdb, 0xe8, 0x98, 0x58, 0xc6, 0xf6, 0x5f, 0x0d, 0xaa,
+	0xf9, 0x06, 0x4f, 0xa1, 0xf8, 0x73, 0x16, 0xae, 0x89, 0x7c, 0x03, 0x73, 0x70, 0x84, 0x55, 0x8a,
+	0x10, 0x18, 0x6b, 0x4e, 0x95, 0xbe, 0xc1, 0x11, 0xce, 0x12, 0x74, 0x09, 0xa5, 0x05, 0xe3, 0xd1,
+	0x4c, 0x48, 0x29, 0xb5, 0x5e, 0xf7, 0x11, 0x29, 0xf9, 0xf8, 0x4a, 0x16, 0xe1, 0x4d, 0x31, 0x6a,
+	0x81, 0x49, 0x3d, 0x16, 0x4f, 0x43, 0x1a, 0x2f, 0xa5, 0x22, 0x13, 0x57, 0xb2, 0x83, 0x21, 0x8d,
+	0x97, 0xf6, 0xf9, 0xde, 0x2f, 0xa9, 0x4a, 0x54, 0x85, 0xf2, 0xd7, 0xd1, 0xf5, 0xe8, 0xcb, 0xb7,
+	0x51, 0xfd, 0x08, 0x1d, 0x43, 0xe5, 0xe6, 0x1c, 0x5f, 0x5f, 0x64, 0x99, 0x86, 0x2a, 0x50, 0x18,
+	0x4c, 0x6e, 0x86, 0x75, 0x1d, 0x95, 0xc1, 0xc0, 0xe3, 0x49, 0xdd, 0xe8, 0x9b, 0x50, 0xf6, 0x58,
+	0x2c, 0x48, 0x2c, 0xec, 0x36, 0xc0, 0x78, 0xef, 0x3d, 0x64, 0x4f, 0x29, 0x15, 0xcb, 0xd8, 0xfe,
+	0xa5, 0xc1, 0x93, 0x7b, 0xb6, 0x18, 0xd2, 0x44, 0xa0, 0x31, 0xfc, 0xef, 0x1f, 0x5c, 0x50, 0x92,
+	0x58, 0x5a, 0xdb, 0xe8, 0x54, 0x7b, 0x2f, 0x1f, 0x91, 0xae, 0x38, 0xf0, 0x43, 0xd5, 0xa8, 0x01,
+	0x45, 0xc1, 0x96, 0x64, 0x6b, 0x1c, 0x95, 0xd8, 0x7f, 0x74, 0x78, 0xfe, 0xe0, 0x10, 0x98, 0xfc,
+	0x58, 0x93, 0x44, 0xa0, 0x8f, 0x70, 0xc2, 0xc9, 0xc6, 0x08, 0x22, 0x5d, 0xa9, 0xdf, 0xaa, 0xe5,
+	0xbd, 0x24, 0x1d, 0x8b, 0x37, 0x98, 0x49, 0xba, 0x22, 0xf8, 0x98, 0xe7, 0x32, 0x74, 0x26, 0x8d,
+	0xae, 0x4b, 0xff, 0xbc, 0x3a, 0x1c, 0x7e, 0x34, 0x8b, 0x88, 0xaf, 0xba, 0x1e, 0x98, 0xbe, 0x01,
+	0xc5, 0x90, 0x46, 0x54, 0xfd, 0xf8, 0x09, 0x56, 0xc9, 0x9d, 0x8a, 0x42, 0x4e, 0x05, 0xb2, 0xa0,
+	0xbc, 0xa0, 0xa1, 0x20, 0x3c, 0x73, 0x5c, 0x76, 0xbe, 0x4d, 0x51, 0x17, 0xca, 0x49, 0xb6, 0x39,
+	0xf3, 0xd4, 0x2a, 0xc9, 0x09, 0x1a, 0xf7, 0x1d, 0xcc, 0x05, 0x2e, 0x65, 0xa0, 0x7e, 0xda, 0x7f,
+	0xff, 0xfd, 0x2c, 0xa0, 0xe2, 0x76, 0x3d, 0x77, 0x3c, 0x16, 0xb9, 0x12, 0xc9, 0x78, 0xe0, 0xee,
+	0xb6, 0x3b, 0x20, 0xb1, 0xbb, 0x9a, 0x77, 0x03, 0xe6, 0xee, 0x2f, 0xfc, 0xbc, 0x24, 0x57, 0xfd,
+	0xdd, 0xbf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xb7, 0x15, 0x48, 0x92, 0x62, 0x04, 0x00, 0x00,
 }

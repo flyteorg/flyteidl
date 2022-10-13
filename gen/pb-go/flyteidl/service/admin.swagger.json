@@ -447,7 +447,7 @@
         ]
       }
     },
-    "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}": {
+    "/api/v1/description_entities/{id.project}/{id.domain}": {
       "get": {
         "summary": "Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.",
         "description": "Fetch existing description entity definitions matching input filters.",
@@ -462,21 +462,21 @@
         },
         "parameters": [
           {
-            "name": "description_entity_id.project",
+            "name": "id.project",
             "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description_entity_id.domain",
+            "name": "id.domain",
             "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description_entity_id.resource_type",
+            "name": "resource_type",
             "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
@@ -491,8 +491,8 @@
             "default": "UNSPECIFIED"
           },
           {
-            "name": "description_entity_id.name",
-            "description": "User or system provided value for the resource.",
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -544,7 +544,7 @@
         ]
       }
     },
-    "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}/{description_entity_id.name}": {
+    "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "summary": "Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.",
         "description": "Fetch existing description entity definitions matching input filters.",
@@ -559,28 +559,28 @@
         },
         "parameters": [
           {
-            "name": "description_entity_id.project",
+            "name": "id.project",
             "description": "Name of the project the resource belongs to.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description_entity_id.domain",
+            "name": "id.domain",
             "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description_entity_id.name",
-            "description": "User or system provided value for the resource.",
+            "name": "id.name",
+            "description": "User provided value for the resource.\nThe combination of project + domain + name uniquely identifies the resource.\n+optional - in certain contexts - like 'List API', 'Launch plans'",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "description_entity_id.resource_type",
+            "name": "resource_type",
             "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
             "in": "query",
             "required": false,
@@ -3341,6 +3341,17 @@
       "description": "- JSON: JSON / YAML for the metadata (which contains inlined primitive values). The representation is inline with the standard json specification as specified - https://www.json.org/json-en.html\n - PROTO: Proto is a serialized binary of `core.LiteralMap` defined in flyteidl/core",
       "title": "LiteralMapFormat decides the encoding format in which the input metadata should be made available to the containers.\nIf the user has access to the protocol buffer definitions, it is recommended to use the PROTO format.\nJSON and YAML do not need any protobuf definitions to read it\nAll remote references in core.LiteralMap are replaced with local filesystem references (the data is downloaded to local filesystem)"
     },
+    "DescriptionDescriptionFormat": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "MARKDOWN",
+        "HTML",
+        "RST"
+      ],
+      "default": "UNKNOWN",
+      "title": "- RST: python default documentation - comments is rst"
+    },
     "ExecutionErrorErrorKind": {
       "type": "string",
       "enum": [
@@ -3385,17 +3396,6 @@
       "default": "UPLOAD_ON_EXIT",
       "description": "- UPLOAD_ON_EXIT: All data will be uploaded after the main container exits\n - UPLOAD_EAGER: Data will be uploaded as it appears. Refer to protocol specification for details\n - DO_NOT_UPLOAD: Data will not be uploaded, only references will be written",
       "title": "Mode to use for uploading"
-    },
-    "LongDescriptionDescriptionFormat": {
-      "type": "string",
-      "enum": [
-        "UNKNOWN",
-        "MARKDOWN",
-        "HTML",
-        "RST"
-      ],
-      "default": "UNKNOWN",
-      "title": "- RST: python default documentation - comments is rst"
     },
     "PluginOverrideMissingPluginBehavior": {
       "type": "string",
@@ -3648,15 +3648,41 @@
       },
       "description": "Options for schedules to run according to a cron expression."
     },
+    "adminDescription": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "title": "long description - no more than 4KB"
+        },
+        "uri": {
+          "type": "string",
+          "title": "if the description sizes exceed some threshold we can offload the entire\ndescription proto altogether to an external data store, like S3 rather than store inline in the db"
+        },
+        "format": {
+          "$ref": "#/definitions/DescriptionDescriptionFormat",
+          "title": "Format of the long description"
+        },
+        "icon_link": {
+          "type": "string",
+          "title": "Optional link to an icon for the entity"
+        }
+      },
+      "description": "Full user description with formatting preserved. This can be rendered\nby clients, such as the console or command line tools with in-tact\nformatting."
+    },
     "adminDescriptionEntity": {
       "type": "object",
       "properties": {
+        "id": {
+          "$ref": "#/definitions/coreIdentifier",
+          "description": "id represents the unique identifier of the description entity."
+        },
         "short_description": {
           "type": "string",
           "description": "One-liner overview of the entity."
         },
         "long_description": {
-          "$ref": "#/definitions/adminLongDescription",
+          "$ref": "#/definitions/adminDescription",
           "description": "Full user description with formatting preserved."
         },
         "source_code": {
@@ -3671,29 +3697,7 @@
           "description": "User-specified tags. These are arbitrary and can be used for searching\nfiltering and discovering tasks."
         }
       },
-      "description": "DescriptionEntity contains detailed description for the task/workflow/launch plan.\nDocumentation could provide insight into the algorithms, business use case, etc."
-    },
-    "adminDescriptionEntityIdentifier": {
-      "type": "object",
-      "properties": {
-        "resource_type": {
-          "$ref": "#/definitions/coreResourceType",
-          "description": "Identifies the specific type of resource that this identifier corresponds to."
-        },
-        "project": {
-          "type": "string",
-          "description": "Name of the project the resource belongs to."
-        },
-        "domain": {
-          "type": "string",
-          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
-        },
-        "name": {
-          "type": "string",
-          "description": "User or system provided value for the resource."
-        }
-      },
-      "title": "Encapsulation of fields that uniquely identifies a Flyte description entity"
+      "description": "DescriptionEntity contains detailed description for the task/workflow.\nDocumentation could provide insight into the algorithms, business use case, etc."
     },
     "adminDescriptionEntityList": {
       "type": "object",
@@ -4346,28 +4350,6 @@
         }
       },
       "title": "Input/output data can represented by actual values or a link to where values are stored"
-    },
-    "adminLongDescription": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string",
-          "title": "long description - no more than 4KB"
-        },
-        "uri": {
-          "type": "string",
-          "title": "if the description sizes exceed some threshold we can offload the entire\ndescription proto altogether to an external data store, like S3 rather than store inline in the db"
-        },
-        "format": {
-          "$ref": "#/definitions/LongDescriptionDescriptionFormat",
-          "title": "Format of the long description"
-        },
-        "icon_link": {
-          "type": "string",
-          "title": "Optional link to an icon for the entity"
-        }
-      },
-      "description": "Full user description with formatting preserved. This can be rendered\nby clients, such as the console or command line tools with in-tact\nformatting."
     },
     "adminMatchableAttributesConfiguration": {
       "type": "object",

@@ -48,6 +48,16 @@ func (m *DescriptionEntity) Validate() error {
 		return nil
 	}
 
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DescriptionEntityValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	// no validation rules for ShortDescription
 
 	if v, ok := interface{}(m.GetLongDescription()).(interface{ Validate() error }); ok {
@@ -129,10 +139,10 @@ var _ interface {
 	ErrorName() string
 } = DescriptionEntityValidationError{}
 
-// Validate checks the field values on LongDescription with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *LongDescription) Validate() error {
+// Validate checks the field values on Description with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *Description) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -143,10 +153,10 @@ func (m *LongDescription) Validate() error {
 
 	switch m.Content.(type) {
 
-	case *LongDescription_Value:
+	case *Description_Value:
 		// no validation rules for Value
 
-	case *LongDescription_Uri:
+	case *Description_Uri:
 		// no validation rules for Uri
 
 	}
@@ -154,9 +164,9 @@ func (m *LongDescription) Validate() error {
 	return nil
 }
 
-// LongDescriptionValidationError is the validation error returned by
-// LongDescription.Validate if the designated constraints aren't met.
-type LongDescriptionValidationError struct {
+// DescriptionValidationError is the validation error returned by
+// Description.Validate if the designated constraints aren't met.
+type DescriptionValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -164,22 +174,22 @@ type LongDescriptionValidationError struct {
 }
 
 // Field function returns field value.
-func (e LongDescriptionValidationError) Field() string { return e.field }
+func (e DescriptionValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e LongDescriptionValidationError) Reason() string { return e.reason }
+func (e DescriptionValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e LongDescriptionValidationError) Cause() error { return e.cause }
+func (e DescriptionValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e LongDescriptionValidationError) Key() bool { return e.key }
+func (e DescriptionValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e LongDescriptionValidationError) ErrorName() string { return "LongDescriptionValidationError" }
+func (e DescriptionValidationError) ErrorName() string { return "DescriptionValidationError" }
 
 // Error satisfies the builtin error interface
-func (e LongDescriptionValidationError) Error() string {
+func (e DescriptionValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -191,14 +201,14 @@ func (e LongDescriptionValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sLongDescription.%s: %s%s",
+		"invalid %sDescription.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = LongDescriptionValidationError{}
+var _ error = DescriptionValidationError{}
 
 var _ interface {
 	Field() string
@@ -206,7 +216,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = LongDescriptionValidationError{}
+} = DescriptionValidationError{}
 
 // Validate checks the field values on SourceCode with the rules defined in the
 // proto definition for this message. If any rules are violated, an error is returned.
@@ -273,82 +283,6 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = SourceCodeValidationError{}
-
-// Validate checks the field values on DescriptionEntityIdentifier with the
-// rules defined in the proto definition for this message. If any rules are
-// violated, an error is returned.
-func (m *DescriptionEntityIdentifier) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for ResourceType
-
-	// no validation rules for Project
-
-	// no validation rules for Domain
-
-	// no validation rules for Name
-
-	return nil
-}
-
-// DescriptionEntityIdentifierValidationError is the validation error returned
-// by DescriptionEntityIdentifier.Validate if the designated constraints
-// aren't met.
-type DescriptionEntityIdentifierValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e DescriptionEntityIdentifierValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e DescriptionEntityIdentifierValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e DescriptionEntityIdentifierValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e DescriptionEntityIdentifierValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e DescriptionEntityIdentifierValidationError) ErrorName() string {
-	return "DescriptionEntityIdentifierValidationError"
-}
-
-// Error satisfies the builtin error interface
-func (e DescriptionEntityIdentifierValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sDescriptionEntityIdentifier.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = DescriptionEntityIdentifierValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = DescriptionEntityIdentifierValidationError{}
 
 // Validate checks the field values on DescriptionEntityList with the rules
 // defined in the proto definition for this message. If any rules are
@@ -442,10 +376,12 @@ func (m *DescriptionEntityListRequest) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetDescriptionEntityId()).(interface{ Validate() error }); ok {
+	// no validation rules for ResourceType
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return DescriptionEntityListRequestValidationError{
-				field:  "DescriptionEntityId",
+				field:  "Id",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

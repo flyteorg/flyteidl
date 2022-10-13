@@ -16,8 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_long_description import AdminLongDescription  # noqa: F401,E501
+from flyteadmin.models.admin_description import AdminDescription  # noqa: F401,E501
 from flyteadmin.models.admin_source_code import AdminSourceCode  # noqa: F401,E501
+from flyteadmin.models.core_identifier import CoreIdentifier  # noqa: F401,E501
 
 
 class AdminDescriptionEntity(object):
@@ -34,28 +35,33 @@ class AdminDescriptionEntity(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'CoreIdentifier',
         'short_description': 'str',
-        'long_description': 'AdminLongDescription',
+        'long_description': 'AdminDescription',
         'source_code': 'AdminSourceCode',
         'tags': 'list[str]'
     }
 
     attribute_map = {
+        'id': 'id',
         'short_description': 'short_description',
         'long_description': 'long_description',
         'source_code': 'source_code',
         'tags': 'tags'
     }
 
-    def __init__(self, short_description=None, long_description=None, source_code=None, tags=None):  # noqa: E501
+    def __init__(self, id=None, short_description=None, long_description=None, source_code=None, tags=None):  # noqa: E501
         """AdminDescriptionEntity - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
         self._short_description = None
         self._long_description = None
         self._source_code = None
         self._tags = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if short_description is not None:
             self.short_description = short_description
         if long_description is not None:
@@ -64,6 +70,29 @@ class AdminDescriptionEntity(object):
             self.source_code = source_code
         if tags is not None:
             self.tags = tags
+
+    @property
+    def id(self):
+        """Gets the id of this AdminDescriptionEntity.  # noqa: E501
+
+        id represents the unique identifier of the description entity.  # noqa: E501
+
+        :return: The id of this AdminDescriptionEntity.  # noqa: E501
+        :rtype: CoreIdentifier
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AdminDescriptionEntity.
+
+        id represents the unique identifier of the description entity.  # noqa: E501
+
+        :param id: The id of this AdminDescriptionEntity.  # noqa: E501
+        :type: CoreIdentifier
+        """
+
+        self._id = id
 
     @property
     def short_description(self):
@@ -95,7 +124,7 @@ class AdminDescriptionEntity(object):
         Full user description with formatting preserved.  # noqa: E501
 
         :return: The long_description of this AdminDescriptionEntity.  # noqa: E501
-        :rtype: AdminLongDescription
+        :rtype: AdminDescription
         """
         return self._long_description
 
@@ -106,7 +135,7 @@ class AdminDescriptionEntity(object):
         Full user description with formatting preserved.  # noqa: E501
 
         :param long_description: The long_description of this AdminDescriptionEntity.  # noqa: E501
-        :type: AdminLongDescription
+        :type: AdminDescription
         """
 
         self._long_description = long_description

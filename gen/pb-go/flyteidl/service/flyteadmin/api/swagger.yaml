@@ -399,7 +399,7 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminTaskExecutionGetDataResponse"
-  /api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}:
+  /api/v1/description_entities/{id.project}/{id.domain}:
     get:
       tags:
       - "AdminService"
@@ -407,20 +407,20 @@ paths:
       description: "Fetch existing description entity definitions matching input filters."
       operationId: "ListDescriptionEntities2"
       parameters:
-      - name: "description_entity_id.project"
+      - name: "id.project"
         in: "path"
         description: "Name of the project the resource belongs to."
         required: true
         type: "string"
-        x-exportParamName: "DescriptionEntityIdProject"
-      - name: "description_entity_id.domain"
+        x-exportParamName: "IdProject"
+      - name: "id.domain"
         in: "path"
         description: "Name of the domain the resource belongs to.\nA domain can be\
           \ considered as a subset within a specific project."
         required: true
         type: "string"
-        x-exportParamName: "DescriptionEntityIdDomain"
-      - name: "description_entity_id.resource_type"
+        x-exportParamName: "IdDomain"
+      - name: "resource_type"
         in: "query"
         description: "Identifies the specific type of resource that this identifier\
           \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
@@ -438,14 +438,16 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        x-exportParamName: "DescriptionEntityIdResourceType"
+        x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
-      - name: "description_entity_id.name"
+      - name: "id.name"
         in: "query"
-        description: "User or system provided value for the resource."
+        description: "User provided value for the resource.\nThe combination of project\
+          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
+          \ contexts - like 'List API', 'Launch plans'."
         required: false
         type: "string"
-        x-exportParamName: "DescriptionEntityIdName"
+        x-exportParamName: "IdName"
         x-optionalDataType: "String"
       - name: "limit"
         in: "query"
@@ -496,7 +498,7 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminDescriptionEntityList"
-  /api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}/{description_entity_id.name}:
+  /api/v1/description_entities/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
       - "AdminService"
@@ -504,26 +506,28 @@ paths:
       description: "Fetch existing description entity definitions matching input filters."
       operationId: "ListDescriptionEntities"
       parameters:
-      - name: "description_entity_id.project"
+      - name: "id.project"
         in: "path"
         description: "Name of the project the resource belongs to."
         required: true
         type: "string"
-        x-exportParamName: "DescriptionEntityIdProject"
-      - name: "description_entity_id.domain"
+        x-exportParamName: "IdProject"
+      - name: "id.domain"
         in: "path"
         description: "Name of the domain the resource belongs to.\nA domain can be\
           \ considered as a subset within a specific project."
         required: true
         type: "string"
-        x-exportParamName: "DescriptionEntityIdDomain"
-      - name: "description_entity_id.name"
+        x-exportParamName: "IdDomain"
+      - name: "id.name"
         in: "path"
-        description: "User or system provided value for the resource."
+        description: "User provided value for the resource.\nThe combination of project\
+          \ + domain + name uniquely identifies the resource.\n+optional - in certain\
+          \ contexts - like 'List API', 'Launch plans'"
         required: true
         type: "string"
-        x-exportParamName: "DescriptionEntityIdName"
-      - name: "description_entity_id.resource_type"
+        x-exportParamName: "IdName"
+      - name: "resource_type"
         in: "query"
         description: "Identifies the specific type of resource that this identifier\
           \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
@@ -541,7 +545,7 @@ paths:
         - "WORKFLOW"
         - "LAUNCH_PLAN"
         - "DATASET"
-        x-exportParamName: "DescriptionEntityIdResourceType"
+        x-exportParamName: "ResourceType"
         x-optionalDataType: "String"
       - name: "limit"
         in: "query"
@@ -3021,6 +3025,15 @@ definitions:
     - "YAML"
     - "PROTO"
     default: "JSON"
+  DescriptionDescriptionFormat:
+    type: "string"
+    title: "- RST: python default documentation - comments is rst"
+    enum:
+    - "UNKNOWN"
+    - "MARKDOWN"
+    - "HTML"
+    - "RST"
+    default: "UNKNOWN"
   ExecutionErrorErrorKind:
     type: "string"
     title: "Error type: System or User"
@@ -3072,15 +3085,6 @@ definitions:
     - "UPLOAD_EAGER"
     - "DO_NOT_UPLOAD"
     default: "UPLOAD_ON_EXIT"
-  LongDescriptionDescriptionFormat:
-    type: "string"
-    title: "- RST: python default documentation - comments is rst"
-    enum:
-    - "UNKNOWN"
-    - "MARKDOWN"
-    - "HTML"
-    - "RST"
-    default: "UNKNOWN"
   PluginOverrideMissingPluginBehavior:
     type: "string"
     description: " - FAIL: By default, if this plugin is not enabled for a Flyte deployment\
@@ -3339,15 +3343,42 @@ definitions:
     example:
       schedule: "schedule"
       offset: "offset"
+  adminDescription:
+    type: "object"
+    properties:
+      value:
+        type: "string"
+        title: "long description - no more than 4KB"
+      uri:
+        type: "string"
+        title: "if the description sizes exceed some threshold we can offload the\
+          \ entire\ndescription proto altogether to an external data store, like S3\
+          \ rather than store inline in the db"
+      format:
+        title: "Format of the long description"
+        $ref: "#/definitions/DescriptionDescriptionFormat"
+      icon_link:
+        type: "string"
+        title: "Optional link to an icon for the entity"
+    description: "Full user description with formatting preserved. This can be rendered\n\
+      by clients, such as the console or command line tools with in-tact\nformatting."
+    example:
+      format: {}
+      icon_link: "icon_link"
+      value: "value"
+      uri: "uri"
   adminDescriptionEntity:
     type: "object"
     properties:
+      id:
+        description: "id represents the unique identifier of the description entity."
+        $ref: "#/definitions/coreIdentifier"
       short_description:
         type: "string"
         description: "One-liner overview of the entity."
       long_description:
         description: "Full user description with formatting preserved."
-        $ref: "#/definitions/adminLongDescription"
+        $ref: "#/definitions/adminDescription"
       source_code:
         description: "Optional link to source code used to define this entity."
         $ref: "#/definitions/adminSourceCode"
@@ -3357,11 +3388,17 @@ definitions:
           \ searching\nfiltering and discovering tasks."
         items:
           type: "string"
-    description: "DescriptionEntity contains detailed description for the task/workflow/launch\
-      \ plan.\nDocumentation could provide insight into the algorithms, business use\
-      \ case, etc."
+    description: "DescriptionEntity contains detailed description for the task/workflow.\n\
+      Documentation could provide insight into the algorithms, business use case,\
+      \ etc."
     example:
       short_description: "short_description"
+      id:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
       long_description:
         format: {}
         icon_link: "icon_link"
@@ -3372,24 +3409,6 @@ definitions:
       tags:
       - "tags"
       - "tags"
-  adminDescriptionEntityIdentifier:
-    type: "object"
-    properties:
-      resource_type:
-        description: "Identifies the specific type of resource that this identifier\
-          \ corresponds to."
-        $ref: "#/definitions/coreResourceType"
-      project:
-        type: "string"
-        description: "Name of the project the resource belongs to."
-      domain:
-        type: "string"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-      name:
-        type: "string"
-        description: "User or system provided value for the resource."
-    title: "Encapsulation of fields that uniquely identifies a Flyte description entity"
   adminDescriptionEntityList:
     type: "object"
     properties:
@@ -3408,6 +3427,12 @@ definitions:
     example:
       descriptionEntities:
       - short_description: "short_description"
+        id:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
         long_description:
           format: {}
           icon_link: "icon_link"
@@ -3419,6 +3444,12 @@ definitions:
         - "tags"
         - "tags"
       - short_description: "short_description"
+        id:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
         long_description:
           format: {}
           icon_link: "icon_link"
@@ -7097,30 +7128,6 @@ definitions:
     example:
       values:
         literals: {}
-      uri: "uri"
-  adminLongDescription:
-    type: "object"
-    properties:
-      value:
-        type: "string"
-        title: "long description - no more than 4KB"
-      uri:
-        type: "string"
-        title: "if the description sizes exceed some threshold we can offload the\
-          \ entire\ndescription proto altogether to an external data store, like S3\
-          \ rather than store inline in the db"
-      format:
-        title: "Format of the long description"
-        $ref: "#/definitions/LongDescriptionDescriptionFormat"
-      icon_link:
-        type: "string"
-        title: "Optional link to an icon for the entity"
-    description: "Full user description with formatting preserved. This can be rendered\n\
-      by clients, such as the console or command line tools with in-tact\nformatting."
-    example:
-      format: {}
-      icon_link: "icon_link"
-      value: "value"
       uri: "uri"
   adminMatchableAttributesConfiguration:
     type: "object"

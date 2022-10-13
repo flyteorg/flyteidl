@@ -2728,11 +2728,11 @@ func (a *AdminServiceApiService) ListActiveLaunchPlans(ctx context.Context, proj
 AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
 Fetch existing description entity definitions matching input filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param descriptionEntityIdProject Name of the project the resource belongs to.
- * @param descriptionEntityIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
- * @param descriptionEntityIdName User or system provided value for the resource.
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idName User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;
  * @param optional nil or *ListDescriptionEntitiesOpts - Optional Parameters:
-     * @param "DescriptionEntityIdResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "ResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -2743,7 +2743,7 @@ Fetch existing description entity definitions matching input filters.
 */
 
 type ListDescriptionEntitiesOpts struct { 
-	DescriptionEntityIdResourceType optional.String
+	ResourceType optional.String
 	Limit optional.Int64
 	Token optional.String
 	Filters optional.String
@@ -2751,7 +2751,7 @@ type ListDescriptionEntitiesOpts struct {
 	SortByDirection optional.String
 }
 
-func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, descriptionEntityIdName string, localVarOptionals *ListDescriptionEntitiesOpts) (AdminDescriptionEntityList, *http.Response, error) {
+func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *ListDescriptionEntitiesOpts) (AdminDescriptionEntityList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2761,17 +2761,17 @@ func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, de
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}/{description_entity_id.name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"description_entity_id.project"+"}", fmt.Sprintf("%v", descriptionEntityIdProject), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"description_entity_id.domain"+"}", fmt.Sprintf("%v", descriptionEntityIdDomain), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"description_entity_id.name"+"}", fmt.Sprintf("%v", descriptionEntityIdName), -1)
+	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id.project"+"}", fmt.Sprintf("%v", idProject), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id.domain"+"}", fmt.Sprintf("%v", idDomain), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id.name"+"}", fmt.Sprintf("%v", idName), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.DescriptionEntityIdResourceType.IsSet() {
-		localVarQueryParams.Add("description_entity_id.resource_type", parameterToString(localVarOptionals.DescriptionEntityIdResourceType.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
 		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))
@@ -2856,11 +2856,11 @@ func (a *AdminServiceApiService) ListDescriptionEntities(ctx context.Context, de
 AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
 Fetch existing description entity definitions matching input filters.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param descriptionEntityIdProject Name of the project the resource belongs to.
- * @param descriptionEntityIdDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
+ * @param idProject Name of the project the resource belongs to.
+ * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param optional nil or *ListDescriptionEntities2Opts - Optional Parameters:
-     * @param "DescriptionEntityIdResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-     * @param "DescriptionEntityIdName" (optional.String) -  User or system provided value for the resource.
+     * @param "ResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
+     * @param "IdName" (optional.String) -  User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like &#39;List API&#39;, &#39;Launch plans&#39;.
      * @param "Limit" (optional.Int64) -  Indicates the number of resources to be returned. +required.
      * @param "Token" (optional.String) -  In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
@@ -2871,8 +2871,8 @@ Fetch existing description entity definitions matching input filters.
 */
 
 type ListDescriptionEntities2Opts struct { 
-	DescriptionEntityIdResourceType optional.String
-	DescriptionEntityIdName optional.String
+	ResourceType optional.String
+	IdName optional.String
 	Limit optional.Int64
 	Token optional.String
 	Filters optional.String
@@ -2880,7 +2880,7 @@ type ListDescriptionEntities2Opts struct {
 	SortByDirection optional.String
 }
 
-func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, descriptionEntityIdProject string, descriptionEntityIdDomain string, localVarOptionals *ListDescriptionEntities2Opts) (AdminDescriptionEntityList, *http.Response, error) {
+func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, idProject string, idDomain string, localVarOptionals *ListDescriptionEntities2Opts) (AdminDescriptionEntityList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -2890,19 +2890,19 @@ func (a *AdminServiceApiService) ListDescriptionEntities2(ctx context.Context, d
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{description_entity_id.project}/{description_entity_id.domain}"
-	localVarPath = strings.Replace(localVarPath, "{"+"description_entity_id.project"+"}", fmt.Sprintf("%v", descriptionEntityIdProject), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"description_entity_id.domain"+"}", fmt.Sprintf("%v", descriptionEntityIdDomain), -1)
+	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{id.project}/{id.domain}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id.project"+"}", fmt.Sprintf("%v", idProject), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id.domain"+"}", fmt.Sprintf("%v", idDomain), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.DescriptionEntityIdResourceType.IsSet() {
-		localVarQueryParams.Add("description_entity_id.resource_type", parameterToString(localVarOptionals.DescriptionEntityIdResourceType.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.ResourceType.IsSet() {
+		localVarQueryParams.Add("resource_type", parameterToString(localVarOptionals.ResourceType.Value(), ""))
 	}
-	if localVarOptionals != nil && localVarOptionals.DescriptionEntityIdName.IsSet() {
-		localVarQueryParams.Add("description_entity_id.name", parameterToString(localVarOptionals.DescriptionEntityIdName.Value(), ""))
+	if localVarOptionals != nil && localVarOptionals.IdName.IsSet() {
+		localVarQueryParams.Add("id.name", parameterToString(localVarOptionals.IdName.Value(), ""))
 	}
 	if localVarOptionals != nil && localVarOptionals.Limit.IsSet() {
 		localVarQueryParams.Add("limit", parameterToString(localVarOptionals.Limit.Value(), ""))

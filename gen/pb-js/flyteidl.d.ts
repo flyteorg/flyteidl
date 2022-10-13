@@ -8432,11 +8432,14 @@ export namespace flyteidl {
         /** Properties of a DescriptionEntity. */
         interface IDescriptionEntity {
 
+            /** DescriptionEntity id */
+            id?: (flyteidl.core.IIdentifier|null);
+
             /** DescriptionEntity shortDescription */
             shortDescription?: (string|null);
 
             /** DescriptionEntity longDescription */
-            longDescription?: (flyteidl.admin.ILongDescription|null);
+            longDescription?: (flyteidl.admin.IDescription|null);
 
             /** DescriptionEntity sourceCode */
             sourceCode?: (flyteidl.admin.ISourceCode|null);
@@ -8454,11 +8457,14 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IDescriptionEntity);
 
+            /** DescriptionEntity id. */
+            public id?: (flyteidl.core.IIdentifier|null);
+
             /** DescriptionEntity shortDescription. */
             public shortDescription: string;
 
             /** DescriptionEntity longDescription. */
-            public longDescription?: (flyteidl.admin.ILongDescription|null);
+            public longDescription?: (flyteidl.admin.IDescription|null);
 
             /** DescriptionEntity sourceCode. */
             public sourceCode?: (flyteidl.admin.ISourceCode|null);
@@ -8499,80 +8505,80 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a LongDescription. */
-        interface ILongDescription {
+        /** Properties of a Description. */
+        interface IDescription {
 
-            /** LongDescription value */
+            /** Description value */
             value?: (string|null);
 
-            /** LongDescription uri */
+            /** Description uri */
             uri?: (string|null);
 
-            /** LongDescription format */
-            format?: (flyteidl.admin.LongDescription.DescriptionFormat|null);
+            /** Description format */
+            format?: (flyteidl.admin.Description.DescriptionFormat|null);
 
-            /** LongDescription iconLink */
+            /** Description iconLink */
             iconLink?: (string|null);
         }
 
-        /** Represents a LongDescription. */
-        class LongDescription implements ILongDescription {
+        /** Represents a Description. */
+        class Description implements IDescription {
 
             /**
-             * Constructs a new LongDescription.
+             * Constructs a new Description.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.admin.ILongDescription);
+            constructor(properties?: flyteidl.admin.IDescription);
 
-            /** LongDescription value. */
+            /** Description value. */
             public value: string;
 
-            /** LongDescription uri. */
+            /** Description uri. */
             public uri: string;
 
-            /** LongDescription format. */
-            public format: flyteidl.admin.LongDescription.DescriptionFormat;
+            /** Description format. */
+            public format: flyteidl.admin.Description.DescriptionFormat;
 
-            /** LongDescription iconLink. */
+            /** Description iconLink. */
             public iconLink: string;
 
-            /** LongDescription content. */
+            /** Description content. */
             public content?: ("value"|"uri");
 
             /**
-             * Creates a new LongDescription instance using the specified properties.
+             * Creates a new Description instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns LongDescription instance
+             * @returns Description instance
              */
-            public static create(properties?: flyteidl.admin.ILongDescription): flyteidl.admin.LongDescription;
+            public static create(properties?: flyteidl.admin.IDescription): flyteidl.admin.Description;
 
             /**
-             * Encodes the specified LongDescription message. Does not implicitly {@link flyteidl.admin.LongDescription.verify|verify} messages.
-             * @param message LongDescription message or plain object to encode
+             * Encodes the specified Description message. Does not implicitly {@link flyteidl.admin.Description.verify|verify} messages.
+             * @param message Description message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.admin.ILongDescription, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.admin.IDescription, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a LongDescription message from the specified reader or buffer.
+             * Decodes a Description message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns LongDescription
+             * @returns Description
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.LongDescription;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Description;
 
             /**
-             * Verifies a LongDescription message.
+             * Verifies a Description message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        namespace LongDescription {
+        namespace Description {
 
             /** DescriptionFormat enum. */
             enum DescriptionFormat {
@@ -8629,76 +8635,6 @@ export namespace flyteidl {
 
             /**
              * Verifies a SourceCode message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a DescriptionEntityIdentifier. */
-        interface IDescriptionEntityIdentifier {
-
-            /** DescriptionEntityIdentifier resourceType */
-            resourceType?: (flyteidl.core.ResourceType|null);
-
-            /** DescriptionEntityIdentifier project */
-            project?: (string|null);
-
-            /** DescriptionEntityIdentifier domain */
-            domain?: (string|null);
-
-            /** DescriptionEntityIdentifier name */
-            name?: (string|null);
-        }
-
-        /** Represents a DescriptionEntityIdentifier. */
-        class DescriptionEntityIdentifier implements IDescriptionEntityIdentifier {
-
-            /**
-             * Constructs a new DescriptionEntityIdentifier.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IDescriptionEntityIdentifier);
-
-            /** DescriptionEntityIdentifier resourceType. */
-            public resourceType: flyteidl.core.ResourceType;
-
-            /** DescriptionEntityIdentifier project. */
-            public project: string;
-
-            /** DescriptionEntityIdentifier domain. */
-            public domain: string;
-
-            /** DescriptionEntityIdentifier name. */
-            public name: string;
-
-            /**
-             * Creates a new DescriptionEntityIdentifier instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns DescriptionEntityIdentifier instance
-             */
-            public static create(properties?: flyteidl.admin.IDescriptionEntityIdentifier): flyteidl.admin.DescriptionEntityIdentifier;
-
-            /**
-             * Encodes the specified DescriptionEntityIdentifier message. Does not implicitly {@link flyteidl.admin.DescriptionEntityIdentifier.verify|verify} messages.
-             * @param message DescriptionEntityIdentifier message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IDescriptionEntityIdentifier, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a DescriptionEntityIdentifier message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns DescriptionEntityIdentifier
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.DescriptionEntityIdentifier;
-
-            /**
-             * Verifies a DescriptionEntityIdentifier message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -8766,8 +8702,11 @@ export namespace flyteidl {
         /** Properties of a DescriptionEntityListRequest. */
         interface IDescriptionEntityListRequest {
 
-            /** DescriptionEntityListRequest descriptionEntityId */
-            descriptionEntityId?: (flyteidl.admin.IDescriptionEntityIdentifier|null);
+            /** DescriptionEntityListRequest resourceType */
+            resourceType?: (flyteidl.core.ResourceType|null);
+
+            /** DescriptionEntityListRequest id */
+            id?: (flyteidl.admin.INamedEntityIdentifier|null);
 
             /** DescriptionEntityListRequest limit */
             limit?: (number|null);
@@ -8791,8 +8730,11 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IDescriptionEntityListRequest);
 
-            /** DescriptionEntityListRequest descriptionEntityId. */
-            public descriptionEntityId?: (flyteidl.admin.IDescriptionEntityIdentifier|null);
+            /** DescriptionEntityListRequest resourceType. */
+            public resourceType: flyteidl.core.ResourceType;
+
+            /** DescriptionEntityListRequest id. */
+            public id?: (flyteidl.admin.INamedEntityIdentifier|null);
 
             /** DescriptionEntityListRequest limit. */
             public limit: number;

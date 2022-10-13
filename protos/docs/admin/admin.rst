@@ -666,12 +666,38 @@ flyteidl/admin/description_entity.proto
 
 
 
+.. _ref_flyteidl.admin.Description:
+
+Description
+------------------------------------------------------------------
+
+Full user description with formatting preserved. This can be rendered
+by clients, such as the console or command line tools with in-tact
+formatting.
+
+
+
+.. csv-table:: Description type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "value", ":ref:`ref_string`", "", "long description - no more than 4KB"
+   "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
+   "format", ":ref:`ref_flyteidl.admin.Description.DescriptionFormat`", "", "Format of the long description"
+   "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
+
+
+
+
+
+
+
 .. _ref_flyteidl.admin.DescriptionEntity:
 
 DescriptionEntity
 ------------------------------------------------------------------
 
-DescriptionEntity contains detailed description for the task/workflow/launch plan.
+DescriptionEntity contains detailed description for the task/workflow.
 Documentation could provide insight into the algorithms, business use case, etc.
 
 
@@ -680,34 +706,11 @@ Documentation could provide insight into the algorithms, business use case, etc.
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
+   "id", ":ref:`ref_flyteidl.core.Identifier`", "", "id represents the unique identifier of the description entity."
    "short_description", ":ref:`ref_string`", "", "One-liner overview of the entity."
-   "long_description", ":ref:`ref_flyteidl.admin.LongDescription`", "", "Full user description with formatting preserved."
+   "long_description", ":ref:`ref_flyteidl.admin.Description`", "", "Full user description with formatting preserved."
    "source_code", ":ref:`ref_flyteidl.admin.SourceCode`", "", "Optional link to source code used to define this entity."
    "tags", ":ref:`ref_string`", "repeated", "User-specified tags. These are arbitrary and can be used for searching filtering and discovering tasks."
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.DescriptionEntityIdentifier:
-
-DescriptionEntityIdentifier
-------------------------------------------------------------------
-
-Encapsulation of fields that uniquely identifies a Flyte description entity
-
-
-
-.. csv-table:: DescriptionEntityIdentifier type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "resource_type", ":ref:`ref_flyteidl.core.ResourceType`", "", "Identifies the specific type of resource that this identifier corresponds to."
-   "project", ":ref:`ref_string`", "", "Name of the project the resource belongs to."
-   "domain", ":ref:`ref_string`", "", "Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project."
-   "name", ":ref:`ref_string`", "", "User or system provided value for the resource."
 
 
 
@@ -752,37 +755,12 @@ See :ref:`ref_flyteidl.admin.DescriptionEntity` for more details
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "description_entity_id", ":ref:`ref_flyteidl.admin.DescriptionEntityIdentifier`", "", "Indicates the node execution to filter by. +required"
+   "resource_type", ":ref:`ref_flyteidl.core.ResourceType`", "", "Identifies the specific type of resource that this identifier corresponds to."
+   "id", ":ref:`ref_flyteidl.admin.NamedEntityIdentifier`", "", "The identifier for the description entity. +required"
    "limit", ":ref:`ref_uint32`", "", "Indicates the number of resources to be returned. +required"
    "token", ":ref:`ref_string`", "", "In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional"
    "filters", ":ref:`ref_string`", "", "Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional"
    "sort_by", ":ref:`ref_flyteidl.admin.Sort`", "", "Sort ordering for returned list. +optional"
-
-
-
-
-
-
-
-.. _ref_flyteidl.admin.LongDescription:
-
-LongDescription
-------------------------------------------------------------------
-
-Full user description with formatting preserved. This can be rendered
-by clients, such as the console or command line tools with in-tact
-formatting.
-
-
-
-.. csv-table:: LongDescription type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "value", ":ref:`ref_string`", "", "long description - no more than 4KB"
-   "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
-   "format", ":ref:`ref_flyteidl.admin.LongDescription.DescriptionFormat`", "", "Format of the long description"
-   "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
 
 
 
@@ -815,14 +793,14 @@ Link to source code used to define this entity
 
 
 
-.. _ref_flyteidl.admin.LongDescription.DescriptionFormat:
+.. _ref_flyteidl.admin.Description.DescriptionFormat:
 
-LongDescription.DescriptionFormat
+Description.DescriptionFormat
 ------------------------------------------------------------------
 
 
 
-.. csv-table:: Enum LongDescription.DescriptionFormat values
+.. csv-table:: Enum Description.DescriptionFormat values
    :header: "Name", "Number", "Description"
    :widths: auto
 
