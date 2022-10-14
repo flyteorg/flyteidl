@@ -24,7 +24,7 @@ import (
 )
 
 const (
-	audience = "audience"
+	audienceKey = "audience"
 )
 
 // TokenSourceProvider defines the interface needed to provide a TokenSource that is used to
@@ -176,7 +176,7 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 	}
 	endpointParams := url.Values{}
 	if len(audience) > 0 {
-		endpointParams = url.Values{audience: {audience}}
+		endpointParams = url.Values{audienceKey: {audience}}
 	}
 	secret = strings.TrimSpace(secret)
 	logger.Infof(ctx, "EndPointparams: %v, Audience: %v", endpointParams, audience)
