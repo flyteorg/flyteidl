@@ -180,20 +180,9 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 	}
 	secret = strings.TrimSpace(secret)
 	logger.Infof(ctx, "EndPointparams: %v, Audience: %v", endpointParams, audience)
-
-
-	configtolog = ClientCredentialsTokenSourceProvider{
-		ccConfig: clientcredentials.Config{
-			ClientID:       cfg.ClientID,
-			ClientSecret:   secret,
-			TokenURL:       tokenURL,
-			Scopes:         scopes,
-			EndpointParams: endpointParams,
-		},
-		TokenRefreshWindow: cfg.TokenRefreshWindow.Duration}, nil
-	}
-
-	logger.Infof(ctx, "NewClientCredentialsTokenSourceProvider ccConfig: %v", configtolog)
+	logger.Infof(ctx, "cliendID: %v, clientSecret", cfg.ClientID, secret)
+	logger.Infof(ctx, "scopes: %v", scopes)
+	
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
 			ClientID:       cfg.ClientID,
