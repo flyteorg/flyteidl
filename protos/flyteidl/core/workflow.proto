@@ -205,21 +205,3 @@ message TaskNodeOverrides {
     // A customizable interface to convey resources requested for a task container. 
     Resources resources = 1;
 }
-
-// The workflow id is already used and the structure is different
-message WorkflowErrorExistsDifferentStructure {
-    Identifier id = 1;
-}
-
-// The workflow id is already used with an identical sctructure
-message WorkflowErrorExistsIdenticalStructure {
-    Identifier id = 1;
-}
-
-// When a CreateWorkflowRequest failes due to matching id
-message CreateWorkflowFailureReason {
-    oneof reason {
-        WorkflowErrorExistsDifferentStructure exists_different_structure = 1;
-        WorkflowErrorExistsIdenticalStructure exists_identical_structure = 2;
-    }
-}
