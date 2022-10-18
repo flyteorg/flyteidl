@@ -208,12 +208,12 @@ message TaskNodeOverrides {
 
 // The workflow id is already used and the structure is different
 message WorkflowErrorExistsDifferentStructure {
-    string id = 1;
+    Identifier id = 1;
 }
 
 // The workflow id is already used with an identical sctructure
 message WorkflowErrorExistsIdenticalStructure {
-    string id = 1;
+    Identifier id = 1;
 }
 
 // When a CreateWorkflowRequest failes due to matching id
