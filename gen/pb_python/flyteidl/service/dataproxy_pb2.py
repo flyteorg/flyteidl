@@ -4,6 +4,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -17,6 +18,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -24,10 +26,35 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n flyteidl/service/dataproxy.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"v\n\x1c\x43reateUploadLocationResponse\x12\x12\n\nsigned_url\x18\x01 \x01(\t\x12\x12\n\nnative_url\x18\x02 \x01(\t\x12.\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x94\x01\n\x1b\x43reateUploadLocationRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12-\n\nexpires_in\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x13\n\x0b\x63ontent_md5\x18\x05 \x01(\x0c\"b\n\x1d\x43reateDownloadLocationRequest\x12\x12\n\nnative_url\x18\x01 \x01(\t\x12-\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\"d\n\x1e\x43reateDownloadLocationResponse\x12\x12\n\nsigned_url\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xfa\x03\n\x10\x44\x61taProxyService\x12\xf0\x01\n\x14\x43reateUploadLocation\x12-.flyteidl.service.CreateUploadLocationRequest\x1a..flyteidl.service.CreateUploadLocationResponse\"y\x82\xd3\xe4\x93\x02#\"\x1e/api/v1/dataproxy/artifact_urn:\x01*\x92\x41M\x1aKCreates a write-only http location that is accessible for tasks at runtime.\x12\xf2\x01\n\x16\x43reateDownloadLocation\x12/.flyteidl.service.CreateDownloadLocationRequest\x1a\x30.flyteidl.service.CreateDownloadLocationResponse\"u\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/dataproxy/artifact_urn\x92\x41L\x1aJCreates a read-only http location that is accessible for tasks at runtime.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n flyteidl/service/dataproxy.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"v\n\x1c\x43reateUploadLocationResponse\x12\x12\n\nsigned_url\x18\x01 \x01(\t\x12\x12\n\nnative_url\x18\x02 \x01(\t\x12.\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x94\x01\n\x1b\x43reateUploadLocationRequest\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12-\n\nexpires_in\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x13\n\x0b\x63ontent_md5\x18\x05 \x01(\x0c\"b\n\x1d\x43reateDownloadLocationRequest\x12\x12\n\nnative_url\x18\x01 \x01(\t\x12-\n\nexpires_in\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\"d\n\x1e\x43reateDownloadLocationResponse\x12\x12\n\nsigned_url\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x9e\x01\n\x0fTaskExecutionId\x12*\n\x07task_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12H\n\x18parent_node_execution_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifier\x12\x15\n\rretry_attempt\x18\x03 \x01(\r\"\xc0\x02\n\x19\x43reateDownloadLinkRequest\x12\x42\n\x0c\x65xecution_id\x18\x01 \x01(\x0b\x32*.flyteidl.core.WorkflowExecutionIdentifierH\x00\x12\x39\n\x07node_id\x18\x02 \x01(\x0b\x32&.flyteidl.core.NodeExecutionIdentifierH\x00\x12\x34\n\x07task_id\x18\x03 \x01(\x0b\x32!.flyteidl.service.TaskExecutionIdH\x00\x12\x35\n\rartifact_type\x18\x04 \x01(\x0e\x32\x1e.flyteidl.service.ArtifactType\x12-\n\nexpires_in\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\x08\n\x06source\"`\n\x1a\x43reateDownloadLinkResponse\x12\x12\n\nsigned_url\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*C\n\x0c\x41rtifactType\x12\x1b\n\x17\x41RTIFACT_TYPE_UNDEFINED\x10\x00\x12\x16\n\x12\x41RTIFACT_TYPE_DECK\x10\x01\x32\xe7\x05\n\x10\x44\x61taProxyService\x12\xf0\x01\n\x14\x43reateUploadLocation\x12-.flyteidl.service.CreateUploadLocationRequest\x1a..flyteidl.service.CreateUploadLocationResponse\"y\x82\xd3\xe4\x93\x02#\"\x1e/api/v1/dataproxy/artifact_urn:\x01*\x92\x41M\x1aKCreates a write-only http location that is accessible for tasks at runtime.\x12\xf5\x01\n\x16\x43reateDownloadLocation\x12/.flyteidl.service.CreateDownloadLocationRequest\x1a\x30.flyteidl.service.CreateDownloadLocationResponse\"x\x88\x02\x01\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1/dataproxy/artifact_urn\x92\x41L\x1aJCreates a read-only http location that is accessible for tasks at runtime.\x12\xe7\x01\n\x12\x43reateDownloadLink\x12+.flyteidl.service.CreateDownloadLinkRequest\x1a,.flyteidl.service.CreateDownloadLinkResponse\"v\x82\xd3\xe4\x93\x02!\x12\x1f/api/v1/dataproxy/artifact_link\x92\x41L\x1aJCreates a read-only http location that is accessible for tasks at runtime.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,])
 
+_ARTIFACTTYPE = _descriptor.EnumDescriptor(
+  name='ArtifactType',
+  full_name='flyteidl.service.ArtifactType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ARTIFACT_TYPE_UNDEFINED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ARTIFACT_TYPE_DECK', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1282,
+  serialized_end=1349,
+)
+_sym_db.RegisterEnumDescriptor(_ARTIFACTTYPE)
+
+ArtifactType = enum_type_wrapper.EnumTypeWrapper(_ARTIFACTTYPE)
+ARTIFACT_TYPE_UNDEFINED = 0
+ARTIFACT_TYPE_DECK = 1
 
 
 
@@ -71,8 +98,8 @@ _CREATEUPLOADLOCATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=195,
-  serialized_end=313,
+  serialized_start=227,
+  serialized_end=345,
 )
 
 
@@ -130,8 +157,8 @@ _CREATEUPLOADLOCATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=316,
-  serialized_end=464,
+  serialized_start=348,
+  serialized_end=496,
 )
 
 
@@ -168,8 +195,8 @@ _CREATEDOWNLOADLOCATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=466,
-  serialized_end=564,
+  serialized_start=498,
+  serialized_end=596,
 )
 
 
@@ -206,18 +233,184 @@ _CREATEDOWNLOADLOCATIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=566,
-  serialized_end=666,
+  serialized_start=598,
+  serialized_end=698,
+)
+
+
+_TASKEXECUTIONID = _descriptor.Descriptor(
+  name='TaskExecutionId',
+  full_name='flyteidl.service.TaskExecutionId',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='task_id', full_name='flyteidl.service.TaskExecutionId.task_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='parent_node_execution_id', full_name='flyteidl.service.TaskExecutionId.parent_node_execution_id', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='retry_attempt', full_name='flyteidl.service.TaskExecutionId.retry_attempt', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=701,
+  serialized_end=859,
+)
+
+
+_CREATEDOWNLOADLINKREQUEST = _descriptor.Descriptor(
+  name='CreateDownloadLinkRequest',
+  full_name='flyteidl.service.CreateDownloadLinkRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='execution_id', full_name='flyteidl.service.CreateDownloadLinkRequest.execution_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_id', full_name='flyteidl.service.CreateDownloadLinkRequest.node_id', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='task_id', full_name='flyteidl.service.CreateDownloadLinkRequest.task_id', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='artifact_type', full_name='flyteidl.service.CreateDownloadLinkRequest.artifact_type', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expires_in', full_name='flyteidl.service.CreateDownloadLinkRequest.expires_in', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='source', full_name='flyteidl.service.CreateDownloadLinkRequest.source',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=862,
+  serialized_end=1182,
+)
+
+
+_CREATEDOWNLOADLINKRESPONSE = _descriptor.Descriptor(
+  name='CreateDownloadLinkResponse',
+  full_name='flyteidl.service.CreateDownloadLinkResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='signed_url', full_name='flyteidl.service.CreateDownloadLinkResponse.signed_url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expires_at', full_name='flyteidl.service.CreateDownloadLinkResponse.expires_at', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1184,
+  serialized_end=1280,
 )
 
 _CREATEUPLOADLOCATIONRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CREATEUPLOADLOCATIONREQUEST.fields_by_name['expires_in'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _CREATEDOWNLOADLOCATIONREQUEST.fields_by_name['expires_in'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _CREATEDOWNLOADLOCATIONRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_TASKEXECUTIONID.fields_by_name['task_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
+_TASKEXECUTIONID.fields_by_name['parent_node_execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._NODEEXECUTIONIDENTIFIER
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['execution_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._WORKFLOWEXECUTIONIDENTIFIER
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['node_id'].message_type = flyteidl_dot_core_dot_identifier__pb2._NODEEXECUTIONIDENTIFIER
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['task_id'].message_type = _TASKEXECUTIONID
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['artifact_type'].enum_type = _ARTIFACTTYPE
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['expires_in'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source'].fields.append(
+  _CREATEDOWNLOADLINKREQUEST.fields_by_name['execution_id'])
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['execution_id'].containing_oneof = _CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source']
+_CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source'].fields.append(
+  _CREATEDOWNLOADLINKREQUEST.fields_by_name['node_id'])
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['node_id'].containing_oneof = _CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source']
+_CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source'].fields.append(
+  _CREATEDOWNLOADLINKREQUEST.fields_by_name['task_id'])
+_CREATEDOWNLOADLINKREQUEST.fields_by_name['task_id'].containing_oneof = _CREATEDOWNLOADLINKREQUEST.oneofs_by_name['source']
+_CREATEDOWNLOADLINKRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['CreateUploadLocationResponse'] = _CREATEUPLOADLOCATIONRESPONSE
 DESCRIPTOR.message_types_by_name['CreateUploadLocationRequest'] = _CREATEUPLOADLOCATIONREQUEST
 DESCRIPTOR.message_types_by_name['CreateDownloadLocationRequest'] = _CREATEDOWNLOADLOCATIONREQUEST
 DESCRIPTOR.message_types_by_name['CreateDownloadLocationResponse'] = _CREATEDOWNLOADLOCATIONRESPONSE
+DESCRIPTOR.message_types_by_name['TaskExecutionId'] = _TASKEXECUTIONID
+DESCRIPTOR.message_types_by_name['CreateDownloadLinkRequest'] = _CREATEDOWNLOADLINKREQUEST
+DESCRIPTOR.message_types_by_name['CreateDownloadLinkResponse'] = _CREATEDOWNLOADLINKRESPONSE
+DESCRIPTOR.enum_types_by_name['ArtifactType'] = _ARTIFACTTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateUploadLocationResponse = _reflection.GeneratedProtocolMessageType('CreateUploadLocationResponse', (_message.Message,), dict(
@@ -248,6 +441,27 @@ CreateDownloadLocationResponse = _reflection.GeneratedProtocolMessageType('Creat
   ))
 _sym_db.RegisterMessage(CreateDownloadLocationResponse)
 
+TaskExecutionId = _reflection.GeneratedProtocolMessageType('TaskExecutionId', (_message.Message,), dict(
+  DESCRIPTOR = _TASKEXECUTIONID,
+  __module__ = 'flyteidl.service.dataproxy_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.service.TaskExecutionId)
+  ))
+_sym_db.RegisterMessage(TaskExecutionId)
+
+CreateDownloadLinkRequest = _reflection.GeneratedProtocolMessageType('CreateDownloadLinkRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEDOWNLOADLINKREQUEST,
+  __module__ = 'flyteidl.service.dataproxy_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkRequest)
+  ))
+_sym_db.RegisterMessage(CreateDownloadLinkRequest)
+
+CreateDownloadLinkResponse = _reflection.GeneratedProtocolMessageType('CreateDownloadLinkResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEDOWNLOADLINKRESPONSE,
+  __module__ = 'flyteidl.service.dataproxy_pb2'
+  # @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkResponse)
+  ))
+_sym_db.RegisterMessage(CreateDownloadLinkResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -257,8 +471,8 @@ _DATAPROXYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=669,
-  serialized_end=1175,
+  serialized_start=1352,
+  serialized_end=2095,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateUploadLocation',
@@ -276,7 +490,16 @@ _DATAPROXYSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEDOWNLOADLOCATIONREQUEST,
     output_type=_CREATEDOWNLOADLOCATIONRESPONSE,
-    serialized_options=_b('\202\323\344\223\002 \022\036/api/v1/dataproxy/artifact_urn\222AL\032JCreates a read-only http location that is accessible for tasks at runtime.'),
+    serialized_options=_b('\210\002\001\202\323\344\223\002 \022\036/api/v1/dataproxy/artifact_urn\222AL\032JCreates a read-only http location that is accessible for tasks at runtime.'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateDownloadLink',
+    full_name='flyteidl.service.DataProxyService.CreateDownloadLink',
+    index=2,
+    containing_service=None,
+    input_type=_CREATEDOWNLOADLINKREQUEST,
+    output_type=_CREATEDOWNLOADLINKRESPONSE,
+    serialized_options=_b('\202\323\344\223\002!\022\037/api/v1/dataproxy/artifact_link\222AL\032JCreates a read-only http location that is accessible for tasks at runtime.'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_DATAPROXYSERVICE)

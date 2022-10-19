@@ -40917,6 +40917,516 @@ export const flyteidl = $root.flyteidl = (() => {
             return CreateDownloadLocationResponse;
         })();
 
+        /**
+         * ArtifactType enum.
+         * @name flyteidl.service.ArtifactType
+         * @enum {string}
+         * @property {number} ARTIFACT_TYPE_UNDEFINED=0 ARTIFACT_TYPE_UNDEFINED value
+         * @property {number} ARTIFACT_TYPE_DECK=1 ARTIFACT_TYPE_DECK value
+         */
+        service.ArtifactType = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "ARTIFACT_TYPE_UNDEFINED"] = 0;
+            values[valuesById[1] = "ARTIFACT_TYPE_DECK"] = 1;
+            return values;
+        })();
+
+        service.TaskExecutionId = (function() {
+
+            /**
+             * Properties of a TaskExecutionId.
+             * @memberof flyteidl.service
+             * @interface ITaskExecutionId
+             * @property {flyteidl.core.IIdentifier|null} [taskId] TaskExecutionId taskId
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecutionId] TaskExecutionId parentNodeExecutionId
+             * @property {number|null} [retryAttempt] TaskExecutionId retryAttempt
+             */
+
+            /**
+             * Constructs a new TaskExecutionId.
+             * @memberof flyteidl.service
+             * @classdesc Represents a TaskExecutionId.
+             * @implements ITaskExecutionId
+             * @constructor
+             * @param {flyteidl.service.ITaskExecutionId=} [properties] Properties to set
+             */
+            function TaskExecutionId(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TaskExecutionId taskId.
+             * @member {flyteidl.core.IIdentifier|null|undefined} taskId
+             * @memberof flyteidl.service.TaskExecutionId
+             * @instance
+             */
+            TaskExecutionId.prototype.taskId = null;
+
+            /**
+             * TaskExecutionId parentNodeExecutionId.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecutionId
+             * @memberof flyteidl.service.TaskExecutionId
+             * @instance
+             */
+            TaskExecutionId.prototype.parentNodeExecutionId = null;
+
+            /**
+             * TaskExecutionId retryAttempt.
+             * @member {number} retryAttempt
+             * @memberof flyteidl.service.TaskExecutionId
+             * @instance
+             */
+            TaskExecutionId.prototype.retryAttempt = 0;
+
+            /**
+             * Creates a new TaskExecutionId instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.TaskExecutionId
+             * @static
+             * @param {flyteidl.service.ITaskExecutionId=} [properties] Properties to set
+             * @returns {flyteidl.service.TaskExecutionId} TaskExecutionId instance
+             */
+            TaskExecutionId.create = function create(properties) {
+                return new TaskExecutionId(properties);
+            };
+
+            /**
+             * Encodes the specified TaskExecutionId message. Does not implicitly {@link flyteidl.service.TaskExecutionId.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.TaskExecutionId
+             * @static
+             * @param {flyteidl.service.ITaskExecutionId} message TaskExecutionId message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TaskExecutionId.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.parentNodeExecutionId != null && message.hasOwnProperty("parentNodeExecutionId"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecutionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
+                return writer;
+            };
+
+            /**
+             * Decodes a TaskExecutionId message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.TaskExecutionId
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.TaskExecutionId} TaskExecutionId
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TaskExecutionId.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskExecutionId();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.parentNodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.retryAttempt = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a TaskExecutionId message.
+             * @function verify
+             * @memberof flyteidl.service.TaskExecutionId
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TaskExecutionId.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.taskId != null && message.hasOwnProperty("taskId")) {
+                    let error = $root.flyteidl.core.Identifier.verify(message.taskId);
+                    if (error)
+                        return "taskId." + error;
+                }
+                if (message.parentNodeExecutionId != null && message.hasOwnProperty("parentNodeExecutionId")) {
+                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecutionId);
+                    if (error)
+                        return "parentNodeExecutionId." + error;
+                }
+                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
+                    if (!$util.isInteger(message.retryAttempt))
+                        return "retryAttempt: integer expected";
+                return null;
+            };
+
+            return TaskExecutionId;
+        })();
+
+        service.CreateDownloadLinkRequest = (function() {
+
+            /**
+             * Properties of a CreateDownloadLinkRequest.
+             * @memberof flyteidl.service
+             * @interface ICreateDownloadLinkRequest
+             * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] CreateDownloadLinkRequest executionId
+             * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] CreateDownloadLinkRequest nodeId
+             * @property {flyteidl.service.ITaskExecutionId|null} [taskId] CreateDownloadLinkRequest taskId
+             * @property {flyteidl.service.ArtifactType|null} [artifactType] CreateDownloadLinkRequest artifactType
+             * @property {google.protobuf.IDuration|null} [expiresIn] CreateDownloadLinkRequest expiresIn
+             */
+
+            /**
+             * Constructs a new CreateDownloadLinkRequest.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateDownloadLinkRequest.
+             * @implements ICreateDownloadLinkRequest
+             * @constructor
+             * @param {flyteidl.service.ICreateDownloadLinkRequest=} [properties] Properties to set
+             */
+            function CreateDownloadLinkRequest(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateDownloadLinkRequest executionId.
+             * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            CreateDownloadLinkRequest.prototype.executionId = null;
+
+            /**
+             * CreateDownloadLinkRequest nodeId.
+             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeId
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            CreateDownloadLinkRequest.prototype.nodeId = null;
+
+            /**
+             * CreateDownloadLinkRequest taskId.
+             * @member {flyteidl.service.ITaskExecutionId|null|undefined} taskId
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            CreateDownloadLinkRequest.prototype.taskId = null;
+
+            /**
+             * CreateDownloadLinkRequest artifactType.
+             * @member {flyteidl.service.ArtifactType} artifactType
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            CreateDownloadLinkRequest.prototype.artifactType = 0;
+
+            /**
+             * CreateDownloadLinkRequest expiresIn.
+             * @member {google.protobuf.IDuration|null|undefined} expiresIn
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            CreateDownloadLinkRequest.prototype.expiresIn = null;
+
+            // OneOf field names bound to virtual getters and setters
+            let $oneOfFields;
+
+            /**
+             * CreateDownloadLinkRequest source.
+             * @member {"executionId"|"nodeId"|"taskId"|undefined} source
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @instance
+             */
+            Object.defineProperty(CreateDownloadLinkRequest.prototype, "source", {
+                get: $util.oneOfGetter($oneOfFields = ["executionId", "nodeId", "taskId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new CreateDownloadLinkRequest instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLinkRequest=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateDownloadLinkRequest} CreateDownloadLinkRequest instance
+             */
+            CreateDownloadLinkRequest.create = function create(properties) {
+                return new CreateDownloadLinkRequest(properties);
+            };
+
+            /**
+             * Encodes the specified CreateDownloadLinkRequest message. Does not implicitly {@link flyteidl.service.CreateDownloadLinkRequest.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLinkRequest} message CreateDownloadLinkRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateDownloadLinkRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.executionId != null && message.hasOwnProperty("executionId"))
+                    $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.taskId != null && message.hasOwnProperty("taskId"))
+                    $root.flyteidl.service.TaskExecutionId.encode(message.taskId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.artifactType != null && message.hasOwnProperty("artifactType"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.artifactType);
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
+                    $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateDownloadLinkRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateDownloadLinkRequest} CreateDownloadLinkRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateDownloadLinkRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateDownloadLinkRequest();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.taskId = $root.flyteidl.service.TaskExecutionId.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.artifactType = reader.int32();
+                        break;
+                    case 5:
+                        message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateDownloadLinkRequest message.
+             * @function verify
+             * @memberof flyteidl.service.CreateDownloadLinkRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateDownloadLinkRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                let properties = {};
+                if (message.executionId != null && message.hasOwnProperty("executionId")) {
+                    properties.source = 1;
+                    {
+                        let error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
+                        if (error)
+                            return "executionId." + error;
+                    }
+                }
+                if (message.nodeId != null && message.hasOwnProperty("nodeId")) {
+                    if (properties.source === 1)
+                        return "source: multiple values";
+                    properties.source = 1;
+                    {
+                        let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeId);
+                        if (error)
+                            return "nodeId." + error;
+                    }
+                }
+                if (message.taskId != null && message.hasOwnProperty("taskId")) {
+                    if (properties.source === 1)
+                        return "source: multiple values";
+                    properties.source = 1;
+                    {
+                        let error = $root.flyteidl.service.TaskExecutionId.verify(message.taskId);
+                        if (error)
+                            return "taskId." + error;
+                    }
+                }
+                if (message.artifactType != null && message.hasOwnProperty("artifactType"))
+                    switch (message.artifactType) {
+                    default:
+                        return "artifactType: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
+                    let error = $root.google.protobuf.Duration.verify(message.expiresIn);
+                    if (error)
+                        return "expiresIn." + error;
+                }
+                return null;
+            };
+
+            return CreateDownloadLinkRequest;
+        })();
+
+        service.CreateDownloadLinkResponse = (function() {
+
+            /**
+             * Properties of a CreateDownloadLinkResponse.
+             * @memberof flyteidl.service
+             * @interface ICreateDownloadLinkResponse
+             * @property {string|null} [signedUrl] CreateDownloadLinkResponse signedUrl
+             * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateDownloadLinkResponse expiresAt
+             */
+
+            /**
+             * Constructs a new CreateDownloadLinkResponse.
+             * @memberof flyteidl.service
+             * @classdesc Represents a CreateDownloadLinkResponse.
+             * @implements ICreateDownloadLinkResponse
+             * @constructor
+             * @param {flyteidl.service.ICreateDownloadLinkResponse=} [properties] Properties to set
+             */
+            function CreateDownloadLinkResponse(properties) {
+                if (properties)
+                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CreateDownloadLinkResponse signedUrl.
+             * @member {string} signedUrl
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @instance
+             */
+            CreateDownloadLinkResponse.prototype.signedUrl = "";
+
+            /**
+             * CreateDownloadLinkResponse expiresAt.
+             * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @instance
+             */
+            CreateDownloadLinkResponse.prototype.expiresAt = null;
+
+            /**
+             * Creates a new CreateDownloadLinkResponse instance using the specified properties.
+             * @function create
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLinkResponse=} [properties] Properties to set
+             * @returns {flyteidl.service.CreateDownloadLinkResponse} CreateDownloadLinkResponse instance
+             */
+            CreateDownloadLinkResponse.create = function create(properties) {
+                return new CreateDownloadLinkResponse(properties);
+            };
+
+            /**
+             * Encodes the specified CreateDownloadLinkResponse message. Does not implicitly {@link flyteidl.service.CreateDownloadLinkResponse.verify|verify} messages.
+             * @function encode
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @static
+             * @param {flyteidl.service.ICreateDownloadLinkResponse} message CreateDownloadLinkResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateDownloadLinkResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                    $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Decodes a CreateDownloadLinkResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {flyteidl.service.CreateDownloadLinkResponse} CreateDownloadLinkResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateDownloadLinkResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.CreateDownloadLinkResponse();
+                while (reader.pos < end) {
+                    let tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.signedUrl = reader.string();
+                        break;
+                    case 2:
+                        message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Verifies a CreateDownloadLinkResponse message.
+             * @function verify
+             * @memberof flyteidl.service.CreateDownloadLinkResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateDownloadLinkResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
+                    if (!$util.isString(message.signedUrl))
+                        return "signedUrl: string expected";
+                if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                    let error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                    if (error)
+                        return "expiresAt." + error;
+                }
+                return null;
+            };
+
+            return CreateDownloadLinkResponse;
+        })();
+
         service.DataProxyService = (function() {
 
             /**
@@ -41012,6 +41522,39 @@ export const flyteidl = $root.flyteidl = (() => {
              * @instance
              * @param {flyteidl.service.ICreateDownloadLocationRequest} request CreateDownloadLocationRequest message or plain object
              * @returns {Promise<flyteidl.service.CreateDownloadLocationResponse>} Promise
+             * @variation 2
+             */
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createDownloadLink}.
+             * @memberof flyteidl.service.DataProxyService
+             * @typedef CreateDownloadLinkCallback
+             * @type {function}
+             * @param {Error|null} error Error, if any
+             * @param {flyteidl.service.CreateDownloadLinkResponse} [response] CreateDownloadLinkResponse
+             */
+
+            /**
+             * Calls CreateDownloadLink.
+             * @function createDownloadLink
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateDownloadLinkRequest} request CreateDownloadLinkRequest message or plain object
+             * @param {flyteidl.service.DataProxyService.CreateDownloadLinkCallback} callback Node-style callback called with the error, if any, and CreateDownloadLinkResponse
+             * @returns {undefined}
+             * @variation 1
+             */
+            Object.defineProperty(DataProxyService.prototype.createDownloadLink = function createDownloadLink(request, callback) {
+                return this.rpcCall(createDownloadLink, $root.flyteidl.service.CreateDownloadLinkRequest, $root.flyteidl.service.CreateDownloadLinkResponse, request, callback);
+            }, "name", { value: "CreateDownloadLink" });
+
+            /**
+             * Calls CreateDownloadLink.
+             * @function createDownloadLink
+             * @memberof flyteidl.service.DataProxyService
+             * @instance
+             * @param {flyteidl.service.ICreateDownloadLinkRequest} request CreateDownloadLinkRequest message or plain object
+             * @returns {Promise<flyteidl.service.CreateDownloadLinkResponse>} Promise
              * @variation 2
              */
 

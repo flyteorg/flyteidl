@@ -17591,6 +17591,213 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** ArtifactType enum. */
+        enum ArtifactType {
+            ARTIFACT_TYPE_UNDEFINED = 0,
+            ARTIFACT_TYPE_DECK = 1
+        }
+
+        /** Properties of a TaskExecutionId. */
+        interface ITaskExecutionId {
+
+            /** TaskExecutionId taskId */
+            taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** TaskExecutionId parentNodeExecutionId */
+            parentNodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** TaskExecutionId retryAttempt */
+            retryAttempt?: (number|null);
+        }
+
+        /** Represents a TaskExecutionId. */
+        class TaskExecutionId implements ITaskExecutionId {
+
+            /**
+             * Constructs a new TaskExecutionId.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ITaskExecutionId);
+
+            /** TaskExecutionId taskId. */
+            public taskId?: (flyteidl.core.IIdentifier|null);
+
+            /** TaskExecutionId parentNodeExecutionId. */
+            public parentNodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** TaskExecutionId retryAttempt. */
+            public retryAttempt: number;
+
+            /**
+             * Creates a new TaskExecutionId instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns TaskExecutionId instance
+             */
+            public static create(properties?: flyteidl.service.ITaskExecutionId): flyteidl.service.TaskExecutionId;
+
+            /**
+             * Encodes the specified TaskExecutionId message. Does not implicitly {@link flyteidl.service.TaskExecutionId.verify|verify} messages.
+             * @param message TaskExecutionId message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ITaskExecutionId, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a TaskExecutionId message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns TaskExecutionId
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.TaskExecutionId;
+
+            /**
+             * Verifies a TaskExecutionId message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateDownloadLinkRequest. */
+        interface ICreateDownloadLinkRequest {
+
+            /** CreateDownloadLinkRequest executionId */
+            executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** CreateDownloadLinkRequest nodeId */
+            nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CreateDownloadLinkRequest taskId */
+            taskId?: (flyteidl.service.ITaskExecutionId|null);
+
+            /** CreateDownloadLinkRequest artifactType */
+            artifactType?: (flyteidl.service.ArtifactType|null);
+
+            /** CreateDownloadLinkRequest expiresIn */
+            expiresIn?: (google.protobuf.IDuration|null);
+        }
+
+        /** Represents a CreateDownloadLinkRequest. */
+        class CreateDownloadLinkRequest implements ICreateDownloadLinkRequest {
+
+            /**
+             * Constructs a new CreateDownloadLinkRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateDownloadLinkRequest);
+
+            /** CreateDownloadLinkRequest executionId. */
+            public executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** CreateDownloadLinkRequest nodeId. */
+            public nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CreateDownloadLinkRequest taskId. */
+            public taskId?: (flyteidl.service.ITaskExecutionId|null);
+
+            /** CreateDownloadLinkRequest artifactType. */
+            public artifactType: flyteidl.service.ArtifactType;
+
+            /** CreateDownloadLinkRequest expiresIn. */
+            public expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateDownloadLinkRequest source. */
+            public source?: ("executionId"|"nodeId"|"taskId");
+
+            /**
+             * Creates a new CreateDownloadLinkRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateDownloadLinkRequest instance
+             */
+            public static create(properties?: flyteidl.service.ICreateDownloadLinkRequest): flyteidl.service.CreateDownloadLinkRequest;
+
+            /**
+             * Encodes the specified CreateDownloadLinkRequest message. Does not implicitly {@link flyteidl.service.CreateDownloadLinkRequest.verify|verify} messages.
+             * @param message CreateDownloadLinkRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateDownloadLinkRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateDownloadLinkRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateDownloadLinkRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateDownloadLinkRequest;
+
+            /**
+             * Verifies a CreateDownloadLinkRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a CreateDownloadLinkResponse. */
+        interface ICreateDownloadLinkResponse {
+
+            /** CreateDownloadLinkResponse signedUrl */
+            signedUrl?: (string|null);
+
+            /** CreateDownloadLinkResponse expiresAt */
+            expiresAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a CreateDownloadLinkResponse. */
+        class CreateDownloadLinkResponse implements ICreateDownloadLinkResponse {
+
+            /**
+             * Constructs a new CreateDownloadLinkResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.ICreateDownloadLinkResponse);
+
+            /** CreateDownloadLinkResponse signedUrl. */
+            public signedUrl: string;
+
+            /** CreateDownloadLinkResponse expiresAt. */
+            public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new CreateDownloadLinkResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns CreateDownloadLinkResponse instance
+             */
+            public static create(properties?: flyteidl.service.ICreateDownloadLinkResponse): flyteidl.service.CreateDownloadLinkResponse;
+
+            /**
+             * Encodes the specified CreateDownloadLinkResponse message. Does not implicitly {@link flyteidl.service.CreateDownloadLinkResponse.verify|verify} messages.
+             * @param message CreateDownloadLinkResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.ICreateDownloadLinkResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a CreateDownloadLinkResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns CreateDownloadLinkResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.CreateDownloadLinkResponse;
+
+            /**
+             * Verifies a CreateDownloadLinkResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents a DataProxyService */
         class DataProxyService extends $protobuf.rpc.Service {
 
@@ -17638,6 +17845,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createDownloadLocation(request: flyteidl.service.ICreateDownloadLocationRequest): Promise<flyteidl.service.CreateDownloadLocationResponse>;
+
+            /**
+             * Calls CreateDownloadLink.
+             * @param request CreateDownloadLinkRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and CreateDownloadLinkResponse
+             */
+            public createDownloadLink(request: flyteidl.service.ICreateDownloadLinkRequest, callback: flyteidl.service.DataProxyService.CreateDownloadLinkCallback): void;
+
+            /**
+             * Calls CreateDownloadLink.
+             * @param request CreateDownloadLinkRequest message or plain object
+             * @returns Promise
+             */
+            public createDownloadLink(request: flyteidl.service.ICreateDownloadLinkRequest): Promise<flyteidl.service.CreateDownloadLinkResponse>;
         }
 
         namespace DataProxyService {
@@ -17655,6 +17876,13 @@ export namespace flyteidl {
              * @param [response] CreateDownloadLocationResponse
              */
             type CreateDownloadLocationCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLocationResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#createDownloadLink}.
+             * @param error Error, if any
+             * @param [response] CreateDownloadLinkResponse
+             */
+            type CreateDownloadLinkCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLinkResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */
