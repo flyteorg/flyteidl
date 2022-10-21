@@ -3620,25 +3620,25 @@ public final class TaskOuterClass {
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    boolean hasDescriptionEntity();
+    boolean hasDescription();
     /**
      * <pre>
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescription();
     /**
      * <pre>
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionOrBuilder();
   }
   /**
    * <pre>
@@ -3698,13 +3698,13 @@ public final class TaskOuterClass {
             }
             case 18: {
               flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder subBuilder = null;
-              if (descriptionEntity_ != null) {
-                subBuilder = descriptionEntity_.toBuilder();
+              if (description_ != null) {
+                subBuilder = description_.toBuilder();
               }
-              descriptionEntity_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
+              description_ = input.readMessage(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(descriptionEntity_);
-                descriptionEntity_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(description_);
+                description_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3774,37 +3774,37 @@ public final class TaskOuterClass {
       return getTemplate();
     }
 
-    public static final int DESCRIPTION_ENTITY_FIELD_NUMBER = 2;
-    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity description_;
     /**
      * <pre>
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    public boolean hasDescriptionEntity() {
-      return descriptionEntity_ != null;
+    public boolean hasDescription() {
+      return description_ != null;
     }
     /**
      * <pre>
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-      return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescription() {
+      return description_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : description_;
     }
     /**
      * <pre>
      * Represents the specification for Description.
      * </pre>
      *
-     * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+     * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
      */
-    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-      return getDescriptionEntity();
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionOrBuilder() {
+      return getDescription();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3824,8 +3824,8 @@ public final class TaskOuterClass {
       if (template_ != null) {
         output.writeMessage(1, getTemplate());
       }
-      if (descriptionEntity_ != null) {
-        output.writeMessage(2, getDescriptionEntity());
+      if (description_ != null) {
+        output.writeMessage(2, getDescription());
       }
       unknownFields.writeTo(output);
     }
@@ -3840,9 +3840,9 @@ public final class TaskOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getTemplate());
       }
-      if (descriptionEntity_ != null) {
+      if (description_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getDescriptionEntity());
+          .computeMessageSize(2, getDescription());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3864,10 +3864,10 @@ public final class TaskOuterClass {
         if (!getTemplate()
             .equals(other.getTemplate())) return false;
       }
-      if (hasDescriptionEntity() != other.hasDescriptionEntity()) return false;
-      if (hasDescriptionEntity()) {
-        if (!getDescriptionEntity()
-            .equals(other.getDescriptionEntity())) return false;
+      if (hasDescription() != other.hasDescription()) return false;
+      if (hasDescription()) {
+        if (!getDescription()
+            .equals(other.getDescription())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3884,9 +3884,9 @@ public final class TaskOuterClass {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getTemplate().hashCode();
       }
-      if (hasDescriptionEntity()) {
-        hash = (37 * hash) + DESCRIPTION_ENTITY_FIELD_NUMBER;
-        hash = (53 * hash) + getDescriptionEntity().hashCode();
+      if (hasDescription()) {
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4031,11 +4031,11 @@ public final class TaskOuterClass {
           template_ = null;
           templateBuilder_ = null;
         }
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
+        if (descriptionBuilder_ == null) {
+          description_ = null;
         } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
+          description_ = null;
+          descriptionBuilder_ = null;
         }
         return this;
       }
@@ -4068,10 +4068,10 @@ public final class TaskOuterClass {
         } else {
           result.template_ = templateBuilder_.build();
         }
-        if (descriptionEntityBuilder_ == null) {
-          result.descriptionEntity_ = descriptionEntity_;
+        if (descriptionBuilder_ == null) {
+          result.description_ = description_;
         } else {
-          result.descriptionEntity_ = descriptionEntityBuilder_.build();
+          result.description_ = descriptionBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4124,8 +4124,8 @@ public final class TaskOuterClass {
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
         }
-        if (other.hasDescriptionEntity()) {
-          mergeDescriptionEntity(other.getDescriptionEntity());
+        if (other.hasDescription()) {
+          mergeDescription(other.getDescription());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4309,31 +4309,31 @@ public final class TaskOuterClass {
         return templateBuilder_;
       }
 
-      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity descriptionEntity_;
+      private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity description_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionEntityBuilder_;
+          flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionBuilder_;
       /**
        * <pre>
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public boolean hasDescriptionEntity() {
-        return descriptionEntityBuilder_ != null || descriptionEntity_ != null;
+      public boolean hasDescription() {
+        return descriptionBuilder_ != null || description_ != null;
       }
       /**
        * <pre>
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          return descriptionEntity_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescription() {
+        if (descriptionBuilder_ == null) {
+          return description_ == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : description_;
         } else {
-          return descriptionEntityBuilder_.getMessage();
+          return descriptionBuilder_.getMessage();
         }
       }
       /**
@@ -4341,17 +4341,17 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public Builder setDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
+      public Builder setDescription(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          descriptionEntity_ = value;
+          description_ = value;
           onChanged();
         } else {
-          descriptionEntityBuilder_.setMessage(value);
+          descriptionBuilder_.setMessage(value);
         }
 
         return this;
@@ -4361,15 +4361,15 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public Builder setDescriptionEntity(
+      public Builder setDescription(
           flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder builderForValue) {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = builderForValue.build();
+        if (descriptionBuilder_ == null) {
+          description_ = builderForValue.build();
           onChanged();
         } else {
-          descriptionEntityBuilder_.setMessage(builderForValue.build());
+          descriptionBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -4379,19 +4379,19 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public Builder mergeDescriptionEntity(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
-        if (descriptionEntityBuilder_ == null) {
-          if (descriptionEntity_ != null) {
-            descriptionEntity_ =
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(descriptionEntity_).mergeFrom(value).buildPartial();
+      public Builder mergeDescription(flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity value) {
+        if (descriptionBuilder_ == null) {
+          if (description_ != null) {
+            description_ =
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.newBuilder(description_).mergeFrom(value).buildPartial();
           } else {
-            descriptionEntity_ = value;
+            description_ = value;
           }
           onChanged();
         } else {
-          descriptionEntityBuilder_.mergeFrom(value);
+          descriptionBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -4401,15 +4401,15 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public Builder clearDescriptionEntity() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntity_ = null;
+      public Builder clearDescription() {
+        if (descriptionBuilder_ == null) {
+          description_ = null;
           onChanged();
         } else {
-          descriptionEntity_ = null;
-          descriptionEntityBuilder_ = null;
+          description_ = null;
+          descriptionBuilder_ = null;
         }
 
         return this;
@@ -4419,26 +4419,26 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionEntityBuilder() {
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder getDescriptionBuilder() {
         
         onChanged();
-        return getDescriptionEntityFieldBuilder().getBuilder();
+        return getDescriptionFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
-      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionEntityOrBuilder() {
-        if (descriptionEntityBuilder_ != null) {
-          return descriptionEntityBuilder_.getMessageOrBuilder();
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder getDescriptionOrBuilder() {
+        if (descriptionBuilder_ != null) {
+          return descriptionBuilder_.getMessageOrBuilder();
         } else {
-          return descriptionEntity_ == null ?
-              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : descriptionEntity_;
+          return description_ == null ?
+              flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.getDefaultInstance() : description_;
         }
       }
       /**
@@ -4446,20 +4446,20 @@ public final class TaskOuterClass {
        * Represents the specification for Description.
        * </pre>
        *
-       * <code>.flyteidl.admin.DescriptionEntity description_entity = 2;</code>
+       * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> 
-          getDescriptionEntityFieldBuilder() {
-        if (descriptionEntityBuilder_ == null) {
-          descriptionEntityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getDescriptionFieldBuilder() {
+        if (descriptionBuilder_ == null) {
+          descriptionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder>(
-                  getDescriptionEntity(),
+                  getDescription(),
                   getParentForChildren(),
                   isClean());
-          descriptionEntity_ = null;
+          description_ = null;
         }
-        return descriptionEntityBuilder_;
+        return descriptionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -5495,15 +5495,15 @@ public final class TaskOuterClass {
       "core.Identifier\022,\n\007closure\030\002 \001(\0132\033.flyte" +
       "idl.admin.TaskClosure\022\031\n\021short_descripti" +
       "on\030\003 \001(\t\">\n\010TaskList\022#\n\005tasks\030\001 \003(\0132\024.fl" +
-      "yteidl.admin.Task\022\r\n\005token\030\002 \001(\t\"x\n\010Task" +
+      "yteidl.admin.Task\022\r\n\005token\030\002 \001(\t\"q\n\010Task" +
       "Spec\022-\n\010template\030\001 \001(\0132\033.flyteidl.core.T" +
-      "askTemplate\022=\n\022description_entity\030\002 \001(\0132" +
-      "!.flyteidl.admin.DescriptionEntity\"q\n\013Ta" +
-      "skClosure\0222\n\rcompiled_task\030\001 \001(\0132\033.flyte" +
-      "idl.core.CompiledTask\022.\n\ncreated_at\030\002 \001(" +
-      "\0132\032.google.protobuf.TimestampB7Z5github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/adminb\006proto3"
+      "askTemplate\0226\n\013description\030\002 \001(\0132!.flyte" +
+      "idl.admin.DescriptionEntity\"q\n\013TaskClosu" +
+      "re\0222\n\rcompiled_task\030\001 \001(\0132\033.flyteidl.cor" +
+      "e.CompiledTask\022.\n\ncreated_at\030\002 \001(\0132\032.goo" +
+      "gle.protobuf.TimestampB7Z5github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5551,7 +5551,7 @@ public final class TaskOuterClass {
     internal_static_flyteidl_admin_TaskSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_TaskSpec_descriptor,
-        new java.lang.String[] { "Template", "DescriptionEntity", });
+        new java.lang.String[] { "Template", "Description", });
     internal_static_flyteidl_admin_TaskClosure_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_admin_TaskClosure_fieldAccessorTable = new

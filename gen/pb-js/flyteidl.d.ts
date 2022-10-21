@@ -8505,6 +8505,14 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** DescriptionFormat enum. */
+        enum DescriptionFormat {
+            DESCRIPTION_FORMAT_UNKNOWN = 0,
+            DESCRIPTION_FORMAT_MARKDOWN = 1,
+            DESCRIPTION_FORMAT_HTML = 2,
+            DESCRIPTION_FORMAT_RST = 3
+        }
+
         /** Properties of a Description. */
         interface IDescription {
 
@@ -8515,7 +8523,7 @@ export namespace flyteidl {
             uri?: (string|null);
 
             /** Description format */
-            format?: (flyteidl.admin.Description.DescriptionFormat|null);
+            format?: (flyteidl.admin.DescriptionFormat|null);
 
             /** Description iconLink */
             iconLink?: (string|null);
@@ -8537,7 +8545,7 @@ export namespace flyteidl {
             public uri: string;
 
             /** Description format. */
-            public format: flyteidl.admin.Description.DescriptionFormat;
+            public format: flyteidl.admin.DescriptionFormat;
 
             /** Description iconLink. */
             public iconLink: string;
@@ -8576,17 +8584,6 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace Description {
-
-            /** DescriptionFormat enum. */
-            enum DescriptionFormat {
-                UNKNOWN = 0,
-                MARKDOWN = 1,
-                HTML = 2,
-                RST = 3
-            }
         }
 
         /** Properties of a SourceCode. */
@@ -14750,8 +14747,8 @@ export namespace flyteidl {
             /** TaskSpec template */
             template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+            /** TaskSpec description */
+            description?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a TaskSpec. */
@@ -14766,8 +14763,8 @@ export namespace flyteidl {
             /** TaskSpec template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
 
-            /** TaskSpec descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+            /** TaskSpec description. */
+            public description?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -15768,8 +15765,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows */
             subWorkflows?: (flyteidl.core.IWorkflowTemplate[]|null);
 
-            /** WorkflowSpec descriptionEntity */
-            descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+            /** WorkflowSpec description */
+            description?: (flyteidl.admin.IDescriptionEntity|null);
         }
 
         /** Represents a WorkflowSpec. */
@@ -15787,8 +15784,8 @@ export namespace flyteidl {
             /** WorkflowSpec subWorkflows. */
             public subWorkflows: flyteidl.core.IWorkflowTemplate[];
 
-            /** WorkflowSpec descriptionEntity. */
-            public descriptionEntity?: (flyteidl.admin.IDescriptionEntity|null);
+            /** WorkflowSpec description. */
+            public description?: (flyteidl.admin.IDescriptionEntity|null);
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.

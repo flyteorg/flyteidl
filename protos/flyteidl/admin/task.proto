@@ -57,7 +57,7 @@ message TaskSpec {
     core.TaskTemplate template = 1;
 
     // Represents the specification for Description.
-    DescriptionEntity description_entity        = 2;
+    DescriptionEntity description        = 2;
 }
 
 // Compute task attributes which include values derived from the TaskSpec, as well as plugin-specific data

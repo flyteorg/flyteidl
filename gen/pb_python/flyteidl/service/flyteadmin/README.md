@@ -97,8 +97,8 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_workflow**](docs/AdminServiceApi.md#get_workflow) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**get_workflow_attributes**](docs/AdminServiceApi.md#get_workflow_attributes) | **GET** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
 *AdminServiceApi* | [**list_active_launch_plans**](docs/AdminServiceApi.md#list_active_launch_plans) | **GET** /api/v1/active_launch_plans/{project}/{domain} | List active versions of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60;.
-*AdminServiceApi* | [**list_description_entities**](docs/AdminServiceApi.md#list_description_entities) | **GET** /api/v1/description_entities/{id.project}/{id.domain}/{id.name} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
-*AdminServiceApi* | [**list_description_entities2**](docs/AdminServiceApi.md#list_description_entities2) | **GET** /api/v1/description_entities/{id.project}/{id.domain} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
+*AdminServiceApi* | [**list_description_entities**](docs/AdminServiceApi.md#list_description_entities) | **GET** /api/v1/description_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
+*AdminServiceApi* | [**list_description_entities2**](docs/AdminServiceApi.md#list_description_entities2) | **GET** /api/v1/description_entities/{resource_type}/{id.project}/{id.domain} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; definitions.
 *AdminServiceApi* | [**list_executions**](docs/AdminServiceApi.md#list_executions) | **GET** /api/v1/executions/{id.project}/{id.domain} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**list_launch_plan_ids**](docs/AdminServiceApi.md#list_launch_plan_ids) | **GET** /api/v1/launch_plan_ids/{project}/{domain} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.NamedEntityIdentifier&#x60; of launch plan objects.
 *AdminServiceApi* | [**list_launch_plans**](docs/AdminServiceApi.md#list_launch_plans) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name} | Fetch a list of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definitions.
@@ -140,6 +140,7 @@ Class | Method | HTTP request | Description
  - [AdminDescription](docs/AdminDescription.md)
  - [AdminDescriptionEntity](docs/AdminDescriptionEntity.md)
  - [AdminDescriptionEntityList](docs/AdminDescriptionEntityList.md)
+ - [AdminDescriptionFormat](docs/AdminDescriptionFormat.md)
  - [AdminDomain](docs/AdminDomain.md)
  - [AdminEmailNotification](docs/AdminEmailNotification.md)
  - [AdminExecution](docs/AdminExecution.md)
@@ -345,7 +346,6 @@ Class | Method | HTTP request | Description
  - [CoreWorkflowNode](docs/CoreWorkflowNode.md)
  - [CoreWorkflowTemplate](docs/CoreWorkflowTemplate.md)
  - [DataLoadingConfigLiteralMapFormat](docs/DataLoadingConfigLiteralMapFormat.md)
- - [DescriptionDescriptionFormat](docs/DescriptionDescriptionFormat.md)
  - [EventExternalResourceInfo](docs/EventExternalResourceInfo.md)
  - [EventNodeExecutionEvent](docs/EventNodeExecutionEvent.md)
  - [EventParentNodeExecutionMetadata](docs/EventParentNodeExecutionMetadata.md)

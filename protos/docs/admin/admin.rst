@@ -683,7 +683,7 @@ formatting.
 
    "value", ":ref:`ref_string`", "", "long description - no more than 4KB"
    "uri", ":ref:`ref_string`", "", "if the description sizes exceed some threshold we can offload the entire description proto altogether to an external data store, like S3 rather than store inline in the db"
-   "format", ":ref:`ref_flyteidl.admin.Description.DescriptionFormat`", "", "Format of the long description"
+   "format", ":ref:`ref_flyteidl.admin.DescriptionFormat`", "", "Format of the long description"
    "icon_link", ":ref:`ref_string`", "", "Optional link to an icon for the entity"
 
 
@@ -793,21 +793,21 @@ Link to source code used to define this entity
 
 
 
-.. _ref_flyteidl.admin.Description.DescriptionFormat:
+.. _ref_flyteidl.admin.DescriptionFormat:
 
-Description.DescriptionFormat
+DescriptionFormat
 ------------------------------------------------------------------
 
+The format of the long description
 
-
-.. csv-table:: Enum Description.DescriptionFormat values
+.. csv-table:: Enum DescriptionFormat values
    :header: "Name", "Number", "Description"
    :widths: auto
 
-   "UNKNOWN", "0", ""
-   "MARKDOWN", "1", ""
-   "HTML", "2", ""
-   "RST", "3", "python default documentation - comments is rst"
+   "DESCRIPTION_FORMAT_UNKNOWN", "0", ""
+   "DESCRIPTION_FORMAT_MARKDOWN", "1", ""
+   "DESCRIPTION_FORMAT_HTML", "2", ""
+   "DESCRIPTION_FORMAT_RST", "3", "python default documentation - comments is rst"
 
 
 ..
@@ -3414,7 +3414,7 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
+   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
 
 
 
@@ -3857,7 +3857,7 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
-   "description_entity", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
+   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
 
 
 

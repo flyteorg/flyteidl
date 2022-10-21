@@ -82,28 +82,28 @@ template<> ::flyteidl::admin::SourceCode* Arena::CreateMaybeMessage<::flyteidl::
 namespace flyteidl {
 namespace admin {
 
-enum Description_DescriptionFormat {
-  Description_DescriptionFormat_UNKNOWN = 0,
-  Description_DescriptionFormat_MARKDOWN = 1,
-  Description_DescriptionFormat_HTML = 2,
-  Description_DescriptionFormat_RST = 3,
-  Description_DescriptionFormat_Description_DescriptionFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  Description_DescriptionFormat_Description_DescriptionFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+enum DescriptionFormat {
+  DESCRIPTION_FORMAT_UNKNOWN = 0,
+  DESCRIPTION_FORMAT_MARKDOWN = 1,
+  DESCRIPTION_FORMAT_HTML = 2,
+  DESCRIPTION_FORMAT_RST = 3,
+  DescriptionFormat_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  DescriptionFormat_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
-bool Description_DescriptionFormat_IsValid(int value);
-const Description_DescriptionFormat Description_DescriptionFormat_DescriptionFormat_MIN = Description_DescriptionFormat_UNKNOWN;
-const Description_DescriptionFormat Description_DescriptionFormat_DescriptionFormat_MAX = Description_DescriptionFormat_RST;
-const int Description_DescriptionFormat_DescriptionFormat_ARRAYSIZE = Description_DescriptionFormat_DescriptionFormat_MAX + 1;
+bool DescriptionFormat_IsValid(int value);
+const DescriptionFormat DescriptionFormat_MIN = DESCRIPTION_FORMAT_UNKNOWN;
+const DescriptionFormat DescriptionFormat_MAX = DESCRIPTION_FORMAT_RST;
+const int DescriptionFormat_ARRAYSIZE = DescriptionFormat_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Description_DescriptionFormat_descriptor();
-inline const ::std::string& Description_DescriptionFormat_Name(Description_DescriptionFormat value) {
+const ::google::protobuf::EnumDescriptor* DescriptionFormat_descriptor();
+inline const ::std::string& DescriptionFormat_Name(DescriptionFormat value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Description_DescriptionFormat_descriptor(), value);
+    DescriptionFormat_descriptor(), value);
 }
-inline bool Description_DescriptionFormat_Parse(
-    const ::std::string& name, Description_DescriptionFormat* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Description_DescriptionFormat>(
-    Description_DescriptionFormat_descriptor(), name, value);
+inline bool DescriptionFormat_Parse(
+    const ::std::string& name, DescriptionFormat* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<DescriptionFormat>(
+    DescriptionFormat_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -379,36 +379,6 @@ class Description final :
 
   // nested types ----------------------------------------------------
 
-  typedef Description_DescriptionFormat DescriptionFormat;
-  static const DescriptionFormat UNKNOWN =
-    Description_DescriptionFormat_UNKNOWN;
-  static const DescriptionFormat MARKDOWN =
-    Description_DescriptionFormat_MARKDOWN;
-  static const DescriptionFormat HTML =
-    Description_DescriptionFormat_HTML;
-  static const DescriptionFormat RST =
-    Description_DescriptionFormat_RST;
-  static inline bool DescriptionFormat_IsValid(int value) {
-    return Description_DescriptionFormat_IsValid(value);
-  }
-  static const DescriptionFormat DescriptionFormat_MIN =
-    Description_DescriptionFormat_DescriptionFormat_MIN;
-  static const DescriptionFormat DescriptionFormat_MAX =
-    Description_DescriptionFormat_DescriptionFormat_MAX;
-  static const int DescriptionFormat_ARRAYSIZE =
-    Description_DescriptionFormat_DescriptionFormat_ARRAYSIZE;
-  static inline const ::google::protobuf::EnumDescriptor*
-  DescriptionFormat_descriptor() {
-    return Description_DescriptionFormat_descriptor();
-  }
-  static inline const ::std::string& DescriptionFormat_Name(DescriptionFormat value) {
-    return Description_DescriptionFormat_Name(value);
-  }
-  static inline bool DescriptionFormat_Parse(const ::std::string& name,
-      DescriptionFormat* value) {
-    return Description_DescriptionFormat_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
 
   // string icon_link = 4;
@@ -425,11 +395,11 @@ class Description final :
   ::std::string* release_icon_link();
   void set_allocated_icon_link(::std::string* icon_link);
 
-  // .flyteidl.admin.Description.DescriptionFormat format = 3;
+  // .flyteidl.admin.DescriptionFormat format = 3;
   void clear_format();
   static const int kFormatFieldNumber = 3;
-  ::flyteidl::admin::Description_DescriptionFormat format() const;
-  void set_format(::flyteidl::admin::Description_DescriptionFormat value);
+  ::flyteidl::admin::DescriptionFormat format() const;
+  void set_format(::flyteidl::admin::DescriptionFormat value);
 
   // string value = 1;
   private:
@@ -1379,15 +1349,15 @@ inline void Description::set_allocated_uri(::std::string* uri) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Description.uri)
 }
 
-// .flyteidl.admin.Description.DescriptionFormat format = 3;
+// .flyteidl.admin.DescriptionFormat format = 3;
 inline void Description::clear_format() {
   format_ = 0;
 }
-inline ::flyteidl::admin::Description_DescriptionFormat Description::format() const {
+inline ::flyteidl::admin::DescriptionFormat Description::format() const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.Description.format)
-  return static_cast< ::flyteidl::admin::Description_DescriptionFormat >(format_);
+  return static_cast< ::flyteidl::admin::DescriptionFormat >(format_);
 }
-inline void Description::set_format(::flyteidl::admin::Description_DescriptionFormat value) {
+inline void Description::set_format(::flyteidl::admin::DescriptionFormat value) {
   
   format_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.admin.Description.format)
@@ -1847,10 +1817,10 @@ inline void DescriptionEntityListRequest::set_allocated_sort_by(::flyteidl::admi
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::admin::Description_DescriptionFormat> : ::std::true_type {};
+template <> struct is_proto_enum< ::flyteidl::admin::DescriptionFormat> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Description_DescriptionFormat>() {
-  return ::flyteidl::admin::Description_DescriptionFormat_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::DescriptionFormat>() {
+  return ::flyteidl::admin::DescriptionFormat_descriptor();
 }
 
 }  // namespace protobuf

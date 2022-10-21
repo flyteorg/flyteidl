@@ -13,6 +13,6 @@ package flyteadmin
 type AdminDescription struct {
 	Value string `json:"value,omitempty"`
 	Uri string `json:"uri,omitempty"`
-	Format *DescriptionDescriptionFormat `json:"format,omitempty"`
+	Format *AdminDescriptionFormat `json:"format,omitempty"`
 	IconLink string `json:"icon_link,omitempty"`
 }

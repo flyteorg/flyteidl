@@ -53,7 +53,7 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "in/version.proto\032\033flyteidl/admin/common."
   "proto\032\'flyteidl/admin/description_entity"
   ".proto\032,protoc-gen-swagger/options/annot"
-  "ations.proto2\256r\n\014AdminService\022\305\002\n\nCreate"
+  "ations.proto2\317r\n\014AdminService\022\305\002\n\nCreate"
   "Task\022!.flyteidl.admin.TaskCreateRequest\032"
   "\".flyteidl.admin.TaskCreateResponse\"\357\001\202\323"
   "\344\223\002\022\"\r/api/v1/tasks:\001*\222A\323\001\032&Create and r"
@@ -411,21 +411,22 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto[] =
   "\022L/api/v1/description_entities/{id.proje"
   "ct}/{id.domain}/{id.name}/{id.version}\222A"
   "6\0324Retrieve an existing description enti"
-  "ty description.\022\273\002\n\027ListDescriptionEntit"
+  "ty description.\022\334\002\n\027ListDescriptionEntit"
   "ies\022,.flyteidl.admin.DescriptionEntityLi"
   "stRequest\032%.flyteidl.admin.DescriptionEn"
-  "tityList\"\312\001\202\323\344\223\002z\022\?/api/v1/description_e"
-  "ntities/{id.project}/{id.domain}/{id.nam"
-  "e}Z7\0225/api/v1/description_entities/{id.p"
-  "roject}/{id.domain}\222AG\032EFetch existing d"
-  "escription entity definitions matching i"
-  "nput filters.B9Z7github.com/flyteorg/fly"
-  "teidl/gen/pb-go/flyteidl/serviceb\006proto3"
+  "tityList\"\353\001\202\323\344\223\002\232\001\022O/api/v1/description_"
+  "entities/{resource_type}/{id.project}/{i"
+  "d.domain}/{id.name}ZG\022E/api/v1/descripti"
+  "on_entities/{resource_type}/{id.project}"
+  "/{id.domain}\222AG\032EFetch existing descript"
+  "ion entity definitions matching input fi"
+  "lters.B9Z7github.com/flyteorg/flyteidl/g"
+  "en/pb-go/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fadmin_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fadmin_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fadmin_2eproto,
-  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 15360,
+  "flyteidl/service/admin.proto", &assign_descriptors_table_flyteidl_2fservice_2fadmin_2eproto, 15393,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fadmin_2eproto() {

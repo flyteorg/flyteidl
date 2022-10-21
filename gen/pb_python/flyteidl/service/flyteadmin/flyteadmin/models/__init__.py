@@ -25,6 +25,7 @@ from flyteadmin.models.admin_cron_schedule import AdminCronSchedule
 from flyteadmin.models.admin_description import AdminDescription
 from flyteadmin.models.admin_description_entity import AdminDescriptionEntity
 from flyteadmin.models.admin_description_entity_list import AdminDescriptionEntityList
+from flyteadmin.models.admin_description_format import AdminDescriptionFormat
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
 from flyteadmin.models.admin_execution import AdminExecution
@@ -230,7 +231,6 @@ from flyteadmin.models.core_workflow_metadata_defaults import CoreWorkflowMetada
 from flyteadmin.models.core_workflow_node import CoreWorkflowNode
 from flyteadmin.models.core_workflow_template import CoreWorkflowTemplate
 from flyteadmin.models.data_loading_config_literal_map_format import DataLoadingConfigLiteralMapFormat
-from flyteadmin.models.description_description_format import DescriptionDescriptionFormat
 from flyteadmin.models.event_external_resource_info import EventExternalResourceInfo
 from flyteadmin.models.event_node_execution_event import EventNodeExecutionEvent
 from flyteadmin.models.event_parent_node_execution_metadata import EventParentNodeExecutionMetadata

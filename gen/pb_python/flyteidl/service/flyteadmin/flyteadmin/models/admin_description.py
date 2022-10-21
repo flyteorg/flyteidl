@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.description_description_format import DescriptionDescriptionFormat  # noqa: F401,E501
+from flyteadmin.models.admin_description_format import AdminDescriptionFormat  # noqa: F401,E501
 
 
 class AdminDescription(object):
@@ -35,7 +35,7 @@ class AdminDescription(object):
     swagger_types = {
         'value': 'str',
         'uri': 'str',
-        'format': 'DescriptionDescriptionFormat',
+        'format': 'AdminDescriptionFormat',
         'icon_link': 'str'
     }
 
@@ -112,7 +112,7 @@ class AdminDescription(object):
 
 
         :return: The format of this AdminDescription.  # noqa: E501
-        :rtype: DescriptionDescriptionFormat
+        :rtype: AdminDescriptionFormat
         """
         return self._format
 
@@ -122,7 +122,7 @@ class AdminDescription(object):
 
 
         :param format: The format of this AdminDescription.  # noqa: E501
-        :type: DescriptionDescriptionFormat
+        :type: AdminDescriptionFormat
         """
 
         self._format = format

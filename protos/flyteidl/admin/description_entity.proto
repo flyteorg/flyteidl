@@ -22,6 +22,15 @@ message DescriptionEntity {
   repeated string tags = 5;
 }
 
+// The format of the long description
+enum DescriptionFormat {
+  DESCRIPTION_FORMAT_UNKNOWN = 0;
+  DESCRIPTION_FORMAT_MARKDOWN = 1;
+  DESCRIPTION_FORMAT_HTML = 2;
+  // python default documentation - comments is rst
+  DESCRIPTION_FORMAT_RST = 3;
+}
+
 // Full user description with formatting preserved. This can be rendered
 // by clients, such as the console or command line tools with in-tact
 // formatting.
@@ -34,13 +43,6 @@ message Description {
     string uri = 2;
   }
 
-  enum DescriptionFormat {
-    UNKNOWN = 0;
-    MARKDOWN = 1;
-    HTML = 2;
-    // python default documentation - comments is rst
-    RST = 3;
-  }
   // Format of the long description
   DescriptionFormat format = 3;
   // Optional link to an icon for the entity

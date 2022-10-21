@@ -2785,7 +2785,7 @@ func request_AdminService_GetDescriptionEntity_0(ctx context.Context, marshaler 
 }
 
 var (
-	filter_AdminService_ListDescriptionEntities_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3}, Base: []int{1, 1, 1, 2, 3, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 3, 4, 5}}
+	filter_AdminService_ListDescriptionEntities_0 = &utilities.DoubleArray{Encoding: map[string]int{"resource_type": 0, "id": 1, "project": 2, "domain": 3, "name": 4}, Base: []int{1, 1, 1, 2, 3, 4, 0, 0, 0, 0}, Check: []int{0, 1, 1, 3, 3, 3, 2, 4, 5, 6}}
 )
 
 func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2794,10 +2794,24 @@ func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshal
 
 	var (
 		val string
+		e   int32
 		ok  bool
 		err error
 		_   = err
 	)
+
+	val, ok = pathParams["resource_type"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "resource_type")
+	}
+
+	e, err = runtime.Enum(val, core.ResourceType_value)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "resource_type", err)
+	}
+
+	protoReq.ResourceType = core.ResourceType(e)
 
 	val, ok = pathParams["id.project"]
 	if !ok {
@@ -2845,7 +2859,7 @@ func request_AdminService_ListDescriptionEntities_0(ctx context.Context, marshal
 }
 
 var (
-	filter_AdminService_ListDescriptionEntities_1 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2}, Base: []int{1, 1, 1, 2, 0, 0}, Check: []int{0, 1, 2, 2, 3, 4}}
+	filter_AdminService_ListDescriptionEntities_1 = &utilities.DoubleArray{Encoding: map[string]int{"resource_type": 0, "id": 1, "project": 2, "domain": 3}, Base: []int{1, 1, 1, 2, 3, 0, 0, 0}, Check: []int{0, 1, 1, 3, 3, 2, 4, 5}}
 )
 
 func request_AdminService_ListDescriptionEntities_1(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2854,10 +2868,24 @@ func request_AdminService_ListDescriptionEntities_1(ctx context.Context, marshal
 
 	var (
 		val string
+		e   int32
 		ok  bool
 		err error
 		_   = err
 	)
+
+	val, ok = pathParams["resource_type"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "resource_type")
+	}
+
+	e, err = runtime.Enum(val, core.ResourceType_value)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "resource_type", err)
+	}
+
+	protoReq.ResourceType = core.ResourceType(e)
 
 	val, ok = pathParams["id.project"]
 	if !ok {
@@ -4163,9 +4191,9 @@ var (
 
 	pattern_AdminService_GetDescriptionEntity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "description_entities", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
-	pattern_AdminService_ListDescriptionEntities_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "description_entities", "id.project", "id.domain", "id.name"}, ""))
+	pattern_AdminService_ListDescriptionEntities_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "description_entities", "resource_type", "id.project", "id.domain", "id.name"}, ""))
 
-	pattern_AdminService_ListDescriptionEntities_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "description_entities", "id.project", "id.domain"}, ""))
+	pattern_AdminService_ListDescriptionEntities_1 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "description_entities", "resource_type", "id.project", "id.domain"}, ""))
 )
 
 var (

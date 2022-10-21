@@ -213,12 +213,10 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fdescription_5fentity_2ep
   "\030\002 \001(\t\0225\n\020long_description\030\003 \001(\0132\033.flyte"
   "idl.admin.Description\022/\n\013source_code\030\004 \001"
   "(\0132\032.flyteidl.admin.SourceCode\022\014\n\004tags\030\005"
-  " \003(\t\"\315\001\n\013Description\022\017\n\005value\030\001 \001(\tH\000\022\r\n"
-  "\003uri\030\002 \001(\tH\000\022=\n\006format\030\003 \001(\0162-.flyteidl."
-  "admin.Description.DescriptionFormat\022\021\n\ti"
-  "con_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007U"
-  "NKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020"
-  "\003B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t"
+  " \003(\t\"~\n\013Description\022\017\n\005value\030\001 \001(\tH\000\022\r\n\003"
+  "uri\030\002 \001(\tH\000\0221\n\006format\030\003 \001(\0162!.flyteidl.a"
+  "dmin.DescriptionFormat\022\021\n\ticon_link\030\004 \001("
+  "\tB\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t"
   "\"f\n\025DescriptionEntityList\022>\n\023description"
   "Entities\030\001 \003(\0132!.flyteidl.admin.Descript"
   "ionEntity\022\r\n\005token\030\002 \001(\t\"\333\001\n\034Description"
@@ -227,13 +225,17 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fdescription_5fentity_2ep
   "\0132%.flyteidl.admin.NamedEntityIdentifier"
   "\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022\017\n\007filter"
   "s\030\005 \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flyteidl.admi"
-  "n.SortB7Z5github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  "n.Sort*\215\001\n\021DescriptionFormat\022\036\n\032DESCRIPT"
+  "ION_FORMAT_UNKNOWN\020\000\022\037\n\033DESCRIPTION_FORM"
+  "AT_MARKDOWN\020\001\022\033\n\027DESCRIPTION_FORMAT_HTML"
+  "\020\002\022\032\n\026DESCRIPTION_FORMAT_RST\020\003B7Z5github"
+  ".com/flyteorg/flyteidl/gen/pb-go/flyteid"
+  "l/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fdescription_5fentity_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fdescription_5fentity_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fdescription_5fentity_2eproto,
-  "flyteidl/admin/description_entity.proto", &assign_descriptors_table_flyteidl_2fadmin_2fdescription_5fentity_2eproto, 951,
+  "flyteidl/admin/description_entity.proto", &assign_descriptors_table_flyteidl_2fadmin_2fdescription_5fentity_2eproto, 1015,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto() {
@@ -249,11 +251,11 @@ void AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto() {
 static bool dynamic_init_dummy_flyteidl_2fadmin_2fdescription_5fentity_2eproto = []() { AddDescriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto(); return true; }();
 namespace flyteidl {
 namespace admin {
-const ::google::protobuf::EnumDescriptor* Description_DescriptionFormat_descriptor() {
+const ::google::protobuf::EnumDescriptor* DescriptionFormat_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fadmin_2fdescription_5fentity_2eproto);
   return file_level_enum_descriptors_flyteidl_2fadmin_2fdescription_5fentity_2eproto[0];
 }
-bool Description_DescriptionFormat_IsValid(int value) {
+bool DescriptionFormat_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -265,15 +267,6 @@ bool Description_DescriptionFormat_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Description_DescriptionFormat Description::UNKNOWN;
-const Description_DescriptionFormat Description::MARKDOWN;
-const Description_DescriptionFormat Description::HTML;
-const Description_DescriptionFormat Description::RST;
-const Description_DescriptionFormat Description::DescriptionFormat_MIN;
-const Description_DescriptionFormat Description::DescriptionFormat_MAX;
-const int Description::DescriptionFormat_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
@@ -1002,11 +995,11 @@ const char* Description::_InternalParse(const char* begin, const char* end, void
         ptr += size;
         break;
       }
-      // .flyteidl.admin.Description.DescriptionFormat format = 3;
+      // .flyteidl.admin.DescriptionFormat format = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_format(static_cast<::flyteidl::admin::Description_DescriptionFormat>(val));
+        msg->set_format(static_cast<::flyteidl::admin::DescriptionFormat>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -1090,14 +1083,14 @@ bool Description::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.admin.Description.DescriptionFormat format = 3;
+      // .flyteidl.admin.DescriptionFormat format = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_format(static_cast< ::flyteidl::admin::Description_DescriptionFormat >(value));
+          set_format(static_cast< ::flyteidl::admin::DescriptionFormat >(value));
         } else {
           goto handle_unusual;
         }
@@ -1166,7 +1159,7 @@ void Description::SerializeWithCachedSizes(
       2, this->uri(), output);
   }
 
-  // .flyteidl.admin.Description.DescriptionFormat format = 3;
+  // .flyteidl.admin.DescriptionFormat format = 3;
   if (this->format() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->format(), output);
@@ -1217,7 +1210,7 @@ void Description::SerializeWithCachedSizes(
         2, this->uri(), target);
   }
 
-  // .flyteidl.admin.Description.DescriptionFormat format = 3;
+  // .flyteidl.admin.DescriptionFormat format = 3;
   if (this->format() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       3, this->format(), target);
@@ -1262,7 +1255,7 @@ size_t Description::ByteSizeLong() const {
         this->icon_link());
   }
 
-  // .flyteidl.admin.Description.DescriptionFormat format = 3;
+  // .flyteidl.admin.DescriptionFormat format = 3;
   if (this->format() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->format());

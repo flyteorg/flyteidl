@@ -14,6 +14,134 @@ public final class DescriptionEntityOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * <pre>
+   * The format of the long description
+   * </pre>
+   *
+   * Protobuf enum {@code flyteidl.admin.DescriptionFormat}
+   */
+  public enum DescriptionFormat
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>DESCRIPTION_FORMAT_UNKNOWN = 0;</code>
+     */
+    DESCRIPTION_FORMAT_UNKNOWN(0),
+    /**
+     * <code>DESCRIPTION_FORMAT_MARKDOWN = 1;</code>
+     */
+    DESCRIPTION_FORMAT_MARKDOWN(1),
+    /**
+     * <code>DESCRIPTION_FORMAT_HTML = 2;</code>
+     */
+    DESCRIPTION_FORMAT_HTML(2),
+    /**
+     * <pre>
+     * python default documentation - comments is rst
+     * </pre>
+     *
+     * <code>DESCRIPTION_FORMAT_RST = 3;</code>
+     */
+    DESCRIPTION_FORMAT_RST(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>DESCRIPTION_FORMAT_UNKNOWN = 0;</code>
+     */
+    public static final int DESCRIPTION_FORMAT_UNKNOWN_VALUE = 0;
+    /**
+     * <code>DESCRIPTION_FORMAT_MARKDOWN = 1;</code>
+     */
+    public static final int DESCRIPTION_FORMAT_MARKDOWN_VALUE = 1;
+    /**
+     * <code>DESCRIPTION_FORMAT_HTML = 2;</code>
+     */
+    public static final int DESCRIPTION_FORMAT_HTML_VALUE = 2;
+    /**
+     * <pre>
+     * python default documentation - comments is rst
+     * </pre>
+     *
+     * <code>DESCRIPTION_FORMAT_RST = 3;</code>
+     */
+    public static final int DESCRIPTION_FORMAT_RST_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DescriptionFormat valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DescriptionFormat forNumber(int value) {
+      switch (value) {
+        case 0: return DESCRIPTION_FORMAT_UNKNOWN;
+        case 1: return DESCRIPTION_FORMAT_MARKDOWN;
+        case 2: return DESCRIPTION_FORMAT_HTML;
+        case 3: return DESCRIPTION_FORMAT_RST;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DescriptionFormat>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        DescriptionFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DescriptionFormat>() {
+            public DescriptionFormat findValueByNumber(int number) {
+              return DescriptionFormat.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.admin.DescriptionEntityOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DescriptionFormat[] VALUES = values();
+
+    public static DescriptionFormat valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DescriptionFormat(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.admin.DescriptionFormat)
+  }
+
   public interface DescriptionEntityOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.admin.DescriptionEntity)
       com.google.protobuf.MessageOrBuilder {
@@ -1697,7 +1825,7 @@ public final class DescriptionEntityOuterClass {
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+     * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
      */
     int getFormatValue();
     /**
@@ -1705,9 +1833,9 @@ public final class DescriptionEntityOuterClass {
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+     * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
      */
-    flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat getFormat();
+    flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat getFormat();
 
     /**
      * <pre>
@@ -1830,130 +1958,6 @@ public final class DescriptionEntityOuterClass {
       return flyteidl.admin.DescriptionEntityOuterClass.internal_static_flyteidl_admin_Description_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               flyteidl.admin.DescriptionEntityOuterClass.Description.class, flyteidl.admin.DescriptionEntityOuterClass.Description.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code flyteidl.admin.Description.DescriptionFormat}
-     */
-    public enum DescriptionFormat
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      UNKNOWN(0),
-      /**
-       * <code>MARKDOWN = 1;</code>
-       */
-      MARKDOWN(1),
-      /**
-       * <code>HTML = 2;</code>
-       */
-      HTML(2),
-      /**
-       * <pre>
-       * python default documentation - comments is rst
-       * </pre>
-       *
-       * <code>RST = 3;</code>
-       */
-      RST(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>UNKNOWN = 0;</code>
-       */
-      public static final int UNKNOWN_VALUE = 0;
-      /**
-       * <code>MARKDOWN = 1;</code>
-       */
-      public static final int MARKDOWN_VALUE = 1;
-      /**
-       * <code>HTML = 2;</code>
-       */
-      public static final int HTML_VALUE = 2;
-      /**
-       * <pre>
-       * python default documentation - comments is rst
-       * </pre>
-       *
-       * <code>RST = 3;</code>
-       */
-      public static final int RST_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static DescriptionFormat valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DescriptionFormat forNumber(int value) {
-        switch (value) {
-          case 0: return UNKNOWN;
-          case 1: return MARKDOWN;
-          case 2: return HTML;
-          case 3: return RST;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DescriptionFormat>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DescriptionFormat> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DescriptionFormat>() {
-              public DescriptionFormat findValueByNumber(int number) {
-                return DescriptionFormat.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return flyteidl.admin.DescriptionEntityOuterClass.Description.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DescriptionFormat[] VALUES = values();
-
-      public static DescriptionFormat valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private DescriptionFormat(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:flyteidl.admin.Description.DescriptionFormat)
     }
 
     private int contentCase_ = 0;
@@ -2105,7 +2109,7 @@ public final class DescriptionEntityOuterClass {
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+     * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
      */
     public int getFormatValue() {
       return format_;
@@ -2115,12 +2119,12 @@ public final class DescriptionEntityOuterClass {
      * Format of the long description
      * </pre>
      *
-     * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+     * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
      */
-    public flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat getFormat() {
+    public flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat getFormat() {
       @SuppressWarnings("deprecation")
-      flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.valueOf(format_);
-      return result == null ? flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.UNRECOGNIZED : result;
+      flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.valueOf(format_);
+      return result == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.UNRECOGNIZED : result;
     }
 
     public static final int ICON_LINK_FIELD_NUMBER = 4;
@@ -2185,7 +2189,7 @@ public final class DescriptionEntityOuterClass {
       if (contentCase_ == 2) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
       }
-      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.UNKNOWN.getNumber()) {
+      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.DESCRIPTION_FORMAT_UNKNOWN.getNumber()) {
         output.writeEnum(3, format_);
       }
       if (!getIconLinkBytes().isEmpty()) {
@@ -2206,7 +2210,7 @@ public final class DescriptionEntityOuterClass {
       if (contentCase_ == 2) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
       }
-      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.UNKNOWN.getNumber()) {
+      if (format_ != flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.DESCRIPTION_FORMAT_UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, format_);
       }
@@ -2778,7 +2782,7 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+       * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
        */
       public int getFormatValue() {
         return format_;
@@ -2788,7 +2792,7 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+       * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
        */
       public Builder setFormatValue(int value) {
         format_ = value;
@@ -2800,21 +2804,21 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+       * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
        */
-      public flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat getFormat() {
+      public flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat getFormat() {
         @SuppressWarnings("deprecation")
-        flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.valueOf(format_);
-        return result == null ? flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat.UNRECOGNIZED : result;
+        flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat result = flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.valueOf(format_);
+        return result == null ? flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+       * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
        */
-      public Builder setFormat(flyteidl.admin.DescriptionEntityOuterClass.Description.DescriptionFormat value) {
+      public Builder setFormat(flyteidl.admin.DescriptionEntityOuterClass.DescriptionFormat value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2828,7 +2832,7 @@ public final class DescriptionEntityOuterClass {
        * Format of the long description
        * </pre>
        *
-       * <code>.flyteidl.admin.Description.DescriptionFormat format = 3;</code>
+       * <code>.flyteidl.admin.DescriptionFormat format = 3;</code>
        */
       public Builder clearFormat() {
         
@@ -6224,12 +6228,10 @@ public final class DescriptionEntityOuterClass {
       "\030\002 \001(\t\0225\n\020long_description\030\003 \001(\0132\033.flyte" +
       "idl.admin.Description\022/\n\013source_code\030\004 \001" +
       "(\0132\032.flyteidl.admin.SourceCode\022\014\n\004tags\030\005" +
-      " \003(\t\"\315\001\n\013Description\022\017\n\005value\030\001 \001(\tH\000\022\r\n" +
-      "\003uri\030\002 \001(\tH\000\022=\n\006format\030\003 \001(\0162-.flyteidl." +
-      "admin.Description.DescriptionFormat\022\021\n\ti" +
-      "con_link\030\004 \001(\t\"A\n\021DescriptionFormat\022\013\n\007U" +
-      "NKNOWN\020\000\022\014\n\010MARKDOWN\020\001\022\010\n\004HTML\020\002\022\007\n\003RST\020" +
-      "\003B\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t" +
+      " \003(\t\"~\n\013Description\022\017\n\005value\030\001 \001(\tH\000\022\r\n\003" +
+      "uri\030\002 \001(\tH\000\0221\n\006format\030\003 \001(\0162!.flyteidl.a" +
+      "dmin.DescriptionFormat\022\021\n\ticon_link\030\004 \001(" +
+      "\tB\t\n\007content\"\032\n\nSourceCode\022\014\n\004link\030\001 \001(\t" +
       "\"f\n\025DescriptionEntityList\022>\n\023description" +
       "Entities\030\001 \003(\0132!.flyteidl.admin.Descript" +
       "ionEntity\022\r\n\005token\030\002 \001(\t\"\333\001\n\034Description" +
@@ -6238,8 +6240,12 @@ public final class DescriptionEntityOuterClass {
       "\0132%.flyteidl.admin.NamedEntityIdentifier" +
       "\022\r\n\005limit\030\003 \001(\r\022\r\n\005token\030\004 \001(\t\022\017\n\007filter" +
       "s\030\005 \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flyteidl.admi" +
-      "n.SortB7Z5github.com/flyteorg/flyteidl/g" +
-      "en/pb-go/flyteidl/adminb\006proto3"
+      "n.Sort*\215\001\n\021DescriptionFormat\022\036\n\032DESCRIPT" +
+      "ION_FORMAT_UNKNOWN\020\000\022\037\n\033DESCRIPTION_FORM" +
+      "AT_MARKDOWN\020\001\022\033\n\027DESCRIPTION_FORMAT_HTML" +
+      "\020\002\022\032\n\026DESCRIPTION_FORMAT_RST\020\003B7Z5github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

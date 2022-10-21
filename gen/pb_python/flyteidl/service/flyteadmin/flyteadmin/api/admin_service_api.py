@@ -3174,20 +3174,20 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_description_entities(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
+    def list_description_entities(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
 
         Fetch existing description entity definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_description_entities(id_project, id_domain, id_name, async_req=True)
+        >>> thread = api.list_description_entities(resource_type, id_project, id_domain, id_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3199,25 +3199,25 @@ class AdminServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_description_entities_with_http_info(id_project, id_domain, id_name, **kwargs)  # noqa: E501
+            return self.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_description_entities_with_http_info(id_project, id_domain, id_name, **kwargs)  # noqa: E501
+            (data) = self.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, **kwargs)  # noqa: E501
             return data
 
-    def list_description_entities_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
+    def list_description_entities_with_http_info(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
 
         Fetch existing description entity definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_description_entities_with_http_info(id_project, id_domain, id_name, async_req=True)
+        >>> thread = api.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
-        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
@@ -3228,7 +3228,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'resource_type', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3243,6 +3243,10 @@ class AdminServiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `list_description_entities`")  # noqa: E501
         # verify the required parameter 'id_project' is set
         if ('id_project' not in params or
                 params['id_project'] is None):
@@ -3259,6 +3263,8 @@ class AdminServiceApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'resource_type' in params:
+            path_params['resource_type'] = params['resource_type']  # noqa: E501
         if 'id_project' in params:
             path_params['id.project'] = params['id_project']  # noqa: E501
         if 'id_domain' in params:
@@ -3267,8 +3273,6 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
-        if 'resource_type' in params:
-            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'token' in params:
@@ -3298,7 +3302,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/description_entities/{id.project}/{id.domain}/{id.name}', 'GET',
+            '/api/v1/description_entities/{resource_type}/{id.project}/{id.domain}/{id.name}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -3313,19 +3317,19 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_description_entities2(self, id_project, id_domain, **kwargs):  # noqa: E501
+    def list_description_entities2(self, resource_type, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
 
         Fetch existing description entity definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_description_entities2(id_project, id_domain, async_req=True)
+        >>> thread = api.list_description_entities2(resource_type, id_project, id_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
         :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
@@ -3338,24 +3342,24 @@ class AdminServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_description_entities2_with_http_info(id_project, id_domain, **kwargs)  # noqa: E501
+            return self.list_description_entities2_with_http_info(resource_type, id_project, id_domain, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_description_entities2_with_http_info(id_project, id_domain, **kwargs)  # noqa: E501
+            (data) = self.list_description_entities2_with_http_info(resource_type, id_project, id_domain, **kwargs)  # noqa: E501
             return data
 
-    def list_description_entities2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
+    def list_description_entities2_with_http_info(self, resource_type, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
 
         Fetch existing description entity definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_description_entities2_with_http_info(id_project, id_domain, async_req=True)
+        >>> thread = api.list_description_entities2_with_http_info(resource_type, id_project, id_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
         :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
         :param int limit: Indicates the number of resources to be returned. +required.
         :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
@@ -3367,7 +3371,7 @@ class AdminServiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'resource_type', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3382,6 +3386,10 @@ class AdminServiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `list_description_entities2`")  # noqa: E501
         # verify the required parameter 'id_project' is set
         if ('id_project' not in params or
                 params['id_project'] is None):
@@ -3394,14 +3402,14 @@ class AdminServiceApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'resource_type' in params:
+            path_params['resource_type'] = params['resource_type']  # noqa: E501
         if 'id_project' in params:
             path_params['id.project'] = params['id_project']  # noqa: E501
         if 'id_domain' in params:
             path_params['id.domain'] = params['id_domain']  # noqa: E501
 
         query_params = []
-        if 'resource_type' in params:
-            query_params.append(('resource_type', params['resource_type']))  # noqa: E501
         if 'id_name' in params:
             query_params.append(('id.name', params['id_name']))  # noqa: E501
         if 'limit' in params:
@@ -3433,7 +3441,7 @@ class AdminServiceApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v1/description_entities/{id.project}/{id.domain}', 'GET',
+            '/api/v1/description_entities/{resource_type}/{id.project}/{id.domain}', 'GET',
             path_params,
             query_params,
             header_params,

@@ -61,7 +61,7 @@ message WorkflowSpec {
     repeated core.WorkflowTemplate sub_workflows = 2;
 
     // Represents the specification for Description.
-    DescriptionEntity description_entity        = 3;
+    DescriptionEntity description        = 3;
 }
 
 // A container holding the compiled workflow produced from the WorkflowSpec and additional metadata.

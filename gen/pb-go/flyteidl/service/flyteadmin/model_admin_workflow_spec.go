@@ -16,5 +16,5 @@ type AdminWorkflowSpec struct {
 	// Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
 	SubWorkflows []CoreWorkflowTemplate `json:"sub_workflows,omitempty"`
 	// Represents the specification for Description.
-	DescriptionEntity *AdminDescriptionEntity `json:"description_entity,omitempty"`
+	Description *AdminDescriptionEntity `json:"description,omitempty"`
 }

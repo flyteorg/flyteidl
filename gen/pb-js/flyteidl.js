@@ -20506,6 +20506,24 @@ export const flyteidl = $root.flyteidl = (() => {
             return DescriptionEntity;
         })();
 
+        /**
+         * DescriptionFormat enum.
+         * @name flyteidl.admin.DescriptionFormat
+         * @enum {string}
+         * @property {number} DESCRIPTION_FORMAT_UNKNOWN=0 DESCRIPTION_FORMAT_UNKNOWN value
+         * @property {number} DESCRIPTION_FORMAT_MARKDOWN=1 DESCRIPTION_FORMAT_MARKDOWN value
+         * @property {number} DESCRIPTION_FORMAT_HTML=2 DESCRIPTION_FORMAT_HTML value
+         * @property {number} DESCRIPTION_FORMAT_RST=3 DESCRIPTION_FORMAT_RST value
+         */
+        admin.DescriptionFormat = (function() {
+            const valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "DESCRIPTION_FORMAT_UNKNOWN"] = 0;
+            values[valuesById[1] = "DESCRIPTION_FORMAT_MARKDOWN"] = 1;
+            values[valuesById[2] = "DESCRIPTION_FORMAT_HTML"] = 2;
+            values[valuesById[3] = "DESCRIPTION_FORMAT_RST"] = 3;
+            return values;
+        })();
+
         admin.Description = (function() {
 
             /**
@@ -20514,7 +20532,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IDescription
              * @property {string|null} [value] Description value
              * @property {string|null} [uri] Description uri
-             * @property {flyteidl.admin.Description.DescriptionFormat|null} [format] Description format
+             * @property {flyteidl.admin.DescriptionFormat|null} [format] Description format
              * @property {string|null} [iconLink] Description iconLink
              */
 
@@ -20551,7 +20569,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * Description format.
-             * @member {flyteidl.admin.Description.DescriptionFormat} format
+             * @member {flyteidl.admin.DescriptionFormat} format
              * @memberof flyteidl.admin.Description
              * @instance
              */
@@ -20691,24 +20709,6 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "iconLink: string expected";
                 return null;
             };
-
-            /**
-             * DescriptionFormat enum.
-             * @name flyteidl.admin.Description.DescriptionFormat
-             * @enum {string}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} MARKDOWN=1 MARKDOWN value
-             * @property {number} HTML=2 HTML value
-             * @property {number} RST=3 RST value
-             */
-            Description.DescriptionFormat = (function() {
-                const valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "MARKDOWN"] = 1;
-                values[valuesById[2] = "HTML"] = 2;
-                values[valuesById[3] = "RST"] = 3;
-                return values;
-            })();
 
             return Description;
         })();
@@ -35177,7 +35177,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @memberof flyteidl.admin
              * @interface ITaskSpec
              * @property {flyteidl.core.ITaskTemplate|null} [template] TaskSpec template
-             * @property {flyteidl.admin.IDescriptionEntity|null} [descriptionEntity] TaskSpec descriptionEntity
+             * @property {flyteidl.admin.IDescriptionEntity|null} [description] TaskSpec description
              */
 
             /**
@@ -35204,12 +35204,12 @@ export const flyteidl = $root.flyteidl = (() => {
             TaskSpec.prototype.template = null;
 
             /**
-             * TaskSpec descriptionEntity.
-             * @member {flyteidl.admin.IDescriptionEntity|null|undefined} descriptionEntity
+             * TaskSpec description.
+             * @member {flyteidl.admin.IDescriptionEntity|null|undefined} description
              * @memberof flyteidl.admin.TaskSpec
              * @instance
              */
-            TaskSpec.prototype.descriptionEntity = null;
+            TaskSpec.prototype.description = null;
 
             /**
              * Creates a new TaskSpec instance using the specified properties.
@@ -35237,8 +35237,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer = $Writer.create();
                 if (message.template != null && message.hasOwnProperty("template"))
                     $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity"))
-                    $root.flyteidl.admin.DescriptionEntity.encode(message.descriptionEntity, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.description != null && message.hasOwnProperty("description"))
+                    $root.flyteidl.admin.DescriptionEntity.encode(message.description, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
 
@@ -35264,7 +35264,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.descriptionEntity = $root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32());
+                        message.description = $root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -35290,10 +35290,10 @@ export const flyteidl = $root.flyteidl = (() => {
                     if (error)
                         return "template." + error;
                 }
-                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity")) {
-                    let error = $root.flyteidl.admin.DescriptionEntity.verify(message.descriptionEntity);
+                if (message.description != null && message.hasOwnProperty("description")) {
+                    let error = $root.flyteidl.admin.DescriptionEntity.verify(message.description);
                     if (error)
-                        return "descriptionEntity." + error;
+                        return "description." + error;
                 }
                 return null;
             };
@@ -37570,7 +37570,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface IWorkflowSpec
              * @property {flyteidl.core.IWorkflowTemplate|null} [template] WorkflowSpec template
              * @property {Array.<flyteidl.core.IWorkflowTemplate>|null} [subWorkflows] WorkflowSpec subWorkflows
-             * @property {flyteidl.admin.IDescriptionEntity|null} [descriptionEntity] WorkflowSpec descriptionEntity
+             * @property {flyteidl.admin.IDescriptionEntity|null} [description] WorkflowSpec description
              */
 
             /**
@@ -37606,12 +37606,12 @@ export const flyteidl = $root.flyteidl = (() => {
             WorkflowSpec.prototype.subWorkflows = $util.emptyArray;
 
             /**
-             * WorkflowSpec descriptionEntity.
-             * @member {flyteidl.admin.IDescriptionEntity|null|undefined} descriptionEntity
+             * WorkflowSpec description.
+             * @member {flyteidl.admin.IDescriptionEntity|null|undefined} description
              * @memberof flyteidl.admin.WorkflowSpec
              * @instance
              */
-            WorkflowSpec.prototype.descriptionEntity = null;
+            WorkflowSpec.prototype.description = null;
 
             /**
              * Creates a new WorkflowSpec instance using the specified properties.
@@ -37642,8 +37642,8 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.subWorkflows != null && message.subWorkflows.length)
                     for (let i = 0; i < message.subWorkflows.length; ++i)
                         $root.flyteidl.core.WorkflowTemplate.encode(message.subWorkflows[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity"))
-                    $root.flyteidl.admin.DescriptionEntity.encode(message.descriptionEntity, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.description != null && message.hasOwnProperty("description"))
+                    $root.flyteidl.admin.DescriptionEntity.encode(message.description, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -37674,7 +37674,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.subWorkflows.push($root.flyteidl.core.WorkflowTemplate.decode(reader, reader.uint32()));
                         break;
                     case 3:
-                        message.descriptionEntity = $root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32());
+                        message.description = $root.flyteidl.admin.DescriptionEntity.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -37709,10 +37709,10 @@ export const flyteidl = $root.flyteidl = (() => {
                             return "subWorkflows." + error;
                     }
                 }
-                if (message.descriptionEntity != null && message.hasOwnProperty("descriptionEntity")) {
-                    let error = $root.flyteidl.admin.DescriptionEntity.verify(message.descriptionEntity);
+                if (message.description != null && message.hasOwnProperty("description")) {
+                    let error = $root.flyteidl.admin.DescriptionEntity.verify(message.description);
                     if (error)
-                        return "descriptionEntity." + error;
+                        return "description." + error;
                 }
                 return null;
             };

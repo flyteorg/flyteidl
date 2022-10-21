@@ -14,5 +14,5 @@ type AdminTaskSpec struct {
 	// Template of the task that encapsulates all the metadata of the task.
 	Template *CoreTaskTemplate `json:"template,omitempty"`
 	// Represents the specification for Description.
-	DescriptionEntity *AdminDescriptionEntity `json:"description_entity,omitempty"`
+	Description *AdminDescriptionEntity `json:"description,omitempty"`
 }
