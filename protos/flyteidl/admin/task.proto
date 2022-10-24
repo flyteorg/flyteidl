@@ -56,7 +56,7 @@ message TaskSpec {
     // Template of the task that encapsulates all the metadata of the task.
     core.TaskTemplate template = 1;
 
-    // Represents the specification for Description.
+    // Represents the specification for description entity.
     DescriptionEntity description        = 2;
 }
 

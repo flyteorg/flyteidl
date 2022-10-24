@@ -60,7 +60,7 @@ message WorkflowSpec {
     // to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
     repeated core.WorkflowTemplate sub_workflows = 2;
 
-    // Represents the specification for Description.
+    // Represents the specification for description entity.
     DescriptionEntity description        = 3;
 }
 
