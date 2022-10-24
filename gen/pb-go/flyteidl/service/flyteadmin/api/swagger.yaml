@@ -399,7 +399,7 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminTaskExecutionGetDataResponse"
-  /api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}:
+  /api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version}:
     get:
       tags:
       - "AdminService"
@@ -407,6 +407,19 @@ paths:
       description: "Retrieve an existing description entity description."
       operationId: "GetDescriptionEntity"
       parameters:
+      - name: "id.resource_type"
+        in: "path"
+        description: "Identifies the specific type of resource that this identifier\
+          \ corresponds to."
+        required: true
+        type: "string"
+        enum:
+        - "UNSPECIFIED"
+        - "TASK"
+        - "WORKFLOW"
+        - "LAUNCH_PLAN"
+        - "DATASET"
+        x-exportParamName: "IdResourceType"
       - name: "id.project"
         in: "path"
         description: "Name of the project the resource belongs to."
@@ -432,26 +445,6 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdVersion"
-      - name: "id.resource_type"
-        in: "query"
-        description: "Identifies the specific type of resource that this identifier\
-          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
-          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
-          \ a compilation of multiple individual objects.\nEventually all Catalog\
-          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
-          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
-          \ manner to other Flyte objects"
-        required: false
-        type: "string"
-        default: "UNSPECIFIED"
-        enum:
-        - "UNSPECIFIED"
-        - "TASK"
-        - "WORKFLOW"
-        - "LAUNCH_PLAN"
-        - "DATASET"
-        x-exportParamName: "IdResourceType"
-        x-optionalDataType: "String"
       responses:
         200:
           description: "A successful response."

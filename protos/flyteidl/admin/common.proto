@@ -184,7 +184,7 @@ message NamedEntityUpdateResponse {
 message ObjectGetRequest {
     // Indicates a unique version of resource.
     // +required
-    core.Identifier id = 1;
+    flyteidl.core.Identifier id = 1;
 }
 
 // Shared request structure to retrieve a list of resources.
