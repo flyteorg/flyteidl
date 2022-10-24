@@ -45,6 +45,7 @@
 #include "flyteidl/admin/version.pb.h"
 #include "flyteidl/admin/common.pb.h"
 #include "flyteidl/admin/description_entity.pb.h"
+#include "flyteidl/core/identifier.pb.h"
 #include "protoc-gen-swagger/options/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
