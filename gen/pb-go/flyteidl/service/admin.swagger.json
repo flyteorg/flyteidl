@@ -447,7 +447,7 @@
         ]
       }
     },
-    "/api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version}": {
+    "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}": {
       "get": {
         "summary": "Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.",
         "description": "Retrieve an existing description entity description.",
@@ -461,20 +461,6 @@
           }
         },
         "parameters": [
-          {
-            "name": "id.resource_type",
-            "description": "Identifies the specific type of resource that this identifier corresponds to.",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN",
-              "DATASET"
-            ]
-          },
           {
             "name": "id.project",
             "description": "Name of the project the resource belongs to.",
@@ -502,6 +488,21 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "id.resource_type",
+            "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN",
+              "DATASET"
+            ],
+            "default": "UNSPECIFIED"
           }
         ],
         "tags": [
@@ -5232,7 +5233,7 @@
         },
         "description": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "Represents the specification for Description."
+          "description": "Represents the specification for description entity."
         }
       },
       "description": "Represents a structure that encapsulates the user-configured specification of the task."
@@ -5493,7 +5494,7 @@
         },
         "description": {
           "$ref": "#/definitions/adminDescriptionEntity",
-          "description": "Represents the specification for Description."
+          "description": "Represents the specification for description entity."
         }
       },
       "description": "Represents a structure that encapsulates the specification of the workflow."

@@ -227,7 +227,7 @@ type WorkflowSpec struct {
 	// propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out
 	// to Admin to see other registered workflows).  In fact, subworkflows do not even need to be registered.
 	SubWorkflows []*core.WorkflowTemplate `protobuf:"bytes,2,rep,name=sub_workflows,json=subWorkflows,proto3" json:"sub_workflows,omitempty"`
-	// Represents the specification for Description.
+	// Represents the specification for description entity.
 	Description          *DescriptionEntity `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`

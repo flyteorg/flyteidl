@@ -2714,7 +2714,7 @@ func request_AdminService_GetVersion_0(ctx context.Context, marshaler runtime.Ma
 }
 
 var (
-	filter_AdminService_GetDescriptionEntity_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "resource_type": 1, "project": 2, "domain": 3, "name": 4, "version": 5}, Base: []int{1, 1, 1, 2, 3, 4, 5, 0, 0, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7}}
+	filter_AdminService_GetDescriptionEntity_0 = &utilities.DoubleArray{Encoding: map[string]int{"id": 0, "project": 1, "domain": 2, "name": 3, "version": 4}, Base: []int{1, 1, 1, 2, 3, 4, 0, 0, 0, 0}, Check: []int{0, 1, 2, 2, 2, 2, 3, 4, 5, 6}}
 )
 
 func request_AdminService_GetDescriptionEntity_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -2723,24 +2723,10 @@ func request_AdminService_GetDescriptionEntity_0(ctx context.Context, marshaler 
 
 	var (
 		val string
-		e   int32
 		ok  bool
 		err error
 		_   = err
 	)
-
-	val, ok = pathParams["id.resource_type"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id.resource_type")
-	}
-
-	err = runtime.PopulateFieldFromPath(&protoReq, "id.resource_type", val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.resource_type", err)
-	}
-
-	protoReq.Id.ResourceType = ResourceType(e)
 
 	val, ok = pathParams["id.project"]
 	if !ok {
@@ -4203,7 +4189,7 @@ var (
 
 	pattern_AdminService_GetVersion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "version"}, ""))
 
-	pattern_AdminService_GetDescriptionEntity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6, 1, 0, 4, 1, 5, 7}, []string{"api", "v1", "description_entities", "id.resource_type", "id.project", "id.domain", "id.name", "id.version"}, ""))
+	pattern_AdminService_GetDescriptionEntity_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "description_entities", "id.project", "id.domain", "id.name", "id.version"}, ""))
 
 	pattern_AdminService_ListDescriptionEntities_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "description_entities", "resource_type", "id.project", "id.domain", "id.name"}, ""))
 

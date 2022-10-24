@@ -607,7 +607,7 @@ service AdminService {
   // Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
   rpc GetDescriptionEntity (flyteidl.admin.ObjectGetRequest) returns (flyteidl.admin.DescriptionEntity) {
     option (google.api.http) = {
-      get: "/api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version}"
+      get: "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Retrieve an existing description entity description."

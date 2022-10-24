@@ -3671,7 +3671,7 @@ public final class WorkflowOuterClass {
 
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -3679,7 +3679,7 @@ public final class WorkflowOuterClass {
     boolean hasDescription();
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -3687,7 +3687,7 @@ public final class WorkflowOuterClass {
     flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescription();
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -3911,7 +3911,7 @@ public final class WorkflowOuterClass {
     private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity description_;
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -3921,7 +3921,7 @@ public final class WorkflowOuterClass {
     }
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -3931,7 +3931,7 @@ public final class WorkflowOuterClass {
     }
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4854,7 +4854,7 @@ public final class WorkflowOuterClass {
           flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionBuilder_;
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4864,7 +4864,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4878,7 +4878,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4898,7 +4898,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4916,7 +4916,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4938,7 +4938,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4956,7 +4956,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4968,7 +4968,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>
@@ -4983,7 +4983,7 @@ public final class WorkflowOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 3;</code>

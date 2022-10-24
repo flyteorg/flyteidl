@@ -3617,7 +3617,7 @@ public final class TaskOuterClass {
 
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -3625,7 +3625,7 @@ public final class TaskOuterClass {
     boolean hasDescription();
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -3633,7 +3633,7 @@ public final class TaskOuterClass {
     flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity getDescription();
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -3778,7 +3778,7 @@ public final class TaskOuterClass {
     private flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity description_;
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -3788,7 +3788,7 @@ public final class TaskOuterClass {
     }
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -3798,7 +3798,7 @@ public final class TaskOuterClass {
     }
     /**
      * <pre>
-     * Represents the specification for Description.
+     * Represents the specification for description entity.
      * </pre>
      *
      * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4314,7 +4314,7 @@ public final class TaskOuterClass {
           flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntity.Builder, flyteidl.admin.DescriptionEntityOuterClass.DescriptionEntityOrBuilder> descriptionBuilder_;
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4324,7 +4324,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4338,7 +4338,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4358,7 +4358,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4376,7 +4376,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4398,7 +4398,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4416,7 +4416,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4428,7 +4428,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>
@@ -4443,7 +4443,7 @@ public final class TaskOuterClass {
       }
       /**
        * <pre>
-       * Represents the specification for Description.
+       * Represents the specification for description entity.
        * </pre>
        *
        * <code>.flyteidl.admin.DescriptionEntity description = 2;</code>

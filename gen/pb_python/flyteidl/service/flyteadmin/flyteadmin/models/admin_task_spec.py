@@ -82,7 +82,7 @@ class AdminTaskSpec(object):
     def description(self):
         """Gets the description of this AdminTaskSpec.  # noqa: E501
 
-        Represents the specification for Description.  # noqa: E501
+        Represents the specification for description entity.  # noqa: E501
 
         :return: The description of this AdminTaskSpec.  # noqa: E501
         :rtype: AdminDescriptionEntity
@@ -93,7 +93,7 @@ class AdminTaskSpec(object):
     def description(self, description):
         """Sets the description of this AdminTaskSpec.
 
-        Represents the specification for Description.  # noqa: E501
+        Represents the specification for description entity.  # noqa: E501
 
         :param description: The description of this AdminTaskSpec.  # noqa: E501
         :type: AdminDescriptionEntity

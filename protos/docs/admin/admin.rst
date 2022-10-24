@@ -3414,7 +3414,7 @@ Represents a structure that encapsulates the user-configured specification of th
    :widths: auto
 
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", "Template of the task that encapsulates all the metadata of the task."
-   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
+   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for description entity."
 
 
 
@@ -3857,7 +3857,7 @@ Represents a structure that encapsulates the specification of the workflow.
 
    "template", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "", "Template of the task that encapsulates all the metadata of the workflow."
    "sub_workflows", ":ref:`ref_flyteidl.core.WorkflowTemplate`", "repeated", "Workflows that are embedded into other workflows need to be passed alongside the parent workflow to the propeller compiler (since the compiler doesn't have any knowledge of other workflows - ie, it doesn't reach out to Admin to see other registered workflows). In fact, subworkflows do not even need to be registered."
-   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for Description."
+   "description", ":ref:`ref_flyteidl.admin.DescriptionEntity`", "", "Represents the specification for description entity."
 
 
 

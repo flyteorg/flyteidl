@@ -1101,15 +1101,21 @@ func (a *AdminServiceApiService) GetActiveLaunchPlan(ctx context.Context, idProj
 AdminServiceApiService Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 Retrieve an existing description entity description.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param idResourceType Identifies the specific type of resource that this identifier corresponds to.
  * @param idProject Name of the project the resource belongs to.
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param idName User provided value for the resource.
  * @param idVersion Specific version of the resource.
+ * @param optional nil or *GetDescriptionEntityOpts - Optional Parameters:
+     * @param "IdResourceType" (optional.String) -  Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
 
 @return AdminDescriptionEntity
 */
-func (a *AdminServiceApiService) GetDescriptionEntity(ctx context.Context, idResourceType string, idProject string, idDomain string, idName string, idVersion string) (AdminDescriptionEntity, *http.Response, error) {
+
+type GetDescriptionEntityOpts struct { 
+	IdResourceType optional.String
+}
+
+func (a *AdminServiceApiService) GetDescriptionEntity(ctx context.Context, idProject string, idDomain string, idName string, idVersion string, localVarOptionals *GetDescriptionEntityOpts) (AdminDescriptionEntity, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -1119,8 +1125,7 @@ func (a *AdminServiceApiService) GetDescriptionEntity(ctx context.Context, idRes
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id.resource_type"+"}", fmt.Sprintf("%v", idResourceType), -1)
+	localVarPath := a.client.cfg.BasePath + "/api/v1/description_entities/{id.project}/{id.domain}/{id.name}/{id.version}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id.project"+"}", fmt.Sprintf("%v", idProject), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id.domain"+"}", fmt.Sprintf("%v", idDomain), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"id.name"+"}", fmt.Sprintf("%v", idName), -1)
@@ -1130,6 +1135,9 @@ func (a *AdminServiceApiService) GetDescriptionEntity(ctx context.Context, idRes
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.IdResourceType.IsSet() {
+		localVarQueryParams.Add("id.resource_type", parameterToString(localVarOptionals.IdResourceType.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
