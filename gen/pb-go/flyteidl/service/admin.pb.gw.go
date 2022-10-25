@@ -2740,7 +2740,7 @@ func request_AdminService_GetDescriptionEntity_0(ctx context.Context, marshaler 
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id.resource_type", err)
 	}
 
-	protoReq.Id.ResourceType = ResourceType(e)
+	protoReq.Id.ResourceType = core.ResourceType(e)
 
 	val, ok = pathParams["id.project"]
 	if !ok {
