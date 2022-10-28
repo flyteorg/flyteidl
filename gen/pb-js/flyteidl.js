@@ -11307,6 +11307,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @property {string|null} [deprecatedErrorMessage] TaskMetadata deprecatedErrorMessage
              * @property {boolean|null} [interruptible] TaskMetadata interruptible
              * @property {boolean|null} [cacheSerializable] TaskMetadata cacheSerializable
+             * @property {boolean|null} [generatesDeck] TaskMetadata generatesDeck
              */
 
             /**
@@ -11388,6 +11389,14 @@ export const flyteidl = $root.flyteidl = (() => {
              */
             TaskMetadata.prototype.cacheSerializable = false;
 
+            /**
+             * TaskMetadata generatesDeck.
+             * @member {boolean} generatesDeck
+             * @memberof flyteidl.core.TaskMetadata
+             * @instance
+             */
+            TaskMetadata.prototype.generatesDeck = false;
+
             // OneOf field names bound to virtual getters and setters
             let $oneOfFields;
 
@@ -11442,6 +11451,8 @@ export const flyteidl = $root.flyteidl = (() => {
                     writer.uint32(/* id 8, wireType 0 =*/64).bool(message.interruptible);
                 if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
                     writer.uint32(/* id 9, wireType 0 =*/72).bool(message.cacheSerializable);
+                if (message.generatesDeck != null && message.hasOwnProperty("generatesDeck"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).bool(message.generatesDeck);
                 return writer;
             };
 
@@ -11486,6 +11497,9 @@ export const flyteidl = $root.flyteidl = (() => {
                         break;
                     case 9:
                         message.cacheSerializable = reader.bool();
+                        break;
+                    case 10:
+                        message.generatesDeck = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11539,6 +11553,9 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.cacheSerializable != null && message.hasOwnProperty("cacheSerializable"))
                     if (typeof message.cacheSerializable !== "boolean")
                         return "cacheSerializable: boolean expected";
+                if (message.generatesDeck != null && message.hasOwnProperty("generatesDeck"))
+                    if (typeof message.generatesDeck !== "boolean")
+                        return "generatesDeck: boolean expected";
                 return null;
             };
 
@@ -40922,161 +40939,15 @@ export const flyteidl = $root.flyteidl = (() => {
          * @name flyteidl.service.ArtifactType
          * @enum {string}
          * @property {number} ARTIFACT_TYPE_UNDEFINED=0 ARTIFACT_TYPE_UNDEFINED value
-         * @property {number} ARTIFACT_TYPE_DECK=1 ARTIFACT_TYPE_DECK value
+         * @property {number} ARTIFACT_TYPE_OUTPUT_METADATA=1 ARTIFACT_TYPE_OUTPUT_METADATA value
+         * @property {number} ARTIFACT_TYPE_DECK=2 ARTIFACT_TYPE_DECK value
          */
         service.ArtifactType = (function() {
             const valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "ARTIFACT_TYPE_UNDEFINED"] = 0;
-            values[valuesById[1] = "ARTIFACT_TYPE_DECK"] = 1;
+            values[valuesById[1] = "ARTIFACT_TYPE_OUTPUT_METADATA"] = 1;
+            values[valuesById[2] = "ARTIFACT_TYPE_DECK"] = 2;
             return values;
-        })();
-
-        service.TaskExecutionId = (function() {
-
-            /**
-             * Properties of a TaskExecutionId.
-             * @memberof flyteidl.service
-             * @interface ITaskExecutionId
-             * @property {flyteidl.core.IIdentifier|null} [taskId] TaskExecutionId taskId
-             * @property {flyteidl.core.INodeExecutionIdentifier|null} [parentNodeExecutionId] TaskExecutionId parentNodeExecutionId
-             * @property {number|null} [retryAttempt] TaskExecutionId retryAttempt
-             */
-
-            /**
-             * Constructs a new TaskExecutionId.
-             * @memberof flyteidl.service
-             * @classdesc Represents a TaskExecutionId.
-             * @implements ITaskExecutionId
-             * @constructor
-             * @param {flyteidl.service.ITaskExecutionId=} [properties] Properties to set
-             */
-            function TaskExecutionId(properties) {
-                if (properties)
-                    for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * TaskExecutionId taskId.
-             * @member {flyteidl.core.IIdentifier|null|undefined} taskId
-             * @memberof flyteidl.service.TaskExecutionId
-             * @instance
-             */
-            TaskExecutionId.prototype.taskId = null;
-
-            /**
-             * TaskExecutionId parentNodeExecutionId.
-             * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} parentNodeExecutionId
-             * @memberof flyteidl.service.TaskExecutionId
-             * @instance
-             */
-            TaskExecutionId.prototype.parentNodeExecutionId = null;
-
-            /**
-             * TaskExecutionId retryAttempt.
-             * @member {number} retryAttempt
-             * @memberof flyteidl.service.TaskExecutionId
-             * @instance
-             */
-            TaskExecutionId.prototype.retryAttempt = 0;
-
-            /**
-             * Creates a new TaskExecutionId instance using the specified properties.
-             * @function create
-             * @memberof flyteidl.service.TaskExecutionId
-             * @static
-             * @param {flyteidl.service.ITaskExecutionId=} [properties] Properties to set
-             * @returns {flyteidl.service.TaskExecutionId} TaskExecutionId instance
-             */
-            TaskExecutionId.create = function create(properties) {
-                return new TaskExecutionId(properties);
-            };
-
-            /**
-             * Encodes the specified TaskExecutionId message. Does not implicitly {@link flyteidl.service.TaskExecutionId.verify|verify} messages.
-             * @function encode
-             * @memberof flyteidl.service.TaskExecutionId
-             * @static
-             * @param {flyteidl.service.ITaskExecutionId} message TaskExecutionId message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            TaskExecutionId.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.taskId != null && message.hasOwnProperty("taskId"))
-                    $root.flyteidl.core.Identifier.encode(message.taskId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.parentNodeExecutionId != null && message.hasOwnProperty("parentNodeExecutionId"))
-                    $root.flyteidl.core.NodeExecutionIdentifier.encode(message.parentNodeExecutionId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.retryAttempt);
-                return writer;
-            };
-
-            /**
-             * Decodes a TaskExecutionId message from the specified reader or buffer.
-             * @function decode
-             * @memberof flyteidl.service.TaskExecutionId
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {flyteidl.service.TaskExecutionId} TaskExecutionId
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            TaskExecutionId.decode = function decode(reader, length) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                let end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskExecutionId();
-                while (reader.pos < end) {
-                    let tag = reader.uint32();
-                    switch (tag >>> 3) {
-                    case 1:
-                        message.taskId = $root.flyteidl.core.Identifier.decode(reader, reader.uint32());
-                        break;
-                    case 2:
-                        message.parentNodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
-                        break;
-                    case 3:
-                        message.retryAttempt = reader.uint32();
-                        break;
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Verifies a TaskExecutionId message.
-             * @function verify
-             * @memberof flyteidl.service.TaskExecutionId
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            TaskExecutionId.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                    let error = $root.flyteidl.core.Identifier.verify(message.taskId);
-                    if (error)
-                        return "taskId." + error;
-                }
-                if (message.parentNodeExecutionId != null && message.hasOwnProperty("parentNodeExecutionId")) {
-                    let error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.parentNodeExecutionId);
-                    if (error)
-                        return "parentNodeExecutionId." + error;
-                }
-                if (message.retryAttempt != null && message.hasOwnProperty("retryAttempt"))
-                    if (!$util.isInteger(message.retryAttempt))
-                        return "retryAttempt: integer expected";
-                return null;
-            };
-
-            return TaskExecutionId;
         })();
 
         service.CreateDownloadLinkRequest = (function() {
@@ -41087,7 +40958,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @interface ICreateDownloadLinkRequest
              * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] CreateDownloadLinkRequest executionId
              * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] CreateDownloadLinkRequest nodeId
-             * @property {flyteidl.service.ITaskExecutionId|null} [taskId] CreateDownloadLinkRequest taskId
+             * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskId] CreateDownloadLinkRequest taskId
              * @property {flyteidl.service.ArtifactType|null} [artifactType] CreateDownloadLinkRequest artifactType
              * @property {google.protobuf.IDuration|null} [expiresIn] CreateDownloadLinkRequest expiresIn
              */
@@ -41125,7 +40996,7 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * CreateDownloadLinkRequest taskId.
-             * @member {flyteidl.service.ITaskExecutionId|null|undefined} taskId
+             * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskId
              * @memberof flyteidl.service.CreateDownloadLinkRequest
              * @instance
              */
@@ -41190,7 +41061,7 @@ export const flyteidl = $root.flyteidl = (() => {
                 if (message.nodeId != null && message.hasOwnProperty("nodeId"))
                     $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.taskId != null && message.hasOwnProperty("taskId"))
-                    $root.flyteidl.service.TaskExecutionId.encode(message.taskId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.artifactType != null && message.hasOwnProperty("artifactType"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.artifactType);
                 if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
@@ -41223,7 +41094,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.taskId = $root.flyteidl.service.TaskExecutionId.decode(reader, reader.uint32());
+                        message.taskId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
                         break;
                     case 4:
                         message.artifactType = reader.int32();
@@ -41274,7 +41145,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "source: multiple values";
                     properties.source = 1;
                     {
-                        let error = $root.flyteidl.service.TaskExecutionId.verify(message.taskId);
+                        let error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskId);
                         if (error)
                             return "taskId." + error;
                     }
@@ -41285,6 +41156,7 @@ export const flyteidl = $root.flyteidl = (() => {
                         return "artifactType: enum value expected";
                     case 0:
                     case 1:
+                    case 2:
                         break;
                     }
                 if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
@@ -41304,7 +41176,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * Properties of a CreateDownloadLinkResponse.
              * @memberof flyteidl.service
              * @interface ICreateDownloadLinkResponse
-             * @property {string|null} [signedUrl] CreateDownloadLinkResponse signedUrl
+             * @property {Array.<string>|null} [signedUrl] CreateDownloadLinkResponse signedUrl
              * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateDownloadLinkResponse expiresAt
              */
 
@@ -41317,6 +41189,7 @@ export const flyteidl = $root.flyteidl = (() => {
              * @param {flyteidl.service.ICreateDownloadLinkResponse=} [properties] Properties to set
              */
             function CreateDownloadLinkResponse(properties) {
+                this.signedUrl = [];
                 if (properties)
                     for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -41325,11 +41198,11 @@ export const flyteidl = $root.flyteidl = (() => {
 
             /**
              * CreateDownloadLinkResponse signedUrl.
-             * @member {string} signedUrl
+             * @member {Array.<string>} signedUrl
              * @memberof flyteidl.service.CreateDownloadLinkResponse
              * @instance
              */
-            CreateDownloadLinkResponse.prototype.signedUrl = "";
+            CreateDownloadLinkResponse.prototype.signedUrl = $util.emptyArray;
 
             /**
              * CreateDownloadLinkResponse expiresAt.
@@ -41363,8 +41236,9 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateDownloadLinkResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl);
+                if (message.signedUrl != null && message.signedUrl.length)
+                    for (let i = 0; i < message.signedUrl.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
                 if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
                     $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
@@ -41389,7 +41263,9 @@ export const flyteidl = $root.flyteidl = (() => {
                     let tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.signedUrl = reader.string();
+                        if (!(message.signedUrl && message.signedUrl.length))
+                            message.signedUrl = [];
+                        message.signedUrl.push(reader.string());
                         break;
                     case 2:
                         message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
@@ -41413,9 +41289,13 @@ export const flyteidl = $root.flyteidl = (() => {
             CreateDownloadLinkResponse.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.signedUrl != null && message.hasOwnProperty("signedUrl"))
-                    if (!$util.isString(message.signedUrl))
-                        return "signedUrl: string expected";
+                if (message.signedUrl != null && message.hasOwnProperty("signedUrl")) {
+                    if (!Array.isArray(message.signedUrl))
+                        return "signedUrl: array expected";
+                    for (let i = 0; i < message.signedUrl.length; ++i)
+                        if (!$util.isString(message.signedUrl[i]))
+                            return "signedUrl: string[] expected";
+                }
                 if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
                     let error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
                     if (error)

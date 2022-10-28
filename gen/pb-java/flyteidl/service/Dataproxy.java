@@ -15,29 +15,69 @@ public final class Dataproxy {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * ArtifactType
+   * </pre>
+   *
    * Protobuf enum {@code flyteidl.service.ArtifactType}
    */
   public enum ArtifactType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.
+     * </pre>
+     *
      * <code>ARTIFACT_TYPE_UNDEFINED = 0;</code>
      */
     ARTIFACT_TYPE_UNDEFINED(0),
     /**
-     * <code>ARTIFACT_TYPE_DECK = 1;</code>
+     * <pre>
+     * ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
+     * finishes executing.
+     * </pre>
+     *
+     * <code>ARTIFACT_TYPE_OUTPUT_METADATA = 1;</code>
      */
-    ARTIFACT_TYPE_DECK(1),
+    ARTIFACT_TYPE_OUTPUT_METADATA(1),
+    /**
+     * <pre>
+     * ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
+     * finishes executing.
+     * </pre>
+     *
+     * <code>ARTIFACT_TYPE_DECK = 2;</code>
+     */
+    ARTIFACT_TYPE_DECK(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
+     * <pre>
+     * ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.
+     * </pre>
+     *
      * <code>ARTIFACT_TYPE_UNDEFINED = 0;</code>
      */
     public static final int ARTIFACT_TYPE_UNDEFINED_VALUE = 0;
     /**
-     * <code>ARTIFACT_TYPE_DECK = 1;</code>
+     * <pre>
+     * ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
+     * finishes executing.
+     * </pre>
+     *
+     * <code>ARTIFACT_TYPE_OUTPUT_METADATA = 1;</code>
      */
-    public static final int ARTIFACT_TYPE_DECK_VALUE = 1;
+    public static final int ARTIFACT_TYPE_OUTPUT_METADATA_VALUE = 1;
+    /**
+     * <pre>
+     * ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
+     * finishes executing.
+     * </pre>
+     *
+     * <code>ARTIFACT_TYPE_DECK = 2;</code>
+     */
+    public static final int ARTIFACT_TYPE_DECK_VALUE = 2;
 
 
     public final int getNumber() {
@@ -59,7 +99,8 @@ public final class Dataproxy {
     public static ArtifactType forNumber(int value) {
       switch (value) {
         case 0: return ARTIFACT_TYPE_UNDEFINED;
-        case 1: return ARTIFACT_TYPE_DECK;
+        case 1: return ARTIFACT_TYPE_OUTPUT_METADATA;
+        case 2: return ARTIFACT_TYPE_DECK;
         default: return null;
       }
     }
@@ -4186,1045 +4227,13 @@ public final class Dataproxy {
 
   }
 
-  public interface TaskExecutionIdOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskExecutionId)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    boolean hasTaskId();
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.Identifier getTaskId();
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder();
-
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    boolean hasParentNodeExecutionId();
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecutionId();
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionIdOrBuilder();
-
-    /**
-     * <pre>
-     * retry attempt number for this task, ie., 2 for the second attempt
-     * </pre>
-     *
-     * <code>uint32 retry_attempt = 3;</code>
-     */
-    int getRetryAttempt();
-  }
-  /**
-   * Protobuf type {@code flyteidl.service.TaskExecutionId}
-   */
-  public  static final class TaskExecutionId extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.TaskExecutionId)
-      TaskExecutionIdOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TaskExecutionId.newBuilder() to construct.
-    private TaskExecutionId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TaskExecutionId() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TaskExecutionId(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              flyteidl.core.IdentifierOuterClass.Identifier.Builder subBuilder = null;
-              if (taskId_ != null) {
-                subBuilder = taskId_.toBuilder();
-              }
-              taskId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.Identifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(taskId_);
-                taskId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder subBuilder = null;
-              if (parentNodeExecutionId_ != null) {
-                subBuilder = parentNodeExecutionId_.toBuilder();
-              }
-              parentNodeExecutionId_ = input.readMessage(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(parentNodeExecutionId_);
-                parentNodeExecutionId_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              retryAttempt_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_TaskExecutionId_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_TaskExecutionId_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.service.Dataproxy.TaskExecutionId.class, flyteidl.service.Dataproxy.TaskExecutionId.Builder.class);
-    }
-
-    public static final int TASK_ID_FIELD_NUMBER = 1;
-    private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    public boolean hasTaskId() {
-      return taskId_ != null;
-    }
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-      return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
-    }
-    /**
-     * <pre>
-     * ID of the task. In combination with the retryAttempt this will indicate
-     * the task execution uniquely for a given parent node execution.
-     * </pre>
-     *
-     * <code>.flyteidl.core.Identifier task_id = 1;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-      return getTaskId();
-    }
-
-    public static final int PARENT_NODE_EXECUTION_ID_FIELD_NUMBER = 2;
-    private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecutionId_;
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    public boolean hasParentNodeExecutionId() {
-      return parentNodeExecutionId_ != null;
-    }
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecutionId() {
-      return parentNodeExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecutionId_;
-    }
-    /**
-     * <pre>
-     * A task execution is always kicked off by a node execution, the event consumer
-     * will use the parent_id to relate the task to it's parent node execution
-     * </pre>
-     *
-     * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-     */
-    public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionIdOrBuilder() {
-      return getParentNodeExecutionId();
-    }
-
-    public static final int RETRY_ATTEMPT_FIELD_NUMBER = 3;
-    private int retryAttempt_;
-    /**
-     * <pre>
-     * retry attempt number for this task, ie., 2 for the second attempt
-     * </pre>
-     *
-     * <code>uint32 retry_attempt = 3;</code>
-     */
-    public int getRetryAttempt() {
-      return retryAttempt_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (taskId_ != null) {
-        output.writeMessage(1, getTaskId());
-      }
-      if (parentNodeExecutionId_ != null) {
-        output.writeMessage(2, getParentNodeExecutionId());
-      }
-      if (retryAttempt_ != 0) {
-        output.writeUInt32(3, retryAttempt_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (taskId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getTaskId());
-      }
-      if (parentNodeExecutionId_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getParentNodeExecutionId());
-      }
-      if (retryAttempt_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, retryAttempt_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.service.Dataproxy.TaskExecutionId)) {
-        return super.equals(obj);
-      }
-      flyteidl.service.Dataproxy.TaskExecutionId other = (flyteidl.service.Dataproxy.TaskExecutionId) obj;
-
-      if (hasTaskId() != other.hasTaskId()) return false;
-      if (hasTaskId()) {
-        if (!getTaskId()
-            .equals(other.getTaskId())) return false;
-      }
-      if (hasParentNodeExecutionId() != other.hasParentNodeExecutionId()) return false;
-      if (hasParentNodeExecutionId()) {
-        if (!getParentNodeExecutionId()
-            .equals(other.getParentNodeExecutionId())) return false;
-      }
-      if (getRetryAttempt()
-          != other.getRetryAttempt()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTaskId()) {
-        hash = (37 * hash) + TASK_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getTaskId().hashCode();
-      }
-      if (hasParentNodeExecutionId()) {
-        hash = (37 * hash) + PARENT_NODE_EXECUTION_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getParentNodeExecutionId().hashCode();
-      }
-      hash = (37 * hash) + RETRY_ATTEMPT_FIELD_NUMBER;
-      hash = (53 * hash) + getRetryAttempt();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.TaskExecutionId parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.service.Dataproxy.TaskExecutionId prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code flyteidl.service.TaskExecutionId}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.TaskExecutionId)
-        flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_TaskExecutionId_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_TaskExecutionId_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.service.Dataproxy.TaskExecutionId.class, flyteidl.service.Dataproxy.TaskExecutionId.Builder.class);
-      }
-
-      // Construct using flyteidl.service.Dataproxy.TaskExecutionId.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
-        } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
-        }
-        if (parentNodeExecutionIdBuilder_ == null) {
-          parentNodeExecutionId_ = null;
-        } else {
-          parentNodeExecutionId_ = null;
-          parentNodeExecutionIdBuilder_ = null;
-        }
-        retryAttempt_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_TaskExecutionId_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.TaskExecutionId getDefaultInstanceForType() {
-        return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.TaskExecutionId build() {
-        flyteidl.service.Dataproxy.TaskExecutionId result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.TaskExecutionId buildPartial() {
-        flyteidl.service.Dataproxy.TaskExecutionId result = new flyteidl.service.Dataproxy.TaskExecutionId(this);
-        if (taskIdBuilder_ == null) {
-          result.taskId_ = taskId_;
-        } else {
-          result.taskId_ = taskIdBuilder_.build();
-        }
-        if (parentNodeExecutionIdBuilder_ == null) {
-          result.parentNodeExecutionId_ = parentNodeExecutionId_;
-        } else {
-          result.parentNodeExecutionId_ = parentNodeExecutionIdBuilder_.build();
-        }
-        result.retryAttempt_ = retryAttempt_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Dataproxy.TaskExecutionId) {
-          return mergeFrom((flyteidl.service.Dataproxy.TaskExecutionId)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.service.Dataproxy.TaskExecutionId other) {
-        if (other == flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance()) return this;
-        if (other.hasTaskId()) {
-          mergeTaskId(other.getTaskId());
-        }
-        if (other.hasParentNodeExecutionId()) {
-          mergeParentNodeExecutionId(other.getParentNodeExecutionId());
-        }
-        if (other.getRetryAttempt() != 0) {
-          setRetryAttempt(other.getRetryAttempt());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.service.Dataproxy.TaskExecutionId parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Dataproxy.TaskExecutionId) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private flyteidl.core.IdentifierOuterClass.Identifier taskId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> taskIdBuilder_;
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public boolean hasTaskId() {
-        return taskIdBuilder_ != null || taskId_ != null;
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.Identifier getTaskId() {
-        if (taskIdBuilder_ == null) {
-          return taskId_ == null ? flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
-        } else {
-          return taskIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public Builder setTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          taskId_ = value;
-          onChanged();
-        } else {
-          taskIdBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public Builder setTaskId(
-          flyteidl.core.IdentifierOuterClass.Identifier.Builder builderForValue) {
-        if (taskIdBuilder_ == null) {
-          taskId_ = builderForValue.build();
-          onChanged();
-        } else {
-          taskIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.Identifier value) {
-        if (taskIdBuilder_ == null) {
-          if (taskId_ != null) {
-            taskId_ =
-              flyteidl.core.IdentifierOuterClass.Identifier.newBuilder(taskId_).mergeFrom(value).buildPartial();
-          } else {
-            taskId_ = value;
-          }
-          onChanged();
-        } else {
-          taskIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public Builder clearTaskId() {
-        if (taskIdBuilder_ == null) {
-          taskId_ = null;
-          onChanged();
-        } else {
-          taskId_ = null;
-          taskIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.Identifier.Builder getTaskIdBuilder() {
-        
-        onChanged();
-        return getTaskIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder getTaskIdOrBuilder() {
-        if (taskIdBuilder_ != null) {
-          return taskIdBuilder_.getMessageOrBuilder();
-        } else {
-          return taskId_ == null ?
-              flyteidl.core.IdentifierOuterClass.Identifier.getDefaultInstance() : taskId_;
-        }
-      }
-      /**
-       * <pre>
-       * ID of the task. In combination with the retryAttempt this will indicate
-       * the task execution uniquely for a given parent node execution.
-       * </pre>
-       *
-       * <code>.flyteidl.core.Identifier task_id = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder> 
-          getTaskIdFieldBuilder() {
-        if (taskIdBuilder_ == null) {
-          taskIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.Identifier, flyteidl.core.IdentifierOuterClass.Identifier.Builder, flyteidl.core.IdentifierOuterClass.IdentifierOrBuilder>(
-                  getTaskId(),
-                  getParentForChildren(),
-                  isClean());
-          taskId_ = null;
-        }
-        return taskIdBuilder_;
-      }
-
-      private flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier parentNodeExecutionId_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> parentNodeExecutionIdBuilder_;
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public boolean hasParentNodeExecutionId() {
-        return parentNodeExecutionIdBuilder_ != null || parentNodeExecutionId_ != null;
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getParentNodeExecutionId() {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          return parentNodeExecutionId_ == null ? flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecutionId_;
-        } else {
-          return parentNodeExecutionIdBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public Builder setParentNodeExecutionId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          parentNodeExecutionId_ = value;
-          onChanged();
-        } else {
-          parentNodeExecutionIdBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public Builder setParentNodeExecutionId(
-          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder builderForValue) {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          parentNodeExecutionId_ = builderForValue.build();
-          onChanged();
-        } else {
-          parentNodeExecutionIdBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public Builder mergeParentNodeExecutionId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          if (parentNodeExecutionId_ != null) {
-            parentNodeExecutionId_ =
-              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.newBuilder(parentNodeExecutionId_).mergeFrom(value).buildPartial();
-          } else {
-            parentNodeExecutionId_ = value;
-          }
-          onChanged();
-        } else {
-          parentNodeExecutionIdBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public Builder clearParentNodeExecutionId() {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          parentNodeExecutionId_ = null;
-          onChanged();
-        } else {
-          parentNodeExecutionId_ = null;
-          parentNodeExecutionIdBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder getParentNodeExecutionIdBuilder() {
-        
-        onChanged();
-        return getParentNodeExecutionIdFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getParentNodeExecutionIdOrBuilder() {
-        if (parentNodeExecutionIdBuilder_ != null) {
-          return parentNodeExecutionIdBuilder_.getMessageOrBuilder();
-        } else {
-          return parentNodeExecutionId_ == null ?
-              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance() : parentNodeExecutionId_;
-        }
-      }
-      /**
-       * <pre>
-       * A task execution is always kicked off by a node execution, the event consumer
-       * will use the parent_id to relate the task to it's parent node execution
-       * </pre>
-       *
-       * <code>.flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> 
-          getParentNodeExecutionIdFieldBuilder() {
-        if (parentNodeExecutionIdBuilder_ == null) {
-          parentNodeExecutionIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder>(
-                  getParentNodeExecutionId(),
-                  getParentForChildren(),
-                  isClean());
-          parentNodeExecutionId_ = null;
-        }
-        return parentNodeExecutionIdBuilder_;
-      }
-
-      private int retryAttempt_ ;
-      /**
-       * <pre>
-       * retry attempt number for this task, ie., 2 for the second attempt
-       * </pre>
-       *
-       * <code>uint32 retry_attempt = 3;</code>
-       */
-      public int getRetryAttempt() {
-        return retryAttempt_;
-      }
-      /**
-       * <pre>
-       * retry attempt number for this task, ie., 2 for the second attempt
-       * </pre>
-       *
-       * <code>uint32 retry_attempt = 3;</code>
-       */
-      public Builder setRetryAttempt(int value) {
-        
-        retryAttempt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * retry attempt number for this task, ie., 2 for the second attempt
-       * </pre>
-       *
-       * <code>uint32 retry_attempt = 3;</code>
-       */
-      public Builder clearRetryAttempt() {
-        
-        retryAttempt_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.TaskExecutionId)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.service.TaskExecutionId)
-    private static final flyteidl.service.Dataproxy.TaskExecutionId DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.TaskExecutionId();
-    }
-
-    public static flyteidl.service.Dataproxy.TaskExecutionId getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TaskExecutionId>
-        PARSER = new com.google.protobuf.AbstractParser<TaskExecutionId>() {
-      @java.lang.Override
-      public TaskExecutionId parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskExecutionId(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TaskExecutionId> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TaskExecutionId> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.service.Dataproxy.TaskExecutionId getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface CreateDownloadLinkRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.CreateDownloadLinkRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5232,7 +4241,7 @@ public final class Dataproxy {
     boolean hasExecutionId();
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5240,7 +4249,7 @@ public final class Dataproxy {
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getExecutionId();
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5249,7 +4258,8 @@ public final class Dataproxy {
 
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5257,7 +4267,8 @@ public final class Dataproxy {
     boolean hasNodeId();
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5265,7 +4276,8 @@ public final class Dataproxy {
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getNodeId();
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5273,17 +4285,29 @@ public final class Dataproxy {
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeIdOrBuilder();
 
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     boolean hasTaskId();
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
-    flyteidl.service.Dataproxy.TaskExecutionId getTaskId();
+    flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId();
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
-    flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder getTaskIdOrBuilder();
+    flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder();
 
     /**
      * <code>.flyteidl.service.ArtifactType artifact_type = 4;</code>
@@ -5396,14 +4420,14 @@ public final class Dataproxy {
               break;
             }
             case 26: {
-              flyteidl.service.Dataproxy.TaskExecutionId.Builder subBuilder = null;
+              flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder subBuilder = null;
               if (sourceCase_ == 3) {
-                subBuilder = ((flyteidl.service.Dataproxy.TaskExecutionId) source_).toBuilder();
+                subBuilder = ((flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_).toBuilder();
               }
               source_ =
-                  input.readMessage(flyteidl.service.Dataproxy.TaskExecutionId.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.service.Dataproxy.TaskExecutionId) source_);
+                subBuilder.mergeFrom((flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_);
                 source_ = subBuilder.buildPartial();
               }
               sourceCase_ = 3;
@@ -5503,7 +4527,7 @@ public final class Dataproxy {
     public static final int EXECUTION_ID_FIELD_NUMBER = 1;
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5513,7 +4537,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5526,7 +4550,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Workflow execution id
+     * WorkflowId is the unique identifier for the workflow execution.
      * </pre>
      *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -5541,7 +4565,8 @@ public final class Dataproxy {
     public static final int NODE_ID_FIELD_NUMBER = 2;
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5551,7 +4576,8 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5564,7 +4590,8 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * Unique identifier for this node execution
+     * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+     * most recent attempt of the task.
      * </pre>
      *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -5578,28 +4605,40 @@ public final class Dataproxy {
 
     public static final int TASK_ID_FIELD_NUMBER = 3;
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     public boolean hasTaskId() {
       return sourceCase_ == 3;
     }
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
-    public flyteidl.service.Dataproxy.TaskExecutionId getTaskId() {
+    public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId() {
       if (sourceCase_ == 3) {
-         return (flyteidl.service.Dataproxy.TaskExecutionId) source_;
+         return (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_;
       }
-      return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+      return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
     }
     /**
-     * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+     * <pre>
+     * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+     * </pre>
+     *
+     * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
-    public flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder getTaskIdOrBuilder() {
+    public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder() {
       if (sourceCase_ == 3) {
-         return (flyteidl.service.Dataproxy.TaskExecutionId) source_;
+         return (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_;
       }
-      return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+      return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
     }
 
     public static final int ARTIFACT_TYPE_FIELD_NUMBER = 4;
@@ -5679,7 +4718,7 @@ public final class Dataproxy {
         output.writeMessage(2, (flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier) source_);
       }
       if (sourceCase_ == 3) {
-        output.writeMessage(3, (flyteidl.service.Dataproxy.TaskExecutionId) source_);
+        output.writeMessage(3, (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_);
       }
       if (artifactType_ != flyteidl.service.Dataproxy.ArtifactType.ARTIFACT_TYPE_UNDEFINED.getNumber()) {
         output.writeEnum(4, artifactType_);
@@ -5706,7 +4745,7 @@ public final class Dataproxy {
       }
       if (sourceCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (flyteidl.service.Dataproxy.TaskExecutionId) source_);
+          .computeMessageSize(3, (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_);
       }
       if (artifactType_ != flyteidl.service.Dataproxy.ArtifactType.ARTIFACT_TYPE_UNDEFINED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -6103,7 +5142,7 @@ public final class Dataproxy {
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> executionIdBuilder_;
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6113,7 +5152,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6133,7 +5172,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6153,7 +5192,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6171,7 +5210,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6197,7 +5236,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6220,7 +5259,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6230,7 +5269,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6247,7 +5286,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Workflow execution id
+       * WorkflowId is the unique identifier for the workflow execution.
        * </pre>
        *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;</code>
@@ -6275,7 +5314,8 @@ public final class Dataproxy {
           flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> nodeIdBuilder_;
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6285,7 +5325,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6305,7 +5346,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6325,7 +5367,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6343,7 +5386,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6369,7 +5413,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6392,7 +5437,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6402,7 +5448,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6419,7 +5466,8 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * Unique identifier for this node execution
+       * NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+       * most recent attempt of the task.
        * </pre>
        *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
@@ -6444,33 +5492,45 @@ public final class Dataproxy {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.service.Dataproxy.TaskExecutionId, flyteidl.service.Dataproxy.TaskExecutionId.Builder, flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder> taskIdBuilder_;
+          flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder> taskIdBuilder_;
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public boolean hasTaskId() {
         return sourceCase_ == 3;
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
-      public flyteidl.service.Dataproxy.TaskExecutionId getTaskId() {
+      public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId() {
         if (taskIdBuilder_ == null) {
           if (sourceCase_ == 3) {
-            return (flyteidl.service.Dataproxy.TaskExecutionId) source_;
+            return (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_;
           }
-          return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+          return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
         } else {
           if (sourceCase_ == 3) {
             return taskIdBuilder_.getMessage();
           }
-          return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+          return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
-      public Builder setTaskId(flyteidl.service.Dataproxy.TaskExecutionId value) {
+      public Builder setTaskId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
         if (taskIdBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6484,10 +5544,14 @@ public final class Dataproxy {
         return this;
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder setTaskId(
-          flyteidl.service.Dataproxy.TaskExecutionId.Builder builderForValue) {
+          flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder builderForValue) {
         if (taskIdBuilder_ == null) {
           source_ = builderForValue.build();
           onChanged();
@@ -6498,13 +5562,17 @@ public final class Dataproxy {
         return this;
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
-      public Builder mergeTaskId(flyteidl.service.Dataproxy.TaskExecutionId value) {
+      public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
         if (taskIdBuilder_ == null) {
           if (sourceCase_ == 3 &&
-              source_ != flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance()) {
-            source_ = flyteidl.service.Dataproxy.TaskExecutionId.newBuilder((flyteidl.service.Dataproxy.TaskExecutionId) source_)
+              source_ != flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance()) {
+            source_ = flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.newBuilder((flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_)
                 .mergeFrom(value).buildPartial();
           } else {
             source_ = value;
@@ -6520,7 +5588,11 @@ public final class Dataproxy {
         return this;
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder clearTaskId() {
         if (taskIdBuilder_ == null) {
@@ -6539,37 +5611,49 @@ public final class Dataproxy {
         return this;
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
-      public flyteidl.service.Dataproxy.TaskExecutionId.Builder getTaskIdBuilder() {
+      public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder getTaskIdBuilder() {
         return getTaskIdFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
-      public flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder getTaskIdOrBuilder() {
+      public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder() {
         if ((sourceCase_ == 3) && (taskIdBuilder_ != null)) {
           return taskIdBuilder_.getMessageOrBuilder();
         } else {
           if (sourceCase_ == 3) {
-            return (flyteidl.service.Dataproxy.TaskExecutionId) source_;
+            return (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_;
           }
-          return flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+          return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
         }
       }
       /**
-       * <code>.flyteidl.service.TaskExecutionId task_id = 3;</code>
+       * <pre>
+       * TaskId is the unique task execution identifier that points to a specific attempt of the task.
+       * </pre>
+       *
+       * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.service.Dataproxy.TaskExecutionId, flyteidl.service.Dataproxy.TaskExecutionId.Builder, flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder> 
+          flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder> 
           getTaskIdFieldBuilder() {
         if (taskIdBuilder_ == null) {
           if (!(sourceCase_ == 3)) {
-            source_ = flyteidl.service.Dataproxy.TaskExecutionId.getDefaultInstance();
+            source_ = flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
           }
           taskIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.service.Dataproxy.TaskExecutionId, flyteidl.service.Dataproxy.TaskExecutionId.Builder, flyteidl.service.Dataproxy.TaskExecutionIdOrBuilder>(
-                  (flyteidl.service.Dataproxy.TaskExecutionId) source_,
+              flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder>(
+                  (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) source_,
                   getParentForChildren(),
                   isClean());
           source_ = null;
@@ -6856,22 +5940,39 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1;</code>
      */
-    java.lang.String getSignedUrl();
+    java.util.List<java.lang.String>
+        getSignedUrlList();
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1;</code>
+     */
+    int getSignedUrlCount();
+    /**
+     * <pre>
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * </pre>
+     *
+     * <code>repeated string signed_url = 1;</code>
+     */
+    java.lang.String getSignedUrl(int index);
+    /**
+     * <pre>
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * </pre>
+     *
+     * <code>repeated string signed_url = 1;</code>
      */
     com.google.protobuf.ByteString
-        getSignedUrlBytes();
+        getSignedUrlBytes(int index);
 
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -6879,7 +5980,7 @@ public final class Dataproxy {
     boolean hasExpiresAt();
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -6887,7 +5988,7 @@ public final class Dataproxy {
     com.google.protobuf.Timestamp getExpiresAt();
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -6907,7 +6008,7 @@ public final class Dataproxy {
       super(builder);
     }
     private CreateDownloadLinkResponse() {
-      signedUrl_ = "";
+      signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -6936,8 +6037,11 @@ public final class Dataproxy {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              signedUrl_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signedUrl_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signedUrl_.add(s);
               break;
             }
             case 18: {
@@ -6968,6 +6072,9 @@ public final class Dataproxy {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          signedUrl_ = signedUrl_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -6985,53 +6092,57 @@ public final class Dataproxy {
               flyteidl.service.Dataproxy.CreateDownloadLinkResponse.class, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SIGNED_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object signedUrl_;
+    private com.google.protobuf.LazyStringList signedUrl_;
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1;</code>
      */
-    public java.lang.String getSignedUrl() {
-      java.lang.Object ref = signedUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        signedUrl_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getSignedUrlList() {
+      return signedUrl_;
     }
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1;</code>
+     */
+    public int getSignedUrlCount() {
+      return signedUrl_.size();
+    }
+    /**
+     * <pre>
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * </pre>
+     *
+     * <code>repeated string signed_url = 1;</code>
+     */
+    public java.lang.String getSignedUrl(int index) {
+      return signedUrl_.get(index);
+    }
+    /**
+     * <pre>
+     * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+     * </pre>
+     *
+     * <code>repeated string signed_url = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getSignedUrlBytes() {
-      java.lang.Object ref = signedUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        signedUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getSignedUrlBytes(int index) {
+      return signedUrl_.getByteString(index);
     }
 
     public static final int EXPIRES_AT_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp expiresAt_;
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7041,7 +6152,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7051,7 +6162,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * ExpiresAt defines when will the signed URL expires.
+     * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7074,8 +6185,8 @@ public final class Dataproxy {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSignedUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedUrl_);
+      for (int i = 0; i < signedUrl_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedUrl_.getRaw(i));
       }
       if (expiresAt_ != null) {
         output.writeMessage(2, getExpiresAt());
@@ -7089,8 +6200,13 @@ public final class Dataproxy {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSignedUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signedUrl_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < signedUrl_.size(); i++) {
+          dataSize += computeStringSizeNoTag(signedUrl_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSignedUrlList().size();
       }
       if (expiresAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -7111,8 +6227,8 @@ public final class Dataproxy {
       }
       flyteidl.service.Dataproxy.CreateDownloadLinkResponse other = (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) obj;
 
-      if (!getSignedUrl()
-          .equals(other.getSignedUrl())) return false;
+      if (!getSignedUrlList()
+          .equals(other.getSignedUrlList())) return false;
       if (hasExpiresAt() != other.hasExpiresAt()) return false;
       if (hasExpiresAt()) {
         if (!getExpiresAt()
@@ -7129,8 +6245,10 @@ public final class Dataproxy {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIGNED_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getSignedUrl().hashCode();
+      if (getSignedUrlCount() > 0) {
+        hash = (37 * hash) + SIGNED_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getSignedUrlList().hashCode();
+      }
       if (hasExpiresAt()) {
         hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
         hash = (53 * hash) + getExpiresAt().hashCode();
@@ -7268,8 +6386,8 @@ public final class Dataproxy {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        signedUrl_ = "";
-
+        signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (expiresAtBuilder_ == null) {
           expiresAt_ = null;
         } else {
@@ -7302,12 +6420,19 @@ public final class Dataproxy {
       @java.lang.Override
       public flyteidl.service.Dataproxy.CreateDownloadLinkResponse buildPartial() {
         flyteidl.service.Dataproxy.CreateDownloadLinkResponse result = new flyteidl.service.Dataproxy.CreateDownloadLinkResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          signedUrl_ = signedUrl_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
         result.signedUrl_ = signedUrl_;
         if (expiresAtBuilder_ == null) {
           result.expiresAt_ = expiresAt_;
         } else {
           result.expiresAt_ = expiresAtBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7356,8 +6481,14 @@ public final class Dataproxy {
 
       public Builder mergeFrom(flyteidl.service.Dataproxy.CreateDownloadLinkResponse other) {
         if (other == flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance()) return this;
-        if (!other.getSignedUrl().isEmpty()) {
-          signedUrl_ = other.signedUrl_;
+        if (!other.signedUrl_.isEmpty()) {
+          if (signedUrl_.isEmpty()) {
+            signedUrl_ = other.signedUrl_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSignedUrlIsMutable();
+            signedUrl_.addAll(other.signedUrl_);
+          }
           onChanged();
         }
         if (other.hasExpiresAt()) {
@@ -7391,61 +6522,88 @@ public final class Dataproxy {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object signedUrl_ = "";
-      /**
-       * <pre>
-       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-       * </pre>
-       *
-       * <code>string signed_url = 1;</code>
-       */
-      public java.lang.String getSignedUrl() {
-        java.lang.Object ref = signedUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          signedUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSignedUrlIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          signedUrl_ = new com.google.protobuf.LazyStringArrayList(signedUrl_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getSignedUrlList() {
+        return signedUrl_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * </pre>
+       *
+       * <code>repeated string signed_url = 1;</code>
+       */
+      public int getSignedUrlCount() {
+        return signedUrl_.size();
+      }
+      /**
+       * <pre>
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * </pre>
+       *
+       * <code>repeated string signed_url = 1;</code>
+       */
+      public java.lang.String getSignedUrl(int index) {
+        return signedUrl_.get(index);
+      }
+      /**
+       * <pre>
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * </pre>
+       *
+       * <code>repeated string signed_url = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getSignedUrlBytes() {
-        java.lang.Object ref = signedUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          signedUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getSignedUrlBytes(int index) {
+        return signedUrl_.getByteString(index);
       }
       /**
        * <pre>
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1;</code>
        */
       public Builder setSignedUrl(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSignedUrlIsMutable();
+        signedUrl_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * </pre>
+       *
+       * <code>repeated string signed_url = 1;</code>
+       */
+      public Builder addSignedUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        signedUrl_ = value;
+  ensureSignedUrlIsMutable();
+        signedUrl_.add(value);
         onChanged();
         return this;
       }
@@ -7454,11 +6612,26 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1;</code>
+       */
+      public Builder addAllSignedUrl(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSignedUrlIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, signedUrl_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
+       * </pre>
+       *
+       * <code>repeated string signed_url = 1;</code>
        */
       public Builder clearSignedUrl() {
-        
-        signedUrl_ = getDefaultInstance().getSignedUrl();
+        signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7467,16 +6640,16 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1;</code>
        */
-      public Builder setSignedUrlBytes(
+      public Builder addSignedUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        signedUrl_ = value;
+        ensureSignedUrlIsMutable();
+        signedUrl_.add(value);
         onChanged();
         return this;
       }
@@ -7486,7 +6659,7 @@ public final class Dataproxy {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiresAtBuilder_;
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7496,7 +6669,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7510,7 +6683,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7530,7 +6703,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7548,7 +6721,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7570,7 +6743,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7588,7 +6761,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7600,7 +6773,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7615,7 +6788,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * ExpiresAt defines when will the signed URL expires.
+       * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp expires_at = 2;</code>
@@ -7707,11 +6880,6 @@ public final class Dataproxy {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_service_CreateDownloadLocationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_TaskExecutionId_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_TaskExecutionId_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_service_CreateDownloadLinkRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7747,44 +6915,42 @@ public final class Dataproxy {
       "_in\030\002 \001(\0132\031.google.protobuf.Duration\"d\n\036" +
       "CreateDownloadLocationResponse\022\022\n\nsigned" +
       "_url\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032.google." +
-      "protobuf.Timestamp\"\236\001\n\017TaskExecutionId\022*" +
-      "\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Identifi" +
-      "er\022H\n\030parent_node_execution_id\030\002 \001(\0132&.f" +
-      "lyteidl.core.NodeExecutionIdentifier\022\025\n\r" +
-      "retry_attempt\030\003 \001(\r\"\300\002\n\031CreateDownloadLi" +
-      "nkRequest\022B\n\014execution_id\030\001 \001(\0132*.flytei" +
-      "dl.core.WorkflowExecutionIdentifierH\000\0229\n" +
-      "\007node_id\030\002 \001(\0132&.flyteidl.core.NodeExecu" +
-      "tionIdentifierH\000\0224\n\007task_id\030\003 \001(\0132!.flyt" +
-      "eidl.service.TaskExecutionIdH\000\0225\n\rartifa" +
-      "ct_type\030\004 \001(\0162\036.flyteidl.service.Artifac" +
-      "tType\022-\n\nexpires_in\030\005 \001(\0132\031.google.proto" +
-      "buf.DurationB\010\n\006source\"`\n\032CreateDownload" +
-      "LinkResponse\022\022\n\nsigned_url\030\001 \001(\t\022.\n\nexpi" +
-      "res_at\030\002 \001(\0132\032.google.protobuf.Timestamp" +
-      "*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFI" +
-      "NED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\347\005\n\020DataPr" +
-      "oxyService\022\360\001\n\024CreateUploadLocation\022-.fl" +
-      "yteidl.service.CreateUploadLocationReque" +
-      "st\032..flyteidl.service.CreateUploadLocati" +
-      "onResponse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/ar" +
-      "tifact_urn:\001*\222AM\032KCreates a write-only h" +
-      "ttp location that is accessible for task" +
-      "s at runtime.\022\365\001\n\026CreateDownloadLocation" +
-      "\022/.flyteidl.service.CreateDownloadLocati" +
-      "onRequest\0320.flyteidl.service.CreateDownl" +
-      "oadLocationResponse\"x\210\002\001\202\323\344\223\002 \022\036/api/v1/" +
-      "dataproxy/artifact_urn\222AL\032JCreates a rea" +
-      "d-only http location that is accessible " +
-      "for tasks at runtime.\022\347\001\n\022CreateDownload" +
-      "Link\022+.flyteidl.service.CreateDownloadLi" +
-      "nkRequest\032,.flyteidl.service.CreateDownl" +
-      "oadLinkResponse\"v\202\323\344\223\002!\022\037/api/v1/datapro" +
-      "xy/artifact_link\222AL\032JCreates a read-only" +
-      " http location that is accessible for ta" +
-      "sks at runtime.B9Z7github.com/flyteorg/f" +
-      "lyteidl/gen/pb-go/flyteidl/serviceb\006prot" +
-      "o3"
+      "protobuf.Timestamp\"\305\002\n\031CreateDownloadLin" +
+      "kRequest\022B\n\014execution_id\030\001 \001(\0132*.flyteid" +
+      "l.core.WorkflowExecutionIdentifierH\000\0229\n\007" +
+      "node_id\030\002 \001(\0132&.flyteidl.core.NodeExecut" +
+      "ionIdentifierH\000\0229\n\007task_id\030\003 \001(\0132&.flyte" +
+      "idl.core.TaskExecutionIdentifierH\000\0225\n\rar" +
+      "tifact_type\030\004 \001(\0162\036.flyteidl.service.Art" +
+      "ifactType\022-\n\nexpires_in\030\005 \001(\0132\031.google.p" +
+      "rotobuf.DurationB\010\n\006source\"`\n\032CreateDown" +
+      "loadLinkResponse\022\022\n\nsigned_url\030\001 \003(\t\022.\n\n" +
+      "expires_at\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tamp*f\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UN" +
+      "DEFINED\020\000\022!\n\035ARTIFACT_TYPE_OUTPUT_METADA" +
+      "TA\020\001\022\026\n\022ARTIFACT_TYPE_DECK\020\0022\236\006\n\020DataPro" +
+      "xyService\022\360\001\n\024CreateUploadLocation\022-.fly" +
+      "teidl.service.CreateUploadLocationReques" +
+      "t\032..flyteidl.service.CreateUploadLocatio" +
+      "nResponse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/art" +
+      "ifact_urn:\001*\222AM\032KCreates a write-only ht" +
+      "tp location that is accessible for tasks" +
+      " at runtime.\022\251\002\n\026CreateDownloadLocation\022" +
+      "/.flyteidl.service.CreateDownloadLocatio" +
+      "nRequest\0320.flyteidl.service.CreateDownlo" +
+      "adLocationResponse\"\253\001\210\002\001\202\323\344\223\002 \022\036/api/v1/" +
+      "dataproxy/artifact_urn\222A\177\032}Deprecated: P" +
+      "lease use CreateDownloadLink instead. Cr" +
+      "eates a read-only http location that is " +
+      "accessible for tasks at runtime.\022\352\001\n\022Cre" +
+      "ateDownloadLink\022+.flyteidl.service.Creat" +
+      "eDownloadLinkRequest\032,.flyteidl.service." +
+      "CreateDownloadLinkResponse\"y\202\323\344\223\002$\"\037/api" +
+      "/v1/dataproxy/artifact_link:\001*\222AL\032JCreat" +
+      "es a read-only http location that is acc" +
+      "essible for tasks at runtime.B9Z7github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7827,20 +6993,14 @@ public final class Dataproxy {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLocationResponse_descriptor,
         new java.lang.String[] { "SignedUrl", "ExpiresAt", });
-    internal_static_flyteidl_service_TaskExecutionId_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_flyteidl_service_TaskExecutionId_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_TaskExecutionId_descriptor,
-        new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", });
     internal_static_flyteidl_service_CreateDownloadLinkRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_service_CreateDownloadLinkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkRequest_descriptor,
         new java.lang.String[] { "ExecutionId", "NodeId", "TaskId", "ArtifactType", "ExpiresIn", "Source", });
     internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor,

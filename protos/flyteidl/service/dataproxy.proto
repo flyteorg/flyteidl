@@ -64,33 +64,31 @@ message CreateDownloadLocationResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
+// ArtifactType
 enum ArtifactType {
+  // ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.
   ARTIFACT_TYPE_UNDEFINED = 0;
-  ARTIFACT_TYPE_DECK = 1;
-}
 
-message TaskExecutionId {
-  // ID of the task. In combination with the retryAttempt this will indicate
-  // the task execution uniquely for a given parent node execution.
-  core.Identifier task_id = 1;
+  // ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
+  // finishes executing.
+  ARTIFACT_TYPE_OUTPUT_METADATA = 1;
 
-  // A task execution is always kicked off by a node execution, the event consumer
-  // will use the parent_id to relate the task to it's parent node execution
-  core.NodeExecutionIdentifier parent_node_execution_id = 2;
-
-  // retry attempt number for this task, ie., 2 for the second attempt
-  uint32 retry_attempt = 3;
+  // ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
+  // finishes executing.
+  ARTIFACT_TYPE_DECK = 2;
 }
 
 message CreateDownloadLinkRequest {
   oneof source {
-    // Workflow execution id
+    // WorkflowId is the unique identifier for the workflow execution.
     core.WorkflowExecutionIdentifier execution_id = 1;
 
-    // Unique identifier for this node execution
+    // NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
+    // most recent attempt of the task.
     core.NodeExecutionIdentifier node_id = 2;
 
-    TaskExecutionId task_id = 3;
+    // TaskId is the unique task execution identifier that points to a specific attempt of the task.
+    core.TaskExecutionIdentifier task_id = 3;
   }
 
   ArtifactType artifact_type = 4;
@@ -103,10 +101,10 @@ message CreateDownloadLinkRequest {
 
 message CreateDownloadLinkResponse {
   // SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-  string signed_url = 1;
-  // ExpiresAt defines when will the signed URL expires.
-  google.protobuf.Timestamp expires_at = 2;
+  repeated string signed_url = 1;
 
+  // ExpiresAt defines when will the signed URL expire.
+  google.protobuf.Timestamp expires_at = 2;
 }
 
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
@@ -129,14 +127,15 @@ service DataProxyService {
       get: "/api/v1/dataproxy/artifact_urn"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-      description: "Creates a read-only http location that is accessible for tasks at runtime."
+      description: "Deprecated: Please use CreateDownloadLink instead. Creates a read-only http location that is accessible for tasks at runtime."
     };
   }
 
   // CreateDownloadLocation creates a signed url to download artifacts.
   rpc CreateDownloadLink (CreateDownloadLinkRequest) returns (CreateDownloadLinkResponse) {
     option (google.api.http) = {
-      get: "/api/v1/dataproxy/artifact_link"
+      post: "/api/v1/dataproxy/artifact_link"
+      body: "*"
     };
     option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
       description: "Creates a read-only http location that is accessible for tasks at runtime."

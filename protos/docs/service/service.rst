@@ -245,9 +245,9 @@ CreateDownloadLinkRequest
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "Workflow execution id"
-   "node_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "Unique identifier for this node execution"
-   "task_id", ":ref:`ref_flyteidl.service.TaskExecutionId`", "", ""
+   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "WorkflowId is the unique identifier for the workflow execution."
+   "node_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the most recent attempt of the task."
+   "task_id", ":ref:`ref_flyteidl.core.TaskExecutionIdentifier`", "", "TaskId is the unique task execution identifier that points to a specific attempt of the task."
    "artifact_type", ":ref:`ref_flyteidl.service.ArtifactType`", "", ""
    "expires_in", ":ref:`ref_google.protobuf.Duration`", "", "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this exceeds the platform allowed max. +optional. The default value comes from a global config."
 
@@ -270,8 +270,8 @@ CreateDownloadLinkResponse
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "signed_url", ":ref:`ref_string`", "", "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
-   "expires_at", ":ref:`ref_google.protobuf.Timestamp`", "", "ExpiresAt defines when will the signed URL expires."
+   "signed_url", ":ref:`ref_string`", "repeated", "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
+   "expires_at", ":ref:`ref_google.protobuf.Timestamp`", "", "ExpiresAt defines when will the signed URL expire."
 
 
 
@@ -370,29 +370,6 @@ CreateUploadLocationResponse
 
 
 
-
-.. _ref_flyteidl.service.TaskExecutionId:
-
-TaskExecutionId
-------------------------------------------------------------------
-
-
-
-
-
-.. csv-table:: TaskExecutionId type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "task_id", ":ref:`ref_flyteidl.core.Identifier`", "", "ID of the task. In combination with the retryAttempt this will indicate the task execution uniquely for a given parent node execution."
-   "parent_node_execution_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "A task execution is always kicked off by a node execution, the event consumer will use the parent_id to relate the task to it's parent node execution"
-   "retry_attempt", ":ref:`ref_uint32`", "", "retry attempt number for this task, ie., 2 for the second attempt"
-
-
-
-
-
-
 ..
    end messages
 
@@ -403,14 +380,15 @@ TaskExecutionId
 ArtifactType
 ------------------------------------------------------------------
 
-
+ArtifactType
 
 .. csv-table:: Enum ArtifactType values
    :header: "Name", "Number", "Description"
    :widths: auto
 
-   "ARTIFACT_TYPE_UNDEFINED", "0", ""
-   "ARTIFACT_TYPE_DECK", "1", ""
+   "ARTIFACT_TYPE_UNDEFINED", "0", "ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum."
+   "ARTIFACT_TYPE_OUTPUT_METADATA", "1", "ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan finishes executing."
+   "ARTIFACT_TYPE_DECK", "2", "ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan finishes executing."
 
 
 ..

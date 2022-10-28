@@ -4792,6 +4792,9 @@ export namespace flyteidl {
 
             /** TaskMetadata cacheSerializable */
             cacheSerializable?: (boolean|null);
+
+            /** TaskMetadata generatesDeck */
+            generatesDeck?: (boolean|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -4826,6 +4829,9 @@ export namespace flyteidl {
 
             /** TaskMetadata cacheSerializable. */
             public cacheSerializable: boolean;
+
+            /** TaskMetadata generatesDeck. */
+            public generatesDeck: boolean;
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -17594,71 +17600,8 @@ export namespace flyteidl {
         /** ArtifactType enum. */
         enum ArtifactType {
             ARTIFACT_TYPE_UNDEFINED = 0,
-            ARTIFACT_TYPE_DECK = 1
-        }
-
-        /** Properties of a TaskExecutionId. */
-        interface ITaskExecutionId {
-
-            /** TaskExecutionId taskId */
-            taskId?: (flyteidl.core.IIdentifier|null);
-
-            /** TaskExecutionId parentNodeExecutionId */
-            parentNodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** TaskExecutionId retryAttempt */
-            retryAttempt?: (number|null);
-        }
-
-        /** Represents a TaskExecutionId. */
-        class TaskExecutionId implements ITaskExecutionId {
-
-            /**
-             * Constructs a new TaskExecutionId.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.service.ITaskExecutionId);
-
-            /** TaskExecutionId taskId. */
-            public taskId?: (flyteidl.core.IIdentifier|null);
-
-            /** TaskExecutionId parentNodeExecutionId. */
-            public parentNodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** TaskExecutionId retryAttempt. */
-            public retryAttempt: number;
-
-            /**
-             * Creates a new TaskExecutionId instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskExecutionId instance
-             */
-            public static create(properties?: flyteidl.service.ITaskExecutionId): flyteidl.service.TaskExecutionId;
-
-            /**
-             * Encodes the specified TaskExecutionId message. Does not implicitly {@link flyteidl.service.TaskExecutionId.verify|verify} messages.
-             * @param message TaskExecutionId message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.service.ITaskExecutionId, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskExecutionId message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskExecutionId
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.TaskExecutionId;
-
-            /**
-             * Verifies a TaskExecutionId message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
+            ARTIFACT_TYPE_OUTPUT_METADATA = 1,
+            ARTIFACT_TYPE_DECK = 2
         }
 
         /** Properties of a CreateDownloadLinkRequest. */
@@ -17671,7 +17614,7 @@ export namespace flyteidl {
             nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
 
             /** CreateDownloadLinkRequest taskId */
-            taskId?: (flyteidl.service.ITaskExecutionId|null);
+            taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
 
             /** CreateDownloadLinkRequest artifactType */
             artifactType?: (flyteidl.service.ArtifactType|null);
@@ -17696,7 +17639,7 @@ export namespace flyteidl {
             public nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
 
             /** CreateDownloadLinkRequest taskId. */
-            public taskId?: (flyteidl.service.ITaskExecutionId|null);
+            public taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
 
             /** CreateDownloadLinkRequest artifactType. */
             public artifactType: flyteidl.service.ArtifactType;
@@ -17744,7 +17687,7 @@ export namespace flyteidl {
         interface ICreateDownloadLinkResponse {
 
             /** CreateDownloadLinkResponse signedUrl */
-            signedUrl?: (string|null);
+            signedUrl?: (string[]|null);
 
             /** CreateDownloadLinkResponse expiresAt */
             expiresAt?: (google.protobuf.ITimestamp|null);
@@ -17760,7 +17703,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.service.ICreateDownloadLinkResponse);
 
             /** CreateDownloadLinkResponse signedUrl. */
-            public signedUrl: string;
+            public signedUrl: string[];
 
             /** CreateDownloadLinkResponse expiresAt. */
             public expiresAt?: (google.protobuf.ITimestamp|null);

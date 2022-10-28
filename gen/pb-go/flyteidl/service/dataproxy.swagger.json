@@ -16,7 +16,7 @@
   ],
   "paths": {
     "/api/v1/dataproxy/artifact_link": {
-      "get": {
+      "post": {
         "summary": "CreateDownloadLocation creates a signed url to download artifacts.",
         "description": "Creates a read-only http location that is accessible for tasks at runtime.",
         "operationId": "CreateDownloadLink",
@@ -30,148 +30,12 @@
         },
         "parameters": [
           {
-            "name": "execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "node_id.node_id",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "node_id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "node_id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "node_id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.task_id.resource_type",
-            "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN",
-              "DATASET"
-            ],
-            "default": "UNSPECIFIED"
-          },
-          {
-            "name": "task_id.task_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.task_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.task_id.name",
-            "description": "User provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.task_id.version",
-            "description": "Specific version of the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.parent_node_execution_id.node_id",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.parent_node_execution_id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.parent_node_execution_id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.parent_node_execution_id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "task_id.retry_attempt",
-            "description": "retry attempt number for this task, ie., 2 for the second attempt.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "artifact_type",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "ARTIFACT_TYPE_UNDEFINED",
-              "ARTIFACT_TYPE_DECK"
-            ],
-            "default": "ARTIFACT_TYPE_UNDEFINED"
-          },
-          {
-            "name": "expires_in",
-            "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config.",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateDownloadLinkRequest"
+            }
           }
         ],
         "tags": [
@@ -182,7 +46,7 @@
     "/api/v1/dataproxy/artifact_urn": {
       "get": {
         "summary": "CreateDownloadLocation creates a signed url to download artifacts.",
-        "description": "Creates a read-only http location that is accessible for tasks at runtime.",
+        "description": "Deprecated: Please use CreateDownloadLink instead. Creates a read-only http location that is accessible for tasks at runtime.",
         "operationId": "CreateDownloadLocation",
         "responses": {
           "200": {
@@ -291,6 +155,22 @@
       "default": "UNSPECIFIED",
       "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"
     },
+    "coreTaskExecutionIdentifier": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "$ref": "#/definitions/coreIdentifier"
+        },
+        "node_execution_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier"
+        },
+        "retry_attempt": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "description": "Encapsulation of fields that identify a Flyte task execution entity."
+    },
     "coreWorkflowExecutionIdentifier": {
       "type": "object",
       "properties": {
@@ -313,21 +193,51 @@
       "type": "string",
       "enum": [
         "ARTIFACT_TYPE_UNDEFINED",
+        "ARTIFACT_TYPE_OUTPUT_METADATA",
         "ARTIFACT_TYPE_DECK"
       ],
-      "default": "ARTIFACT_TYPE_UNDEFINED"
+      "default": "ARTIFACT_TYPE_UNDEFINED",
+      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_OUTPUT_METADATA: ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan\nfinishes executing.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.",
+      "title": "ArtifactType"
+    },
+    "serviceCreateDownloadLinkRequest": {
+      "type": "object",
+      "properties": {
+        "execution_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "WorkflowId is the unique identifier for the workflow execution."
+        },
+        "node_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the\nmost recent attempt of the task."
+        },
+        "task_id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "TaskId is the unique task execution identifier that points to a specific attempt of the task."
+        },
+        "artifact_type": {
+          "$ref": "#/definitions/serviceArtifactType"
+        },
+        "expires_in": {
+          "type": "string",
+          "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
+        }
+      }
     },
     "serviceCreateDownloadLinkResponse": {
       "type": "object",
       "properties": {
         "signed_url": {
-          "type": "string",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
           "title": "SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)"
         },
         "expires_at": {
           "type": "string",
           "format": "date-time",
-          "description": "ExpiresAt defines when will the signed URL expires."
+          "description": "ExpiresAt defines when will the signed URL expire."
         }
       }
     },
@@ -387,24 +297,6 @@
           "type": "string",
           "format": "date-time",
           "description": "ExpiresAt defines when will the signed URL expires."
-        }
-      }
-    },
-    "serviceTaskExecutionId": {
-      "type": "object",
-      "properties": {
-        "task_id": {
-          "$ref": "#/definitions/coreIdentifier",
-          "description": "ID of the task. In combination with the retryAttempt this will indicate\nthe task execution uniquely for a given parent node execution."
-        },
-        "parent_node_execution_id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "title": "A task execution is always kicked off by a node execution, the event consumer\nwill use the parent_id to relate the task to it's parent node execution"
-        },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64",
-          "title": "retry attempt number for this task, ie., 2 for the second attempt"
         }
       }
     }

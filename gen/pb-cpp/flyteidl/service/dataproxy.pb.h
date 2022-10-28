@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -74,9 +74,6 @@ extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationReque
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
-class TaskExecutionId;
-class TaskExecutionIdDefaultTypeInternal;
-extern TaskExecutionIdDefaultTypeInternal _TaskExecutionId_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
@@ -87,7 +84,6 @@ template<> ::flyteidl::service::CreateDownloadLocationRequest* Arena::CreateMayb
 template<> ::flyteidl::service::CreateDownloadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateDownloadLocationResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
-template<> ::flyteidl::service::TaskExecutionId* Arena::CreateMaybeMessage<::flyteidl::service::TaskExecutionId>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -95,7 +91,8 @@ namespace service {
 
 enum ArtifactType {
   ARTIFACT_TYPE_UNDEFINED = 0,
-  ARTIFACT_TYPE_DECK = 1,
+  ARTIFACT_TYPE_OUTPUT_METADATA = 1,
+  ARTIFACT_TYPE_DECK = 2,
   ArtifactType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ArtifactType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
@@ -696,138 +693,6 @@ class CreateDownloadLocationResponse final :
 };
 // -------------------------------------------------------------------
 
-class TaskExecutionId final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.TaskExecutionId) */ {
- public:
-  TaskExecutionId();
-  virtual ~TaskExecutionId();
-
-  TaskExecutionId(const TaskExecutionId& from);
-
-  inline TaskExecutionId& operator=(const TaskExecutionId& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  TaskExecutionId(TaskExecutionId&& from) noexcept
-    : TaskExecutionId() {
-    *this = ::std::move(from);
-  }
-
-  inline TaskExecutionId& operator=(TaskExecutionId&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const TaskExecutionId& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TaskExecutionId* internal_default_instance() {
-    return reinterpret_cast<const TaskExecutionId*>(
-               &_TaskExecutionId_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(TaskExecutionId* other);
-  friend void swap(TaskExecutionId& a, TaskExecutionId& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TaskExecutionId* New() const final {
-    return CreateMaybeMessage<TaskExecutionId>(nullptr);
-  }
-
-  TaskExecutionId* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<TaskExecutionId>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const TaskExecutionId& from);
-  void MergeFrom(const TaskExecutionId& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TaskExecutionId* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .flyteidl.core.Identifier task_id = 1;
-  bool has_task_id() const;
-  void clear_task_id();
-  static const int kTaskIdFieldNumber = 1;
-  const ::flyteidl::core::Identifier& task_id() const;
-  ::flyteidl::core::Identifier* release_task_id();
-  ::flyteidl::core::Identifier* mutable_task_id();
-  void set_allocated_task_id(::flyteidl::core::Identifier* task_id);
-
-  // .flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;
-  bool has_parent_node_execution_id() const;
-  void clear_parent_node_execution_id();
-  static const int kParentNodeExecutionIdFieldNumber = 2;
-  const ::flyteidl::core::NodeExecutionIdentifier& parent_node_execution_id() const;
-  ::flyteidl::core::NodeExecutionIdentifier* release_parent_node_execution_id();
-  ::flyteidl::core::NodeExecutionIdentifier* mutable_parent_node_execution_id();
-  void set_allocated_parent_node_execution_id(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_id);
-
-  // uint32 retry_attempt = 3;
-  void clear_retry_attempt();
-  static const int kRetryAttemptFieldNumber = 3;
-  ::google::protobuf::uint32 retry_attempt() const;
-  void set_retry_attempt(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.service.TaskExecutionId)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::Identifier* task_id_;
-  ::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_id_;
-  ::google::protobuf::uint32 retry_attempt_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
-};
-// -------------------------------------------------------------------
-
 class CreateDownloadLinkRequest final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.CreateDownloadLinkRequest) */ {
  public:
@@ -873,7 +738,7 @@ class CreateDownloadLinkRequest final :
                &_CreateDownloadLinkRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(CreateDownloadLinkRequest* other);
   friend void swap(CreateDownloadLinkRequest& a, CreateDownloadLinkRequest& b) {
@@ -963,14 +828,14 @@ class CreateDownloadLinkRequest final :
   ::flyteidl::core::NodeExecutionIdentifier* mutable_node_id();
   void set_allocated_node_id(::flyteidl::core::NodeExecutionIdentifier* node_id);
 
-  // .flyteidl.service.TaskExecutionId task_id = 3;
+  // .flyteidl.core.TaskExecutionIdentifier task_id = 3;
   bool has_task_id() const;
   void clear_task_id();
   static const int kTaskIdFieldNumber = 3;
-  const ::flyteidl::service::TaskExecutionId& task_id() const;
-  ::flyteidl::service::TaskExecutionId* release_task_id();
-  ::flyteidl::service::TaskExecutionId* mutable_task_id();
-  void set_allocated_task_id(::flyteidl::service::TaskExecutionId* task_id);
+  const ::flyteidl::core::TaskExecutionIdentifier& task_id() const;
+  ::flyteidl::core::TaskExecutionIdentifier* release_task_id();
+  ::flyteidl::core::TaskExecutionIdentifier* mutable_task_id();
+  void set_allocated_task_id(::flyteidl::core::TaskExecutionIdentifier* task_id);
 
   void clear_source();
   SourceCase source_case() const;
@@ -991,7 +856,7 @@ class CreateDownloadLinkRequest final :
     SourceUnion() {}
     ::flyteidl::core::WorkflowExecutionIdentifier* execution_id_;
     ::flyteidl::core::NodeExecutionIdentifier* node_id_;
-    ::flyteidl::service::TaskExecutionId* task_id_;
+    ::flyteidl::core::TaskExecutionIdentifier* task_id_;
   } source_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1038,7 +903,7 @@ class CreateDownloadLinkResponse final :
                &_CreateDownloadLinkResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(CreateDownloadLinkResponse* other);
   friend void swap(CreateDownloadLinkResponse& a, CreateDownloadLinkResponse& b) {
@@ -1095,19 +960,27 @@ class CreateDownloadLinkResponse final :
 
   // accessors -------------------------------------------------------
 
-  // string signed_url = 1;
+  // repeated string signed_url = 1;
+  int signed_url_size() const;
   void clear_signed_url();
   static const int kSignedUrlFieldNumber = 1;
-  const ::std::string& signed_url() const;
-  void set_signed_url(const ::std::string& value);
+  const ::std::string& signed_url(int index) const;
+  ::std::string* mutable_signed_url(int index);
+  void set_signed_url(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_signed_url(::std::string&& value);
+  void set_signed_url(int index, ::std::string&& value);
   #endif
-  void set_signed_url(const char* value);
-  void set_signed_url(const char* value, size_t size);
-  ::std::string* mutable_signed_url();
-  ::std::string* release_signed_url();
-  void set_allocated_signed_url(::std::string* signed_url);
+  void set_signed_url(int index, const char* value);
+  void set_signed_url(int index, const char* value, size_t size);
+  ::std::string* add_signed_url();
+  void add_signed_url(const ::std::string& value);
+  #if LANG_CXX11
+  void add_signed_url(::std::string&& value);
+  #endif
+  void add_signed_url(const char* value);
+  void add_signed_url(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& signed_url() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_signed_url();
 
   // .google.protobuf.Timestamp expires_at = 2;
   bool has_expires_at() const;
@@ -1123,7 +996,7 @@ class CreateDownloadLinkResponse final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr signed_url_;
+  ::google::protobuf::RepeatedPtrField<::std::string> signed_url_;
   ::google::protobuf::Timestamp* expires_at_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
@@ -1761,114 +1634,6 @@ inline void CreateDownloadLocationResponse::set_allocated_expires_at(::google::p
 
 // -------------------------------------------------------------------
 
-// TaskExecutionId
-
-// .flyteidl.core.Identifier task_id = 1;
-inline bool TaskExecutionId::has_task_id() const {
-  return this != internal_default_instance() && task_id_ != nullptr;
-}
-inline const ::flyteidl::core::Identifier& TaskExecutionId::task_id() const {
-  const ::flyteidl::core::Identifier* p = task_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskExecutionId.task_id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Identifier*>(
-      &::flyteidl::core::_Identifier_default_instance_);
-}
-inline ::flyteidl::core::Identifier* TaskExecutionId::release_task_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskExecutionId.task_id)
-  
-  ::flyteidl::core::Identifier* temp = task_id_;
-  task_id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::Identifier* TaskExecutionId::mutable_task_id() {
-  
-  if (task_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Identifier>(GetArenaNoVirtual());
-    task_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskExecutionId.task_id)
-  return task_id_;
-}
-inline void TaskExecutionId::set_allocated_task_id(::flyteidl::core::Identifier* task_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(task_id_);
-  }
-  if (task_id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      task_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, task_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  task_id_ = task_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskExecutionId.task_id)
-}
-
-// .flyteidl.core.NodeExecutionIdentifier parent_node_execution_id = 2;
-inline bool TaskExecutionId::has_parent_node_execution_id() const {
-  return this != internal_default_instance() && parent_node_execution_id_ != nullptr;
-}
-inline const ::flyteidl::core::NodeExecutionIdentifier& TaskExecutionId::parent_node_execution_id() const {
-  const ::flyteidl::core::NodeExecutionIdentifier* p = parent_node_execution_id_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskExecutionId.parent_node_execution_id)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
-      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
-}
-inline ::flyteidl::core::NodeExecutionIdentifier* TaskExecutionId::release_parent_node_execution_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskExecutionId.parent_node_execution_id)
-  
-  ::flyteidl::core::NodeExecutionIdentifier* temp = parent_node_execution_id_;
-  parent_node_execution_id_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::NodeExecutionIdentifier* TaskExecutionId::mutable_parent_node_execution_id() {
-  
-  if (parent_node_execution_id_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
-    parent_node_execution_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskExecutionId.parent_node_execution_id)
-  return parent_node_execution_id_;
-}
-inline void TaskExecutionId::set_allocated_parent_node_execution_id(::flyteidl::core::NodeExecutionIdentifier* parent_node_execution_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(parent_node_execution_id_);
-  }
-  if (parent_node_execution_id) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      parent_node_execution_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, parent_node_execution_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  parent_node_execution_id_ = parent_node_execution_id;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskExecutionId.parent_node_execution_id)
-}
-
-// uint32 retry_attempt = 3;
-inline void TaskExecutionId::clear_retry_attempt() {
-  retry_attempt_ = 0u;
-}
-inline ::google::protobuf::uint32 TaskExecutionId::retry_attempt() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskExecutionId.retry_attempt)
-  return retry_attempt_;
-}
-inline void TaskExecutionId::set_retry_attempt(::google::protobuf::uint32 value) {
-  
-  retry_attempt_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskExecutionId.retry_attempt)
-}
-
-// -------------------------------------------------------------------
-
 // CreateDownloadLinkRequest
 
 // .flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;
@@ -1941,41 +1706,35 @@ inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::mut
   return source_.node_id_;
 }
 
-// .flyteidl.service.TaskExecutionId task_id = 3;
+// .flyteidl.core.TaskExecutionIdentifier task_id = 3;
 inline bool CreateDownloadLinkRequest::has_task_id() const {
   return source_case() == kTaskId;
 }
 inline void CreateDownloadLinkRequest::set_has_task_id() {
   _oneof_case_[0] = kTaskId;
 }
-inline void CreateDownloadLinkRequest::clear_task_id() {
-  if (has_task_id()) {
-    delete source_.task_id_;
-    clear_has_source();
-  }
-}
-inline ::flyteidl::service::TaskExecutionId* CreateDownloadLinkRequest::release_task_id() {
+inline ::flyteidl::core::TaskExecutionIdentifier* CreateDownloadLinkRequest::release_task_id() {
   // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.task_id)
   if (has_task_id()) {
     clear_has_source();
-      ::flyteidl::service::TaskExecutionId* temp = source_.task_id_;
+      ::flyteidl::core::TaskExecutionIdentifier* temp = source_.task_id_;
     source_.task_id_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::service::TaskExecutionId& CreateDownloadLinkRequest::task_id() const {
+inline const ::flyteidl::core::TaskExecutionIdentifier& CreateDownloadLinkRequest::task_id() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.task_id)
   return has_task_id()
       ? *source_.task_id_
-      : *reinterpret_cast< ::flyteidl::service::TaskExecutionId*>(&::flyteidl::service::_TaskExecutionId_default_instance_);
+      : *reinterpret_cast< ::flyteidl::core::TaskExecutionIdentifier*>(&::flyteidl::core::_TaskExecutionIdentifier_default_instance_);
 }
-inline ::flyteidl::service::TaskExecutionId* CreateDownloadLinkRequest::mutable_task_id() {
+inline ::flyteidl::core::TaskExecutionIdentifier* CreateDownloadLinkRequest::mutable_task_id() {
   if (!has_task_id()) {
     clear_source();
     set_has_task_id();
-    source_.task_id_ = CreateMaybeMessage< ::flyteidl::service::TaskExecutionId >(
+    source_.task_id_ = CreateMaybeMessage< ::flyteidl::core::TaskExecutionIdentifier >(
         GetArenaNoVirtual());
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.task_id)
@@ -2055,57 +1814,73 @@ inline CreateDownloadLinkRequest::SourceCase CreateDownloadLinkRequest::source_c
 
 // CreateDownloadLinkResponse
 
-// string signed_url = 1;
+// repeated string signed_url = 1;
+inline int CreateDownloadLinkResponse::signed_url_size() const {
+  return signed_url_.size();
+}
 inline void CreateDownloadLinkResponse::clear_signed_url() {
-  signed_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  signed_url_.Clear();
 }
-inline const ::std::string& CreateDownloadLinkResponse::signed_url() const {
+inline const ::std::string& CreateDownloadLinkResponse::signed_url(int index) const {
   // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkResponse.signed_url)
-  return signed_url_.GetNoArena();
+  return signed_url_.Get(index);
 }
-inline void CreateDownloadLinkResponse::set_signed_url(const ::std::string& value) {
-  
-  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+inline ::std::string* CreateDownloadLinkResponse::mutable_signed_url(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  return signed_url_.Mutable(index);
+}
+inline void CreateDownloadLinkResponse::set_signed_url(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  signed_url_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void CreateDownloadLinkResponse::set_signed_url(::std::string&& value) {
-  
-  signed_url_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+inline void CreateDownloadLinkResponse::set_signed_url(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  signed_url_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void CreateDownloadLinkResponse::set_signed_url(const char* value) {
+inline void CreateDownloadLinkResponse::set_signed_url(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  signed_url_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateDownloadLinkResponse.signed_url)
 }
-inline void CreateDownloadLinkResponse::set_signed_url(const char* value, size_t size) {
-  
-  signed_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+inline void CreateDownloadLinkResponse::set_signed_url(int index, const char* value, size_t size) {
+  signed_url_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateDownloadLinkResponse.signed_url)
 }
-inline ::std::string* CreateDownloadLinkResponse::mutable_signed_url() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkResponse.signed_url)
-  return signed_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* CreateDownloadLinkResponse::add_signed_url() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  return signed_url_.Add();
 }
-inline ::std::string* CreateDownloadLinkResponse::release_signed_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkResponse.signed_url)
-  
-  return signed_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CreateDownloadLinkResponse::add_signed_url(const ::std::string& value) {
+  signed_url_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.service.CreateDownloadLinkResponse.signed_url)
 }
-inline void CreateDownloadLinkResponse::set_allocated_signed_url(::std::string* signed_url) {
-  if (signed_url != nullptr) {
-    
-  } else {
-    
-  }
-  signed_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_url);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+#if LANG_CXX11
+inline void CreateDownloadLinkResponse::add_signed_url(::std::string&& value) {
+  signed_url_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+}
+#endif
+inline void CreateDownloadLinkResponse::add_signed_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  signed_url_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+}
+inline void CreateDownloadLinkResponse::add_signed_url(const char* value, size_t size) {
+  signed_url_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+CreateDownloadLinkResponse::signed_url() const {
+  // @@protoc_insertion_point(field_list:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  return signed_url_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+CreateDownloadLinkResponse::mutable_signed_url() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.CreateDownloadLinkResponse.signed_url)
+  return &signed_url_;
 }
 
 // .google.protobuf.Timestamp expires_at = 2;
@@ -2157,8 +1932,6 @@ inline void CreateDownloadLinkResponse::set_allocated_expires_at(::google::proto
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
