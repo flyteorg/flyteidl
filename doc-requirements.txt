@@ -36,7 +36,7 @@ importlib-metadata==4.10.0
     # via markdown
 jinja2==3.0.3
     # via sphinx
-lxml==4.7.1
+lxml==4.9.1
     # via sphinx-material
 markdown==3.3.6
     # via sphinx-markdown-tables
