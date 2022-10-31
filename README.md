@@ -15,7 +15,7 @@ This is one of the core repositories of Flyte. It contains the Specification of 
 
 1. Ensure Docker is installed locally.
 
-2. Run `docker-compose up` to start a dev container, and `docker-compose exec devcontainer bash` to SSH into it.
+2. If using Visual Studio Code, open the project in dev container. If not, run `docker-compose up` to start a dev container, and `docker-compose exec devcontainer bash` to SSH into it.
 
 ```bash
    docker-compose up -d
