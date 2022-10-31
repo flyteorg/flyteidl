@@ -13,13 +13,15 @@ This is one of the core repositories of Flyte. It contains the Specification of 
 
 ## Tooling for Flyteidl
 
-1. Run ``make download_tooling`` to install generator dependencies.
+1. Ensure Docker is installed locally.
+
+2. Run `docker-compose up` to start a dev container, and `docker-compose exec devcontainer bash` to SSH into it.
 
 ```bash
-   make download_tooling
+   docker-compose up -d
+   docker-compose exec devcontainer bash
 ```
 
-2. Ensure Docker is installed locally.
 3. Run ``make generate`` to generate all the code, mock client, and docs for FlyteAdmin Service.
 
 ```bash
