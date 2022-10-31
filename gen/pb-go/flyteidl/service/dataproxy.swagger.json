@@ -193,11 +193,10 @@
       "type": "string",
       "enum": [
         "ARTIFACT_TYPE_UNDEFINED",
-        "ARTIFACT_TYPE_OUTPUT_METADATA",
         "ARTIFACT_TYPE_DECK"
       ],
       "default": "ARTIFACT_TYPE_UNDEFINED",
-      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_OUTPUT_METADATA: ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan\nfinishes executing.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.",
+      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.",
       "title": "ArtifactType"
     },
     "serviceCreateDownloadLinkRequest": {

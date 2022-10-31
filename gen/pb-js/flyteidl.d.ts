@@ -18424,8 +18424,7 @@ export namespace flyteidl {
         /** ArtifactType enum. */
         enum ArtifactType {
             ARTIFACT_TYPE_UNDEFINED = 0,
-            ARTIFACT_TYPE_OUTPUT_METADATA = 1,
-            ARTIFACT_TYPE_DECK = 2
+            ARTIFACT_TYPE_DECK = 1
         }
 
         /** Properties of a CreateDownloadLinkRequest. */

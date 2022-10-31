@@ -33,22 +33,13 @@ public final class Dataproxy {
     ARTIFACT_TYPE_UNDEFINED(0),
     /**
      * <pre>
-     * ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
-     * finishes executing.
-     * </pre>
-     *
-     * <code>ARTIFACT_TYPE_OUTPUT_METADATA = 1;</code>
-     */
-    ARTIFACT_TYPE_OUTPUT_METADATA(1),
-    /**
-     * <pre>
      * ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
      * finishes executing.
      * </pre>
      *
-     * <code>ARTIFACT_TYPE_DECK = 2;</code>
+     * <code>ARTIFACT_TYPE_DECK = 1;</code>
      */
-    ARTIFACT_TYPE_DECK(2),
+    ARTIFACT_TYPE_DECK(1),
     UNRECOGNIZED(-1),
     ;
 
@@ -62,22 +53,13 @@ public final class Dataproxy {
     public static final int ARTIFACT_TYPE_UNDEFINED_VALUE = 0;
     /**
      * <pre>
-     * ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
-     * finishes executing.
-     * </pre>
-     *
-     * <code>ARTIFACT_TYPE_OUTPUT_METADATA = 1;</code>
-     */
-    public static final int ARTIFACT_TYPE_OUTPUT_METADATA_VALUE = 1;
-    /**
-     * <pre>
      * ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
      * finishes executing.
      * </pre>
      *
-     * <code>ARTIFACT_TYPE_DECK = 2;</code>
+     * <code>ARTIFACT_TYPE_DECK = 1;</code>
      */
-    public static final int ARTIFACT_TYPE_DECK_VALUE = 2;
+    public static final int ARTIFACT_TYPE_DECK_VALUE = 1;
 
 
     public final int getNumber() {
@@ -99,8 +81,7 @@ public final class Dataproxy {
     public static ArtifactType forNumber(int value) {
       switch (value) {
         case 0: return ARTIFACT_TYPE_UNDEFINED;
-        case 1: return ARTIFACT_TYPE_OUTPUT_METADATA;
-        case 2: return ARTIFACT_TYPE_DECK;
+        case 1: return ARTIFACT_TYPE_DECK;
         default: return null;
       }
     }
@@ -6926,31 +6907,30 @@ public final class Dataproxy {
       "rotobuf.DurationB\010\n\006source\"`\n\032CreateDown" +
       "loadLinkResponse\022\022\n\nsigned_url\030\001 \003(\t\022.\n\n" +
       "expires_at\030\002 \001(\0132\032.google.protobuf.Times" +
-      "tamp*f\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UN" +
-      "DEFINED\020\000\022!\n\035ARTIFACT_TYPE_OUTPUT_METADA" +
-      "TA\020\001\022\026\n\022ARTIFACT_TYPE_DECK\020\0022\236\006\n\020DataPro" +
-      "xyService\022\360\001\n\024CreateUploadLocation\022-.fly" +
-      "teidl.service.CreateUploadLocationReques" +
-      "t\032..flyteidl.service.CreateUploadLocatio" +
-      "nResponse\"y\202\323\344\223\002#\"\036/api/v1/dataproxy/art" +
-      "ifact_urn:\001*\222AM\032KCreates a write-only ht" +
-      "tp location that is accessible for tasks" +
-      " at runtime.\022\251\002\n\026CreateDownloadLocation\022" +
-      "/.flyteidl.service.CreateDownloadLocatio" +
-      "nRequest\0320.flyteidl.service.CreateDownlo" +
-      "adLocationResponse\"\253\001\210\002\001\202\323\344\223\002 \022\036/api/v1/" +
-      "dataproxy/artifact_urn\222A\177\032}Deprecated: P" +
-      "lease use CreateDownloadLink instead. Cr" +
-      "eates a read-only http location that is " +
-      "accessible for tasks at runtime.\022\352\001\n\022Cre" +
-      "ateDownloadLink\022+.flyteidl.service.Creat" +
-      "eDownloadLinkRequest\032,.flyteidl.service." +
-      "CreateDownloadLinkResponse\"y\202\323\344\223\002$\"\037/api" +
-      "/v1/dataproxy/artifact_link:\001*\222AL\032JCreat" +
-      "es a read-only http location that is acc" +
-      "essible for tasks at runtime.B9Z7github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/serviceb\006proto3"
+      "tamp*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UN" +
+      "DEFINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\236\006\n\020Da" +
+      "taProxyService\022\360\001\n\024CreateUploadLocation\022" +
+      "-.flyteidl.service.CreateUploadLocationR" +
+      "equest\032..flyteidl.service.CreateUploadLo" +
+      "cationResponse\"y\202\323\344\223\002#\"\036/api/v1/dataprox" +
+      "y/artifact_urn:\001*\222AM\032KCreates a write-on" +
+      "ly http location that is accessible for " +
+      "tasks at runtime.\022\251\002\n\026CreateDownloadLoca" +
+      "tion\022/.flyteidl.service.CreateDownloadLo" +
+      "cationRequest\0320.flyteidl.service.CreateD" +
+      "ownloadLocationResponse\"\253\001\210\002\001\202\323\344\223\002 \022\036/ap" +
+      "i/v1/dataproxy/artifact_urn\222A\177\032}Deprecat" +
+      "ed: Please use CreateDownloadLink instea" +
+      "d. Creates a read-only http location tha" +
+      "t is accessible for tasks at runtime.\022\352\001" +
+      "\n\022CreateDownloadLink\022+.flyteidl.service." +
+      "CreateDownloadLinkRequest\032,.flyteidl.ser" +
+      "vice.CreateDownloadLinkResponse\"y\202\323\344\223\002$\"" +
+      "\037/api/v1/dataproxy/artifact_link:\001*\222AL\032J" +
+      "Creates a read-only http location that i" +
+      "s accessible for tasks at runtime.B9Z7gi" +
+      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
+      "teidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

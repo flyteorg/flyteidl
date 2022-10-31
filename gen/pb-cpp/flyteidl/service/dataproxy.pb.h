@@ -91,8 +91,7 @@ namespace service {
 
 enum ArtifactType {
   ARTIFACT_TYPE_UNDEFINED = 0,
-  ARTIFACT_TYPE_OUTPUT_METADATA = 1,
-  ARTIFACT_TYPE_DECK = 2,
+  ARTIFACT_TYPE_DECK = 1,
   ArtifactType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ArtifactType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };

@@ -42849,14 +42849,12 @@
              * @name flyteidl.service.ArtifactType
              * @enum {string}
              * @property {number} ARTIFACT_TYPE_UNDEFINED=0 ARTIFACT_TYPE_UNDEFINED value
-             * @property {number} ARTIFACT_TYPE_OUTPUT_METADATA=1 ARTIFACT_TYPE_OUTPUT_METADATA value
-             * @property {number} ARTIFACT_TYPE_DECK=2 ARTIFACT_TYPE_DECK value
+             * @property {number} ARTIFACT_TYPE_DECK=1 ARTIFACT_TYPE_DECK value
              */
             service.ArtifactType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "ARTIFACT_TYPE_UNDEFINED"] = 0;
-                values[valuesById[1] = "ARTIFACT_TYPE_OUTPUT_METADATA"] = 1;
-                values[valuesById[2] = "ARTIFACT_TYPE_DECK"] = 2;
+                values[valuesById[1] = "ARTIFACT_TYPE_DECK"] = 1;
                 return values;
             })();
     
@@ -43066,7 +43064,6 @@
                             return "artifactType: enum value expected";
                         case 0:
                         case 1:
-                        case 2:
                             break;
                         }
                     if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {

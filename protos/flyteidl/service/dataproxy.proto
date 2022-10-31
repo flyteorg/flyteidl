@@ -69,13 +69,9 @@ enum ArtifactType {
   // ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.
   ARTIFACT_TYPE_UNDEFINED = 0;
 
-  // ARTIFACT_TYPE_OUTPUT_METADATA refers to the output.pb file generated after a task, a workflow or a launch plan
-  // finishes executing.
-  ARTIFACT_TYPE_OUTPUT_METADATA = 1;
-
   // ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
   // finishes executing.
-  ARTIFACT_TYPE_DECK = 2;
+  ARTIFACT_TYPE_DECK = 1;
 }
 
 message CreateDownloadLinkRequest {
