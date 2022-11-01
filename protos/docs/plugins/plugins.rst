@@ -56,6 +56,148 @@ will be executed concurrently.
 
 
 
+.. _ref_flyteidl/plugins/dask.proto:
+
+flyteidl/plugins/dask.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskAutoscaler:
+
+DaskAutoscaler
+------------------------------------------------------------------
+
+Configuration for the dask auto scaler. The autoscaler will only scale the default worker group
+
+
+
+.. csv-table:: DaskAutoscaler type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "minimum", ":ref:`ref_int32`", "", "The minimum number of workers. Defaults to 1"
+   "maximum", ":ref:`ref_int32`", "", "The maximum number of workers."
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskCluster:
+
+DaskCluster
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: DaskCluster type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "image", ":ref:`ref_string`", "", "Optional image to use for the scheduler as well as the default worker group. If unset, will use the default image."
+   "nWorkers", ":ref:`ref_int32`", "", "Number of workers in the default worker group"
+   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned to the scheduler as well as all pods of the default worker group. As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices it is advised to only set limits. If requests are not explicitly set, the plugin will make sure to set requests==limits. The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit."
+   "additionalWorkerGroups", ":ref:`ref_flyteidl.plugins.DaskWorkerGroup`", "repeated", "Additional worker groups of the cluster"
+   "autoscaler", ":ref:`ref_flyteidl.plugins.DaskAutoscaler`", "", "Optional autoscaler configuration"
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskJob:
+
+DaskJob
+------------------------------------------------------------------
+
+Custom Proto for Dask Plugin
+
+
+
+.. csv-table:: DaskJob type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "namespace", ":ref:`ref_string`", "", "Optional namespace to use for the dask pods. If none is given, the namespace of the Flyte task is used"
+   "jobPodSpec", ":ref:`ref_flyteidl.plugins.JobPodSpec`", "", "Spec for the job pod"
+   "cluster", ":ref:`ref_flyteidl.plugins.DaskCluster`", "", "Cluster"
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskWorkerGroup:
+
+DaskWorkerGroup
+------------------------------------------------------------------
+
+Definition for additional worker groups
+
+
+
+.. csv-table:: DaskWorkerGroup type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "name", ":ref:`ref_string`", "", "Name of the additional worker group"
+   "image", ":ref:`ref_string`", "", "Optional image to use for the pods of the worker group. If unset, will use the default image."
+   "nWorkers", ":ref:`ref_int32`", "", "Number of workers in the worker group"
+   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned all pods of the worker group. As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices it is advised to only set limits. If requests are not explicitly set, the plugin will make sure to set requests==limits. The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit."
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.JobPodSpec:
+
+JobPodSpec
+------------------------------------------------------------------
+
+Specification for the job pod
+
+
+
+.. csv-table:: JobPodSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "image", ":ref:`ref_string`", "", "Optional image to use. If unset, will use the default image."
+   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned to the job pod."
+
+
+
+
+
+
+..
+   end messages
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
 .. _ref_flyteidl/plugins/mpi.proto:
 
 flyteidl/plugins/mpi.proto
