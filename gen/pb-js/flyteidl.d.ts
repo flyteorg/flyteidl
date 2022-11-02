@@ -12,7 +12,8 @@ export namespace flyteidl {
             CACHE_HIT = 2,
             CACHE_POPULATED = 3,
             CACHE_LOOKUP_FAILURE = 4,
-            CACHE_PUT_FAILURE = 5
+            CACHE_PUT_FAILURE = 5,
+            CACHE_SKIPPED = 6
         }
 
         /** Properties of a CatalogArtifactTag. */
@@ -9638,6 +9639,9 @@ export namespace flyteidl {
 
             /** ExecutionRelaunchRequest name */
             name?: (string|null);
+
+            /** ExecutionRelaunchRequest overwriteCache */
+            overwriteCache?: (boolean|null);
         }
 
         /** Represents an ExecutionRelaunchRequest. */
@@ -9654,6 +9658,9 @@ export namespace flyteidl {
 
             /** ExecutionRelaunchRequest name. */
             public name: string;
+
+            /** ExecutionRelaunchRequest overwriteCache. */
+            public overwriteCache: boolean;
 
             /**
              * Creates a new ExecutionRelaunchRequest instance using the specified properties.
@@ -10479,6 +10486,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec overwriteCache */
+            overwriteCache?: (boolean|null);
         }
 
         /** Represents an ExecutionSpec. */
@@ -10531,6 +10541,9 @@ export namespace flyteidl {
 
             /** ExecutionSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** ExecutionSpec overwriteCache. */
+            public overwriteCache: boolean;
 
             /** ExecutionSpec notificationOverrides. */
             public notificationOverrides?: ("notifications"|"disableAll");
@@ -11302,6 +11315,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec overwriteCache */
+            overwriteCache?: (boolean|null);
         }
 
         /** Represents a LaunchPlanSpec. */
@@ -11354,6 +11370,9 @@ export namespace flyteidl {
 
             /** LaunchPlanSpec interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** LaunchPlanSpec overwriteCache. */
+            public overwriteCache: boolean;
 
             /**
              * Creates a new LaunchPlanSpec instance using the specified properties.
@@ -12397,6 +12416,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig interruptible */
             interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** WorkflowExecutionConfig overwriteCache */
+            overwriteCache?: (boolean|null);
         }
 
         /** Represents a WorkflowExecutionConfig. */
@@ -12425,6 +12447,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionConfig interruptible. */
             public interruptible?: (google.protobuf.IBoolValue|null);
+
+            /** WorkflowExecutionConfig overwriteCache. */
+            public overwriteCache: boolean;
 
             /**
              * Creates a new WorkflowExecutionConfig instance using the specified properties.

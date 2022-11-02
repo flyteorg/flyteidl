@@ -3593,6 +3593,7 @@ definitions:
           tier: {}
           spec:
             queueing_budget: "queueing_budget"
+        overwrite_cache: true
         raw_output_data_config:
           output_location_prefix: "output_location_prefix"
         cluster_assignment:
@@ -3966,6 +3967,7 @@ definitions:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           cluster_assignment:
@@ -4155,6 +4157,7 @@ definitions:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           cluster_assignment:
@@ -4330,6 +4333,13 @@ definitions:
         type: "string"
         title: "User provided value for the relaunched execution.\nIf none is provided\
           \ the system will generate a unique string.\n+optional"
+      overwrite_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be overwritten for a single execution.\nIf enabled, all calculations are\
+          \ performed even if cached results would be available, overwriting the stored\n\
+          data once execution finishes successfully."
     description: "Request to relaunch the referenced execution."
   adminExecutionSpec:
     type: "object"
@@ -4393,6 +4403,13 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      overwrite_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be overwritten for a single execution.\nIf enabled, all calculations are\
+          \ performed even if cached results would be available, overwriting the stored\n\
+          data once execution finishes successfully."
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4435,6 +4452,7 @@ definitions:
         tier: {}
         spec:
           queueing_budget: "queueing_budget"
+      overwrite_cache: true
       raw_output_data_config:
         output_location_prefix: "output_location_prefix"
       cluster_assignment:
@@ -4938,6 +4956,7 @@ definitions:
           tier: {}
           spec:
             queueing_budget: "queueing_budget"
+        overwrite_cache: true
         raw_output_data_config:
           output_location_prefix: "output_location_prefix"
         default_inputs:
@@ -5736,6 +5755,7 @@ definitions:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           default_inputs:
@@ -6249,6 +6269,7 @@ definitions:
             tier: {}
             spec:
               queueing_budget: "queueing_budget"
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           default_inputs:
@@ -6577,6 +6598,13 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      overwrite_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be overwritten for a single execution.\nIf enabled, all calculations are\
+          \ performed even if cached results would be available, overwriting the stored\n\
+          data once execution finishes successfully."
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6644,6 +6672,7 @@ definitions:
         tier: {}
         spec:
           queueing_budget: "queueing_budget"
+      overwrite_cache: true
       raw_output_data_config:
         output_location_prefix: "output_location_prefix"
       default_inputs:
@@ -6907,6 +6936,7 @@ definitions:
             spec:
               queueing_budget: "queueing_budget"
           workflow_execution_config:
+            overwrite_cache: true
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
             max_parallelism: 0
@@ -7006,6 +7036,7 @@ definitions:
             spec:
               queueing_budget: "queueing_budget"
           workflow_execution_config:
+            overwrite_cache: true
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
             max_parallelism: 0
@@ -7138,6 +7169,7 @@ definitions:
           spec:
             queueing_budget: "queueing_budget"
         workflow_execution_config:
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           max_parallelism: 0
@@ -7277,6 +7309,7 @@ definitions:
         spec:
           queueing_budget: "queueing_budget"
       workflow_execution_config:
+        overwrite_cache: true
         raw_output_data_config:
           output_location_prefix: "output_location_prefix"
         max_parallelism: 0
@@ -14540,6 +14573,7 @@ definitions:
           spec:
             queueing_budget: "queueing_budget"
         workflow_execution_config:
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           max_parallelism: 0
@@ -14659,6 +14693,7 @@ definitions:
             spec:
               queueing_budget: "queueing_budget"
           workflow_execution_config:
+            overwrite_cache: true
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
             max_parallelism: 0
@@ -14781,6 +14816,7 @@ definitions:
           spec:
             queueing_budget: "queueing_budget"
         workflow_execution_config:
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           max_parallelism: 0
@@ -14904,6 +14940,7 @@ definitions:
             spec:
               queueing_budget: "queueing_budget"
           workflow_execution_config:
+            overwrite_cache: true
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
             max_parallelism: 0
@@ -23277,6 +23314,7 @@ definitions:
           spec:
             queueing_budget: "queueing_budget"
         workflow_execution_config:
+          overwrite_cache: true
           raw_output_data_config:
             output_location_prefix: "output_location_prefix"
           max_parallelism: 0
@@ -23403,6 +23441,7 @@ definitions:
             spec:
               queueing_budget: "queueing_budget"
           workflow_execution_config:
+            overwrite_cache: true
             raw_output_data_config:
               output_location_prefix: "output_location_prefix"
             max_parallelism: 0
@@ -30091,9 +30130,17 @@ definitions:
           \ as a default.\nAs we need to distinguish between the field not being provided\
           \ and its default value false, we have to use a wrapper\naround the bool\
           \ field."
+      overwrite_cache:
+        type: "boolean"
+        format: "boolean"
+        description: "Allows for all cached values of a workflow and its tasks to\
+          \ be overwritten for a single execution.\nIf enabled, all calculations are\
+          \ performed even if cached results would be available, overwriting the stored\n\
+          data once execution finishes successfully."
     description: "Adds defaults for customizable workflow-execution specifications\
       \ and overrides."
     example:
+      overwrite_cache: true
       raw_output_data_config:
         output_location_prefix: "output_location_prefix"
       max_parallelism: 0
@@ -43914,7 +43961,8 @@ definitions:
       \ a previous execution\n - CACHE_POPULATED: used to indicate that the resultant\
       \ artifact was added to the cache\n - CACHE_LOOKUP_FAILURE: Used to indicate\
       \ that cache lookup failed because of an error\n - CACHE_PUT_FAILURE: Used to\
-      \ indicate that cache lookup failed because of an error"
+      \ indicate that cache lookup failed because of an error\n - CACHE_SKIPPED: Used\
+      \ to indicate the cache lookup was skipped"
     enum:
     - "CACHE_DISABLED"
     - "CACHE_MISS"
@@ -43922,6 +43970,7 @@ definitions:
     - "CACHE_POPULATED"
     - "CACHE_LOOKUP_FAILURE"
     - "CACHE_PUT_FAILURE"
+    - "CACHE_SKIPPED"
     default: "CACHE_DISABLED"
   coreCatalogMetadata:
     type: "object"

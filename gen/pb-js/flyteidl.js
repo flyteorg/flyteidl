@@ -44,6 +44,7 @@
              * @property {number} CACHE_POPULATED=3 CACHE_POPULATED value
              * @property {number} CACHE_LOOKUP_FAILURE=4 CACHE_LOOKUP_FAILURE value
              * @property {number} CACHE_PUT_FAILURE=5 CACHE_PUT_FAILURE value
+             * @property {number} CACHE_SKIPPED=6 CACHE_SKIPPED value
              */
             core.CatalogCacheStatus = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -53,6 +54,7 @@
                 values[valuesById[3] = "CACHE_POPULATED"] = 3;
                 values[valuesById[4] = "CACHE_LOOKUP_FAILURE"] = 4;
                 values[valuesById[5] = "CACHE_PUT_FAILURE"] = 5;
+                values[valuesById[6] = "CACHE_SKIPPED"] = 6;
                 return values;
             })();
     
@@ -16348,6 +16350,7 @@
                         case 3:
                         case 4:
                         case 5:
+                        case 6:
                             break;
                         }
                     if (message.catalogKey != null && message.hasOwnProperty("catalogKey")) {
@@ -17385,6 +17388,7 @@
                         case 3:
                         case 4:
                         case 5:
+                        case 6:
                             break;
                         }
                     if (message.logs != null && message.hasOwnProperty("logs")) {
@@ -23105,6 +23109,7 @@
                  * @interface IExecutionRelaunchRequest
                  * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [id] ExecutionRelaunchRequest id
                  * @property {string|null} [name] ExecutionRelaunchRequest name
+                 * @property {boolean|null} [overwriteCache] ExecutionRelaunchRequest overwriteCache
                  */
     
                 /**
@@ -23139,6 +23144,14 @@
                 ExecutionRelaunchRequest.prototype.name = "";
     
                 /**
+                 * ExecutionRelaunchRequest overwriteCache.
+                 * @member {boolean} overwriteCache
+                 * @memberof flyteidl.admin.ExecutionRelaunchRequest
+                 * @instance
+                 */
+                ExecutionRelaunchRequest.prototype.overwriteCache = false;
+    
+                /**
                  * Creates a new ExecutionRelaunchRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.ExecutionRelaunchRequest
@@ -23166,6 +23179,8 @@
                         $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.name != null && message.hasOwnProperty("name"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.overwriteCache);
                     return writer;
                 };
     
@@ -23192,6 +23207,9 @@
                             break;
                         case 3:
                             message.name = reader.string();
+                            break;
+                        case 4:
+                            message.overwriteCache = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -23220,6 +23238,9 @@
                     if (message.name != null && message.hasOwnProperty("name"))
                         if (!$util.isString(message.name))
                             return "name: string expected";
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        if (typeof message.overwriteCache !== "boolean")
+                            return "overwriteCache: boolean expected";
                     return null;
                 };
     
@@ -25077,6 +25098,7 @@
                  * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] ExecutionSpec rawOutputDataConfig
                  * @property {flyteidl.admin.IClusterAssignment|null} [clusterAssignment] ExecutionSpec clusterAssignment
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
+                 * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
                  */
     
                 /**
@@ -25206,6 +25228,14 @@
                  */
                 ExecutionSpec.prototype.interruptible = null;
     
+                /**
+                 * ExecutionSpec overwriteCache.
+                 * @member {boolean} overwriteCache
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.overwriteCache = false;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -25272,6 +25302,8 @@
                         $root.flyteidl.admin.ClusterAssignment.encode(message.clusterAssignment, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
                     return writer;
                 };
     
@@ -25334,6 +25366,9 @@
                             break;
                         case 21:
                             message.interruptible = $root.google.protobuf.BoolValue.decode(reader, reader.uint32());
+                            break;
+                        case 22:
+                            message.overwriteCache = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -25428,6 +25463,9 @@
                         if (error)
                             return "interruptible." + error;
                     }
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        if (typeof message.overwriteCache !== "boolean")
+                            return "overwriteCache: boolean expected";
                     return null;
                 };
     
@@ -27001,6 +27039,7 @@
                  * @property {flyteidl.admin.IRawOutputDataConfig|null} [rawOutputDataConfig] LaunchPlanSpec rawOutputDataConfig
                  * @property {number|null} [maxParallelism] LaunchPlanSpec maxParallelism
                  * @property {google.protobuf.IBoolValue|null} [interruptible] LaunchPlanSpec interruptible
+                 * @property {boolean|null} [overwriteCache] LaunchPlanSpec overwriteCache
                  */
     
                 /**
@@ -27131,6 +27170,14 @@
                 LaunchPlanSpec.prototype.interruptible = null;
     
                 /**
+                 * LaunchPlanSpec overwriteCache.
+                 * @member {boolean} overwriteCache
+                 * @memberof flyteidl.admin.LaunchPlanSpec
+                 * @instance
+                 */
+                LaunchPlanSpec.prototype.overwriteCache = false;
+    
+                /**
                  * Creates a new LaunchPlanSpec instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.LaunchPlanSpec
@@ -27182,6 +27229,8 @@
                         writer.uint32(/* id 18, wireType 0 =*/144).int32(message.maxParallelism);
                     if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        writer.uint32(/* id 20, wireType 0 =*/160).bool(message.overwriteCache);
                     return writer;
                 };
     
@@ -27244,6 +27293,9 @@
                             break;
                         case 19:
                             message.interruptible = $root.google.protobuf.BoolValue.decode(reader, reader.uint32());
+                            break;
+                        case 20:
+                            message.overwriteCache = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -27330,6 +27382,9 @@
                         if (error)
                             return "interruptible." + error;
                     }
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        if (typeof message.overwriteCache !== "boolean")
+                            return "overwriteCache: boolean expected";
                     return null;
                 };
     
@@ -29641,6 +29696,7 @@
                  * @property {flyteidl.admin.ILabels|null} [labels] WorkflowExecutionConfig labels
                  * @property {flyteidl.admin.IAnnotations|null} [annotations] WorkflowExecutionConfig annotations
                  * @property {google.protobuf.IBoolValue|null} [interruptible] WorkflowExecutionConfig interruptible
+                 * @property {boolean|null} [overwriteCache] WorkflowExecutionConfig overwriteCache
                  */
     
                 /**
@@ -29707,6 +29763,14 @@
                 WorkflowExecutionConfig.prototype.interruptible = null;
     
                 /**
+                 * WorkflowExecutionConfig overwriteCache.
+                 * @member {boolean} overwriteCache
+                 * @memberof flyteidl.admin.WorkflowExecutionConfig
+                 * @instance
+                 */
+                WorkflowExecutionConfig.prototype.overwriteCache = false;
+    
+                /**
                  * Creates a new WorkflowExecutionConfig instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.WorkflowExecutionConfig
@@ -29742,6 +29806,8 @@
                         $root.flyteidl.admin.Annotations.encode(message.annotations, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     if (message.interruptible != null && message.hasOwnProperty("interruptible"))
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        writer.uint32(/* id 7, wireType 0 =*/56).bool(message.overwriteCache);
                     return writer;
                 };
     
@@ -29780,6 +29846,9 @@
                             break;
                         case 6:
                             message.interruptible = $root.google.protobuf.BoolValue.decode(reader, reader.uint32());
+                            break;
+                        case 7:
+                            message.overwriteCache = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -29828,6 +29897,9 @@
                         if (error)
                             return "interruptible." + error;
                     }
+                    if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
+                        if (typeof message.overwriteCache !== "boolean")
+                            return "overwriteCache: boolean expected";
                     return null;
                 };
     
@@ -32118,6 +32190,7 @@
                         case 3:
                         case 4:
                         case 5:
+                        case 6:
                             break;
                         }
                     if (message.catalogKey != null && message.hasOwnProperty("catalogKey")) {
