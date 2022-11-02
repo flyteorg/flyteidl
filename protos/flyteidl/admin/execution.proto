@@ -53,10 +53,10 @@ message ExecutionRelaunchRequest {
     // +optional
     string name = 3;
 
-    // Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+    // Allows for all cached values of a workflow and its tasks to be overwritten for a single execution.
     // If enabled, all calculations are performed even if cached results would be available, overwriting the stored
     // data once execution finishes successfully.
-    bool skip_cache = 4;
+    bool overwrite_cache = 4;
 }
 
 // Request to recover the referenced execution.
@@ -305,10 +305,10 @@ message ExecutionSpec {
     // around the bool field.
     google.protobuf.BoolValue interruptible = 21;
 
-    // Allows for all cached values of a workflow and its tasks to be skipped for a single execution.
+    // Allows for all cached values of a workflow and its tasks to be overwritten for a single execution.
     // If enabled, all calculations are performed even if cached results would be available, overwriting the stored
     // data once execution finishes successfully.
-    bool skip_cache = 22;
+    bool overwrite_cache = 22;
 }
 
 // Request to terminate an in-progress execution.  This action is irreversible.

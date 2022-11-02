@@ -1308,11 +1308,11 @@ class WorkflowExecutionConfig final :
   ::google::protobuf::int32 max_parallelism() const;
   void set_max_parallelism(::google::protobuf::int32 value);
 
-  // bool skip_cache = 7;
-  void clear_skip_cache();
-  static const int kSkipCacheFieldNumber = 7;
-  bool skip_cache() const;
-  void set_skip_cache(bool value);
+  // bool overwrite_cache = 7;
+  void clear_overwrite_cache();
+  static const int kOverwriteCacheFieldNumber = 7;
+  bool overwrite_cache() const;
+  void set_overwrite_cache(bool value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowExecutionConfig)
  private:
@@ -1325,7 +1325,7 @@ class WorkflowExecutionConfig final :
   ::flyteidl::admin::Annotations* annotations_;
   ::google::protobuf::BoolValue* interruptible_;
   ::google::protobuf::int32 max_parallelism_;
-  bool skip_cache_;
+  bool overwrite_cache_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 };
@@ -2903,18 +2903,18 @@ inline void WorkflowExecutionConfig::set_allocated_interruptible(::google::proto
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.WorkflowExecutionConfig.interruptible)
 }
 
-// bool skip_cache = 7;
-inline void WorkflowExecutionConfig::clear_skip_cache() {
-  skip_cache_ = false;
+// bool overwrite_cache = 7;
+inline void WorkflowExecutionConfig::clear_overwrite_cache() {
+  overwrite_cache_ = false;
 }
-inline bool WorkflowExecutionConfig::skip_cache() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowExecutionConfig.skip_cache)
-  return skip_cache_;
+inline bool WorkflowExecutionConfig::overwrite_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowExecutionConfig.overwrite_cache)
+  return overwrite_cache_;
 }
-inline void WorkflowExecutionConfig::set_skip_cache(bool value) {
+inline void WorkflowExecutionConfig::set_overwrite_cache(bool value) {
   
-  skip_cache_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowExecutionConfig.skip_cache)
+  overwrite_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.WorkflowExecutionConfig.overwrite_cache)
 }
 
 // -------------------------------------------------------------------

@@ -566,7 +566,7 @@ func (m *LaunchPlanSpec) Validate() error {
 		}
 	}
 
-	// no validation rules for SkipCache
+	// no validation rules for OverwriteCache
 
 	return nil
 }

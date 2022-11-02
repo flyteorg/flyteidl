@@ -489,11 +489,11 @@ class ExecutionRelaunchRequest final :
   ::flyteidl::core::WorkflowExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::WorkflowExecutionIdentifier* id);
 
-  // bool skip_cache = 4;
-  void clear_skip_cache();
-  static const int kSkipCacheFieldNumber = 4;
-  bool skip_cache() const;
-  void set_skip_cache(bool value);
+  // bool overwrite_cache = 4;
+  void clear_overwrite_cache();
+  static const int kOverwriteCacheFieldNumber = 4;
+  bool overwrite_cache() const;
+  void set_overwrite_cache(bool value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ExecutionRelaunchRequest)
  private:
@@ -502,7 +502,7 @@ class ExecutionRelaunchRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::flyteidl::core::WorkflowExecutionIdentifier* id_;
-  bool skip_cache_;
+  bool overwrite_cache_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -2361,11 +2361,11 @@ class ExecutionSpec final :
   ::google::protobuf::int32 max_parallelism() const;
   void set_max_parallelism(::google::protobuf::int32 value);
 
-  // bool skip_cache = 22;
-  void clear_skip_cache();
-  static const int kSkipCacheFieldNumber = 22;
-  bool skip_cache() const;
-  void set_skip_cache(bool value);
+  // bool overwrite_cache = 22;
+  void clear_overwrite_cache();
+  static const int kOverwriteCacheFieldNumber = 22;
+  bool overwrite_cache() const;
+  void set_overwrite_cache(bool value);
 
   // .flyteidl.admin.NotificationList notifications = 5;
   bool has_notifications() const;
@@ -2409,7 +2409,7 @@ class ExecutionSpec final :
   ::flyteidl::admin::ClusterAssignment* cluster_assignment_;
   ::google::protobuf::BoolValue* interruptible_;
   ::google::protobuf::int32 max_parallelism_;
-  bool skip_cache_;
+  bool overwrite_cache_;
   union NotificationOverridesUnion {
     NotificationOverridesUnion() {}
     ::flyteidl::admin::NotificationList* notifications_;
@@ -3647,18 +3647,18 @@ inline void ExecutionRelaunchRequest::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionRelaunchRequest.name)
 }
 
-// bool skip_cache = 4;
-inline void ExecutionRelaunchRequest::clear_skip_cache() {
-  skip_cache_ = false;
+// bool overwrite_cache = 4;
+inline void ExecutionRelaunchRequest::clear_overwrite_cache() {
+  overwrite_cache_ = false;
 }
-inline bool ExecutionRelaunchRequest::skip_cache() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRelaunchRequest.skip_cache)
-  return skip_cache_;
+inline bool ExecutionRelaunchRequest::overwrite_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionRelaunchRequest.overwrite_cache)
+  return overwrite_cache_;
 }
-inline void ExecutionRelaunchRequest::set_skip_cache(bool value) {
+inline void ExecutionRelaunchRequest::set_overwrite_cache(bool value) {
   
-  skip_cache_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionRelaunchRequest.skip_cache)
+  overwrite_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionRelaunchRequest.overwrite_cache)
 }
 
 // -------------------------------------------------------------------
@@ -5973,18 +5973,18 @@ inline void ExecutionSpec::set_allocated_interruptible(::google::protobuf::BoolV
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ExecutionSpec.interruptible)
 }
 
-// bool skip_cache = 22;
-inline void ExecutionSpec::clear_skip_cache() {
-  skip_cache_ = false;
+// bool overwrite_cache = 22;
+inline void ExecutionSpec::clear_overwrite_cache() {
+  overwrite_cache_ = false;
 }
-inline bool ExecutionSpec::skip_cache() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.skip_cache)
-  return skip_cache_;
+inline bool ExecutionSpec::overwrite_cache() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ExecutionSpec.overwrite_cache)
+  return overwrite_cache_;
 }
-inline void ExecutionSpec::set_skip_cache(bool value) {
+inline void ExecutionSpec::set_overwrite_cache(bool value) {
   
-  skip_cache_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.skip_cache)
+  overwrite_cache_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ExecutionSpec.overwrite_cache)
 }
 
 inline bool ExecutionSpec::has_notification_overrides() const {

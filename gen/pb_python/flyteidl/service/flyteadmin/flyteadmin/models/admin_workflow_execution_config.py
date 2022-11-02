@@ -42,7 +42,7 @@ class AdminWorkflowExecutionConfig(object):
         'labels': 'AdminLabels',
         'annotations': 'AdminAnnotations',
         'interruptible': 'bool',
-        'skip_cache': 'bool'
+        'overwrite_cache': 'bool'
     }
 
     attribute_map = {
@@ -52,10 +52,10 @@ class AdminWorkflowExecutionConfig(object):
         'labels': 'labels',
         'annotations': 'annotations',
         'interruptible': 'interruptible',
-        'skip_cache': 'skip_cache'
+        'overwrite_cache': 'overwrite_cache'
     }
 
-    def __init__(self, max_parallelism=None, security_context=None, raw_output_data_config=None, labels=None, annotations=None, interruptible=None, skip_cache=None):  # noqa: E501
+    def __init__(self, max_parallelism=None, security_context=None, raw_output_data_config=None, labels=None, annotations=None, interruptible=None, overwrite_cache=None):  # noqa: E501
         """AdminWorkflowExecutionConfig - a model defined in Swagger"""  # noqa: E501
 
         self._max_parallelism = None
@@ -64,7 +64,7 @@ class AdminWorkflowExecutionConfig(object):
         self._labels = None
         self._annotations = None
         self._interruptible = None
-        self._skip_cache = None
+        self._overwrite_cache = None
         self.discriminator = None
 
         if max_parallelism is not None:
@@ -79,8 +79,8 @@ class AdminWorkflowExecutionConfig(object):
             self.annotations = annotations
         if interruptible is not None:
             self.interruptible = interruptible
-        if skip_cache is not None:
-            self.skip_cache = skip_cache
+        if overwrite_cache is not None:
+            self.overwrite_cache = overwrite_cache
 
     @property
     def max_parallelism(self):
@@ -221,27 +221,27 @@ class AdminWorkflowExecutionConfig(object):
         self._interruptible = interruptible
 
     @property
-    def skip_cache(self):
-        """Gets the skip_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
+    def overwrite_cache(self):
+        """Gets the overwrite_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
 
-        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+        Allows for all cached values of a workflow and its tasks to be overwritten for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
 
-        :return: The skip_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
+        :return: The overwrite_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
         :rtype: bool
         """
-        return self._skip_cache
+        return self._overwrite_cache
 
-    @skip_cache.setter
-    def skip_cache(self, skip_cache):
-        """Sets the skip_cache of this AdminWorkflowExecutionConfig.
+    @overwrite_cache.setter
+    def overwrite_cache(self, overwrite_cache):
+        """Sets the overwrite_cache of this AdminWorkflowExecutionConfig.
 
-        Allows for all cached values of a workflow and its tasks to be skipped for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
+        Allows for all cached values of a workflow and its tasks to be overwritten for a single execution. If enabled, all calculations are performed even if cached results would be available, overwriting the stored data once execution finishes successfully.  # noqa: E501
 
-        :param skip_cache: The skip_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
+        :param overwrite_cache: The overwrite_cache of this AdminWorkflowExecutionConfig.  # noqa: E501
         :type: bool
         """
 
-        self._skip_cache = skip_cache
+        self._overwrite_cache = overwrite_cache
 
     def to_dict(self):
         """Returns the model properties as a dict"""
