@@ -220,21 +220,6 @@ func (m *DaskCluster) Validate() error {
 		}
 	}
 
-	for idx, item := range m.GetAdditionalWorkerGroups() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return DaskClusterValidationError{
-					field:  fmt.Sprintf("AdditionalWorkerGroups[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
 	if v, ok := interface{}(m.GetAutoscaler()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return DaskClusterValidationError{
@@ -370,84 +355,3 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = DaskAutoscalerValidationError{}
-
-// Validate checks the field values on DaskWorkerGroup with the rules defined
-// in the proto definition for this message. If any rules are violated, an
-// error is returned.
-func (m *DaskWorkerGroup) Validate() error {
-	if m == nil {
-		return nil
-	}
-
-	// no validation rules for Name
-
-	// no validation rules for Image
-
-	// no validation rules for NWorkers
-
-	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
-		if err := v.Validate(); err != nil {
-			return DaskWorkerGroupValidationError{
-				field:  "Resources",
-				reason: "embedded message failed validation",
-				cause:  err,
-			}
-		}
-	}
-
-	return nil
-}
-
-// DaskWorkerGroupValidationError is the validation error returned by
-// DaskWorkerGroup.Validate if the designated constraints aren't met.
-type DaskWorkerGroupValidationError struct {
-	field  string
-	reason string
-	cause  error
-	key    bool
-}
-
-// Field function returns field value.
-func (e DaskWorkerGroupValidationError) Field() string { return e.field }
-
-// Reason function returns reason value.
-func (e DaskWorkerGroupValidationError) Reason() string { return e.reason }
-
-// Cause function returns cause value.
-func (e DaskWorkerGroupValidationError) Cause() error { return e.cause }
-
-// Key function returns key value.
-func (e DaskWorkerGroupValidationError) Key() bool { return e.key }
-
-// ErrorName returns error name.
-func (e DaskWorkerGroupValidationError) ErrorName() string { return "DaskWorkerGroupValidationError" }
-
-// Error satisfies the builtin error interface
-func (e DaskWorkerGroupValidationError) Error() string {
-	cause := ""
-	if e.cause != nil {
-		cause = fmt.Sprintf(" | caused by: %v", e.cause)
-	}
-
-	key := ""
-	if e.key {
-		key = "key for "
-	}
-
-	return fmt.Sprintf(
-		"invalid %sDaskWorkerGroup.%s: %s%s",
-		key,
-		e.field,
-		e.reason,
-		cause)
-}
-
-var _ error = DaskWorkerGroupValidationError{}
-
-var _ interface {
-	Field() string
-	Reason() string
-	Key() bool
-	Cause() error
-	ErrorName() string
-} = DaskWorkerGroupValidationError{}

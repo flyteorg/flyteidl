@@ -103,7 +103,6 @@ DaskCluster
    "image", ":ref:`ref_string`", "", "Optional image to use for the scheduler as well as the default worker group. If unset, will use the default image."
    "nWorkers", ":ref:`ref_int32`", "", "Number of workers in the default worker group"
    "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned to the scheduler as well as all pods of the default worker group. As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices it is advised to only set limits. If requests are not explicitly set, the plugin will make sure to set requests==limits. The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit."
-   "additionalWorkerGroups", ":ref:`ref_flyteidl.plugins.DaskWorkerGroup`", "repeated", "Additional worker groups of the cluster"
    "autoscaler", ":ref:`ref_flyteidl.plugins.DaskAutoscaler`", "", "Optional autoscaler configuration"
 
 
@@ -128,30 +127,6 @@ Custom Proto for Dask Plugin
    "namespace", ":ref:`ref_string`", "", "Optional namespace to use for the dask pods. If none is given, the namespace of the Flyte task is used"
    "jobPodSpec", ":ref:`ref_flyteidl.plugins.JobPodSpec`", "", "Spec for the job pod"
    "cluster", ":ref:`ref_flyteidl.plugins.DaskCluster`", "", "Cluster"
-
-
-
-
-
-
-
-.. _ref_flyteidl.plugins.DaskWorkerGroup:
-
-DaskWorkerGroup
-------------------------------------------------------------------
-
-Definition for additional worker groups
-
-
-
-.. csv-table:: DaskWorkerGroup type fields
-   :header: "Field", "Type", "Label", "Description"
-   :widths: auto
-
-   "name", ":ref:`ref_string`", "", "Name of the additional worker group"
-   "image", ":ref:`ref_string`", "", "Optional image to use for the pods of the worker group. If unset, will use the default image."
-   "nWorkers", ":ref:`ref_int32`", "", "Number of workers in the worker group"
-   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned all pods of the worker group. As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices it is advised to only set limits. If requests are not explicitly set, the plugin will make sure to set requests==limits. The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit."
 
 
 

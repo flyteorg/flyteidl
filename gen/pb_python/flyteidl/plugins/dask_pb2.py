@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1b\x66lyteidl/plugins/dask.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"~\n\x07\x44\x61skJob\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x30\n\njobPodSpec\x18\x02 \x01(\x0b\x32\x1c.flyteidl.plugins.JobPodSpec\x12.\n\x07\x63luster\x18\x03 \x01(\x0b\x32\x1d.flyteidl.plugins.DaskCluster\"H\n\nJobPodSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12+\n\tresources\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Resources\"\xd4\x01\n\x0b\x44\x61skCluster\x12\r\n\x05image\x18\x01 \x01(\t\x12\x10\n\x08nWorkers\x18\x02 \x01(\x05\x12+\n\tresources\x18\x03 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12\x41\n\x16\x61\x64\x64itionalWorkerGroups\x18\x04 \x03(\x0b\x32!.flyteidl.plugins.DaskWorkerGroup\x12\x34\n\nautoscaler\x18\x05 \x01(\x0b\x32 .flyteidl.plugins.DaskAutoscaler\"2\n\x0e\x44\x61skAutoscaler\x12\x0f\n\x07minimum\x18\x01 \x01(\x05\x12\x0f\n\x07maximum\x18\x02 \x01(\x05\"m\n\x0f\x44\x61skWorkerGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12\x10\n\x08nWorkers\x18\x03 \x01(\x05\x12+\n\tresources\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.ResourcesB9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  serialized_pb=_b('\n\x1b\x66lyteidl/plugins/dask.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"~\n\x07\x44\x61skJob\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x30\n\njobPodSpec\x18\x02 \x01(\x0b\x32\x1c.flyteidl.plugins.JobPodSpec\x12.\n\x07\x63luster\x18\x03 \x01(\x0b\x32\x1d.flyteidl.plugins.DaskCluster\"H\n\nJobPodSpec\x12\r\n\x05image\x18\x01 \x01(\t\x12+\n\tresources\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.Resources\"\x91\x01\n\x0b\x44\x61skCluster\x12\r\n\x05image\x18\x01 \x01(\t\x12\x10\n\x08nWorkers\x18\x02 \x01(\x05\x12+\n\tresources\x18\x03 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12\x34\n\nautoscaler\x18\x05 \x01(\x0b\x32 .flyteidl.plugins.DaskAutoscaler\"2\n\x0e\x44\x61skAutoscaler\x12\x0f\n\x07minimum\x18\x01 \x01(\x05\x12\x0f\n\x07maximum\x18\x02 \x01(\x05\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,])
 
@@ -140,14 +140,7 @@ _DASKCLUSTER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='additionalWorkerGroups', full_name='flyteidl.plugins.DaskCluster.additionalWorkerGroups', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='autoscaler', full_name='flyteidl.plugins.DaskCluster.autoscaler', index=4,
+      name='autoscaler', full_name='flyteidl.plugins.DaskCluster.autoscaler', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -166,7 +159,7 @@ _DASKCLUSTER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=279,
-  serialized_end=491,
+  serialized_end=424,
 )
 
 
@@ -203,74 +196,19 @@ _DASKAUTOSCALER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=493,
-  serialized_end=543,
-)
-
-
-_DASKWORKERGROUP = _descriptor.Descriptor(
-  name='DaskWorkerGroup',
-  full_name='flyteidl.plugins.DaskWorkerGroup',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='flyteidl.plugins.DaskWorkerGroup.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='image', full_name='flyteidl.plugins.DaskWorkerGroup.image', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='nWorkers', full_name='flyteidl.plugins.DaskWorkerGroup.nWorkers', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='resources', full_name='flyteidl.plugins.DaskWorkerGroup.resources', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=545,
-  serialized_end=654,
+  serialized_start=426,
+  serialized_end=476,
 )
 
 _DASKJOB.fields_by_name['jobPodSpec'].message_type = _JOBPODSPEC
 _DASKJOB.fields_by_name['cluster'].message_type = _DASKCLUSTER
 _JOBPODSPEC.fields_by_name['resources'].message_type = flyteidl_dot_core_dot_tasks__pb2._RESOURCES
 _DASKCLUSTER.fields_by_name['resources'].message_type = flyteidl_dot_core_dot_tasks__pb2._RESOURCES
-_DASKCLUSTER.fields_by_name['additionalWorkerGroups'].message_type = _DASKWORKERGROUP
 _DASKCLUSTER.fields_by_name['autoscaler'].message_type = _DASKAUTOSCALER
-_DASKWORKERGROUP.fields_by_name['resources'].message_type = flyteidl_dot_core_dot_tasks__pb2._RESOURCES
 DESCRIPTOR.message_types_by_name['DaskJob'] = _DASKJOB
 DESCRIPTOR.message_types_by_name['JobPodSpec'] = _JOBPODSPEC
 DESCRIPTOR.message_types_by_name['DaskCluster'] = _DASKCLUSTER
 DESCRIPTOR.message_types_by_name['DaskAutoscaler'] = _DASKAUTOSCALER
-DESCRIPTOR.message_types_by_name['DaskWorkerGroup'] = _DASKWORKERGROUP
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DaskJob = _reflection.GeneratedProtocolMessageType('DaskJob', (_message.Message,), dict(
@@ -300,13 +238,6 @@ DaskAutoscaler = _reflection.GeneratedProtocolMessageType('DaskAutoscaler', (_me
   # @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskAutoscaler)
   ))
 _sym_db.RegisterMessage(DaskAutoscaler)
-
-DaskWorkerGroup = _reflection.GeneratedProtocolMessageType('DaskWorkerGroup', (_message.Message,), dict(
-  DESCRIPTOR = _DASKWORKERGROUP,
-  __module__ = 'flyteidl.plugins.dask_pb2'
-  # @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskWorkerGroup)
-  ))
-_sym_db.RegisterMessage(DaskWorkerGroup)
 
 
 DESCRIPTOR._options = None
