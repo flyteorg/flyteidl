@@ -39,15 +39,4 @@ message DaskCluster {
     // sure to set requests==limits.
     // The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit.
     core.Resources resources = 3;
-    // Optional autoscaler configuration
-    DaskAutoscaler autoscaler = 5;
-}
-
-
-// Configuration for the dask auto scaler. The autoscaler will only scale the default worker group
-message DaskAutoscaler {
-    // The minimum number of workers. Defaults to 1
-    int32 minimum = 1;
-    // The maximum number of workers.
-    int32 maximum = 2;  
 }

@@ -17,9 +17,8 @@
 #include <google/protobuf/port_def.inc>
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fdask_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fdask_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DaskCluster_flyteidl_2fplugins_2fdask_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fdask_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_JobPodSpec_flyteidl_2fplugins_2fdask_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fdask_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_DaskCluster_flyteidl_2fplugins_2fdask_2eproto;
 namespace flyteidl {
 namespace plugins {
 class DaskJobDefaultTypeInternal {
@@ -34,10 +33,6 @@ class DaskClusterDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<DaskCluster> _instance;
 } _DaskCluster_default_instance_;
-class DaskAutoscalerDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<DaskAutoscaler> _instance;
-} _DaskAutoscaler_default_instance_;
 }  // namespace plugins
 }  // namespace flyteidl
 static void InitDefaultsDaskJob_flyteidl_2fplugins_2fdask_2eproto() {
@@ -82,33 +77,17 @@ static void InitDefaultsDaskCluster_flyteidl_2fplugins_2fdask_2eproto() {
   ::flyteidl::plugins::DaskCluster::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_DaskCluster_flyteidl_2fplugins_2fdask_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDaskCluster_flyteidl_2fplugins_2fdask_2eproto}, {
-      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,
-      &scc_info_DaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto.base,}};
-
-static void InitDefaultsDaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::plugins::_DaskAutoscaler_default_instance_;
-    new (ptr) ::flyteidl::plugins::DaskAutoscaler();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::plugins::DaskAutoscaler::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_DaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_DaskCluster_flyteidl_2fplugins_2fdask_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDaskCluster_flyteidl_2fplugins_2fdask_2eproto}, {
+      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fdask_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_DaskJob_flyteidl_2fplugins_2fdask_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_JobPodSpec_flyteidl_2fplugins_2fdask_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_DaskCluster_flyteidl_2fplugins_2fdask_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_DaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fdask_2eproto[4];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fdask_2eproto[3];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fplugins_2fdask_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fdask_2eproto = nullptr;
 
@@ -136,33 +115,23 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fdask_2eproto::
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskCluster, image_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskCluster, nworkers_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskCluster, resources_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskCluster, autoscaler_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskAutoscaler, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskAutoscaler, minimum_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DaskAutoscaler, maximum_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::DaskJob)},
   { 8, -1, sizeof(::flyteidl::plugins::JobPodSpec)},
   { 15, -1, sizeof(::flyteidl::plugins::DaskCluster)},
-  { 24, -1, sizeof(::flyteidl::plugins::DaskAutoscaler)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_DaskJob_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_JobPodSpec_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_DaskCluster_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::_DaskAutoscaler_default_instance_),
 };
 
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fdask_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fdask_2eproto, "flyteidl/plugins/dask.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fdask_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fdask_2eproto, 4, file_level_enum_descriptors_flyteidl_2fplugins_2fdask_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fdask_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fdask_2eproto, 3, file_level_enum_descriptors_flyteidl_2fplugins_2fdask_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fdask_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fdask_2eproto[] =
@@ -172,19 +141,16 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fdask_2eproto[] =
   " \001(\0132\034.flyteidl.plugins.JobPodSpec\022.\n\007cl"
   "uster\030\003 \001(\0132\035.flyteidl.plugins.DaskClust"
   "er\"H\n\nJobPodSpec\022\r\n\005image\030\001 \001(\t\022+\n\tresou"
-  "rces\030\002 \001(\0132\030.flyteidl.core.Resources\"\221\001\n"
-  "\013DaskCluster\022\r\n\005image\030\001 \001(\t\022\020\n\010nWorkers\030"
-  "\002 \001(\005\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core"
-  ".Resources\0224\n\nautoscaler\030\005 \001(\0132 .flyteid"
-  "l.plugins.DaskAutoscaler\"2\n\016DaskAutoscal"
-  "er\022\017\n\007minimum\030\001 \001(\005\022\017\n\007maximum\030\002 \001(\005B9Z7"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/pluginsb\006proto3"
+  "rces\030\002 \001(\0132\030.flyteidl.core.Resources\"[\n\013"
+  "DaskCluster\022\r\n\005image\030\001 \001(\t\022\020\n\010nWorkers\030\002"
+  " \001(\005\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core."
+  "ResourcesB9Z7github.com/flyteorg/flyteid"
+  "l/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fdask_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fdask_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fdask_2eproto,
-  "flyteidl/plugins/dask.proto", &assign_descriptors_table_flyteidl_2fplugins_2fdask_2eproto, 543,
+  "flyteidl/plugins/dask.proto", &assign_descriptors_table_flyteidl_2fplugins_2fdask_2eproto, 436,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fdask_2eproto() {
@@ -1007,22 +973,15 @@ void JobPodSpec::InternalSwap(JobPodSpec* other) {
 void DaskCluster::InitAsDefaultInstance() {
   ::flyteidl::plugins::_DaskCluster_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resources*>(
       ::flyteidl::core::Resources::internal_default_instance());
-  ::flyteidl::plugins::_DaskCluster_default_instance_._instance.get_mutable()->autoscaler_ = const_cast< ::flyteidl::plugins::DaskAutoscaler*>(
-      ::flyteidl::plugins::DaskAutoscaler::internal_default_instance());
 }
 class DaskCluster::HasBitSetters {
  public:
   static const ::flyteidl::core::Resources& resources(const DaskCluster* msg);
-  static const ::flyteidl::plugins::DaskAutoscaler& autoscaler(const DaskCluster* msg);
 };
 
 const ::flyteidl::core::Resources&
 DaskCluster::HasBitSetters::resources(const DaskCluster* msg) {
   return *msg->resources_;
-}
-const ::flyteidl::plugins::DaskAutoscaler&
-DaskCluster::HasBitSetters::autoscaler(const DaskCluster* msg) {
-  return *msg->autoscaler_;
 }
 void DaskCluster::clear_resources() {
   if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
@@ -1034,7 +993,6 @@ void DaskCluster::clear_resources() {
 const int DaskCluster::kImageFieldNumber;
 const int DaskCluster::kNWorkersFieldNumber;
 const int DaskCluster::kResourcesFieldNumber;
-const int DaskCluster::kAutoscalerFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DaskCluster::DaskCluster()
@@ -1054,11 +1012,6 @@ DaskCluster::DaskCluster(const DaskCluster& from)
     resources_ = new ::flyteidl::core::Resources(*from.resources_);
   } else {
     resources_ = nullptr;
-  }
-  if (from.has_autoscaler()) {
-    autoscaler_ = new ::flyteidl::plugins::DaskAutoscaler(*from.autoscaler_);
-  } else {
-    autoscaler_ = nullptr;
   }
   nworkers_ = from.nworkers_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.DaskCluster)
@@ -1081,7 +1034,6 @@ DaskCluster::~DaskCluster() {
 void DaskCluster::SharedDtor() {
   image_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete resources_;
-  if (this != internal_default_instance()) delete autoscaler_;
 }
 
 void DaskCluster::SetCachedSize(int size) const {
@@ -1104,10 +1056,6 @@ void DaskCluster::Clear() {
     delete resources_;
   }
   resources_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && autoscaler_ != nullptr) {
-    delete autoscaler_;
-  }
-  autoscaler_ = nullptr;
   nworkers_ = 0;
   _internal_metadata_.Clear();
 }
@@ -1155,19 +1103,6 @@ const char* DaskCluster::_InternalParse(const char* begin, const char* end, void
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::core::Resources::_InternalParse;
         object = msg->mutable_resources();
-        if (size > end - ptr) goto len_delim_till_end;
-        ptr += size;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-            {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.plugins.DaskAutoscaler autoscaler = 5;
-      case 5: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::flyteidl::plugins::DaskAutoscaler::_InternalParse;
-        object = msg->mutable_autoscaler();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1247,17 +1182,6 @@ bool DaskCluster::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.DaskAutoscaler autoscaler = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_autoscaler()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1306,12 +1230,6 @@ void DaskCluster::SerializeWithCachedSizes(
       3, HasBitSetters::resources(this), output);
   }
 
-  // .flyteidl.plugins.DaskAutoscaler autoscaler = 5;
-  if (this->has_autoscaler()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, HasBitSetters::autoscaler(this), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1348,13 +1266,6 @@ void DaskCluster::SerializeWithCachedSizes(
         3, HasBitSetters::resources(this), target);
   }
 
-  // .flyteidl.plugins.DaskAutoscaler autoscaler = 5;
-  if (this->has_autoscaler()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, HasBitSetters::autoscaler(this), target);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1388,13 +1299,6 @@ size_t DaskCluster::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *resources_);
-  }
-
-  // .flyteidl.plugins.DaskAutoscaler autoscaler = 5;
-  if (this->has_autoscaler()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *autoscaler_);
   }
 
   // int32 nWorkers = 2;
@@ -1438,9 +1342,6 @@ void DaskCluster::MergeFrom(const DaskCluster& from) {
   if (from.has_resources()) {
     mutable_resources()->::flyteidl::core::Resources::MergeFrom(from.resources());
   }
-  if (from.has_autoscaler()) {
-    mutable_autoscaler()->::flyteidl::plugins::DaskAutoscaler::MergeFrom(from.autoscaler());
-  }
   if (from.nworkers() != 0) {
     set_nworkers(from.nworkers());
   }
@@ -1474,319 +1375,10 @@ void DaskCluster::InternalSwap(DaskCluster* other) {
   image_.Swap(&other->image_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(resources_, other->resources_);
-  swap(autoscaler_, other->autoscaler_);
   swap(nworkers_, other->nworkers_);
 }
 
 ::google::protobuf::Metadata DaskCluster::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fdask_2eproto);
-  return ::file_level_metadata_flyteidl_2fplugins_2fdask_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
-void DaskAutoscaler::InitAsDefaultInstance() {
-}
-class DaskAutoscaler::HasBitSetters {
- public:
-};
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DaskAutoscaler::kMinimumFieldNumber;
-const int DaskAutoscaler::kMaximumFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-DaskAutoscaler::DaskAutoscaler()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:flyteidl.plugins.DaskAutoscaler)
-}
-DaskAutoscaler::DaskAutoscaler(const DaskAutoscaler& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&minimum_, &from.minimum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&maximum_) -
-    reinterpret_cast<char*>(&minimum_)) + sizeof(maximum_));
-  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.DaskAutoscaler)
-}
-
-void DaskAutoscaler::SharedCtor() {
-  ::memset(&minimum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&maximum_) -
-      reinterpret_cast<char*>(&minimum_)) + sizeof(maximum_));
-}
-
-DaskAutoscaler::~DaskAutoscaler() {
-  // @@protoc_insertion_point(destructor:flyteidl.plugins.DaskAutoscaler)
-  SharedDtor();
-}
-
-void DaskAutoscaler::SharedDtor() {
-}
-
-void DaskAutoscaler::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const DaskAutoscaler& DaskAutoscaler::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_DaskAutoscaler_flyteidl_2fplugins_2fdask_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void DaskAutoscaler::Clear() {
-// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.DaskAutoscaler)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&minimum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&maximum_) -
-      reinterpret_cast<char*>(&minimum_)) + sizeof(maximum_));
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* DaskAutoscaler::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<DaskAutoscaler*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // int32 minimum = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_minimum(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      // int32 maximum = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
-        msg->set_maximum(::google::protobuf::internal::ReadVarint(&ptr));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DaskAutoscaler::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:flyteidl.plugins.DaskAutoscaler)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int32 minimum = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &minimum_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // int32 maximum = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &maximum_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:flyteidl.plugins.DaskAutoscaler)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.DaskAutoscaler)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void DaskAutoscaler::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.DaskAutoscaler)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 minimum = 1;
-  if (this->minimum() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->minimum(), output);
-  }
-
-  // int32 maximum = 2;
-  if (this->maximum() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->maximum(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.DaskAutoscaler)
-}
-
-::google::protobuf::uint8* DaskAutoscaler::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.DaskAutoscaler)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 minimum = 1;
-  if (this->minimum() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->minimum(), target);
-  }
-
-  // int32 maximum = 2;
-  if (this->maximum() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->maximum(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.DaskAutoscaler)
-  return target;
-}
-
-size_t DaskAutoscaler::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.DaskAutoscaler)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // int32 minimum = 1;
-  if (this->minimum() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->minimum());
-  }
-
-  // int32 maximum = 2;
-  if (this->maximum() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->maximum());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void DaskAutoscaler::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.DaskAutoscaler)
-  GOOGLE_DCHECK_NE(&from, this);
-  const DaskAutoscaler* source =
-      ::google::protobuf::DynamicCastToGenerated<DaskAutoscaler>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.DaskAutoscaler)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.DaskAutoscaler)
-    MergeFrom(*source);
-  }
-}
-
-void DaskAutoscaler::MergeFrom(const DaskAutoscaler& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.DaskAutoscaler)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.minimum() != 0) {
-    set_minimum(from.minimum());
-  }
-  if (from.maximum() != 0) {
-    set_maximum(from.maximum());
-  }
-}
-
-void DaskAutoscaler::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.DaskAutoscaler)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void DaskAutoscaler::CopyFrom(const DaskAutoscaler& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.DaskAutoscaler)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool DaskAutoscaler::IsInitialized() const {
-  return true;
-}
-
-void DaskAutoscaler::Swap(DaskAutoscaler* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void DaskAutoscaler::InternalSwap(DaskAutoscaler* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(minimum_, other->minimum_);
-  swap(maximum_, other->maximum_);
-}
-
-::google::protobuf::Metadata DaskAutoscaler::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fdask_2eproto);
   return ::file_level_metadata_flyteidl_2fplugins_2fdask_2eproto[kIndexInFileMessages];
 }
@@ -1805,9 +1397,6 @@ template<> PROTOBUF_NOINLINE ::flyteidl::plugins::JobPodSpec* Arena::CreateMaybe
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::DaskCluster* Arena::CreateMaybeMessage< ::flyteidl::plugins::DaskCluster >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::DaskCluster >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::plugins::DaskAutoscaler* Arena::CreateMaybeMessage< ::flyteidl::plugins::DaskAutoscaler >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::plugins::DaskAutoscaler >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

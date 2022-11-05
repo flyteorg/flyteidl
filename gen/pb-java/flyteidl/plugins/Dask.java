@@ -2040,31 +2040,6 @@ public final class Dask {
      * <code>.flyteidl.core.Resources resources = 3;</code>
      */
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
-
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    boolean hasAutoscaler();
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    flyteidl.plugins.Dask.DaskAutoscaler getAutoscaler();
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    flyteidl.plugins.Dask.DaskAutoscalerOrBuilder getAutoscalerOrBuilder();
   }
   /**
    * Protobuf type {@code flyteidl.plugins.DaskCluster}
@@ -2126,19 +2101,6 @@ public final class Dask {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(resources_);
                 resources_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              flyteidl.plugins.Dask.DaskAutoscaler.Builder subBuilder = null;
-              if (autoscaler_ != null) {
-                subBuilder = autoscaler_.toBuilder();
-              }
-              autoscaler_ = input.readMessage(flyteidl.plugins.Dask.DaskAutoscaler.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(autoscaler_);
-                autoscaler_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2277,39 +2239,6 @@ public final class Dask {
       return getResources();
     }
 
-    public static final int AUTOSCALER_FIELD_NUMBER = 5;
-    private flyteidl.plugins.Dask.DaskAutoscaler autoscaler_;
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    public boolean hasAutoscaler() {
-      return autoscaler_ != null;
-    }
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    public flyteidl.plugins.Dask.DaskAutoscaler getAutoscaler() {
-      return autoscaler_ == null ? flyteidl.plugins.Dask.DaskAutoscaler.getDefaultInstance() : autoscaler_;
-    }
-    /**
-     * <pre>
-     * Optional autoscaler configuration
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-     */
-    public flyteidl.plugins.Dask.DaskAutoscalerOrBuilder getAutoscalerOrBuilder() {
-      return getAutoscaler();
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2333,9 +2262,6 @@ public final class Dask {
       if (resources_ != null) {
         output.writeMessage(3, getResources());
       }
-      if (autoscaler_ != null) {
-        output.writeMessage(5, getAutoscaler());
-      }
       unknownFields.writeTo(output);
     }
 
@@ -2355,10 +2281,6 @@ public final class Dask {
       if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getResources());
-      }
-      if (autoscaler_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getAutoscaler());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2384,11 +2306,6 @@ public final class Dask {
         if (!getResources()
             .equals(other.getResources())) return false;
       }
-      if (hasAutoscaler() != other.hasAutoscaler()) return false;
-      if (hasAutoscaler()) {
-        if (!getAutoscaler()
-            .equals(other.getAutoscaler())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2407,10 +2324,6 @@ public final class Dask {
       if (hasResources()) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResources().hashCode();
-      }
-      if (hasAutoscaler()) {
-        hash = (37 * hash) + AUTOSCALER_FIELD_NUMBER;
-        hash = (53 * hash) + getAutoscaler().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2555,12 +2468,6 @@ public final class Dask {
           resources_ = null;
           resourcesBuilder_ = null;
         }
-        if (autoscalerBuilder_ == null) {
-          autoscaler_ = null;
-        } else {
-          autoscaler_ = null;
-          autoscalerBuilder_ = null;
-        }
         return this;
       }
 
@@ -2593,11 +2500,6 @@ public final class Dask {
           result.resources_ = resources_;
         } else {
           result.resources_ = resourcesBuilder_.build();
-        }
-        if (autoscalerBuilder_ == null) {
-          result.autoscaler_ = autoscaler_;
-        } else {
-          result.autoscaler_ = autoscalerBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2656,9 +2558,6 @@ public final class Dask {
         }
         if (other.hasResources()) {
           mergeResources(other.getResources());
-        }
-        if (other.hasAutoscaler()) {
-          mergeAutoscaler(other.getAutoscaler());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3009,159 +2908,6 @@ public final class Dask {
         }
         return resourcesBuilder_;
       }
-
-      private flyteidl.plugins.Dask.DaskAutoscaler autoscaler_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.DaskAutoscaler, flyteidl.plugins.Dask.DaskAutoscaler.Builder, flyteidl.plugins.Dask.DaskAutoscalerOrBuilder> autoscalerBuilder_;
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public boolean hasAutoscaler() {
-        return autoscalerBuilder_ != null || autoscaler_ != null;
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public flyteidl.plugins.Dask.DaskAutoscaler getAutoscaler() {
-        if (autoscalerBuilder_ == null) {
-          return autoscaler_ == null ? flyteidl.plugins.Dask.DaskAutoscaler.getDefaultInstance() : autoscaler_;
-        } else {
-          return autoscalerBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public Builder setAutoscaler(flyteidl.plugins.Dask.DaskAutoscaler value) {
-        if (autoscalerBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          autoscaler_ = value;
-          onChanged();
-        } else {
-          autoscalerBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public Builder setAutoscaler(
-          flyteidl.plugins.Dask.DaskAutoscaler.Builder builderForValue) {
-        if (autoscalerBuilder_ == null) {
-          autoscaler_ = builderForValue.build();
-          onChanged();
-        } else {
-          autoscalerBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public Builder mergeAutoscaler(flyteidl.plugins.Dask.DaskAutoscaler value) {
-        if (autoscalerBuilder_ == null) {
-          if (autoscaler_ != null) {
-            autoscaler_ =
-              flyteidl.plugins.Dask.DaskAutoscaler.newBuilder(autoscaler_).mergeFrom(value).buildPartial();
-          } else {
-            autoscaler_ = value;
-          }
-          onChanged();
-        } else {
-          autoscalerBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public Builder clearAutoscaler() {
-        if (autoscalerBuilder_ == null) {
-          autoscaler_ = null;
-          onChanged();
-        } else {
-          autoscaler_ = null;
-          autoscalerBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public flyteidl.plugins.Dask.DaskAutoscaler.Builder getAutoscalerBuilder() {
-        
-        onChanged();
-        return getAutoscalerFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      public flyteidl.plugins.Dask.DaskAutoscalerOrBuilder getAutoscalerOrBuilder() {
-        if (autoscalerBuilder_ != null) {
-          return autoscalerBuilder_.getMessageOrBuilder();
-        } else {
-          return autoscaler_ == null ?
-              flyteidl.plugins.Dask.DaskAutoscaler.getDefaultInstance() : autoscaler_;
-        }
-      }
-      /**
-       * <pre>
-       * Optional autoscaler configuration
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.DaskAutoscaler autoscaler = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.DaskAutoscaler, flyteidl.plugins.Dask.DaskAutoscaler.Builder, flyteidl.plugins.Dask.DaskAutoscalerOrBuilder> 
-          getAutoscalerFieldBuilder() {
-        if (autoscalerBuilder_ == null) {
-          autoscalerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.Dask.DaskAutoscaler, flyteidl.plugins.Dask.DaskAutoscaler.Builder, flyteidl.plugins.Dask.DaskAutoscalerOrBuilder>(
-                  getAutoscaler(),
-                  getParentForChildren(),
-                  isClean());
-          autoscaler_ = null;
-        }
-        return autoscalerBuilder_;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3215,590 +2961,6 @@ public final class Dask {
 
   }
 
-  public interface DaskAutoscalerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.DaskAutoscaler)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The minimum number of workers. Defaults to 1
-     * </pre>
-     *
-     * <code>int32 minimum = 1;</code>
-     */
-    int getMinimum();
-
-    /**
-     * <pre>
-     * The maximum number of workers.
-     * </pre>
-     *
-     * <code>int32 maximum = 2;</code>
-     */
-    int getMaximum();
-  }
-  /**
-   * <pre>
-   * Configuration for the dask auto scaler. The autoscaler will only scale the default worker group
-   * </pre>
-   *
-   * Protobuf type {@code flyteidl.plugins.DaskAutoscaler}
-   */
-  public  static final class DaskAutoscaler extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.DaskAutoscaler)
-      DaskAutoscalerOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use DaskAutoscaler.newBuilder() to construct.
-    private DaskAutoscaler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private DaskAutoscaler() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private DaskAutoscaler(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              minimum_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              maximum_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskAutoscaler_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskAutoscaler_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.Dask.DaskAutoscaler.class, flyteidl.plugins.Dask.DaskAutoscaler.Builder.class);
-    }
-
-    public static final int MINIMUM_FIELD_NUMBER = 1;
-    private int minimum_;
-    /**
-     * <pre>
-     * The minimum number of workers. Defaults to 1
-     * </pre>
-     *
-     * <code>int32 minimum = 1;</code>
-     */
-    public int getMinimum() {
-      return minimum_;
-    }
-
-    public static final int MAXIMUM_FIELD_NUMBER = 2;
-    private int maximum_;
-    /**
-     * <pre>
-     * The maximum number of workers.
-     * </pre>
-     *
-     * <code>int32 maximum = 2;</code>
-     */
-    public int getMaximum() {
-      return maximum_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (minimum_ != 0) {
-        output.writeInt32(1, minimum_);
-      }
-      if (maximum_ != 0) {
-        output.writeInt32(2, maximum_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (minimum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, minimum_);
-      }
-      if (maximum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, maximum_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.plugins.Dask.DaskAutoscaler)) {
-        return super.equals(obj);
-      }
-      flyteidl.plugins.Dask.DaskAutoscaler other = (flyteidl.plugins.Dask.DaskAutoscaler) obj;
-
-      if (getMinimum()
-          != other.getMinimum()) return false;
-      if (getMaximum()
-          != other.getMaximum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
-      hash = (53 * hash) + getMinimum();
-      hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
-      hash = (53 * hash) + getMaximum();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.plugins.Dask.DaskAutoscaler parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.plugins.Dask.DaskAutoscaler prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Configuration for the dask auto scaler. The autoscaler will only scale the default worker group
-     * </pre>
-     *
-     * Protobuf type {@code flyteidl.plugins.DaskAutoscaler}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.DaskAutoscaler)
-        flyteidl.plugins.Dask.DaskAutoscalerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskAutoscaler_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskAutoscaler_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.Dask.DaskAutoscaler.class, flyteidl.plugins.Dask.DaskAutoscaler.Builder.class);
-      }
-
-      // Construct using flyteidl.plugins.Dask.DaskAutoscaler.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        minimum_ = 0;
-
-        maximum_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskAutoscaler_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Dask.DaskAutoscaler getDefaultInstanceForType() {
-        return flyteidl.plugins.Dask.DaskAutoscaler.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Dask.DaskAutoscaler build() {
-        flyteidl.plugins.Dask.DaskAutoscaler result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.plugins.Dask.DaskAutoscaler buildPartial() {
-        flyteidl.plugins.Dask.DaskAutoscaler result = new flyteidl.plugins.Dask.DaskAutoscaler(this);
-        result.minimum_ = minimum_;
-        result.maximum_ = maximum_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Dask.DaskAutoscaler) {
-          return mergeFrom((flyteidl.plugins.Dask.DaskAutoscaler)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.plugins.Dask.DaskAutoscaler other) {
-        if (other == flyteidl.plugins.Dask.DaskAutoscaler.getDefaultInstance()) return this;
-        if (other.getMinimum() != 0) {
-          setMinimum(other.getMinimum());
-        }
-        if (other.getMaximum() != 0) {
-          setMaximum(other.getMaximum());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.plugins.Dask.DaskAutoscaler parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Dask.DaskAutoscaler) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int minimum_ ;
-      /**
-       * <pre>
-       * The minimum number of workers. Defaults to 1
-       * </pre>
-       *
-       * <code>int32 minimum = 1;</code>
-       */
-      public int getMinimum() {
-        return minimum_;
-      }
-      /**
-       * <pre>
-       * The minimum number of workers. Defaults to 1
-       * </pre>
-       *
-       * <code>int32 minimum = 1;</code>
-       */
-      public Builder setMinimum(int value) {
-        
-        minimum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The minimum number of workers. Defaults to 1
-       * </pre>
-       *
-       * <code>int32 minimum = 1;</code>
-       */
-      public Builder clearMinimum() {
-        
-        minimum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int maximum_ ;
-      /**
-       * <pre>
-       * The maximum number of workers.
-       * </pre>
-       *
-       * <code>int32 maximum = 2;</code>
-       */
-      public int getMaximum() {
-        return maximum_;
-      }
-      /**
-       * <pre>
-       * The maximum number of workers.
-       * </pre>
-       *
-       * <code>int32 maximum = 2;</code>
-       */
-      public Builder setMaximum(int value) {
-        
-        maximum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The maximum number of workers.
-       * </pre>
-       *
-       * <code>int32 maximum = 2;</code>
-       */
-      public Builder clearMaximum() {
-        
-        maximum_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.DaskAutoscaler)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskAutoscaler)
-    private static final flyteidl.plugins.Dask.DaskAutoscaler DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Dask.DaskAutoscaler();
-    }
-
-    public static flyteidl.plugins.Dask.DaskAutoscaler getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<DaskAutoscaler>
-        PARSER = new com.google.protobuf.AbstractParser<DaskAutoscaler>() {
-      @java.lang.Override
-      public DaskAutoscaler parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DaskAutoscaler(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<DaskAutoscaler> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<DaskAutoscaler> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.plugins.Dask.DaskAutoscaler getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_DaskJob_descriptor;
   private static final 
@@ -3814,11 +2976,6 @@ public final class Dask {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_DaskAutoscaler_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_DaskAutoscaler_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3834,14 +2991,11 @@ public final class Dask {
       " \001(\0132\034.flyteidl.plugins.JobPodSpec\022.\n\007cl" +
       "uster\030\003 \001(\0132\035.flyteidl.plugins.DaskClust" +
       "er\"H\n\nJobPodSpec\022\r\n\005image\030\001 \001(\t\022+\n\tresou" +
-      "rces\030\002 \001(\0132\030.flyteidl.core.Resources\"\221\001\n" +
-      "\013DaskCluster\022\r\n\005image\030\001 \001(\t\022\020\n\010nWorkers\030" +
-      "\002 \001(\005\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core" +
-      ".Resources\0224\n\nautoscaler\030\005 \001(\0132 .flyteid" +
-      "l.plugins.DaskAutoscaler\"2\n\016DaskAutoscal" +
-      "er\022\017\n\007minimum\030\001 \001(\005\022\017\n\007maximum\030\002 \001(\005B9Z7" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/pluginsb\006proto3"
+      "rces\030\002 \001(\0132\030.flyteidl.core.Resources\"[\n\013" +
+      "DaskCluster\022\r\n\005image\030\001 \001(\t\022\020\n\010nWorkers\030\002" +
+      " \001(\005\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core." +
+      "ResourcesB9Z7github.com/flyteorg/flyteid" +
+      "l/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3873,13 +3027,7 @@ public final class Dask {
     internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DaskCluster_descriptor,
-        new java.lang.String[] { "Image", "NWorkers", "Resources", "Autoscaler", });
-    internal_static_flyteidl_plugins_DaskAutoscaler_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_flyteidl_plugins_DaskAutoscaler_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_DaskAutoscaler_descriptor,
-        new java.lang.String[] { "Minimum", "Maximum", });
+        new java.lang.String[] { "Image", "NWorkers", "Resources", });
     flyteidl.core.Tasks.getDescriptor();
   }
 
