@@ -237,7 +237,7 @@ flyteidl/service/dataproxy.proto
 CreateDownloadLinkRequest
 ------------------------------------------------------------------
 
-
+CreateDownloadLinkRequest defines the request parameters to create a download link (signed url)
 
 
 
@@ -245,11 +245,9 @@ CreateDownloadLinkRequest
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "execution_id", ":ref:`ref_flyteidl.core.WorkflowExecutionIdentifier`", "", "WorkflowId is the unique identifier for the workflow execution."
-   "node_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the most recent attempt of the task."
-   "task_id", ":ref:`ref_flyteidl.core.TaskExecutionIdentifier`", "", "TaskId is the unique task execution identifier that points to a specific attempt of the task."
-   "artifact_type", ":ref:`ref_flyteidl.service.ArtifactType`", "", ""
+   "artifact_type", ":ref:`ref_flyteidl.service.ArtifactType`", "", "ArtifactType of the artifact requested."
    "expires_in", ":ref:`ref_google.protobuf.Duration`", "", "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this exceeds the platform allowed max. +optional. The default value comes from a global config."
+   "node_execution_id", ":ref:`ref_flyteidl.core.NodeExecutionIdentifier`", "", "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the most recent attempt of the task."
 
 
 
@@ -262,7 +260,7 @@ CreateDownloadLinkRequest
 CreateDownloadLinkResponse
 ------------------------------------------------------------------
 
-
+CreateDownloadLinkResponse defines the response for the generated links
 
 
 

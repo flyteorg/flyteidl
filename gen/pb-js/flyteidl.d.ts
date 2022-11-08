@@ -18430,20 +18430,14 @@ export namespace flyteidl {
         /** Properties of a CreateDownloadLinkRequest. */
         interface ICreateDownloadLinkRequest {
 
-            /** CreateDownloadLinkRequest executionId */
-            executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** CreateDownloadLinkRequest nodeId */
-            nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** CreateDownloadLinkRequest taskId */
-            taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
             /** CreateDownloadLinkRequest artifactType */
             artifactType?: (flyteidl.service.ArtifactType|null);
 
             /** CreateDownloadLinkRequest expiresIn */
             expiresIn?: (google.protobuf.IDuration|null);
+
+            /** CreateDownloadLinkRequest nodeExecutionId */
+            nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
         }
 
         /** Represents a CreateDownloadLinkRequest. */
@@ -18455,23 +18449,17 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.service.ICreateDownloadLinkRequest);
 
-            /** CreateDownloadLinkRequest executionId. */
-            public executionId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** CreateDownloadLinkRequest nodeId. */
-            public nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** CreateDownloadLinkRequest taskId. */
-            public taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
             /** CreateDownloadLinkRequest artifactType. */
             public artifactType: flyteidl.service.ArtifactType;
 
             /** CreateDownloadLinkRequest expiresIn. */
             public expiresIn?: (google.protobuf.IDuration|null);
 
+            /** CreateDownloadLinkRequest nodeExecutionId. */
+            public nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
             /** CreateDownloadLinkRequest source. */
-            public source?: ("executionId"|"nodeId"|"taskId");
+            public source?: "nodeExecutionId";
 
             /**
              * Creates a new CreateDownloadLinkRequest instance using the specified properties.

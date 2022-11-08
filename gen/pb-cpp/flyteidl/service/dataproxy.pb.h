@@ -725,9 +725,7 @@ class CreateDownloadLinkRequest final :
   static const CreateDownloadLinkRequest& default_instance();
 
   enum SourceCase {
-    kExecutionId = 1,
-    kNodeId = 2,
-    kTaskId = 3,
+    kNodeExecutionId = 3,
     SOURCE_NOT_SET = 0,
   };
 
@@ -794,56 +792,36 @@ class CreateDownloadLinkRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .google.protobuf.Duration expires_in = 5;
+  // .google.protobuf.Duration expires_in = 2;
   bool has_expires_in() const;
   void clear_expires_in();
-  static const int kExpiresInFieldNumber = 5;
+  static const int kExpiresInFieldNumber = 2;
   const ::google::protobuf::Duration& expires_in() const;
   ::google::protobuf::Duration* release_expires_in();
   ::google::protobuf::Duration* mutable_expires_in();
   void set_allocated_expires_in(::google::protobuf::Duration* expires_in);
 
-  // .flyteidl.service.ArtifactType artifact_type = 4;
+  // .flyteidl.service.ArtifactType artifact_type = 1;
   void clear_artifact_type();
-  static const int kArtifactTypeFieldNumber = 4;
+  static const int kArtifactTypeFieldNumber = 1;
   ::flyteidl::service::ArtifactType artifact_type() const;
   void set_artifact_type(::flyteidl::service::ArtifactType value);
 
-  // .flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;
-  bool has_execution_id() const;
-  void clear_execution_id();
-  static const int kExecutionIdFieldNumber = 1;
-  const ::flyteidl::core::WorkflowExecutionIdentifier& execution_id() const;
-  ::flyteidl::core::WorkflowExecutionIdentifier* release_execution_id();
-  ::flyteidl::core::WorkflowExecutionIdentifier* mutable_execution_id();
-  void set_allocated_execution_id(::flyteidl::core::WorkflowExecutionIdentifier* execution_id);
-
-  // .flyteidl.core.NodeExecutionIdentifier node_id = 2;
-  bool has_node_id() const;
-  void clear_node_id();
-  static const int kNodeIdFieldNumber = 2;
-  const ::flyteidl::core::NodeExecutionIdentifier& node_id() const;
-  ::flyteidl::core::NodeExecutionIdentifier* release_node_id();
-  ::flyteidl::core::NodeExecutionIdentifier* mutable_node_id();
-  void set_allocated_node_id(::flyteidl::core::NodeExecutionIdentifier* node_id);
-
-  // .flyteidl.core.TaskExecutionIdentifier task_id = 3;
-  bool has_task_id() const;
-  void clear_task_id();
-  static const int kTaskIdFieldNumber = 3;
-  const ::flyteidl::core::TaskExecutionIdentifier& task_id() const;
-  ::flyteidl::core::TaskExecutionIdentifier* release_task_id();
-  ::flyteidl::core::TaskExecutionIdentifier* mutable_task_id();
-  void set_allocated_task_id(::flyteidl::core::TaskExecutionIdentifier* task_id);
+  // .flyteidl.core.NodeExecutionIdentifier node_execution_id = 3;
+  bool has_node_execution_id() const;
+  void clear_node_execution_id();
+  static const int kNodeExecutionIdFieldNumber = 3;
+  const ::flyteidl::core::NodeExecutionIdentifier& node_execution_id() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_node_execution_id();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_node_execution_id();
+  void set_allocated_node_execution_id(::flyteidl::core::NodeExecutionIdentifier* node_execution_id);
 
   void clear_source();
   SourceCase source_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkRequest)
  private:
   class HasBitSetters;
-  void set_has_execution_id();
-  void set_has_node_id();
-  void set_has_task_id();
+  void set_has_node_execution_id();
 
   inline bool has_source() const;
   inline void clear_has_source();
@@ -853,9 +831,7 @@ class CreateDownloadLinkRequest final :
   int artifact_type_;
   union SourceUnion {
     SourceUnion() {}
-    ::flyteidl::core::WorkflowExecutionIdentifier* execution_id_;
-    ::flyteidl::core::NodeExecutionIdentifier* node_id_;
-    ::flyteidl::core::TaskExecutionIdentifier* task_id_;
+    ::flyteidl::core::NodeExecutionIdentifier* node_execution_id_;
   } source_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1635,112 +1611,7 @@ inline void CreateDownloadLocationResponse::set_allocated_expires_at(::google::p
 
 // CreateDownloadLinkRequest
 
-// .flyteidl.core.WorkflowExecutionIdentifier execution_id = 1;
-inline bool CreateDownloadLinkRequest::has_execution_id() const {
-  return source_case() == kExecutionId;
-}
-inline void CreateDownloadLinkRequest::set_has_execution_id() {
-  _oneof_case_[0] = kExecutionId;
-}
-inline ::flyteidl::core::WorkflowExecutionIdentifier* CreateDownloadLinkRequest::release_execution_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.execution_id)
-  if (has_execution_id()) {
-    clear_has_source();
-      ::flyteidl::core::WorkflowExecutionIdentifier* temp = source_.execution_id_;
-    source_.execution_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::flyteidl::core::WorkflowExecutionIdentifier& CreateDownloadLinkRequest::execution_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.execution_id)
-  return has_execution_id()
-      ? *source_.execution_id_
-      : *reinterpret_cast< ::flyteidl::core::WorkflowExecutionIdentifier*>(&::flyteidl::core::_WorkflowExecutionIdentifier_default_instance_);
-}
-inline ::flyteidl::core::WorkflowExecutionIdentifier* CreateDownloadLinkRequest::mutable_execution_id() {
-  if (!has_execution_id()) {
-    clear_source();
-    set_has_execution_id();
-    source_.execution_id_ = CreateMaybeMessage< ::flyteidl::core::WorkflowExecutionIdentifier >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.execution_id)
-  return source_.execution_id_;
-}
-
-// .flyteidl.core.NodeExecutionIdentifier node_id = 2;
-inline bool CreateDownloadLinkRequest::has_node_id() const {
-  return source_case() == kNodeId;
-}
-inline void CreateDownloadLinkRequest::set_has_node_id() {
-  _oneof_case_[0] = kNodeId;
-}
-inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::release_node_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.node_id)
-  if (has_node_id()) {
-    clear_has_source();
-      ::flyteidl::core::NodeExecutionIdentifier* temp = source_.node_id_;
-    source_.node_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::flyteidl::core::NodeExecutionIdentifier& CreateDownloadLinkRequest::node_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.node_id)
-  return has_node_id()
-      ? *source_.node_id_
-      : *reinterpret_cast< ::flyteidl::core::NodeExecutionIdentifier*>(&::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
-}
-inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::mutable_node_id() {
-  if (!has_node_id()) {
-    clear_source();
-    set_has_node_id();
-    source_.node_id_ = CreateMaybeMessage< ::flyteidl::core::NodeExecutionIdentifier >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.node_id)
-  return source_.node_id_;
-}
-
-// .flyteidl.core.TaskExecutionIdentifier task_id = 3;
-inline bool CreateDownloadLinkRequest::has_task_id() const {
-  return source_case() == kTaskId;
-}
-inline void CreateDownloadLinkRequest::set_has_task_id() {
-  _oneof_case_[0] = kTaskId;
-}
-inline ::flyteidl::core::TaskExecutionIdentifier* CreateDownloadLinkRequest::release_task_id() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.task_id)
-  if (has_task_id()) {
-    clear_has_source();
-      ::flyteidl::core::TaskExecutionIdentifier* temp = source_.task_id_;
-    source_.task_id_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::flyteidl::core::TaskExecutionIdentifier& CreateDownloadLinkRequest::task_id() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.task_id)
-  return has_task_id()
-      ? *source_.task_id_
-      : *reinterpret_cast< ::flyteidl::core::TaskExecutionIdentifier*>(&::flyteidl::core::_TaskExecutionIdentifier_default_instance_);
-}
-inline ::flyteidl::core::TaskExecutionIdentifier* CreateDownloadLinkRequest::mutable_task_id() {
-  if (!has_task_id()) {
-    clear_source();
-    set_has_task_id();
-    source_.task_id_ = CreateMaybeMessage< ::flyteidl::core::TaskExecutionIdentifier >(
-        GetArenaNoVirtual());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.task_id)
-  return source_.task_id_;
-}
-
-// .flyteidl.service.ArtifactType artifact_type = 4;
+// .flyteidl.service.ArtifactType artifact_type = 1;
 inline void CreateDownloadLinkRequest::clear_artifact_type() {
   artifact_type_ = 0;
 }
@@ -1754,7 +1625,7 @@ inline void CreateDownloadLinkRequest::set_artifact_type(::flyteidl::service::Ar
   // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.artifact_type)
 }
 
-// .google.protobuf.Duration expires_in = 5;
+// .google.protobuf.Duration expires_in = 2;
 inline bool CreateDownloadLinkRequest::has_expires_in() const {
   return this != internal_default_instance() && expires_in_ != nullptr;
 }
@@ -1798,6 +1669,41 @@ inline void CreateDownloadLinkRequest::set_allocated_expires_in(::google::protob
   }
   expires_in_ = expires_in;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkRequest.expires_in)
+}
+
+// .flyteidl.core.NodeExecutionIdentifier node_execution_id = 3;
+inline bool CreateDownloadLinkRequest::has_node_execution_id() const {
+  return source_case() == kNodeExecutionId;
+}
+inline void CreateDownloadLinkRequest::set_has_node_execution_id() {
+  _oneof_case_[0] = kNodeExecutionId;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::release_node_execution_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.node_execution_id)
+  if (has_node_execution_id()) {
+    clear_has_source();
+      ::flyteidl::core::NodeExecutionIdentifier* temp = source_.node_execution_id_;
+    source_.node_execution_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& CreateDownloadLinkRequest::node_execution_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.node_execution_id)
+  return has_node_execution_id()
+      ? *source_.node_execution_id_
+      : *reinterpret_cast< ::flyteidl::core::NodeExecutionIdentifier*>(&::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::mutable_node_execution_id() {
+  if (!has_node_execution_id()) {
+    clear_source();
+    set_has_node_execution_id();
+    source_.node_execution_id_ = CreateMaybeMessage< ::flyteidl::core::NodeExecutionIdentifier >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.node_execution_id)
+  return source_.node_execution_id_;
 }
 
 inline bool CreateDownloadLinkRequest::has_source() const {

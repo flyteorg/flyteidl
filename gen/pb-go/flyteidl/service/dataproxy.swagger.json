@@ -105,32 +105,6 @@
     }
   },
   "definitions": {
-    "coreIdentifier": {
-      "type": "object",
-      "properties": {
-        "resource_type": {
-          "$ref": "#/definitions/coreResourceType",
-          "description": "Identifies the specific type of resource that this identifier corresponds to."
-        },
-        "project": {
-          "type": "string",
-          "description": "Name of the project the resource belongs to."
-        },
-        "domain": {
-          "type": "string",
-          "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project."
-        },
-        "name": {
-          "type": "string",
-          "description": "User provided value for the resource."
-        },
-        "version": {
-          "type": "string",
-          "description": "Specific version of the resource."
-        }
-      },
-      "description": "Encapsulation of fields that uniquely identifies a Flyte resource."
-    },
     "coreNodeExecutionIdentifier": {
       "type": "object",
       "properties": {
@@ -142,34 +116,6 @@
         }
       },
       "description": "Encapsulation of fields that identify a Flyte node execution entity."
-    },
-    "coreResourceType": {
-      "type": "string",
-      "enum": [
-        "UNSPECIFIED",
-        "TASK",
-        "WORKFLOW",
-        "LAUNCH_PLAN",
-        "DATASET"
-      ],
-      "default": "UNSPECIFIED",
-      "description": "Indicates a resource type within Flyte.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects"
-    },
-    "coreTaskExecutionIdentifier": {
-      "type": "object",
-      "properties": {
-        "task_id": {
-          "$ref": "#/definitions/coreIdentifier"
-        },
-        "node_execution_id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier"
-        },
-        "retry_attempt": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "description": "Encapsulation of fields that identify a Flyte task execution entity."
     },
     "coreWorkflowExecutionIdentifier": {
       "type": "object",
@@ -202,26 +148,20 @@
     "serviceCreateDownloadLinkRequest": {
       "type": "object",
       "properties": {
-        "execution_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
-          "description": "WorkflowId is the unique identifier for the workflow execution."
-        },
-        "node_id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "description": "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the\nmost recent attempt of the task."
-        },
-        "task_id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier",
-          "description": "TaskId is the unique task execution identifier that points to a specific attempt of the task."
-        },
         "artifact_type": {
-          "$ref": "#/definitions/serviceArtifactType"
+          "$ref": "#/definitions/serviceArtifactType",
+          "description": "ArtifactType of the artifact requested."
         },
         "expires_in": {
           "type": "string",
           "description": "ExpiresIn defines a requested expiration duration for the generated url. The request will be rejected if this\nexceeds the platform allowed max.\n+optional. The default value comes from a global config."
+        },
+        "node_execution_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the\nmost recent attempt of the task."
         }
-      }
+      },
+      "title": "CreateDownloadLinkRequest defines the request parameters to create a download link (signed url)"
     },
     "serviceCreateDownloadLinkResponse": {
       "type": "object",
@@ -238,7 +178,8 @@
           "format": "date-time",
           "description": "ExpiresAt defines when will the signed URL expire."
         }
-      }
+      },
+      "title": "CreateDownloadLinkResponse defines the response for the generated links"
     },
     "serviceCreateDownloadLocationResponse": {
       "type": "object",

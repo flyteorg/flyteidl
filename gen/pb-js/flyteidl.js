@@ -42864,11 +42864,9 @@
                  * Properties of a CreateDownloadLinkRequest.
                  * @memberof flyteidl.service
                  * @interface ICreateDownloadLinkRequest
-                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [executionId] CreateDownloadLinkRequest executionId
-                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] CreateDownloadLinkRequest nodeId
-                 * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskId] CreateDownloadLinkRequest taskId
                  * @property {flyteidl.service.ArtifactType|null} [artifactType] CreateDownloadLinkRequest artifactType
                  * @property {google.protobuf.IDuration|null} [expiresIn] CreateDownloadLinkRequest expiresIn
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeExecutionId] CreateDownloadLinkRequest nodeExecutionId
                  */
     
                 /**
@@ -42887,30 +42885,6 @@
                 }
     
                 /**
-                 * CreateDownloadLinkRequest executionId.
-                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} executionId
-                 * @memberof flyteidl.service.CreateDownloadLinkRequest
-                 * @instance
-                 */
-                CreateDownloadLinkRequest.prototype.executionId = null;
-    
-                /**
-                 * CreateDownloadLinkRequest nodeId.
-                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeId
-                 * @memberof flyteidl.service.CreateDownloadLinkRequest
-                 * @instance
-                 */
-                CreateDownloadLinkRequest.prototype.nodeId = null;
-    
-                /**
-                 * CreateDownloadLinkRequest taskId.
-                 * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskId
-                 * @memberof flyteidl.service.CreateDownloadLinkRequest
-                 * @instance
-                 */
-                CreateDownloadLinkRequest.prototype.taskId = null;
-    
-                /**
                  * CreateDownloadLinkRequest artifactType.
                  * @member {flyteidl.service.ArtifactType} artifactType
                  * @memberof flyteidl.service.CreateDownloadLinkRequest
@@ -42926,17 +42900,25 @@
                  */
                 CreateDownloadLinkRequest.prototype.expiresIn = null;
     
+                /**
+                 * CreateDownloadLinkRequest nodeExecutionId.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeExecutionId
+                 * @memberof flyteidl.service.CreateDownloadLinkRequest
+                 * @instance
+                 */
+                CreateDownloadLinkRequest.prototype.nodeExecutionId = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * CreateDownloadLinkRequest source.
-                 * @member {"executionId"|"nodeId"|"taskId"|undefined} source
+                 * @member {"nodeExecutionId"|undefined} source
                  * @memberof flyteidl.service.CreateDownloadLinkRequest
                  * @instance
                  */
                 Object.defineProperty(CreateDownloadLinkRequest.prototype, "source", {
-                    get: $util.oneOfGetter($oneOfFields = ["executionId", "nodeId", "taskId"]),
+                    get: $util.oneOfGetter($oneOfFields = ["nodeExecutionId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -42964,16 +42946,12 @@
                 CreateDownloadLinkRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.executionId != null && message.hasOwnProperty("executionId"))
-                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.executionId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.taskId != null && message.hasOwnProperty("taskId"))
-                        $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.artifactType != null && message.hasOwnProperty("artifactType"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).int32(message.artifactType);
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.artifactType);
                     if (message.expiresIn != null && message.hasOwnProperty("expiresIn"))
-                        $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                        $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeExecutionId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -42996,19 +42974,13 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.executionId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.taskId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 4:
                             message.artifactType = reader.int32();
                             break;
-                        case 5:
+                        case 2:
                             message.expiresIn = $root.google.protobuf.Duration.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.nodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -43030,34 +43002,6 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
-                    if (message.executionId != null && message.hasOwnProperty("executionId")) {
-                        properties.source = 1;
-                        {
-                            var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.executionId);
-                            if (error)
-                                return "executionId." + error;
-                        }
-                    }
-                    if (message.nodeId != null && message.hasOwnProperty("nodeId")) {
-                        if (properties.source === 1)
-                            return "source: multiple values";
-                        properties.source = 1;
-                        {
-                            var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeId);
-                            if (error)
-                                return "nodeId." + error;
-                        }
-                    }
-                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                        if (properties.source === 1)
-                            return "source: multiple values";
-                        properties.source = 1;
-                        {
-                            var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskId);
-                            if (error)
-                                return "taskId." + error;
-                        }
-                    }
                     if (message.artifactType != null && message.hasOwnProperty("artifactType"))
                         switch (message.artifactType) {
                         default:
@@ -43070,6 +43014,14 @@
                         var error = $root.google.protobuf.Duration.verify(message.expiresIn);
                         if (error)
                             return "expiresIn." + error;
+                    }
+                    if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId")) {
+                        properties.source = 1;
+                        {
+                            var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeExecutionId);
+                            if (error)
+                                return "nodeExecutionId." + error;
+                        }
                     }
                     return null;
                 };
