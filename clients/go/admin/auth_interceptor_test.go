@@ -239,10 +239,10 @@ func Test_newAuthInterceptor(t *testing.T) {
 
 func TestMaterializeCredentials(t *testing.T) {
 	port := rand.IntnRange(10000, 60000)
-	t.Run("No public client config or oauth2 metadata endpoint lookup", func(t *testing.T) {
+	t.Run("No oauth2 metadata endpoint lookup", func(t *testing.T) {
 		m := &mocks2.AuthMetadataServiceServer{}
 		m.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(nil, errors.New("unexpected call to get oauth2 metadata"))
-		m.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(nil, errors.New("unexpected call to get public client config"))
+		m.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service2.PublicClientAuthConfigResponse{}, nil)
 		s := newAuthMetadataServer(t, port, m)
 		ctx := context.Background()
 		assert.NoError(t, s.Start(ctx))
