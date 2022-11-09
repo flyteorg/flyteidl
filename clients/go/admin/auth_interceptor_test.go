@@ -17,18 +17,20 @@ import (
 
 	"k8s.io/apimachinery/pkg/util/rand"
 
-	mocks2 "github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/stretchr/testify/mock"
+
+	mocks2 "github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 
 	service2 "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/flyteorg/flyteidl/clients/go/admin/cache/mocks"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+
+	"github.com/flyteorg/flyteidl/clients/go/admin/cache/mocks"
 )
 
 // authMetadataServer is a fake AuthMetadataServer that takes in an AuthMetadataServer implementation (usually one
@@ -281,6 +283,6 @@ func TestMaterializeCredentials(t *testing.T) {
 			TokenURL:              fmt.Sprintf("http://localhost:%d/api/v1/token", port),
 			Scopes:                []string{"all"},
 		}, &mocks.TokenCache{}, f)
-		assert.EqualError(t, err, "failed to fetch client metadata. Error: rpc error: code = Unknown desc = expected err")
+		assert.EqualError(t, err, "failed to initialized token source provider. Err: failed to fetch client metadata. Error: rpc error: code = Unknown desc = expected err")
 	})
 }
