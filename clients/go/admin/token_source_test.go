@@ -34,39 +34,48 @@ func TestNewTokenSource(t *testing.T) {
 
 func TestNewTokenSourceProvider(t *testing.T) {
 	ctx := context.Background()
-
-	t.Run("audience from client config", func(t *testing.T) {
-		cfg := GetConfig(ctx)
-		tokenCache := &tokenCacheMocks.TokenCache{}
-		metadataClient := &adminMocks.AuthMetadataServiceClient{}
-		metadataClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service.OAuth2MetadataResponse{}, nil)
-		metadataClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service.PublicClientAuthConfigResponse{}, nil)
-		cfg.AuthType = AuthTypeClientSecret
-		cfg.Audience = "aud"
-		cfg.Scopes = []string{"all"}
-		flyteTokenSource, err := NewTokenSourceProvider(ctx, cfg, tokenCache, metadataClient)
-		assert.NoError(t, err)
-		assert.NotNil(t, flyteTokenSource)
-		clientCredSourceProvider, ok := flyteTokenSource.(ClientCredentialsTokenSourceProvider)
-		assert.True(t, ok)
-		assert.Equal(t, []string{"all"}, clientCredSourceProvider.ccConfig.Scopes)
-		assert.Equal(t, url.Values{audienceKey: {"aud"}}, clientCredSourceProvider.ccConfig.EndpointParams)
-	})
-	t.Run("audience from public client response", func(t *testing.T) {
-		cfg := GetConfig(ctx)
-		tokenCache := &tokenCacheMocks.TokenCache{}
-		metadataClient := &adminMocks.AuthMetadataServiceClient{}
-		metadataClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service.OAuth2MetadataResponse{}, nil)
-		metadataClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&service.PublicClientAuthConfigResponse{Audience: "aud", Scopes: []string{"all"}}, nil)
-		cfg.AuthType = AuthTypeClientSecret
-		cfg.Audience = ""
-		cfg.Scopes = []string{}
-		flyteTokenSource, err := NewTokenSourceProvider(ctx, cfg, tokenCache, metadataClient)
-		assert.NoError(t, err)
-		assert.NotNil(t, flyteTokenSource)
-		clientCredSourceProvider, ok := flyteTokenSource.(ClientCredentialsTokenSourceProvider)
-		assert.True(t, ok)
-		assert.Equal(t, []string{"all"}, clientCredSourceProvider.ccConfig.Scopes)
-		assert.Equal(t, url.Values{audienceKey: {"aud"}}, clientCredSourceProvider.ccConfig.EndpointParams)
-	})
+	tests := []struct {
+		name                 string
+		audienceCfg          string
+		scopesCfg            []string
+		clientConfigResponse service.PublicClientAuthConfigResponse
+		expectedAudience     string
+		expectedScopes       []string
+	}{
+		{
+			name:                 "audience from client config",
+			audienceCfg:          "aud",
+			scopesCfg:            []string{"all"},
+			clientConfigResponse: service.PublicClientAuthConfigResponse{},
+			expectedAudience:     "aud",
+			expectedScopes:       []string{"all"},
+		},
+		{
+			name:                 "audience from public client response",
+			audienceCfg:          "",
+			scopesCfg:            []string{},
+			clientConfigResponse: service.PublicClientAuthConfigResponse{Audience: "aud", Scopes: []string{"all"}},
+			expectedAudience:     "aud",
+			expectedScopes:       []string{"all"},
+		},
+	}
+	for _, test := range tests {
+		t.Run("audience from client config", func(t *testing.T) {
+			cfg := GetConfig(ctx)
+			tokenCache := &tokenCacheMocks.TokenCache{}
+			metadataClient := &adminMocks.AuthMetadataServiceClient{}
+			metadataClient.OnGetOAuth2MetadataMatch(mock.Anything, mock.Anything).Return(&service.OAuth2MetadataResponse{}, nil)
+			metadataClient.OnGetPublicClientConfigMatch(mock.Anything, mock.Anything).Return(&test.clientConfigResponse, nil)
+			cfg.AuthType = AuthTypeClientSecret
+			cfg.Audience = test.audienceCfg
+			cfg.Scopes = test.scopesCfg
+			flyteTokenSource, err := NewTokenSourceProvider(ctx, cfg, tokenCache, metadataClient)
+			assert.NoError(t, err)
+			assert.NotNil(t, flyteTokenSource)
+			clientCredSourceProvider, ok := flyteTokenSource.(ClientCredentialsTokenSourceProvider)
+			assert.True(t, ok)
+			assert.Equal(t, test.expectedScopes, clientCredSourceProvider.ccConfig.Scopes)
+			assert.Equal(t, url.Values{audienceKey: {test.expectedAudience}}, clientCredSourceProvider.ccConfig.EndpointParams)
+		})
+	}
 }
