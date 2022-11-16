@@ -36,7 +36,7 @@ importlib-metadata==4.10.0
     # via markdown
 jinja2==3.0.3
     # via sphinx
-lxml==4.7.1
+lxml==4.9.1
     # via sphinx-material
 markdown==3.3.6
     # via sphinx-markdown-tables
@@ -112,3 +112,4 @@ zipp==3.7.0
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
