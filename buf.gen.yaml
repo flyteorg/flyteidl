@@ -6,4 +6,5 @@ plugins:
     out: gen/pb_python
   - remote: buf.build/protocolbuffers/plugins/python:v21.7.0-1
     out: gen/pb_python
-
+  - remote: buf.build/protocolbuffers/plugins/pyi:v21.9.0-1
+    out: gen/pb_python
