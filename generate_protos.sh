@@ -17,7 +17,7 @@ docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d pr
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
 
-languages=("python" "cpp" "java")
+languages=("cpp" "java")
 idlfolders=("service" "admin" "core" "event" "plugins" "datacatalog")
 
 for lang in "${languages[@]}"
@@ -27,6 +27,8 @@ do
         docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/$folder -l $lang
     done
 done
+
+buf generate
 
 # Docs generated
 
