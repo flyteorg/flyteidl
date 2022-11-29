@@ -29,7 +29,8 @@ do
 done
 
 # Buf migration
-docker run --volume "$(pwd):/workspace" --workdir /workspace bufbuild/buf generate
+# docker run --volume "$(pwd):/workspace" --workdir /workspace bufbuild/buf generate
+buf generate
 
 # Docs generated
 
