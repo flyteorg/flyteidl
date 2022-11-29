@@ -241,6 +241,6 @@ jobs:
 
   generate:
     name: Check Generate
-    uses: flyteorg/flytetools/.github/workflows/go_generate.yml@enable-buf
+    uses: flyteorg/flytetools/.github/workflows/go_generate.yml@master
     with:
       go-version: 1.18
