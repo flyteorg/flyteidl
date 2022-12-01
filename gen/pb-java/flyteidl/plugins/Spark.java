@@ -659,6 +659,16 @@ public final class Spark {
      */
     com.google.protobuf.ByteString
         getExecutorPathBytes();
+
+    /**
+     * <code>string databricksConf = 7;</code>
+     */
+    java.lang.String getDatabricksConf();
+    /**
+     * <code>string databricksConf = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabricksConfBytes();
   }
   /**
    * <pre>
@@ -681,6 +691,7 @@ public final class Spark {
       mainApplicationFile_ = "";
       mainClass_ = "";
       executorPath_ = "";
+      databricksConf_ = "";
     }
 
     @java.lang.Override
@@ -755,6 +766,12 @@ public final class Spark {
               java.lang.String s = input.readStringRequireUtf8();
 
               executorPath_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              databricksConf_ = s;
               break;
             }
             default: {
@@ -1083,6 +1100,40 @@ public final class Spark {
       }
     }
 
+    public static final int DATABRICKSCONF_FIELD_NUMBER = 7;
+    private volatile java.lang.Object databricksConf_;
+    /**
+     * <code>string databricksConf = 7;</code>
+     */
+    public java.lang.String getDatabricksConf() {
+      java.lang.Object ref = databricksConf_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databricksConf_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string databricksConf = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabricksConfBytes() {
+      java.lang.Object ref = databricksConf_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        databricksConf_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1120,6 +1171,9 @@ public final class Spark {
           5);
       if (!getExecutorPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, executorPath_);
+      }
+      if (!getDatabricksConfBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, databricksConf_);
       }
       unknownFields.writeTo(output);
     }
@@ -1163,6 +1217,9 @@ public final class Spark {
       if (!getExecutorPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, executorPath_);
       }
+      if (!getDatabricksConfBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, databricksConf_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1189,6 +1246,8 @@ public final class Spark {
           other.internalGetHadoopConf())) return false;
       if (!getExecutorPath()
           .equals(other.getExecutorPath())) return false;
+      if (!getDatabricksConf()
+          .equals(other.getDatabricksConf())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1216,6 +1275,8 @@ public final class Spark {
       }
       hash = (37 * hash) + EXECUTORPATH_FIELD_NUMBER;
       hash = (53 * hash) + getExecutorPath().hashCode();
+      hash = (37 * hash) + DATABRICKSCONF_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabricksConf().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1389,6 +1450,8 @@ public final class Spark {
         internalGetMutableHadoopConf().clear();
         executorPath_ = "";
 
+        databricksConf_ = "";
+
         return this;
       }
 
@@ -1425,6 +1488,7 @@ public final class Spark {
         result.hadoopConf_ = internalGetHadoopConf();
         result.hadoopConf_.makeImmutable();
         result.executorPath_ = executorPath_;
+        result.databricksConf_ = databricksConf_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1491,6 +1555,10 @@ public final class Spark {
             other.internalGetHadoopConf());
         if (!other.getExecutorPath().isEmpty()) {
           executorPath_ = other.executorPath_;
+          onChanged();
+        }
+        if (!other.getDatabricksConf().isEmpty()) {
+          databricksConf_ = other.databricksConf_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2040,6 +2108,75 @@ public final class Spark {
         onChanged();
         return this;
       }
+
+      private java.lang.Object databricksConf_ = "";
+      /**
+       * <code>string databricksConf = 7;</code>
+       */
+      public java.lang.String getDatabricksConf() {
+        java.lang.Object ref = databricksConf_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          databricksConf_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string databricksConf = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabricksConfBytes() {
+        java.lang.Object ref = databricksConf_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          databricksConf_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string databricksConf = 7;</code>
+       */
+      public Builder setDatabricksConf(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        databricksConf_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string databricksConf = 7;</code>
+       */
+      public Builder clearDatabricksConf() {
+        
+        databricksConf_ = getDefaultInstance().getDatabricksConf();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string databricksConf = 7;</code>
+       */
+      public Builder setDatabricksConfBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        databricksConf_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2124,18 +2261,19 @@ public final class Spark {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/plugins/spark.proto\022\020flyteidl" +
       ".plugins\"B\n\020SparkApplication\".\n\004Type\022\n\n\006" +
-      "PYTHON\020\000\022\010\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\365\002\n" +
+      "PYTHON\020\000\022\010\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\215\003\n" +
       "\010SparkJob\022@\n\017applicationType\030\001 \001(\0162\'.fly" +
       "teidl.plugins.SparkApplication.Type\022\033\n\023m" +
       "ainApplicationFile\030\002 \001(\t\022\021\n\tmainClass\030\003 " +
       "\001(\t\022<\n\tsparkConf\030\004 \003(\0132).flyteidl.plugin" +
       "s.SparkJob.SparkConfEntry\022>\n\nhadoopConf\030" +
       "\005 \003(\0132*.flyteidl.plugins.SparkJob.Hadoop" +
-      "ConfEntry\022\024\n\014executorPath\030\006 \001(\t\0320\n\016Spark" +
-      "ConfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\0321\n\017HadoopConfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t:\0028\001B9Z7github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "ConfEntry\022\024\n\014executorPath\030\006 \001(\t\022\026\n\016datab" +
+      "ricksConf\030\007 \001(\t\0320\n\016SparkConfEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017HadoopConfE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2160,7 +2298,7 @@ public final class Spark {
     internal_static_flyteidl_plugins_SparkJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_SparkJob_descriptor,
-        new java.lang.String[] { "ApplicationType", "MainApplicationFile", "MainClass", "SparkConf", "HadoopConf", "ExecutorPath", });
+        new java.lang.String[] { "ApplicationType", "MainApplicationFile", "MainClass", "SparkConf", "HadoopConf", "ExecutorPath", "DatabricksConf", });
     internal_static_flyteidl_plugins_SparkJob_SparkConfEntry_descriptor =
       internal_static_flyteidl_plugins_SparkJob_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_plugins_SparkJob_SparkConfEntry_fieldAccessorTable = new

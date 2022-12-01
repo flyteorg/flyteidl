@@ -443,6 +443,20 @@ class SparkJob final :
   ::std::string* release_executorpath();
   void set_allocated_executorpath(::std::string* executorpath);
 
+  // string databricksConf = 7;
+  void clear_databricksconf();
+  static const int kDatabricksConfFieldNumber = 7;
+  const ::std::string& databricksconf() const;
+  void set_databricksconf(const ::std::string& value);
+  #if LANG_CXX11
+  void set_databricksconf(::std::string&& value);
+  #endif
+  void set_databricksconf(const char* value);
+  void set_databricksconf(const char* value, size_t size);
+  ::std::string* mutable_databricksconf();
+  ::std::string* release_databricksconf();
+  void set_allocated_databricksconf(::std::string* databricksconf);
+
   // .flyteidl.plugins.SparkApplication.Type applicationType = 1;
   void clear_applicationtype();
   static const int kApplicationTypeFieldNumber = 1;
@@ -469,6 +483,7 @@ class SparkJob final :
   ::google::protobuf::internal::ArenaStringPtr mainapplicationfile_;
   ::google::protobuf::internal::ArenaStringPtr mainclass_;
   ::google::protobuf::internal::ArenaStringPtr executorpath_;
+  ::google::protobuf::internal::ArenaStringPtr databricksconf_;
   int applicationtype_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fspark_2eproto;
@@ -699,6 +714,59 @@ inline void SparkJob::set_allocated_executorpath(::std::string* executorpath) {
   }
   executorpath_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), executorpath);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.executorPath)
+}
+
+// string databricksConf = 7;
+inline void SparkJob::clear_databricksconf() {
+  databricksconf_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SparkJob::databricksconf() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.SparkJob.databricksConf)
+  return databricksconf_.GetNoArena();
+}
+inline void SparkJob::set_databricksconf(const ::std::string& value) {
+  
+  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.SparkJob.databricksConf)
+}
+#if LANG_CXX11
+inline void SparkJob::set_databricksconf(::std::string&& value) {
+  
+  databricksconf_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.SparkJob.databricksConf)
+}
+#endif
+inline void SparkJob::set_databricksconf(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.SparkJob.databricksConf)
+}
+inline void SparkJob::set_databricksconf(const char* value, size_t size) {
+  
+  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.SparkJob.databricksConf)
+}
+inline ::std::string* SparkJob::mutable_databricksconf() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.SparkJob.databricksConf)
+  return databricksconf_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SparkJob::release_databricksconf() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.SparkJob.databricksConf)
+  
+  return databricksconf_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SparkJob::set_allocated_databricksconf(::std::string* databricksconf) {
+  if (databricksconf != nullptr) {
+    
+  } else {
+    
+  }
+  databricksconf_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), databricksconf);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.databricksConf)
 }
 
 #ifdef __GNUC__

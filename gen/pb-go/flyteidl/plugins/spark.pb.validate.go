@@ -120,6 +120,8 @@ func (m *SparkJob) Validate() error {
 
 	// no validation rules for ExecutorPath
 
+	// no validation rules for DatabricksConf
+
 	return nil
 }
 

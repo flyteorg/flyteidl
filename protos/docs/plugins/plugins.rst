@@ -501,6 +501,7 @@ Custom Proto for Spark Plugin.
    "sparkConf", ":ref:`ref_flyteidl.plugins.SparkJob.SparkConfEntry`", "repeated", ""
    "hadoopConf", ":ref:`ref_flyteidl.plugins.SparkJob.HadoopConfEntry`", "repeated", ""
    "executorPath", ":ref:`ref_string`", "", "Executor path for Python jobs."
+   "databricksConf", ":ref:`ref_string`", "", ""
 
 
 

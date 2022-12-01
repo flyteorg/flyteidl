@@ -21,4 +21,5 @@ message SparkJob {
     map<string, string> sparkConf = 4;
     map<string, string> hadoopConf = 5;
     string executorPath = 6; // Executor path for Python jobs.
+    string databricksConf =7;
 }
