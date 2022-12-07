@@ -661,10 +661,22 @@ public final class Spark {
         getExecutorPathBytes();
 
     /**
+     * <pre>
+     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * The config is automatically encoded by flytekit, and decoded in the propeller.
+     * </pre>
+     *
      * <code>string databricksConf = 7;</code>
      */
     java.lang.String getDatabricksConf();
     /**
+     * <pre>
+     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * The config is automatically encoded by flytekit, and decoded in the propeller.
+     * </pre>
+     *
      * <code>string databricksConf = 7;</code>
      */
     com.google.protobuf.ByteString
@@ -1103,6 +1115,12 @@ public final class Spark {
     public static final int DATABRICKSCONF_FIELD_NUMBER = 7;
     private volatile java.lang.Object databricksConf_;
     /**
+     * <pre>
+     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * The config is automatically encoded by flytekit, and decoded in the propeller.
+     * </pre>
+     *
      * <code>string databricksConf = 7;</code>
      */
     public java.lang.String getDatabricksConf() {
@@ -1118,6 +1136,12 @@ public final class Spark {
       }
     }
     /**
+     * <pre>
+     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * The config is automatically encoded by flytekit, and decoded in the propeller.
+     * </pre>
+     *
      * <code>string databricksConf = 7;</code>
      */
     public com.google.protobuf.ByteString
@@ -2111,6 +2135,12 @@ public final class Spark {
 
       private java.lang.Object databricksConf_ = "";
       /**
+       * <pre>
+       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * The config is automatically encoded by flytekit, and decoded in the propeller.
+       * </pre>
+       *
        * <code>string databricksConf = 7;</code>
        */
       public java.lang.String getDatabricksConf() {
@@ -2126,6 +2156,12 @@ public final class Spark {
         }
       }
       /**
+       * <pre>
+       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * The config is automatically encoded by flytekit, and decoded in the propeller.
+       * </pre>
+       *
        * <code>string databricksConf = 7;</code>
        */
       public com.google.protobuf.ByteString
@@ -2142,6 +2178,12 @@ public final class Spark {
         }
       }
       /**
+       * <pre>
+       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * The config is automatically encoded by flytekit, and decoded in the propeller.
+       * </pre>
+       *
        * <code>string databricksConf = 7;</code>
        */
       public Builder setDatabricksConf(
@@ -2155,6 +2197,12 @@ public final class Spark {
         return this;
       }
       /**
+       * <pre>
+       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * The config is automatically encoded by flytekit, and decoded in the propeller.
+       * </pre>
+       *
        * <code>string databricksConf = 7;</code>
        */
       public Builder clearDatabricksConf() {
@@ -2164,6 +2212,12 @@ public final class Spark {
         return this;
       }
       /**
+       * <pre>
+       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * The config is automatically encoded by flytekit, and decoded in the propeller.
+       * </pre>
+       *
        * <code>string databricksConf = 7;</code>
        */
       public Builder setDatabricksConfBytes(

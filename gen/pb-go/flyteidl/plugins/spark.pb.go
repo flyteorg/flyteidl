@@ -84,16 +84,19 @@ var xxx_messageInfo_SparkApplication proto.InternalMessageInfo
 
 // Custom Proto for Spark Plugin.
 type SparkJob struct {
-	ApplicationType      SparkApplication_Type `protobuf:"varint,1,opt,name=applicationType,proto3,enum=flyteidl.plugins.SparkApplication_Type" json:"applicationType,omitempty"`
-	MainApplicationFile  string                `protobuf:"bytes,2,opt,name=mainApplicationFile,proto3" json:"mainApplicationFile,omitempty"`
-	MainClass            string                `protobuf:"bytes,3,opt,name=mainClass,proto3" json:"mainClass,omitempty"`
-	SparkConf            map[string]string     `protobuf:"bytes,4,rep,name=sparkConf,proto3" json:"sparkConf,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	HadoopConf           map[string]string     `protobuf:"bytes,5,rep,name=hadoopConf,proto3" json:"hadoopConf,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	ExecutorPath         string                `protobuf:"bytes,6,opt,name=executorPath,proto3" json:"executorPath,omitempty"`
-	DatabricksConf       string                `protobuf:"bytes,7,opt,name=databricksConf,proto3" json:"databricksConf,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
-	XXX_unrecognized     []byte                `json:"-"`
-	XXX_sizecache        int32                 `json:"-"`
+	ApplicationType     SparkApplication_Type `protobuf:"varint,1,opt,name=applicationType,proto3,enum=flyteidl.plugins.SparkApplication_Type" json:"applicationType,omitempty"`
+	MainApplicationFile string                `protobuf:"bytes,2,opt,name=mainApplicationFile,proto3" json:"mainApplicationFile,omitempty"`
+	MainClass           string                `protobuf:"bytes,3,opt,name=mainClass,proto3" json:"mainClass,omitempty"`
+	SparkConf           map[string]string     `protobuf:"bytes,4,rep,name=sparkConf,proto3" json:"sparkConf,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	HadoopConf          map[string]string     `protobuf:"bytes,5,rep,name=hadoopConf,proto3" json:"hadoopConf,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	ExecutorPath        string                `protobuf:"bytes,6,opt,name=executorPath,proto3" json:"executorPath,omitempty"`
+	// databricksConf is base64 encoded string which stores databricks job configuration.
+	// Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+	// The config is automatically encoded by flytekit, and decoded in the propeller.
+	DatabricksConf       string   `protobuf:"bytes,7,opt,name=databricksConf,proto3" json:"databricksConf,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *SparkJob) Reset()         { *m = SparkJob{} }
