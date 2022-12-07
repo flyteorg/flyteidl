@@ -11,11 +11,15 @@ setup(
     maintainer_email='admin@flyte.org',
     packages=find_packages('gen/pb_python'),
     package_dir={'': 'gen/pb_python'},
+    # https://github.com/pypa/setuptools/issues/3136 describes an extension to
+    # setuptools that would involve a simpler way to specify this, but while
+    # that does not happen we have to package the pyi files manually like so:
+    package_data={'flyteidl': ["*.pyi", "**/*.pyi"]},
     dependency_links=[],
     install_requires=[
         'googleapis-common-protos',
         'protoc_gen_swagger',
-        'protobuf>=3.5.0,<4.0.0',
+        'protobuf>=4.21.1,<5.0.0',
         # Packages in here should rarely be pinned. This is because these
         # packages (at the specified version) are required for project
         # consuming this library. By pinning to a specific version you are the

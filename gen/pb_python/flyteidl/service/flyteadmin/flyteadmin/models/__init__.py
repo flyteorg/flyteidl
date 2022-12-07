@@ -22,6 +22,10 @@ from flyteadmin.models.admin_auth_role import AdminAuthRole
 from flyteadmin.models.admin_cluster_assignment import AdminClusterAssignment
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes
 from flyteadmin.models.admin_cron_schedule import AdminCronSchedule
+from flyteadmin.models.admin_description import AdminDescription
+from flyteadmin.models.admin_description_entity import AdminDescriptionEntity
+from flyteadmin.models.admin_description_entity_list import AdminDescriptionEntityList
+from flyteadmin.models.admin_description_format import AdminDescriptionFormat
 from flyteadmin.models.admin_domain import AdminDomain
 from flyteadmin.models.admin_email_notification import AdminEmailNotification
 from flyteadmin.models.admin_execution import AdminExecution
@@ -100,6 +104,7 @@ from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataCon
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
+from flyteadmin.models.admin_source_code import AdminSourceCode
 from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
 from flyteadmin.models.admin_task import AdminTask
 from flyteadmin.models.admin_task_closure import AdminTaskClosure
@@ -197,6 +202,7 @@ from flyteadmin.models.core_resources import CoreResources
 from flyteadmin.models.core_retry_strategy import CoreRetryStrategy
 from flyteadmin.models.core_runtime_metadata import CoreRuntimeMetadata
 from flyteadmin.models.core_scalar import CoreScalar
+from flyteadmin.models.core_schema import CoreSchema
 from flyteadmin.models.core_schema_type import CoreSchemaType
 from flyteadmin.models.core_secret import CoreSecret
 from flyteadmin.models.core_security_context import CoreSecurityContext
@@ -245,7 +251,6 @@ from flyteadmin.models.flyteidladmin_node_execution import FlyteidladminNodeExec
 from flyteadmin.models.flyteidladmin_task_execution import FlyteidladminTaskExecution
 from flyteadmin.models.flyteidladmin_task_node_metadata import FlyteidladminTaskNodeMetadata
 from flyteadmin.models.flyteidladmin_workflow_node_metadata import FlyteidladminWorkflowNodeMetadata
-from flyteadmin.models.flyteidlcore_schema import FlyteidlcoreSchema
 from flyteadmin.models.flyteidlevent_dynamic_workflow_node_metadata import FlyteidleventDynamicWorkflowNodeMetadata
 from flyteadmin.models.flyteidlevent_task_node_metadata import FlyteidleventTaskNodeMetadata
 from flyteadmin.models.flyteidlevent_workflow_node_metadata import FlyteidleventWorkflowNodeMetadata

@@ -36,7 +36,6 @@ class AdminServiceApi(object):
     def create_execution(self, body, **kwargs):  # noqa: E501
         """Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
-        Create a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_execution(body, async_req=True)
@@ -58,7 +57,6 @@ class AdminServiceApi(object):
     def create_execution_with_http_info(self, body, **kwargs):  # noqa: E501
         """Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
-        Create a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_execution_with_http_info(body, async_req=True)
@@ -135,7 +133,6 @@ class AdminServiceApi(object):
     def create_launch_plan(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition  # noqa: E501
 
-        Create and register a launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_launch_plan(body, async_req=True)
@@ -157,7 +154,6 @@ class AdminServiceApi(object):
     def create_launch_plan_with_http_info(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition  # noqa: E501
 
-        Create and register a launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_launch_plan_with_http_info(body, async_req=True)
@@ -234,7 +230,6 @@ class AdminServiceApi(object):
     def create_node_event(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.  # noqa: E501
 
-        Create a node execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_node_event(body, async_req=True)
@@ -256,7 +251,6 @@ class AdminServiceApi(object):
     def create_node_event_with_http_info(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.  # noqa: E501
 
-        Create a node execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_node_event_with_http_info(body, async_req=True)
@@ -333,7 +327,6 @@ class AdminServiceApi(object):
     def create_task(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.Task` definition  # noqa: E501
 
-        Create and register a task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_task(body, async_req=True)
@@ -355,7 +348,6 @@ class AdminServiceApi(object):
     def create_task_with_http_info(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.Task` definition  # noqa: E501
 
-        Create and register a task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_task_with_http_info(body, async_req=True)
@@ -432,7 +424,6 @@ class AdminServiceApi(object):
     def create_task_event(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.  # noqa: E501
 
-        Create a task execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_task_event(body, async_req=True)
@@ -454,7 +445,6 @@ class AdminServiceApi(object):
     def create_task_event_with_http_info(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.  # noqa: E501
 
-        Create a task execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_task_event_with_http_info(body, async_req=True)
@@ -531,7 +521,6 @@ class AdminServiceApi(object):
     def create_workflow(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition  # noqa: E501
 
-        Create and register a workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_workflow(body, async_req=True)
@@ -553,7 +542,6 @@ class AdminServiceApi(object):
     def create_workflow_with_http_info(self, body, **kwargs):  # noqa: E501
         """Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition  # noqa: E501
 
-        Create and register a workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_workflow_with_http_info(body, async_req=True)
@@ -630,7 +618,6 @@ class AdminServiceApi(object):
     def create_workflow_event(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.  # noqa: E501
 
-        Create a workflow execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_workflow_event(body, async_req=True)
@@ -652,7 +639,6 @@ class AdminServiceApi(object):
     def create_workflow_event_with_http_info(self, body, **kwargs):  # noqa: E501
         """Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.  # noqa: E501
 
-        Create a workflow execution event recording a phase transition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_workflow_event_with_http_info(body, async_req=True)
@@ -729,7 +715,6 @@ class AdminServiceApi(object):
     def delete_project_attributes(self, project, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project_attributes(project, body, async_req=True)
@@ -752,7 +737,6 @@ class AdminServiceApi(object):
     def delete_project_attributes_with_http_info(self, project, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project_attributes_with_http_info(project, body, async_req=True)
@@ -836,7 +820,6 @@ class AdminServiceApi(object):
     def delete_project_domain_attributes(self, project, domain, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project_domain_attributes(project, domain, body, async_req=True)
@@ -860,7 +843,6 @@ class AdminServiceApi(object):
     def delete_project_domain_attributes_with_http_info(self, project, domain, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_project_domain_attributes_with_http_info(project, domain, body, async_req=True)
@@ -951,7 +933,6 @@ class AdminServiceApi(object):
     def delete_workflow_attributes(self, project, domain, workflow, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_workflow_attributes(project, domain, workflow, body, async_req=True)
@@ -976,7 +957,6 @@ class AdminServiceApi(object):
     def delete_workflow_attributes_with_http_info(self, project, domain, workflow, body, **kwargs):  # noqa: E501
         """Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Delete the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_workflow_attributes_with_http_info(project, domain, workflow, body, async_req=True)
@@ -1074,7 +1054,6 @@ class AdminServiceApi(object):
     def get_active_launch_plan(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Retrieve the active launch plan version specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_active_launch_plan(id_project, id_domain, id_name, async_req=True)
@@ -1098,7 +1077,6 @@ class AdminServiceApi(object):
     def get_active_launch_plan_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Retrieve the active launch plan version specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_active_launch_plan_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -1186,10 +1164,138 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_description_entity(self, id_resource_type, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_description_entity(id_resource_type, id_project, id_domain, id_name, id_version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id_resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_version: Specific version of the resource. (required)
+        :return: AdminDescriptionEntity
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_description_entity_with_http_info(id_resource_type, id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_description_entity_with_http_info(id_resource_type, id_project, id_domain, id_name, id_version, **kwargs)  # noqa: E501
+            return data
+
+    def get_description_entity_with_http_info(self, id_resource_type, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
+        """Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_description_entity_with_http_info(id_resource_type, id_project, id_domain, id_name, id_version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id_resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. (required)
+        :param str id_version: Specific version of the resource. (required)
+        :return: AdminDescriptionEntity
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id_resource_type', 'id_project', 'id_domain', 'id_name', 'id_version']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_description_entity" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id_resource_type' is set
+        if ('id_resource_type' not in params or
+                params['id_resource_type'] is None):
+            raise ValueError("Missing the required parameter `id_resource_type` when calling `get_description_entity`")  # noqa: E501
+        # verify the required parameter 'id_project' is set
+        if ('id_project' not in params or
+                params['id_project'] is None):
+            raise ValueError("Missing the required parameter `id_project` when calling `get_description_entity`")  # noqa: E501
+        # verify the required parameter 'id_domain' is set
+        if ('id_domain' not in params or
+                params['id_domain'] is None):
+            raise ValueError("Missing the required parameter `id_domain` when calling `get_description_entity`")  # noqa: E501
+        # verify the required parameter 'id_name' is set
+        if ('id_name' not in params or
+                params['id_name'] is None):
+            raise ValueError("Missing the required parameter `id_name` when calling `get_description_entity`")  # noqa: E501
+        # verify the required parameter 'id_version' is set
+        if ('id_version' not in params or
+                params['id_version'] is None):
+            raise ValueError("Missing the required parameter `id_version` when calling `get_description_entity`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id_resource_type' in params:
+            path_params['id.resource_type'] = params['id_resource_type']  # noqa: E501
+        if 'id_project' in params:
+            path_params['id.project'] = params['id_project']  # noqa: E501
+        if 'id_domain' in params:
+            path_params['id.domain'] = params['id_domain']  # noqa: E501
+        if 'id_name' in params:
+            path_params['id.name'] = params['id_name']  # noqa: E501
+        if 'id_version' in params:
+            path_params['id.version'] = params['id_version']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminDescriptionEntity',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_execution(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Retrieve an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_execution(id_project, id_domain, id_name, async_req=True)
@@ -1213,7 +1319,6 @@ class AdminServiceApi(object):
     def get_execution_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Retrieve an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_execution_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -1304,7 +1409,6 @@ class AdminServiceApi(object):
     def get_execution_data(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Retrieve input and output data from an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_execution_data(id_project, id_domain, id_name, async_req=True)
@@ -1328,7 +1432,6 @@ class AdminServiceApi(object):
     def get_execution_data_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Retrieve input and output data from an existing workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_execution_data_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -1419,7 +1522,6 @@ class AdminServiceApi(object):
     def get_launch_plan(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.  # noqa: E501
 
-        Retrieve an existing launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_launch_plan(id_project, id_domain, id_name, id_version, async_req=True)
@@ -1445,7 +1547,6 @@ class AdminServiceApi(object):
     def get_launch_plan_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.  # noqa: E501
 
-        Retrieve an existing launch plan definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_launch_plan_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
@@ -1546,7 +1647,6 @@ class AdminServiceApi(object):
     def get_named_entity(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
-        Retrieve a NamedEntity object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_named_entity(resource_type, id_project, id_domain, id_name, async_req=True)
@@ -1571,7 +1671,6 @@ class AdminServiceApi(object):
     def get_named_entity_with_http_info(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
-        Retrieve a NamedEntity object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_named_entity_with_http_info(resource_type, id_project, id_domain, id_name, async_req=True)
@@ -1669,7 +1768,6 @@ class AdminServiceApi(object):
     def get_node_execution(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Retrieve an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)
@@ -1694,7 +1792,6 @@ class AdminServiceApi(object):
     def get_node_execution_with_http_info(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Retrieve an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution_with_http_info(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)
@@ -1792,7 +1889,6 @@ class AdminServiceApi(object):
     def get_node_execution_data(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Retrieve input and output data from an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution_data(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)
@@ -1817,7 +1913,6 @@ class AdminServiceApi(object):
     def get_node_execution_data_with_http_info(self, id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Retrieve input and output data from an existing node execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_node_execution_data_with_http_info(id_execution_id_project, id_execution_id_domain, id_execution_id_name, id_node_id, async_req=True)
@@ -1915,7 +2010,6 @@ class AdminServiceApi(object):
     def get_project_attributes(self, project, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_attributes(project, async_req=True)
@@ -1938,7 +2032,6 @@ class AdminServiceApi(object):
     def get_project_attributes_with_http_info(self, project, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_attributes_with_http_info(project, async_req=True)
@@ -2018,7 +2111,6 @@ class AdminServiceApi(object):
     def get_project_domain_attributes(self, project, domain, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_domain_attributes(project, domain, async_req=True)
@@ -2042,7 +2134,6 @@ class AdminServiceApi(object):
     def get_project_domain_attributes_with_http_info(self, project, domain, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_project_domain_attributes_with_http_info(project, domain, async_req=True)
@@ -2129,7 +2220,6 @@ class AdminServiceApi(object):
     def get_task(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.Task` definition.  # noqa: E501
 
-        Retrieve an existing task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task(id_project, id_domain, id_name, id_version, async_req=True)
@@ -2155,7 +2245,6 @@ class AdminServiceApi(object):
     def get_task_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.Task` definition.  # noqa: E501
 
-        Retrieve an existing task definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
@@ -2256,7 +2345,6 @@ class AdminServiceApi(object):
     def get_task_execution(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Retrieve an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task_execution(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
@@ -2287,7 +2375,6 @@ class AdminServiceApi(object):
     def get_task_execution_with_http_info(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
         """Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Retrieve an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task_execution_with_http_info(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
@@ -2423,7 +2510,6 @@ class AdminServiceApi(object):
     def get_task_execution_data(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Retrieve input and output data from an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task_execution_data(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
@@ -2454,7 +2540,6 @@ class AdminServiceApi(object):
     def get_task_execution_data_with_http_info(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
         """Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Retrieve input and output data from an existing task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_task_execution_data_with_http_info(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
@@ -2590,7 +2675,6 @@ class AdminServiceApi(object):
     def get_version(self, **kwargs):  # noqa: E501
         """get_version  # noqa: E501
 
-        Retrieve the Version (including the Build  information) for FlyteAdmin service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_version(async_req=True)
@@ -2611,7 +2695,6 @@ class AdminServiceApi(object):
     def get_version_with_http_info(self, **kwargs):  # noqa: E501
         """get_version  # noqa: E501
 
-        Retrieve the Version (including the Build  information) for FlyteAdmin service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_version_with_http_info(async_req=True)
@@ -2681,7 +2764,6 @@ class AdminServiceApi(object):
     def get_workflow(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.  # noqa: E501
 
-        Retrieve an existing workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_workflow(id_project, id_domain, id_name, id_version, async_req=True)
@@ -2707,7 +2789,6 @@ class AdminServiceApi(object):
     def get_workflow_with_http_info(self, id_project, id_domain, id_name, id_version, **kwargs):  # noqa: E501
         """Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.  # noqa: E501
 
-        Retrieve an existing workflow definition.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_workflow_with_http_info(id_project, id_domain, id_name, id_version, async_req=True)
@@ -2808,7 +2889,6 @@ class AdminServiceApi(object):
     def get_workflow_attributes(self, project, domain, workflow, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_workflow_attributes(project, domain, workflow, async_req=True)
@@ -2833,7 +2913,6 @@ class AdminServiceApi(object):
     def get_workflow_attributes_with_http_info(self, project, domain, workflow, **kwargs):  # noqa: E501
         """Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Retrieve the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_workflow_attributes_with_http_info(project, domain, workflow, async_req=True)
@@ -2927,7 +3006,6 @@ class AdminServiceApi(object):
     def list_active_launch_plans(self, project, domain, **kwargs):  # noqa: E501
         """List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Fetch the active launch plan versions specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_active_launch_plans(project, domain, async_req=True)
@@ -2954,7 +3032,6 @@ class AdminServiceApi(object):
     def list_active_launch_plans_with_http_info(self, project, domain, **kwargs):  # noqa: E501
         """List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Fetch the active launch plan versions specified by input request filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_active_launch_plans_with_http_info(project, domain, async_req=True)
@@ -3047,10 +3124,287 @@ class AdminServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def list_description_entities(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_description_entities(resource_type, id_project, id_domain, id_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
+        :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :return: AdminDescriptionEntityList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, **kwargs)  # noqa: E501
+            return data
+
+    def list_description_entities_with_http_info(self, resource_type, id_project, id_domain, id_name, **kwargs):  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_description_entities_with_http_info(resource_type, id_project, id_domain, id_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans' (required)
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
+        :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :return: AdminDescriptionEntityList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_description_entities" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `list_description_entities`")  # noqa: E501
+        # verify the required parameter 'id_project' is set
+        if ('id_project' not in params or
+                params['id_project'] is None):
+            raise ValueError("Missing the required parameter `id_project` when calling `list_description_entities`")  # noqa: E501
+        # verify the required parameter 'id_domain' is set
+        if ('id_domain' not in params or
+                params['id_domain'] is None):
+            raise ValueError("Missing the required parameter `id_domain` when calling `list_description_entities`")  # noqa: E501
+        # verify the required parameter 'id_name' is set
+        if ('id_name' not in params or
+                params['id_name'] is None):
+            raise ValueError("Missing the required parameter `id_name` when calling `list_description_entities`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'resource_type' in params:
+            path_params['resource_type'] = params['resource_type']  # noqa: E501
+        if 'id_project' in params:
+            path_params['id.project'] = params['id_project']  # noqa: E501
+        if 'id_domain' in params:
+            path_params['id.domain'] = params['id_domain']  # noqa: E501
+        if 'id_name' in params:
+            path_params['id.name'] = params['id_name']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'token' in params:
+            query_params.append(('token', params['token']))  # noqa: E501
+        if 'filters' in params:
+            query_params.append(('filters', params['filters']))  # noqa: E501
+        if 'sort_by_key' in params:
+            query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
+        if 'sort_by_direction' in params:
+            query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/description_entities/{resource_type}/{id.project}/{id.domain}/{id.name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminDescriptionEntityList',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def list_description_entities2(self, resource_type, id_project, id_domain, **kwargs):  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_description_entities2(resource_type, id_project, id_domain, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
+        :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :return: AdminDescriptionEntityList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.list_description_entities2_with_http_info(resource_type, id_project, id_domain, **kwargs)  # noqa: E501
+        else:
+            (data) = self.list_description_entities2_with_http_info(resource_type, id_project, id_domain, **kwargs)  # noqa: E501
+            return data
+
+    def list_description_entities2_with_http_info(self, resource_type, id_project, id_domain, **kwargs):  # noqa: E501
+        """Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_description_entities2_with_http_info(resource_type, id_project, id_domain, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str resource_type: Identifies the specific type of resource that this identifier corresponds to. (required)
+        :param str id_project: Name of the project the resource belongs to. (required)
+        :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
+        :param str id_name: User provided value for the resource. The combination of project + domain + name uniquely identifies the resource. +optional - in certain contexts - like 'List API', 'Launch plans'.
+        :param int limit: Indicates the number of resources to be returned. +required.
+        :param str token: In the case of multiple pages of results, the server-provided token can be used to fetch the next page in a query. +optional.
+        :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
+        :param str sort_by_key: Indicates an attribute to sort the response values. +required.
+        :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :return: AdminDescriptionEntityList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['resource_type', 'id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method list_description_entities2" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `list_description_entities2`")  # noqa: E501
+        # verify the required parameter 'id_project' is set
+        if ('id_project' not in params or
+                params['id_project'] is None):
+            raise ValueError("Missing the required parameter `id_project` when calling `list_description_entities2`")  # noqa: E501
+        # verify the required parameter 'id_domain' is set
+        if ('id_domain' not in params or
+                params['id_domain'] is None):
+            raise ValueError("Missing the required parameter `id_domain` when calling `list_description_entities2`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'resource_type' in params:
+            path_params['resource_type'] = params['resource_type']  # noqa: E501
+        if 'id_project' in params:
+            path_params['id.project'] = params['id_project']  # noqa: E501
+        if 'id_domain' in params:
+            path_params['id.domain'] = params['id_domain']  # noqa: E501
+
+        query_params = []
+        if 'id_name' in params:
+            query_params.append(('id.name', params['id_name']))  # noqa: E501
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'token' in params:
+            query_params.append(('token', params['token']))  # noqa: E501
+        if 'filters' in params:
+            query_params.append(('filters', params['filters']))  # noqa: E501
+        if 'sort_by_key' in params:
+            query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
+        if 'sort_by_direction' in params:
+            query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v1/description_entities/{resource_type}/{id.project}/{id.domain}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AdminDescriptionEntityList',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def list_executions(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Fetch existing workflow executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_executions(id_project, id_domain, async_req=True)
@@ -3079,7 +3433,6 @@ class AdminServiceApi(object):
     def list_executions_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Fetch existing workflow executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_executions_with_http_info(id_project, id_domain, async_req=True)
@@ -3181,7 +3534,6 @@ class AdminServiceApi(object):
     def list_launch_plan_ids(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.  # noqa: E501
 
-        Fetch existing launch plan definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plan_ids(project, domain, async_req=True)
@@ -3209,7 +3561,6 @@ class AdminServiceApi(object):
     def list_launch_plan_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.  # noqa: E501
 
-        Fetch existing launch plan definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plan_ids_with_http_info(project, domain, async_req=True)
@@ -3308,7 +3659,6 @@ class AdminServiceApi(object):
     def list_launch_plans(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
-        Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plans(id_project, id_domain, id_name, async_req=True)
@@ -3337,7 +3687,6 @@ class AdminServiceApi(object):
     def list_launch_plans_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
-        Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plans_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -3443,7 +3792,6 @@ class AdminServiceApi(object):
     def list_launch_plans2(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
-        Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plans2(id_project, id_domain, async_req=True)
@@ -3472,7 +3820,6 @@ class AdminServiceApi(object):
     def list_launch_plans2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.  # noqa: E501
 
-        Fetch existing launch plan definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_launch_plans2_with_http_info(id_project, id_domain, async_req=True)
@@ -3574,7 +3921,6 @@ class AdminServiceApi(object):
     def list_matchable_attributes(self, **kwargs):  # noqa: E501
         """Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.  # noqa: E501
 
-        Retrieve a list of MatchableAttributesConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_matchable_attributes(async_req=True)
@@ -3596,7 +3942,6 @@ class AdminServiceApi(object):
     def list_matchable_attributes_with_http_info(self, **kwargs):  # noqa: E501
         """Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.  # noqa: E501
 
-        Retrieve a list of MatchableAttributesConfiguration objects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_matchable_attributes_with_http_info(async_req=True)
@@ -3669,7 +4014,6 @@ class AdminServiceApi(object):
     def list_named_entities(self, resource_type, project, domain, **kwargs):  # noqa: E501
         """Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.  # noqa: E501
 
-        Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_named_entities(resource_type, project, domain, async_req=True)
@@ -3698,7 +4042,6 @@ class AdminServiceApi(object):
     def list_named_entities_with_http_info(self, resource_type, project, domain, **kwargs):  # noqa: E501
         """Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.  # noqa: E501
 
-        Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_named_entities_with_http_info(resource_type, project, domain, async_req=True)
@@ -3804,7 +4147,6 @@ class AdminServiceApi(object):
     def list_node_executions(self, workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Fetch existing node executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_node_executions(workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, async_req=True)
@@ -3834,7 +4176,6 @@ class AdminServiceApi(object):
     def list_node_executions_with_http_info(self, workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
 
-        Fetch existing node executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_node_executions_with_http_info(workflow_execution_id_project, workflow_execution_id_domain, workflow_execution_id_name, async_req=True)
@@ -3943,7 +4284,6 @@ class AdminServiceApi(object):
     def list_node_executions_for_task(self, task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Fetch child node executions launched by the specified task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_node_executions_for_task(task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, async_req=True)
@@ -3979,7 +4319,6 @@ class AdminServiceApi(object):
     def list_node_executions_for_task_with_http_info(self, task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Fetch child node executions launched by the specified task execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_node_executions_for_task_with_http_info(task_execution_id_node_execution_id_execution_id_project, task_execution_id_node_execution_id_execution_id_domain, task_execution_id_node_execution_id_execution_id_name, task_execution_id_node_execution_id_node_id, task_execution_id_task_id_project, task_execution_id_task_id_domain, task_execution_id_task_id_name, task_execution_id_task_id_version, task_execution_id_retry_attempt, async_req=True)
@@ -4130,7 +4469,6 @@ class AdminServiceApi(object):
     def list_projects(self, **kwargs):  # noqa: E501
         """Fetches a list of :ref:`ref_flyteidl.admin.Project`  # noqa: E501
 
-        Fetch registered projects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_projects(async_req=True)
@@ -4156,7 +4494,6 @@ class AdminServiceApi(object):
     def list_projects_with_http_info(self, **kwargs):  # noqa: E501
         """Fetches a list of :ref:`ref_flyteidl.admin.Project`  # noqa: E501
 
-        Fetch registered projects.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_projects_with_http_info(async_req=True)
@@ -4241,7 +4578,6 @@ class AdminServiceApi(object):
     def list_task_executions(self, node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, **kwargs):  # noqa: E501
         """Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Fetch existing task executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_task_executions(node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, async_req=True)
@@ -4271,7 +4607,6 @@ class AdminServiceApi(object):
     def list_task_executions_with_http_info(self, node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, **kwargs):  # noqa: E501
         """Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
 
-        Fetch existing task executions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_task_executions_with_http_info(node_execution_id_execution_id_project, node_execution_id_execution_id_domain, node_execution_id_execution_id_name, node_execution_id_node_id, async_req=True)
@@ -4384,7 +4719,6 @@ class AdminServiceApi(object):
     def list_task_ids(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.  # noqa: E501
 
-        Fetch existing task definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_task_ids(project, domain, async_req=True)
@@ -4412,7 +4746,6 @@ class AdminServiceApi(object):
     def list_task_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.  # noqa: E501
 
-        Fetch existing task definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_task_ids_with_http_info(project, domain, async_req=True)
@@ -4511,7 +4844,6 @@ class AdminServiceApi(object):
     def list_tasks(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
-        Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_tasks(id_project, id_domain, id_name, async_req=True)
@@ -4540,7 +4872,6 @@ class AdminServiceApi(object):
     def list_tasks_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
-        Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_tasks_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -4646,7 +4977,6 @@ class AdminServiceApi(object):
     def list_tasks2(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
-        Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_tasks2(id_project, id_domain, async_req=True)
@@ -4675,7 +5005,6 @@ class AdminServiceApi(object):
     def list_tasks2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.  # noqa: E501
 
-        Fetch existing task definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_tasks2_with_http_info(id_project, id_domain, async_req=True)
@@ -4777,7 +5106,6 @@ class AdminServiceApi(object):
     def list_workflow_ids(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.  # noqa: E501
 
-        Fetch an existing workflow definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflow_ids(project, domain, async_req=True)
@@ -4805,7 +5133,6 @@ class AdminServiceApi(object):
     def list_workflow_ids_with_http_info(self, project, domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.  # noqa: E501
 
-        Fetch an existing workflow definition identifiers matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflow_ids_with_http_info(project, domain, async_req=True)
@@ -4904,7 +5231,6 @@ class AdminServiceApi(object):
     def list_workflows(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
-        Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflows(id_project, id_domain, id_name, async_req=True)
@@ -4933,7 +5259,6 @@ class AdminServiceApi(object):
     def list_workflows_with_http_info(self, id_project, id_domain, id_name, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
-        Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflows_with_http_info(id_project, id_domain, id_name, async_req=True)
@@ -5039,7 +5364,6 @@ class AdminServiceApi(object):
     def list_workflows2(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
-        Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflows2(id_project, id_domain, async_req=True)
@@ -5068,7 +5392,6 @@ class AdminServiceApi(object):
     def list_workflows2_with_http_info(self, id_project, id_domain, **kwargs):  # noqa: E501
         """Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.  # noqa: E501
 
-        Fetch existing workflow definitions matching input filters.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.list_workflows2_with_http_info(id_project, id_domain, async_req=True)
@@ -5170,7 +5493,6 @@ class AdminServiceApi(object):
     def recover_execution(self, body, **kwargs):  # noqa: E501
         """Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.  # noqa: E501
 
-        Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.recover_execution(body, async_req=True)
@@ -5192,7 +5514,6 @@ class AdminServiceApi(object):
     def recover_execution_with_http_info(self, body, **kwargs):  # noqa: E501
         """Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.  # noqa: E501
 
-        Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.recover_execution_with_http_info(body, async_req=True)
@@ -5269,7 +5590,6 @@ class AdminServiceApi(object):
     def register_project(self, body, **kwargs):  # noqa: E501
         """Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.  # noqa: E501
 
-        Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.register_project(body, async_req=True)
@@ -5291,7 +5611,6 @@ class AdminServiceApi(object):
     def register_project_with_http_info(self, body, **kwargs):  # noqa: E501
         """Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.  # noqa: E501
 
-        Register a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.register_project_with_http_info(body, async_req=True)
@@ -5368,7 +5687,6 @@ class AdminServiceApi(object):
     def relaunch_execution(self, body, **kwargs):  # noqa: E501
         """Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
-        Relaunch a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.relaunch_execution(body, async_req=True)
@@ -5390,7 +5708,6 @@ class AdminServiceApi(object):
     def relaunch_execution_with_http_info(self, body, **kwargs):  # noqa: E501
         """Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`  # noqa: E501
 
-        Relaunch a workflow execution.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.relaunch_execution_with_http_info(body, async_req=True)
@@ -5467,7 +5784,6 @@ class AdminServiceApi(object):
     def terminate_execution(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Terminate the active workflow execution specified in the request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.terminate_execution(id_project, id_domain, id_name, body, async_req=True)
@@ -5492,7 +5808,6 @@ class AdminServiceApi(object):
     def terminate_execution_with_http_info(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Terminate the active workflow execution specified in the request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.terminate_execution_with_http_info(id_project, id_domain, id_name, body, async_req=True)
@@ -5590,7 +5905,6 @@ class AdminServiceApi(object):
     def update_execution(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Update execution belonging to project domain :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Update execution belonging to project domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_execution(id_project, id_domain, id_name, body, async_req=True)
@@ -5615,7 +5929,6 @@ class AdminServiceApi(object):
     def update_execution_with_http_info(self, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Update execution belonging to project domain :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
 
-        Update execution belonging to project domain.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_execution_with_http_info(id_project, id_domain, id_name, body, async_req=True)
@@ -5713,7 +6026,6 @@ class AdminServiceApi(object):
     def update_launch_plan(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
         """Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_launch_plan(id_project, id_domain, id_name, id_version, body, async_req=True)
@@ -5739,7 +6051,6 @@ class AdminServiceApi(object):
     def update_launch_plan_with_http_info(self, id_project, id_domain, id_name, id_version, body, **kwargs):  # noqa: E501
         """Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.  # noqa: E501
 
-        Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_launch_plan_with_http_info(id_project, id_domain, id_name, id_version, body, async_req=True)
@@ -5844,7 +6155,6 @@ class AdminServiceApi(object):
     def update_named_entity(self, resource_type, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
-        Update the fields associated with a NamedEntity  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_named_entity(resource_type, id_project, id_domain, id_name, body, async_req=True)
@@ -5870,7 +6180,6 @@ class AdminServiceApi(object):
     def update_named_entity_with_http_info(self, resource_type, id_project, id_domain, id_name, body, **kwargs):  # noqa: E501
         """Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.  # noqa: E501
 
-        Update the fields associated with a NamedEntity  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_named_entity_with_http_info(resource_type, id_project, id_domain, id_name, body, async_req=True)
@@ -5975,7 +6284,6 @@ class AdminServiceApi(object):
     def update_project(self, id, body, **kwargs):  # noqa: E501
         """Updates an existing :ref:`ref_flyteidl.admin.Project`  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
-        Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project(id, body, async_req=True)
@@ -5998,7 +6306,6 @@ class AdminServiceApi(object):
     def update_project_with_http_info(self, id, body, **kwargs):  # noqa: E501
         """Updates an existing :ref:`ref_flyteidl.admin.Project`  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.  # noqa: E501
 
-        Update a project.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_with_http_info(id, body, async_req=True)
@@ -6082,7 +6389,6 @@ class AdminServiceApi(object):
     def update_project_attributes(self, attributes_project, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` at the project level  # noqa: E501
 
-        Update the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_attributes(attributes_project, body, async_req=True)
@@ -6105,7 +6411,6 @@ class AdminServiceApi(object):
     def update_project_attributes_with_http_info(self, attributes_project, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` at the project level  # noqa: E501
 
-        Update the customized resource attributes associated with a project  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_attributes_with_http_info(attributes_project, body, async_req=True)
@@ -6189,7 +6494,6 @@ class AdminServiceApi(object):
     def update_project_domain_attributes(self, attributes_project, attributes_domain, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Update the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_domain_attributes(attributes_project, attributes_domain, body, async_req=True)
@@ -6213,7 +6517,6 @@ class AdminServiceApi(object):
     def update_project_domain_attributes_with_http_info(self, attributes_project, attributes_domain, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.  # noqa: E501
 
-        Update the customized resource attributes associated with a project-domain combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_project_domain_attributes_with_http_info(attributes_project, attributes_domain, body, async_req=True)
@@ -6304,7 +6607,6 @@ class AdminServiceApi(object):
     def update_workflow_attributes(self, attributes_project, attributes_domain, attributes_workflow, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Update the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_workflow_attributes(attributes_project, attributes_domain, attributes_workflow, body, async_req=True)
@@ -6329,7 +6631,6 @@ class AdminServiceApi(object):
     def update_workflow_attributes_with_http_info(self, attributes_project, attributes_domain, attributes_workflow, body, **kwargs):  # noqa: E501
         """Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.  # noqa: E501
 
-        Update the customized resource attributes associated with a project, domain and workflow combination  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_workflow_attributes_with_http_info(attributes_project, attributes_domain, attributes_workflow, body, async_req=True)

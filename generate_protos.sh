@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 DIR=`pwd`
 rm -rf $DIR/gen
@@ -16,7 +17,7 @@ docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d pr
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/plugins -l go --go_source_relative --validate_out
 docker run --rm -u $(id -u):$(id -g) -v $DIR:/defs $LYFT_IMAGE -i ./protos -d protos/flyteidl/datacatalog -l go --go_source_relative --validate_out
 
-languages=("python" "cpp" "java")
+languages=("cpp" "java")
 idlfolders=("service" "admin" "core" "event" "plugins" "datacatalog")
 
 for lang in "${languages[@]}"
@@ -27,37 +28,48 @@ do
     done
 done
 
+# Buf migration
+# TODO: fix stub generation via docker image. The trick of forcing the current user as a user in
+# the container (used extensively in this file) does not work.
+# docker run --volume "$(pwd):/workspace" --workdir /workspace bufbuild/buf generate
+buf generate
+
+# Unfortunately the python protoc plugin does not add __init__.py files to the generated code
+# (as described in https://github.com/protocolbuffers/protobuf/issues/881). One of the
+# suggestions is to manually create such files, which is what we do here:
+find gen/pb_python -type d -exec touch {}/__init__.py \;
+
 # Docs generated
 
-# Remove any currently generated core docs file
-ls -d protos/docs/core/* | grep -v index.rst | xargs rm
-# Use list of proto files in core directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/core:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/restructuredtext.tmpl,core.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/core/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
+# # Remove any currently generated core docs file
+# ls -d protos/docs/core/* | grep -v index.rst | xargs rm
+# # Use list of proto files in core directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/core:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/restructuredtext.tmpl,core.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/core/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
 
-# Remove any currently generated admin docs file
-ls -d protos/docs/admin/* | grep -v index.rst | xargs rm
-# Use list of proto files in admin directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[duration | wrappers].
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/admin:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,admin.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/admin/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/wrappers.proto
+# # Remove any currently generated admin docs file
+# ls -d protos/docs/admin/* | grep -v index.rst | xargs rm
+# # Use list of proto files in admin directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[duration | wrappers].
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/admin:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,admin.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/admin/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/wrappers.proto
 
-# Remove any currently generated datacatalog docs file
-ls -d protos/docs/datacatalog/* | grep -v index.rst | xargs rm
-# Use list of proto files in datacatalog directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/datacatalog:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,datacatalog.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/datacatalog/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
+# # Remove any currently generated datacatalog docs file
+# ls -d protos/docs/datacatalog/* | grep -v index.rst | xargs rm
+# # Use list of proto files in datacatalog directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/datacatalog:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,datacatalog.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/datacatalog/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
 
-# Remove any currently generated event docs file
-ls -d protos/docs/event/* | grep -v index.rst | xargs rm
-# Use list of proto files in event directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/event:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,event.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/event/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
+# # Remove any currently generated event docs file
+# ls -d protos/docs/event/* | grep -v index.rst | xargs rm
+# # Use list of proto files in event directory to generate the RST files required for sphinx conversion. Additionally generate for google.protobuf.[timestamp | struct | duration].
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/event:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,event.rst -I=tmp/doc_gen_deps -I=protos `ls protos/flyteidl/event/*.proto | xargs` tmp/doc_gen_deps/google/protobuf/timestamp.proto tmp/doc_gen_deps/google/protobuf/duration.proto tmp/doc_gen_deps/google/protobuf/struct.proto
 
-# Remove any currently generated plugins docs file
-ls -d protos/docs/plugins/* | grep -v index.rst | xargs rm
-# Use list of proto files in plugins directory to generate the RST files required for sphinx conversion
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/plugins:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,plugins.rst -I=protos -I=tmp/doc_gen_deps `ls protos/flyteidl/plugins/*.proto | xargs`
+# # Remove any currently generated plugins docs file
+# ls -d protos/docs/plugins/* | grep -v index.rst | xargs rm
+# # Use list of proto files in plugins directory to generate the RST files required for sphinx conversion
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/plugins:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,plugins.rst -I=protos -I=tmp/doc_gen_deps `ls protos/flyteidl/plugins/*.proto | xargs`
 
-# Remove any currently generated service docs file
-ls -d protos/docs/service/* | grep -v index.rst | xargs rm
-# Use list of proto files in service directory to generate the RST files required for sphinx conversion
-docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/service:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,service.rst -I=protos -I=tmp/doc_gen_deps `ls protos/flyteidl/service/*.proto | xargs`
+# # Remove any currently generated service docs file
+# ls -d protos/docs/service/* | grep -v index.rst | xargs rm
+# # Use list of proto files in service directory to generate the RST files required for sphinx conversion
+# docker run --rm -u $(id -u):$(id -g) -v $DIR/protos:/protos:ro -v $DIR/protos/docs/service:/out:rw -v $DIR/tmp/doc_gen_deps:/tmp/doc_gen_deps:ro $PROTOC_GEN_DOC_IMAGE --doc_opt=protos/docs/withoutscalar_restructuredtext.tmpl,service.rst -I=protos -I=tmp/doc_gen_deps `ls protos/flyteidl/service/*.proto | xargs`
 
 # Generate binary data from OpenAPI 2 file
 docker run --rm -u $(id -u):$(id -g) -v $DIR/gen/pb-go/flyteidl/service:/service --entrypoint go-bindata $LYFT_IMAGE -pkg service -o /service/openapi.go -prefix /service/ -modtime 1562572800 /service/admin.swagger.json
@@ -83,6 +95,11 @@ rm -rf gen/pb-go/github.com
 # Copy the validate.py protos.
 mkdir -p gen/pb_python/validate
 cp -r validate/* gen/pb_python/validate/
+
+# Update the service code manually because the code generated by protoc is incorrect
+# More detail, check https://github.com/flyteorg/flyteidl/pull/303#discussion_r1002151053
+sed -i -e 's/protoReq.Id.ResourceType = ResourceType(e)/protoReq.Id.ResourceType = core.ResourceType(e)/g' gen/pb-go/flyteidl/service/admin.pb.gw.go
+rm -f gen/pb-go/flyteidl/service/admin.pb.gw.go-e
 
 # This section is used by Travis CI to ensure that the generation step was run
 if [ -n "$DELTA_CHECK" ]; then

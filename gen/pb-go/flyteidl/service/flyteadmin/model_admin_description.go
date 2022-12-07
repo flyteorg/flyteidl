@@ -9,8 +9,10 @@
 
 package flyteadmin
 
-// A strongly typed schema that defines the interface of data retrieved from the underlying storage medium.
-type FlyteidlcoreSchema struct {
+// Full user description with formatting preserved. This can be rendered by clients, such as the console or command line tools with in-tact formatting.
+type AdminDescription struct {
+	Value string `json:"value,omitempty"`
 	Uri string `json:"uri,omitempty"`
-	Type_ *CoreSchemaType `json:"type,omitempty"`
+	Format *AdminDescriptionFormat `json:"format,omitempty"`
+	IconLink string `json:"icon_link,omitempty"`
 }
