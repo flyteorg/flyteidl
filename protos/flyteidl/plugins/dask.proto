@@ -9,13 +9,10 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
 // Custom Proto for Dask Plugin
 message DaskJob {
-    // Optional namespace to use for the dask pods. If none is given, the namespace of the
-    // Flyte task is used
-    string namespace = 1;
     // Spec for the job pod
-    JobPodSpec jobPodSpec = 2;    
+    JobPodSpec jobPodSpec = 1;    
     // Cluster
-    DaskCluster cluster = 3;
+    DaskCluster cluster = 2;
 }
 
 

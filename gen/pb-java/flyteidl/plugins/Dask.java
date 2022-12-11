@@ -20,30 +20,10 @@ public final class Dask {
 
     /**
      * <pre>
-     * Optional namespace to use for the dask pods. If none is given, the namespace of the
-     * Flyte task is used
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * Optional namespace to use for the dask pods. If none is given, the namespace of the
-     * Flyte task is used
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
-
-    /**
-     * <pre>
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     boolean hasJobPodSpec();
     /**
@@ -51,7 +31,7 @@ public final class Dask {
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     flyteidl.plugins.Dask.JobPodSpec getJobPodSpec();
     /**
@@ -59,7 +39,7 @@ public final class Dask {
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder();
 
@@ -68,7 +48,7 @@ public final class Dask {
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     boolean hasCluster();
     /**
@@ -76,7 +56,7 @@ public final class Dask {
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     flyteidl.plugins.Dask.DaskCluster getCluster();
     /**
@@ -84,7 +64,7 @@ public final class Dask {
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder();
   }
@@ -105,7 +85,6 @@ public final class Dask {
       super(builder);
     }
     private DaskJob() {
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -133,12 +112,6 @@ public final class Dask {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
-            case 18: {
               flyteidl.plugins.Dask.JobPodSpec.Builder subBuilder = null;
               if (jobPodSpec_ != null) {
                 subBuilder = jobPodSpec_.toBuilder();
@@ -151,7 +124,7 @@ public final class Dask {
 
               break;
             }
-            case 26: {
+            case 18: {
               flyteidl.plugins.Dask.DaskCluster.Builder subBuilder = null;
               if (cluster_ != null) {
                 subBuilder = cluster_.toBuilder();
@@ -196,58 +169,14 @@ public final class Dask {
               flyteidl.plugins.Dask.DaskJob.class, flyteidl.plugins.Dask.DaskJob.Builder.class);
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * Optional namespace to use for the dask pods. If none is given, the namespace of the
-     * Flyte task is used
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Optional namespace to use for the dask pods. If none is given, the namespace of the
-     * Flyte task is used
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JOBPODSPEC_FIELD_NUMBER = 2;
+    public static final int JOBPODSPEC_FIELD_NUMBER = 1;
     private flyteidl.plugins.Dask.JobPodSpec jobPodSpec_;
     /**
      * <pre>
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     public boolean hasJobPodSpec() {
       return jobPodSpec_ != null;
@@ -257,7 +186,7 @@ public final class Dask {
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     public flyteidl.plugins.Dask.JobPodSpec getJobPodSpec() {
       return jobPodSpec_ == null ? flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance() : jobPodSpec_;
@@ -267,20 +196,20 @@ public final class Dask {
      * Spec for the job pod
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
      */
     public flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder() {
       return getJobPodSpec();
     }
 
-    public static final int CLUSTER_FIELD_NUMBER = 3;
+    public static final int CLUSTER_FIELD_NUMBER = 2;
     private flyteidl.plugins.Dask.DaskCluster cluster_;
     /**
      * <pre>
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     public boolean hasCluster() {
       return cluster_ != null;
@@ -290,7 +219,7 @@ public final class Dask {
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     public flyteidl.plugins.Dask.DaskCluster getCluster() {
       return cluster_ == null ? flyteidl.plugins.Dask.DaskCluster.getDefaultInstance() : cluster_;
@@ -300,7 +229,7 @@ public final class Dask {
      * Cluster
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
      */
     public flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder() {
       return getCluster();
@@ -320,14 +249,11 @@ public final class Dask {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-      }
       if (jobPodSpec_ != null) {
-        output.writeMessage(2, getJobPodSpec());
+        output.writeMessage(1, getJobPodSpec());
       }
       if (cluster_ != null) {
-        output.writeMessage(3, getCluster());
+        output.writeMessage(2, getCluster());
       }
       unknownFields.writeTo(output);
     }
@@ -338,16 +264,13 @@ public final class Dask {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-      }
       if (jobPodSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getJobPodSpec());
+          .computeMessageSize(1, getJobPodSpec());
       }
       if (cluster_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCluster());
+          .computeMessageSize(2, getCluster());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -364,8 +287,6 @@ public final class Dask {
       }
       flyteidl.plugins.Dask.DaskJob other = (flyteidl.plugins.Dask.DaskJob) obj;
 
-      if (!getNamespace()
-          .equals(other.getNamespace())) return false;
       if (hasJobPodSpec() != other.hasJobPodSpec()) return false;
       if (hasJobPodSpec()) {
         if (!getJobPodSpec()
@@ -387,8 +308,6 @@ public final class Dask {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       if (hasJobPodSpec()) {
         hash = (37 * hash) + JOBPODSPEC_FIELD_NUMBER;
         hash = (53 * hash) + getJobPodSpec().hashCode();
@@ -534,8 +453,6 @@ public final class Dask {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        namespace_ = "";
-
         if (jobPodSpecBuilder_ == null) {
           jobPodSpec_ = null;
         } else {
@@ -574,7 +491,6 @@ public final class Dask {
       @java.lang.Override
       public flyteidl.plugins.Dask.DaskJob buildPartial() {
         flyteidl.plugins.Dask.DaskJob result = new flyteidl.plugins.Dask.DaskJob(this);
-        result.namespace_ = namespace_;
         if (jobPodSpecBuilder_ == null) {
           result.jobPodSpec_ = jobPodSpec_;
         } else {
@@ -633,10 +549,6 @@ public final class Dask {
 
       public Builder mergeFrom(flyteidl.plugins.Dask.DaskJob other) {
         if (other == flyteidl.plugins.Dask.DaskJob.getDefaultInstance()) return this;
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
         if (other.hasJobPodSpec()) {
           mergeJobPodSpec(other.getJobPodSpec());
         }
@@ -672,100 +584,6 @@ public final class Dask {
         return this;
       }
 
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * Optional namespace to use for the dask pods. If none is given, the namespace of the
-       * Flyte task is used
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional namespace to use for the dask pods. If none is given, the namespace of the
-       * Flyte task is used
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Optional namespace to use for the dask pods. If none is given, the namespace of the
-       * Flyte task is used
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional namespace to use for the dask pods. If none is given, the namespace of the
-       * Flyte task is used
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional namespace to use for the dask pods. If none is given, the namespace of the
-       * Flyte task is used
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.plugins.Dask.JobPodSpec jobPodSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.Dask.JobPodSpec, flyteidl.plugins.Dask.JobPodSpec.Builder, flyteidl.plugins.Dask.JobPodSpecOrBuilder> jobPodSpecBuilder_;
@@ -774,7 +592,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public boolean hasJobPodSpec() {
         return jobPodSpecBuilder_ != null || jobPodSpec_ != null;
@@ -784,7 +602,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public flyteidl.plugins.Dask.JobPodSpec getJobPodSpec() {
         if (jobPodSpecBuilder_ == null) {
@@ -798,7 +616,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public Builder setJobPodSpec(flyteidl.plugins.Dask.JobPodSpec value) {
         if (jobPodSpecBuilder_ == null) {
@@ -818,7 +636,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public Builder setJobPodSpec(
           flyteidl.plugins.Dask.JobPodSpec.Builder builderForValue) {
@@ -836,7 +654,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public Builder mergeJobPodSpec(flyteidl.plugins.Dask.JobPodSpec value) {
         if (jobPodSpecBuilder_ == null) {
@@ -858,7 +676,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public Builder clearJobPodSpec() {
         if (jobPodSpecBuilder_ == null) {
@@ -876,7 +694,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public flyteidl.plugins.Dask.JobPodSpec.Builder getJobPodSpecBuilder() {
         
@@ -888,7 +706,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       public flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder() {
         if (jobPodSpecBuilder_ != null) {
@@ -903,7 +721,7 @@ public final class Dask {
        * Spec for the job pod
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 2;</code>
+       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.Dask.JobPodSpec, flyteidl.plugins.Dask.JobPodSpec.Builder, flyteidl.plugins.Dask.JobPodSpecOrBuilder> 
@@ -927,7 +745,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public boolean hasCluster() {
         return clusterBuilder_ != null || cluster_ != null;
@@ -937,7 +755,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public flyteidl.plugins.Dask.DaskCluster getCluster() {
         if (clusterBuilder_ == null) {
@@ -951,7 +769,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public Builder setCluster(flyteidl.plugins.Dask.DaskCluster value) {
         if (clusterBuilder_ == null) {
@@ -971,7 +789,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public Builder setCluster(
           flyteidl.plugins.Dask.DaskCluster.Builder builderForValue) {
@@ -989,7 +807,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public Builder mergeCluster(flyteidl.plugins.Dask.DaskCluster value) {
         if (clusterBuilder_ == null) {
@@ -1011,7 +829,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public Builder clearCluster() {
         if (clusterBuilder_ == null) {
@@ -1029,7 +847,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public flyteidl.plugins.Dask.DaskCluster.Builder getClusterBuilder() {
         
@@ -1041,7 +859,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       public flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder() {
         if (clusterBuilder_ != null) {
@@ -1056,7 +874,7 @@ public final class Dask {
        * Cluster
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 3;</code>
+       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.plugins.Dask.DaskCluster, flyteidl.plugins.Dask.DaskCluster.Builder, flyteidl.plugins.Dask.DaskClusterOrBuilder> 
@@ -2986,16 +2804,16 @@ public final class Dask {
   static {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/plugins/dask.proto\022\020flyteidl." +
-      "plugins\032\031flyteidl/core/tasks.proto\"~\n\007Da" +
-      "skJob\022\021\n\tnamespace\030\001 \001(\t\0220\n\njobPodSpec\030\002" +
-      " \001(\0132\034.flyteidl.plugins.JobPodSpec\022.\n\007cl" +
-      "uster\030\003 \001(\0132\035.flyteidl.plugins.DaskClust" +
-      "er\"H\n\nJobPodSpec\022\r\n\005image\030\001 \001(\t\022+\n\tresou" +
-      "rces\030\002 \001(\0132\030.flyteidl.core.Resources\"[\n\013" +
-      "DaskCluster\022\r\n\005image\030\001 \001(\t\022\020\n\010nWorkers\030\002" +
-      " \001(\005\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core." +
-      "ResourcesB9Z7github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/pluginsb\006proto3"
+      "plugins\032\031flyteidl/core/tasks.proto\"k\n\007Da" +
+      "skJob\0220\n\njobPodSpec\030\001 \001(\0132\034.flyteidl.plu" +
+      "gins.JobPodSpec\022.\n\007cluster\030\002 \001(\0132\035.flyte" +
+      "idl.plugins.DaskCluster\"H\n\nJobPodSpec\022\r\n" +
+      "\005image\030\001 \001(\t\022+\n\tresources\030\002 \001(\0132\030.flytei" +
+      "dl.core.Resources\"[\n\013DaskCluster\022\r\n\005imag" +
+      "e\030\001 \001(\t\022\020\n\010nWorkers\030\002 \001(\005\022+\n\tresources\030\003" +
+      " \001(\0132\030.flyteidl.core.ResourcesB9Z7github" +
+      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
+      "l/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3015,7 +2833,7 @@ public final class Dask {
     internal_static_flyteidl_plugins_DaskJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DaskJob_descriptor,
-        new java.lang.String[] { "Namespace", "JobPodSpec", "Cluster", });
+        new java.lang.String[] { "JobPodSpec", "Cluster", });
     internal_static_flyteidl_plugins_JobPodSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_JobPodSpec_fieldAccessorTable = new

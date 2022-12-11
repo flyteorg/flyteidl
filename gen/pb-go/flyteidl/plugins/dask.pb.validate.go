@@ -43,8 +43,6 @@ func (m *DaskJob) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Namespace
-
 	if v, ok := interface{}(m.GetJobPodSpec()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return DaskJobValidationError{

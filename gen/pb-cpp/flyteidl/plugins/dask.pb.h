@@ -169,33 +169,19 @@ class DaskJob final :
 
   // accessors -------------------------------------------------------
 
-  // string namespace = 1;
-  void clear_namespace_();
-  static const int kNamespaceFieldNumber = 1;
-  const ::std::string& namespace_() const;
-  void set_namespace_(const ::std::string& value);
-  #if LANG_CXX11
-  void set_namespace_(::std::string&& value);
-  #endif
-  void set_namespace_(const char* value);
-  void set_namespace_(const char* value, size_t size);
-  ::std::string* mutable_namespace_();
-  ::std::string* release_namespace_();
-  void set_allocated_namespace_(::std::string* namespace_);
-
-  // .flyteidl.plugins.JobPodSpec jobPodSpec = 2;
+  // .flyteidl.plugins.JobPodSpec jobPodSpec = 1;
   bool has_jobpodspec() const;
   void clear_jobpodspec();
-  static const int kJobPodSpecFieldNumber = 2;
+  static const int kJobPodSpecFieldNumber = 1;
   const ::flyteidl::plugins::JobPodSpec& jobpodspec() const;
   ::flyteidl::plugins::JobPodSpec* release_jobpodspec();
   ::flyteidl::plugins::JobPodSpec* mutable_jobpodspec();
   void set_allocated_jobpodspec(::flyteidl::plugins::JobPodSpec* jobpodspec);
 
-  // .flyteidl.plugins.DaskCluster cluster = 3;
+  // .flyteidl.plugins.DaskCluster cluster = 2;
   bool has_cluster() const;
   void clear_cluster();
-  static const int kClusterFieldNumber = 3;
+  static const int kClusterFieldNumber = 2;
   const ::flyteidl::plugins::DaskCluster& cluster() const;
   ::flyteidl::plugins::DaskCluster* release_cluster();
   ::flyteidl::plugins::DaskCluster* mutable_cluster();
@@ -206,7 +192,6 @@ class DaskJob final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr namespace__;
   ::flyteidl::plugins::JobPodSpec* jobpodspec_;
   ::flyteidl::plugins::DaskCluster* cluster_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -490,60 +475,7 @@ class DaskCluster final :
 #endif  // __GNUC__
 // DaskJob
 
-// string namespace = 1;
-inline void DaskJob::clear_namespace_() {
-  namespace__.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& DaskJob::namespace_() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskJob.namespace)
-  return namespace__.GetNoArena();
-}
-inline void DaskJob::set_namespace_(const ::std::string& value) {
-  
-  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DaskJob.namespace)
-}
-#if LANG_CXX11
-inline void DaskJob::set_namespace_(::std::string&& value) {
-  
-  namespace__.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.DaskJob.namespace)
-}
-#endif
-inline void DaskJob::set_namespace_(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.DaskJob.namespace)
-}
-inline void DaskJob::set_namespace_(const char* value, size_t size) {
-  
-  namespace__.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.DaskJob.namespace)
-}
-inline ::std::string* DaskJob::mutable_namespace_() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskJob.namespace)
-  return namespace__.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* DaskJob::release_namespace_() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskJob.namespace)
-  
-  return namespace__.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void DaskJob::set_allocated_namespace_(::std::string* namespace_) {
-  if (namespace_ != nullptr) {
-    
-  } else {
-    
-  }
-  namespace__.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), namespace_);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskJob.namespace)
-}
-
-// .flyteidl.plugins.JobPodSpec jobPodSpec = 2;
+// .flyteidl.plugins.JobPodSpec jobPodSpec = 1;
 inline bool DaskJob::has_jobpodspec() const {
   return this != internal_default_instance() && jobpodspec_ != nullptr;
 }
@@ -594,7 +526,7 @@ inline void DaskJob::set_allocated_jobpodspec(::flyteidl::plugins::JobPodSpec* j
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskJob.jobPodSpec)
 }
 
-// .flyteidl.plugins.DaskCluster cluster = 3;
+// .flyteidl.plugins.DaskCluster cluster = 2;
 inline bool DaskJob::has_cluster() const {
   return this != internal_default_instance() && cluster_ != nullptr;
 }

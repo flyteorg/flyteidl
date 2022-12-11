@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x66lyteidl/plugins/dask.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"\x9e\x01\n\x07\x44\x61skJob\x12\x1c\n\tnamespace\x18\x01 \x01(\tR\tnamespace\x12<\n\njobPodSpec\x18\x02 \x01(\x0b\x32\x1c.flyteidl.plugins.JobPodSpecR\njobPodSpec\x12\x37\n\x07\x63luster\x18\x03 \x01(\x0b\x32\x1d.flyteidl.plugins.DaskClusterR\x07\x63luster\"Z\n\nJobPodSpec\x12\x14\n\x05image\x18\x01 \x01(\tR\x05image\x12\x36\n\tresources\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresources\"w\n\x0b\x44\x61skCluster\x12\x14\n\x05image\x18\x01 \x01(\tR\x05image\x12\x1a\n\x08nWorkers\x18\x02 \x01(\x05R\x08nWorkers\x12\x36\n\tresources\x18\x03 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresourcesB\xbb\x01\n\x14\x63om.flyteidl.pluginsB\tDaskProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\xa2\x02\x03\x46PX\xaa\x02\x10\x46lyteidl.Plugins\xca\x02\x10\x46lyteidl\\Plugins\xe2\x02\x1c\x46lyteidl\\Plugins\\GPBMetadata\xea\x02\x11\x46lyteidl::Pluginsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x66lyteidl/plugins/dask.proto\x12\x10\x66lyteidl.plugins\x1a\x19\x66lyteidl/core/tasks.proto\"\x80\x01\n\x07\x44\x61skJob\x12<\n\njobPodSpec\x18\x01 \x01(\x0b\x32\x1c.flyteidl.plugins.JobPodSpecR\njobPodSpec\x12\x37\n\x07\x63luster\x18\x02 \x01(\x0b\x32\x1d.flyteidl.plugins.DaskClusterR\x07\x63luster\"Z\n\nJobPodSpec\x12\x14\n\x05image\x18\x01 \x01(\tR\x05image\x12\x36\n\tresources\x18\x02 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresources\"w\n\x0b\x44\x61skCluster\x12\x14\n\x05image\x18\x01 \x01(\tR\x05image\x12\x1a\n\x08nWorkers\x18\x02 \x01(\x05R\x08nWorkers\x12\x36\n\tresources\x18\x03 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresourcesB\xbb\x01\n\x14\x63om.flyteidl.pluginsB\tDaskProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\xa2\x02\x03\x46PX\xaa\x02\x10\x46lyteidl.Plugins\xca\x02\x10\x46lyteidl\\Plugins\xe2\x02\x1c\x46lyteidl\\Plugins\\GPBMetadata\xea\x02\x11\x46lyteidl::Pluginsb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flyteidl.plugins.dask_pb2', globals())
@@ -23,9 +23,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.pluginsB\tDaskProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\242\002\003FPX\252\002\020Flyteidl.Plugins\312\002\020Flyteidl\\Plugins\342\002\034Flyteidl\\Plugins\\GPBMetadata\352\002\021Flyteidl::Plugins'
   _DASKJOB._serialized_start=77
-  _DASKJOB._serialized_end=235
-  _JOBPODSPEC._serialized_start=237
-  _JOBPODSPEC._serialized_end=327
-  _DASKCLUSTER._serialized_start=329
-  _DASKCLUSTER._serialized_end=448
+  _DASKJOB._serialized_end=205
+  _JOBPODSPEC._serialized_start=207
+  _JOBPODSPEC._serialized_end=297
+  _DASKCLUSTER._serialized_start=299
+  _DASKCLUSTER._serialized_end=418
 # @@protoc_insertion_point(module_scope)

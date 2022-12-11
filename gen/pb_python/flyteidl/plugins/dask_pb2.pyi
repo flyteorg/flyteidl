@@ -16,14 +16,12 @@ class DaskCluster(_message.Message):
     def __init__(self, image: _Optional[str] = ..., nWorkers: _Optional[int] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
 
 class DaskJob(_message.Message):
-    __slots__ = ["cluster", "jobPodSpec", "namespace"]
+    __slots__ = ["cluster", "jobPodSpec"]
     CLUSTER_FIELD_NUMBER: _ClassVar[int]
     JOBPODSPEC_FIELD_NUMBER: _ClassVar[int]
-    NAMESPACE_FIELD_NUMBER: _ClassVar[int]
     cluster: DaskCluster
     jobPodSpec: JobPodSpec
-    namespace: str
-    def __init__(self, namespace: _Optional[str] = ..., jobPodSpec: _Optional[_Union[JobPodSpec, _Mapping]] = ..., cluster: _Optional[_Union[DaskCluster, _Mapping]] = ...) -> None: ...
+    def __init__(self, jobPodSpec: _Optional[_Union[JobPodSpec, _Mapping]] = ..., cluster: _Optional[_Union[DaskCluster, _Mapping]] = ...) -> None: ...
 
 class JobPodSpec(_message.Message):
     __slots__ = ["image", "resources"]
