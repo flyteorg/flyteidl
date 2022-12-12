@@ -18,6 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fspark_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SparkJob_HadoopConfEntry_DoNotUse_flyteidl_2fplugins_2fspark_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fspark_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SparkJob_SparkConfEntry_DoNotUse_flyteidl_2fplugins_2fspark_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_google_2fprotobuf_2fstruct_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ListValue_google_2fprotobuf_2fstruct_2eproto;
 namespace flyteidl {
 namespace plugins {
 class SparkApplicationDefaultTypeInternal {
@@ -89,10 +90,11 @@ static void InitDefaultsSparkJob_flyteidl_2fplugins_2fspark_2eproto() {
   ::flyteidl::plugins::SparkJob::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_SparkJob_flyteidl_2fplugins_2fspark_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSparkJob_flyteidl_2fplugins_2fspark_2eproto}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_SparkJob_flyteidl_2fplugins_2fspark_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsSparkJob_flyteidl_2fplugins_2fspark_2eproto}, {
       &scc_info_SparkJob_SparkConfEntry_DoNotUse_flyteidl_2fplugins_2fspark_2eproto.base,
-      &scc_info_SparkJob_HadoopConfEntry_DoNotUse_flyteidl_2fplugins_2fspark_2eproto.base,}};
+      &scc_info_SparkJob_HadoopConfEntry_DoNotUse_flyteidl_2fplugins_2fspark_2eproto.base,
+      &scc_info_ListValue_google_2fprotobuf_2fstruct_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fspark_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_SparkApplication_flyteidl_2fplugins_2fspark_2eproto.base);
@@ -164,32 +166,34 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fspark_2eproto[] =
   "\n\034flyteidl/plugins/spark.proto\022\020flyteidl"
-  ".plugins\"B\n\020SparkApplication\".\n\004Type\022\n\n\006"
-  "PYTHON\020\000\022\010\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\215\003\n"
-  "\010SparkJob\022@\n\017applicationType\030\001 \001(\0162\'.fly"
-  "teidl.plugins.SparkApplication.Type\022\033\n\023m"
-  "ainApplicationFile\030\002 \001(\t\022\021\n\tmainClass\030\003 "
-  "\001(\t\022<\n\tsparkConf\030\004 \003(\0132).flyteidl.plugin"
-  "s.SparkJob.SparkConfEntry\022>\n\nhadoopConf\030"
-  "\005 \003(\0132*.flyteidl.plugins.SparkJob.Hadoop"
-  "ConfEntry\022\024\n\014executorPath\030\006 \001(\t\022\026\n\016datab"
-  "ricksConf\030\007 \001(\t\0320\n\016SparkConfEntry\022\013\n\003key"
-  "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017HadoopConfE"
-  "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/pluginsb\006proto3"
+  ".plugins\032\034google/protobuf/struct.proto\"B"
+  "\n\020SparkApplication\".\n\004Type\022\n\n\006PYTHON\020\000\022\010"
+  "\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\246\003\n\010SparkJob\022"
+  "@\n\017applicationType\030\001 \001(\0162\'.flyteidl.plug"
+  "ins.SparkApplication.Type\022\033\n\023mainApplica"
+  "tionFile\030\002 \001(\t\022\021\n\tmainClass\030\003 \001(\t\022<\n\tspa"
+  "rkConf\030\004 \003(\0132).flyteidl.plugins.SparkJob"
+  ".SparkConfEntry\022>\n\nhadoopConf\030\005 \003(\0132*.fl"
+  "yteidl.plugins.SparkJob.HadoopConfEntry\022"
+  "\024\n\014executorPath\030\006 \001(\t\022/\n\016databricksConf\030"
+  "\007 \001(\0132\027.google.protobuf.Struct\0320\n\016SparkC"
+  "onfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+  "\0321\n\017HadoopConfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+  "e\030\002 \001(\t:\0028\001B9Z7github.com/flyteorg/flyte"
+  "idl/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fspark_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fspark_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fspark_2eproto,
-  "flyteidl/plugins/spark.proto", &assign_descriptors_table_flyteidl_2fplugins_2fspark_2eproto, 583,
+  "flyteidl/plugins/spark.proto", &assign_descriptors_table_flyteidl_2fplugins_2fspark_2eproto, 638,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fspark_2eproto() {
   static constexpr ::google::protobuf::internal::InitFunc deps[1] =
   {
+    ::AddDescriptors_google_2fprotobuf_2fstruct_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fspark_2eproto, deps, 0);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fspark_2eproto, deps, 1);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -516,11 +520,24 @@ bool SparkJob_HadoopConfEntry_DoNotUse::_ParseMap(const char* begin, const char*
 // ===================================================================
 
 void SparkJob::InitAsDefaultInstance() {
+  ::flyteidl::plugins::_SparkJob_default_instance_._instance.get_mutable()->databricksconf_ = const_cast< ::google::protobuf::Struct*>(
+      ::google::protobuf::Struct::internal_default_instance());
 }
 class SparkJob::HasBitSetters {
  public:
+  static const ::google::protobuf::Struct& databricksconf(const SparkJob* msg);
 };
 
+const ::google::protobuf::Struct&
+SparkJob::HasBitSetters::databricksconf(const SparkJob* msg) {
+  return *msg->databricksconf_;
+}
+void SparkJob::clear_databricksconf() {
+  if (GetArenaNoVirtual() == nullptr && databricksconf_ != nullptr) {
+    delete databricksconf_;
+  }
+  databricksconf_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SparkJob::kApplicationTypeFieldNumber;
 const int SparkJob::kMainApplicationFileFieldNumber;
@@ -554,9 +571,10 @@ SparkJob::SparkJob(const SparkJob& from)
   if (from.executorpath().size() > 0) {
     executorpath_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.executorpath_);
   }
-  databricksconf_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.databricksconf().size() > 0) {
-    databricksconf_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.databricksconf_);
+  if (from.has_databricksconf()) {
+    databricksconf_ = new ::google::protobuf::Struct(*from.databricksconf_);
+  } else {
+    databricksconf_ = nullptr;
   }
   applicationtype_ = from.applicationtype_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.SparkJob)
@@ -568,8 +586,9 @@ void SparkJob::SharedCtor() {
   mainapplicationfile_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mainclass_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   executorpath_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  databricksconf_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  applicationtype_ = 0;
+  ::memset(&databricksconf_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&applicationtype_) -
+      reinterpret_cast<char*>(&databricksconf_)) + sizeof(applicationtype_));
 }
 
 SparkJob::~SparkJob() {
@@ -581,7 +600,7 @@ void SparkJob::SharedDtor() {
   mainapplicationfile_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mainclass_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   executorpath_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  databricksconf_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete databricksconf_;
 }
 
 void SparkJob::SetCachedSize(int size) const {
@@ -604,7 +623,10 @@ void SparkJob::Clear() {
   mainapplicationfile_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mainclass_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   executorpath_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  databricksconf_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && databricksconf_ != nullptr) {
+    delete databricksconf_;
+  }
+  databricksconf_ = nullptr;
   applicationtype_ = 0;
   _internal_metadata_.Clear();
 }
@@ -716,20 +738,17 @@ const char* SparkJob::_InternalParse(const char* begin, const char* end, void* o
         ptr += size;
         break;
       }
-      // string databricksConf = 7;
+      // .google.protobuf.Struct databricksConf = 7;
       case 7: {
         if (static_cast<::google::protobuf::uint8>(tag) != 58) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.SparkJob.databricksConf");
+        parser_till_end = ::google::protobuf::Struct::_InternalParse;
         object = msg->mutable_databricksconf();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -877,15 +896,11 @@ bool SparkJob::MergePartialFromCodedStream(
         break;
       }
 
-      // string databricksConf = 7;
+      // .google.protobuf.Struct databricksConf = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (58 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_databricksconf()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->databricksconf().data(), static_cast<int>(this->databricksconf().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.SparkJob.databricksConf"));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_databricksconf()));
         } else {
           goto handle_unusual;
         }
@@ -1053,14 +1068,10 @@ void SparkJob::SerializeWithCachedSizes(
       6, this->executorpath(), output);
   }
 
-  // string databricksConf = 7;
-  if (this->databricksconf().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->databricksconf().data(), static_cast<int>(this->databricksconf().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.SparkJob.databricksConf");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      7, this->databricksconf(), output);
+  // .google.protobuf.Struct databricksConf = 7;
+  if (this->has_databricksconf()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, HasBitSetters::databricksconf(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1213,15 +1224,11 @@ void SparkJob::SerializeWithCachedSizes(
         6, this->executorpath(), target);
   }
 
-  // string databricksConf = 7;
-  if (this->databricksconf().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->databricksconf().data(), static_cast<int>(this->databricksconf().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.SparkJob.databricksConf");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        7, this->databricksconf(), target);
+  // .google.protobuf.Struct databricksConf = 7;
+  if (this->has_databricksconf()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        7, HasBitSetters::databricksconf(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1294,11 +1301,11 @@ size_t SparkJob::ByteSizeLong() const {
         this->executorpath());
   }
 
-  // string databricksConf = 7;
-  if (this->databricksconf().size() > 0) {
+  // .google.protobuf.Struct databricksConf = 7;
+  if (this->has_databricksconf()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->databricksconf());
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *databricksconf_);
   }
 
   // .flyteidl.plugins.SparkApplication.Type applicationType = 1;
@@ -1348,9 +1355,8 @@ void SparkJob::MergeFrom(const SparkJob& from) {
 
     executorpath_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.executorpath_);
   }
-  if (from.databricksconf().size() > 0) {
-
-    databricksconf_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.databricksconf_);
+  if (from.has_databricksconf()) {
+    mutable_databricksconf()->::google::protobuf::Struct::MergeFrom(from.databricksconf());
   }
   if (from.applicationtype() != 0) {
     set_applicationtype(from.applicationtype());
@@ -1390,8 +1396,7 @@ void SparkJob::InternalSwap(SparkJob* other) {
     GetArenaNoVirtual());
   executorpath_.Swap(&other->executorpath_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  databricksconf_.Swap(&other->databricksconf_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  swap(databricksconf_, other->databricksconf_);
   swap(applicationtype_, other->applicationtype_);
 }
 

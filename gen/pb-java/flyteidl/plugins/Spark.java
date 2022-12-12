@@ -662,25 +662,31 @@ public final class Spark {
 
     /**
      * <pre>
-     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Databricks job configuration.
      * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-     * The config is automatically encoded by flytekit, and decoded in the propeller.
      * </pre>
      *
-     * <code>string databricksConf = 7;</code>
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
      */
-    java.lang.String getDatabricksConf();
+    boolean hasDatabricksConf();
     /**
      * <pre>
-     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Databricks job configuration.
      * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-     * The config is automatically encoded by flytekit, and decoded in the propeller.
      * </pre>
      *
-     * <code>string databricksConf = 7;</code>
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
      */
-    com.google.protobuf.ByteString
-        getDatabricksConfBytes();
+    com.google.protobuf.Struct getDatabricksConf();
+    /**
+     * <pre>
+     * Databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
+     */
+    com.google.protobuf.StructOrBuilder getDatabricksConfOrBuilder();
   }
   /**
    * <pre>
@@ -703,7 +709,6 @@ public final class Spark {
       mainApplicationFile_ = "";
       mainClass_ = "";
       executorPath_ = "";
-      databricksConf_ = "";
     }
 
     @java.lang.Override
@@ -781,9 +786,16 @@ public final class Spark {
               break;
             }
             case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (databricksConf_ != null) {
+                subBuilder = databricksConf_.toBuilder();
+              }
+              databricksConf_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(databricksConf_);
+                databricksConf_ = subBuilder.buildPartial();
+              }
 
-              databricksConf_ = s;
               break;
             }
             default: {
@@ -1113,49 +1125,39 @@ public final class Spark {
     }
 
     public static final int DATABRICKSCONF_FIELD_NUMBER = 7;
-    private volatile java.lang.Object databricksConf_;
+    private com.google.protobuf.Struct databricksConf_;
     /**
      * <pre>
-     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Databricks job configuration.
      * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-     * The config is automatically encoded by flytekit, and decoded in the propeller.
      * </pre>
      *
-     * <code>string databricksConf = 7;</code>
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
      */
-    public java.lang.String getDatabricksConf() {
-      java.lang.Object ref = databricksConf_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        databricksConf_ = s;
-        return s;
-      }
+    public boolean hasDatabricksConf() {
+      return databricksConf_ != null;
     }
     /**
      * <pre>
-     * databricksConf is base64 encoded string which stores databricks job configuration.
+     * Databricks job configuration.
      * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-     * The config is automatically encoded by flytekit, and decoded in the propeller.
      * </pre>
      *
-     * <code>string databricksConf = 7;</code>
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatabricksConfBytes() {
-      java.lang.Object ref = databricksConf_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        databricksConf_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.Struct getDatabricksConf() {
+      return databricksConf_ == null ? com.google.protobuf.Struct.getDefaultInstance() : databricksConf_;
+    }
+    /**
+     * <pre>
+     * Databricks job configuration.
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct databricksConf = 7;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getDatabricksConfOrBuilder() {
+      return getDatabricksConf();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1196,8 +1198,8 @@ public final class Spark {
       if (!getExecutorPathBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, executorPath_);
       }
-      if (!getDatabricksConfBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, databricksConf_);
+      if (databricksConf_ != null) {
+        output.writeMessage(7, getDatabricksConf());
       }
       unknownFields.writeTo(output);
     }
@@ -1241,8 +1243,9 @@ public final class Spark {
       if (!getExecutorPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, executorPath_);
       }
-      if (!getDatabricksConfBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, databricksConf_);
+      if (databricksConf_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getDatabricksConf());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1270,8 +1273,11 @@ public final class Spark {
           other.internalGetHadoopConf())) return false;
       if (!getExecutorPath()
           .equals(other.getExecutorPath())) return false;
-      if (!getDatabricksConf()
-          .equals(other.getDatabricksConf())) return false;
+      if (hasDatabricksConf() != other.hasDatabricksConf()) return false;
+      if (hasDatabricksConf()) {
+        if (!getDatabricksConf()
+            .equals(other.getDatabricksConf())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1299,8 +1305,10 @@ public final class Spark {
       }
       hash = (37 * hash) + EXECUTORPATH_FIELD_NUMBER;
       hash = (53 * hash) + getExecutorPath().hashCode();
-      hash = (37 * hash) + DATABRICKSCONF_FIELD_NUMBER;
-      hash = (53 * hash) + getDatabricksConf().hashCode();
+      if (hasDatabricksConf()) {
+        hash = (37 * hash) + DATABRICKSCONF_FIELD_NUMBER;
+        hash = (53 * hash) + getDatabricksConf().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1474,8 +1482,12 @@ public final class Spark {
         internalGetMutableHadoopConf().clear();
         executorPath_ = "";
 
-        databricksConf_ = "";
-
+        if (databricksConfBuilder_ == null) {
+          databricksConf_ = null;
+        } else {
+          databricksConf_ = null;
+          databricksConfBuilder_ = null;
+        }
         return this;
       }
 
@@ -1512,7 +1524,11 @@ public final class Spark {
         result.hadoopConf_ = internalGetHadoopConf();
         result.hadoopConf_.makeImmutable();
         result.executorPath_ = executorPath_;
-        result.databricksConf_ = databricksConf_;
+        if (databricksConfBuilder_ == null) {
+          result.databricksConf_ = databricksConf_;
+        } else {
+          result.databricksConf_ = databricksConfBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1581,9 +1597,8 @@ public final class Spark {
           executorPath_ = other.executorPath_;
           onChanged();
         }
-        if (!other.getDatabricksConf().isEmpty()) {
-          databricksConf_ = other.databricksConf_;
-          onChanged();
+        if (other.hasDatabricksConf()) {
+          mergeDatabricksConf(other.getDatabricksConf());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2133,103 +2148,166 @@ public final class Spark {
         return this;
       }
 
-      private java.lang.Object databricksConf_ = "";
+      private com.google.protobuf.Struct databricksConf_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> databricksConfBuilder_;
       /**
        * <pre>
-       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Databricks job configuration.
        * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-       * The config is automatically encoded by flytekit, and decoded in the propeller.
        * </pre>
        *
-       * <code>string databricksConf = 7;</code>
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
        */
-      public java.lang.String getDatabricksConf() {
-        java.lang.Object ref = databricksConf_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          databricksConf_ = s;
-          return s;
+      public boolean hasDatabricksConf() {
+        return databricksConfBuilder_ != null || databricksConf_ != null;
+      }
+      /**
+       * <pre>
+       * Databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
+       */
+      public com.google.protobuf.Struct getDatabricksConf() {
+        if (databricksConfBuilder_ == null) {
+          return databricksConf_ == null ? com.google.protobuf.Struct.getDefaultInstance() : databricksConf_;
         } else {
-          return (java.lang.String) ref;
+          return databricksConfBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Databricks job configuration.
        * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-       * The config is automatically encoded by flytekit, and decoded in the propeller.
        * </pre>
        *
-       * <code>string databricksConf = 7;</code>
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
        */
-      public com.google.protobuf.ByteString
-          getDatabricksConfBytes() {
-        java.lang.Object ref = databricksConf_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          databricksConf_ = b;
-          return b;
+      public Builder setDatabricksConf(com.google.protobuf.Struct value) {
+        if (databricksConfBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          databricksConf_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          databricksConfBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
        * <pre>
-       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Databricks job configuration.
        * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-       * The config is automatically encoded by flytekit, and decoded in the propeller.
        * </pre>
        *
-       * <code>string databricksConf = 7;</code>
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
        */
       public Builder setDatabricksConf(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        databricksConf_ = value;
-        onChanged();
+          com.google.protobuf.Struct.Builder builderForValue) {
+        if (databricksConfBuilder_ == null) {
+          databricksConf_ = builderForValue.build();
+          onChanged();
+        } else {
+          databricksConfBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
        * <pre>
-       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Databricks job configuration.
        * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-       * The config is automatically encoded by flytekit, and decoded in the propeller.
        * </pre>
        *
-       * <code>string databricksConf = 7;</code>
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
+       */
+      public Builder mergeDatabricksConf(com.google.protobuf.Struct value) {
+        if (databricksConfBuilder_ == null) {
+          if (databricksConf_ != null) {
+            databricksConf_ =
+              com.google.protobuf.Struct.newBuilder(databricksConf_).mergeFrom(value).buildPartial();
+          } else {
+            databricksConf_ = value;
+          }
+          onChanged();
+        } else {
+          databricksConfBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
        */
       public Builder clearDatabricksConf() {
-        
-        databricksConf_ = getDefaultInstance().getDatabricksConf();
-        onChanged();
+        if (databricksConfBuilder_ == null) {
+          databricksConf_ = null;
+          onChanged();
+        } else {
+          databricksConf_ = null;
+          databricksConfBuilder_ = null;
+        }
+
         return this;
       }
       /**
        * <pre>
-       * databricksConf is base64 encoded string which stores databricks job configuration.
+       * Databricks job configuration.
        * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-       * The config is automatically encoded by flytekit, and decoded in the propeller.
        * </pre>
        *
-       * <code>string databricksConf = 7;</code>
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
        */
-      public Builder setDatabricksConfBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public com.google.protobuf.Struct.Builder getDatabricksConfBuilder() {
         
-        databricksConf_ = value;
         onChanged();
-        return this;
+        return getDatabricksConfFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
+       */
+      public com.google.protobuf.StructOrBuilder getDatabricksConfOrBuilder() {
+        if (databricksConfBuilder_ != null) {
+          return databricksConfBuilder_.getMessageOrBuilder();
+        } else {
+          return databricksConf_ == null ?
+              com.google.protobuf.Struct.getDefaultInstance() : databricksConf_;
+        }
+      }
+      /**
+       * <pre>
+       * Databricks job configuration.
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct databricksConf = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+          getDatabricksConfFieldBuilder() {
+        if (databricksConfBuilder_ == null) {
+          databricksConfBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                  getDatabricksConf(),
+                  getParentForChildren(),
+                  isClean());
+          databricksConf_ = null;
+        }
+        return databricksConfBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2314,20 +2392,21 @@ public final class Spark {
   static {
     java.lang.String[] descriptorData = {
       "\n\034flyteidl/plugins/spark.proto\022\020flyteidl" +
-      ".plugins\"B\n\020SparkApplication\".\n\004Type\022\n\n\006" +
-      "PYTHON\020\000\022\010\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\215\003\n" +
-      "\010SparkJob\022@\n\017applicationType\030\001 \001(\0162\'.fly" +
-      "teidl.plugins.SparkApplication.Type\022\033\n\023m" +
-      "ainApplicationFile\030\002 \001(\t\022\021\n\tmainClass\030\003 " +
-      "\001(\t\022<\n\tsparkConf\030\004 \003(\0132).flyteidl.plugin" +
-      "s.SparkJob.SparkConfEntry\022>\n\nhadoopConf\030" +
-      "\005 \003(\0132*.flyteidl.plugins.SparkJob.Hadoop" +
-      "ConfEntry\022\024\n\014executorPath\030\006 \001(\t\022\026\n\016datab" +
-      "ricksConf\030\007 \001(\t\0320\n\016SparkConfEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0321\n\017HadoopConfE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B9Z7" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/pluginsb\006proto3"
+      ".plugins\032\034google/protobuf/struct.proto\"B" +
+      "\n\020SparkApplication\".\n\004Type\022\n\n\006PYTHON\020\000\022\010" +
+      "\n\004JAVA\020\001\022\t\n\005SCALA\020\002\022\005\n\001R\020\003\"\246\003\n\010SparkJob\022" +
+      "@\n\017applicationType\030\001 \001(\0162\'.flyteidl.plug" +
+      "ins.SparkApplication.Type\022\033\n\023mainApplica" +
+      "tionFile\030\002 \001(\t\022\021\n\tmainClass\030\003 \001(\t\022<\n\tspa" +
+      "rkConf\030\004 \003(\0132).flyteidl.plugins.SparkJob" +
+      ".SparkConfEntry\022>\n\nhadoopConf\030\005 \003(\0132*.fl" +
+      "yteidl.plugins.SparkJob.HadoopConfEntry\022" +
+      "\024\n\014executorPath\030\006 \001(\t\022/\n\016databricksConf\030" +
+      "\007 \001(\0132\027.google.protobuf.Struct\0320\n\016SparkC" +
+      "onfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\0321\n\017HadoopConfEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001B9Z7github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2340,6 +2419,7 @@ public final class Spark {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_plugins_SparkApplication_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2365,6 +2445,7 @@ public final class Spark {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_SparkJob_HadoopConfEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    com.google.protobuf.StructProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

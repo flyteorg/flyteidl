@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package flyteidl.plugins;
+import "google/protobuf/struct.proto";
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
@@ -21,8 +22,7 @@ message SparkJob {
     map<string, string> sparkConf = 4;
     map<string, string> hadoopConf = 5;
     string executorPath = 6; // Executor path for Python jobs.
-    // databricksConf is base64 encoded string which stores databricks job configuration.
+    // Databricks job configuration.
     // Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
-    // The config is automatically encoded by flytekit, and decoded in the propeller.
-    string databricksConf = 7;
+    google.protobuf.Struct databricksConf = 7;
 }

@@ -1,3 +1,4 @@
+from google.protobuf import struct_pb2 as _struct_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -40,10 +41,10 @@ class SparkJob(_message.Message):
     MAINCLASS_FIELD_NUMBER: _ClassVar[int]
     SPARKCONF_FIELD_NUMBER: _ClassVar[int]
     applicationType: SparkApplication.Type
-    databricksConf: str
+    databricksConf: _struct_pb2.Struct
     executorPath: str
     hadoopConf: _containers.ScalarMap[str, str]
     mainApplicationFile: str
     mainClass: str
     sparkConf: _containers.ScalarMap[str, str]
-    def __init__(self, applicationType: _Optional[_Union[SparkApplication.Type, str]] = ..., mainApplicationFile: _Optional[str] = ..., mainClass: _Optional[str] = ..., sparkConf: _Optional[_Mapping[str, str]] = ..., hadoopConf: _Optional[_Mapping[str, str]] = ..., executorPath: _Optional[str] = ..., databricksConf: _Optional[str] = ...) -> None: ...
+    def __init__(self, applicationType: _Optional[_Union[SparkApplication.Type, str]] = ..., mainApplicationFile: _Optional[str] = ..., mainClass: _Optional[str] = ..., sparkConf: _Optional[_Mapping[str, str]] = ..., hadoopConf: _Optional[_Mapping[str, str]] = ..., executorPath: _Optional[str] = ..., databricksConf: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...

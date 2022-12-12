@@ -35,6 +35,7 @@
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/struct.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fspark_2eproto
@@ -443,19 +444,14 @@ class SparkJob final :
   ::std::string* release_executorpath();
   void set_allocated_executorpath(::std::string* executorpath);
 
-  // string databricksConf = 7;
+  // .google.protobuf.Struct databricksConf = 7;
+  bool has_databricksconf() const;
   void clear_databricksconf();
   static const int kDatabricksConfFieldNumber = 7;
-  const ::std::string& databricksconf() const;
-  void set_databricksconf(const ::std::string& value);
-  #if LANG_CXX11
-  void set_databricksconf(::std::string&& value);
-  #endif
-  void set_databricksconf(const char* value);
-  void set_databricksconf(const char* value, size_t size);
-  ::std::string* mutable_databricksconf();
-  ::std::string* release_databricksconf();
-  void set_allocated_databricksconf(::std::string* databricksconf);
+  const ::google::protobuf::Struct& databricksconf() const;
+  ::google::protobuf::Struct* release_databricksconf();
+  ::google::protobuf::Struct* mutable_databricksconf();
+  void set_allocated_databricksconf(::google::protobuf::Struct* databricksconf);
 
   // .flyteidl.plugins.SparkApplication.Type applicationType = 1;
   void clear_applicationtype();
@@ -483,7 +479,7 @@ class SparkJob final :
   ::google::protobuf::internal::ArenaStringPtr mainapplicationfile_;
   ::google::protobuf::internal::ArenaStringPtr mainclass_;
   ::google::protobuf::internal::ArenaStringPtr executorpath_;
-  ::google::protobuf::internal::ArenaStringPtr databricksconf_;
+  ::google::protobuf::Struct* databricksconf_;
   int applicationtype_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fspark_2eproto;
@@ -716,56 +712,49 @@ inline void SparkJob::set_allocated_executorpath(::std::string* executorpath) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.executorPath)
 }
 
-// string databricksConf = 7;
-inline void SparkJob::clear_databricksconf() {
-  databricksconf_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .google.protobuf.Struct databricksConf = 7;
+inline bool SparkJob::has_databricksconf() const {
+  return this != internal_default_instance() && databricksconf_ != nullptr;
 }
-inline const ::std::string& SparkJob::databricksconf() const {
+inline const ::google::protobuf::Struct& SparkJob::databricksconf() const {
+  const ::google::protobuf::Struct* p = databricksconf_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.SparkJob.databricksConf)
-  return databricksconf_.GetNoArena();
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Struct*>(
+      &::google::protobuf::_Struct_default_instance_);
 }
-inline void SparkJob::set_databricksconf(const ::std::string& value) {
-  
-  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.SparkJob.databricksConf)
-}
-#if LANG_CXX11
-inline void SparkJob::set_databricksconf(::std::string&& value) {
-  
-  databricksconf_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.SparkJob.databricksConf)
-}
-#endif
-inline void SparkJob::set_databricksconf(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.SparkJob.databricksConf)
-}
-inline void SparkJob::set_databricksconf(const char* value, size_t size) {
-  
-  databricksconf_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.SparkJob.databricksConf)
-}
-inline ::std::string* SparkJob::mutable_databricksconf() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.SparkJob.databricksConf)
-  return databricksconf_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SparkJob::release_databricksconf() {
+inline ::google::protobuf::Struct* SparkJob::release_databricksconf() {
   // @@protoc_insertion_point(field_release:flyteidl.plugins.SparkJob.databricksConf)
   
-  return databricksconf_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::google::protobuf::Struct* temp = databricksconf_;
+  databricksconf_ = nullptr;
+  return temp;
 }
-inline void SparkJob::set_allocated_databricksconf(::std::string* databricksconf) {
-  if (databricksconf != nullptr) {
+inline ::google::protobuf::Struct* SparkJob::mutable_databricksconf() {
+  
+  if (databricksconf_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Struct>(GetArenaNoVirtual());
+    databricksconf_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.SparkJob.databricksConf)
+  return databricksconf_;
+}
+inline void SparkJob::set_allocated_databricksconf(::google::protobuf::Struct* databricksconf) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(databricksconf_);
+  }
+  if (databricksconf) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(databricksconf)->GetArena();
+    if (message_arena != submessage_arena) {
+      databricksconf = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, databricksconf, submessage_arena);
+    }
     
   } else {
     
   }
-  databricksconf_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), databricksconf);
+  databricksconf_ = databricksconf;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.databricksConf)
 }
 
