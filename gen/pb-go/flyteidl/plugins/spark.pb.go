@@ -92,10 +92,10 @@ type SparkJob struct {
 	HadoopConf          map[string]string     `protobuf:"bytes,5,rep,name=hadoopConf,proto3" json:"hadoopConf,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	ExecutorPath        string                `protobuf:"bytes,6,opt,name=executorPath,proto3" json:"executorPath,omitempty"`
 	// Databricks job configuration.
-	// Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+	// Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
 	DatabricksConf *_struct.Struct `protobuf:"bytes,7,opt,name=databricksConf,proto3" json:"databricksConf,omitempty"`
 	// Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-	// This token can be set either in flytepropeller or flytekit
+	// This token can be set in either flytepropeller or flytekit.
 	DatabricksToken      string   `protobuf:"bytes,8,opt,name=databricksToken,proto3" json:"databricksToken,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

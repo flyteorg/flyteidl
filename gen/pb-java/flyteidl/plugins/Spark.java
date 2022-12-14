@@ -663,7 +663,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -672,7 +672,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -681,7 +681,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -691,7 +691,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-     * This token can be set either in flytepropeller or flytekit
+     * This token can be set in either flytepropeller or flytekit.
      * </pre>
      *
      * <code>string databricksToken = 8;</code>
@@ -700,7 +700,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-     * This token can be set either in flytepropeller or flytekit
+     * This token can be set in either flytepropeller or flytekit.
      * </pre>
      *
      * <code>string databricksToken = 8;</code>
@@ -1156,7 +1156,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -1167,7 +1167,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -1178,7 +1178,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks job configuration.
-     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+     * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
      * </pre>
      *
      * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -1192,7 +1192,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-     * This token can be set either in flytepropeller or flytekit
+     * This token can be set in either flytepropeller or flytekit.
      * </pre>
      *
      * <code>string databricksToken = 8;</code>
@@ -1212,7 +1212,7 @@ public final class Spark {
     /**
      * <pre>
      * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-     * This token can be set either in flytepropeller or flytekit
+     * This token can be set in either flytepropeller or flytekit.
      * </pre>
      *
      * <code>string databricksToken = 8;</code>
@@ -2242,7 +2242,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2253,7 +2253,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2268,7 +2268,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2289,7 +2289,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2308,7 +2308,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2331,7 +2331,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2350,7 +2350,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2363,7 +2363,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2379,7 +2379,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks job configuration.
-       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
+       * Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure.
        * </pre>
        *
        * <code>.google.protobuf.Struct databricksConf = 7;</code>
@@ -2402,7 +2402,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-       * This token can be set either in flytepropeller or flytekit
+       * This token can be set in either flytepropeller or flytekit.
        * </pre>
        *
        * <code>string databricksToken = 8;</code>
@@ -2422,7 +2422,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-       * This token can be set either in flytepropeller or flytekit
+       * This token can be set in either flytepropeller or flytekit.
        * </pre>
        *
        * <code>string databricksToken = 8;</code>
@@ -2443,7 +2443,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-       * This token can be set either in flytepropeller or flytekit
+       * This token can be set in either flytepropeller or flytekit.
        * </pre>
        *
        * <code>string databricksToken = 8;</code>
@@ -2461,7 +2461,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-       * This token can be set either in flytepropeller or flytekit
+       * This token can be set in either flytepropeller or flytekit.
        * </pre>
        *
        * <code>string databricksToken = 8;</code>
@@ -2475,7 +2475,7 @@ public final class Spark {
       /**
        * <pre>
        * Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
-       * This token can be set either in flytepropeller or flytekit
+       * This token can be set in either flytepropeller or flytekit.
        * </pre>
        *
        * <code>string databricksToken = 8;</code>
