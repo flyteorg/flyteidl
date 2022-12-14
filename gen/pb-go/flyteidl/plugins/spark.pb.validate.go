@@ -130,6 +130,8 @@ func (m *SparkJob) Validate() error {
 		}
 	}
 
+	// no validation rules for DatabricksToken
+
 	return nil
 }
 

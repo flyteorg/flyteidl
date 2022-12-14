@@ -444,6 +444,20 @@ class SparkJob final :
   ::std::string* release_executorpath();
   void set_allocated_executorpath(::std::string* executorpath);
 
+  // string databricksToken = 8;
+  void clear_databrickstoken();
+  static const int kDatabricksTokenFieldNumber = 8;
+  const ::std::string& databrickstoken() const;
+  void set_databrickstoken(const ::std::string& value);
+  #if LANG_CXX11
+  void set_databrickstoken(::std::string&& value);
+  #endif
+  void set_databrickstoken(const char* value);
+  void set_databrickstoken(const char* value, size_t size);
+  ::std::string* mutable_databrickstoken();
+  ::std::string* release_databrickstoken();
+  void set_allocated_databrickstoken(::std::string* databrickstoken);
+
   // .google.protobuf.Struct databricksConf = 7;
   bool has_databricksconf() const;
   void clear_databricksconf();
@@ -479,6 +493,7 @@ class SparkJob final :
   ::google::protobuf::internal::ArenaStringPtr mainapplicationfile_;
   ::google::protobuf::internal::ArenaStringPtr mainclass_;
   ::google::protobuf::internal::ArenaStringPtr executorpath_;
+  ::google::protobuf::internal::ArenaStringPtr databrickstoken_;
   ::google::protobuf::Struct* databricksconf_;
   int applicationtype_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -756,6 +771,59 @@ inline void SparkJob::set_allocated_databricksconf(::google::protobuf::Struct* d
   }
   databricksconf_ = databricksconf;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.databricksConf)
+}
+
+// string databricksToken = 8;
+inline void SparkJob::clear_databrickstoken() {
+  databrickstoken_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SparkJob::databrickstoken() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.SparkJob.databricksToken)
+  return databrickstoken_.GetNoArena();
+}
+inline void SparkJob::set_databrickstoken(const ::std::string& value) {
+  
+  databrickstoken_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.SparkJob.databricksToken)
+}
+#if LANG_CXX11
+inline void SparkJob::set_databrickstoken(::std::string&& value) {
+  
+  databrickstoken_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.SparkJob.databricksToken)
+}
+#endif
+inline void SparkJob::set_databrickstoken(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  databrickstoken_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.SparkJob.databricksToken)
+}
+inline void SparkJob::set_databrickstoken(const char* value, size_t size) {
+  
+  databrickstoken_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.SparkJob.databricksToken)
+}
+inline ::std::string* SparkJob::mutable_databrickstoken() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.SparkJob.databricksToken)
+  return databrickstoken_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SparkJob::release_databrickstoken() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.SparkJob.databricksToken)
+  
+  return databrickstoken_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SparkJob::set_allocated_databrickstoken(::std::string* databrickstoken) {
+  if (databrickstoken != nullptr) {
+    
+  } else {
+    
+  }
+  databrickstoken_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), databrickstoken);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.SparkJob.databricksToken)
 }
 
 #ifdef __GNUC__

@@ -25,4 +25,7 @@ message SparkJob {
     // Databricks job configuration.
     // Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure
     google.protobuf.Struct databricksConf = 7;
+    // Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
+    // This token can be set either in flytepropeller or flytekit
+    string databricksToken = 8;
 }
