@@ -18,7 +18,7 @@ class SparkApplication(_message.Message):
     def __init__(self) -> None: ...
 
 class SparkJob(_message.Message):
-    __slots__ = ["applicationType", "databricksConf", "databricksToken", "executorPath", "hadoopConf", "mainApplicationFile", "mainClass", "sparkConf"]
+    __slots__ = ["applicationType", "databricksConf", "databricksInstance", "databricksToken", "executorPath", "hadoopConf", "mainApplicationFile", "mainClass", "sparkConf"]
     class HadoopConfEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -35,6 +35,7 @@ class SparkJob(_message.Message):
         def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
     APPLICATIONTYPE_FIELD_NUMBER: _ClassVar[int]
     DATABRICKSCONF_FIELD_NUMBER: _ClassVar[int]
+    DATABRICKSINSTANCE_FIELD_NUMBER: _ClassVar[int]
     DATABRICKSTOKEN_FIELD_NUMBER: _ClassVar[int]
     EXECUTORPATH_FIELD_NUMBER: _ClassVar[int]
     HADOOPCONF_FIELD_NUMBER: _ClassVar[int]
@@ -43,10 +44,11 @@ class SparkJob(_message.Message):
     SPARKCONF_FIELD_NUMBER: _ClassVar[int]
     applicationType: SparkApplication.Type
     databricksConf: _struct_pb2.Struct
+    databricksInstance: str
     databricksToken: str
     executorPath: str
     hadoopConf: _containers.ScalarMap[str, str]
     mainApplicationFile: str
     mainClass: str
     sparkConf: _containers.ScalarMap[str, str]
-    def __init__(self, applicationType: _Optional[_Union[SparkApplication.Type, str]] = ..., mainApplicationFile: _Optional[str] = ..., mainClass: _Optional[str] = ..., sparkConf: _Optional[_Mapping[str, str]] = ..., hadoopConf: _Optional[_Mapping[str, str]] = ..., executorPath: _Optional[str] = ..., databricksConf: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., databricksToken: _Optional[str] = ...) -> None: ...
+    def __init__(self, applicationType: _Optional[_Union[SparkApplication.Type, str]] = ..., mainApplicationFile: _Optional[str] = ..., mainClass: _Optional[str] = ..., sparkConf: _Optional[_Mapping[str, str]] = ..., hadoopConf: _Optional[_Mapping[str, str]] = ..., executorPath: _Optional[str] = ..., databricksConf: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., databricksToken: _Optional[str] = ..., databricksInstance: _Optional[str] = ...) -> None: ...

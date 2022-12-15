@@ -132,6 +132,8 @@ func (m *SparkJob) Validate() error {
 
 	// no validation rules for DatabricksToken
 
+	// no validation rules for DatabricksInstance
+
 	return nil
 }
 

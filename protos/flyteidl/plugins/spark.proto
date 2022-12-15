@@ -28,6 +28,7 @@ message SparkJob {
     // Databricks access token. https://docs.databricks.com/dev-tools/api/latest/authentication.html
     // This token can be set in either flytepropeller or flytekit.
     string databricksToken = 8;
-    // domain name of your deployment. Use the form <account>.cloud.databricks.com.
+    // Domain name of your deployment. Use the form <account>.cloud.databricks.com.
+    // This instance name can be set in either flytepropeller or flytekit.
     string databricksInstance = 9;
 }
