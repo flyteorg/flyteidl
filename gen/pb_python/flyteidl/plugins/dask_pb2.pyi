@@ -5,28 +5,28 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DaskCluster(_message.Message):
-    __slots__ = ["image", "nWorkers", "resources"]
-    IMAGE_FIELD_NUMBER: _ClassVar[int]
-    NWORKERS_FIELD_NUMBER: _ClassVar[int]
-    RESOURCES_FIELD_NUMBER: _ClassVar[int]
-    image: str
-    nWorkers: int
-    resources: _tasks_pb2.Resources
-    def __init__(self, image: _Optional[str] = ..., nWorkers: _Optional[int] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
-
 class DaskJob(_message.Message):
-    __slots__ = ["cluster", "jobPodSpec"]
-    CLUSTER_FIELD_NUMBER: _ClassVar[int]
-    JOBPODSPEC_FIELD_NUMBER: _ClassVar[int]
-    cluster: DaskCluster
-    jobPodSpec: JobPodSpec
-    def __init__(self, jobPodSpec: _Optional[_Union[JobPodSpec, _Mapping]] = ..., cluster: _Optional[_Union[DaskCluster, _Mapping]] = ...) -> None: ...
+    __slots__ = ["scheduler", "workers"]
+    SCHEDULER_FIELD_NUMBER: _ClassVar[int]
+    WORKERS_FIELD_NUMBER: _ClassVar[int]
+    scheduler: Scheduler
+    workers: WorkerGroup
+    def __init__(self, scheduler: _Optional[_Union[Scheduler, _Mapping]] = ..., workers: _Optional[_Union[WorkerGroup, _Mapping]] = ...) -> None: ...
 
-class JobPodSpec(_message.Message):
+class Scheduler(_message.Message):
     __slots__ = ["image", "resources"]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
     image: str
     resources: _tasks_pb2.Resources
     def __init__(self, image: _Optional[str] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
+
+class WorkerGroup(_message.Message):
+    __slots__ = ["image", "number_of_workers", "resources"]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_OF_WORKERS_FIELD_NUMBER: _ClassVar[int]
+    RESOURCES_FIELD_NUMBER: _ClassVar[int]
+    image: str
+    number_of_workers: int
+    resources: _tasks_pb2.Resources
+    def __init__(self, number_of_workers: _Optional[int] = ..., image: _Optional[str] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...

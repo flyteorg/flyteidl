@@ -21,12 +21,12 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-// Custom Proto for Dask Plugin
+// Custom Proto for Dask Plugin.
 type DaskJob struct {
-	// Spec for the job pod
-	JobPodSpec *JobPodSpec `protobuf:"bytes,1,opt,name=jobPodSpec,proto3" json:"jobPodSpec,omitempty"`
-	// Cluster
-	Cluster              *DaskCluster `protobuf:"bytes,2,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	// Spec for the scheduler pod.
+	Scheduler *Scheduler `protobuf:"bytes,1,opt,name=scheduler,proto3" json:"scheduler,omitempty"`
+	// Spec of the default worker group.
+	Workers              *WorkerGroup `protobuf:"bytes,2,opt,name=workers,proto3" json:"workers,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -57,77 +57,76 @@ func (m *DaskJob) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DaskJob proto.InternalMessageInfo
 
-func (m *DaskJob) GetJobPodSpec() *JobPodSpec {
+func (m *DaskJob) GetScheduler() *Scheduler {
 	if m != nil {
-		return m.JobPodSpec
+		return m.Scheduler
 	}
 	return nil
 }
 
-func (m *DaskJob) GetCluster() *DaskCluster {
+func (m *DaskJob) GetWorkers() *WorkerGroup {
 	if m != nil {
-		return m.Cluster
+		return m.Workers
 	}
 	return nil
 }
 
-// Specification for the job pod
-type JobPodSpec struct {
+// Specification for the scheduler pod.
+type Scheduler struct {
 	// Optional image to use. If unset, will use the default image.
 	Image string `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
-	// Resources assigned to the job pod.
+	// Resources assigned to the scheduler pod.
 	Resources            *core.Resources `protobuf:"bytes,2,opt,name=resources,proto3" json:"resources,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
 	XXX_unrecognized     []byte          `json:"-"`
 	XXX_sizecache        int32           `json:"-"`
 }
 
-func (m *JobPodSpec) Reset()         { *m = JobPodSpec{} }
-func (m *JobPodSpec) String() string { return proto.CompactTextString(m) }
-func (*JobPodSpec) ProtoMessage()    {}
-func (*JobPodSpec) Descriptor() ([]byte, []int) {
+func (m *Scheduler) Reset()         { *m = Scheduler{} }
+func (m *Scheduler) String() string { return proto.CompactTextString(m) }
+func (*Scheduler) ProtoMessage()    {}
+func (*Scheduler) Descriptor() ([]byte, []int) {
 	return fileDescriptor_d719e18eb4f4b89f, []int{1}
 }
 
-func (m *JobPodSpec) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_JobPodSpec.Unmarshal(m, b)
+func (m *Scheduler) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Scheduler.Unmarshal(m, b)
 }
-func (m *JobPodSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_JobPodSpec.Marshal(b, m, deterministic)
+func (m *Scheduler) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Scheduler.Marshal(b, m, deterministic)
 }
-func (m *JobPodSpec) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JobPodSpec.Merge(m, src)
+func (m *Scheduler) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Scheduler.Merge(m, src)
 }
-func (m *JobPodSpec) XXX_Size() int {
-	return xxx_messageInfo_JobPodSpec.Size(m)
+func (m *Scheduler) XXX_Size() int {
+	return xxx_messageInfo_Scheduler.Size(m)
 }
-func (m *JobPodSpec) XXX_DiscardUnknown() {
-	xxx_messageInfo_JobPodSpec.DiscardUnknown(m)
+func (m *Scheduler) XXX_DiscardUnknown() {
+	xxx_messageInfo_Scheduler.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_JobPodSpec proto.InternalMessageInfo
+var xxx_messageInfo_Scheduler proto.InternalMessageInfo
 
-func (m *JobPodSpec) GetImage() string {
+func (m *Scheduler) GetImage() string {
 	if m != nil {
 		return m.Image
 	}
 	return ""
 }
 
-func (m *JobPodSpec) GetResources() *core.Resources {
+func (m *Scheduler) GetResources() *core.Resources {
 	if m != nil {
 		return m.Resources
 	}
 	return nil
 }
 
-type DaskCluster struct {
-	// Optional image to use for the scheduler as well as the default worker group. If unset, will use
-	// the default image.
-	Image string `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
-	// Number of workers in the default worker group
-	NWorkers int32 `protobuf:"varint,2,opt,name=nWorkers,proto3" json:"nWorkers,omitempty"`
-	// Resources assigned to the scheduler as well as all pods of the default worker group.
+type WorkerGroup struct {
+	// Number of workers in the group.
+	NumberOfWorkers uint32 `protobuf:"varint,1,opt,name=number_of_workers,json=numberOfWorkers,proto3" json:"number_of_workers,omitempty"`
+	// Optional image to use for the pods of the worker group. If unset, will use the default image.
+	Image string `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`
+	// Resources assigned to the all pods of the worker group.
 	// As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices
 	// it is advised to only set limits. If requests are not explicitly set, the plugin will make
 	// sure to set requests==limits.
@@ -138,46 +137,46 @@ type DaskCluster struct {
 	XXX_sizecache        int32           `json:"-"`
 }
 
-func (m *DaskCluster) Reset()         { *m = DaskCluster{} }
-func (m *DaskCluster) String() string { return proto.CompactTextString(m) }
-func (*DaskCluster) ProtoMessage()    {}
-func (*DaskCluster) Descriptor() ([]byte, []int) {
+func (m *WorkerGroup) Reset()         { *m = WorkerGroup{} }
+func (m *WorkerGroup) String() string { return proto.CompactTextString(m) }
+func (*WorkerGroup) ProtoMessage()    {}
+func (*WorkerGroup) Descriptor() ([]byte, []int) {
 	return fileDescriptor_d719e18eb4f4b89f, []int{2}
 }
 
-func (m *DaskCluster) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DaskCluster.Unmarshal(m, b)
+func (m *WorkerGroup) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_WorkerGroup.Unmarshal(m, b)
 }
-func (m *DaskCluster) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DaskCluster.Marshal(b, m, deterministic)
+func (m *WorkerGroup) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_WorkerGroup.Marshal(b, m, deterministic)
 }
-func (m *DaskCluster) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DaskCluster.Merge(m, src)
+func (m *WorkerGroup) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WorkerGroup.Merge(m, src)
 }
-func (m *DaskCluster) XXX_Size() int {
-	return xxx_messageInfo_DaskCluster.Size(m)
+func (m *WorkerGroup) XXX_Size() int {
+	return xxx_messageInfo_WorkerGroup.Size(m)
 }
-func (m *DaskCluster) XXX_DiscardUnknown() {
-	xxx_messageInfo_DaskCluster.DiscardUnknown(m)
+func (m *WorkerGroup) XXX_DiscardUnknown() {
+	xxx_messageInfo_WorkerGroup.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_DaskCluster proto.InternalMessageInfo
+var xxx_messageInfo_WorkerGroup proto.InternalMessageInfo
 
-func (m *DaskCluster) GetImage() string {
+func (m *WorkerGroup) GetNumberOfWorkers() uint32 {
+	if m != nil {
+		return m.NumberOfWorkers
+	}
+	return 0
+}
+
+func (m *WorkerGroup) GetImage() string {
 	if m != nil {
 		return m.Image
 	}
 	return ""
 }
 
-func (m *DaskCluster) GetNWorkers() int32 {
-	if m != nil {
-		return m.NWorkers
-	}
-	return 0
-}
-
-func (m *DaskCluster) GetResources() *core.Resources {
+func (m *WorkerGroup) GetResources() *core.Resources {
 	if m != nil {
 		return m.Resources
 	}
@@ -186,29 +185,30 @@ func (m *DaskCluster) GetResources() *core.Resources {
 
 func init() {
 	proto.RegisterType((*DaskJob)(nil), "flyteidl.plugins.DaskJob")
-	proto.RegisterType((*JobPodSpec)(nil), "flyteidl.plugins.JobPodSpec")
-	proto.RegisterType((*DaskCluster)(nil), "flyteidl.plugins.DaskCluster")
+	proto.RegisterType((*Scheduler)(nil), "flyteidl.plugins.Scheduler")
+	proto.RegisterType((*WorkerGroup)(nil), "flyteidl.plugins.WorkerGroup")
 }
 
 func init() { proto.RegisterFile("flyteidl/plugins/dask.proto", fileDescriptor_d719e18eb4f4b89f) }
 
 var fileDescriptor_d719e18eb4f4b89f = []byte{
-	// 263 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x91, 0xc1, 0x4b, 0xc3, 0x30,
-	0x14, 0xc6, 0xa9, 0x32, 0xe7, 0xde, 0x2e, 0x12, 0x3c, 0xd4, 0xa9, 0x20, 0x3d, 0x79, 0x31, 0x01,
-	0x05, 0x87, 0xe0, 0x49, 0x3d, 0xed, 0x24, 0xf1, 0x20, 0xec, 0xd6, 0xa4, 0xcf, 0x58, 0xdb, 0xf5,
-	0x95, 0x24, 0x45, 0xbc, 0xf9, 0xa7, 0xcb, 0xda, 0xb5, 0x9d, 0x15, 0x61, 0xc7, 0xf0, 0x7e, 0xdf,
-	0xef, 0x23, 0x7c, 0x70, 0xfa, 0x96, 0x7f, 0x79, 0x4c, 0x93, 0x5c, 0x94, 0x79, 0x65, 0xd2, 0xc2,
-	0x89, 0x24, 0x76, 0x19, 0x2f, 0x2d, 0x79, 0x62, 0x47, 0xed, 0x91, 0x6f, 0x8e, 0xb3, 0x93, 0x0e,
-	0xd7, 0x64, 0x51, 0xf8, 0xd8, 0x65, 0xae, 0x81, 0xa3, 0xef, 0x00, 0xc6, 0x4f, 0xb1, 0xcb, 0x16,
-	0xa4, 0xd8, 0x3d, 0xc0, 0x07, 0xa9, 0x67, 0x4a, 0x5e, 0x4a, 0xd4, 0x61, 0x70, 0x11, 0x5c, 0x4e,
-	0xaf, 0xcf, 0xf8, 0xd0, 0xc6, 0x17, 0x1d, 0x23, 0xb7, 0x78, 0x36, 0x87, 0xb1, 0xce, 0x2b, 0xe7,
-	0xd1, 0x86, 0x7b, 0x75, 0xf4, 0xfc, 0x6f, 0x74, 0xdd, 0xf4, 0xd8, 0x40, 0xb2, 0xa5, 0xa3, 0x25,
-	0x40, 0xaf, 0x64, 0xc7, 0x30, 0x4a, 0x57, 0xb1, 0xc1, 0xba, 0x7f, 0x22, 0x9b, 0x07, 0xbb, 0x85,
-	0x89, 0x45, 0x47, 0x95, 0xd5, 0xe8, 0x36, 0xfa, 0xb0, 0xd7, 0xaf, 0x7f, 0xc5, 0x65, 0x7b, 0x97,
-	0x3d, 0x1a, 0x7d, 0xc2, 0x74, 0xab, 0xf3, 0x1f, 0xf9, 0x0c, 0x0e, 0x8b, 0x57, 0xb2, 0x19, 0xda,
-	0xc6, 0x3d, 0x92, 0xdd, 0xfb, 0x77, 0xf1, 0xfe, 0xce, 0xc5, 0x0f, 0x77, 0xcb, 0xb9, 0x49, 0xfd,
-	0x7b, 0xa5, 0xb8, 0xa6, 0x95, 0xa8, 0x03, 0x64, 0x8d, 0xe8, 0x86, 0x30, 0x58, 0x88, 0x52, 0x5d,
-	0x19, 0x12, 0xc3, 0x29, 0xd5, 0x41, 0xbd, 0xcc, 0xcd, 0x4f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xba,
-	0x86, 0xdc, 0x43, 0xe5, 0x01, 0x00, 0x00,
+	// 277 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x91, 0xcb, 0x4b, 0xf4, 0x30,
+	0x14, 0xc5, 0xe9, 0x7c, 0x7c, 0x0e, 0xcd, 0x20, 0x6a, 0x70, 0x51, 0x1d, 0x04, 0xe9, 0x4a, 0x04,
+	0x13, 0x50, 0x70, 0x98, 0xad, 0x08, 0x82, 0x1b, 0x21, 0x2e, 0x44, 0x37, 0x43, 0x1f, 0xb7, 0x99,
+	0xd2, 0xc7, 0x2d, 0x37, 0x0d, 0xe2, 0xc2, 0xb5, 0xff, 0xb6, 0x4c, 0x6b, 0x5a, 0x19, 0x11, 0x5c,
+	0x86, 0xf3, 0xbb, 0xe7, 0x9c, 0x70, 0xd8, 0x3c, 0x2b, 0xdf, 0x5a, 0xc8, 0xd3, 0x52, 0x36, 0xa5,
+	0xd5, 0x79, 0x6d, 0x64, 0x1a, 0x99, 0x42, 0x34, 0x84, 0x2d, 0xf2, 0x7d, 0x27, 0x8a, 0x2f, 0xf1,
+	0xf8, 0x68, 0xc0, 0x13, 0x24, 0x90, 0x6d, 0x64, 0x0a, 0xd3, 0xc3, 0xe1, 0x3b, 0x9b, 0xde, 0x46,
+	0xa6, 0xb8, 0xc7, 0x98, 0x2f, 0x99, 0x6f, 0x92, 0x35, 0xa4, 0xb6, 0x04, 0x0a, 0xbc, 0x53, 0xef,
+	0x6c, 0x76, 0x39, 0x17, 0xdb, 0x5e, 0xe2, 0xd1, 0x21, 0x6a, 0xa4, 0xf9, 0x82, 0x4d, 0x5f, 0x91,
+	0x0a, 0x20, 0x13, 0x4c, 0xba, 0xc3, 0x93, 0x9f, 0x87, 0x4f, 0x1d, 0x70, 0x47, 0x68, 0x1b, 0xe5,
+	0xe8, 0xf0, 0x99, 0xf9, 0x83, 0x21, 0x3f, 0x64, 0xff, 0xf3, 0x2a, 0xd2, 0xd0, 0x85, 0xfb, 0xaa,
+	0x7f, 0xf0, 0x6b, 0xe6, 0x13, 0x18, 0xb4, 0x94, 0x80, 0x73, 0x0f, 0x46, 0xf7, 0xcd, 0x87, 0x84,
+	0x72, 0xba, 0x1a, 0xd1, 0xf0, 0xc3, 0x63, 0xb3, 0x6f, 0x99, 0xfc, 0x9c, 0x1d, 0xd4, 0xb6, 0x8a,
+	0x81, 0x56, 0x98, 0xad, 0x5c, 0xdb, 0x4d, 0xd2, 0xae, 0xda, 0xeb, 0x85, 0x87, 0xac, 0xe7, 0xcd,
+	0xd8, 0x64, 0xf2, 0x6b, 0x93, 0x7f, 0x7f, 0x6e, 0x72, 0xb3, 0x7c, 0x59, 0xe8, 0xbc, 0x5d, 0xdb,
+	0x58, 0x24, 0x58, 0xc9, 0xee, 0x00, 0x49, 0xcb, 0x61, 0x14, 0x0d, 0xb5, 0x6c, 0xe2, 0x0b, 0x8d,
+	0x72, 0x7b, 0xd6, 0x78, 0xa7, 0x5b, 0xe9, 0xea, 0x33, 0x00, 0x00, 0xff, 0xff, 0x1e, 0xa6, 0x9a,
+	0xc6, 0xf1, 0x01, 0x00, 0x00,
 }

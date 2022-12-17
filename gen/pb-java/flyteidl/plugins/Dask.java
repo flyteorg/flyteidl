@@ -20,57 +20,57 @@ public final class Dask {
 
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    boolean hasJobPodSpec();
+    boolean hasScheduler();
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    flyteidl.plugins.Dask.JobPodSpec getJobPodSpec();
+    flyteidl.plugins.Dask.Scheduler getScheduler();
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder();
+    flyteidl.plugins.Dask.SchedulerOrBuilder getSchedulerOrBuilder();
 
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    boolean hasCluster();
+    boolean hasWorkers();
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    flyteidl.plugins.Dask.DaskCluster getCluster();
+    flyteidl.plugins.Dask.WorkerGroup getWorkers();
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder();
+    flyteidl.plugins.Dask.WorkerGroupOrBuilder getWorkersOrBuilder();
   }
   /**
    * <pre>
-   * Custom Proto for Dask Plugin
+   * Custom Proto for Dask Plugin.
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.DaskJob}
@@ -112,27 +112,27 @@ public final class Dask {
               done = true;
               break;
             case 10: {
-              flyteidl.plugins.Dask.JobPodSpec.Builder subBuilder = null;
-              if (jobPodSpec_ != null) {
-                subBuilder = jobPodSpec_.toBuilder();
+              flyteidl.plugins.Dask.Scheduler.Builder subBuilder = null;
+              if (scheduler_ != null) {
+                subBuilder = scheduler_.toBuilder();
               }
-              jobPodSpec_ = input.readMessage(flyteidl.plugins.Dask.JobPodSpec.parser(), extensionRegistry);
+              scheduler_ = input.readMessage(flyteidl.plugins.Dask.Scheduler.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(jobPodSpec_);
-                jobPodSpec_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(scheduler_);
+                scheduler_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 18: {
-              flyteidl.plugins.Dask.DaskCluster.Builder subBuilder = null;
-              if (cluster_ != null) {
-                subBuilder = cluster_.toBuilder();
+              flyteidl.plugins.Dask.WorkerGroup.Builder subBuilder = null;
+              if (workers_ != null) {
+                subBuilder = workers_.toBuilder();
               }
-              cluster_ = input.readMessage(flyteidl.plugins.Dask.DaskCluster.parser(), extensionRegistry);
+              workers_ = input.readMessage(flyteidl.plugins.Dask.WorkerGroup.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(cluster_);
-                cluster_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(workers_);
+                workers_ = subBuilder.buildPartial();
               }
 
               break;
@@ -169,70 +169,70 @@ public final class Dask {
               flyteidl.plugins.Dask.DaskJob.class, flyteidl.plugins.Dask.DaskJob.Builder.class);
     }
 
-    public static final int JOBPODSPEC_FIELD_NUMBER = 1;
-    private flyteidl.plugins.Dask.JobPodSpec jobPodSpec_;
+    public static final int SCHEDULER_FIELD_NUMBER = 1;
+    private flyteidl.plugins.Dask.Scheduler scheduler_;
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    public boolean hasJobPodSpec() {
-      return jobPodSpec_ != null;
+    public boolean hasScheduler() {
+      return scheduler_ != null;
     }
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    public flyteidl.plugins.Dask.JobPodSpec getJobPodSpec() {
-      return jobPodSpec_ == null ? flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance() : jobPodSpec_;
+    public flyteidl.plugins.Dask.Scheduler getScheduler() {
+      return scheduler_ == null ? flyteidl.plugins.Dask.Scheduler.getDefaultInstance() : scheduler_;
     }
     /**
      * <pre>
-     * Spec for the job pod
+     * Spec for the scheduler pod.
      * </pre>
      *
-     * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+     * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
      */
-    public flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder() {
-      return getJobPodSpec();
+    public flyteidl.plugins.Dask.SchedulerOrBuilder getSchedulerOrBuilder() {
+      return getScheduler();
     }
 
-    public static final int CLUSTER_FIELD_NUMBER = 2;
-    private flyteidl.plugins.Dask.DaskCluster cluster_;
+    public static final int WORKERS_FIELD_NUMBER = 2;
+    private flyteidl.plugins.Dask.WorkerGroup workers_;
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    public boolean hasCluster() {
-      return cluster_ != null;
+    public boolean hasWorkers() {
+      return workers_ != null;
     }
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    public flyteidl.plugins.Dask.DaskCluster getCluster() {
-      return cluster_ == null ? flyteidl.plugins.Dask.DaskCluster.getDefaultInstance() : cluster_;
+    public flyteidl.plugins.Dask.WorkerGroup getWorkers() {
+      return workers_ == null ? flyteidl.plugins.Dask.WorkerGroup.getDefaultInstance() : workers_;
     }
     /**
      * <pre>
-     * Cluster
+     * Spec of the default worker group.
      * </pre>
      *
-     * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+     * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
      */
-    public flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder() {
-      return getCluster();
+    public flyteidl.plugins.Dask.WorkerGroupOrBuilder getWorkersOrBuilder() {
+      return getWorkers();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -249,11 +249,11 @@ public final class Dask {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jobPodSpec_ != null) {
-        output.writeMessage(1, getJobPodSpec());
+      if (scheduler_ != null) {
+        output.writeMessage(1, getScheduler());
       }
-      if (cluster_ != null) {
-        output.writeMessage(2, getCluster());
+      if (workers_ != null) {
+        output.writeMessage(2, getWorkers());
       }
       unknownFields.writeTo(output);
     }
@@ -264,13 +264,13 @@ public final class Dask {
       if (size != -1) return size;
 
       size = 0;
-      if (jobPodSpec_ != null) {
+      if (scheduler_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getJobPodSpec());
+          .computeMessageSize(1, getScheduler());
       }
-      if (cluster_ != null) {
+      if (workers_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCluster());
+          .computeMessageSize(2, getWorkers());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -287,15 +287,15 @@ public final class Dask {
       }
       flyteidl.plugins.Dask.DaskJob other = (flyteidl.plugins.Dask.DaskJob) obj;
 
-      if (hasJobPodSpec() != other.hasJobPodSpec()) return false;
-      if (hasJobPodSpec()) {
-        if (!getJobPodSpec()
-            .equals(other.getJobPodSpec())) return false;
+      if (hasScheduler() != other.hasScheduler()) return false;
+      if (hasScheduler()) {
+        if (!getScheduler()
+            .equals(other.getScheduler())) return false;
       }
-      if (hasCluster() != other.hasCluster()) return false;
-      if (hasCluster()) {
-        if (!getCluster()
-            .equals(other.getCluster())) return false;
+      if (hasWorkers() != other.hasWorkers()) return false;
+      if (hasWorkers()) {
+        if (!getWorkers()
+            .equals(other.getWorkers())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -308,13 +308,13 @@ public final class Dask {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasJobPodSpec()) {
-        hash = (37 * hash) + JOBPODSPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getJobPodSpec().hashCode();
+      if (hasScheduler()) {
+        hash = (37 * hash) + SCHEDULER_FIELD_NUMBER;
+        hash = (53 * hash) + getScheduler().hashCode();
       }
-      if (hasCluster()) {
-        hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
-        hash = (53 * hash) + getCluster().hashCode();
+      if (hasWorkers()) {
+        hash = (37 * hash) + WORKERS_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkers().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -413,7 +413,7 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Custom Proto for Dask Plugin
+     * Custom Proto for Dask Plugin.
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.DaskJob}
@@ -453,17 +453,17 @@ public final class Dask {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jobPodSpecBuilder_ == null) {
-          jobPodSpec_ = null;
+        if (schedulerBuilder_ == null) {
+          scheduler_ = null;
         } else {
-          jobPodSpec_ = null;
-          jobPodSpecBuilder_ = null;
+          scheduler_ = null;
+          schedulerBuilder_ = null;
         }
-        if (clusterBuilder_ == null) {
-          cluster_ = null;
+        if (workersBuilder_ == null) {
+          workers_ = null;
         } else {
-          cluster_ = null;
-          clusterBuilder_ = null;
+          workers_ = null;
+          workersBuilder_ = null;
         }
         return this;
       }
@@ -491,15 +491,15 @@ public final class Dask {
       @java.lang.Override
       public flyteidl.plugins.Dask.DaskJob buildPartial() {
         flyteidl.plugins.Dask.DaskJob result = new flyteidl.plugins.Dask.DaskJob(this);
-        if (jobPodSpecBuilder_ == null) {
-          result.jobPodSpec_ = jobPodSpec_;
+        if (schedulerBuilder_ == null) {
+          result.scheduler_ = scheduler_;
         } else {
-          result.jobPodSpec_ = jobPodSpecBuilder_.build();
+          result.scheduler_ = schedulerBuilder_.build();
         }
-        if (clusterBuilder_ == null) {
-          result.cluster_ = cluster_;
+        if (workersBuilder_ == null) {
+          result.workers_ = workers_;
         } else {
-          result.cluster_ = clusterBuilder_.build();
+          result.workers_ = workersBuilder_.build();
         }
         onBuilt();
         return result;
@@ -549,11 +549,11 @@ public final class Dask {
 
       public Builder mergeFrom(flyteidl.plugins.Dask.DaskJob other) {
         if (other == flyteidl.plugins.Dask.DaskJob.getDefaultInstance()) return this;
-        if (other.hasJobPodSpec()) {
-          mergeJobPodSpec(other.getJobPodSpec());
+        if (other.hasScheduler()) {
+          mergeScheduler(other.getScheduler());
         }
-        if (other.hasCluster()) {
-          mergeCluster(other.getCluster());
+        if (other.hasWorkers()) {
+          mergeWorkers(other.getWorkers());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -584,310 +584,310 @@ public final class Dask {
         return this;
       }
 
-      private flyteidl.plugins.Dask.JobPodSpec jobPodSpec_;
+      private flyteidl.plugins.Dask.Scheduler scheduler_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.JobPodSpec, flyteidl.plugins.Dask.JobPodSpec.Builder, flyteidl.plugins.Dask.JobPodSpecOrBuilder> jobPodSpecBuilder_;
+          flyteidl.plugins.Dask.Scheduler, flyteidl.plugins.Dask.Scheduler.Builder, flyteidl.plugins.Dask.SchedulerOrBuilder> schedulerBuilder_;
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public boolean hasJobPodSpec() {
-        return jobPodSpecBuilder_ != null || jobPodSpec_ != null;
+      public boolean hasScheduler() {
+        return schedulerBuilder_ != null || scheduler_ != null;
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public flyteidl.plugins.Dask.JobPodSpec getJobPodSpec() {
-        if (jobPodSpecBuilder_ == null) {
-          return jobPodSpec_ == null ? flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance() : jobPodSpec_;
+      public flyteidl.plugins.Dask.Scheduler getScheduler() {
+        if (schedulerBuilder_ == null) {
+          return scheduler_ == null ? flyteidl.plugins.Dask.Scheduler.getDefaultInstance() : scheduler_;
         } else {
-          return jobPodSpecBuilder_.getMessage();
+          return schedulerBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public Builder setJobPodSpec(flyteidl.plugins.Dask.JobPodSpec value) {
-        if (jobPodSpecBuilder_ == null) {
+      public Builder setScheduler(flyteidl.plugins.Dask.Scheduler value) {
+        if (schedulerBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          jobPodSpec_ = value;
+          scheduler_ = value;
           onChanged();
         } else {
-          jobPodSpecBuilder_.setMessage(value);
+          schedulerBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public Builder setJobPodSpec(
-          flyteidl.plugins.Dask.JobPodSpec.Builder builderForValue) {
-        if (jobPodSpecBuilder_ == null) {
-          jobPodSpec_ = builderForValue.build();
+      public Builder setScheduler(
+          flyteidl.plugins.Dask.Scheduler.Builder builderForValue) {
+        if (schedulerBuilder_ == null) {
+          scheduler_ = builderForValue.build();
           onChanged();
         } else {
-          jobPodSpecBuilder_.setMessage(builderForValue.build());
+          schedulerBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public Builder mergeJobPodSpec(flyteidl.plugins.Dask.JobPodSpec value) {
-        if (jobPodSpecBuilder_ == null) {
-          if (jobPodSpec_ != null) {
-            jobPodSpec_ =
-              flyteidl.plugins.Dask.JobPodSpec.newBuilder(jobPodSpec_).mergeFrom(value).buildPartial();
+      public Builder mergeScheduler(flyteidl.plugins.Dask.Scheduler value) {
+        if (schedulerBuilder_ == null) {
+          if (scheduler_ != null) {
+            scheduler_ =
+              flyteidl.plugins.Dask.Scheduler.newBuilder(scheduler_).mergeFrom(value).buildPartial();
           } else {
-            jobPodSpec_ = value;
+            scheduler_ = value;
           }
           onChanged();
         } else {
-          jobPodSpecBuilder_.mergeFrom(value);
+          schedulerBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public Builder clearJobPodSpec() {
-        if (jobPodSpecBuilder_ == null) {
-          jobPodSpec_ = null;
+      public Builder clearScheduler() {
+        if (schedulerBuilder_ == null) {
+          scheduler_ = null;
           onChanged();
         } else {
-          jobPodSpec_ = null;
-          jobPodSpecBuilder_ = null;
+          scheduler_ = null;
+          schedulerBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public flyteidl.plugins.Dask.JobPodSpec.Builder getJobPodSpecBuilder() {
+      public flyteidl.plugins.Dask.Scheduler.Builder getSchedulerBuilder() {
         
         onChanged();
-        return getJobPodSpecFieldBuilder().getBuilder();
+        return getSchedulerFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
-      public flyteidl.plugins.Dask.JobPodSpecOrBuilder getJobPodSpecOrBuilder() {
-        if (jobPodSpecBuilder_ != null) {
-          return jobPodSpecBuilder_.getMessageOrBuilder();
+      public flyteidl.plugins.Dask.SchedulerOrBuilder getSchedulerOrBuilder() {
+        if (schedulerBuilder_ != null) {
+          return schedulerBuilder_.getMessageOrBuilder();
         } else {
-          return jobPodSpec_ == null ?
-              flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance() : jobPodSpec_;
+          return scheduler_ == null ?
+              flyteidl.plugins.Dask.Scheduler.getDefaultInstance() : scheduler_;
         }
       }
       /**
        * <pre>
-       * Spec for the job pod
+       * Spec for the scheduler pod.
        * </pre>
        *
-       * <code>.flyteidl.plugins.JobPodSpec jobPodSpec = 1;</code>
+       * <code>.flyteidl.plugins.Scheduler scheduler = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.JobPodSpec, flyteidl.plugins.Dask.JobPodSpec.Builder, flyteidl.plugins.Dask.JobPodSpecOrBuilder> 
-          getJobPodSpecFieldBuilder() {
-        if (jobPodSpecBuilder_ == null) {
-          jobPodSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.Dask.JobPodSpec, flyteidl.plugins.Dask.JobPodSpec.Builder, flyteidl.plugins.Dask.JobPodSpecOrBuilder>(
-                  getJobPodSpec(),
+          flyteidl.plugins.Dask.Scheduler, flyteidl.plugins.Dask.Scheduler.Builder, flyteidl.plugins.Dask.SchedulerOrBuilder> 
+          getSchedulerFieldBuilder() {
+        if (schedulerBuilder_ == null) {
+          schedulerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.Dask.Scheduler, flyteidl.plugins.Dask.Scheduler.Builder, flyteidl.plugins.Dask.SchedulerOrBuilder>(
+                  getScheduler(),
                   getParentForChildren(),
                   isClean());
-          jobPodSpec_ = null;
+          scheduler_ = null;
         }
-        return jobPodSpecBuilder_;
+        return schedulerBuilder_;
       }
 
-      private flyteidl.plugins.Dask.DaskCluster cluster_;
+      private flyteidl.plugins.Dask.WorkerGroup workers_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.DaskCluster, flyteidl.plugins.Dask.DaskCluster.Builder, flyteidl.plugins.Dask.DaskClusterOrBuilder> clusterBuilder_;
+          flyteidl.plugins.Dask.WorkerGroup, flyteidl.plugins.Dask.WorkerGroup.Builder, flyteidl.plugins.Dask.WorkerGroupOrBuilder> workersBuilder_;
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public boolean hasCluster() {
-        return clusterBuilder_ != null || cluster_ != null;
+      public boolean hasWorkers() {
+        return workersBuilder_ != null || workers_ != null;
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public flyteidl.plugins.Dask.DaskCluster getCluster() {
-        if (clusterBuilder_ == null) {
-          return cluster_ == null ? flyteidl.plugins.Dask.DaskCluster.getDefaultInstance() : cluster_;
+      public flyteidl.plugins.Dask.WorkerGroup getWorkers() {
+        if (workersBuilder_ == null) {
+          return workers_ == null ? flyteidl.plugins.Dask.WorkerGroup.getDefaultInstance() : workers_;
         } else {
-          return clusterBuilder_.getMessage();
+          return workersBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public Builder setCluster(flyteidl.plugins.Dask.DaskCluster value) {
-        if (clusterBuilder_ == null) {
+      public Builder setWorkers(flyteidl.plugins.Dask.WorkerGroup value) {
+        if (workersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          cluster_ = value;
+          workers_ = value;
           onChanged();
         } else {
-          clusterBuilder_.setMessage(value);
+          workersBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public Builder setCluster(
-          flyteidl.plugins.Dask.DaskCluster.Builder builderForValue) {
-        if (clusterBuilder_ == null) {
-          cluster_ = builderForValue.build();
+      public Builder setWorkers(
+          flyteidl.plugins.Dask.WorkerGroup.Builder builderForValue) {
+        if (workersBuilder_ == null) {
+          workers_ = builderForValue.build();
           onChanged();
         } else {
-          clusterBuilder_.setMessage(builderForValue.build());
+          workersBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public Builder mergeCluster(flyteidl.plugins.Dask.DaskCluster value) {
-        if (clusterBuilder_ == null) {
-          if (cluster_ != null) {
-            cluster_ =
-              flyteidl.plugins.Dask.DaskCluster.newBuilder(cluster_).mergeFrom(value).buildPartial();
+      public Builder mergeWorkers(flyteidl.plugins.Dask.WorkerGroup value) {
+        if (workersBuilder_ == null) {
+          if (workers_ != null) {
+            workers_ =
+              flyteidl.plugins.Dask.WorkerGroup.newBuilder(workers_).mergeFrom(value).buildPartial();
           } else {
-            cluster_ = value;
+            workers_ = value;
           }
           onChanged();
         } else {
-          clusterBuilder_.mergeFrom(value);
+          workersBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public Builder clearCluster() {
-        if (clusterBuilder_ == null) {
-          cluster_ = null;
+      public Builder clearWorkers() {
+        if (workersBuilder_ == null) {
+          workers_ = null;
           onChanged();
         } else {
-          cluster_ = null;
-          clusterBuilder_ = null;
+          workers_ = null;
+          workersBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public flyteidl.plugins.Dask.DaskCluster.Builder getClusterBuilder() {
+      public flyteidl.plugins.Dask.WorkerGroup.Builder getWorkersBuilder() {
         
         onChanged();
-        return getClusterFieldBuilder().getBuilder();
+        return getWorkersFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
-      public flyteidl.plugins.Dask.DaskClusterOrBuilder getClusterOrBuilder() {
-        if (clusterBuilder_ != null) {
-          return clusterBuilder_.getMessageOrBuilder();
+      public flyteidl.plugins.Dask.WorkerGroupOrBuilder getWorkersOrBuilder() {
+        if (workersBuilder_ != null) {
+          return workersBuilder_.getMessageOrBuilder();
         } else {
-          return cluster_ == null ?
-              flyteidl.plugins.Dask.DaskCluster.getDefaultInstance() : cluster_;
+          return workers_ == null ?
+              flyteidl.plugins.Dask.WorkerGroup.getDefaultInstance() : workers_;
         }
       }
       /**
        * <pre>
-       * Cluster
+       * Spec of the default worker group.
        * </pre>
        *
-       * <code>.flyteidl.plugins.DaskCluster cluster = 2;</code>
+       * <code>.flyteidl.plugins.WorkerGroup workers = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.plugins.Dask.DaskCluster, flyteidl.plugins.Dask.DaskCluster.Builder, flyteidl.plugins.Dask.DaskClusterOrBuilder> 
-          getClusterFieldBuilder() {
-        if (clusterBuilder_ == null) {
-          clusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.plugins.Dask.DaskCluster, flyteidl.plugins.Dask.DaskCluster.Builder, flyteidl.plugins.Dask.DaskClusterOrBuilder>(
-                  getCluster(),
+          flyteidl.plugins.Dask.WorkerGroup, flyteidl.plugins.Dask.WorkerGroup.Builder, flyteidl.plugins.Dask.WorkerGroupOrBuilder> 
+          getWorkersFieldBuilder() {
+        if (workersBuilder_ == null) {
+          workersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.Dask.WorkerGroup, flyteidl.plugins.Dask.WorkerGroup.Builder, flyteidl.plugins.Dask.WorkerGroupOrBuilder>(
+                  getWorkers(),
                   getParentForChildren(),
                   isClean());
-          cluster_ = null;
+          workers_ = null;
         }
-        return clusterBuilder_;
+        return workersBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -942,8 +942,8 @@ public final class Dask {
 
   }
 
-  public interface JobPodSpecOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.JobPodSpec)
+  public interface SchedulerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.Scheduler)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -966,7 +966,7 @@ public final class Dask {
 
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -974,7 +974,7 @@ public final class Dask {
     boolean hasResources();
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -982,7 +982,7 @@ public final class Dask {
     flyteidl.core.Tasks.Resources getResources();
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -991,21 +991,21 @@ public final class Dask {
   }
   /**
    * <pre>
-   * Specification for the job pod
+   * Specification for the scheduler pod.
    * </pre>
    *
-   * Protobuf type {@code flyteidl.plugins.JobPodSpec}
+   * Protobuf type {@code flyteidl.plugins.Scheduler}
    */
-  public  static final class JobPodSpec extends
+  public  static final class Scheduler extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.JobPodSpec)
-      JobPodSpecOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.Scheduler)
+      SchedulerOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use JobPodSpec.newBuilder() to construct.
-    private JobPodSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Scheduler.newBuilder() to construct.
+    private Scheduler(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private JobPodSpec() {
+    private Scheduler() {
       image_ = "";
     }
 
@@ -1014,7 +1014,7 @@ public final class Dask {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private JobPodSpec(
+    private Scheduler(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1073,15 +1073,15 @@ public final class Dask {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_JobPodSpec_descriptor;
+      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_Scheduler_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_JobPodSpec_fieldAccessorTable
+      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_Scheduler_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.Dask.JobPodSpec.class, flyteidl.plugins.Dask.JobPodSpec.Builder.class);
+              flyteidl.plugins.Dask.Scheduler.class, flyteidl.plugins.Dask.Scheduler.Builder.class);
     }
 
     public static final int IMAGE_FIELD_NUMBER = 1;
@@ -1130,7 +1130,7 @@ public final class Dask {
     private flyteidl.core.Tasks.Resources resources_;
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1140,7 +1140,7 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1150,7 +1150,7 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Resources assigned to the job pod.
+     * Resources assigned to the scheduler pod.
      * </pre>
      *
      * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1205,10 +1205,10 @@ public final class Dask {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.Dask.JobPodSpec)) {
+      if (!(obj instanceof flyteidl.plugins.Dask.Scheduler)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.Dask.JobPodSpec other = (flyteidl.plugins.Dask.JobPodSpec) obj;
+      flyteidl.plugins.Dask.Scheduler other = (flyteidl.plugins.Dask.Scheduler) obj;
 
       if (!getImage()
           .equals(other.getImage())) return false;
@@ -1239,69 +1239,69 @@ public final class Dask {
       return hash;
     }
 
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(byte[] data)
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Dask.Scheduler parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseDelimitedFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.JobPodSpec parseFrom(
+    public static flyteidl.plugins.Dask.Scheduler parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1314,7 +1314,7 @@ public final class Dask {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.Dask.JobPodSpec prototype) {
+    public static Builder newBuilder(flyteidl.plugins.Dask.Scheduler prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1331,29 +1331,29 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Specification for the job pod
+     * Specification for the scheduler pod.
      * </pre>
      *
-     * Protobuf type {@code flyteidl.plugins.JobPodSpec}
+     * Protobuf type {@code flyteidl.plugins.Scheduler}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.JobPodSpec)
-        flyteidl.plugins.Dask.JobPodSpecOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.Scheduler)
+        flyteidl.plugins.Dask.SchedulerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_JobPodSpec_descriptor;
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_Scheduler_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_JobPodSpec_fieldAccessorTable
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_Scheduler_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.Dask.JobPodSpec.class, flyteidl.plugins.Dask.JobPodSpec.Builder.class);
+                flyteidl.plugins.Dask.Scheduler.class, flyteidl.plugins.Dask.Scheduler.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.Dask.JobPodSpec.newBuilder()
+      // Construct using flyteidl.plugins.Dask.Scheduler.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1385,17 +1385,17 @@ public final class Dask {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_JobPodSpec_descriptor;
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_Scheduler_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.JobPodSpec getDefaultInstanceForType() {
-        return flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance();
+      public flyteidl.plugins.Dask.Scheduler getDefaultInstanceForType() {
+        return flyteidl.plugins.Dask.Scheduler.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.JobPodSpec build() {
-        flyteidl.plugins.Dask.JobPodSpec result = buildPartial();
+      public flyteidl.plugins.Dask.Scheduler build() {
+        flyteidl.plugins.Dask.Scheduler result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1403,8 +1403,8 @@ public final class Dask {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.JobPodSpec buildPartial() {
-        flyteidl.plugins.Dask.JobPodSpec result = new flyteidl.plugins.Dask.JobPodSpec(this);
+      public flyteidl.plugins.Dask.Scheduler buildPartial() {
+        flyteidl.plugins.Dask.Scheduler result = new flyteidl.plugins.Dask.Scheduler(this);
         result.image_ = image_;
         if (resourcesBuilder_ == null) {
           result.resources_ = resources_;
@@ -1449,16 +1449,16 @@ public final class Dask {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Dask.JobPodSpec) {
-          return mergeFrom((flyteidl.plugins.Dask.JobPodSpec)other);
+        if (other instanceof flyteidl.plugins.Dask.Scheduler) {
+          return mergeFrom((flyteidl.plugins.Dask.Scheduler)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.Dask.JobPodSpec other) {
-        if (other == flyteidl.plugins.Dask.JobPodSpec.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.Dask.Scheduler other) {
+        if (other == flyteidl.plugins.Dask.Scheduler.getDefaultInstance()) return this;
         if (!other.getImage().isEmpty()) {
           image_ = other.image_;
           onChanged();
@@ -1481,11 +1481,11 @@ public final class Dask {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.Dask.JobPodSpec parsedMessage = null;
+        flyteidl.plugins.Dask.Scheduler parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Dask.JobPodSpec) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.Dask.Scheduler) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1589,7 +1589,7 @@ public final class Dask {
           flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> resourcesBuilder_;
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1599,7 +1599,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1613,7 +1613,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1633,7 +1633,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1651,7 +1651,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1673,7 +1673,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1691,7 +1691,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1703,7 +1703,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1718,7 +1718,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the job pod.
+       * Resources assigned to the scheduler pod.
        * </pre>
        *
        * <code>.flyteidl.core.Resources resources = 2;</code>
@@ -1749,82 +1749,80 @@ public final class Dask {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.JobPodSpec)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.Scheduler)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.JobPodSpec)
-    private static final flyteidl.plugins.Dask.JobPodSpec DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.Scheduler)
+    private static final flyteidl.plugins.Dask.Scheduler DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Dask.JobPodSpec();
+      DEFAULT_INSTANCE = new flyteidl.plugins.Dask.Scheduler();
     }
 
-    public static flyteidl.plugins.Dask.JobPodSpec getDefaultInstance() {
+    public static flyteidl.plugins.Dask.Scheduler getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<JobPodSpec>
-        PARSER = new com.google.protobuf.AbstractParser<JobPodSpec>() {
+    private static final com.google.protobuf.Parser<Scheduler>
+        PARSER = new com.google.protobuf.AbstractParser<Scheduler>() {
       @java.lang.Override
-      public JobPodSpec parsePartialFrom(
+      public Scheduler parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new JobPodSpec(input, extensionRegistry);
+        return new Scheduler(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<JobPodSpec> parser() {
+    public static com.google.protobuf.Parser<Scheduler> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<JobPodSpec> getParserForType() {
+    public com.google.protobuf.Parser<Scheduler> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.Dask.JobPodSpec getDefaultInstanceForType() {
+    public flyteidl.plugins.Dask.Scheduler getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DaskClusterOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.DaskCluster)
+  public interface WorkerGroupOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.WorkerGroup)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-     * the default image.
+     * Number of workers in the group.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>uint32 number_of_workers = 1;</code>
+     */
+    int getNumberOfWorkers();
+
+    /**
+     * <pre>
+     * Optional image to use for the pods of the worker group. If unset, will use the default image.
+     * </pre>
+     *
+     * <code>string image = 2;</code>
      */
     java.lang.String getImage();
     /**
      * <pre>
-     * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-     * the default image.
+     * Optional image to use for the pods of the worker group. If unset, will use the default image.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 2;</code>
      */
     com.google.protobuf.ByteString
         getImageBytes();
 
     /**
      * <pre>
-     * Number of workers in the default worker group
-     * </pre>
-     *
-     * <code>int32 nWorkers = 2;</code>
-     */
-    int getNWorkers();
-
-    /**
-     * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -1836,7 +1834,7 @@ public final class Dask {
     boolean hasResources();
     /**
      * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -1848,7 +1846,7 @@ public final class Dask {
     flyteidl.core.Tasks.Resources getResources();
     /**
      * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -1860,18 +1858,18 @@ public final class Dask {
     flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
   }
   /**
-   * Protobuf type {@code flyteidl.plugins.DaskCluster}
+   * Protobuf type {@code flyteidl.plugins.WorkerGroup}
    */
-  public  static final class DaskCluster extends
+  public  static final class WorkerGroup extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.plugins.DaskCluster)
-      DaskClusterOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.WorkerGroup)
+      WorkerGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DaskCluster.newBuilder() to construct.
-    private DaskCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use WorkerGroup.newBuilder() to construct.
+    private WorkerGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DaskCluster() {
+    private WorkerGroup() {
       image_ = "";
     }
 
@@ -1880,7 +1878,7 @@ public final class Dask {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DaskCluster(
+    private WorkerGroup(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1899,15 +1897,15 @@ public final class Dask {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              numberOfWorkers_ = input.readUInt32();
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               image_ = s;
-              break;
-            }
-            case 16: {
-
-              nWorkers_ = input.readInt32();
               break;
             }
             case 26: {
@@ -1944,26 +1942,38 @@ public final class Dask {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskCluster_descriptor;
+      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_WorkerGroup_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable
+      return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_WorkerGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.plugins.Dask.DaskCluster.class, flyteidl.plugins.Dask.DaskCluster.Builder.class);
+              flyteidl.plugins.Dask.WorkerGroup.class, flyteidl.plugins.Dask.WorkerGroup.Builder.class);
     }
 
-    public static final int IMAGE_FIELD_NUMBER = 1;
+    public static final int NUMBER_OF_WORKERS_FIELD_NUMBER = 1;
+    private int numberOfWorkers_;
+    /**
+     * <pre>
+     * Number of workers in the group.
+     * </pre>
+     *
+     * <code>uint32 number_of_workers = 1;</code>
+     */
+    public int getNumberOfWorkers() {
+      return numberOfWorkers_;
+    }
+
+    public static final int IMAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object image_;
     /**
      * <pre>
-     * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-     * the default image.
+     * Optional image to use for the pods of the worker group. If unset, will use the default image.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 2;</code>
      */
     public java.lang.String getImage() {
       java.lang.Object ref = image_;
@@ -1979,11 +1989,10 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-     * the default image.
+     * Optional image to use for the pods of the worker group. If unset, will use the default image.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 2;</code>
      */
     public com.google.protobuf.ByteString
         getImageBytes() {
@@ -1999,24 +2008,11 @@ public final class Dask {
       }
     }
 
-    public static final int NWORKERS_FIELD_NUMBER = 2;
-    private int nWorkers_;
-    /**
-     * <pre>
-     * Number of workers in the default worker group
-     * </pre>
-     *
-     * <code>int32 nWorkers = 2;</code>
-     */
-    public int getNWorkers() {
-      return nWorkers_;
-    }
-
     public static final int RESOURCES_FIELD_NUMBER = 3;
     private flyteidl.core.Tasks.Resources resources_;
     /**
      * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -2030,7 +2026,7 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -2044,7 +2040,7 @@ public final class Dask {
     }
     /**
      * <pre>
-     * Resources assigned to the scheduler as well as all pods of the default worker group.
+     * Resources assigned to the all pods of the worker group.
      * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
      * it is advised to only set limits. If requests are not explicitly set, the plugin will make
      * sure to set requests==limits.
@@ -2071,11 +2067,11 @@ public final class Dask {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getImageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, image_);
+      if (numberOfWorkers_ != 0) {
+        output.writeUInt32(1, numberOfWorkers_);
       }
-      if (nWorkers_ != 0) {
-        output.writeInt32(2, nWorkers_);
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, image_);
       }
       if (resources_ != null) {
         output.writeMessage(3, getResources());
@@ -2089,12 +2085,12 @@ public final class Dask {
       if (size != -1) return size;
 
       size = 0;
-      if (!getImageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, image_);
-      }
-      if (nWorkers_ != 0) {
+      if (numberOfWorkers_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, nWorkers_);
+          .computeUInt32Size(1, numberOfWorkers_);
+      }
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, image_);
       }
       if (resources_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -2110,15 +2106,15 @@ public final class Dask {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.plugins.Dask.DaskCluster)) {
+      if (!(obj instanceof flyteidl.plugins.Dask.WorkerGroup)) {
         return super.equals(obj);
       }
-      flyteidl.plugins.Dask.DaskCluster other = (flyteidl.plugins.Dask.DaskCluster) obj;
+      flyteidl.plugins.Dask.WorkerGroup other = (flyteidl.plugins.Dask.WorkerGroup) obj;
 
+      if (getNumberOfWorkers()
+          != other.getNumberOfWorkers()) return false;
       if (!getImage()
           .equals(other.getImage())) return false;
-      if (getNWorkers()
-          != other.getNWorkers()) return false;
       if (hasResources() != other.hasResources()) return false;
       if (hasResources()) {
         if (!getResources()
@@ -2135,10 +2131,10 @@ public final class Dask {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NUMBER_OF_WORKERS_FIELD_NUMBER;
+      hash = (53 * hash) + getNumberOfWorkers();
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + NWORKERS_FIELD_NUMBER;
-      hash = (53 * hash) + getNWorkers();
       if (hasResources()) {
         hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getResources().hashCode();
@@ -2148,69 +2144,69 @@ public final class Dask {
       return hash;
     }
 
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(byte[] data)
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.plugins.Dask.WorkerGroup parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseDelimitedFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.plugins.Dask.DaskCluster parseFrom(
+    public static flyteidl.plugins.Dask.WorkerGroup parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2223,7 +2219,7 @@ public final class Dask {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.plugins.Dask.DaskCluster prototype) {
+    public static Builder newBuilder(flyteidl.plugins.Dask.WorkerGroup prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2239,26 +2235,26 @@ public final class Dask {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.plugins.DaskCluster}
+     * Protobuf type {@code flyteidl.plugins.WorkerGroup}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.DaskCluster)
-        flyteidl.plugins.Dask.DaskClusterOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.WorkerGroup)
+        flyteidl.plugins.Dask.WorkerGroupOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskCluster_descriptor;
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_WorkerGroup_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_WorkerGroup_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.plugins.Dask.DaskCluster.class, flyteidl.plugins.Dask.DaskCluster.Builder.class);
+                flyteidl.plugins.Dask.WorkerGroup.class, flyteidl.plugins.Dask.WorkerGroup.Builder.class);
       }
 
-      // Construct using flyteidl.plugins.Dask.DaskCluster.newBuilder()
+      // Construct using flyteidl.plugins.Dask.WorkerGroup.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2276,9 +2272,9 @@ public final class Dask {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        image_ = "";
+        numberOfWorkers_ = 0;
 
-        nWorkers_ = 0;
+        image_ = "";
 
         if (resourcesBuilder_ == null) {
           resources_ = null;
@@ -2292,17 +2288,17 @@ public final class Dask {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_DaskCluster_descriptor;
+        return flyteidl.plugins.Dask.internal_static_flyteidl_plugins_WorkerGroup_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.DaskCluster getDefaultInstanceForType() {
-        return flyteidl.plugins.Dask.DaskCluster.getDefaultInstance();
+      public flyteidl.plugins.Dask.WorkerGroup getDefaultInstanceForType() {
+        return flyteidl.plugins.Dask.WorkerGroup.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.DaskCluster build() {
-        flyteidl.plugins.Dask.DaskCluster result = buildPartial();
+      public flyteidl.plugins.Dask.WorkerGroup build() {
+        flyteidl.plugins.Dask.WorkerGroup result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2310,10 +2306,10 @@ public final class Dask {
       }
 
       @java.lang.Override
-      public flyteidl.plugins.Dask.DaskCluster buildPartial() {
-        flyteidl.plugins.Dask.DaskCluster result = new flyteidl.plugins.Dask.DaskCluster(this);
+      public flyteidl.plugins.Dask.WorkerGroup buildPartial() {
+        flyteidl.plugins.Dask.WorkerGroup result = new flyteidl.plugins.Dask.WorkerGroup(this);
+        result.numberOfWorkers_ = numberOfWorkers_;
         result.image_ = image_;
-        result.nWorkers_ = nWorkers_;
         if (resourcesBuilder_ == null) {
           result.resources_ = resources_;
         } else {
@@ -2357,22 +2353,22 @@ public final class Dask {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.plugins.Dask.DaskCluster) {
-          return mergeFrom((flyteidl.plugins.Dask.DaskCluster)other);
+        if (other instanceof flyteidl.plugins.Dask.WorkerGroup) {
+          return mergeFrom((flyteidl.plugins.Dask.WorkerGroup)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.plugins.Dask.DaskCluster other) {
-        if (other == flyteidl.plugins.Dask.DaskCluster.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.plugins.Dask.WorkerGroup other) {
+        if (other == flyteidl.plugins.Dask.WorkerGroup.getDefaultInstance()) return this;
+        if (other.getNumberOfWorkers() != 0) {
+          setNumberOfWorkers(other.getNumberOfWorkers());
+        }
         if (!other.getImage().isEmpty()) {
           image_ = other.image_;
           onChanged();
-        }
-        if (other.getNWorkers() != 0) {
-          setNWorkers(other.getNWorkers());
         }
         if (other.hasResources()) {
           mergeResources(other.getResources());
@@ -2392,11 +2388,11 @@ public final class Dask {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.plugins.Dask.DaskCluster parsedMessage = null;
+        flyteidl.plugins.Dask.WorkerGroup parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.plugins.Dask.DaskCluster) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.plugins.Dask.WorkerGroup) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2406,14 +2402,51 @@ public final class Dask {
         return this;
       }
 
+      private int numberOfWorkers_ ;
+      /**
+       * <pre>
+       * Number of workers in the group.
+       * </pre>
+       *
+       * <code>uint32 number_of_workers = 1;</code>
+       */
+      public int getNumberOfWorkers() {
+        return numberOfWorkers_;
+      }
+      /**
+       * <pre>
+       * Number of workers in the group.
+       * </pre>
+       *
+       * <code>uint32 number_of_workers = 1;</code>
+       */
+      public Builder setNumberOfWorkers(int value) {
+        
+        numberOfWorkers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Number of workers in the group.
+       * </pre>
+       *
+       * <code>uint32 number_of_workers = 1;</code>
+       */
+      public Builder clearNumberOfWorkers() {
+        
+        numberOfWorkers_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object image_ = "";
       /**
        * <pre>
-       * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-       * the default image.
+       * Optional image to use for the pods of the worker group. If unset, will use the default image.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 2;</code>
        */
       public java.lang.String getImage() {
         java.lang.Object ref = image_;
@@ -2429,11 +2462,10 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-       * the default image.
+       * Optional image to use for the pods of the worker group. If unset, will use the default image.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 2;</code>
        */
       public com.google.protobuf.ByteString
           getImageBytes() {
@@ -2450,11 +2482,10 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-       * the default image.
+       * Optional image to use for the pods of the worker group. If unset, will use the default image.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 2;</code>
        */
       public Builder setImage(
           java.lang.String value) {
@@ -2468,11 +2499,10 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-       * the default image.
+       * Optional image to use for the pods of the worker group. If unset, will use the default image.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 2;</code>
        */
       public Builder clearImage() {
         
@@ -2482,11 +2512,10 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Optional image to use for the scheduler as well as the default worker group. If unset, will use 
-       * the default image.
+       * Optional image to use for the pods of the worker group. If unset, will use the default image.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 2;</code>
        */
       public Builder setImageBytes(
           com.google.protobuf.ByteString value) {
@@ -2500,50 +2529,12 @@ public final class Dask {
         return this;
       }
 
-      private int nWorkers_ ;
-      /**
-       * <pre>
-       * Number of workers in the default worker group
-       * </pre>
-       *
-       * <code>int32 nWorkers = 2;</code>
-       */
-      public int getNWorkers() {
-        return nWorkers_;
-      }
-      /**
-       * <pre>
-       * Number of workers in the default worker group
-       * </pre>
-       *
-       * <code>int32 nWorkers = 2;</code>
-       */
-      public Builder setNWorkers(int value) {
-        
-        nWorkers_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Number of workers in the default worker group
-       * </pre>
-       *
-       * <code>int32 nWorkers = 2;</code>
-       */
-      public Builder clearNWorkers() {
-        
-        nWorkers_ = 0;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.Tasks.Resources resources_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> resourcesBuilder_;
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2557,7 +2548,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2575,7 +2566,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2599,7 +2590,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2621,7 +2612,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2647,7 +2638,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2669,7 +2660,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2685,7 +2676,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2704,7 +2695,7 @@ public final class Dask {
       }
       /**
        * <pre>
-       * Resources assigned to the scheduler as well as all pods of the default worker group.
+       * Resources assigned to the all pods of the worker group.
        * As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices 
        * it is advised to only set limits. If requests are not explicitly set, the plugin will make
        * sure to set requests==limits.
@@ -2739,41 +2730,41 @@ public final class Dask {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.DaskCluster)
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.WorkerGroup)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskCluster)
-    private static final flyteidl.plugins.Dask.DaskCluster DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.WorkerGroup)
+    private static final flyteidl.plugins.Dask.WorkerGroup DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.plugins.Dask.DaskCluster();
+      DEFAULT_INSTANCE = new flyteidl.plugins.Dask.WorkerGroup();
     }
 
-    public static flyteidl.plugins.Dask.DaskCluster getDefaultInstance() {
+    public static flyteidl.plugins.Dask.WorkerGroup getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DaskCluster>
-        PARSER = new com.google.protobuf.AbstractParser<DaskCluster>() {
+    private static final com.google.protobuf.Parser<WorkerGroup>
+        PARSER = new com.google.protobuf.AbstractParser<WorkerGroup>() {
       @java.lang.Override
-      public DaskCluster parsePartialFrom(
+      public WorkerGroup parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DaskCluster(input, extensionRegistry);
+        return new WorkerGroup(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DaskCluster> parser() {
+    public static com.google.protobuf.Parser<WorkerGroup> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DaskCluster> getParserForType() {
+    public com.google.protobuf.Parser<WorkerGroup> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.plugins.Dask.DaskCluster getDefaultInstanceForType() {
+    public flyteidl.plugins.Dask.WorkerGroup getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2785,15 +2776,15 @@ public final class Dask {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_plugins_DaskJob_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_JobPodSpec_descriptor;
+    internal_static_flyteidl_plugins_Scheduler_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_JobPodSpec_fieldAccessorTable;
+      internal_static_flyteidl_plugins_Scheduler_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_plugins_DaskCluster_descriptor;
+    internal_static_flyteidl_plugins_WorkerGroup_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable;
+      internal_static_flyteidl_plugins_WorkerGroup_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2804,16 +2795,16 @@ public final class Dask {
   static {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/plugins/dask.proto\022\020flyteidl." +
-      "plugins\032\031flyteidl/core/tasks.proto\"k\n\007Da" +
-      "skJob\0220\n\njobPodSpec\030\001 \001(\0132\034.flyteidl.plu" +
-      "gins.JobPodSpec\022.\n\007cluster\030\002 \001(\0132\035.flyte" +
-      "idl.plugins.DaskCluster\"H\n\nJobPodSpec\022\r\n" +
-      "\005image\030\001 \001(\t\022+\n\tresources\030\002 \001(\0132\030.flytei" +
-      "dl.core.Resources\"[\n\013DaskCluster\022\r\n\005imag" +
-      "e\030\001 \001(\t\022\020\n\010nWorkers\030\002 \001(\005\022+\n\tresources\030\003" +
-      " \001(\0132\030.flyteidl.core.ResourcesB9Z7github" +
-      ".com/flyteorg/flyteidl/gen/pb-go/flyteid" +
-      "l/pluginsb\006proto3"
+      "plugins\032\031flyteidl/core/tasks.proto\"i\n\007Da" +
+      "skJob\022.\n\tscheduler\030\001 \001(\0132\033.flyteidl.plug" +
+      "ins.Scheduler\022.\n\007workers\030\002 \001(\0132\035.flyteid" +
+      "l.plugins.WorkerGroup\"G\n\tScheduler\022\r\n\005im" +
+      "age\030\001 \001(\t\022+\n\tresources\030\002 \001(\0132\030.flyteidl." +
+      "core.Resources\"d\n\013WorkerGroup\022\031\n\021number_" +
+      "of_workers\030\001 \001(\r\022\r\n\005image\030\002 \001(\t\022+\n\tresou" +
+      "rces\030\003 \001(\0132\030.flyteidl.core.ResourcesB9Z7" +
+      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
+      "lyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2833,19 +2824,19 @@ public final class Dask {
     internal_static_flyteidl_plugins_DaskJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DaskJob_descriptor,
-        new java.lang.String[] { "JobPodSpec", "Cluster", });
-    internal_static_flyteidl_plugins_JobPodSpec_descriptor =
+        new java.lang.String[] { "Scheduler", "Workers", });
+    internal_static_flyteidl_plugins_Scheduler_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_flyteidl_plugins_JobPodSpec_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_Scheduler_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_JobPodSpec_descriptor,
+        internal_static_flyteidl_plugins_Scheduler_descriptor,
         new java.lang.String[] { "Image", "Resources", });
-    internal_static_flyteidl_plugins_DaskCluster_descriptor =
+    internal_static_flyteidl_plugins_WorkerGroup_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_flyteidl_plugins_DaskCluster_fieldAccessorTable = new
+    internal_static_flyteidl_plugins_WorkerGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_plugins_DaskCluster_descriptor,
-        new java.lang.String[] { "Image", "NWorkers", "Resources", });
+        internal_static_flyteidl_plugins_WorkerGroup_descriptor,
+        new java.lang.String[] { "NumberOfWorkers", "Image", "Resources", });
     flyteidl.core.Tasks.getDescriptor();
   }
 
