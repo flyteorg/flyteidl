@@ -120,9 +120,10 @@ var _ interface {
 	ErrorName() string
 } = DaskJobValidationError{}
 
-// Validate checks the field values on Scheduler with the rules defined in the
-// proto definition for this message. If any rules are violated, an error is returned.
-func (m *Scheduler) Validate() error {
+// Validate checks the field values on DaskScheduler with the rules defined in
+// the proto definition for this message. If any rules are violated, an error
+// is returned.
+func (m *DaskScheduler) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -131,7 +132,7 @@ func (m *Scheduler) Validate() error {
 
 	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return SchedulerValidationError{
+			return DaskSchedulerValidationError{
 				field:  "Resources",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -142,9 +143,9 @@ func (m *Scheduler) Validate() error {
 	return nil
 }
 
-// SchedulerValidationError is the validation error returned by
-// Scheduler.Validate if the designated constraints aren't met.
-type SchedulerValidationError struct {
+// DaskSchedulerValidationError is the validation error returned by
+// DaskScheduler.Validate if the designated constraints aren't met.
+type DaskSchedulerValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -152,22 +153,22 @@ type SchedulerValidationError struct {
 }
 
 // Field function returns field value.
-func (e SchedulerValidationError) Field() string { return e.field }
+func (e DaskSchedulerValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e SchedulerValidationError) Reason() string { return e.reason }
+func (e DaskSchedulerValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e SchedulerValidationError) Cause() error { return e.cause }
+func (e DaskSchedulerValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e SchedulerValidationError) Key() bool { return e.key }
+func (e DaskSchedulerValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e SchedulerValidationError) ErrorName() string { return "SchedulerValidationError" }
+func (e DaskSchedulerValidationError) ErrorName() string { return "DaskSchedulerValidationError" }
 
 // Error satisfies the builtin error interface
-func (e SchedulerValidationError) Error() string {
+func (e DaskSchedulerValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -179,14 +180,14 @@ func (e SchedulerValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sScheduler.%s: %s%s",
+		"invalid %sDaskScheduler.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = SchedulerValidationError{}
+var _ error = DaskSchedulerValidationError{}
 
 var _ interface {
 	Field() string
@@ -194,12 +195,12 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = SchedulerValidationError{}
+} = DaskSchedulerValidationError{}
 
-// Validate checks the field values on WorkerGroup with the rules defined in
-// the proto definition for this message. If any rules are violated, an error
-// is returned.
-func (m *WorkerGroup) Validate() error {
+// Validate checks the field values on DaskWorkerGroup with the rules defined
+// in the proto definition for this message. If any rules are violated, an
+// error is returned.
+func (m *DaskWorkerGroup) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -210,7 +211,7 @@ func (m *WorkerGroup) Validate() error {
 
 	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
-			return WorkerGroupValidationError{
+			return DaskWorkerGroupValidationError{
 				field:  "Resources",
 				reason: "embedded message failed validation",
 				cause:  err,
@@ -221,9 +222,9 @@ func (m *WorkerGroup) Validate() error {
 	return nil
 }
 
-// WorkerGroupValidationError is the validation error returned by
-// WorkerGroup.Validate if the designated constraints aren't met.
-type WorkerGroupValidationError struct {
+// DaskWorkerGroupValidationError is the validation error returned by
+// DaskWorkerGroup.Validate if the designated constraints aren't met.
+type DaskWorkerGroupValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -231,22 +232,22 @@ type WorkerGroupValidationError struct {
 }
 
 // Field function returns field value.
-func (e WorkerGroupValidationError) Field() string { return e.field }
+func (e DaskWorkerGroupValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e WorkerGroupValidationError) Reason() string { return e.reason }
+func (e DaskWorkerGroupValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e WorkerGroupValidationError) Cause() error { return e.cause }
+func (e DaskWorkerGroupValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e WorkerGroupValidationError) Key() bool { return e.key }
+func (e DaskWorkerGroupValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e WorkerGroupValidationError) ErrorName() string { return "WorkerGroupValidationError" }
+func (e DaskWorkerGroupValidationError) ErrorName() string { return "DaskWorkerGroupValidationError" }
 
 // Error satisfies the builtin error interface
-func (e WorkerGroupValidationError) Error() string {
+func (e DaskWorkerGroupValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -258,14 +259,14 @@ func (e WorkerGroupValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sWorkerGroup.%s: %s%s",
+		"invalid %sDaskWorkerGroup.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = WorkerGroupValidationError{}
+var _ error = DaskWorkerGroupValidationError{}
 
 var _ interface {
 	Field() string
@@ -273,4 +274,4 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = WorkerGroupValidationError{}
+} = DaskWorkerGroupValidationError{}

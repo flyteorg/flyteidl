@@ -9,11 +9,11 @@ class DaskJob(_message.Message):
     __slots__ = ["scheduler", "workers"]
     SCHEDULER_FIELD_NUMBER: _ClassVar[int]
     WORKERS_FIELD_NUMBER: _ClassVar[int]
-    scheduler: Scheduler
-    workers: WorkerGroup
-    def __init__(self, scheduler: _Optional[_Union[Scheduler, _Mapping]] = ..., workers: _Optional[_Union[WorkerGroup, _Mapping]] = ...) -> None: ...
+    scheduler: DaskScheduler
+    workers: DaskWorkerGroup
+    def __init__(self, scheduler: _Optional[_Union[DaskScheduler, _Mapping]] = ..., workers: _Optional[_Union[DaskWorkerGroup, _Mapping]] = ...) -> None: ...
 
-class Scheduler(_message.Message):
+class DaskScheduler(_message.Message):
     __slots__ = ["image", "resources"]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     RESOURCES_FIELD_NUMBER: _ClassVar[int]
@@ -21,7 +21,7 @@ class Scheduler(_message.Message):
     resources: _tasks_pb2.Resources
     def __init__(self, image: _Optional[str] = ..., resources: _Optional[_Union[_tasks_pb2.Resources, _Mapping]] = ...) -> None: ...
 
-class WorkerGroup(_message.Message):
+class DaskWorkerGroup(_message.Message):
     __slots__ = ["image", "number_of_workers", "resources"]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
     NUMBER_OF_WORKERS_FIELD_NUMBER: _ClassVar[int]

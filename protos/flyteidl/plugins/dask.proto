@@ -10,14 +10,14 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 // Custom Proto for Dask Plugin.
 message DaskJob {
     // Spec for the scheduler pod.
-    Scheduler scheduler = 1; 
+    DaskScheduler scheduler = 1; 
 
     // Spec of the default worker group.
-    WorkerGroup workers = 2;
+    DaskWorkerGroup workers = 2;
 }
 
 // Specification for the scheduler pod.
-message Scheduler {
+message DaskScheduler {
     // Optional image to use. If unset, will use the default image.
     string image = 1;
 
@@ -25,7 +25,7 @@ message Scheduler {
     core.Resources resources = 2;
 }
 
-message WorkerGroup {
+message DaskWorkerGroup {
     // Number of workers in the group.
     uint32 number_of_workers = 1;
 

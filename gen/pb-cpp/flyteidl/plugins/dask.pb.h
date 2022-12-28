@@ -54,19 +54,19 @@ namespace plugins {
 class DaskJob;
 class DaskJobDefaultTypeInternal;
 extern DaskJobDefaultTypeInternal _DaskJob_default_instance_;
-class Scheduler;
-class SchedulerDefaultTypeInternal;
-extern SchedulerDefaultTypeInternal _Scheduler_default_instance_;
-class WorkerGroup;
-class WorkerGroupDefaultTypeInternal;
-extern WorkerGroupDefaultTypeInternal _WorkerGroup_default_instance_;
+class DaskScheduler;
+class DaskSchedulerDefaultTypeInternal;
+extern DaskSchedulerDefaultTypeInternal _DaskScheduler_default_instance_;
+class DaskWorkerGroup;
+class DaskWorkerGroupDefaultTypeInternal;
+extern DaskWorkerGroupDefaultTypeInternal _DaskWorkerGroup_default_instance_;
 }  // namespace plugins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::DaskJob* Arena::CreateMaybeMessage<::flyteidl::plugins::DaskJob>(Arena*);
-template<> ::flyteidl::plugins::Scheduler* Arena::CreateMaybeMessage<::flyteidl::plugins::Scheduler>(Arena*);
-template<> ::flyteidl::plugins::WorkerGroup* Arena::CreateMaybeMessage<::flyteidl::plugins::WorkerGroup>(Arena*);
+template<> ::flyteidl::plugins::DaskScheduler* Arena::CreateMaybeMessage<::flyteidl::plugins::DaskScheduler>(Arena*);
+template<> ::flyteidl::plugins::DaskWorkerGroup* Arena::CreateMaybeMessage<::flyteidl::plugins::DaskWorkerGroup>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -169,55 +169,55 @@ class DaskJob final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.plugins.Scheduler scheduler = 1;
+  // .flyteidl.plugins.DaskScheduler scheduler = 1;
   bool has_scheduler() const;
   void clear_scheduler();
   static const int kSchedulerFieldNumber = 1;
-  const ::flyteidl::plugins::Scheduler& scheduler() const;
-  ::flyteidl::plugins::Scheduler* release_scheduler();
-  ::flyteidl::plugins::Scheduler* mutable_scheduler();
-  void set_allocated_scheduler(::flyteidl::plugins::Scheduler* scheduler);
+  const ::flyteidl::plugins::DaskScheduler& scheduler() const;
+  ::flyteidl::plugins::DaskScheduler* release_scheduler();
+  ::flyteidl::plugins::DaskScheduler* mutable_scheduler();
+  void set_allocated_scheduler(::flyteidl::plugins::DaskScheduler* scheduler);
 
-  // .flyteidl.plugins.WorkerGroup workers = 2;
+  // .flyteidl.plugins.DaskWorkerGroup workers = 2;
   bool has_workers() const;
   void clear_workers();
   static const int kWorkersFieldNumber = 2;
-  const ::flyteidl::plugins::WorkerGroup& workers() const;
-  ::flyteidl::plugins::WorkerGroup* release_workers();
-  ::flyteidl::plugins::WorkerGroup* mutable_workers();
-  void set_allocated_workers(::flyteidl::plugins::WorkerGroup* workers);
+  const ::flyteidl::plugins::DaskWorkerGroup& workers() const;
+  ::flyteidl::plugins::DaskWorkerGroup* release_workers();
+  ::flyteidl::plugins::DaskWorkerGroup* mutable_workers();
+  void set_allocated_workers(::flyteidl::plugins::DaskWorkerGroup* workers);
 
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskJob)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::plugins::Scheduler* scheduler_;
-  ::flyteidl::plugins::WorkerGroup* workers_;
+  ::flyteidl::plugins::DaskScheduler* scheduler_;
+  ::flyteidl::plugins::DaskWorkerGroup* workers_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fdask_2eproto;
 };
 // -------------------------------------------------------------------
 
-class Scheduler final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.Scheduler) */ {
+class DaskScheduler final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.DaskScheduler) */ {
  public:
-  Scheduler();
-  virtual ~Scheduler();
+  DaskScheduler();
+  virtual ~DaskScheduler();
 
-  Scheduler(const Scheduler& from);
+  DaskScheduler(const DaskScheduler& from);
 
-  inline Scheduler& operator=(const Scheduler& from) {
+  inline DaskScheduler& operator=(const DaskScheduler& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Scheduler(Scheduler&& from) noexcept
-    : Scheduler() {
+  DaskScheduler(DaskScheduler&& from) noexcept
+    : DaskScheduler() {
     *this = ::std::move(from);
   }
 
-  inline Scheduler& operator=(Scheduler&& from) noexcept {
+  inline DaskScheduler& operator=(DaskScheduler&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -229,34 +229,34 @@ class Scheduler final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const Scheduler& default_instance();
+  static const DaskScheduler& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Scheduler* internal_default_instance() {
-    return reinterpret_cast<const Scheduler*>(
-               &_Scheduler_default_instance_);
+  static inline const DaskScheduler* internal_default_instance() {
+    return reinterpret_cast<const DaskScheduler*>(
+               &_DaskScheduler_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  void Swap(Scheduler* other);
-  friend void swap(Scheduler& a, Scheduler& b) {
+  void Swap(DaskScheduler* other);
+  friend void swap(DaskScheduler& a, DaskScheduler& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Scheduler* New() const final {
-    return CreateMaybeMessage<Scheduler>(nullptr);
+  inline DaskScheduler* New() const final {
+    return CreateMaybeMessage<DaskScheduler>(nullptr);
   }
 
-  Scheduler* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Scheduler>(arena);
+  DaskScheduler* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DaskScheduler>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Scheduler& from);
-  void MergeFrom(const Scheduler& from);
+  void CopyFrom(const DaskScheduler& from);
+  void MergeFrom(const DaskScheduler& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -278,7 +278,7 @@ class Scheduler final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Scheduler* other);
+  void InternalSwap(DaskScheduler* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -317,7 +317,7 @@ class Scheduler final :
   ::flyteidl::core::Resources* mutable_resources();
   void set_allocated_resources(::flyteidl::core::Resources* resources);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.Scheduler)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskScheduler)
  private:
   class HasBitSetters;
 
@@ -329,25 +329,25 @@ class Scheduler final :
 };
 // -------------------------------------------------------------------
 
-class WorkerGroup final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.WorkerGroup) */ {
+class DaskWorkerGroup final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.DaskWorkerGroup) */ {
  public:
-  WorkerGroup();
-  virtual ~WorkerGroup();
+  DaskWorkerGroup();
+  virtual ~DaskWorkerGroup();
 
-  WorkerGroup(const WorkerGroup& from);
+  DaskWorkerGroup(const DaskWorkerGroup& from);
 
-  inline WorkerGroup& operator=(const WorkerGroup& from) {
+  inline DaskWorkerGroup& operator=(const DaskWorkerGroup& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  WorkerGroup(WorkerGroup&& from) noexcept
-    : WorkerGroup() {
+  DaskWorkerGroup(DaskWorkerGroup&& from) noexcept
+    : DaskWorkerGroup() {
     *this = ::std::move(from);
   }
 
-  inline WorkerGroup& operator=(WorkerGroup&& from) noexcept {
+  inline DaskWorkerGroup& operator=(DaskWorkerGroup&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -359,34 +359,34 @@ class WorkerGroup final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const WorkerGroup& default_instance();
+  static const DaskWorkerGroup& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const WorkerGroup* internal_default_instance() {
-    return reinterpret_cast<const WorkerGroup*>(
-               &_WorkerGroup_default_instance_);
+  static inline const DaskWorkerGroup* internal_default_instance() {
+    return reinterpret_cast<const DaskWorkerGroup*>(
+               &_DaskWorkerGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  void Swap(WorkerGroup* other);
-  friend void swap(WorkerGroup& a, WorkerGroup& b) {
+  void Swap(DaskWorkerGroup* other);
+  friend void swap(DaskWorkerGroup& a, DaskWorkerGroup& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline WorkerGroup* New() const final {
-    return CreateMaybeMessage<WorkerGroup>(nullptr);
+  inline DaskWorkerGroup* New() const final {
+    return CreateMaybeMessage<DaskWorkerGroup>(nullptr);
   }
 
-  WorkerGroup* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<WorkerGroup>(arena);
+  DaskWorkerGroup* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DaskWorkerGroup>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const WorkerGroup& from);
-  void MergeFrom(const WorkerGroup& from);
+  void CopyFrom(const DaskWorkerGroup& from);
+  void MergeFrom(const DaskWorkerGroup& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -408,7 +408,7 @@ class WorkerGroup final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(WorkerGroup* other);
+  void InternalSwap(DaskWorkerGroup* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -453,7 +453,7 @@ class WorkerGroup final :
   ::google::protobuf::uint32 number_of_workers() const;
   void set_number_of_workers(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.plugins.WorkerGroup)
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.DaskWorkerGroup)
  private:
   class HasBitSetters;
 
@@ -475,7 +475,7 @@ class WorkerGroup final :
 #endif  // __GNUC__
 // DaskJob
 
-// .flyteidl.plugins.Scheduler scheduler = 1;
+// .flyteidl.plugins.DaskScheduler scheduler = 1;
 inline bool DaskJob::has_scheduler() const {
   return this != internal_default_instance() && scheduler_ != nullptr;
 }
@@ -485,29 +485,29 @@ inline void DaskJob::clear_scheduler() {
   }
   scheduler_ = nullptr;
 }
-inline const ::flyteidl::plugins::Scheduler& DaskJob::scheduler() const {
-  const ::flyteidl::plugins::Scheduler* p = scheduler_;
+inline const ::flyteidl::plugins::DaskScheduler& DaskJob::scheduler() const {
+  const ::flyteidl::plugins::DaskScheduler* p = scheduler_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskJob.scheduler)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::Scheduler*>(
-      &::flyteidl::plugins::_Scheduler_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::DaskScheduler*>(
+      &::flyteidl::plugins::_DaskScheduler_default_instance_);
 }
-inline ::flyteidl::plugins::Scheduler* DaskJob::release_scheduler() {
+inline ::flyteidl::plugins::DaskScheduler* DaskJob::release_scheduler() {
   // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskJob.scheduler)
   
-  ::flyteidl::plugins::Scheduler* temp = scheduler_;
+  ::flyteidl::plugins::DaskScheduler* temp = scheduler_;
   scheduler_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::Scheduler* DaskJob::mutable_scheduler() {
+inline ::flyteidl::plugins::DaskScheduler* DaskJob::mutable_scheduler() {
   
   if (scheduler_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::Scheduler>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::plugins::DaskScheduler>(GetArenaNoVirtual());
     scheduler_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskJob.scheduler)
   return scheduler_;
 }
-inline void DaskJob::set_allocated_scheduler(::flyteidl::plugins::Scheduler* scheduler) {
+inline void DaskJob::set_allocated_scheduler(::flyteidl::plugins::DaskScheduler* scheduler) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete scheduler_;
@@ -526,7 +526,7 @@ inline void DaskJob::set_allocated_scheduler(::flyteidl::plugins::Scheduler* sch
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskJob.scheduler)
 }
 
-// .flyteidl.plugins.WorkerGroup workers = 2;
+// .flyteidl.plugins.DaskWorkerGroup workers = 2;
 inline bool DaskJob::has_workers() const {
   return this != internal_default_instance() && workers_ != nullptr;
 }
@@ -536,29 +536,29 @@ inline void DaskJob::clear_workers() {
   }
   workers_ = nullptr;
 }
-inline const ::flyteidl::plugins::WorkerGroup& DaskJob::workers() const {
-  const ::flyteidl::plugins::WorkerGroup* p = workers_;
+inline const ::flyteidl::plugins::DaskWorkerGroup& DaskJob::workers() const {
+  const ::flyteidl::plugins::DaskWorkerGroup* p = workers_;
   // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskJob.workers)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::WorkerGroup*>(
-      &::flyteidl::plugins::_WorkerGroup_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::DaskWorkerGroup*>(
+      &::flyteidl::plugins::_DaskWorkerGroup_default_instance_);
 }
-inline ::flyteidl::plugins::WorkerGroup* DaskJob::release_workers() {
+inline ::flyteidl::plugins::DaskWorkerGroup* DaskJob::release_workers() {
   // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskJob.workers)
   
-  ::flyteidl::plugins::WorkerGroup* temp = workers_;
+  ::flyteidl::plugins::DaskWorkerGroup* temp = workers_;
   workers_ = nullptr;
   return temp;
 }
-inline ::flyteidl::plugins::WorkerGroup* DaskJob::mutable_workers() {
+inline ::flyteidl::plugins::DaskWorkerGroup* DaskJob::mutable_workers() {
   
   if (workers_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::plugins::WorkerGroup>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::plugins::DaskWorkerGroup>(GetArenaNoVirtual());
     workers_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskJob.workers)
   return workers_;
 }
-inline void DaskJob::set_allocated_workers(::flyteidl::plugins::WorkerGroup* workers) {
+inline void DaskJob::set_allocated_workers(::flyteidl::plugins::DaskWorkerGroup* workers) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete workers_;
@@ -579,88 +579,88 @@ inline void DaskJob::set_allocated_workers(::flyteidl::plugins::WorkerGroup* wor
 
 // -------------------------------------------------------------------
 
-// Scheduler
+// DaskScheduler
 
 // string image = 1;
-inline void Scheduler::clear_image() {
+inline void DaskScheduler::clear_image() {
   image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Scheduler::image() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.Scheduler.image)
+inline const ::std::string& DaskScheduler::image() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskScheduler.image)
   return image_.GetNoArena();
 }
-inline void Scheduler::set_image(const ::std::string& value) {
+inline void DaskScheduler::set_image(const ::std::string& value) {
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DaskScheduler.image)
 }
 #if LANG_CXX11
-inline void Scheduler::set_image(::std::string&& value) {
+inline void DaskScheduler::set_image(::std::string&& value) {
   
   image_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.DaskScheduler.image)
 }
 #endif
-inline void Scheduler::set_image(const char* value) {
+inline void DaskScheduler::set_image(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.DaskScheduler.image)
 }
-inline void Scheduler::set_image(const char* value, size_t size) {
+inline void DaskScheduler::set_image(const char* value, size_t size) {
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.DaskScheduler.image)
 }
-inline ::std::string* Scheduler::mutable_image() {
+inline ::std::string* DaskScheduler::mutable_image() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskScheduler.image)
   return image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Scheduler::release_image() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.Scheduler.image)
+inline ::std::string* DaskScheduler::release_image() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskScheduler.image)
   
   return image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Scheduler::set_allocated_image(::std::string* image) {
+inline void DaskScheduler::set_allocated_image(::std::string* image) {
   if (image != nullptr) {
     
   } else {
     
   }
   image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.Scheduler.image)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskScheduler.image)
 }
 
 // .flyteidl.core.Resources resources = 2;
-inline bool Scheduler::has_resources() const {
+inline bool DaskScheduler::has_resources() const {
   return this != internal_default_instance() && resources_ != nullptr;
 }
-inline const ::flyteidl::core::Resources& Scheduler::resources() const {
+inline const ::flyteidl::core::Resources& DaskScheduler::resources() const {
   const ::flyteidl::core::Resources* p = resources_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.Scheduler.resources)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskScheduler.resources)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
       &::flyteidl::core::_Resources_default_instance_);
 }
-inline ::flyteidl::core::Resources* Scheduler::release_resources() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.Scheduler.resources)
+inline ::flyteidl::core::Resources* DaskScheduler::release_resources() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskScheduler.resources)
   
   ::flyteidl::core::Resources* temp = resources_;
   resources_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Resources* Scheduler::mutable_resources() {
+inline ::flyteidl::core::Resources* DaskScheduler::mutable_resources() {
   
   if (resources_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
     resources_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.Scheduler.resources)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskScheduler.resources)
   return resources_;
 }
-inline void Scheduler::set_allocated_resources(::flyteidl::core::Resources* resources) {
+inline void DaskScheduler::set_allocated_resources(::flyteidl::core::Resources* resources) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
@@ -676,107 +676,107 @@ inline void Scheduler::set_allocated_resources(::flyteidl::core::Resources* reso
     
   }
   resources_ = resources;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.Scheduler.resources)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskScheduler.resources)
 }
 
 // -------------------------------------------------------------------
 
-// WorkerGroup
+// DaskWorkerGroup
 
 // uint32 number_of_workers = 1;
-inline void WorkerGroup::clear_number_of_workers() {
+inline void DaskWorkerGroup::clear_number_of_workers() {
   number_of_workers_ = 0u;
 }
-inline ::google::protobuf::uint32 WorkerGroup::number_of_workers() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.WorkerGroup.number_of_workers)
+inline ::google::protobuf::uint32 DaskWorkerGroup::number_of_workers() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskWorkerGroup.number_of_workers)
   return number_of_workers_;
 }
-inline void WorkerGroup::set_number_of_workers(::google::protobuf::uint32 value) {
+inline void DaskWorkerGroup::set_number_of_workers(::google::protobuf::uint32 value) {
   
   number_of_workers_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.WorkerGroup.number_of_workers)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DaskWorkerGroup.number_of_workers)
 }
 
 // string image = 2;
-inline void WorkerGroup::clear_image() {
+inline void DaskWorkerGroup::clear_image() {
   image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& WorkerGroup::image() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.WorkerGroup.image)
+inline const ::std::string& DaskWorkerGroup::image() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskWorkerGroup.image)
   return image_.GetNoArena();
 }
-inline void WorkerGroup::set_image(const ::std::string& value) {
+inline void DaskWorkerGroup::set_image(const ::std::string& value) {
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DaskWorkerGroup.image)
 }
 #if LANG_CXX11
-inline void WorkerGroup::set_image(::std::string&& value) {
+inline void DaskWorkerGroup::set_image(::std::string&& value) {
   
   image_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.DaskWorkerGroup.image)
 }
 #endif
-inline void WorkerGroup::set_image(const char* value) {
+inline void DaskWorkerGroup::set_image(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.DaskWorkerGroup.image)
 }
-inline void WorkerGroup::set_image(const char* value, size_t size) {
+inline void DaskWorkerGroup::set_image(const char* value, size_t size) {
   
   image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.DaskWorkerGroup.image)
 }
-inline ::std::string* WorkerGroup::mutable_image() {
+inline ::std::string* DaskWorkerGroup::mutable_image() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskWorkerGroup.image)
   return image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* WorkerGroup::release_image() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.WorkerGroup.image)
+inline ::std::string* DaskWorkerGroup::release_image() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskWorkerGroup.image)
   
   return image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void WorkerGroup::set_allocated_image(::std::string* image) {
+inline void DaskWorkerGroup::set_allocated_image(::std::string* image) {
   if (image != nullptr) {
     
   } else {
     
   }
   image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.WorkerGroup.image)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskWorkerGroup.image)
 }
 
 // .flyteidl.core.Resources resources = 3;
-inline bool WorkerGroup::has_resources() const {
+inline bool DaskWorkerGroup::has_resources() const {
   return this != internal_default_instance() && resources_ != nullptr;
 }
-inline const ::flyteidl::core::Resources& WorkerGroup::resources() const {
+inline const ::flyteidl::core::Resources& DaskWorkerGroup::resources() const {
   const ::flyteidl::core::Resources* p = resources_;
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.WorkerGroup.resources)
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DaskWorkerGroup.resources)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
       &::flyteidl::core::_Resources_default_instance_);
 }
-inline ::flyteidl::core::Resources* WorkerGroup::release_resources() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.WorkerGroup.resources)
+inline ::flyteidl::core::Resources* DaskWorkerGroup::release_resources() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DaskWorkerGroup.resources)
   
   ::flyteidl::core::Resources* temp = resources_;
   resources_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Resources* WorkerGroup::mutable_resources() {
+inline ::flyteidl::core::Resources* DaskWorkerGroup::mutable_resources() {
   
   if (resources_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
     resources_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.WorkerGroup.resources)
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DaskWorkerGroup.resources)
   return resources_;
 }
-inline void WorkerGroup::set_allocated_resources(::flyteidl::core::Resources* resources) {
+inline void DaskWorkerGroup::set_allocated_resources(::flyteidl::core::Resources* resources) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
@@ -792,7 +792,7 @@ inline void WorkerGroup::set_allocated_resources(::flyteidl::core::Resources* re
     
   }
   resources_ = resources;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.WorkerGroup.resources)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DaskWorkerGroup.resources)
 }
 
 #ifdef __GNUC__
