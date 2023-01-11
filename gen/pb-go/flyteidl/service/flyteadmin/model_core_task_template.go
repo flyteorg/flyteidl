@@ -29,4 +29,6 @@ type CoreTaskTemplate struct {
 	// security_context encapsulates security attributes requested to run this task.
 	SecurityContext *CoreSecurityContext `json:"security_context,omitempty"`
 	Config map[string]string `json:"config,omitempty"`
+	PodTemplateName string `json:"pod_template_name,omitempty"`
+	PodTemplate *ProtobufStruct `json:"pod_template,omitempty"`
 }

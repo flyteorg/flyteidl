@@ -12347,6 +12347,8 @@
                  * @property {number|null} [taskTypeVersion] TaskTemplate taskTypeVersion
                  * @property {flyteidl.core.ISecurityContext|null} [securityContext] TaskTemplate securityContext
                  * @property {Object.<string,string>|null} [config] TaskTemplate config
+                 * @property {string|null} [podTemplateName] TaskTemplate podTemplateName
+                 * @property {google.protobuf.IStruct|null} [podTemplate] TaskTemplate podTemplate
                  */
     
                 /**
@@ -12453,6 +12455,22 @@
                  */
                 TaskTemplate.prototype.config = $util.emptyObject;
     
+                /**
+                 * TaskTemplate podTemplateName.
+                 * @member {string} podTemplateName
+                 * @memberof flyteidl.core.TaskTemplate
+                 * @instance
+                 */
+                TaskTemplate.prototype.podTemplateName = "";
+    
+                /**
+                 * TaskTemplate podTemplate.
+                 * @member {google.protobuf.IStruct|null|undefined} podTemplate
+                 * @memberof flyteidl.core.TaskTemplate
+                 * @instance
+                 */
+                TaskTemplate.prototype.podTemplate = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -12464,6 +12482,17 @@
                  */
                 Object.defineProperty(TaskTemplate.prototype, "target", {
                     get: $util.oneOfGetter($oneOfFields = ["container", "k8sPod", "sql"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * TaskTemplate template.
+                 * @member {"podTemplateName"|"podTemplate"|undefined} template
+                 * @memberof flyteidl.core.TaskTemplate
+                 * @instance
+                 */
+                Object.defineProperty(TaskTemplate.prototype, "template", {
+                    get: $util.oneOfGetter($oneOfFields = ["podTemplateName", "podTemplate"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -12514,6 +12543,10 @@
                         $root.flyteidl.core.K8sPod.encode(message.k8sPod, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                     if (message.sql != null && message.hasOwnProperty("sql"))
                         $root.flyteidl.core.Sql.encode(message.sql, writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
+                    if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName"))
+                        writer.uint32(/* id 19, wireType 2 =*/154).string(message.podTemplateName);
+                    if (message.podTemplate != null && message.hasOwnProperty("podTemplate"))
+                        $root.google.protobuf.Struct.encode(message.podTemplate, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     return writer;
                 };
     
@@ -12572,6 +12605,12 @@
                             key = reader.string();
                             reader.pos++;
                             message.config[key] = reader.string();
+                            break;
+                        case 19:
+                            message.podTemplateName = reader.string();
+                            break;
+                        case 20:
+                            message.podTemplate = $root.google.protobuf.Struct.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -12659,6 +12698,21 @@
                         for (var i = 0; i < key.length; ++i)
                             if (!$util.isString(message.config[key[i]]))
                                 return "config: string{k:string} expected";
+                    }
+                    if (message.podTemplateName != null && message.hasOwnProperty("podTemplateName")) {
+                        properties.template = 1;
+                        if (!$util.isString(message.podTemplateName))
+                            return "podTemplateName: string expected";
+                    }
+                    if (message.podTemplate != null && message.hasOwnProperty("podTemplate")) {
+                        if (properties.template === 1)
+                            return "template: multiple values";
+                        properties.template = 1;
+                        {
+                            var error = $root.google.protobuf.Struct.verify(message.podTemplate);
+                            if (error)
+                                return "podTemplate." + error;
+                        }
                     }
                     return null;
                 };

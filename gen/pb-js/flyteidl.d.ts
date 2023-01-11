@@ -5216,6 +5216,12 @@ export namespace flyteidl {
 
             /** TaskTemplate config */
             config?: ({ [k: string]: string }|null);
+
+            /** TaskTemplate podTemplateName */
+            podTemplateName?: (string|null);
+
+            /** TaskTemplate podTemplate */
+            podTemplate?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a TaskTemplate. */
@@ -5260,8 +5266,17 @@ export namespace flyteidl {
             /** TaskTemplate config. */
             public config: { [k: string]: string };
 
+            /** TaskTemplate podTemplateName. */
+            public podTemplateName: string;
+
+            /** TaskTemplate podTemplate. */
+            public podTemplate?: (google.protobuf.IStruct|null);
+
             /** TaskTemplate target. */
             public target?: ("container"|"k8sPod"|"sql");
+
+            /** TaskTemplate template. */
+            public template?: ("podTemplateName"|"podTemplate");
 
             /**
              * Creates a new TaskTemplate instance using the specified properties.

@@ -6834,6 +6834,12 @@
             "type": "string"
           },
           "title": "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system\nto use as required.\nreserve the field numbers 1 through 15 for very frequently occurring message elements"
+        },
+        "pod_template_name": {
+          "type": "string"
+        },
+        "pod_template": {
+          "$ref": "#/definitions/protobufStruct"
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."
