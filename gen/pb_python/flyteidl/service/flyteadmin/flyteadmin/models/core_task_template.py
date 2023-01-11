@@ -52,7 +52,7 @@ class CoreTaskTemplate(object):
         'security_context': 'CoreSecurityContext',
         'config': 'dict(str, str)',
         'pod_template_name': 'str',
-        'pod_template': 'ProtobufStruct'
+        'pod_template_struct': 'ProtobufStruct'
     }
 
     attribute_map = {
@@ -68,10 +68,10 @@ class CoreTaskTemplate(object):
         'security_context': 'security_context',
         'config': 'config',
         'pod_template_name': 'pod_template_name',
-        'pod_template': 'pod_template'
+        'pod_template_struct': 'pod_template_struct'
     }
 
-    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, sql=None, task_type_version=None, security_context=None, config=None, pod_template_name=None, pod_template=None):  # noqa: E501
+    def __init__(self, id=None, type=None, metadata=None, interface=None, custom=None, container=None, k8s_pod=None, sql=None, task_type_version=None, security_context=None, config=None, pod_template_name=None, pod_template_struct=None):  # noqa: E501
         """CoreTaskTemplate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -86,7 +86,7 @@ class CoreTaskTemplate(object):
         self._security_context = None
         self._config = None
         self._pod_template_name = None
-        self._pod_template = None
+        self._pod_template_struct = None
         self.discriminator = None
 
         if id is not None:
@@ -113,8 +113,8 @@ class CoreTaskTemplate(object):
             self.config = config
         if pod_template_name is not None:
             self.pod_template_name = pod_template_name
-        if pod_template is not None:
-            self.pod_template = pod_template
+        if pod_template_struct is not None:
+            self.pod_template_struct = pod_template_struct
 
     @property
     def id(self):
@@ -365,6 +365,7 @@ class CoreTaskTemplate(object):
     def pod_template_name(self):
         """Gets the pod_template_name of this CoreTaskTemplate.  # noqa: E501
 
+        pod_template_name is the unique name of a PodTemplate k8s resource.  # noqa: E501
 
         :return: The pod_template_name of this CoreTaskTemplate.  # noqa: E501
         :rtype: str
@@ -375,6 +376,7 @@ class CoreTaskTemplate(object):
     def pod_template_name(self, pod_template_name):
         """Sets the pod_template_name of this CoreTaskTemplate.
 
+        pod_template_name is the unique name of a PodTemplate k8s resource.  # noqa: E501
 
         :param pod_template_name: The pod_template_name of this CoreTaskTemplate.  # noqa: E501
         :type: str
@@ -383,25 +385,27 @@ class CoreTaskTemplate(object):
         self._pod_template_name = pod_template_name
 
     @property
-    def pod_template(self):
-        """Gets the pod_template of this CoreTaskTemplate.  # noqa: E501
+    def pod_template_struct(self):
+        """Gets the pod_template_struct of this CoreTaskTemplate.  # noqa: E501
 
+        pod_template_struct is a JSON marshaled PodTemplate.  # noqa: E501
 
-        :return: The pod_template of this CoreTaskTemplate.  # noqa: E501
+        :return: The pod_template_struct of this CoreTaskTemplate.  # noqa: E501
         :rtype: ProtobufStruct
         """
-        return self._pod_template
+        return self._pod_template_struct
 
-    @pod_template.setter
-    def pod_template(self, pod_template):
-        """Sets the pod_template of this CoreTaskTemplate.
+    @pod_template_struct.setter
+    def pod_template_struct(self, pod_template_struct):
+        """Sets the pod_template_struct of this CoreTaskTemplate.
 
+        pod_template_struct is a JSON marshaled PodTemplate.  # noqa: E501
 
-        :param pod_template: The pod_template of this CoreTaskTemplate.  # noqa: E501
+        :param pod_template_struct: The pod_template_struct of this CoreTaskTemplate.  # noqa: E501
         :type: ProtobufStruct
         """
 
-        self._pod_template = pod_template
+        self._pod_template_struct = pod_template_struct
 
     def to_dict(self):
         """Returns the model properties as a dict"""

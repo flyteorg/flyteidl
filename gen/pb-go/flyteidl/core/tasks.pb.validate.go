@@ -419,17 +419,17 @@ func (m *TaskTemplate) Validate() error {
 
 	}
 
-	switch m.Template.(type) {
+	switch m.PodTemplate.(type) {
 
 	case *TaskTemplate_PodTemplateName:
 		// no validation rules for PodTemplateName
 
-	case *TaskTemplate_PodTemplate:
+	case *TaskTemplate_PodTemplateStruct:
 
-		if v, ok := interface{}(m.GetPodTemplate()).(interface{ Validate() error }); ok {
+		if v, ok := interface{}(m.GetPodTemplateStruct()).(interface{ Validate() error }); ok {
 			if err := v.Validate(); err != nil {
 				return TaskTemplateValidationError{
-					field:  "PodTemplate",
+					field:  "PodTemplateStruct",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

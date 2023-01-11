@@ -6836,10 +6836,12 @@
           "title": "Metadata about the custom defined for this task. This is extensible to allow various plugins in the system\nto use as required.\nreserve the field numbers 1 through 15 for very frequently occurring message elements"
         },
         "pod_template_name": {
-          "type": "string"
+          "type": "string",
+          "description": "pod_template_name is the unique name of a PodTemplate k8s resource."
         },
-        "pod_template": {
-          "$ref": "#/definitions/protobufStruct"
+        "pod_template_struct": {
+          "$ref": "#/definitions/protobufStruct",
+          "description": "pod_template_struct is a JSON marshaled PodTemplate."
         }
       },
       "description": "A Task structure that uniquely identifies a task in the system\nTasks are registered as a first step in the system."

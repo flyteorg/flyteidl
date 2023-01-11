@@ -11660,7 +11660,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -11925,7 +11925,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -15194,7 +15194,7 @@ definitions:
               tags:
                 key: "tags"
             pod_template_name: "pod_template_name"
-            pod_template:
+            pod_template_struct:
               fields:
                 key:
                   list_value:
@@ -15475,7 +15475,7 @@ definitions:
             tags:
               key: "tags"
           pod_template_name: "pod_template_name"
-          pod_template:
+          pod_template_struct:
             fields:
               key:
                 list_value:
@@ -16153,7 +16153,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -16428,7 +16428,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -20831,7 +20831,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -21096,7 +21096,7 @@ definitions:
                 tags:
                   key: "tags"
               pod_template_name: "pod_template_name"
-              pod_template:
+              pod_template_struct:
                 fields:
                   key:
                     list_value:
@@ -27667,7 +27667,7 @@ definitions:
               tags:
                 key: "tags"
             pod_template_name: "pod_template_name"
-            pod_template:
+            pod_template_struct:
               fields:
                 key:
                   list_value:
@@ -27932,7 +27932,7 @@ definitions:
               tags:
                 key: "tags"
             pod_template_name: "pod_template_name"
-            pod_template:
+            pod_template_struct:
               fields:
                 key:
                   list_value:
@@ -34412,7 +34412,7 @@ definitions:
                   tags:
                     key: "tags"
                 pod_template_name: "pod_template_name"
-                pod_template:
+                pod_template_struct:
                   fields:
                     key:
                       list_value:
@@ -34677,7 +34677,7 @@ definitions:
                   tags:
                     key: "tags"
                 pod_template_name: "pod_template_name"
-                pod_template:
+                pod_template_struct:
                   fields:
                     key:
                       list_value:
@@ -40988,7 +40988,7 @@ definitions:
                   tags:
                     key: "tags"
                 pod_template_name: "pod_template_name"
-                pod_template:
+                pod_template_struct:
                   fields:
                     key:
                       list_value:
@@ -41253,7 +41253,7 @@ definitions:
                   tags:
                     key: "tags"
                 pod_template_name: "pod_template_name"
-                pod_template:
+                pod_template_struct:
                   fields:
                     key:
                       list_value:
@@ -44246,7 +44246,7 @@ definitions:
           tags:
             key: "tags"
         pod_template_name: "pod_template_name"
-        pod_template:
+        pod_template_struct:
           fields:
             key:
               list_value:
@@ -50585,7 +50585,7 @@ definitions:
             tags:
               key: "tags"
           pod_template_name: "pod_template_name"
-          pod_template:
+          pod_template_struct:
             fields:
               key:
                 list_value:
@@ -50850,7 +50850,7 @@ definitions:
             tags:
               key: "tags"
           pod_template_name: "pod_template_name"
-          pod_template:
+          pod_template_struct:
             fields:
               key:
                 list_value:
@@ -55753,7 +55753,9 @@ definitions:
           type: "string"
       pod_template_name:
         type: "string"
-      pod_template:
+        description: "pod_template_name is the unique name of a PodTemplate k8s resource."
+      pod_template_struct:
+        description: "pod_template_struct is a JSON marshaled PodTemplate."
         $ref: "#/definitions/protobufStruct"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
@@ -55816,7 +55818,7 @@ definitions:
         tags:
           key: "tags"
       pod_template_name: "pod_template_name"
-      pod_template:
+      pod_template_struct:
         fields:
           key:
             list_value:
@@ -62994,7 +62996,7 @@ definitions:
               tags:
                 key: "tags"
             pod_template_name: "pod_template_name"
-            pod_template:
+            pod_template_struct:
               fields:
                 key:
                   list_value:
@@ -63259,7 +63261,7 @@ definitions:
               tags:
                 key: "tags"
             pod_template_name: "pod_template_name"
-            pod_template:
+            pod_template_struct:
               fields:
                 key:
                   list_value:

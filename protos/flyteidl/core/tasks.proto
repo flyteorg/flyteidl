@@ -144,10 +144,13 @@ message TaskTemplate {
     // reserve the field numbers 1 through 15 for very frequently occurring message elements
     map<string, string> config = 16;
 
-    // TODO @hamersaw - document
-    oneof template {
+    // pod_template provides the definition for a PodTemplate to be applied as the base configuration for this task.
+    // This enables fine-grained k8s configuration for Flyte tasks in addition to overriding the default PodTemplate.
+    oneof pod_template {
+        // pod_template_name is the unique name of a PodTemplate k8s resource.
         string pod_template_name = 19;
-        google.protobuf.Struct pod_template = 20;
+        // pod_template_struct is a JSON marshaled PodTemplate.
+        google.protobuf.Struct pod_template_struct = 20;
     }
 }
 

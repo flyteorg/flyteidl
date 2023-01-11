@@ -5880,31 +5880,51 @@ public final class Tasks {
         java.lang.String key);
 
     /**
+     * <pre>
+     * pod_template_name is the unique name of a PodTemplate k8s resource.
+     * </pre>
+     *
      * <code>string pod_template_name = 19;</code>
      */
     java.lang.String getPodTemplateName();
     /**
+     * <pre>
+     * pod_template_name is the unique name of a PodTemplate k8s resource.
+     * </pre>
+     *
      * <code>string pod_template_name = 19;</code>
      */
     com.google.protobuf.ByteString
         getPodTemplateNameBytes();
 
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    boolean hasPodTemplate();
+    boolean hasPodTemplateStruct();
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    com.google.protobuf.Struct getPodTemplate();
+    com.google.protobuf.Struct getPodTemplateStruct();
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    com.google.protobuf.StructOrBuilder getPodTemplateOrBuilder();
+    com.google.protobuf.StructOrBuilder getPodTemplateStructOrBuilder();
 
     public flyteidl.core.Tasks.TaskTemplate.TargetCase getTargetCase();
 
-    public flyteidl.core.Tasks.TaskTemplate.TemplateCase getTemplateCase();
+    public flyteidl.core.Tasks.TaskTemplate.PodTemplateCase getPodTemplateCase();
   }
   /**
    * <pre>
@@ -6084,22 +6104,22 @@ public final class Tasks {
             }
             case 154: {
               java.lang.String s = input.readStringRequireUtf8();
-              templateCase_ = 19;
-              template_ = s;
+              podTemplateCase_ = 19;
+              podTemplate_ = s;
               break;
             }
             case 162: {
               com.google.protobuf.Struct.Builder subBuilder = null;
-              if (templateCase_ == 20) {
-                subBuilder = ((com.google.protobuf.Struct) template_).toBuilder();
+              if (podTemplateCase_ == 20) {
+                subBuilder = ((com.google.protobuf.Struct) podTemplate_).toBuilder();
               }
-              template_ =
+              podTemplate_ =
                   input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.protobuf.Struct) template_);
-                template_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.protobuf.Struct) podTemplate_);
+                podTemplate_ = subBuilder.buildPartial();
               }
-              templateCase_ = 20;
+              podTemplateCase_ = 20;
               break;
             }
             default: {
@@ -6187,30 +6207,30 @@ public final class Tasks {
           targetCase_);
     }
 
-    private int templateCase_ = 0;
-    private java.lang.Object template_;
-    public enum TemplateCase
+    private int podTemplateCase_ = 0;
+    private java.lang.Object podTemplate_;
+    public enum PodTemplateCase
         implements com.google.protobuf.Internal.EnumLite {
       POD_TEMPLATE_NAME(19),
-      POD_TEMPLATE(20),
-      TEMPLATE_NOT_SET(0);
+      POD_TEMPLATE_STRUCT(20),
+      PODTEMPLATE_NOT_SET(0);
       private final int value;
-      private TemplateCase(int value) {
+      private PodTemplateCase(int value) {
         this.value = value;
       }
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static TemplateCase valueOf(int value) {
+      public static PodTemplateCase valueOf(int value) {
         return forNumber(value);
       }
 
-      public static TemplateCase forNumber(int value) {
+      public static PodTemplateCase forNumber(int value) {
         switch (value) {
           case 19: return POD_TEMPLATE_NAME;
-          case 20: return POD_TEMPLATE;
-          case 0: return TEMPLATE_NOT_SET;
+          case 20: return POD_TEMPLATE_STRUCT;
+          case 0: return PODTEMPLATE_NOT_SET;
           default: return null;
         }
       }
@@ -6219,10 +6239,10 @@ public final class Tasks {
       }
     };
 
-    public TemplateCase
-    getTemplateCase() {
-      return TemplateCase.forNumber(
-          templateCase_);
+    public PodTemplateCase
+    getPodTemplateCase() {
+      return PodTemplateCase.forNumber(
+          podTemplateCase_);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -6632,12 +6652,16 @@ public final class Tasks {
 
     public static final int POD_TEMPLATE_NAME_FIELD_NUMBER = 19;
     /**
+     * <pre>
+     * pod_template_name is the unique name of a PodTemplate k8s resource.
+     * </pre>
+     *
      * <code>string pod_template_name = 19;</code>
      */
     public java.lang.String getPodTemplateName() {
       java.lang.Object ref = "";
-      if (templateCase_ == 19) {
-        ref = template_;
+      if (podTemplateCase_ == 19) {
+        ref = podTemplate_;
       }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
@@ -6645,27 +6669,31 @@ public final class Tasks {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (templateCase_ == 19) {
-          template_ = s;
+        if (podTemplateCase_ == 19) {
+          podTemplate_ = s;
         }
         return s;
       }
     }
     /**
+     * <pre>
+     * pod_template_name is the unique name of a PodTemplate k8s resource.
+     * </pre>
+     *
      * <code>string pod_template_name = 19;</code>
      */
     public com.google.protobuf.ByteString
         getPodTemplateNameBytes() {
       java.lang.Object ref = "";
-      if (templateCase_ == 19) {
-        ref = template_;
+      if (podTemplateCase_ == 19) {
+        ref = podTemplate_;
       }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (templateCase_ == 19) {
-          template_ = b;
+        if (podTemplateCase_ == 19) {
+          podTemplate_ = b;
         }
         return b;
       } else {
@@ -6673,28 +6701,40 @@ public final class Tasks {
       }
     }
 
-    public static final int POD_TEMPLATE_FIELD_NUMBER = 20;
+    public static final int POD_TEMPLATE_STRUCT_FIELD_NUMBER = 20;
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    public boolean hasPodTemplate() {
-      return templateCase_ == 20;
+    public boolean hasPodTemplateStruct() {
+      return podTemplateCase_ == 20;
     }
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    public com.google.protobuf.Struct getPodTemplate() {
-      if (templateCase_ == 20) {
-         return (com.google.protobuf.Struct) template_;
+    public com.google.protobuf.Struct getPodTemplateStruct() {
+      if (podTemplateCase_ == 20) {
+         return (com.google.protobuf.Struct) podTemplate_;
       }
       return com.google.protobuf.Struct.getDefaultInstance();
     }
     /**
-     * <code>.google.protobuf.Struct pod_template = 20;</code>
+     * <pre>
+     * pod_template_struct is a JSON marshaled PodTemplate.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
      */
-    public com.google.protobuf.StructOrBuilder getPodTemplateOrBuilder() {
-      if (templateCase_ == 20) {
-         return (com.google.protobuf.Struct) template_;
+    public com.google.protobuf.StructOrBuilder getPodTemplateStructOrBuilder() {
+      if (podTemplateCase_ == 20) {
+         return (com.google.protobuf.Struct) podTemplate_;
       }
       return com.google.protobuf.Struct.getDefaultInstance();
     }
@@ -6749,11 +6789,11 @@ public final class Tasks {
       if (targetCase_ == 18) {
         output.writeMessage(18, (flyteidl.core.Tasks.Sql) target_);
       }
-      if (templateCase_ == 19) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, template_);
+      if (podTemplateCase_ == 19) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, podTemplate_);
       }
-      if (templateCase_ == 20) {
-        output.writeMessage(20, (com.google.protobuf.Struct) template_);
+      if (podTemplateCase_ == 20) {
+        output.writeMessage(20, (com.google.protobuf.Struct) podTemplate_);
       }
       unknownFields.writeTo(output);
     }
@@ -6813,12 +6853,12 @@ public final class Tasks {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(18, (flyteidl.core.Tasks.Sql) target_);
       }
-      if (templateCase_ == 19) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, template_);
+      if (podTemplateCase_ == 19) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, podTemplate_);
       }
-      if (templateCase_ == 20) {
+      if (podTemplateCase_ == 20) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20, (com.google.protobuf.Struct) template_);
+          .computeMessageSize(20, (com.google.protobuf.Struct) podTemplate_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6883,15 +6923,15 @@ public final class Tasks {
         case 0:
         default:
       }
-      if (!getTemplateCase().equals(other.getTemplateCase())) return false;
-      switch (templateCase_) {
+      if (!getPodTemplateCase().equals(other.getPodTemplateCase())) return false;
+      switch (podTemplateCase_) {
         case 19:
           if (!getPodTemplateName()
               .equals(other.getPodTemplateName())) return false;
           break;
         case 20:
-          if (!getPodTemplate()
-              .equals(other.getPodTemplate())) return false;
+          if (!getPodTemplateStruct()
+              .equals(other.getPodTemplateStruct())) return false;
           break;
         case 0:
         default:
@@ -6951,14 +6991,14 @@ public final class Tasks {
         case 0:
         default:
       }
-      switch (templateCase_) {
+      switch (podTemplateCase_) {
         case 19:
           hash = (37 * hash) + POD_TEMPLATE_NAME_FIELD_NUMBER;
           hash = (53 * hash) + getPodTemplateName().hashCode();
           break;
         case 20:
-          hash = (37 * hash) + POD_TEMPLATE_FIELD_NUMBER;
-          hash = (53 * hash) + getPodTemplate().hashCode();
+          hash = (37 * hash) + POD_TEMPLATE_STRUCT_FIELD_NUMBER;
+          hash = (53 * hash) + getPodTemplateStruct().hashCode();
           break;
         case 0:
         default:
@@ -7160,8 +7200,8 @@ public final class Tasks {
         internalGetMutableConfig().clear();
         targetCase_ = 0;
         target_ = null;
-        templateCase_ = 0;
-        template_ = null;
+        podTemplateCase_ = 0;
+        podTemplate_ = null;
         return this;
       }
 
@@ -7240,19 +7280,19 @@ public final class Tasks {
         }
         result.config_ = internalGetConfig();
         result.config_.makeImmutable();
-        if (templateCase_ == 19) {
-          result.template_ = template_;
+        if (podTemplateCase_ == 19) {
+          result.podTemplate_ = podTemplate_;
         }
-        if (templateCase_ == 20) {
-          if (podTemplateBuilder_ == null) {
-            result.template_ = template_;
+        if (podTemplateCase_ == 20) {
+          if (podTemplateStructBuilder_ == null) {
+            result.podTemplate_ = podTemplate_;
           } else {
-            result.template_ = podTemplateBuilder_.build();
+            result.podTemplate_ = podTemplateStructBuilder_.build();
           }
         }
         result.bitField0_ = to_bitField0_;
         result.targetCase_ = targetCase_;
-        result.templateCase_ = templateCase_;
+        result.podTemplateCase_ = podTemplateCase_;
         onBuilt();
         return result;
       }
@@ -7342,18 +7382,18 @@ public final class Tasks {
             break;
           }
         }
-        switch (other.getTemplateCase()) {
+        switch (other.getPodTemplateCase()) {
           case POD_TEMPLATE_NAME: {
-            templateCase_ = 19;
-            template_ = other.template_;
+            podTemplateCase_ = 19;
+            podTemplate_ = other.podTemplate_;
             onChanged();
             break;
           }
-          case POD_TEMPLATE: {
-            mergePodTemplate(other.getPodTemplate());
+          case POD_TEMPLATE_STRUCT: {
+            mergePodTemplateStruct(other.getPodTemplateStruct());
             break;
           }
-          case TEMPLATE_NOT_SET: {
+          case PODTEMPLATE_NOT_SET: {
             break;
           }
         }
@@ -7400,17 +7440,17 @@ public final class Tasks {
         return this;
       }
 
-      private int templateCase_ = 0;
-      private java.lang.Object template_;
-      public TemplateCase
-          getTemplateCase() {
-        return TemplateCase.forNumber(
-            templateCase_);
+      private int podTemplateCase_ = 0;
+      private java.lang.Object podTemplate_;
+      public PodTemplateCase
+          getPodTemplateCase() {
+        return PodTemplateCase.forNumber(
+            podTemplateCase_);
       }
 
-      public Builder clearTemplate() {
-        templateCase_ = 0;
-        template_ = null;
+      public Builder clearPodTemplate() {
+        podTemplateCase_ = 0;
+        podTemplate_ = null;
         onChanged();
         return this;
       }
@@ -8902,19 +8942,23 @@ public final class Tasks {
       }
 
       /**
+       * <pre>
+       * pod_template_name is the unique name of a PodTemplate k8s resource.
+       * </pre>
+       *
        * <code>string pod_template_name = 19;</code>
        */
       public java.lang.String getPodTemplateName() {
         java.lang.Object ref = "";
-        if (templateCase_ == 19) {
-          ref = template_;
+        if (podTemplateCase_ == 19) {
+          ref = podTemplate_;
         }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (templateCase_ == 19) {
-            template_ = s;
+          if (podTemplateCase_ == 19) {
+            podTemplate_ = s;
           }
           return s;
         } else {
@@ -8922,20 +8966,24 @@ public final class Tasks {
         }
       }
       /**
+       * <pre>
+       * pod_template_name is the unique name of a PodTemplate k8s resource.
+       * </pre>
+       *
        * <code>string pod_template_name = 19;</code>
        */
       public com.google.protobuf.ByteString
           getPodTemplateNameBytes() {
         java.lang.Object ref = "";
-        if (templateCase_ == 19) {
-          ref = template_;
+        if (podTemplateCase_ == 19) {
+          ref = podTemplate_;
         }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          if (templateCase_ == 19) {
-            template_ = b;
+          if (podTemplateCase_ == 19) {
+            podTemplate_ = b;
           }
           return b;
         } else {
@@ -8943,6 +8991,10 @@ public final class Tasks {
         }
       }
       /**
+       * <pre>
+       * pod_template_name is the unique name of a PodTemplate k8s resource.
+       * </pre>
+       *
        * <code>string pod_template_name = 19;</code>
        */
       public Builder setPodTemplateName(
@@ -8950,23 +9002,31 @@ public final class Tasks {
         if (value == null) {
     throw new NullPointerException();
   }
-  templateCase_ = 19;
-        template_ = value;
+  podTemplateCase_ = 19;
+        podTemplate_ = value;
         onChanged();
         return this;
       }
       /**
+       * <pre>
+       * pod_template_name is the unique name of a PodTemplate k8s resource.
+       * </pre>
+       *
        * <code>string pod_template_name = 19;</code>
        */
       public Builder clearPodTemplateName() {
-        if (templateCase_ == 19) {
-          templateCase_ = 0;
-          template_ = null;
+        if (podTemplateCase_ == 19) {
+          podTemplateCase_ = 0;
+          podTemplate_ = null;
           onChanged();
         }
         return this;
       }
       /**
+       * <pre>
+       * pod_template_name is the unique name of a PodTemplate k8s resource.
+       * </pre>
+       *
        * <code>string pod_template_name = 19;</code>
        */
       public Builder setPodTemplateNameBytes(
@@ -8975,146 +9035,182 @@ public final class Tasks {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        templateCase_ = 19;
-        template_ = value;
+        podTemplateCase_ = 19;
+        podTemplate_ = value;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> podTemplateBuilder_;
+          com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> podTemplateStructBuilder_;
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public boolean hasPodTemplate() {
-        return templateCase_ == 20;
+      public boolean hasPodTemplateStruct() {
+        return podTemplateCase_ == 20;
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public com.google.protobuf.Struct getPodTemplate() {
-        if (podTemplateBuilder_ == null) {
-          if (templateCase_ == 20) {
-            return (com.google.protobuf.Struct) template_;
+      public com.google.protobuf.Struct getPodTemplateStruct() {
+        if (podTemplateStructBuilder_ == null) {
+          if (podTemplateCase_ == 20) {
+            return (com.google.protobuf.Struct) podTemplate_;
           }
           return com.google.protobuf.Struct.getDefaultInstance();
         } else {
-          if (templateCase_ == 20) {
-            return podTemplateBuilder_.getMessage();
+          if (podTemplateCase_ == 20) {
+            return podTemplateStructBuilder_.getMessage();
           }
           return com.google.protobuf.Struct.getDefaultInstance();
         }
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public Builder setPodTemplate(com.google.protobuf.Struct value) {
-        if (podTemplateBuilder_ == null) {
+      public Builder setPodTemplateStruct(com.google.protobuf.Struct value) {
+        if (podTemplateStructBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          template_ = value;
+          podTemplate_ = value;
           onChanged();
         } else {
-          podTemplateBuilder_.setMessage(value);
+          podTemplateStructBuilder_.setMessage(value);
         }
-        templateCase_ = 20;
+        podTemplateCase_ = 20;
         return this;
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public Builder setPodTemplate(
+      public Builder setPodTemplateStruct(
           com.google.protobuf.Struct.Builder builderForValue) {
-        if (podTemplateBuilder_ == null) {
-          template_ = builderForValue.build();
+        if (podTemplateStructBuilder_ == null) {
+          podTemplate_ = builderForValue.build();
           onChanged();
         } else {
-          podTemplateBuilder_.setMessage(builderForValue.build());
+          podTemplateStructBuilder_.setMessage(builderForValue.build());
         }
-        templateCase_ = 20;
+        podTemplateCase_ = 20;
         return this;
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public Builder mergePodTemplate(com.google.protobuf.Struct value) {
-        if (podTemplateBuilder_ == null) {
-          if (templateCase_ == 20 &&
-              template_ != com.google.protobuf.Struct.getDefaultInstance()) {
-            template_ = com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) template_)
+      public Builder mergePodTemplateStruct(com.google.protobuf.Struct value) {
+        if (podTemplateStructBuilder_ == null) {
+          if (podTemplateCase_ == 20 &&
+              podTemplate_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            podTemplate_ = com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) podTemplate_)
                 .mergeFrom(value).buildPartial();
           } else {
-            template_ = value;
+            podTemplate_ = value;
           }
           onChanged();
         } else {
-          if (templateCase_ == 20) {
-            podTemplateBuilder_.mergeFrom(value);
+          if (podTemplateCase_ == 20) {
+            podTemplateStructBuilder_.mergeFrom(value);
           }
-          podTemplateBuilder_.setMessage(value);
+          podTemplateStructBuilder_.setMessage(value);
         }
-        templateCase_ = 20;
+        podTemplateCase_ = 20;
         return this;
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public Builder clearPodTemplate() {
-        if (podTemplateBuilder_ == null) {
-          if (templateCase_ == 20) {
-            templateCase_ = 0;
-            template_ = null;
+      public Builder clearPodTemplateStruct() {
+        if (podTemplateStructBuilder_ == null) {
+          if (podTemplateCase_ == 20) {
+            podTemplateCase_ = 0;
+            podTemplate_ = null;
             onChanged();
           }
         } else {
-          if (templateCase_ == 20) {
-            templateCase_ = 0;
-            template_ = null;
+          if (podTemplateCase_ == 20) {
+            podTemplateCase_ = 0;
+            podTemplate_ = null;
           }
-          podTemplateBuilder_.clear();
+          podTemplateStructBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public com.google.protobuf.Struct.Builder getPodTemplateBuilder() {
-        return getPodTemplateFieldBuilder().getBuilder();
+      public com.google.protobuf.Struct.Builder getPodTemplateStructBuilder() {
+        return getPodTemplateStructFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
-      public com.google.protobuf.StructOrBuilder getPodTemplateOrBuilder() {
-        if ((templateCase_ == 20) && (podTemplateBuilder_ != null)) {
-          return podTemplateBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.StructOrBuilder getPodTemplateStructOrBuilder() {
+        if ((podTemplateCase_ == 20) && (podTemplateStructBuilder_ != null)) {
+          return podTemplateStructBuilder_.getMessageOrBuilder();
         } else {
-          if (templateCase_ == 20) {
-            return (com.google.protobuf.Struct) template_;
+          if (podTemplateCase_ == 20) {
+            return (com.google.protobuf.Struct) podTemplate_;
           }
           return com.google.protobuf.Struct.getDefaultInstance();
         }
       }
       /**
-       * <code>.google.protobuf.Struct pod_template = 20;</code>
+       * <pre>
+       * pod_template_struct is a JSON marshaled PodTemplate.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct pod_template_struct = 20;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-          getPodTemplateFieldBuilder() {
-        if (podTemplateBuilder_ == null) {
-          if (!(templateCase_ == 20)) {
-            template_ = com.google.protobuf.Struct.getDefaultInstance();
+          getPodTemplateStructFieldBuilder() {
+        if (podTemplateStructBuilder_ == null) {
+          if (!(podTemplateCase_ == 20)) {
+            podTemplate_ = com.google.protobuf.Struct.getDefaultInstance();
           }
-          podTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          podTemplateStructBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                  (com.google.protobuf.Struct) template_,
+                  (com.google.protobuf.Struct) podTemplate_,
                   getParentForChildren(),
                   isClean());
-          template_ = null;
+          podTemplate_ = null;
         }
-        templateCase_ = 20;
+        podTemplateCase_ = 20;
         onChanged();;
-        return podTemplateBuilder_;
+        return podTemplateStructBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18611,7 +18707,7 @@ public final class Tasks {
       " \001(\010\0223\n\004tags\030\013 \003(\0132%.flyteidl.core.TaskM" +
       "etadata.TagsEntry\032+\n\tTagsEntry\022\013\n\003key\030\001 " +
       "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\025\n\023interruptible_" +
-      "value\"\352\004\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.fly" +
+      "value\"\365\004\n\014TaskTemplate\022%\n\002id\030\001 \001(\0132\031.fly" +
       "teidl.core.Identifier\022\014\n\004type\030\002 \001(\t\022-\n\010m" +
       "etadata\030\003 \001(\0132\033.flyteidl.core.TaskMetada" +
       "ta\0220\n\tinterface\030\004 \001(\0132\035.flyteidl.core.Ty" +
@@ -18623,49 +18719,49 @@ public final class Tasks {
       " \001(\005\0228\n\020security_context\030\010 \001(\0132\036.flyteid" +
       "l.core.SecurityContext\0227\n\006config\030\020 \003(\0132\'" +
       ".flyteidl.core.TaskTemplate.ConfigEntry\022" +
-      "\033\n\021pod_template_name\030\023 \001(\tH\001\022/\n\014pod_temp" +
-      "late\030\024 \001(\0132\027.google.protobuf.StructH\001\032-\n" +
-      "\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001B\010\n\006targetB\n\n\010template\"\'\n\rContainerP" +
-      "ort\022\026\n\016container_port\030\001 \001(\r\"\255\003\n\tContaine" +
-      "r\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002 \003(\t\022\014\n\004arg" +
-      "s\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030.flyteidl.co" +
-      "re.Resources\022(\n\003env\030\005 \003(\0132\033.flyteidl.cor" +
-      "e.KeyValuePair\022/\n\006config\030\006 \003(\0132\033.flyteid" +
-      "l.core.KeyValuePairB\002\030\001\022+\n\005ports\030\007 \003(\0132\034" +
-      ".flyteidl.core.ContainerPort\0225\n\013data_con" +
-      "fig\030\t \001(\0132 .flyteidl.core.DataLoadingCon" +
-      "fig\022;\n\014architecture\030\n \001(\0162%.flyteidl.cor" +
-      "e.Container.Architecture\"I\n\014Architecture" +
-      "\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005ARM64\020\002\022\n\n\006A" +
-      "RM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStrategy\022=\n\rdo" +
-      "wnload_mode\030\001 \001(\0162&.flyteidl.core.IOStra" +
-      "tegy.DownloadMode\0229\n\013upload_mode\030\002 \001(\0162$" +
-      ".flyteidl.core.IOStrategy.UploadMode\"L\n\014" +
-      "DownloadMode\022\022\n\016DOWNLOAD_EAGER\020\000\022\023\n\017DOWN" +
-      "LOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNLOAD\020\002\"E\n\nUp" +
-      "loadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022\020\n\014UPLOAD_E" +
-      "AGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n\021DataLoadin" +
-      "gConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ninput_path\030\002" +
-      " \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006format\030\004 \001(" +
-      "\01621.flyteidl.core.DataLoadingConfig.Lite" +
-      "ralMapFormat\022.\n\013io_strategy\030\005 \001(\0132\031.flyt" +
-      "eidl.core.IOStrategy\"1\n\020LiteralMapFormat" +
-      "\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO\020\002\"g\n\006K8sPo" +
-      "d\0222\n\010metadata\030\001 \001(\0132 .flyteidl.core.K8sO" +
-      "bjectMetadata\022)\n\010pod_spec\030\002 \001(\0132\027.google" +
-      ".protobuf.Struct\"\374\001\n\021K8sObjectMetadata\022<" +
-      "\n\006labels\030\001 \003(\0132,.flyteidl.core.K8sObject" +
-      "Metadata.LabelsEntry\022F\n\013annotations\030\002 \003(" +
-      "\01321.flyteidl.core.K8sObjectMetadata.Anno" +
-      "tationsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\003Sql\022\021" +
-      "\n\tstatement\030\001 \001(\t\022+\n\007dialect\030\002 \001(\0162\032.fly" +
-      "teidl.core.Sql.Dialect\"7\n\007Dialect\022\r\n\tUND" +
-      "EFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022\t\n\005OTHER\020\003B" +
-      "6Z4github.com/flyteorg/flyteidl/gen/pb-g" +
-      "o/flyteidl/coreb\006proto3"
+      "\033\n\021pod_template_name\030\023 \001(\tH\001\0226\n\023pod_temp" +
+      "late_struct\030\024 \001(\0132\027.google.protobuf.Stru" +
+      "ctH\001\032-\n\013ConfigEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001B\010\n\006targetB\016\n\014pod_template\"\'\n" +
+      "\rContainerPort\022\026\n\016container_port\030\001 \001(\r\"\255" +
+      "\003\n\tContainer\022\r\n\005image\030\001 \001(\t\022\017\n\007command\030\002" +
+      " \003(\t\022\014\n\004args\030\003 \003(\t\022+\n\tresources\030\004 \001(\0132\030." +
+      "flyteidl.core.Resources\022(\n\003env\030\005 \003(\0132\033.f" +
+      "lyteidl.core.KeyValuePair\022/\n\006config\030\006 \003(" +
+      "\0132\033.flyteidl.core.KeyValuePairB\002\030\001\022+\n\005po" +
+      "rts\030\007 \003(\0132\034.flyteidl.core.ContainerPort\022" +
+      "5\n\013data_config\030\t \001(\0132 .flyteidl.core.Dat" +
+      "aLoadingConfig\022;\n\014architecture\030\n \001(\0162%.f" +
+      "lyteidl.core.Container.Architecture\"I\n\014A" +
+      "rchitecture\022\013\n\007UNKNOWN\020\000\022\t\n\005AMD64\020\001\022\t\n\005A" +
+      "RM64\020\002\022\n\n\006ARM_V6\020\003\022\n\n\006ARM_V7\020\004\"\233\002\n\nIOStr" +
+      "ategy\022=\n\rdownload_mode\030\001 \001(\0162&.flyteidl." +
+      "core.IOStrategy.DownloadMode\0229\n\013upload_m" +
+      "ode\030\002 \001(\0162$.flyteidl.core.IOStrategy.Upl" +
+      "oadMode\"L\n\014DownloadMode\022\022\n\016DOWNLOAD_EAGE" +
+      "R\020\000\022\023\n\017DOWNLOAD_STREAM\020\001\022\023\n\017DO_NOT_DOWNL" +
+      "OAD\020\002\"E\n\nUploadMode\022\022\n\016UPLOAD_ON_EXIT\020\000\022" +
+      "\020\n\014UPLOAD_EAGER\020\001\022\021\n\rDO_NOT_UPLOAD\020\002\"\363\001\n" +
+      "\021DataLoadingConfig\022\017\n\007enabled\030\001 \001(\010\022\022\n\ni" +
+      "nput_path\030\002 \001(\t\022\023\n\013output_path\030\003 \001(\t\022A\n\006" +
+      "format\030\004 \001(\01621.flyteidl.core.DataLoading" +
+      "Config.LiteralMapFormat\022.\n\013io_strategy\030\005" +
+      " \001(\0132\031.flyteidl.core.IOStrategy\"1\n\020Liter" +
+      "alMapFormat\022\010\n\004JSON\020\000\022\010\n\004YAML\020\001\022\t\n\005PROTO" +
+      "\020\002\"g\n\006K8sPod\0222\n\010metadata\030\001 \001(\0132 .flyteid" +
+      "l.core.K8sObjectMetadata\022)\n\010pod_spec\030\002 \001" +
+      "(\0132\027.google.protobuf.Struct\"\374\001\n\021K8sObjec" +
+      "tMetadata\022<\n\006labels\030\001 \003(\0132,.flyteidl.cor" +
+      "e.K8sObjectMetadata.LabelsEntry\022F\n\013annot" +
+      "ations\030\002 \003(\01321.flyteidl.core.K8sObjectMe" +
+      "tadata.AnnotationsEntry\032-\n\013LabelsEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annota" +
+      "tionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"~\n\003Sql\022\021\n\tstatement\030\001 \001(\t\022+\n\007dialect\030" +
+      "\002 \001(\0162\032.flyteidl.core.Sql.Dialect\"7\n\007Dia" +
+      "lect\022\r\n\tUNDEFINED\020\000\022\010\n\004ANSI\020\001\022\010\n\004HIVE\020\002\022" +
+      "\t\n\005OTHER\020\003B6Z4github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18720,7 +18816,7 @@ public final class Tasks {
     internal_static_flyteidl_core_TaskTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_TaskTemplate_descriptor,
-        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "K8SPod", "Sql", "TaskTypeVersion", "SecurityContext", "Config", "PodTemplateName", "PodTemplate", "Target", "Template", });
+        new java.lang.String[] { "Id", "Type", "Metadata", "Interface", "Custom", "Container", "K8SPod", "Sql", "TaskTypeVersion", "SecurityContext", "Config", "PodTemplateName", "PodTemplateStruct", "Target", "PodTemplate", });
     internal_static_flyteidl_core_TaskTemplate_ConfigEntry_descriptor =
       internal_static_flyteidl_core_TaskTemplate_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_TaskTemplate_ConfigEntry_fieldAccessorTable = new

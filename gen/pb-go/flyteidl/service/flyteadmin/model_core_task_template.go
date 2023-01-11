@@ -29,6 +29,8 @@ type CoreTaskTemplate struct {
 	// security_context encapsulates security attributes requested to run this task.
 	SecurityContext *CoreSecurityContext `json:"security_context,omitempty"`
 	Config map[string]string `json:"config,omitempty"`
+	// pod_template_name is the unique name of a PodTemplate k8s resource.
 	PodTemplateName string `json:"pod_template_name,omitempty"`
-	PodTemplate *ProtobufStruct `json:"pod_template,omitempty"`
+	// pod_template_struct is a JSON marshaled PodTemplate.
+	PodTemplateStruct *ProtobufStruct `json:"pod_template_struct,omitempty"`
 }

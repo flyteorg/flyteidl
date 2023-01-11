@@ -1071,10 +1071,10 @@ class TaskTemplate final :
     TARGET_NOT_SET = 0,
   };
 
-  enum TemplateCase {
+  enum PodTemplateCase {
     kPodTemplateName = 19,
-    kPodTemplate = 20,
-    TEMPLATE_NOT_SET = 0,
+    kPodTemplateStruct = 20,
+    POD_TEMPLATE_NOT_SET = 0,
   };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1259,19 +1259,19 @@ class TaskTemplate final :
   ::std::string* release_pod_template_name();
   void set_allocated_pod_template_name(::std::string* pod_template_name);
 
-  // .google.protobuf.Struct pod_template = 20;
-  bool has_pod_template() const;
-  void clear_pod_template();
-  static const int kPodTemplateFieldNumber = 20;
-  const ::google::protobuf::Struct& pod_template() const;
-  ::google::protobuf::Struct* release_pod_template();
-  ::google::protobuf::Struct* mutable_pod_template();
-  void set_allocated_pod_template(::google::protobuf::Struct* pod_template);
+  // .google.protobuf.Struct pod_template_struct = 20;
+  bool has_pod_template_struct() const;
+  void clear_pod_template_struct();
+  static const int kPodTemplateStructFieldNumber = 20;
+  const ::google::protobuf::Struct& pod_template_struct() const;
+  ::google::protobuf::Struct* release_pod_template_struct();
+  ::google::protobuf::Struct* mutable_pod_template_struct();
+  void set_allocated_pod_template_struct(::google::protobuf::Struct* pod_template_struct);
 
   void clear_target();
   TargetCase target_case() const;
-  void clear_template();
-  TemplateCase template_case() const;
+  void clear_pod_template();
+  PodTemplateCase pod_template_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.core.TaskTemplate)
  private:
   class HasBitSetters;
@@ -1279,13 +1279,13 @@ class TaskTemplate final :
   void set_has_k8s_pod();
   void set_has_sql();
   void set_has_pod_template_name();
-  void set_has_pod_template();
+  void set_has_pod_template_struct();
 
   inline bool has_target() const;
   inline void clear_has_target();
 
-  inline bool has_template() const;
-  inline void clear_has_template();
+  inline bool has_pod_template() const;
+  inline void clear_has_pod_template();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::MapField<
@@ -1307,11 +1307,11 @@ class TaskTemplate final :
     ::flyteidl::core::K8sPod* k8s_pod_;
     ::flyteidl::core::Sql* sql_;
   } target_;
-  union TemplateUnion {
-    TemplateUnion() {}
+  union PodTemplateUnion {
+    PodTemplateUnion() {}
     ::google::protobuf::internal::ArenaStringPtr pod_template_name_;
-    ::google::protobuf::Struct* pod_template_;
-  } template_;
+    ::google::protobuf::Struct* pod_template_struct_;
+  } pod_template_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[2];
 
@@ -3587,129 +3587,129 @@ TaskTemplate::mutable_config() {
 
 // string pod_template_name = 19;
 inline bool TaskTemplate::has_pod_template_name() const {
-  return template_case() == kPodTemplateName;
+  return pod_template_case() == kPodTemplateName;
 }
 inline void TaskTemplate::set_has_pod_template_name() {
   _oneof_case_[1] = kPodTemplateName;
 }
 inline void TaskTemplate::clear_pod_template_name() {
   if (has_pod_template_name()) {
-    template_.pod_template_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    clear_has_template();
+    pod_template_.pod_template_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_pod_template();
   }
 }
 inline const ::std::string& TaskTemplate::pod_template_name() const {
   // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.pod_template_name)
   if (has_pod_template_name()) {
-    return template_.pod_template_name_.GetNoArena();
+    return pod_template_.pod_template_name_.GetNoArena();
   }
   return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
 inline void TaskTemplate::set_pod_template_name(const ::std::string& value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.pod_template_name)
   if (!has_pod_template_name()) {
-    clear_template();
+    clear_pod_template();
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    pod_template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  pod_template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.pod_template_name)
 }
 #if LANG_CXX11
 inline void TaskTemplate::set_pod_template_name(::std::string&& value) {
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskTemplate.pod_template_name)
   if (!has_pod_template_name()) {
-    clear_template();
+    clear_pod_template();
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    pod_template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  pod_template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TaskTemplate.pod_template_name)
 }
 #endif
 inline void TaskTemplate::set_pod_template_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   if (!has_pod_template_name()) {
-    clear_template();
+    clear_pod_template();
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    pod_template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  pod_template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.core.TaskTemplate.pod_template_name)
 }
 inline void TaskTemplate::set_pod_template_name(const char* value, size_t size) {
   if (!has_pod_template_name()) {
-    clear_template();
+    clear_pod_template();
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    pod_template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  pod_template_.pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TaskTemplate.pod_template_name)
 }
 inline ::std::string* TaskTemplate::mutable_pod_template_name() {
   if (!has_pod_template_name()) {
-    clear_template();
+    clear_pod_template();
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    pod_template_.pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.pod_template_name)
-  return template_.pod_template_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return pod_template_.pod_template_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TaskTemplate::release_pod_template_name() {
   // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.pod_template_name)
   if (has_pod_template_name()) {
-    clear_has_template();
-    return template_.pod_template_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_pod_template();
+    return pod_template_.pod_template_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   } else {
     return nullptr;
   }
 }
 inline void TaskTemplate::set_allocated_pod_template_name(::std::string* pod_template_name) {
-  if (has_template()) {
-    clear_template();
+  if (has_pod_template()) {
+    clear_pod_template();
   }
   if (pod_template_name != nullptr) {
     set_has_pod_template_name();
-    template_.pod_template_name_.UnsafeSetDefault(pod_template_name);
+    pod_template_.pod_template_name_.UnsafeSetDefault(pod_template_name);
   }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskTemplate.pod_template_name)
 }
 
-// .google.protobuf.Struct pod_template = 20;
-inline bool TaskTemplate::has_pod_template() const {
-  return template_case() == kPodTemplate;
+// .google.protobuf.Struct pod_template_struct = 20;
+inline bool TaskTemplate::has_pod_template_struct() const {
+  return pod_template_case() == kPodTemplateStruct;
 }
-inline void TaskTemplate::set_has_pod_template() {
-  _oneof_case_[1] = kPodTemplate;
+inline void TaskTemplate::set_has_pod_template_struct() {
+  _oneof_case_[1] = kPodTemplateStruct;
 }
-inline ::google::protobuf::Struct* TaskTemplate::release_pod_template() {
-  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.pod_template)
-  if (has_pod_template()) {
-    clear_has_template();
-      ::google::protobuf::Struct* temp = template_.pod_template_;
-    template_.pod_template_ = nullptr;
+inline ::google::protobuf::Struct* TaskTemplate::release_pod_template_struct() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskTemplate.pod_template_struct)
+  if (has_pod_template_struct()) {
+    clear_has_pod_template();
+      ::google::protobuf::Struct* temp = pod_template_.pod_template_struct_;
+    pod_template_.pod_template_struct_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::google::protobuf::Struct& TaskTemplate::pod_template() const {
-  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.pod_template)
-  return has_pod_template()
-      ? *template_.pod_template_
+inline const ::google::protobuf::Struct& TaskTemplate::pod_template_struct() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskTemplate.pod_template_struct)
+  return has_pod_template_struct()
+      ? *pod_template_.pod_template_struct_
       : *reinterpret_cast< ::google::protobuf::Struct*>(&::google::protobuf::_Struct_default_instance_);
 }
-inline ::google::protobuf::Struct* TaskTemplate::mutable_pod_template() {
-  if (!has_pod_template()) {
-    clear_template();
-    set_has_pod_template();
-    template_.pod_template_ = CreateMaybeMessage< ::google::protobuf::Struct >(
+inline ::google::protobuf::Struct* TaskTemplate::mutable_pod_template_struct() {
+  if (!has_pod_template_struct()) {
+    clear_pod_template();
+    set_has_pod_template_struct();
+    pod_template_.pod_template_struct_ = CreateMaybeMessage< ::google::protobuf::Struct >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.pod_template)
-  return template_.pod_template_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskTemplate.pod_template_struct)
+  return pod_template_.pod_template_struct_;
 }
 
 inline bool TaskTemplate::has_target() const {
@@ -3718,17 +3718,17 @@ inline bool TaskTemplate::has_target() const {
 inline void TaskTemplate::clear_has_target() {
   _oneof_case_[0] = TARGET_NOT_SET;
 }
-inline bool TaskTemplate::has_template() const {
-  return template_case() != TEMPLATE_NOT_SET;
+inline bool TaskTemplate::has_pod_template() const {
+  return pod_template_case() != POD_TEMPLATE_NOT_SET;
 }
-inline void TaskTemplate::clear_has_template() {
-  _oneof_case_[1] = TEMPLATE_NOT_SET;
+inline void TaskTemplate::clear_has_pod_template() {
+  _oneof_case_[1] = POD_TEMPLATE_NOT_SET;
 }
 inline TaskTemplate::TargetCase TaskTemplate::target_case() const {
   return TaskTemplate::TargetCase(_oneof_case_[0]);
 }
-inline TaskTemplate::TemplateCase TaskTemplate::template_case() const {
-  return TaskTemplate::TemplateCase(_oneof_case_[1]);
+inline TaskTemplate::PodTemplateCase TaskTemplate::pod_template_case() const {
+  return TaskTemplate::PodTemplateCase(_oneof_case_[1]);
 }
 // -------------------------------------------------------------------
 
