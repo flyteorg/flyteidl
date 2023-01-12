@@ -53,7 +53,7 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 		scopes := cfg.Scopes
 		audienceValue := cfg.Audience
 
-		if len(scopes) == 0 || len(audienceValue) == 0 {
+		if len(scopes) == 0 || cfg.UseAudienceFromAdmin {
 			publicClientConfig, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
 			if err != nil {
 				return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
@@ -63,9 +63,7 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 				scopes = publicClientConfig.Scopes
 			}
 			// Update audience from publicClientConfig
-			if len(audienceValue) == 0 {
-				audienceValue = publicClientConfig.Audience
-			}
+			audienceValue = publicClientConfig.Audience
 		}
 
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL, audienceValue)
