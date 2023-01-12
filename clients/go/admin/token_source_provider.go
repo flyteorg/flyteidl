@@ -63,7 +63,9 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 				scopes = publicClientConfig.Scopes
 			}
 			// Update audience from publicClientConfig
-			audienceValue = publicClientConfig.Audience
+			if cfg.UseAudienceFromAdmin {
+				audienceValue = publicClientConfig.Audience
+			}
 		}
 
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL, audienceValue)

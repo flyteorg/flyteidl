@@ -278,6 +278,6 @@ func TestMaterializeCredentials(t *testing.T) {
 			TokenURL:              fmt.Sprintf("http://localhost:%d/api/v1/token", port),
 			Scopes:                []string{"all"},
 		}, &mocks.TokenCache{}, f)
-		assert.EqualError(t, err, "failed to initialized token source provider. Err: failed to fetch client metadata. Error: rpc error: code = Unknown desc = expected err")
+		assert.EqualError(t, err, "failed to fetch client metadata. Error: rpc error: code = Unknown desc = expected err")
 	})
 }
