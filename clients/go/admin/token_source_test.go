@@ -35,30 +35,44 @@ func TestNewTokenSource(t *testing.T) {
 func TestNewTokenSourceProvider(t *testing.T) {
 	ctx := context.Background()
 	tests := []struct {
-		name                 string
-		audienceCfg          string
-		scopesCfg            []string
-		useAudienceFromAdmin bool
-		clientConfigResponse service.PublicClientAuthConfigResponse
-		expectedAudience     string
-		expectedScopes       []string
+		name                     string
+		audienceCfg              string
+		scopesCfg                []string
+		useAudienceFromAdmin     bool
+		clientConfigResponse     service.PublicClientAuthConfigResponse
+		expectedAudience         string
+		expectedScopes           []string
+		expectedCallsPubEndpoint int
 	}{
 		{
-			name:                 "audience from client config",
-			audienceCfg:          "clientConfiguredAud",
-			scopesCfg:            []string{"all"},
-			clientConfigResponse: service.PublicClientAuthConfigResponse{},
-			expectedAudience:     "clientConfiguredAud",
-			expectedScopes:       []string{"all"},
+			name:                     "audience from client config",
+			audienceCfg:              "clientConfiguredAud",
+			scopesCfg:                []string{"all"},
+			clientConfigResponse:     service.PublicClientAuthConfigResponse{},
+			expectedAudience:         "clientConfiguredAud",
+			expectedScopes:           []string{"all"},
+			expectedCallsPubEndpoint: 0,
 		},
 		{
-			name:                 "audience from public client response",
-			audienceCfg:          "clientConfiguredAud",
-			useAudienceFromAdmin: true,
-			scopesCfg:            []string{"all"},
-			clientConfigResponse: service.PublicClientAuthConfigResponse{Audience: "AdminConfiguredAud", Scopes: []string{}},
-			expectedAudience:     "AdminConfiguredAud",
-			expectedScopes:       []string{"all"},
+			name:                     "audience from public client response",
+			audienceCfg:              "clientConfiguredAud",
+			useAudienceFromAdmin:     true,
+			scopesCfg:                []string{"all"},
+			clientConfigResponse:     service.PublicClientAuthConfigResponse{Audience: "AdminConfiguredAud", Scopes: []string{}},
+			expectedAudience:         "AdminConfiguredAud",
+			expectedScopes:           []string{"all"},
+			expectedCallsPubEndpoint: 1,
+		},
+
+		{
+			name:                     "audience from client with useAudience from admin false",
+			audienceCfg:              "clientConfiguredAud",
+			useAudienceFromAdmin:     false,
+			scopesCfg:                []string{"all"},
+			clientConfigResponse:     service.PublicClientAuthConfigResponse{Audience: "AdminConfiguredAud", Scopes: []string{}},
+			expectedAudience:         "clientConfiguredAud",
+			expectedScopes:           []string{"all"},
+			expectedCallsPubEndpoint: 0,
 		},
 	}
 	for _, test := range tests {
@@ -72,6 +86,7 @@ func TestNewTokenSourceProvider(t *testing.T) {
 		cfg.Scopes = test.scopesCfg
 		cfg.UseAudienceFromAdmin = test.useAudienceFromAdmin
 		flyteTokenSource, err := NewTokenSourceProvider(ctx, cfg, tokenCache, metadataClient)
+		assert.True(t, metadataClient.AssertNumberOfCalls(t, "GetPublicClientConfig", test.expectedCallsPubEndpoint))
 		assert.NoError(t, err)
 		assert.NotNil(t, flyteTokenSource)
 		clientCredSourceProvider, ok := flyteTokenSource.(ClientCredentialsTokenSourceProvider)
