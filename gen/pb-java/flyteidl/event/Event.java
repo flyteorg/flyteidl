@@ -8185,6 +8185,26 @@ public final class Event {
      * <code>.flyteidl.core.CompiledWorkflowClosure compiled_workflow = 2;</code>
      */
     flyteidl.core.Compiler.CompiledWorkflowClosureOrBuilder getCompiledWorkflowOrBuilder();
+
+    /**
+     * <pre>
+     * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+     * required to correctly recover partially completed executions where the workflow has already been compiled.
+     * </pre>
+     *
+     * <code>string dynamic_job_spec_uri = 3;</code>
+     */
+    java.lang.String getDynamicJobSpecUri();
+    /**
+     * <pre>
+     * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+     * required to correctly recover partially completed executions where the workflow has already been compiled.
+     * </pre>
+     *
+     * <code>string dynamic_job_spec_uri = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDynamicJobSpecUriBytes();
   }
   /**
    * <pre>
@@ -8203,6 +8223,7 @@ public final class Event {
       super(builder);
     }
     private DynamicWorkflowNodeMetadata() {
+      dynamicJobSpecUri_ = "";
     }
 
     @java.lang.Override
@@ -8253,6 +8274,12 @@ public final class Event {
                 compiledWorkflow_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dynamicJobSpecUri_ = s;
               break;
             }
             default: {
@@ -8353,6 +8380,50 @@ public final class Event {
       return getCompiledWorkflow();
     }
 
+    public static final int DYNAMIC_JOB_SPEC_URI_FIELD_NUMBER = 3;
+    private volatile java.lang.Object dynamicJobSpecUri_;
+    /**
+     * <pre>
+     * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+     * required to correctly recover partially completed executions where the workflow has already been compiled.
+     * </pre>
+     *
+     * <code>string dynamic_job_spec_uri = 3;</code>
+     */
+    public java.lang.String getDynamicJobSpecUri() {
+      java.lang.Object ref = dynamicJobSpecUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dynamicJobSpecUri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+     * required to correctly recover partially completed executions where the workflow has already been compiled.
+     * </pre>
+     *
+     * <code>string dynamic_job_spec_uri = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDynamicJobSpecUriBytes() {
+      java.lang.Object ref = dynamicJobSpecUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dynamicJobSpecUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8373,6 +8444,9 @@ public final class Event {
       if (compiledWorkflow_ != null) {
         output.writeMessage(2, getCompiledWorkflow());
       }
+      if (!getDynamicJobSpecUriBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dynamicJobSpecUri_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8389,6 +8463,9 @@ public final class Event {
       if (compiledWorkflow_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getCompiledWorkflow());
+      }
+      if (!getDynamicJobSpecUriBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dynamicJobSpecUri_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8415,6 +8492,8 @@ public final class Event {
         if (!getCompiledWorkflow()
             .equals(other.getCompiledWorkflow())) return false;
       }
+      if (!getDynamicJobSpecUri()
+          .equals(other.getDynamicJobSpecUri())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8434,6 +8513,8 @@ public final class Event {
         hash = (37 * hash) + COMPILED_WORKFLOW_FIELD_NUMBER;
         hash = (53 * hash) + getCompiledWorkflow().hashCode();
       }
+      hash = (37 * hash) + DYNAMIC_JOB_SPEC_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getDynamicJobSpecUri().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8583,6 +8664,8 @@ public final class Event {
           compiledWorkflow_ = null;
           compiledWorkflowBuilder_ = null;
         }
+        dynamicJobSpecUri_ = "";
+
         return this;
       }
 
@@ -8619,6 +8702,7 @@ public final class Event {
         } else {
           result.compiledWorkflow_ = compiledWorkflowBuilder_.build();
         }
+        result.dynamicJobSpecUri_ = dynamicJobSpecUri_;
         onBuilt();
         return result;
       }
@@ -8672,6 +8756,10 @@ public final class Event {
         }
         if (other.hasCompiledWorkflow()) {
           mergeCompiledWorkflow(other.getCompiledWorkflow());
+        }
+        if (!other.getDynamicJobSpecUri().isEmpty()) {
+          dynamicJobSpecUri_ = other.dynamicJobSpecUri_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9006,6 +9094,100 @@ public final class Event {
           compiledWorkflow_ = null;
         }
         return compiledWorkflowBuilder_;
+      }
+
+      private java.lang.Object dynamicJobSpecUri_ = "";
+      /**
+       * <pre>
+       * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+       * required to correctly recover partially completed executions where the workflow has already been compiled.
+       * </pre>
+       *
+       * <code>string dynamic_job_spec_uri = 3;</code>
+       */
+      public java.lang.String getDynamicJobSpecUri() {
+        java.lang.Object ref = dynamicJobSpecUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dynamicJobSpecUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+       * required to correctly recover partially completed executions where the workflow has already been compiled.
+       * </pre>
+       *
+       * <code>string dynamic_job_spec_uri = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDynamicJobSpecUriBytes() {
+        java.lang.Object ref = dynamicJobSpecUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dynamicJobSpecUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+       * required to correctly recover partially completed executions where the workflow has already been compiled.
+       * </pre>
+       *
+       * <code>string dynamic_job_spec_uri = 3;</code>
+       */
+      public Builder setDynamicJobSpecUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dynamicJobSpecUri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+       * required to correctly recover partially completed executions where the workflow has already been compiled.
+       * </pre>
+       *
+       * <code>string dynamic_job_spec_uri = 3;</code>
+       */
+      public Builder clearDynamicJobSpecUri() {
+        
+        dynamicJobSpecUri_ = getDefaultInstance().getDynamicJobSpecUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * dynamic_job_spec_uri is the location of the DynamicJobSpec proto message for this DynamicWorkflow. This is
+       * required to correctly recover partially completed executions where the workflow has already been compiled.
+       * </pre>
+       *
+       * <code>string dynamic_job_spec_uri = 3;</code>
+       */
+      public Builder setDynamicJobSpecUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dynamicJobSpecUri_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -18793,47 +18975,48 @@ public final class Event {
       "atalogReservation.Status\022\026\n\016checkpoint_u" +
       "ri\030\004 \001(\t\022E\n\020dynamic_workflow\030\020 \001(\0132+.fly" +
       "teidl.event.DynamicWorkflowNodeMetadata\"" +
-      "\207\001\n\033DynamicWorkflowNodeMetadata\022%\n\002id\030\001 " +
+      "\245\001\n\033DynamicWorkflowNodeMetadata\022%\n\002id\030\001 " +
       "\001(\0132\031.flyteidl.core.Identifier\022A\n\021compil" +
       "ed_workflow\030\002 \001(\0132&.flyteidl.core.Compil" +
-      "edWorkflowClosure\"Q\n\033ParentTaskExecution" +
-      "Metadata\0222\n\002id\030\001 \001(\0132&.flyteidl.core.Tas" +
-      "kExecutionIdentifier\".\n\033ParentNodeExecut" +
-      "ionMetadata\022\017\n\007node_id\030\001 \001(\t\"\224\005\n\022TaskExe" +
-      "cutionEvent\022*\n\007task_id\030\001 \001(\0132\031.flyteidl." +
-      "core.Identifier\022H\n\030parent_node_execution" +
-      "_id\030\002 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifier\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phas" +
-      "e\030\004 \001(\0162\".flyteidl.core.TaskExecution.Ph" +
-      "ase\022\023\n\013producer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026" +
-      ".flyteidl.core.TaskLog\022/\n\013occurred_at\030\007 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\021\n\tinput" +
-      "_uri\030\010 \001(\t\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005erro" +
-      "r\030\n \001(\0132\035.flyteidl.core.ExecutionErrorH\000" +
-      "\0220\n\013output_data\030\021 \001(\0132\031.flyteidl.core.Li" +
-      "teralMapH\000\022,\n\013custom_info\030\013 \001(\0132\027.google" +
-      ".protobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022" +
-      "\016\n\006reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010me" +
-      "tadata\030\020 \001(\0132%.flyteidl.event.TaskExecut" +
-      "ionMetadata\022\025\n\revent_version\030\022 \001(\005B\017\n\rou" +
-      "tput_result\"\343\001\n\024ExternalResourceInfo\022\023\n\013" +
-      "external_id\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretr" +
-      "y_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteid" +
-      "l.core.TaskExecution.Phase\0227\n\014cache_stat" +
-      "us\030\005 \001(\0162!.flyteidl.core.CatalogCacheSta" +
-      "tus\022$\n\004logs\030\006 \003(\0132\026.flyteidl.core.TaskLo" +
-      "g\"?\n\020ResourcePoolInfo\022\030\n\020allocation_toke" +
-      "n\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecu" +
-      "tionMetadata\022\026\n\016generated_name\030\001 \001(\t\022@\n\022" +
-      "external_resources\030\002 \003(\0132$.flyteidl.even" +
-      "t.ExternalResourceInfo\022<\n\022resource_pool_" +
-      "info\030\003 \003(\0132 .flyteidl.event.ResourcePool" +
-      "Info\022\031\n\021plugin_identifier\030\004 \001(\t\022K\n\016insta" +
-      "nce_class\030\020 \001(\01623.flyteidl.event.TaskExe" +
-      "cutionMetadata.InstanceClass\"/\n\rInstance" +
-      "Class\022\013\n\007DEFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z" +
-      "5github.com/flyteorg/flyteidl/gen/pb-go/" +
-      "flyteidl/eventb\006proto3"
+      "edWorkflowClosure\022\034\n\024dynamic_job_spec_ur" +
+      "i\030\003 \001(\t\"Q\n\033ParentTaskExecutionMetadata\0222" +
+      "\n\002id\030\001 \001(\0132&.flyteidl.core.TaskExecution" +
+      "Identifier\".\n\033ParentNodeExecutionMetadat" +
+      "a\022\017\n\007node_id\030\001 \001(\t\"\224\005\n\022TaskExecutionEven" +
+      "t\022*\n\007task_id\030\001 \001(\0132\031.flyteidl.core.Ident" +
+      "ifier\022H\n\030parent_node_execution_id\030\002 \001(\0132" +
+      "&.flyteidl.core.NodeExecutionIdentifier\022" +
+      "\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001(\0162\"." +
+      "flyteidl.core.TaskExecution.Phase\022\023\n\013pro" +
+      "ducer_id\030\005 \001(\t\022$\n\004logs\030\006 \003(\0132\026.flyteidl." +
+      "core.TaskLog\022/\n\013occurred_at\030\007 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\021\n\tinput_uri\030\010 \001(\t" +
+      "\022\024\n\noutput_uri\030\t \001(\tH\000\022.\n\005error\030\n \001(\0132\035." +
+      "flyteidl.core.ExecutionErrorH\000\0220\n\013output" +
+      "_data\030\021 \001(\0132\031.flyteidl.core.LiteralMapH\000" +
+      "\022,\n\013custom_info\030\013 \001(\0132\027.google.protobuf." +
+      "Struct\022\025\n\rphase_version\030\014 \001(\r\022\016\n\006reason\030" +
+      "\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010metadata\030\020 \001" +
+      "(\0132%.flyteidl.event.TaskExecutionMetadat" +
+      "a\022\025\n\revent_version\030\022 \001(\005B\017\n\routput_resul" +
+      "t\"\343\001\n\024ExternalResourceInfo\022\023\n\013external_i" +
+      "d\030\001 \001(\t\022\r\n\005index\030\002 \001(\r\022\025\n\rretry_attempt\030" +
+      "\003 \001(\r\0221\n\005phase\030\004 \001(\0162\".flyteidl.core.Tas" +
+      "kExecution.Phase\0227\n\014cache_status\030\005 \001(\0162!" +
+      ".flyteidl.core.CatalogCacheStatus\022$\n\004log" +
+      "s\030\006 \003(\0132\026.flyteidl.core.TaskLog\"?\n\020Resou" +
+      "rcePoolInfo\022\030\n\020allocation_token\030\001 \001(\t\022\021\n" +
+      "\tnamespace\030\002 \001(\t\"\310\002\n\025TaskExecutionMetada" +
+      "ta\022\026\n\016generated_name\030\001 \001(\t\022@\n\022external_r" +
+      "esources\030\002 \003(\0132$.flyteidl.event.External" +
+      "ResourceInfo\022<\n\022resource_pool_info\030\003 \003(\013" +
+      "2 .flyteidl.event.ResourcePoolInfo\022\031\n\021pl" +
+      "ugin_identifier\030\004 \001(\t\022K\n\016instance_class\030" +
+      "\020 \001(\01623.flyteidl.event.TaskExecutionMeta" +
+      "data.InstanceClass\"/\n\rInstanceClass\022\013\n\007D" +
+      "EFAULT\020\000\022\021\n\rINTERRUPTIBLE\020\001B7Z5github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/e" +
+      "ventb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -18883,7 +19066,7 @@ public final class Event {
     internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_DynamicWorkflowNodeMetadata_descriptor,
-        new java.lang.String[] { "Id", "CompiledWorkflow", });
+        new java.lang.String[] { "Id", "CompiledWorkflow", "DynamicJobSpecUri", });
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_event_ParentTaskExecutionMetadata_fieldAccessorTable = new

@@ -16466,6 +16466,7 @@
                  * @interface IDynamicWorkflowNodeMetadata
                  * @property {flyteidl.core.IIdentifier|null} [id] DynamicWorkflowNodeMetadata id
                  * @property {flyteidl.core.ICompiledWorkflowClosure|null} [compiledWorkflow] DynamicWorkflowNodeMetadata compiledWorkflow
+                 * @property {string|null} [dynamicJobSpecUri] DynamicWorkflowNodeMetadata dynamicJobSpecUri
                  */
     
                 /**
@@ -16500,6 +16501,14 @@
                 DynamicWorkflowNodeMetadata.prototype.compiledWorkflow = null;
     
                 /**
+                 * DynamicWorkflowNodeMetadata dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.event.DynamicWorkflowNodeMetadata
+                 * @instance
+                 */
+                DynamicWorkflowNodeMetadata.prototype.dynamicJobSpecUri = "";
+    
+                /**
                  * Creates a new DynamicWorkflowNodeMetadata instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.event.DynamicWorkflowNodeMetadata
@@ -16527,6 +16536,8 @@
                         $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow"))
                         $root.flyteidl.core.CompiledWorkflowClosure.encode(message.compiledWorkflow, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -16553,6 +16564,9 @@
                             break;
                         case 2:
                             message.compiledWorkflow = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -16583,6 +16597,9 @@
                         if (error)
                             return "compiledWorkflow." + error;
                     }
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
@@ -31675,6 +31692,7 @@
                  * @property {flyteidl.admin.IWorkflowNodeMetadata|null} [workflowNodeMetadata] NodeExecutionClosure workflowNodeMetadata
                  * @property {flyteidl.admin.ITaskNodeMetadata|null} [taskNodeMetadata] NodeExecutionClosure taskNodeMetadata
                  * @property {string|null} [deckUri] NodeExecutionClosure deckUri
+                 * @property {string|null} [dynamicJobSpecUri] NodeExecutionClosure dynamicJobSpecUri
                  */
     
                 /**
@@ -31780,6 +31798,14 @@
                  */
                 NodeExecutionClosure.prototype.deckUri = "";
     
+                /**
+                 * NodeExecutionClosure dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.admin.NodeExecutionClosure
+                 * @instance
+                 */
+                NodeExecutionClosure.prototype.dynamicJobSpecUri = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -31851,6 +31877,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.outputData, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                     if (message.deckUri != null && message.hasOwnProperty("deckUri"))
                         writer.uint32(/* id 11, wireType 2 =*/90).string(message.deckUri);
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 12, wireType 2 =*/98).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -31904,6 +31932,9 @@
                             break;
                         case 11:
                             message.deckUri = reader.string();
+                            break;
+                        case 12:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -32008,6 +32039,9 @@
                     if (message.deckUri != null && message.hasOwnProperty("deckUri"))
                         if (!$util.isString(message.deckUri))
                             return "deckUri: string expected";
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
@@ -32290,6 +32324,7 @@
                  * @interface IDynamicWorkflowNodeMetadata
                  * @property {flyteidl.core.IIdentifier|null} [id] DynamicWorkflowNodeMetadata id
                  * @property {flyteidl.core.ICompiledWorkflowClosure|null} [compiledWorkflow] DynamicWorkflowNodeMetadata compiledWorkflow
+                 * @property {string|null} [dynamicJobSpecUri] DynamicWorkflowNodeMetadata dynamicJobSpecUri
                  */
     
                 /**
@@ -32324,6 +32359,14 @@
                 DynamicWorkflowNodeMetadata.prototype.compiledWorkflow = null;
     
                 /**
+                 * DynamicWorkflowNodeMetadata dynamicJobSpecUri.
+                 * @member {string} dynamicJobSpecUri
+                 * @memberof flyteidl.admin.DynamicWorkflowNodeMetadata
+                 * @instance
+                 */
+                DynamicWorkflowNodeMetadata.prototype.dynamicJobSpecUri = "";
+    
+                /**
                  * Creates a new DynamicWorkflowNodeMetadata instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.DynamicWorkflowNodeMetadata
@@ -32351,6 +32394,8 @@
                         $root.flyteidl.core.Identifier.encode(message.id, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.compiledWorkflow != null && message.hasOwnProperty("compiledWorkflow"))
                         $root.flyteidl.core.CompiledWorkflowClosure.encode(message.compiledWorkflow, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.dynamicJobSpecUri);
                     return writer;
                 };
     
@@ -32377,6 +32422,9 @@
                             break;
                         case 2:
                             message.compiledWorkflow = $root.flyteidl.core.CompiledWorkflowClosure.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.dynamicJobSpecUri = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -32407,6 +32455,9 @@
                         if (error)
                             return "compiledWorkflow." + error;
                     }
+                    if (message.dynamicJobSpecUri != null && message.hasOwnProperty("dynamicJobSpecUri"))
+                        if (!$util.isString(message.dynamicJobSpecUri))
+                            return "dynamicJobSpecUri: string expected";
                     return null;
                 };
     
