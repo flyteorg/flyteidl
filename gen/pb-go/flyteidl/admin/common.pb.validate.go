@@ -1032,6 +1032,8 @@ func (m *ResourceListRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for IncludeArchived
+
 	return nil
 }
 

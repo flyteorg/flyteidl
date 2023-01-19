@@ -2026,6 +2026,12 @@ class ResourceListRequest final :
   ::google::protobuf::uint32 limit() const;
   void set_limit(::google::protobuf::uint32 value);
 
+  // bool include_archived = 6;
+  void clear_include_archived();
+  static const int kIncludeArchivedFieldNumber = 6;
+  bool include_archived() const;
+  void set_include_archived(bool value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.ResourceListRequest)
  private:
   class HasBitSetters;
@@ -2036,6 +2042,7 @@ class ResourceListRequest final :
   ::flyteidl::admin::NamedEntityIdentifier* id_;
   ::flyteidl::admin::Sort* sort_by_;
   ::google::protobuf::uint32 limit_;
+  bool include_archived_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
 };
@@ -4910,6 +4917,20 @@ inline void ResourceListRequest::set_allocated_sort_by(::flyteidl::admin::Sort* 
   }
   sort_by_ = sort_by;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.ResourceListRequest.sort_by)
+}
+
+// bool include_archived = 6;
+inline void ResourceListRequest::clear_include_archived() {
+  include_archived_ = false;
+}
+inline bool ResourceListRequest::include_archived() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ResourceListRequest.include_archived)
+  return include_archived_;
+}
+inline void ResourceListRequest::set_include_archived(bool value) {
+  
+  include_archived_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.ResourceListRequest.include_archived)
 }
 
 // -------------------------------------------------------------------

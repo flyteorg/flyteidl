@@ -19744,6 +19744,7 @@
                  * @property {string|null} [token] ResourceListRequest token
                  * @property {string|null} [filters] ResourceListRequest filters
                  * @property {flyteidl.admin.ISort|null} [sortBy] ResourceListRequest sortBy
+                 * @property {boolean|null} [includeArchived] ResourceListRequest includeArchived
                  */
     
                 /**
@@ -19802,6 +19803,14 @@
                 ResourceListRequest.prototype.sortBy = null;
     
                 /**
+                 * ResourceListRequest includeArchived.
+                 * @member {boolean} includeArchived
+                 * @memberof flyteidl.admin.ResourceListRequest
+                 * @instance
+                 */
+                ResourceListRequest.prototype.includeArchived = false;
+    
+                /**
                  * Creates a new ResourceListRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.ResourceListRequest
@@ -19835,6 +19844,8 @@
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.filters);
                     if (message.sortBy != null && message.hasOwnProperty("sortBy"))
                         $root.flyteidl.admin.Sort.encode(message.sortBy, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.includeArchived != null && message.hasOwnProperty("includeArchived"))
+                        writer.uint32(/* id 6, wireType 0 =*/48).bool(message.includeArchived);
                     return writer;
                 };
     
@@ -19870,6 +19881,9 @@
                             break;
                         case 5:
                             message.sortBy = $root.flyteidl.admin.Sort.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            message.includeArchived = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -19909,6 +19923,9 @@
                         if (error)
                             return "sortBy." + error;
                     }
+                    if (message.includeArchived != null && message.hasOwnProperty("includeArchived"))
+                        if (typeof message.includeArchived !== "boolean")
+                            return "includeArchived: boolean expected";
                     return null;
                 };
     

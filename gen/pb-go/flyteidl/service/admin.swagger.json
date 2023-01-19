@@ -928,6 +928,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -1242,6 +1250,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -1323,6 +1339,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -2535,6 +2559,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -2616,6 +2648,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -3028,6 +3068,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -3109,6 +3157,14 @@
               "ASCENDING"
             ],
             "default": "DESCENDING"
+          },
+          {
+            "name": "include_archived",
+            "description": "Defines the API behavior to include archived executions\nCurrently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it\nThis flag overrides this behavior to avoid adding such a logic.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [

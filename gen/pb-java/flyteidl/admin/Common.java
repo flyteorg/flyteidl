@@ -12182,6 +12182,17 @@ public final class Common {
      * <code>.flyteidl.admin.Sort sort_by = 5;</code>
      */
     flyteidl.admin.Common.SortOrBuilder getSortByOrBuilder();
+
+    /**
+     * <pre>
+     * Defines the API behavior to include archived executions
+     * Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+     * This flag overrides this behavior to avoid adding such a logic
+     * </pre>
+     *
+     * <code>bool include_archived = 6;</code>
+     */
+    boolean getIncludeArchived();
   }
   /**
    * <pre>
@@ -12270,6 +12281,11 @@ public final class Common {
                 sortBy_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 48: {
+
+              includeArchived_ = input.readBool();
               break;
             }
             default: {
@@ -12482,6 +12498,21 @@ public final class Common {
       return getSortBy();
     }
 
+    public static final int INCLUDE_ARCHIVED_FIELD_NUMBER = 6;
+    private boolean includeArchived_;
+    /**
+     * <pre>
+     * Defines the API behavior to include archived executions
+     * Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+     * This flag overrides this behavior to avoid adding such a logic
+     * </pre>
+     *
+     * <code>bool include_archived = 6;</code>
+     */
+    public boolean getIncludeArchived() {
+      return includeArchived_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12511,6 +12542,9 @@ public final class Common {
       if (sortBy_ != null) {
         output.writeMessage(5, getSortBy());
       }
+      if (includeArchived_ != false) {
+        output.writeBool(6, includeArchived_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12537,6 +12571,10 @@ public final class Common {
       if (sortBy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getSortBy());
+      }
+      if (includeArchived_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, includeArchived_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12569,6 +12607,8 @@ public final class Common {
         if (!getSortBy()
             .equals(other.getSortBy())) return false;
       }
+      if (getIncludeArchived()
+          != other.getIncludeArchived()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12594,6 +12634,9 @@ public final class Common {
         hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
         hash = (53 * hash) + getSortBy().hashCode();
       }
+      hash = (37 * hash) + INCLUDE_ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIncludeArchived());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12750,6 +12793,8 @@ public final class Common {
           sortBy_ = null;
           sortByBuilder_ = null;
         }
+        includeArchived_ = false;
+
         return this;
       }
 
@@ -12789,6 +12834,7 @@ public final class Common {
         } else {
           result.sortBy_ = sortByBuilder_.build();
         }
+        result.includeArchived_ = includeArchived_;
         onBuilt();
         return result;
       }
@@ -12853,6 +12899,9 @@ public final class Common {
         }
         if (other.hasSortBy()) {
           mergeSortBy(other.getSortBy());
+        }
+        if (other.getIncludeArchived() != false) {
+          setIncludeArchived(other.getIncludeArchived());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13444,6 +13493,50 @@ public final class Common {
           sortBy_ = null;
         }
         return sortByBuilder_;
+      }
+
+      private boolean includeArchived_ ;
+      /**
+       * <pre>
+       * Defines the API behavior to include archived executions
+       * Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+       * This flag overrides this behavior to avoid adding such a logic
+       * </pre>
+       *
+       * <code>bool include_archived = 6;</code>
+       */
+      public boolean getIncludeArchived() {
+        return includeArchived_;
+      }
+      /**
+       * <pre>
+       * Defines the API behavior to include archived executions
+       * Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+       * This flag overrides this behavior to avoid adding such a logic
+       * </pre>
+       *
+       * <code>bool include_archived = 6;</code>
+       */
+      public Builder setIncludeArchived(boolean value) {
+        
+        includeArchived_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Defines the API behavior to include archived executions
+       * Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+       * This flag overrides this behavior to avoid adding such a logic
+       * </pre>
+       *
+       * <code>bool include_archived = 6;</code>
+       */
+      public Builder clearIncludeArchived() {
+        
+        includeArchived_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -20909,35 +21002,36 @@ public final class Common {
       "5\n\010metadata\030\003 \001(\0132#.flyteidl.admin.Named" +
       "EntityMetadata\"\033\n\031NamedEntityUpdateRespo" +
       "nse\"9\n\020ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.fl" +
-      "yteidl.core.Identifier\"\236\001\n\023ResourceListR" +
+      "yteidl.core.Identifier\"\270\001\n\023ResourceListR" +
       "equest\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.Name" +
       "dEntityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005toke" +
       "n\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(" +
-      "\0132\024.flyteidl.admin.Sort\"-\n\021EmailNotifica" +
-      "tion\022\030\n\020recipients_email\030\001 \003(\t\"1\n\025PagerD" +
-      "utyNotification\022\030\n\020recipients_email\030\001 \003(" +
-      "\t\"-\n\021SlackNotification\022\030\n\020recipients_ema" +
-      "il\030\001 \003(\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(" +
-      "\0162&.flyteidl.core.WorkflowExecution.Phas" +
-      "e\0222\n\005email\030\002 \001(\0132!.flyteidl.admin.EmailN" +
-      "otificationH\000\022;\n\npager_duty\030\003 \001(\0132%.flyt" +
-      "eidl.admin.PagerDutyNotificationH\000\0222\n\005sl" +
-      "ack\030\004 \001(\0132!.flyteidl.admin.SlackNotifica" +
-      "tionH\000B\006\n\004type\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r" +
-      "\n\005bytes\030\002 \001(\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 " +
-      "\003(\0132\".flyteidl.admin.Labels.ValuesEntry\032" +
-      "-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'." +
-      "flyteidl.admin.Annotations.ValuesEntry\032-" +
-      "\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030" +
-      "\001 \001(\t\022\"\n\032kubernetes_service_account\030\002 \001(" +
-      "\t:\002\030\001\"5\n\023RawOutputDataConfig\022\036\n\026output_l" +
-      "ocation_prefix\030\001 \001(\t*\\\n\020NamedEntityState" +
-      "\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTIT" +
-      "Y_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gi" +
-      "thub.com/flyteorg/flyteidl/gen/pb-go/fly" +
-      "teidl/adminb\006proto3"
+      "\0132\024.flyteidl.admin.Sort\022\030\n\020include_archi" +
+      "ved\030\006 \001(\010\"-\n\021EmailNotification\022\030\n\020recipi" +
+      "ents_email\030\001 \003(\t\"1\n\025PagerDutyNotificatio" +
+      "n\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNoti" +
+      "fication\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014N" +
+      "otification\0226\n\006phases\030\001 \003(\0162&.flyteidl.c" +
+      "ore.WorkflowExecution.Phase\0222\n\005email\030\002 \001" +
+      "(\0132!.flyteidl.admin.EmailNotificationH\000\022" +
+      ";\n\npager_duty\030\003 \001(\0132%.flyteidl.admin.Pag" +
+      "erDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.fl" +
+      "yteidl.admin.SlackNotificationH\000B\006\n\004type" +
+      "\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:" +
+      "\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl" +
+      ".admin.Labels.ValuesEntry\032-\n\013ValuesEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Anno" +
+      "tations\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin" +
+      ".Annotations.ValuesEntry\032-\n\013ValuesEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"N\n\010AuthR" +
+      "ole\022\032\n\022assumable_iam_role\030\001 \001(\t\022\"\n\032kuber" +
+      "netes_service_account\030\002 \001(\t:\002\030\001\"5\n\023RawOu" +
+      "tputDataConfig\022\036\n\026output_location_prefix" +
+      "\030\001 \001(\t*\\\n\020NamedEntityState\022\027\n\023NAMED_ENTI" +
+      "TY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024" +
+      "\n\020SYSTEM_GENERATED\020\002B7Z5github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/adminb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21030,7 +21124,7 @@ public final class Common {
     internal_static_flyteidl_admin_ResourceListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ResourceListRequest_descriptor,
-        new java.lang.String[] { "Id", "Limit", "Token", "Filters", "SortBy", });
+        new java.lang.String[] { "Id", "Limit", "Token", "Filters", "SortBy", "IncludeArchived", });
     internal_static_flyteidl_admin_EmailNotification_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_flyteidl_admin_EmailNotification_fieldAccessorTable = new

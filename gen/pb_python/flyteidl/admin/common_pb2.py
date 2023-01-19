@@ -15,7 +15,7 @@ from flyteidl.core import execution_pb2 as flyteidl_dot_core_dot_execution__pb2
 from flyteidl.core import identifier_pb2 as flyteidl_dot_core_dot_identifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"]\n\x15NamedEntityIdentifier\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\"o\n\x13NamedEntityMetadata\x12 \n\x0b\x64\x65scription\x18\x01 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x05state\x18\x02 \x01(\x0e\x32 .flyteidl.admin.NamedEntityStateR\x05state\"\xc7\x01\n\x0bNamedEntity\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12?\n\x08metadata\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NamedEntityMetadataR\x08metadata\"\x82\x01\n\x04Sort\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12<\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.DirectionR\tdirection\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\xc9\x01\n NamedEntityIdentifierListRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x14\n\x05limit\x18\x03 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x04 \x01(\tR\x05token\x12-\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\x12\x18\n\x07\x66ilters\x18\x06 \x01(\tR\x07\x66ilters\"\x81\x02\n\x16NamedEntityListRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x18\n\x07project\x18\x02 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x03 \x01(\tR\x06\x64omain\x12\x14\n\x05limit\x18\x04 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x05 \x01(\tR\x05token\x12-\n\x07sort_by\x18\x06 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\x12\x18\n\x07\x66ilters\x18\x07 \x01(\tR\x07\x66ilters\"t\n\x19NamedEntityIdentifierList\x12\x41\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x08\x65ntities\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\"`\n\x0fNamedEntityList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1b.flyteidl.admin.NamedEntityR\x08\x65ntities\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\"\x90\x01\n\x15NamedEntityGetRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\"\xd4\x01\n\x18NamedEntityUpdateRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12?\n\x08metadata\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NamedEntityMetadataR\x08metadata\"\x1b\n\x19NamedEntityUpdateResponse\"=\n\x10ObjectGetRequest\x12)\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierR\x02id\"\xc1\x01\n\x13ResourceListRequest\x12\x35\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12\x14\n\x05limit\x18\x02 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\x12\x18\n\x07\x66ilters\x18\x04 \x01(\tR\x07\x66ilters\x12-\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\">\n\x11\x45mailNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\"B\n\x15PagerDutyNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\">\n\x11SlackNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\"\x94\x02\n\x0cNotification\x12>\n\x06phases\x18\x01 \x03(\x0e\x32&.flyteidl.core.WorkflowExecution.PhaseR\x06phases\x12\x39\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00R\x05\x65mail\x12\x46\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00R\tpagerDuty\x12\x39\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00R\x05slackB\x06\n\x04type\"5\n\x07UrlBlob\x12\x10\n\x03url\x18\x01 \x01(\tR\x03url\x12\x14\n\x05\x62ytes\x18\x02 \x01(\x03R\x05\x62ytes:\x02\x18\x01\"\x7f\n\x06Labels\x12:\n\x06values\x18\x01 \x03(\x0b\x32\".flyteidl.admin.Labels.ValuesEntryR\x06values\x1a\x39\n\x0bValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x89\x01\n\x0b\x41nnotations\x12?\n\x06values\x18\x01 \x03(\x0b\x32\'.flyteidl.admin.Annotations.ValuesEntryR\x06values\x1a\x39\n\x0bValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"z\n\x08\x41uthRole\x12,\n\x12\x61ssumable_iam_role\x18\x01 \x01(\tR\x10\x61ssumableIamRole\x12<\n\x1akubernetes_service_account\x18\x02 \x01(\tR\x18kubernetesServiceAccount:\x02\x18\x01\"K\n\x13RawOutputDataConfig\x12\x34\n\x16output_location_prefix\x18\x01 \x01(\tR\x14outputLocationPrefix*\\\n\x10NamedEntityState\x12\x17\n\x13NAMED_ENTITY_ACTIVE\x10\x00\x12\x19\n\x15NAMED_ENTITY_ARCHIVED\x10\x01\x12\x14\n\x10SYSTEM_GENERATED\x10\x02\x42\xb1\x01\n\x12\x63om.flyteidl.adminB\x0b\x43ommonProtoP\x01Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin\xa2\x02\x03\x46\x41X\xaa\x02\x0e\x46lyteidl.Admin\xca\x02\x0e\x46lyteidl\\Admin\xe2\x02\x1a\x46lyteidl\\Admin\\GPBMetadata\xea\x02\x0f\x46lyteidl::Adminb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x66lyteidl/admin/common.proto\x12\x0e\x66lyteidl.admin\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\"]\n\x15NamedEntityIdentifier\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\"o\n\x13NamedEntityMetadata\x12 \n\x0b\x64\x65scription\x18\x01 \x01(\tR\x0b\x64\x65scription\x12\x36\n\x05state\x18\x02 \x01(\x0e\x32 .flyteidl.admin.NamedEntityStateR\x05state\"\xc7\x01\n\x0bNamedEntity\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12?\n\x08metadata\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NamedEntityMetadataR\x08metadata\"\x82\x01\n\x04Sort\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12<\n\tdirection\x18\x02 \x01(\x0e\x32\x1e.flyteidl.admin.Sort.DirectionR\tdirection\"*\n\tDirection\x12\x0e\n\nDESCENDING\x10\x00\x12\r\n\tASCENDING\x10\x01\"\xc9\x01\n NamedEntityIdentifierListRequest\x12\x18\n\x07project\x18\x01 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x02 \x01(\tR\x06\x64omain\x12\x14\n\x05limit\x18\x03 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x04 \x01(\tR\x05token\x12-\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\x12\x18\n\x07\x66ilters\x18\x06 \x01(\tR\x07\x66ilters\"\x81\x02\n\x16NamedEntityListRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x18\n\x07project\x18\x02 \x01(\tR\x07project\x12\x16\n\x06\x64omain\x18\x03 \x01(\tR\x06\x64omain\x12\x14\n\x05limit\x18\x04 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x05 \x01(\tR\x05token\x12-\n\x07sort_by\x18\x06 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\x12\x18\n\x07\x66ilters\x18\x07 \x01(\tR\x07\x66ilters\"t\n\x19NamedEntityIdentifierList\x12\x41\n\x08\x65ntities\x18\x01 \x03(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x08\x65ntities\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\"`\n\x0fNamedEntityList\x12\x37\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x1b.flyteidl.admin.NamedEntityR\x08\x65ntities\x12\x14\n\x05token\x18\x02 \x01(\tR\x05token\"\x90\x01\n\x15NamedEntityGetRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\"\xd4\x01\n\x18NamedEntityUpdateRequest\x12@\n\rresource_type\x18\x01 \x01(\x0e\x32\x1b.flyteidl.core.ResourceTypeR\x0cresourceType\x12\x35\n\x02id\x18\x02 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12?\n\x08metadata\x18\x03 \x01(\x0b\x32#.flyteidl.admin.NamedEntityMetadataR\x08metadata\"\x1b\n\x19NamedEntityUpdateResponse\"=\n\x10ObjectGetRequest\x12)\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierR\x02id\"\xec\x01\n\x13ResourceListRequest\x12\x35\n\x02id\x18\x01 \x01(\x0b\x32%.flyteidl.admin.NamedEntityIdentifierR\x02id\x12\x14\n\x05limit\x18\x02 \x01(\rR\x05limit\x12\x14\n\x05token\x18\x03 \x01(\tR\x05token\x12\x18\n\x07\x66ilters\x18\x04 \x01(\tR\x07\x66ilters\x12-\n\x07sort_by\x18\x05 \x01(\x0b\x32\x14.flyteidl.admin.SortR\x06sortBy\x12)\n\x10include_archived\x18\x06 \x01(\x08R\x0fincludeArchived\">\n\x11\x45mailNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\"B\n\x15PagerDutyNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\">\n\x11SlackNotification\x12)\n\x10recipients_email\x18\x01 \x03(\tR\x0frecipientsEmail\"\x94\x02\n\x0cNotification\x12>\n\x06phases\x18\x01 \x03(\x0e\x32&.flyteidl.core.WorkflowExecution.PhaseR\x06phases\x12\x39\n\x05\x65mail\x18\x02 \x01(\x0b\x32!.flyteidl.admin.EmailNotificationH\x00R\x05\x65mail\x12\x46\n\npager_duty\x18\x03 \x01(\x0b\x32%.flyteidl.admin.PagerDutyNotificationH\x00R\tpagerDuty\x12\x39\n\x05slack\x18\x04 \x01(\x0b\x32!.flyteidl.admin.SlackNotificationH\x00R\x05slackB\x06\n\x04type\"5\n\x07UrlBlob\x12\x10\n\x03url\x18\x01 \x01(\tR\x03url\x12\x14\n\x05\x62ytes\x18\x02 \x01(\x03R\x05\x62ytes:\x02\x18\x01\"\x7f\n\x06Labels\x12:\n\x06values\x18\x01 \x03(\x0b\x32\".flyteidl.admin.Labels.ValuesEntryR\x06values\x1a\x39\n\x0bValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x89\x01\n\x0b\x41nnotations\x12?\n\x06values\x18\x01 \x03(\x0b\x32\'.flyteidl.admin.Annotations.ValuesEntryR\x06values\x1a\x39\n\x0bValuesEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"z\n\x08\x41uthRole\x12,\n\x12\x61ssumable_iam_role\x18\x01 \x01(\tR\x10\x61ssumableIamRole\x12<\n\x1akubernetes_service_account\x18\x02 \x01(\tR\x18kubernetesServiceAccount:\x02\x18\x01\"K\n\x13RawOutputDataConfig\x12\x34\n\x16output_location_prefix\x18\x01 \x01(\tR\x14outputLocationPrefix*\\\n\x10NamedEntityState\x12\x17\n\x13NAMED_ENTITY_ACTIVE\x10\x00\x12\x19\n\x15NAMED_ENTITY_ARCHIVED\x10\x01\x12\x14\n\x10SYSTEM_GENERATED\x10\x02\x42\xb1\x01\n\x12\x63om.flyteidl.adminB\x0b\x43ommonProtoP\x01Z5github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin\xa2\x02\x03\x46\x41X\xaa\x02\x0e\x46lyteidl.Admin\xca\x02\x0e\x46lyteidl\\Admin\xe2\x02\x1a\x46lyteidl\\Admin\\GPBMetadata\xea\x02\x0f\x46lyteidl::Adminb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flyteidl.admin.common_pb2', globals())
@@ -31,8 +31,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ANNOTATIONS_VALUESENTRY._serialized_options = b'8\001'
   _AUTHROLE._options = None
   _AUTHROLE._serialized_options = b'\030\001'
-  _NAMEDENTITYSTATE._serialized_start=2983
-  _NAMEDENTITYSTATE._serialized_end=3075
+  _NAMEDENTITYSTATE._serialized_start=3026
+  _NAMEDENTITYSTATE._serialized_end=3118
   _NAMEDENTITYIDENTIFIER._serialized_start=110
   _NAMEDENTITYIDENTIFIER._serialized_end=203
   _NAMEDENTITYMETADATA._serialized_start=205
@@ -60,27 +60,27 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _OBJECTGETREQUEST._serialized_start=1724
   _OBJECTGETREQUEST._serialized_end=1785
   _RESOURCELISTREQUEST._serialized_start=1788
-  _RESOURCELISTREQUEST._serialized_end=1981
-  _EMAILNOTIFICATION._serialized_start=1983
-  _EMAILNOTIFICATION._serialized_end=2045
-  _PAGERDUTYNOTIFICATION._serialized_start=2047
-  _PAGERDUTYNOTIFICATION._serialized_end=2113
-  _SLACKNOTIFICATION._serialized_start=2115
-  _SLACKNOTIFICATION._serialized_end=2177
-  _NOTIFICATION._serialized_start=2180
-  _NOTIFICATION._serialized_end=2456
-  _URLBLOB._serialized_start=2458
-  _URLBLOB._serialized_end=2511
-  _LABELS._serialized_start=2513
-  _LABELS._serialized_end=2640
-  _LABELS_VALUESENTRY._serialized_start=2583
-  _LABELS_VALUESENTRY._serialized_end=2640
-  _ANNOTATIONS._serialized_start=2643
-  _ANNOTATIONS._serialized_end=2780
-  _ANNOTATIONS_VALUESENTRY._serialized_start=2583
-  _ANNOTATIONS_VALUESENTRY._serialized_end=2640
-  _AUTHROLE._serialized_start=2782
-  _AUTHROLE._serialized_end=2904
-  _RAWOUTPUTDATACONFIG._serialized_start=2906
-  _RAWOUTPUTDATACONFIG._serialized_end=2981
+  _RESOURCELISTREQUEST._serialized_end=2024
+  _EMAILNOTIFICATION._serialized_start=2026
+  _EMAILNOTIFICATION._serialized_end=2088
+  _PAGERDUTYNOTIFICATION._serialized_start=2090
+  _PAGERDUTYNOTIFICATION._serialized_end=2156
+  _SLACKNOTIFICATION._serialized_start=2158
+  _SLACKNOTIFICATION._serialized_end=2220
+  _NOTIFICATION._serialized_start=2223
+  _NOTIFICATION._serialized_end=2499
+  _URLBLOB._serialized_start=2501
+  _URLBLOB._serialized_end=2554
+  _LABELS._serialized_start=2556
+  _LABELS._serialized_end=2683
+  _LABELS_VALUESENTRY._serialized_start=2626
+  _LABELS_VALUESENTRY._serialized_end=2683
+  _ANNOTATIONS._serialized_start=2686
+  _ANNOTATIONS._serialized_end=2823
+  _ANNOTATIONS_VALUESENTRY._serialized_start=2626
+  _ANNOTATIONS_VALUESENTRY._serialized_end=2683
+  _AUTHROLE._serialized_start=2825
+  _AUTHROLE._serialized_end=2947
+  _RAWOUTPUTDATACONFIG._serialized_start=2949
+  _RAWOUTPUTDATACONFIG._serialized_end=3024
 # @@protoc_insertion_point(module_scope)

@@ -615,6 +615,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, token_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, filters_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, sort_by_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ResourceListRequest, include_archived_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::EmailNotification, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -708,17 +709,17 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 82, -1, sizeof(::flyteidl::admin::NamedEntityUpdateResponse)},
   { 87, -1, sizeof(::flyteidl::admin::ObjectGetRequest)},
   { 93, -1, sizeof(::flyteidl::admin::ResourceListRequest)},
-  { 103, -1, sizeof(::flyteidl::admin::EmailNotification)},
-  { 109, -1, sizeof(::flyteidl::admin::PagerDutyNotification)},
-  { 115, -1, sizeof(::flyteidl::admin::SlackNotification)},
-  { 121, -1, sizeof(::flyteidl::admin::Notification)},
-  { 131, -1, sizeof(::flyteidl::admin::UrlBlob)},
-  { 138, 145, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
-  { 147, -1, sizeof(::flyteidl::admin::Labels)},
-  { 153, 160, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
-  { 162, -1, sizeof(::flyteidl::admin::Annotations)},
-  { 168, -1, sizeof(::flyteidl::admin::AuthRole)},
-  { 175, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
+  { 104, -1, sizeof(::flyteidl::admin::EmailNotification)},
+  { 110, -1, sizeof(::flyteidl::admin::PagerDutyNotification)},
+  { 116, -1, sizeof(::flyteidl::admin::SlackNotification)},
+  { 122, -1, sizeof(::flyteidl::admin::Notification)},
+  { 132, -1, sizeof(::flyteidl::admin::UrlBlob)},
+  { 139, 146, sizeof(::flyteidl::admin::Labels_ValuesEntry_DoNotUse)},
+  { 148, -1, sizeof(::flyteidl::admin::Labels)},
+  { 154, 161, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
+  { 163, -1, sizeof(::flyteidl::admin::Annotations)},
+  { 169, -1, sizeof(::flyteidl::admin::AuthRole)},
+  { 176, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -792,40 +793,41 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "5\n\010metadata\030\003 \001(\0132#.flyteidl.admin.Named"
   "EntityMetadata\"\033\n\031NamedEntityUpdateRespo"
   "nse\"9\n\020ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.fl"
-  "yteidl.core.Identifier\"\236\001\n\023ResourceListR"
+  "yteidl.core.Identifier\"\270\001\n\023ResourceListR"
   "equest\0221\n\002id\030\001 \001(\0132%.flyteidl.admin.Name"
   "dEntityIdentifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005toke"
   "n\030\003 \001(\t\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001("
-  "\0132\024.flyteidl.admin.Sort\"-\n\021EmailNotifica"
-  "tion\022\030\n\020recipients_email\030\001 \003(\t\"1\n\025PagerD"
-  "utyNotification\022\030\n\020recipients_email\030\001 \003("
-  "\t\"-\n\021SlackNotification\022\030\n\020recipients_ema"
-  "il\030\001 \003(\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003("
-  "\0162&.flyteidl.core.WorkflowExecution.Phas"
-  "e\0222\n\005email\030\002 \001(\0132!.flyteidl.admin.EmailN"
-  "otificationH\000\022;\n\npager_duty\030\003 \001(\0132%.flyt"
-  "eidl.admin.PagerDutyNotificationH\000\0222\n\005sl"
-  "ack\030\004 \001(\0132!.flyteidl.admin.SlackNotifica"
-  "tionH\000B\006\n\004type\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r"
-  "\n\005bytes\030\002 \001(\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 "
-  "\003(\0132\".flyteidl.admin.Labels.ValuesEntry\032"
-  "-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-  "(\t:\0028\001\"u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'."
-  "flyteidl.admin.Annotations.ValuesEntry\032-"
-  "\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-  "\t:\0028\001\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030"
-  "\001 \001(\t\022\"\n\032kubernetes_service_account\030\002 \001("
-  "\t:\002\030\001\"5\n\023RawOutputDataConfig\022\036\n\026output_l"
-  "ocation_prefix\030\001 \001(\t*\\\n\020NamedEntityState"
-  "\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTIT"
-  "Y_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gi"
-  "thub.com/flyteorg/flyteidl/gen/pb-go/fly"
-  "teidl/adminb\006proto3"
+  "\0132\024.flyteidl.admin.Sort\022\030\n\020include_archi"
+  "ved\030\006 \001(\010\"-\n\021EmailNotification\022\030\n\020recipi"
+  "ents_email\030\001 \003(\t\"1\n\025PagerDutyNotificatio"
+  "n\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNoti"
+  "fication\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014N"
+  "otification\0226\n\006phases\030\001 \003(\0162&.flyteidl.c"
+  "ore.WorkflowExecution.Phase\0222\n\005email\030\002 \001"
+  "(\0132!.flyteidl.admin.EmailNotificationH\000\022"
+  ";\n\npager_duty\030\003 \001(\0132%.flyteidl.admin.Pag"
+  "erDutyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.fl"
+  "yteidl.admin.SlackNotificationH\000B\006\n\004type"
+  "\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:"
+  "\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl"
+  ".admin.Labels.ValuesEntry\032-\n\013ValuesEntry"
+  "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Anno"
+  "tations\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin"
+  ".Annotations.ValuesEntry\032-\n\013ValuesEntry\022"
+  "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"N\n\010AuthR"
+  "ole\022\032\n\022assumable_iam_role\030\001 \001(\t\022\"\n\032kuber"
+  "netes_service_account\030\002 \001(\t:\002\030\001\"5\n\023RawOu"
+  "tputDataConfig\022\036\n\026output_location_prefix"
+  "\030\001 \001(\t*\\\n\020NamedEntityState\022\027\n\023NAMED_ENTI"
+  "TY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024"
+  "\n\020SYSTEM_GENERATED\020\002B7Z5github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/adminb\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2619,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2645,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -5702,6 +5704,7 @@ const int ResourceListRequest::kLimitFieldNumber;
 const int ResourceListRequest::kTokenFieldNumber;
 const int ResourceListRequest::kFiltersFieldNumber;
 const int ResourceListRequest::kSortByFieldNumber;
+const int ResourceListRequest::kIncludeArchivedFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ResourceListRequest::ResourceListRequest()
@@ -5731,7 +5734,9 @@ ResourceListRequest::ResourceListRequest(const ResourceListRequest& from)
   } else {
     sort_by_ = nullptr;
   }
-  limit_ = from.limit_;
+  ::memcpy(&limit_, &from.limit_,
+    static_cast<size_t>(reinterpret_cast<char*>(&include_archived_) -
+    reinterpret_cast<char*>(&limit_)) + sizeof(include_archived_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.ResourceListRequest)
 }
 
@@ -5741,8 +5746,8 @@ void ResourceListRequest::SharedCtor() {
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   filters_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&limit_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(limit_));
+      reinterpret_cast<char*>(&include_archived_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(include_archived_));
 }
 
 ResourceListRequest::~ResourceListRequest() {
@@ -5782,7 +5787,9 @@ void ResourceListRequest::Clear() {
     delete sort_by_;
   }
   sort_by_ = nullptr;
-  limit_ = 0u;
+  ::memset(&limit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&include_archived_) -
+      reinterpret_cast<char*>(&limit_)) + sizeof(include_archived_));
   _internal_metadata_.Clear();
 }
 
@@ -5862,6 +5869,13 @@ const char* ResourceListRequest::_InternalParse(const char* begin, const char* e
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // bool include_archived = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
+        msg->set_include_archived(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -5963,6 +5977,19 @@ bool ResourceListRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // bool include_archived = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &include_archived_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6027,6 +6054,11 @@ void ResourceListRequest::SerializeWithCachedSizes(
       5, HasBitSetters::sort_by(this), output);
   }
 
+  // bool include_archived = 6;
+  if (this->include_archived() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->include_archived(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6079,6 +6111,11 @@ void ResourceListRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::sort_by(this), target);
+  }
+
+  // bool include_archived = 6;
+  if (this->include_archived() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->include_archived(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6137,6 +6174,11 @@ size_t ResourceListRequest::ByteSizeLong() const {
         this->limit());
   }
 
+  // bool include_archived = 6;
+  if (this->include_archived() != 0) {
+    total_size += 1 + 1;
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -6181,6 +6223,9 @@ void ResourceListRequest::MergeFrom(const ResourceListRequest& from) {
   if (from.limit() != 0) {
     set_limit(from.limit());
   }
+  if (from.include_archived() != 0) {
+    set_include_archived(from.include_archived());
+  }
 }
 
 void ResourceListRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6215,6 +6260,7 @@ void ResourceListRequest::InternalSwap(ResourceListRequest* other) {
   swap(id_, other->id_);
   swap(sort_by_, other->sort_by_);
   swap(limit_, other->limit_);
+  swap(include_archived_, other->include_archived_);
 }
 
 ::google::protobuf::Metadata ResourceListRequest::GetMetadata() const {

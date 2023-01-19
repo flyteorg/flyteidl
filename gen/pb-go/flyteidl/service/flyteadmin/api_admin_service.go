@@ -2886,6 +2886,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Execution&#
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminExecutionList
 */
@@ -2897,6 +2898,7 @@ type ListExecutionsOpts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListExecutions(ctx context.Context, idProject string, idDomain string, localVarOptionals *ListExecutionsOpts) (AdminExecutionList, *http.Response, error) {
@@ -2934,6 +2936,9 @@ func (a *AdminServiceApiService) ListExecutions(ctx context.Context, idProject s
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3131,6 +3136,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminLaunchPlanList
 */
@@ -3141,6 +3147,7 @@ type ListLaunchPlansOpts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListLaunchPlans(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *ListLaunchPlansOpts) (AdminLaunchPlanList, *http.Response, error) {
@@ -3176,6 +3183,9 @@ func (a *AdminServiceApiService) ListLaunchPlans(ctx context.Context, idProject 
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -3253,6 +3263,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.LaunchPlan&
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminLaunchPlanList
 */
@@ -3264,6 +3275,7 @@ type ListLaunchPlans2Opts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListLaunchPlans2(ctx context.Context, idProject string, idDomain string, localVarOptionals *ListLaunchPlans2Opts) (AdminLaunchPlanList, *http.Response, error) {
@@ -3301,6 +3313,9 @@ func (a *AdminServiceApiService) ListLaunchPlans2(ctx context.Context, idProject
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -4222,6 +4237,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Task&#x60; 
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminTaskList
 */
@@ -4232,6 +4248,7 @@ type ListTasksOpts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListTasks(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *ListTasksOpts) (AdminTaskList, *http.Response, error) {
@@ -4267,6 +4284,9 @@ func (a *AdminServiceApiService) ListTasks(ctx context.Context, idProject string
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -4344,6 +4364,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Task&#x60; 
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminTaskList
 */
@@ -4355,6 +4376,7 @@ type ListTasks2Opts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListTasks2(ctx context.Context, idProject string, idDomain string, localVarOptionals *ListTasks2Opts) (AdminTaskList, *http.Response, error) {
@@ -4392,6 +4414,9 @@ func (a *AdminServiceApiService) ListTasks2(ctx context.Context, idProject strin
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -4589,6 +4614,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminWorkflowList
 */
@@ -4599,6 +4625,7 @@ type ListWorkflowsOpts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListWorkflows(ctx context.Context, idProject string, idDomain string, idName string, localVarOptionals *ListWorkflowsOpts) (AdminWorkflowList, *http.Response, error) {
@@ -4634,6 +4661,9 @@ func (a *AdminServiceApiService) ListWorkflows(ctx context.Context, idProject st
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
@@ -4711,6 +4741,7 @@ AdminServiceApiService Fetch a list of :ref:&#x60;ref_flyteidl.admin.Workflow&#x
      * @param "Filters" (optional.String) -  Indicates a list of filters passed as string. More info on constructing filters : &lt;Link&gt; +optional.
      * @param "SortByKey" (optional.String) -  Indicates an attribute to sort the response values. +required.
      * @param "SortByDirection" (optional.String) -  Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+     * @param "IncludeArchived" (optional.Bool) -  Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn&#39;t request it This flag overrides this behavior to avoid adding such a logic.
 
 @return AdminWorkflowList
 */
@@ -4722,6 +4753,7 @@ type ListWorkflows2Opts struct {
 	Filters optional.String
 	SortByKey optional.String
 	SortByDirection optional.String
+	IncludeArchived optional.Bool
 }
 
 func (a *AdminServiceApiService) ListWorkflows2(ctx context.Context, idProject string, idDomain string, localVarOptionals *ListWorkflows2Opts) (AdminWorkflowList, *http.Response, error) {
@@ -4759,6 +4791,9 @@ func (a *AdminServiceApiService) ListWorkflows2(ctx context.Context, idProject s
 	}
 	if localVarOptionals != nil && localVarOptionals.SortByDirection.IsSet() {
 		localVarQueryParams.Add("sort_by.direction", parameterToString(localVarOptionals.SortByDirection.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.IncludeArchived.IsSet() {
+		localVarQueryParams.Add("include_archived", parameterToString(localVarOptionals.IncludeArchived.Value(), ""))
 	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}

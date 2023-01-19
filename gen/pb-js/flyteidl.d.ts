@@ -8187,6 +8187,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy */
             sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest includeArchived */
+            includeArchived?: (boolean|null);
         }
 
         /** Represents a ResourceListRequest. */
@@ -8212,6 +8215,9 @@ export namespace flyteidl {
 
             /** ResourceListRequest sortBy. */
             public sortBy?: (flyteidl.admin.ISort|null);
+
+            /** ResourceListRequest includeArchived. */
+            public includeArchived: boolean;
 
             /**
              * Creates a new ResourceListRequest instance using the specified properties.

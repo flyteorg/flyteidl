@@ -182,18 +182,20 @@ class RawOutputDataConfig(_message.Message):
     def __init__(self, output_location_prefix: _Optional[str] = ...) -> None: ...
 
 class ResourceListRequest(_message.Message):
-    __slots__ = ["filters", "id", "limit", "sort_by", "token"]
+    __slots__ = ["filters", "id", "include_archived", "limit", "sort_by", "token"]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    INCLUDE_ARCHIVED_FIELD_NUMBER: _ClassVar[int]
     LIMIT_FIELD_NUMBER: _ClassVar[int]
     SORT_BY_FIELD_NUMBER: _ClassVar[int]
     TOKEN_FIELD_NUMBER: _ClassVar[int]
     filters: str
     id: NamedEntityIdentifier
+    include_archived: bool
     limit: int
     sort_by: Sort
     token: str
-    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[_Union[NamedEntityIdentifier, _Mapping]] = ..., limit: _Optional[int] = ..., token: _Optional[str] = ..., filters: _Optional[str] = ..., sort_by: _Optional[_Union[Sort, _Mapping]] = ..., include_archived: bool = ...) -> None: ...
 
 class SlackNotification(_message.Message):
     __slots__ = ["recipients_email"]

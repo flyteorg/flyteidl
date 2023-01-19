@@ -3419,6 +3419,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3447,12 +3448,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminExecutionList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3497,6 +3499,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -3673,6 +3677,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3701,12 +3706,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3755,6 +3761,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -3806,6 +3814,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3834,12 +3843,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminLaunchPlanList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3884,6 +3894,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -4858,6 +4870,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4886,12 +4899,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4940,6 +4954,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -4991,6 +5007,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5019,12 +5036,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminTaskList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5069,6 +5087,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -5245,6 +5265,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5273,12 +5294,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5327,6 +5349,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 
@@ -5378,6 +5402,7 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5406,12 +5431,13 @@ class AdminServiceApi(object):
         :param str filters: Indicates a list of filters passed as string. More info on constructing filters : <Link> +optional.
         :param str sort_by_key: Indicates an attribute to sort the response values. +required.
         :param str sort_by_direction: Indicates the direction to apply sort key for response values. +optional.   - DESCENDING: By default, fields are sorted in descending order.
+        :param bool include_archived: Defines the API behavior to include archived executions Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it This flag overrides this behavior to avoid adding such a logic.
         :return: AdminWorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'limit', 'token', 'filters', 'sort_by_key', 'sort_by_direction', 'include_archived']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5456,6 +5482,8 @@ class AdminServiceApi(object):
             query_params.append(('sort_by.key', params['sort_by_key']))  # noqa: E501
         if 'sort_by_direction' in params:
             query_params.append(('sort_by.direction', params['sort_by_direction']))  # noqa: E501
+        if 'include_archived' in params:
+            query_params.append(('include_archived', params['include_archived']))  # noqa: E501
 
         header_params = {}
 

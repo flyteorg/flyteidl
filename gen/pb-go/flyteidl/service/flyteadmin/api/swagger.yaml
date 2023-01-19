@@ -810,6 +810,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -1078,6 +1089,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -1155,6 +1177,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -2233,6 +2266,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -2310,6 +2354,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -2679,6 +2734,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."
@@ -2756,6 +2822,17 @@ paths:
         - "ASCENDING"
         x-exportParamName: "SortByDirection"
         x-optionalDataType: "String"
+      - name: "include_archived"
+        in: "query"
+        description: "Defines the API behavior to include archived executions\nCurrently\
+          \ the ListExecutions API adds a state filter of excluding archived executions\
+          \ if the API doesn't request it\nThis flag overrides this behavior to avoid\
+          \ adding such a logic."
+        required: false
+        type: "boolean"
+        format: "boolean"
+        x-exportParamName: "IncludeArchived"
+        x-optionalDataType: "Bool"
       responses:
         200:
           description: "A successful response."

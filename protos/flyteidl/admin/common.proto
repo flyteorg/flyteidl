@@ -211,6 +211,11 @@ message ResourceListRequest {
     // Sort ordering.
     // +optional
     Sort sort_by = 5;
+
+    // Defines the API behavior to include archived executions
+    // Currently the ListExecutions API adds a state filter of excluding archived executions if the API doesn't request it
+    // This flag overrides this behavior to avoid adding such a logic
+    bool include_archived = 6;
 }
 
 // Defines an email notification specification.
