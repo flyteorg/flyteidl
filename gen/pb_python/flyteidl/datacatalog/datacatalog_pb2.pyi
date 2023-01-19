@@ -107,6 +107,26 @@ class DatasetPropertyFilter(_message.Message):
     version: str
     def __init__(self, project: _Optional[str] = ..., name: _Optional[str] = ..., domain: _Optional[str] = ..., version: _Optional[str] = ...) -> None: ...
 
+class DeleteArtifactRequest(_message.Message):
+    __slots__ = ["artifact_id", "dataset", "tag_name"]
+    ARTIFACT_ID_FIELD_NUMBER: _ClassVar[int]
+    DATASET_FIELD_NUMBER: _ClassVar[int]
+    TAG_NAME_FIELD_NUMBER: _ClassVar[int]
+    artifact_id: str
+    dataset: DatasetID
+    tag_name: str
+    def __init__(self, dataset: _Optional[_Union[DatasetID, _Mapping]] = ..., artifact_id: _Optional[str] = ..., tag_name: _Optional[str] = ...) -> None: ...
+
+class DeleteArtifactResponse(_message.Message):
+    __slots__ = []
+    def __init__(self) -> None: ...
+
+class DeleteArtifactsRequest(_message.Message):
+    __slots__ = ["artifacts"]
+    ARTIFACTS_FIELD_NUMBER: _ClassVar[int]
+    artifacts: _containers.RepeatedCompositeFieldContainer[DeleteArtifactRequest]
+    def __init__(self, artifacts: _Optional[_Iterable[_Union[DeleteArtifactRequest, _Mapping]]] = ...) -> None: ...
+
 class FilterExpression(_message.Message):
     __slots__ = ["filters"]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -156,6 +176,18 @@ class GetOrExtendReservationResponse(_message.Message):
     RESERVATION_FIELD_NUMBER: _ClassVar[int]
     reservation: Reservation
     def __init__(self, reservation: _Optional[_Union[Reservation, _Mapping]] = ...) -> None: ...
+
+class GetOrExtendReservationsRequest(_message.Message):
+    __slots__ = ["reservations"]
+    RESERVATIONS_FIELD_NUMBER: _ClassVar[int]
+    reservations: _containers.RepeatedCompositeFieldContainer[GetOrExtendReservationRequest]
+    def __init__(self, reservations: _Optional[_Iterable[_Union[GetOrExtendReservationRequest, _Mapping]]] = ...) -> None: ...
+
+class GetOrExtendReservationsResponse(_message.Message):
+    __slots__ = ["reservations"]
+    RESERVATIONS_FIELD_NUMBER: _ClassVar[int]
+    reservations: _containers.RepeatedCompositeFieldContainer[Reservation]
+    def __init__(self, reservations: _Optional[_Iterable[_Union[Reservation, _Mapping]]] = ...) -> None: ...
 
 class KeyValuePair(_message.Message):
     __slots__ = ["key", "value"]
@@ -256,6 +288,12 @@ class ReleaseReservationRequest(_message.Message):
 class ReleaseReservationResponse(_message.Message):
     __slots__ = []
     def __init__(self) -> None: ...
+
+class ReleaseReservationsRequest(_message.Message):
+    __slots__ = ["reservations"]
+    RESERVATIONS_FIELD_NUMBER: _ClassVar[int]
+    reservations: _containers.RepeatedCompositeFieldContainer[ReleaseReservationRequest]
+    def __init__(self, reservations: _Optional[_Iterable[_Union[ReleaseReservationRequest, _Mapping]]] = ...) -> None: ...
 
 class Reservation(_message.Message):
     __slots__ = ["expires_at", "heartbeat_interval", "metadata", "owner_id", "reservation_id"]
