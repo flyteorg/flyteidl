@@ -11646,6 +11646,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -11659,18 +11660,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -11699,6 +11689,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -11811,16 +11807,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -11866,6 +11852,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
           - template:
               container:
                 args:
@@ -11911,6 +11900,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -11924,18 +11914,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -11964,6 +11943,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -12076,16 +12061,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -12131,6 +12106,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
           primary:
             template:
               outputs:
@@ -15180,6 +15158,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -15193,18 +15172,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            pod_template_name: "pod_template_name"
-            pod_template_struct:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -15233,6 +15201,12 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             type: "type"
             interface:
               outputs:
@@ -15345,16 +15319,6 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
-            sql:
-              dialect: {}
-              statement: "statement"
-            task_type_version: 1
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             config:
               key: "config"
             security_context:
@@ -15400,6 +15364,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              dialect: {}
+              statement: "statement"
   adminTaskClosure:
     type: "object"
     properties:
@@ -15461,6 +15428,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -15474,18 +15442,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          pod_template_name: "pod_template_name"
-          pod_template_struct:
-            fields:
-              key:
-                list_value:
-                  values:
-                  - null
-                  - null
-                number_value: 6.027456183070403
-                string_value: "string_value"
-                null_value: {}
-                bool_value: true
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -15514,6 +15471,12 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
+          id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           type: "type"
           interface:
             outputs:
@@ -15626,16 +15589,6 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
-          sql:
-            dialect: {}
-            statement: "statement"
-          task_type_version: 1
-          id:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           config:
             key: "config"
           security_context:
@@ -15681,6 +15634,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            dialect: {}
+            statement: "statement"
   adminTaskCreateRequest:
     type: "object"
     properties:
@@ -16139,6 +16095,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -16152,18 +16109,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -16192,6 +16138,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -16304,16 +16256,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -16359,6 +16301,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
       - short_description: "short_description"
         id:
           domain: "domain"
@@ -16414,6 +16359,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -16427,18 +16373,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -16467,6 +16402,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -16579,16 +16520,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -16634,6 +16565,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
       token: "token"
   adminTaskResourceAttributes:
     type: "object"
@@ -20817,6 +20751,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -20830,18 +20765,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -20870,6 +20794,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -20982,16 +20912,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -21037,6 +20957,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
           - template:
               container:
                 args:
@@ -21082,6 +21005,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -21095,18 +21019,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              pod_template_name: "pod_template_name"
-              pod_template_struct:
-                fields:
-                  key:
-                    list_value:
-                      values:
-                      - null
-                      - null
-                    number_value: 6.027456183070403
-                    string_value: "string_value"
-                    null_value: {}
-                    bool_value: true
+              task_type_version: 1
               custom:
                 fields:
                   key:
@@ -21135,6 +21048,12 @@ definitions:
                       string_value: "string_value"
                       null_value: {}
                       bool_value: true
+              id:
+                domain: "domain"
+                resource_type: {}
+                name: "name"
+                project: "project"
+                version: "version"
               type: "type"
               interface:
                 outputs:
@@ -21247,16 +21166,6 @@ definitions:
                         simple: {}
                         structure:
                           tag: "tag"
-              sql:
-                dialect: {}
-                statement: "statement"
-              task_type_version: 1
-              id:
-                domain: "domain"
-                resource_type: {}
-                name: "name"
-                project: "project"
-                version: "version"
               config:
                 key: "config"
               security_context:
@@ -21302,6 +21211,9 @@ definitions:
                   group_version: "group_version"
                   key: "key"
                   group: "group"
+              sql:
+                dialect: {}
+                statement: "statement"
           primary:
             template:
               outputs:
@@ -27653,6 +27565,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -27666,18 +27579,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            pod_template_name: "pod_template_name"
-            pod_template_struct:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -27706,6 +27608,12 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             type: "type"
             interface:
               outputs:
@@ -27818,16 +27726,6 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
-            sql:
-              dialect: {}
-              statement: "statement"
-            task_type_version: 1
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             config:
               key: "config"
             security_context:
@@ -27873,6 +27771,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              dialect: {}
+              statement: "statement"
         - template:
             container:
               args:
@@ -27918,6 +27819,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -27931,18 +27833,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            pod_template_name: "pod_template_name"
-            pod_template_struct:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -27971,6 +27862,12 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             type: "type"
             interface:
               outputs:
@@ -28083,16 +27980,6 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
-            sql:
-              dialect: {}
-              statement: "statement"
-            task_type_version: 1
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             config:
               key: "config"
             security_context:
@@ -28138,6 +28025,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              dialect: {}
+              statement: "statement"
         primary:
           template:
             outputs:
@@ -34398,6 +34288,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -34411,18 +34302,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                pod_template_name: "pod_template_name"
-                pod_template_struct:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -34451,6 +34331,12 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
                 type: "type"
                 interface:
                   outputs:
@@ -34563,16 +34449,6 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
-                sql:
-                  dialect: {}
-                  statement: "statement"
-                task_type_version: 1
-                id:
-                  domain: "domain"
-                  resource_type: {}
-                  name: "name"
-                  project: "project"
-                  version: "version"
                 config:
                   key: "config"
                 security_context:
@@ -34618,6 +34494,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  dialect: {}
+                  statement: "statement"
             - template:
                 container:
                   args:
@@ -34663,6 +34542,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -34676,18 +34556,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                pod_template_name: "pod_template_name"
-                pod_template_struct:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -34716,6 +34585,12 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
                 type: "type"
                 interface:
                   outputs:
@@ -34828,16 +34703,6 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
-                sql:
-                  dialect: {}
-                  statement: "statement"
-                task_type_version: 1
-                id:
-                  domain: "domain"
-                  resource_type: {}
-                  name: "name"
-                  project: "project"
-                  version: "version"
                 config:
                   key: "config"
                 security_context:
@@ -34883,6 +34748,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  dialect: {}
+                  statement: "statement"
             primary:
               template:
                 outputs:
@@ -40974,6 +40842,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -40987,18 +40856,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                pod_template_name: "pod_template_name"
-                pod_template_struct:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -41027,6 +40885,12 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
                 type: "type"
                 interface:
                   outputs:
@@ -41139,16 +41003,6 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
-                sql:
-                  dialect: {}
-                  statement: "statement"
-                task_type_version: 1
-                id:
-                  domain: "domain"
-                  resource_type: {}
-                  name: "name"
-                  project: "project"
-                  version: "version"
                 config:
                   key: "config"
                 security_context:
@@ -41194,6 +41048,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  dialect: {}
+                  statement: "statement"
             - template:
                 container:
                   args:
@@ -41239,6 +41096,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -41252,18 +41110,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                pod_template_name: "pod_template_name"
-                pod_template_struct:
-                  fields:
-                    key:
-                      list_value:
-                        values:
-                        - null
-                        - null
-                      number_value: 6.027456183070403
-                      string_value: "string_value"
-                      null_value: {}
-                      bool_value: true
+                task_type_version: 1
                 custom:
                   fields:
                     key:
@@ -41292,6 +41139,12 @@ definitions:
                         string_value: "string_value"
                         null_value: {}
                         bool_value: true
+                id:
+                  domain: "domain"
+                  resource_type: {}
+                  name: "name"
+                  project: "project"
+                  version: "version"
                 type: "type"
                 interface:
                   outputs:
@@ -41404,16 +41257,6 @@ definitions:
                           simple: {}
                           structure:
                             tag: "tag"
-                sql:
-                  dialect: {}
-                  statement: "statement"
-                task_type_version: 1
-                id:
-                  domain: "domain"
-                  resource_type: {}
-                  name: "name"
-                  project: "project"
-                  version: "version"
                 config:
                   key: "config"
                 security_context:
@@ -41459,6 +41302,9 @@ definitions:
                     group_version: "group_version"
                     key: "key"
                     group: "group"
+                sql:
+                  dialect: {}
+                  statement: "statement"
             primary:
               template:
                 outputs:
@@ -44232,6 +44078,7 @@ definitions:
         metadata:
           retries:
             retries: 0
+          pod_template_name: "pod_template_name"
           discoverable: true
           runtime:
             flavor: "flavor"
@@ -44245,18 +44092,7 @@ definitions:
           generates_deck: true
           tags:
             key: "tags"
-        pod_template_name: "pod_template_name"
-        pod_template_struct:
-          fields:
-            key:
-              list_value:
-                values:
-                - null
-                - null
-              number_value: 6.027456183070403
-              string_value: "string_value"
-              null_value: {}
-              bool_value: true
+        task_type_version: 1
         custom:
           fields:
             key:
@@ -44285,6 +44121,12 @@ definitions:
                 string_value: "string_value"
                 null_value: {}
                 bool_value: true
+        id:
+          domain: "domain"
+          resource_type: {}
+          name: "name"
+          project: "project"
+          version: "version"
         type: "type"
         interface:
           outputs:
@@ -44397,16 +44239,6 @@ definitions:
                   simple: {}
                   structure:
                     tag: "tag"
-        sql:
-          dialect: {}
-          statement: "statement"
-        task_type_version: 1
-        id:
-          domain: "domain"
-          resource_type: {}
-          name: "name"
-          project: "project"
-          version: "version"
         config:
           key: "config"
         security_context:
@@ -44452,6 +44284,9 @@ definitions:
             group_version: "group_version"
             key: "key"
             group: "group"
+        sql:
+          dialect: {}
+          statement: "statement"
   coreCompiledWorkflow:
     type: "object"
     properties:
@@ -50571,6 +50406,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -50584,18 +50420,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          pod_template_name: "pod_template_name"
-          pod_template_struct:
-            fields:
-              key:
-                list_value:
-                  values:
-                  - null
-                  - null
-                number_value: 6.027456183070403
-                string_value: "string_value"
-                null_value: {}
-                bool_value: true
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -50624,6 +50449,12 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
+          id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           type: "type"
           interface:
             outputs:
@@ -50736,16 +50567,6 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
-          sql:
-            dialect: {}
-            statement: "statement"
-          task_type_version: 1
-          id:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           config:
             key: "config"
           security_context:
@@ -50791,6 +50612,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            dialect: {}
+            statement: "statement"
       - template:
           container:
             args:
@@ -50836,6 +50660,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -50849,18 +50674,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          pod_template_name: "pod_template_name"
-          pod_template_struct:
-            fields:
-              key:
-                list_value:
-                  values:
-                  - null
-                  - null
-                number_value: 6.027456183070403
-                string_value: "string_value"
-                null_value: {}
-                bool_value: true
+          task_type_version: 1
           custom:
             fields:
               key:
@@ -50889,6 +50703,12 @@ definitions:
                   string_value: "string_value"
                   null_value: {}
                   bool_value: true
+          id:
+            domain: "domain"
+            resource_type: {}
+            name: "name"
+            project: "project"
+            version: "version"
           type: "type"
           interface:
             outputs:
@@ -51001,16 +50821,6 @@ definitions:
                     simple: {}
                     structure:
                       tag: "tag"
-          sql:
-            dialect: {}
-            statement: "statement"
-          task_type_version: 1
-          id:
-            domain: "domain"
-            resource_type: {}
-            name: "name"
-            project: "project"
-            version: "version"
           config:
             key: "config"
           security_context:
@@ -51056,6 +50866,9 @@ definitions:
               group_version: "group_version"
               key: "key"
               group: "group"
+          sql:
+            dialect: {}
+            statement: "statement"
       primary:
         template:
           outputs:
@@ -55637,10 +55450,17 @@ definitions:
           \ arbitrary labels"
         additionalProperties:
           type: "string"
+      pod_template_name:
+        type: "string"
+        description: "pod_template_name is the unique name of a PodTemplate k8s resource\
+          \ to be used as the base configuration if this\ntask creates a k8s Pod.\
+          \ If this value is set, the specified PodTemplate will be used instead of,\
+          \ but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
     title: "Task Metadata"
     example:
       retries:
         retries: 0
+      pod_template_name: "pod_template_name"
       discoverable: true
       runtime:
         flavor: "flavor"
@@ -55751,12 +55571,6 @@ definitions:
           \ field numbers 1 through 15 for very frequently occurring message elements"
         additionalProperties:
           type: "string"
-      pod_template_name:
-        type: "string"
-        description: "pod_template_name is the unique name of a PodTemplate k8s resource."
-      pod_template_struct:
-        description: "pod_template_struct is a JSON marshaled PodTemplate."
-        $ref: "#/definitions/protobufStruct"
     description: "A Task structure that uniquely identifies a task in the system\n\
       Tasks are registered as a first step in the system."
     example:
@@ -55804,6 +55618,7 @@ definitions:
       metadata:
         retries:
           retries: 0
+        pod_template_name: "pod_template_name"
         discoverable: true
         runtime:
           flavor: "flavor"
@@ -55817,18 +55632,7 @@ definitions:
         generates_deck: true
         tags:
           key: "tags"
-      pod_template_name: "pod_template_name"
-      pod_template_struct:
-        fields:
-          key:
-            list_value:
-              values:
-              - null
-              - null
-            number_value: 6.027456183070403
-            string_value: "string_value"
-            null_value: {}
-            bool_value: true
+      task_type_version: 1
       custom:
         fields:
           key:
@@ -55857,6 +55661,12 @@ definitions:
               string_value: "string_value"
               null_value: {}
               bool_value: true
+      id:
+        domain: "domain"
+        resource_type: {}
+        name: "name"
+        project: "project"
+        version: "version"
       type: "type"
       interface:
         outputs:
@@ -55969,16 +55779,6 @@ definitions:
                 simple: {}
                 structure:
                   tag: "tag"
-      sql:
-        dialect: {}
-        statement: "statement"
-      task_type_version: 1
-      id:
-        domain: "domain"
-        resource_type: {}
-        name: "name"
-        project: "project"
-        version: "version"
       config:
         key: "config"
       security_context:
@@ -56024,6 +55824,9 @@ definitions:
           group_version: "group_version"
           key: "key"
           group: "group"
+      sql:
+        dialect: {}
+        statement: "statement"
   coreTypeAnnotation:
     type: "object"
     properties:
@@ -62982,6 +62785,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -62995,18 +62799,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            pod_template_name: "pod_template_name"
-            pod_template_struct:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -63035,6 +62828,12 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             type: "type"
             interface:
               outputs:
@@ -63147,16 +62946,6 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
-            sql:
-              dialect: {}
-              statement: "statement"
-            task_type_version: 1
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             config:
               key: "config"
             security_context:
@@ -63202,6 +62991,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              dialect: {}
+              statement: "statement"
         - template:
             container:
               args:
@@ -63247,6 +63039,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -63260,18 +63053,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            pod_template_name: "pod_template_name"
-            pod_template_struct:
-              fields:
-                key:
-                  list_value:
-                    values:
-                    - null
-                    - null
-                  number_value: 6.027456183070403
-                  string_value: "string_value"
-                  null_value: {}
-                  bool_value: true
+            task_type_version: 1
             custom:
               fields:
                 key:
@@ -63300,6 +63082,12 @@ definitions:
                     string_value: "string_value"
                     null_value: {}
                     bool_value: true
+            id:
+              domain: "domain"
+              resource_type: {}
+              name: "name"
+              project: "project"
+              version: "version"
             type: "type"
             interface:
               outputs:
@@ -63412,16 +63200,6 @@ definitions:
                       simple: {}
                       structure:
                         tag: "tag"
-            sql:
-              dialect: {}
-              statement: "statement"
-            task_type_version: 1
-            id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
             config:
               key: "config"
             security_context:
@@ -63467,6 +63245,9 @@ definitions:
                 group_version: "group_version"
                 key: "key"
                 group: "group"
+            sql:
+              dialect: {}
+              statement: "statement"
         primary:
           template:
             outputs:

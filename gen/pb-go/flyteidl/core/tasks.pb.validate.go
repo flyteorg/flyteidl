@@ -251,6 +251,8 @@ func (m *TaskMetadata) Validate() error {
 
 	// no validation rules for Tags
 
+	// no validation rules for PodTemplateName
+
 	switch m.InterruptibleValue.(type) {
 
 	case *TaskMetadata_Interruptible:
@@ -411,25 +413,6 @@ func (m *TaskTemplate) Validate() error {
 			if err := v.Validate(); err != nil {
 				return TaskTemplateValidationError{
 					field:  "Sql",
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
-			}
-		}
-
-	}
-
-	switch m.PodTemplate.(type) {
-
-	case *TaskTemplate_PodTemplateName:
-		// no validation rules for PodTemplateName
-
-	case *TaskTemplate_PodTemplateStruct:
-
-		if v, ok := interface{}(m.GetPodTemplateStruct()).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return TaskTemplateValidationError{
-					field:  "PodTemplateStruct",
 					reason: "embedded message failed validation",
 					cause:  err,
 				}

@@ -5104,6 +5104,9 @@ export namespace flyteidl {
 
             /** TaskMetadata tags */
             tags?: ({ [k: string]: string }|null);
+
+            /** TaskMetadata podTemplateName */
+            podTemplateName?: (string|null);
         }
 
         /** Represents a TaskMetadata. */
@@ -5144,6 +5147,9 @@ export namespace flyteidl {
 
             /** TaskMetadata tags. */
             public tags: { [k: string]: string };
+
+            /** TaskMetadata podTemplateName. */
+            public podTemplateName: string;
 
             /** TaskMetadata interruptibleValue. */
             public interruptibleValue?: "interruptible";
@@ -5216,12 +5222,6 @@ export namespace flyteidl {
 
             /** TaskTemplate config */
             config?: ({ [k: string]: string }|null);
-
-            /** TaskTemplate podTemplateName */
-            podTemplateName?: (string|null);
-
-            /** TaskTemplate podTemplateStruct */
-            podTemplateStruct?: (google.protobuf.IStruct|null);
         }
 
         /** Represents a TaskTemplate. */
@@ -5266,17 +5266,8 @@ export namespace flyteidl {
             /** TaskTemplate config. */
             public config: { [k: string]: string };
 
-            /** TaskTemplate podTemplateName. */
-            public podTemplateName: string;
-
-            /** TaskTemplate podTemplateStruct. */
-            public podTemplateStruct?: (google.protobuf.IStruct|null);
-
             /** TaskTemplate target. */
             public target?: ("container"|"k8sPod"|"sql");
-
-            /** TaskTemplate podTemplate. */
-            public podTemplate?: ("podTemplateName"|"podTemplateStruct");
 
             /**
              * Creates a new TaskTemplate instance using the specified properties.

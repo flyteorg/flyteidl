@@ -166,7 +166,7 @@ class Sql(_message.Message):
     def __init__(self, statement: _Optional[str] = ..., dialect: _Optional[_Union[Sql.Dialect, str]] = ...) -> None: ...
 
 class TaskMetadata(_message.Message):
-    __slots__ = ["cache_serializable", "deprecated_error_message", "discoverable", "discovery_version", "generates_deck", "interruptible", "retries", "runtime", "tags", "timeout"]
+    __slots__ = ["cache_serializable", "deprecated_error_message", "discoverable", "discovery_version", "generates_deck", "interruptible", "pod_template_name", "retries", "runtime", "tags", "timeout"]
     class TagsEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -180,6 +180,7 @@ class TaskMetadata(_message.Message):
     DISCOVERY_VERSION_FIELD_NUMBER: _ClassVar[int]
     GENERATES_DECK_FIELD_NUMBER: _ClassVar[int]
     INTERRUPTIBLE_FIELD_NUMBER: _ClassVar[int]
+    POD_TEMPLATE_NAME_FIELD_NUMBER: _ClassVar[int]
     RETRIES_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     TAGS_FIELD_NUMBER: _ClassVar[int]
@@ -190,14 +191,15 @@ class TaskMetadata(_message.Message):
     discovery_version: str
     generates_deck: bool
     interruptible: bool
+    pod_template_name: str
     retries: _literals_pb2.RetryStrategy
     runtime: RuntimeMetadata
     tags: _containers.ScalarMap[str, str]
     timeout: _duration_pb2.Duration
-    def __init__(self, discoverable: bool = ..., runtime: _Optional[_Union[RuntimeMetadata, _Mapping]] = ..., timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., retries: _Optional[_Union[_literals_pb2.RetryStrategy, _Mapping]] = ..., discovery_version: _Optional[str] = ..., deprecated_error_message: _Optional[str] = ..., interruptible: bool = ..., cache_serializable: bool = ..., generates_deck: bool = ..., tags: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, discoverable: bool = ..., runtime: _Optional[_Union[RuntimeMetadata, _Mapping]] = ..., timeout: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., retries: _Optional[_Union[_literals_pb2.RetryStrategy, _Mapping]] = ..., discovery_version: _Optional[str] = ..., deprecated_error_message: _Optional[str] = ..., interruptible: bool = ..., cache_serializable: bool = ..., generates_deck: bool = ..., tags: _Optional[_Mapping[str, str]] = ..., pod_template_name: _Optional[str] = ...) -> None: ...
 
 class TaskTemplate(_message.Message):
-    __slots__ = ["config", "container", "custom", "id", "interface", "k8s_pod", "metadata", "pod_template_name", "pod_template_struct", "security_context", "sql", "task_type_version", "type"]
+    __slots__ = ["config", "container", "custom", "id", "interface", "k8s_pod", "metadata", "security_context", "sql", "task_type_version", "type"]
     class ConfigEntry(_message.Message):
         __slots__ = ["key", "value"]
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -212,8 +214,6 @@ class TaskTemplate(_message.Message):
     INTERFACE_FIELD_NUMBER: _ClassVar[int]
     K8S_POD_FIELD_NUMBER: _ClassVar[int]
     METADATA_FIELD_NUMBER: _ClassVar[int]
-    POD_TEMPLATE_NAME_FIELD_NUMBER: _ClassVar[int]
-    POD_TEMPLATE_STRUCT_FIELD_NUMBER: _ClassVar[int]
     SECURITY_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     SQL_FIELD_NUMBER: _ClassVar[int]
     TASK_TYPE_VERSION_FIELD_NUMBER: _ClassVar[int]
@@ -225,10 +225,8 @@ class TaskTemplate(_message.Message):
     interface: _interface_pb2.TypedInterface
     k8s_pod: K8sPod
     metadata: TaskMetadata
-    pod_template_name: str
-    pod_template_struct: _struct_pb2.Struct
     security_context: _security_pb2.SecurityContext
     sql: Sql
     task_type_version: int
     type: str
-    def __init__(self, id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., type: _Optional[str] = ..., metadata: _Optional[_Union[TaskMetadata, _Mapping]] = ..., interface: _Optional[_Union[_interface_pb2.TypedInterface, _Mapping]] = ..., custom: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., container: _Optional[_Union[Container, _Mapping]] = ..., k8s_pod: _Optional[_Union[K8sPod, _Mapping]] = ..., sql: _Optional[_Union[Sql, _Mapping]] = ..., task_type_version: _Optional[int] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., config: _Optional[_Mapping[str, str]] = ..., pod_template_name: _Optional[str] = ..., pod_template_struct: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., type: _Optional[str] = ..., metadata: _Optional[_Union[TaskMetadata, _Mapping]] = ..., interface: _Optional[_Union[_interface_pb2.TypedInterface, _Mapping]] = ..., custom: _Optional[_Union[_struct_pb2.Struct, _Mapping]] = ..., container: _Optional[_Union[Container, _Mapping]] = ..., k8s_pod: _Optional[_Union[K8sPod, _Mapping]] = ..., sql: _Optional[_Union[Sql, _Mapping]] = ..., task_type_version: _Optional[int] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., config: _Optional[_Mapping[str, str]] = ...) -> None: ...
