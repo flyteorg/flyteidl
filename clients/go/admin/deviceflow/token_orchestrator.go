@@ -125,8 +125,7 @@ func (t TokenOrchestrator) PollTokenEndpoint(ctx context.Context, tokReq DeviceA
 		// Unmarshalled response if it contains an error then check if we need to increase the polling interval
 		if len(tokResp.Error) > 0 {
 			if tokResp.Error == errSlowDown || tokResp.Error == errAuthPending {
-				pollInterval = pollInterval * 2
-
+				logger.Debugf(ctx, "going to poll again due to error %v", tokResp.Error)
 			} else {
 				return nil, fmt.Errorf("oauth error : %v", tokResp.Error)
 			}
