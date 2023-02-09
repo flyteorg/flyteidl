@@ -6763,6 +6763,10 @@
             "type": "string"
           },
           "title": "Arbitrary tags that allow users and the platform to store small but arbitrary labels"
+        },
+        "pod_template_name": {
+          "type": "string",
+          "description": "pod_template_name is the unique name of a PodTemplate k8s resource to be used as the base configuration if this\ntask creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
         }
       },
       "title": "Task Metadata"
@@ -7115,6 +7119,10 @@
         "input_uri": {
           "type": "string"
         },
+        "input_data": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "Raw input data consumed by this node execution."
+        },
         "output_uri": {
           "type": "string",
           "description": "URL to the output of the execution, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
@@ -7243,6 +7251,10 @@
         "input_uri": {
           "type": "string",
           "description": "URI of the input file, it encodes all the information\nincluding Cloud source provider. ie., s3://..."
+        },
+        "input_data": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "Raw input data consumed by this task execution."
         },
         "output_uri": {
           "type": "string",

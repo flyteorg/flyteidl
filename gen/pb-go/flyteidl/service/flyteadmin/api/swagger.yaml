@@ -11653,6 +11653,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -11906,6 +11907,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -15166,6 +15168,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -15435,6 +15438,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -16101,6 +16105,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -16364,6 +16369,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -20755,6 +20761,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -21008,6 +21015,7 @@ definitions:
               metadata:
                 retries:
                   retries: 0
+                pod_template_name: "pod_template_name"
                 discoverable: true
                 runtime:
                   flavor: "flavor"
@@ -27567,6 +27575,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -27820,6 +27829,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -34288,6 +34298,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -34541,6 +34552,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -40840,6 +40852,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -41093,6 +41106,7 @@ definitions:
                 metadata:
                   retries:
                     retries: 0
+                  pod_template_name: "pod_template_name"
                   discoverable: true
                   runtime:
                     flavor: "flavor"
@@ -44074,6 +44088,7 @@ definitions:
         metadata:
           retries:
             retries: 0
+          pod_template_name: "pod_template_name"
           discoverable: true
           runtime:
             flavor: "flavor"
@@ -50401,6 +50416,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -50654,6 +50670,7 @@ definitions:
           metadata:
             retries:
               retries: 0
+            pod_template_name: "pod_template_name"
             discoverable: true
             runtime:
               flavor: "flavor"
@@ -55443,10 +55460,17 @@ definitions:
           \ arbitrary labels"
         additionalProperties:
           type: "string"
+      pod_template_name:
+        type: "string"
+        description: "pod_template_name is the unique name of a PodTemplate k8s resource\
+          \ to be used as the base configuration if this\ntask creates a k8s Pod.\
+          \ If this value is set, the specified PodTemplate will be used instead of,\
+          \ but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
     title: "Task Metadata"
     example:
       retries:
         retries: 0
+      pod_template_name: "pod_template_name"
       discoverable: true
       runtime:
         flavor: "flavor"
@@ -55604,6 +55628,7 @@ definitions:
       metadata:
         retries:
           retries: 0
+        pod_template_name: "pod_template_name"
         discoverable: true
         runtime:
           flavor: "flavor"
@@ -58440,6 +58465,9 @@ definitions:
           \ it is generated\nby the executor of the node."
       input_uri:
         type: "string"
+      input_data:
+        description: "Raw input data consumed by this node execution."
+        $ref: "#/definitions/coreLiteralMap"
       output_uri:
         type: "string"
         description: "URL to the output of the execution, it encodes all the information\n\
@@ -58552,6 +58580,9 @@ definitions:
         type: "string"
         description: "URI of the input file, it encodes all the information\nincluding\
           \ Cloud source provider. ie., s3://..."
+      input_data:
+        description: "Raw input data consumed by this task execution."
+        $ref: "#/definitions/coreLiteralMap"
       output_uri:
         type: "string"
         description: "URI to the output of the execution, it will be in a format that\
@@ -62776,6 +62807,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
@@ -63029,6 +63061,7 @@ definitions:
             metadata:
               retries:
                 retries: 0
+              pod_template_name: "pod_template_name"
               discoverable: true
               runtime:
                 flavor: "flavor"
