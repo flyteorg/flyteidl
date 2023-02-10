@@ -8344,6 +8344,7 @@
                  * @property {string|null} [format] StructuredDatasetType format
                  * @property {string|null} [externalSchemaType] StructuredDatasetType externalSchemaType
                  * @property {Uint8Array|null} [externalSchemaBytes] StructuredDatasetType externalSchemaBytes
+                 * @property {Array.<string>|null} [partitionColumns] StructuredDatasetType partitionColumns
                  */
     
                 /**
@@ -8356,6 +8357,7 @@
                  */
                 function StructuredDatasetType(properties) {
                     this.columns = [];
+                    this.partitionColumns = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -8395,6 +8397,14 @@
                 StructuredDatasetType.prototype.externalSchemaBytes = $util.newBuffer([]);
     
                 /**
+                 * StructuredDatasetType partitionColumns.
+                 * @member {Array.<string>} partitionColumns
+                 * @memberof flyteidl.core.StructuredDatasetType
+                 * @instance
+                 */
+                StructuredDatasetType.prototype.partitionColumns = $util.emptyArray;
+    
+                /**
                  * Creates a new StructuredDatasetType instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.StructuredDatasetType
@@ -8427,6 +8437,9 @@
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.externalSchemaType);
                     if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
                         writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.externalSchemaBytes);
+                    if (message.partitionColumns != null && message.partitionColumns.length)
+                        for (var i = 0; i < message.partitionColumns.length; ++i)
+                            writer.uint32(/* id 5, wireType 2 =*/42).string(message.partitionColumns[i]);
                     return writer;
                 };
     
@@ -8461,6 +8474,11 @@
                             break;
                         case 4:
                             message.externalSchemaBytes = reader.bytes();
+                            break;
+                        case 5:
+                            if (!(message.partitionColumns && message.partitionColumns.length))
+                                message.partitionColumns = [];
+                            message.partitionColumns.push(reader.string());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -8499,6 +8517,13 @@
                     if (message.externalSchemaBytes != null && message.hasOwnProperty("externalSchemaBytes"))
                         if (!(message.externalSchemaBytes && typeof message.externalSchemaBytes.length === "number" || $util.isString(message.externalSchemaBytes)))
                             return "externalSchemaBytes: buffer expected";
+                    if (message.partitionColumns != null && message.hasOwnProperty("partitionColumns")) {
+                        if (!Array.isArray(message.partitionColumns))
+                            return "partitionColumns: array expected";
+                        for (var i = 0; i < message.partitionColumns.length; ++i)
+                            if (!$util.isString(message.partitionColumns[i]))
+                                return "partitionColumns: string[] expected";
+                    }
                     return null;
                 };
     

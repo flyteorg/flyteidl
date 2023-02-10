@@ -99,7 +99,7 @@ class SchemaType(_message.Message):
     def __init__(self, columns: _Optional[_Iterable[_Union[SchemaType.SchemaColumn, _Mapping]]] = ...) -> None: ...
 
 class StructuredDatasetType(_message.Message):
-    __slots__ = ["columns", "external_schema_bytes", "external_schema_type", "format"]
+    __slots__ = ["columns", "external_schema_bytes", "external_schema_type", "format", "partition_columns"]
     class DatasetColumn(_message.Message):
         __slots__ = ["literal_type", "name"]
         LITERAL_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -111,11 +111,13 @@ class StructuredDatasetType(_message.Message):
     EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER: _ClassVar[int]
     EXTERNAL_SCHEMA_TYPE_FIELD_NUMBER: _ClassVar[int]
     FORMAT_FIELD_NUMBER: _ClassVar[int]
+    PARTITION_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     columns: _containers.RepeatedCompositeFieldContainer[StructuredDatasetType.DatasetColumn]
     external_schema_bytes: bytes
     external_schema_type: str
     format: str
-    def __init__(self, columns: _Optional[_Iterable[_Union[StructuredDatasetType.DatasetColumn, _Mapping]]] = ..., format: _Optional[str] = ..., external_schema_type: _Optional[str] = ..., external_schema_bytes: _Optional[bytes] = ...) -> None: ...
+    partition_columns: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, columns: _Optional[_Iterable[_Union[StructuredDatasetType.DatasetColumn, _Mapping]]] = ..., format: _Optional[str] = ..., external_schema_type: _Optional[str] = ..., external_schema_bytes: _Optional[bytes] = ..., partition_columns: _Optional[_Iterable[str]] = ...) -> None: ...
 
 class TypeAnnotation(_message.Message):
     __slots__ = ["annotations"]

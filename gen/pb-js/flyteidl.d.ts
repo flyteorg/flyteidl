@@ -3488,6 +3488,9 @@ export namespace flyteidl {
 
             /** StructuredDatasetType externalSchemaBytes */
             externalSchemaBytes?: (Uint8Array|null);
+
+            /** StructuredDatasetType partitionColumns */
+            partitionColumns?: (string[]|null);
         }
 
         /** Represents a StructuredDatasetType. */
@@ -3510,6 +3513,9 @@ export namespace flyteidl {
 
             /** StructuredDatasetType externalSchemaBytes. */
             public externalSchemaBytes: Uint8Array;
+
+            /** StructuredDatasetType partitionColumns. */
+            public partitionColumns: string[];
 
             /**
              * Creates a new StructuredDatasetType instance using the specified properties.

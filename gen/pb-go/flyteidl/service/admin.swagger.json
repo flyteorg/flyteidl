@@ -6659,6 +6659,13 @@
           "type": "string",
           "format": "byte",
           "description": "The serialized bytes of a third-party schema library like Arrow.\nThis is an optional field that will not be used for type checking."
+        },
+        "partition_columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "This indicates which columns in the structured dataset is used for\npartitioning when the dataset is serialized. This is an optional field\nthat will not be userd for type checking"
         }
       }
     },
