@@ -18,5 +18,6 @@ type CoreStructuredDatasetType struct {
 	ExternalSchemaType string `json:"external_schema_type,omitempty"`
 	// The serialized bytes of a third-party schema library like Arrow. This is an optional field that will not be used for type checking.
 	ExternalSchemaBytes string `json:"external_schema_bytes,omitempty"`
+	// This indicates which columns in the structured dataset is used for partitioning when the dataset is serialized. This is an optional field that will not be used for type checking.
 	PartitionColumns []string `json:"partition_columns,omitempty"`
 }

@@ -167,6 +167,7 @@ class CoreStructuredDatasetType(object):
     def partition_columns(self):
         """Gets the partition_columns of this CoreStructuredDatasetType.  # noqa: E501
 
+        This indicates which columns in the structured dataset is used for partitioning when the dataset is serialized. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :return: The partition_columns of this CoreStructuredDatasetType.  # noqa: E501
         :rtype: list[str]
@@ -177,6 +178,7 @@ class CoreStructuredDatasetType(object):
     def partition_columns(self, partition_columns):
         """Sets the partition_columns of this CoreStructuredDatasetType.
 
+        This indicates which columns in the structured dataset is used for partitioning when the dataset is serialized. This is an optional field that will not be used for type checking.  # noqa: E501
 
         :param partition_columns: The partition_columns of this CoreStructuredDatasetType.  # noqa: E501
         :type: list[str]
