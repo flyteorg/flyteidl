@@ -581,7 +581,7 @@
           "items": {
             "type": "string"
           },
-          "description": "This indicates which columns in the structured dataset is used for\npartitioning when the dataset is serialized. This is an optional field\nthat will not be used for type checking."
+          "description": "This indicates which columns in the structured dataset are used for\npartitioning when the dataset is serialized. This is an optional field\nthat will not be used for type checking."
         }
       }
     },

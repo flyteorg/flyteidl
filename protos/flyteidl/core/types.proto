@@ -68,7 +68,7 @@ message StructuredDatasetType {
     // This is an optional field that will not be used for type checking.
     bytes external_schema_bytes = 4;
     
-    // This indicates which columns in the structured dataset is used for
+    // This indicates which columns in the structured dataset are used for
     // partitioning when the dataset is serialized. This is an optional field
     // that will not be used for type checking.
     repeated string partition_columns = 5;

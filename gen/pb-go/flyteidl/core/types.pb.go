@@ -236,7 +236,7 @@ type StructuredDatasetType struct {
 	// The serialized bytes of a third-party schema library like Arrow.
 	// This is an optional field that will not be used for type checking.
 	ExternalSchemaBytes []byte `protobuf:"bytes,4,opt,name=external_schema_bytes,json=externalSchemaBytes,proto3" json:"external_schema_bytes,omitempty"`
-	// This indicates which columns in the structured dataset is used for
+	// This indicates which columns in the structured dataset are used for
 	// partitioning when the dataset is serialized. This is an optional field
 	// that will not be used for type checking.
 	PartitionColumns     []string `protobuf:"bytes,5,rep,name=partition_columns,json=partitionColumns,proto3" json:"partition_columns,omitempty"`

@@ -2040,7 +2040,7 @@ public final class Types {
 
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -2051,7 +2051,7 @@ public final class Types {
         getPartitionColumnsList();
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -2061,7 +2061,7 @@ public final class Types {
     int getPartitionColumnsCount();
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -2071,7 +2071,7 @@ public final class Types {
     java.lang.String getPartitionColumns(int index);
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -3201,7 +3201,7 @@ public final class Types {
     private com.google.protobuf.LazyStringList partitionColumns_;
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -3214,7 +3214,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -3226,7 +3226,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -3238,7 +3238,7 @@ public final class Types {
     }
     /**
      * <pre>
-     * This indicates which columns in the structured dataset is used for
+     * This indicates which columns in the structured dataset are used for
      * partitioning when the dataset is serialized. This is an optional field
      * that will not be used for type checking.
      * </pre>
@@ -4237,7 +4237,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4250,7 +4250,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4262,7 +4262,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4274,7 +4274,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4287,7 +4287,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4306,7 +4306,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4325,7 +4325,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4342,7 +4342,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
@@ -4357,7 +4357,7 @@ public final class Types {
       }
       /**
        * <pre>
-       * This indicates which columns in the structured dataset is used for
+       * This indicates which columns in the structured dataset are used for
        * partitioning when the dataset is serialized. This is an optional field
        * that will not be used for type checking.
        * </pre>
