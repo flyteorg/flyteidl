@@ -37,6 +37,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto
@@ -47,7 +48,7 @@ struct TableStruct_flyteidl_2fadmin_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[24]
+  static const ::google::protobuf::internal::ParseTable schema[27]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -65,6 +66,9 @@ extern Annotations_ValuesEntry_DoNotUseDefaultTypeInternal _Annotations_ValuesEn
 class AuthRole;
 class AuthRoleDefaultTypeInternal;
 extern AuthRoleDefaultTypeInternal _AuthRole_default_instance_;
+class CategoricalSpanInfo;
+class CategoricalSpanInfoDefaultTypeInternal;
+extern CategoricalSpanInfoDefaultTypeInternal _CategoricalSpanInfo_default_instance_;
 class EmailNotification;
 class EmailNotificationDefaultTypeInternal;
 extern EmailNotificationDefaultTypeInternal _EmailNotification_default_instance_;
@@ -116,6 +120,9 @@ extern PagerDutyNotificationDefaultTypeInternal _PagerDutyNotification_default_i
 class RawOutputDataConfig;
 class RawOutputDataConfigDefaultTypeInternal;
 extern RawOutputDataConfigDefaultTypeInternal _RawOutputDataConfig_default_instance_;
+class ReferenceSpanInfo;
+class ReferenceSpanInfoDefaultTypeInternal;
+extern ReferenceSpanInfoDefaultTypeInternal _ReferenceSpanInfo_default_instance_;
 class ResourceListRequest;
 class ResourceListRequestDefaultTypeInternal;
 extern ResourceListRequestDefaultTypeInternal _ResourceListRequest_default_instance_;
@@ -125,6 +132,9 @@ extern SlackNotificationDefaultTypeInternal _SlackNotification_default_instance_
 class Sort;
 class SortDefaultTypeInternal;
 extern SortDefaultTypeInternal _Sort_default_instance_;
+class Span;
+class SpanDefaultTypeInternal;
+extern SpanDefaultTypeInternal _Span_default_instance_;
 class UrlBlob;
 class UrlBlobDefaultTypeInternal;
 extern UrlBlobDefaultTypeInternal _UrlBlob_default_instance_;
@@ -135,6 +145,7 @@ namespace protobuf {
 template<> ::flyteidl::admin::Annotations* Arena::CreateMaybeMessage<::flyteidl::admin::Annotations>(Arena*);
 template<> ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Annotations_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage<::flyteidl::admin::AuthRole>(Arena*);
+template<> ::flyteidl::admin::CategoricalSpanInfo* Arena::CreateMaybeMessage<::flyteidl::admin::CategoricalSpanInfo>(Arena*);
 template<> ::flyteidl::admin::EmailNotification* Arena::CreateMaybeMessage<::flyteidl::admin::EmailNotification>(Arena*);
 template<> ::flyteidl::admin::Labels* Arena::CreateMaybeMessage<::flyteidl::admin::Labels>(Arena*);
 template<> ::flyteidl::admin::Labels_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Labels_ValuesEntry_DoNotUse>(Arena*);
@@ -152,9 +163,11 @@ template<> ::flyteidl::admin::Notification* Arena::CreateMaybeMessage<::flyteidl
 template<> ::flyteidl::admin::ObjectGetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ObjectGetRequest>(Arena*);
 template<> ::flyteidl::admin::PagerDutyNotification* Arena::CreateMaybeMessage<::flyteidl::admin::PagerDutyNotification>(Arena*);
 template<> ::flyteidl::admin::RawOutputDataConfig* Arena::CreateMaybeMessage<::flyteidl::admin::RawOutputDataConfig>(Arena*);
+template<> ::flyteidl::admin::ReferenceSpanInfo* Arena::CreateMaybeMessage<::flyteidl::admin::ReferenceSpanInfo>(Arena*);
 template<> ::flyteidl::admin::ResourceListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::ResourceListRequest>(Arena*);
 template<> ::flyteidl::admin::SlackNotification* Arena::CreateMaybeMessage<::flyteidl::admin::SlackNotification>(Arena*);
 template<> ::flyteidl::admin::Sort* Arena::CreateMaybeMessage<::flyteidl::admin::Sort>(Arena*);
+template<> ::flyteidl::admin::Span* Arena::CreateMaybeMessage<::flyteidl::admin::Span>(Arena*);
 template<> ::flyteidl::admin::UrlBlob* Arena::CreateMaybeMessage<::flyteidl::admin::UrlBlob>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -181,6 +194,30 @@ inline bool Sort_Direction_Parse(
     const ::std::string& name, Sort_Direction* value) {
   return ::google::protobuf::internal::ParseNamedEnum<Sort_Direction>(
     Sort_Direction_descriptor(), name, value);
+}
+enum CategoricalSpanInfo_Category {
+  CategoricalSpanInfo_Category_UNKNOWN = 0,
+  CategoricalSpanInfo_Category_NODE_TRANSITION = 1,
+  CategoricalSpanInfo_Category_EXECUTION_OVERHEAD = 2,
+  CategoricalSpanInfo_Category_PLUGIN_OVERHEAD = 3,
+  CategoricalSpanInfo_Category_PLUGIN_EXECUTION = 4,
+  CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool CategoricalSpanInfo_Category_IsValid(int value);
+const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MIN = CategoricalSpanInfo_Category_UNKNOWN;
+const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_PLUGIN_EXECUTION;
+const int CategoricalSpanInfo_Category_Category_ARRAYSIZE = CategoricalSpanInfo_Category_Category_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CategoricalSpanInfo_Category_descriptor();
+inline const ::std::string& CategoricalSpanInfo_Category_Name(CategoricalSpanInfo_Category value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CategoricalSpanInfo_Category_descriptor(), value);
+}
+inline bool CategoricalSpanInfo_Category_Parse(
+    const ::std::string& name, CategoricalSpanInfo_Category* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CategoricalSpanInfo_Category>(
+    CategoricalSpanInfo_Category_descriptor(), name, value);
 }
 enum NamedEntityState {
   NAMED_ENTITY_ACTIVE = 0,
@@ -3262,6 +3299,483 @@ class RawOutputDataConfig final :
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Span final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Span) */ {
+ public:
+  Span();
+  virtual ~Span();
+
+  Span(const Span& from);
+
+  inline Span& operator=(const Span& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Span(Span&& from) noexcept
+    : Span() {
+    *this = ::std::move(from);
+  }
+
+  inline Span& operator=(Span&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Span& default_instance();
+
+  enum InfoCase {
+    kCategory = 3,
+    kReference = 4,
+    INFO_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Span* internal_default_instance() {
+    return reinterpret_cast<const Span*>(
+               &_Span_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(Span* other);
+  friend void swap(Span& a, Span& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Span* New() const final {
+    return CreateMaybeMessage<Span>(nullptr);
+  }
+
+  Span* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Span>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Span& from);
+  void MergeFrom(const Span& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Span* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .google.protobuf.Timestamp start_time = 1;
+  bool has_start_time() const;
+  void clear_start_time();
+  static const int kStartTimeFieldNumber = 1;
+  const ::google::protobuf::Timestamp& start_time() const;
+  ::google::protobuf::Timestamp* release_start_time();
+  ::google::protobuf::Timestamp* mutable_start_time();
+  void set_allocated_start_time(::google::protobuf::Timestamp* start_time);
+
+  // .google.protobuf.Timestamp end_time = 2;
+  bool has_end_time() const;
+  void clear_end_time();
+  static const int kEndTimeFieldNumber = 2;
+  const ::google::protobuf::Timestamp& end_time() const;
+  ::google::protobuf::Timestamp* release_end_time();
+  ::google::protobuf::Timestamp* mutable_end_time();
+  void set_allocated_end_time(::google::protobuf::Timestamp* end_time);
+
+  // .flyteidl.admin.CategoricalSpanInfo category = 3;
+  bool has_category() const;
+  void clear_category();
+  static const int kCategoryFieldNumber = 3;
+  const ::flyteidl::admin::CategoricalSpanInfo& category() const;
+  ::flyteidl::admin::CategoricalSpanInfo* release_category();
+  ::flyteidl::admin::CategoricalSpanInfo* mutable_category();
+  void set_allocated_category(::flyteidl::admin::CategoricalSpanInfo* category);
+
+  // .flyteidl.admin.ReferenceSpanInfo reference = 4;
+  bool has_reference() const;
+  void clear_reference();
+  static const int kReferenceFieldNumber = 4;
+  const ::flyteidl::admin::ReferenceSpanInfo& reference() const;
+  ::flyteidl::admin::ReferenceSpanInfo* release_reference();
+  ::flyteidl::admin::ReferenceSpanInfo* mutable_reference();
+  void set_allocated_reference(::flyteidl::admin::ReferenceSpanInfo* reference);
+
+  void clear_info();
+  InfoCase info_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.Span)
+ private:
+  class HasBitSetters;
+  void set_has_category();
+  void set_has_reference();
+
+  inline bool has_info() const;
+  inline void clear_has_info();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::Timestamp* start_time_;
+  ::google::protobuf::Timestamp* end_time_;
+  union InfoUnion {
+    InfoUnion() {}
+    ::flyteidl::admin::CategoricalSpanInfo* category_;
+    ::flyteidl::admin::ReferenceSpanInfo* reference_;
+  } info_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CategoricalSpanInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.CategoricalSpanInfo) */ {
+ public:
+  CategoricalSpanInfo();
+  virtual ~CategoricalSpanInfo();
+
+  CategoricalSpanInfo(const CategoricalSpanInfo& from);
+
+  inline CategoricalSpanInfo& operator=(const CategoricalSpanInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CategoricalSpanInfo(CategoricalSpanInfo&& from) noexcept
+    : CategoricalSpanInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline CategoricalSpanInfo& operator=(CategoricalSpanInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const CategoricalSpanInfo& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CategoricalSpanInfo* internal_default_instance() {
+    return reinterpret_cast<const CategoricalSpanInfo*>(
+               &_CategoricalSpanInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(CategoricalSpanInfo* other);
+  friend void swap(CategoricalSpanInfo& a, CategoricalSpanInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CategoricalSpanInfo* New() const final {
+    return CreateMaybeMessage<CategoricalSpanInfo>(nullptr);
+  }
+
+  CategoricalSpanInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CategoricalSpanInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CategoricalSpanInfo& from);
+  void MergeFrom(const CategoricalSpanInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CategoricalSpanInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CategoricalSpanInfo_Category Category;
+  static const Category UNKNOWN =
+    CategoricalSpanInfo_Category_UNKNOWN;
+  static const Category NODE_TRANSITION =
+    CategoricalSpanInfo_Category_NODE_TRANSITION;
+  static const Category EXECUTION_OVERHEAD =
+    CategoricalSpanInfo_Category_EXECUTION_OVERHEAD;
+  static const Category PLUGIN_OVERHEAD =
+    CategoricalSpanInfo_Category_PLUGIN_OVERHEAD;
+  static const Category PLUGIN_EXECUTION =
+    CategoricalSpanInfo_Category_PLUGIN_EXECUTION;
+  static inline bool Category_IsValid(int value) {
+    return CategoricalSpanInfo_Category_IsValid(value);
+  }
+  static const Category Category_MIN =
+    CategoricalSpanInfo_Category_Category_MIN;
+  static const Category Category_MAX =
+    CategoricalSpanInfo_Category_Category_MAX;
+  static const int Category_ARRAYSIZE =
+    CategoricalSpanInfo_Category_Category_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Category_descriptor() {
+    return CategoricalSpanInfo_Category_descriptor();
+  }
+  static inline const ::std::string& Category_Name(Category value) {
+    return CategoricalSpanInfo_Category_Name(value);
+  }
+  static inline bool Category_Parse(const ::std::string& name,
+      Category* value) {
+    return CategoricalSpanInfo_Category_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // string description = 2;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 2;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
+  // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+  void clear_category();
+  static const int kCategoryFieldNumber = 1;
+  ::flyteidl::admin::CategoricalSpanInfo_Category category() const;
+  void set_category(::flyteidl::admin::CategoricalSpanInfo_Category value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.CategoricalSpanInfo)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
+  int category_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ReferenceSpanInfo final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.ReferenceSpanInfo) */ {
+ public:
+  ReferenceSpanInfo();
+  virtual ~ReferenceSpanInfo();
+
+  ReferenceSpanInfo(const ReferenceSpanInfo& from);
+
+  inline ReferenceSpanInfo& operator=(const ReferenceSpanInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ReferenceSpanInfo(ReferenceSpanInfo&& from) noexcept
+    : ReferenceSpanInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline ReferenceSpanInfo& operator=(ReferenceSpanInfo&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ReferenceSpanInfo& default_instance();
+
+  enum IdCase {
+    kWorkflowId = 1,
+    kNodeId = 2,
+    kTaskId = 3,
+    ID_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ReferenceSpanInfo* internal_default_instance() {
+    return reinterpret_cast<const ReferenceSpanInfo*>(
+               &_ReferenceSpanInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  void Swap(ReferenceSpanInfo* other);
+  friend void swap(ReferenceSpanInfo& a, ReferenceSpanInfo& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ReferenceSpanInfo* New() const final {
+    return CreateMaybeMessage<ReferenceSpanInfo>(nullptr);
+  }
+
+  ReferenceSpanInfo* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ReferenceSpanInfo>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ReferenceSpanInfo& from);
+  void MergeFrom(const ReferenceSpanInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ReferenceSpanInfo* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;
+  bool has_workflow_id() const;
+  void clear_workflow_id();
+  static const int kWorkflowIdFieldNumber = 1;
+  const ::flyteidl::core::WorkflowExecutionIdentifier& workflow_id() const;
+  ::flyteidl::core::WorkflowExecutionIdentifier* release_workflow_id();
+  ::flyteidl::core::WorkflowExecutionIdentifier* mutable_workflow_id();
+  void set_allocated_workflow_id(::flyteidl::core::WorkflowExecutionIdentifier* workflow_id);
+
+  // .flyteidl.core.NodeExecutionIdentifier node_id = 2;
+  bool has_node_id() const;
+  void clear_node_id();
+  static const int kNodeIdFieldNumber = 2;
+  const ::flyteidl::core::NodeExecutionIdentifier& node_id() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_node_id();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_node_id();
+  void set_allocated_node_id(::flyteidl::core::NodeExecutionIdentifier* node_id);
+
+  // .flyteidl.core.TaskExecutionIdentifier task_id = 3;
+  bool has_task_id() const;
+  void clear_task_id();
+  static const int kTaskIdFieldNumber = 3;
+  const ::flyteidl::core::TaskExecutionIdentifier& task_id() const;
+  ::flyteidl::core::TaskExecutionIdentifier* release_task_id();
+  ::flyteidl::core::TaskExecutionIdentifier* mutable_task_id();
+  void set_allocated_task_id(::flyteidl::core::TaskExecutionIdentifier* task_id);
+
+  void clear_id();
+  IdCase id_case() const;
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.ReferenceSpanInfo)
+ private:
+  class HasBitSetters;
+  void set_has_workflow_id();
+  void set_has_node_id();
+  void set_has_task_id();
+
+  inline bool has_id() const;
+  inline void clear_has_id();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  union IdUnion {
+    IdUnion() {}
+    ::flyteidl::core::WorkflowExecutionIdentifier* workflow_id_;
+    ::flyteidl::core::NodeExecutionIdentifier* node_id_;
+    ::flyteidl::core::TaskExecutionIdentifier* task_id_;
+  } id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
+};
 // ===================================================================
 
 
@@ -5583,9 +6097,391 @@ inline void RawOutputDataConfig::set_allocated_output_location_prefix(::std::str
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.RawOutputDataConfig.output_location_prefix)
 }
 
+// -------------------------------------------------------------------
+
+// Span
+
+// .google.protobuf.Timestamp start_time = 1;
+inline bool Span::has_start_time() const {
+  return this != internal_default_instance() && start_time_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& Span::start_time() const {
+  const ::google::protobuf::Timestamp* p = start_time_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Span.start_time)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* Span::release_start_time() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Span.start_time)
+  
+  ::google::protobuf::Timestamp* temp = start_time_;
+  start_time_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* Span::mutable_start_time() {
+  
+  if (start_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    start_time_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Span.start_time)
+  return start_time_;
+}
+inline void Span::set_allocated_start_time(::google::protobuf::Timestamp* start_time) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(start_time_);
+  }
+  if (start_time) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(start_time)->GetArena();
+    if (message_arena != submessage_arena) {
+      start_time = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, start_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  start_time_ = start_time;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Span.start_time)
+}
+
+// .google.protobuf.Timestamp end_time = 2;
+inline bool Span::has_end_time() const {
+  return this != internal_default_instance() && end_time_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& Span::end_time() const {
+  const ::google::protobuf::Timestamp* p = end_time_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Span.end_time)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* Span::release_end_time() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Span.end_time)
+  
+  ::google::protobuf::Timestamp* temp = end_time_;
+  end_time_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* Span::mutable_end_time() {
+  
+  if (end_time_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    end_time_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Span.end_time)
+  return end_time_;
+}
+inline void Span::set_allocated_end_time(::google::protobuf::Timestamp* end_time) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(end_time_);
+  }
+  if (end_time) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(end_time)->GetArena();
+    if (message_arena != submessage_arena) {
+      end_time = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, end_time, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  end_time_ = end_time;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Span.end_time)
+}
+
+// .flyteidl.admin.CategoricalSpanInfo category = 3;
+inline bool Span::has_category() const {
+  return info_case() == kCategory;
+}
+inline void Span::set_has_category() {
+  _oneof_case_[0] = kCategory;
+}
+inline void Span::clear_category() {
+  if (has_category()) {
+    delete info_.category_;
+    clear_has_info();
+  }
+}
+inline ::flyteidl::admin::CategoricalSpanInfo* Span::release_category() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Span.category)
+  if (has_category()) {
+    clear_has_info();
+      ::flyteidl::admin::CategoricalSpanInfo* temp = info_.category_;
+    info_.category_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::admin::CategoricalSpanInfo& Span::category() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Span.category)
+  return has_category()
+      ? *info_.category_
+      : *reinterpret_cast< ::flyteidl::admin::CategoricalSpanInfo*>(&::flyteidl::admin::_CategoricalSpanInfo_default_instance_);
+}
+inline ::flyteidl::admin::CategoricalSpanInfo* Span::mutable_category() {
+  if (!has_category()) {
+    clear_info();
+    set_has_category();
+    info_.category_ = CreateMaybeMessage< ::flyteidl::admin::CategoricalSpanInfo >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Span.category)
+  return info_.category_;
+}
+
+// .flyteidl.admin.ReferenceSpanInfo reference = 4;
+inline bool Span::has_reference() const {
+  return info_case() == kReference;
+}
+inline void Span::set_has_reference() {
+  _oneof_case_[0] = kReference;
+}
+inline void Span::clear_reference() {
+  if (has_reference()) {
+    delete info_.reference_;
+    clear_has_info();
+  }
+}
+inline ::flyteidl::admin::ReferenceSpanInfo* Span::release_reference() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Span.reference)
+  if (has_reference()) {
+    clear_has_info();
+      ::flyteidl::admin::ReferenceSpanInfo* temp = info_.reference_;
+    info_.reference_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::admin::ReferenceSpanInfo& Span::reference() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Span.reference)
+  return has_reference()
+      ? *info_.reference_
+      : *reinterpret_cast< ::flyteidl::admin::ReferenceSpanInfo*>(&::flyteidl::admin::_ReferenceSpanInfo_default_instance_);
+}
+inline ::flyteidl::admin::ReferenceSpanInfo* Span::mutable_reference() {
+  if (!has_reference()) {
+    clear_info();
+    set_has_reference();
+    info_.reference_ = CreateMaybeMessage< ::flyteidl::admin::ReferenceSpanInfo >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Span.reference)
+  return info_.reference_;
+}
+
+inline bool Span::has_info() const {
+  return info_case() != INFO_NOT_SET;
+}
+inline void Span::clear_has_info() {
+  _oneof_case_[0] = INFO_NOT_SET;
+}
+inline Span::InfoCase Span::info_case() const {
+  return Span::InfoCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// CategoricalSpanInfo
+
+// .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+inline void CategoricalSpanInfo::clear_category() {
+  category_ = 0;
+}
+inline ::flyteidl::admin::CategoricalSpanInfo_Category CategoricalSpanInfo::category() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.CategoricalSpanInfo.category)
+  return static_cast< ::flyteidl::admin::CategoricalSpanInfo_Category >(category_);
+}
+inline void CategoricalSpanInfo::set_category(::flyteidl::admin::CategoricalSpanInfo_Category value) {
+  
+  category_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.CategoricalSpanInfo.category)
+}
+
+// string description = 2;
+inline void CategoricalSpanInfo::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CategoricalSpanInfo::description() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.CategoricalSpanInfo.description)
+  return description_.GetNoArena();
+}
+inline void CategoricalSpanInfo::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.admin.CategoricalSpanInfo.description)
+}
+#if LANG_CXX11
+inline void CategoricalSpanInfo::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.CategoricalSpanInfo.description)
+}
+#endif
+inline void CategoricalSpanInfo::set_description(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.CategoricalSpanInfo.description)
+}
+inline void CategoricalSpanInfo::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.CategoricalSpanInfo.description)
+}
+inline ::std::string* CategoricalSpanInfo::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.CategoricalSpanInfo.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CategoricalSpanInfo::release_description() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.CategoricalSpanInfo.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CategoricalSpanInfo::set_allocated_description(::std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.CategoricalSpanInfo.description)
+}
+
+// -------------------------------------------------------------------
+
+// ReferenceSpanInfo
+
+// .flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;
+inline bool ReferenceSpanInfo::has_workflow_id() const {
+  return id_case() == kWorkflowId;
+}
+inline void ReferenceSpanInfo::set_has_workflow_id() {
+  _oneof_case_[0] = kWorkflowId;
+}
+inline ::flyteidl::core::WorkflowExecutionIdentifier* ReferenceSpanInfo::release_workflow_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ReferenceSpanInfo.workflow_id)
+  if (has_workflow_id()) {
+    clear_has_id();
+      ::flyteidl::core::WorkflowExecutionIdentifier* temp = id_.workflow_id_;
+    id_.workflow_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::WorkflowExecutionIdentifier& ReferenceSpanInfo::workflow_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ReferenceSpanInfo.workflow_id)
+  return has_workflow_id()
+      ? *id_.workflow_id_
+      : *reinterpret_cast< ::flyteidl::core::WorkflowExecutionIdentifier*>(&::flyteidl::core::_WorkflowExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::WorkflowExecutionIdentifier* ReferenceSpanInfo::mutable_workflow_id() {
+  if (!has_workflow_id()) {
+    clear_id();
+    set_has_workflow_id();
+    id_.workflow_id_ = CreateMaybeMessage< ::flyteidl::core::WorkflowExecutionIdentifier >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ReferenceSpanInfo.workflow_id)
+  return id_.workflow_id_;
+}
+
+// .flyteidl.core.NodeExecutionIdentifier node_id = 2;
+inline bool ReferenceSpanInfo::has_node_id() const {
+  return id_case() == kNodeId;
+}
+inline void ReferenceSpanInfo::set_has_node_id() {
+  _oneof_case_[0] = kNodeId;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* ReferenceSpanInfo::release_node_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ReferenceSpanInfo.node_id)
+  if (has_node_id()) {
+    clear_has_id();
+      ::flyteidl::core::NodeExecutionIdentifier* temp = id_.node_id_;
+    id_.node_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& ReferenceSpanInfo::node_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ReferenceSpanInfo.node_id)
+  return has_node_id()
+      ? *id_.node_id_
+      : *reinterpret_cast< ::flyteidl::core::NodeExecutionIdentifier*>(&::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* ReferenceSpanInfo::mutable_node_id() {
+  if (!has_node_id()) {
+    clear_id();
+    set_has_node_id();
+    id_.node_id_ = CreateMaybeMessage< ::flyteidl::core::NodeExecutionIdentifier >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ReferenceSpanInfo.node_id)
+  return id_.node_id_;
+}
+
+// .flyteidl.core.TaskExecutionIdentifier task_id = 3;
+inline bool ReferenceSpanInfo::has_task_id() const {
+  return id_case() == kTaskId;
+}
+inline void ReferenceSpanInfo::set_has_task_id() {
+  _oneof_case_[0] = kTaskId;
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* ReferenceSpanInfo::release_task_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.ReferenceSpanInfo.task_id)
+  if (has_task_id()) {
+    clear_has_id();
+      ::flyteidl::core::TaskExecutionIdentifier* temp = id_.task_id_;
+    id_.task_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::flyteidl::core::TaskExecutionIdentifier& ReferenceSpanInfo::task_id() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ReferenceSpanInfo.task_id)
+  return has_task_id()
+      ? *id_.task_id_
+      : *reinterpret_cast< ::flyteidl::core::TaskExecutionIdentifier*>(&::flyteidl::core::_TaskExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* ReferenceSpanInfo::mutable_task_id() {
+  if (!has_task_id()) {
+    clear_id();
+    set_has_task_id();
+    id_.task_id_ = CreateMaybeMessage< ::flyteidl::core::TaskExecutionIdentifier >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ReferenceSpanInfo.task_id)
+  return id_.task_id_;
+}
+
+inline bool ReferenceSpanInfo::has_id() const {
+  return id_case() != ID_NOT_SET;
+}
+inline void ReferenceSpanInfo::clear_has_id() {
+  _oneof_case_[0] = ID_NOT_SET;
+}
+inline ReferenceSpanInfo::IdCase ReferenceSpanInfo::id_case() const {
+  return ReferenceSpanInfo::IdCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -5645,6 +6541,11 @@ template <> struct is_proto_enum< ::flyteidl::admin::Sort_Direction> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::Sort_Direction>() {
   return ::flyteidl::admin::Sort_Direction_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::admin::CategoricalSpanInfo_Category> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::admin::CategoricalSpanInfo_Category>() {
+  return ::flyteidl::admin::CategoricalSpanInfo_Category_descriptor();
 }
 template <> struct is_proto_enum< ::flyteidl::admin::NamedEntityState> : ::std::true_type {};
 template <>

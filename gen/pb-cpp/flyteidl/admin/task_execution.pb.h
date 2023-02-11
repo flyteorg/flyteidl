@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[7]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -70,6 +70,12 @@ extern TaskExecutionGetDataRequestDefaultTypeInternal _TaskExecutionGetDataReque
 class TaskExecutionGetDataResponse;
 class TaskExecutionGetDataResponseDefaultTypeInternal;
 extern TaskExecutionGetDataResponseDefaultTypeInternal _TaskExecutionGetDataResponse_default_instance_;
+class TaskExecutionGetMetricsRequest;
+class TaskExecutionGetMetricsRequestDefaultTypeInternal;
+extern TaskExecutionGetMetricsRequestDefaultTypeInternal _TaskExecutionGetMetricsRequest_default_instance_;
+class TaskExecutionGetMetricsResponse;
+class TaskExecutionGetMetricsResponseDefaultTypeInternal;
+extern TaskExecutionGetMetricsResponseDefaultTypeInternal _TaskExecutionGetMetricsResponse_default_instance_;
 class TaskExecutionGetRequest;
 class TaskExecutionGetRequestDefaultTypeInternal;
 extern TaskExecutionGetRequestDefaultTypeInternal _TaskExecutionGetRequest_default_instance_;
@@ -87,6 +93,8 @@ template<> ::flyteidl::admin::TaskExecution* Arena::CreateMaybeMessage<::flyteid
 template<> ::flyteidl::admin::TaskExecutionClosure* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionClosure>(Arena*);
 template<> ::flyteidl::admin::TaskExecutionGetDataRequest* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionGetDataRequest>(Arena*);
 template<> ::flyteidl::admin::TaskExecutionGetDataResponse* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionGetDataResponse>(Arena*);
+template<> ::flyteidl::admin::TaskExecutionGetMetricsRequest* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionGetMetricsRequest>(Arena*);
+template<> ::flyteidl::admin::TaskExecutionGetMetricsResponse* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionGetMetricsResponse>(Arena*);
 template<> ::flyteidl::admin::TaskExecutionGetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionGetRequest>(Arena*);
 template<> ::flyteidl::admin::TaskExecutionList* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionList>(Arena*);
 template<> ::flyteidl::admin::TaskExecutionListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::TaskExecutionListRequest>(Arena*);
@@ -1189,6 +1197,239 @@ class TaskExecutionGetDataResponse final :
   ::flyteidl::admin::UrlBlob* outputs_;
   ::flyteidl::core::LiteralMap* full_inputs_;
   ::flyteidl::core::LiteralMap* full_outputs_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TaskExecutionGetMetricsRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.TaskExecutionGetMetricsRequest) */ {
+ public:
+  TaskExecutionGetMetricsRequest();
+  virtual ~TaskExecutionGetMetricsRequest();
+
+  TaskExecutionGetMetricsRequest(const TaskExecutionGetMetricsRequest& from);
+
+  inline TaskExecutionGetMetricsRequest& operator=(const TaskExecutionGetMetricsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TaskExecutionGetMetricsRequest(TaskExecutionGetMetricsRequest&& from) noexcept
+    : TaskExecutionGetMetricsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline TaskExecutionGetMetricsRequest& operator=(TaskExecutionGetMetricsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TaskExecutionGetMetricsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TaskExecutionGetMetricsRequest* internal_default_instance() {
+    return reinterpret_cast<const TaskExecutionGetMetricsRequest*>(
+               &_TaskExecutionGetMetricsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(TaskExecutionGetMetricsRequest* other);
+  friend void swap(TaskExecutionGetMetricsRequest& a, TaskExecutionGetMetricsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TaskExecutionGetMetricsRequest* New() const final {
+    return CreateMaybeMessage<TaskExecutionGetMetricsRequest>(nullptr);
+  }
+
+  TaskExecutionGetMetricsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TaskExecutionGetMetricsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TaskExecutionGetMetricsRequest& from);
+  void MergeFrom(const TaskExecutionGetMetricsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TaskExecutionGetMetricsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.TaskExecutionIdentifier id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::flyteidl::core::TaskExecutionIdentifier& id() const;
+  ::flyteidl::core::TaskExecutionIdentifier* release_id();
+  ::flyteidl::core::TaskExecutionIdentifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::TaskExecutionIdentifier* id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionGetMetricsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::TaskExecutionIdentifier* id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TaskExecutionGetMetricsResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.TaskExecutionGetMetricsResponse) */ {
+ public:
+  TaskExecutionGetMetricsResponse();
+  virtual ~TaskExecutionGetMetricsResponse();
+
+  TaskExecutionGetMetricsResponse(const TaskExecutionGetMetricsResponse& from);
+
+  inline TaskExecutionGetMetricsResponse& operator=(const TaskExecutionGetMetricsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TaskExecutionGetMetricsResponse(TaskExecutionGetMetricsResponse&& from) noexcept
+    : TaskExecutionGetMetricsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline TaskExecutionGetMetricsResponse& operator=(TaskExecutionGetMetricsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const TaskExecutionGetMetricsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TaskExecutionGetMetricsResponse* internal_default_instance() {
+    return reinterpret_cast<const TaskExecutionGetMetricsResponse*>(
+               &_TaskExecutionGetMetricsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(TaskExecutionGetMetricsResponse* other);
+  friend void swap(TaskExecutionGetMetricsResponse& a, TaskExecutionGetMetricsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TaskExecutionGetMetricsResponse* New() const final {
+    return CreateMaybeMessage<TaskExecutionGetMetricsResponse>(nullptr);
+  }
+
+  TaskExecutionGetMetricsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TaskExecutionGetMetricsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TaskExecutionGetMetricsResponse& from);
+  void MergeFrom(const TaskExecutionGetMetricsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TaskExecutionGetMetricsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.admin.Span spans = 1;
+  int spans_size() const;
+  void clear_spans();
+  static const int kSpansFieldNumber = 1;
+  ::flyteidl::admin::Span* mutable_spans(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+      mutable_spans();
+  const ::flyteidl::admin::Span& spans(int index) const;
+  ::flyteidl::admin::Span* add_spans();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+      spans() const;
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskExecutionGetMetricsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span > spans_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto;
 };
@@ -2560,9 +2801,93 @@ inline void TaskExecutionGetDataResponse::set_allocated_full_outputs(::flyteidl:
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionGetDataResponse.full_outputs)
 }
 
+// -------------------------------------------------------------------
+
+// TaskExecutionGetMetricsRequest
+
+// .flyteidl.core.TaskExecutionIdentifier id = 1;
+inline bool TaskExecutionGetMetricsRequest::has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline const ::flyteidl::core::TaskExecutionIdentifier& TaskExecutionGetMetricsRequest::id() const {
+  const ::flyteidl::core::TaskExecutionIdentifier* p = id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionGetMetricsRequest.id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::TaskExecutionIdentifier*>(
+      &::flyteidl::core::_TaskExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* TaskExecutionGetMetricsRequest::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskExecutionGetMetricsRequest.id)
+  
+  ::flyteidl::core::TaskExecutionIdentifier* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::TaskExecutionIdentifier* TaskExecutionGetMetricsRequest::mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::TaskExecutionIdentifier>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionGetMetricsRequest.id)
+  return id_;
+}
+inline void TaskExecutionGetMetricsRequest::set_allocated_id(::flyteidl::core::TaskExecutionIdentifier* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskExecutionGetMetricsRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// TaskExecutionGetMetricsResponse
+
+// repeated .flyteidl.admin.Span spans = 1;
+inline int TaskExecutionGetMetricsResponse::spans_size() const {
+  return spans_.size();
+}
+inline ::flyteidl::admin::Span* TaskExecutionGetMetricsResponse::mutable_spans(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskExecutionGetMetricsResponse.spans)
+  return spans_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+TaskExecutionGetMetricsResponse::mutable_spans() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.TaskExecutionGetMetricsResponse.spans)
+  return &spans_;
+}
+inline const ::flyteidl::admin::Span& TaskExecutionGetMetricsResponse::spans(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskExecutionGetMetricsResponse.spans)
+  return spans_.Get(index);
+}
+inline ::flyteidl::admin::Span* TaskExecutionGetMetricsResponse::add_spans() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.TaskExecutionGetMetricsResponse.spans)
+  return spans_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+TaskExecutionGetMetricsResponse::spans() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.TaskExecutionGetMetricsResponse.spans)
+  return spans_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

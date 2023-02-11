@@ -221,3 +221,12 @@ message NodeExecutionGetDataResponse {
     DynamicWorkflowNodeMetadata dynamic_workflow = 16;
 }
 
+// TODO @hamersaw docs
+message NodeExecutionGetMetricsRequest {
+    core.NodeExecutionIdentifier id = 1;
+}
+
+// TODO @hamersaw docs
+message NodeExecutionGetMetricsResponse {
+    repeated Span spans = 1;
+}

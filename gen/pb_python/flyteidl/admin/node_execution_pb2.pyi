@@ -93,6 +93,18 @@ class NodeExecutionGetDataResponse(_message.Message):
     outputs: _common_pb2.UrlBlob
     def __init__(self, inputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., outputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., full_inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., full_outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., dynamic_workflow: _Optional[_Union[DynamicWorkflowNodeMetadata, _Mapping]] = ...) -> None: ...
 
+class NodeExecutionGetMetricsRequest(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.NodeExecutionIdentifier
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class NodeExecutionGetMetricsResponse(_message.Message):
+    __slots__ = ["spans"]
+    SPANS_FIELD_NUMBER: _ClassVar[int]
+    spans: _containers.RepeatedCompositeFieldContainer[_common_pb2.Span]
+    def __init__(self, spans: _Optional[_Iterable[_Union[_common_pb2.Span, _Mapping]]] = ...) -> None: ...
+
 class NodeExecutionGetRequest(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]

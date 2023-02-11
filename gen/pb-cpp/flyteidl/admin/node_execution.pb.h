@@ -49,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[12]
+  static const ::google::protobuf::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -76,6 +76,12 @@ extern NodeExecutionGetDataRequestDefaultTypeInternal _NodeExecutionGetDataReque
 class NodeExecutionGetDataResponse;
 class NodeExecutionGetDataResponseDefaultTypeInternal;
 extern NodeExecutionGetDataResponseDefaultTypeInternal _NodeExecutionGetDataResponse_default_instance_;
+class NodeExecutionGetMetricsRequest;
+class NodeExecutionGetMetricsRequestDefaultTypeInternal;
+extern NodeExecutionGetMetricsRequestDefaultTypeInternal _NodeExecutionGetMetricsRequest_default_instance_;
+class NodeExecutionGetMetricsResponse;
+class NodeExecutionGetMetricsResponseDefaultTypeInternal;
+extern NodeExecutionGetMetricsResponseDefaultTypeInternal _NodeExecutionGetMetricsResponse_default_instance_;
 class NodeExecutionGetRequest;
 class NodeExecutionGetRequestDefaultTypeInternal;
 extern NodeExecutionGetRequestDefaultTypeInternal _NodeExecutionGetRequest_default_instance_;
@@ -104,6 +110,8 @@ template<> ::flyteidl::admin::NodeExecutionClosure* Arena::CreateMaybeMessage<::
 template<> ::flyteidl::admin::NodeExecutionForTaskListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionForTaskListRequest>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionGetDataRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetDataRequest>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionGetDataResponse* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetDataResponse>(Arena*);
+template<> ::flyteidl::admin::NodeExecutionGetMetricsRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetMetricsRequest>(Arena*);
+template<> ::flyteidl::admin::NodeExecutionGetMetricsResponse* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetMetricsResponse>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionGetRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionGetRequest>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionList* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionList>(Arena*);
 template<> ::flyteidl::admin::NodeExecutionListRequest* Arena::CreateMaybeMessage<::flyteidl::admin::NodeExecutionListRequest>(Arena*);
@@ -1906,6 +1914,239 @@ class NodeExecutionGetDataResponse final :
   ::flyteidl::core::LiteralMap* full_inputs_;
   ::flyteidl::core::LiteralMap* full_outputs_;
   ::flyteidl::admin::DynamicWorkflowNodeMetadata* dynamic_workflow_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NodeExecutionGetMetricsRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.NodeExecutionGetMetricsRequest) */ {
+ public:
+  NodeExecutionGetMetricsRequest();
+  virtual ~NodeExecutionGetMetricsRequest();
+
+  NodeExecutionGetMetricsRequest(const NodeExecutionGetMetricsRequest& from);
+
+  inline NodeExecutionGetMetricsRequest& operator=(const NodeExecutionGetMetricsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NodeExecutionGetMetricsRequest(NodeExecutionGetMetricsRequest&& from) noexcept
+    : NodeExecutionGetMetricsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline NodeExecutionGetMetricsRequest& operator=(NodeExecutionGetMetricsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NodeExecutionGetMetricsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodeExecutionGetMetricsRequest* internal_default_instance() {
+    return reinterpret_cast<const NodeExecutionGetMetricsRequest*>(
+               &_NodeExecutionGetMetricsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(NodeExecutionGetMetricsRequest* other);
+  friend void swap(NodeExecutionGetMetricsRequest& a, NodeExecutionGetMetricsRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodeExecutionGetMetricsRequest* New() const final {
+    return CreateMaybeMessage<NodeExecutionGetMetricsRequest>(nullptr);
+  }
+
+  NodeExecutionGetMetricsRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NodeExecutionGetMetricsRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NodeExecutionGetMetricsRequest& from);
+  void MergeFrom(const NodeExecutionGetMetricsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodeExecutionGetMetricsRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .flyteidl.core.NodeExecutionIdentifier id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::flyteidl::core::NodeExecutionIdentifier& id() const;
+  ::flyteidl::core::NodeExecutionIdentifier* release_id();
+  ::flyteidl::core::NodeExecutionIdentifier* mutable_id();
+  void set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionGetMetricsRequest)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::flyteidl::core::NodeExecutionIdentifier* id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NodeExecutionGetMetricsResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.NodeExecutionGetMetricsResponse) */ {
+ public:
+  NodeExecutionGetMetricsResponse();
+  virtual ~NodeExecutionGetMetricsResponse();
+
+  NodeExecutionGetMetricsResponse(const NodeExecutionGetMetricsResponse& from);
+
+  inline NodeExecutionGetMetricsResponse& operator=(const NodeExecutionGetMetricsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NodeExecutionGetMetricsResponse(NodeExecutionGetMetricsResponse&& from) noexcept
+    : NodeExecutionGetMetricsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline NodeExecutionGetMetricsResponse& operator=(NodeExecutionGetMetricsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const NodeExecutionGetMetricsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NodeExecutionGetMetricsResponse* internal_default_instance() {
+    return reinterpret_cast<const NodeExecutionGetMetricsResponse*>(
+               &_NodeExecutionGetMetricsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(NodeExecutionGetMetricsResponse* other);
+  friend void swap(NodeExecutionGetMetricsResponse& a, NodeExecutionGetMetricsResponse& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NodeExecutionGetMetricsResponse* New() const final {
+    return CreateMaybeMessage<NodeExecutionGetMetricsResponse>(nullptr);
+  }
+
+  NodeExecutionGetMetricsResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NodeExecutionGetMetricsResponse>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NodeExecutionGetMetricsResponse& from);
+  void MergeFrom(const NodeExecutionGetMetricsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NodeExecutionGetMetricsResponse* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .flyteidl.admin.Span spans = 1;
+  int spans_size() const;
+  void clear_spans();
+  static const int kSpansFieldNumber = 1;
+  ::flyteidl::admin::Span* mutable_spans(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+      mutable_spans();
+  const ::flyteidl::admin::Span& spans(int index) const;
+  ::flyteidl::admin::Span* add_spans();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+      spans() const;
+
+  // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionGetMetricsResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span > spans_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
@@ -3935,9 +4176,93 @@ inline void NodeExecutionGetDataResponse::set_allocated_dynamic_workflow(::flyte
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetDataResponse.dynamic_workflow)
 }
 
+// -------------------------------------------------------------------
+
+// NodeExecutionGetMetricsRequest
+
+// .flyteidl.core.NodeExecutionIdentifier id = 1;
+inline bool NodeExecutionGetMetricsRequest::has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline const ::flyteidl::core::NodeExecutionIdentifier& NodeExecutionGetMetricsRequest::id() const {
+  const ::flyteidl::core::NodeExecutionIdentifier* p = id_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetMetricsRequest.id)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::NodeExecutionIdentifier*>(
+      &::flyteidl::core::_NodeExecutionIdentifier_default_instance_);
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* NodeExecutionGetMetricsRequest::release_id() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionGetMetricsRequest.id)
+  
+  ::flyteidl::core::NodeExecutionIdentifier* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::NodeExecutionIdentifier* NodeExecutionGetMetricsRequest::mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::NodeExecutionIdentifier>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionGetMetricsRequest.id)
+  return id_;
+}
+inline void NodeExecutionGetMetricsRequest::set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(id_);
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetMetricsRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// NodeExecutionGetMetricsResponse
+
+// repeated .flyteidl.admin.Span spans = 1;
+inline int NodeExecutionGetMetricsResponse::spans_size() const {
+  return spans_.size();
+}
+inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::mutable_spans(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
+  return spans_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+NodeExecutionGetMetricsResponse::mutable_spans() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
+  return &spans_;
+}
+inline const ::flyteidl::admin::Span& NodeExecutionGetMetricsResponse::spans(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
+  return spans_.Get(index);
+}
+inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::add_spans() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
+  return spans_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+NodeExecutionGetMetricsResponse::spans() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
+  return spans_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

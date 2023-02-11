@@ -5,6 +5,7 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/admin";
 
 import "flyteidl/core/execution.proto";
 import "flyteidl/core/identifier.proto";
+import "google/protobuf/timestamp.proto";
 
 // Encapsulation of fields that identifies a Flyte resource.
 // A Flyte resource can be a task, workflow or launch plan.
@@ -299,4 +300,38 @@ message RawOutputDataConfig {
     // Prefix for where offloaded data from user workflows will be written
     // e.g. s3://bucket/key or s3://bucket/
     string output_location_prefix = 1;
+}
+
+// TODO @hamersaw docs
+message Span {
+    google.protobuf.Timestamp start_time = 1;
+    google.protobuf.Timestamp end_time = 2;
+
+    oneof info {
+        CategoricalSpanInfo category = 3;
+        ReferenceSpanInfo reference = 4;
+    }
+}
+
+// TODO @hamersaw docs
+message CategoricalSpanInfo {
+    enum Category {
+        UNKNOWN = 0;
+        NODE_TRANSITION = 1;
+        EXECUTION_OVERHEAD = 2;
+        PLUGIN_OVERHEAD = 3;
+        PLUGIN_EXECUTION = 4;
+    }
+
+    Category category = 1;
+    string description = 2;
+}
+
+// TODO @hamersaw docs
+message ReferenceSpanInfo {
+    oneof id {
+        flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;
+        flyteidl.core.NodeExecutionIdentifier node_id = 2;
+        flyteidl.core.TaskExecutionIdentifier task_id = 3;
+    }
 }

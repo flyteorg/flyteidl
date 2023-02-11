@@ -1,5 +1,6 @@
 from flyteidl.core import execution_pb2 as _execution_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -31,6 +32,21 @@ class AuthRole(_message.Message):
     assumable_iam_role: str
     kubernetes_service_account: str
     def __init__(self, assumable_iam_role: _Optional[str] = ..., kubernetes_service_account: _Optional[str] = ...) -> None: ...
+
+class CategoricalSpanInfo(_message.Message):
+    __slots__ = ["category", "description"]
+    class Category(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = []
+    CATEGORY_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    EXECUTION_OVERHEAD: CategoricalSpanInfo.Category
+    NODE_TRANSITION: CategoricalSpanInfo.Category
+    PLUGIN_EXECUTION: CategoricalSpanInfo.Category
+    PLUGIN_OVERHEAD: CategoricalSpanInfo.Category
+    UNKNOWN: CategoricalSpanInfo.Category
+    category: CategoricalSpanInfo.Category
+    description: str
+    def __init__(self, category: _Optional[_Union[CategoricalSpanInfo.Category, str]] = ..., description: _Optional[str] = ...) -> None: ...
 
 class EmailNotification(_message.Message):
     __slots__ = ["recipients_email"]
@@ -181,6 +197,16 @@ class RawOutputDataConfig(_message.Message):
     output_location_prefix: str
     def __init__(self, output_location_prefix: _Optional[str] = ...) -> None: ...
 
+class ReferenceSpanInfo(_message.Message):
+    __slots__ = ["node_id", "task_id", "workflow_id"]
+    NODE_ID_FIELD_NUMBER: _ClassVar[int]
+    TASK_ID_FIELD_NUMBER: _ClassVar[int]
+    WORKFLOW_ID_FIELD_NUMBER: _ClassVar[int]
+    node_id: _identifier_pb2.NodeExecutionIdentifier
+    task_id: _identifier_pb2.TaskExecutionIdentifier
+    workflow_id: _identifier_pb2.WorkflowExecutionIdentifier
+    def __init__(self, workflow_id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., node_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., task_id: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
 class ResourceListRequest(_message.Message):
     __slots__ = ["filters", "id", "limit", "sort_by", "token"]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -212,6 +238,18 @@ class Sort(_message.Message):
     direction: Sort.Direction
     key: str
     def __init__(self, key: _Optional[str] = ..., direction: _Optional[_Union[Sort.Direction, str]] = ...) -> None: ...
+
+class Span(_message.Message):
+    __slots__ = ["category", "end_time", "reference", "start_time"]
+    CATEGORY_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    REFERENCE_FIELD_NUMBER: _ClassVar[int]
+    START_TIME_FIELD_NUMBER: _ClassVar[int]
+    category: CategoricalSpanInfo
+    end_time: _timestamp_pb2.Timestamp
+    reference: ReferenceSpanInfo
+    start_time: _timestamp_pb2.Timestamp
+    def __init__(self, start_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., category: _Optional[_Union[CategoricalSpanInfo, _Mapping]] = ..., reference: _Optional[_Union[ReferenceSpanInfo, _Mapping]] = ...) -> None: ...
 
 class UrlBlob(_message.Message):
     __slots__ = ["bytes", "url"]

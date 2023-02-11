@@ -247,6 +247,18 @@ class WorkflowExecutionGetDataResponse(_message.Message):
     outputs: _common_pb2.UrlBlob
     def __init__(self, outputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., inputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., full_inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., full_outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
+class WorkflowExecutionGetMetricsRequest(_message.Message):
+    __slots__ = ["id"]
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: _identifier_pb2.WorkflowExecutionIdentifier
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
+
+class WorkflowExecutionGetMetricsResponse(_message.Message):
+    __slots__ = ["spans"]
+    SPANS_FIELD_NUMBER: _ClassVar[int]
+    spans: _containers.RepeatedCompositeFieldContainer[_common_pb2.Span]
+    def __init__(self, spans: _Optional[_Iterable[_Union[_common_pb2.Span, _Mapping]]] = ...) -> None: ...
+
 class WorkflowExecutionGetRequest(_message.Message):
     __slots__ = ["id"]
     ID_FIELD_NUMBER: _ClassVar[int]

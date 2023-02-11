@@ -381,3 +381,13 @@ message ExecutionStateChangeDetails {
 }
 
 message ExecutionUpdateResponse {}
+
+// TODO @hamersaw docs
+message WorkflowExecutionGetMetricsRequest {
+    core.WorkflowExecutionIdentifier id = 1;
+}
+
+// TODO @hamersaw docs
+message WorkflowExecutionGetMetricsResponse {
+    repeated Span spans = 1;
+}

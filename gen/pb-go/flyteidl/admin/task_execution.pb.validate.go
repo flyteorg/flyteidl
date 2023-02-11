@@ -749,3 +749,164 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = TaskExecutionGetDataResponseValidationError{}
+
+// Validate checks the field values on TaskExecutionGetMetricsRequest with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *TaskExecutionGetMetricsRequest) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	if v, ok := interface{}(m.GetId()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionGetMetricsRequestValidationError{
+				field:  "Id",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
+	return nil
+}
+
+// TaskExecutionGetMetricsRequestValidationError is the validation error
+// returned by TaskExecutionGetMetricsRequest.Validate if the designated
+// constraints aren't met.
+type TaskExecutionGetMetricsRequestValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TaskExecutionGetMetricsRequestValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TaskExecutionGetMetricsRequestValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TaskExecutionGetMetricsRequestValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TaskExecutionGetMetricsRequestValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TaskExecutionGetMetricsRequestValidationError) ErrorName() string {
+	return "TaskExecutionGetMetricsRequestValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e TaskExecutionGetMetricsRequestValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTaskExecutionGetMetricsRequest.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TaskExecutionGetMetricsRequestValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TaskExecutionGetMetricsRequestValidationError{}
+
+// Validate checks the field values on TaskExecutionGetMetricsResponse with the
+// rules defined in the proto definition for this message. If any rules are
+// violated, an error is returned.
+func (m *TaskExecutionGetMetricsResponse) Validate() error {
+	if m == nil {
+		return nil
+	}
+
+	for idx, item := range m.GetSpans() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return TaskExecutionGetMetricsResponseValidationError{
+					field:  fmt.Sprintf("Spans[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// TaskExecutionGetMetricsResponseValidationError is the validation error
+// returned by TaskExecutionGetMetricsResponse.Validate if the designated
+// constraints aren't met.
+type TaskExecutionGetMetricsResponseValidationError struct {
+	field  string
+	reason string
+	cause  error
+	key    bool
+}
+
+// Field function returns field value.
+func (e TaskExecutionGetMetricsResponseValidationError) Field() string { return e.field }
+
+// Reason function returns reason value.
+func (e TaskExecutionGetMetricsResponseValidationError) Reason() string { return e.reason }
+
+// Cause function returns cause value.
+func (e TaskExecutionGetMetricsResponseValidationError) Cause() error { return e.cause }
+
+// Key function returns key value.
+func (e TaskExecutionGetMetricsResponseValidationError) Key() bool { return e.key }
+
+// ErrorName returns error name.
+func (e TaskExecutionGetMetricsResponseValidationError) ErrorName() string {
+	return "TaskExecutionGetMetricsResponseValidationError"
+}
+
+// Error satisfies the builtin error interface
+func (e TaskExecutionGetMetricsResponseValidationError) Error() string {
+	cause := ""
+	if e.cause != nil {
+		cause = fmt.Sprintf(" | caused by: %v", e.cause)
+	}
+
+	key := ""
+	if e.key {
+		key = "key for "
+	}
+
+	return fmt.Sprintf(
+		"invalid %sTaskExecutionGetMetricsResponse.%s: %s%s",
+		key,
+		e.field,
+		e.reason,
+		cause)
+}
+
+var _ error = TaskExecutionGetMetricsResponseValidationError{}
+
+var _ interface {
+	Field() string
+	Reason() string
+	Key() bool
+	Cause() error
+	ErrorName() string
+} = TaskExecutionGetMetricsResponseValidationError{}
