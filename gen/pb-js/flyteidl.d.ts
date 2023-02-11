@@ -18448,6 +18448,48 @@ export namespace flyteidl {
              * @returns Promise
              */
             public listDescriptionEntities(request: flyteidl.admin.IDescriptionEntityListRequest): Promise<flyteidl.admin.DescriptionEntityList>;
+
+            /**
+             * Calls GetExecutionMetrics.
+             * @param request WorkflowExecutionGetMetricsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+             */
+            public getExecutionMetrics(request: flyteidl.admin.IWorkflowExecutionGetMetricsRequest, callback: flyteidl.service.AdminService.GetExecutionMetricsCallback): void;
+
+            /**
+             * Calls GetExecutionMetrics.
+             * @param request WorkflowExecutionGetMetricsRequest message or plain object
+             * @returns Promise
+             */
+            public getExecutionMetrics(request: flyteidl.admin.IWorkflowExecutionGetMetricsRequest): Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>;
+
+            /**
+             * Calls GetNodeExecutionMetrics.
+             * @param request NodeExecutionGetMetricsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and NodeExecutionGetMetricsResponse
+             */
+            public getNodeExecutionMetrics(request: flyteidl.admin.INodeExecutionGetMetricsRequest, callback: flyteidl.service.AdminService.GetNodeExecutionMetricsCallback): void;
+
+            /**
+             * Calls GetNodeExecutionMetrics.
+             * @param request NodeExecutionGetMetricsRequest message or plain object
+             * @returns Promise
+             */
+            public getNodeExecutionMetrics(request: flyteidl.admin.INodeExecutionGetMetricsRequest): Promise<flyteidl.admin.NodeExecutionGetMetricsResponse>;
+
+            /**
+             * Calls GetTaskExecutionMetrics.
+             * @param request TaskExecutionGetMetricsRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and TaskExecutionGetMetricsResponse
+             */
+            public getTaskExecutionMetrics(request: flyteidl.admin.ITaskExecutionGetMetricsRequest, callback: flyteidl.service.AdminService.GetTaskExecutionMetricsCallback): void;
+
+            /**
+             * Calls GetTaskExecutionMetrics.
+             * @param request TaskExecutionGetMetricsRequest message or plain object
+             * @returns Promise
+             */
+            public getTaskExecutionMetrics(request: flyteidl.admin.ITaskExecutionGetMetricsRequest): Promise<flyteidl.admin.TaskExecutionGetMetricsResponse>;
         }
 
         namespace AdminService {
@@ -18815,6 +18857,27 @@ export namespace flyteidl {
              * @param [response] DescriptionEntityList
              */
             type ListDescriptionEntitiesCallback = (error: (Error|null), response?: flyteidl.admin.DescriptionEntityList) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getExecutionMetrics}.
+             * @param error Error, if any
+             * @param [response] WorkflowExecutionGetMetricsResponse
+             */
+            type GetExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.WorkflowExecutionGetMetricsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionMetrics}.
+             * @param error Error, if any
+             * @param [response] NodeExecutionGetMetricsResponse
+             */
+            type GetNodeExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionGetMetricsResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecutionMetrics}.
+             * @param error Error, if any
+             * @param [response] TaskExecutionGetMetricsResponse
+             */
+            type GetTaskExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionGetMetricsResponse) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

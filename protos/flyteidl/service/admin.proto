@@ -627,4 +627,34 @@ service AdminService {
     //   description: "Fetch existing description entity definitions matching input filters."
     // };
   }
+
+  // Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.
+  rpc GetExecutionMetrics (flyteidl.admin.WorkflowExecutionGetMetricsRequest) returns (flyteidl.admin.WorkflowExecutionGetMetricsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/metrics/executions/{id.project}/{id.domain}/{id.name}"
+    };
+    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    //   description: "Retrieve metrics from an existing workflow execution."
+    // };
+  };
+
+  // Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+  rpc GetNodeExecutionMetrics (flyteidl.admin.NodeExecutionGetMetricsRequest) returns (flyteidl.admin.NodeExecutionGetMetricsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
+    };
+    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    //   description: "Retrieve metrics from an existing node execution."
+    // };
+  };
+
+  // Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.
+  rpc GetTaskExecutionMetrics (flyteidl.admin.TaskExecutionGetMetricsRequest) returns (flyteidl.admin.TaskExecutionGetMetricsResponse) {
+    option (google.api.http) = {
+        get: "/api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}"
+    };
+    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
+    //   description: "Retrieve metrics from an existing task execution."
+    // };
+  }
 }

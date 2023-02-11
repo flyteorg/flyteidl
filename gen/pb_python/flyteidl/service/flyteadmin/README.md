@@ -84,15 +84,18 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_description_entity**](docs/AdminServiceApi.md#get_description_entity) | **GET** /api/v1/description_entities/{id.resource_type}/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.DescriptionEntity&#x60; object.
 *AdminServiceApi* | [**get_execution**](docs/AdminServiceApi.md#get_execution) | **GET** /api/v1/executions/{id.project}/{id.domain}/{id.name} | Fetches a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_execution_data**](docs/AdminServiceApi.md#get_execution_data) | **GET** /api/v1/data/executions/{id.project}/{id.domain}/{id.name} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
+*AdminServiceApi* | [**get_execution_metrics**](docs/AdminServiceApi.md#get_execution_metrics) | **GET** /api/v1/metrics/executions/{id.project}/{id.domain}/{id.name} | Fetches runtime metrics for a :ref:&#x60;ref_flyteidl.admin.Execution&#x60;.
 *AdminServiceApi* | [**get_launch_plan**](docs/AdminServiceApi.md#get_launch_plan) | **GET** /api/v1/launch_plans/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.LaunchPlan&#x60; definition.
 *AdminServiceApi* | [**get_named_entity**](docs/AdminServiceApi.md#get_named_entity) | **GET** /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name} | Returns a :ref:&#x60;ref_flyteidl.admin.NamedEntity&#x60; object.
 *AdminServiceApi* | [**get_node_execution**](docs/AdminServiceApi.md#get_node_execution) | **GET** /api/v1/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**get_node_execution_data**](docs/AdminServiceApi.md#get_node_execution_data) | **GET** /api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
+*AdminServiceApi* | [**get_node_execution_metrics**](docs/AdminServiceApi.md#get_node_execution_metrics) | **GET** /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id} | Fetches metrics for a :ref:&#x60;ref_flyteidl.admin.NodeExecution&#x60;.
 *AdminServiceApi* | [**get_project_attributes**](docs/AdminServiceApi.md#get_project_attributes) | **GET** /api/v1/project_attributes/{project} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**get_project_domain_attributes**](docs/AdminServiceApi.md#get_project_domain_attributes) | **GET** /api/v1/project_domain_attributes/{project}/{domain} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project and domain.
 *AdminServiceApi* | [**get_task**](docs/AdminServiceApi.md#get_task) | **GET** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**get_task_execution**](docs/AdminServiceApi.md#get_task_execution) | **GET** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**get_task_execution_data**](docs/AdminServiceApi.md#get_task_execution_data) | **GET** /api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
+*AdminServiceApi* | [**get_task_execution_metrics**](docs/AdminServiceApi.md#get_task_execution_metrics) | **GET** /api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches metrics for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**get_version**](docs/AdminServiceApi.md#get_version) | **GET** /api/v1/version | 
 *AdminServiceApi* | [**get_workflow**](docs/AdminServiceApi.md#get_workflow) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**get_workflow_attributes**](docs/AdminServiceApi.md#get_workflow_attributes) | **GET** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
@@ -134,6 +137,7 @@ Class | Method | HTTP request | Description
  - [AdminAnnotations](docs/AdminAnnotations.md)
  - [AdminAuth](docs/AdminAuth.md)
  - [AdminAuthRole](docs/AdminAuthRole.md)
+ - [AdminCategoricalSpanInfo](docs/AdminCategoricalSpanInfo.md)
  - [AdminClusterAssignment](docs/AdminClusterAssignment.md)
  - [AdminClusterResourceAttributes](docs/AdminClusterResourceAttributes.md)
  - [AdminCronSchedule](docs/AdminCronSchedule.md)
@@ -191,6 +195,7 @@ Class | Method | HTTP request | Description
  - [AdminNodeExecutionEventRequest](docs/AdminNodeExecutionEventRequest.md)
  - [AdminNodeExecutionEventResponse](docs/AdminNodeExecutionEventResponse.md)
  - [AdminNodeExecutionGetDataResponse](docs/AdminNodeExecutionGetDataResponse.md)
+ - [AdminNodeExecutionGetMetricsResponse](docs/AdminNodeExecutionGetMetricsResponse.md)
  - [AdminNodeExecutionList](docs/AdminNodeExecutionList.md)
  - [AdminNodeExecutionMetaData](docs/AdminNodeExecutionMetaData.md)
  - [AdminNotification](docs/AdminNotification.md)
@@ -216,10 +221,12 @@ Class | Method | HTTP request | Description
  - [AdminProjectUpdateResponse](docs/AdminProjectUpdateResponse.md)
  - [AdminProjects](docs/AdminProjects.md)
  - [AdminRawOutputDataConfig](docs/AdminRawOutputDataConfig.md)
+ - [AdminReferenceSpanInfo](docs/AdminReferenceSpanInfo.md)
  - [AdminSchedule](docs/AdminSchedule.md)
  - [AdminSlackNotification](docs/AdminSlackNotification.md)
  - [AdminSort](docs/AdminSort.md)
  - [AdminSourceCode](docs/AdminSourceCode.md)
+ - [AdminSpan](docs/AdminSpan.md)
  - [AdminSystemMetadata](docs/AdminSystemMetadata.md)
  - [AdminTask](docs/AdminTask.md)
  - [AdminTaskClosure](docs/AdminTaskClosure.md)
@@ -229,6 +236,7 @@ Class | Method | HTTP request | Description
  - [AdminTaskExecutionEventRequest](docs/AdminTaskExecutionEventRequest.md)
  - [AdminTaskExecutionEventResponse](docs/AdminTaskExecutionEventResponse.md)
  - [AdminTaskExecutionGetDataResponse](docs/AdminTaskExecutionGetDataResponse.md)
+ - [AdminTaskExecutionGetMetricsResponse](docs/AdminTaskExecutionGetMetricsResponse.md)
  - [AdminTaskExecutionList](docs/AdminTaskExecutionList.md)
  - [AdminTaskList](docs/AdminTaskList.md)
  - [AdminTaskResourceAttributes](docs/AdminTaskResourceAttributes.md)
@@ -250,10 +258,12 @@ Class | Method | HTTP request | Description
  - [AdminWorkflowExecutionEventRequest](docs/AdminWorkflowExecutionEventRequest.md)
  - [AdminWorkflowExecutionEventResponse](docs/AdminWorkflowExecutionEventResponse.md)
  - [AdminWorkflowExecutionGetDataResponse](docs/AdminWorkflowExecutionGetDataResponse.md)
+ - [AdminWorkflowExecutionGetMetricsResponse](docs/AdminWorkflowExecutionGetMetricsResponse.md)
  - [AdminWorkflowList](docs/AdminWorkflowList.md)
  - [AdminWorkflowSpec](docs/AdminWorkflowSpec.md)
  - [BlobTypeBlobDimensionality](docs/BlobTypeBlobDimensionality.md)
  - [CatalogReservationStatus](docs/CatalogReservationStatus.md)
+ - [CategoricalSpanInfoCategory](docs/CategoricalSpanInfoCategory.md)
  - [ComparisonExpressionOperator](docs/ComparisonExpressionOperator.md)
  - [ConjunctionExpressionLogicalOperator](docs/ConjunctionExpressionLogicalOperator.md)
  - [ConnectionSetIdList](docs/ConnectionSetIdList.md)

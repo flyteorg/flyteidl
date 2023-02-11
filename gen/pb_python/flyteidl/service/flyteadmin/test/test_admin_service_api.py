@@ -127,6 +127,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_get_execution_metrics(self):
+        """Test case for get_execution_metrics
+
+        Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.  # noqa: E501
+        """
+        pass
+
     def test_get_launch_plan(self):
         """Test case for get_launch_plan
 
@@ -152,6 +159,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """Test case for get_node_execution_data
 
         Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
+        """
+        pass
+
+    def test_get_node_execution_metrics(self):
+        """Test case for get_node_execution_metrics
+
+        Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
         """
         pass
 
@@ -187,6 +201,13 @@ class TestAdminServiceApi(unittest.TestCase):
         """Test case for get_task_execution_data
 
         Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
+        """
+        pass
+
+    def test_get_task_execution_metrics(self):
+        """Test case for get_task_execution_metrics
+
+        Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
         """
         pass
 

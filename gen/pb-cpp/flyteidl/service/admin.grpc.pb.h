@@ -471,6 +471,30 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::DescriptionEntityList>> PrepareAsyncListDescriptionEntities(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::DescriptionEntityList>>(PrepareAsyncListDescriptionEntitiesRaw(context, request, cq));
     }
+    // Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.
+    virtual ::grpc::Status GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>> AsyncGetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>>(AsyncGetExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>> PrepareAsyncGetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>>(PrepareAsyncGetExecutionMetricsRaw(context, request, cq));
+    }
+    // Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+    virtual ::grpc::Status GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>> AsyncGetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>>(AsyncGetNodeExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>> PrepareAsyncGetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>>(PrepareAsyncGetNodeExecutionMetricsRaw(context, request, cq));
+    }
+    // Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.
+    virtual ::grpc::Status GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>> AsyncGetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>>(AsyncGetTaskExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>> PrepareAsyncGetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>>(PrepareAsyncGetTaskExecutionMetricsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -739,6 +763,21 @@ class AdminService final {
       virtual void ListDescriptionEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::DescriptionEntityList* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListDescriptionEntities(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest* request, ::flyteidl::admin::DescriptionEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void ListDescriptionEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::DescriptionEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.
+      virtual void GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+      virtual void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.
+      virtual void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -846,6 +885,12 @@ class AdminService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::DescriptionEntity>* PrepareAsyncGetDescriptionEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::DescriptionEntityList>* AsyncListDescriptionEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::DescriptionEntityList>* PrepareAsyncListDescriptionEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* AsyncGetExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* PrepareAsyncGetExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>* AsyncGetNodeExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::NodeExecutionGetMetricsResponse>* PrepareAsyncGetNodeExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* AsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* PrepareAsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -1214,6 +1259,27 @@ class AdminService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::DescriptionEntityList>> PrepareAsyncListDescriptionEntities(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::DescriptionEntityList>>(PrepareAsyncListDescriptionEntitiesRaw(context, request, cq));
     }
+    ::grpc::Status GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>> AsyncGetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>>(AsyncGetExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>> PrepareAsyncGetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>>(PrepareAsyncGetExecutionMetricsRaw(context, request, cq));
+    }
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>> AsyncGetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>>(AsyncGetNodeExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>> PrepareAsyncGetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>>(PrepareAsyncGetNodeExecutionMetricsRaw(context, request, cq));
+    }
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>> AsyncGetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>>(AsyncGetTaskExecutionMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>> PrepareAsyncGetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>>(PrepareAsyncGetTaskExecutionMetricsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -1425,6 +1491,18 @@ class AdminService final {
       void ListDescriptionEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::DescriptionEntityList* response, std::function<void(::grpc::Status)>) override;
       void ListDescriptionEntities(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest* request, ::flyteidl::admin::DescriptionEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void ListDescriptionEntities(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::DescriptionEntityList* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetNodeExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -1540,6 +1618,12 @@ class AdminService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::DescriptionEntity>* PrepareAsyncGetDescriptionEntityRaw(::grpc::ClientContext* context, const ::flyteidl::admin::ObjectGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::DescriptionEntityList>* AsyncListDescriptionEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::DescriptionEntityList>* PrepareAsyncListDescriptionEntitiesRaw(::grpc::ClientContext* context, const ::flyteidl::admin::DescriptionEntityListRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* AsyncGetExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* PrepareAsyncGetExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>* AsyncGetNodeExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::NodeExecutionGetMetricsResponse>* PrepareAsyncGetNodeExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* AsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* PrepareAsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTask_;
     const ::grpc::internal::RpcMethod rpcmethod_GetTask_;
     const ::grpc::internal::RpcMethod rpcmethod_ListTaskIds_;
@@ -1592,6 +1676,9 @@ class AdminService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetVersion_;
     const ::grpc::internal::RpcMethod rpcmethod_GetDescriptionEntity_;
     const ::grpc::internal::RpcMethod rpcmethod_ListDescriptionEntities_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetExecutionMetrics_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetNodeExecutionMetrics_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetTaskExecutionMetrics_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1708,6 +1795,12 @@ class AdminService final {
     virtual ::grpc::Status GetDescriptionEntity(::grpc::ServerContext* context, const ::flyteidl::admin::ObjectGetRequest* request, ::flyteidl::admin::DescriptionEntity* response);
     // Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
     virtual ::grpc::Status ListDescriptionEntities(::grpc::ServerContext* context, const ::flyteidl::admin::DescriptionEntityListRequest* request, ::flyteidl::admin::DescriptionEntityList* response);
+    // Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.
+    virtual ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response);
+    // Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
+    virtual ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response);
+    // Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.
+    virtual ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateTask : public BaseClass {
@@ -2749,7 +2842,67 @@ class AdminService final {
       ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateTask<WithAsyncMethod_GetTask<WithAsyncMethod_ListTaskIds<WithAsyncMethod_ListTasks<WithAsyncMethod_CreateWorkflow<WithAsyncMethod_GetWorkflow<WithAsyncMethod_ListWorkflowIds<WithAsyncMethod_ListWorkflows<WithAsyncMethod_CreateLaunchPlan<WithAsyncMethod_GetLaunchPlan<WithAsyncMethod_GetActiveLaunchPlan<WithAsyncMethod_ListActiveLaunchPlans<WithAsyncMethod_ListLaunchPlanIds<WithAsyncMethod_ListLaunchPlans<WithAsyncMethod_UpdateLaunchPlan<WithAsyncMethod_CreateExecution<WithAsyncMethod_RelaunchExecution<WithAsyncMethod_RecoverExecution<WithAsyncMethod_GetExecution<WithAsyncMethod_UpdateExecution<WithAsyncMethod_GetExecutionData<WithAsyncMethod_ListExecutions<WithAsyncMethod_TerminateExecution<WithAsyncMethod_GetNodeExecution<WithAsyncMethod_ListNodeExecutions<WithAsyncMethod_ListNodeExecutionsForTask<WithAsyncMethod_GetNodeExecutionData<WithAsyncMethod_RegisterProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_ListProjects<WithAsyncMethod_CreateWorkflowEvent<WithAsyncMethod_CreateNodeEvent<WithAsyncMethod_CreateTaskEvent<WithAsyncMethod_GetTaskExecution<WithAsyncMethod_ListTaskExecutions<WithAsyncMethod_GetTaskExecutionData<WithAsyncMethod_UpdateProjectDomainAttributes<WithAsyncMethod_GetProjectDomainAttributes<WithAsyncMethod_DeleteProjectDomainAttributes<WithAsyncMethod_UpdateProjectAttributes<WithAsyncMethod_GetProjectAttributes<WithAsyncMethod_DeleteProjectAttributes<WithAsyncMethod_UpdateWorkflowAttributes<WithAsyncMethod_GetWorkflowAttributes<WithAsyncMethod_DeleteWorkflowAttributes<WithAsyncMethod_ListMatchableAttributes<WithAsyncMethod_ListNamedEntities<WithAsyncMethod_GetNamedEntity<WithAsyncMethod_UpdateNamedEntity<WithAsyncMethod_GetVersion<WithAsyncMethod_GetDescriptionEntity<WithAsyncMethod_ListDescriptionEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetExecutionMetrics() {
+      ::grpc::Service::MarkMethodAsync(52);
+    }
+    ~WithAsyncMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetExecutionMetrics(::grpc::ServerContext* context, ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::MarkMethodAsync(53);
+    }
+    ~WithAsyncMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetNodeExecutionMetrics(::grpc::ServerContext* context, ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::NodeExecutionGetMetricsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::MarkMethodAsync(54);
+    }
+    ~WithAsyncMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTaskExecutionMetrics(::grpc::ServerContext* context, ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateTask<WithAsyncMethod_GetTask<WithAsyncMethod_ListTaskIds<WithAsyncMethod_ListTasks<WithAsyncMethod_CreateWorkflow<WithAsyncMethod_GetWorkflow<WithAsyncMethod_ListWorkflowIds<WithAsyncMethod_ListWorkflows<WithAsyncMethod_CreateLaunchPlan<WithAsyncMethod_GetLaunchPlan<WithAsyncMethod_GetActiveLaunchPlan<WithAsyncMethod_ListActiveLaunchPlans<WithAsyncMethod_ListLaunchPlanIds<WithAsyncMethod_ListLaunchPlans<WithAsyncMethod_UpdateLaunchPlan<WithAsyncMethod_CreateExecution<WithAsyncMethod_RelaunchExecution<WithAsyncMethod_RecoverExecution<WithAsyncMethod_GetExecution<WithAsyncMethod_UpdateExecution<WithAsyncMethod_GetExecutionData<WithAsyncMethod_ListExecutions<WithAsyncMethod_TerminateExecution<WithAsyncMethod_GetNodeExecution<WithAsyncMethod_ListNodeExecutions<WithAsyncMethod_ListNodeExecutionsForTask<WithAsyncMethod_GetNodeExecutionData<WithAsyncMethod_RegisterProject<WithAsyncMethod_UpdateProject<WithAsyncMethod_ListProjects<WithAsyncMethod_CreateWorkflowEvent<WithAsyncMethod_CreateNodeEvent<WithAsyncMethod_CreateTaskEvent<WithAsyncMethod_GetTaskExecution<WithAsyncMethod_ListTaskExecutions<WithAsyncMethod_GetTaskExecutionData<WithAsyncMethod_UpdateProjectDomainAttributes<WithAsyncMethod_GetProjectDomainAttributes<WithAsyncMethod_DeleteProjectDomainAttributes<WithAsyncMethod_UpdateProjectAttributes<WithAsyncMethod_GetProjectAttributes<WithAsyncMethod_DeleteProjectAttributes<WithAsyncMethod_UpdateWorkflowAttributes<WithAsyncMethod_GetWorkflowAttributes<WithAsyncMethod_DeleteWorkflowAttributes<WithAsyncMethod_ListMatchableAttributes<WithAsyncMethod_ListNamedEntities<WithAsyncMethod_GetNamedEntity<WithAsyncMethod_UpdateNamedEntity<WithAsyncMethod_GetVersion<WithAsyncMethod_GetDescriptionEntity<WithAsyncMethod_ListDescriptionEntities<WithAsyncMethod_GetExecutionMetrics<WithAsyncMethod_GetNodeExecutionMetrics<WithAsyncMethod_GetTaskExecutionMetrics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateTask : public BaseClass {
    private:
@@ -4362,7 +4515,100 @@ class AdminService final {
     }
     virtual void ListDescriptionEntities(::grpc::ServerContext* context, const ::flyteidl::admin::DescriptionEntityListRequest* request, ::flyteidl::admin::DescriptionEntityList* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_CreateTask<ExperimentalWithCallbackMethod_GetTask<ExperimentalWithCallbackMethod_ListTaskIds<ExperimentalWithCallbackMethod_ListTasks<ExperimentalWithCallbackMethod_CreateWorkflow<ExperimentalWithCallbackMethod_GetWorkflow<ExperimentalWithCallbackMethod_ListWorkflowIds<ExperimentalWithCallbackMethod_ListWorkflows<ExperimentalWithCallbackMethod_CreateLaunchPlan<ExperimentalWithCallbackMethod_GetLaunchPlan<ExperimentalWithCallbackMethod_GetActiveLaunchPlan<ExperimentalWithCallbackMethod_ListActiveLaunchPlans<ExperimentalWithCallbackMethod_ListLaunchPlanIds<ExperimentalWithCallbackMethod_ListLaunchPlans<ExperimentalWithCallbackMethod_UpdateLaunchPlan<ExperimentalWithCallbackMethod_CreateExecution<ExperimentalWithCallbackMethod_RelaunchExecution<ExperimentalWithCallbackMethod_RecoverExecution<ExperimentalWithCallbackMethod_GetExecution<ExperimentalWithCallbackMethod_UpdateExecution<ExperimentalWithCallbackMethod_GetExecutionData<ExperimentalWithCallbackMethod_ListExecutions<ExperimentalWithCallbackMethod_TerminateExecution<ExperimentalWithCallbackMethod_GetNodeExecution<ExperimentalWithCallbackMethod_ListNodeExecutions<ExperimentalWithCallbackMethod_ListNodeExecutionsForTask<ExperimentalWithCallbackMethod_GetNodeExecutionData<ExperimentalWithCallbackMethod_RegisterProject<ExperimentalWithCallbackMethod_UpdateProject<ExperimentalWithCallbackMethod_ListProjects<ExperimentalWithCallbackMethod_CreateWorkflowEvent<ExperimentalWithCallbackMethod_CreateNodeEvent<ExperimentalWithCallbackMethod_CreateTaskEvent<ExperimentalWithCallbackMethod_GetTaskExecution<ExperimentalWithCallbackMethod_ListTaskExecutions<ExperimentalWithCallbackMethod_GetTaskExecutionData<ExperimentalWithCallbackMethod_UpdateProjectDomainAttributes<ExperimentalWithCallbackMethod_GetProjectDomainAttributes<ExperimentalWithCallbackMethod_DeleteProjectDomainAttributes<ExperimentalWithCallbackMethod_UpdateProjectAttributes<ExperimentalWithCallbackMethod_GetProjectAttributes<ExperimentalWithCallbackMethod_DeleteProjectAttributes<ExperimentalWithCallbackMethod_UpdateWorkflowAttributes<ExperimentalWithCallbackMethod_GetWorkflowAttributes<ExperimentalWithCallbackMethod_DeleteWorkflowAttributes<ExperimentalWithCallbackMethod_ListMatchableAttributes<ExperimentalWithCallbackMethod_ListNamedEntities<ExperimentalWithCallbackMethod_GetNamedEntity<ExperimentalWithCallbackMethod_UpdateNamedEntity<ExperimentalWithCallbackMethod_GetVersion<ExperimentalWithCallbackMethod_GetDescriptionEntity<ExperimentalWithCallbackMethod_ListDescriptionEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodCallback(52,
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::WorkflowExecutionGetMetricsRequest, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request,
+                 ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_GetExecutionMetrics(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::WorkflowExecutionGetMetricsRequest, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::WorkflowExecutionGetMetricsRequest, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(52))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodCallback(53,
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionGetMetricsRequest, ::flyteidl::admin::NodeExecutionGetMetricsResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request,
+                 ::flyteidl::admin::NodeExecutionGetMetricsResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetNodeExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_GetNodeExecutionMetrics(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::NodeExecutionGetMetricsRequest, ::flyteidl::admin::NodeExecutionGetMetricsResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::NodeExecutionGetMetricsRequest, ::flyteidl::admin::NodeExecutionGetMetricsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(53))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithCallbackMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodCallback(54,
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::TaskExecutionGetMetricsRequest, ::flyteidl::admin::TaskExecutionGetMetricsResponse>(
+          [this](::grpc::ServerContext* context,
+                 const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request,
+                 ::flyteidl::admin::TaskExecutionGetMetricsResponse* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   return this->GetTaskExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    void SetMessageAllocatorFor_GetTaskExecutionMetrics(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::admin::TaskExecutionGetMetricsRequest, ::flyteidl::admin::TaskExecutionGetMetricsResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::admin::TaskExecutionGetMetricsRequest, ::flyteidl::admin::TaskExecutionGetMetricsResponse>*>(
+          ::grpc::Service::experimental().GetHandler(54))
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  typedef ExperimentalWithCallbackMethod_CreateTask<ExperimentalWithCallbackMethod_GetTask<ExperimentalWithCallbackMethod_ListTaskIds<ExperimentalWithCallbackMethod_ListTasks<ExperimentalWithCallbackMethod_CreateWorkflow<ExperimentalWithCallbackMethod_GetWorkflow<ExperimentalWithCallbackMethod_ListWorkflowIds<ExperimentalWithCallbackMethod_ListWorkflows<ExperimentalWithCallbackMethod_CreateLaunchPlan<ExperimentalWithCallbackMethod_GetLaunchPlan<ExperimentalWithCallbackMethod_GetActiveLaunchPlan<ExperimentalWithCallbackMethod_ListActiveLaunchPlans<ExperimentalWithCallbackMethod_ListLaunchPlanIds<ExperimentalWithCallbackMethod_ListLaunchPlans<ExperimentalWithCallbackMethod_UpdateLaunchPlan<ExperimentalWithCallbackMethod_CreateExecution<ExperimentalWithCallbackMethod_RelaunchExecution<ExperimentalWithCallbackMethod_RecoverExecution<ExperimentalWithCallbackMethod_GetExecution<ExperimentalWithCallbackMethod_UpdateExecution<ExperimentalWithCallbackMethod_GetExecutionData<ExperimentalWithCallbackMethod_ListExecutions<ExperimentalWithCallbackMethod_TerminateExecution<ExperimentalWithCallbackMethod_GetNodeExecution<ExperimentalWithCallbackMethod_ListNodeExecutions<ExperimentalWithCallbackMethod_ListNodeExecutionsForTask<ExperimentalWithCallbackMethod_GetNodeExecutionData<ExperimentalWithCallbackMethod_RegisterProject<ExperimentalWithCallbackMethod_UpdateProject<ExperimentalWithCallbackMethod_ListProjects<ExperimentalWithCallbackMethod_CreateWorkflowEvent<ExperimentalWithCallbackMethod_CreateNodeEvent<ExperimentalWithCallbackMethod_CreateTaskEvent<ExperimentalWithCallbackMethod_GetTaskExecution<ExperimentalWithCallbackMethod_ListTaskExecutions<ExperimentalWithCallbackMethod_GetTaskExecutionData<ExperimentalWithCallbackMethod_UpdateProjectDomainAttributes<ExperimentalWithCallbackMethod_GetProjectDomainAttributes<ExperimentalWithCallbackMethod_DeleteProjectDomainAttributes<ExperimentalWithCallbackMethod_UpdateProjectAttributes<ExperimentalWithCallbackMethod_GetProjectAttributes<ExperimentalWithCallbackMethod_DeleteProjectAttributes<ExperimentalWithCallbackMethod_UpdateWorkflowAttributes<ExperimentalWithCallbackMethod_GetWorkflowAttributes<ExperimentalWithCallbackMethod_DeleteWorkflowAttributes<ExperimentalWithCallbackMethod_ListMatchableAttributes<ExperimentalWithCallbackMethod_ListNamedEntities<ExperimentalWithCallbackMethod_GetNamedEntity<ExperimentalWithCallbackMethod_UpdateNamedEntity<ExperimentalWithCallbackMethod_GetVersion<ExperimentalWithCallbackMethod_GetDescriptionEntity<ExperimentalWithCallbackMethod_ListDescriptionEntities<ExperimentalWithCallbackMethod_GetExecutionMetrics<ExperimentalWithCallbackMethod_GetNodeExecutionMetrics<ExperimentalWithCallbackMethod_GetTaskExecutionMetrics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateTask : public BaseClass {
    private:
@@ -5243,6 +5489,57 @@ class AdminService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListDescriptionEntities(::grpc::ServerContext* context, const ::flyteidl::admin::DescriptionEntityListRequest* request, ::flyteidl::admin::DescriptionEntityList* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetExecutionMetrics() {
+      ::grpc::Service::MarkMethodGeneric(52);
+    }
+    ~WithGenericMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::MarkMethodGeneric(53);
+    }
+    ~WithGenericMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::MarkMethodGeneric(54);
+    }
+    ~WithGenericMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -6285,6 +6582,66 @@ class AdminService final {
     }
     void RequestListDescriptionEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetExecutionMetrics() {
+      ::grpc::Service::MarkMethodRaw(52);
+    }
+    ~WithRawMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetExecutionMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::MarkMethodRaw(53);
+    }
+    ~WithRawMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetNodeExecutionMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::MarkMethodRaw(54);
+    }
+    ~WithRawMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetTaskExecutionMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -7588,6 +7945,81 @@ class AdminService final {
     virtual void ListDescriptionEntities(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(52,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetExecutionMetrics(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(53,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetNodeExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::experimental().MarkMethodRawCallback(54,
+        new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          [this](::grpc::ServerContext* context,
+                 const ::grpc::ByteBuffer* request,
+                 ::grpc::ByteBuffer* response,
+                 ::grpc::experimental::ServerCallbackRpcController* controller) {
+                   this->GetTaskExecutionMetrics(context, request, response, controller);
+                 }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual void GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateTask : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -8627,9 +9059,69 @@ class AdminService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListDescriptionEntities(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::DescriptionEntityListRequest,::flyteidl::admin::DescriptionEntityList>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_RecoverExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_UpdateExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<WithStreamedUnaryMethod_GetProjectDomainAttributes<WithStreamedUnaryMethod_DeleteProjectDomainAttributes<WithStreamedUnaryMethod_UpdateProjectAttributes<WithStreamedUnaryMethod_GetProjectAttributes<WithStreamedUnaryMethod_DeleteProjectAttributes<WithStreamedUnaryMethod_UpdateWorkflowAttributes<WithStreamedUnaryMethod_GetWorkflowAttributes<WithStreamedUnaryMethod_DeleteWorkflowAttributes<WithStreamedUnaryMethod_ListMatchableAttributes<WithStreamedUnaryMethod_ListNamedEntities<WithStreamedUnaryMethod_GetNamedEntity<WithStreamedUnaryMethod_UpdateNamedEntity<WithStreamedUnaryMethod_GetVersion<WithStreamedUnaryMethod_GetDescriptionEntity<WithStreamedUnaryMethod_ListDescriptionEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetExecutionMetrics() {
+      ::grpc::Service::MarkMethodStreamed(52,
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::WorkflowExecutionGetMetricsRequest, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse>(std::bind(&WithStreamedUnaryMethod_GetExecutionMetrics<BaseClass>::StreamedGetExecutionMetrics, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::WorkflowExecutionGetMetricsRequest* request, ::flyteidl::admin::WorkflowExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetExecutionMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::WorkflowExecutionGetMetricsRequest,::flyteidl::admin::WorkflowExecutionGetMetricsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetNodeExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetNodeExecutionMetrics() {
+      ::grpc::Service::MarkMethodStreamed(53,
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::NodeExecutionGetMetricsRequest, ::flyteidl::admin::NodeExecutionGetMetricsResponse>(std::bind(&WithStreamedUnaryMethod_GetNodeExecutionMetrics<BaseClass>::StreamedGetNodeExecutionMetrics, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetNodeExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetNodeExecutionMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::NodeExecutionGetMetricsRequest,::flyteidl::admin::NodeExecutionGetMetricsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetTaskExecutionMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetTaskExecutionMetrics() {
+      ::grpc::Service::MarkMethodStreamed(54,
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::admin::TaskExecutionGetMetricsRequest, ::flyteidl::admin::TaskExecutionGetMetricsResponse>(std::bind(&WithStreamedUnaryMethod_GetTaskExecutionMetrics<BaseClass>::StreamedGetTaskExecutionMetrics, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetTaskExecutionMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetTaskExecutionMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::admin::TaskExecutionGetMetricsRequest,::flyteidl::admin::TaskExecutionGetMetricsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_RecoverExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_UpdateExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<WithStreamedUnaryMethod_GetProjectDomainAttributes<WithStreamedUnaryMethod_DeleteProjectDomainAttributes<WithStreamedUnaryMethod_UpdateProjectAttributes<WithStreamedUnaryMethod_GetProjectAttributes<WithStreamedUnaryMethod_DeleteProjectAttributes<WithStreamedUnaryMethod_UpdateWorkflowAttributes<WithStreamedUnaryMethod_GetWorkflowAttributes<WithStreamedUnaryMethod_DeleteWorkflowAttributes<WithStreamedUnaryMethod_ListMatchableAttributes<WithStreamedUnaryMethod_ListNamedEntities<WithStreamedUnaryMethod_GetNamedEntity<WithStreamedUnaryMethod_UpdateNamedEntity<WithStreamedUnaryMethod_GetVersion<WithStreamedUnaryMethod_GetDescriptionEntity<WithStreamedUnaryMethod_ListDescriptionEntities<WithStreamedUnaryMethod_GetExecutionMetrics<WithStreamedUnaryMethod_GetNodeExecutionMetrics<WithStreamedUnaryMethod_GetTaskExecutionMetrics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_RecoverExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_UpdateExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<WithStreamedUnaryMethod_GetProjectDomainAttributes<WithStreamedUnaryMethod_DeleteProjectDomainAttributes<WithStreamedUnaryMethod_UpdateProjectAttributes<WithStreamedUnaryMethod_GetProjectAttributes<WithStreamedUnaryMethod_DeleteProjectAttributes<WithStreamedUnaryMethod_UpdateWorkflowAttributes<WithStreamedUnaryMethod_GetWorkflowAttributes<WithStreamedUnaryMethod_DeleteWorkflowAttributes<WithStreamedUnaryMethod_ListMatchableAttributes<WithStreamedUnaryMethod_ListNamedEntities<WithStreamedUnaryMethod_GetNamedEntity<WithStreamedUnaryMethod_UpdateNamedEntity<WithStreamedUnaryMethod_GetVersion<WithStreamedUnaryMethod_GetDescriptionEntity<WithStreamedUnaryMethod_ListDescriptionEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateTask<WithStreamedUnaryMethod_GetTask<WithStreamedUnaryMethod_ListTaskIds<WithStreamedUnaryMethod_ListTasks<WithStreamedUnaryMethod_CreateWorkflow<WithStreamedUnaryMethod_GetWorkflow<WithStreamedUnaryMethod_ListWorkflowIds<WithStreamedUnaryMethod_ListWorkflows<WithStreamedUnaryMethod_CreateLaunchPlan<WithStreamedUnaryMethod_GetLaunchPlan<WithStreamedUnaryMethod_GetActiveLaunchPlan<WithStreamedUnaryMethod_ListActiveLaunchPlans<WithStreamedUnaryMethod_ListLaunchPlanIds<WithStreamedUnaryMethod_ListLaunchPlans<WithStreamedUnaryMethod_UpdateLaunchPlan<WithStreamedUnaryMethod_CreateExecution<WithStreamedUnaryMethod_RelaunchExecution<WithStreamedUnaryMethod_RecoverExecution<WithStreamedUnaryMethod_GetExecution<WithStreamedUnaryMethod_UpdateExecution<WithStreamedUnaryMethod_GetExecutionData<WithStreamedUnaryMethod_ListExecutions<WithStreamedUnaryMethod_TerminateExecution<WithStreamedUnaryMethod_GetNodeExecution<WithStreamedUnaryMethod_ListNodeExecutions<WithStreamedUnaryMethod_ListNodeExecutionsForTask<WithStreamedUnaryMethod_GetNodeExecutionData<WithStreamedUnaryMethod_RegisterProject<WithStreamedUnaryMethod_UpdateProject<WithStreamedUnaryMethod_ListProjects<WithStreamedUnaryMethod_CreateWorkflowEvent<WithStreamedUnaryMethod_CreateNodeEvent<WithStreamedUnaryMethod_CreateTaskEvent<WithStreamedUnaryMethod_GetTaskExecution<WithStreamedUnaryMethod_ListTaskExecutions<WithStreamedUnaryMethod_GetTaskExecutionData<WithStreamedUnaryMethod_UpdateProjectDomainAttributes<WithStreamedUnaryMethod_GetProjectDomainAttributes<WithStreamedUnaryMethod_DeleteProjectDomainAttributes<WithStreamedUnaryMethod_UpdateProjectAttributes<WithStreamedUnaryMethod_GetProjectAttributes<WithStreamedUnaryMethod_DeleteProjectAttributes<WithStreamedUnaryMethod_UpdateWorkflowAttributes<WithStreamedUnaryMethod_GetWorkflowAttributes<WithStreamedUnaryMethod_DeleteWorkflowAttributes<WithStreamedUnaryMethod_ListMatchableAttributes<WithStreamedUnaryMethod_ListNamedEntities<WithStreamedUnaryMethod_GetNamedEntity<WithStreamedUnaryMethod_UpdateNamedEntity<WithStreamedUnaryMethod_GetVersion<WithStreamedUnaryMethod_GetDescriptionEntity<WithStreamedUnaryMethod_ListDescriptionEntities<WithStreamedUnaryMethod_GetExecutionMetrics<WithStreamedUnaryMethod_GetNodeExecutionMetrics<WithStreamedUnaryMethod_GetTaskExecutionMetrics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace service

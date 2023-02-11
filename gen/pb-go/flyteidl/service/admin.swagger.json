@@ -1482,6 +1482,188 @@
         ]
       }
     },
+    "/api/v1/metrics/executions/{id.project}/{id.domain}/{id.name}": {
+      "get": {
+        "summary": "Fetches runtime metrics for a :ref:`ref_flyteidl.admin.Execution`.",
+        "operationId": "GetExecutionMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminWorkflowExecutionGetMetricsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
+      "get": {
+        "summary": "Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.",
+        "operationId": "GetNodeExecutionMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminNodeExecutionGetMetricsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
+      "get": {
+        "summary": "Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.",
+        "operationId": "GetTaskExecutionMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/adminTaskExecutionGetMetricsResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id.node_execution_id.execution_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.execution_id.name",
+            "description": "User or system provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.node_execution_id.node_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.project",
+            "description": "Name of the project the resource belongs to.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.domain",
+            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.name",
+            "description": "User provided value for the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.task_id.version",
+            "description": "Specific version of the resource.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id.retry_attempt",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "id.task_id.resource_type",
+            "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "UNSPECIFIED",
+              "TASK",
+              "WORKFLOW",
+              "LAUNCH_PLAN",
+              "DATASET"
+            ],
+            "default": "UNSPECIFIED"
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "summary": "Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.",
@@ -3200,6 +3382,17 @@
       "default": "RESERVATION_DISABLED",
       "description": "Indicates the status of a catalog reservation operation.\n\n - RESERVATION_DISABLED: Used to indicate that reservations are disabled\n - RESERVATION_ACQUIRED: Used to indicate that a reservation was successfully acquired or extended\n - RESERVATION_EXISTS: Used to indicate that an active reservation currently exists\n - RESERVATION_RELEASED: Used to indicate that the reservation has been successfully released\n - RESERVATION_FAILURE: Used to indicate that a reservation operation resulted in failure"
     },
+    "CategoricalSpanInfoCategory": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "NODE_TRANSITION",
+        "EXECUTION_OVERHEAD",
+        "PLUGIN_OVERHEAD",
+        "PLUGIN_EXECUTION"
+      ],
+      "default": "UNKNOWN"
+    },
     "ComparisonExpressionOperator": {
       "type": "string",
       "enum": [
@@ -3518,6 +3711,18 @@
         }
       },
       "description": "Defines permissions associated with executions created by this launch plan spec.\nUse either of these roles when they have permissions required by your workflow execution.\nDeprecated."
+    },
+    "adminCategoricalSpanInfo": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/CategoricalSpanInfoCategory"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "title": "TODO @hamersaw docs"
     },
     "adminClusterAssignment": {
       "type": "object",
@@ -4559,6 +4764,18 @@
       },
       "description": "Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution."
     },
+    "adminNodeExecutionGetMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminSpan"
+          }
+        }
+      },
+      "title": "TODO @hamersaw docs"
+    },
     "adminNodeExecutionList": {
       "type": "object",
       "properties": {
@@ -4867,6 +5084,21 @@
       },
       "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211 for more background information."
     },
+    "adminReferenceSpanInfo": {
+      "type": "object",
+      "properties": {
+        "workflow_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+        },
+        "node_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier"
+        },
+        "task_id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier"
+        }
+      },
+      "title": "TODO @hamersaw docs"
+    },
     "adminSchedule": {
       "type": "object",
       "properties": {
@@ -4922,6 +5154,26 @@
         }
       },
       "title": "Link to source code used to define this entity"
+    },
+    "adminSpan": {
+      "type": "object",
+      "properties": {
+        "start_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_time": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "category": {
+          "$ref": "#/definitions/adminCategoricalSpanInfo"
+        },
+        "reference": {
+          "$ref": "#/definitions/adminReferenceSpanInfo"
+        }
+      },
+      "title": "TODO @hamersaw docs"
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -5091,6 +5343,18 @@
         }
       },
       "description": "Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution."
+    },
+    "adminTaskExecutionGetMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminSpan"
+          }
+        }
+      },
+      "title": "TODO @hamersaw docs"
     },
     "adminTaskExecutionList": {
       "type": "object",
@@ -5399,6 +5663,18 @@
         }
       },
       "description": "Response structure for WorkflowExecutionGetDataRequest which contains inputs and outputs for an execution."
+    },
+    "adminWorkflowExecutionGetMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminSpan"
+          }
+        }
+      },
+      "title": "TODO @hamersaw docs"
     },
     "adminWorkflowList": {
       "type": "object",

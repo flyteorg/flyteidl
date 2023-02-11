@@ -43898,6 +43898,105 @@
                  * @variation 2
                  */
     
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getExecutionMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetExecutionMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.WorkflowExecutionGetMetricsResponse} [response] WorkflowExecutionGetMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetExecutionMetrics.
+                 * @function getExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetExecutionMetricsCallback} callback Node-style callback called with the error, if any, and WorkflowExecutionGetMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getExecutionMetrics = function getExecutionMetrics(request, callback) {
+                    return this.rpcCall(getExecutionMetrics, $root.flyteidl.admin.WorkflowExecutionGetMetricsRequest, $root.flyteidl.admin.WorkflowExecutionGetMetricsResponse, request, callback);
+                }, "name", { value: "GetExecutionMetrics" });
+    
+                /**
+                 * Calls GetExecutionMetrics.
+                 * @function getExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.IWorkflowExecutionGetMetricsRequest} request WorkflowExecutionGetMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.WorkflowExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetNodeExecutionMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.NodeExecutionGetMetricsResponse} [response] NodeExecutionGetMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetNodeExecutionMetrics.
+                 * @function getNodeExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.INodeExecutionGetMetricsRequest} request NodeExecutionGetMetricsRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetNodeExecutionMetricsCallback} callback Node-style callback called with the error, if any, and NodeExecutionGetMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getNodeExecutionMetrics = function getNodeExecutionMetrics(request, callback) {
+                    return this.rpcCall(getNodeExecutionMetrics, $root.flyteidl.admin.NodeExecutionGetMetricsRequest, $root.flyteidl.admin.NodeExecutionGetMetricsResponse, request, callback);
+                }, "name", { value: "GetNodeExecutionMetrics" });
+    
+                /**
+                 * Calls GetNodeExecutionMetrics.
+                 * @function getNodeExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.INodeExecutionGetMetricsRequest} request NodeExecutionGetMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.NodeExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.AdminService#getTaskExecutionMetrics}.
+                 * @memberof flyteidl.service.AdminService
+                 * @typedef GetTaskExecutionMetricsCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.admin.TaskExecutionGetMetricsResponse} [response] TaskExecutionGetMetricsResponse
+                 */
+    
+                /**
+                 * Calls GetTaskExecutionMetrics.
+                 * @function getTaskExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.ITaskExecutionGetMetricsRequest} request TaskExecutionGetMetricsRequest message or plain object
+                 * @param {flyteidl.service.AdminService.GetTaskExecutionMetricsCallback} callback Node-style callback called with the error, if any, and TaskExecutionGetMetricsResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(AdminService.prototype.getTaskExecutionMetrics = function getTaskExecutionMetrics(request, callback) {
+                    return this.rpcCall(getTaskExecutionMetrics, $root.flyteidl.admin.TaskExecutionGetMetricsRequest, $root.flyteidl.admin.TaskExecutionGetMetricsResponse, request, callback);
+                }, "name", { value: "GetTaskExecutionMetrics" });
+    
+                /**
+                 * Calls GetTaskExecutionMetrics.
+                 * @function getTaskExecutionMetrics
+                 * @memberof flyteidl.service.AdminService
+                 * @instance
+                 * @param {flyteidl.admin.ITaskExecutionGetMetricsRequest} request TaskExecutionGetMetricsRequest message or plain object
+                 * @returns {Promise<flyteidl.admin.TaskExecutionGetMetricsResponse>} Promise
+                 * @variation 2
+                 */
+    
                 return AdminService;
             })();
     
