@@ -324,7 +324,6 @@ message CategoricalSpanInfo {
     }
 
     Category category = 1;
-    string description = 2;
 }
 
 // TODO @hamersaw docs
@@ -334,4 +333,6 @@ message ReferenceSpanInfo {
         flyteidl.core.NodeExecutionIdentifier node_id = 2;
         flyteidl.core.TaskExecutionIdentifier task_id = 3;
     }
+
+    repeated Span spans = 4;
 }

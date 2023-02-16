@@ -1325,6 +1325,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdName"
+      - name: "depth"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "Depth"
+        x-optionalDataType: "Int32"
       responses:
         200:
           description: "A successful response."
@@ -1361,98 +1368,18 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "IdNodeId"
+      - name: "depth"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+        x-exportParamName: "Depth"
+        x-optionalDataType: "Int32"
       responses:
         200:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminNodeExecutionGetMetricsResponse"
-  ? /api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}
-  : get:
-      tags:
-      - "AdminService"
-      summary: "Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`."
-      operationId: "GetTaskExecutionMetrics"
-      parameters:
-      - name: "id.node_execution_id.execution_id.project"
-        in: "path"
-        description: "Name of the project the resource belongs to."
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeExecutionIdExecutionIdProject"
-      - name: "id.node_execution_id.execution_id.domain"
-        in: "path"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeExecutionIdExecutionIdDomain"
-      - name: "id.node_execution_id.execution_id.name"
-        in: "path"
-        description: "User or system provided value for the resource."
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeExecutionIdExecutionIdName"
-      - name: "id.node_execution_id.node_id"
-        in: "path"
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeExecutionIdNodeId"
-      - name: "id.task_id.project"
-        in: "path"
-        description: "Name of the project the resource belongs to."
-        required: true
-        type: "string"
-        x-exportParamName: "IdTaskIdProject"
-      - name: "id.task_id.domain"
-        in: "path"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-        required: true
-        type: "string"
-        x-exportParamName: "IdTaskIdDomain"
-      - name: "id.task_id.name"
-        in: "path"
-        description: "User provided value for the resource."
-        required: true
-        type: "string"
-        x-exportParamName: "IdTaskIdName"
-      - name: "id.task_id.version"
-        in: "path"
-        description: "Specific version of the resource."
-        required: true
-        type: "string"
-        x-exportParamName: "IdTaskIdVersion"
-      - name: "id.retry_attempt"
-        in: "path"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-exportParamName: "IdRetryAttempt"
-      - name: "id.task_id.resource_type"
-        in: "query"
-        description: "Identifies the specific type of resource that this identifier\
-          \ corresponds to.\n\n - DATASET: A dataset represents an entity modeled\
-          \ in Flyte DataCatalog. A Dataset is also a versioned entity and can be\
-          \ a compilation of multiple individual objects.\nEventually all Catalog\
-          \ objects should be modeled similar to Flyte Objects. The Dataset entities\
-          \ makes it possible for the UI  and CLI to act on the objects \nin a similar\
-          \ manner to other Flyte objects"
-        required: false
-        type: "string"
-        default: "UNSPECIFIED"
-        enum:
-        - "UNSPECIFIED"
-        - "TASK"
-        - "WORKFLOW"
-        - "LAUNCH_PLAN"
-        - "DATASET"
-        x-exportParamName: "IdTaskIdResourceType"
-        x-optionalDataType: "String"
-      responses:
-        200:
-          description: "A successful response."
-          schema:
-            $ref: "#/definitions/adminTaskExecutionGetMetricsResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -3338,11 +3265,8 @@ definitions:
     properties:
       category:
         $ref: "#/definitions/CategoricalSpanInfoCategory"
-      description:
-        type: "string"
     title: "TODO @hamersaw docs"
     example:
-      description: "description"
       category: {}
   adminClusterAssignment:
     type: "object"
@@ -14309,14 +14233,15 @@ definitions:
   adminNodeExecutionGetMetricsResponse:
     type: "object"
     properties:
-      spans:
-        type: "array"
-        items:
-          $ref: "#/definitions/adminSpan"
+      span:
+        $ref: "#/definitions/adminSpan"
     title: "TODO @hamersaw docs"
     example:
-      spans:
-      - reference:
+      span:
+        reference:
+          spans:
+          - null
+          - null
           workflow_id:
             domain: "domain"
             name: "name"
@@ -14344,37 +14269,6 @@ definitions:
         start_time: "2000-01-23T04:56:07.000+00:00"
         end_time: "2000-01-23T04:56:07.000+00:00"
         category:
-          description: "description"
-          category: {}
-      - reference:
-          workflow_id:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          task_id:
-            task_id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
-            node_execution_id:
-              execution_id:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              node_id: "node_id"
-            retry_attempt: 0
-          node_id:
-            execution_id:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            node_id: "node_id"
-        start_time: "2000-01-23T04:56:07.000+00:00"
-        end_time: "2000-01-23T04:56:07.000+00:00"
-        category:
-          description: "description"
           category: {}
   adminNodeExecutionList:
     type: "object"
@@ -15271,8 +15165,15 @@ definitions:
         $ref: "#/definitions/coreNodeExecutionIdentifier"
       task_id:
         $ref: "#/definitions/coreTaskExecutionIdentifier"
+      spans:
+        type: "array"
+        items:
+          $ref: "#/definitions/adminSpan"
     title: "TODO @hamersaw docs"
     example:
+      spans:
+      - null
+      - null
       workflow_id:
         domain: "domain"
         name: "name"
@@ -15371,6 +15272,9 @@ definitions:
     title: "TODO @hamersaw docs"
     example:
       reference:
+        spans:
+        - null
+        - null
         workflow_id:
           domain: "domain"
           name: "name"
@@ -15398,7 +15302,6 @@ definitions:
       start_time: "2000-01-23T04:56:07.000+00:00"
       end_time: "2000-01-23T04:56:07.000+00:00"
       category:
-        description: "description"
         category: {}
   adminSystemMetadata:
     type: "object"
@@ -16152,76 +16055,6 @@ definitions:
         url: "url"
       full_outputs:
         literals: {}
-  adminTaskExecutionGetMetricsResponse:
-    type: "object"
-    properties:
-      spans:
-        type: "array"
-        items:
-          $ref: "#/definitions/adminSpan"
-    title: "TODO @hamersaw docs"
-    example:
-      spans:
-      - reference:
-          workflow_id:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          task_id:
-            task_id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
-            node_execution_id:
-              execution_id:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              node_id: "node_id"
-            retry_attempt: 0
-          node_id:
-            execution_id:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            node_id: "node_id"
-        start_time: "2000-01-23T04:56:07.000+00:00"
-        end_time: "2000-01-23T04:56:07.000+00:00"
-        category:
-          description: "description"
-          category: {}
-      - reference:
-          workflow_id:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          task_id:
-            task_id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
-            node_execution_id:
-              execution_id:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              node_id: "node_id"
-            retry_attempt: 0
-          node_id:
-            execution_id:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            node_id: "node_id"
-        start_time: "2000-01-23T04:56:07.000+00:00"
-        end_time: "2000-01-23T04:56:07.000+00:00"
-        category:
-          description: "description"
-          category: {}
   adminTaskExecutionList:
     type: "object"
     properties:
@@ -30590,14 +30423,15 @@ definitions:
   adminWorkflowExecutionGetMetricsResponse:
     type: "object"
     properties:
-      spans:
-        type: "array"
-        items:
-          $ref: "#/definitions/adminSpan"
+      span:
+        $ref: "#/definitions/adminSpan"
     title: "TODO @hamersaw docs"
     example:
-      spans:
-      - reference:
+      span:
+        reference:
+          spans:
+          - null
+          - null
           workflow_id:
             domain: "domain"
             name: "name"
@@ -30625,37 +30459,6 @@ definitions:
         start_time: "2000-01-23T04:56:07.000+00:00"
         end_time: "2000-01-23T04:56:07.000+00:00"
         category:
-          description: "description"
-          category: {}
-      - reference:
-          workflow_id:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          task_id:
-            task_id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
-            node_execution_id:
-              execution_id:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              node_id: "node_id"
-            retry_attempt: 0
-          node_id:
-            execution_id:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            node_id: "node_id"
-        start_time: "2000-01-23T04:56:07.000+00:00"
-        end_time: "2000-01-23T04:56:07.000+00:00"
-        category:
-          description: "description"
           category: {}
   adminWorkflowList:
     type: "object"

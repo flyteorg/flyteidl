@@ -18,7 +18,7 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UrlBlob_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NodeExecutionMetaData_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TaskNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fnode_5fexecution_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_WorkflowNodeMetadata_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
@@ -319,7 +319,7 @@ static void InitDefaultsNodeExecutionGetMetricsResponse_flyteidl_2fadmin_2fnode_
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionGetMetricsResponse_flyteidl_2fadmin_2fnode_5fexecution_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsNodeExecutionGetMetricsResponse_flyteidl_2fadmin_2fnode_5fexecution_2eproto}, {
-      &scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto.base,}};
+      &scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_NodeExecutionGetRequest_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
@@ -456,12 +456,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fnode_5fexecution
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetMetricsRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetMetricsRequest, depth_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetMetricsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetMetricsResponse, spans_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::NodeExecutionGetMetricsResponse, span_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::NodeExecutionGetRequest)},
@@ -477,7 +478,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 91, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataRequest)},
   { 97, -1, sizeof(::flyteidl::admin::NodeExecutionGetDataResponse)},
   { 107, -1, sizeof(::flyteidl::admin::NodeExecutionGetMetricsRequest)},
-  { 113, -1, sizeof(::flyteidl::admin::NodeExecutionGetMetricsResponse)},
+  { 114, -1, sizeof(::flyteidl::admin::NodeExecutionGetMetricsResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -567,17 +568,18 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto
   "teralMap\022/\n\014full_outputs\030\004 \001(\0132\031.flyteid"
   "l.core.LiteralMap\022E\n\020dynamic_workflow\030\020 "
   "\001(\0132+.flyteidl.admin.DynamicWorkflowNode"
-  "Metadata\"T\n\036NodeExecutionGetMetricsReque"
+  "Metadata\"c\n\036NodeExecutionGetMetricsReque"
   "st\0222\n\002id\030\001 \001(\0132&.flyteidl.core.NodeExecu"
-  "tionIdentifier\"F\n\037NodeExecutionGetMetric"
-  "sResponse\022#\n\005spans\030\001 \003(\0132\024.flyteidl.admi"
-  "n.SpanB7Z5github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  "tionIdentifier\022\r\n\005depth\030\002 \001(\005\"E\n\037NodeExe"
+  "cutionGetMetricsResponse\022\"\n\004span\030\001 \001(\0132\024"
+  ".flyteidl.admin.SpanB7Z5github.com/flyte"
+  "org/flyteidl/gen/pb-go/flyteidl/adminb\006p"
+  "roto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fnode_5fexecution_2eproto,
-  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 2751,
+  "flyteidl/admin/node_execution.proto", &assign_descriptors_table_flyteidl_2fadmin_2fnode_5fexecution_2eproto, 2765,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fnode_5fexecution_2eproto() {
@@ -6480,6 +6482,7 @@ void NodeExecutionGetMetricsRequest::clear_id() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NodeExecutionGetMetricsRequest::kIdFieldNumber;
+const int NodeExecutionGetMetricsRequest::kDepthFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionGetMetricsRequest::NodeExecutionGetMetricsRequest()
@@ -6496,13 +6499,16 @@ NodeExecutionGetMetricsRequest::NodeExecutionGetMetricsRequest(const NodeExecuti
   } else {
     id_ = nullptr;
   }
+  depth_ = from.depth_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.NodeExecutionGetMetricsRequest)
 }
 
 void NodeExecutionGetMetricsRequest::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_NodeExecutionGetMetricsRequest_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
-  id_ = nullptr;
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&depth_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(depth_));
 }
 
 NodeExecutionGetMetricsRequest::~NodeExecutionGetMetricsRequest() {
@@ -6533,6 +6539,7 @@ void NodeExecutionGetMetricsRequest::Clear() {
     delete id_;
   }
   id_ = nullptr;
+  depth_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -6560,6 +6567,13 @@ const char* NodeExecutionGetMetricsRequest::_InternalParse(const char* begin, co
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // int32 depth = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_depth(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -6603,6 +6617,19 @@ bool NodeExecutionGetMetricsRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 depth = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &depth_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6636,6 +6663,11 @@ void NodeExecutionGetMetricsRequest::SerializeWithCachedSizes(
       1, HasBitSetters::id(this), output);
   }
 
+  // int32 depth = 2;
+  if (this->depth() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->depth(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6654,6 +6686,11 @@ void NodeExecutionGetMetricsRequest::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, HasBitSetters::id(this), target);
+  }
+
+  // int32 depth = 2;
+  if (this->depth() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->depth(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6682,6 +6719,13 @@ size_t NodeExecutionGetMetricsRequest::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *id_);
+  }
+
+  // int32 depth = 2;
+  if (this->depth() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->depth());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -6714,6 +6758,9 @@ void NodeExecutionGetMetricsRequest::MergeFrom(const NodeExecutionGetMetricsRequ
   if (from.has_id()) {
     mutable_id()->::flyteidl::core::NodeExecutionIdentifier::MergeFrom(from.id());
   }
+  if (from.depth() != 0) {
+    set_depth(from.depth());
+  }
 }
 
 void NodeExecutionGetMetricsRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6742,6 +6789,7 @@ void NodeExecutionGetMetricsRequest::InternalSwap(NodeExecutionGetMetricsRequest
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(id_, other->id_);
+  swap(depth_, other->depth_);
 }
 
 ::google::protobuf::Metadata NodeExecutionGetMetricsRequest::GetMetadata() const {
@@ -6753,16 +6801,26 @@ void NodeExecutionGetMetricsRequest::InternalSwap(NodeExecutionGetMetricsRequest
 // ===================================================================
 
 void NodeExecutionGetMetricsResponse::InitAsDefaultInstance() {
+  ::flyteidl::admin::_NodeExecutionGetMetricsResponse_default_instance_._instance.get_mutable()->span_ = const_cast< ::flyteidl::admin::Span*>(
+      ::flyteidl::admin::Span::internal_default_instance());
 }
 class NodeExecutionGetMetricsResponse::HasBitSetters {
  public:
+  static const ::flyteidl::admin::Span& span(const NodeExecutionGetMetricsResponse* msg);
 };
 
-void NodeExecutionGetMetricsResponse::clear_spans() {
-  spans_.Clear();
+const ::flyteidl::admin::Span&
+NodeExecutionGetMetricsResponse::HasBitSetters::span(const NodeExecutionGetMetricsResponse* msg) {
+  return *msg->span_;
+}
+void NodeExecutionGetMetricsResponse::clear_span() {
+  if (GetArenaNoVirtual() == nullptr && span_ != nullptr) {
+    delete span_;
+  }
+  span_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int NodeExecutionGetMetricsResponse::kSpansFieldNumber;
+const int NodeExecutionGetMetricsResponse::kSpanFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NodeExecutionGetMetricsResponse::NodeExecutionGetMetricsResponse()
@@ -6772,15 +6830,20 @@ NodeExecutionGetMetricsResponse::NodeExecutionGetMetricsResponse()
 }
 NodeExecutionGetMetricsResponse::NodeExecutionGetMetricsResponse(const NodeExecutionGetMetricsResponse& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      spans_(from.spans_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_span()) {
+    span_ = new ::flyteidl::admin::Span(*from.span_);
+  } else {
+    span_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.NodeExecutionGetMetricsResponse)
 }
 
 void NodeExecutionGetMetricsResponse::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_NodeExecutionGetMetricsResponse_flyteidl_2fadmin_2fnode_5fexecution_2eproto.base);
+  span_ = nullptr;
 }
 
 NodeExecutionGetMetricsResponse::~NodeExecutionGetMetricsResponse() {
@@ -6789,6 +6852,7 @@ NodeExecutionGetMetricsResponse::~NodeExecutionGetMetricsResponse() {
 }
 
 void NodeExecutionGetMetricsResponse::SharedDtor() {
+  if (this != internal_default_instance()) delete span_;
 }
 
 void NodeExecutionGetMetricsResponse::SetCachedSize(int size) const {
@@ -6806,7 +6870,10 @@ void NodeExecutionGetMetricsResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  spans_.Clear();
+  if (GetArenaNoVirtual() == nullptr && span_ != nullptr) {
+    delete span_;
+  }
+  span_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -6823,20 +6890,17 @@ const char* NodeExecutionGetMetricsResponse::_InternalParse(const char* begin, c
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .flyteidl.admin.Span spans = 1;
+      // .flyteidl.admin.Span span = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::flyteidl::admin::Span::_InternalParse;
-          object = msg->add_spans();
-          if (size > end - ptr) goto len_delim_till_end;
-          ptr += size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-              {parser_till_end, object}, ptr - size, ptr));
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::Span::_InternalParse;
+        object = msg->mutable_span();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
         break;
       }
       default: {
@@ -6869,11 +6933,11 @@ bool NodeExecutionGetMetricsResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .flyteidl.admin.Span spans = 1;
+      // .flyteidl.admin.Span span = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_spans()));
+               input, mutable_span()));
         } else {
           goto handle_unusual;
         }
@@ -6907,13 +6971,10 @@ void NodeExecutionGetMetricsResponse::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.Span spans = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->spans_size()); i < n; i++) {
+  // .flyteidl.admin.Span span = 1;
+  if (this->has_span()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->spans(static_cast<int>(i)),
-      output);
+      1, HasBitSetters::span(this), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6929,12 +6990,11 @@ void NodeExecutionGetMetricsResponse::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.Span spans = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->spans_size()); i < n; i++) {
+  // .flyteidl.admin.Span span = 1;
+  if (this->has_span()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->spans(static_cast<int>(i)), target);
+        1, HasBitSetters::span(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6958,15 +7018,11 @@ size_t NodeExecutionGetMetricsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .flyteidl.admin.Span spans = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->spans_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->spans(static_cast<int>(i)));
-    }
+  // .flyteidl.admin.Span span = 1;
+  if (this->has_span()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *span_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -6996,7 +7052,9 @@ void NodeExecutionGetMetricsResponse::MergeFrom(const NodeExecutionGetMetricsRes
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  spans_.MergeFrom(from.spans_);
+  if (from.has_span()) {
+    mutable_span()->::flyteidl::admin::Span::MergeFrom(from.span());
+  }
 }
 
 void NodeExecutionGetMetricsResponse::CopyFrom(const ::google::protobuf::Message& from) {
@@ -7024,7 +7082,7 @@ void NodeExecutionGetMetricsResponse::Swap(NodeExecutionGetMetricsResponse* othe
 void NodeExecutionGetMetricsResponse::InternalSwap(NodeExecutionGetMetricsResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&spans_)->InternalSwap(CastToBase(&other->spans_));
+  swap(span_, other->span_);
 }
 
 ::google::protobuf::Metadata NodeExecutionGetMetricsResponse::GetMetadata() const {

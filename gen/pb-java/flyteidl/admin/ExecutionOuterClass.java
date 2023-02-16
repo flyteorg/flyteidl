@@ -26192,6 +26192,11 @@ public final class ExecutionOuterClass {
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder();
+
+    /**
+     * <code>int32 depth = 2;</code>
+     */
+    int getDepth();
   }
   /**
    * <pre>
@@ -26249,6 +26254,11 @@ public final class ExecutionOuterClass {
 
               break;
             }
+            case 16: {
+
+              depth_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -26302,6 +26312,15 @@ public final class ExecutionOuterClass {
       return getId();
     }
 
+    public static final int DEPTH_FIELD_NUMBER = 2;
+    private int depth_;
+    /**
+     * <code>int32 depth = 2;</code>
+     */
+    public int getDepth() {
+      return depth_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -26319,6 +26338,9 @@ public final class ExecutionOuterClass {
       if (id_ != null) {
         output.writeMessage(1, getId());
       }
+      if (depth_ != 0) {
+        output.writeInt32(2, depth_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -26331,6 +26353,10 @@ public final class ExecutionOuterClass {
       if (id_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getId());
+      }
+      if (depth_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, depth_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -26352,6 +26378,8 @@ public final class ExecutionOuterClass {
         if (!getId()
             .equals(other.getId())) return false;
       }
+      if (getDepth()
+          != other.getDepth()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -26367,6 +26395,8 @@ public final class ExecutionOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
+      hash = (37 * hash) + DEPTH_FIELD_NUMBER;
+      hash = (53 * hash) + getDepth();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -26510,6 +26540,8 @@ public final class ExecutionOuterClass {
           id_ = null;
           idBuilder_ = null;
         }
+        depth_ = 0;
+
         return this;
       }
 
@@ -26541,6 +26573,7 @@ public final class ExecutionOuterClass {
         } else {
           result.id_ = idBuilder_.build();
         }
+        result.depth_ = depth_;
         onBuilt();
         return result;
       }
@@ -26591,6 +26624,9 @@ public final class ExecutionOuterClass {
         if (other == flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsRequest.getDefaultInstance()) return this;
         if (other.hasId()) {
           mergeId(other.getId());
+        }
+        if (other.getDepth() != 0) {
+          setDepth(other.getDepth());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -26737,6 +26773,32 @@ public final class ExecutionOuterClass {
         }
         return idBuilder_;
       }
+
+      private int depth_ ;
+      /**
+       * <code>int32 depth = 2;</code>
+       */
+      public int getDepth() {
+        return depth_;
+      }
+      /**
+       * <code>int32 depth = 2;</code>
+       */
+      public Builder setDepth(int value) {
+        
+        depth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 depth = 2;</code>
+       */
+      public Builder clearDepth() {
+        
+        depth_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -26795,28 +26857,17 @@ public final class ExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    java.util.List<flyteidl.admin.Common.Span> 
-        getSpansList();
+    boolean hasSpan();
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    flyteidl.admin.Common.Span getSpans(int index);
+    flyteidl.admin.Common.Span getSpan();
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    int getSpansCount();
-    /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-     */
-    java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
-        getSpansOrBuilderList();
-    /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-     */
-    flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
-        int index);
+    flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder();
   }
   /**
    * <pre>
@@ -26835,7 +26886,6 @@ public final class ExecutionOuterClass {
       super(builder);
     }
     private WorkflowExecutionGetMetricsResponse() {
-      spans_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -26863,12 +26913,16 @@ public final class ExecutionOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                spans_ = new java.util.ArrayList<flyteidl.admin.Common.Span>();
-                mutable_bitField0_ |= 0x00000001;
+              flyteidl.admin.Common.Span.Builder subBuilder = null;
+              if (span_ != null) {
+                subBuilder = span_.toBuilder();
               }
-              spans_.add(
-                  input.readMessage(flyteidl.admin.Common.Span.parser(), extensionRegistry));
+              span_ = input.readMessage(flyteidl.admin.Common.Span.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(span_);
+                span_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -26886,9 +26940,6 @@ public final class ExecutionOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          spans_ = java.util.Collections.unmodifiableList(spans_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -26906,39 +26957,25 @@ public final class ExecutionOuterClass {
               flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse.class, flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse.Builder.class);
     }
 
-    public static final int SPANS_FIELD_NUMBER = 1;
-    private java.util.List<flyteidl.admin.Common.Span> spans_;
+    public static final int SPAN_FIELD_NUMBER = 1;
+    private flyteidl.admin.Common.Span span_;
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
-      return spans_;
+    public boolean hasSpan() {
+      return span_ != null;
     }
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
-        getSpansOrBuilderList() {
-      return spans_;
+    public flyteidl.admin.Common.Span getSpan() {
+      return span_ == null ? flyteidl.admin.Common.Span.getDefaultInstance() : span_;
     }
     /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+     * <code>.flyteidl.admin.Span span = 1;</code>
      */
-    public int getSpansCount() {
-      return spans_.size();
-    }
-    /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-     */
-    public flyteidl.admin.Common.Span getSpans(int index) {
-      return spans_.get(index);
-    }
-    /**
-     * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-     */
-    public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
-        int index) {
-      return spans_.get(index);
+    public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
+      return getSpan();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -26955,8 +26992,8 @@ public final class ExecutionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < spans_.size(); i++) {
-        output.writeMessage(1, spans_.get(i));
+      if (span_ != null) {
+        output.writeMessage(1, getSpan());
       }
       unknownFields.writeTo(output);
     }
@@ -26967,9 +27004,9 @@ public final class ExecutionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < spans_.size(); i++) {
+      if (span_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, spans_.get(i));
+          .computeMessageSize(1, getSpan());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -26986,8 +27023,11 @@ public final class ExecutionOuterClass {
       }
       flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse other = (flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse) obj;
 
-      if (!getSpansList()
-          .equals(other.getSpansList())) return false;
+      if (hasSpan() != other.hasSpan()) return false;
+      if (hasSpan()) {
+        if (!getSpan()
+            .equals(other.getSpan())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -26999,9 +27039,9 @@ public final class ExecutionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getSpansCount() > 0) {
-        hash = (37 * hash) + SPANS_FIELD_NUMBER;
-        hash = (53 * hash) + getSpansList().hashCode();
+      if (hasSpan()) {
+        hash = (37 * hash) + SPAN_FIELD_NUMBER;
+        hash = (53 * hash) + getSpan().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -27135,17 +27175,16 @@ public final class ExecutionOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getSpansFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (spansBuilder_ == null) {
-          spans_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (spanBuilder_ == null) {
+          span_ = null;
         } else {
-          spansBuilder_.clear();
+          span_ = null;
+          spanBuilder_ = null;
         }
         return this;
       }
@@ -27173,15 +27212,10 @@ public final class ExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse buildPartial() {
         flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse result = new flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse(this);
-        int from_bitField0_ = bitField0_;
-        if (spansBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            spans_ = java.util.Collections.unmodifiableList(spans_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.spans_ = spans_;
+        if (spanBuilder_ == null) {
+          result.span_ = span_;
         } else {
-          result.spans_ = spansBuilder_.build();
+          result.span_ = spanBuilder_.build();
         }
         onBuilt();
         return result;
@@ -27231,31 +27265,8 @@ public final class ExecutionOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse other) {
         if (other == flyteidl.admin.ExecutionOuterClass.WorkflowExecutionGetMetricsResponse.getDefaultInstance()) return this;
-        if (spansBuilder_ == null) {
-          if (!other.spans_.isEmpty()) {
-            if (spans_.isEmpty()) {
-              spans_ = other.spans_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureSpansIsMutable();
-              spans_.addAll(other.spans_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.spans_.isEmpty()) {
-            if (spansBuilder_.isEmpty()) {
-              spansBuilder_.dispose();
-              spansBuilder_ = null;
-              spans_ = other.spans_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              spansBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSpansFieldBuilder() : null;
-            } else {
-              spansBuilder_.addAllMessages(other.spans_);
-            }
-          }
+        if (other.hasSpan()) {
+          mergeSpan(other.getSpan());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -27285,246 +27296,122 @@ public final class ExecutionOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<flyteidl.admin.Common.Span> spans_ =
-        java.util.Collections.emptyList();
-      private void ensureSpansIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          spans_ = new java.util.ArrayList<flyteidl.admin.Common.Span>(spans_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spansBuilder_;
-
+      private flyteidl.admin.Common.Span span_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spanBuilder_;
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
-        if (spansBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(spans_);
+      public boolean hasSpan() {
+        return spanBuilder_ != null || span_ != null;
+      }
+      /**
+       * <code>.flyteidl.admin.Span span = 1;</code>
+       */
+      public flyteidl.admin.Common.Span getSpan() {
+        if (spanBuilder_ == null) {
+          return span_ == null ? flyteidl.admin.Common.Span.getDefaultInstance() : span_;
         } else {
-          return spansBuilder_.getMessageList();
+          return spanBuilder_.getMessage();
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public int getSpansCount() {
-        if (spansBuilder_ == null) {
-          return spans_.size();
-        } else {
-          return spansBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public flyteidl.admin.Common.Span getSpans(int index) {
-        if (spansBuilder_ == null) {
-          return spans_.get(index);
-        } else {
-          return spansBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public Builder setSpans(
-          int index, flyteidl.admin.Common.Span value) {
-        if (spansBuilder_ == null) {
+      public Builder setSpan(flyteidl.admin.Common.Span value) {
+        if (spanBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSpansIsMutable();
-          spans_.set(index, value);
+          span_ = value;
           onChanged();
         } else {
-          spansBuilder_.setMessage(index, value);
+          spanBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public Builder setSpans(
-          int index, flyteidl.admin.Common.Span.Builder builderForValue) {
-        if (spansBuilder_ == null) {
-          ensureSpansIsMutable();
-          spans_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          spansBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public Builder addSpans(flyteidl.admin.Common.Span value) {
-        if (spansBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSpansIsMutable();
-          spans_.add(value);
-          onChanged();
-        } else {
-          spansBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public Builder addSpans(
-          int index, flyteidl.admin.Common.Span value) {
-        if (spansBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSpansIsMutable();
-          spans_.add(index, value);
-          onChanged();
-        } else {
-          spansBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public Builder addSpans(
+      public Builder setSpan(
           flyteidl.admin.Common.Span.Builder builderForValue) {
-        if (spansBuilder_ == null) {
-          ensureSpansIsMutable();
-          spans_.add(builderForValue.build());
+        if (spanBuilder_ == null) {
+          span_ = builderForValue.build();
           onChanged();
         } else {
-          spansBuilder_.addMessage(builderForValue.build());
+          spanBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public Builder addSpans(
-          int index, flyteidl.admin.Common.Span.Builder builderForValue) {
-        if (spansBuilder_ == null) {
-          ensureSpansIsMutable();
-          spans_.add(index, builderForValue.build());
+      public Builder mergeSpan(flyteidl.admin.Common.Span value) {
+        if (spanBuilder_ == null) {
+          if (span_ != null) {
+            span_ =
+              flyteidl.admin.Common.Span.newBuilder(span_).mergeFrom(value).buildPartial();
+          } else {
+            span_ = value;
+          }
           onChanged();
         } else {
-          spansBuilder_.addMessage(index, builderForValue.build());
+          spanBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public Builder addAllSpans(
-          java.lang.Iterable<? extends flyteidl.admin.Common.Span> values) {
-        if (spansBuilder_ == null) {
-          ensureSpansIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, spans_);
+      public Builder clearSpan() {
+        if (spanBuilder_ == null) {
+          span_ = null;
           onChanged();
         } else {
-          spansBuilder_.addAllMessages(values);
+          span_ = null;
+          spanBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public Builder clearSpans() {
-        if (spansBuilder_ == null) {
-          spans_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
+      public flyteidl.admin.Common.Span.Builder getSpanBuilder() {
+        
+        onChanged();
+        return getSpanFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.admin.Span span = 1;</code>
+       */
+      public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
+        if (spanBuilder_ != null) {
+          return spanBuilder_.getMessageOrBuilder();
         } else {
-          spansBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public Builder removeSpans(int index) {
-        if (spansBuilder_ == null) {
-          ensureSpansIsMutable();
-          spans_.remove(index);
-          onChanged();
-        } else {
-          spansBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public flyteidl.admin.Common.Span.Builder getSpansBuilder(
-          int index) {
-        return getSpansFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
-          int index) {
-        if (spansBuilder_ == null) {
-          return spans_.get(index);  } else {
-          return spansBuilder_.getMessageOrBuilder(index);
+          return span_ == null ?
+              flyteidl.admin.Common.Span.getDefaultInstance() : span_;
         }
       }
       /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
+       * <code>.flyteidl.admin.Span span = 1;</code>
        */
-      public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
-           getSpansOrBuilderList() {
-        if (spansBuilder_ != null) {
-          return spansBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(spans_);
-        }
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public flyteidl.admin.Common.Span.Builder addSpansBuilder() {
-        return getSpansFieldBuilder().addBuilder(
-            flyteidl.admin.Common.Span.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public flyteidl.admin.Common.Span.Builder addSpansBuilder(
-          int index) {
-        return getSpansFieldBuilder().addBuilder(
-            index, flyteidl.admin.Common.Span.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .flyteidl.admin.Span spans = 1;</code>
-       */
-      public java.util.List<flyteidl.admin.Common.Span.Builder> 
-           getSpansBuilderList() {
-        return getSpansFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> 
-          getSpansFieldBuilder() {
-        if (spansBuilder_ == null) {
-          spansBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getSpanFieldBuilder() {
+        if (spanBuilder_ == null) {
+          spanBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder>(
-                  spans_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getSpan(),
                   getParentForChildren(),
                   isClean());
-          spans_ = null;
+          span_ = null;
         }
-        return spansBuilder_;
+        return spanBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -27808,14 +27695,14 @@ public final class ExecutionOuterClass {
       "\036.flyteidl.admin.ExecutionState\022/\n\013occur" +
       "red_at\030\002 \001(\0132\032.google.protobuf.Timestamp" +
       "\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpdateRe" +
-      "sponse\"\\\n\"WorkflowExecutionGetMetricsReq" +
+      "sponse\"k\n\"WorkflowExecutionGetMetricsReq" +
       "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\"J\n#WorkflowExecutio" +
-      "nGetMetricsResponse\022#\n\005spans\030\001 \003(\0132\024.fly" +
-      "teidl.admin.Span*>\n\016ExecutionState\022\024\n\020EX" +
-      "ECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED\020\001" +
-      "B7Z5github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/adminb\006proto3"
+      "wExecutionIdentifier\022\r\n\005depth\030\002 \001(\005\"I\n#W" +
+      "orkflowExecutionGetMetricsResponse\022\"\n\004sp" +
+      "an\030\001 \001(\0132\024.flyteidl.admin.Span*>\n\016Execut" +
+      "ionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUT" +
+      "ION_ARCHIVED\020\001B7Z5github.com/flyteorg/fl" +
+      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27969,13 +27856,13 @@ public final class ExecutionOuterClass {
     internal_static_flyteidl_admin_WorkflowExecutionGetMetricsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetMetricsRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Depth", });
     internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_WorkflowExecutionGetMetricsResponse_descriptor,
-        new java.lang.String[] { "Spans", });
+        new java.lang.String[] { "Span", });
     flyteidl.admin.ClusterAssignmentOuterClass.getDescriptor();
     flyteidl.admin.Common.getDescriptor();
     flyteidl.core.Literals.getDescriptor();

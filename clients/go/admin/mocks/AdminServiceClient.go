@@ -1217,54 +1217,6 @@ func (_m *AdminServiceClient) GetTaskExecutionData(ctx context.Context, in *admi
 	return r0, r1
 }
 
-type AdminServiceClient_GetTaskExecutionMetrics struct {
-	*mock.Call
-}
-
-func (_m AdminServiceClient_GetTaskExecutionMetrics) Return(_a0 *admin.TaskExecutionGetMetricsResponse, _a1 error) *AdminServiceClient_GetTaskExecutionMetrics {
-	return &AdminServiceClient_GetTaskExecutionMetrics{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AdminServiceClient) OnGetTaskExecutionMetrics(ctx context.Context, in *admin.TaskExecutionGetMetricsRequest, opts ...grpc.CallOption) *AdminServiceClient_GetTaskExecutionMetrics {
-	c_call := _m.On("GetTaskExecutionMetrics", ctx, in, opts)
-	return &AdminServiceClient_GetTaskExecutionMetrics{Call: c_call}
-}
-
-func (_m *AdminServiceClient) OnGetTaskExecutionMetricsMatch(matchers ...interface{}) *AdminServiceClient_GetTaskExecutionMetrics {
-	c_call := _m.On("GetTaskExecutionMetrics", matchers...)
-	return &AdminServiceClient_GetTaskExecutionMetrics{Call: c_call}
-}
-
-// GetTaskExecutionMetrics provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) GetTaskExecutionMetrics(ctx context.Context, in *admin.TaskExecutionGetMetricsRequest, opts ...grpc.CallOption) (*admin.TaskExecutionGetMetricsResponse, error) {
-	_va := make([]interface{}, len(opts))
-	for _i := range opts {
-		_va[_i] = opts[_i]
-	}
-	var _ca []interface{}
-	_ca = append(_ca, ctx, in)
-	_ca = append(_ca, _va...)
-	ret := _m.Called(_ca...)
-
-	var r0 *admin.TaskExecutionGetMetricsResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.TaskExecutionGetMetricsRequest, ...grpc.CallOption) *admin.TaskExecutionGetMetricsResponse); ok {
-		r0 = rf(ctx, in, opts...)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.TaskExecutionGetMetricsResponse)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.TaskExecutionGetMetricsRequest, ...grpc.CallOption) error); ok {
-		r1 = rf(ctx, in, opts...)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 type AdminServiceClient_GetVersion struct {
 	*mock.Call
 }

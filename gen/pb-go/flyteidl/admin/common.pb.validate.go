@@ -1857,8 +1857,6 @@ func (m *CategoricalSpanInfo) Validate() error {
 
 	// no validation rules for Category
 
-	// no validation rules for Description
-
 	return nil
 }
 
@@ -1924,6 +1922,21 @@ var _ interface {
 func (m *ReferenceSpanInfo) Validate() error {
 	if m == nil {
 		return nil
+	}
+
+	for idx, item := range m.GetSpans() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return ReferenceSpanInfoValidationError{
+					field:  fmt.Sprintf("Spans[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
 	}
 
 	switch m.Id.(type) {

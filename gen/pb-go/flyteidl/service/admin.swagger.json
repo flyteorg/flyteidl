@@ -1515,6 +1515,13 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -1561,102 +1568,13 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}": {
-      "get": {
-        "summary": "Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.",
-        "operationId": "GetTaskExecutionMetrics",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminTaskExecutionGetMetricsResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.node_execution_id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
           },
           {
-            "name": "id.node_execution_id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.node_execution_id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.node_execution_id.node_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.name",
-            "description": "User provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.task_id.version",
-            "description": "Specific version of the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.retry_attempt",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "id.task_id.resource_type",
-            "description": "Identifies the specific type of resource that this identifier corresponds to.\n\n - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects.\nEventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects \nin a similar manner to other Flyte objects",
+            "name": "depth",
             "in": "query",
             "required": false,
-            "type": "string",
-            "enum": [
-              "UNSPECIFIED",
-              "TASK",
-              "WORKFLOW",
-              "LAUNCH_PLAN",
-              "DATASET"
-            ],
-            "default": "UNSPECIFIED"
+            "type": "integer",
+            "format": "int32"
           }
         ],
         "tags": [
@@ -3717,9 +3635,6 @@
       "properties": {
         "category": {
           "$ref": "#/definitions/CategoricalSpanInfoCategory"
-        },
-        "description": {
-          "type": "string"
         }
       },
       "title": "TODO @hamersaw docs"
@@ -4767,11 +4682,8 @@
     "adminNodeExecutionGetMetricsResponse": {
       "type": "object",
       "properties": {
-        "spans": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminSpan"
-          }
+        "span": {
+          "$ref": "#/definitions/adminSpan"
         }
       },
       "title": "TODO @hamersaw docs"
@@ -5095,6 +5007,12 @@
         },
         "task_id": {
           "$ref": "#/definitions/coreTaskExecutionIdentifier"
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adminSpan"
+          }
         }
       },
       "title": "TODO @hamersaw docs"
@@ -5343,18 +5261,6 @@
         }
       },
       "description": "Response structure for TaskExecutionGetDataRequest which contains inputs and outputs for a task execution."
-    },
-    "adminTaskExecutionGetMetricsResponse": {
-      "type": "object",
-      "properties": {
-        "spans": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminSpan"
-          }
-        }
-      },
-      "title": "TODO @hamersaw docs"
     },
     "adminTaskExecutionList": {
       "type": "object",
@@ -5667,11 +5573,8 @@
     "adminWorkflowExecutionGetMetricsResponse": {
       "type": "object",
       "properties": {
-        "spans": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminSpan"
-          }
+        "span": {
+          "$ref": "#/definitions/adminSpan"
         }
       },
       "title": "TODO @hamersaw docs"

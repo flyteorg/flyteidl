@@ -8849,9 +8849,6 @@ export namespace flyteidl {
 
             /** CategoricalSpanInfo category */
             category?: (flyteidl.admin.CategoricalSpanInfo.Category|null);
-
-            /** CategoricalSpanInfo description */
-            description?: (string|null);
         }
 
         /** Represents a CategoricalSpanInfo. */
@@ -8865,9 +8862,6 @@ export namespace flyteidl {
 
             /** CategoricalSpanInfo category. */
             public category: flyteidl.admin.CategoricalSpanInfo.Category;
-
-            /** CategoricalSpanInfo description. */
-            public description: string;
 
             /**
              * Creates a new CategoricalSpanInfo instance using the specified properties.
@@ -8925,6 +8919,9 @@ export namespace flyteidl {
 
             /** ReferenceSpanInfo taskId */
             taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** ReferenceSpanInfo spans */
+            spans?: (flyteidl.admin.ISpan[]|null);
         }
 
         /** Represents a ReferenceSpanInfo. */
@@ -8944,6 +8941,9 @@ export namespace flyteidl {
 
             /** ReferenceSpanInfo taskId. */
             public taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** ReferenceSpanInfo spans. */
+            public spans: flyteidl.admin.ISpan[];
 
             /** ReferenceSpanInfo id. */
             public id?: ("workflowId"|"nodeId"|"taskId");
@@ -11238,6 +11238,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionGetMetricsRequest id */
             id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** WorkflowExecutionGetMetricsRequest depth */
+            depth?: (number|null);
         }
 
         /** Represents a WorkflowExecutionGetMetricsRequest. */
@@ -11251,6 +11254,9 @@ export namespace flyteidl {
 
             /** WorkflowExecutionGetMetricsRequest id. */
             public id?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** WorkflowExecutionGetMetricsRequest depth. */
+            public depth: number;
 
             /**
              * Creates a new WorkflowExecutionGetMetricsRequest instance using the specified properties.
@@ -11288,8 +11294,8 @@ export namespace flyteidl {
         /** Properties of a WorkflowExecutionGetMetricsResponse. */
         interface IWorkflowExecutionGetMetricsResponse {
 
-            /** WorkflowExecutionGetMetricsResponse spans */
-            spans?: (flyteidl.admin.ISpan[]|null);
+            /** WorkflowExecutionGetMetricsResponse span */
+            span?: (flyteidl.admin.ISpan|null);
         }
 
         /** Represents a WorkflowExecutionGetMetricsResponse. */
@@ -11301,8 +11307,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IWorkflowExecutionGetMetricsResponse);
 
-            /** WorkflowExecutionGetMetricsResponse spans. */
-            public spans: flyteidl.admin.ISpan[];
+            /** WorkflowExecutionGetMetricsResponse span. */
+            public span?: (flyteidl.admin.ISpan|null);
 
             /**
              * Creates a new WorkflowExecutionGetMetricsResponse instance using the specified properties.
@@ -13950,6 +13956,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetMetricsRequest id */
             id?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** NodeExecutionGetMetricsRequest depth */
+            depth?: (number|null);
         }
 
         /** Represents a NodeExecutionGetMetricsRequest. */
@@ -13963,6 +13972,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetMetricsRequest id. */
             public id?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** NodeExecutionGetMetricsRequest depth. */
+            public depth: number;
 
             /**
              * Creates a new NodeExecutionGetMetricsRequest instance using the specified properties.
@@ -14000,8 +14012,8 @@ export namespace flyteidl {
         /** Properties of a NodeExecutionGetMetricsResponse. */
         interface INodeExecutionGetMetricsResponse {
 
-            /** NodeExecutionGetMetricsResponse spans */
-            spans?: (flyteidl.admin.ISpan[]|null);
+            /** NodeExecutionGetMetricsResponse span */
+            span?: (flyteidl.admin.ISpan|null);
         }
 
         /** Represents a NodeExecutionGetMetricsResponse. */
@@ -14013,8 +14025,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.INodeExecutionGetMetricsResponse);
 
-            /** NodeExecutionGetMetricsResponse spans. */
-            public spans: flyteidl.admin.ISpan[];
+            /** NodeExecutionGetMetricsResponse span. */
+            public span?: (flyteidl.admin.ISpan|null);
 
             /**
              * Creates a new NodeExecutionGetMetricsResponse instance using the specified properties.
@@ -16512,110 +16524,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a TaskExecutionGetMetricsRequest. */
-        interface ITaskExecutionGetMetricsRequest {
-
-            /** TaskExecutionGetMetricsRequest id */
-            id?: (flyteidl.core.ITaskExecutionIdentifier|null);
-        }
-
-        /** Represents a TaskExecutionGetMetricsRequest. */
-        class TaskExecutionGetMetricsRequest implements ITaskExecutionGetMetricsRequest {
-
-            /**
-             * Constructs a new TaskExecutionGetMetricsRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.ITaskExecutionGetMetricsRequest);
-
-            /** TaskExecutionGetMetricsRequest id. */
-            public id?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /**
-             * Creates a new TaskExecutionGetMetricsRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskExecutionGetMetricsRequest instance
-             */
-            public static create(properties?: flyteidl.admin.ITaskExecutionGetMetricsRequest): flyteidl.admin.TaskExecutionGetMetricsRequest;
-
-            /**
-             * Encodes the specified TaskExecutionGetMetricsRequest message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetMetricsRequest.verify|verify} messages.
-             * @param message TaskExecutionGetMetricsRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.ITaskExecutionGetMetricsRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskExecutionGetMetricsRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskExecutionGetMetricsRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionGetMetricsRequest;
-
-            /**
-             * Verifies a TaskExecutionGetMetricsRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a TaskExecutionGetMetricsResponse. */
-        interface ITaskExecutionGetMetricsResponse {
-
-            /** TaskExecutionGetMetricsResponse spans */
-            spans?: (flyteidl.admin.ISpan[]|null);
-        }
-
-        /** Represents a TaskExecutionGetMetricsResponse. */
-        class TaskExecutionGetMetricsResponse implements ITaskExecutionGetMetricsResponse {
-
-            /**
-             * Constructs a new TaskExecutionGetMetricsResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.ITaskExecutionGetMetricsResponse);
-
-            /** TaskExecutionGetMetricsResponse spans. */
-            public spans: flyteidl.admin.ISpan[];
-
-            /**
-             * Creates a new TaskExecutionGetMetricsResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns TaskExecutionGetMetricsResponse instance
-             */
-            public static create(properties?: flyteidl.admin.ITaskExecutionGetMetricsResponse): flyteidl.admin.TaskExecutionGetMetricsResponse;
-
-            /**
-             * Encodes the specified TaskExecutionGetMetricsResponse message. Does not implicitly {@link flyteidl.admin.TaskExecutionGetMetricsResponse.verify|verify} messages.
-             * @param message TaskExecutionGetMetricsResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.ITaskExecutionGetMetricsResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a TaskExecutionGetMetricsResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns TaskExecutionGetMetricsResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.TaskExecutionGetMetricsResponse;
-
-            /**
-             * Verifies a TaskExecutionGetMetricsResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a GetVersionResponse. */
         interface IGetVersionResponse {
 
@@ -18476,20 +18384,6 @@ export namespace flyteidl {
              * @returns Promise
              */
             public getNodeExecutionMetrics(request: flyteidl.admin.INodeExecutionGetMetricsRequest): Promise<flyteidl.admin.NodeExecutionGetMetricsResponse>;
-
-            /**
-             * Calls GetTaskExecutionMetrics.
-             * @param request TaskExecutionGetMetricsRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and TaskExecutionGetMetricsResponse
-             */
-            public getTaskExecutionMetrics(request: flyteidl.admin.ITaskExecutionGetMetricsRequest, callback: flyteidl.service.AdminService.GetTaskExecutionMetricsCallback): void;
-
-            /**
-             * Calls GetTaskExecutionMetrics.
-             * @param request TaskExecutionGetMetricsRequest message or plain object
-             * @returns Promise
-             */
-            public getTaskExecutionMetrics(request: flyteidl.admin.ITaskExecutionGetMetricsRequest): Promise<flyteidl.admin.TaskExecutionGetMetricsResponse>;
         }
 
         namespace AdminService {
@@ -18871,13 +18765,6 @@ export namespace flyteidl {
              * @param [response] NodeExecutionGetMetricsResponse
              */
             type GetNodeExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.NodeExecutionGetMetricsResponse) => void;
-
-            /**
-             * Callback as used by {@link flyteidl.service.AdminService#getTaskExecutionMetrics}.
-             * @param error Error, if any
-             * @param [response] TaskExecutionGetMetricsResponse
-             */
-            type GetTaskExecutionMetricsCallback = (error: (Error|null), response?: flyteidl.admin.TaskExecutionGetMetricsResponse) => void;
         }
 
         /** Properties of a OAuth2MetadataRequest. */

@@ -2023,12 +2023,19 @@ class NodeExecutionGetMetricsRequest final :
   ::flyteidl::core::NodeExecutionIdentifier* mutable_id();
   void set_allocated_id(::flyteidl::core::NodeExecutionIdentifier* id);
 
+  // int32 depth = 2;
+  void clear_depth();
+  static const int kDepthFieldNumber = 2;
+  ::google::protobuf::int32 depth() const;
+  void set_depth(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionGetMetricsRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::core::NodeExecutionIdentifier* id_;
+  ::google::protobuf::int32 depth_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
@@ -2129,24 +2136,21 @@ class NodeExecutionGetMetricsResponse final :
 
   // accessors -------------------------------------------------------
 
-  // repeated .flyteidl.admin.Span spans = 1;
-  int spans_size() const;
-  void clear_spans();
-  static const int kSpansFieldNumber = 1;
-  ::flyteidl::admin::Span* mutable_spans(int index);
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
-      mutable_spans();
-  const ::flyteidl::admin::Span& spans(int index) const;
-  ::flyteidl::admin::Span* add_spans();
-  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
-      spans() const;
+  // .flyteidl.admin.Span span = 1;
+  bool has_span() const;
+  void clear_span();
+  static const int kSpanFieldNumber = 1;
+  const ::flyteidl::admin::Span& span() const;
+  ::flyteidl::admin::Span* release_span();
+  ::flyteidl::admin::Span* mutable_span();
+  void set_allocated_span(::flyteidl::admin::Span* span);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.NodeExecutionGetMetricsResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span > spans_;
+  ::flyteidl::admin::Span* span_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fnode_5fexecution_2eproto;
 };
@@ -4225,35 +4229,67 @@ inline void NodeExecutionGetMetricsRequest::set_allocated_id(::flyteidl::core::N
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetMetricsRequest.id)
 }
 
+// int32 depth = 2;
+inline void NodeExecutionGetMetricsRequest::clear_depth() {
+  depth_ = 0;
+}
+inline ::google::protobuf::int32 NodeExecutionGetMetricsRequest::depth() const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetMetricsRequest.depth)
+  return depth_;
+}
+inline void NodeExecutionGetMetricsRequest::set_depth(::google::protobuf::int32 value) {
+  
+  depth_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.admin.NodeExecutionGetMetricsRequest.depth)
+}
+
 // -------------------------------------------------------------------
 
 // NodeExecutionGetMetricsResponse
 
-// repeated .flyteidl.admin.Span spans = 1;
-inline int NodeExecutionGetMetricsResponse::spans_size() const {
-  return spans_.size();
+// .flyteidl.admin.Span span = 1;
+inline bool NodeExecutionGetMetricsResponse::has_span() const {
+  return this != internal_default_instance() && span_ != nullptr;
 }
-inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::mutable_spans(int index) {
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
-  return spans_.Mutable(index);
+inline const ::flyteidl::admin::Span& NodeExecutionGetMetricsResponse::span() const {
+  const ::flyteidl::admin::Span* p = span_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetMetricsResponse.span)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Span*>(
+      &::flyteidl::admin::_Span_default_instance_);
 }
-inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
-NodeExecutionGetMetricsResponse::mutable_spans() {
-  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
-  return &spans_;
+inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::release_span() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.NodeExecutionGetMetricsResponse.span)
+  
+  ::flyteidl::admin::Span* temp = span_;
+  span_ = nullptr;
+  return temp;
 }
-inline const ::flyteidl::admin::Span& NodeExecutionGetMetricsResponse::spans(int index) const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
-  return spans_.Get(index);
+inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::mutable_span() {
+  
+  if (span_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::Span>(GetArenaNoVirtual());
+    span_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.NodeExecutionGetMetricsResponse.span)
+  return span_;
 }
-inline ::flyteidl::admin::Span* NodeExecutionGetMetricsResponse::add_spans() {
-  // @@protoc_insertion_point(field_add:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
-  return spans_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
-NodeExecutionGetMetricsResponse::spans() const {
-  // @@protoc_insertion_point(field_list:flyteidl.admin.NodeExecutionGetMetricsResponse.spans)
-  return spans_;
+inline void NodeExecutionGetMetricsResponse::set_allocated_span(::flyteidl::admin::Span* span) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(span_);
+  }
+  if (span) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      span = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, span, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  span_ = span;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.NodeExecutionGetMetricsResponse.span)
 }
 
 #ifdef __GNUC__

@@ -1531,6 +1531,7 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
+        :param int depth:
         :return: AdminWorkflowExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1554,12 +1555,13 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
+        :param int depth:
         :return: AdminWorkflowExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_project', 'id_domain', 'id_name']  # noqa: E501
+        all_params = ['id_project', 'id_domain', 'id_name', 'depth']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1598,6 +1600,8 @@ class AdminServiceApi(object):
             path_params['id.name'] = params['id_name']  # noqa: E501
 
         query_params = []
+        if 'depth' in params:
+            query_params.append(('depth', params['depth']))  # noqa: E501
 
         header_params = {}
 
@@ -2133,6 +2137,7 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
+        :param int depth:
         :return: AdminNodeExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2157,12 +2162,13 @@ class AdminServiceApi(object):
         :param str id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_execution_id_name: User or system provided value for the resource. (required)
         :param str id_node_id: (required)
+        :param int depth:
         :return: AdminNodeExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id_execution_id_project', 'id_execution_id_domain', 'id_execution_id_name', 'id_node_id']  # noqa: E501
+        all_params = ['id_execution_id_project', 'id_execution_id_domain', 'id_execution_id_name', 'id_node_id', 'depth']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2207,6 +2213,8 @@ class AdminServiceApi(object):
             path_params['id.node_id'] = params['id_node_id']  # noqa: E501
 
         query_params = []
+        if 'depth' in params:
+            query_params.append(('depth', params['depth']))  # noqa: E501
 
         header_params = {}
 
@@ -2899,171 +2907,6 @@ class AdminServiceApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AdminTaskExecutionGetDataResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_task_execution_metrics(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_task_execution_metrics(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id_node_execution_id_execution_id_project: Name of the project the resource belongs to. (required)
-        :param str id_node_execution_id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_node_execution_id_execution_id_name: User or system provided value for the resource. (required)
-        :param str id_node_execution_id_node_id: (required)
-        :param str id_task_id_project: Name of the project the resource belongs to. (required)
-        :param str id_task_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_task_id_name: User provided value for the resource. (required)
-        :param str id_task_id_version: Specific version of the resource. (required)
-        :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :return: AdminTaskExecutionGetMetricsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_task_execution_metrics_with_http_info(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_task_execution_metrics_with_http_info(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs)  # noqa: E501
-            return data
-
-    def get_task_execution_metrics_with_http_info(self, id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, **kwargs):  # noqa: E501
-        """Fetches metrics for a :ref:`ref_flyteidl.admin.TaskExecution`.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_task_execution_metrics_with_http_info(id_node_execution_id_execution_id_project, id_node_execution_id_execution_id_domain, id_node_execution_id_execution_id_name, id_node_execution_id_node_id, id_task_id_project, id_task_id_domain, id_task_id_name, id_task_id_version, id_retry_attempt, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id_node_execution_id_execution_id_project: Name of the project the resource belongs to. (required)
-        :param str id_node_execution_id_execution_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_node_execution_id_execution_id_name: User or system provided value for the resource. (required)
-        :param str id_node_execution_id_node_id: (required)
-        :param str id_task_id_project: Name of the project the resource belongs to. (required)
-        :param str id_task_id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
-        :param str id_task_id_name: User provided value for the resource. (required)
-        :param str id_task_id_version: Specific version of the resource. (required)
-        :param int id_retry_attempt: (required)
-        :param str id_task_id_resource_type: Identifies the specific type of resource that this identifier corresponds to.   - DATASET: A dataset represents an entity modeled in Flyte DataCatalog. A Dataset is also a versioned entity and can be a compilation of multiple individual objects. Eventually all Catalog objects should be modeled similar to Flyte Objects. The Dataset entities makes it possible for the UI  and CLI to act on the objects  in a similar manner to other Flyte objects
-        :return: AdminTaskExecutionGetMetricsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['id_node_execution_id_execution_id_project', 'id_node_execution_id_execution_id_domain', 'id_node_execution_id_execution_id_name', 'id_node_execution_id_node_id', 'id_task_id_project', 'id_task_id_domain', 'id_task_id_name', 'id_task_id_version', 'id_retry_attempt', 'id_task_id_resource_type']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_task_execution_metrics" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'id_node_execution_id_execution_id_project' is set
-        if ('id_node_execution_id_execution_id_project' not in params or
-                params['id_node_execution_id_execution_id_project'] is None):
-            raise ValueError("Missing the required parameter `id_node_execution_id_execution_id_project` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_node_execution_id_execution_id_domain' is set
-        if ('id_node_execution_id_execution_id_domain' not in params or
-                params['id_node_execution_id_execution_id_domain'] is None):
-            raise ValueError("Missing the required parameter `id_node_execution_id_execution_id_domain` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_node_execution_id_execution_id_name' is set
-        if ('id_node_execution_id_execution_id_name' not in params or
-                params['id_node_execution_id_execution_id_name'] is None):
-            raise ValueError("Missing the required parameter `id_node_execution_id_execution_id_name` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_node_execution_id_node_id' is set
-        if ('id_node_execution_id_node_id' not in params or
-                params['id_node_execution_id_node_id'] is None):
-            raise ValueError("Missing the required parameter `id_node_execution_id_node_id` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_task_id_project' is set
-        if ('id_task_id_project' not in params or
-                params['id_task_id_project'] is None):
-            raise ValueError("Missing the required parameter `id_task_id_project` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_task_id_domain' is set
-        if ('id_task_id_domain' not in params or
-                params['id_task_id_domain'] is None):
-            raise ValueError("Missing the required parameter `id_task_id_domain` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_task_id_name' is set
-        if ('id_task_id_name' not in params or
-                params['id_task_id_name'] is None):
-            raise ValueError("Missing the required parameter `id_task_id_name` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_task_id_version' is set
-        if ('id_task_id_version' not in params or
-                params['id_task_id_version'] is None):
-            raise ValueError("Missing the required parameter `id_task_id_version` when calling `get_task_execution_metrics`")  # noqa: E501
-        # verify the required parameter 'id_retry_attempt' is set
-        if ('id_retry_attempt' not in params or
-                params['id_retry_attempt'] is None):
-            raise ValueError("Missing the required parameter `id_retry_attempt` when calling `get_task_execution_metrics`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'id_node_execution_id_execution_id_project' in params:
-            path_params['id.node_execution_id.execution_id.project'] = params['id_node_execution_id_execution_id_project']  # noqa: E501
-        if 'id_node_execution_id_execution_id_domain' in params:
-            path_params['id.node_execution_id.execution_id.domain'] = params['id_node_execution_id_execution_id_domain']  # noqa: E501
-        if 'id_node_execution_id_execution_id_name' in params:
-            path_params['id.node_execution_id.execution_id.name'] = params['id_node_execution_id_execution_id_name']  # noqa: E501
-        if 'id_node_execution_id_node_id' in params:
-            path_params['id.node_execution_id.node_id'] = params['id_node_execution_id_node_id']  # noqa: E501
-        if 'id_task_id_project' in params:
-            path_params['id.task_id.project'] = params['id_task_id_project']  # noqa: E501
-        if 'id_task_id_domain' in params:
-            path_params['id.task_id.domain'] = params['id_task_id_domain']  # noqa: E501
-        if 'id_task_id_name' in params:
-            path_params['id.task_id.name'] = params['id_task_id_name']  # noqa: E501
-        if 'id_task_id_version' in params:
-            path_params['id.task_id.version'] = params['id_task_id_version']  # noqa: E501
-        if 'id_retry_attempt' in params:
-            path_params['id.retry_attempt'] = params['id_retry_attempt']  # noqa: E501
-
-        query_params = []
-        if 'id_task_id_resource_type' in params:
-            query_params.append(('id.task_id.resource_type', params['id_task_id_resource_type']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='AdminTaskExecutionGetMetricsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

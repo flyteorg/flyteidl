@@ -3591,20 +3591,6 @@ class CategoricalSpanInfo final :
 
   // accessors -------------------------------------------------------
 
-  // string description = 2;
-  void clear_description();
-  static const int kDescriptionFieldNumber = 2;
-  const ::std::string& description() const;
-  void set_description(const ::std::string& value);
-  #if LANG_CXX11
-  void set_description(::std::string&& value);
-  #endif
-  void set_description(const char* value);
-  void set_description(const char* value, size_t size);
-  ::std::string* mutable_description();
-  ::std::string* release_description();
-  void set_allocated_description(::std::string* description);
-
   // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
   void clear_category();
   static const int kCategoryFieldNumber = 1;
@@ -3616,7 +3602,6 @@ class CategoricalSpanInfo final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr description_;
   int category_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
@@ -3725,6 +3710,18 @@ class ReferenceSpanInfo final :
 
   // accessors -------------------------------------------------------
 
+  // repeated .flyteidl.admin.Span spans = 4;
+  int spans_size() const;
+  void clear_spans();
+  static const int kSpansFieldNumber = 4;
+  ::flyteidl::admin::Span* mutable_spans(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+      mutable_spans();
+  const ::flyteidl::admin::Span& spans(int index) const;
+  ::flyteidl::admin::Span* add_spans();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+      spans() const;
+
   // .flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;
   bool has_workflow_id() const;
   void clear_workflow_id();
@@ -3765,6 +3762,7 @@ class ReferenceSpanInfo final :
   inline void clear_has_id();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span > spans_;
   union IdUnion {
     IdUnion() {}
     ::flyteidl::core::WorkflowExecutionIdentifier* workflow_id_;
@@ -6302,59 +6300,6 @@ inline void CategoricalSpanInfo::set_category(::flyteidl::admin::CategoricalSpan
   // @@protoc_insertion_point(field_set:flyteidl.admin.CategoricalSpanInfo.category)
 }
 
-// string description = 2;
-inline void CategoricalSpanInfo::clear_description() {
-  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& CategoricalSpanInfo::description() const {
-  // @@protoc_insertion_point(field_get:flyteidl.admin.CategoricalSpanInfo.description)
-  return description_.GetNoArena();
-}
-inline void CategoricalSpanInfo::set_description(const ::std::string& value) {
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.admin.CategoricalSpanInfo.description)
-}
-#if LANG_CXX11
-inline void CategoricalSpanInfo::set_description(::std::string&& value) {
-  
-  description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.CategoricalSpanInfo.description)
-}
-#endif
-inline void CategoricalSpanInfo::set_description(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.admin.CategoricalSpanInfo.description)
-}
-inline void CategoricalSpanInfo::set_description(const char* value, size_t size) {
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.CategoricalSpanInfo.description)
-}
-inline ::std::string* CategoricalSpanInfo::mutable_description() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.CategoricalSpanInfo.description)
-  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* CategoricalSpanInfo::release_description() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.CategoricalSpanInfo.description)
-  
-  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void CategoricalSpanInfo::set_allocated_description(::std::string* description) {
-  if (description != nullptr) {
-    
-  } else {
-    
-  }
-  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.CategoricalSpanInfo.description)
-}
-
 // -------------------------------------------------------------------
 
 // ReferenceSpanInfo
@@ -6462,6 +6407,36 @@ inline ::flyteidl::core::TaskExecutionIdentifier* ReferenceSpanInfo::mutable_tas
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.ReferenceSpanInfo.task_id)
   return id_.task_id_;
+}
+
+// repeated .flyteidl.admin.Span spans = 4;
+inline int ReferenceSpanInfo::spans_size() const {
+  return spans_.size();
+}
+inline void ReferenceSpanInfo::clear_spans() {
+  spans_.Clear();
+}
+inline ::flyteidl::admin::Span* ReferenceSpanInfo::mutable_spans(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.ReferenceSpanInfo.spans)
+  return spans_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >*
+ReferenceSpanInfo::mutable_spans() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.ReferenceSpanInfo.spans)
+  return &spans_;
+}
+inline const ::flyteidl::admin::Span& ReferenceSpanInfo::spans(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.ReferenceSpanInfo.spans)
+  return spans_.Get(index);
+}
+inline ::flyteidl::admin::Span* ReferenceSpanInfo::add_spans() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.ReferenceSpanInfo.spans)
+  return spans_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::admin::Span >&
+ReferenceSpanInfo::spans() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.ReferenceSpanInfo.spans)
+  return spans_;
 }
 
 inline bool ReferenceSpanInfo::has_id() const {

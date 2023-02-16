@@ -26,7 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SlackNotification_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_NamedEntity_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto;
@@ -503,23 +503,6 @@ static void InitDefaultsRawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto() 
 ::google::protobuf::internal::SCCInfo<0> scc_info_RawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto}, {}};
 
-static void InitDefaultsSpan_flyteidl_2fadmin_2fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_Span_default_instance_;
-    new (ptr) ::flyteidl::admin::Span();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::flyteidl::admin::Span::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<3> scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsSpan_flyteidl_2fadmin_2fcommon_2eproto}, {
-      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
-      &scc_info_CategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base,
-      &scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base,}};
-
 static void InitDefaultsCategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -538,18 +521,26 @@ static void InitDefaultsReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
+    void* ptr = &::flyteidl::admin::_Span_default_instance_;
+    new (ptr) ::flyteidl::admin::Span();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  {
     void* ptr = &::flyteidl::admin::_ReferenceSpanInfo_default_instance_;
     new (ptr) ::flyteidl::admin::ReferenceSpanInfo();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
+  ::flyteidl::admin::Span::InitAsDefaultInstance();
   ::flyteidl::admin::ReferenceSpanInfo::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<3> scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto}, {
+::google::protobuf::internal::SCCInfo<5> scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto}, {
       &scc_info_WorkflowExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
       &scc_info_NodeExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
-      &scc_info_TaskExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,}};
+      &scc_info_TaskExecutionIdentifier_flyteidl_2fcore_2fidentifier_2eproto.base,
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
+      &scc_info_CategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_NamedEntityIdentifier_flyteidl_2fadmin_2fcommon_2eproto.base);
@@ -576,7 +567,6 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_CategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
 }
@@ -783,7 +773,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::CategoricalSpanInfo, category_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::CategoricalSpanInfo, description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ReferenceSpanInfo, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -792,6 +781,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   offsetof(::flyteidl::admin::ReferenceSpanInfoDefaultTypeInternal, workflow_id_),
   offsetof(::flyteidl::admin::ReferenceSpanInfoDefaultTypeInternal, node_id_),
   offsetof(::flyteidl::admin::ReferenceSpanInfoDefaultTypeInternal, task_id_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ReferenceSpanInfo, spans_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ReferenceSpanInfo, id_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -821,7 +811,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 175, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
   { 181, -1, sizeof(::flyteidl::admin::Span)},
   { 191, -1, sizeof(::flyteidl::admin::CategoricalSpanInfo)},
-  { 198, -1, sizeof(::flyteidl::admin::ReferenceSpanInfo)},
+  { 197, -1, sizeof(::flyteidl::admin::ReferenceSpanInfo)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -928,27 +918,28 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010"
   "category\030\003 \001(\0132#.flyteidl.admin.Categori"
   "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte"
-  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\333\001"
+  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\306\001"
   "\n\023CategoricalSpanInfo\022>\n\010category\030\001 \001(\0162"
   ",.flyteidl.admin.CategoricalSpanInfo.Cat"
-  "egory\022\023\n\013description\030\002 \001(\t\"o\n\010Category\022\013"
-  "\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSITION\020\001\022\026\n\022EXEC"
-  "UTION_OVERHEAD\020\002\022\023\n\017PLUGIN_OVERHEAD\020\003\022\024\n"
-  "\020PLUGIN_EXECUTION\020\004\"\322\001\n\021ReferenceSpanInf"
-  "o\022A\n\013workflow_id\030\001 \001(\0132*.flyteidl.core.W"
-  "orkflowExecutionIdentifierH\000\0229\n\007node_id\030"
-  "\002 \001(\0132&.flyteidl.core.NodeExecutionIdent"
-  "ifierH\000\0229\n\007task_id\030\003 \001(\0132&.flyteidl.core"
-  ".TaskExecutionIdentifierH\000B\004\n\002id*\\\n\020Name"
-  "dEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n"
-  "\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENER"
-  "ATED\020\002B7Z5github.com/flyteorg/flyteidl/g"
-  "en/pb-go/flyteidl/adminb\006proto3"
+  "egory\"o\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_T"
+  "RANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\023\n\017P"
+  "LUGIN_OVERHEAD\020\003\022\024\n\020PLUGIN_EXECUTION\020\004\"\367"
+  "\001\n\021ReferenceSpanInfo\022A\n\013workflow_id\030\001 \001("
+  "\0132*.flyteidl.core.WorkflowExecutionIdent"
+  "ifierH\000\0229\n\007node_id\030\002 \001(\0132&.flyteidl.core"
+  ".NodeExecutionIdentifierH\000\0229\n\007task_id\030\003 "
+  "\001(\0132&.flyteidl.core.TaskExecutionIdentif"
+  "ierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.admin.Sp"
+  "anB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023NAMED_EN"
+  "TITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001"
+  "\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github.com/fly"
+  "teorg/flyteidl/gen/pb-go/flyteidl/adminb"
+  "\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3311,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3327,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -9810,7 +9801,7 @@ Span::Span(const Span& from)
 
 void Span::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto.base);
+      &scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::memset(&start_time_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&end_time_) -
       reinterpret_cast<char*>(&start_time_)) + sizeof(end_time_));
@@ -9834,7 +9825,7 @@ void Span::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 const Span& Span::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_Span_flyteidl_2fadmin_2fcommon_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_ReferenceSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -10256,7 +10247,6 @@ class CategoricalSpanInfo::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int CategoricalSpanInfo::kCategoryFieldNumber;
-const int CategoricalSpanInfo::kDescriptionFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CategoricalSpanInfo::CategoricalSpanInfo()
@@ -10268,18 +10258,11 @@ CategoricalSpanInfo::CategoricalSpanInfo(const CategoricalSpanInfo& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.description().size() > 0) {
-    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
-  }
   category_ = from.category_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.CategoricalSpanInfo)
 }
 
 void CategoricalSpanInfo::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_CategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
-  description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   category_ = 0;
 }
 
@@ -10289,7 +10272,6 @@ CategoricalSpanInfo::~CategoricalSpanInfo() {
 }
 
 void CategoricalSpanInfo::SharedDtor() {
-  description_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void CategoricalSpanInfo::SetCachedSize(int size) const {
@@ -10307,7 +10289,6 @@ void CategoricalSpanInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   category_ = 0;
   _internal_metadata_.Clear();
 }
@@ -10333,22 +10314,6 @@ const char* CategoricalSpanInfo::_InternalParse(const char* begin, const char* e
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string description = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.admin.CategoricalSpanInfo.description");
-        object = msg->mutable_description();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -10364,13 +10329,6 @@ const char* CategoricalSpanInfo::_InternalParse(const char* begin, const char* e
     }  // switch
   }  // while
   return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool CategoricalSpanInfo::MergePartialFromCodedStream(
@@ -10391,21 +10349,6 @@ bool CategoricalSpanInfo::MergePartialFromCodedStream(
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
           set_category(static_cast< ::flyteidl::admin::CategoricalSpanInfo_Category >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string description = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_description()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->description().data(), static_cast<int>(this->description().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.CategoricalSpanInfo.description"));
         } else {
           goto handle_unusual;
         }
@@ -10445,16 +10388,6 @@ void CategoricalSpanInfo::SerializeWithCachedSizes(
       1, this->category(), output);
   }
 
-  // string description = 2;
-  if (this->description().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.CategoricalSpanInfo.description");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->description(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -10472,17 +10405,6 @@ void CategoricalSpanInfo::SerializeWithCachedSizes(
   if (this->category() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->category(), target);
-  }
-
-  // string description = 2;
-  if (this->description().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->description().data(), static_cast<int>(this->description().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.admin.CategoricalSpanInfo.description");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->description(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -10505,13 +10427,6 @@ size_t CategoricalSpanInfo::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // string description = 2;
-  if (this->description().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->description());
-  }
 
   // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
   if (this->category() != 0) {
@@ -10546,10 +10461,6 @@ void CategoricalSpanInfo::MergeFrom(const CategoricalSpanInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
-  }
   if (from.category() != 0) {
     set_category(from.category());
   }
@@ -10580,8 +10491,6 @@ void CategoricalSpanInfo::Swap(CategoricalSpanInfo* other) {
 void CategoricalSpanInfo::InternalSwap(CategoricalSpanInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   swap(category_, other->category_);
 }
 
@@ -10684,6 +10593,7 @@ void ReferenceSpanInfo::clear_task_id() {
 const int ReferenceSpanInfo::kWorkflowIdFieldNumber;
 const int ReferenceSpanInfo::kNodeIdFieldNumber;
 const int ReferenceSpanInfo::kTaskIdFieldNumber;
+const int ReferenceSpanInfo::kSpansFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ReferenceSpanInfo::ReferenceSpanInfo()
@@ -10693,7 +10603,8 @@ ReferenceSpanInfo::ReferenceSpanInfo()
 }
 ReferenceSpanInfo::ReferenceSpanInfo(const ReferenceSpanInfo& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      spans_(from.spans_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   clear_has_id();
   switch (from.id_case()) {
@@ -10771,6 +10682,7 @@ void ReferenceSpanInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  spans_.Clear();
   clear_id();
   _internal_metadata_.Clear();
 }
@@ -10825,6 +10737,22 @@ const char* ReferenceSpanInfo::_InternalParse(const char* begin, const char* end
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // repeated .flyteidl.admin.Span spans = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::flyteidl::admin::Span::_InternalParse;
+          object = msg->add_spans();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 34 && (ptr += 1));
         break;
       }
       default: {
@@ -10890,6 +10818,17 @@ bool ReferenceSpanInfo::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated .flyteidl.admin.Span spans = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_spans()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -10935,6 +10874,15 @@ void ReferenceSpanInfo::SerializeWithCachedSizes(
       3, HasBitSetters::task_id(this), output);
   }
 
+  // repeated .flyteidl.admin.Span spans = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->spans_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4,
+      this->spans(static_cast<int>(i)),
+      output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -10969,6 +10917,14 @@ void ReferenceSpanInfo::SerializeWithCachedSizes(
         3, HasBitSetters::task_id(this), target);
   }
 
+  // repeated .flyteidl.admin.Span spans = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->spans_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->spans(static_cast<int>(i)), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -10989,6 +10945,17 @@ size_t ReferenceSpanInfo::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .flyteidl.admin.Span spans = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->spans_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->spans(static_cast<int>(i)));
+    }
+  }
 
   switch (id_case()) {
     // .flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;
@@ -11043,6 +11010,7 @@ void ReferenceSpanInfo::MergeFrom(const ReferenceSpanInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  spans_.MergeFrom(from.spans_);
   switch (from.id_case()) {
     case kWorkflowId: {
       mutable_workflow_id()->::flyteidl::core::WorkflowExecutionIdentifier::MergeFrom(from.workflow_id());
@@ -11087,6 +11055,7 @@ void ReferenceSpanInfo::Swap(ReferenceSpanInfo* other) {
 void ReferenceSpanInfo::InternalSwap(ReferenceSpanInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&spans_)->InternalSwap(CastToBase(&other->spans_));
   swap(id_, other->id_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }

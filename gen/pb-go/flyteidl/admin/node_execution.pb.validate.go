@@ -1192,6 +1192,8 @@ func (m *NodeExecutionGetMetricsRequest) Validate() error {
 		}
 	}
 
+	// no validation rules for Depth
+
 	return nil
 }
 
@@ -1260,19 +1262,14 @@ func (m *NodeExecutionGetMetricsResponse) Validate() error {
 		return nil
 	}
 
-	for idx, item := range m.GetSpans() {
-		_, _ = idx, item
-
-		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := v.Validate(); err != nil {
-				return NodeExecutionGetMetricsResponseValidationError{
-					field:  fmt.Sprintf("Spans[%v]", idx),
-					reason: "embedded message failed validation",
-					cause:  err,
-				}
+	if v, ok := interface{}(m.GetSpan()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NodeExecutionGetMetricsResponseValidationError{
+				field:  "Span",
+				reason: "embedded message failed validation",
+				cause:  err,
 			}
 		}
-
 	}
 
 	return nil

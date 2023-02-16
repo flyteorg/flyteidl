@@ -248,16 +248,18 @@ class WorkflowExecutionGetDataResponse(_message.Message):
     def __init__(self, outputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., inputs: _Optional[_Union[_common_pb2.UrlBlob, _Mapping]] = ..., full_inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., full_outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
 class WorkflowExecutionGetMetricsRequest(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ["depth", "id"]
+    DEPTH_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
+    depth: int
     id: _identifier_pb2.WorkflowExecutionIdentifier
-    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ...) -> None: ...
+    def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., depth: _Optional[int] = ...) -> None: ...
 
 class WorkflowExecutionGetMetricsResponse(_message.Message):
-    __slots__ = ["spans"]
-    SPANS_FIELD_NUMBER: _ClassVar[int]
-    spans: _containers.RepeatedCompositeFieldContainer[_common_pb2.Span]
-    def __init__(self, spans: _Optional[_Iterable[_Union[_common_pb2.Span, _Mapping]]] = ...) -> None: ...
+    __slots__ = ["span"]
+    SPAN_FIELD_NUMBER: _ClassVar[int]
+    span: _common_pb2.Span
+    def __init__(self, span: _Optional[_Union[_common_pb2.Span, _Mapping]] = ...) -> None: ...
 
 class WorkflowExecutionGetRequest(_message.Message):
     __slots__ = ["id"]

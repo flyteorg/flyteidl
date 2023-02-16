@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from flyteadmin.models.admin_span import AdminSpan  # noqa: F401,E501
 from flyteadmin.models.core_node_execution_identifier import CoreNodeExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_task_execution_identifier import CoreTaskExecutionIdentifier  # noqa: F401,E501
 from flyteadmin.models.core_workflow_execution_identifier import CoreWorkflowExecutionIdentifier  # noqa: F401,E501
@@ -37,21 +38,24 @@ class AdminReferenceSpanInfo(object):
     swagger_types = {
         'workflow_id': 'CoreWorkflowExecutionIdentifier',
         'node_id': 'CoreNodeExecutionIdentifier',
-        'task_id': 'CoreTaskExecutionIdentifier'
+        'task_id': 'CoreTaskExecutionIdentifier',
+        'spans': 'list[AdminSpan]'
     }
 
     attribute_map = {
         'workflow_id': 'workflow_id',
         'node_id': 'node_id',
-        'task_id': 'task_id'
+        'task_id': 'task_id',
+        'spans': 'spans'
     }
 
-    def __init__(self, workflow_id=None, node_id=None, task_id=None):  # noqa: E501
+    def __init__(self, workflow_id=None, node_id=None, task_id=None, spans=None):  # noqa: E501
         """AdminReferenceSpanInfo - a model defined in Swagger"""  # noqa: E501
 
         self._workflow_id = None
         self._node_id = None
         self._task_id = None
+        self._spans = None
         self.discriminator = None
 
         if workflow_id is not None:
@@ -60,6 +64,8 @@ class AdminReferenceSpanInfo(object):
             self.node_id = node_id
         if task_id is not None:
             self.task_id = task_id
+        if spans is not None:
+            self.spans = spans
 
     @property
     def workflow_id(self):
@@ -123,6 +129,27 @@ class AdminReferenceSpanInfo(object):
         """
 
         self._task_id = task_id
+
+    @property
+    def spans(self):
+        """Gets the spans of this AdminReferenceSpanInfo.  # noqa: E501
+
+
+        :return: The spans of this AdminReferenceSpanInfo.  # noqa: E501
+        :rtype: list[AdminSpan]
+        """
+        return self._spans
+
+    @spans.setter
+    def spans(self, spans):
+        """Sets the spans of this AdminReferenceSpanInfo.
+
+
+        :param spans: The spans of this AdminReferenceSpanInfo.  # noqa: E501
+        :type: list[AdminSpan]
+        """
+
+        self._spans = spans
 
     def to_dict(self):
         """Returns the model properties as a dict"""

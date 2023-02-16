@@ -74,7 +74,6 @@ static const char* AdminService_method_names[] = {
   "/flyteidl.service.AdminService/ListDescriptionEntities",
   "/flyteidl.service.AdminService/GetExecutionMetrics",
   "/flyteidl.service.AdminService/GetNodeExecutionMetrics",
-  "/flyteidl.service.AdminService/GetTaskExecutionMetrics",
 };
 
 std::unique_ptr< AdminService::Stub> AdminService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -138,7 +137,6 @@ AdminService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chann
   , rpcmethod_ListDescriptionEntities_(AdminService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetExecutionMetrics_(AdminService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetNodeExecutionMetrics_(AdminService_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTaskExecutionMetrics_(AdminService_method_names[54], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status AdminService::Stub::CreateTask(::grpc::ClientContext* context, const ::flyteidl::admin::TaskCreateRequest& request, ::flyteidl::admin::TaskCreateResponse* response) {
@@ -1653,34 +1651,6 @@ void AdminService::Stub::experimental_async::GetNodeExecutionMetrics(::grpc::Cli
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::NodeExecutionGetMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetNodeExecutionMetrics_, context, request, false);
 }
 
-::grpc::Status AdminService::Stub::GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTaskExecutionMetrics_, context, request, response);
-}
-
-void AdminService::Stub::experimental_async::GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionMetrics_, context, request, response, std::move(f));
-}
-
-void AdminService::Stub::experimental_async::GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionMetrics_, context, request, response, std::move(f));
-}
-
-void AdminService::Stub::experimental_async::GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionMetrics_, context, request, response, reactor);
-}
-
-void AdminService::Stub::experimental_async::GetTaskExecutionMetrics(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTaskExecutionMetrics_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* AdminService::Stub::AsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionGetMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskExecutionMetrics_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::admin::TaskExecutionGetMetricsResponse>* AdminService::Stub::PrepareAsyncGetTaskExecutionMetricsRaw(::grpc::ClientContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::admin::TaskExecutionGetMetricsResponse>::Create(channel_.get(), cq, rpcmethod_GetTaskExecutionMetrics_, context, request, false);
-}
-
 AdminService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AdminService_method_names[0],
@@ -1952,11 +1922,6 @@ AdminService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::NodeExecutionGetMetricsRequest, ::flyteidl::admin::NodeExecutionGetMetricsResponse>(
           std::mem_fn(&AdminService::Service::GetNodeExecutionMetrics), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      AdminService_method_names[54],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< AdminService::Service, ::flyteidl::admin::TaskExecutionGetMetricsRequest, ::flyteidl::admin::TaskExecutionGetMetricsResponse>(
-          std::mem_fn(&AdminService::Service::GetTaskExecutionMetrics), this)));
 }
 
 AdminService::Service::~Service() {
@@ -2334,13 +2299,6 @@ AdminService::Service::~Service() {
 }
 
 ::grpc::Status AdminService::Service::GetNodeExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::NodeExecutionGetMetricsRequest* request, ::flyteidl::admin::NodeExecutionGetMetricsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status AdminService::Service::GetTaskExecutionMetrics(::grpc::ServerContext* context, const ::flyteidl::admin::TaskExecutionGetMetricsRequest* request, ::flyteidl::admin::TaskExecutionGetMetricsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

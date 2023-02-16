@@ -13,4 +13,5 @@ type AdminReferenceSpanInfo struct {
 	WorkflowId *CoreWorkflowExecutionIdentifier `json:"workflow_id,omitempty"`
 	NodeId *CoreNodeExecutionIdentifier `json:"node_id,omitempty"`
 	TaskId *CoreTaskExecutionIdentifier `json:"task_id,omitempty"`
+	Spans []AdminSpan `json:"spans,omitempty"`
 }

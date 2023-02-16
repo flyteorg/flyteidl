@@ -22065,16 +22065,6 @@ public final class Common {
      * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
      */
     flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory();
-
-    /**
-     * <code>string description = 2;</code>
-     */
-    java.lang.String getDescription();
-    /**
-     * <code>string description = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
   }
   /**
    * <pre>
@@ -22094,7 +22084,6 @@ public final class Common {
     }
     private CategoricalSpanInfo() {
       category_ = 0;
-      description_ = "";
     }
 
     @java.lang.Override
@@ -22125,12 +22114,6 @@ public final class Common {
               int rawValue = input.readEnum();
 
               category_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
               break;
             }
             default: {
@@ -22307,40 +22290,6 @@ public final class Common {
       return result == null ? flyteidl.admin.Common.CategoricalSpanInfo.Category.UNRECOGNIZED : result;
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
-    /**
-     * <code>string description = 2;</code>
-     */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string description = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      java.lang.Object ref = description_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -22358,9 +22307,6 @@ public final class Common {
       if (category_ != flyteidl.admin.Common.CategoricalSpanInfo.Category.UNKNOWN.getNumber()) {
         output.writeEnum(1, category_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -22373,9 +22319,6 @@ public final class Common {
       if (category_ != flyteidl.admin.Common.CategoricalSpanInfo.Category.UNKNOWN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, category_);
-      }
-      if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -22393,8 +22336,6 @@ public final class Common {
       flyteidl.admin.Common.CategoricalSpanInfo other = (flyteidl.admin.Common.CategoricalSpanInfo) obj;
 
       if (category_ != other.category_) return false;
-      if (!getDescription()
-          .equals(other.getDescription())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -22408,8 +22349,6 @@ public final class Common {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
       hash = (53 * hash) + category_;
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -22549,8 +22488,6 @@ public final class Common {
         super.clear();
         category_ = 0;
 
-        description_ = "";
-
         return this;
       }
 
@@ -22578,7 +22515,6 @@ public final class Common {
       public flyteidl.admin.Common.CategoricalSpanInfo buildPartial() {
         flyteidl.admin.Common.CategoricalSpanInfo result = new flyteidl.admin.Common.CategoricalSpanInfo(this);
         result.category_ = category_;
-        result.description_ = description_;
         onBuilt();
         return result;
       }
@@ -22629,10 +22565,6 @@ public final class Common {
         if (other == flyteidl.admin.Common.CategoricalSpanInfo.getDefaultInstance()) return this;
         if (other.category_ != 0) {
           setCategoryValue(other.getCategoryValue());
-        }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -22704,75 +22636,6 @@ public final class Common {
       public Builder clearCategory() {
         
         category_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object description_ = "";
-      /**
-       * <code>string description = 2;</code>
-       */
-      public java.lang.String getDescription() {
-        java.lang.Object ref = description_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          description_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        java.lang.Object ref = description_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          description_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder setDescription(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        description_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder clearDescription() {
-        
-        description_ = getDefaultInstance().getDescription();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        description_ = value;
         onChanged();
         return this;
       }
@@ -22872,6 +22735,30 @@ public final class Common {
      */
     flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder();
 
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    java.util.List<flyteidl.admin.Common.Span> 
+        getSpansList();
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    flyteidl.admin.Common.Span getSpans(int index);
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    int getSpansCount();
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
+        getSpansOrBuilderList();
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
+        int index);
+
     public flyteidl.admin.Common.ReferenceSpanInfo.IdCase getIdCase();
   }
   /**
@@ -22891,6 +22778,7 @@ public final class Common {
       super(builder);
     }
     private ReferenceSpanInfo() {
+      spans_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -22959,6 +22847,15 @@ public final class Common {
               idCase_ = 3;
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                spans_ = new java.util.ArrayList<flyteidl.admin.Common.Span>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              spans_.add(
+                  input.readMessage(flyteidl.admin.Common.Span.parser(), extensionRegistry));
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -22974,6 +22871,9 @@ public final class Common {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          spans_ = java.util.Collections.unmodifiableList(spans_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -22991,6 +22891,7 @@ public final class Common {
               flyteidl.admin.Common.ReferenceSpanInfo.class, flyteidl.admin.Common.ReferenceSpanInfo.Builder.class);
     }
 
+    private int bitField0_;
     private int idCase_ = 0;
     private java.lang.Object id_;
     public enum IdCase
@@ -23109,6 +23010,41 @@ public final class Common {
       return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
     }
 
+    public static final int SPANS_FIELD_NUMBER = 4;
+    private java.util.List<flyteidl.admin.Common.Span> spans_;
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
+      return spans_;
+    }
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
+        getSpansOrBuilderList() {
+      return spans_;
+    }
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    public int getSpansCount() {
+      return spans_.size();
+    }
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    public flyteidl.admin.Common.Span getSpans(int index) {
+      return spans_.get(index);
+    }
+    /**
+     * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+     */
+    public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
+        int index) {
+      return spans_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -23132,6 +23068,9 @@ public final class Common {
       if (idCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) id_);
       }
+      for (int i = 0; i < spans_.size(); i++) {
+        output.writeMessage(4, spans_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -23153,6 +23092,10 @@ public final class Common {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier) id_);
       }
+      for (int i = 0; i < spans_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, spans_.get(i));
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -23168,6 +23111,8 @@ public final class Common {
       }
       flyteidl.admin.Common.ReferenceSpanInfo other = (flyteidl.admin.Common.ReferenceSpanInfo) obj;
 
+      if (!getSpansList()
+          .equals(other.getSpansList())) return false;
       if (!getIdCase().equals(other.getIdCase())) return false;
       switch (idCase_) {
         case 1:
@@ -23196,6 +23141,10 @@ public final class Common {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSpansCount() > 0) {
+        hash = (37 * hash) + SPANS_FIELD_NUMBER;
+        hash = (53 * hash) + getSpansList().hashCode();
+      }
       switch (idCase_) {
         case 1:
           hash = (37 * hash) + WORKFLOW_ID_FIELD_NUMBER;
@@ -23344,11 +23293,18 @@ public final class Common {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getSpansFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (spansBuilder_ == null) {
+          spans_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          spansBuilder_.clear();
+        }
         idCase_ = 0;
         id_ = null;
         return this;
@@ -23377,6 +23333,8 @@ public final class Common {
       @java.lang.Override
       public flyteidl.admin.Common.ReferenceSpanInfo buildPartial() {
         flyteidl.admin.Common.ReferenceSpanInfo result = new flyteidl.admin.Common.ReferenceSpanInfo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (idCase_ == 1) {
           if (workflowIdBuilder_ == null) {
             result.id_ = id_;
@@ -23398,6 +23356,16 @@ public final class Common {
             result.id_ = taskIdBuilder_.build();
           }
         }
+        if (spansBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            spans_ = java.util.Collections.unmodifiableList(spans_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.spans_ = spans_;
+        } else {
+          result.spans_ = spansBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         result.idCase_ = idCase_;
         onBuilt();
         return result;
@@ -23447,6 +23415,32 @@ public final class Common {
 
       public Builder mergeFrom(flyteidl.admin.Common.ReferenceSpanInfo other) {
         if (other == flyteidl.admin.Common.ReferenceSpanInfo.getDefaultInstance()) return this;
+        if (spansBuilder_ == null) {
+          if (!other.spans_.isEmpty()) {
+            if (spans_.isEmpty()) {
+              spans_ = other.spans_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureSpansIsMutable();
+              spans_.addAll(other.spans_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.spans_.isEmpty()) {
+            if (spansBuilder_.isEmpty()) {
+              spansBuilder_.dispose();
+              spansBuilder_ = null;
+              spans_ = other.spans_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              spansBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSpansFieldBuilder() : null;
+            } else {
+              spansBuilder_.addAllMessages(other.spans_);
+            }
+          }
+        }
         switch (other.getIdCase()) {
           case WORKFLOW_ID: {
             mergeWorkflowId(other.getWorkflowId());
@@ -23507,6 +23501,7 @@ public final class Common {
         return this;
       }
 
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> workflowIdBuilder_;
@@ -23915,6 +23910,246 @@ public final class Common {
         onChanged();;
         return taskIdBuilder_;
       }
+
+      private java.util.List<flyteidl.admin.Common.Span> spans_ =
+        java.util.Collections.emptyList();
+      private void ensureSpansIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          spans_ = new java.util.ArrayList<flyteidl.admin.Common.Span>(spans_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spansBuilder_;
+
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
+        if (spansBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(spans_);
+        } else {
+          return spansBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public int getSpansCount() {
+        if (spansBuilder_ == null) {
+          return spans_.size();
+        } else {
+          return spansBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public flyteidl.admin.Common.Span getSpans(int index) {
+        if (spansBuilder_ == null) {
+          return spans_.get(index);
+        } else {
+          return spansBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder setSpans(
+          int index, flyteidl.admin.Common.Span value) {
+        if (spansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSpansIsMutable();
+          spans_.set(index, value);
+          onChanged();
+        } else {
+          spansBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder setSpans(
+          int index, flyteidl.admin.Common.Span.Builder builderForValue) {
+        if (spansBuilder_ == null) {
+          ensureSpansIsMutable();
+          spans_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          spansBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder addSpans(flyteidl.admin.Common.Span value) {
+        if (spansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSpansIsMutable();
+          spans_.add(value);
+          onChanged();
+        } else {
+          spansBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder addSpans(
+          int index, flyteidl.admin.Common.Span value) {
+        if (spansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSpansIsMutable();
+          spans_.add(index, value);
+          onChanged();
+        } else {
+          spansBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder addSpans(
+          flyteidl.admin.Common.Span.Builder builderForValue) {
+        if (spansBuilder_ == null) {
+          ensureSpansIsMutable();
+          spans_.add(builderForValue.build());
+          onChanged();
+        } else {
+          spansBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder addSpans(
+          int index, flyteidl.admin.Common.Span.Builder builderForValue) {
+        if (spansBuilder_ == null) {
+          ensureSpansIsMutable();
+          spans_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          spansBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder addAllSpans(
+          java.lang.Iterable<? extends flyteidl.admin.Common.Span> values) {
+        if (spansBuilder_ == null) {
+          ensureSpansIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, spans_);
+          onChanged();
+        } else {
+          spansBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder clearSpans() {
+        if (spansBuilder_ == null) {
+          spans_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          spansBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public Builder removeSpans(int index) {
+        if (spansBuilder_ == null) {
+          ensureSpansIsMutable();
+          spans_.remove(index);
+          onChanged();
+        } else {
+          spansBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public flyteidl.admin.Common.Span.Builder getSpansBuilder(
+          int index) {
+        return getSpansFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
+          int index) {
+        if (spansBuilder_ == null) {
+          return spans_.get(index);  } else {
+          return spansBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
+           getSpansOrBuilderList() {
+        if (spansBuilder_ != null) {
+          return spansBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(spans_);
+        }
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public flyteidl.admin.Common.Span.Builder addSpansBuilder() {
+        return getSpansFieldBuilder().addBuilder(
+            flyteidl.admin.Common.Span.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public flyteidl.admin.Common.Span.Builder addSpansBuilder(
+          int index) {
+        return getSpansFieldBuilder().addBuilder(
+            index, flyteidl.admin.Common.Span.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .flyteidl.admin.Span spans = 4;</code>
+       */
+      public java.util.List<flyteidl.admin.Common.Span.Builder> 
+           getSpansBuilderList() {
+        return getSpansFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> 
+          getSpansFieldBuilder() {
+        if (spansBuilder_ == null) {
+          spansBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder>(
+                  spans_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          spans_ = null;
+        }
+        return spansBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -24179,22 +24414,23 @@ public final class Common {
       "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010" +
       "category\030\003 \001(\0132#.flyteidl.admin.Categori" +
       "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte" +
-      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\333\001" +
+      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\306\001" +
       "\n\023CategoricalSpanInfo\022>\n\010category\030\001 \001(\0162" +
       ",.flyteidl.admin.CategoricalSpanInfo.Cat" +
-      "egory\022\023\n\013description\030\002 \001(\t\"o\n\010Category\022\013" +
-      "\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSITION\020\001\022\026\n\022EXEC" +
-      "UTION_OVERHEAD\020\002\022\023\n\017PLUGIN_OVERHEAD\020\003\022\024\n" +
-      "\020PLUGIN_EXECUTION\020\004\"\322\001\n\021ReferenceSpanInf" +
-      "o\022A\n\013workflow_id\030\001 \001(\0132*.flyteidl.core.W" +
-      "orkflowExecutionIdentifierH\000\0229\n\007node_id\030" +
-      "\002 \001(\0132&.flyteidl.core.NodeExecutionIdent" +
-      "ifierH\000\0229\n\007task_id\030\003 \001(\0132&.flyteidl.core" +
-      ".TaskExecutionIdentifierH\000B\004\n\002id*\\\n\020Name" +
-      "dEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n" +
-      "\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENER" +
-      "ATED\020\002B7Z5github.com/flyteorg/flyteidl/g" +
-      "en/pb-go/flyteidl/adminb\006proto3"
+      "egory\"o\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_T" +
+      "RANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\023\n\017P" +
+      "LUGIN_OVERHEAD\020\003\022\024\n\020PLUGIN_EXECUTION\020\004\"\367" +
+      "\001\n\021ReferenceSpanInfo\022A\n\013workflow_id\030\001 \001(" +
+      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
+      "ifierH\000\0229\n\007node_id\030\002 \001(\0132&.flyteidl.core" +
+      ".NodeExecutionIdentifierH\000\0229\n\007task_id\030\003 " +
+      "\001(\0132&.flyteidl.core.TaskExecutionIdentif" +
+      "ierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.admin.Sp" +
+      "anB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023NAMED_EN" +
+      "TITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001" +
+      "\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/adminb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -24366,13 +24602,13 @@ public final class Common {
     internal_static_flyteidl_admin_CategoricalSpanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_CategoricalSpanInfo_descriptor,
-        new java.lang.String[] { "Category", "Description", });
+        new java.lang.String[] { "Category", });
     internal_static_flyteidl_admin_ReferenceSpanInfo_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_flyteidl_admin_ReferenceSpanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_ReferenceSpanInfo_descriptor,
-        new java.lang.String[] { "WorkflowId", "NodeId", "TaskId", "Id", });
+        new java.lang.String[] { "WorkflowId", "NodeId", "TaskId", "Spans", "Id", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -95,7 +95,6 @@ Class | Method | HTTP request | Description
 *AdminServiceApi* | [**get_task**](docs/AdminServiceApi.md#get_task) | **GET** /api/v1/tasks/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Task&#x60; definition.
 *AdminServiceApi* | [**get_task_execution**](docs/AdminServiceApi.md#get_task_execution) | **GET** /api/v1/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**get_task_execution_data**](docs/AdminServiceApi.md#get_task_execution_data) | **GET** /api/v1/data/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches input and output data for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
-*AdminServiceApi* | [**get_task_execution_metrics**](docs/AdminServiceApi.md#get_task_execution_metrics) | **GET** /api/v1/metrics/task_executions/{id.node_execution_id.execution_id.project}/{id.node_execution_id.execution_id.domain}/{id.node_execution_id.execution_id.name}/{id.node_execution_id.node_id}/{id.task_id.project}/{id.task_id.domain}/{id.task_id.name}/{id.task_id.version}/{id.retry_attempt} | Fetches metrics for a :ref:&#x60;ref_flyteidl.admin.TaskExecution&#x60;.
 *AdminServiceApi* | [**get_version**](docs/AdminServiceApi.md#get_version) | **GET** /api/v1/version | 
 *AdminServiceApi* | [**get_workflow**](docs/AdminServiceApi.md#get_workflow) | **GET** /api/v1/workflows/{id.project}/{id.domain}/{id.name}/{id.version} | Fetch a :ref:&#x60;ref_flyteidl.admin.Workflow&#x60; definition.
 *AdminServiceApi* | [**get_workflow_attributes**](docs/AdminServiceApi.md#get_workflow_attributes) | **GET** /api/v1/workflow_attributes/{project}/{domain}/{workflow} | Fetches custom :ref:&#x60;ref_flyteidl.admin.MatchableAttributesConfiguration&#x60; for a project, domain and workflow.
@@ -236,7 +235,6 @@ Class | Method | HTTP request | Description
  - [AdminTaskExecutionEventRequest](docs/AdminTaskExecutionEventRequest.md)
  - [AdminTaskExecutionEventResponse](docs/AdminTaskExecutionEventResponse.md)
  - [AdminTaskExecutionGetDataResponse](docs/AdminTaskExecutionGetDataResponse.md)
- - [AdminTaskExecutionGetMetricsResponse](docs/AdminTaskExecutionGetMetricsResponse.md)
  - [AdminTaskExecutionList](docs/AdminTaskExecutionList.md)
  - [AdminTaskList](docs/AdminTaskList.md)
  - [AdminTaskResourceAttributes](docs/AdminTaskResourceAttributes.md)

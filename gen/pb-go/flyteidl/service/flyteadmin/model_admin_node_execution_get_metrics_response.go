@@ -10,5 +10,5 @@
 package flyteadmin
 
 type AdminNodeExecutionGetMetricsResponse struct {
-	Spans []AdminSpan `json:"spans,omitempty"`
+	Span *AdminSpan `json:"span,omitempty"`
 }

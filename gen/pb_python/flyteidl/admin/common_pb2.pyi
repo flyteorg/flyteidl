@@ -34,19 +34,17 @@ class AuthRole(_message.Message):
     def __init__(self, assumable_iam_role: _Optional[str] = ..., kubernetes_service_account: _Optional[str] = ...) -> None: ...
 
 class CategoricalSpanInfo(_message.Message):
-    __slots__ = ["category", "description"]
+    __slots__ = ["category"]
     class Category(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
-    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     EXECUTION_OVERHEAD: CategoricalSpanInfo.Category
     NODE_TRANSITION: CategoricalSpanInfo.Category
     PLUGIN_EXECUTION: CategoricalSpanInfo.Category
     PLUGIN_OVERHEAD: CategoricalSpanInfo.Category
     UNKNOWN: CategoricalSpanInfo.Category
     category: CategoricalSpanInfo.Category
-    description: str
-    def __init__(self, category: _Optional[_Union[CategoricalSpanInfo.Category, str]] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, category: _Optional[_Union[CategoricalSpanInfo.Category, str]] = ...) -> None: ...
 
 class EmailNotification(_message.Message):
     __slots__ = ["recipients_email"]
@@ -198,14 +196,16 @@ class RawOutputDataConfig(_message.Message):
     def __init__(self, output_location_prefix: _Optional[str] = ...) -> None: ...
 
 class ReferenceSpanInfo(_message.Message):
-    __slots__ = ["node_id", "task_id", "workflow_id"]
+    __slots__ = ["node_id", "spans", "task_id", "workflow_id"]
     NODE_ID_FIELD_NUMBER: _ClassVar[int]
+    SPANS_FIELD_NUMBER: _ClassVar[int]
     TASK_ID_FIELD_NUMBER: _ClassVar[int]
     WORKFLOW_ID_FIELD_NUMBER: _ClassVar[int]
     node_id: _identifier_pb2.NodeExecutionIdentifier
+    spans: _containers.RepeatedCompositeFieldContainer[Span]
     task_id: _identifier_pb2.TaskExecutionIdentifier
     workflow_id: _identifier_pb2.WorkflowExecutionIdentifier
-    def __init__(self, workflow_id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., node_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., task_id: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ...) -> None: ...
+    def __init__(self, workflow_id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., node_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., task_id: _Optional[_Union[_identifier_pb2.TaskExecutionIdentifier, _Mapping]] = ..., spans: _Optional[_Iterable[_Union[Span, _Mapping]]] = ...) -> None: ...
 
 class ResourceListRequest(_message.Message):
     __slots__ = ["filters", "id", "limit", "sort_by", "token"]

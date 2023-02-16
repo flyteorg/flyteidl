@@ -224,9 +224,10 @@ message NodeExecutionGetDataResponse {
 // TODO @hamersaw docs
 message NodeExecutionGetMetricsRequest {
     core.NodeExecutionIdentifier id = 1;
+    int32 depth = 2;
 }
 
 // TODO @hamersaw docs
 message NodeExecutionGetMetricsResponse {
-    repeated Span spans = 1;
+    Span span = 1;
 }

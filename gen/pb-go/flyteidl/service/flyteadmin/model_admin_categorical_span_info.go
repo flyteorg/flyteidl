@@ -11,5 +11,4 @@ package flyteadmin
 
 type AdminCategoricalSpanInfo struct {
 	Category *CategoricalSpanInfoCategory `json:"category,omitempty"`
-	Description string `json:"description,omitempty"`
 }

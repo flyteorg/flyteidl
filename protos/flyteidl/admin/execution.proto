@@ -385,9 +385,10 @@ message ExecutionUpdateResponse {}
 // TODO @hamersaw docs
 message WorkflowExecutionGetMetricsRequest {
     core.WorkflowExecutionIdentifier id = 1;
+    int32 depth = 2;
 }
 
 // TODO @hamersaw docs
 message WorkflowExecutionGetMetricsResponse {
-    repeated Span spans = 1;
+    Span span = 1;
 }

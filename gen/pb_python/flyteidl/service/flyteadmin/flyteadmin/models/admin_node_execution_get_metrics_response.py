@@ -33,42 +33,42 @@ class AdminNodeExecutionGetMetricsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'spans': 'list[AdminSpan]'
+        'span': 'AdminSpan'
     }
 
     attribute_map = {
-        'spans': 'spans'
+        'span': 'span'
     }
 
-    def __init__(self, spans=None):  # noqa: E501
+    def __init__(self, span=None):  # noqa: E501
         """AdminNodeExecutionGetMetricsResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._spans = None
+        self._span = None
         self.discriminator = None
 
-        if spans is not None:
-            self.spans = spans
+        if span is not None:
+            self.span = span
 
     @property
-    def spans(self):
-        """Gets the spans of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
+    def span(self):
+        """Gets the span of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
 
 
-        :return: The spans of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
-        :rtype: list[AdminSpan]
+        :return: The span of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
+        :rtype: AdminSpan
         """
-        return self._spans
+        return self._span
 
-    @spans.setter
-    def spans(self, spans):
-        """Sets the spans of this AdminNodeExecutionGetMetricsResponse.
+    @span.setter
+    def span(self, span):
+        """Sets the span of this AdminNodeExecutionGetMetricsResponse.
 
 
-        :param spans: The spans of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
-        :type: list[AdminSpan]
+        :param span: The span of this AdminNodeExecutionGetMetricsResponse.  # noqa: E501
+        :type: AdminSpan
         """
 
-        self._spans = spans
+        self._span = span
 
     def to_dict(self):
         """Returns the model properties as a dict"""
