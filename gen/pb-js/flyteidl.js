@@ -21494,6 +21494,7 @@
                         case 2:
                         case 3:
                         case 4:
+                        case 5:
                             break;
                         }
                     return null;
@@ -21506,16 +21507,18 @@
                  * @property {number} UNKNOWN=0 UNKNOWN value
                  * @property {number} NODE_TRANSITION=1 NODE_TRANSITION value
                  * @property {number} EXECUTION_OVERHEAD=2 EXECUTION_OVERHEAD value
-                 * @property {number} PLUGIN_OVERHEAD=3 PLUGIN_OVERHEAD value
-                 * @property {number} PLUGIN_EXECUTION=4 PLUGIN_EXECUTION value
+                 * @property {number} EXECUTION_IDLE=3 EXECUTION_IDLE value
+                 * @property {number} PLUGIN_OVERHEAD=4 PLUGIN_OVERHEAD value
+                 * @property {number} PLUGIN_EXECUTION=5 PLUGIN_EXECUTION value
                  */
                 CategoricalSpanInfo.Category = (function() {
                     var valuesById = {}, values = Object.create(valuesById);
                     values[valuesById[0] = "UNKNOWN"] = 0;
                     values[valuesById[1] = "NODE_TRANSITION"] = 1;
                     values[valuesById[2] = "EXECUTION_OVERHEAD"] = 2;
-                    values[valuesById[3] = "PLUGIN_OVERHEAD"] = 3;
-                    values[valuesById[4] = "PLUGIN_EXECUTION"] = 4;
+                    values[valuesById[3] = "EXECUTION_IDLE"] = 3;
+                    values[valuesById[4] = "PLUGIN_OVERHEAD"] = 4;
+                    values[valuesById[5] = "PLUGIN_EXECUTION"] = 5;
                     return values;
                 })();
     

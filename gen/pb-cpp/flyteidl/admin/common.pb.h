@@ -199,8 +199,9 @@ enum CategoricalSpanInfo_Category {
   CategoricalSpanInfo_Category_UNKNOWN = 0,
   CategoricalSpanInfo_Category_NODE_TRANSITION = 1,
   CategoricalSpanInfo_Category_EXECUTION_OVERHEAD = 2,
-  CategoricalSpanInfo_Category_PLUGIN_OVERHEAD = 3,
-  CategoricalSpanInfo_Category_PLUGIN_EXECUTION = 4,
+  CategoricalSpanInfo_Category_EXECUTION_IDLE = 3,
+  CategoricalSpanInfo_Category_PLUGIN_OVERHEAD = 4,
+  CategoricalSpanInfo_Category_PLUGIN_EXECUTION = 5,
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
@@ -3564,6 +3565,8 @@ class CategoricalSpanInfo final :
     CategoricalSpanInfo_Category_NODE_TRANSITION;
   static const Category EXECUTION_OVERHEAD =
     CategoricalSpanInfo_Category_EXECUTION_OVERHEAD;
+  static const Category EXECUTION_IDLE =
+    CategoricalSpanInfo_Category_EXECUTION_IDLE;
   static const Category PLUGIN_OVERHEAD =
     CategoricalSpanInfo_Category_PLUGIN_OVERHEAD;
   static const Category PLUGIN_EXECUTION =

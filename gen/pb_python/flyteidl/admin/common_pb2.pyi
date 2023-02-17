@@ -38,6 +38,7 @@ class CategoricalSpanInfo(_message.Message):
     class Category(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
+    EXECUTION_IDLE: CategoricalSpanInfo.Category
     EXECUTION_OVERHEAD: CategoricalSpanInfo.Category
     NODE_TRANSITION: CategoricalSpanInfo.Category
     PLUGIN_EXECUTION: CategoricalSpanInfo.Category

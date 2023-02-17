@@ -22166,13 +22166,17 @@ public final class Common {
        */
       EXECUTION_OVERHEAD(2),
       /**
-       * <code>PLUGIN_OVERHEAD = 3;</code>
+       * <code>EXECUTION_IDLE = 3;</code>
        */
-      PLUGIN_OVERHEAD(3),
+      EXECUTION_IDLE(3),
       /**
-       * <code>PLUGIN_EXECUTION = 4;</code>
+       * <code>PLUGIN_OVERHEAD = 4;</code>
        */
-      PLUGIN_EXECUTION(4),
+      PLUGIN_OVERHEAD(4),
+      /**
+       * <code>PLUGIN_EXECUTION = 5;</code>
+       */
+      PLUGIN_EXECUTION(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -22189,13 +22193,17 @@ public final class Common {
        */
       public static final int EXECUTION_OVERHEAD_VALUE = 2;
       /**
-       * <code>PLUGIN_OVERHEAD = 3;</code>
+       * <code>EXECUTION_IDLE = 3;</code>
        */
-      public static final int PLUGIN_OVERHEAD_VALUE = 3;
+      public static final int EXECUTION_IDLE_VALUE = 3;
       /**
-       * <code>PLUGIN_EXECUTION = 4;</code>
+       * <code>PLUGIN_OVERHEAD = 4;</code>
        */
-      public static final int PLUGIN_EXECUTION_VALUE = 4;
+      public static final int PLUGIN_OVERHEAD_VALUE = 4;
+      /**
+       * <code>PLUGIN_EXECUTION = 5;</code>
+       */
+      public static final int PLUGIN_EXECUTION_VALUE = 5;
 
 
       public final int getNumber() {
@@ -22219,8 +22227,9 @@ public final class Common {
           case 0: return UNKNOWN;
           case 1: return NODE_TRANSITION;
           case 2: return EXECUTION_OVERHEAD;
-          case 3: return PLUGIN_OVERHEAD;
-          case 4: return PLUGIN_EXECUTION;
+          case 3: return EXECUTION_IDLE;
+          case 4: return PLUGIN_OVERHEAD;
+          case 5: return PLUGIN_EXECUTION;
           default: return null;
         }
       }
@@ -24414,23 +24423,23 @@ public final class Common {
       "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010" +
       "category\030\003 \001(\0132#.flyteidl.admin.Categori" +
       "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte" +
-      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\306\001" +
+      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\333\001" +
       "\n\023CategoricalSpanInfo\022>\n\010category\030\001 \001(\0162" +
       ",.flyteidl.admin.CategoricalSpanInfo.Cat" +
-      "egory\"o\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_T" +
-      "RANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\023\n\017P" +
-      "LUGIN_OVERHEAD\020\003\022\024\n\020PLUGIN_EXECUTION\020\004\"\367" +
-      "\001\n\021ReferenceSpanInfo\022A\n\013workflow_id\030\001 \001(" +
-      "\0132*.flyteidl.core.WorkflowExecutionIdent" +
-      "ifierH\000\0229\n\007node_id\030\002 \001(\0132&.flyteidl.core" +
-      ".NodeExecutionIdentifierH\000\0229\n\007task_id\030\003 " +
-      "\001(\0132&.flyteidl.core.TaskExecutionIdentif" +
-      "ierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.admin.Sp" +
-      "anB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023NAMED_EN" +
-      "TITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001" +
-      "\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github.com/fly" +
-      "teorg/flyteidl/gen/pb-go/flyteidl/adminb" +
-      "\006proto3"
+      "egory\"\203\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_" +
+      "TRANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\022\n\016" +
+      "EXECUTION_IDLE\020\003\022\023\n\017PLUGIN_OVERHEAD\020\004\022\024\n" +
+      "\020PLUGIN_EXECUTION\020\005\"\367\001\n\021ReferenceSpanInf" +
+      "o\022A\n\013workflow_id\030\001 \001(\0132*.flyteidl.core.W" +
+      "orkflowExecutionIdentifierH\000\0229\n\007node_id\030" +
+      "\002 \001(\0132&.flyteidl.core.NodeExecutionIdent" +
+      "ifierH\000\0229\n\007task_id\030\003 \001(\0132&.flyteidl.core" +
+      ".TaskExecutionIdentifierH\000\022#\n\005spans\030\004 \003(" +
+      "\0132\024.flyteidl.admin.SpanB\004\n\002id*\\\n\020NamedEn" +
+      "tityState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NA" +
+      "MED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATE" +
+      "D\020\002B7Z5github.com/flyteorg/flyteidl/gen/" +
+      "pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

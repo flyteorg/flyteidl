@@ -16,6 +16,7 @@ const (
 	CategoricalSpanInfoCategoryUNKNOWN CategoricalSpanInfoCategory = "UNKNOWN"
 	CategoricalSpanInfoCategoryNODE_TRANSITION CategoricalSpanInfoCategory = "NODE_TRANSITION"
 	CategoricalSpanInfoCategoryEXECUTION_OVERHEAD CategoricalSpanInfoCategory = "EXECUTION_OVERHEAD"
+	CategoricalSpanInfoCategoryEXECUTION_IDLE CategoricalSpanInfoCategory = "EXECUTION_IDLE"
 	CategoricalSpanInfoCategoryPLUGIN_OVERHEAD CategoricalSpanInfoCategory = "PLUGIN_OVERHEAD"
 	CategoricalSpanInfoCategoryPLUGIN_EXECUTION CategoricalSpanInfoCategory = "PLUGIN_EXECUTION"
 )

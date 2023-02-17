@@ -3306,6 +3306,7 @@
         "UNKNOWN",
         "NODE_TRANSITION",
         "EXECUTION_OVERHEAD",
+        "EXECUTION_IDLE",
         "PLUGIN_OVERHEAD",
         "PLUGIN_EXECUTION"
       ],

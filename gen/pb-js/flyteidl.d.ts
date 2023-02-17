@@ -8903,8 +8903,9 @@ export namespace flyteidl {
                 UNKNOWN = 0,
                 NODE_TRANSITION = 1,
                 EXECUTION_OVERHEAD = 2,
-                PLUGIN_OVERHEAD = 3,
-                PLUGIN_EXECUTION = 4
+                EXECUTION_IDLE = 3,
+                PLUGIN_OVERHEAD = 4,
+                PLUGIN_EXECUTION = 5
             }
         }
 
