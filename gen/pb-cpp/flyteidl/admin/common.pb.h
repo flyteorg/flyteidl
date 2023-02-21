@@ -201,13 +201,13 @@ enum CategoricalSpanInfo_Category {
   CategoricalSpanInfo_Category_EXECUTION_OVERHEAD = 2,
   CategoricalSpanInfo_Category_EXECUTION_IDLE = 3,
   CategoricalSpanInfo_Category_PLUGIN_OVERHEAD = 4,
-  CategoricalSpanInfo_Category_PLUGIN_EXECUTION = 5,
+  CategoricalSpanInfo_Category_PLUGIN_RUNTIME = 5,
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CategoricalSpanInfo_Category_IsValid(int value);
 const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MIN = CategoricalSpanInfo_Category_UNKNOWN;
-const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_PLUGIN_EXECUTION;
+const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_PLUGIN_RUNTIME;
 const int CategoricalSpanInfo_Category_Category_ARRAYSIZE = CategoricalSpanInfo_Category_Category_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CategoricalSpanInfo_Category_descriptor();
@@ -3569,8 +3569,8 @@ class CategoricalSpanInfo final :
     CategoricalSpanInfo_Category_EXECUTION_IDLE;
   static const Category PLUGIN_OVERHEAD =
     CategoricalSpanInfo_Category_PLUGIN_OVERHEAD;
-  static const Category PLUGIN_EXECUTION =
-    CategoricalSpanInfo_Category_PLUGIN_EXECUTION;
+  static const Category PLUGIN_RUNTIME =
+    CategoricalSpanInfo_Category_PLUGIN_RUNTIME;
   static inline bool Category_IsValid(int value) {
     return CategoricalSpanInfo_Category_IsValid(value);
   }

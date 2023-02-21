@@ -41,8 +41,8 @@ class CategoricalSpanInfo(_message.Message):
     EXECUTION_IDLE: CategoricalSpanInfo.Category
     EXECUTION_OVERHEAD: CategoricalSpanInfo.Category
     NODE_TRANSITION: CategoricalSpanInfo.Category
-    PLUGIN_EXECUTION: CategoricalSpanInfo.Category
     PLUGIN_OVERHEAD: CategoricalSpanInfo.Category
+    PLUGIN_RUNTIME: CategoricalSpanInfo.Category
     UNKNOWN: CategoricalSpanInfo.Category
     category: CategoricalSpanInfo.Category
     def __init__(self, category: _Optional[_Union[CategoricalSpanInfo.Category, str]] = ...) -> None: ...

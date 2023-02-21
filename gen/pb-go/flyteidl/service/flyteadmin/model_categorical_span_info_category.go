@@ -18,5 +18,5 @@ const (
 	CategoricalSpanInfoCategoryEXECUTION_OVERHEAD CategoricalSpanInfoCategory = "EXECUTION_OVERHEAD"
 	CategoricalSpanInfoCategoryEXECUTION_IDLE CategoricalSpanInfoCategory = "EXECUTION_IDLE"
 	CategoricalSpanInfoCategoryPLUGIN_OVERHEAD CategoricalSpanInfoCategory = "PLUGIN_OVERHEAD"
-	CategoricalSpanInfoCategoryPLUGIN_EXECUTION CategoricalSpanInfoCategory = "PLUGIN_EXECUTION"
+	CategoricalSpanInfoCategoryPLUGIN_RUNTIME CategoricalSpanInfoCategory = "PLUGIN_RUNTIME"
 )

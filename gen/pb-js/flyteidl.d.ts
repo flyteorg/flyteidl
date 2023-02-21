@@ -8905,7 +8905,7 @@ export namespace flyteidl {
                 EXECUTION_OVERHEAD = 2,
                 EXECUTION_IDLE = 3,
                 PLUGIN_OVERHEAD = 4,
-                PLUGIN_EXECUTION = 5
+                PLUGIN_RUNTIME = 5
             }
         }
 

@@ -2930,7 +2930,7 @@ definitions:
     - "EXECUTION_OVERHEAD"
     - "EXECUTION_IDLE"
     - "PLUGIN_OVERHEAD"
-    - "PLUGIN_EXECUTION"
+    - "PLUGIN_RUNTIME"
     default: "UNKNOWN"
   ComparisonExpressionOperator:
     type: "string"
