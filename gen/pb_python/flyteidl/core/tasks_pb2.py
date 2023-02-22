@@ -21,80 +21,16 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-<<<<<<< HEAD
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x66lyteidl/core/tasks.proto\x12\rflyteidl.core\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xd0\x02\n\tResources\x12\x42\n\x08requests\x18\x01 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntryR\x08requests\x12>\n\x06limits\x18\x02 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntryR\x06limits\x1a`\n\rResourceEntry\x12\x39\n\x04name\x18\x01 \x01(\x0e\x32%.flyteidl.core.Resources.ResourceNameR\x04name\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value\"]\n\x0cResourceName\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43PU\x10\x01\x12\x07\n\x03GPU\x10\x02\x12\n\n\x06MEMORY\x10\x03\x12\x0b\n\x07STORAGE\x10\x04\x12\x15\n\x11\x45PHEMERAL_STORAGE\x10\x05\"\xac\x01\n\x0fRuntimeMetadata\x12>\n\x04type\x18\x01 \x01(\x0e\x32*.flyteidl.core.RuntimeMetadata.RuntimeTypeR\x04type\x12\x18\n\x07version\x18\x02 \x01(\tR\x07version\x12\x16\n\x06\x66lavor\x18\x03 \x01(\tR\x06\x66lavor\"\'\n\x0bRuntimeType\x12\t\n\x05OTHER\x10\x00\x12\r\n\tFLYTE_SDK\x10\x01\"\xf5\x04\n\x0cTaskMetadata\x12\"\n\x0c\x64iscoverable\x18\x01 \x01(\x08R\x0c\x64iscoverable\x12\x38\n\x07runtime\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.RuntimeMetadataR\x07runtime\x12\x33\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationR\x07timeout\x12\x36\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategyR\x07retries\x12+\n\x11\x64iscovery_version\x18\x06 \x01(\tR\x10\x64iscoveryVersion\x12\x38\n\x18\x64\x65precated_error_message\x18\x07 \x01(\tR\x16\x64\x65precatedErrorMessage\x12&\n\rinterruptible\x18\x08 \x01(\x08H\x00R\rinterruptible\x12-\n\x12\x63\x61\x63he_serializable\x18\t \x01(\x08R\x11\x63\x61\x63heSerializable\x12%\n\x0egenerates_deck\x18\n \x01(\x08R\rgeneratesDeck\x12\x39\n\x04tags\x18\x0b \x03(\x0b\x32%.flyteidl.core.TaskMetadata.TagsEntryR\x04tags\x12*\n\x11pod_template_name\x18\x0c \x01(\tR\x0fpodTemplateName\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x15\n\x13interruptible_value\"\x85\x05\n\x0cTaskTemplate\x12)\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierR\x02id\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x37\n\x08metadata\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadataR\x08metadata\x12;\n\tinterface\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterfaceR\tinterface\x12/\n\x06\x63ustom\x18\x05 \x01(\x0b\x32\x17.google.protobuf.StructR\x06\x63ustom\x12\x38\n\tcontainer\x18\x06 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00R\tcontainer\x12\x30\n\x07k8s_pod\x18\x11 \x01(\x0b\x32\x15.flyteidl.core.K8sPodH\x00R\x06k8sPod\x12&\n\x03sql\x18\x12 \x01(\x0b\x32\x12.flyteidl.core.SqlH\x00R\x03sql\x12*\n\x11task_type_version\x18\x07 \x01(\x05R\x0ftaskTypeVersion\x12I\n\x10security_context\x18\x08 \x01(\x0b\x32\x1e.flyteidl.core.SecurityContextR\x0fsecurityContext\x12?\n\x06\x63onfig\x18\x10 \x03(\x0b\x32\'.flyteidl.core.TaskTemplate.ConfigEntryR\x06\x63onfig\x1a\x39\n\x0b\x43onfigEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\x08\n\x06target\"6\n\rContainerPort\x12%\n\x0e\x63ontainer_port\x18\x01 \x01(\rR\rcontainerPort\"\xfc\x03\n\tContainer\x12\x14\n\x05image\x18\x01 \x01(\tR\x05image\x12\x18\n\x07\x63ommand\x18\x02 \x03(\tR\x07\x63ommand\x12\x12\n\x04\x61rgs\x18\x03 \x03(\tR\x04\x61rgs\x12\x36\n\tresources\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresources\x12-\n\x03\x65nv\x18\x05 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePairR\x03\x65nv\x12\x37\n\x06\x63onfig\x18\x06 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePairB\x02\x18\x01R\x06\x63onfig\x12\x32\n\x05ports\x18\x07 \x03(\x0b\x32\x1c.flyteidl.core.ContainerPortR\x05ports\x12\x41\n\x0b\x64\x61ta_config\x18\t \x01(\x0b\x32 .flyteidl.core.DataLoadingConfigR\ndataConfig\x12I\n\x0c\x61rchitecture\x18\n \x01(\x0e\x32%.flyteidl.core.Container.ArchitectureR\x0c\x61rchitecture\"I\n\x0c\x41rchitecture\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41MD64\x10\x01\x12\t\n\x05\x41RM64\x10\x02\x12\n\n\x06\x41RM_V6\x10\x03\x12\n\n\x06\x41RM_V7\x10\x04\"\xb5\x02\n\nIOStrategy\x12K\n\rdownload_mode\x18\x01 \x01(\x0e\x32&.flyteidl.core.IOStrategy.DownloadModeR\x0c\x64ownloadMode\x12\x45\n\x0bupload_mode\x18\x02 \x01(\x0e\x32$.flyteidl.core.IOStrategy.UploadModeR\nuploadMode\"L\n\x0c\x44ownloadMode\x12\x12\n\x0e\x44OWNLOAD_EAGER\x10\x00\x12\x13\n\x0f\x44OWNLOAD_STREAM\x10\x01\x12\x13\n\x0f\x44O_NOT_DOWNLOAD\x10\x02\"E\n\nUploadMode\x12\x12\n\x0eUPLOAD_ON_EXIT\x10\x00\x12\x10\n\x0cUPLOAD_EAGER\x10\x01\x12\x11\n\rDO_NOT_UPLOAD\x10\x02\"\xa7\x02\n\x11\x44\x61taLoadingConfig\x12\x18\n\x07\x65nabled\x18\x01 \x01(\x08R\x07\x65nabled\x12\x1d\n\ninput_path\x18\x02 \x01(\tR\tinputPath\x12\x1f\n\x0boutput_path\x18\x03 \x01(\tR\noutputPath\x12I\n\x06\x66ormat\x18\x04 \x01(\x0e\x32\x31.flyteidl.core.DataLoadingConfig.LiteralMapFormatR\x06\x66ormat\x12:\n\x0bio_strategy\x18\x05 \x01(\x0b\x32\x19.flyteidl.core.IOStrategyR\nioStrategy\"1\n\x10LiteralMapFormat\x12\x08\n\x04JSON\x10\x00\x12\x08\n\x04YAML\x10\x01\x12\t\n\x05PROTO\x10\x02\"z\n\x06K8sPod\x12<\n\x08metadata\x18\x01 \x01(\x0b\x32 .flyteidl.core.K8sObjectMetadataR\x08metadata\x12\x32\n\x08pod_spec\x18\x02 \x01(\x0b\x32\x17.google.protobuf.StructR\x07podSpec\"\xa9\x02\n\x11K8sObjectMetadata\x12\x44\n\x06labels\x18\x01 \x03(\x0b\x32,.flyteidl.core.K8sObjectMetadata.LabelsEntryR\x06labels\x12S\n\x0b\x61nnotations\x18\x02 \x03(\x0b\x32\x31.flyteidl.core.K8sObjectMetadata.AnnotationsEntryR\x0b\x61nnotations\x1a\x39\n\x0bLabelsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a>\n\x10\x41nnotationsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"\x92\x01\n\x03Sql\x12\x1c\n\tstatement\x18\x01 \x01(\tR\tstatement\x12\x34\n\x07\x64ialect\x18\x02 \x01(\x0e\x32\x1a.flyteidl.core.Sql.DialectR\x07\x64ialect\"7\n\x07\x44ialect\x12\r\n\tUNDEFINED\x10\x00\x12\x08\n\x04\x41NSI\x10\x01\x12\x08\n\x04HIVE\x10\x02\x12\t\n\x05OTHER\x10\x03\x42\xaa\x01\n\x11\x63om.flyteidl.coreB\nTasksProtoP\x01Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\xa2\x02\x03\x46\x43X\xaa\x02\rFlyteidl.Core\xca\x02\rFlyteidl\\Core\xe2\x02\x19\x46lyteidl\\Core\\GPBMetadata\xea\x02\x0e\x46lyteidl::Coreb\x06proto3')
-=======
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/tasks.proto',
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x19\x66lyteidl/core/tasks.proto\x12\rflyteidl.core\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xb1\x02\n\tResources\x12\x38\n\x08requests\x18\x01 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntry\x12\x36\n\x06limits\x18\x02 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntry\x1aS\n\rResourceEntry\x12\x33\n\x04name\x18\x01 \x01(\x0e\x32%.flyteidl.core.Resources.ResourceName\x12\r\n\x05value\x18\x02 \x01(\t\"]\n\x0cResourceName\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43PU\x10\x01\x12\x07\n\x03GPU\x10\x02\x12\n\n\x06MEMORY\x10\x03\x12\x0b\n\x07STORAGE\x10\x04\x12\x15\n\x11\x45PHEMERAL_STORAGE\x10\x05\"\x95\x01\n\x0fRuntimeMetadata\x12\x38\n\x04type\x18\x01 \x01(\x0e\x32*.flyteidl.core.RuntimeMetadata.RuntimeType\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06\x66lavor\x18\x03 \x01(\t\"\'\n\x0bRuntimeType\x12\t\n\x05OTHER\x10\x00\x12\r\n\tFLYTE_SDK\x10\x01\"\xd1\x02\n\x0cTaskMetadata\x12\x14\n\x0c\x64iscoverable\x18\x01 \x01(\x08\x12/\n\x07runtime\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.RuntimeMetadata\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\x12\x19\n\x11\x64iscovery_version\x18\x06 \x01(\t\x12 \n\x18\x64\x65precated_error_message\x18\x07 \x01(\t\x12\x17\n\rinterruptible\x18\x08 \x01(\x08H\x00\x12\x1a\n\x12\x63\x61\x63he_serializable\x18\t \x01(\x08\x12\x16\n\x0egenerates_deck\x18\n \x01(\x08\x42\x15\n\x13interruptible_value\"\x90\x04\n\x0cTaskTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x0c\n\x04type\x18\x02 \x01(\t\x12-\n\x08metadata\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\x30\n\tinterface\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\'\n\x06\x63ustom\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12-\n\tcontainer\x18\x06 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00\x12(\n\x07k8s_pod\x18\x11 \x01(\x0b\x32\x15.flyteidl.core.K8sPodH\x00\x12!\n\x03sql\x18\x12 \x01(\x0b\x32\x12.flyteidl.core.SqlH\x00\x12\x19\n\x11task_type_version\x18\x07 \x01(\x05\x12\x38\n\x10security_context\x18\x08 \x01(\x0b\x32\x1e.flyteidl.core.SecurityContext\x12\x37\n\x06\x63onfig\x18\x10 \x03(\x0b\x32\'.flyteidl.core.TaskTemplate.ConfigEntry\x1a-\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06target\"\'\n\rContainerPort\x12\x16\n\x0e\x63ontainer_port\x18\x01 \x01(\r\"\xad\x03\n\tContainer\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x02 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x03 \x03(\t\x12+\n\tresources\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12(\n\x03\x65nv\x18\x05 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePair\x12/\n\x06\x63onfig\x18\x06 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePairB\x02\x18\x01\x12+\n\x05ports\x18\x07 \x03(\x0b\x32\x1c.flyteidl.core.ContainerPort\x12\x35\n\x0b\x64\x61ta_config\x18\t \x01(\x0b\x32 .flyteidl.core.DataLoadingConfig\x12;\n\x0c\x61rchitecture\x18\n \x01(\x0e\x32%.flyteidl.core.Container.Architecture\"I\n\x0c\x41rchitecture\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41MD64\x10\x01\x12\t\n\x05\x41RM64\x10\x02\x12\n\n\x06\x41RM_V6\x10\x03\x12\n\n\x06\x41RM_V7\x10\x04\"\x9b\x02\n\nIOStrategy\x12=\n\rdownload_mode\x18\x01 \x01(\x0e\x32&.flyteidl.core.IOStrategy.DownloadMode\x12\x39\n\x0bupload_mode\x18\x02 \x01(\x0e\x32$.flyteidl.core.IOStrategy.UploadMode\"L\n\x0c\x44ownloadMode\x12\x12\n\x0e\x44OWNLOAD_EAGER\x10\x00\x12\x13\n\x0f\x44OWNLOAD_STREAM\x10\x01\x12\x13\n\x0f\x44O_NOT_DOWNLOAD\x10\x02\"E\n\nUploadMode\x12\x12\n\x0eUPLOAD_ON_EXIT\x10\x00\x12\x10\n\x0cUPLOAD_EAGER\x10\x01\x12\x11\n\rDO_NOT_UPLOAD\x10\x02\"\xf3\x01\n\x11\x44\x61taLoadingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x12\n\ninput_path\x18\x02 \x01(\t\x12\x13\n\x0boutput_path\x18\x03 \x01(\t\x12\x41\n\x06\x66ormat\x18\x04 \x01(\x0e\x32\x31.flyteidl.core.DataLoadingConfig.LiteralMapFormat\x12.\n\x0bio_strategy\x18\x05 \x01(\x0b\x32\x19.flyteidl.core.IOStrategy\"1\n\x10LiteralMapFormat\x12\x08\n\x04JSON\x10\x00\x12\x08\n\x04YAML\x10\x01\x12\t\n\x05PROTO\x10\x02\"g\n\x06K8sPod\x12\x32\n\x08metadata\x18\x01 \x01(\x0b\x32 .flyteidl.core.K8sObjectMetadata\x12)\n\x08pod_spec\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"\xfc\x01\n\x11K8sObjectMetadata\x12<\n\x06labels\x18\x01 \x03(\x0b\x32,.flyteidl.core.K8sObjectMetadata.LabelsEntry\x12\x46\n\x0b\x61nnotations\x18\x02 \x03(\x0b\x32\x31.flyteidl.core.K8sObjectMetadata.AnnotationsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x03Sql\x12\x11\n\tstatement\x18\x01 \x01(\t\x12+\n\x07\x64ialect\x18\x02 \x01(\x0e\x32\x1a.flyteidl.core.Sql.Dialect\"7\n\x07\x44ialect\x12\r\n\tUNDEFINED\x10\x00\x12\x08\n\x04\x41NSI\x10\x01\x12\x08\n\x04HIVE\x10\x02\x12\t\n\x05OTHER\x10\x03\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x19\x66lyteidl/core/tasks.proto\x12\rflyteidl.core\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xb1\x02\n\tResources\x12\x38\n\x08requests\x18\x01 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntry\x12\x36\n\x06limits\x18\x02 \x03(\x0b\x32&.flyteidl.core.Resources.ResourceEntry\x1aS\n\rResourceEntry\x12\x33\n\x04name\x18\x01 \x01(\x0e\x32%.flyteidl.core.Resources.ResourceName\x12\r\n\x05value\x18\x02 \x01(\t\"]\n\x0cResourceName\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x43PU\x10\x01\x12\x07\n\x03GPU\x10\x02\x12\n\n\x06MEMORY\x10\x03\x12\x0b\n\x07STORAGE\x10\x04\x12\x15\n\x11\x45PHEMERAL_STORAGE\x10\x05\"\x95\x01\n\x0fRuntimeMetadata\x12\x38\n\x04type\x18\x01 \x01(\x0e\x32*.flyteidl.core.RuntimeMetadata.RuntimeType\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06\x66lavor\x18\x03 \x01(\t\"\'\n\x0bRuntimeType\x12\t\n\x05OTHER\x10\x00\x12\r\n\tFLYTE_SDK\x10\x01\"\xce\x03\n\x0cTaskMetadata\x12\x14\n\x0c\x64iscoverable\x18\x01 \x01(\x08\x12/\n\x07runtime\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.RuntimeMetadata\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\x12\x19\n\x11\x64iscovery_version\x18\x06 \x01(\t\x12 \n\x18\x64\x65precated_error_message\x18\x07 \x01(\t\x12\x17\n\rinterruptible\x18\x08 \x01(\x08H\x00\x12\x1a\n\x12\x63\x61\x63he_serializable\x18\t \x01(\x08\x12\x16\n\x0egenerates_deck\x18\n \x01(\x08\x12\x33\n\x04tags\x18\x0b \x03(\x0b\x32%.flyteidl.core.TaskMetadata.TagsEntry\x12\x19\n\x11pod_template_name\x18\x0c \x01(\t\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x15\n\x13interruptible_value\"\x90\x04\n\x0cTaskTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x0c\n\x04type\x18\x02 \x01(\t\x12-\n\x08metadata\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.TaskMetadata\x12\x30\n\tinterface\x18\x04 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\'\n\x06\x63ustom\x18\x05 \x01(\x0b\x32\x17.google.protobuf.Struct\x12-\n\tcontainer\x18\x06 \x01(\x0b\x32\x18.flyteidl.core.ContainerH\x00\x12(\n\x07k8s_pod\x18\x11 \x01(\x0b\x32\x15.flyteidl.core.K8sPodH\x00\x12!\n\x03sql\x18\x12 \x01(\x0b\x32\x12.flyteidl.core.SqlH\x00\x12\x19\n\x11task_type_version\x18\x07 \x01(\x05\x12\x38\n\x10security_context\x18\x08 \x01(\x0b\x32\x1e.flyteidl.core.SecurityContext\x12\x37\n\x06\x63onfig\x18\x10 \x03(\x0b\x32\'.flyteidl.core.TaskTemplate.ConfigEntry\x1a-\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06target\"\'\n\rContainerPort\x12\x16\n\x0e\x63ontainer_port\x18\x01 \x01(\r\"\xad\x03\n\tContainer\x12\r\n\x05image\x18\x01 \x01(\t\x12\x0f\n\x07\x63ommand\x18\x02 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x03 \x03(\t\x12+\n\tresources\x18\x04 \x01(\x0b\x32\x18.flyteidl.core.Resources\x12(\n\x03\x65nv\x18\x05 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePair\x12/\n\x06\x63onfig\x18\x06 \x03(\x0b\x32\x1b.flyteidl.core.KeyValuePairB\x02\x18\x01\x12+\n\x05ports\x18\x07 \x03(\x0b\x32\x1c.flyteidl.core.ContainerPort\x12\x35\n\x0b\x64\x61ta_config\x18\t \x01(\x0b\x32 .flyteidl.core.DataLoadingConfig\x12;\n\x0c\x61rchitecture\x18\n \x01(\x0e\x32%.flyteidl.core.Container.Architecture\"I\n\x0c\x41rchitecture\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41MD64\x10\x01\x12\t\n\x05\x41RM64\x10\x02\x12\n\n\x06\x41RM_V6\x10\x03\x12\n\n\x06\x41RM_V7\x10\x04\"\x9b\x02\n\nIOStrategy\x12=\n\rdownload_mode\x18\x01 \x01(\x0e\x32&.flyteidl.core.IOStrategy.DownloadMode\x12\x39\n\x0bupload_mode\x18\x02 \x01(\x0e\x32$.flyteidl.core.IOStrategy.UploadMode\"L\n\x0c\x44ownloadMode\x12\x12\n\x0e\x44OWNLOAD_EAGER\x10\x00\x12\x13\n\x0f\x44OWNLOAD_STREAM\x10\x01\x12\x13\n\x0f\x44O_NOT_DOWNLOAD\x10\x02\"E\n\nUploadMode\x12\x12\n\x0eUPLOAD_ON_EXIT\x10\x00\x12\x10\n\x0cUPLOAD_EAGER\x10\x01\x12\x11\n\rDO_NOT_UPLOAD\x10\x02\"\xf3\x01\n\x11\x44\x61taLoadingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x12\n\ninput_path\x18\x02 \x01(\t\x12\x13\n\x0boutput_path\x18\x03 \x01(\t\x12\x41\n\x06\x66ormat\x18\x04 \x01(\x0e\x32\x31.flyteidl.core.DataLoadingConfig.LiteralMapFormat\x12.\n\x0bio_strategy\x18\x05 \x01(\x0b\x32\x19.flyteidl.core.IOStrategy\"1\n\x10LiteralMapFormat\x12\x08\n\x04JSON\x10\x00\x12\x08\n\x04YAML\x10\x01\x12\t\n\x05PROTO\x10\x02\"g\n\x06K8sPod\x12\x32\n\x08metadata\x18\x01 \x01(\x0b\x32 .flyteidl.core.K8sObjectMetadata\x12)\n\x08pod_spec\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"\xfc\x01\n\x11K8sObjectMetadata\x12<\n\x06labels\x18\x01 \x03(\x0b\x32,.flyteidl.core.K8sObjectMetadata.LabelsEntry\x12\x46\n\x0b\x61nnotations\x18\x02 \x03(\x0b\x32\x31.flyteidl.core.K8sObjectMetadata.AnnotationsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x03Sql\x12\x11\n\tstatement\x18\x01 \x01(\t\x12+\n\x07\x64ialect\x18\x02 \x01(\x0e\x32\x1a.flyteidl.core.Sql.Dialect\"7\n\x07\x44ialect\x12\r\n\tUNDEFINED\x10\x00\x12\x08\n\x04\x41NSI\x10\x01\x12\x08\n\x04HIVE\x10\x02\x12\t\n\x05OTHER\x10\x03\x42\x36Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_security__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
 
 
-<<<<<<< HEAD
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\021com.flyteidl.coreB\nTasksProtoP\001Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\242\002\003FCX\252\002\rFlyteidl.Core\312\002\rFlyteidl\\Core\342\002\031Flyteidl\\Core\\GPBMetadata\352\002\016Flyteidl::Core'
-  _TASKMETADATA_TAGSENTRY._options = None
-  _TASKMETADATA_TAGSENTRY._serialized_options = b'8\001'
-  _TASKTEMPLATE_CONFIGENTRY._options = None
-  _TASKTEMPLATE_CONFIGENTRY._serialized_options = b'8\001'
-  _CONTAINER.fields_by_name['config']._options = None
-  _CONTAINER.fields_by_name['config']._serialized_options = b'\030\001'
-  _K8SOBJECTMETADATA_LABELSENTRY._options = None
-  _K8SOBJECTMETADATA_LABELSENTRY._serialized_options = b'8\001'
-  _K8SOBJECTMETADATA_ANNOTATIONSENTRY._options = None
-  _K8SOBJECTMETADATA_ANNOTATIONSENTRY._serialized_options = b'8\001'
-  _RESOURCES._serialized_start=230
-  _RESOURCES._serialized_end=566
-  _RESOURCES_RESOURCEENTRY._serialized_start=375
-  _RESOURCES_RESOURCEENTRY._serialized_end=471
-  _RESOURCES_RESOURCENAME._serialized_start=473
-  _RESOURCES_RESOURCENAME._serialized_end=566
-  _RUNTIMEMETADATA._serialized_start=569
-  _RUNTIMEMETADATA._serialized_end=741
-  _RUNTIMEMETADATA_RUNTIMETYPE._serialized_start=702
-  _RUNTIMEMETADATA_RUNTIMETYPE._serialized_end=741
-  _TASKMETADATA._serialized_start=744
-  _TASKMETADATA._serialized_end=1373
-  _TASKMETADATA_TAGSENTRY._serialized_start=1295
-  _TASKMETADATA_TAGSENTRY._serialized_end=1350
-  _TASKTEMPLATE._serialized_start=1376
-  _TASKTEMPLATE._serialized_end=2021
-  _TASKTEMPLATE_CONFIGENTRY._serialized_start=1954
-  _TASKTEMPLATE_CONFIGENTRY._serialized_end=2011
-  _CONTAINERPORT._serialized_start=2023
-  _CONTAINERPORT._serialized_end=2077
-  _CONTAINER._serialized_start=2080
-  _CONTAINER._serialized_end=2588
-  _CONTAINER_ARCHITECTURE._serialized_start=2515
-  _CONTAINER_ARCHITECTURE._serialized_end=2588
-  _IOSTRATEGY._serialized_start=2591
-  _IOSTRATEGY._serialized_end=2900
-  _IOSTRATEGY_DOWNLOADMODE._serialized_start=2753
-  _IOSTRATEGY_DOWNLOADMODE._serialized_end=2829
-  _IOSTRATEGY_UPLOADMODE._serialized_start=2831
-  _IOSTRATEGY_UPLOADMODE._serialized_end=2900
-  _DATALOADINGCONFIG._serialized_start=2903
-  _DATALOADINGCONFIG._serialized_end=3198
-  _DATALOADINGCONFIG_LITERALMAPFORMAT._serialized_start=3149
-  _DATALOADINGCONFIG_LITERALMAPFORMAT._serialized_end=3198
-  _K8SPOD._serialized_start=3200
-  _K8SPOD._serialized_end=3322
-  _K8SOBJECTMETADATA._serialized_start=3325
-  _K8SOBJECTMETADATA._serialized_end=3622
-  _K8SOBJECTMETADATA_LABELSENTRY._serialized_start=3501
-  _K8SOBJECTMETADATA_LABELSENTRY._serialized_end=3558
-  _K8SOBJECTMETADATA_ANNOTATIONSENTRY._serialized_start=3560
-  _K8SOBJECTMETADATA_ANNOTATIONSENTRY._serialized_end=3622
-  _SQL._serialized_start=3625
-  _SQL._serialized_end=3771
-  _SQL_DIALECT._serialized_start=3716
-  _SQL_DIALECT._serialized_end=3771
-=======
 
 _RESOURCES_RESOURCENAME = _descriptor.EnumDescriptor(
   name='ResourceName',
@@ -185,8 +121,8 @@ _CONTAINER_ARCHITECTURE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1958,
-  serialized_end=2031,
+  serialized_start=2083,
+  serialized_end=2156,
 )
 _sym_db.RegisterEnumDescriptor(_CONTAINER_ARCHITECTURE)
 
@@ -211,8 +147,8 @@ _IOSTRATEGY_DOWNLOADMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2170,
-  serialized_end=2246,
+  serialized_start=2295,
+  serialized_end=2371,
 )
 _sym_db.RegisterEnumDescriptor(_IOSTRATEGY_DOWNLOADMODE)
 
@@ -237,8 +173,8 @@ _IOSTRATEGY_UPLOADMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2248,
-  serialized_end=2317,
+  serialized_start=2373,
+  serialized_end=2442,
 )
 _sym_db.RegisterEnumDescriptor(_IOSTRATEGY_UPLOADMODE)
 
@@ -263,8 +199,8 @@ _DATALOADINGCONFIG_LITERALMAPFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2514,
-  serialized_end=2563,
+  serialized_start=2639,
+  serialized_end=2688,
 )
 _sym_db.RegisterEnumDescriptor(_DATALOADINGCONFIG_LITERALMAPFORMAT)
 
@@ -293,8 +229,8 @@ _SQL_DIALECT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2996,
-  serialized_end=3051,
+  serialized_start=3121,
+  serialized_end=3176,
 )
 _sym_db.RegisterEnumDescriptor(_SQL_DIALECT)
 
@@ -421,6 +357,43 @@ _RUNTIMEMETADATA = _descriptor.Descriptor(
 )
 
 
+_TASKMETADATA_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='flyteidl.core.TaskMetadata.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.core.TaskMetadata.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.core.TaskMetadata.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1086,
+  serialized_end=1129,
+)
+
 _TASKMETADATA = _descriptor.Descriptor(
   name='TaskMetadata',
   full_name='flyteidl.core.TaskMetadata',
@@ -491,10 +464,24 @@ _TASKMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='flyteidl.core.TaskMetadata.tags', index=9,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pod_template_name', full_name='flyteidl.core.TaskMetadata.pod_template_name', index=10,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_TASKMETADATA_TAGSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -507,7 +494,7 @@ _TASKMETADATA = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=690,
-  serialized_end=1027,
+  serialized_end=1152,
 )
 
 
@@ -544,8 +531,8 @@ _TASKTEMPLATE_CONFIGENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1503,
-  serialized_end=1548,
+  serialized_start=1628,
+  serialized_end=1673,
 )
 
 _TASKTEMPLATE = _descriptor.Descriptor(
@@ -647,8 +634,8 @@ _TASKTEMPLATE = _descriptor.Descriptor(
       name='target', full_name='flyteidl.core.TaskTemplate.target',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1030,
-  serialized_end=1558,
+  serialized_start=1155,
+  serialized_end=1683,
 )
 
 
@@ -678,8 +665,8 @@ _CONTAINERPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1560,
-  serialized_end=1599,
+  serialized_start=1685,
+  serialized_end=1724,
 )
 
 
@@ -766,8 +753,8 @@ _CONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1602,
-  serialized_end=2031,
+  serialized_start=1727,
+  serialized_end=2156,
 )
 
 
@@ -806,8 +793,8 @@ _IOSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2034,
-  serialized_end=2317,
+  serialized_start=2159,
+  serialized_end=2442,
 )
 
 
@@ -866,8 +853,8 @@ _DATALOADINGCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2320,
-  serialized_end=2563,
+  serialized_start=2445,
+  serialized_end=2688,
 )
 
 
@@ -904,8 +891,8 @@ _K8SPOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2565,
-  serialized_end=2668,
+  serialized_start=2690,
+  serialized_end=2793,
 )
 
 
@@ -942,8 +929,8 @@ _K8SOBJECTMETADATA_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2826,
-  serialized_end=2871,
+  serialized_start=2951,
+  serialized_end=2996,
 )
 
 _K8SOBJECTMETADATA_ANNOTATIONSENTRY = _descriptor.Descriptor(
@@ -979,8 +966,8 @@ _K8SOBJECTMETADATA_ANNOTATIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2873,
-  serialized_end=2923,
+  serialized_start=2998,
+  serialized_end=3048,
 )
 
 _K8SOBJECTMETADATA = _descriptor.Descriptor(
@@ -1016,8 +1003,8 @@ _K8SOBJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2671,
-  serialized_end=2923,
+  serialized_start=2796,
+  serialized_end=3048,
 )
 
 
@@ -1055,8 +1042,8 @@ _SQL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2925,
-  serialized_end=3051,
+  serialized_start=3050,
+  serialized_end=3176,
 )
 
 _RESOURCES_RESOURCEENTRY.fields_by_name['name'].enum_type = _RESOURCES_RESOURCENAME
@@ -1066,9 +1053,11 @@ _RESOURCES.fields_by_name['limits'].message_type = _RESOURCES_RESOURCEENTRY
 _RESOURCES_RESOURCENAME.containing_type = _RESOURCES
 _RUNTIMEMETADATA.fields_by_name['type'].enum_type = _RUNTIMEMETADATA_RUNTIMETYPE
 _RUNTIMEMETADATA_RUNTIMETYPE.containing_type = _RUNTIMEMETADATA
+_TASKMETADATA_TAGSENTRY.containing_type = _TASKMETADATA
 _TASKMETADATA.fields_by_name['runtime'].message_type = _RUNTIMEMETADATA
 _TASKMETADATA.fields_by_name['timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _TASKMETADATA.fields_by_name['retries'].message_type = flyteidl_dot_core_dot_literals__pb2._RETRYSTRATEGY
+_TASKMETADATA.fields_by_name['tags'].message_type = _TASKMETADATA_TAGSENTRY
 _TASKMETADATA.oneofs_by_name['interruptible_value'].fields.append(
   _TASKMETADATA.fields_by_name['interruptible'])
 _TASKMETADATA.fields_by_name['interruptible'].containing_oneof = _TASKMETADATA.oneofs_by_name['interruptible_value']
@@ -1149,11 +1138,19 @@ RuntimeMetadata = _reflection.GeneratedProtocolMessageType('RuntimeMetadata', (_
 _sym_db.RegisterMessage(RuntimeMetadata)
 
 TaskMetadata = _reflection.GeneratedProtocolMessageType('TaskMetadata', (_message.Message,), dict(
+
+  TagsEntry = _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _TASKMETADATA_TAGSENTRY,
+    __module__ = 'flyteidl.core.tasks_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.core.TaskMetadata.TagsEntry)
+    ))
+  ,
   DESCRIPTOR = _TASKMETADATA,
   __module__ = 'flyteidl.core.tasks_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.core.TaskMetadata)
   ))
 _sym_db.RegisterMessage(TaskMetadata)
+_sym_db.RegisterMessage(TaskMetadata.TagsEntry)
 
 TaskTemplate = _reflection.GeneratedProtocolMessageType('TaskTemplate', (_message.Message,), dict(
 
@@ -1237,9 +1234,9 @@ _sym_db.RegisterMessage(Sql)
 
 
 DESCRIPTOR._options = None
+_TASKMETADATA_TAGSENTRY._options = None
 _TASKTEMPLATE_CONFIGENTRY._options = None
 _CONTAINER.fields_by_name['config']._options = None
 _K8SOBJECTMETADATA_LABELSENTRY._options = None
 _K8SOBJECTMETADATA_ANNOTATIONSENTRY._options = None
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
 # @@protoc_insertion_point(module_scope)

@@ -16,37 +16,16 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-<<<<<<< HEAD
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\x1a\x1cgoogle/protobuf/struct.proto\"B\n\x10SparkApplication\".\n\x04Type\x12\n\n\x06PYTHON\x10\x00\x12\x08\n\x04JAVA\x10\x01\x12\t\n\x05SCALA\x10\x02\x12\x05\n\x01R\x10\x03\"\xfe\x04\n\x08SparkJob\x12Q\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32\'.flyteidl.plugins.SparkApplication.TypeR\x0f\x61pplicationType\x12\x30\n\x13mainApplicationFile\x18\x02 \x01(\tR\x13mainApplicationFile\x12\x1c\n\tmainClass\x18\x03 \x01(\tR\tmainClass\x12G\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntryR\tsparkConf\x12J\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntryR\nhadoopConf\x12\"\n\x0c\x65xecutorPath\x18\x06 \x01(\tR\x0c\x65xecutorPath\x12?\n\x0e\x64\x61tabricksConf\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructR\x0e\x64\x61tabricksConf\x12(\n\x0f\x64\x61tabricksToken\x18\x08 \x01(\tR\x0f\x64\x61tabricksToken\x12.\n\x12\x64\x61tabricksInstance\x18\t \x01(\tR\x12\x64\x61tabricksInstance\x1a<\n\x0eSparkConfEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a=\n\x0fHadoopConfEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x42\xbc\x01\n\x14\x63om.flyteidl.pluginsB\nSparkProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\xa2\x02\x03\x46PX\xaa\x02\x10\x46lyteidl.Plugins\xca\x02\x10\x46lyteidl\\Plugins\xe2\x02\x1c\x46lyteidl\\Plugins\\GPBMetadata\xea\x02\x11\x46lyteidl::Pluginsb\x06proto3')
-=======
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/spark.proto',
   package='flyteidl.plugins',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\"B\n\x10SparkApplication\".\n\x04Type\x12\n\n\x06PYTHON\x10\x00\x12\x08\n\x04JAVA\x10\x01\x12\t\n\x05SCALA\x10\x02\x12\x05\n\x01R\x10\x03\"\xf5\x02\n\x08SparkJob\x12@\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32\'.flyteidl.plugins.SparkApplication.Type\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12<\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntry\x12>\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntry\x12\x14\n\x0c\x65xecutorPath\x18\x06 \x01(\t\x1a\x30\n\x0eSparkConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fHadoopConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
-)
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
+  serialized_pb=_b('\n\x1c\x66lyteidl/plugins/spark.proto\x12\x10\x66lyteidl.plugins\x1a\x1cgoogle/protobuf/struct.proto\"B\n\x10SparkApplication\".\n\x04Type\x12\n\n\x06PYTHON\x10\x00\x12\x08\n\x04JAVA\x10\x01\x12\t\n\x05SCALA\x10\x02\x12\x05\n\x01R\x10\x03\"\xdb\x03\n\x08SparkJob\x12@\n\x0f\x61pplicationType\x18\x01 \x01(\x0e\x32\'.flyteidl.plugins.SparkApplication.Type\x12\x1b\n\x13mainApplicationFile\x18\x02 \x01(\t\x12\x11\n\tmainClass\x18\x03 \x01(\t\x12<\n\tsparkConf\x18\x04 \x03(\x0b\x32).flyteidl.plugins.SparkJob.SparkConfEntry\x12>\n\nhadoopConf\x18\x05 \x03(\x0b\x32*.flyteidl.plugins.SparkJob.HadoopConfEntry\x12\x14\n\x0c\x65xecutorPath\x18\x06 \x01(\t\x12/\n\x0e\x64\x61tabricksConf\x18\x07 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x17\n\x0f\x64\x61tabricksToken\x18\x08 \x01(\t\x12\x1a\n\x12\x64\x61tabricksInstance\x18\t \x01(\t\x1a\x30\n\x0eSparkConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fHadoopConfEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
 
-<<<<<<< HEAD
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.pluginsB\nSparkProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\242\002\003FPX\252\002\020Flyteidl.Plugins\312\002\020Flyteidl\\Plugins\342\002\034Flyteidl\\Plugins\\GPBMetadata\352\002\021Flyteidl::Plugins'
-  _SPARKJOB_SPARKCONFENTRY._options = None
-  _SPARKJOB_SPARKCONFENTRY._serialized_options = b'8\001'
-  _SPARKJOB_HADOOPCONFENTRY._options = None
-  _SPARKJOB_HADOOPCONFENTRY._serialized_options = b'8\001'
-  _SPARKAPPLICATION._serialized_start=80
-  _SPARKAPPLICATION._serialized_end=146
-  _SPARKAPPLICATION_TYPE._serialized_start=100
-  _SPARKAPPLICATION_TYPE._serialized_end=146
-  _SPARKJOB._serialized_start=149
-  _SPARKJOB._serialized_end=787
-  _SPARKJOB_SPARKCONFENTRY._serialized_start=664
-  _SPARKJOB_SPARKCONFENTRY._serialized_end=724
-  _SPARKJOB_HADOOPCONFENTRY._serialized_start=726
-  _SPARKJOB_HADOOPCONFENTRY._serialized_end=787
-=======
 
 _SPARKAPPLICATION_TYPE = _descriptor.EnumDescriptor(
   name='Type',
@@ -73,8 +52,8 @@ _SPARKAPPLICATION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=70,
-  serialized_end=116,
+  serialized_start=100,
+  serialized_end=146,
 )
 _sym_db.RegisterEnumDescriptor(_SPARKAPPLICATION_TYPE)
 
@@ -99,8 +78,8 @@ _SPARKAPPLICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=50,
-  serialized_end=116,
+  serialized_start=80,
+  serialized_end=146,
 )
 
 
@@ -137,8 +116,8 @@ _SPARKJOB_SPARKCONFENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=393,
-  serialized_end=441,
+  serialized_start=525,
+  serialized_end=573,
 )
 
 _SPARKJOB_HADOOPCONFENTRY = _descriptor.Descriptor(
@@ -174,8 +153,8 @@ _SPARKJOB_HADOOPCONFENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=492,
+  serialized_start=575,
+  serialized_end=624,
 )
 
 _SPARKJOB = _descriptor.Descriptor(
@@ -227,6 +206,27 @@ _SPARKJOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='databricksConf', full_name='flyteidl.plugins.SparkJob.databricksConf', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='databricksToken', full_name='flyteidl.plugins.SparkJob.databricksToken', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='databricksInstance', full_name='flyteidl.plugins.SparkJob.databricksInstance', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -239,8 +239,8 @@ _SPARKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=492,
+  serialized_start=149,
+  serialized_end=624,
 )
 
 _SPARKAPPLICATION_TYPE.containing_type = _SPARKAPPLICATION
@@ -249,6 +249,7 @@ _SPARKJOB_HADOOPCONFENTRY.containing_type = _SPARKJOB
 _SPARKJOB.fields_by_name['applicationType'].enum_type = _SPARKAPPLICATION_TYPE
 _SPARKJOB.fields_by_name['sparkConf'].message_type = _SPARKJOB_SPARKCONFENTRY
 _SPARKJOB.fields_by_name['hadoopConf'].message_type = _SPARKJOB_HADOOPCONFENTRY
+_SPARKJOB.fields_by_name['databricksConf'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 DESCRIPTOR.message_types_by_name['SparkApplication'] = _SPARKAPPLICATION
 DESCRIPTOR.message_types_by_name['SparkJob'] = _SPARKJOB
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -287,5 +288,4 @@ _sym_db.RegisterMessage(SparkJob.HadoopConfEntry)
 DESCRIPTOR._options = None
 _SPARKJOB_SPARKCONFENTRY._options = None
 _SPARKJOB_HADOOPCONFENTRY._options = None
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
 # @@protoc_insertion_point(module_scope)

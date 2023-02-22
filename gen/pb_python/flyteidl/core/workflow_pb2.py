@@ -24,62 +24,16 @@ from flyteidl.core import security_pb2 as flyteidl_dot_core_dot_security__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
-<<<<<<< HEAD
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x66lyteidl/core/workflow.proto\x12\rflyteidl.core\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\"{\n\x07IfBlock\x12>\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpressionR\tcondition\x12\x30\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.NodeR\x08thenNode\"\xd4\x01\n\x0bIfElseBlock\x12*\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlockR\x04\x63\x61se\x12,\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlockR\x05other\x12\x32\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00R\x08\x65lseNode\x12,\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00R\x05\x65rrorB\t\n\x07\x64\x65\x66\x61ult\"A\n\nBranchNode\x12\x33\n\x07if_else\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlockR\x06ifElse\"\x97\x01\n\x08TaskNode\x12>\n\x0creference_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00R\x0breferenceId\x12>\n\toverrides\x18\x02 \x01(\x0b\x32 .flyteidl.core.TaskNodeOverridesR\toverridesB\x0b\n\treference\"\xa6\x01\n\x0cWorkflowNode\x12\x42\n\x0elaunchplan_ref\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00R\rlaunchplanRef\x12\x45\n\x10sub_workflow_ref\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00R\x0esubWorkflowRefB\x0b\n\treference\"/\n\x10\x41pproveCondition\x12\x1b\n\tsignal_id\x18\x01 \x01(\tR\x08signalId\"\x90\x01\n\x0fSignalCondition\x12\x1b\n\tsignal_id\x18\x01 \x01(\tR\x08signalId\x12.\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralTypeR\x04type\x12\x30\n\x14output_variable_name\x18\x03 \x01(\tR\x12outputVariableName\"G\n\x0eSleepCondition\x12\x35\n\x08\x64uration\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationR\x08\x64uration\"\xc5\x01\n\x08GateNode\x12;\n\x07\x61pprove\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.ApproveConditionH\x00R\x07\x61pprove\x12\x38\n\x06signal\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.SignalConditionH\x00R\x06signal\x12\x35\n\x05sleep\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.SleepConditionH\x00R\x05sleepB\x0b\n\tcondition\"\xce\x01\n\x0cNodeMetadata\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x33\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationR\x07timeout\x12\x36\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategyR\x07retries\x12&\n\rinterruptible\x18\x06 \x01(\x08H\x00R\rinterruptibleB\x15\n\x13interruptible_value\"/\n\x05\x41lias\x12\x10\n\x03var\x18\x01 \x01(\tR\x03var\x12\x14\n\x05\x61lias\x18\x02 \x01(\tR\x05\x61lias\"\xe4\x03\n\x04Node\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x37\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadataR\x08metadata\x12.\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.BindingR\x06inputs\x12*\n\x11upstream_node_ids\x18\x04 \x03(\tR\x0fupstreamNodeIds\x12;\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.AliasR\routputAliases\x12\x36\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00R\x08taskNode\x12\x42\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00R\x0cworkflowNode\x12<\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00R\nbranchNode\x12\x36\n\tgate_node\x18\t \x01(\x0b\x32\x17.flyteidl.core.GateNodeH\x00R\x08gateNodeB\x08\n\x06target\"\xfc\x02\n\x10WorkflowMetadata\x12M\n\x12quality_of_service\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.QualityOfServiceR\x10qualityOfService\x12N\n\non_failure\x18\x02 \x01(\x0e\x32/.flyteidl.core.WorkflowMetadata.OnFailurePolicyR\tonFailure\x12=\n\x04tags\x18\x03 \x03(\x0b\x32).flyteidl.core.WorkflowMetadata.TagsEntryR\x04tags\x1a\x37\n\tTagsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\"Q\n\x0fOnFailurePolicy\x12\x14\n\x10\x46\x41IL_IMMEDIATELY\x10\x00\x12(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\x10\x01\"@\n\x18WorkflowMetadataDefaults\x12$\n\rinterruptible\x18\x01 \x01(\x08R\rinterruptible\"\xa2\x03\n\x10WorkflowTemplate\x12)\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierR\x02id\x12;\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadataR\x08metadata\x12;\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterfaceR\tinterface\x12)\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.NodeR\x05nodes\x12\x30\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.BindingR\x07outputs\x12\x36\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.NodeR\x0b\x66\x61ilureNode\x12T\n\x11metadata_defaults\x18\x07 \x01(\x0b\x32\'.flyteidl.core.WorkflowMetadataDefaultsR\x10metadataDefaults\"K\n\x11TaskNodeOverrides\x12\x36\n\tresources\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.ResourcesR\tresourcesB\xad\x01\n\x11\x63om.flyteidl.coreB\rWorkflowProtoP\x01Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\xa2\x02\x03\x46\x43X\xaa\x02\rFlyteidl.Core\xca\x02\rFlyteidl\\Core\xe2\x02\x19\x46lyteidl\\Core\\GPBMetadata\xea\x02\x0e\x46lyteidl::Coreb\x06proto3')
-=======
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/core/workflow.proto',
   package='flyteidl.core',
   syntax='proto3',
   serialized_options=_b('Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core'),
-  serialized_pb=_b('\n\x1c\x66lyteidl/core/workflow.proto\x12\rflyteidl.core\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\"f\n\x07IfBlock\x12\x33\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpression\x12&\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.Node\"\xb6\x01\n\x0bIfElseBlock\x12$\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlock\x12%\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlock\x12(\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"9\n\nBranchNode\x12+\n\x07if_else\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlock\"\x7f\n\x08TaskNode\x12\x31\n\x0creference_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x33\n\toverrides\x18\x02 \x01(\x0b\x32 .flyteidl.core.TaskNodeOverridesB\x0b\n\treference\"\x87\x01\n\x0cWorkflowNode\x12\x33\n\x0elaunchplan_ref\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x35\n\x10sub_workflow_ref\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"%\n\x10\x41pproveCondition\x12\x11\n\tsignal_id\x18\x01 \x01(\t\"l\n\x0fSignalCondition\x12\x11\n\tsignal_id\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x1c\n\x14output_variable_name\x18\x03 \x01(\t\"=\n\x0eSleepCondition\x12+\n\x08\x64uration\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xad\x01\n\x08GateNode\x12\x32\n\x07\x61pprove\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.ApproveConditionH\x00\x12\x30\n\x06signal\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.SignalConditionH\x00\x12.\n\x05sleep\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.SleepConditionH\x00\x42\x0b\n\tcondition\"\xa7\x01\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\x12\x17\n\rinterruptible\x18\x06 \x01(\x08H\x00\x42\x15\n\x13interruptible_value\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x80\x03\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12&\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12,\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.Alias\x12,\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x12\x34\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00\x12\x30\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00\x12,\n\tgate_node\x18\t \x01(\x0b\x32\x17.flyteidl.core.GateNodeH\x00\x42\x08\n\x06target\"\xe7\x01\n\x10WorkflowMetadata\x12;\n\x12quality_of_service\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.QualityOfService\x12\x43\n\non_failure\x18\x02 \x01(\x0e\x32/.flyteidl.core.WorkflowMetadata.OnFailurePolicy\"Q\n\x0fOnFailurePolicy\x12\x14\n\x10\x46\x41IL_IMMEDIATELY\x10\x00\x12(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\x10\x01\"1\n\x18WorkflowMetadataDefaults\x12\x15\n\rinterruptible\x18\x01 \x01(\x08\"\xda\x02\n\x10WorkflowTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x31\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadata\x12\x30\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\"\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\'\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12)\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.Node\x12\x42\n\x11metadata_defaults\x18\x07 \x01(\x0b\x32\'.flyteidl.core.WorkflowMetadataDefaults\"@\n\x11TaskNodeOverrides\x12+\n\tresources\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.ResourcesB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
+  serialized_pb=_b('\n\x1c\x66lyteidl/core/workflow.proto\x12\rflyteidl.core\x1a\x1d\x66lyteidl/core/condition.proto\x1a\x1d\x66lyteidl/core/execution.proto\x1a\x1e\x66lyteidl/core/identifier.proto\x1a\x1d\x66lyteidl/core/interface.proto\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x19\x66lyteidl/core/types.proto\x1a\x1c\x66lyteidl/core/security.proto\x1a\x1egoogle/protobuf/duration.proto\"f\n\x07IfBlock\x12\x33\n\tcondition\x18\x01 \x01(\x0b\x32 .flyteidl.core.BooleanExpression\x12&\n\tthen_node\x18\x02 \x01(\x0b\x32\x13.flyteidl.core.Node\"\xb6\x01\n\x0bIfElseBlock\x12$\n\x04\x63\x61se\x18\x01 \x01(\x0b\x32\x16.flyteidl.core.IfBlock\x12%\n\x05other\x18\x02 \x03(\x0b\x32\x16.flyteidl.core.IfBlock\x12(\n\telse_node\x18\x03 \x01(\x0b\x32\x13.flyteidl.core.NodeH\x00\x12%\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x14.flyteidl.core.ErrorH\x00\x42\t\n\x07\x64\x65\x66\x61ult\"9\n\nBranchNode\x12+\n\x07if_else\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.IfElseBlock\"\x7f\n\x08TaskNode\x12\x31\n\x0creference_id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x33\n\toverrides\x18\x02 \x01(\x0b\x32 .flyteidl.core.TaskNodeOverridesB\x0b\n\treference\"\x87\x01\n\x0cWorkflowNode\x12\x33\n\x0elaunchplan_ref\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x12\x35\n\x10sub_workflow_ref\x18\x02 \x01(\x0b\x32\x19.flyteidl.core.IdentifierH\x00\x42\x0b\n\treference\"%\n\x10\x41pproveCondition\x12\x11\n\tsignal_id\x18\x01 \x01(\t\"l\n\x0fSignalCondition\x12\x11\n\tsignal_id\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0b\x32\x1a.flyteidl.core.LiteralType\x12\x1c\n\x14output_variable_name\x18\x03 \x01(\t\"=\n\x0eSleepCondition\x12+\n\x08\x64uration\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xad\x01\n\x08GateNode\x12\x32\n\x07\x61pprove\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.ApproveConditionH\x00\x12\x30\n\x06signal\x18\x02 \x01(\x0b\x32\x1e.flyteidl.core.SignalConditionH\x00\x12.\n\x05sleep\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.SleepConditionH\x00\x42\x0b\n\tcondition\"\xa7\x01\n\x0cNodeMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x07timeout\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12-\n\x07retries\x18\x05 \x01(\x0b\x32\x1c.flyteidl.core.RetryStrategy\x12\x17\n\rinterruptible\x18\x06 \x01(\x08H\x00\x42\x15\n\x13interruptible_value\"#\n\x05\x41lias\x12\x0b\n\x03var\x18\x01 \x01(\t\x12\r\n\x05\x61lias\x18\x02 \x01(\t\"\x80\x03\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n\x08metadata\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.NodeMetadata\x12&\n\x06inputs\x18\x03 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12\x19\n\x11upstream_node_ids\x18\x04 \x03(\t\x12,\n\x0eoutput_aliases\x18\x05 \x03(\x0b\x32\x14.flyteidl.core.Alias\x12,\n\ttask_node\x18\x06 \x01(\x0b\x32\x17.flyteidl.core.TaskNodeH\x00\x12\x34\n\rworkflow_node\x18\x07 \x01(\x0b\x32\x1b.flyteidl.core.WorkflowNodeH\x00\x12\x30\n\x0b\x62ranch_node\x18\x08 \x01(\x0b\x32\x19.flyteidl.core.BranchNodeH\x00\x12,\n\tgate_node\x18\t \x01(\x0b\x32\x17.flyteidl.core.GateNodeH\x00\x42\x08\n\x06target\"\xcd\x02\n\x10WorkflowMetadata\x12;\n\x12quality_of_service\x18\x01 \x01(\x0b\x32\x1f.flyteidl.core.QualityOfService\x12\x43\n\non_failure\x18\x02 \x01(\x0e\x32/.flyteidl.core.WorkflowMetadata.OnFailurePolicy\x12\x37\n\x04tags\x18\x03 \x03(\x0b\x32).flyteidl.core.WorkflowMetadata.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x0fOnFailurePolicy\x12\x14\n\x10\x46\x41IL_IMMEDIATELY\x10\x00\x12(\n$FAIL_AFTER_EXECUTABLE_NODES_COMPLETE\x10\x01\"1\n\x18WorkflowMetadataDefaults\x12\x15\n\rinterruptible\x18\x01 \x01(\x08\"\xda\x02\n\x10WorkflowTemplate\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.flyteidl.core.Identifier\x12\x31\n\x08metadata\x18\x02 \x01(\x0b\x32\x1f.flyteidl.core.WorkflowMetadata\x12\x30\n\tinterface\x18\x03 \x01(\x0b\x32\x1d.flyteidl.core.TypedInterface\x12\"\n\x05nodes\x18\x04 \x03(\x0b\x32\x13.flyteidl.core.Node\x12\'\n\x07outputs\x18\x05 \x03(\x0b\x32\x16.flyteidl.core.Binding\x12)\n\x0c\x66\x61ilure_node\x18\x06 \x01(\x0b\x32\x13.flyteidl.core.Node\x12\x42\n\x11metadata_defaults\x18\x07 \x01(\x0b\x32\'.flyteidl.core.WorkflowMetadataDefaults\"@\n\x11TaskNodeOverrides\x12+\n\tresources\x18\x01 \x01(\x0b\x32\x18.flyteidl.core.ResourcesB6Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/coreb\x06proto3')
   ,
   dependencies=[flyteidl_dot_core_dot_condition__pb2.DESCRIPTOR,flyteidl_dot_core_dot_execution__pb2.DESCRIPTOR,flyteidl_dot_core_dot_identifier__pb2.DESCRIPTOR,flyteidl_dot_core_dot_interface__pb2.DESCRIPTOR,flyteidl_dot_core_dot_literals__pb2.DESCRIPTOR,flyteidl_dot_core_dot_tasks__pb2.DESCRIPTOR,flyteidl_dot_core_dot_types__pb2.DESCRIPTOR,flyteidl_dot_core_dot_security__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
 
 
-<<<<<<< HEAD
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\021com.flyteidl.coreB\rWorkflowProtoP\001Z4github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/core\242\002\003FCX\252\002\rFlyteidl.Core\312\002\rFlyteidl\\Core\342\002\031Flyteidl\\Core\\GPBMetadata\352\002\016Flyteidl::Core'
-  _WORKFLOWMETADATA_TAGSENTRY._options = None
-  _WORKFLOWMETADATA_TAGSENTRY._serialized_options = b'8\001'
-  _IFBLOCK._serialized_start=318
-  _IFBLOCK._serialized_end=441
-  _IFELSEBLOCK._serialized_start=444
-  _IFELSEBLOCK._serialized_end=656
-  _BRANCHNODE._serialized_start=658
-  _BRANCHNODE._serialized_end=723
-  _TASKNODE._serialized_start=726
-  _TASKNODE._serialized_end=877
-  _WORKFLOWNODE._serialized_start=880
-  _WORKFLOWNODE._serialized_end=1046
-  _APPROVECONDITION._serialized_start=1048
-  _APPROVECONDITION._serialized_end=1095
-  _SIGNALCONDITION._serialized_start=1098
-  _SIGNALCONDITION._serialized_end=1242
-  _SLEEPCONDITION._serialized_start=1244
-  _SLEEPCONDITION._serialized_end=1315
-  _GATENODE._serialized_start=1318
-  _GATENODE._serialized_end=1515
-  _NODEMETADATA._serialized_start=1518
-  _NODEMETADATA._serialized_end=1724
-  _ALIAS._serialized_start=1726
-  _ALIAS._serialized_end=1773
-  _NODE._serialized_start=1776
-  _NODE._serialized_end=2260
-  _WORKFLOWMETADATA._serialized_start=2263
-  _WORKFLOWMETADATA._serialized_end=2643
-  _WORKFLOWMETADATA_TAGSENTRY._serialized_start=2505
-  _WORKFLOWMETADATA_TAGSENTRY._serialized_end=2560
-  _WORKFLOWMETADATA_ONFAILUREPOLICY._serialized_start=2562
-  _WORKFLOWMETADATA_ONFAILUREPOLICY._serialized_end=2643
-  _WORKFLOWMETADATADEFAULTS._serialized_start=2645
-  _WORKFLOWMETADATADEFAULTS._serialized_end=2709
-  _WORKFLOWTEMPLATE._serialized_start=2712
-  _WORKFLOWTEMPLATE._serialized_end=3130
-  _TASKNODEOVERRIDES._serialized_start=3132
-  _TASKNODEOVERRIDES._serialized_end=3207
-=======
 
 _WORKFLOWMETADATA_ONFAILUREPOLICY = _descriptor.EnumDescriptor(
   name='OnFailurePolicy',
@@ -98,8 +52,8 @@ _WORKFLOWMETADATA_ONFAILUREPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2066,
-  serialized_end=2147,
+  serialized_start=2168,
+  serialized_end=2249,
 )
 _sym_db.RegisterEnumDescriptor(_WORKFLOWMETADATA_ONFAILUREPOLICY)
 
@@ -648,6 +602,43 @@ _NODE = _descriptor.Descriptor(
 )
 
 
+_WORKFLOWMETADATA_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='flyteidl.core.WorkflowMetadata.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='flyteidl.core.WorkflowMetadata.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='flyteidl.core.WorkflowMetadata.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2123,
+  serialized_end=2166,
+)
+
 _WORKFLOWMETADATA = _descriptor.Descriptor(
   name='WorkflowMetadata',
   full_name='flyteidl.core.WorkflowMetadata',
@@ -669,10 +660,17 @@ _WORKFLOWMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='flyteidl.core.WorkflowMetadata.tags', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_WORKFLOWMETADATA_TAGSENTRY, ],
   enum_types=[
     _WORKFLOWMETADATA_ONFAILUREPOLICY,
   ],
@@ -683,7 +681,7 @@ _WORKFLOWMETADATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1916,
-  serialized_end=2147,
+  serialized_end=2249,
 )
 
 
@@ -713,8 +711,8 @@ _WORKFLOWMETADATADEFAULTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2149,
-  serialized_end=2198,
+  serialized_start=2251,
+  serialized_end=2300,
 )
 
 
@@ -786,8 +784,8 @@ _WORKFLOWTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2201,
-  serialized_end=2547,
+  serialized_start=2303,
+  serialized_end=2649,
 )
 
 
@@ -817,8 +815,8 @@ _TASKNODEOVERRIDES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2549,
-  serialized_end=2613,
+  serialized_start=2651,
+  serialized_end=2715,
 )
 
 _IFBLOCK.fields_by_name['condition'].message_type = flyteidl_dot_core_dot_condition__pb2._BOOLEANEXPRESSION
@@ -885,8 +883,10 @@ _NODE.fields_by_name['branch_node'].containing_oneof = _NODE.oneofs_by_name['tar
 _NODE.oneofs_by_name['target'].fields.append(
   _NODE.fields_by_name['gate_node'])
 _NODE.fields_by_name['gate_node'].containing_oneof = _NODE.oneofs_by_name['target']
+_WORKFLOWMETADATA_TAGSENTRY.containing_type = _WORKFLOWMETADATA
 _WORKFLOWMETADATA.fields_by_name['quality_of_service'].message_type = flyteidl_dot_core_dot_execution__pb2._QUALITYOFSERVICE
 _WORKFLOWMETADATA.fields_by_name['on_failure'].enum_type = _WORKFLOWMETADATA_ONFAILUREPOLICY
+_WORKFLOWMETADATA.fields_by_name['tags'].message_type = _WORKFLOWMETADATA_TAGSENTRY
 _WORKFLOWMETADATA_ONFAILUREPOLICY.containing_type = _WORKFLOWMETADATA
 _WORKFLOWTEMPLATE.fields_by_name['id'].message_type = flyteidl_dot_core_dot_identifier__pb2._IDENTIFIER
 _WORKFLOWTEMPLATE.fields_by_name['metadata'].message_type = _WORKFLOWMETADATA
@@ -999,11 +999,19 @@ Node = _reflection.GeneratedProtocolMessageType('Node', (_message.Message,), dic
 _sym_db.RegisterMessage(Node)
 
 WorkflowMetadata = _reflection.GeneratedProtocolMessageType('WorkflowMetadata', (_message.Message,), dict(
+
+  TagsEntry = _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _WORKFLOWMETADATA_TAGSENTRY,
+    __module__ = 'flyteidl.core.workflow_pb2'
+    # @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata.TagsEntry)
+    ))
+  ,
   DESCRIPTOR = _WORKFLOWMETADATA,
   __module__ = 'flyteidl.core.workflow_pb2'
   # @@protoc_insertion_point(class_scope:flyteidl.core.WorkflowMetadata)
   ))
 _sym_db.RegisterMessage(WorkflowMetadata)
+_sym_db.RegisterMessage(WorkflowMetadata.TagsEntry)
 
 WorkflowMetadataDefaults = _reflection.GeneratedProtocolMessageType('WorkflowMetadataDefaults', (_message.Message,), dict(
   DESCRIPTOR = _WORKFLOWMETADATADEFAULTS,
@@ -1028,5 +1036,5 @@ _sym_db.RegisterMessage(TaskNodeOverrides)
 
 
 DESCRIPTOR._options = None
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
+_WORKFLOWMETADATA_TAGSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

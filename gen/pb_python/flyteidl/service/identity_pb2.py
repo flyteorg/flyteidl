@@ -17,32 +17,16 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-<<<<<<< HEAD
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1f\x66lyteidl/service/identity.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x11\n\x0fUserInfoRequest\"\xa5\x02\n\x10UserInfoResponse\x12\x18\n\x07subject\x18\x01 \x01(\tR\x07subject\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12-\n\x12preferred_username\x18\x03 \x01(\tR\x11preferredUsername\x12\x1d\n\ngiven_name\x18\x04 \x01(\tR\tgivenName\x12\x1f\n\x0b\x66\x61mily_name\x18\x05 \x01(\tR\nfamilyName\x12\x14\n\x05\x65mail\x18\x06 \x01(\tR\x05\x65mail\x12\x18\n\x07picture\x18\x07 \x01(\tR\x07picture\x12\x44\n\x11\x61\x64\x64itional_claims\x18\x08 \x01(\x0b\x32\x17.google.protobuf.StructR\x10\x61\x64\x64itionalClaims2q\n\x0fIdentityService\x12^\n\x08UserInfo\x12!.flyteidl.service.UserInfoRequest\x1a\".flyteidl.service.UserInfoResponse\"\x0b\x82\xd3\xe4\x93\x02\x05\x12\x03/meB\xbf\x01\n\x14\x63om.flyteidl.serviceB\rIdentityProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
-=======
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/service/identity.proto',
   package='flyteidl.service',
   syntax='proto3',
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service'),
-  serialized_pb=_b('\n\x1f\x66lyteidl/service/identity.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a,protoc-gen-swagger/options/annotations.proto\"\x11\n\x0fUserInfoRequest\"\x96\x01\n\x10UserInfoResponse\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1a\n\x12preferred_username\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\r\n\x05\x65mail\x18\x06 \x01(\t\x12\x0f\n\x07picture\x18\x07 \x01(\t2\x9d\x01\n\x0fIdentityService\x12\x89\x01\n\x08UserInfo\x12!.flyteidl.service.UserInfoRequest\x1a\".flyteidl.service.UserInfoResponse\"6\x82\xd3\xe4\x93\x02\x05\x12\x03/me\x92\x41(\x1a&Retrieves authenticated identity info.B9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
+  serialized_pb=_b('\n\x1f\x66lyteidl/service/identity.proto\x12\x10\x66lyteidl.service\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x11\n\x0fUserInfoRequest\"\xca\x01\n\x10UserInfoResponse\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1a\n\x12preferred_username\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\r\n\x05\x65mail\x18\x06 \x01(\t\x12\x0f\n\x07picture\x18\x07 \x01(\t\x12\x32\n\x11\x61\x64\x64itional_claims\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct2q\n\x0fIdentityService\x12^\n\x08UserInfo\x12!.flyteidl.service.UserInfoRequest\x1a\".flyteidl.service.UserInfoResponse\"\x0b\x82\xd3\xe4\x93\x02\x05\x12\x03/meB9Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/serviceb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
 
-<<<<<<< HEAD
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.serviceB\rIdentityProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\242\002\003FSX\252\002\020Flyteidl.Service\312\002\020Flyteidl\\Service\342\002\034Flyteidl\\Service\\GPBMetadata\352\002\021Flyteidl::Service'
-  _IDENTITYSERVICE.methods_by_name['UserInfo']._options = None
-  _IDENTITYSERVICE.methods_by_name['UserInfo']._serialized_options = b'\202\323\344\223\002\005\022\003/me'
-  _USERINFOREQUEST._serialized_start=113
-  _USERINFOREQUEST._serialized_end=130
-  _USERINFORESPONSE._serialized_start=133
-  _USERINFORESPONSE._serialized_end=426
-  _IDENTITYSERVICE._serialized_start=428
-  _IDENTITYSERVICE._serialized_end=541
-=======
 
 
 _USERINFOREQUEST = _descriptor.Descriptor(
@@ -64,8 +48,8 @@ _USERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=146,
+  serialized_start=113,
+  serialized_end=130,
 )
 
 
@@ -125,6 +109,13 @@ _USERINFORESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='additional_claims', full_name='flyteidl.service.UserInfoResponse.additional_claims', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -137,10 +128,11 @@ _USERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=149,
-  serialized_end=299,
+  serialized_start=133,
+  serialized_end=335,
 )
 
+_USERINFORESPONSE.fields_by_name['additional_claims'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 DESCRIPTOR.message_types_by_name['UserInfoRequest'] = _USERINFOREQUEST
 DESCRIPTOR.message_types_by_name['UserInfoResponse'] = _USERINFORESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -168,8 +160,8 @@ _IDENTITYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=302,
-  serialized_end=459,
+  serialized_start=337,
+  serialized_end=450,
   methods=[
   _descriptor.MethodDescriptor(
     name='UserInfo',
@@ -178,12 +170,11 @@ _IDENTITYSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_USERINFOREQUEST,
     output_type=_USERINFORESPONSE,
-    serialized_options=_b('\202\323\344\223\002\005\022\003/me\222A(\032&Retrieves authenticated identity info.'),
+    serialized_options=_b('\202\323\344\223\002\005\022\003/me'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_IDENTITYSERVICE)
 
 DESCRIPTOR.services_by_name['IdentityService'] = _IDENTITYSERVICE
 
->>>>>>> parent of f4ede354 (Use buf to generate python stubs (#346))
 # @@protoc_insertion_point(module_scope)
