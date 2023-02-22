@@ -36,23 +36,26 @@ class CoreStructuredDatasetType(object):
         'columns': 'list[StructuredDatasetTypeDatasetColumn]',
         'format': 'str',
         'external_schema_type': 'str',
-        'external_schema_bytes': 'str'
+        'external_schema_bytes': 'str',
+        'partition_columns': 'list[str]'
     }
 
     attribute_map = {
         'columns': 'columns',
         'format': 'format',
         'external_schema_type': 'external_schema_type',
-        'external_schema_bytes': 'external_schema_bytes'
+        'external_schema_bytes': 'external_schema_bytes',
+        'partition_columns': 'partition_columns'
     }
 
-    def __init__(self, columns=None, format=None, external_schema_type=None, external_schema_bytes=None):  # noqa: E501
+    def __init__(self, columns=None, format=None, external_schema_type=None, external_schema_bytes=None, partition_columns=None):  # noqa: E501
         """CoreStructuredDatasetType - a model defined in Swagger"""  # noqa: E501
 
         self._columns = None
         self._format = None
         self._external_schema_type = None
         self._external_schema_bytes = None
+        self._partition_columns = None
         self.discriminator = None
 
         if columns is not None:
@@ -63,6 +66,8 @@ class CoreStructuredDatasetType(object):
             self.external_schema_type = external_schema_type
         if external_schema_bytes is not None:
             self.external_schema_bytes = external_schema_bytes
+        if partition_columns is not None:
+            self.partition_columns = partition_columns
 
     @property
     def columns(self):
@@ -157,6 +162,29 @@ class CoreStructuredDatasetType(object):
             raise ValueError(r"Invalid value for `external_schema_bytes`, must be a follow pattern or equal to `/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/`")  # noqa: E501
 
         self._external_schema_bytes = external_schema_bytes
+
+    @property
+    def partition_columns(self):
+        """Gets the partition_columns of this CoreStructuredDatasetType.  # noqa: E501
+
+        This indicates which columns in the structured dataset are used for partitioning when the dataset is serialized. This is an optional field that will not be used for type checking.  # noqa: E501
+
+        :return: The partition_columns of this CoreStructuredDatasetType.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._partition_columns
+
+    @partition_columns.setter
+    def partition_columns(self, partition_columns):
+        """Sets the partition_columns of this CoreStructuredDatasetType.
+
+        This indicates which columns in the structured dataset are used for partitioning when the dataset is serialized. This is an optional field that will not be used for type checking.  # noqa: E501
+
+        :param partition_columns: The partition_columns of this CoreStructuredDatasetType.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._partition_columns = partition_columns
 
     def to_dict(self):
         """Returns the model properties as a dict"""

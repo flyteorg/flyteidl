@@ -706,6 +706,28 @@ class StructuredDatasetType final :
   const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn >&
       columns() const;
 
+  // repeated string partition_columns = 5;
+  int partition_columns_size() const;
+  void clear_partition_columns();
+  static const int kPartitionColumnsFieldNumber = 5;
+  const ::std::string& partition_columns(int index) const;
+  ::std::string* mutable_partition_columns(int index);
+  void set_partition_columns(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_partition_columns(int index, ::std::string&& value);
+  #endif
+  void set_partition_columns(int index, const char* value);
+  void set_partition_columns(int index, const char* value, size_t size);
+  ::std::string* add_partition_columns();
+  void add_partition_columns(const ::std::string& value);
+  #if LANG_CXX11
+  void add_partition_columns(::std::string&& value);
+  #endif
+  void add_partition_columns(const char* value);
+  void add_partition_columns(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& partition_columns() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_partition_columns();
+
   // string format = 2;
   void clear_format();
   static const int kFormatFieldNumber = 2;
@@ -754,6 +776,7 @@ class StructuredDatasetType final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::flyteidl::core::StructuredDatasetType_DatasetColumn > columns_;
+  ::google::protobuf::RepeatedPtrField<::std::string> partition_columns_;
   ::google::protobuf::internal::ArenaStringPtr format_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_type_;
   ::google::protobuf::internal::ArenaStringPtr external_schema_bytes_;
@@ -2320,6 +2343,75 @@ inline void StructuredDatasetType::set_allocated_external_schema_bytes(::std::st
   }
   external_schema_bytes_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), external_schema_bytes);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.core.StructuredDatasetType.external_schema_bytes)
+}
+
+// repeated string partition_columns = 5;
+inline int StructuredDatasetType::partition_columns_size() const {
+  return partition_columns_.size();
+}
+inline void StructuredDatasetType::clear_partition_columns() {
+  partition_columns_.Clear();
+}
+inline const ::std::string& StructuredDatasetType::partition_columns(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.StructuredDatasetType.partition_columns)
+  return partition_columns_.Get(index);
+}
+inline ::std::string* StructuredDatasetType::mutable_partition_columns(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.StructuredDatasetType.partition_columns)
+  return partition_columns_.Mutable(index);
+}
+inline void StructuredDatasetType::set_partition_columns(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.partition_columns)
+  partition_columns_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void StructuredDatasetType::set_partition_columns(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.core.StructuredDatasetType.partition_columns)
+  partition_columns_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void StructuredDatasetType::set_partition_columns(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  partition_columns_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+inline void StructuredDatasetType::set_partition_columns(int index, const char* value, size_t size) {
+  partition_columns_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+inline ::std::string* StructuredDatasetType::add_partition_columns() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.core.StructuredDatasetType.partition_columns)
+  return partition_columns_.Add();
+}
+inline void StructuredDatasetType::add_partition_columns(const ::std::string& value) {
+  partition_columns_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+#if LANG_CXX11
+inline void StructuredDatasetType::add_partition_columns(::std::string&& value) {
+  partition_columns_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+#endif
+inline void StructuredDatasetType::add_partition_columns(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  partition_columns_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+inline void StructuredDatasetType::add_partition_columns(const char* value, size_t size) {
+  partition_columns_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.core.StructuredDatasetType.partition_columns)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+StructuredDatasetType::partition_columns() const {
+  // @@protoc_insertion_point(field_list:flyteidl.core.StructuredDatasetType.partition_columns)
+  return partition_columns_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+StructuredDatasetType::mutable_partition_columns() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.core.StructuredDatasetType.partition_columns)
+  return &partition_columns_;
 }
 
 // -------------------------------------------------------------------

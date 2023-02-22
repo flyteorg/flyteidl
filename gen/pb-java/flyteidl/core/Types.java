@@ -2037,6 +2037,49 @@ public final class Types {
      * <code>bytes external_schema_bytes = 4;</code>
      */
     com.google.protobuf.ByteString getExternalSchemaBytes();
+
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getPartitionColumnsList();
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    int getPartitionColumnsCount();
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    java.lang.String getPartitionColumns(int index);
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPartitionColumnsBytes(int index);
   }
   /**
    * Protobuf type {@code flyteidl.core.StructuredDatasetType}
@@ -2055,6 +2098,7 @@ public final class Types {
       format_ = "";
       externalSchemaType_ = "";
       externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
+      partitionColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -2107,6 +2151,15 @@ public final class Types {
               externalSchemaBytes_ = input.readBytes();
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                partitionColumns_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              partitionColumns_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2124,6 +2177,9 @@ public final class Types {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          partitionColumns_ = partitionColumns_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3141,6 +3197,59 @@ public final class Types {
       return externalSchemaBytes_;
     }
 
+    public static final int PARTITION_COLUMNS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList partitionColumns_;
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPartitionColumnsList() {
+      return partitionColumns_;
+    }
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    public int getPartitionColumnsCount() {
+      return partitionColumns_.size();
+    }
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    public java.lang.String getPartitionColumns(int index) {
+      return partitionColumns_.get(index);
+    }
+    /**
+     * <pre>
+     * This indicates which columns in the structured dataset are used for
+     * partitioning when the dataset is serialized. This is an optional field
+     * that will not be used for type checking.
+     * </pre>
+     *
+     * <code>repeated string partition_columns = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPartitionColumnsBytes(int index) {
+      return partitionColumns_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3167,6 +3276,9 @@ public final class Types {
       if (!externalSchemaBytes_.isEmpty()) {
         output.writeBytes(4, externalSchemaBytes_);
       }
+      for (int i = 0; i < partitionColumns_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, partitionColumns_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3189,6 +3301,14 @@ public final class Types {
       if (!externalSchemaBytes_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, externalSchemaBytes_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < partitionColumns_.size(); i++) {
+          dataSize += computeStringSizeNoTag(partitionColumns_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPartitionColumnsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3213,6 +3333,8 @@ public final class Types {
           .equals(other.getExternalSchemaType())) return false;
       if (!getExternalSchemaBytes()
           .equals(other.getExternalSchemaBytes())) return false;
+      if (!getPartitionColumnsList()
+          .equals(other.getPartitionColumnsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3234,6 +3356,10 @@ public final class Types {
       hash = (53 * hash) + getExternalSchemaType().hashCode();
       hash = (37 * hash) + EXTERNAL_SCHEMA_BYTES_FIELD_NUMBER;
       hash = (53 * hash) + getExternalSchemaBytes().hashCode();
+      if (getPartitionColumnsCount() > 0) {
+        hash = (37 * hash) + PARTITION_COLUMNS_FIELD_NUMBER;
+        hash = (53 * hash) + getPartitionColumnsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3380,6 +3506,8 @@ public final class Types {
 
         externalSchemaBytes_ = com.google.protobuf.ByteString.EMPTY;
 
+        partitionColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -3420,6 +3548,11 @@ public final class Types {
         result.format_ = format_;
         result.externalSchemaType_ = externalSchemaType_;
         result.externalSchemaBytes_ = externalSchemaBytes_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          partitionColumns_ = partitionColumns_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.partitionColumns_ = partitionColumns_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3505,6 +3638,16 @@ public final class Types {
         }
         if (other.getExternalSchemaBytes() != com.google.protobuf.ByteString.EMPTY) {
           setExternalSchemaBytes(other.getExternalSchemaBytes());
+        }
+        if (!other.partitionColumns_.isEmpty()) {
+          if (partitionColumns_.isEmpty()) {
+            partitionColumns_ = other.partitionColumns_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePartitionColumnsIsMutable();
+            partitionColumns_.addAll(other.partitionColumns_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4081,6 +4224,154 @@ public final class Types {
       public Builder clearExternalSchemaBytes() {
         
         externalSchemaBytes_ = getDefaultInstance().getExternalSchemaBytes();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList partitionColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePartitionColumnsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          partitionColumns_ = new com.google.protobuf.LazyStringArrayList(partitionColumns_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPartitionColumnsList() {
+        return partitionColumns_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public int getPartitionColumnsCount() {
+        return partitionColumns_.size();
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public java.lang.String getPartitionColumns(int index) {
+        return partitionColumns_.get(index);
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartitionColumnsBytes(int index) {
+        return partitionColumns_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public Builder setPartitionColumns(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePartitionColumnsIsMutable();
+        partitionColumns_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public Builder addPartitionColumns(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePartitionColumnsIsMutable();
+        partitionColumns_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public Builder addAllPartitionColumns(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePartitionColumnsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, partitionColumns_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public Builder clearPartitionColumns() {
+        partitionColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * This indicates which columns in the structured dataset are used for
+       * partitioning when the dataset is serialized. This is an optional field
+       * that will not be used for type checking.
+       * </pre>
+       *
+       * <code>repeated string partition_columns = 5;</code>
+       */
+      public Builder addPartitionColumnsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePartitionColumnsIsMutable();
+        partitionColumns_.add(value);
         onChanged();
         return this;
       }
@@ -12784,43 +13075,44 @@ public final class Types {
       ".core.SchemaType.SchemaColumn.SchemaColu" +
       "mnType\"_\n\020SchemaColumnType\022\013\n\007INTEGER\020\000\022" +
       "\t\n\005FLOAT\020\001\022\n\n\006STRING\020\002\022\013\n\007BOOLEAN\020\003\022\014\n\010D" +
-      "ATETIME\020\004\022\014\n\010DURATION\020\005\"\372\001\n\025StructuredDa" +
+      "ATETIME\020\004\022\014\n\010DURATION\020\005\"\225\002\n\025StructuredDa" +
       "tasetType\022C\n\007columns\030\001 \003(\01322.flyteidl.co" +
       "re.StructuredDatasetType.DatasetColumn\022\016" +
       "\n\006format\030\002 \001(\t\022\034\n\024external_schema_type\030\003" +
-      " \001(\t\022\035\n\025external_schema_bytes\030\004 \001(\014\032O\n\rD" +
-      "atasetColumn\022\014\n\004name\030\001 \001(\t\0220\n\014literal_ty" +
-      "pe\030\002 \001(\0132\032.flyteidl.core.LiteralType\"\217\001\n" +
-      "\010BlobType\022\016\n\006format\030\001 \001(\t\022B\n\016dimensional" +
-      "ity\030\002 \001(\0162*.flyteidl.core.BlobType.BlobD" +
-      "imensionality\"/\n\022BlobDimensionality\022\n\n\006S" +
-      "INGLE\020\000\022\r\n\tMULTIPART\020\001\"\032\n\010EnumType\022\016\n\006va" +
-      "lues\030\001 \003(\t\"9\n\tUnionType\022,\n\010variants\030\001 \003(" +
-      "\0132\032.flyteidl.core.LiteralType\"\034\n\rTypeStr" +
-      "ucture\022\013\n\003tag\030\001 \001(\t\">\n\016TypeAnnotation\022,\n" +
-      "\013annotations\030\001 \001(\0132\027.google.protobuf.Str" +
-      "uct\"\273\004\n\013LiteralType\022+\n\006simple\030\001 \001(\0162\031.fl" +
-      "yteidl.core.SimpleTypeH\000\022+\n\006schema\030\002 \001(\013" +
-      "2\031.flyteidl.core.SchemaTypeH\000\0225\n\017collect" +
-      "ion_type\030\003 \001(\0132\032.flyteidl.core.LiteralTy" +
-      "peH\000\0224\n\016map_value_type\030\004 \001(\0132\032.flyteidl." +
-      "core.LiteralTypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyte" +
-      "idl.core.BlobTypeH\000\022,\n\tenum_type\030\007 \001(\0132\027" +
-      ".flyteidl.core.EnumTypeH\000\022G\n\027structured_" +
-      "dataset_type\030\010 \001(\0132$.flyteidl.core.Struc" +
-      "turedDatasetTypeH\000\022.\n\nunion_type\030\n \001(\0132\030" +
-      ".flyteidl.core.UnionTypeH\000\022)\n\010metadata\030\006" +
-      " \001(\0132\027.google.protobuf.Struct\0221\n\nannotat" +
-      "ion\030\t \001(\0132\035.flyteidl.core.TypeAnnotation" +
-      "\022/\n\tstructure\030\013 \001(\0132\034.flyteidl.core.Type" +
-      "StructureB\006\n\004type\"/\n\017OutputReference\022\017\n\007" +
-      "node_id\030\001 \001(\t\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016f" +
-      "ailed_node_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n" +
-      "\nSimpleType\022\010\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FL" +
-      "OAT\020\002\022\n\n\006STRING\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETI" +
-      "ME\020\005\022\014\n\010DURATION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020" +
-      "\010\022\n\n\006STRUCT\020\tB6Z4github.com/flyteorg/fly" +
-      "teidl/gen/pb-go/flyteidl/coreb\006proto3"
+      " \001(\t\022\035\n\025external_schema_bytes\030\004 \001(\014\022\031\n\021p" +
+      "artition_columns\030\005 \003(\t\032O\n\rDatasetColumn\022" +
+      "\014\n\004name\030\001 \001(\t\0220\n\014literal_type\030\002 \001(\0132\032.fl" +
+      "yteidl.core.LiteralType\"\217\001\n\010BlobType\022\016\n\006" +
+      "format\030\001 \001(\t\022B\n\016dimensionality\030\002 \001(\0162*.f" +
+      "lyteidl.core.BlobType.BlobDimensionality" +
+      "\"/\n\022BlobDimensionality\022\n\n\006SINGLE\020\000\022\r\n\tMU" +
+      "LTIPART\020\001\"\032\n\010EnumType\022\016\n\006values\030\001 \003(\t\"9\n" +
+      "\tUnionType\022,\n\010variants\030\001 \003(\0132\032.flyteidl." +
+      "core.LiteralType\"\034\n\rTypeStructure\022\013\n\003tag" +
+      "\030\001 \001(\t\">\n\016TypeAnnotation\022,\n\013annotations\030" +
+      "\001 \001(\0132\027.google.protobuf.Struct\"\273\004\n\013Liter" +
+      "alType\022+\n\006simple\030\001 \001(\0162\031.flyteidl.core.S" +
+      "impleTypeH\000\022+\n\006schema\030\002 \001(\0132\031.flyteidl.c" +
+      "ore.SchemaTypeH\000\0225\n\017collection_type\030\003 \001(" +
+      "\0132\032.flyteidl.core.LiteralTypeH\000\0224\n\016map_v" +
+      "alue_type\030\004 \001(\0132\032.flyteidl.core.LiteralT" +
+      "ypeH\000\022\'\n\004blob\030\005 \001(\0132\027.flyteidl.core.Blob" +
+      "TypeH\000\022,\n\tenum_type\030\007 \001(\0132\027.flyteidl.cor" +
+      "e.EnumTypeH\000\022G\n\027structured_dataset_type\030" +
+      "\010 \001(\0132$.flyteidl.core.StructuredDatasetT" +
+      "ypeH\000\022.\n\nunion_type\030\n \001(\0132\030.flyteidl.cor" +
+      "e.UnionTypeH\000\022)\n\010metadata\030\006 \001(\0132\027.google" +
+      ".protobuf.Struct\0221\n\nannotation\030\t \001(\0132\035.f" +
+      "lyteidl.core.TypeAnnotation\022/\n\tstructure" +
+      "\030\013 \001(\0132\034.flyteidl.core.TypeStructureB\006\n\004" +
+      "type\"/\n\017OutputReference\022\017\n\007node_id\030\001 \001(\t" +
+      "\022\013\n\003var\030\002 \001(\t\"0\n\005Error\022\026\n\016failed_node_id" +
+      "\030\001 \001(\t\022\017\n\007message\030\002 \001(\t*\206\001\n\nSimpleType\022\010" +
+      "\n\004NONE\020\000\022\013\n\007INTEGER\020\001\022\t\n\005FLOAT\020\002\022\n\n\006STRI" +
+      "NG\020\003\022\013\n\007BOOLEAN\020\004\022\014\n\010DATETIME\020\005\022\014\n\010DURAT" +
+      "ION\020\006\022\n\n\006BINARY\020\007\022\t\n\005ERROR\020\010\022\n\n\006STRUCT\020\t" +
+      "B6Z4github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12852,7 +13144,7 @@ public final class Types {
     internal_static_flyteidl_core_StructuredDatasetType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_core_StructuredDatasetType_descriptor,
-        new java.lang.String[] { "Columns", "Format", "ExternalSchemaType", "ExternalSchemaBytes", });
+        new java.lang.String[] { "Columns", "Format", "ExternalSchemaType", "ExternalSchemaBytes", "PartitionColumns", });
     internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_descriptor =
       internal_static_flyteidl_core_StructuredDatasetType_descriptor.getNestedTypes().get(0);
     internal_static_flyteidl_core_StructuredDatasetType_DatasetColumn_fieldAccessorTable = new
