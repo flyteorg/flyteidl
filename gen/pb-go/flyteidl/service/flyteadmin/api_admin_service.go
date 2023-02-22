@@ -324,15 +324,15 @@ Create and register a task definition.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body
 
-@return AdminTaskCreateResponse
+@return FlyteidladminTaskCreateResponse
 */
-func (a *AdminServiceApiService) CreateTask(ctx context.Context, body AdminTaskCreateRequest) (AdminTaskCreateResponse, *http.Response, error) {
+func (a *AdminServiceApiService) CreateTask(ctx context.Context, body FlyteidladminTaskCreateRequest) (FlyteidladminTaskCreateResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue AdminTaskCreateResponse
+		localVarReturnValue FlyteidladminTaskCreateResponse
 	)
 
 	// create path and map variables
@@ -392,7 +392,7 @@ func (a *AdminServiceApiService) CreateTask(ctx context.Context, body AdminTaskC
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v AdminTaskCreateResponse
+			var v FlyteidladminTaskCreateResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

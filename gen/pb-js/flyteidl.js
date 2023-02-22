@@ -44737,6 +44737,923 @@
                 return IdentityService;
             })();
     
+            service.BackendPluginService = (function() {
+    
+                /**
+                 * Constructs a new BackendPluginService service.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a BackendPluginService
+                 * @extends $protobuf.rpc.Service
+                 * @constructor
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 */
+                function BackendPluginService(rpcImpl, requestDelimited, responseDelimited) {
+                    $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+                }
+    
+                (BackendPluginService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = BackendPluginService;
+    
+                /**
+                 * Creates new BackendPluginService service using the specified rpc implementation.
+                 * @function create
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @static
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 * @returns {BackendPluginService} RPC service. Useful where requests and/or responses are streamed.
+                 */
+                BackendPluginService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                    return new this(rpcImpl, requestDelimited, responseDelimited);
+                };
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.BackendPluginService#createTask}.
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @typedef CreateTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskCreateResponse} [response] TaskCreateResponse
+                 */
+    
+                /**
+                 * Calls CreateTask.
+                 * @function createTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
+                 * @param {flyteidl.service.BackendPluginService.CreateTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(BackendPluginService.prototype.createTask = function createTask(request, callback) {
+                    return this.rpcCall(createTask, $root.flyteidl.service.TaskCreateRequest, $root.flyteidl.service.TaskCreateResponse, request, callback);
+                }, "name", { value: "CreateTask" });
+    
+                /**
+                 * Calls CreateTask.
+                 * @function createTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskCreateResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.BackendPluginService#getTask}.
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @typedef GetTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskCreateResponse} [response] TaskCreateResponse
+                 */
+    
+                /**
+                 * Calls GetTask.
+                 * @function getTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
+                 * @param {flyteidl.service.BackendPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(BackendPluginService.prototype.getTask = function getTask(request, callback) {
+                    return this.rpcCall(getTask, $root.flyteidl.service.TaskGetRequest, $root.flyteidl.service.TaskCreateResponse, request, callback);
+                }, "name", { value: "GetTask" });
+    
+                /**
+                 * Calls GetTask.
+                 * @function getTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskCreateResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.BackendPluginService#deleteTask}.
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @typedef DeleteTaskCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.TaskDeleteResponse} [response] TaskDeleteResponse
+                 */
+    
+                /**
+                 * Calls DeleteTask.
+                 * @function deleteTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
+                 * @param {flyteidl.service.BackendPluginService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and TaskDeleteResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(BackendPluginService.prototype.deleteTask = function deleteTask(request, callback) {
+                    return this.rpcCall(deleteTask, $root.flyteidl.service.TaskDeleteRequest, $root.flyteidl.service.TaskDeleteResponse, request, callback);
+                }, "name", { value: "DeleteTask" });
+    
+                /**
+                 * Calls DeleteTask.
+                 * @function deleteTask
+                 * @memberof flyteidl.service.BackendPluginService
+                 * @instance
+                 * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
+                 * @returns {Promise<flyteidl.service.TaskDeleteResponse>} Promise
+                 * @variation 2
+                 */
+    
+                return BackendPluginService;
+            })();
+    
+            service.TaskCreateRequest = (function() {
+    
+                /**
+                 * Properties of a TaskCreateRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskCreateRequest
+                 * @property {string|null} [taskType] TaskCreateRequest taskType
+                 * @property {flyteidl.core.ILiteral|null} [input] TaskCreateRequest input
+                 * @property {flyteidl.core.ITaskTemplate|null} [template] TaskCreateRequest template
+                 */
+    
+                /**
+                 * Constructs a new TaskCreateRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskCreateRequest.
+                 * @implements ITaskCreateRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskCreateRequest=} [properties] Properties to set
+                 */
+                function TaskCreateRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskCreateRequest taskType.
+                 * @member {string} taskType
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.taskType = "";
+    
+                /**
+                 * TaskCreateRequest input.
+                 * @member {flyteidl.core.ILiteral|null|undefined} input
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.input = null;
+    
+                /**
+                 * TaskCreateRequest template.
+                 * @member {flyteidl.core.ITaskTemplate|null|undefined} template
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.template = null;
+    
+                /**
+                 * Creates a new TaskCreateRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskCreateRequest} TaskCreateRequest instance
+                 */
+                TaskCreateRequest.create = function create(properties) {
+                    return new TaskCreateRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskCreateRequest message. Does not implicitly {@link flyteidl.service.TaskCreateRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateRequest} message TaskCreateRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskCreateRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
+                    if (message.input != null && message.hasOwnProperty("input"))
+                        $root.flyteidl.core.Literal.encode(message.input, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.template != null && message.hasOwnProperty("template"))
+                        $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskCreateRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskCreateRequest} TaskCreateRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskCreateRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskCreateRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskType = reader.string();
+                            break;
+                        case 2:
+                            message.input = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskCreateRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskCreateRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        if (!$util.isString(message.taskType))
+                            return "taskType: string expected";
+                    if (message.input != null && message.hasOwnProperty("input")) {
+                        var error = $root.flyteidl.core.Literal.verify(message.input);
+                        if (error)
+                            return "input." + error;
+                    }
+                    if (message.template != null && message.hasOwnProperty("template")) {
+                        var error = $root.flyteidl.core.TaskTemplate.verify(message.template);
+                        if (error)
+                            return "template." + error;
+                    }
+                    return null;
+                };
+    
+                return TaskCreateRequest;
+            })();
+    
+            service.TaskCreateResponse = (function() {
+    
+                /**
+                 * Properties of a TaskCreateResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskCreateResponse
+                 * @property {string|null} [jobId] TaskCreateResponse jobId
+                 * @property {string|null} [message] TaskCreateResponse message
+                 */
+    
+                /**
+                 * Constructs a new TaskCreateResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskCreateResponse.
+                 * @implements ITaskCreateResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskCreateResponse=} [properties] Properties to set
+                 */
+                function TaskCreateResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskCreateResponse jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @instance
+                 */
+                TaskCreateResponse.prototype.jobId = "";
+    
+                /**
+                 * TaskCreateResponse message.
+                 * @member {string} message
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @instance
+                 */
+                TaskCreateResponse.prototype.message = "";
+    
+                /**
+                 * Creates a new TaskCreateResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskCreateResponse} TaskCreateResponse instance
+                 */
+                TaskCreateResponse.create = function create(properties) {
+                    return new TaskCreateResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskCreateResponse message. Does not implicitly {@link flyteidl.service.TaskCreateResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskCreateResponse} message TaskCreateResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskCreateResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.jobId);
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskCreateResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskCreateResponse} TaskCreateResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskCreateResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskCreateResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.jobId = reader.string();
+                            break;
+                        case 2:
+                            message.message = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskCreateResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskCreateResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskCreateResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        if (!$util.isString(message.message))
+                            return "message: string expected";
+                    return null;
+                };
+    
+                return TaskCreateResponse;
+            })();
+    
+            service.TaskGetRequest = (function() {
+    
+                /**
+                 * Properties of a TaskGetRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskGetRequest
+                 * @property {string|null} [taskType] TaskGetRequest taskType
+                 * @property {string|null} [jobId] TaskGetRequest jobId
+                 * @property {string|null} [outputPrefix] TaskGetRequest outputPrefix
+                 * @property {string|null} [prevState] TaskGetRequest prevState
+                 */
+    
+                /**
+                 * Constructs a new TaskGetRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskGetRequest.
+                 * @implements ITaskGetRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskGetRequest=} [properties] Properties to set
+                 */
+                function TaskGetRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskGetRequest taskType.
+                 * @member {string} taskType
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.taskType = "";
+    
+                /**
+                 * TaskGetRequest jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.jobId = "";
+    
+                /**
+                 * TaskGetRequest outputPrefix.
+                 * @member {string} outputPrefix
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.outputPrefix = "";
+    
+                /**
+                 * TaskGetRequest prevState.
+                 * @member {string} prevState
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @instance
+                 */
+                TaskGetRequest.prototype.prevState = "";
+    
+                /**
+                 * Creates a new TaskGetRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskGetRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskGetRequest} TaskGetRequest instance
+                 */
+                TaskGetRequest.create = function create(properties) {
+                    return new TaskGetRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskGetRequest message. Does not implicitly {@link flyteidl.service.TaskGetRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskGetRequest} message TaskGetRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskGetRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
+                    if (message.prevState != null && message.hasOwnProperty("prevState"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.prevState);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskGetRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskGetRequest} TaskGetRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskGetRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskGetRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskType = reader.string();
+                            break;
+                        case 2:
+                            message.jobId = reader.string();
+                            break;
+                        case 3:
+                            message.outputPrefix = reader.string();
+                            break;
+                        case 4:
+                            message.prevState = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskGetRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskGetRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskGetRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        if (!$util.isString(message.taskType))
+                            return "taskType: string expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        if (!$util.isString(message.outputPrefix))
+                            return "outputPrefix: string expected";
+                    if (message.prevState != null && message.hasOwnProperty("prevState"))
+                        if (!$util.isString(message.prevState))
+                            return "prevState: string expected";
+                    return null;
+                };
+    
+                return TaskGetRequest;
+            })();
+    
+            service.TaskGetResponse = (function() {
+    
+                /**
+                 * Properties of a TaskGetResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskGetResponse
+                 * @property {string|null} [state] TaskGetResponse state
+                 * @property {string|null} [message] TaskGetResponse message
+                 */
+    
+                /**
+                 * Constructs a new TaskGetResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskGetResponse.
+                 * @implements ITaskGetResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskGetResponse=} [properties] Properties to set
+                 */
+                function TaskGetResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskGetResponse state.
+                 * @member {string} state
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @instance
+                 */
+                TaskGetResponse.prototype.state = "";
+    
+                /**
+                 * TaskGetResponse message.
+                 * @member {string} message
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @instance
+                 */
+                TaskGetResponse.prototype.message = "";
+    
+                /**
+                 * Creates a new TaskGetResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskGetResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskGetResponse} TaskGetResponse instance
+                 */
+                TaskGetResponse.create = function create(properties) {
+                    return new TaskGetResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskGetResponse message. Does not implicitly {@link flyteidl.service.TaskGetResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskGetResponse} message TaskGetResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskGetResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.state);
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskGetResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskGetResponse} TaskGetResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskGetResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskGetResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.state = reader.string();
+                            break;
+                        case 2:
+                            message.message = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskGetResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskGetResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskGetResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.state != null && message.hasOwnProperty("state"))
+                        if (!$util.isString(message.state))
+                            return "state: string expected";
+                    if (message.message != null && message.hasOwnProperty("message"))
+                        if (!$util.isString(message.message))
+                            return "message: string expected";
+                    return null;
+                };
+    
+                return TaskGetResponse;
+            })();
+    
+            service.TaskDeleteRequest = (function() {
+    
+                /**
+                 * Properties of a TaskDeleteRequest.
+                 * @memberof flyteidl.service
+                 * @interface ITaskDeleteRequest
+                 * @property {string|null} [taskType] TaskDeleteRequest taskType
+                 * @property {string|null} [jobId] TaskDeleteRequest jobId
+                 */
+    
+                /**
+                 * Constructs a new TaskDeleteRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskDeleteRequest.
+                 * @implements ITaskDeleteRequest
+                 * @constructor
+                 * @param {flyteidl.service.ITaskDeleteRequest=} [properties] Properties to set
+                 */
+                function TaskDeleteRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * TaskDeleteRequest taskType.
+                 * @member {string} taskType
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @instance
+                 */
+                TaskDeleteRequest.prototype.taskType = "";
+    
+                /**
+                 * TaskDeleteRequest jobId.
+                 * @member {string} jobId
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @instance
+                 */
+                TaskDeleteRequest.prototype.jobId = "";
+    
+                /**
+                 * Creates a new TaskDeleteRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskDeleteRequest} TaskDeleteRequest instance
+                 */
+                TaskDeleteRequest.create = function create(properties) {
+                    return new TaskDeleteRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskDeleteRequest message. Does not implicitly {@link flyteidl.service.TaskDeleteRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteRequest} message TaskDeleteRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskDeleteRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskDeleteRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskDeleteRequest} TaskDeleteRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskDeleteRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskDeleteRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.taskType = reader.string();
+                            break;
+                        case 2:
+                            message.jobId = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskDeleteRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskDeleteRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskDeleteRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.taskType != null && message.hasOwnProperty("taskType"))
+                        if (!$util.isString(message.taskType))
+                            return "taskType: string expected";
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
+                        if (!$util.isString(message.jobId))
+                            return "jobId: string expected";
+                    return null;
+                };
+    
+                return TaskDeleteRequest;
+            })();
+    
+            service.TaskDeleteResponse = (function() {
+    
+                /**
+                 * Properties of a TaskDeleteResponse.
+                 * @memberof flyteidl.service
+                 * @interface ITaskDeleteResponse
+                 */
+    
+                /**
+                 * Constructs a new TaskDeleteResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a TaskDeleteResponse.
+                 * @implements ITaskDeleteResponse
+                 * @constructor
+                 * @param {flyteidl.service.ITaskDeleteResponse=} [properties] Properties to set
+                 */
+                function TaskDeleteResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new TaskDeleteResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.TaskDeleteResponse} TaskDeleteResponse instance
+                 */
+                TaskDeleteResponse.create = function create(properties) {
+                    return new TaskDeleteResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified TaskDeleteResponse message. Does not implicitly {@link flyteidl.service.TaskDeleteResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {flyteidl.service.ITaskDeleteResponse} message TaskDeleteResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                TaskDeleteResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a TaskDeleteResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.TaskDeleteResponse} TaskDeleteResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                TaskDeleteResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.TaskDeleteResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a TaskDeleteResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.TaskDeleteResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                TaskDeleteResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return TaskDeleteResponse;
+            })();
+    
             service.SignalService = (function() {
     
                 /**

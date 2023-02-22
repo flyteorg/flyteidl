@@ -501,6 +501,175 @@ IdentityService defines an RPC Service that interacts with user/app identities.
 
 
 
+.. _ref_flyteidl/service/plugin_system.proto:
+
+flyteidl/service/plugin_system.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.service.TaskCreateRequest:
+
+TaskCreateRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskCreateRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "task_type", ":ref:`ref_string`", "", ""
+   "input", ":ref:`ref_flyteidl.core.Literal`", "", ""
+   "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.TaskCreateResponse:
+
+TaskCreateResponse
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskCreateResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "job_id", ":ref:`ref_string`", "", ""
+   "message", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.TaskDeleteRequest:
+
+TaskDeleteRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskDeleteRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "task_type", ":ref:`ref_string`", "", ""
+   "job_id", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.TaskDeleteResponse:
+
+TaskDeleteResponse
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.TaskGetRequest:
+
+TaskGetRequest
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskGetRequest type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "task_type", ":ref:`ref_string`", "", ""
+   "job_id", ":ref:`ref_string`", "", ""
+   "output_prefix", ":ref:`ref_string`", "", ""
+   "prev_state", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+
+.. _ref_flyteidl.service.TaskGetResponse:
+
+TaskGetResponse
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: TaskGetResponse type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "state", ":ref:`ref_string`", "", ""
+   "message", ":ref:`ref_string`", "", ""
+
+
+
+
+
+
+..
+   end messages
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+
+.. _ref_flyteidl.service.BackendPluginService:
+
+BackendPluginService
+------------------------------------------------------------------
+
+
+
+.. csv-table:: BackendPluginService service methods
+   :header: "Method Name", "Request Type", "Response Type", "Description"
+   :widths: auto
+
+   "CreateTask", ":ref:`ref_flyteidl.service.TaskCreateRequest`", ":ref:`ref_flyteidl.service.TaskCreateResponse`", ""
+   "GetTask", ":ref:`ref_flyteidl.service.TaskGetRequest`", ":ref:`ref_flyteidl.service.TaskCreateResponse`", ""
+   "DeleteTask", ":ref:`ref_flyteidl.service.TaskDeleteRequest`", ":ref:`ref_flyteidl.service.TaskDeleteResponse`", ""
+
+..
+   end services
+
+
+
+
 .. _ref_flyteidl/service/signal.proto:
 
 flyteidl/service/signal.proto
