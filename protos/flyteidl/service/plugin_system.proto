@@ -1,0 +1,45 @@
+syntax = "proto3";
+package flyteidl.service;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
+import "flyteidl/core/literals.proto";
+import "flyteidl/core/tasks.proto";
+
+service BackendPluginService {
+  rpc CreateTask (TaskCreateRequest) returns (TaskCreateResponse){};
+  rpc GetTask (TaskGetRequest) returns (TaskCreateResponse){};
+  rpc DeleteTask (TaskDeleteRequest) returns (TaskDeleteResponse){};
+}
+
+
+message TaskCreateRequest {
+  string task_type = 1;
+  core.Literal input = 2;
+  core.TaskTemplate template = 3;
+}
+
+message TaskCreateResponse {
+  string job_id = 1;
+  string message = 2;
+}
+
+message TaskGetRequest {
+  string task_type = 1;
+  string job_id = 2;
+  string output_prefix = 3;
+  string prev_state = 4;
+}
+
+message TaskGetResponse {
+  string state = 1;
+  string message = 2;
+}
+
+message TaskDeleteRequest {
+  string task_type = 1;
+  string job_id = 2;
+}
+
+message TaskDeleteResponse {
+}
+
