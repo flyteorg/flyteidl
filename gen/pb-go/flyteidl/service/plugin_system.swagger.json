@@ -680,7 +680,7 @@
           "$ref": "#/definitions/coreBinary"
         },
         "schema": {
-          "$ref": "#/definitions/flyteidlcoreSchema"
+          "$ref": "#/definitions/coreSchema"
         },
         "none_type": {
           "$ref": "#/definitions/coreVoid"
@@ -698,6 +698,18 @@
           "$ref": "#/definitions/coreUnion"
         }
       }
+    },
+    "coreSchema": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/coreSchemaType"
+        }
+      },
+      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
     },
     "coreSchemaType": {
       "type": "object",
@@ -875,6 +887,17 @@
           "type": "boolean",
           "format": "boolean",
           "description": "Indicates whether the task will generate a Deck URI when it finishes executing."
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Arbitrary tags that allow users and the platform to store small but arbitrary labels"
+        },
+        "pod_template_name": {
+          "type": "string",
+          "description": "pod_template_name is the unique name of a PodTemplate k8s resource to be used as the base configuration if this\ntask creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied\nidentically as, the default PodTemplate configured in FlytePropeller."
         }
       },
       "title": "Task Metadata"
@@ -1017,18 +1040,6 @@
     "coreVoid": {
       "type": "object",
       "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
-    },
-    "flyteidlcoreSchema": {
-      "type": "object",
-      "properties": {
-        "uri": {
-          "type": "string"
-        },
-        "type": {
-          "$ref": "#/definitions/coreSchemaType"
-        }
-      },
-      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
     },
     "flyteidlserviceTaskCreateResponse": {
       "type": "object",

@@ -56,6 +56,100 @@ will be executed concurrently.
 
 
 
+.. _ref_flyteidl/plugins/dask.proto:
+
+flyteidl/plugins/dask.proto
+==================================================================
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskCluster:
+
+DaskCluster
+------------------------------------------------------------------
+
+
+
+
+
+.. csv-table:: DaskCluster type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "image", ":ref:`ref_string`", "", "Optional image to use for the scheduler as well as the default worker group. If unset, will use the default image."
+   "nWorkers", ":ref:`ref_int32`", "", "Number of workers in the default worker group"
+   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned to the scheduler as well as all pods of the default worker group. As per https://kubernetes.dask.org/en/latest/kubecluster.html?highlight=limit#best-practices it is advised to only set limits. If requests are not explicitly set, the plugin will make sure to set requests==limits. The plugin sets ` --memory-limit` as well as `--nthreads` for the workers according to the limit."
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.DaskJob:
+
+DaskJob
+------------------------------------------------------------------
+
+Custom Proto for Dask Plugin
+
+
+
+.. csv-table:: DaskJob type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "namespace", ":ref:`ref_string`", "", "Optional namespace to use for the dask pods. If none is given, the namespace of the Flyte task is used"
+   "jobPodSpec", ":ref:`ref_flyteidl.plugins.JobPodSpec`", "", "Spec for the job pod"
+   "cluster", ":ref:`ref_flyteidl.plugins.DaskCluster`", "", "Cluster"
+
+
+
+
+
+
+
+.. _ref_flyteidl.plugins.JobPodSpec:
+
+JobPodSpec
+------------------------------------------------------------------
+
+Specification for the job pod
+
+
+
+.. csv-table:: JobPodSpec type fields
+   :header: "Field", "Type", "Label", "Description"
+   :widths: auto
+
+   "image", ":ref:`ref_string`", "", "Optional image to use. If unset, will use the default image."
+   "resources", ":ref:`ref_flyteidl.core.Resources`", "", "Resources assigned to the job pod."
+
+
+
+
+
+
+..
+   end messages
+
+
+..
+   end enums
+
+
+..
+   end HasExtensions
+
+
+..
+   end services
+
+
+
+
 .. _ref_flyteidl/plugins/mpi.proto:
 
 flyteidl/plugins/mpi.proto
@@ -501,6 +595,7 @@ Custom Proto for Spark Plugin.
    "sparkConf", ":ref:`ref_flyteidl.plugins.SparkJob.SparkConfEntry`", "repeated", ""
    "hadoopConf", ":ref:`ref_flyteidl.plugins.SparkJob.HadoopConfEntry`", "repeated", ""
    "executorPath", ":ref:`ref_string`", "", "Executor path for Python jobs."
+   "databricksConf", ":ref:`ref_string`", "", "databricksConf is base64 encoded string which stores databricks job configuration. Config structure can be found here. https://docs.databricks.com/dev-tools/api/2.0/jobs.html#request-structure The config is automatically encoded by flytekit, and decoded in the propeller."
 
 
 

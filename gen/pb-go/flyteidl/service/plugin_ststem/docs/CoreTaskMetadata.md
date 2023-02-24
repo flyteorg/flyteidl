@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Interruptible** | **bool** |  | [optional] [default to null]
 **CacheSerializable** | **bool** |  | [optional] [default to null]
 **GeneratesDeck** | **bool** | Indicates whether the task will generate a Deck URI when it finishes executing. | [optional] [default to null]
+**Tags** | **map[string]string** |  | [optional] [default to null]
+**PodTemplateName** | **string** | pod_template_name is the unique name of a PodTemplate k8s resource to be used as the base configuration if this task creates a k8s Pod. If this value is set, the specified PodTemplate will be used instead of, but applied identically as, the default PodTemplate configured in FlytePropeller. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

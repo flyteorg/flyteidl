@@ -1,4 +1,4 @@
-# FlyteidlcoreSchema
+# CoreSchema
 
 ## Properties
 Name | Type | Description | Notes

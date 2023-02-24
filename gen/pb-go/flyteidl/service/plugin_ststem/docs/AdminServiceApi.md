@@ -66,8 +66,6 @@ Method | HTTP request | Description
 > AdminExecutionCreateResponse CreateExecution(ctx, body)
 Triggers the creation of a :ref:`ref_flyteidl.admin.Execution`
 
-Create a workflow execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -93,8 +91,6 @@ No authorization required
 # **CreateLaunchPlan**
 > AdminLaunchPlanCreateResponse CreateLaunchPlan(ctx, body)
 Create and upload a :ref:`ref_flyteidl.admin.LaunchPlan` definition
-
-Create and register a launch plan definition.
 
 ### Required Parameters
 
@@ -122,8 +118,6 @@ No authorization required
 > AdminNodeExecutionEventResponse CreateNodeEvent(ctx, body)
 Indicates a :ref:`ref_flyteidl.event.NodeExecutionEvent` has occurred.
 
-Create a node execution event recording a phase transition.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -149,8 +143,6 @@ No authorization required
 # **CreateTask**
 > FlyteidladminTaskCreateResponse CreateTask(ctx, body)
 Create and upload a :ref:`ref_flyteidl.admin.Task` definition
-
-Create and register a task definition.
 
 ### Required Parameters
 
@@ -178,8 +170,6 @@ No authorization required
 > AdminTaskExecutionEventResponse CreateTaskEvent(ctx, body)
 Indicates a :ref:`ref_flyteidl.event.TaskExecutionEvent` has occurred.
 
-Create a task execution event recording a phase transition.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -205,8 +195,6 @@ No authorization required
 # **CreateWorkflow**
 > AdminWorkflowCreateResponse CreateWorkflow(ctx, body)
 Create and upload a :ref:`ref_flyteidl.admin.Workflow` definition
-
-Create and register a workflow definition.
 
 ### Required Parameters
 
@@ -234,8 +222,6 @@ No authorization required
 > AdminWorkflowExecutionEventResponse CreateWorkflowEvent(ctx, body)
 Indicates a :ref:`ref_flyteidl.event.WorkflowExecutionEvent` has occurred.
 
-Create a workflow execution event recording a phase transition.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -261,8 +247,6 @@ No authorization required
 # **DeleteProjectAttributes**
 > AdminProjectAttributesDeleteResponse DeleteProjectAttributes(ctx, project, body)
 Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.
-
-Delete the customized resource attributes associated with a project
 
 ### Required Parameters
 
@@ -291,8 +275,6 @@ No authorization required
 > AdminProjectDomainAttributesDeleteResponse DeleteProjectDomainAttributes(ctx, project, domain, body)
 Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.
 
-Delete the customized resource attributes associated with a project-domain combination
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -320,8 +302,6 @@ No authorization required
 # **DeleteWorkflowAttributes**
 > AdminWorkflowAttributesDeleteResponse DeleteWorkflowAttributes(ctx, project, domain, workflow, body)
 Deletes custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
-
-Delete the customized resource attributes associated with a project, domain and workflow combination
 
 ### Required Parameters
 
@@ -352,8 +332,6 @@ No authorization required
 > AdminLaunchPlan GetActiveLaunchPlan(ctx, idProject, idDomain, idName)
 Fetch the active version of a :ref:`ref_flyteidl.admin.LaunchPlan`.
 
-Retrieve the active launch plan version specified by input request filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -381,8 +359,6 @@ No authorization required
 # **GetDescriptionEntity**
 > AdminDescriptionEntity GetDescriptionEntity(ctx, idResourceType, idProject, idDomain, idName, idVersion)
 Fetch a :ref:`ref_flyteidl.admin.DescriptionEntity` object.
-
-Retrieve an existing description entity description.
 
 ### Required Parameters
 
@@ -414,8 +390,6 @@ No authorization required
 > AdminExecution GetExecution(ctx, idProject, idDomain, idName)
 Fetches a :ref:`ref_flyteidl.admin.Execution`.
 
-Retrieve an existing workflow execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -444,8 +418,6 @@ No authorization required
 > AdminWorkflowExecutionGetDataResponse GetExecutionData(ctx, idProject, idDomain, idName)
 Fetches input and output data for a :ref:`ref_flyteidl.admin.Execution`.
 
-Retrieve input and output data from an existing workflow execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -473,8 +445,6 @@ No authorization required
 # **GetLaunchPlan**
 > AdminLaunchPlan GetLaunchPlan(ctx, idProject, idDomain, idName, idVersion, optional)
 Fetch a :ref:`ref_flyteidl.admin.LaunchPlan` definition.
-
-Retrieve an existing launch plan definition.
 
 ### Required Parameters
 
@@ -517,8 +487,6 @@ No authorization required
 > AdminNamedEntity GetNamedEntity(ctx, resourceType, idProject, idDomain, idName)
 Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.
 
-Retrieve a NamedEntity object.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -547,8 +515,6 @@ No authorization required
 # **GetNodeExecution**
 > FlyteidladminNodeExecution GetNodeExecution(ctx, idExecutionIdProject, idExecutionIdDomain, idExecutionIdName, idNodeId)
 Fetches a :ref:`ref_flyteidl.admin.NodeExecution`.
-
-Retrieve an existing node execution.
 
 ### Required Parameters
 
@@ -579,8 +545,6 @@ No authorization required
 > AdminNodeExecutionGetDataResponse GetNodeExecutionData(ctx, idExecutionIdProject, idExecutionIdDomain, idExecutionIdName, idNodeId)
 Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.
 
-Retrieve input and output data from an existing node execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -609,8 +573,6 @@ No authorization required
 # **GetProjectAttributes**
 > AdminProjectAttributesGetResponse GetProjectAttributes(ctx, project, optional)
 Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.
-
-Retrieve the customized resource attributes associated with a project
 
 ### Required Parameters
 
@@ -646,8 +608,6 @@ No authorization required
 # **GetProjectDomainAttributes**
 > AdminProjectDomainAttributesGetResponse GetProjectDomainAttributes(ctx, project, domain, optional)
 Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.
-
-Retrieve the customized resource attributes associated with a project-domain combination
 
 ### Required Parameters
 
@@ -685,8 +645,6 @@ No authorization required
 # **GetTask**
 > AdminTask GetTask(ctx, idProject, idDomain, idName, idVersion, optional)
 Fetch a :ref:`ref_flyteidl.admin.Task` definition.
-
-Retrieve an existing task definition.
 
 ### Required Parameters
 
@@ -728,8 +686,6 @@ No authorization required
 # **GetTaskExecution**
 > FlyteidladminTaskExecution GetTaskExecution(ctx, idNodeExecutionIdExecutionIdProject, idNodeExecutionIdExecutionIdDomain, idNodeExecutionIdExecutionIdName, idNodeExecutionIdNodeId, idTaskIdProject, idTaskIdDomain, idTaskIdName, idTaskIdVersion, idRetryAttempt, optional)
 Fetches a :ref:`ref_flyteidl.admin.TaskExecution`.
-
-Retrieve an existing task execution.
 
 ### Required Parameters
 
@@ -782,8 +738,6 @@ No authorization required
 > AdminTaskExecutionGetDataResponse GetTaskExecutionData(ctx, idNodeExecutionIdExecutionIdProject, idNodeExecutionIdExecutionIdDomain, idNodeExecutionIdExecutionIdName, idNodeExecutionIdNodeId, idTaskIdProject, idTaskIdDomain, idTaskIdName, idTaskIdVersion, idRetryAttempt, optional)
 Fetches input and output data for a :ref:`ref_flyteidl.admin.TaskExecution`.
 
-Retrieve input and output data from an existing task execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -835,8 +789,6 @@ No authorization required
 > AdminGetVersionResponse GetVersion(ctx, )
 
 
-Retrieve the Version (including the Build  information) for FlyteAdmin service
-
 ### Required Parameters
 This endpoint does not need any parameter.
 
@@ -858,8 +810,6 @@ No authorization required
 # **GetWorkflow**
 > AdminWorkflow GetWorkflow(ctx, idProject, idDomain, idName, idVersion, optional)
 Fetch a :ref:`ref_flyteidl.admin.Workflow` definition.
-
-Retrieve an existing workflow definition.
 
 ### Required Parameters
 
@@ -902,8 +852,6 @@ No authorization required
 > AdminWorkflowAttributesGetResponse GetWorkflowAttributes(ctx, project, domain, workflow, optional)
 Fetches custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
 
-Retrieve the customized resource attributes associated with a project, domain and workflow combination
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -942,8 +890,6 @@ No authorization required
 # **ListActiveLaunchPlans**
 > AdminLaunchPlanList ListActiveLaunchPlans(ctx, project, domain, optional)
 List active versions of :ref:`ref_flyteidl.admin.LaunchPlan`.
-
-Fetch the active launch plan versions specified by input request filters.
 
 ### Required Parameters
 
@@ -984,8 +930,6 @@ No authorization required
 # **ListDescriptionEntities**
 > AdminDescriptionEntityList ListDescriptionEntities(ctx, resourceType, idProject, idDomain, idName, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
-
-Fetch existing description entity definitions matching input filters.
 
 ### Required Parameters
 
@@ -1032,8 +976,6 @@ No authorization required
 > AdminDescriptionEntityList ListDescriptionEntities2(ctx, resourceType, idProject, idDomain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.DescriptionEntity` definitions.
 
-Fetch existing description entity definitions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1078,8 +1020,6 @@ No authorization required
 > AdminExecutionList ListExecutions(ctx, idProject, idDomain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.Execution`.
 
-Fetch existing workflow executions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1122,8 +1062,6 @@ No authorization required
 > AdminNamedEntityIdentifierList ListLaunchPlanIds(ctx, project, domain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of launch plan objects.
 
-Fetch existing launch plan definition identifiers matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1164,8 +1102,6 @@ No authorization required
 # **ListLaunchPlans**
 > AdminLaunchPlanList ListLaunchPlans(ctx, idProject, idDomain, idName, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.
-
-Fetch existing launch plan definitions matching input filters.
 
 ### Required Parameters
 
@@ -1210,8 +1146,6 @@ No authorization required
 > AdminLaunchPlanList ListLaunchPlans2(ctx, idProject, idDomain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.LaunchPlan` definitions.
 
-Fetch existing launch plan definitions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1254,8 +1188,6 @@ No authorization required
 > AdminListMatchableAttributesResponse ListMatchableAttributes(ctx, optional)
 Lists custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a specific resource type.
 
-Retrieve a list of MatchableAttributesConfiguration objects.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1288,8 +1220,6 @@ No authorization required
 # **ListNamedEntities**
 > AdminNamedEntityList ListNamedEntities(ctx, resourceType, project, domain, optional)
 Returns a list of :ref:`ref_flyteidl.admin.NamedEntity` objects.
-
-Retrieve a list of NamedEntity objects sharing a common resource type, project, and domain.
 
 ### Required Parameters
 
@@ -1334,8 +1264,6 @@ No authorization required
 > AdminNodeExecutionList ListNodeExecutions(ctx, workflowExecutionIdProject, workflowExecutionIdDomain, workflowExecutionIdName, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution`.
 
-Fetch existing node executions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1379,8 +1307,6 @@ No authorization required
 # **ListNodeExecutionsForTask**
 > AdminNodeExecutionList ListNodeExecutionsForTask(ctx, taskExecutionIdNodeExecutionIdExecutionIdProject, taskExecutionIdNodeExecutionIdExecutionIdDomain, taskExecutionIdNodeExecutionIdExecutionIdName, taskExecutionIdNodeExecutionIdNodeId, taskExecutionIdTaskIdProject, taskExecutionIdTaskIdDomain, taskExecutionIdTaskIdName, taskExecutionIdTaskIdVersion, taskExecutionIdRetryAttempt, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.NodeExecution` launched by the reference :ref:`ref_flyteidl.admin.TaskExecution`.
-
-Fetch child node executions launched by the specified task execution.
 
 ### Required Parameters
 
@@ -1438,8 +1364,6 @@ No authorization required
 > AdminProjects ListProjects(ctx, optional)
 Fetches a list of :ref:`ref_flyteidl.admin.Project`
 
-Fetch registered projects.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1476,8 +1400,6 @@ No authorization required
 # **ListTaskExecutions**
 > AdminTaskExecutionList ListTaskExecutions(ctx, nodeExecutionIdExecutionIdProject, nodeExecutionIdExecutionIdDomain, nodeExecutionIdExecutionIdName, nodeExecutionIdNodeId, optional)
 Fetches a list of :ref:`ref_flyteidl.admin.TaskExecution`.
-
-Fetch existing task executions matching input filters.
 
 ### Required Parameters
 
@@ -1524,8 +1446,6 @@ No authorization required
 > AdminNamedEntityIdentifierList ListTaskIds(ctx, project, domain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of task objects.
 
-Fetch existing task definition identifiers matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1566,8 +1486,6 @@ No authorization required
 # **ListTasks**
 > AdminTaskList ListTasks(ctx, idProject, idDomain, idName, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.
-
-Fetch existing task definitions matching input filters.
 
 ### Required Parameters
 
@@ -1612,8 +1530,6 @@ No authorization required
 > AdminTaskList ListTasks2(ctx, idProject, idDomain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.Task` definitions.
 
-Fetch existing task definitions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1656,8 +1572,6 @@ No authorization required
 > AdminNamedEntityIdentifierList ListWorkflowIds(ctx, project, domain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.NamedEntityIdentifier` of workflow objects.
 
-Fetch an existing workflow definition identifiers matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1698,8 +1612,6 @@ No authorization required
 # **ListWorkflows**
 > AdminWorkflowList ListWorkflows(ctx, idProject, idDomain, idName, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.
-
-Fetch existing workflow definitions matching input filters.
 
 ### Required Parameters
 
@@ -1744,8 +1656,6 @@ No authorization required
 > AdminWorkflowList ListWorkflows2(ctx, idProject, idDomain, optional)
 Fetch a list of :ref:`ref_flyteidl.admin.Workflow` definitions.
 
-Fetch existing workflow definitions matching input filters.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1788,8 +1698,6 @@ No authorization required
 > AdminExecutionCreateResponse RecoverExecution(ctx, body)
 Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again. See :ref:`ref_flyteidl.admin.ExecutionRecoverRequest` for more details.
 
-Recreates a previously-run workflow execution that will only start executing from the last known failure point. In Recover mode, users cannot change any input parameters or update the version of the execution. This is extremely useful to recover from system errors and byzantine faults like - Loss of K8s cluster, bugs in platform or instability, machine failures, downstream system failures (downstream services), or simply to recover executions that failed because of retry exhaustion and should complete if tried again.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1815,8 +1723,6 @@ No authorization required
 # **RegisterProject**
 > AdminProjectRegisterResponse RegisterProject(ctx, body)
 Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.
-
-Register a project.
 
 ### Required Parameters
 
@@ -1844,8 +1750,6 @@ No authorization required
 > AdminExecutionCreateResponse RelaunchExecution(ctx, body)
 Triggers the creation of an identical :ref:`ref_flyteidl.admin.Execution`
 
-Relaunch a workflow execution.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1871,8 +1775,6 @@ No authorization required
 # **TerminateExecution**
 > AdminExecutionTerminateResponse TerminateExecution(ctx, idProject, idDomain, idName, body)
 Terminates an in-progress :ref:`ref_flyteidl.admin.Execution`.
-
-Terminate the active workflow execution specified in the request.
 
 ### Required Parameters
 
@@ -1903,8 +1805,6 @@ No authorization required
 > AdminExecutionUpdateResponse UpdateExecution(ctx, idProject, idDomain, idName, body)
 Update execution belonging to project domain :ref:`ref_flyteidl.admin.Execution`.
 
-Update execution belonging to project domain.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1933,8 +1833,6 @@ No authorization required
 # **UpdateLaunchPlan**
 > AdminLaunchPlanUpdateResponse UpdateLaunchPlan(ctx, idProject, idDomain, idName, idVersion, body)
 Updates the status of a registered :ref:`ref_flyteidl.admin.LaunchPlan`.
-
-Update the status of an existing launch plan definition. At most one launch plan version for a given {project, domain, name} can be active at a time. If this call sets a launch plan to active and existing version is already active, the result of this call will be that the formerly active launch plan will be made inactive and specified launch plan in this request will be made active. In the event that the formerly active launch plan had a schedule associated it with it, this schedule will be disabled. If the reference launch plan in this request is being set to active and has a schedule associated with it, the schedule will be enabled.
 
 ### Required Parameters
 
@@ -1966,8 +1864,6 @@ No authorization required
 > AdminNamedEntityUpdateResponse UpdateNamedEntity(ctx, resourceType, idProject, idDomain, idName, body)
 Updates a :ref:`ref_flyteidl.admin.NamedEntity` object.
 
-Update the fields associated with a NamedEntity
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1998,8 +1894,6 @@ No authorization required
 > AdminProjectUpdateResponse UpdateProject(ctx, id, body)
 Updates an existing :ref:`ref_flyteidl.admin.Project`  flyteidl.admin.Project should be passed but the domains property should be empty; it will be ignored in the handler as domains cannot be updated via this API.
 
-Update a project.
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -2026,8 +1920,6 @@ No authorization required
 # **UpdateProjectAttributes**
 > AdminProjectAttributesUpdateResponse UpdateProjectAttributes(ctx, attributesProject, body)
 Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` at the project level
-
-Update the customized resource attributes associated with a project
 
 ### Required Parameters
 
@@ -2056,8 +1948,6 @@ No authorization required
 > AdminProjectDomainAttributesUpdateResponse UpdateProjectDomainAttributes(ctx, attributesProject, attributesDomain, body)
 Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project and domain.
 
-Update the customized resource attributes associated with a project-domain combination
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -2085,8 +1975,6 @@ No authorization required
 # **UpdateWorkflowAttributes**
 > AdminWorkflowAttributesUpdateResponse UpdateWorkflowAttributes(ctx, attributesProject, attributesDomain, attributesWorkflow, body)
 Creates or updates custom :ref:`ref_flyteidl.admin.MatchableAttributesConfiguration` for a project, domain and workflow.
-
-Update the customized resource attributes associated with a project, domain and workflow combination
 
 ### Required Parameters
 

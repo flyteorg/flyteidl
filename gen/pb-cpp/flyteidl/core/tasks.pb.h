@@ -51,7 +51,7 @@ struct TableStruct_flyteidl_2fcore_2ftasks_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[15]
+  static const ::google::protobuf::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -99,6 +99,9 @@ extern SqlDefaultTypeInternal _Sql_default_instance_;
 class TaskMetadata;
 class TaskMetadataDefaultTypeInternal;
 extern TaskMetadataDefaultTypeInternal _TaskMetadata_default_instance_;
+class TaskMetadata_TagsEntry_DoNotUse;
+class TaskMetadata_TagsEntry_DoNotUseDefaultTypeInternal;
+extern TaskMetadata_TagsEntry_DoNotUseDefaultTypeInternal _TaskMetadata_TagsEntry_DoNotUse_default_instance_;
 class TaskTemplate;
 class TaskTemplateDefaultTypeInternal;
 extern TaskTemplateDefaultTypeInternal _TaskTemplate_default_instance_;
@@ -122,6 +125,7 @@ template<> ::flyteidl::core::Resources_ResourceEntry* Arena::CreateMaybeMessage<
 template<> ::flyteidl::core::RuntimeMetadata* Arena::CreateMaybeMessage<::flyteidl::core::RuntimeMetadata>(Arena*);
 template<> ::flyteidl::core::Sql* Arena::CreateMaybeMessage<::flyteidl::core::Sql>(Arena*);
 template<> ::flyteidl::core::TaskMetadata* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata>(Arena*);
+template<> ::flyteidl::core::TaskMetadata_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskMetadata_TagsEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::core::TaskTemplate* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate>(Arena*);
 template<> ::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::core::TaskTemplate_ConfigEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
@@ -752,6 +756,30 @@ class RuntimeMetadata final :
 };
 // -------------------------------------------------------------------
 
+class TaskMetadata_TagsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TaskMetadata_TagsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  typedef ::google::protobuf::internal::MapEntry<TaskMetadata_TagsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  TaskMetadata_TagsEntry_DoNotUse();
+  TaskMetadata_TagsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const TaskMetadata_TagsEntry_DoNotUse& other);
+  static const TaskMetadata_TagsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TaskMetadata_TagsEntry_DoNotUse*>(&_TaskMetadata_TagsEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
 class TaskMetadata final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.core.TaskMetadata) */ {
  public:
@@ -795,7 +823,7 @@ class TaskMetadata final :
                &_TaskMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(TaskMetadata* other);
   friend void swap(TaskMetadata& a, TaskMetadata& b) {
@@ -850,7 +878,17 @@ class TaskMetadata final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
+
+  // map<string, string> tags = 11;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 11;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      tags() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_tags();
 
   // string discovery_version = 6;
   void clear_discovery_version();
@@ -879,6 +917,20 @@ class TaskMetadata final :
   ::std::string* mutable_deprecated_error_message();
   ::std::string* release_deprecated_error_message();
   void set_allocated_deprecated_error_message(::std::string* deprecated_error_message);
+
+  // string pod_template_name = 12;
+  void clear_pod_template_name();
+  static const int kPodTemplateNameFieldNumber = 12;
+  const ::std::string& pod_template_name() const;
+  void set_pod_template_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_pod_template_name(::std::string&& value);
+  #endif
+  void set_pod_template_name(const char* value);
+  void set_pod_template_name(const char* value, size_t size);
+  ::std::string* mutable_pod_template_name();
+  ::std::string* release_pod_template_name();
+  void set_allocated_pod_template_name(::std::string* pod_template_name);
 
   // .flyteidl.core.RuntimeMetadata runtime = 2;
   bool has_runtime() const;
@@ -945,8 +997,15 @@ class TaskMetadata final :
   inline void clear_has_interruptible_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      TaskMetadata_TagsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > tags_;
   ::google::protobuf::internal::ArenaStringPtr discovery_version_;
   ::google::protobuf::internal::ArenaStringPtr deprecated_error_message_;
+  ::google::protobuf::internal::ArenaStringPtr pod_template_name_;
   ::flyteidl::core::RuntimeMetadata* runtime_;
   ::google::protobuf::Duration* timeout_;
   ::flyteidl::core::RetryStrategy* retries_;
@@ -1033,7 +1092,7 @@ class TaskTemplate final :
                &_TaskTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(TaskTemplate* other);
   friend void swap(TaskTemplate& a, TaskTemplate& b) {
@@ -1269,7 +1328,7 @@ class ContainerPort final :
                &_ContainerPort_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(ContainerPort* other);
   friend void swap(ContainerPort& a, ContainerPort& b) {
@@ -1381,7 +1440,7 @@ class Container final :
                &_Container_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Container* other);
   friend void swap(Container& a, Container& b) {
@@ -1645,7 +1704,7 @@ class IOStrategy final :
                &_IOStrategy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(IOStrategy* other);
   friend void swap(IOStrategy& a, IOStrategy& b) {
@@ -1820,7 +1879,7 @@ class DataLoadingConfig final :
                &_DataLoadingConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(DataLoadingConfig* other);
   friend void swap(DataLoadingConfig& a, DataLoadingConfig& b) {
@@ -2007,7 +2066,7 @@ class K8sPod final :
                &_K8sPod_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(K8sPod* other);
   friend void swap(K8sPod& a, K8sPod& b) {
@@ -2180,7 +2239,7 @@ class K8sObjectMetadata final :
                &_K8sObjectMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(K8sObjectMetadata* other);
   friend void swap(K8sObjectMetadata& a, K8sObjectMetadata& b) {
@@ -2316,7 +2375,7 @@ class Sql final :
                &_Sql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(Sql* other);
   friend void swap(Sql& a, Sql& b) {
@@ -2701,6 +2760,8 @@ inline void RuntimeMetadata::set_allocated_flavor(::std::string* flavor) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // TaskMetadata
 
 // bool discoverable = 1;
@@ -3020,6 +3081,77 @@ inline void TaskMetadata::set_generates_deck(bool value) {
   
   generates_deck_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.generates_deck)
+}
+
+// map<string, string> tags = 11;
+inline int TaskMetadata::tags_size() const {
+  return tags_.size();
+}
+inline void TaskMetadata::clear_tags() {
+  tags_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+TaskMetadata::tags() const {
+  // @@protoc_insertion_point(field_map:flyteidl.core.TaskMetadata.tags)
+  return tags_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+TaskMetadata::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_map:flyteidl.core.TaskMetadata.tags)
+  return tags_.MutableMap();
+}
+
+// string pod_template_name = 12;
+inline void TaskMetadata::clear_pod_template_name() {
+  pod_template_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskMetadata::pod_template_name() const {
+  // @@protoc_insertion_point(field_get:flyteidl.core.TaskMetadata.pod_template_name)
+  return pod_template_name_.GetNoArena();
+}
+inline void TaskMetadata::set_pod_template_name(const ::std::string& value) {
+  
+  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.core.TaskMetadata.pod_template_name)
+}
+#if LANG_CXX11
+inline void TaskMetadata::set_pod_template_name(::std::string&& value) {
+  
+  pod_template_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.core.TaskMetadata.pod_template_name)
+}
+#endif
+inline void TaskMetadata::set_pod_template_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.core.TaskMetadata.pod_template_name)
+}
+inline void TaskMetadata::set_pod_template_name(const char* value, size_t size) {
+  
+  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.core.TaskMetadata.pod_template_name)
+}
+inline ::std::string* TaskMetadata::mutable_pod_template_name() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.core.TaskMetadata.pod_template_name)
+  return pod_template_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskMetadata::release_pod_template_name() {
+  // @@protoc_insertion_point(field_release:flyteidl.core.TaskMetadata.pod_template_name)
+  
+  return pod_template_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskMetadata::set_allocated_pod_template_name(::std::string* pod_template_name) {
+  if (pod_template_name != nullptr) {
+    
+  } else {
+    
+  }
+  pod_template_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pod_template_name);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.core.TaskMetadata.pod_template_name)
 }
 
 inline bool TaskMetadata::has_interruptible_value() const {
@@ -4339,6 +4471,8 @@ inline void Sql::set_dialect(::flyteidl::core::Sql_Dialect value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
