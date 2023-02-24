@@ -1,5 +1,6 @@
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import tasks_pb2 as _tasks_pb2
+from flyteidl.core import interface_pb2 as _interface_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -7,14 +8,12 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TaskCreateRequest(_message.Message):
-    __slots__ = ["input", "task_type", "template"]
-    INPUT_FIELD_NUMBER: _ClassVar[int]
-    TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["inputs", "template"]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    input: _literals_pb2.Literal
-    task_type: str
+    inputs: _interface_pb2.VariableMap
     template: _tasks_pb2.TaskTemplate
-    def __init__(self, task_type: _Optional[str] = ..., input: _Optional[_Union[_literals_pb2.Literal, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ...) -> None: ...
+    def __init__(self, inputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ...) -> None: ...
 
 class TaskCreateResponse(_message.Message):
     __slots__ = ["job_id", "message"]

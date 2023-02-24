@@ -19,38 +19,28 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string task_type = 1;</code>
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
      */
-    java.lang.String getTaskType();
+    boolean hasInputs();
     /**
-     * <code>string task_type = 1;</code>
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getTaskTypeBytes();
+    flyteidl.core.Interface.VariableMap getInputs();
+    /**
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     */
+    flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder();
 
     /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    boolean hasInput();
-    /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    flyteidl.core.Literals.Literal getInput();
-    /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    flyteidl.core.Literals.LiteralOrBuilder getInputOrBuilder();
-
-    /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     boolean hasTemplate();
     /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplate getTemplate();
     /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder();
   }
@@ -67,7 +57,6 @@ public final class PluginSystem {
       super(builder);
     }
     private TaskCreateRequest() {
-      taskType_ = "";
     }
 
     @java.lang.Override
@@ -95,25 +84,19 @@ public final class PluginSystem {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              flyteidl.core.Interface.VariableMap.Builder subBuilder = null;
+              if (inputs_ != null) {
+                subBuilder = inputs_.toBuilder();
+              }
+              inputs_ = input.readMessage(flyteidl.core.Interface.VariableMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputs_);
+                inputs_ = subBuilder.buildPartial();
+              }
 
-              taskType_ = s;
               break;
             }
             case 18: {
-              flyteidl.core.Literals.Literal.Builder subBuilder = null;
-              if (input_ != null) {
-                subBuilder = input_.toBuilder();
-              }
-              input_ = input.readMessage(flyteidl.core.Literals.Literal.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(input_);
-                input_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
               flyteidl.core.Tasks.TaskTemplate.Builder subBuilder = null;
               if (template_ != null) {
                 subBuilder = template_.toBuilder();
@@ -158,77 +141,43 @@ public final class PluginSystem {
               flyteidl.service.PluginSystem.TaskCreateRequest.class, flyteidl.service.PluginSystem.TaskCreateRequest.Builder.class);
     }
 
-    public static final int TASK_TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object taskType_;
+    public static final int INPUTS_FIELD_NUMBER = 1;
+    private flyteidl.core.Interface.VariableMap inputs_;
     /**
-     * <code>string task_type = 1;</code>
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
      */
-    public java.lang.String getTaskType() {
-      java.lang.Object ref = taskType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskType_ = s;
-        return s;
-      }
+    public boolean hasInputs() {
+      return inputs_ != null;
     }
     /**
-     * <code>string task_type = 1;</code>
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTaskTypeBytes() {
-      java.lang.Object ref = taskType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.core.Interface.VariableMap getInputs() {
+      return inputs_ == null ? flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
+    }
+    /**
+     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     */
+    public flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder() {
+      return getInputs();
     }
 
-    public static final int INPUT_FIELD_NUMBER = 2;
-    private flyteidl.core.Literals.Literal input_;
-    /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    public boolean hasInput() {
-      return input_ != null;
-    }
-    /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    public flyteidl.core.Literals.Literal getInput() {
-      return input_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : input_;
-    }
-    /**
-     * <code>.flyteidl.core.Literal input = 2;</code>
-     */
-    public flyteidl.core.Literals.LiteralOrBuilder getInputOrBuilder() {
-      return getInput();
-    }
-
-    public static final int TEMPLATE_FIELD_NUMBER = 3;
+    public static final int TEMPLATE_FIELD_NUMBER = 2;
     private flyteidl.core.Tasks.TaskTemplate template_;
     /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public boolean hasTemplate() {
       return template_ != null;
     }
     /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public flyteidl.core.Tasks.TaskTemplate getTemplate() {
       return template_ == null ? flyteidl.core.Tasks.TaskTemplate.getDefaultInstance() : template_;
     }
     /**
-     * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+     * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder() {
       return getTemplate();
@@ -248,14 +197,11 @@ public final class PluginSystem {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTaskTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskType_);
-      }
-      if (input_ != null) {
-        output.writeMessage(2, getInput());
+      if (inputs_ != null) {
+        output.writeMessage(1, getInputs());
       }
       if (template_ != null) {
-        output.writeMessage(3, getTemplate());
+        output.writeMessage(2, getTemplate());
       }
       unknownFields.writeTo(output);
     }
@@ -266,16 +212,13 @@ public final class PluginSystem {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTaskTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskType_);
-      }
-      if (input_ != null) {
+      if (inputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getInput());
+          .computeMessageSize(1, getInputs());
       }
       if (template_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getTemplate());
+          .computeMessageSize(2, getTemplate());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -292,12 +235,10 @@ public final class PluginSystem {
       }
       flyteidl.service.PluginSystem.TaskCreateRequest other = (flyteidl.service.PluginSystem.TaskCreateRequest) obj;
 
-      if (!getTaskType()
-          .equals(other.getTaskType())) return false;
-      if (hasInput() != other.hasInput()) return false;
-      if (hasInput()) {
-        if (!getInput()
-            .equals(other.getInput())) return false;
+      if (hasInputs() != other.hasInputs()) return false;
+      if (hasInputs()) {
+        if (!getInputs()
+            .equals(other.getInputs())) return false;
       }
       if (hasTemplate() != other.hasTemplate()) return false;
       if (hasTemplate()) {
@@ -315,11 +256,9 @@ public final class PluginSystem {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TASK_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getTaskType().hashCode();
-      if (hasInput()) {
-        hash = (37 * hash) + INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getInput().hashCode();
+      if (hasInputs()) {
+        hash = (37 * hash) + INPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + getInputs().hashCode();
       }
       if (hasTemplate()) {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
@@ -458,13 +397,11 @@ public final class PluginSystem {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        taskType_ = "";
-
-        if (inputBuilder_ == null) {
-          input_ = null;
+        if (inputsBuilder_ == null) {
+          inputs_ = null;
         } else {
-          input_ = null;
-          inputBuilder_ = null;
+          inputs_ = null;
+          inputsBuilder_ = null;
         }
         if (templateBuilder_ == null) {
           template_ = null;
@@ -498,11 +435,10 @@ public final class PluginSystem {
       @java.lang.Override
       public flyteidl.service.PluginSystem.TaskCreateRequest buildPartial() {
         flyteidl.service.PluginSystem.TaskCreateRequest result = new flyteidl.service.PluginSystem.TaskCreateRequest(this);
-        result.taskType_ = taskType_;
-        if (inputBuilder_ == null) {
-          result.input_ = input_;
+        if (inputsBuilder_ == null) {
+          result.inputs_ = inputs_;
         } else {
-          result.input_ = inputBuilder_.build();
+          result.inputs_ = inputsBuilder_.build();
         }
         if (templateBuilder_ == null) {
           result.template_ = template_;
@@ -557,12 +493,8 @@ public final class PluginSystem {
 
       public Builder mergeFrom(flyteidl.service.PluginSystem.TaskCreateRequest other) {
         if (other == flyteidl.service.PluginSystem.TaskCreateRequest.getDefaultInstance()) return this;
-        if (!other.getTaskType().isEmpty()) {
-          taskType_ = other.taskType_;
-          onChanged();
-        }
-        if (other.hasInput()) {
-          mergeInput(other.getInput());
+        if (other.hasInputs()) {
+          mergeInputs(other.getInputs());
         }
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
@@ -596,203 +528,134 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object taskType_ = "";
-      /**
-       * <code>string task_type = 1;</code>
-       */
-      public java.lang.String getTaskType() {
-        java.lang.Object ref = taskType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          taskType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string task_type = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTaskTypeBytes() {
-        java.lang.Object ref = taskType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          taskType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string task_type = 1;</code>
-       */
-      public Builder setTaskType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        taskType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string task_type = 1;</code>
-       */
-      public Builder clearTaskType() {
-        
-        taskType_ = getDefaultInstance().getTaskType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string task_type = 1;</code>
-       */
-      public Builder setTaskTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        taskType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private flyteidl.core.Literals.Literal input_;
+      private flyteidl.core.Interface.VariableMap inputs_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> inputBuilder_;
+          flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder> inputsBuilder_;
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public boolean hasInput() {
-        return inputBuilder_ != null || input_ != null;
+      public boolean hasInputs() {
+        return inputsBuilder_ != null || inputs_ != null;
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public flyteidl.core.Literals.Literal getInput() {
-        if (inputBuilder_ == null) {
-          return input_ == null ? flyteidl.core.Literals.Literal.getDefaultInstance() : input_;
+      public flyteidl.core.Interface.VariableMap getInputs() {
+        if (inputsBuilder_ == null) {
+          return inputs_ == null ? flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
         } else {
-          return inputBuilder_.getMessage();
+          return inputsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public Builder setInput(flyteidl.core.Literals.Literal value) {
-        if (inputBuilder_ == null) {
+      public Builder setInputs(flyteidl.core.Interface.VariableMap value) {
+        if (inputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          input_ = value;
+          inputs_ = value;
           onChanged();
         } else {
-          inputBuilder_.setMessage(value);
+          inputsBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public Builder setInput(
-          flyteidl.core.Literals.Literal.Builder builderForValue) {
-        if (inputBuilder_ == null) {
-          input_ = builderForValue.build();
+      public Builder setInputs(
+          flyteidl.core.Interface.VariableMap.Builder builderForValue) {
+        if (inputsBuilder_ == null) {
+          inputs_ = builderForValue.build();
           onChanged();
         } else {
-          inputBuilder_.setMessage(builderForValue.build());
+          inputsBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public Builder mergeInput(flyteidl.core.Literals.Literal value) {
-        if (inputBuilder_ == null) {
-          if (input_ != null) {
-            input_ =
-              flyteidl.core.Literals.Literal.newBuilder(input_).mergeFrom(value).buildPartial();
+      public Builder mergeInputs(flyteidl.core.Interface.VariableMap value) {
+        if (inputsBuilder_ == null) {
+          if (inputs_ != null) {
+            inputs_ =
+              flyteidl.core.Interface.VariableMap.newBuilder(inputs_).mergeFrom(value).buildPartial();
           } else {
-            input_ = value;
+            inputs_ = value;
           }
           onChanged();
         } else {
-          inputBuilder_.mergeFrom(value);
+          inputsBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public Builder clearInput() {
-        if (inputBuilder_ == null) {
-          input_ = null;
+      public Builder clearInputs() {
+        if (inputsBuilder_ == null) {
+          inputs_ = null;
           onChanged();
         } else {
-          input_ = null;
-          inputBuilder_ = null;
+          inputs_ = null;
+          inputsBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public flyteidl.core.Literals.Literal.Builder getInputBuilder() {
+      public flyteidl.core.Interface.VariableMap.Builder getInputsBuilder() {
         
         onChanged();
-        return getInputFieldBuilder().getBuilder();
+        return getInputsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
-      public flyteidl.core.Literals.LiteralOrBuilder getInputOrBuilder() {
-        if (inputBuilder_ != null) {
-          return inputBuilder_.getMessageOrBuilder();
+      public flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder() {
+        if (inputsBuilder_ != null) {
+          return inputsBuilder_.getMessageOrBuilder();
         } else {
-          return input_ == null ?
-              flyteidl.core.Literals.Literal.getDefaultInstance() : input_;
+          return inputs_ == null ?
+              flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
         }
       }
       /**
-       * <code>.flyteidl.core.Literal input = 2;</code>
+       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder> 
-          getInputFieldBuilder() {
-        if (inputBuilder_ == null) {
-          inputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Literals.Literal, flyteidl.core.Literals.Literal.Builder, flyteidl.core.Literals.LiteralOrBuilder>(
-                  getInput(),
+          flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder> 
+          getInputsFieldBuilder() {
+        if (inputsBuilder_ == null) {
+          inputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder>(
+                  getInputs(),
                   getParentForChildren(),
                   isClean());
-          input_ = null;
+          inputs_ = null;
         }
-        return inputBuilder_;
+        return inputsBuilder_;
       }
 
       private flyteidl.core.Tasks.TaskTemplate template_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> templateBuilder_;
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public boolean hasTemplate() {
         return templateBuilder_ != null || template_ != null;
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplate getTemplate() {
         if (templateBuilder_ == null) {
@@ -802,7 +665,7 @@ public final class PluginSystem {
         }
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder setTemplate(flyteidl.core.Tasks.TaskTemplate value) {
         if (templateBuilder_ == null) {
@@ -818,7 +681,7 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder setTemplate(
           flyteidl.core.Tasks.TaskTemplate.Builder builderForValue) {
@@ -832,7 +695,7 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder mergeTemplate(flyteidl.core.Tasks.TaskTemplate value) {
         if (templateBuilder_ == null) {
@@ -850,7 +713,7 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder clearTemplate() {
         if (templateBuilder_ == null) {
@@ -864,7 +727,7 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplate.Builder getTemplateBuilder() {
         
@@ -872,7 +735,7 @@ public final class PluginSystem {
         return getTemplateFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder() {
         if (templateBuilder_ != null) {
@@ -883,7 +746,7 @@ public final class PluginSystem {
         }
       }
       /**
-       * <code>.flyteidl.core.TaskTemplate template = 3;</code>
+       * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> 
@@ -4421,26 +4284,27 @@ public final class PluginSystem {
     java.lang.String[] descriptorData = {
       "\n$flyteidl/service/plugin_system.proto\022\020" +
       "flyteidl.service\032\034flyteidl/core/literals" +
-      ".proto\032\031flyteidl/core/tasks.proto\"|\n\021Tas" +
-      "kCreateRequest\022\021\n\ttask_type\030\001 \001(\t\022%\n\005inp" +
-      "ut\030\002 \001(\0132\026.flyteidl.core.Literal\022-\n\010temp" +
-      "late\030\003 \001(\0132\033.flyteidl.core.TaskTemplate\"" +
-      "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
-      "\007message\030\002 \001(\t\"^\n\016TaskGetRequest\022\021\n\ttask" +
-      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022\025\n\routput_pr" +
-      "efix\030\003 \001(\t\022\022\n\nprev_state\030\004 \001(\t\"1\n\017TaskGe" +
-      "tResponse\022\r\n\005state\030\001 \001(\t\022\017\n\007message\030\002 \001(" +
-      "\t\"6\n\021TaskDeleteRequest\022\021\n\ttask_type\030\001 \001(" +
-      "\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse2" +
-      "\241\002\n\024BackendPluginService\022Y\n\nCreateTask\022#" +
-      ".flyteidl.service.TaskCreateRequest\032$.fl" +
-      "yteidl.service.TaskCreateResponse\"\000\022S\n\007G" +
-      "etTask\022 .flyteidl.service.TaskGetRequest" +
-      "\032$.flyteidl.service.TaskCreateResponse\"\000" +
-      "\022Y\n\nDeleteTask\022#.flyteidl.service.TaskDe" +
-      "leteRequest\032$.flyteidl.service.TaskDelet" +
-      "eResponse\"\000B9Z7github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
+      ".proto\032\031flyteidl/core/tasks.proto\032\035flyte" +
+      "idl/core/interface.proto\"n\n\021TaskCreateRe" +
+      "quest\022*\n\006inputs\030\001 \001(\0132\032.flyteidl.core.Va" +
+      "riableMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
+      "ore.TaskTemplate\"5\n\022TaskCreateResponse\022\016" +
+      "\n\006job_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"^\n\016TaskG" +
+      "etRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002" +
+      " \001(\t\022\025\n\routput_prefix\030\003 \001(\t\022\022\n\nprev_stat" +
+      "e\030\004 \001(\t\"1\n\017TaskGetResponse\022\r\n\005state\030\001 \001(" +
+      "\t\022\017\n\007message\030\002 \001(\t\"6\n\021TaskDeleteRequest\022" +
+      "\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022Ta" +
+      "skDeleteResponse2\241\002\n\024BackendPluginServic" +
+      "e\022Y\n\nCreateTask\022#.flyteidl.service.TaskC" +
+      "reateRequest\032$.flyteidl.service.TaskCrea" +
+      "teResponse\"\000\022S\n\007GetTask\022 .flyteidl.servi" +
+      "ce.TaskGetRequest\032$.flyteidl.service.Tas" +
+      "kCreateResponse\"\000\022Y\n\nDeleteTask\022#.flytei" +
+      "dl.service.TaskDeleteRequest\032$.flyteidl." +
+      "service.TaskDeleteResponse\"\000B9Z7github.c" +
+      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
+      "serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4455,13 +4319,14 @@ public final class PluginSystem {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Tasks.getDescriptor(),
+          flyteidl.core.Interface.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_service_TaskCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_flyteidl_service_TaskCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskCreateRequest_descriptor,
-        new java.lang.String[] { "TaskType", "Input", "Template", });
+        new java.lang.String[] { "Inputs", "Template", });
     internal_static_flyteidl_service_TaskCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_service_TaskCreateResponse_fieldAccessorTable = new
@@ -4494,6 +4359,7 @@ public final class PluginSystem {
         new java.lang.String[] { });
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Tasks.getDescriptor();
+    flyteidl.core.Interface.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

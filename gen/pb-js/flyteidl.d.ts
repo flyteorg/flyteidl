@@ -19348,11 +19348,8 @@ export namespace flyteidl {
         /** Properties of a TaskCreateRequest. */
         interface ITaskCreateRequest {
 
-            /** TaskCreateRequest taskType */
-            taskType?: (string|null);
-
-            /** TaskCreateRequest input */
-            input?: (flyteidl.core.ILiteral|null);
+            /** TaskCreateRequest inputs */
+            inputs?: (flyteidl.core.IVariableMap|null);
 
             /** TaskCreateRequest template */
             template?: (flyteidl.core.ITaskTemplate|null);
@@ -19367,11 +19364,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.service.ITaskCreateRequest);
 
-            /** TaskCreateRequest taskType. */
-            public taskType: string;
-
-            /** TaskCreateRequest input. */
-            public input?: (flyteidl.core.ILiteral|null);
+            /** TaskCreateRequest inputs. */
+            public inputs?: (flyteidl.core.IVariableMap|null);
 
             /** TaskCreateRequest template. */
             public template?: (flyteidl.core.ITaskTemplate|null);

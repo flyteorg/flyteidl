@@ -33,6 +33,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/tasks.pb.h"
+#include "flyteidl/core/interface.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fplugin_5fsystem_2eproto
@@ -182,33 +183,19 @@ class TaskCreateRequest final :
 
   // accessors -------------------------------------------------------
 
-  // string task_type = 1;
-  void clear_task_type();
-  static const int kTaskTypeFieldNumber = 1;
-  const ::std::string& task_type() const;
-  void set_task_type(const ::std::string& value);
-  #if LANG_CXX11
-  void set_task_type(::std::string&& value);
-  #endif
-  void set_task_type(const char* value);
-  void set_task_type(const char* value, size_t size);
-  ::std::string* mutable_task_type();
-  ::std::string* release_task_type();
-  void set_allocated_task_type(::std::string* task_type);
+  // .flyteidl.core.VariableMap inputs = 1;
+  bool has_inputs() const;
+  void clear_inputs();
+  static const int kInputsFieldNumber = 1;
+  const ::flyteidl::core::VariableMap& inputs() const;
+  ::flyteidl::core::VariableMap* release_inputs();
+  ::flyteidl::core::VariableMap* mutable_inputs();
+  void set_allocated_inputs(::flyteidl::core::VariableMap* inputs);
 
-  // .flyteidl.core.Literal input = 2;
-  bool has_input() const;
-  void clear_input();
-  static const int kInputFieldNumber = 2;
-  const ::flyteidl::core::Literal& input() const;
-  ::flyteidl::core::Literal* release_input();
-  ::flyteidl::core::Literal* mutable_input();
-  void set_allocated_input(::flyteidl::core::Literal* input);
-
-  // .flyteidl.core.TaskTemplate template = 3;
+  // .flyteidl.core.TaskTemplate template = 2;
   bool has_template_() const;
   void clear_template_();
-  static const int kTemplateFieldNumber = 3;
+  static const int kTemplateFieldNumber = 2;
   const ::flyteidl::core::TaskTemplate& template_() const;
   ::flyteidl::core::TaskTemplate* release_template_();
   ::flyteidl::core::TaskTemplate* mutable_template_();
@@ -219,8 +206,7 @@ class TaskCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr task_type_;
-  ::flyteidl::core::Literal* input_;
+  ::flyteidl::core::VariableMap* inputs_;
   ::flyteidl::core::TaskTemplate* template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
@@ -911,105 +897,52 @@ class TaskDeleteResponse final :
 #endif  // __GNUC__
 // TaskCreateRequest
 
-// string task_type = 1;
-inline void TaskCreateRequest::clear_task_type() {
-  task_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.core.VariableMap inputs = 1;
+inline bool TaskCreateRequest::has_inputs() const {
+  return this != internal_default_instance() && inputs_ != nullptr;
 }
-inline const ::std::string& TaskCreateRequest::task_type() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateRequest.task_type)
-  return task_type_.GetNoArena();
+inline const ::flyteidl::core::VariableMap& TaskCreateRequest::inputs() const {
+  const ::flyteidl::core::VariableMap* p = inputs_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateRequest.inputs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::VariableMap*>(
+      &::flyteidl::core::_VariableMap_default_instance_);
 }
-inline void TaskCreateRequest::set_task_type(const ::std::string& value) {
+inline ::flyteidl::core::VariableMap* TaskCreateRequest::release_inputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateRequest.inputs)
   
-  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateRequest.task_type)
-}
-#if LANG_CXX11
-inline void TaskCreateRequest::set_task_type(::std::string&& value) {
-  
-  task_type_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskCreateRequest.task_type)
-}
-#endif
-inline void TaskCreateRequest::set_task_type(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskCreateRequest.task_type)
-}
-inline void TaskCreateRequest::set_task_type(const char* value, size_t size) {
-  
-  task_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskCreateRequest.task_type)
-}
-inline ::std::string* TaskCreateRequest::mutable_task_type() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateRequest.task_type)
-  return task_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskCreateRequest::release_task_type() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateRequest.task_type)
-  
-  return task_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskCreateRequest::set_allocated_task_type(::std::string* task_type) {
-  if (task_type != nullptr) {
-    
-  } else {
-    
-  }
-  task_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), task_type);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateRequest.task_type)
-}
-
-// .flyteidl.core.Literal input = 2;
-inline bool TaskCreateRequest::has_input() const {
-  return this != internal_default_instance() && input_ != nullptr;
-}
-inline const ::flyteidl::core::Literal& TaskCreateRequest::input() const {
-  const ::flyteidl::core::Literal* p = input_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateRequest.input)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Literal*>(
-      &::flyteidl::core::_Literal_default_instance_);
-}
-inline ::flyteidl::core::Literal* TaskCreateRequest::release_input() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateRequest.input)
-  
-  ::flyteidl::core::Literal* temp = input_;
-  input_ = nullptr;
+  ::flyteidl::core::VariableMap* temp = inputs_;
+  inputs_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::Literal* TaskCreateRequest::mutable_input() {
+inline ::flyteidl::core::VariableMap* TaskCreateRequest::mutable_inputs() {
   
-  if (input_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::Literal>(GetArenaNoVirtual());
-    input_ = p;
+  if (inputs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::VariableMap>(GetArenaNoVirtual());
+    inputs_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateRequest.input)
-  return input_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateRequest.inputs)
+  return inputs_;
 }
-inline void TaskCreateRequest::set_allocated_input(::flyteidl::core::Literal* input) {
+inline void TaskCreateRequest::set_allocated_inputs(::flyteidl::core::VariableMap* inputs) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(input_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(inputs_);
   }
-  if (input) {
+  if (inputs) {
     ::google::protobuf::Arena* submessage_arena = nullptr;
     if (message_arena != submessage_arena) {
-      input = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, input, submessage_arena);
+      inputs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, inputs, submessage_arena);
     }
     
   } else {
     
   }
-  input_ = input;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateRequest.input)
+  inputs_ = inputs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateRequest.inputs)
 }
 
-// .flyteidl.core.TaskTemplate template = 3;
+// .flyteidl.core.TaskTemplate template = 2;
 inline bool TaskCreateRequest::has_template_() const {
   return this != internal_default_instance() && template__ != nullptr;
 }

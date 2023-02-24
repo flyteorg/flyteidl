@@ -13,9 +13,10 @@ _sym_db = _symbol_database.Default()
 
 from flyteidl.core import literals_pb2 as flyteidl_dot_core_dot_literals__pb2
 from flyteidl.core import tasks_pb2 as flyteidl_dot_core_dot_tasks__pb2
+from flyteidl.core import interface_pb2 as flyteidl_dot_core_dot_interface__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$flyteidl/service/plugin_system.proto\x12\x10\x66lyteidl.service\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\"\x97\x01\n\x11TaskCreateRequest\x12\x1b\n\ttask_type\x18\x01 \x01(\tR\x08taskType\x12,\n\x05input\x18\x02 \x01(\x0b\x32\x16.flyteidl.core.LiteralR\x05input\x12\x37\n\x08template\x18\x03 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateR\x08template\"E\n\x12TaskCreateResponse\x12\x15\n\x06job_id\x18\x01 \x01(\tR\x05jobId\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x88\x01\n\x0eTaskGetRequest\x12\x1b\n\ttask_type\x18\x01 \x01(\tR\x08taskType\x12\x15\n\x06job_id\x18\x02 \x01(\tR\x05jobId\x12#\n\routput_prefix\x18\x03 \x01(\tR\x0coutputPrefix\x12\x1d\n\nprev_state\x18\x04 \x01(\tR\tprevState\"A\n\x0fTaskGetResponse\x12\x14\n\x05state\x18\x01 \x01(\tR\x05state\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"G\n\x11TaskDeleteRequest\x12\x1b\n\ttask_type\x18\x01 \x01(\tR\x08taskType\x12\x15\n\x06job_id\x18\x02 \x01(\tR\x05jobId\"\x14\n\x12TaskDeleteResponse2\xa1\x02\n\x14\x42\x61\x63kendPluginService\x12Y\n\nCreateTask\x12#.flyteidl.service.TaskCreateRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x00\x12S\n\x07GetTask\x12 .flyteidl.service.TaskGetRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x00\x12Y\n\nDeleteTask\x12#.flyteidl.service.TaskDeleteRequest\x1a$.flyteidl.service.TaskDeleteResponse\"\x00\x42\xc3\x01\n\x14\x63om.flyteidl.serviceB\x11PluginSystemProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$flyteidl/service/plugin_system.proto\x12\x10\x66lyteidl.service\x1a\x1c\x66lyteidl/core/literals.proto\x1a\x19\x66lyteidl/core/tasks.proto\x1a\x1d\x66lyteidl/core/interface.proto\"\x80\x01\n\x11TaskCreateRequest\x12\x32\n\x06inputs\x18\x01 \x01(\x0b\x32\x1a.flyteidl.core.VariableMapR\x06inputs\x12\x37\n\x08template\x18\x02 \x01(\x0b\x32\x1b.flyteidl.core.TaskTemplateR\x08template\"E\n\x12TaskCreateResponse\x12\x15\n\x06job_id\x18\x01 \x01(\tR\x05jobId\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"\x88\x01\n\x0eTaskGetRequest\x12\x1b\n\ttask_type\x18\x01 \x01(\tR\x08taskType\x12\x15\n\x06job_id\x18\x02 \x01(\tR\x05jobId\x12#\n\routput_prefix\x18\x03 \x01(\tR\x0coutputPrefix\x12\x1d\n\nprev_state\x18\x04 \x01(\tR\tprevState\"A\n\x0fTaskGetResponse\x12\x14\n\x05state\x18\x01 \x01(\tR\x05state\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"G\n\x11TaskDeleteRequest\x12\x1b\n\ttask_type\x18\x01 \x01(\tR\x08taskType\x12\x15\n\x06job_id\x18\x02 \x01(\tR\x05jobId\"\x14\n\x12TaskDeleteResponse2\xa1\x02\n\x14\x42\x61\x63kendPluginService\x12Y\n\nCreateTask\x12#.flyteidl.service.TaskCreateRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x00\x12S\n\x07GetTask\x12 .flyteidl.service.TaskGetRequest\x1a$.flyteidl.service.TaskCreateResponse\"\x00\x12Y\n\nDeleteTask\x12#.flyteidl.service.TaskDeleteRequest\x1a$.flyteidl.service.TaskDeleteResponse\"\x00\x42\xc3\x01\n\x14\x63om.flyteidl.serviceB\x11PluginSystemProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\xa2\x02\x03\x46SX\xaa\x02\x10\x46lyteidl.Service\xca\x02\x10\x46lyteidl\\Service\xe2\x02\x1c\x46lyteidl\\Service\\GPBMetadata\xea\x02\x11\x46lyteidl::Serviceb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flyteidl.service.plugin_system_pb2', globals())
@@ -23,18 +24,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.serviceB\021PluginSystemProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service\242\002\003FSX\252\002\020Flyteidl.Service\312\002\020Flyteidl\\Service\342\002\034Flyteidl\\Service\\GPBMetadata\352\002\021Flyteidl::Service'
-  _TASKCREATEREQUEST._serialized_start=116
-  _TASKCREATEREQUEST._serialized_end=267
-  _TASKCREATERESPONSE._serialized_start=269
-  _TASKCREATERESPONSE._serialized_end=338
-  _TASKGETREQUEST._serialized_start=341
-  _TASKGETREQUEST._serialized_end=477
-  _TASKGETRESPONSE._serialized_start=479
-  _TASKGETRESPONSE._serialized_end=544
-  _TASKDELETEREQUEST._serialized_start=546
-  _TASKDELETEREQUEST._serialized_end=617
-  _TASKDELETERESPONSE._serialized_start=619
-  _TASKDELETERESPONSE._serialized_end=639
-  _BACKENDPLUGINSERVICE._serialized_start=642
-  _BACKENDPLUGINSERVICE._serialized_end=931
+  _TASKCREATEREQUEST._serialized_start=147
+  _TASKCREATEREQUEST._serialized_end=275
+  _TASKCREATERESPONSE._serialized_start=277
+  _TASKCREATERESPONSE._serialized_end=346
+  _TASKGETREQUEST._serialized_start=349
+  _TASKGETREQUEST._serialized_end=485
+  _TASKGETRESPONSE._serialized_start=487
+  _TASKGETRESPONSE._serialized_end=552
+  _TASKDELETEREQUEST._serialized_start=554
+  _TASKDELETEREQUEST._serialized_end=625
+  _TASKDELETERESPONSE._serialized_start=627
+  _TASKDELETERESPONSE._serialized_end=647
+  _BACKENDPLUGINSERVICE._serialized_start=650
+  _BACKENDPLUGINSERVICE._serialized_end=939
 # @@protoc_insertion_point(module_scope)

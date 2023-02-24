@@ -44877,8 +44877,7 @@
                  * Properties of a TaskCreateRequest.
                  * @memberof flyteidl.service
                  * @interface ITaskCreateRequest
-                 * @property {string|null} [taskType] TaskCreateRequest taskType
-                 * @property {flyteidl.core.ILiteral|null} [input] TaskCreateRequest input
+                 * @property {flyteidl.core.IVariableMap|null} [inputs] TaskCreateRequest inputs
                  * @property {flyteidl.core.ITaskTemplate|null} [template] TaskCreateRequest template
                  */
     
@@ -44898,20 +44897,12 @@
                 }
     
                 /**
-                 * TaskCreateRequest taskType.
-                 * @member {string} taskType
+                 * TaskCreateRequest inputs.
+                 * @member {flyteidl.core.IVariableMap|null|undefined} inputs
                  * @memberof flyteidl.service.TaskCreateRequest
                  * @instance
                  */
-                TaskCreateRequest.prototype.taskType = "";
-    
-                /**
-                 * TaskCreateRequest input.
-                 * @member {flyteidl.core.ILiteral|null|undefined} input
-                 * @memberof flyteidl.service.TaskCreateRequest
-                 * @instance
-                 */
-                TaskCreateRequest.prototype.input = null;
+                TaskCreateRequest.prototype.inputs = null;
     
                 /**
                  * TaskCreateRequest template.
@@ -44945,12 +44936,10 @@
                 TaskCreateRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.taskType != null && message.hasOwnProperty("taskType"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
-                    if (message.input != null && message.hasOwnProperty("input"))
-                        $root.flyteidl.core.Literal.encode(message.input, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        $root.flyteidl.core.VariableMap.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.template != null && message.hasOwnProperty("template"))
-                        $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -44973,12 +44962,9 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.taskType = reader.string();
+                            message.inputs = $root.flyteidl.core.VariableMap.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.input = $root.flyteidl.core.Literal.decode(reader, reader.uint32());
-                            break;
-                        case 3:
                             message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
                             break;
                         default:
@@ -45000,13 +44986,10 @@
                 TaskCreateRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.taskType != null && message.hasOwnProperty("taskType"))
-                        if (!$util.isString(message.taskType))
-                            return "taskType: string expected";
-                    if (message.input != null && message.hasOwnProperty("input")) {
-                        var error = $root.flyteidl.core.Literal.verify(message.input);
+                    if (message.inputs != null && message.hasOwnProperty("inputs")) {
+                        var error = $root.flyteidl.core.VariableMap.verify(message.inputs);
                         if (error)
-                            return "input." + error;
+                            return "inputs." + error;
                     }
                     if (message.template != null && message.hasOwnProperty("template")) {
                         var error = $root.flyteidl.core.TaskTemplate.verify(message.template);

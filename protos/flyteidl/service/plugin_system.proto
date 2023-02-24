@@ -4,6 +4,7 @@ package flyteidl.service;
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service";
 import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
+import "flyteidl/core/interface.proto";
 
 service BackendPluginService {
   rpc CreateTask (TaskCreateRequest) returns (TaskCreateResponse){};
@@ -13,9 +14,8 @@ service BackendPluginService {
 
 
 message TaskCreateRequest {
-  string task_type = 1;
-  core.Literal input = 2;
-  core.TaskTemplate template = 3;
+  core.VariableMap inputs = 1;
+  core.TaskTemplate template = 2;
 }
 
 message TaskCreateResponse {

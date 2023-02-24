@@ -523,8 +523,7 @@ TaskCreateRequest
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "task_type", ":ref:`ref_string`", "", ""
-   "input", ":ref:`ref_flyteidl.core.Literal`", "", ""
+   "inputs", ":ref:`ref_flyteidl.core.VariableMap`", "", ""
    "template", ":ref:`ref_flyteidl.core.TaskTemplate`", "", ""
 
 
