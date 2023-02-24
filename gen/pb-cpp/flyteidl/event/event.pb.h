@@ -1561,6 +1561,15 @@ class TaskExecutionEvent final :
   ::flyteidl::event::TaskExecutionMetadata* mutable_metadata();
   void set_allocated_metadata(::flyteidl::event::TaskExecutionMetadata* metadata);
 
+  // .google.protobuf.Timestamp reported_at = 20;
+  bool has_reported_at() const;
+  void clear_reported_at();
+  static const int kReportedAtFieldNumber = 20;
+  const ::google::protobuf::Timestamp& reported_at() const;
+  ::google::protobuf::Timestamp* release_reported_at();
+  ::google::protobuf::Timestamp* mutable_reported_at();
+  void set_allocated_reported_at(::google::protobuf::Timestamp* reported_at);
+
   // uint32 retry_attempt = 3;
   void clear_retry_attempt();
   static const int kRetryAttemptFieldNumber = 3;
@@ -1675,6 +1684,7 @@ class TaskExecutionEvent final :
   ::google::protobuf::Timestamp* occurred_at_;
   ::google::protobuf::Struct* custom_info_;
   ::flyteidl::event::TaskExecutionMetadata* metadata_;
+  ::google::protobuf::Timestamp* reported_at_;
   ::google::protobuf::uint32 retry_attempt_;
   int phase_;
   ::google::protobuf::uint32 phase_version_;
@@ -4637,6 +4647,52 @@ inline void TaskExecutionEvent::set_event_version(::google::protobuf::int32 valu
   
   event_version_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.event.TaskExecutionEvent.event_version)
+}
+
+// .google.protobuf.Timestamp reported_at = 20;
+inline bool TaskExecutionEvent::has_reported_at() const {
+  return this != internal_default_instance() && reported_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& TaskExecutionEvent::reported_at() const {
+  const ::google::protobuf::Timestamp* p = reported_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.event.TaskExecutionEvent.reported_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* TaskExecutionEvent::release_reported_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.event.TaskExecutionEvent.reported_at)
+  
+  ::google::protobuf::Timestamp* temp = reported_at_;
+  reported_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* TaskExecutionEvent::mutable_reported_at() {
+  
+  if (reported_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    reported_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.event.TaskExecutionEvent.reported_at)
+  return reported_at_;
+}
+inline void TaskExecutionEvent::set_allocated_reported_at(::google::protobuf::Timestamp* reported_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(reported_at_);
+  }
+  if (reported_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(reported_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      reported_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, reported_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  reported_at_ = reported_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.event.TaskExecutionEvent.reported_at)
 }
 
 inline bool TaskExecutionEvent::has_input_value() const {

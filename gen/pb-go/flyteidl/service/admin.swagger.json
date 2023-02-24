@@ -7469,6 +7469,11 @@
           "type": "integer",
           "format": "int32",
           "description": "The event version is used to indicate versioned changes in how data is reported using this\nproto message. For example, event_verison \u003e 0 means that maps tasks report logs using the\nTaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog\nin this message."
+        },
+        "reported_at": {
+          "type": "string",
+          "format": "date-time",
+          "title": "TODO @hamersaw docs"
         }
       },
       "description": "Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."

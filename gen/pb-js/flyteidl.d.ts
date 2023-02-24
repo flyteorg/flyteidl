@@ -7043,6 +7043,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent eventVersion */
             eventVersion?: (number|null);
+
+            /** TaskExecutionEvent reportedAt */
+            reportedAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a TaskExecutionEvent. */
@@ -7107,6 +7110,9 @@ export namespace flyteidl {
 
             /** TaskExecutionEvent eventVersion. */
             public eventVersion: number;
+
+            /** TaskExecutionEvent reportedAt. */
+            public reportedAt?: (google.protobuf.ITimestamp|null);
 
             /** TaskExecutionEvent inputValue. */
             public inputValue?: ("inputUri"|"inputData");

@@ -217,6 +217,9 @@ message TaskExecutionEvent {
     // TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
     // in this message.
     int32 event_version = 18;
+
+    // TODO @hamersaw docs
+    google.protobuf.Timestamp reported_at = 20;
 }
 
 // This message contains metadata about external resources produced or used by a specific task execution.

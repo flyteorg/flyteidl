@@ -868,6 +868,16 @@ func (m *TaskExecutionEvent) Validate() error {
 
 	// no validation rules for EventVersion
 
+	if v, ok := interface{}(m.GetReportedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskExecutionEventValidationError{
+				field:  "ReportedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	switch m.InputValue.(type) {
 
 	case *TaskExecutionEvent_InputUri:

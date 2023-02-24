@@ -11036,6 +11036,31 @@ public final class Event {
      */
     int getEventVersion();
 
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    boolean hasReportedAt();
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    com.google.protobuf.Timestamp getReportedAt();
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder();
+
     public flyteidl.event.Event.TaskExecutionEvent.InputValueCase getInputValueCase();
 
     public flyteidl.event.Event.TaskExecutionEvent.OutputResultCase getOutputResultCase();
@@ -11253,6 +11278,19 @@ public final class Event {
                 inputValue_ = subBuilder.buildPartial();
               }
               inputValueCase_ = 19;
+              break;
+            }
+            case 162: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (reportedAt_ != null) {
+                subBuilder = reportedAt_.toBuilder();
+              }
+              reportedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reportedAt_);
+                reportedAt_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -12017,6 +12055,39 @@ public final class Event {
       return eventVersion_;
     }
 
+    public static final int REPORTED_AT_FIELD_NUMBER = 20;
+    private com.google.protobuf.Timestamp reportedAt_;
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    public boolean hasReportedAt() {
+      return reportedAt_ != null;
+    }
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    public com.google.protobuf.Timestamp getReportedAt() {
+      return reportedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+    }
+    /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder() {
+      return getReportedAt();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12084,6 +12155,9 @@ public final class Event {
       }
       if (inputValueCase_ == 19) {
         output.writeMessage(19, (flyteidl.core.Literals.LiteralMap) inputValue_);
+      }
+      if (reportedAt_ != null) {
+        output.writeMessage(20, getReportedAt());
       }
       unknownFields.writeTo(output);
     }
@@ -12161,6 +12235,10 @@ public final class Event {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(19, (flyteidl.core.Literals.LiteralMap) inputValue_);
       }
+      if (reportedAt_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, getReportedAt());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12216,6 +12294,11 @@ public final class Event {
       }
       if (getEventVersion()
           != other.getEventVersion()) return false;
+      if (hasReportedAt() != other.hasReportedAt()) return false;
+      if (hasReportedAt()) {
+        if (!getReportedAt()
+            .equals(other.getReportedAt())) return false;
+      }
       if (!getInputValueCase().equals(other.getInputValueCase())) return false;
       switch (inputValueCase_) {
         case 8:
@@ -12295,6 +12378,10 @@ public final class Event {
       }
       hash = (37 * hash) + EVENT_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getEventVersion();
+      if (hasReportedAt()) {
+        hash = (37 * hash) + REPORTED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getReportedAt().hashCode();
+      }
       switch (inputValueCase_) {
         case 8:
           hash = (37 * hash) + INPUT_URI_FIELD_NUMBER;
@@ -12511,6 +12598,12 @@ public final class Event {
         }
         eventVersion_ = 0;
 
+        if (reportedAtBuilder_ == null) {
+          reportedAt_ = null;
+        } else {
+          reportedAt_ = null;
+          reportedAtBuilder_ = null;
+        }
         inputValueCase_ = 0;
         inputValue_ = null;
         outputResultCase_ = 0;
@@ -12611,6 +12704,11 @@ public final class Event {
           result.metadata_ = metadataBuilder_.build();
         }
         result.eventVersion_ = eventVersion_;
+        if (reportedAtBuilder_ == null) {
+          result.reportedAt_ = reportedAt_;
+        } else {
+          result.reportedAt_ = reportedAtBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         result.inputValueCase_ = inputValueCase_;
         result.outputResultCase_ = outputResultCase_;
@@ -12726,6 +12824,9 @@ public final class Event {
         }
         if (other.getEventVersion() != 0) {
           setEventVersion(other.getEventVersion());
+        }
+        if (other.hasReportedAt()) {
+          mergeReportedAt(other.getReportedAt());
         }
         switch (other.getInputValueCase()) {
           case INPUT_URI: {
@@ -15120,6 +15221,159 @@ public final class Event {
         eventVersion_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp reportedAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> reportedAtBuilder_;
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public boolean hasReportedAt() {
+        return reportedAtBuilder_ != null || reportedAt_ != null;
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public com.google.protobuf.Timestamp getReportedAt() {
+        if (reportedAtBuilder_ == null) {
+          return reportedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+        } else {
+          return reportedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public Builder setReportedAt(com.google.protobuf.Timestamp value) {
+        if (reportedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          reportedAt_ = value;
+          onChanged();
+        } else {
+          reportedAtBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public Builder setReportedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (reportedAtBuilder_ == null) {
+          reportedAt_ = builderForValue.build();
+          onChanged();
+        } else {
+          reportedAtBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public Builder mergeReportedAt(com.google.protobuf.Timestamp value) {
+        if (reportedAtBuilder_ == null) {
+          if (reportedAt_ != null) {
+            reportedAt_ =
+              com.google.protobuf.Timestamp.newBuilder(reportedAt_).mergeFrom(value).buildPartial();
+          } else {
+            reportedAt_ = value;
+          }
+          onChanged();
+        } else {
+          reportedAtBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public Builder clearReportedAt() {
+        if (reportedAtBuilder_ == null) {
+          reportedAt_ = null;
+          onChanged();
+        } else {
+          reportedAt_ = null;
+          reportedAtBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getReportedAtBuilder() {
+        
+        onChanged();
+        return getReportedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder() {
+        if (reportedAtBuilder_ != null) {
+          return reportedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return reportedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+        }
+      }
+      /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp reported_at = 20;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getReportedAtFieldBuilder() {
+        if (reportedAtBuilder_ == null) {
+          reportedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getReportedAt(),
+                  getParentForChildren(),
+                  isClean());
+          reportedAt_ = null;
+        }
+        return reportedAtBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -19545,7 +19799,7 @@ public final class Event {
       "ure\"Q\n\033ParentTaskExecutionMetadata\0222\n\002id" +
       "\030\001 \001(\0132&.flyteidl.core.TaskExecutionIden" +
       "tifier\".\n\033ParentNodeExecutionMetadata\022\017\n" +
-      "\007node_id\030\001 \001(\t\"\326\005\n\022TaskExecutionEvent\022*\n" +
+      "\007node_id\030\001 \001(\t\"\207\006\n\022TaskExecutionEvent\022*\n" +
       "\007task_id\030\001 \001(\0132\031.flyteidl.core.Identifie" +
       "r\022H\n\030parent_node_execution_id\030\002 \001(\0132&.fl" +
       "yteidl.core.NodeExecutionIdentifier\022\025\n\rr" +
@@ -19562,25 +19816,27 @@ public final class Event {
       "otobuf.Struct\022\025\n\rphase_version\030\014 \001(\r\022\016\n\006" +
       "reason\030\r \001(\t\022\021\n\ttask_type\030\016 \001(\t\0227\n\010metad" +
       "ata\030\020 \001(\0132%.flyteidl.event.TaskExecution" +
-      "Metadata\022\025\n\revent_version\030\022 \001(\005B\r\n\013input" +
-      "_valueB\017\n\routput_result\"\343\001\n\024ExternalReso" +
-      "urceInfo\022\023\n\013external_id\030\001 \001(\t\022\r\n\005index\030\002" +
-      " \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005phase\030\004 \001" +
-      "(\0162\".flyteidl.core.TaskExecution.Phase\0227" +
-      "\n\014cache_status\030\005 \001(\0162!.flyteidl.core.Cat" +
-      "alogCacheStatus\022$\n\004logs\030\006 \003(\0132\026.flyteidl" +
-      ".core.TaskLog\"?\n\020ResourcePoolInfo\022\030\n\020all" +
-      "ocation_token\030\001 \001(\t\022\021\n\tnamespace\030\002 \001(\t\"\310" +
-      "\002\n\025TaskExecutionMetadata\022\026\n\016generated_na" +
-      "me\030\001 \001(\t\022@\n\022external_resources\030\002 \003(\0132$.f" +
-      "lyteidl.event.ExternalResourceInfo\022<\n\022re" +
-      "source_pool_info\030\003 \003(\0132 .flyteidl.event." +
-      "ResourcePoolInfo\022\031\n\021plugin_identifier\030\004 " +
-      "\001(\t\022K\n\016instance_class\030\020 \001(\01623.flyteidl.e" +
-      "vent.TaskExecutionMetadata.InstanceClass" +
-      "\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022\021\n\rINTERR" +
-      "UPTIBLE\020\001B7Z5github.com/flyteorg/flyteid" +
-      "l/gen/pb-go/flyteidl/eventb\006proto3"
+      "Metadata\022\025\n\revent_version\030\022 \001(\005\022/\n\013repor" +
+      "ted_at\030\024 \001(\0132\032.google.protobuf.Timestamp" +
+      "B\r\n\013input_valueB\017\n\routput_result\"\343\001\n\024Ext" +
+      "ernalResourceInfo\022\023\n\013external_id\030\001 \001(\t\022\r" +
+      "\n\005index\030\002 \001(\r\022\025\n\rretry_attempt\030\003 \001(\r\0221\n\005" +
+      "phase\030\004 \001(\0162\".flyteidl.core.TaskExecutio" +
+      "n.Phase\0227\n\014cache_status\030\005 \001(\0162!.flyteidl" +
+      ".core.CatalogCacheStatus\022$\n\004logs\030\006 \003(\0132\026" +
+      ".flyteidl.core.TaskLog\"?\n\020ResourcePoolIn" +
+      "fo\022\030\n\020allocation_token\030\001 \001(\t\022\021\n\tnamespac" +
+      "e\030\002 \001(\t\"\310\002\n\025TaskExecutionMetadata\022\026\n\016gen" +
+      "erated_name\030\001 \001(\t\022@\n\022external_resources\030" +
+      "\002 \003(\0132$.flyteidl.event.ExternalResourceI" +
+      "nfo\022<\n\022resource_pool_info\030\003 \003(\0132 .flytei" +
+      "dl.event.ResourcePoolInfo\022\031\n\021plugin_iden" +
+      "tifier\030\004 \001(\t\022K\n\016instance_class\030\020 \001(\01623.f" +
+      "lyteidl.event.TaskExecutionMetadata.Inst" +
+      "anceClass\"/\n\rInstanceClass\022\013\n\007DEFAULT\020\000\022" +
+      "\021\n\rINTERRUPTIBLE\020\001B7Z5github.com/flyteor" +
+      "g/flyteidl/gen/pb-go/flyteidl/eventb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19648,7 +19904,7 @@ public final class Event {
     internal_static_flyteidl_event_TaskExecutionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_event_TaskExecutionEvent_descriptor,
-        new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "InputData", "OutputUri", "Error", "OutputData", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "EventVersion", "InputValue", "OutputResult", });
+        new java.lang.String[] { "TaskId", "ParentNodeExecutionId", "RetryAttempt", "Phase", "ProducerId", "Logs", "OccurredAt", "InputUri", "InputData", "OutputUri", "Error", "OutputData", "CustomInfo", "PhaseVersion", "Reason", "TaskType", "Metadata", "EventVersion", "ReportedAt", "InputValue", "OutputResult", });
     internal_static_flyteidl_event_ExternalResourceInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_flyteidl_event_ExternalResourceInfo_fieldAccessorTable = new

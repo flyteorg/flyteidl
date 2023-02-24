@@ -58883,6 +58883,10 @@ definitions:
           \ > 0 means that maps tasks report logs using the\nTaskExecutionMetadata\
           \ ExternalResourceInfo fields for each subtask rather than the TaskLog\n\
           in this message."
+      reported_at:
+        type: "string"
+        format: "date-time"
+        title: "TODO @hamersaw docs"
     description: "Plugin specific execution event information. For tasks like Python,\
       \ Hive, Spark, DynamicJob."
   eventTaskExecutionMetadata:

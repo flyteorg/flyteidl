@@ -16889,6 +16889,7 @@
                  * @property {string|null} [taskType] TaskExecutionEvent taskType
                  * @property {flyteidl.event.ITaskExecutionMetadata|null} [metadata] TaskExecutionEvent metadata
                  * @property {number|null} [eventVersion] TaskExecutionEvent eventVersion
+                 * @property {google.protobuf.ITimestamp|null} [reportedAt] TaskExecutionEvent reportedAt
                  */
     
                 /**
@@ -17051,6 +17052,14 @@
                  */
                 TaskExecutionEvent.prototype.eventVersion = 0;
     
+                /**
+                 * TaskExecutionEvent reportedAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} reportedAt
+                 * @memberof flyteidl.event.TaskExecutionEvent
+                 * @instance
+                 */
+                TaskExecutionEvent.prototype.reportedAt = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -17137,6 +17146,8 @@
                         writer.uint32(/* id 18, wireType 0 =*/144).int32(message.eventVersion);
                     if (message.inputData != null && message.hasOwnProperty("inputData"))
                         $root.flyteidl.core.LiteralMap.encode(message.inputData, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
+                        $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 20, wireType 2 =*/162).fork()).ldelim();
                     return writer;
                 };
     
@@ -17213,6 +17224,9 @@
                             break;
                         case 18:
                             message.eventVersion = reader.int32();
+                            break;
+                        case 20:
+                            message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -17340,6 +17354,11 @@
                     if (message.eventVersion != null && message.hasOwnProperty("eventVersion"))
                         if (!$util.isInteger(message.eventVersion))
                             return "eventVersion: integer expected";
+                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.reportedAt);
+                        if (error)
+                            return "reportedAt." + error;
+                    }
                     return null;
                 };
     
