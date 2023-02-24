@@ -183,14 +183,28 @@ class TaskCreateRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.core.VariableMap inputs = 1;
+  // string output_prefix = 3;
+  void clear_output_prefix();
+  static const int kOutputPrefixFieldNumber = 3;
+  const ::std::string& output_prefix() const;
+  void set_output_prefix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_output_prefix(::std::string&& value);
+  #endif
+  void set_output_prefix(const char* value);
+  void set_output_prefix(const char* value, size_t size);
+  ::std::string* mutable_output_prefix();
+  ::std::string* release_output_prefix();
+  void set_allocated_output_prefix(::std::string* output_prefix);
+
+  // .flyteidl.core.LiteralMap inputs = 1;
   bool has_inputs() const;
   void clear_inputs();
   static const int kInputsFieldNumber = 1;
-  const ::flyteidl::core::VariableMap& inputs() const;
-  ::flyteidl::core::VariableMap* release_inputs();
-  ::flyteidl::core::VariableMap* mutable_inputs();
-  void set_allocated_inputs(::flyteidl::core::VariableMap* inputs);
+  const ::flyteidl::core::LiteralMap& inputs() const;
+  ::flyteidl::core::LiteralMap* release_inputs();
+  ::flyteidl::core::LiteralMap* mutable_inputs();
+  void set_allocated_inputs(::flyteidl::core::LiteralMap* inputs);
 
   // .flyteidl.core.TaskTemplate template = 2;
   bool has_template_() const;
@@ -206,7 +220,8 @@ class TaskCreateRequest final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::core::VariableMap* inputs_;
+  ::google::protobuf::internal::ArenaStringPtr output_prefix_;
+  ::flyteidl::core::LiteralMap* inputs_;
   ::flyteidl::core::TaskTemplate* template__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
@@ -897,33 +912,33 @@ class TaskDeleteResponse final :
 #endif  // __GNUC__
 // TaskCreateRequest
 
-// .flyteidl.core.VariableMap inputs = 1;
+// .flyteidl.core.LiteralMap inputs = 1;
 inline bool TaskCreateRequest::has_inputs() const {
   return this != internal_default_instance() && inputs_ != nullptr;
 }
-inline const ::flyteidl::core::VariableMap& TaskCreateRequest::inputs() const {
-  const ::flyteidl::core::VariableMap* p = inputs_;
+inline const ::flyteidl::core::LiteralMap& TaskCreateRequest::inputs() const {
+  const ::flyteidl::core::LiteralMap* p = inputs_;
   // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateRequest.inputs)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::VariableMap*>(
-      &::flyteidl::core::_VariableMap_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralMap*>(
+      &::flyteidl::core::_LiteralMap_default_instance_);
 }
-inline ::flyteidl::core::VariableMap* TaskCreateRequest::release_inputs() {
+inline ::flyteidl::core::LiteralMap* TaskCreateRequest::release_inputs() {
   // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateRequest.inputs)
   
-  ::flyteidl::core::VariableMap* temp = inputs_;
+  ::flyteidl::core::LiteralMap* temp = inputs_;
   inputs_ = nullptr;
   return temp;
 }
-inline ::flyteidl::core::VariableMap* TaskCreateRequest::mutable_inputs() {
+inline ::flyteidl::core::LiteralMap* TaskCreateRequest::mutable_inputs() {
   
   if (inputs_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::VariableMap>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralMap>(GetArenaNoVirtual());
     inputs_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateRequest.inputs)
   return inputs_;
 }
-inline void TaskCreateRequest::set_allocated_inputs(::flyteidl::core::VariableMap* inputs) {
+inline void TaskCreateRequest::set_allocated_inputs(::flyteidl::core::LiteralMap* inputs) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(inputs_);
@@ -985,6 +1000,59 @@ inline void TaskCreateRequest::set_allocated_template_(::flyteidl::core::TaskTem
   }
   template__ = template_;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateRequest.template)
+}
+
+// string output_prefix = 3;
+inline void TaskCreateRequest::clear_output_prefix() {
+  output_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& TaskCreateRequest::output_prefix() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateRequest.output_prefix)
+  return output_prefix_.GetNoArena();
+}
+inline void TaskCreateRequest::set_output_prefix(const ::std::string& value) {
+  
+  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateRequest.output_prefix)
+}
+#if LANG_CXX11
+inline void TaskCreateRequest::set_output_prefix(::std::string&& value) {
+  
+  output_prefix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskCreateRequest.output_prefix)
+}
+#endif
+inline void TaskCreateRequest::set_output_prefix(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskCreateRequest.output_prefix)
+}
+inline void TaskCreateRequest::set_output_prefix(const char* value, size_t size) {
+  
+  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskCreateRequest.output_prefix)
+}
+inline ::std::string* TaskCreateRequest::mutable_output_prefix() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateRequest.output_prefix)
+  return output_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskCreateRequest::release_output_prefix() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateRequest.output_prefix)
+  
+  return output_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void TaskCreateRequest::set_allocated_output_prefix(::std::string* output_prefix) {
+  if (output_prefix != nullptr) {
+    
+  } else {
+    
+  }
+  output_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_prefix);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateRequest.output_prefix)
 }
 
 // -------------------------------------------------------------------

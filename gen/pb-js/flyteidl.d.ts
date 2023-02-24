@@ -19349,10 +19349,13 @@ export namespace flyteidl {
         interface ITaskCreateRequest {
 
             /** TaskCreateRequest inputs */
-            inputs?: (flyteidl.core.IVariableMap|null);
+            inputs?: (flyteidl.core.ILiteralMap|null);
 
             /** TaskCreateRequest template */
             template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskCreateRequest outputPrefix */
+            outputPrefix?: (string|null);
         }
 
         /** Represents a TaskCreateRequest. */
@@ -19365,10 +19368,13 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.service.ITaskCreateRequest);
 
             /** TaskCreateRequest inputs. */
-            public inputs?: (flyteidl.core.IVariableMap|null);
+            public inputs?: (flyteidl.core.ILiteralMap|null);
 
             /** TaskCreateRequest template. */
             public template?: (flyteidl.core.ITaskTemplate|null);
+
+            /** TaskCreateRequest outputPrefix. */
+            public outputPrefix: string;
 
             /**
              * Creates a new TaskCreateRequest instance using the specified properties.

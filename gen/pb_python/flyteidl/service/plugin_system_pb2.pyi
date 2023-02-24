@@ -8,12 +8,14 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TaskCreateRequest(_message.Message):
-    __slots__ = ["inputs", "template"]
+    __slots__ = ["inputs", "output_prefix", "template"]
     INPUTS_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_PREFIX_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_FIELD_NUMBER: _ClassVar[int]
-    inputs: _interface_pb2.VariableMap
+    inputs: _literals_pb2.LiteralMap
+    output_prefix: str
     template: _tasks_pb2.TaskTemplate
-    def __init__(self, inputs: _Optional[_Union[_interface_pb2.VariableMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ...) -> None: ...
+    def __init__(self, inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ..., output_prefix: _Optional[str] = ...) -> None: ...
 
 class TaskCreateResponse(_message.Message):
     __slots__ = ["job_id", "message"]

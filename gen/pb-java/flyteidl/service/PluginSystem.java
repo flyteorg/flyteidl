@@ -19,17 +19,17 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     boolean hasInputs();
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
-    flyteidl.core.Interface.VariableMap getInputs();
+    flyteidl.core.Literals.LiteralMap getInputs();
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
-    flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder();
+    flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder();
 
     /**
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
@@ -43,6 +43,16 @@ public final class PluginSystem {
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder();
+
+    /**
+     * <code>string output_prefix = 3;</code>
+     */
+    java.lang.String getOutputPrefix();
+    /**
+     * <code>string output_prefix = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getOutputPrefixBytes();
   }
   /**
    * Protobuf type {@code flyteidl.service.TaskCreateRequest}
@@ -57,6 +67,7 @@ public final class PluginSystem {
       super(builder);
     }
     private TaskCreateRequest() {
+      outputPrefix_ = "";
     }
 
     @java.lang.Override
@@ -84,11 +95,11 @@ public final class PluginSystem {
               done = true;
               break;
             case 10: {
-              flyteidl.core.Interface.VariableMap.Builder subBuilder = null;
+              flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
               if (inputs_ != null) {
                 subBuilder = inputs_.toBuilder();
               }
-              inputs_ = input.readMessage(flyteidl.core.Interface.VariableMap.parser(), extensionRegistry);
+              inputs_ = input.readMessage(flyteidl.core.Literals.LiteralMap.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(inputs_);
                 inputs_ = subBuilder.buildPartial();
@@ -107,6 +118,12 @@ public final class PluginSystem {
                 template_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              outputPrefix_ = s;
               break;
             }
             default: {
@@ -142,23 +159,23 @@ public final class PluginSystem {
     }
 
     public static final int INPUTS_FIELD_NUMBER = 1;
-    private flyteidl.core.Interface.VariableMap inputs_;
+    private flyteidl.core.Literals.LiteralMap inputs_;
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     public boolean hasInputs() {
       return inputs_ != null;
     }
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
-    public flyteidl.core.Interface.VariableMap getInputs() {
-      return inputs_ == null ? flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
+    public flyteidl.core.Literals.LiteralMap getInputs() {
+      return inputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : inputs_;
     }
     /**
-     * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+     * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
-    public flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder() {
+    public flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder() {
       return getInputs();
     }
 
@@ -183,6 +200,40 @@ public final class PluginSystem {
       return getTemplate();
     }
 
+    public static final int OUTPUT_PREFIX_FIELD_NUMBER = 3;
+    private volatile java.lang.Object outputPrefix_;
+    /**
+     * <code>string output_prefix = 3;</code>
+     */
+    public java.lang.String getOutputPrefix() {
+      java.lang.Object ref = outputPrefix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputPrefix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string output_prefix = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOutputPrefixBytes() {
+      java.lang.Object ref = outputPrefix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        outputPrefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -203,6 +254,9 @@ public final class PluginSystem {
       if (template_ != null) {
         output.writeMessage(2, getTemplate());
       }
+      if (!getOutputPrefixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPrefix_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -219,6 +273,9 @@ public final class PluginSystem {
       if (template_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getTemplate());
+      }
+      if (!getOutputPrefixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPrefix_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -245,6 +302,8 @@ public final class PluginSystem {
         if (!getTemplate()
             .equals(other.getTemplate())) return false;
       }
+      if (!getOutputPrefix()
+          .equals(other.getOutputPrefix())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -264,6 +323,8 @@ public final class PluginSystem {
         hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
         hash = (53 * hash) + getTemplate().hashCode();
       }
+      hash = (37 * hash) + OUTPUT_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputPrefix().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,6 +470,8 @@ public final class PluginSystem {
           template_ = null;
           templateBuilder_ = null;
         }
+        outputPrefix_ = "";
+
         return this;
       }
 
@@ -445,6 +508,7 @@ public final class PluginSystem {
         } else {
           result.template_ = templateBuilder_.build();
         }
+        result.outputPrefix_ = outputPrefix_;
         onBuilt();
         return result;
       }
@@ -499,6 +563,10 @@ public final class PluginSystem {
         if (other.hasTemplate()) {
           mergeTemplate(other.getTemplate());
         }
+        if (!other.getOutputPrefix().isEmpty()) {
+          outputPrefix_ = other.outputPrefix_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -528,29 +596,29 @@ public final class PluginSystem {
         return this;
       }
 
-      private flyteidl.core.Interface.VariableMap inputs_;
+      private flyteidl.core.Literals.LiteralMap inputs_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder> inputsBuilder_;
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> inputsBuilder_;
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public boolean hasInputs() {
         return inputsBuilder_ != null || inputs_ != null;
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
-      public flyteidl.core.Interface.VariableMap getInputs() {
+      public flyteidl.core.Literals.LiteralMap getInputs() {
         if (inputsBuilder_ == null) {
-          return inputs_ == null ? flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
+          return inputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : inputs_;
         } else {
           return inputsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
-      public Builder setInputs(flyteidl.core.Interface.VariableMap value) {
+      public Builder setInputs(flyteidl.core.Literals.LiteralMap value) {
         if (inputsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -564,10 +632,10 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder setInputs(
-          flyteidl.core.Interface.VariableMap.Builder builderForValue) {
+          flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
         if (inputsBuilder_ == null) {
           inputs_ = builderForValue.build();
           onChanged();
@@ -578,13 +646,13 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
-      public Builder mergeInputs(flyteidl.core.Interface.VariableMap value) {
+      public Builder mergeInputs(flyteidl.core.Literals.LiteralMap value) {
         if (inputsBuilder_ == null) {
           if (inputs_ != null) {
             inputs_ =
-              flyteidl.core.Interface.VariableMap.newBuilder(inputs_).mergeFrom(value).buildPartial();
+              flyteidl.core.Literals.LiteralMap.newBuilder(inputs_).mergeFrom(value).buildPartial();
           } else {
             inputs_ = value;
           }
@@ -596,7 +664,7 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder clearInputs() {
         if (inputsBuilder_ == null) {
@@ -610,33 +678,33 @@ public final class PluginSystem {
         return this;
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
-      public flyteidl.core.Interface.VariableMap.Builder getInputsBuilder() {
+      public flyteidl.core.Literals.LiteralMap.Builder getInputsBuilder() {
         
         onChanged();
         return getInputsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
-      public flyteidl.core.Interface.VariableMapOrBuilder getInputsOrBuilder() {
+      public flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder() {
         if (inputsBuilder_ != null) {
           return inputsBuilder_.getMessageOrBuilder();
         } else {
           return inputs_ == null ?
-              flyteidl.core.Interface.VariableMap.getDefaultInstance() : inputs_;
+              flyteidl.core.Literals.LiteralMap.getDefaultInstance() : inputs_;
         }
       }
       /**
-       * <code>.flyteidl.core.VariableMap inputs = 1;</code>
+       * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder> 
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
           getInputsFieldBuilder() {
         if (inputsBuilder_ == null) {
           inputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.core.Interface.VariableMap, flyteidl.core.Interface.VariableMap.Builder, flyteidl.core.Interface.VariableMapOrBuilder>(
+              flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder>(
                   getInputs(),
                   getParentForChildren(),
                   isClean());
@@ -760,6 +828,75 @@ public final class PluginSystem {
           template_ = null;
         }
         return templateBuilder_;
+      }
+
+      private java.lang.Object outputPrefix_ = "";
+      /**
+       * <code>string output_prefix = 3;</code>
+       */
+      public java.lang.String getOutputPrefix() {
+        java.lang.Object ref = outputPrefix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          outputPrefix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string output_prefix = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOutputPrefixBytes() {
+        java.lang.Object ref = outputPrefix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          outputPrefix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string output_prefix = 3;</code>
+       */
+      public Builder setOutputPrefix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        outputPrefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string output_prefix = 3;</code>
+       */
+      public Builder clearOutputPrefix() {
+        
+        outputPrefix_ = getDefaultInstance().getOutputPrefix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string output_prefix = 3;</code>
+       */
+      public Builder setOutputPrefixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        outputPrefix_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4285,26 +4422,26 @@ public final class PluginSystem {
       "\n$flyteidl/service/plugin_system.proto\022\020" +
       "flyteidl.service\032\034flyteidl/core/literals" +
       ".proto\032\031flyteidl/core/tasks.proto\032\035flyte" +
-      "idl/core/interface.proto\"n\n\021TaskCreateRe" +
-      "quest\022*\n\006inputs\030\001 \001(\0132\032.flyteidl.core.Va" +
-      "riableMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
-      "ore.TaskTemplate\"5\n\022TaskCreateResponse\022\016" +
-      "\n\006job_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"^\n\016TaskG" +
-      "etRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002" +
-      " \001(\t\022\025\n\routput_prefix\030\003 \001(\t\022\022\n\nprev_stat" +
-      "e\030\004 \001(\t\"1\n\017TaskGetResponse\022\r\n\005state\030\001 \001(" +
-      "\t\022\017\n\007message\030\002 \001(\t\"6\n\021TaskDeleteRequest\022" +
-      "\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022Ta" +
-      "skDeleteResponse2\241\002\n\024BackendPluginServic" +
-      "e\022Y\n\nCreateTask\022#.flyteidl.service.TaskC" +
-      "reateRequest\032$.flyteidl.service.TaskCrea" +
-      "teResponse\"\000\022S\n\007GetTask\022 .flyteidl.servi" +
-      "ce.TaskGetRequest\032$.flyteidl.service.Tas" +
-      "kCreateResponse\"\000\022Y\n\nDeleteTask\022#.flytei" +
-      "dl.service.TaskDeleteRequest\032$.flyteidl." +
-      "service.TaskDeleteResponse\"\000B9Z7github.c" +
-      "om/flyteorg/flyteidl/gen/pb-go/flyteidl/" +
-      "serviceb\006proto3"
+      "idl/core/interface.proto\"\204\001\n\021TaskCreateR" +
+      "equest\022)\n\006inputs\030\001 \001(\0132\031.flyteidl.core.L" +
+      "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
+      "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
+      "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
+      "\007message\030\002 \001(\t\"^\n\016TaskGetRequest\022\021\n\ttask" +
+      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022\025\n\routput_pr" +
+      "efix\030\003 \001(\t\022\022\n\nprev_state\030\004 \001(\t\"1\n\017TaskGe" +
+      "tResponse\022\r\n\005state\030\001 \001(\t\022\017\n\007message\030\002 \001(" +
+      "\t\"6\n\021TaskDeleteRequest\022\021\n\ttask_type\030\001 \001(" +
+      "\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse2" +
+      "\241\002\n\024BackendPluginService\022Y\n\nCreateTask\022#" +
+      ".flyteidl.service.TaskCreateRequest\032$.fl" +
+      "yteidl.service.TaskCreateResponse\"\000\022S\n\007G" +
+      "etTask\022 .flyteidl.service.TaskGetRequest" +
+      "\032$.flyteidl.service.TaskCreateResponse\"\000" +
+      "\022Y\n\nDeleteTask\022#.flyteidl.service.TaskDe" +
+      "leteRequest\032$.flyteidl.service.TaskDelet" +
+      "eResponse\"\000B9Z7github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4326,7 +4463,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskCreateRequest_descriptor,
-        new java.lang.String[] { "Inputs", "Template", });
+        new java.lang.String[] { "Inputs", "Template", "OutputPrefix", });
     internal_static_flyteidl_service_TaskCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_service_TaskCreateResponse_fieldAccessorTable = new

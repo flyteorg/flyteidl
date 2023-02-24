@@ -14,8 +14,9 @@ service BackendPluginService {
 
 
 message TaskCreateRequest {
-  core.VariableMap inputs = 1;
+  core.LiteralMap inputs = 1;
   core.TaskTemplate template = 2;
+  string output_prefix = 3;
 }
 
 message TaskCreateResponse {

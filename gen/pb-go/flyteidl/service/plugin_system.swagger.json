@@ -163,6 +163,39 @@
         }
       }
     },
+    "coreBinary": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "byte"
+        },
+        "tag": {
+          "type": "string"
+        }
+      },
+      "description": "A simple byte array with a tag to help different parts of the system communicate about what is in the byte array.\nIt's strongly advisable that consumers of this type define a unique tag and validate the tag before parsing the data."
+    },
+    "coreBlob": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/coreBlobMetadata"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "description": "Refers to an offloaded set of files. It encapsulates the type of the store and a unique uri for where the data is.\nThere are no restrictions on how the uri is formatted since it will depend on how to interact with the store."
+    },
+    "coreBlobMetadata": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/coreBlobType"
+        }
+      }
+    },
     "coreBlobType": {
       "type": "object",
       "properties": {
@@ -281,6 +314,20 @@
       },
       "description": "Enables declaring enum types, with predefined string values\nFor len(values) \u003e 0, the first value in the ordered list is regarded as the default value. If you wish\nTo provide no defaults, make the first value as undefined."
     },
+    "coreError": {
+      "type": "object",
+      "properties": {
+        "failed_node_id": {
+          "type": "string",
+          "description": "The node id that threw the error."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message thrown."
+        }
+      },
+      "description": "Represents an error thrown from a node."
+    },
     "coreIOStrategy": {
       "type": "object",
       "properties": {
@@ -387,6 +434,52 @@
       },
       "description": "A generic key value pair."
     },
+    "coreLiteral": {
+      "type": "object",
+      "properties": {
+        "scalar": {
+          "$ref": "#/definitions/coreScalar",
+          "description": "A simple value."
+        },
+        "collection": {
+          "$ref": "#/definitions/coreLiteralCollection",
+          "description": "A collection of literals to allow nesting."
+        },
+        "map": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "description": "A map of strings to literals."
+        },
+        "hash": {
+          "type": "string",
+          "title": "A hash representing this literal.\nThis is used for caching purposes. For more details refer to RFC 1893\n(https://github.com/flyteorg/flyte/blob/master/rfc/system/1893-caching-of-offloaded-objects.md)"
+        }
+      },
+      "description": "A simple value. This supports any level of nesting (e.g. array of array of array of Blobs) as well as simple primitives."
+    },
+    "coreLiteralCollection": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A collection of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
+    },
+    "coreLiteralMap": {
+      "type": "object",
+      "properties": {
+        "literals": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/coreLiteral"
+          }
+        }
+      },
+      "description": "A map of literals. This is a workaround since oneofs in proto messages cannot contain a repeated field."
+    },
     "coreLiteralType": {
       "type": "object",
       "properties": {
@@ -485,6 +578,34 @@
       "default": "CLIENT_CREDENTIALS",
       "description": "Type of the token requested.\n\n - CLIENT_CREDENTIALS: CLIENT_CREDENTIALS indicates a 2-legged OAuth token requested using client credentials."
     },
+    "corePrimitive": {
+      "type": "object",
+      "properties": {
+        "integer": {
+          "type": "string",
+          "format": "int64"
+        },
+        "float_value": {
+          "type": "number",
+          "format": "double"
+        },
+        "string_value": {
+          "type": "string"
+        },
+        "boolean": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration": {
+          "type": "string"
+        }
+      },
+      "title": "Primitive Types"
+    },
     "coreResourceType": {
       "type": "string",
       "enum": [
@@ -545,6 +666,38 @@
         }
       },
       "description": "Runtime information. This is loosely defined to allow for extensibility."
+    },
+    "coreScalar": {
+      "type": "object",
+      "properties": {
+        "primitive": {
+          "$ref": "#/definitions/corePrimitive"
+        },
+        "blob": {
+          "$ref": "#/definitions/coreBlob"
+        },
+        "binary": {
+          "$ref": "#/definitions/coreBinary"
+        },
+        "schema": {
+          "$ref": "#/definitions/flyteidlcoreSchema"
+        },
+        "none_type": {
+          "$ref": "#/definitions/coreVoid"
+        },
+        "error": {
+          "$ref": "#/definitions/coreError"
+        },
+        "generic": {
+          "$ref": "#/definitions/protobufStruct"
+        },
+        "structured_dataset": {
+          "$ref": "#/definitions/coreStructuredDataset"
+        },
+        "union": {
+          "$ref": "#/definitions/coreUnion"
+        }
+      }
     },
     "coreSchemaType": {
       "type": "object",
@@ -634,6 +787,27 @@
         }
       },
       "description": "Sql represents a generic sql workload with a statement and dialect."
+    },
+    "coreStructuredDataset": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "title": "String location uniquely identifying where the data is.\nShould start with the storage location (e.g. s3://, gs://, bq://, etc.)"
+        },
+        "metadata": {
+          "$ref": "#/definitions/coreStructuredDatasetMetadata"
+        }
+      }
+    },
+    "coreStructuredDatasetMetadata": {
+      "type": "object",
+      "properties": {
+        "structured_dataset_type": {
+          "$ref": "#/definitions/coreStructuredDatasetType",
+          "description": "Bundle the type information along with the literal.\nThis is here because StructuredDatasets can often be more defined at run time than at compile time.\nThat is, at compile time you might only declare a task to return a pandas dataframe or a StructuredDataset,\nwithout any column information, but at run time, you might have that column information.\nflytekit python will copy this type information into the literal, from the type information, if not provided by\nthe various plugins (encoders).\nSince this field is run time generated, it's not used for any type checking."
+        }
+      }
     },
     "coreStructuredDatasetType": {
       "type": "object",
@@ -788,6 +962,18 @@
       },
       "description": "Defines strongly typed inputs and outputs."
     },
+    "coreUnion": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/coreLiteral"
+        },
+        "type": {
+          "$ref": "#/definitions/coreLiteralType"
+        }
+      },
+      "description": "The runtime representation of a tagged union value. See `UnionType` for more details."
+    },
     "coreUnionType": {
       "type": "object",
       "properties": {
@@ -827,6 +1013,22 @@
         }
       },
       "title": "A map of Variables"
+    },
+    "coreVoid": {
+      "type": "object",
+      "description": "Used to denote a nil/null/None assignment to a scalar value. The underlying LiteralType for Void is intentionally\nundefined since it can be assigned to a scalar of any LiteralType."
+    },
+    "flyteidlcoreSchema": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/coreSchemaType"
+        }
+      },
+      "description": "A strongly typed schema that defines the interface of data retrieved from the underlying storage medium."
     },
     "flyteidlserviceTaskCreateResponse": {
       "type": "object",

@@ -44877,8 +44877,9 @@
                  * Properties of a TaskCreateRequest.
                  * @memberof flyteidl.service
                  * @interface ITaskCreateRequest
-                 * @property {flyteidl.core.IVariableMap|null} [inputs] TaskCreateRequest inputs
+                 * @property {flyteidl.core.ILiteralMap|null} [inputs] TaskCreateRequest inputs
                  * @property {flyteidl.core.ITaskTemplate|null} [template] TaskCreateRequest template
+                 * @property {string|null} [outputPrefix] TaskCreateRequest outputPrefix
                  */
     
                 /**
@@ -44898,7 +44899,7 @@
     
                 /**
                  * TaskCreateRequest inputs.
-                 * @member {flyteidl.core.IVariableMap|null|undefined} inputs
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} inputs
                  * @memberof flyteidl.service.TaskCreateRequest
                  * @instance
                  */
@@ -44911,6 +44912,14 @@
                  * @instance
                  */
                 TaskCreateRequest.prototype.template = null;
+    
+                /**
+                 * TaskCreateRequest outputPrefix.
+                 * @member {string} outputPrefix
+                 * @memberof flyteidl.service.TaskCreateRequest
+                 * @instance
+                 */
+                TaskCreateRequest.prototype.outputPrefix = "";
     
                 /**
                  * Creates a new TaskCreateRequest instance using the specified properties.
@@ -44937,9 +44946,11 @@
                     if (!writer)
                         writer = $Writer.create();
                     if (message.inputs != null && message.hasOwnProperty("inputs"))
-                        $root.flyteidl.core.VariableMap.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.core.LiteralMap.encode(message.inputs, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.template != null && message.hasOwnProperty("template"))
                         $root.flyteidl.core.TaskTemplate.encode(message.template, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
                     return writer;
                 };
     
@@ -44962,10 +44973,13 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.inputs = $root.flyteidl.core.VariableMap.decode(reader, reader.uint32());
+                            message.inputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                             break;
                         case 2:
                             message.template = $root.flyteidl.core.TaskTemplate.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.outputPrefix = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -44987,7 +45001,7 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.inputs != null && message.hasOwnProperty("inputs")) {
-                        var error = $root.flyteidl.core.VariableMap.verify(message.inputs);
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.inputs);
                         if (error)
                             return "inputs." + error;
                     }
@@ -44996,6 +45010,9 @@
                         if (error)
                             return "template." + error;
                     }
+                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
+                        if (!$util.isString(message.outputPrefix))
+                            return "outputPrefix: string expected";
                     return null;
                 };
     
