@@ -1107,6 +1107,15 @@
       },
       "description": "`Value` represents a dynamically typed value which can be either\nnull, a number, a string, a boolean, a recursive struct value, or a\nlist of values. A producer of value is expected to set one of that\nvariants, absence of any variant indicates an error.\n\nThe JSON representation for `Value` is JSON value."
     },
+    "serviceState": {
+      "type": "string",
+      "enum": [
+        "FAILED",
+        "RUNNING",
+        "SUCCEEDED"
+      ],
+      "default": "FAILED"
+    },
     "serviceTaskDeleteResponse": {
       "type": "object"
     },
@@ -1114,7 +1123,7 @@
       "type": "object",
       "properties": {
         "state": {
-          "type": "string"
+          "$ref": "#/definitions/serviceState"
         },
         "message": {
           "type": "string"

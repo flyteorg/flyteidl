@@ -44871,6 +44871,22 @@
                 return BackendPluginService;
             })();
     
+            /**
+             * State enum.
+             * @name flyteidl.service.State
+             * @enum {string}
+             * @property {number} FAILED=0 FAILED value
+             * @property {number} RUNNING=1 RUNNING value
+             * @property {number} SUCCEEDED=2 SUCCEEDED value
+             */
+            service.State = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "FAILED"] = 0;
+                values[valuesById[1] = "RUNNING"] = 1;
+                values[valuesById[2] = "SUCCEEDED"] = 2;
+                return values;
+            })();
+    
             service.TaskCreateRequest = (function() {
     
                 /**
@@ -45155,7 +45171,7 @@
                  * @property {string|null} [taskType] TaskGetRequest taskType
                  * @property {string|null} [jobId] TaskGetRequest jobId
                  * @property {string|null} [outputPrefix] TaskGetRequest outputPrefix
-                 * @property {string|null} [prevState] TaskGetRequest prevState
+                 * @property {flyteidl.service.State|null} [prevState] TaskGetRequest prevState
                  */
     
                 /**
@@ -45199,11 +45215,11 @@
     
                 /**
                  * TaskGetRequest prevState.
-                 * @member {string} prevState
+                 * @member {flyteidl.service.State} prevState
                  * @memberof flyteidl.service.TaskGetRequest
                  * @instance
                  */
-                TaskGetRequest.prototype.prevState = "";
+                TaskGetRequest.prototype.prevState = 0;
     
                 /**
                  * Creates a new TaskGetRequest instance using the specified properties.
@@ -45236,7 +45252,7 @@
                     if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
                     if (message.prevState != null && message.hasOwnProperty("prevState"))
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.prevState);
+                        writer.uint32(/* id 4, wireType 0 =*/32).int32(message.prevState);
                     return writer;
                 };
     
@@ -45268,7 +45284,7 @@
                             message.outputPrefix = reader.string();
                             break;
                         case 4:
-                            message.prevState = reader.string();
+                            message.prevState = reader.int32();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -45299,8 +45315,14 @@
                         if (!$util.isString(message.outputPrefix))
                             return "outputPrefix: string expected";
                     if (message.prevState != null && message.hasOwnProperty("prevState"))
-                        if (!$util.isString(message.prevState))
-                            return "prevState: string expected";
+                        switch (message.prevState) {
+                        default:
+                            return "prevState: enum value expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                            break;
+                        }
                     return null;
                 };
     
@@ -45313,7 +45335,7 @@
                  * Properties of a TaskGetResponse.
                  * @memberof flyteidl.service
                  * @interface ITaskGetResponse
-                 * @property {string|null} [state] TaskGetResponse state
+                 * @property {flyteidl.service.State|null} [state] TaskGetResponse state
                  * @property {string|null} [message] TaskGetResponse message
                  */
     
@@ -45334,11 +45356,11 @@
     
                 /**
                  * TaskGetResponse state.
-                 * @member {string} state
+                 * @member {flyteidl.service.State} state
                  * @memberof flyteidl.service.TaskGetResponse
                  * @instance
                  */
-                TaskGetResponse.prototype.state = "";
+                TaskGetResponse.prototype.state = 0;
     
                 /**
                  * TaskGetResponse message.
@@ -45373,7 +45395,7 @@
                     if (!writer)
                         writer = $Writer.create();
                     if (message.state != null && message.hasOwnProperty("state"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.state);
+                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
                     if (message.message != null && message.hasOwnProperty("message"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
                     return writer;
@@ -45398,7 +45420,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.state = reader.string();
+                            message.state = reader.int32();
                             break;
                         case 2:
                             message.message = reader.string();
@@ -45423,8 +45445,14 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.state != null && message.hasOwnProperty("state"))
-                        if (!$util.isString(message.state))
-                            return "state: string expected";
+                        switch (message.state) {
+                        default:
+                            return "state: enum value expected";
+                        case 0:
+                        case 1:
+                        case 2:
+                            break;
+                        }
                     if (message.message != null && message.hasOwnProperty("message"))
                         if (!$util.isString(message.message))
                             return "message: string expected";

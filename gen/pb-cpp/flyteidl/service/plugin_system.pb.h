@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/tasks.pb.h"
@@ -86,6 +87,28 @@ template<> ::flyteidl::service::TaskGetResponse* Arena::CreateMaybeMessage<::fly
 namespace flyteidl {
 namespace service {
 
+enum State {
+  FAILED = 0,
+  RUNNING = 1,
+  SUCCEEDED = 2,
+  State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool State_IsValid(int value);
+const State State_MIN = FAILED;
+const State State_MAX = SUCCEEDED;
+const int State_ARRAYSIZE = State_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* State_descriptor();
+inline const ::std::string& State_Name(State value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    State_descriptor(), value);
+}
+inline bool State_Parse(
+    const ::std::string& name, State* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<State>(
+    State_descriptor(), name, value);
+}
 // ===================================================================
 
 class TaskCreateRequest final :
@@ -500,19 +523,11 @@ class TaskGetRequest final :
   ::std::string* release_output_prefix();
   void set_allocated_output_prefix(::std::string* output_prefix);
 
-  // string prev_state = 4;
+  // .flyteidl.service.State prev_state = 4;
   void clear_prev_state();
   static const int kPrevStateFieldNumber = 4;
-  const ::std::string& prev_state() const;
-  void set_prev_state(const ::std::string& value);
-  #if LANG_CXX11
-  void set_prev_state(::std::string&& value);
-  #endif
-  void set_prev_state(const char* value);
-  void set_prev_state(const char* value, size_t size);
-  ::std::string* mutable_prev_state();
-  ::std::string* release_prev_state();
-  void set_allocated_prev_state(::std::string* prev_state);
+  ::flyteidl::service::State prev_state() const;
+  void set_prev_state(::flyteidl::service::State value);
 
   // @@protoc_insertion_point(class_scope:flyteidl.service.TaskGetRequest)
  private:
@@ -522,7 +537,7 @@ class TaskGetRequest final :
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr job_id_;
   ::google::protobuf::internal::ArenaStringPtr output_prefix_;
-  ::google::protobuf::internal::ArenaStringPtr prev_state_;
+  int prev_state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
 };
@@ -623,20 +638,6 @@ class TaskGetResponse final :
 
   // accessors -------------------------------------------------------
 
-  // string state = 1;
-  void clear_state();
-  static const int kStateFieldNumber = 1;
-  const ::std::string& state() const;
-  void set_state(const ::std::string& value);
-  #if LANG_CXX11
-  void set_state(::std::string&& value);
-  #endif
-  void set_state(const char* value);
-  void set_state(const char* value, size_t size);
-  ::std::string* mutable_state();
-  ::std::string* release_state();
-  void set_allocated_state(::std::string* state);
-
   // string message = 2;
   void clear_message();
   static const int kMessageFieldNumber = 2;
@@ -651,13 +652,19 @@ class TaskGetResponse final :
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
+  // .flyteidl.service.State state = 1;
+  void clear_state();
+  static const int kStateFieldNumber = 1;
+  ::flyteidl::service::State state() const;
+  void set_state(::flyteidl::service::State value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.TaskGetResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr state_;
   ::google::protobuf::internal::ArenaStringPtr message_;
+  int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
 };
@@ -1328,114 +1335,36 @@ inline void TaskGetRequest::set_allocated_output_prefix(::std::string* output_pr
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.output_prefix)
 }
 
-// string prev_state = 4;
+// .flyteidl.service.State prev_state = 4;
 inline void TaskGetRequest::clear_prev_state() {
-  prev_state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  prev_state_ = 0;
 }
-inline const ::std::string& TaskGetRequest::prev_state() const {
+inline ::flyteidl::service::State TaskGetRequest::prev_state() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetRequest.prev_state)
-  return prev_state_.GetNoArena();
+  return static_cast< ::flyteidl::service::State >(prev_state_);
 }
-inline void TaskGetRequest::set_prev_state(const ::std::string& value) {
+inline void TaskGetRequest::set_prev_state(::flyteidl::service::State value) {
   
-  prev_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  prev_state_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetRequest.prev_state)
-}
-#if LANG_CXX11
-inline void TaskGetRequest::set_prev_state(::std::string&& value) {
-  
-  prev_state_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskGetRequest.prev_state)
-}
-#endif
-inline void TaskGetRequest::set_prev_state(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  prev_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskGetRequest.prev_state)
-}
-inline void TaskGetRequest::set_prev_state(const char* value, size_t size) {
-  
-  prev_state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskGetRequest.prev_state)
-}
-inline ::std::string* TaskGetRequest::mutable_prev_state() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetRequest.prev_state)
-  return prev_state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskGetRequest::release_prev_state() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetRequest.prev_state)
-  
-  return prev_state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskGetRequest::set_allocated_prev_state(::std::string* prev_state) {
-  if (prev_state != nullptr) {
-    
-  } else {
-    
-  }
-  prev_state_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), prev_state);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.prev_state)
 }
 
 // -------------------------------------------------------------------
 
 // TaskGetResponse
 
-// string state = 1;
+// .flyteidl.service.State state = 1;
 inline void TaskGetResponse::clear_state() {
-  state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  state_ = 0;
 }
-inline const ::std::string& TaskGetResponse::state() const {
+inline ::flyteidl::service::State TaskGetResponse::state() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetResponse.state)
-  return state_.GetNoArena();
+  return static_cast< ::flyteidl::service::State >(state_);
 }
-inline void TaskGetResponse::set_state(const ::std::string& value) {
+inline void TaskGetResponse::set_state(::flyteidl::service::State value) {
   
-  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  state_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetResponse.state)
-}
-#if LANG_CXX11
-inline void TaskGetResponse::set_state(::std::string&& value) {
-  
-  state_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskGetResponse.state)
-}
-#endif
-inline void TaskGetResponse::set_state(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskGetResponse.state)
-}
-inline void TaskGetResponse::set_state(const char* value, size_t size) {
-  
-  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskGetResponse.state)
-}
-inline ::std::string* TaskGetResponse::mutable_state() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetResponse.state)
-  return state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskGetResponse::release_state() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetResponse.state)
-  
-  return state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskGetResponse::set_allocated_state(::std::string* state) {
-  if (state != nullptr) {
-    
-  } else {
-    
-  }
-  state_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), state);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetResponse.state)
 }
 
 // string message = 2;
@@ -1623,6 +1552,18 @@ inline void TaskDeleteRequest::set_allocated_job_id(::std::string* job_id) {
 
 }  // namespace service
 }  // namespace flyteidl
+
+namespace google {
+namespace protobuf {
+
+template <> struct is_proto_enum< ::flyteidl::service::State> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::service::State>() {
+  return ::flyteidl::service::State_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

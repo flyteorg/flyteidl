@@ -14,6 +14,113 @@ public final class PluginSystem {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code flyteidl.service.State}
+   */
+  public enum State
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>FAILED = 0;</code>
+     */
+    FAILED(0),
+    /**
+     * <code>RUNNING = 1;</code>
+     */
+    RUNNING(1),
+    /**
+     * <code>SUCCEEDED = 2;</code>
+     */
+    SUCCEEDED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>FAILED = 0;</code>
+     */
+    public static final int FAILED_VALUE = 0;
+    /**
+     * <code>RUNNING = 1;</code>
+     */
+    public static final int RUNNING_VALUE = 1;
+    /**
+     * <code>SUCCEEDED = 2;</code>
+     */
+    public static final int SUCCEEDED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0: return FAILED;
+        case 1: return RUNNING;
+        case 2: return SUCCEEDED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return flyteidl.service.PluginSystem.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:flyteidl.service.State)
+  }
+
   public interface TaskCreateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.service.TaskCreateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -1672,14 +1779,13 @@ public final class PluginSystem {
         getOutputPrefixBytes();
 
     /**
-     * <code>string prev_state = 4;</code>
+     * <code>.flyteidl.service.State prev_state = 4;</code>
      */
-    java.lang.String getPrevState();
+    int getPrevStateValue();
     /**
-     * <code>string prev_state = 4;</code>
+     * <code>.flyteidl.service.State prev_state = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getPrevStateBytes();
+    flyteidl.service.PluginSystem.State getPrevState();
   }
   /**
    * Protobuf type {@code flyteidl.service.TaskGetRequest}
@@ -1697,7 +1803,7 @@ public final class PluginSystem {
       taskType_ = "";
       jobId_ = "";
       outputPrefix_ = "";
-      prevState_ = "";
+      prevState_ = 0;
     }
 
     @java.lang.Override
@@ -1742,10 +1848,10 @@ public final class PluginSystem {
               outputPrefix_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
+              int rawValue = input.readEnum();
 
-              prevState_ = s;
+              prevState_ = rawValue;
               break;
             }
             default: {
@@ -1883,37 +1989,20 @@ public final class PluginSystem {
     }
 
     public static final int PREV_STATE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object prevState_;
+    private int prevState_;
     /**
-     * <code>string prev_state = 4;</code>
+     * <code>.flyteidl.service.State prev_state = 4;</code>
      */
-    public java.lang.String getPrevState() {
-      java.lang.Object ref = prevState_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        prevState_ = s;
-        return s;
-      }
+    public int getPrevStateValue() {
+      return prevState_;
     }
     /**
-     * <code>string prev_state = 4;</code>
+     * <code>.flyteidl.service.State prev_state = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getPrevStateBytes() {
-      java.lang.Object ref = prevState_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        prevState_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.service.PluginSystem.State getPrevState() {
+      @SuppressWarnings("deprecation")
+      flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(prevState_);
+      return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1939,8 +2028,8 @@ public final class PluginSystem {
       if (!getOutputPrefixBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPrefix_);
       }
-      if (!getPrevStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, prevState_);
+      if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+        output.writeEnum(4, prevState_);
       }
       unknownFields.writeTo(output);
     }
@@ -1960,8 +2049,9 @@ public final class PluginSystem {
       if (!getOutputPrefixBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPrefix_);
       }
-      if (!getPrevStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, prevState_);
+      if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, prevState_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1984,8 +2074,7 @@ public final class PluginSystem {
           .equals(other.getJobId())) return false;
       if (!getOutputPrefix()
           .equals(other.getOutputPrefix())) return false;
-      if (!getPrevState()
-          .equals(other.getPrevState())) return false;
+      if (prevState_ != other.prevState_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2004,7 +2093,7 @@ public final class PluginSystem {
       hash = (37 * hash) + OUTPUT_PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getOutputPrefix().hashCode();
       hash = (37 * hash) + PREV_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrevState().hashCode();
+      hash = (53 * hash) + prevState_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2144,7 +2233,7 @@ public final class PluginSystem {
 
         outputPrefix_ = "";
 
-        prevState_ = "";
+        prevState_ = 0;
 
         return this;
       }
@@ -2236,9 +2325,8 @@ public final class PluginSystem {
           outputPrefix_ = other.outputPrefix_;
           onChanged();
         }
-        if (!other.getPrevState().isEmpty()) {
-          prevState_ = other.prevState_;
-          onChanged();
+        if (other.prevState_ != 0) {
+          setPrevStateValue(other.getPrevStateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2476,71 +2564,47 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object prevState_ = "";
+      private int prevState_ = 0;
       /**
-       * <code>string prev_state = 4;</code>
+       * <code>.flyteidl.service.State prev_state = 4;</code>
        */
-      public java.lang.String getPrevState() {
-        java.lang.Object ref = prevState_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          prevState_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getPrevStateValue() {
+        return prevState_;
       }
       /**
-       * <code>string prev_state = 4;</code>
+       * <code>.flyteidl.service.State prev_state = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getPrevStateBytes() {
-        java.lang.Object ref = prevState_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          prevState_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string prev_state = 4;</code>
-       */
-      public Builder setPrevState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setPrevStateValue(int value) {
         prevState_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string prev_state = 4;</code>
+       * <code>.flyteidl.service.State prev_state = 4;</code>
+       */
+      public flyteidl.service.PluginSystem.State getPrevState() {
+        @SuppressWarnings("deprecation")
+        flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(prevState_);
+        return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.service.State prev_state = 4;</code>
+       */
+      public Builder setPrevState(flyteidl.service.PluginSystem.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        prevState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public Builder clearPrevState() {
         
-        prevState_ = getDefaultInstance().getPrevState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string prev_state = 4;</code>
-       */
-      public Builder setPrevStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        prevState_ = value;
+        prevState_ = 0;
         onChanged();
         return this;
       }
@@ -2602,14 +2666,13 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string state = 1;</code>
+     * <code>.flyteidl.service.State state = 1;</code>
      */
-    java.lang.String getState();
+    int getStateValue();
     /**
-     * <code>string state = 1;</code>
+     * <code>.flyteidl.service.State state = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getStateBytes();
+    flyteidl.service.PluginSystem.State getState();
 
     /**
      * <code>string message = 2;</code>
@@ -2634,7 +2697,7 @@ public final class PluginSystem {
       super(builder);
     }
     private TaskGetResponse() {
-      state_ = "";
+      state_ = 0;
       message_ = "";
     }
 
@@ -2662,10 +2725,10 @@ public final class PluginSystem {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
+              int rawValue = input.readEnum();
 
-              state_ = s;
+              state_ = rawValue;
               break;
             }
             case 18: {
@@ -2707,37 +2770,20 @@ public final class PluginSystem {
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object state_;
+    private int state_;
     /**
-     * <code>string state = 1;</code>
+     * <code>.flyteidl.service.State state = 1;</code>
      */
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
-      }
+    public int getStateValue() {
+      return state_;
     }
     /**
-     * <code>string state = 1;</code>
+     * <code>.flyteidl.service.State state = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.service.PluginSystem.State getState() {
+      @SuppressWarnings("deprecation")
+      flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(state_);
+      return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
@@ -2788,8 +2834,8 @@ public final class PluginSystem {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, state_);
+      if (state_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+        output.writeEnum(1, state_);
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -2803,8 +2849,9 @@ public final class PluginSystem {
       if (size != -1) return size;
 
       size = 0;
-      if (!getStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, state_);
+      if (state_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, state_);
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -2824,8 +2871,7 @@ public final class PluginSystem {
       }
       flyteidl.service.PluginSystem.TaskGetResponse other = (flyteidl.service.PluginSystem.TaskGetResponse) obj;
 
-      if (!getState()
-          .equals(other.getState())) return false;
+      if (state_ != other.state_) return false;
       if (!getMessage()
           .equals(other.getMessage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2840,7 +2886,7 @@ public final class PluginSystem {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
+      hash = (53 * hash) + state_;
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2976,7 +3022,7 @@ public final class PluginSystem {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        state_ = "";
+        state_ = 0;
 
         message_ = "";
 
@@ -3056,9 +3102,8 @@ public final class PluginSystem {
 
       public Builder mergeFrom(flyteidl.service.PluginSystem.TaskGetResponse other) {
         if (other == flyteidl.service.PluginSystem.TaskGetResponse.getDefaultInstance()) return this;
-        if (!other.getState().isEmpty()) {
-          state_ = other.state_;
-          onChanged();
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -3093,71 +3138,47 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object state_ = "";
+      private int state_ = 0;
       /**
-       * <code>string state = 1;</code>
+       * <code>.flyteidl.service.State state = 1;</code>
        */
-      public java.lang.String getState() {
-        java.lang.Object ref = state_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          state_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getStateValue() {
+        return state_;
       }
       /**
-       * <code>string state = 1;</code>
+       * <code>.flyteidl.service.State state = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        java.lang.Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string state = 1;</code>
-       */
-      public Builder setState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setStateValue(int value) {
         state_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string state = 1;</code>
+       * <code>.flyteidl.service.State state = 1;</code>
+       */
+      public flyteidl.service.PluginSystem.State getState() {
+        @SuppressWarnings("deprecation")
+        flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(state_);
+        return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.flyteidl.service.State state = 1;</code>
+       */
+      public Builder setState(flyteidl.service.PluginSystem.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.State state = 1;</code>
        */
       public Builder clearState() {
         
-        state_ = getDefaultInstance().getState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 1;</code>
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        state_ = value;
+        state_ = 0;
         onChanged();
         return this;
       }
@@ -4427,21 +4448,24 @@ public final class PluginSystem {
       "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
       "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
       "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
-      "\007message\030\002 \001(\t\"^\n\016TaskGetRequest\022\021\n\ttask" +
+      "\007message\030\002 \001(\t\"w\n\016TaskGetRequest\022\021\n\ttask" +
       "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022\025\n\routput_pr" +
-      "efix\030\003 \001(\t\022\022\n\nprev_state\030\004 \001(\t\"1\n\017TaskGe" +
-      "tResponse\022\r\n\005state\030\001 \001(\t\022\017\n\007message\030\002 \001(" +
-      "\t\"6\n\021TaskDeleteRequest\022\021\n\ttask_type\030\001 \001(" +
-      "\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse2" +
-      "\236\002\n\024BackendPluginService\022Y\n\nCreateTask\022#" +
-      ".flyteidl.service.TaskCreateRequest\032$.fl" +
-      "yteidl.service.TaskCreateResponse\"\000\022P\n\007G" +
-      "etTask\022 .flyteidl.service.TaskGetRequest" +
-      "\032!.flyteidl.service.TaskGetResponse\"\000\022Y\n" +
-      "\nDeleteTask\022#.flyteidl.service.TaskDelet" +
-      "eRequest\032$.flyteidl.service.TaskDeleteRe" +
-      "sponse\"\000B9Z7github.com/flyteorg/flyteidl" +
-      "/gen/pb-go/flyteidl/serviceb\006proto3"
+      "efix\030\003 \001(\t\022+\n\nprev_state\030\004 \001(\0162\027.flyteid" +
+      "l.service.State\"J\n\017TaskGetResponse\022&\n\005st" +
+      "ate\030\001 \001(\0162\027.flyteidl.service.State\022\017\n\007me" +
+      "ssage\030\002 \001(\t\"6\n\021TaskDeleteRequest\022\021\n\ttask" +
+      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDelet" +
+      "eResponse*/\n\005State\022\n\n\006FAILED\020\000\022\013\n\007RUNNIN" +
+      "G\020\001\022\r\n\tSUCCEEDED\020\0022\236\002\n\024BackendPluginServ" +
+      "ice\022Y\n\nCreateTask\022#.flyteidl.service.Tas" +
+      "kCreateRequest\032$.flyteidl.service.TaskCr" +
+      "eateResponse\"\000\022P\n\007GetTask\022 .flyteidl.ser" +
+      "vice.TaskGetRequest\032!.flyteidl.service.T" +
+      "askGetResponse\"\000\022Y\n\nDeleteTask\022#.flyteid" +
+      "l.service.TaskDeleteRequest\032$.flyteidl.s" +
+      "ervice.TaskDeleteResponse\"\000B9Z7github.co" +
+      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/s" +
+      "erviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

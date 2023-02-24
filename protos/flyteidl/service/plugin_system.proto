@@ -12,6 +12,11 @@ service BackendPluginService {
   rpc DeleteTask (TaskDeleteRequest) returns (TaskDeleteResponse){};
 }
 
+enum State {
+  FAILED = 0;
+  RUNNING = 1;
+  SUCCEEDED = 2;
+}
 
 message TaskCreateRequest {
   core.LiteralMap inputs = 1;
@@ -28,11 +33,11 @@ message TaskGetRequest {
   string task_type = 1;
   string job_id = 2;
   string output_prefix = 3;
-  string prev_state = 4;
+  State prev_state = 4;
 }
 
 message TaskGetResponse {
-  string state = 1;
+  State state = 1;
   string message = 2;
 }
 

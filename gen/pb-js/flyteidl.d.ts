@@ -19345,6 +19345,13 @@ export namespace flyteidl {
             type DeleteTaskCallback = (error: (Error|null), response?: flyteidl.service.TaskDeleteResponse) => void;
         }
 
+        /** State enum. */
+        enum State {
+            FAILED = 0,
+            RUNNING = 1,
+            SUCCEEDED = 2
+        }
+
         /** Properties of a TaskCreateRequest. */
         interface ITaskCreateRequest {
 
@@ -19480,7 +19487,7 @@ export namespace flyteidl {
             outputPrefix?: (string|null);
 
             /** TaskGetRequest prevState */
-            prevState?: (string|null);
+            prevState?: (flyteidl.service.State|null);
         }
 
         /** Represents a TaskGetRequest. */
@@ -19502,7 +19509,7 @@ export namespace flyteidl {
             public outputPrefix: string;
 
             /** TaskGetRequest prevState. */
-            public prevState: string;
+            public prevState: flyteidl.service.State;
 
             /**
              * Creates a new TaskGetRequest instance using the specified properties.
@@ -19541,7 +19548,7 @@ export namespace flyteidl {
         interface ITaskGetResponse {
 
             /** TaskGetResponse state */
-            state?: (string|null);
+            state?: (flyteidl.service.State|null);
 
             /** TaskGetResponse message */
             message?: (string|null);
@@ -19557,7 +19564,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.service.ITaskGetResponse);
 
             /** TaskGetResponse state. */
-            public state: string;
+            public state: flyteidl.service.State;
 
             /** TaskGetResponse message. */
             public message: string;

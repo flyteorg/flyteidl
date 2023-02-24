@@ -607,7 +607,7 @@ TaskGetRequest
    "task_type", ":ref:`ref_string`", "", ""
    "job_id", ":ref:`ref_string`", "", ""
    "output_prefix", ":ref:`ref_string`", "", ""
-   "prev_state", ":ref:`ref_string`", "", ""
+   "prev_state", ":ref:`ref_flyteidl.service.State`", "", ""
 
 
 
@@ -628,7 +628,7 @@ TaskGetResponse
    :header: "Field", "Type", "Label", "Description"
    :widths: auto
 
-   "state", ":ref:`ref_string`", "", ""
+   "state", ":ref:`ref_flyteidl.service.State`", "", ""
    "message", ":ref:`ref_string`", "", ""
 
 
@@ -638,6 +638,23 @@ TaskGetResponse
 
 ..
    end messages
+
+
+
+.. _ref_flyteidl.service.State:
+
+State
+------------------------------------------------------------------
+
+
+
+.. csv-table:: Enum State values
+   :header: "Name", "Number", "Description"
+   :widths: auto
+
+   "FAILED", "0", ""
+   "RUNNING", "1", ""
+   "SUCCEEDED", "2", ""
 
 
 ..
