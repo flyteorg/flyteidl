@@ -117,7 +117,7 @@ type BackendPluginServiceClient_GetTask struct {
 	*mock.Call
 }
 
-func (_m BackendPluginServiceClient_GetTask) Return(_a0 *service.TaskCreateResponse, _a1 error) *BackendPluginServiceClient_GetTask {
+func (_m BackendPluginServiceClient_GetTask) Return(_a0 *service.TaskGetResponse, _a1 error) *BackendPluginServiceClient_GetTask {
 	return &BackendPluginServiceClient_GetTask{Call: _m.Call.Return(_a0, _a1)}
 }
 
@@ -132,7 +132,7 @@ func (_m *BackendPluginServiceClient) OnGetTaskMatch(matchers ...interface{}) *B
 }
 
 // GetTask provides a mock function with given fields: ctx, in, opts
-func (_m *BackendPluginServiceClient) GetTask(ctx context.Context, in *service.TaskGetRequest, opts ...grpc.CallOption) (*service.TaskCreateResponse, error) {
+func (_m *BackendPluginServiceClient) GetTask(ctx context.Context, in *service.TaskGetRequest, opts ...grpc.CallOption) (*service.TaskGetResponse, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -142,12 +142,12 @@ func (_m *BackendPluginServiceClient) GetTask(ctx context.Context, in *service.T
 	_ca = append(_ca, _va...)
 	ret := _m.Called(_ca...)
 
-	var r0 *service.TaskCreateResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *service.TaskGetRequest, ...grpc.CallOption) *service.TaskCreateResponse); ok {
+	var r0 *service.TaskGetResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *service.TaskGetRequest, ...grpc.CallOption) *service.TaskGetResponse); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*service.TaskCreateResponse)
+			r0 = ret.Get(0).(*service.TaskGetResponse)
 		}
 	}
 

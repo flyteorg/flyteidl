@@ -19295,7 +19295,7 @@ export namespace flyteidl {
             /**
              * Calls GetTask.
              * @param request TaskGetRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and TaskCreateResponse
+             * @param callback Node-style callback called with the error, if any, and TaskGetResponse
              */
             public getTask(request: flyteidl.service.ITaskGetRequest, callback: flyteidl.service.BackendPluginService.GetTaskCallback): void;
 
@@ -19304,7 +19304,7 @@ export namespace flyteidl {
              * @param request TaskGetRequest message or plain object
              * @returns Promise
              */
-            public getTask(request: flyteidl.service.ITaskGetRequest): Promise<flyteidl.service.TaskCreateResponse>;
+            public getTask(request: flyteidl.service.ITaskGetRequest): Promise<flyteidl.service.TaskGetResponse>;
 
             /**
              * Calls DeleteTask.
@@ -19333,9 +19333,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.service.BackendPluginService#getTask}.
              * @param error Error, if any
-             * @param [response] TaskCreateResponse
+             * @param [response] TaskGetResponse
              */
-            type GetTaskCallback = (error: (Error|null), response?: flyteidl.service.TaskCreateResponse) => void;
+            type GetTaskCallback = (error: (Error|null), response?: flyteidl.service.TaskGetResponse) => void;
 
             /**
              * Callback as used by {@link flyteidl.service.BackendPluginService#deleteTask}.

@@ -44808,7 +44808,7 @@
                  * @typedef GetTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
-                 * @param {flyteidl.service.TaskCreateResponse} [response] TaskCreateResponse
+                 * @param {flyteidl.service.TaskGetResponse} [response] TaskGetResponse
                  */
     
                 /**
@@ -44817,12 +44817,12 @@
                  * @memberof flyteidl.service.BackendPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
-                 * @param {flyteidl.service.BackendPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
+                 * @param {flyteidl.service.BackendPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskGetResponse
                  * @returns {undefined}
                  * @variation 1
                  */
                 Object.defineProperty(BackendPluginService.prototype.getTask = function getTask(request, callback) {
-                    return this.rpcCall(getTask, $root.flyteidl.service.TaskGetRequest, $root.flyteidl.service.TaskCreateResponse, request, callback);
+                    return this.rpcCall(getTask, $root.flyteidl.service.TaskGetRequest, $root.flyteidl.service.TaskGetResponse, request, callback);
                 }, "name", { value: "GetTask" });
     
                 /**
@@ -44831,7 +44831,7 @@
                  * @memberof flyteidl.service.BackendPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
-                 * @returns {Promise<flyteidl.service.TaskCreateResponse>} Promise
+                 * @returns {Promise<flyteidl.service.TaskGetResponse>} Promise
                  * @variation 2
                  */
     

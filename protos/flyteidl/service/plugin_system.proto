@@ -8,7 +8,7 @@ import "flyteidl/core/interface.proto";
 
 service BackendPluginService {
   rpc CreateTask (TaskCreateRequest) returns (TaskCreateResponse){};
-  rpc GetTask (TaskGetRequest) returns (TaskCreateResponse){};
+  rpc GetTask (TaskGetRequest) returns (TaskGetResponse){};
   rpc DeleteTask (TaskDeleteRequest) returns (TaskDeleteResponse){};
 }
 

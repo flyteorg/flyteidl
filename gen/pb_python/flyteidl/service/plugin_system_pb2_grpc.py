@@ -22,7 +22,7 @@ class BackendPluginServiceStub(object):
         self.GetTask = channel.unary_unary(
                 '/flyteidl.service.BackendPluginService/GetTask',
                 request_serializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskGetRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskCreateResponse.FromString,
+                response_deserializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskGetResponse.FromString,
                 )
         self.DeleteTask = channel.unary_unary(
                 '/flyteidl.service.BackendPluginService/DeleteTask',
@@ -63,7 +63,7 @@ def add_BackendPluginServiceServicer_to_server(servicer, server):
             'GetTask': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTask,
                     request_deserializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskGetRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskCreateResponse.SerializeToString,
+                    response_serializer=flyteidl_dot_service_dot_plugin__system__pb2.TaskGetResponse.SerializeToString,
             ),
             'DeleteTask': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTask,
@@ -110,7 +110,7 @@ class BackendPluginService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.BackendPluginService/GetTask',
             flyteidl_dot_service_dot_plugin__system__pb2.TaskGetRequest.SerializeToString,
-            flyteidl_dot_service_dot_plugin__system__pb2.TaskCreateResponse.FromString,
+            flyteidl_dot_service_dot_plugin__system__pb2.TaskGetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -4433,15 +4433,15 @@ public final class PluginSystem {
       "tResponse\022\r\n\005state\030\001 \001(\t\022\017\n\007message\030\002 \001(" +
       "\t\"6\n\021TaskDeleteRequest\022\021\n\ttask_type\030\001 \001(" +
       "\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse2" +
-      "\241\002\n\024BackendPluginService\022Y\n\nCreateTask\022#" +
+      "\236\002\n\024BackendPluginService\022Y\n\nCreateTask\022#" +
       ".flyteidl.service.TaskCreateRequest\032$.fl" +
-      "yteidl.service.TaskCreateResponse\"\000\022S\n\007G" +
+      "yteidl.service.TaskCreateResponse\"\000\022P\n\007G" +
       "etTask\022 .flyteidl.service.TaskGetRequest" +
-      "\032$.flyteidl.service.TaskCreateResponse\"\000" +
-      "\022Y\n\nDeleteTask\022#.flyteidl.service.TaskDe" +
-      "leteRequest\032$.flyteidl.service.TaskDelet" +
-      "eResponse\"\000B9Z7github.com/flyteorg/flyte" +
-      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
+      "\032!.flyteidl.service.TaskGetResponse\"\000\022Y\n" +
+      "\nDeleteTask\022#.flyteidl.service.TaskDelet" +
+      "eRequest\032$.flyteidl.service.TaskDeleteRe" +
+      "sponse\"\000B9Z7github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

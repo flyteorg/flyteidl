@@ -65,32 +65,32 @@ void BackendPluginService::Stub::experimental_async::CreateTask(::grpc::ClientCo
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::TaskCreateResponse>::Create(channel_.get(), cq, rpcmethod_CreateTask_, context, request, false);
 }
 
-::grpc::Status BackendPluginService::Stub::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskCreateResponse* response) {
+::grpc::Status BackendPluginService::Stub::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskGetResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetTask_, context, request, response);
 }
 
-void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)> f) {
+void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, std::move(f));
 }
 
-void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)> f) {
+void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, std::move(f));
 }
 
-void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, reactor);
 }
 
-void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void BackendPluginService::Stub::experimental_async::GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetTask_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* BackendPluginService::Stub::AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::TaskCreateResponse>::Create(channel_.get(), cq, rpcmethod_GetTask_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>* BackendPluginService::Stub::AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::TaskGetResponse>::Create(channel_.get(), cq, rpcmethod_GetTask_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* BackendPluginService::Stub::PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::TaskCreateResponse>::Create(channel_.get(), cq, rpcmethod_GetTask_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>* BackendPluginService::Stub::PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::TaskGetResponse>::Create(channel_.get(), cq, rpcmethod_GetTask_, context, request, false);
 }
 
 ::grpc::Status BackendPluginService::Stub::DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::flyteidl::service::TaskDeleteResponse* response) {
@@ -130,7 +130,7 @@ BackendPluginService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BackendPluginService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< BackendPluginService::Service, ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskCreateResponse>(
+      new ::grpc::internal::RpcMethodHandler< BackendPluginService::Service, ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskGetResponse>(
           std::mem_fn(&BackendPluginService::Service::GetTask), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       BackendPluginService_method_names[2],
@@ -149,7 +149,7 @@ BackendPluginService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status BackendPluginService::Service::GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) {
+::grpc::Status BackendPluginService::Service::GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) {
   (void) context;
   (void) request;
   (void) response;

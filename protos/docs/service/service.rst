@@ -661,7 +661,7 @@ BackendPluginService
    :widths: auto
 
    "CreateTask", ":ref:`ref_flyteidl.service.TaskCreateRequest`", ":ref:`ref_flyteidl.service.TaskCreateResponse`", ""
-   "GetTask", ":ref:`ref_flyteidl.service.TaskGetRequest`", ":ref:`ref_flyteidl.service.TaskCreateResponse`", ""
+   "GetTask", ":ref:`ref_flyteidl.service.TaskGetRequest`", ":ref:`ref_flyteidl.service.TaskGetResponse`", ""
    "DeleteTask", ":ref:`ref_flyteidl.service.TaskDeleteRequest`", ":ref:`ref_flyteidl.service.TaskDeleteResponse`", ""
 
 ..

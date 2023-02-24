@@ -1109,6 +1109,17 @@
     },
     "serviceTaskDeleteResponse": {
       "type": "object"
+    },
+    "serviceTaskGetResponse": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
     }
   }
 }

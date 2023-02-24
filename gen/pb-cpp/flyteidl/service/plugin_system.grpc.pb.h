@@ -55,12 +55,12 @@ class BackendPluginService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>> PrepareAsyncCreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>>(PrepareAsyncCreateTaskRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskCreateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>> AsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>>(AsyncGetTaskRaw(context, request, cq));
+    virtual ::grpc::Status GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskGetResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>> AsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>>(AsyncGetTaskRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>> PrepareAsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>>(PrepareAsyncGetTaskRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>> PrepareAsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>>(PrepareAsyncGetTaskRaw(context, request, cq));
     }
     virtual ::grpc::Status DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::flyteidl::service::TaskDeleteResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskDeleteResponse>> AsyncDeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) {
@@ -76,10 +76,10 @@ class BackendPluginService final {
       virtual void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -89,8 +89,8 @@ class BackendPluginService final {
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>* AsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>* PrepareAsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>* AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>* PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>* AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>* PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskDeleteResponse>* AsyncDeleteTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskDeleteResponse>* PrepareAsyncDeleteTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -104,12 +104,12 @@ class BackendPluginService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>> PrepareAsyncCreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>>(PrepareAsyncCreateTaskRaw(context, request, cq));
     }
-    ::grpc::Status GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskCreateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>> AsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>>(AsyncGetTaskRaw(context, request, cq));
+    ::grpc::Status GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskGetResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>> AsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>>(AsyncGetTaskRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>> PrepareAsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>>(PrepareAsyncGetTaskRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>> PrepareAsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>>(PrepareAsyncGetTaskRaw(context, request, cq));
     }
     ::grpc::Status DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::flyteidl::service::TaskDeleteResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskDeleteResponse>> AsyncDeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) {
@@ -125,10 +125,10 @@ class BackendPluginService final {
       void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) override;
       void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
@@ -146,8 +146,8 @@ class BackendPluginService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* AsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* PrepareAsyncCreateTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskCreateResponse>* PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>* AsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskGetResponse>* PrepareAsyncGetTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskDeleteResponse>* AsyncDeleteTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::TaskDeleteResponse>* PrepareAsyncDeleteTaskRaw(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateTask_;
@@ -161,7 +161,7 @@ class BackendPluginService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status CreateTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response);
-    virtual ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response);
+    virtual ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response);
     virtual ::grpc::Status DeleteTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response);
   };
   template <class BaseClass>
@@ -196,11 +196,11 @@ class BackendPluginService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetTask(::grpc::ServerContext* context, ::flyteidl::service::TaskGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::TaskCreateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetTask(::grpc::ServerContext* context, ::flyteidl::service::TaskGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::TaskGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -263,17 +263,17 @@ class BackendPluginService final {
    public:
     ExperimentalWithCallbackMethod_GetTask() {
       ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskCreateResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskGetResponse>(
           [this](::grpc::ServerContext* context,
                  const ::flyteidl::service::TaskGetRequest* request,
-                 ::flyteidl::service::TaskCreateResponse* response,
+                 ::flyteidl::service::TaskGetResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->GetTask(context, request, response, controller);
                  }));
     }
     void SetMessageAllocatorFor_GetTask(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskCreateResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskCreateResponse>*>(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskGetResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskGetResponse>*>(
           ::grpc::Service::experimental().GetHandler(1))
               ->SetMessageAllocator(allocator);
     }
@@ -281,11 +281,11 @@ class BackendPluginService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteTask : public BaseClass {
@@ -348,7 +348,7 @@ class BackendPluginService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -402,7 +402,7 @@ class BackendPluginService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -474,7 +474,7 @@ class BackendPluginService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -532,18 +532,18 @@ class BackendPluginService final {
    public:
     WithStreamedUnaryMethod_GetTask() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskCreateResponse>(std::bind(&WithStreamedUnaryMethod_GetTask<BaseClass>::StreamedGetTask, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::TaskGetRequest, ::flyteidl::service::TaskGetResponse>(std::bind(&WithStreamedUnaryMethod_GetTask<BaseClass>::StreamedGetTask, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetTask() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskCreateResponse* response) override {
+    ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetTask(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::TaskGetRequest,::flyteidl::service::TaskCreateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetTask(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::TaskGetRequest,::flyteidl::service::TaskGetResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteTask : public BaseClass {
