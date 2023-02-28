@@ -20748,53 +20748,104 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     boolean hasStartTime();
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     com.google.protobuf.Timestamp getStartTime();
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     boolean hasEndTime();
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     com.google.protobuf.Timestamp getEndTime();
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     boolean hasCategory();
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     flyteidl.admin.Common.CategoricalSpanInfo getCategory();
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     flyteidl.admin.Common.CategoricalSpanInfoOrBuilder getCategoryOrBuilder();
 
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     boolean hasReference();
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     flyteidl.admin.Common.ReferenceSpanInfo getReference();
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     flyteidl.admin.Common.ReferenceSpanInfoOrBuilder getReferenceOrBuilder();
@@ -20803,7 +20854,9 @@ public final class Common {
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with
+   * a description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity
+   * relationships (ex. workflow -&gt; node -&gt; task).
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.Span}
@@ -20971,18 +21024,30 @@ public final class Common {
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public boolean hasStartTime() {
       return startTime_ != null;
     }
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
     /**
+     * <pre>
+     * start_time defines the instance this span began.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
@@ -20992,18 +21057,30 @@ public final class Common {
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public boolean hasEndTime() {
       return endTime_ != null;
     }
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
     /**
+     * <pre>
+     * end_time defines the instance this span completed.
+     * </pre>
+     *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -21012,12 +21089,20 @@ public final class Common {
 
     public static final int CATEGORY_FIELD_NUMBER = 3;
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     public boolean hasCategory() {
       return infoCase_ == 3;
     }
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     public flyteidl.admin.Common.CategoricalSpanInfo getCategory() {
@@ -21027,6 +21112,10 @@ public final class Common {
       return flyteidl.admin.Common.CategoricalSpanInfo.getDefaultInstance();
     }
     /**
+     * <pre>
+     * category labels the span with a brief description.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
      */
     public flyteidl.admin.Common.CategoricalSpanInfoOrBuilder getCategoryOrBuilder() {
@@ -21038,12 +21127,22 @@ public final class Common {
 
     public static final int REFERENCE_FIELD_NUMBER = 4;
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     public boolean hasReference() {
       return infoCase_ == 4;
     }
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     public flyteidl.admin.Common.ReferenceSpanInfo getReference() {
@@ -21053,6 +21152,11 @@ public final class Common {
       return flyteidl.admin.Common.ReferenceSpanInfo.getDefaultInstance();
     }
     /**
+     * <pre>
+     * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+     * replationships (ex. workflow -&gt; node -&gt; task).
+     * </pre>
+     *
      * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
      */
     public flyteidl.admin.Common.ReferenceSpanInfoOrBuilder getReferenceOrBuilder() {
@@ -21279,7 +21383,9 @@ public final class Common {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with
+     * a description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity
+     * relationships (ex. workflow -&gt; node -&gt; task).
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.Span}
@@ -21499,12 +21605,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public boolean hasStartTime() {
         return startTimeBuilder_ != null || startTime_ != null;
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public com.google.protobuf.Timestamp getStartTime() {
@@ -21515,6 +21629,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public Builder setStartTime(com.google.protobuf.Timestamp value) {
@@ -21531,6 +21649,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public Builder setStartTime(
@@ -21545,6 +21667,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
@@ -21563,6 +21689,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public Builder clearStartTime() {
@@ -21577,6 +21707,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
@@ -21585,6 +21719,10 @@ public final class Common {
         return getStartTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
@@ -21596,6 +21734,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * start_time defines the instance this span began.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -21616,12 +21758,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public boolean hasEndTime() {
         return endTimeBuilder_ != null || endTime_ != null;
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public com.google.protobuf.Timestamp getEndTime() {
@@ -21632,6 +21782,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public Builder setEndTime(com.google.protobuf.Timestamp value) {
@@ -21648,6 +21802,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public Builder setEndTime(
@@ -21662,6 +21820,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
@@ -21680,6 +21842,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public Builder clearEndTime() {
@@ -21694,6 +21860,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
@@ -21702,6 +21872,10 @@ public final class Common {
         return getEndTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -21713,6 +21887,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * end_time defines the instance this span completed.
+       * </pre>
+       *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -21732,12 +21910,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.CategoricalSpanInfo, flyteidl.admin.Common.CategoricalSpanInfo.Builder, flyteidl.admin.Common.CategoricalSpanInfoOrBuilder> categoryBuilder_;
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public boolean hasCategory() {
         return infoCase_ == 3;
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public flyteidl.admin.Common.CategoricalSpanInfo getCategory() {
@@ -21754,6 +21940,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public Builder setCategory(flyteidl.admin.Common.CategoricalSpanInfo value) {
@@ -21770,6 +21960,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public Builder setCategory(
@@ -21784,6 +21978,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public Builder mergeCategory(flyteidl.admin.Common.CategoricalSpanInfo value) {
@@ -21806,6 +22004,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public Builder clearCategory() {
@@ -21825,12 +22027,20 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public flyteidl.admin.Common.CategoricalSpanInfo.Builder getCategoryBuilder() {
         return getCategoryFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       public flyteidl.admin.Common.CategoricalSpanInfoOrBuilder getCategoryOrBuilder() {
@@ -21844,6 +22054,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * category labels the span with a brief description.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo category = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -21868,12 +22082,22 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.ReferenceSpanInfo, flyteidl.admin.Common.ReferenceSpanInfo.Builder, flyteidl.admin.Common.ReferenceSpanInfoOrBuilder> referenceBuilder_;
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public boolean hasReference() {
         return infoCase_ == 4;
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public flyteidl.admin.Common.ReferenceSpanInfo getReference() {
@@ -21890,6 +22114,11 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public Builder setReference(flyteidl.admin.Common.ReferenceSpanInfo value) {
@@ -21906,6 +22135,11 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public Builder setReference(
@@ -21920,6 +22154,11 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public Builder mergeReference(flyteidl.admin.Common.ReferenceSpanInfo value) {
@@ -21942,6 +22181,11 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public Builder clearReference() {
@@ -21961,12 +22205,22 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public flyteidl.admin.Common.ReferenceSpanInfo.Builder getReferenceBuilder() {
         return getReferenceFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       public flyteidl.admin.Common.ReferenceSpanInfoOrBuilder getReferenceOrBuilder() {
@@ -21980,6 +22234,11 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * reference allows nesting spans by providing a hierarchical interface to represent Flyte entity
+       * replationships (ex. workflow -&gt; node -&gt; task).
+       * </pre>
+       *
        * <code>.flyteidl.admin.ReferenceSpanInfo reference = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -22058,17 +22317,25 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * category defines the category that this span is labelled as.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
      */
     int getCategoryValue();
     /**
+     * <pre>
+     * category defines the category that this span is labelled as.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
      */
     flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory();
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.CategoricalSpanInfo}
@@ -22149,6 +22416,10 @@ public final class Common {
     }
 
     /**
+     * <pre>
+     * Category defines a collection of span categories.
+     * </pre>
+     *
      * Protobuf enum {@code flyteidl.admin.CategoricalSpanInfo.Category}
      */
     public enum Category
@@ -22285,12 +22556,20 @@ public final class Common {
     public static final int CATEGORY_FIELD_NUMBER = 1;
     private int category_;
     /**
+     * <pre>
+     * category defines the category that this span is labelled as.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
      */
     public int getCategoryValue() {
       return category_;
     }
     /**
+     * <pre>
+     * category defines the category that this span is labelled as.
+     * </pre>
+     *
      * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
      */
     public flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory() {
@@ -22455,7 +22734,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.CategoricalSpanInfo}
@@ -22606,12 +22885,20 @@ public final class Common {
 
       private int category_ = 0;
       /**
+       * <pre>
+       * category defines the category that this span is labelled as.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
        */
       public int getCategoryValue() {
         return category_;
       }
       /**
+       * <pre>
+       * category defines the category that this span is labelled as.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
        */
       public Builder setCategoryValue(int value) {
@@ -22620,6 +22907,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category defines the category that this span is labelled as.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
        */
       public flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory() {
@@ -22628,6 +22919,10 @@ public final class Common {
         return result == null ? flyteidl.admin.Common.CategoricalSpanInfo.Category.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * category defines the category that this span is labelled as.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
        */
       public Builder setCategory(flyteidl.admin.Common.CategoricalSpanInfo.Category value) {
@@ -22640,6 +22935,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * category defines the category that this span is labelled as.
+       * </pre>
+       *
        * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
        */
       public Builder clearCategory() {
@@ -22706,63 +23005,119 @@ public final class Common {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     boolean hasWorkflowId();
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowId();
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowIdOrBuilder();
 
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     boolean hasNodeId();
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getNodeId();
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeIdOrBuilder();
 
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     boolean hasTaskId();
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId();
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder();
 
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     java.util.List<flyteidl.admin.Common.Span> 
         getSpansList();
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     flyteidl.admin.Common.Span getSpans(int index);
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     int getSpansCount();
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
         getSpansOrBuilderList();
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
@@ -22772,7 +23127,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ReferenceSpanInfo}
@@ -22943,12 +23298,20 @@ public final class Common {
 
     public static final int WORKFLOW_ID_FIELD_NUMBER = 1;
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     public boolean hasWorkflowId() {
       return idCase_ == 1;
     }
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowId() {
@@ -22958,6 +23321,10 @@ public final class Common {
       return flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance();
     }
     /**
+     * <pre>
+     * workflow_id is the id of the workflow execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowIdOrBuilder() {
@@ -22969,12 +23336,20 @@ public final class Common {
 
     public static final int NODE_ID_FIELD_NUMBER = 2;
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     public boolean hasNodeId() {
       return idCase_ == 2;
     }
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getNodeId() {
@@ -22984,6 +23359,10 @@ public final class Common {
       return flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance();
     }
     /**
+     * <pre>
+     * node_id is the id of the node execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
      */
     public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeIdOrBuilder() {
@@ -22995,12 +23374,20 @@ public final class Common {
 
     public static final int TASK_ID_FIELD_NUMBER = 3;
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     public boolean hasTaskId() {
       return idCase_ == 3;
     }
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId() {
@@ -23010,6 +23397,10 @@ public final class Common {
       return flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.getDefaultInstance();
     }
     /**
+     * <pre>
+     * task_id is the id of the task execution this Span represents.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
      */
     public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder() {
@@ -23022,12 +23413,20 @@ public final class Common {
     public static final int SPANS_FIELD_NUMBER = 4;
     private java.util.List<flyteidl.admin.Common.Span> spans_;
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
       return spans_;
     }
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
@@ -23035,18 +23434,30 @@ public final class Common {
       return spans_;
     }
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     public int getSpansCount() {
       return spans_.size();
     }
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     public flyteidl.admin.Common.Span getSpans(int index) {
       return spans_.get(index);
     }
     /**
+     * <pre>
+     * spans defines a collection of Spans that breakdown this execution.
+     * </pre>
+     *
      * <code>repeated .flyteidl.admin.Span spans = 4;</code>
      */
     public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
@@ -23267,7 +23678,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ReferenceSpanInfo}
@@ -23515,12 +23926,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> workflowIdBuilder_;
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public boolean hasWorkflowId() {
         return idCase_ == 1;
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getWorkflowId() {
@@ -23537,6 +23956,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public Builder setWorkflowId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -23553,6 +23976,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public Builder setWorkflowId(
@@ -23567,6 +23994,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public Builder mergeWorkflowId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -23589,6 +24020,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public Builder clearWorkflowId() {
@@ -23608,12 +24043,20 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getWorkflowIdBuilder() {
         return getWorkflowIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getWorkflowIdOrBuilder() {
@@ -23627,6 +24070,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * workflow_id is the id of the workflow execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier workflow_id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -23651,12 +24098,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder> nodeIdBuilder_;
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public boolean hasNodeId() {
         return idCase_ == 2;
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier getNodeId() {
@@ -23673,6 +24128,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public Builder setNodeId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
@@ -23689,6 +24148,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public Builder setNodeId(
@@ -23703,6 +24166,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public Builder mergeNodeId(flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier value) {
@@ -23725,6 +24192,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public Builder clearNodeId() {
@@ -23744,12 +24215,20 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.Builder getNodeIdBuilder() {
         return getNodeIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       public flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeIdOrBuilder() {
@@ -23763,6 +24242,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * node_id is the id of the node execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.NodeExecutionIdentifier node_id = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -23787,12 +24270,20 @@ public final class Common {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder> taskIdBuilder_;
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public boolean hasTaskId() {
         return idCase_ == 3;
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier getTaskId() {
@@ -23809,6 +24300,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder setTaskId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
@@ -23825,6 +24320,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder setTaskId(
@@ -23839,6 +24338,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder mergeTaskId(flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier value) {
@@ -23861,6 +24364,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public Builder clearTaskId() {
@@ -23880,12 +24387,20 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifier.Builder getTaskIdBuilder() {
         return getTaskIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       public flyteidl.core.IdentifierOuterClass.TaskExecutionIdentifierOrBuilder getTaskIdOrBuilder() {
@@ -23899,6 +24414,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * task_id is the id of the task execution this Span represents.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskExecutionIdentifier task_id = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -23933,6 +24452,10 @@ public final class Common {
           flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spansBuilder_;
 
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public java.util.List<flyteidl.admin.Common.Span> getSpansList() {
@@ -23943,6 +24466,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public int getSpansCount() {
@@ -23953,6 +24480,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public flyteidl.admin.Common.Span getSpans(int index) {
@@ -23963,6 +24494,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder setSpans(
@@ -23980,6 +24515,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder setSpans(
@@ -23994,6 +24533,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder addSpans(flyteidl.admin.Common.Span value) {
@@ -24010,6 +24553,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder addSpans(
@@ -24027,6 +24574,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder addSpans(
@@ -24041,6 +24592,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder addSpans(
@@ -24055,6 +24610,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder addAllSpans(
@@ -24070,6 +24629,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder clearSpans() {
@@ -24083,6 +24646,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public Builder removeSpans(int index) {
@@ -24096,6 +24663,10 @@ public final class Common {
         return this;
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public flyteidl.admin.Common.Span.Builder getSpansBuilder(
@@ -24103,6 +24674,10 @@ public final class Common {
         return getSpansFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public flyteidl.admin.Common.SpanOrBuilder getSpansOrBuilder(
@@ -24113,6 +24688,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public java.util.List<? extends flyteidl.admin.Common.SpanOrBuilder> 
@@ -24124,6 +24703,10 @@ public final class Common {
         }
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public flyteidl.admin.Common.Span.Builder addSpansBuilder() {
@@ -24131,6 +24714,10 @@ public final class Common {
             flyteidl.admin.Common.Span.getDefaultInstance());
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public flyteidl.admin.Common.Span.Builder addSpansBuilder(
@@ -24139,6 +24726,10 @@ public final class Common {
             index, flyteidl.admin.Common.Span.getDefaultInstance());
       }
       /**
+       * <pre>
+       * spans defines a collection of Spans that breakdown this execution.
+       * </pre>
+       *
        * <code>repeated .flyteidl.admin.Span spans = 4;</code>
        */
       public java.util.List<flyteidl.admin.Common.Span.Builder> 

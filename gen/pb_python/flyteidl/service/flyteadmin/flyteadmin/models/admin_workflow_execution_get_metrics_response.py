@@ -53,6 +53,7 @@ class AdminWorkflowExecutionGetMetricsResponse(object):
     def span(self):
         """Gets the span of this AdminWorkflowExecutionGetMetricsResponse.  # noqa: E501
 
+        Span defines the top-level breakdown of the workflows execution. More precise information is nested in a hierarchical structure using Flyte entity references.  # noqa: E501
 
         :return: The span of this AdminWorkflowExecutionGetMetricsResponse.  # noqa: E501
         :rtype: AdminSpan
@@ -63,6 +64,7 @@ class AdminWorkflowExecutionGetMetricsResponse(object):
     def span(self, span):
         """Sets the span of this AdminWorkflowExecutionGetMetricsResponse.
 
+        Span defines the top-level breakdown of the workflows execution. More precise information is nested in a hierarchical structure using Flyte entity references.  # noqa: E501
 
         :param span: The span of this AdminWorkflowExecutionGetMetricsResponse.  # noqa: E501
         :type: AdminSpan

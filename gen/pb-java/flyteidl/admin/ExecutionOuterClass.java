@@ -26181,26 +26181,42 @@ public final class ExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     boolean hasId();
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId();
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder();
 
     /**
+     * <pre>
+     * depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+     * </pre>
+     *
      * <code>int32 depth = 2;</code>
      */
     int getDepth();
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * WorkflowExecutionGetMetricsRequest represents a request to retrieve metrics for the specified workflow execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetMetricsRequest}
@@ -26294,18 +26310,30 @@ public final class ExecutionOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier id_;
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     public boolean hasId() {
       return id_ != null;
     }
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
       return id_ == null ? flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.getDefaultInstance() : id_;
     }
     /**
+     * <pre>
+     * id defines the workflow execution to query for.
+     * </pre>
+     *
      * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
      */
     public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
@@ -26315,6 +26343,10 @@ public final class ExecutionOuterClass {
     public static final int DEPTH_FIELD_NUMBER = 2;
     private int depth_;
     /**
+     * <pre>
+     * depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+     * </pre>
+     *
      * <code>int32 depth = 2;</code>
      */
     public int getDepth() {
@@ -26494,7 +26526,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * WorkflowExecutionGetMetricsRequest represents a request to retrieve metrics for the specified workflow execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetMetricsRequest}
@@ -26661,12 +26693,20 @@ public final class ExecutionOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder, flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder> idBuilder_;
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public boolean hasId() {
         return idBuilder_ != null || id_ != null;
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier getId() {
@@ -26677,6 +26717,10 @@ public final class ExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public Builder setId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -26693,6 +26737,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public Builder setId(
@@ -26707,6 +26755,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public Builder mergeId(flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier value) {
@@ -26725,6 +26777,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public Builder clearId() {
@@ -26739,6 +26795,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifier.Builder getIdBuilder() {
@@ -26747,6 +26807,10 @@ public final class ExecutionOuterClass {
         return getIdFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       public flyteidl.core.IdentifierOuterClass.WorkflowExecutionIdentifierOrBuilder getIdOrBuilder() {
@@ -26758,6 +26822,10 @@ public final class ExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * id defines the workflow execution to query for.
+       * </pre>
+       *
        * <code>.flyteidl.core.WorkflowExecutionIdentifier id = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -26776,12 +26844,20 @@ public final class ExecutionOuterClass {
 
       private int depth_ ;
       /**
+       * <pre>
+       * depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+       * </pre>
+       *
        * <code>int32 depth = 2;</code>
        */
       public int getDepth() {
         return depth_;
       }
       /**
+       * <pre>
+       * depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+       * </pre>
+       *
        * <code>int32 depth = 2;</code>
        */
       public Builder setDepth(int value) {
@@ -26791,6 +26867,10 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+       * </pre>
+       *
        * <code>int32 depth = 2;</code>
        */
       public Builder clearDepth() {
@@ -26857,21 +26937,36 @@ public final class ExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     boolean hasSpan();
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     flyteidl.admin.Common.Span getSpan();
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder();
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetMetricsResponse}
@@ -26960,18 +27055,33 @@ public final class ExecutionOuterClass {
     public static final int SPAN_FIELD_NUMBER = 1;
     private flyteidl.admin.Common.Span span_;
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     public boolean hasSpan() {
       return span_ != null;
     }
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     public flyteidl.admin.Common.Span getSpan() {
       return span_ == null ? flyteidl.admin.Common.Span.getDefaultInstance() : span_;
     }
     /**
+     * <pre>
+     * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+     * hierarchical structure using Flyte entity references.
+     * </pre>
+     *
      * <code>.flyteidl.admin.Span span = 1;</code>
      */
     public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
@@ -27140,7 +27250,7 @@ public final class ExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.WorkflowExecutionGetMetricsResponse}
@@ -27301,12 +27411,22 @@ public final class ExecutionOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spanBuilder_;
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public boolean hasSpan() {
         return spanBuilder_ != null || span_ != null;
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public flyteidl.admin.Common.Span getSpan() {
@@ -27317,6 +27437,11 @@ public final class ExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public Builder setSpan(flyteidl.admin.Common.Span value) {
@@ -27333,6 +27458,11 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public Builder setSpan(
@@ -27347,6 +27477,11 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public Builder mergeSpan(flyteidl.admin.Common.Span value) {
@@ -27365,6 +27500,11 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public Builder clearSpan() {
@@ -27379,6 +27519,11 @@ public final class ExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public flyteidl.admin.Common.Span.Builder getSpanBuilder() {
@@ -27387,6 +27532,11 @@ public final class ExecutionOuterClass {
         return getSpanFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
@@ -27398,6 +27548,11 @@ public final class ExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+       * hierarchical structure using Flyte entity references.
+       * </pre>
+       *
        * <code>.flyteidl.admin.Span span = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<

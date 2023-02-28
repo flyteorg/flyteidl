@@ -1531,7 +1531,7 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
-        :param int depth:
+        :param int depth: depth defines the number of Flyte entity levels to traverse when breaking down execution details.
         :return: AdminWorkflowExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1555,7 +1555,7 @@ class AdminServiceApi(object):
         :param str id_project: Name of the project the resource belongs to. (required)
         :param str id_domain: Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project. (required)
         :param str id_name: User or system provided value for the resource. (required)
-        :param int depth:
+        :param int depth: depth defines the number of Flyte entity levels to traverse when breaking down execution details.
         :return: AdminWorkflowExecutionGetMetricsResponse
                  If the method is called asynchronously,
                  returns the request thread.

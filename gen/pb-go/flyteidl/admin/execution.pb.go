@@ -1579,13 +1579,15 @@ func (m *ExecutionUpdateResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ExecutionUpdateResponse proto.InternalMessageInfo
 
-// TODO @hamersaw docs
+// WorkflowExecutionGetMetricsRequest represents a request to retrieve metrics for the specified workflow execution.
 type WorkflowExecutionGetMetricsRequest struct {
-	Id                   *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Depth                int32                             `protobuf:"varint,2,opt,name=depth,proto3" json:"depth,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                          `json:"-"`
-	XXX_unrecognized     []byte                            `json:"-"`
-	XXX_sizecache        int32                             `json:"-"`
+	// id defines the workflow execution to query for.
+	Id *core.WorkflowExecutionIdentifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// depth defines the number of Flyte entity levels to traverse when breaking down execution details.
+	Depth                int32    `protobuf:"varint,2,opt,name=depth,proto3" json:"depth,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *WorkflowExecutionGetMetricsRequest) Reset()         { *m = WorkflowExecutionGetMetricsRequest{} }
@@ -1627,8 +1629,10 @@ func (m *WorkflowExecutionGetMetricsRequest) GetDepth() int32 {
 	return 0
 }
 
-// TODO @hamersaw docs
+// WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution.
 type WorkflowExecutionGetMetricsResponse struct {
+	// Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+	// hierarchical structure using Flyte entity references.
 	Span                 *Span    `protobuf:"bytes,1,opt,name=span,proto3" json:"span,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

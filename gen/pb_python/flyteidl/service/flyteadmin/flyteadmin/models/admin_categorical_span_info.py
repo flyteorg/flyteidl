@@ -53,6 +53,7 @@ class AdminCategoricalSpanInfo(object):
     def category(self):
         """Gets the category of this AdminCategoricalSpanInfo.  # noqa: E501
 
+        category defines the category that this span is labelled as.  # noqa: E501
 
         :return: The category of this AdminCategoricalSpanInfo.  # noqa: E501
         :rtype: CategoricalSpanInfoCategory
@@ -63,6 +64,7 @@ class AdminCategoricalSpanInfo(object):
     def category(self, category):
         """Sets the category of this AdminCategoricalSpanInfo.
 
+        category defines the category that this span is labelled as.  # noqa: E501
 
         :param category: The category of this AdminCategoricalSpanInfo.  # noqa: E501
         :type: CategoricalSpanInfoCategory

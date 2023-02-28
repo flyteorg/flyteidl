@@ -69,6 +69,7 @@ class AdminSpan(object):
     def start_time(self):
         """Gets the start_time of this AdminSpan.  # noqa: E501
 
+        start_time defines the instance this span began.  # noqa: E501
 
         :return: The start_time of this AdminSpan.  # noqa: E501
         :rtype: datetime
@@ -79,6 +80,7 @@ class AdminSpan(object):
     def start_time(self, start_time):
         """Sets the start_time of this AdminSpan.
 
+        start_time defines the instance this span began.  # noqa: E501
 
         :param start_time: The start_time of this AdminSpan.  # noqa: E501
         :type: datetime
@@ -90,6 +92,7 @@ class AdminSpan(object):
     def end_time(self):
         """Gets the end_time of this AdminSpan.  # noqa: E501
 
+        end_time defines the instance this span completed.  # noqa: E501
 
         :return: The end_time of this AdminSpan.  # noqa: E501
         :rtype: datetime
@@ -100,6 +103,7 @@ class AdminSpan(object):
     def end_time(self, end_time):
         """Sets the end_time of this AdminSpan.
 
+        end_time defines the instance this span completed.  # noqa: E501
 
         :param end_time: The end_time of this AdminSpan.  # noqa: E501
         :type: datetime
@@ -111,6 +115,7 @@ class AdminSpan(object):
     def category(self):
         """Gets the category of this AdminSpan.  # noqa: E501
 
+        category labels the span with a brief description.  # noqa: E501
 
         :return: The category of this AdminSpan.  # noqa: E501
         :rtype: AdminCategoricalSpanInfo
@@ -121,6 +126,7 @@ class AdminSpan(object):
     def category(self, category):
         """Sets the category of this AdminSpan.
 
+        category labels the span with a brief description.  # noqa: E501
 
         :param category: The category of this AdminSpan.  # noqa: E501
         :type: AdminCategoricalSpanInfo
@@ -132,6 +138,7 @@ class AdminSpan(object):
     def reference(self):
         """Gets the reference of this AdminSpan.  # noqa: E501
 
+        reference allows nesting spans by providing a hierarchical interface to represent Flyte entity replationships (ex. workflow -> node -> task).  # noqa: E501
 
         :return: The reference of this AdminSpan.  # noqa: E501
         :rtype: AdminReferenceSpanInfo
@@ -142,6 +149,7 @@ class AdminSpan(object):
     def reference(self, reference):
         """Sets the reference of this AdminSpan.
 
+        reference allows nesting spans by providing a hierarchical interface to represent Flyte entity replationships (ex. workflow -> node -> task).  # noqa: E501
 
         :param reference: The reference of this AdminSpan.  # noqa: E501
         :type: AdminReferenceSpanInfo

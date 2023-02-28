@@ -13,9 +13,14 @@ import (
 	"time"
 )
 
+// Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with a description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity relationships (ex. workflow -> node -> task).
 type AdminSpan struct {
+	// start_time defines the instance this span began.
 	StartTime time.Time `json:"start_time,omitempty"`
+	// end_time defines the instance this span completed.
 	EndTime time.Time `json:"end_time,omitempty"`
+	// category labels the span with a brief description.
 	Category *AdminCategoricalSpanInfo `json:"category,omitempty"`
+	// reference allows nesting spans by providing a hierarchical interface to represent Flyte entity replationships (ex. workflow -> node -> task).
 	Reference *AdminReferenceSpanInfo `json:"reference,omitempty"`
 }

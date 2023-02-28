@@ -71,6 +71,7 @@ class AdminReferenceSpanInfo(object):
     def workflow_id(self):
         """Gets the workflow_id of this AdminReferenceSpanInfo.  # noqa: E501
 
+        workflow_id is the id of the workflow execution this Span represents.  # noqa: E501
 
         :return: The workflow_id of this AdminReferenceSpanInfo.  # noqa: E501
         :rtype: CoreWorkflowExecutionIdentifier
@@ -81,6 +82,7 @@ class AdminReferenceSpanInfo(object):
     def workflow_id(self, workflow_id):
         """Sets the workflow_id of this AdminReferenceSpanInfo.
 
+        workflow_id is the id of the workflow execution this Span represents.  # noqa: E501
 
         :param workflow_id: The workflow_id of this AdminReferenceSpanInfo.  # noqa: E501
         :type: CoreWorkflowExecutionIdentifier
@@ -92,6 +94,7 @@ class AdminReferenceSpanInfo(object):
     def node_id(self):
         """Gets the node_id of this AdminReferenceSpanInfo.  # noqa: E501
 
+        node_id is the id of the node execution this Span represents.  # noqa: E501
 
         :return: The node_id of this AdminReferenceSpanInfo.  # noqa: E501
         :rtype: CoreNodeExecutionIdentifier
@@ -102,6 +105,7 @@ class AdminReferenceSpanInfo(object):
     def node_id(self, node_id):
         """Sets the node_id of this AdminReferenceSpanInfo.
 
+        node_id is the id of the node execution this Span represents.  # noqa: E501
 
         :param node_id: The node_id of this AdminReferenceSpanInfo.  # noqa: E501
         :type: CoreNodeExecutionIdentifier
@@ -113,6 +117,7 @@ class AdminReferenceSpanInfo(object):
     def task_id(self):
         """Gets the task_id of this AdminReferenceSpanInfo.  # noqa: E501
 
+        task_id is the id of the task execution this Span represents.  # noqa: E501
 
         :return: The task_id of this AdminReferenceSpanInfo.  # noqa: E501
         :rtype: CoreTaskExecutionIdentifier
@@ -123,6 +128,7 @@ class AdminReferenceSpanInfo(object):
     def task_id(self, task_id):
         """Sets the task_id of this AdminReferenceSpanInfo.
 
+        task_id is the id of the task execution this Span represents.  # noqa: E501
 
         :param task_id: The task_id of this AdminReferenceSpanInfo.  # noqa: E501
         :type: CoreTaskExecutionIdentifier
@@ -134,6 +140,7 @@ class AdminReferenceSpanInfo(object):
     def spans(self):
         """Gets the spans of this AdminReferenceSpanInfo.  # noqa: E501
 
+        spans defines a collection of Spans that breakdown this execution.  # noqa: E501
 
         :return: The spans of this AdminReferenceSpanInfo.  # noqa: E501
         :rtype: list[AdminSpan]
@@ -144,6 +151,7 @@ class AdminReferenceSpanInfo(object):
     def spans(self, spans):
         """Sets the spans of this AdminReferenceSpanInfo.
 
+        spans defines a collection of Spans that breakdown this execution.  # noqa: E501
 
         :param spans: The spans of this AdminReferenceSpanInfo.  # noqa: E501
         :type: list[AdminSpan]

@@ -80,6 +80,7 @@ func (Sort_Direction) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_7c2cf612a185829c, []int{3, 0}
 }
 
+// Category defines a collection of span categories.
 type CategoricalSpanInfo_Category int32
 
 const (
@@ -1388,10 +1389,14 @@ func (m *RawOutputDataConfig) GetOutputLocationPrefix() string {
 	return ""
 }
 
-// TODO @hamersaw docs
+// Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with
+// a description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity
+// relationships (ex. workflow -> node -> task).
 type Span struct {
+	// start_time defines the instance this span began.
 	StartTime *timestamp.Timestamp `protobuf:"bytes,1,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`
-	EndTime   *timestamp.Timestamp `protobuf:"bytes,2,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
+	// end_time defines the instance this span completed.
+	EndTime *timestamp.Timestamp `protobuf:"bytes,2,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`
 	// Types that are valid to be assigned to Info:
 	//	*Span_Category
 	//	*Span_Reference
@@ -1485,8 +1490,9 @@ func (*Span) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// TODO @hamersaw docs
+// CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration.
 type CategoricalSpanInfo struct {
+	// category defines the category that this span is labelled as.
 	Category             CategoricalSpanInfo_Category `protobuf:"varint,1,opt,name=category,proto3,enum=flyteidl.admin.CategoricalSpanInfo_Category" json:"category,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                     `json:"-"`
 	XXX_unrecognized     []byte                       `json:"-"`
@@ -1525,17 +1531,18 @@ func (m *CategoricalSpanInfo) GetCategory() CategoricalSpanInfo_Category {
 	return CategoricalSpanInfo_UNKNOWN
 }
 
-// TODO @hamersaw docs
+// ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
 type ReferenceSpanInfo struct {
 	// Types that are valid to be assigned to Id:
 	//	*ReferenceSpanInfo_WorkflowId
 	//	*ReferenceSpanInfo_NodeId
 	//	*ReferenceSpanInfo_TaskId
-	Id                   isReferenceSpanInfo_Id `protobuf_oneof:"id"`
-	Spans                []*Span                `protobuf:"bytes,4,rep,name=spans,proto3" json:"spans,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}               `json:"-"`
-	XXX_unrecognized     []byte                 `json:"-"`
-	XXX_sizecache        int32                  `json:"-"`
+	Id isReferenceSpanInfo_Id `protobuf_oneof:"id"`
+	// spans defines a collection of Spans that breakdown this execution.
+	Spans                []*Span  `protobuf:"bytes,4,rep,name=spans,proto3" json:"spans,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *ReferenceSpanInfo) Reset()         { *m = ReferenceSpanInfo{} }

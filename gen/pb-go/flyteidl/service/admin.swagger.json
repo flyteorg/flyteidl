@@ -1518,6 +1518,7 @@
           },
           {
             "name": "depth",
+            "description": "depth defines the number of Flyte entity levels to traverse when breaking down execution details.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -3257,7 +3258,8 @@
         "PLUGIN_OVERHEAD",
         "PLUGIN_RUNTIME"
       ],
-      "default": "UNKNOWN"
+      "default": "UNKNOWN",
+      "description": "Category defines a collection of span categories."
     },
     "ComparisonExpressionOperator": {
       "type": "string",
@@ -3582,10 +3584,11 @@
       "type": "object",
       "properties": {
         "category": {
-          "$ref": "#/definitions/CategoricalSpanInfoCategory"
+          "$ref": "#/definitions/CategoricalSpanInfoCategory",
+          "description": "category defines the category that this span is labelled as."
         }
       },
-      "title": "TODO @hamersaw docs"
+      "description": "CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration."
     },
     "adminClusterAssignment": {
       "type": "object",
@@ -4939,22 +4942,26 @@
       "type": "object",
       "properties": {
         "workflow_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier"
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "workflow_id is the id of the workflow execution this Span represents."
         },
         "node_id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier"
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "node_id is the id of the node execution this Span represents."
         },
         "task_id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier"
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "task_id is the id of the task execution this Span represents."
         },
         "spans": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/adminSpan"
-          }
+          },
+          "description": "spans defines a collection of Spans that breakdown this execution."
         }
       },
-      "title": "TODO @hamersaw docs"
+      "description": "ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity."
     },
     "adminSchedule": {
       "type": "object",
@@ -5017,20 +5024,24 @@
       "properties": {
         "start_time": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "start_time defines the instance this span began."
         },
         "end_time": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "end_time defines the instance this span completed."
         },
         "category": {
-          "$ref": "#/definitions/adminCategoricalSpanInfo"
+          "$ref": "#/definitions/adminCategoricalSpanInfo",
+          "description": "category labels the span with a brief description."
         },
         "reference": {
-          "$ref": "#/definitions/adminReferenceSpanInfo"
+          "$ref": "#/definitions/adminReferenceSpanInfo",
+          "description": "reference allows nesting spans by providing a hierarchical interface to represent Flyte entity\nreplationships (ex. workflow -\u003e node -\u003e task)."
         }
       },
-      "title": "TODO @hamersaw docs"
+      "description": "Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with\na description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity\nrelationships (ex. workflow -\u003e node -\u003e task)."
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -5513,10 +5524,11 @@
       "type": "object",
       "properties": {
         "span": {
-          "$ref": "#/definitions/adminSpan"
+          "$ref": "#/definitions/adminSpan",
+          "description": "Span defines the top-level breakdown of the workflows execution. More precise information is nested in a\nhierarchical structure using Flyte entity references."
         }
       },
-      "title": "TODO @hamersaw docs"
+      "description": "WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution."
     },
     "adminWorkflowList": {
       "type": "object",

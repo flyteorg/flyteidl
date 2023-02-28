@@ -382,13 +382,18 @@ message ExecutionStateChangeDetails {
 
 message ExecutionUpdateResponse {}
 
-// TODO @hamersaw docs
+// WorkflowExecutionGetMetricsRequest represents a request to retrieve metrics for the specified workflow execution.
 message WorkflowExecutionGetMetricsRequest {
+    // id defines the workflow execution to query for.
     core.WorkflowExecutionIdentifier id = 1;
+
+    // depth defines the number of Flyte entity levels to traverse when breaking down execution details.
     int32 depth = 2;
 }
 
-// TODO @hamersaw docs
+// WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution.
 message WorkflowExecutionGetMetricsResponse {
+    // Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
+    // hierarchical structure using Flyte entity references.
     Span span = 1;
 }

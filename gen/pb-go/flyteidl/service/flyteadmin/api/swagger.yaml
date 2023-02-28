@@ -1327,6 +1327,8 @@ paths:
         x-exportParamName: "IdName"
       - name: "depth"
         in: "query"
+        description: "depth defines the number of Flyte entity levels to traverse\
+          \ when breaking down execution details."
         required: false
         type: "integer"
         format: "int32"
@@ -2881,6 +2883,7 @@ definitions:
     default: "RESERVATION_DISABLED"
   CategoricalSpanInfoCategory:
     type: "string"
+    description: "Category defines a collection of span categories."
     enum:
     - "UNKNOWN"
     - "NODE_TRANSITION"
@@ -3222,8 +3225,10 @@ definitions:
     type: "object"
     properties:
       category:
+        description: "category defines the category that this span is labelled as."
         $ref: "#/definitions/CategoricalSpanInfoCategory"
-    title: "TODO @hamersaw docs"
+    description: "CategoricalSpanInfo represents a labelled Span, providing a brief\
+      \ attribution for the duration."
     example:
       category: {}
   adminClusterAssignment:
@@ -15078,16 +15083,21 @@ definitions:
     type: "object"
     properties:
       workflow_id:
+        description: "workflow_id is the id of the workflow execution this Span represents."
         $ref: "#/definitions/coreWorkflowExecutionIdentifier"
       node_id:
+        description: "node_id is the id of the node execution this Span represents."
         $ref: "#/definitions/coreNodeExecutionIdentifier"
       task_id:
+        description: "task_id is the id of the task execution this Span represents."
         $ref: "#/definitions/coreTaskExecutionIdentifier"
       spans:
         type: "array"
+        description: "spans defines a collection of Spans that breakdown this execution."
         items:
           $ref: "#/definitions/adminSpan"
-    title: "TODO @hamersaw docs"
+    description: "ReferenceSpanInfo represents a collection of Span belonging to a\
+      \ specific Flyte entity."
     example:
       spans:
       - null
@@ -15180,14 +15190,22 @@ definitions:
       start_time:
         type: "string"
         format: "date-time"
+        description: "start_time defines the instance this span began."
       end_time:
         type: "string"
         format: "date-time"
+        description: "end_time defines the instance this span completed."
       category:
+        description: "category labels the span with a brief description."
         $ref: "#/definitions/adminCategoricalSpanInfo"
       reference:
+        description: "reference allows nesting spans by providing a hierarchical interface\
+          \ to represent Flyte entity\nreplationships (ex. workflow -> node -> task)."
         $ref: "#/definitions/adminReferenceSpanInfo"
-    title: "TODO @hamersaw docs"
+    description: "Span represents a duration trace of Flyte execution. This can refer\
+      \ to either a category, which labels the span with\na description, or a reference,\
+      \ which facilitates hierarchical breakdown of spans to capture Flyte entity\n\
+      relationships (ex. workflow -> node -> task)."
     example:
       reference:
         spans:
@@ -30342,8 +30360,12 @@ definitions:
     type: "object"
     properties:
       span:
+        description: "Span defines the top-level breakdown of the workflows execution.\
+          \ More precise information is nested in a\nhierarchical structure using\
+          \ Flyte entity references."
         $ref: "#/definitions/adminSpan"
-    title: "TODO @hamersaw docs"
+    description: "WorkflowExecutionGetMetricsResponse represents the response containing\
+      \ metrics for the specified workflow execution."
     example:
       span:
         reference:

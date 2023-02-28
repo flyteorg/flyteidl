@@ -1307,7 +1307,7 @@ AdminServiceApiService Fetches runtime metrics for a :ref:&#x60;ref_flyteidl.adm
  * @param idDomain Name of the domain the resource belongs to. A domain can be considered as a subset within a specific project.
  * @param idName User or system provided value for the resource.
  * @param optional nil or *GetExecutionMetricsOpts - Optional Parameters:
-     * @param "Depth" (optional.Int32) - 
+     * @param "Depth" (optional.Int32) -  depth defines the number of Flyte entity levels to traverse when breaking down execution details.
 
 @return AdminWorkflowExecutionGetMetricsResponse
 */

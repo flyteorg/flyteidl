@@ -8,7 +8,7 @@
  */
 
 package flyteadmin
-
+// CategoricalSpanInfoCategory : Category defines a collection of span categories.
 type CategoricalSpanInfoCategory string
 
 // List of CategoricalSpanInfoCategory
