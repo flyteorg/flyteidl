@@ -777,7 +777,10 @@ type TaskExecutionEvent struct {
 	// TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
 	// in this message.
 	EventVersion int32 `protobuf:"varint,18,opt,name=event_version,json=eventVersion,proto3" json:"event_version,omitempty"`
-	// TODO @hamersaw docs
+	// This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+	// pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+	// but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+	// facilitates more accurate portrayal of the evaluation time-series.
 	ReportedAt           *timestamp.Timestamp `protobuf:"bytes,20,opt,name=reported_at,json=reportedAt,proto3" json:"reported_at,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`

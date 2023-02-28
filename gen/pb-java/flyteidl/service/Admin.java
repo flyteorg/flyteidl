@@ -38,8 +38,8 @@ public final class Admin {
       "admin/task_execution.proto\032\034flyteidl/adm" +
       "in/version.proto\032\033flyteidl/admin/common." +
       "proto\032\'flyteidl/admin/description_entity" +
-      ".proto\032\036flyteidl/core/identifier.proto2\201" +
-      "P\n\014AdminService\022m\n\nCreateTask\022!.flyteidl" +
+      ".proto\032\036flyteidl/core/identifier.proto2\204" +
+      "N\n\014AdminService\022m\n\nCreateTask\022!.flyteidl" +
       ".admin.TaskCreateRequest\032\".flyteidl.admi" +
       "n.TaskCreateResponse\"\030\202\323\344\223\002\022\"\r/api/v1/ta" +
       "sks:\001*\022\210\001\n\007GetTask\022 .flyteidl.admin.Obje" +
@@ -288,15 +288,9 @@ public final class Admin {
       "xecutionGetMetricsRequest\0323.flyteidl.adm" +
       "in.WorkflowExecutionGetMetricsResponse\"E" +
       "\202\323\344\223\002?\022=/api/v1/metrics/executions/{id.p" +
-      "roject}/{id.domain}/{id.name}\022\372\001\n\027GetNod" +
-      "eExecutionMetrics\022..flyteidl.admin.NodeE" +
-      "xecutionGetMetricsRequest\032/.flyteidl.adm" +
-      "in.NodeExecutionGetMetricsResponse\"~\202\323\344\223" +
-      "\002x\022v/api/v1/metrics/node_executions/{id." +
-      "execution_id.project}/{id.execution_id.d" +
-      "omain}/{id.execution_id.name}/{id.node_i" +
-      "d}B9Z7github.com/flyteorg/flyteidl/gen/p" +
-      "b-go/flyteidl/serviceb\006proto3"
+      "roject}/{id.domain}/{id.name}B9Z7github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -1337,49 +1337,6 @@ paths:
           description: "A successful response."
           schema:
             $ref: "#/definitions/adminWorkflowExecutionGetMetricsResponse"
-  /api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}:
-    get:
-      tags:
-      - "AdminService"
-      summary: "Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`."
-      operationId: "GetNodeExecutionMetrics"
-      parameters:
-      - name: "id.execution_id.project"
-        in: "path"
-        description: "Name of the project the resource belongs to."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdProject"
-      - name: "id.execution_id.domain"
-        in: "path"
-        description: "Name of the domain the resource belongs to.\nA domain can be\
-          \ considered as a subset within a specific project."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdDomain"
-      - name: "id.execution_id.name"
-        in: "path"
-        description: "User or system provided value for the resource."
-        required: true
-        type: "string"
-        x-exportParamName: "IdExecutionIdName"
-      - name: "id.node_id"
-        in: "path"
-        required: true
-        type: "string"
-        x-exportParamName: "IdNodeId"
-      - name: "depth"
-        in: "query"
-        required: false
-        type: "integer"
-        format: "int32"
-        x-exportParamName: "Depth"
-        x-optionalDataType: "Int32"
-      responses:
-        200:
-          description: "A successful response."
-          schema:
-            $ref: "#/definitions/adminNodeExecutionGetMetricsResponse"
   /api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}:
     get:
       tags:
@@ -14231,46 +14188,6 @@ definitions:
         url: "url"
       full_outputs:
         literals: {}
-  adminNodeExecutionGetMetricsResponse:
-    type: "object"
-    properties:
-      span:
-        $ref: "#/definitions/adminSpan"
-    title: "TODO @hamersaw docs"
-    example:
-      span:
-        reference:
-          spans:
-          - null
-          - null
-          workflow_id:
-            domain: "domain"
-            name: "name"
-            project: "project"
-          task_id:
-            task_id:
-              domain: "domain"
-              resource_type: {}
-              name: "name"
-              project: "project"
-              version: "version"
-            node_execution_id:
-              execution_id:
-                domain: "domain"
-                name: "name"
-                project: "project"
-              node_id: "node_id"
-            retry_attempt: 0
-          node_id:
-            execution_id:
-              domain: "domain"
-              name: "name"
-              project: "project"
-            node_id: "node_id"
-        start_time: "2000-01-23T04:56:07.000+00:00"
-        end_time: "2000-01-23T04:56:07.000+00:00"
-        category:
-          category: {}
   adminNodeExecutionList:
     type: "object"
     properties:
@@ -58886,7 +58803,12 @@ definitions:
       reported_at:
         type: "string"
         format: "date-time"
-        title: "TODO @hamersaw docs"
+        description: "This timestamp represents the instant when the event was reported\
+          \ by the executing framework. For example, a k8s\npod task may be marked\
+          \ completed at (ie. `occurred_at`) the instant the container running user\
+          \ code completes,\nbut this event will not be reported until the pod is\
+          \ marked as completed. Extracting both of these timestamps\nfacilitates\
+          \ more accurate portrayal of the evaluation time-series."
     description: "Plugin specific execution event information. For tasks like Python,\
       \ Hive, Spark, DynamicJob."
   eventTaskExecutionMetadata:

@@ -162,13 +162,6 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
-    def test_get_node_execution_metrics(self):
-        """Test case for get_node_execution_metrics
-
-        Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.  # noqa: E501
-        """
-        pass
-
     def test_get_project_attributes(self):
         """Test case for get_project_attributes
 

@@ -11038,7 +11038,10 @@ public final class Event {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -11046,7 +11049,10 @@ public final class Event {
     boolean hasReportedAt();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -11054,7 +11060,10 @@ public final class Event {
     com.google.protobuf.Timestamp getReportedAt();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -12059,7 +12068,10 @@ public final class Event {
     private com.google.protobuf.Timestamp reportedAt_;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -12069,7 +12081,10 @@ public final class Event {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -12079,7 +12094,10 @@ public final class Event {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+     * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+     * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+     * facilitates more accurate portrayal of the evaluation time-series. 
      * </pre>
      *
      * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15228,7 +15246,10 @@ public final class Event {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> reportedAtBuilder_;
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15238,7 +15259,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15252,7 +15276,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15272,7 +15299,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15290,7 +15320,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15312,7 +15345,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15330,7 +15366,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15342,7 +15381,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>
@@ -15357,7 +15399,10 @@ public final class Event {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s
+       * pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,
+       * but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps
+       * facilitates more accurate portrayal of the evaluation time-series. 
        * </pre>
        *
        * <code>.google.protobuf.Timestamp reported_at = 20;</code>

@@ -552,6 +552,7 @@ class EventTaskExecutionEvent(object):
     def reported_at(self):
         """Gets the reported_at of this EventTaskExecutionEvent.  # noqa: E501
 
+        This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes, but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps facilitates more accurate portrayal of the evaluation time-series.  # noqa: E501
 
         :return: The reported_at of this EventTaskExecutionEvent.  # noqa: E501
         :rtype: datetime
@@ -562,6 +563,7 @@ class EventTaskExecutionEvent(object):
     def reported_at(self, reported_at):
         """Sets the reported_at of this EventTaskExecutionEvent.
 
+        This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s pod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes, but this event will not be reported until the pod is marked as completed. Extracting both of these timestamps facilitates more accurate portrayal of the evaluation time-series.  # noqa: E501
 
         :param reported_at: The reported_at of this EventTaskExecutionEvent.  # noqa: E501
         :type: datetime

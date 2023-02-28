@@ -1529,59 +1529,6 @@
         ]
       }
     },
-    "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
-      "get": {
-        "summary": "Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.",
-        "operationId": "GetNodeExecutionMetrics",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminNodeExecutionGetMetricsResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id.execution_id.project",
-            "description": "Name of the project the resource belongs to.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.domain",
-            "description": "Name of the domain the resource belongs to.\nA domain can be considered as a subset within a specific project.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.execution_id.name",
-            "description": "User or system provided value for the resource.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "id.node_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "depth",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/named_entities/{resource_type}/{id.project}/{id.domain}/{id.name}": {
       "get": {
         "summary": "Returns a :ref:`ref_flyteidl.admin.NamedEntity` object.",
@@ -4680,15 +4627,6 @@
       },
       "description": "Response structure for NodeExecutionGetDataRequest which contains inputs and outputs for a node execution."
     },
-    "adminNodeExecutionGetMetricsResponse": {
-      "type": "object",
-      "properties": {
-        "span": {
-          "$ref": "#/definitions/adminSpan"
-        }
-      },
-      "title": "TODO @hamersaw docs"
-    },
     "adminNodeExecutionList": {
       "type": "object",
       "properties": {
@@ -7473,7 +7411,7 @@
         "reported_at": {
           "type": "string",
           "format": "date-time",
-          "title": "TODO @hamersaw docs"
+          "description": "This timestamp represents the instant when the event was reported by the executing framework. For example, a k8s\npod task may be marked completed at (ie. `occurred_at`) the instant the container running user code completes,\nbut this event will not be reported until the pod is marked as completed. Extracting both of these timestamps\nfacilitates more accurate portrayal of the evaluation time-series."
         }
       },
       "description": "Plugin specific execution event information. For tasks like Python, Hive, Spark, DynamicJob."

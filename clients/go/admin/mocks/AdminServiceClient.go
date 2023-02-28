@@ -929,54 +929,6 @@ func (_m *AdminServiceClient) GetNodeExecutionData(ctx context.Context, in *admi
 	return r0, r1
 }
 
-type AdminServiceClient_GetNodeExecutionMetrics struct {
-	*mock.Call
-}
-
-func (_m AdminServiceClient_GetNodeExecutionMetrics) Return(_a0 *admin.NodeExecutionGetMetricsResponse, _a1 error) *AdminServiceClient_GetNodeExecutionMetrics {
-	return &AdminServiceClient_GetNodeExecutionMetrics{Call: _m.Call.Return(_a0, _a1)}
-}
-
-func (_m *AdminServiceClient) OnGetNodeExecutionMetrics(ctx context.Context, in *admin.NodeExecutionGetMetricsRequest, opts ...grpc.CallOption) *AdminServiceClient_GetNodeExecutionMetrics {
-	c_call := _m.On("GetNodeExecutionMetrics", ctx, in, opts)
-	return &AdminServiceClient_GetNodeExecutionMetrics{Call: c_call}
-}
-
-func (_m *AdminServiceClient) OnGetNodeExecutionMetricsMatch(matchers ...interface{}) *AdminServiceClient_GetNodeExecutionMetrics {
-	c_call := _m.On("GetNodeExecutionMetrics", matchers...)
-	return &AdminServiceClient_GetNodeExecutionMetrics{Call: c_call}
-}
-
-// GetNodeExecutionMetrics provides a mock function with given fields: ctx, in, opts
-func (_m *AdminServiceClient) GetNodeExecutionMetrics(ctx context.Context, in *admin.NodeExecutionGetMetricsRequest, opts ...grpc.CallOption) (*admin.NodeExecutionGetMetricsResponse, error) {
-	_va := make([]interface{}, len(opts))
-	for _i := range opts {
-		_va[_i] = opts[_i]
-	}
-	var _ca []interface{}
-	_ca = append(_ca, ctx, in)
-	_ca = append(_ca, _va...)
-	ret := _m.Called(_ca...)
-
-	var r0 *admin.NodeExecutionGetMetricsResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *admin.NodeExecutionGetMetricsRequest, ...grpc.CallOption) *admin.NodeExecutionGetMetricsResponse); ok {
-		r0 = rf(ctx, in, opts...)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*admin.NodeExecutionGetMetricsResponse)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *admin.NodeExecutionGetMetricsRequest, ...grpc.CallOption) error); ok {
-		r1 = rf(ctx, in, opts...)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 type AdminServiceClient_GetProjectAttributes struct {
 	*mock.Call
 }

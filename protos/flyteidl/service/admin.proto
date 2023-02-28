@@ -637,14 +637,4 @@ service AdminService {
     //   description: "Retrieve metrics from an existing workflow execution."
     // };
   };
-
-  // Fetches metrics for a :ref:`ref_flyteidl.admin.NodeExecution`.
-  rpc GetNodeExecutionMetrics (flyteidl.admin.NodeExecutionGetMetricsRequest) returns (flyteidl.admin.NodeExecutionGetMetricsResponse) {
-    option (google.api.http) = {
-      get: "/api/v1/metrics/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}"
-    };
-    // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
-    //   description: "Retrieve metrics from an existing node execution."
-    // };
-  };
 }

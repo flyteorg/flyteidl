@@ -43749,39 +43749,6 @@
                  * @variation 2
                  */
     
-                /**
-                 * Callback as used by {@link flyteidl.service.AdminService#getNodeExecutionMetrics}.
-                 * @memberof flyteidl.service.AdminService
-                 * @typedef GetNodeExecutionMetricsCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.admin.NodeExecutionGetMetricsResponse} [response] NodeExecutionGetMetricsResponse
-                 */
-    
-                /**
-                 * Calls GetNodeExecutionMetrics.
-                 * @function getNodeExecutionMetrics
-                 * @memberof flyteidl.service.AdminService
-                 * @instance
-                 * @param {flyteidl.admin.INodeExecutionGetMetricsRequest} request NodeExecutionGetMetricsRequest message or plain object
-                 * @param {flyteidl.service.AdminService.GetNodeExecutionMetricsCallback} callback Node-style callback called with the error, if any, and NodeExecutionGetMetricsResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(AdminService.prototype.getNodeExecutionMetrics = function getNodeExecutionMetrics(request, callback) {
-                    return this.rpcCall(getNodeExecutionMetrics, $root.flyteidl.admin.NodeExecutionGetMetricsRequest, $root.flyteidl.admin.NodeExecutionGetMetricsResponse, request, callback);
-                }, "name", { value: "GetNodeExecutionMetrics" });
-    
-                /**
-                 * Calls GetNodeExecutionMetrics.
-                 * @function getNodeExecutionMetrics
-                 * @memberof flyteidl.service.AdminService
-                 * @instance
-                 * @param {flyteidl.admin.INodeExecutionGetMetricsRequest} request NodeExecutionGetMetricsRequest message or plain object
-                 * @returns {Promise<flyteidl.admin.NodeExecutionGetMetricsResponse>} Promise
-                 * @variation 2
-                 */
-    
                 return AdminService;
             })();
     
