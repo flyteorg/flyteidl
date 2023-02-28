@@ -45044,14 +45044,16 @@
              * @name flyteidl.service.State
              * @enum {string}
              * @property {number} FAILED=0 FAILED value
-             * @property {number} RUNNING=1 RUNNING value
-             * @property {number} SUCCEEDED=2 SUCCEEDED value
+             * @property {number} PENDING=1 PENDING value
+             * @property {number} RUNNING=2 RUNNING value
+             * @property {number} SUCCEEDED=3 SUCCEEDED value
              */
             service.State = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "FAILED"] = 0;
-                values[valuesById[1] = "RUNNING"] = 1;
-                values[valuesById[2] = "SUCCEEDED"] = 2;
+                values[valuesById[1] = "PENDING"] = 1;
+                values[valuesById[2] = "RUNNING"] = 2;
+                values[valuesById[3] = "SUCCEEDED"] = 3;
                 return values;
             })();
     
@@ -45489,6 +45491,7 @@
                         case 0:
                         case 1:
                         case 2:
+                        case 3:
                             break;
                         }
                     return null;
@@ -45619,6 +45622,7 @@
                         case 0:
                         case 1:
                         case 2:
+                        case 3:
                             break;
                         }
                     if (message.message != null && message.hasOwnProperty("message"))

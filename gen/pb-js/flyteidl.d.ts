@@ -19390,8 +19390,9 @@ export namespace flyteidl {
         /** State enum. */
         enum State {
             FAILED = 0,
-            RUNNING = 1,
-            SUCCEEDED = 2
+            PENDING = 1,
+            RUNNING = 2,
+            SUCCEEDED = 3
         }
 
         /** Properties of a TaskCreateRequest. */

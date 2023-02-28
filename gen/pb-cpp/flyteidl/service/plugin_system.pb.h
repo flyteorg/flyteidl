@@ -89,8 +89,9 @@ namespace service {
 
 enum State {
   FAILED = 0,
-  RUNNING = 1,
-  SUCCEEDED = 2,
+  PENDING = 1,
+  RUNNING = 2,
+  SUCCEEDED = 3,
   State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };

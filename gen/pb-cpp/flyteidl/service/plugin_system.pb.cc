@@ -230,22 +230,22 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fplugin_5fsystem_2eprot
   "ate\030\001 \001(\0162\027.flyteidl.service.State\022\017\n\007me"
   "ssage\030\002 \001(\t\"6\n\021TaskDeleteRequest\022\021\n\ttask"
   "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDelet"
-  "eResponse*/\n\005State\022\n\n\006FAILED\020\000\022\013\n\007RUNNIN"
-  "G\020\001\022\r\n\tSUCCEEDED\020\0022\236\002\n\024BackendPluginServ"
-  "ice\022Y\n\nCreateTask\022#.flyteidl.service.Tas"
-  "kCreateRequest\032$.flyteidl.service.TaskCr"
-  "eateResponse\"\000\022P\n\007GetTask\022 .flyteidl.ser"
-  "vice.TaskGetRequest\032!.flyteidl.service.T"
-  "askGetResponse\"\000\022Y\n\nDeleteTask\022#.flyteid"
-  "l.service.TaskDeleteRequest\032$.flyteidl.s"
-  "ervice.TaskDeleteResponse\"\000B9Z7github.co"
-  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/s"
-  "erviceb\006proto3"
+  "eResponse*<\n\005State\022\n\n\006FAILED\020\000\022\013\n\007PENDIN"
+  "G\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\0032\236\002\n\024Back"
+  "endPluginService\022Y\n\nCreateTask\022#.flyteid"
+  "l.service.TaskCreateRequest\032$.flyteidl.s"
+  "ervice.TaskCreateResponse\"\000\022P\n\007GetTask\022 "
+  ".flyteidl.service.TaskGetRequest\032!.flyte"
+  "idl.service.TaskGetResponse\"\000\022Y\n\nDeleteT"
+  "ask\022#.flyteidl.service.TaskDeleteRequest"
+  "\032$.flyteidl.service.TaskDeleteResponse\"\000"
+  "B9Z7github.com/flyteorg/flyteidl/gen/pb-"
+  "go/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fplugin_5fsystem_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fplugin_5fsystem_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fplugin_5fsystem_2eproto,
-  "flyteidl/service/plugin_system.proto", &assign_descriptors_table_flyteidl_2fservice_2fplugin_5fsystem_2eproto, 1014,
+  "flyteidl/service/plugin_system.proto", &assign_descriptors_table_flyteidl_2fservice_2fplugin_5fsystem_2eproto, 1027,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fplugin_5fsystem_2eproto() {
@@ -271,6 +271,7 @@ bool State_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
       return true;
     default:
       return false;

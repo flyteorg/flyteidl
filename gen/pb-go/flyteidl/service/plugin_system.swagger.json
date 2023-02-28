@@ -1122,6 +1122,7 @@
       "type": "string",
       "enum": [
         "FAILED",
+        "PENDING",
         "RUNNING",
         "SUCCEEDED"
       ],

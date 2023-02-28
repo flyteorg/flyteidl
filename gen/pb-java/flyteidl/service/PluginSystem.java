@@ -24,13 +24,17 @@ public final class PluginSystem {
      */
     FAILED(0),
     /**
-     * <code>RUNNING = 1;</code>
+     * <code>PENDING = 1;</code>
      */
-    RUNNING(1),
+    PENDING(1),
     /**
-     * <code>SUCCEEDED = 2;</code>
+     * <code>RUNNING = 2;</code>
      */
-    SUCCEEDED(2),
+    RUNNING(2),
+    /**
+     * <code>SUCCEEDED = 3;</code>
+     */
+    SUCCEEDED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -39,13 +43,17 @@ public final class PluginSystem {
      */
     public static final int FAILED_VALUE = 0;
     /**
-     * <code>RUNNING = 1;</code>
+     * <code>PENDING = 1;</code>
      */
-    public static final int RUNNING_VALUE = 1;
+    public static final int PENDING_VALUE = 1;
     /**
-     * <code>SUCCEEDED = 2;</code>
+     * <code>RUNNING = 2;</code>
      */
-    public static final int SUCCEEDED_VALUE = 2;
+    public static final int RUNNING_VALUE = 2;
+    /**
+     * <code>SUCCEEDED = 3;</code>
+     */
+    public static final int SUCCEEDED_VALUE = 3;
 
 
     public final int getNumber() {
@@ -67,8 +75,9 @@ public final class PluginSystem {
     public static State forNumber(int value) {
       switch (value) {
         case 0: return FAILED;
-        case 1: return RUNNING;
-        case 2: return SUCCEEDED;
+        case 1: return PENDING;
+        case 2: return RUNNING;
+        case 3: return SUCCEEDED;
         default: return null;
       }
     }
@@ -4455,17 +4464,17 @@ public final class PluginSystem {
       "ate\030\001 \001(\0162\027.flyteidl.service.State\022\017\n\007me" +
       "ssage\030\002 \001(\t\"6\n\021TaskDeleteRequest\022\021\n\ttask" +
       "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDelet" +
-      "eResponse*/\n\005State\022\n\n\006FAILED\020\000\022\013\n\007RUNNIN" +
-      "G\020\001\022\r\n\tSUCCEEDED\020\0022\236\002\n\024BackendPluginServ" +
-      "ice\022Y\n\nCreateTask\022#.flyteidl.service.Tas" +
-      "kCreateRequest\032$.flyteidl.service.TaskCr" +
-      "eateResponse\"\000\022P\n\007GetTask\022 .flyteidl.ser" +
-      "vice.TaskGetRequest\032!.flyteidl.service.T" +
-      "askGetResponse\"\000\022Y\n\nDeleteTask\022#.flyteid" +
-      "l.service.TaskDeleteRequest\032$.flyteidl.s" +
-      "ervice.TaskDeleteResponse\"\000B9Z7github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/s" +
-      "erviceb\006proto3"
+      "eResponse*<\n\005State\022\n\n\006FAILED\020\000\022\013\n\007PENDIN" +
+      "G\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\0032\236\002\n\024Back" +
+      "endPluginService\022Y\n\nCreateTask\022#.flyteid" +
+      "l.service.TaskCreateRequest\032$.flyteidl.s" +
+      "ervice.TaskCreateResponse\"\000\022P\n\007GetTask\022 " +
+      ".flyteidl.service.TaskGetRequest\032!.flyte" +
+      "idl.service.TaskGetResponse\"\000\022Y\n\nDeleteT" +
+      "ask\022#.flyteidl.service.TaskDeleteRequest" +
+      "\032$.flyteidl.service.TaskDeleteResponse\"\000" +
+      "B9Z7github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

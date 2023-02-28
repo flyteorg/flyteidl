@@ -8,6 +8,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 
 DESCRIPTOR: _descriptor.FileDescriptor
 FAILED: State
+PENDING: State
 RUNNING: State
 SUCCEEDED: State
 
