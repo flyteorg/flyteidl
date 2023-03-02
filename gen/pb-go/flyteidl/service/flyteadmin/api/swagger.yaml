@@ -58713,6 +58713,15 @@ definitions:
         title: "String location uniquely identifying where the deck HTML file is\n\
           NativeUrl specifies the url in the format of the configured storage provider\
           \ (e.g. s3://my-bucket/randomstring/suffix.tar)"
+      reported_at:
+        type: "string"
+        format: "date-time"
+        description: "This timestamp represents the instant when the event was reported\
+          \ by the executing framework. For example,\nwhen first processing a node\
+          \ the `occurred_at` timestamp should be the instant propeller makes progress,\
+          \ so when\nliteral inputs are intially copied. The event however will not\
+          \ be sent until after the copy completes.\nExtracting both of these timestamps\
+          \ facilitates a more accurate portrayal of the evaluation time-series."
   eventParentNodeExecutionMetadata:
     type: "object"
     properties:
@@ -58830,7 +58839,7 @@ definitions:
           \ completed at (ie. `occurred_at`) the instant the container running user\
           \ code completes,\nbut this event will not be reported until the pod is\
           \ marked as completed. Extracting both of these timestamps\nfacilitates\
-          \ more accurate portrayal of the evaluation time-series."
+          \ a more accurate portrayal of the evaluation time-series."
     description: "Plugin specific execution event information. For tasks like Python,\
       \ Hive, Spark, DynamicJob."
   eventTaskExecutionMetadata:

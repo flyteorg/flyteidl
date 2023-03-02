@@ -6584,6 +6584,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent deckUri */
             deckUri?: (string|null);
+
+            /** NodeExecutionEvent reportedAt */
+            reportedAt?: (google.protobuf.ITimestamp|null);
         }
 
         /** Represents a NodeExecutionEvent. */
@@ -6654,6 +6657,9 @@ export namespace flyteidl {
 
             /** NodeExecutionEvent deckUri. */
             public deckUri: string;
+
+            /** NodeExecutionEvent reportedAt. */
+            public reportedAt?: (google.protobuf.ITimestamp|null);
 
             /** NodeExecutionEvent inputValue. */
             public inputValue?: ("inputUri"|"inputData");
