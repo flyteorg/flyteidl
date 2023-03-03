@@ -18,7 +18,7 @@ import (
 	"github.com/flyteorg/flytestdlib/config"
 )
 
-//go:generate mockery --srcpkg golang.org/x/oauth2 --name TokenSource --with-expecter
+//go:generate mockery --srcpkg golang.org/x/oauth2 --name TokenSource
 
 type DummyTestTokenSource struct {
 	oauth2.TokenSource

@@ -12,14 +12,6 @@ type TokenSource struct {
 	mock.Mock
 }
 
-type TokenSource_Expecter struct {
-	mock *mock.Mock
-}
-
-func (_m *TokenSource) EXPECT() *TokenSource_Expecter {
-	return &TokenSource_Expecter{mock: &_m.Mock}
-}
-
 // Token provides a mock function with given fields:
 func (_m *TokenSource) Token() (*oauth2.Token, error) {
 	ret := _m.Called()
@@ -41,28 +33,6 @@ func (_m *TokenSource) Token() (*oauth2.Token, error) {
 	}
 
 	return r0, r1
-}
-
-// TokenSource_Token_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'Token'
-type TokenSource_Token_Call struct {
-	*mock.Call
-}
-
-// Token is a helper method to define mock.On call
-func (_e *TokenSource_Expecter) Token() *TokenSource_Token_Call {
-	return &TokenSource_Token_Call{Call: _e.mock.On("Token")}
-}
-
-func (_c *TokenSource_Token_Call) Run(run func()) *TokenSource_Token_Call {
-	_c.Call.Run(func(args mock.Arguments) {
-		run()
-	})
-	return _c
-}
-
-func (_c *TokenSource_Token_Call) Return(_a0 *oauth2.Token, _a1 error) *TokenSource_Token_Call {
-	_c.Call.Return(_a0, _a1)
-	return _c
 }
 
 type mockConstructorTestingTNewTokenSource interface {
