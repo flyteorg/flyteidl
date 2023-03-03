@@ -176,7 +176,7 @@ func TestCustomTokenSource_fetchTokenFromCache(t *testing.T) {
 			customSource.failedToRefresh = test.failedToRefresh
 			var tokenErr error = nil
 			if test.token == nil {
-				tokenErr = fmt.Errorf("no token!")
+				tokenErr = fmt.Errorf("no token")
 			}
 			tokenCache.OnGetToken().Return(nil, tokenErr).Once()
 			token, needsRefresh := customSource.fetchTokenFromCache()

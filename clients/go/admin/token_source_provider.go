@@ -259,10 +259,9 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 			logger.Warnf(s.ctx, "failed to refresh token, using last cached token until expired")
 			s.failedToRefresh = true
 			return cachedToken, nil
-		} else {
-			logger.Errorf(s.ctx, "failed to refresh token")
-			return nil, err
 		}
+		logger.Errorf(s.ctx, "failed to refresh token")
+		return nil, err
 	}
 	logger.Infof(s.ctx, "refreshed token")
 	err = s.tokenCache.SaveToken(token)
