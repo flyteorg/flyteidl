@@ -185,6 +185,9 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 		endpointParams = url.Values{audienceKey: {audience}}
 	}
 	secret = strings.TrimSpace(secret)
+	if tokenCache == nil {
+		tokenCache = &cache.TokenCacheInMemoryProvider{}
+	}
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
 			ClientID:       cfg.ClientID,
