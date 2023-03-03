@@ -17,8 +17,6 @@ import (
 	"github.com/flyteorg/flytestdlib/config"
 )
 
-//go:generate mockery --srcpkg golang.org/x/oauth2 --name TokenSource
-
 type DummyTestTokenSource struct {
 	oauth2.TokenSource
 }
@@ -257,9 +255,9 @@ func TestCustomTokenSource_Token(t *testing.T) {
 
 			mockSource := &adminMocks.TokenSource{}
 			if test.newToken != nil {
-				mockSource.On("Token").Return(test.newToken, nil)
+				mockSource.OnToken().Return(test.newToken, nil)
 			} else {
-				mockSource.On("Token").Return(nil, fmt.Errorf("refresh token failed"))
+				mockSource.OnToken().Return(nil, fmt.Errorf("refresh token failed"))
 			}
 			customSource.new = mockSource
 			customSource.refreshTime = test.refreshTime

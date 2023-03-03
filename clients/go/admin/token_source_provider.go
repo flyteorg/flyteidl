@@ -23,6 +23,11 @@ import (
 	"github.com/flyteorg/flytestdlib/logger"
 )
 
+//go:generate mockery -name TokenSource
+type TokenSource interface {
+	Token() (*oauth2.Token, error)
+}
+
 const (
 	audienceKey = "audience"
 )
