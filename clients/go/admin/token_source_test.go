@@ -12,7 +12,6 @@ import (
 	"golang.org/x/oauth2"
 
 	tokenCacheMocks "github.com/flyteorg/flyteidl/clients/go/admin/cache/mocks"
-	"github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	adminMocks "github.com/flyteorg/flyteidl/clients/go/admin/mocks"
 	"github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/service"
 	"github.com/flyteorg/flytestdlib/config"
@@ -256,7 +255,7 @@ func TestCustomTokenSource_Token(t *testing.T) {
 			customSource, ok := source.(*customTokenSource)
 			assert.True(t, ok)
 
-			mockSource := &mocks.TokenSource{}
+			mockSource := &adminMocks.TokenSource{}
 			if test.newToken != nil {
 				mockSource.On("Token").Return(test.newToken, nil)
 			} else {
