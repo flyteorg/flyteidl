@@ -25,6 +25,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+// The state of the execution is used to control its visibility in the UI/CLI.
 type State int32
 
 const (
@@ -56,13 +57,19 @@ func (State) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_3ccc78ed94d2bb96, []int{0}
 }
 
+// Represents a request structure to create task.
 type TaskCreateRequest struct {
-	Inputs               *core.LiteralMap   `protobuf:"bytes,1,opt,name=inputs,proto3" json:"inputs,omitempty"`
-	Template             *core.TaskTemplate `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
-	OutputPrefix         string             `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
+	// The inputs required to start the execution. All required inputs must be
+	// included in this map. If not required and not provided, defaults apply.
+	// +optional
+	Inputs *core.LiteralMap `protobuf:"bytes,1,opt,name=inputs,proto3" json:"inputs,omitempty"`
+	// Template of the task that encapsulates all the metadata of the task.
+	Template *core.TaskTemplate `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
+	// Prefix for where offloaded data from user workflows will be written.
+	OutputPrefix         string   `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *TaskCreateRequest) Reset()         { *m = TaskCreateRequest{} }
@@ -111,8 +118,11 @@ func (m *TaskCreateRequest) GetOutputPrefix() string {
 	return ""
 }
 
+// Represents a create response structure.
 type TaskCreateResponse struct {
-	JobId                string   `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	// The unique id identifying the job.
+	JobId string `protobuf:"bytes,1,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	// Error message if fail to create job.
 	Message              string   `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -158,10 +168,15 @@ func (m *TaskCreateResponse) GetMessage() string {
 	return ""
 }
 
+// A message used to fetch a job state from backend plugin server.
 type TaskGetRequest struct {
-	TaskType             string   `protobuf:"bytes,1,opt,name=task_type,json=taskType,proto3" json:"task_type,omitempty"`
-	JobId                string   `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
-	OutputPrefix         string   `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
+	// A predefined yet extensible Task type identifier.
+	TaskType string `protobuf:"bytes,1,opt,name=task_type,json=taskType,proto3" json:"task_type,omitempty"`
+	// The unique id identifying the job.
+	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
+	// Prefix for where offloaded data from user workflows will be written.
+	OutputPrefix string `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
+	// The latest job status.
 	PrevState            State    `protobuf:"varint,4,opt,name=prev_state,json=prevState,proto3,enum=flyteidl.service.State" json:"prev_state,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -221,8 +236,11 @@ func (m *TaskGetRequest) GetPrevState() State {
 	return State_FAILED
 }
 
+// Response to get an individual task state.
 type TaskGetResponse struct {
-	State                State    `protobuf:"varint,1,opt,name=state,proto3,enum=flyteidl.service.State" json:"state,omitempty"`
+	// The state of the execution is used to control its visibility in the UI/CLI.
+	State State `protobuf:"varint,1,opt,name=state,proto3,enum=flyteidl.service.State" json:"state,omitempty"`
+	// Error message if fail to get job.
 	Message              string   `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -268,8 +286,11 @@ func (m *TaskGetResponse) GetMessage() string {
 	return ""
 }
 
+// A message used to delete a task.
 type TaskDeleteRequest struct {
-	TaskType             string   `protobuf:"bytes,1,opt,name=task_type,json=taskType,proto3" json:"task_type,omitempty"`
+	// A predefined yet extensible Task type identifier.
+	TaskType string `protobuf:"bytes,1,opt,name=task_type,json=taskType,proto3" json:"task_type,omitempty"`
+	// The unique id identifying the job.
 	JobId                string   `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -315,6 +336,7 @@ func (m *TaskDeleteRequest) GetJobId() string {
 	return ""
 }
 
+// Response to delete a task.
 type TaskDeleteResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -410,8 +432,11 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type BackendPluginServiceClient interface {
+	// Send a task create request to the backend plugin server.
 	CreateTask(ctx context.Context, in *TaskCreateRequest, opts ...grpc.CallOption) (*TaskCreateResponse, error)
+	// Get job status.
 	GetTask(ctx context.Context, in *TaskGetRequest, opts ...grpc.CallOption) (*TaskGetResponse, error)
+	// Delete the task resource.
 	DeleteTask(ctx context.Context, in *TaskDeleteRequest, opts ...grpc.CallOption) (*TaskDeleteResponse, error)
 }
 
@@ -452,8 +477,11 @@ func (c *backendPluginServiceClient) DeleteTask(ctx context.Context, in *TaskDel
 
 // BackendPluginServiceServer is the server API for BackendPluginService service.
 type BackendPluginServiceServer interface {
+	// Send a task create request to the backend plugin server.
 	CreateTask(context.Context, *TaskCreateRequest) (*TaskCreateResponse, error)
+	// Get job status.
 	GetTask(context.Context, *TaskGetRequest) (*TaskGetResponse, error)
+	// Delete the task resource.
 	DeleteTask(context.Context, *TaskDeleteRequest) (*TaskDeleteResponse, error)
 }
 

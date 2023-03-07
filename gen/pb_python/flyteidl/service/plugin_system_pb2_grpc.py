@@ -6,7 +6,8 @@ from flyteidl.service import plugin_system_pb2 as flyteidl_dot_service_dot_plugi
 
 
 class BackendPluginServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """BackendPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -32,22 +33,26 @@ class BackendPluginServiceStub(object):
 
 
 class BackendPluginServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """BackendPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
+    """
 
     def CreateTask(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Send a task create request to the backend plugin server.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetTask(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get job status.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteTask(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete the task resource.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -78,7 +83,8 @@ def add_BackendPluginServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BackendPluginService(object):
-    """Missing associated documentation comment in .proto file."""
+    """BackendPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
+    """
 
     @staticmethod
     def CreateTask(request,

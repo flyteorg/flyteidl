@@ -15,6 +15,10 @@ public final class PluginSystem {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * <pre>
+   * The state of the execution is used to control its visibility in the UI/CLI.
+   * </pre>
+   *
    * Protobuf enum {@code flyteidl.service.State}
    */
   public enum State
@@ -135,42 +139,84 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     boolean hasInputs();
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     flyteidl.core.Literals.LiteralMap getInputs();
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder();
 
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     boolean hasTemplate();
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplate getTemplate();
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder();
 
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     java.lang.String getOutputPrefix();
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     com.google.protobuf.ByteString
         getOutputPrefixBytes();
   }
   /**
+   * <pre>
+   * Represents a request structure to create task.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskCreateRequest}
    */
   public  static final class TaskCreateRequest extends
@@ -277,18 +323,36 @@ public final class PluginSystem {
     public static final int INPUTS_FIELD_NUMBER = 1;
     private flyteidl.core.Literals.LiteralMap inputs_;
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     public boolean hasInputs() {
       return inputs_ != null;
     }
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     public flyteidl.core.Literals.LiteralMap getInputs() {
       return inputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : inputs_;
     }
     /**
+     * <pre>
+     * The inputs required to start the execution. All required inputs must be
+     * included in this map. If not required and not provided, defaults apply.
+     * +optional
+     * </pre>
+     *
      * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
      */
     public flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder() {
@@ -298,18 +362,30 @@ public final class PluginSystem {
     public static final int TEMPLATE_FIELD_NUMBER = 2;
     private flyteidl.core.Tasks.TaskTemplate template_;
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public boolean hasTemplate() {
       return template_ != null;
     }
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public flyteidl.core.Tasks.TaskTemplate getTemplate() {
       return template_ == null ? flyteidl.core.Tasks.TaskTemplate.getDefaultInstance() : template_;
     }
     /**
+     * <pre>
+     * Template of the task that encapsulates all the metadata of the task.
+     * </pre>
+     *
      * <code>.flyteidl.core.TaskTemplate template = 2;</code>
      */
     public flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder() {
@@ -319,6 +395,10 @@ public final class PluginSystem {
     public static final int OUTPUT_PREFIX_FIELD_NUMBER = 3;
     private volatile java.lang.Object outputPrefix_;
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     public java.lang.String getOutputPrefix() {
@@ -334,6 +414,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -537,6 +621,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * Represents a request structure to create task.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskCreateRequest}
      */
     public static final class Builder extends
@@ -716,12 +804,24 @@ public final class PluginSystem {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> inputsBuilder_;
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public boolean hasInputs() {
         return inputsBuilder_ != null || inputs_ != null;
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public flyteidl.core.Literals.LiteralMap getInputs() {
@@ -732,6 +832,12 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder setInputs(flyteidl.core.Literals.LiteralMap value) {
@@ -748,6 +854,12 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder setInputs(
@@ -762,6 +874,12 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder mergeInputs(flyteidl.core.Literals.LiteralMap value) {
@@ -780,6 +898,12 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public Builder clearInputs() {
@@ -794,6 +918,12 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public flyteidl.core.Literals.LiteralMap.Builder getInputsBuilder() {
@@ -802,6 +932,12 @@ public final class PluginSystem {
         return getInputsFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       public flyteidl.core.Literals.LiteralMapOrBuilder getInputsOrBuilder() {
@@ -813,6 +949,12 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The inputs required to start the execution. All required inputs must be
+       * included in this map. If not required and not provided, defaults apply.
+       * +optional
+       * </pre>
+       *
        * <code>.flyteidl.core.LiteralMap inputs = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -833,12 +975,20 @@ public final class PluginSystem {
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Tasks.TaskTemplate, flyteidl.core.Tasks.TaskTemplate.Builder, flyteidl.core.Tasks.TaskTemplateOrBuilder> templateBuilder_;
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public boolean hasTemplate() {
         return templateBuilder_ != null || template_ != null;
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplate getTemplate() {
@@ -849,6 +999,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder setTemplate(flyteidl.core.Tasks.TaskTemplate value) {
@@ -865,6 +1019,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder setTemplate(
@@ -879,6 +1037,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder mergeTemplate(flyteidl.core.Tasks.TaskTemplate value) {
@@ -897,6 +1059,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public Builder clearTemplate() {
@@ -911,6 +1077,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplate.Builder getTemplateBuilder() {
@@ -919,6 +1089,10 @@ public final class PluginSystem {
         return getTemplateFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       public flyteidl.core.Tasks.TaskTemplateOrBuilder getTemplateOrBuilder() {
@@ -930,6 +1104,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Template of the task that encapsulates all the metadata of the task.
+       * </pre>
+       *
        * <code>.flyteidl.core.TaskTemplate template = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -948,6 +1126,10 @@ public final class PluginSystem {
 
       private java.lang.Object outputPrefix_ = "";
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public java.lang.String getOutputPrefix() {
@@ -963,6 +1145,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -979,6 +1165,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder setOutputPrefix(
@@ -992,6 +1182,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder clearOutputPrefix() {
@@ -1001,6 +1195,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder setOutputPrefixBytes(
@@ -1072,26 +1270,46 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 1;</code>
      */
     java.lang.String getJobId();
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
 
     /**
+     * <pre>
+     * Error message if fail to create job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
+     * <pre>
+     * Error message if fail to create job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
         getMessageBytes();
   }
   /**
+   * <pre>
+   * Represents a create response structure.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskCreateResponse}
    */
   public  static final class TaskCreateResponse extends
@@ -1179,6 +1397,10 @@ public final class PluginSystem {
     public static final int JOB_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object jobId_;
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 1;</code>
      */
     public java.lang.String getJobId() {
@@ -1194,6 +1416,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1213,6 +1439,10 @@ public final class PluginSystem {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
+     * <pre>
+     * Error message if fail to create job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
@@ -1228,6 +1458,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * Error message if fail to create job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1409,6 +1643,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * Represents a create response structure.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskCreateResponse}
      */
     public static final class Builder extends
@@ -1565,6 +1803,10 @@ public final class PluginSystem {
 
       private java.lang.Object jobId_ = "";
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 1;</code>
        */
       public java.lang.String getJobId() {
@@ -1580,6 +1822,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -1596,6 +1842,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 1;</code>
        */
       public Builder setJobId(
@@ -1609,6 +1859,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 1;</code>
        */
       public Builder clearJobId() {
@@ -1618,6 +1872,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 1;</code>
        */
       public Builder setJobIdBytes(
@@ -1634,6 +1892,10 @@ public final class PluginSystem {
 
       private java.lang.Object message_ = "";
       /**
+       * <pre>
+       * Error message if fail to create job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
@@ -1649,6 +1911,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Error message if fail to create job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1665,6 +1931,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Error message if fail to create job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessage(
@@ -1678,6 +1948,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Error message if fail to create job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
@@ -1687,6 +1961,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Error message if fail to create job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
@@ -1758,45 +2036,81 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     java.lang.String getTaskType();
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     com.google.protobuf.ByteString
         getTaskTypeBytes();
 
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     java.lang.String getJobId();
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
 
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     java.lang.String getOutputPrefix();
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     com.google.protobuf.ByteString
         getOutputPrefixBytes();
 
     /**
+     * <pre>
+     * The latest job status.
+     * </pre>
+     *
      * <code>.flyteidl.service.State prev_state = 4;</code>
      */
     int getPrevStateValue();
     /**
+     * <pre>
+     * The latest job status.
+     * </pre>
+     *
      * <code>.flyteidl.service.State prev_state = 4;</code>
      */
     flyteidl.service.PluginSystem.State getPrevState();
   }
   /**
+   * <pre>
+   * A message used to fetch a job state from backend plugin server.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskGetRequest}
    */
   public  static final class TaskGetRequest extends
@@ -1898,6 +2212,10 @@ public final class PluginSystem {
     public static final int TASK_TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object taskType_;
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     public java.lang.String getTaskType() {
@@ -1913,6 +2231,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -1932,6 +2254,10 @@ public final class PluginSystem {
     public static final int JOB_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object jobId_;
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     public java.lang.String getJobId() {
@@ -1947,6 +2273,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1966,6 +2296,10 @@ public final class PluginSystem {
     public static final int OUTPUT_PREFIX_FIELD_NUMBER = 3;
     private volatile java.lang.Object outputPrefix_;
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     public java.lang.String getOutputPrefix() {
@@ -1981,6 +2315,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * Prefix for where offloaded data from user workflows will be written.
+     * </pre>
+     *
      * <code>string output_prefix = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -2000,12 +2338,20 @@ public final class PluginSystem {
     public static final int PREV_STATE_FIELD_NUMBER = 4;
     private int prevState_;
     /**
+     * <pre>
+     * The latest job status.
+     * </pre>
+     *
      * <code>.flyteidl.service.State prev_state = 4;</code>
      */
     public int getPrevStateValue() {
       return prevState_;
     }
     /**
+     * <pre>
+     * The latest job status.
+     * </pre>
+     *
      * <code>.flyteidl.service.State prev_state = 4;</code>
      */
     public flyteidl.service.PluginSystem.State getPrevState() {
@@ -2199,6 +2545,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * A message used to fetch a job state from backend plugin server.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskGetRequest}
      */
     public static final class Builder extends
@@ -2368,6 +2718,10 @@ public final class PluginSystem {
 
       private java.lang.Object taskType_ = "";
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public java.lang.String getTaskType() {
@@ -2383,6 +2737,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -2399,6 +2757,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder setTaskType(
@@ -2412,6 +2774,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder clearTaskType() {
@@ -2421,6 +2787,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder setTaskTypeBytes(
@@ -2437,6 +2807,10 @@ public final class PluginSystem {
 
       private java.lang.Object jobId_ = "";
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public java.lang.String getJobId() {
@@ -2452,6 +2826,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -2468,6 +2846,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder setJobId(
@@ -2481,6 +2863,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder clearJobId() {
@@ -2490,6 +2876,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder setJobIdBytes(
@@ -2506,6 +2896,10 @@ public final class PluginSystem {
 
       private java.lang.Object outputPrefix_ = "";
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public java.lang.String getOutputPrefix() {
@@ -2521,6 +2915,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public com.google.protobuf.ByteString
@@ -2537,6 +2935,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder setOutputPrefix(
@@ -2550,6 +2952,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder clearOutputPrefix() {
@@ -2559,6 +2965,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Prefix for where offloaded data from user workflows will be written.
+       * </pre>
+       *
        * <code>string output_prefix = 3;</code>
        */
       public Builder setOutputPrefixBytes(
@@ -2575,12 +2985,20 @@ public final class PluginSystem {
 
       private int prevState_ = 0;
       /**
+       * <pre>
+       * The latest job status.
+       * </pre>
+       *
        * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public int getPrevStateValue() {
         return prevState_;
       }
       /**
+       * <pre>
+       * The latest job status.
+       * </pre>
+       *
        * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public Builder setPrevStateValue(int value) {
@@ -2589,6 +3007,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The latest job status.
+       * </pre>
+       *
        * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public flyteidl.service.PluginSystem.State getPrevState() {
@@ -2597,6 +3019,10 @@ public final class PluginSystem {
         return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * The latest job status.
+       * </pre>
+       *
        * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public Builder setPrevState(flyteidl.service.PluginSystem.State value) {
@@ -2609,6 +3035,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The latest job status.
+       * </pre>
+       *
        * <code>.flyteidl.service.State prev_state = 4;</code>
        */
       public Builder clearPrevState() {
@@ -2675,25 +3105,45 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
      * <code>.flyteidl.service.State state = 1;</code>
      */
     int getStateValue();
     /**
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
      * <code>.flyteidl.service.State state = 1;</code>
      */
     flyteidl.service.PluginSystem.State getState();
 
     /**
+     * <pre>
+     * Error message if fail to get job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
+     * <pre>
+     * Error message if fail to get job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
         getMessageBytes();
   }
   /**
+   * <pre>
+   * Response to get an individual task state.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskGetResponse}
    */
   public  static final class TaskGetResponse extends
@@ -2781,12 +3231,20 @@ public final class PluginSystem {
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_;
     /**
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
      * <code>.flyteidl.service.State state = 1;</code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
+     * <pre>
+     * The state of the execution is used to control its visibility in the UI/CLI.
+     * </pre>
+     *
      * <code>.flyteidl.service.State state = 1;</code>
      */
     public flyteidl.service.PluginSystem.State getState() {
@@ -2798,6 +3256,10 @@ public final class PluginSystem {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
+     * <pre>
+     * Error message if fail to get job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
@@ -2813,6 +3275,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * Error message if fail to get job.
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -2994,6 +3460,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * Response to get an individual task state.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskGetResponse}
      */
     public static final class Builder extends
@@ -3149,12 +3619,20 @@ public final class PluginSystem {
 
       private int state_ = 0;
       /**
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
        * <code>.flyteidl.service.State state = 1;</code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
        * <code>.flyteidl.service.State state = 1;</code>
        */
       public Builder setStateValue(int value) {
@@ -3163,6 +3641,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
        * <code>.flyteidl.service.State state = 1;</code>
        */
       public flyteidl.service.PluginSystem.State getState() {
@@ -3171,6 +3653,10 @@ public final class PluginSystem {
         return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
        * <code>.flyteidl.service.State state = 1;</code>
        */
       public Builder setState(flyteidl.service.PluginSystem.State value) {
@@ -3183,6 +3669,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The state of the execution is used to control its visibility in the UI/CLI.
+       * </pre>
+       *
        * <code>.flyteidl.service.State state = 1;</code>
        */
       public Builder clearState() {
@@ -3194,6 +3684,10 @@ public final class PluginSystem {
 
       private java.lang.Object message_ = "";
       /**
+       * <pre>
+       * Error message if fail to get job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
@@ -3209,6 +3703,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Error message if fail to get job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -3225,6 +3723,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * Error message if fail to get job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessage(
@@ -3238,6 +3740,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Error message if fail to get job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
@@ -3247,6 +3753,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * Error message if fail to get job.
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
@@ -3318,26 +3828,46 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     java.lang.String getTaskType();
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     com.google.protobuf.ByteString
         getTaskTypeBytes();
 
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     java.lang.String getJobId();
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
   }
   /**
+   * <pre>
+   * A message used to delete a task.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskDeleteRequest}
    */
   public  static final class TaskDeleteRequest extends
@@ -3425,6 +3955,10 @@ public final class PluginSystem {
     public static final int TASK_TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object taskType_;
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     public java.lang.String getTaskType() {
@@ -3440,6 +3974,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * A predefined yet extensible Task type identifier.
+     * </pre>
+     *
      * <code>string task_type = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -3459,6 +3997,10 @@ public final class PluginSystem {
     public static final int JOB_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object jobId_;
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     public java.lang.String getJobId() {
@@ -3474,6 +4016,10 @@ public final class PluginSystem {
       }
     }
     /**
+     * <pre>
+     * The unique id identifying the job.
+     * </pre>
+     *
      * <code>string job_id = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -3655,6 +4201,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * A message used to delete a task.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskDeleteRequest}
      */
     public static final class Builder extends
@@ -3811,6 +4361,10 @@ public final class PluginSystem {
 
       private java.lang.Object taskType_ = "";
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public java.lang.String getTaskType() {
@@ -3826,6 +4380,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -3842,6 +4400,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder setTaskType(
@@ -3855,6 +4417,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder clearTaskType() {
@@ -3864,6 +4430,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * A predefined yet extensible Task type identifier.
+       * </pre>
+       *
        * <code>string task_type = 1;</code>
        */
       public Builder setTaskTypeBytes(
@@ -3880,6 +4450,10 @@ public final class PluginSystem {
 
       private java.lang.Object jobId_ = "";
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public java.lang.String getJobId() {
@@ -3895,6 +4469,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -3911,6 +4489,10 @@ public final class PluginSystem {
         }
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder setJobId(
@@ -3924,6 +4506,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder clearJobId() {
@@ -3933,6 +4519,10 @@ public final class PluginSystem {
         return this;
       }
       /**
+       * <pre>
+       * The unique id identifying the job.
+       * </pre>
+       *
        * <code>string job_id = 2;</code>
        */
       public Builder setJobIdBytes(
@@ -4004,6 +4594,10 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
   }
   /**
+   * <pre>
+   * Response to delete a task.
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.TaskDeleteResponse}
    */
   public  static final class TaskDeleteResponse extends
@@ -4218,6 +4812,10 @@ public final class PluginSystem {
       return builder;
     }
     /**
+     * <pre>
+     * Response to delete a task.
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.TaskDeleteResponse}
      */
     public static final class Builder extends

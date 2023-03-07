@@ -40,6 +40,7 @@ class ServerContext;
 namespace flyteidl {
 namespace service {
 
+// BackendPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
 class BackendPluginService final {
  public:
   static constexpr char const* service_full_name() {
@@ -48,6 +49,7 @@ class BackendPluginService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Send a task create request to the backend plugin server.
     virtual ::grpc::Status CreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::flyteidl::service::TaskCreateResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>> AsyncCreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>>(AsyncCreateTaskRaw(context, request, cq));
@@ -55,6 +57,7 @@ class BackendPluginService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>> PrepareAsyncCreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskCreateResponse>>(PrepareAsyncCreateTaskRaw(context, request, cq));
     }
+    // Get job status.
     virtual ::grpc::Status GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::flyteidl::service::TaskGetResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>> AsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>>(AsyncGetTaskRaw(context, request, cq));
@@ -62,6 +65,7 @@ class BackendPluginService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>> PrepareAsyncGetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskGetResponse>>(PrepareAsyncGetTaskRaw(context, request, cq));
     }
+    // Delete the task resource.
     virtual ::grpc::Status DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::flyteidl::service::TaskDeleteResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskDeleteResponse>> AsyncDeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::TaskDeleteResponse>>(AsyncDeleteTaskRaw(context, request, cq));
@@ -72,14 +76,17 @@ class BackendPluginService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
+      // Send a task create request to the backend plugin server.
       virtual void CreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void CreateTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskCreateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Get job status.
       virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void GetTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskGetResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      // Delete the task resource.
       virtual void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteTask(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::TaskDeleteResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteTask(::grpc::ClientContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
@@ -160,8 +167,11 @@ class BackendPluginService final {
    public:
     Service();
     virtual ~Service();
+    // Send a task create request to the backend plugin server.
     virtual ::grpc::Status CreateTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskCreateRequest* request, ::flyteidl::service::TaskCreateResponse* response);
+    // Get job status.
     virtual ::grpc::Status GetTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskGetRequest* request, ::flyteidl::service::TaskGetResponse* response);
+    // Delete the task resource.
     virtual ::grpc::Status DeleteTask(::grpc::ServerContext* context, const ::flyteidl::service::TaskDeleteRequest* request, ::flyteidl::service::TaskDeleteResponse* response);
   };
   template <class BaseClass>

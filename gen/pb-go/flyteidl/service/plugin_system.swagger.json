@@ -1045,12 +1045,15 @@
       "type": "object",
       "properties": {
         "job_id": {
-          "type": "string"
+          "type": "string",
+          "description": "The unique id identifying the job."
         },
         "message": {
-          "type": "string"
+          "type": "string",
+          "description": "Error message if fail to create job."
         }
-      }
+      },
+      "description": "Represents a create response structure."
     },
     "protobufListValue": {
       "type": "object",
@@ -1126,21 +1129,26 @@
         "RUNNING",
         "SUCCEEDED"
       ],
-      "default": "FAILED"
+      "default": "FAILED",
+      "description": "The state of the execution is used to control its visibility in the UI/CLI."
     },
     "serviceTaskDeleteResponse": {
-      "type": "object"
+      "type": "object",
+      "description": "Response to delete a task."
     },
     "serviceTaskGetResponse": {
       "type": "object",
       "properties": {
         "state": {
-          "$ref": "#/definitions/serviceState"
+          "$ref": "#/definitions/serviceState",
+          "description": "The state of the execution is used to control its visibility in the UI/CLI."
         },
         "message": {
-          "type": "string"
+          "type": "string",
+          "description": "Error message if fail to get job."
         }
-      }
+      },
+      "description": "Response to get an individual task state."
     }
   }
 }
