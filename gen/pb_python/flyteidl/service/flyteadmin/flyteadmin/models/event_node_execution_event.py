@@ -596,7 +596,7 @@ class EventNodeExecutionEvent(object):
     def reported_at(self):
         """Gets the reported_at of this EventNodeExecutionEvent.  # noqa: E501
 
-        This timestamp represents the instant when the event was reported by the executing framework. For example, when first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when literal inputs are intially copied. The event however will not be sent until after the copy completes. Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.  # noqa: E501
+        This timestamp represents the instant when the event was reported by the executing framework. For example, when first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when literal inputs are initially copied. The event however will not be sent until after the copy completes. Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.  # noqa: E501
 
         :return: The reported_at of this EventNodeExecutionEvent.  # noqa: E501
         :rtype: datetime
@@ -607,7 +607,7 @@ class EventNodeExecutionEvent(object):
     def reported_at(self, reported_at):
         """Sets the reported_at of this EventNodeExecutionEvent.
 
-        This timestamp represents the instant when the event was reported by the executing framework. For example, when first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when literal inputs are intially copied. The event however will not be sent until after the copy completes. Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.  # noqa: E501
+        This timestamp represents the instant when the event was reported by the executing framework. For example, when first processing a node the `occurred_at` timestamp should be the instant propeller makes progress, so when literal inputs are initially copied. The event however will not be sent until after the copy completes. Extracting both of these timestamps facilitates a more accurate portrayal of the evaluation time-series.  # noqa: E501
 
         :param reported_at: The reported_at of this EventNodeExecutionEvent.  # noqa: E501
         :type: datetime

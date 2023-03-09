@@ -583,6 +583,8 @@ func (m *DynamicWorkflowNodeMetadata) Validate() error {
 		}
 	}
 
+	// no validation rules for DynamicJobSpecUri
+
 	return nil
 }
 
