@@ -228,14 +228,3 @@ message NodeExecutionGetDataResponse {
     // Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
     DynamicWorkflowNodeMetadata dynamic_workflow = 16;
 }
-
-// TODO @hamersaw docs
-message NodeExecutionGetMetricsRequest {
-    core.NodeExecutionIdentifier id = 1;
-    int32 depth = 2;
-}
-
-// TODO @hamersaw docs
-message NodeExecutionGetMetricsResponse {
-    Span span = 1;
-}

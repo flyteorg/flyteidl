@@ -23127,7 +23127,7 @@ public final class Common {
   }
   /**
    * <pre>
-   * ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
+   * ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.ReferenceSpanInfo}
@@ -23678,7 +23678,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
+     * ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.ReferenceSpanInfo}

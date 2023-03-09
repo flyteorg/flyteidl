@@ -9,7 +9,7 @@
 
 package flyteadmin
 
-// ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
+// ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity.
 type AdminReferenceSpanInfo struct {
 	// workflow_id is the id of the workflow execution this Span represents.
 	WorkflowId *CoreWorkflowExecutionIdentifier `json:"workflow_id,omitempty"`

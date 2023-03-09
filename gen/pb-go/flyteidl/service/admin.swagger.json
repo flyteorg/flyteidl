@@ -4965,7 +4965,7 @@
           "description": "spans defines a collection of Spans that breakdown this execution."
         }
       },
-      "description": "ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity."
+      "description": "ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity."
     },
     "adminSchedule": {
       "type": "object",

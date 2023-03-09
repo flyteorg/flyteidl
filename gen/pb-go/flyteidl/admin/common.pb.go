@@ -1531,7 +1531,7 @@ func (m *CategoricalSpanInfo) GetCategory() CategoricalSpanInfo_Category {
 	return CategoricalSpanInfo_UNKNOWN
 }
 
-// ReferenceSpanInfo represents a collection of Span belonging to a specific Flyte entity.
+// ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity.
 type ReferenceSpanInfo struct {
 	// Types that are valid to be assigned to Id:
 	//	*ReferenceSpanInfo_WorkflowId
