@@ -273,7 +273,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2ftask_5fexecution
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Reason, reported_at_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Reason, occurred_at_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Reason, message_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskExecutionGetDataRequest, _internal_metadata_),
@@ -356,8 +356,8 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2ftask_5fexecution_2eproto
   "\030\013 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.even"
   "t.TaskExecutionMetadata\022\025\n\revent_version"
   "\030\021 \001(\005\022\'\n\007reasons\030\022 \003(\0132\026.flyteidl.admin"
-  ".ReasonB\017\n\routput_result\"J\n\006Reason\022/\n\013re"
-  "ported_at\030\001 \001(\0132\032.google.protobuf.Timest"
+  ".ReasonB\017\n\routput_result\"J\n\006Reason\022/\n\013oc"
+  "curred_at\030\001 \001(\0132\032.google.protobuf.Timest"
   "amp\022\017\n\007message\030\002 \001(\t\"Q\n\033TaskExecutionGet"
   "DataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.core."
   "TaskExecutionIdentifier\"\332\001\n\034TaskExecutio"
@@ -3386,26 +3386,26 @@ void TaskExecutionClosure::InternalSwap(TaskExecutionClosure* other) {
 // ===================================================================
 
 void Reason::InitAsDefaultInstance() {
-  ::flyteidl::admin::_Reason_default_instance_._instance.get_mutable()->reported_at_ = const_cast< ::google::protobuf::Timestamp*>(
+  ::flyteidl::admin::_Reason_default_instance_._instance.get_mutable()->occurred_at_ = const_cast< ::google::protobuf::Timestamp*>(
       ::google::protobuf::Timestamp::internal_default_instance());
 }
 class Reason::HasBitSetters {
  public:
-  static const ::google::protobuf::Timestamp& reported_at(const Reason* msg);
+  static const ::google::protobuf::Timestamp& occurred_at(const Reason* msg);
 };
 
 const ::google::protobuf::Timestamp&
-Reason::HasBitSetters::reported_at(const Reason* msg) {
-  return *msg->reported_at_;
+Reason::HasBitSetters::occurred_at(const Reason* msg) {
+  return *msg->occurred_at_;
 }
-void Reason::clear_reported_at() {
-  if (GetArenaNoVirtual() == nullptr && reported_at_ != nullptr) {
-    delete reported_at_;
+void Reason::clear_occurred_at() {
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
   }
-  reported_at_ = nullptr;
+  occurred_at_ = nullptr;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Reason::kReportedAtFieldNumber;
+const int Reason::kOccurredAtFieldNumber;
 const int Reason::kMessageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -3422,10 +3422,10 @@ Reason::Reason(const Reason& from)
   if (from.message().size() > 0) {
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
-  if (from.has_reported_at()) {
-    reported_at_ = new ::google::protobuf::Timestamp(*from.reported_at_);
+  if (from.has_occurred_at()) {
+    occurred_at_ = new ::google::protobuf::Timestamp(*from.occurred_at_);
   } else {
-    reported_at_ = nullptr;
+    occurred_at_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.Reason)
 }
@@ -3434,7 +3434,7 @@ void Reason::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_Reason_flyteidl_2fadmin_2ftask_5fexecution_2eproto.base);
   message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  reported_at_ = nullptr;
+  occurred_at_ = nullptr;
 }
 
 Reason::~Reason() {
@@ -3444,7 +3444,7 @@ Reason::~Reason() {
 
 void Reason::SharedDtor() {
   message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete reported_at_;
+  if (this != internal_default_instance()) delete occurred_at_;
 }
 
 void Reason::SetCachedSize(int size) const {
@@ -3463,10 +3463,10 @@ void Reason::Clear() {
   (void) cached_has_bits;
 
   message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && reported_at_ != nullptr) {
-    delete reported_at_;
+  if (GetArenaNoVirtual() == nullptr && occurred_at_ != nullptr) {
+    delete occurred_at_;
   }
-  reported_at_ = nullptr;
+  occurred_at_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -3483,13 +3483,13 @@ const char* Reason::_InternalParse(const char* begin, const char* end, void* obj
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .google.protobuf.Timestamp reported_at = 1;
+      // .google.protobuf.Timestamp occurred_at = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::google::protobuf::Timestamp::_InternalParse;
-        object = msg->mutable_reported_at();
+        object = msg->mutable_occurred_at();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -3546,11 +3546,11 @@ bool Reason::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .google.protobuf.Timestamp reported_at = 1;
+      // .google.protobuf.Timestamp occurred_at = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_reported_at()));
+               input, mutable_occurred_at()));
         } else {
           goto handle_unusual;
         }
@@ -3599,10 +3599,10 @@ void Reason::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Timestamp reported_at = 1;
-  if (this->has_reported_at()) {
+  // .google.protobuf.Timestamp occurred_at = 1;
+  if (this->has_occurred_at()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::reported_at(this), output);
+      1, HasBitSetters::occurred_at(this), output);
   }
 
   // string message = 2;
@@ -3628,11 +3628,11 @@ void Reason::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Timestamp reported_at = 1;
-  if (this->has_reported_at()) {
+  // .google.protobuf.Timestamp occurred_at = 1;
+  if (this->has_occurred_at()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, HasBitSetters::reported_at(this), target);
+        1, HasBitSetters::occurred_at(this), target);
   }
 
   // string message = 2;
@@ -3674,11 +3674,11 @@ size_t Reason::ByteSizeLong() const {
         this->message());
   }
 
-  // .google.protobuf.Timestamp reported_at = 1;
-  if (this->has_reported_at()) {
+  // .google.protobuf.Timestamp occurred_at = 1;
+  if (this->has_occurred_at()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *reported_at_);
+        *occurred_at_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3712,8 +3712,8 @@ void Reason::MergeFrom(const Reason& from) {
 
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
   }
-  if (from.has_reported_at()) {
-    mutable_reported_at()->::google::protobuf::Timestamp::MergeFrom(from.reported_at());
+  if (from.has_occurred_at()) {
+    mutable_occurred_at()->::google::protobuf::Timestamp::MergeFrom(from.occurred_at());
   }
 }
 
@@ -3744,7 +3744,7 @@ void Reason::InternalSwap(Reason* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   message_.Swap(&other->message_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(reported_at_, other->reported_at_);
+  swap(occurred_at_, other->occurred_at_);
 }
 
 ::google::protobuf::Metadata Reason::GetMetadata() const {

@@ -586,10 +586,10 @@ func (m *Reason) Validate() error {
 		return nil
 	}
 
-	if v, ok := interface{}(m.GetReportedAt()).(interface{ Validate() error }); ok {
+	if v, ok := interface{}(m.GetOccurredAt()).(interface{ Validate() error }); ok {
 		if err := v.Validate(); err != nil {
 			return ReasonValidationError{
-				field:  "ReportedAt",
+				field:  "OccurredAt",
 				reason: "embedded message failed validation",
 				cause:  err,
 			}

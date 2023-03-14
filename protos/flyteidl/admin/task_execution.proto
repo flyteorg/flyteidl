@@ -124,16 +124,17 @@ message TaskExecutionClosure {
     // in this message.
     int32 event_version = 17;
 
-    // TODO @hamersaw docs
+    // A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+    // as previously done, is much more valuable in visualizing and understanding historical evaluations.
     repeated Reason reasons = 18;
 }
 
-// TODO @hamersaw docs
+// Reason is a single message annotated with a timestamp to indicate the instant the reason occurred.
 message Reason {
-    // TODO @hamersaw docs
-    google.protobuf.Timestamp reported_at = 1;
+    // occurred_at is the timestamp indicating the instant that this reason happened.
+    google.protobuf.Timestamp occurred_at = 1;
 
-    // TODO @hamersaw docs
+    // message
     string message = 2;
 }
 

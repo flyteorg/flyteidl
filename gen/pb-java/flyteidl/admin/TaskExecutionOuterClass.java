@@ -8629,29 +8629,53 @@ public final class TaskExecutionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    boolean hasReportedAt();
+    boolean hasOccurredAt();
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    com.google.protobuf.Timestamp getReportedAt();
+    com.google.protobuf.Timestamp getOccurredAt();
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder();
 
     /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     java.lang.String getMessage();
     /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     com.google.protobuf.ByteString
         getMessageBytes();
   }
   /**
+   * <pre>
+   * TODO &#64;hamersaw docs
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.admin.Reason}
    */
   public  static final class Reason extends
@@ -8693,13 +8717,13 @@ public final class TaskExecutionOuterClass {
               break;
             case 10: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (reportedAt_ != null) {
-                subBuilder = reportedAt_.toBuilder();
+              if (occurredAt_ != null) {
+                subBuilder = occurredAt_.toBuilder();
               }
-              reportedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              occurredAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(reportedAt_);
-                reportedAt_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(occurredAt_);
+                occurredAt_ = subBuilder.buildPartial();
               }
 
               break;
@@ -8742,30 +8766,46 @@ public final class TaskExecutionOuterClass {
               flyteidl.admin.TaskExecutionOuterClass.Reason.class, flyteidl.admin.TaskExecutionOuterClass.Reason.Builder.class);
     }
 
-    public static final int REPORTED_AT_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp reportedAt_;
+    public static final int OCCURRED_AT_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp occurredAt_;
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    public boolean hasReportedAt() {
-      return reportedAt_ != null;
+    public boolean hasOccurredAt() {
+      return occurredAt_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    public com.google.protobuf.Timestamp getReportedAt() {
-      return reportedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+    public com.google.protobuf.Timestamp getOccurredAt() {
+      return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
     }
     /**
-     * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder() {
-      return getReportedAt();
+    public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+      return getOccurredAt();
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private volatile java.lang.Object message_;
     /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public java.lang.String getMessage() {
@@ -8781,6 +8821,10 @@ public final class TaskExecutionOuterClass {
       }
     }
     /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
      * <code>string message = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -8811,8 +8855,8 @@ public final class TaskExecutionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (reportedAt_ != null) {
-        output.writeMessage(1, getReportedAt());
+      if (occurredAt_ != null) {
+        output.writeMessage(1, getOccurredAt());
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
@@ -8826,9 +8870,9 @@ public final class TaskExecutionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (reportedAt_ != null) {
+      if (occurredAt_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getReportedAt());
+          .computeMessageSize(1, getOccurredAt());
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
@@ -8848,10 +8892,10 @@ public final class TaskExecutionOuterClass {
       }
       flyteidl.admin.TaskExecutionOuterClass.Reason other = (flyteidl.admin.TaskExecutionOuterClass.Reason) obj;
 
-      if (hasReportedAt() != other.hasReportedAt()) return false;
-      if (hasReportedAt()) {
-        if (!getReportedAt()
-            .equals(other.getReportedAt())) return false;
+      if (hasOccurredAt() != other.hasOccurredAt()) return false;
+      if (hasOccurredAt()) {
+        if (!getOccurredAt()
+            .equals(other.getOccurredAt())) return false;
       }
       if (!getMessage()
           .equals(other.getMessage())) return false;
@@ -8866,9 +8910,9 @@ public final class TaskExecutionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasReportedAt()) {
-        hash = (37 * hash) + REPORTED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getReportedAt().hashCode();
+      if (hasOccurredAt()) {
+        hash = (37 * hash) + OCCURRED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getOccurredAt().hashCode();
       }
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
@@ -8968,6 +9012,10 @@ public final class TaskExecutionOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * TODO &#64;hamersaw docs
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.admin.Reason}
      */
     public static final class Builder extends
@@ -9005,11 +9053,11 @@ public final class TaskExecutionOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (reportedAtBuilder_ == null) {
-          reportedAt_ = null;
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
         } else {
-          reportedAt_ = null;
-          reportedAtBuilder_ = null;
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
         }
         message_ = "";
 
@@ -9039,10 +9087,10 @@ public final class TaskExecutionOuterClass {
       @java.lang.Override
       public flyteidl.admin.TaskExecutionOuterClass.Reason buildPartial() {
         flyteidl.admin.TaskExecutionOuterClass.Reason result = new flyteidl.admin.TaskExecutionOuterClass.Reason(this);
-        if (reportedAtBuilder_ == null) {
-          result.reportedAt_ = reportedAt_;
+        if (occurredAtBuilder_ == null) {
+          result.occurredAt_ = occurredAt_;
         } else {
-          result.reportedAt_ = reportedAtBuilder_.build();
+          result.occurredAt_ = occurredAtBuilder_.build();
         }
         result.message_ = message_;
         onBuilt();
@@ -9093,8 +9141,8 @@ public final class TaskExecutionOuterClass {
 
       public Builder mergeFrom(flyteidl.admin.TaskExecutionOuterClass.Reason other) {
         if (other == flyteidl.admin.TaskExecutionOuterClass.Reason.getDefaultInstance()) return this;
-        if (other.hasReportedAt()) {
-          mergeReportedAt(other.getReportedAt());
+        if (other.hasOccurredAt()) {
+          mergeOccurredAt(other.getOccurredAt());
         }
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
@@ -9129,125 +9177,165 @@ public final class TaskExecutionOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp reportedAt_;
+      private com.google.protobuf.Timestamp occurredAt_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> reportedAtBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> occurredAtBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public boolean hasReportedAt() {
-        return reportedAtBuilder_ != null || reportedAt_ != null;
+      public boolean hasOccurredAt() {
+        return occurredAtBuilder_ != null || occurredAt_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public com.google.protobuf.Timestamp getReportedAt() {
-        if (reportedAtBuilder_ == null) {
-          return reportedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+      public com.google.protobuf.Timestamp getOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          return occurredAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
         } else {
-          return reportedAtBuilder_.getMessage();
+          return occurredAtBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public Builder setReportedAt(com.google.protobuf.Timestamp value) {
-        if (reportedAtBuilder_ == null) {
+      public Builder setOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          reportedAt_ = value;
+          occurredAt_ = value;
           onChanged();
         } else {
-          reportedAtBuilder_.setMessage(value);
+          occurredAtBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public Builder setReportedAt(
+      public Builder setOccurredAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (reportedAtBuilder_ == null) {
-          reportedAt_ = builderForValue.build();
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = builderForValue.build();
           onChanged();
         } else {
-          reportedAtBuilder_.setMessage(builderForValue.build());
+          occurredAtBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public Builder mergeReportedAt(com.google.protobuf.Timestamp value) {
-        if (reportedAtBuilder_ == null) {
-          if (reportedAt_ != null) {
-            reportedAt_ =
-              com.google.protobuf.Timestamp.newBuilder(reportedAt_).mergeFrom(value).buildPartial();
+      public Builder mergeOccurredAt(com.google.protobuf.Timestamp value) {
+        if (occurredAtBuilder_ == null) {
+          if (occurredAt_ != null) {
+            occurredAt_ =
+              com.google.protobuf.Timestamp.newBuilder(occurredAt_).mergeFrom(value).buildPartial();
           } else {
-            reportedAt_ = value;
+            occurredAt_ = value;
           }
           onChanged();
         } else {
-          reportedAtBuilder_.mergeFrom(value);
+          occurredAtBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public Builder clearReportedAt() {
-        if (reportedAtBuilder_ == null) {
-          reportedAt_ = null;
+      public Builder clearOccurredAt() {
+        if (occurredAtBuilder_ == null) {
+          occurredAt_ = null;
           onChanged();
         } else {
-          reportedAt_ = null;
-          reportedAtBuilder_ = null;
+          occurredAt_ = null;
+          occurredAtBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getReportedAtBuilder() {
+      public com.google.protobuf.Timestamp.Builder getOccurredAtBuilder() {
         
         onChanged();
-        return getReportedAtFieldBuilder().getBuilder();
+        return getOccurredAtFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getReportedAtOrBuilder() {
-        if (reportedAtBuilder_ != null) {
-          return reportedAtBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.TimestampOrBuilder getOccurredAtOrBuilder() {
+        if (occurredAtBuilder_ != null) {
+          return occurredAtBuilder_.getMessageOrBuilder();
         } else {
-          return reportedAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : reportedAt_;
+          return occurredAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : occurredAt_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp reported_at = 1;</code>
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getReportedAtFieldBuilder() {
-        if (reportedAtBuilder_ == null) {
-          reportedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getOccurredAtFieldBuilder() {
+        if (occurredAtBuilder_ == null) {
+          occurredAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getReportedAt(),
+                  getOccurredAt(),
                   getParentForChildren(),
                   isClean());
-          reportedAt_ = null;
+          occurredAt_ = null;
         }
-        return reportedAtBuilder_;
+        return occurredAtBuilder_;
       }
 
       private java.lang.Object message_ = "";
       /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public java.lang.String getMessage() {
@@ -9263,6 +9351,10 @@ public final class TaskExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -9279,6 +9371,10 @@ public final class TaskExecutionOuterClass {
         }
       }
       /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessage(
@@ -9292,6 +9388,10 @@ public final class TaskExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder clearMessage() {
@@ -9301,6 +9401,10 @@ public final class TaskExecutionOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * TODO &#64;hamersaw docs
+       * </pre>
+       *
        * <code>string message = 2;</code>
        */
       public Builder setMessageBytes(
@@ -11609,8 +11713,8 @@ public final class TaskExecutionOuterClass {
       "\030\013 \001(\t\0227\n\010metadata\030\020 \001(\0132%.flyteidl.even" +
       "t.TaskExecutionMetadata\022\025\n\revent_version" +
       "\030\021 \001(\005\022\'\n\007reasons\030\022 \003(\0132\026.flyteidl.admin" +
-      ".ReasonB\017\n\routput_result\"J\n\006Reason\022/\n\013re" +
-      "ported_at\030\001 \001(\0132\032.google.protobuf.Timest" +
+      ".ReasonB\017\n\routput_result\"J\n\006Reason\022/\n\013oc" +
+      "curred_at\030\001 \001(\0132\032.google.protobuf.Timest" +
       "amp\022\017\n\007message\030\002 \001(\t\"Q\n\033TaskExecutionGet" +
       "DataRequest\0222\n\002id\030\001 \001(\0132&.flyteidl.core." +
       "TaskExecutionIdentifier\"\332\001\n\034TaskExecutio" +
@@ -11677,7 +11781,7 @@ public final class TaskExecutionOuterClass {
     internal_static_flyteidl_admin_Reason_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Reason_descriptor,
-        new java.lang.String[] { "ReportedAt", "Message", });
+        new java.lang.String[] { "OccurredAt", "Message", });
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_flyteidl_admin_TaskExecutionGetDataRequest_fieldAccessorTable = new

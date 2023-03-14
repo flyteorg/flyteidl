@@ -38297,7 +38297,7 @@
                  * Properties of a Reason.
                  * @memberof flyteidl.admin
                  * @interface IReason
-                 * @property {google.protobuf.ITimestamp|null} [reportedAt] Reason reportedAt
+                 * @property {google.protobuf.ITimestamp|null} [occurredAt] Reason occurredAt
                  * @property {string|null} [message] Reason message
                  */
     
@@ -38317,12 +38317,12 @@
                 }
     
                 /**
-                 * Reason reportedAt.
-                 * @member {google.protobuf.ITimestamp|null|undefined} reportedAt
+                 * Reason occurredAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} occurredAt
                  * @memberof flyteidl.admin.Reason
                  * @instance
                  */
-                Reason.prototype.reportedAt = null;
+                Reason.prototype.occurredAt = null;
     
                 /**
                  * Reason message.
@@ -38356,8 +38356,8 @@
                 Reason.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt"))
-                        $root.google.protobuf.Timestamp.encode(message.reportedAt, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.occurredAt != null && message.hasOwnProperty("occurredAt"))
+                        $root.google.protobuf.Timestamp.encode(message.occurredAt, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.message != null && message.hasOwnProperty("message"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.message);
                     return writer;
@@ -38382,7 +38382,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.reportedAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            message.occurredAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                             break;
                         case 2:
                             message.message = reader.string();
@@ -38406,10 +38406,10 @@
                 Reason.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.reportedAt != null && message.hasOwnProperty("reportedAt")) {
-                        var error = $root.google.protobuf.Timestamp.verify(message.reportedAt);
+                    if (message.occurredAt != null && message.hasOwnProperty("occurredAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.occurredAt);
                         if (error)
-                            return "reportedAt." + error;
+                            return "occurredAt." + error;
                     }
                     if (message.message != null && message.hasOwnProperty("message"))
                         if (!$util.isString(message.message))

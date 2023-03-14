@@ -16005,8 +16005,8 @@ export namespace flyteidl {
         /** Properties of a Reason. */
         interface IReason {
 
-            /** Reason reportedAt */
-            reportedAt?: (google.protobuf.ITimestamp|null);
+            /** Reason occurredAt */
+            occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** Reason message */
             message?: (string|null);
@@ -16021,8 +16021,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.admin.IReason);
 
-            /** Reason reportedAt. */
-            public reportedAt?: (google.protobuf.ITimestamp|null);
+            /** Reason occurredAt. */
+            public occurredAt?: (google.protobuf.ITimestamp|null);
 
             /** Reason message. */
             public message: string;

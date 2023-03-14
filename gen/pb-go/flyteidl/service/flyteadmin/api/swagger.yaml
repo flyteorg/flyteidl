@@ -15047,13 +15047,16 @@ definitions:
   adminReason:
     type: "object"
     properties:
-      reported_at:
+      occurred_at:
         type: "string"
         format: "date-time"
+        title: "TODO @hamersaw docs"
       message:
         type: "string"
+        title: "TODO @hamersaw docs"
+    title: "TODO @hamersaw docs"
     example:
-      reported_at: "2000-01-23T04:56:07.000+00:00"
+      occurred_at: "2000-01-23T04:56:07.000+00:00"
       message: "message"
   adminSchedule:
     type: "object"
@@ -15809,9 +15812,9 @@ definitions:
         generated_name: "generated_name"
         plugin_identifier: "plugin_identifier"
       reasons:
-      - reported_at: "2000-01-23T04:56:07.000+00:00"
+      - occurred_at: "2000-01-23T04:56:07.000+00:00"
         message: "message"
-      - reported_at: "2000-01-23T04:56:07.000+00:00"
+      - occurred_at: "2000-01-23T04:56:07.000+00:00"
         message: "message"
       created_at: "2000-01-23T04:56:07.000+00:00"
       error:
@@ -15963,9 +15966,9 @@ definitions:
             generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
           reasons:
-          - reported_at: "2000-01-23T04:56:07.000+00:00"
+          - occurred_at: "2000-01-23T04:56:07.000+00:00"
             message: "message"
-          - reported_at: "2000-01-23T04:56:07.000+00:00"
+          - occurred_at: "2000-01-23T04:56:07.000+00:00"
             message: "message"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
@@ -16057,9 +16060,9 @@ definitions:
             generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
           reasons:
-          - reported_at: "2000-01-23T04:56:07.000+00:00"
+          - occurred_at: "2000-01-23T04:56:07.000+00:00"
             message: "message"
-          - reported_at: "2000-01-23T04:56:07.000+00:00"
+          - occurred_at: "2000-01-23T04:56:07.000+00:00"
             message: "message"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
@@ -65657,9 +65660,9 @@ definitions:
           generated_name: "generated_name"
           plugin_identifier: "plugin_identifier"
         reasons:
-        - reported_at: "2000-01-23T04:56:07.000+00:00"
+        - occurred_at: "2000-01-23T04:56:07.000+00:00"
           message: "message"
-        - reported_at: "2000-01-23T04:56:07.000+00:00"
+        - occurred_at: "2000-01-23T04:56:07.000+00:00"
           message: "message"
         created_at: "2000-01-23T04:56:07.000+00:00"
         error:

@@ -31,47 +31,47 @@ class AdminReason(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'reported_at': 'datetime',
+        'occurred_at': 'datetime',
         'message': 'str'
     }
 
     attribute_map = {
-        'reported_at': 'reported_at',
+        'occurred_at': 'occurred_at',
         'message': 'message'
     }
 
-    def __init__(self, reported_at=None, message=None):  # noqa: E501
+    def __init__(self, occurred_at=None, message=None):  # noqa: E501
         """AdminReason - a model defined in Swagger"""  # noqa: E501
 
-        self._reported_at = None
+        self._occurred_at = None
         self._message = None
         self.discriminator = None
 
-        if reported_at is not None:
-            self.reported_at = reported_at
+        if occurred_at is not None:
+            self.occurred_at = occurred_at
         if message is not None:
             self.message = message
 
     @property
-    def reported_at(self):
-        """Gets the reported_at of this AdminReason.  # noqa: E501
+    def occurred_at(self):
+        """Gets the occurred_at of this AdminReason.  # noqa: E501
 
 
-        :return: The reported_at of this AdminReason.  # noqa: E501
+        :return: The occurred_at of this AdminReason.  # noqa: E501
         :rtype: datetime
         """
-        return self._reported_at
+        return self._occurred_at
 
-    @reported_at.setter
-    def reported_at(self, reported_at):
-        """Sets the reported_at of this AdminReason.
+    @occurred_at.setter
+    def occurred_at(self, occurred_at):
+        """Sets the occurred_at of this AdminReason.
 
 
-        :param reported_at: The reported_at of this AdminReason.  # noqa: E501
+        :param occurred_at: The occurred_at of this AdminReason.  # noqa: E501
         :type: datetime
         """
 
-        self._reported_at = reported_at
+        self._occurred_at = occurred_at
 
     @property
     def message(self):

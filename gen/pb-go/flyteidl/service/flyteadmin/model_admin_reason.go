@@ -14,6 +14,6 @@ import (
 )
 
 type AdminReason struct {
-	ReportedAt time.Time `json:"reported_at,omitempty"`
+	OccurredAt time.Time `json:"occurred_at,omitempty"`
 	Message string `json:"message,omitempty"`
 }

@@ -1060,14 +1060,14 @@ class Reason final :
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
-  // .google.protobuf.Timestamp reported_at = 1;
-  bool has_reported_at() const;
-  void clear_reported_at();
-  static const int kReportedAtFieldNumber = 1;
-  const ::google::protobuf::Timestamp& reported_at() const;
-  ::google::protobuf::Timestamp* release_reported_at();
-  ::google::protobuf::Timestamp* mutable_reported_at();
-  void set_allocated_reported_at(::google::protobuf::Timestamp* reported_at);
+  // .google.protobuf.Timestamp occurred_at = 1;
+  bool has_occurred_at() const;
+  void clear_occurred_at();
+  static const int kOccurredAtFieldNumber = 1;
+  const ::google::protobuf::Timestamp& occurred_at() const;
+  ::google::protobuf::Timestamp* release_occurred_at();
+  ::google::protobuf::Timestamp* mutable_occurred_at();
+  void set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Reason)
  private:
@@ -1075,7 +1075,7 @@ class Reason final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr message_;
-  ::google::protobuf::Timestamp* reported_at_;
+  ::google::protobuf::Timestamp* occurred_at_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2ftask_5fexecution_2eproto;
 };
@@ -2508,50 +2508,50 @@ inline TaskExecutionClosure::OutputResultCase TaskExecutionClosure::output_resul
 
 // Reason
 
-// .google.protobuf.Timestamp reported_at = 1;
-inline bool Reason::has_reported_at() const {
-  return this != internal_default_instance() && reported_at_ != nullptr;
+// .google.protobuf.Timestamp occurred_at = 1;
+inline bool Reason::has_occurred_at() const {
+  return this != internal_default_instance() && occurred_at_ != nullptr;
 }
-inline const ::google::protobuf::Timestamp& Reason::reported_at() const {
-  const ::google::protobuf::Timestamp* p = reported_at_;
-  // @@protoc_insertion_point(field_get:flyteidl.admin.Reason.reported_at)
+inline const ::google::protobuf::Timestamp& Reason::occurred_at() const {
+  const ::google::protobuf::Timestamp* p = occurred_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Reason.occurred_at)
   return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
       &::google::protobuf::_Timestamp_default_instance_);
 }
-inline ::google::protobuf::Timestamp* Reason::release_reported_at() {
-  // @@protoc_insertion_point(field_release:flyteidl.admin.Reason.reported_at)
+inline ::google::protobuf::Timestamp* Reason::release_occurred_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.Reason.occurred_at)
   
-  ::google::protobuf::Timestamp* temp = reported_at_;
-  reported_at_ = nullptr;
+  ::google::protobuf::Timestamp* temp = occurred_at_;
+  occurred_at_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Timestamp* Reason::mutable_reported_at() {
+inline ::google::protobuf::Timestamp* Reason::mutable_occurred_at() {
   
-  if (reported_at_ == nullptr) {
+  if (occurred_at_ == nullptr) {
     auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
-    reported_at_ = p;
+    occurred_at_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Reason.reported_at)
-  return reported_at_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Reason.occurred_at)
+  return occurred_at_;
 }
-inline void Reason::set_allocated_reported_at(::google::protobuf::Timestamp* reported_at) {
+inline void Reason::set_allocated_occurred_at(::google::protobuf::Timestamp* occurred_at) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(reported_at_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(occurred_at_);
   }
-  if (reported_at) {
+  if (occurred_at) {
     ::google::protobuf::Arena* submessage_arena =
-      reinterpret_cast<::google::protobuf::MessageLite*>(reported_at)->GetArena();
+      reinterpret_cast<::google::protobuf::MessageLite*>(occurred_at)->GetArena();
     if (message_arena != submessage_arena) {
-      reported_at = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, reported_at, submessage_arena);
+      occurred_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, occurred_at, submessage_arena);
     }
     
   } else {
     
   }
-  reported_at_ = reported_at;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Reason.reported_at)
+  occurred_at_ = occurred_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.Reason.occurred_at)
 }
 
 // string message = 2;

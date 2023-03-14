@@ -14,12 +14,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Reason(_message.Message):
-    __slots__ = ["message", "reported_at"]
+    __slots__ = ["message", "occurred_at"]
     MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    REPORTED_AT_FIELD_NUMBER: _ClassVar[int]
+    OCCURRED_AT_FIELD_NUMBER: _ClassVar[int]
     message: str
-    reported_at: _timestamp_pb2.Timestamp
-    def __init__(self, reported_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[str] = ...) -> None: ...
+    occurred_at: _timestamp_pb2.Timestamp
+    def __init__(self, occurred_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., message: _Optional[str] = ...) -> None: ...
 
 class TaskExecution(_message.Message):
     __slots__ = ["closure", "id", "input_uri", "is_parent"]
