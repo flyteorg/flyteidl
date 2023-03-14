@@ -306,7 +306,8 @@ type TaskExecutionClosure struct {
 	// TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
 	// in this message.
 	EventVersion int32 `protobuf:"varint,17,opt,name=event_version,json=eventVersion,proto3" json:"event_version,omitempty"`
-	// TODO @hamersaw docs
+	// A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+	// as previously done, is much more valuable in visualizing and understanding historical evaluations.
 	Reasons              []*Reason `protobuf:"bytes,18,rep,name=reasons,proto3" json:"reasons,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_unrecognized     []byte    `json:"-"`
@@ -483,11 +484,11 @@ func (*TaskExecutionClosure) XXX_OneofWrappers() []interface{} {
 	}
 }
 
-// TODO @hamersaw docs
+// Reason is a single message annotated with a timestamp to indicate the instant the reason occurred.
 type Reason struct {
-	// TODO @hamersaw docs
+	// occurred_at is the timestamp indicating the instant that this reason happened.
 	OccurredAt *timestamp.Timestamp `protobuf:"bytes,1,opt,name=occurred_at,json=occurredAt,proto3" json:"occurred_at,omitempty"`
-	// TODO @hamersaw docs
+	// message is the explanation for the most recent phase transition or status update.
 	Message              string   `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`

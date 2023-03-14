@@ -56,6 +56,7 @@ class AdminReason(object):
     def occurred_at(self):
         """Gets the occurred_at of this AdminReason.  # noqa: E501
 
+        occurred_at is the timestamp indicating the instant that this reason happened.  # noqa: E501
 
         :return: The occurred_at of this AdminReason.  # noqa: E501
         :rtype: datetime
@@ -66,6 +67,7 @@ class AdminReason(object):
     def occurred_at(self, occurred_at):
         """Sets the occurred_at of this AdminReason.
 
+        occurred_at is the timestamp indicating the instant that this reason happened.  # noqa: E501
 
         :param occurred_at: The occurred_at of this AdminReason.  # noqa: E501
         :type: datetime
@@ -77,6 +79,7 @@ class AdminReason(object):
     def message(self):
         """Gets the message of this AdminReason.  # noqa: E501
 
+        message is the explanation for the most recent phase transition or status update.  # noqa: E501
 
         :return: The message of this AdminReason.  # noqa: E501
         :rtype: str
@@ -87,6 +90,7 @@ class AdminReason(object):
     def message(self, message):
         """Sets the message of this AdminReason.
 
+        message is the explanation for the most recent phase transition or status update.  # noqa: E501
 
         :param message: The message of this AdminReason.  # noqa: E501
         :type: str

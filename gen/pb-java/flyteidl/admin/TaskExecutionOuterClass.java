@@ -4636,7 +4636,8 @@ public final class TaskExecutionOuterClass {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -4645,7 +4646,8 @@ public final class TaskExecutionOuterClass {
         getReasonsList();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -4653,7 +4655,8 @@ public final class TaskExecutionOuterClass {
     flyteidl.admin.TaskExecutionOuterClass.Reason getReasons(int index);
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -4661,7 +4664,8 @@ public final class TaskExecutionOuterClass {
     int getReasonsCount();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -4670,7 +4674,8 @@ public final class TaskExecutionOuterClass {
         getReasonsOrBuilderList();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -5474,7 +5479,8 @@ public final class TaskExecutionOuterClass {
     private java.util.List<flyteidl.admin.TaskExecutionOuterClass.Reason> reasons_;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -5484,7 +5490,8 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -5495,7 +5502,8 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -5505,7 +5513,8 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -5515,7 +5524,8 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+     * as previously done, is much more valuable in visualizing and understanding historical evaluations.
      * </pre>
      *
      * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8274,7 +8284,8 @@ public final class TaskExecutionOuterClass {
 
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8288,7 +8299,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8302,7 +8314,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8316,7 +8329,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8337,7 +8351,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8355,7 +8370,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8375,7 +8391,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8396,7 +8413,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8414,7 +8432,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8432,7 +8451,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8451,7 +8471,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8468,7 +8489,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8485,7 +8507,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8496,7 +8519,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8510,7 +8534,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8525,7 +8550,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8536,7 +8562,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8548,7 +8575,8 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * A time-series of the phase transition or update explanations. This, when compared to storing a singular reason
+       * as previously done, is much more valuable in visualizing and understanding historical evaluations.
        * </pre>
        *
        * <code>repeated .flyteidl.admin.Reason reasons = 18;</code>
@@ -8630,7 +8658,7 @@ public final class TaskExecutionOuterClass {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8638,7 +8666,7 @@ public final class TaskExecutionOuterClass {
     boolean hasOccurredAt();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8646,7 +8674,7 @@ public final class TaskExecutionOuterClass {
     com.google.protobuf.Timestamp getOccurredAt();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8655,7 +8683,7 @@ public final class TaskExecutionOuterClass {
 
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * message is the explanation for the most recent phase transition or status update.
      * </pre>
      *
      * <code>string message = 2;</code>
@@ -8663,7 +8691,7 @@ public final class TaskExecutionOuterClass {
     java.lang.String getMessage();
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * message is the explanation for the most recent phase transition or status update.
      * </pre>
      *
      * <code>string message = 2;</code>
@@ -8673,7 +8701,7 @@ public final class TaskExecutionOuterClass {
   }
   /**
    * <pre>
-   * TODO &#64;hamersaw docs
+   * Reason is a single message annotated with a timestamp to indicate the instant the reason occurred.
    * </pre>
    *
    * Protobuf type {@code flyteidl.admin.Reason}
@@ -8770,7 +8798,7 @@ public final class TaskExecutionOuterClass {
     private com.google.protobuf.Timestamp occurredAt_;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8780,7 +8808,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8790,7 +8818,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * occurred_at is the timestamp indicating the instant that this reason happened.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -8803,7 +8831,7 @@ public final class TaskExecutionOuterClass {
     private volatile java.lang.Object message_;
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * message is the explanation for the most recent phase transition or status update.
      * </pre>
      *
      * <code>string message = 2;</code>
@@ -8822,7 +8850,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * message is the explanation for the most recent phase transition or status update.
      * </pre>
      *
      * <code>string message = 2;</code>
@@ -9013,7 +9041,7 @@ public final class TaskExecutionOuterClass {
     }
     /**
      * <pre>
-     * TODO &#64;hamersaw docs
+     * Reason is a single message annotated with a timestamp to indicate the instant the reason occurred.
      * </pre>
      *
      * Protobuf type {@code flyteidl.admin.Reason}
@@ -9182,7 +9210,7 @@ public final class TaskExecutionOuterClass {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> occurredAtBuilder_;
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9192,7 +9220,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9206,7 +9234,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9226,7 +9254,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9244,7 +9272,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9266,7 +9294,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9284,7 +9312,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9296,7 +9324,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9311,7 +9339,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * occurred_at is the timestamp indicating the instant that this reason happened.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp occurred_at = 1;</code>
@@ -9333,7 +9361,7 @@ public final class TaskExecutionOuterClass {
       private java.lang.Object message_ = "";
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * message is the explanation for the most recent phase transition or status update.
        * </pre>
        *
        * <code>string message = 2;</code>
@@ -9352,7 +9380,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * message is the explanation for the most recent phase transition or status update.
        * </pre>
        *
        * <code>string message = 2;</code>
@@ -9372,7 +9400,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * message is the explanation for the most recent phase transition or status update.
        * </pre>
        *
        * <code>string message = 2;</code>
@@ -9389,7 +9417,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * message is the explanation for the most recent phase transition or status update.
        * </pre>
        *
        * <code>string message = 2;</code>
@@ -9402,7 +9430,7 @@ public final class TaskExecutionOuterClass {
       }
       /**
        * <pre>
-       * TODO &#64;hamersaw docs
+       * message is the explanation for the most recent phase transition or status update.
        * </pre>
        *
        * <code>string message = 2;</code>

@@ -451,6 +451,7 @@ class AdminTaskExecutionClosure(object):
     def reasons(self):
         """Gets the reasons of this AdminTaskExecutionClosure.  # noqa: E501
 
+        A time-series of the phase transition or update explanations. This, when compared to storing a singular reason as previously done, is much more valuable in visualizing and understanding historical evaluations.  # noqa: E501
 
         :return: The reasons of this AdminTaskExecutionClosure.  # noqa: E501
         :rtype: list[AdminReason]
@@ -461,6 +462,7 @@ class AdminTaskExecutionClosure(object):
     def reasons(self, reasons):
         """Sets the reasons of this AdminTaskExecutionClosure.
 
+        A time-series of the phase transition or update explanations. This, when compared to storing a singular reason as previously done, is much more valuable in visualizing and understanding historical evaluations.  # noqa: E501
 
         :param reasons: The reasons of this AdminTaskExecutionClosure.  # noqa: E501
         :type: list[AdminReason]

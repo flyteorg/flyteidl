@@ -15050,11 +15050,14 @@ definitions:
       occurred_at:
         type: "string"
         format: "date-time"
-        title: "TODO @hamersaw docs"
+        description: "occurred_at is the timestamp indicating the instant that this\
+          \ reason happened."
       message:
         type: "string"
-        title: "TODO @hamersaw docs"
-    title: "TODO @hamersaw docs"
+        description: "message is the explanation for the most recent phase transition\
+          \ or status update."
+    description: "Reason is a single message annotated with a timestamp to indicate\
+      \ the instant the reason occurred."
     example:
       occurred_at: "2000-01-23T04:56:07.000+00:00"
       message: "message"
@@ -15768,7 +15771,9 @@ definitions:
           \ fields for each subtask rather than the TaskLog\nin this message."
       reasons:
         type: "array"
-        title: "TODO @hamersaw docs"
+        description: "A time-series of the phase transition or update explanations.\
+          \ This, when compared to storing a singular reason\nas previously done,\
+          \ is much more valuable in visualizing and understanding historical evaluations."
         items:
           $ref: "#/definitions/adminReason"
     description: "Container for task execution details and results."

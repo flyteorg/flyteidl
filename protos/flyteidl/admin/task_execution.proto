@@ -134,7 +134,7 @@ message Reason {
     // occurred_at is the timestamp indicating the instant that this reason happened.
     google.protobuf.Timestamp occurred_at = 1;
 
-    // message
+    // message is the explanation for the most recent phase transition or status update.
     string message = 2;
 }
 

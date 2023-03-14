@@ -4877,14 +4877,14 @@
         "occurred_at": {
           "type": "string",
           "format": "date-time",
-          "title": "TODO @hamersaw docs"
+          "description": "occurred_at is the timestamp indicating the instant that this reason happened."
         },
         "message": {
           "type": "string",
-          "title": "TODO @hamersaw docs"
+          "description": "message is the explanation for the most recent phase transition or status update."
         }
       },
-      "title": "TODO @hamersaw docs"
+      "description": "Reason is a single message annotated with a timestamp to indicate the instant the reason occurred."
     },
     "adminSchedule": {
       "type": "object",
@@ -5074,7 +5074,7 @@
           "items": {
             "$ref": "#/definitions/adminReason"
           },
-          "title": "TODO @hamersaw docs"
+          "description": "A time-series of the phase transition or update explanations. This, when compared to storing a singular reason\nas previously done, is much more valuable in visualizing and understanding historical evaluations."
         }
       },
       "description": "Container for task execution details and results."
