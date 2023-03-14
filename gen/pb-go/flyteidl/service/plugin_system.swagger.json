@@ -1150,6 +1150,10 @@
         "message": {
           "type": "string",
           "description": "Error message if fail to get job."
+        },
+        "outputs": {
+          "$ref": "#/definitions/coreLiteralMap",
+          "title": "The outputs of the execution. It's typically used by sql task. Flyteplugins service will create a\nStructured dataset pointing to the query result table.\n+optional"
         }
       },
       "description": "Response to get an individual task state."

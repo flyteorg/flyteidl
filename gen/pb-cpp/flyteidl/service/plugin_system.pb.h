@@ -510,18 +510,9 @@ class TaskGetRequest final :
   ::std::string* release_job_id();
   void set_allocated_job_id(::std::string* job_id);
 
-  // .flyteidl.core.LiteralMap outputs = 3;
-  bool has_outputs() const;
-  void clear_outputs();
-  static const int kOutputsFieldNumber = 3;
-  const ::flyteidl::core::LiteralMap& outputs() const;
-  ::flyteidl::core::LiteralMap* release_outputs();
-  ::flyteidl::core::LiteralMap* mutable_outputs();
-  void set_allocated_outputs(::flyteidl::core::LiteralMap* outputs);
-
-  // .flyteidl.service.State prev_state = 4;
+  // .flyteidl.service.State prev_state = 3;
   void clear_prev_state();
-  static const int kPrevStateFieldNumber = 4;
+  static const int kPrevStateFieldNumber = 3;
   ::flyteidl::service::State prev_state() const;
   void set_prev_state(::flyteidl::service::State value);
 
@@ -532,7 +523,6 @@ class TaskGetRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr job_id_;
-  ::flyteidl::core::LiteralMap* outputs_;
   int prev_state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
@@ -648,6 +638,15 @@ class TaskGetResponse final :
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
+  // .flyteidl.core.LiteralMap outputs = 3;
+  bool has_outputs() const;
+  void clear_outputs();
+  static const int kOutputsFieldNumber = 3;
+  const ::flyteidl::core::LiteralMap& outputs() const;
+  ::flyteidl::core::LiteralMap* release_outputs();
+  ::flyteidl::core::LiteralMap* mutable_outputs();
+  void set_allocated_outputs(::flyteidl::core::LiteralMap* outputs);
+
   // .flyteidl.service.State state = 1;
   void clear_state();
   static const int kStateFieldNumber = 1;
@@ -660,6 +659,7 @@ class TaskGetResponse final :
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr message_;
+  ::flyteidl::core::LiteralMap* outputs_;
   int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
@@ -1278,52 +1278,7 @@ inline void TaskGetRequest::set_allocated_job_id(::std::string* job_id) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.job_id)
 }
 
-// .flyteidl.core.LiteralMap outputs = 3;
-inline bool TaskGetRequest::has_outputs() const {
-  return this != internal_default_instance() && outputs_ != nullptr;
-}
-inline const ::flyteidl::core::LiteralMap& TaskGetRequest::outputs() const {
-  const ::flyteidl::core::LiteralMap* p = outputs_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetRequest.outputs)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralMap*>(
-      &::flyteidl::core::_LiteralMap_default_instance_);
-}
-inline ::flyteidl::core::LiteralMap* TaskGetRequest::release_outputs() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetRequest.outputs)
-  
-  ::flyteidl::core::LiteralMap* temp = outputs_;
-  outputs_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::core::LiteralMap* TaskGetRequest::mutable_outputs() {
-  
-  if (outputs_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralMap>(GetArenaNoVirtual());
-    outputs_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetRequest.outputs)
-  return outputs_;
-}
-inline void TaskGetRequest::set_allocated_outputs(::flyteidl::core::LiteralMap* outputs) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(outputs_);
-  }
-  if (outputs) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      outputs = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, outputs, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  outputs_ = outputs;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.outputs)
-}
-
-// .flyteidl.service.State prev_state = 4;
+// .flyteidl.service.State prev_state = 3;
 inline void TaskGetRequest::clear_prev_state() {
   prev_state_ = 0;
 }
@@ -1406,6 +1361,51 @@ inline void TaskGetResponse::set_allocated_message(::std::string* message) {
   }
   message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetResponse.message)
+}
+
+// .flyteidl.core.LiteralMap outputs = 3;
+inline bool TaskGetResponse::has_outputs() const {
+  return this != internal_default_instance() && outputs_ != nullptr;
+}
+inline const ::flyteidl::core::LiteralMap& TaskGetResponse::outputs() const {
+  const ::flyteidl::core::LiteralMap* p = outputs_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetResponse.outputs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralMap*>(
+      &::flyteidl::core::_LiteralMap_default_instance_);
+}
+inline ::flyteidl::core::LiteralMap* TaskGetResponse::release_outputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetResponse.outputs)
+  
+  ::flyteidl::core::LiteralMap* temp = outputs_;
+  outputs_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::LiteralMap* TaskGetResponse::mutable_outputs() {
+  
+  if (outputs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralMap>(GetArenaNoVirtual());
+    outputs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetResponse.outputs)
+  return outputs_;
+}
+inline void TaskGetResponse::set_allocated_outputs(::flyteidl::core::LiteralMap* outputs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(outputs_);
+  }
+  if (outputs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      outputs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, outputs, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  outputs_ = outputs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetResponse.outputs)
 }
 
 // -------------------------------------------------------------------

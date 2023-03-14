@@ -19550,9 +19550,6 @@ export namespace flyteidl {
             /** TaskGetRequest jobId */
             jobId?: (string|null);
 
-            /** TaskGetRequest outputs */
-            outputs?: (flyteidl.core.ILiteralMap|null);
-
             /** TaskGetRequest prevState */
             prevState?: (flyteidl.service.State|null);
         }
@@ -19571,9 +19568,6 @@ export namespace flyteidl {
 
             /** TaskGetRequest jobId. */
             public jobId: string;
-
-            /** TaskGetRequest outputs. */
-            public outputs?: (flyteidl.core.ILiteralMap|null);
 
             /** TaskGetRequest prevState. */
             public prevState: flyteidl.service.State;
@@ -19619,6 +19613,9 @@ export namespace flyteidl {
 
             /** TaskGetResponse message */
             message?: (string|null);
+
+            /** TaskGetResponse outputs */
+            outputs?: (flyteidl.core.ILiteralMap|null);
         }
 
         /** Represents a TaskGetResponse. */
@@ -19635,6 +19632,9 @@ export namespace flyteidl {
 
             /** TaskGetResponse message. */
             public message: string;
+
+            /** TaskGetResponse outputs. */
+            public outputs?: (flyteidl.core.ILiteralMap|null);
 
             /**
              * Creates a new TaskGetResponse instance using the specified properties.
