@@ -43,16 +43,16 @@ class TaskDeleteResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class TaskGetRequest(_message.Message):
-    __slots__ = ["job_id", "output_prefix", "prev_state", "task_type"]
+    __slots__ = ["job_id", "outputs", "prev_state", "task_type"]
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    OUTPUT_PREFIX_FIELD_NUMBER: _ClassVar[int]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
     PREV_STATE_FIELD_NUMBER: _ClassVar[int]
     TASK_TYPE_FIELD_NUMBER: _ClassVar[int]
     job_id: str
-    output_prefix: str
+    outputs: _literals_pb2.LiteralMap
     prev_state: State
     task_type: str
-    def __init__(self, task_type: _Optional[str] = ..., job_id: _Optional[str] = ..., output_prefix: _Optional[str] = ..., prev_state: _Optional[_Union[State, str]] = ...) -> None: ...
+    def __init__(self, task_type: _Optional[str] = ..., job_id: _Optional[str] = ..., outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., prev_state: _Optional[_Union[State, str]] = ...) -> None: ...
 
 class TaskGetResponse(_message.Message):
     __slots__ = ["message", "state"]

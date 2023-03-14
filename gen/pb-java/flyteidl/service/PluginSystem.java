@@ -2073,21 +2073,31 @@ public final class PluginSystem {
 
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * The outputs of the execution.
+     * +optional
      * </pre>
      *
-     * <code>string output_prefix = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
      */
-    java.lang.String getOutputPrefix();
+    boolean hasOutputs();
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * The outputs of the execution.
+     * +optional
      * </pre>
      *
-     * <code>string output_prefix = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getOutputPrefixBytes();
+    flyteidl.core.Literals.LiteralMap getOutputs();
+    /**
+     * <pre>
+     * The outputs of the execution.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     */
+    flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder();
 
     /**
      * <pre>
@@ -2125,7 +2135,6 @@ public final class PluginSystem {
     private TaskGetRequest() {
       taskType_ = "";
       jobId_ = "";
-      outputPrefix_ = "";
       prevState_ = 0;
     }
 
@@ -2166,9 +2175,16 @@ public final class PluginSystem {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
+              if (outputs_ != null) {
+                subBuilder = outputs_.toBuilder();
+              }
+              outputs_ = input.readMessage(flyteidl.core.Literals.LiteralMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputs_);
+                outputs_ = subBuilder.buildPartial();
+              }
 
-              outputPrefix_ = s;
               break;
             }
             case 32: {
@@ -2293,46 +2309,40 @@ public final class PluginSystem {
       }
     }
 
-    public static final int OUTPUT_PREFIX_FIELD_NUMBER = 3;
-    private volatile java.lang.Object outputPrefix_;
+    public static final int OUTPUTS_FIELD_NUMBER = 3;
+    private flyteidl.core.Literals.LiteralMap outputs_;
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * The outputs of the execution.
+     * +optional
      * </pre>
      *
-     * <code>string output_prefix = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
      */
-    public java.lang.String getOutputPrefix() {
-      java.lang.Object ref = outputPrefix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        outputPrefix_ = s;
-        return s;
-      }
+    public boolean hasOutputs() {
+      return outputs_ != null;
     }
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * The outputs of the execution.
+     * +optional
      * </pre>
      *
-     * <code>string output_prefix = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getOutputPrefixBytes() {
-      java.lang.Object ref = outputPrefix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        outputPrefix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public flyteidl.core.Literals.LiteralMap getOutputs() {
+      return outputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : outputs_;
+    }
+    /**
+     * <pre>
+     * The outputs of the execution.
+     * +optional
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     */
+    public flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder() {
+      return getOutputs();
     }
 
     public static final int PREV_STATE_FIELD_NUMBER = 4;
@@ -2380,8 +2390,8 @@ public final class PluginSystem {
       if (!getJobIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (!getOutputPrefixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, outputPrefix_);
+      if (outputs_ != null) {
+        output.writeMessage(3, getOutputs());
       }
       if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
         output.writeEnum(4, prevState_);
@@ -2401,8 +2411,9 @@ public final class PluginSystem {
       if (!getJobIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
       }
-      if (!getOutputPrefixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, outputPrefix_);
+      if (outputs_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getOutputs());
       }
       if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -2427,8 +2438,11 @@ public final class PluginSystem {
           .equals(other.getTaskType())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
-      if (!getOutputPrefix()
-          .equals(other.getOutputPrefix())) return false;
+      if (hasOutputs() != other.hasOutputs()) return false;
+      if (hasOutputs()) {
+        if (!getOutputs()
+            .equals(other.getOutputs())) return false;
+      }
       if (prevState_ != other.prevState_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2445,8 +2459,10 @@ public final class PluginSystem {
       hash = (53 * hash) + getTaskType().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
-      hash = (37 * hash) + OUTPUT_PREFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getOutputPrefix().hashCode();
+      if (hasOutputs()) {
+        hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
+        hash = (53 * hash) + getOutputs().hashCode();
+      }
       hash = (37 * hash) + PREV_STATE_FIELD_NUMBER;
       hash = (53 * hash) + prevState_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2590,8 +2606,12 @@ public final class PluginSystem {
 
         jobId_ = "";
 
-        outputPrefix_ = "";
-
+        if (outputsBuilder_ == null) {
+          outputs_ = null;
+        } else {
+          outputs_ = null;
+          outputsBuilder_ = null;
+        }
         prevState_ = 0;
 
         return this;
@@ -2622,7 +2642,11 @@ public final class PluginSystem {
         flyteidl.service.PluginSystem.TaskGetRequest result = new flyteidl.service.PluginSystem.TaskGetRequest(this);
         result.taskType_ = taskType_;
         result.jobId_ = jobId_;
-        result.outputPrefix_ = outputPrefix_;
+        if (outputsBuilder_ == null) {
+          result.outputs_ = outputs_;
+        } else {
+          result.outputs_ = outputsBuilder_.build();
+        }
         result.prevState_ = prevState_;
         onBuilt();
         return result;
@@ -2680,9 +2704,8 @@ public final class PluginSystem {
           jobId_ = other.jobId_;
           onChanged();
         }
-        if (!other.getOutputPrefix().isEmpty()) {
-          outputPrefix_ = other.outputPrefix_;
-          onChanged();
+        if (other.hasOutputs()) {
+          mergeOutputs(other.getOutputs());
         }
         if (other.prevState_ != 0) {
           setPrevStateValue(other.getPrevStateValue());
@@ -2894,93 +2917,166 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object outputPrefix_ = "";
+      private flyteidl.core.Literals.LiteralMap outputs_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> outputsBuilder_;
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * The outputs of the execution.
+       * +optional
        * </pre>
        *
-       * <code>string output_prefix = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
        */
-      public java.lang.String getOutputPrefix() {
-        java.lang.Object ref = outputPrefix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          outputPrefix_ = s;
-          return s;
+      public boolean hasOutputs() {
+        return outputsBuilder_ != null || outputs_ != null;
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap getOutputs() {
+        if (outputsBuilder_ == null) {
+          return outputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : outputs_;
         } else {
-          return (java.lang.String) ref;
+          return outputsBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * The outputs of the execution.
+       * +optional
        * </pre>
        *
-       * <code>string output_prefix = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getOutputPrefixBytes() {
-        java.lang.Object ref = outputPrefix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          outputPrefix_ = b;
-          return b;
+      public Builder setOutputs(flyteidl.core.Literals.LiteralMap value) {
+        if (outputsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          outputs_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          outputsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public Builder setOutputs(
+          flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
+        if (outputsBuilder_ == null) {
+          outputs_ = builderForValue.build();
+          onChanged();
+        } else {
+          outputsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public Builder mergeOutputs(flyteidl.core.Literals.LiteralMap value) {
+        if (outputsBuilder_ == null) {
+          if (outputs_ != null) {
+            outputs_ =
+              flyteidl.core.Literals.LiteralMap.newBuilder(outputs_).mergeFrom(value).buildPartial();
+          } else {
+            outputs_ = value;
+          }
+          onChanged();
+        } else {
+          outputsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public Builder clearOutputs() {
+        if (outputsBuilder_ == null) {
+          outputs_ = null;
+          onChanged();
+        } else {
+          outputs_ = null;
+          outputsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap.Builder getOutputsBuilder() {
+        
+        onChanged();
+        return getOutputsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The outputs of the execution.
+       * +optional
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       */
+      public flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder() {
+        if (outputsBuilder_ != null) {
+          return outputsBuilder_.getMessageOrBuilder();
+        } else {
+          return outputs_ == null ?
+              flyteidl.core.Literals.LiteralMap.getDefaultInstance() : outputs_;
         }
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * The outputs of the execution.
+       * +optional
        * </pre>
        *
-       * <code>string output_prefix = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
        */
-      public Builder setOutputPrefix(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        outputPrefix_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public Builder clearOutputPrefix() {
-        
-        outputPrefix_ = getDefaultInstance().getOutputPrefix();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
-       * </pre>
-       *
-       * <code>string output_prefix = 3;</code>
-       */
-      public Builder setOutputPrefixBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        outputPrefix_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
+          getOutputsFieldBuilder() {
+        if (outputsBuilder_ == null) {
+          outputsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder>(
+                  getOutputs(),
+                  getParentForChildren(),
+                  isClean());
+          outputs_ = null;
+        }
+        return outputsBuilder_;
       }
 
       private int prevState_ = 0;
@@ -5055,24 +5151,25 @@ public final class PluginSystem {
       "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
       "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
       "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
-      "\007message\030\002 \001(\t\"w\n\016TaskGetRequest\022\021\n\ttask" +
-      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022\025\n\routput_pr" +
-      "efix\030\003 \001(\t\022+\n\nprev_state\030\004 \001(\0162\027.flyteid" +
-      "l.service.State\"J\n\017TaskGetResponse\022&\n\005st" +
-      "ate\030\001 \001(\0162\027.flyteidl.service.State\022\017\n\007me" +
-      "ssage\030\002 \001(\t\"6\n\021TaskDeleteRequest\022\021\n\ttask" +
-      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDelet" +
-      "eResponse*<\n\005State\022\n\n\006FAILED\020\000\022\013\n\007PENDIN" +
-      "G\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\0032\236\002\n\024Back" +
-      "endPluginService\022Y\n\nCreateTask\022#.flyteid" +
-      "l.service.TaskCreateRequest\032$.flyteidl.s" +
-      "ervice.TaskCreateResponse\"\000\022P\n\007GetTask\022 " +
-      ".flyteidl.service.TaskGetRequest\032!.flyte" +
-      "idl.service.TaskGetResponse\"\000\022Y\n\nDeleteT" +
-      "ask\022#.flyteidl.service.TaskDeleteRequest" +
-      "\032$.flyteidl.service.TaskDeleteResponse\"\000" +
-      "B9Z7github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/serviceb\006proto3"
+      "\007message\030\002 \001(\t\"\214\001\n\016TaskGetRequest\022\021\n\ttas" +
+      "k_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022*\n\007outputs\030" +
+      "\003 \001(\0132\031.flyteidl.core.LiteralMap\022+\n\nprev" +
+      "_state\030\004 \001(\0162\027.flyteidl.service.State\"J\n" +
+      "\017TaskGetResponse\022&\n\005state\030\001 \001(\0162\027.flytei" +
+      "dl.service.State\022\017\n\007message\030\002 \001(\t\"6\n\021Tas" +
+      "kDeleteRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job" +
+      "_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse*<\n\005State" +
+      "\022\n\n\006FAILED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r" +
+      "\n\tSUCCEEDED\020\0032\236\002\n\024BackendPluginService\022Y" +
+      "\n\nCreateTask\022#.flyteidl.service.TaskCrea" +
+      "teRequest\032$.flyteidl.service.TaskCreateR" +
+      "esponse\"\000\022P\n\007GetTask\022 .flyteidl.service." +
+      "TaskGetRequest\032!.flyteidl.service.TaskGe" +
+      "tResponse\"\000\022Y\n\nDeleteTask\022#.flyteidl.ser" +
+      "vice.TaskDeleteRequest\032$.flyteidl.servic" +
+      "e.TaskDeleteResponse\"\000B9Z7github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/servic" +
+      "eb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5106,7 +5203,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskGetRequest_descriptor,
-        new java.lang.String[] { "TaskType", "JobId", "OutputPrefix", "PrevState", });
+        new java.lang.String[] { "TaskType", "JobId", "Outputs", "PrevState", });
     internal_static_flyteidl_service_TaskGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_service_TaskGetResponse_fieldAccessorTable = new

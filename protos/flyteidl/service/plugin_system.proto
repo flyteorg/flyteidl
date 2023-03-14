@@ -50,8 +50,10 @@ message TaskGetRequest {
   string task_type = 1;
   // The unique id identifying the job.
   string job_id = 2;
-  // Prefix for where offloaded data from user workflows will be written.
-  string output_prefix = 3;
+  // The outputs of the execution. It's typically used by sql task. Flyteplugins service will create a
+  // Structured dataset pointing to the query result table.
+  // +optional
+  core.LiteralMap outputs = 3;
   // The latest job status.
   State prev_state = 4;
 }

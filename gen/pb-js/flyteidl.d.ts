@@ -19550,8 +19550,8 @@ export namespace flyteidl {
             /** TaskGetRequest jobId */
             jobId?: (string|null);
 
-            /** TaskGetRequest outputPrefix */
-            outputPrefix?: (string|null);
+            /** TaskGetRequest outputs */
+            outputs?: (flyteidl.core.ILiteralMap|null);
 
             /** TaskGetRequest prevState */
             prevState?: (flyteidl.service.State|null);
@@ -19572,8 +19572,8 @@ export namespace flyteidl {
             /** TaskGetRequest jobId. */
             public jobId: string;
 
-            /** TaskGetRequest outputPrefix. */
-            public outputPrefix: string;
+            /** TaskGetRequest outputs. */
+            public outputs?: (flyteidl.core.ILiteralMap|null);
 
             /** TaskGetRequest prevState. */
             public prevState: flyteidl.service.State;

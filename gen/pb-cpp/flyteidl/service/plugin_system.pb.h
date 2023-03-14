@@ -510,19 +510,14 @@ class TaskGetRequest final :
   ::std::string* release_job_id();
   void set_allocated_job_id(::std::string* job_id);
 
-  // string output_prefix = 3;
-  void clear_output_prefix();
-  static const int kOutputPrefixFieldNumber = 3;
-  const ::std::string& output_prefix() const;
-  void set_output_prefix(const ::std::string& value);
-  #if LANG_CXX11
-  void set_output_prefix(::std::string&& value);
-  #endif
-  void set_output_prefix(const char* value);
-  void set_output_prefix(const char* value, size_t size);
-  ::std::string* mutable_output_prefix();
-  ::std::string* release_output_prefix();
-  void set_allocated_output_prefix(::std::string* output_prefix);
+  // .flyteidl.core.LiteralMap outputs = 3;
+  bool has_outputs() const;
+  void clear_outputs();
+  static const int kOutputsFieldNumber = 3;
+  const ::flyteidl::core::LiteralMap& outputs() const;
+  ::flyteidl::core::LiteralMap* release_outputs();
+  ::flyteidl::core::LiteralMap* mutable_outputs();
+  void set_allocated_outputs(::flyteidl::core::LiteralMap* outputs);
 
   // .flyteidl.service.State prev_state = 4;
   void clear_prev_state();
@@ -537,7 +532,7 @@ class TaskGetRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr job_id_;
-  ::google::protobuf::internal::ArenaStringPtr output_prefix_;
+  ::flyteidl::core::LiteralMap* outputs_;
   int prev_state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
@@ -1283,57 +1278,49 @@ inline void TaskGetRequest::set_allocated_job_id(::std::string* job_id) {
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.job_id)
 }
 
-// string output_prefix = 3;
-inline void TaskGetRequest::clear_output_prefix() {
-  output_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.core.LiteralMap outputs = 3;
+inline bool TaskGetRequest::has_outputs() const {
+  return this != internal_default_instance() && outputs_ != nullptr;
 }
-inline const ::std::string& TaskGetRequest::output_prefix() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetRequest.output_prefix)
-  return output_prefix_.GetNoArena();
+inline const ::flyteidl::core::LiteralMap& TaskGetRequest::outputs() const {
+  const ::flyteidl::core::LiteralMap* p = outputs_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetRequest.outputs)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::LiteralMap*>(
+      &::flyteidl::core::_LiteralMap_default_instance_);
 }
-inline void TaskGetRequest::set_output_prefix(const ::std::string& value) {
+inline ::flyteidl::core::LiteralMap* TaskGetRequest::release_outputs() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetRequest.outputs)
   
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetRequest.output_prefix)
+  ::flyteidl::core::LiteralMap* temp = outputs_;
+  outputs_ = nullptr;
+  return temp;
 }
-#if LANG_CXX11
-inline void TaskGetRequest::set_output_prefix(::std::string&& value) {
+inline ::flyteidl::core::LiteralMap* TaskGetRequest::mutable_outputs() {
   
-  output_prefix_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskGetRequest.output_prefix)
+  if (outputs_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::LiteralMap>(GetArenaNoVirtual());
+    outputs_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetRequest.outputs)
+  return outputs_;
 }
-#endif
-inline void TaskGetRequest::set_output_prefix(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskGetRequest.output_prefix)
-}
-inline void TaskGetRequest::set_output_prefix(const char* value, size_t size) {
-  
-  output_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskGetRequest.output_prefix)
-}
-inline ::std::string* TaskGetRequest::mutable_output_prefix() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetRequest.output_prefix)
-  return output_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskGetRequest::release_output_prefix() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetRequest.output_prefix)
-  
-  return output_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskGetRequest::set_allocated_output_prefix(::std::string* output_prefix) {
-  if (output_prefix != nullptr) {
+inline void TaskGetRequest::set_allocated_outputs(::flyteidl::core::LiteralMap* outputs) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(outputs_);
+  }
+  if (outputs) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      outputs = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, outputs, submessage_arena);
+    }
     
   } else {
     
   }
-  output_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), output_prefix);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.output_prefix)
+  outputs_ = outputs;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.outputs)
 }
 
 // .flyteidl.service.State prev_state = 4;

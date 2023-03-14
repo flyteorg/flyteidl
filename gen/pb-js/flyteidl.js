@@ -45410,7 +45410,7 @@
                  * @interface ITaskGetRequest
                  * @property {string|null} [taskType] TaskGetRequest taskType
                  * @property {string|null} [jobId] TaskGetRequest jobId
-                 * @property {string|null} [outputPrefix] TaskGetRequest outputPrefix
+                 * @property {flyteidl.core.ILiteralMap|null} [outputs] TaskGetRequest outputs
                  * @property {flyteidl.service.State|null} [prevState] TaskGetRequest prevState
                  */
     
@@ -45446,12 +45446,12 @@
                 TaskGetRequest.prototype.jobId = "";
     
                 /**
-                 * TaskGetRequest outputPrefix.
-                 * @member {string} outputPrefix
+                 * TaskGetRequest outputs.
+                 * @member {flyteidl.core.ILiteralMap|null|undefined} outputs
                  * @memberof flyteidl.service.TaskGetRequest
                  * @instance
                  */
-                TaskGetRequest.prototype.outputPrefix = "";
+                TaskGetRequest.prototype.outputs = null;
     
                 /**
                  * TaskGetRequest prevState.
@@ -45489,8 +45489,8 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
                     if (message.jobId != null && message.hasOwnProperty("jobId"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
-                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputPrefix);
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        $root.flyteidl.core.LiteralMap.encode(message.outputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.prevState != null && message.hasOwnProperty("prevState"))
                         writer.uint32(/* id 4, wireType 0 =*/32).int32(message.prevState);
                     return writer;
@@ -45521,7 +45521,7 @@
                             message.jobId = reader.string();
                             break;
                         case 3:
-                            message.outputPrefix = reader.string();
+                            message.outputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                             break;
                         case 4:
                             message.prevState = reader.int32();
@@ -45551,9 +45551,11 @@
                     if (message.jobId != null && message.hasOwnProperty("jobId"))
                         if (!$util.isString(message.jobId))
                             return "jobId: string expected";
-                    if (message.outputPrefix != null && message.hasOwnProperty("outputPrefix"))
-                        if (!$util.isString(message.outputPrefix))
-                            return "outputPrefix: string expected";
+                    if (message.outputs != null && message.hasOwnProperty("outputs")) {
+                        var error = $root.flyteidl.core.LiteralMap.verify(message.outputs);
+                        if (error)
+                            return "outputs." + error;
+                    }
                     if (message.prevState != null && message.hasOwnProperty("prevState"))
                         switch (message.prevState) {
                         default:
