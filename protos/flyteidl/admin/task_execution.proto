@@ -123,6 +123,18 @@ message TaskExecutionClosure {
     // TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog
     // in this message.
     int32 event_version = 17;
+
+    // TODO @hamersaw docs
+    repeated Reason reasons = 18;
+}
+
+// TODO @hamersaw docs
+message Reason {
+    // TODO @hamersaw docs
+    google.protobuf.Timestamp reported_at = 1;
+
+    // TODO @hamersaw docs
+    string message = 2;
 }
 
 // Request structure to fetch inputs and output for a task execution.

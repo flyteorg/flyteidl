@@ -15044,6 +15044,17 @@ definitions:
       \ for more background information."
     example:
       output_location_prefix: "output_location_prefix"
+  adminReason:
+    type: "object"
+    properties:
+      reported_at:
+        type: "string"
+        format: "date-time"
+      message:
+        type: "string"
+    example:
+      reported_at: "2000-01-23T04:56:07.000+00:00"
+      message: "message"
   adminSchedule:
     type: "object"
     properties:
@@ -15752,6 +15763,11 @@ definitions:
           \ data is maintained using this\nproto message. For example, event_verison\
           \ > 0 means that maps tasks logs use the\nTaskExecutionMetadata ExternalResourceInfo\
           \ fields for each subtask rather than the TaskLog\nin this message."
+      reasons:
+        type: "array"
+        title: "TODO @hamersaw docs"
+        items:
+          $ref: "#/definitions/adminReason"
     description: "Container for task execution details and results."
     example:
       phase: {}
@@ -15792,6 +15808,11 @@ definitions:
           namespace: "namespace"
         generated_name: "generated_name"
         plugin_identifier: "plugin_identifier"
+      reasons:
+      - reported_at: "2000-01-23T04:56:07.000+00:00"
+        message: "message"
+      - reported_at: "2000-01-23T04:56:07.000+00:00"
+        message: "message"
       created_at: "2000-01-23T04:56:07.000+00:00"
       error:
         code: "code"
@@ -15941,6 +15962,11 @@ definitions:
               namespace: "namespace"
             generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
+          reasons:
+          - reported_at: "2000-01-23T04:56:07.000+00:00"
+            message: "message"
+          - reported_at: "2000-01-23T04:56:07.000+00:00"
+            message: "message"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
             code: "code"
@@ -16030,6 +16056,11 @@ definitions:
               namespace: "namespace"
             generated_name: "generated_name"
             plugin_identifier: "plugin_identifier"
+          reasons:
+          - reported_at: "2000-01-23T04:56:07.000+00:00"
+            message: "message"
+          - reported_at: "2000-01-23T04:56:07.000+00:00"
+            message: "message"
           created_at: "2000-01-23T04:56:07.000+00:00"
           error:
             code: "code"
@@ -65625,6 +65656,11 @@ definitions:
             namespace: "namespace"
           generated_name: "generated_name"
           plugin_identifier: "plugin_identifier"
+        reasons:
+        - reported_at: "2000-01-23T04:56:07.000+00:00"
+          message: "message"
+        - reported_at: "2000-01-23T04:56:07.000+00:00"
+          message: "message"
         created_at: "2000-01-23T04:56:07.000+00:00"
         error:
           code: "code"

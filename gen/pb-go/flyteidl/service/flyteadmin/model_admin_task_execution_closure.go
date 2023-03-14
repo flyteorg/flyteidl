@@ -43,4 +43,5 @@ type AdminTaskExecutionClosure struct {
 	Metadata *EventTaskExecutionMetadata `json:"metadata,omitempty"`
 	// The event version is used to indicate versioned changes in how data is maintained using this proto message. For example, event_verison > 0 means that maps tasks logs use the TaskExecutionMetadata ExternalResourceInfo fields for each subtask rather than the TaskLog in this message.
 	EventVersion int32 `json:"event_version,omitempty"`
+	Reasons []AdminReason `json:"reasons,omitempty"`
 }
