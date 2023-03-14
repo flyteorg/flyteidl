@@ -50,8 +50,6 @@ message TaskGetRequest {
   string task_type = 1;
   // The unique id identifying the job.
   string job_id = 2;
-  // The latest job status.
-  State prev_state = 3;
 }
 
 // Response to get an individual task state.

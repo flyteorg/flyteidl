@@ -19549,9 +19549,6 @@ export namespace flyteidl {
 
             /** TaskGetRequest jobId */
             jobId?: (string|null);
-
-            /** TaskGetRequest prevState */
-            prevState?: (flyteidl.service.State|null);
         }
 
         /** Represents a TaskGetRequest. */
@@ -19568,9 +19565,6 @@ export namespace flyteidl {
 
             /** TaskGetRequest jobId. */
             public jobId: string;
-
-            /** TaskGetRequest prevState. */
-            public prevState: flyteidl.service.State;
 
             /**
              * Creates a new TaskGetRequest instance using the specified properties.

@@ -2070,23 +2070,6 @@ public final class PluginSystem {
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
-
-    /**
-     * <pre>
-     * The latest job status.
-     * </pre>
-     *
-     * <code>.flyteidl.service.State prev_state = 3;</code>
-     */
-    int getPrevStateValue();
-    /**
-     * <pre>
-     * The latest job status.
-     * </pre>
-     *
-     * <code>.flyteidl.service.State prev_state = 3;</code>
-     */
-    flyteidl.service.PluginSystem.State getPrevState();
   }
   /**
    * <pre>
@@ -2107,7 +2090,6 @@ public final class PluginSystem {
     private TaskGetRequest() {
       taskType_ = "";
       jobId_ = "";
-      prevState_ = 0;
     }
 
     @java.lang.Override
@@ -2144,12 +2126,6 @@ public final class PluginSystem {
               java.lang.String s = input.readStringRequireUtf8();
 
               jobId_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              prevState_ = rawValue;
               break;
             }
             default: {
@@ -2268,31 +2244,6 @@ public final class PluginSystem {
       }
     }
 
-    public static final int PREV_STATE_FIELD_NUMBER = 3;
-    private int prevState_;
-    /**
-     * <pre>
-     * The latest job status.
-     * </pre>
-     *
-     * <code>.flyteidl.service.State prev_state = 3;</code>
-     */
-    public int getPrevStateValue() {
-      return prevState_;
-    }
-    /**
-     * <pre>
-     * The latest job status.
-     * </pre>
-     *
-     * <code>.flyteidl.service.State prev_state = 3;</code>
-     */
-    public flyteidl.service.PluginSystem.State getPrevState() {
-      @SuppressWarnings("deprecation")
-      flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(prevState_);
-      return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2313,9 +2264,6 @@ public final class PluginSystem {
       if (!getJobIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, jobId_);
       }
-      if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
-        output.writeEnum(3, prevState_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -2330,10 +2278,6 @@ public final class PluginSystem {
       }
       if (!getJobIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, jobId_);
-      }
-      if (prevState_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, prevState_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2354,7 +2298,6 @@ public final class PluginSystem {
           .equals(other.getTaskType())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
-      if (prevState_ != other.prevState_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2370,8 +2313,6 @@ public final class PluginSystem {
       hash = (53 * hash) + getTaskType().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
-      hash = (37 * hash) + PREV_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + prevState_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2513,8 +2454,6 @@ public final class PluginSystem {
 
         jobId_ = "";
 
-        prevState_ = 0;
-
         return this;
       }
 
@@ -2543,7 +2482,6 @@ public final class PluginSystem {
         flyteidl.service.PluginSystem.TaskGetRequest result = new flyteidl.service.PluginSystem.TaskGetRequest(this);
         result.taskType_ = taskType_;
         result.jobId_ = jobId_;
-        result.prevState_ = prevState_;
         onBuilt();
         return result;
       }
@@ -2599,9 +2537,6 @@ public final class PluginSystem {
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           onChanged();
-        }
-        if (other.prevState_ != 0) {
-          setPrevStateValue(other.getPrevStateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2806,71 +2741,6 @@ public final class PluginSystem {
   checkByteStringIsUtf8(value);
         
         jobId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int prevState_ = 0;
-      /**
-       * <pre>
-       * The latest job status.
-       * </pre>
-       *
-       * <code>.flyteidl.service.State prev_state = 3;</code>
-       */
-      public int getPrevStateValue() {
-        return prevState_;
-      }
-      /**
-       * <pre>
-       * The latest job status.
-       * </pre>
-       *
-       * <code>.flyteidl.service.State prev_state = 3;</code>
-       */
-      public Builder setPrevStateValue(int value) {
-        prevState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The latest job status.
-       * </pre>
-       *
-       * <code>.flyteidl.service.State prev_state = 3;</code>
-       */
-      public flyteidl.service.PluginSystem.State getPrevState() {
-        @SuppressWarnings("deprecation")
-        flyteidl.service.PluginSystem.State result = flyteidl.service.PluginSystem.State.valueOf(prevState_);
-        return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * The latest job status.
-       * </pre>
-       *
-       * <code>.flyteidl.service.State prev_state = 3;</code>
-       */
-      public Builder setPrevState(flyteidl.service.PluginSystem.State value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        prevState_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The latest job status.
-       * </pre>
-       *
-       * <code>.flyteidl.service.State prev_state = 3;</code>
-       */
-      public Builder clearPrevState() {
-        
-        prevState_ = 0;
         onChanged();
         return this;
       }
@@ -5166,25 +5036,24 @@ public final class PluginSystem {
       "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
       "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
       "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
-      "\007message\030\002 \001(\t\"`\n\016TaskGetRequest\022\021\n\ttask" +
-      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\022+\n\nprev_stat" +
-      "e\030\003 \001(\0162\027.flyteidl.service.State\"v\n\017Task" +
-      "GetResponse\022&\n\005state\030\001 \001(\0162\027.flyteidl.se" +
-      "rvice.State\022\017\n\007message\030\002 \001(\t\022*\n\007outputs\030" +
-      "\003 \001(\0132\031.flyteidl.core.LiteralMap\"6\n\021Task" +
-      "DeleteRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_" +
-      "id\030\002 \001(\t\"\024\n\022TaskDeleteResponse*<\n\005State\022" +
-      "\n\n\006FAILED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r\n" +
-      "\tSUCCEEDED\020\0032\236\002\n\024BackendPluginService\022Y\n" +
-      "\nCreateTask\022#.flyteidl.service.TaskCreat" +
-      "eRequest\032$.flyteidl.service.TaskCreateRe" +
-      "sponse\"\000\022P\n\007GetTask\022 .flyteidl.service.T" +
-      "askGetRequest\032!.flyteidl.service.TaskGet" +
-      "Response\"\000\022Y\n\nDeleteTask\022#.flyteidl.serv" +
-      "ice.TaskDeleteRequest\032$.flyteidl.service" +
-      ".TaskDeleteResponse\"\000B9Z7github.com/flyt" +
-      "eorg/flyteidl/gen/pb-go/flyteidl/service" +
-      "b\006proto3"
+      "\007message\030\002 \001(\t\"3\n\016TaskGetRequest\022\021\n\ttask" +
+      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"v\n\017TaskGetRe" +
+      "sponse\022&\n\005state\030\001 \001(\0162\027.flyteidl.service" +
+      ".State\022\017\n\007message\030\002 \001(\t\022*\n\007outputs\030\003 \001(\013" +
+      "2\031.flyteidl.core.LiteralMap\"6\n\021TaskDelet" +
+      "eRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 " +
+      "\001(\t\"\024\n\022TaskDeleteResponse*<\n\005State\022\n\n\006FA" +
+      "ILED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCC" +
+      "EEDED\020\0032\236\002\n\024BackendPluginService\022Y\n\nCrea" +
+      "teTask\022#.flyteidl.service.TaskCreateRequ" +
+      "est\032$.flyteidl.service.TaskCreateRespons" +
+      "e\"\000\022P\n\007GetTask\022 .flyteidl.service.TaskGe" +
+      "tRequest\032!.flyteidl.service.TaskGetRespo" +
+      "nse\"\000\022Y\n\nDeleteTask\022#.flyteidl.service.T" +
+      "askDeleteRequest\032$.flyteidl.service.Task" +
+      "DeleteResponse\"\000B9Z7github.com/flyteorg/" +
+      "flyteidl/gen/pb-go/flyteidl/serviceb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5218,7 +5087,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskGetRequest_descriptor,
-        new java.lang.String[] { "TaskType", "JobId", "PrevState", });
+        new java.lang.String[] { "TaskType", "JobId", });
     internal_static_flyteidl_service_TaskGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_flyteidl_service_TaskGetResponse_fieldAccessorTable = new

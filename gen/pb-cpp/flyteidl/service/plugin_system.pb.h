@@ -510,12 +510,6 @@ class TaskGetRequest final :
   ::std::string* release_job_id();
   void set_allocated_job_id(::std::string* job_id);
 
-  // .flyteidl.service.State prev_state = 3;
-  void clear_prev_state();
-  static const int kPrevStateFieldNumber = 3;
-  ::flyteidl::service::State prev_state() const;
-  void set_prev_state(::flyteidl::service::State value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.service.TaskGetRequest)
  private:
   class HasBitSetters;
@@ -523,7 +517,6 @@ class TaskGetRequest final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr task_type_;
   ::google::protobuf::internal::ArenaStringPtr job_id_;
-  int prev_state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
 };
@@ -1276,20 +1269,6 @@ inline void TaskGetRequest::set_allocated_job_id(::std::string* job_id) {
   }
   job_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), job_id);
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetRequest.job_id)
-}
-
-// .flyteidl.service.State prev_state = 3;
-inline void TaskGetRequest::clear_prev_state() {
-  prev_state_ = 0;
-}
-inline ::flyteidl::service::State TaskGetRequest::prev_state() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetRequest.prev_state)
-  return static_cast< ::flyteidl::service::State >(prev_state_);
-}
-inline void TaskGetRequest::set_prev_state(::flyteidl::service::State value) {
-  
-  prev_state_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetRequest.prev_state)
 }
 
 // -------------------------------------------------------------------

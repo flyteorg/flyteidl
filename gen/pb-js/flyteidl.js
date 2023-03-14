@@ -45410,7 +45410,6 @@
                  * @interface ITaskGetRequest
                  * @property {string|null} [taskType] TaskGetRequest taskType
                  * @property {string|null} [jobId] TaskGetRequest jobId
-                 * @property {flyteidl.service.State|null} [prevState] TaskGetRequest prevState
                  */
     
                 /**
@@ -45445,14 +45444,6 @@
                 TaskGetRequest.prototype.jobId = "";
     
                 /**
-                 * TaskGetRequest prevState.
-                 * @member {flyteidl.service.State} prevState
-                 * @memberof flyteidl.service.TaskGetRequest
-                 * @instance
-                 */
-                TaskGetRequest.prototype.prevState = 0;
-    
-                /**
                  * Creates a new TaskGetRequest instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.TaskGetRequest
@@ -45480,8 +45471,6 @@
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.taskType);
                     if (message.jobId != null && message.hasOwnProperty("jobId"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.jobId);
-                    if (message.prevState != null && message.hasOwnProperty("prevState"))
-                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.prevState);
                     return writer;
                 };
     
@@ -45509,9 +45498,6 @@
                         case 2:
                             message.jobId = reader.string();
                             break;
-                        case 3:
-                            message.prevState = reader.int32();
-                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -45537,16 +45523,6 @@
                     if (message.jobId != null && message.hasOwnProperty("jobId"))
                         if (!$util.isString(message.jobId))
                             return "jobId: string expected";
-                    if (message.prevState != null && message.hasOwnProperty("prevState"))
-                        switch (message.prevState) {
-                        default:
-                            return "prevState: enum value expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                            break;
-                        }
                     return null;
                 };
     
