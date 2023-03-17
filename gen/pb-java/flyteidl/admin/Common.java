@@ -22430,37 +22430,45 @@ public final class Common {
        */
       UNKNOWN(0),
       /**
-       * <code>NODE_TRANSITION = 1;</code>
+       * <code>NODE_IDLE = 1;</code>
        */
-      NODE_TRANSITION(1),
+      NODE_IDLE(1),
       /**
-       * <code>NODE_SETUP = 2;</code>
+       * <code>NODE_RESET = 2;</code>
        */
-      NODE_SETUP(2),
+      NODE_RESET(2),
       /**
-       * <code>NODE_RESET = 3;</code>
+       * <code>NODE_SETUP = 3;</code>
        */
-      NODE_RESET(3),
+      NODE_SETUP(3),
       /**
-       * <code>NODE_IDLE = 4;</code>
+       * <code>NODE_TEARDOWN = 4;</code>
        */
-      NODE_IDLE(4),
+      NODE_TEARDOWN(4),
       /**
-       * <code>NODE_TEARDOWN = 5;</code>
+       * <code>NODE_TRANSITION = 5;</code>
        */
-      NODE_TEARDOWN(5),
+      NODE_TRANSITION(5),
       /**
-       * <code>TASK_SETUP = 6;</code>
+       * <code>TASK_RUNTIME = 6;</code>
        */
-      TASK_SETUP(6),
+      TASK_RUNTIME(6),
       /**
-       * <code>TASK_RUNTIME = 7;</code>
+       * <code>TASK_SETUP = 7;</code>
        */
-      TASK_RUNTIME(7),
+      TASK_SETUP(7),
       /**
        * <code>TASK_TEARDOWN = 8;</code>
        */
       TASK_TEARDOWN(8),
+      /**
+       * <code>WORKFLOW_SETUP = 9;</code>
+       */
+      WORKFLOW_SETUP(9),
+      /**
+       * <code>WORKFLOW_TEARDOWN = 10;</code>
+       */
+      WORKFLOW_TEARDOWN(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -22469,37 +22477,45 @@ public final class Common {
        */
       public static final int UNKNOWN_VALUE = 0;
       /**
-       * <code>NODE_TRANSITION = 1;</code>
+       * <code>NODE_IDLE = 1;</code>
        */
-      public static final int NODE_TRANSITION_VALUE = 1;
+      public static final int NODE_IDLE_VALUE = 1;
       /**
-       * <code>NODE_SETUP = 2;</code>
+       * <code>NODE_RESET = 2;</code>
        */
-      public static final int NODE_SETUP_VALUE = 2;
+      public static final int NODE_RESET_VALUE = 2;
       /**
-       * <code>NODE_RESET = 3;</code>
+       * <code>NODE_SETUP = 3;</code>
        */
-      public static final int NODE_RESET_VALUE = 3;
+      public static final int NODE_SETUP_VALUE = 3;
       /**
-       * <code>NODE_IDLE = 4;</code>
+       * <code>NODE_TEARDOWN = 4;</code>
        */
-      public static final int NODE_IDLE_VALUE = 4;
+      public static final int NODE_TEARDOWN_VALUE = 4;
       /**
-       * <code>NODE_TEARDOWN = 5;</code>
+       * <code>NODE_TRANSITION = 5;</code>
        */
-      public static final int NODE_TEARDOWN_VALUE = 5;
+      public static final int NODE_TRANSITION_VALUE = 5;
       /**
-       * <code>TASK_SETUP = 6;</code>
+       * <code>TASK_RUNTIME = 6;</code>
        */
-      public static final int TASK_SETUP_VALUE = 6;
+      public static final int TASK_RUNTIME_VALUE = 6;
       /**
-       * <code>TASK_RUNTIME = 7;</code>
+       * <code>TASK_SETUP = 7;</code>
        */
-      public static final int TASK_RUNTIME_VALUE = 7;
+      public static final int TASK_SETUP_VALUE = 7;
       /**
        * <code>TASK_TEARDOWN = 8;</code>
        */
       public static final int TASK_TEARDOWN_VALUE = 8;
+      /**
+       * <code>WORKFLOW_SETUP = 9;</code>
+       */
+      public static final int WORKFLOW_SETUP_VALUE = 9;
+      /**
+       * <code>WORKFLOW_TEARDOWN = 10;</code>
+       */
+      public static final int WORKFLOW_TEARDOWN_VALUE = 10;
 
 
       public final int getNumber() {
@@ -22521,14 +22537,16 @@ public final class Common {
       public static Category forNumber(int value) {
         switch (value) {
           case 0: return UNKNOWN;
-          case 1: return NODE_TRANSITION;
-          case 2: return NODE_SETUP;
-          case 3: return NODE_RESET;
-          case 4: return NODE_IDLE;
-          case 5: return NODE_TEARDOWN;
-          case 6: return TASK_SETUP;
-          case 7: return TASK_RUNTIME;
+          case 1: return NODE_IDLE;
+          case 2: return NODE_RESET;
+          case 3: return NODE_SETUP;
+          case 4: return NODE_TEARDOWN;
+          case 5: return NODE_TRANSITION;
+          case 6: return TASK_RUNTIME;
+          case 7: return TASK_SETUP;
           case 8: return TASK_TEARDOWN;
+          case 9: return WORKFLOW_SETUP;
+          case 10: return WORKFLOW_TEARDOWN;
           default: return null;
         }
       }
@@ -25084,23 +25102,24 @@ public final class Common {
       "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010" +
       "category\030\003 \001(\0132#.flyteidl.admin.Categori" +
       "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte" +
-      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\315\001" +
+      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\370\001" +
       "\n\023CategoricalSpanInfo\022\020\n\010category\030\001 \001(\t\"" +
-      "\243\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSI" +
-      "TION\020\001\022\016\n\nNODE_SETUP\020\002\022\016\n\nNODE_RESET\020\003\022\r" +
-      "\n\tNODE_IDLE\020\004\022\021\n\rNODE_TEARDOWN\020\005\022\016\n\nTASK" +
-      "_SETUP\020\006\022\020\n\014TASK_RUNTIME\020\007\022\021\n\rTASK_TEARD" +
-      "OWN\020\010\"\367\001\n\021ReferenceSpanInfo\022A\n\013workflow_" +
-      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
-      "onIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.flytei" +
-      "dl.core.NodeExecutionIdentifierH\000\0229\n\007tas" +
-      "k_id\030\003 \001(\0132&.flyteidl.core.TaskExecution" +
-      "IdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.a" +
-      "dmin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023N" +
-      "AMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARC" +
-      "HIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/adminb\006proto3"
+      "\316\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\r\n\tNODE_IDLE\020\001" +
+      "\022\016\n\nNODE_RESET\020\002\022\016\n\nNODE_SETUP\020\003\022\021\n\rNODE" +
+      "_TEARDOWN\020\004\022\023\n\017NODE_TRANSITION\020\005\022\020\n\014TASK" +
+      "_RUNTIME\020\006\022\016\n\nTASK_SETUP\020\007\022\021\n\rTASK_TEARD" +
+      "OWN\020\010\022\022\n\016WORKFLOW_SETUP\020\t\022\025\n\021WORKFLOW_TE" +
+      "ARDOWN\020\n\"\367\001\n\021ReferenceSpanInfo\022A\n\013workfl" +
+      "ow_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec" +
+      "utionIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.fly" +
+      "teidl.core.NodeExecutionIdentifierH\000\0229\n\007" +
+      "task_id\030\003 \001(\0132&.flyteidl.core.TaskExecut" +
+      "ionIdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteid" +
+      "l.admin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027" +
+      "\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_" +
+      "ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gith" +
+      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
+      "idl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

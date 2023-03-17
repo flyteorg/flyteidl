@@ -47,6 +47,8 @@ class CategoricalSpanInfo(_message.Message):
     TASK_SETUP: CategoricalSpanInfo.Category
     TASK_TEARDOWN: CategoricalSpanInfo.Category
     UNKNOWN: CategoricalSpanInfo.Category
+    WORKFLOW_SETUP: CategoricalSpanInfo.Category
+    WORKFLOW_TEARDOWN: CategoricalSpanInfo.Category
     category: str
     def __init__(self, category: _Optional[str] = ...) -> None: ...
 

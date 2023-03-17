@@ -197,20 +197,22 @@ inline bool Sort_Direction_Parse(
 }
 enum CategoricalSpanInfo_Category {
   CategoricalSpanInfo_Category_UNKNOWN = 0,
-  CategoricalSpanInfo_Category_NODE_TRANSITION = 1,
-  CategoricalSpanInfo_Category_NODE_SETUP = 2,
-  CategoricalSpanInfo_Category_NODE_RESET = 3,
-  CategoricalSpanInfo_Category_NODE_IDLE = 4,
-  CategoricalSpanInfo_Category_NODE_TEARDOWN = 5,
-  CategoricalSpanInfo_Category_TASK_SETUP = 6,
-  CategoricalSpanInfo_Category_TASK_RUNTIME = 7,
+  CategoricalSpanInfo_Category_NODE_IDLE = 1,
+  CategoricalSpanInfo_Category_NODE_RESET = 2,
+  CategoricalSpanInfo_Category_NODE_SETUP = 3,
+  CategoricalSpanInfo_Category_NODE_TEARDOWN = 4,
+  CategoricalSpanInfo_Category_NODE_TRANSITION = 5,
+  CategoricalSpanInfo_Category_TASK_RUNTIME = 6,
+  CategoricalSpanInfo_Category_TASK_SETUP = 7,
   CategoricalSpanInfo_Category_TASK_TEARDOWN = 8,
+  CategoricalSpanInfo_Category_WORKFLOW_SETUP = 9,
+  CategoricalSpanInfo_Category_WORKFLOW_TEARDOWN = 10,
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CategoricalSpanInfo_Category_IsValid(int value);
 const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MIN = CategoricalSpanInfo_Category_UNKNOWN;
-const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_TASK_TEARDOWN;
+const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_WORKFLOW_TEARDOWN;
 const int CategoricalSpanInfo_Category_Category_ARRAYSIZE = CategoricalSpanInfo_Category_Category_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CategoricalSpanInfo_Category_descriptor();
@@ -3564,22 +3566,26 @@ class CategoricalSpanInfo final :
   typedef CategoricalSpanInfo_Category Category;
   static const Category UNKNOWN =
     CategoricalSpanInfo_Category_UNKNOWN;
-  static const Category NODE_TRANSITION =
-    CategoricalSpanInfo_Category_NODE_TRANSITION;
-  static const Category NODE_SETUP =
-    CategoricalSpanInfo_Category_NODE_SETUP;
-  static const Category NODE_RESET =
-    CategoricalSpanInfo_Category_NODE_RESET;
   static const Category NODE_IDLE =
     CategoricalSpanInfo_Category_NODE_IDLE;
+  static const Category NODE_RESET =
+    CategoricalSpanInfo_Category_NODE_RESET;
+  static const Category NODE_SETUP =
+    CategoricalSpanInfo_Category_NODE_SETUP;
   static const Category NODE_TEARDOWN =
     CategoricalSpanInfo_Category_NODE_TEARDOWN;
-  static const Category TASK_SETUP =
-    CategoricalSpanInfo_Category_TASK_SETUP;
+  static const Category NODE_TRANSITION =
+    CategoricalSpanInfo_Category_NODE_TRANSITION;
   static const Category TASK_RUNTIME =
     CategoricalSpanInfo_Category_TASK_RUNTIME;
+  static const Category TASK_SETUP =
+    CategoricalSpanInfo_Category_TASK_SETUP;
   static const Category TASK_TEARDOWN =
     CategoricalSpanInfo_Category_TASK_TEARDOWN;
+  static const Category WORKFLOW_SETUP =
+    CategoricalSpanInfo_Category_WORKFLOW_SETUP;
+  static const Category WORKFLOW_TEARDOWN =
+    CategoricalSpanInfo_Category_WORKFLOW_TEARDOWN;
   static inline bool Category_IsValid(int value) {
     return CategoricalSpanInfo_Category_IsValid(value);
   }

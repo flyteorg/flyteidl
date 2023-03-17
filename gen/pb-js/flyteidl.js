@@ -21570,26 +21570,30 @@
                  * @name flyteidl.admin.CategoricalSpanInfo.Category
                  * @enum {string}
                  * @property {number} UNKNOWN=0 UNKNOWN value
-                 * @property {number} NODE_TRANSITION=1 NODE_TRANSITION value
-                 * @property {number} NODE_SETUP=2 NODE_SETUP value
-                 * @property {number} NODE_RESET=3 NODE_RESET value
-                 * @property {number} NODE_IDLE=4 NODE_IDLE value
-                 * @property {number} NODE_TEARDOWN=5 NODE_TEARDOWN value
-                 * @property {number} TASK_SETUP=6 TASK_SETUP value
-                 * @property {number} TASK_RUNTIME=7 TASK_RUNTIME value
+                 * @property {number} NODE_IDLE=1 NODE_IDLE value
+                 * @property {number} NODE_RESET=2 NODE_RESET value
+                 * @property {number} NODE_SETUP=3 NODE_SETUP value
+                 * @property {number} NODE_TEARDOWN=4 NODE_TEARDOWN value
+                 * @property {number} NODE_TRANSITION=5 NODE_TRANSITION value
+                 * @property {number} TASK_RUNTIME=6 TASK_RUNTIME value
+                 * @property {number} TASK_SETUP=7 TASK_SETUP value
                  * @property {number} TASK_TEARDOWN=8 TASK_TEARDOWN value
+                 * @property {number} WORKFLOW_SETUP=9 WORKFLOW_SETUP value
+                 * @property {number} WORKFLOW_TEARDOWN=10 WORKFLOW_TEARDOWN value
                  */
                 CategoricalSpanInfo.Category = (function() {
                     var valuesById = {}, values = Object.create(valuesById);
                     values[valuesById[0] = "UNKNOWN"] = 0;
-                    values[valuesById[1] = "NODE_TRANSITION"] = 1;
-                    values[valuesById[2] = "NODE_SETUP"] = 2;
-                    values[valuesById[3] = "NODE_RESET"] = 3;
-                    values[valuesById[4] = "NODE_IDLE"] = 4;
-                    values[valuesById[5] = "NODE_TEARDOWN"] = 5;
-                    values[valuesById[6] = "TASK_SETUP"] = 6;
-                    values[valuesById[7] = "TASK_RUNTIME"] = 7;
+                    values[valuesById[1] = "NODE_IDLE"] = 1;
+                    values[valuesById[2] = "NODE_RESET"] = 2;
+                    values[valuesById[3] = "NODE_SETUP"] = 3;
+                    values[valuesById[4] = "NODE_TEARDOWN"] = 4;
+                    values[valuesById[5] = "NODE_TRANSITION"] = 5;
+                    values[valuesById[6] = "TASK_RUNTIME"] = 6;
+                    values[valuesById[7] = "TASK_SETUP"] = 7;
                     values[valuesById[8] = "TASK_TEARDOWN"] = 8;
+                    values[valuesById[9] = "WORKFLOW_SETUP"] = 9;
+                    values[valuesById[10] = "WORKFLOW_TEARDOWN"] = 10;
                     return values;
                 })();
     

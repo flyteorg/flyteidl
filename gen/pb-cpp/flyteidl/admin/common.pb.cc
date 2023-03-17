@@ -918,28 +918,29 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010"
   "category\030\003 \001(\0132#.flyteidl.admin.Categori"
   "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte"
-  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\315\001"
+  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\370\001"
   "\n\023CategoricalSpanInfo\022\020\n\010category\030\001 \001(\t\""
-  "\243\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSI"
-  "TION\020\001\022\016\n\nNODE_SETUP\020\002\022\016\n\nNODE_RESET\020\003\022\r"
-  "\n\tNODE_IDLE\020\004\022\021\n\rNODE_TEARDOWN\020\005\022\016\n\nTASK"
-  "_SETUP\020\006\022\020\n\014TASK_RUNTIME\020\007\022\021\n\rTASK_TEARD"
-  "OWN\020\010\"\367\001\n\021ReferenceSpanInfo\022A\n\013workflow_"
-  "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti"
-  "onIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.flytei"
-  "dl.core.NodeExecutionIdentifierH\000\0229\n\007tas"
-  "k_id\030\003 \001(\0132&.flyteidl.core.TaskExecution"
-  "IdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.a"
-  "dmin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023N"
-  "AMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARC"
-  "HIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github."
-  "com/flyteorg/flyteidl/gen/pb-go/flyteidl"
-  "/adminb\006proto3"
+  "\316\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\r\n\tNODE_IDLE\020\001"
+  "\022\016\n\nNODE_RESET\020\002\022\016\n\nNODE_SETUP\020\003\022\021\n\rNODE"
+  "_TEARDOWN\020\004\022\023\n\017NODE_TRANSITION\020\005\022\020\n\014TASK"
+  "_RUNTIME\020\006\022\016\n\nTASK_SETUP\020\007\022\021\n\rTASK_TEARD"
+  "OWN\020\010\022\022\n\016WORKFLOW_SETUP\020\t\022\025\n\021WORKFLOW_TE"
+  "ARDOWN\020\n\"\367\001\n\021ReferenceSpanInfo\022A\n\013workfl"
+  "ow_id\030\001 \001(\0132*.flyteidl.core.WorkflowExec"
+  "utionIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.fly"
+  "teidl.core.NodeExecutionIdentifierH\000\0229\n\007"
+  "task_id\030\003 \001(\0132&.flyteidl.core.TaskExecut"
+  "ionIdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteid"
+  "l.admin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027"
+  "\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_"
+  "ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gith"
+  "ub.com/flyteorg/flyteidl/gen/pb-go/flyte"
+  "idl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3334,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3377,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -992,6 +993,8 @@ bool CategoricalSpanInfo_Category_IsValid(int value) {
     case 6:
     case 7:
     case 8:
+    case 9:
+    case 10:
       return true;
     default:
       return false;
@@ -1000,14 +1003,16 @@ bool CategoricalSpanInfo_Category_IsValid(int value) {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const CategoricalSpanInfo_Category CategoricalSpanInfo::UNKNOWN;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_TRANSITION;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_SETUP;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_RESET;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_IDLE;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_RESET;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_SETUP;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_TEARDOWN;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_SETUP;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_TRANSITION;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_RUNTIME;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_SETUP;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_TEARDOWN;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::WORKFLOW_SETUP;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::WORKFLOW_TEARDOWN;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::Category_MIN;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::Category_MAX;
 const int CategoricalSpanInfo::Category_ARRAYSIZE;
