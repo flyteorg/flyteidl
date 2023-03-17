@@ -2881,17 +2881,6 @@ definitions:
     - "RESERVATION_RELEASED"
     - "RESERVATION_FAILURE"
     default: "RESERVATION_DISABLED"
-  CategoricalSpanInfoCategory:
-    type: "string"
-    description: "Category defines a collection of span categories."
-    enum:
-    - "UNKNOWN"
-    - "NODE_TRANSITION"
-    - "EXECUTION_OVERHEAD"
-    - "EXECUTION_IDLE"
-    - "PLUGIN_OVERHEAD"
-    - "PLUGIN_RUNTIME"
-    default: "UNKNOWN"
   ComparisonExpressionOperator:
     type: "string"
     title: "Binary Operator for each expression"
@@ -3225,12 +3214,12 @@ definitions:
     type: "object"
     properties:
       category:
-        description: "category defines the category that this span is labelled as."
-        $ref: "#/definitions/CategoricalSpanInfoCategory"
+        type: "string"
+        description: "category defines the category that this span is labeled as."
     description: "CategoricalSpanInfo represents a labelled Span, providing a brief\
       \ attribution for the duration."
     example:
-      category: {}
+      category: "category"
   adminClusterAssignment:
     type: "object"
     properties:
@@ -15264,7 +15253,7 @@ definitions:
       start_time: "2000-01-23T04:56:07.000+00:00"
       end_time: "2000-01-23T04:56:07.000+00:00"
       category:
-        category: {}
+        category: "category"
   adminSystemMetadata:
     type: "object"
     properties:
@@ -30489,7 +30478,7 @@ definitions:
         start_time: "2000-01-23T04:56:07.000+00:00"
         end_time: "2000-01-23T04:56:07.000+00:00"
         category:
-          category: {}
+          category: "category"
   adminWorkflowList:
     type: "object"
     properties:

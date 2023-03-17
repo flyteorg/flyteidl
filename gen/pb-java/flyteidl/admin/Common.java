@@ -22318,20 +22318,21 @@ public final class Common {
 
     /**
      * <pre>
-     * category defines the category that this span is labelled as.
+     * category defines the category that this span is labeled as.
      * </pre>
      *
-     * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+     * <code>string category = 1;</code>
      */
-    int getCategoryValue();
+    java.lang.String getCategory();
     /**
      * <pre>
-     * category defines the category that this span is labelled as.
+     * category defines the category that this span is labeled as.
      * </pre>
      *
-     * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+     * <code>string category = 1;</code>
      */
-    flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory();
+    com.google.protobuf.ByteString
+        getCategoryBytes();
   }
   /**
    * <pre>
@@ -22350,7 +22351,7 @@ public final class Common {
       super(builder);
     }
     private CategoricalSpanInfo() {
-      category_ = 0;
+      category_ = "";
     }
 
     @java.lang.Override
@@ -22377,10 +22378,10 @@ public final class Common {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              category_ = rawValue;
+              category_ = s;
               break;
             }
             default: {
@@ -22433,21 +22434,33 @@ public final class Common {
        */
       NODE_TRANSITION(1),
       /**
-       * <code>EXECUTION_OVERHEAD = 2;</code>
+       * <code>NODE_SETUP = 2;</code>
        */
-      EXECUTION_OVERHEAD(2),
+      NODE_SETUP(2),
       /**
-       * <code>EXECUTION_IDLE = 3;</code>
+       * <code>NODE_RESET = 3;</code>
        */
-      EXECUTION_IDLE(3),
+      NODE_RESET(3),
       /**
-       * <code>PLUGIN_OVERHEAD = 4;</code>
+       * <code>NODE_IDLE = 4;</code>
        */
-      PLUGIN_OVERHEAD(4),
+      NODE_IDLE(4),
       /**
-       * <code>PLUGIN_RUNTIME = 5;</code>
+       * <code>NODE_TEARDOWN = 5;</code>
        */
-      PLUGIN_RUNTIME(5),
+      NODE_TEARDOWN(5),
+      /**
+       * <code>TASK_SETUP = 6;</code>
+       */
+      TASK_SETUP(6),
+      /**
+       * <code>TASK_RUNTIME = 7;</code>
+       */
+      TASK_RUNTIME(7),
+      /**
+       * <code>TASK_TEARDOWN = 8;</code>
+       */
+      TASK_TEARDOWN(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -22460,21 +22473,33 @@ public final class Common {
        */
       public static final int NODE_TRANSITION_VALUE = 1;
       /**
-       * <code>EXECUTION_OVERHEAD = 2;</code>
+       * <code>NODE_SETUP = 2;</code>
        */
-      public static final int EXECUTION_OVERHEAD_VALUE = 2;
+      public static final int NODE_SETUP_VALUE = 2;
       /**
-       * <code>EXECUTION_IDLE = 3;</code>
+       * <code>NODE_RESET = 3;</code>
        */
-      public static final int EXECUTION_IDLE_VALUE = 3;
+      public static final int NODE_RESET_VALUE = 3;
       /**
-       * <code>PLUGIN_OVERHEAD = 4;</code>
+       * <code>NODE_IDLE = 4;</code>
        */
-      public static final int PLUGIN_OVERHEAD_VALUE = 4;
+      public static final int NODE_IDLE_VALUE = 4;
       /**
-       * <code>PLUGIN_RUNTIME = 5;</code>
+       * <code>NODE_TEARDOWN = 5;</code>
        */
-      public static final int PLUGIN_RUNTIME_VALUE = 5;
+      public static final int NODE_TEARDOWN_VALUE = 5;
+      /**
+       * <code>TASK_SETUP = 6;</code>
+       */
+      public static final int TASK_SETUP_VALUE = 6;
+      /**
+       * <code>TASK_RUNTIME = 7;</code>
+       */
+      public static final int TASK_RUNTIME_VALUE = 7;
+      /**
+       * <code>TASK_TEARDOWN = 8;</code>
+       */
+      public static final int TASK_TEARDOWN_VALUE = 8;
 
 
       public final int getNumber() {
@@ -22497,10 +22522,13 @@ public final class Common {
         switch (value) {
           case 0: return UNKNOWN;
           case 1: return NODE_TRANSITION;
-          case 2: return EXECUTION_OVERHEAD;
-          case 3: return EXECUTION_IDLE;
-          case 4: return PLUGIN_OVERHEAD;
-          case 5: return PLUGIN_RUNTIME;
+          case 2: return NODE_SETUP;
+          case 3: return NODE_RESET;
+          case 4: return NODE_IDLE;
+          case 5: return NODE_TEARDOWN;
+          case 6: return TASK_SETUP;
+          case 7: return TASK_RUNTIME;
+          case 8: return TASK_TEARDOWN;
           default: return null;
         }
       }
@@ -22554,28 +22582,45 @@ public final class Common {
     }
 
     public static final int CATEGORY_FIELD_NUMBER = 1;
-    private int category_;
+    private volatile java.lang.Object category_;
     /**
      * <pre>
-     * category defines the category that this span is labelled as.
+     * category defines the category that this span is labeled as.
      * </pre>
      *
-     * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+     * <code>string category = 1;</code>
      */
-    public int getCategoryValue() {
-      return category_;
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
-     * category defines the category that this span is labelled as.
+     * category defines the category that this span is labeled as.
      * </pre>
      *
-     * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+     * <code>string category = 1;</code>
      */
-    public flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory() {
-      @SuppressWarnings("deprecation")
-      flyteidl.admin.Common.CategoricalSpanInfo.Category result = flyteidl.admin.Common.CategoricalSpanInfo.Category.valueOf(category_);
-      return result == null ? flyteidl.admin.Common.CategoricalSpanInfo.Category.UNRECOGNIZED : result;
+    public com.google.protobuf.ByteString
+        getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -22592,8 +22637,8 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (category_ != flyteidl.admin.Common.CategoricalSpanInfo.Category.UNKNOWN.getNumber()) {
-        output.writeEnum(1, category_);
+      if (!getCategoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, category_);
       }
       unknownFields.writeTo(output);
     }
@@ -22604,9 +22649,8 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (category_ != flyteidl.admin.Common.CategoricalSpanInfo.Category.UNKNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, category_);
+      if (!getCategoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, category_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -22623,7 +22667,8 @@ public final class Common {
       }
       flyteidl.admin.Common.CategoricalSpanInfo other = (flyteidl.admin.Common.CategoricalSpanInfo) obj;
 
-      if (category_ != other.category_) return false;
+      if (!getCategory()
+          .equals(other.getCategory())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -22636,7 +22681,7 @@ public final class Common {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-      hash = (53 * hash) + category_;
+      hash = (53 * hash) + getCategory().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -22774,7 +22819,7 @@ public final class Common {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        category_ = 0;
+        category_ = "";
 
         return this;
       }
@@ -22851,8 +22896,9 @@ public final class Common {
 
       public Builder mergeFrom(flyteidl.admin.Common.CategoricalSpanInfo other) {
         if (other == flyteidl.admin.Common.CategoricalSpanInfo.getDefaultInstance()) return this;
-        if (other.category_ != 0) {
-          setCategoryValue(other.getCategoryValue());
+        if (!other.getCategory().isEmpty()) {
+          category_ = other.category_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -22883,67 +22929,91 @@ public final class Common {
         return this;
       }
 
-      private int category_ = 0;
+      private java.lang.Object category_ = "";
       /**
        * <pre>
-       * category defines the category that this span is labelled as.
+       * category defines the category that this span is labeled as.
        * </pre>
        *
-       * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+       * <code>string category = 1;</code>
        */
-      public int getCategoryValue() {
-        return category_;
+      public java.lang.String getCategory() {
+        java.lang.Object ref = category_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          category_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * category defines the category that this span is labelled as.
+       * category defines the category that this span is labeled as.
        * </pre>
        *
-       * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+       * <code>string category = 1;</code>
        */
-      public Builder setCategoryValue(int value) {
+      public com.google.protobuf.ByteString
+          getCategoryBytes() {
+        java.lang.Object ref = category_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          category_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * category defines the category that this span is labeled as.
+       * </pre>
+       *
+       * <code>string category = 1;</code>
+       */
+      public Builder setCategory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         category_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * category defines the category that this span is labelled as.
+       * category defines the category that this span is labeled as.
        * </pre>
        *
-       * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+       * <code>string category = 1;</code>
        */
-      public flyteidl.admin.Common.CategoricalSpanInfo.Category getCategory() {
-        @SuppressWarnings("deprecation")
-        flyteidl.admin.Common.CategoricalSpanInfo.Category result = flyteidl.admin.Common.CategoricalSpanInfo.Category.valueOf(category_);
-        return result == null ? flyteidl.admin.Common.CategoricalSpanInfo.Category.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * category defines the category that this span is labelled as.
-       * </pre>
-       *
-       * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
-       */
-      public Builder setCategory(flyteidl.admin.Common.CategoricalSpanInfo.Category value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder clearCategory() {
         
-        category_ = value.getNumber();
+        category_ = getDefaultInstance().getCategory();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * category defines the category that this span is labelled as.
+       * category defines the category that this span is labeled as.
        * </pre>
        *
-       * <code>.flyteidl.admin.CategoricalSpanInfo.Category category = 1;</code>
+       * <code>string category = 1;</code>
        */
-      public Builder clearCategory() {
+      public Builder setCategoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
-        category_ = 0;
+        category_ = value;
         onChanged();
         return this;
       }
@@ -25014,23 +25084,23 @@ public final class Common {
       "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010" +
       "category\030\003 \001(\0132#.flyteidl.admin.Categori" +
       "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte" +
-      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\331\001" +
-      "\n\023CategoricalSpanInfo\022>\n\010category\030\001 \001(\0162" +
-      ",.flyteidl.admin.CategoricalSpanInfo.Cat" +
-      "egory\"\201\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_" +
-      "TRANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\022\n\016" +
-      "EXECUTION_IDLE\020\003\022\023\n\017PLUGIN_OVERHEAD\020\004\022\022\n" +
-      "\016PLUGIN_RUNTIME\020\005\"\367\001\n\021ReferenceSpanInfo\022" +
-      "A\n\013workflow_id\030\001 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifierH\000\0229\n\007node_id\030\002 " +
-      "\001(\0132&.flyteidl.core.NodeExecutionIdentif" +
-      "ierH\000\0229\n\007task_id\030\003 \001(\0132&.flyteidl.core.T" +
-      "askExecutionIdentifierH\000\022#\n\005spans\030\004 \003(\0132" +
-      "\024.flyteidl.admin.SpanB\004\n\002id*\\\n\020NamedEnti" +
-      "tyState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAME" +
-      "D_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020" +
-      "\002B7Z5github.com/flyteorg/flyteidl/gen/pb" +
-      "-go/flyteidl/adminb\006proto3"
+      "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\315\001" +
+      "\n\023CategoricalSpanInfo\022\020\n\010category\030\001 \001(\t\"" +
+      "\243\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSI" +
+      "TION\020\001\022\016\n\nNODE_SETUP\020\002\022\016\n\nNODE_RESET\020\003\022\r" +
+      "\n\tNODE_IDLE\020\004\022\021\n\rNODE_TEARDOWN\020\005\022\016\n\nTASK" +
+      "_SETUP\020\006\022\020\n\014TASK_RUNTIME\020\007\022\021\n\rTASK_TEARD" +
+      "OWN\020\010\"\367\001\n\021ReferenceSpanInfo\022A\n\013workflow_" +
+      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.flytei" +
+      "dl.core.NodeExecutionIdentifierH\000\0229\n\007tas" +
+      "k_id\030\003 \001(\0132&.flyteidl.core.TaskExecution" +
+      "IdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.a" +
+      "dmin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023N" +
+      "AMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARC" +
+      "HIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

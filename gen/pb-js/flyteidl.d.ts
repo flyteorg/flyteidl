@@ -8872,7 +8872,7 @@ export namespace flyteidl {
         interface ICategoricalSpanInfo {
 
             /** CategoricalSpanInfo category */
-            category?: (flyteidl.admin.CategoricalSpanInfo.Category|null);
+            category?: (string|null);
         }
 
         /** Represents a CategoricalSpanInfo. */
@@ -8885,7 +8885,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.ICategoricalSpanInfo);
 
             /** CategoricalSpanInfo category. */
-            public category: flyteidl.admin.CategoricalSpanInfo.Category;
+            public category: string;
 
             /**
              * Creates a new CategoricalSpanInfo instance using the specified properties.
@@ -8926,10 +8926,13 @@ export namespace flyteidl {
             enum Category {
                 UNKNOWN = 0,
                 NODE_TRANSITION = 1,
-                EXECUTION_OVERHEAD = 2,
-                EXECUTION_IDLE = 3,
-                PLUGIN_OVERHEAD = 4,
-                PLUGIN_RUNTIME = 5
+                NODE_SETUP = 2,
+                NODE_RESET = 3,
+                NODE_IDLE = 4,
+                NODE_TEARDOWN = 5,
+                TASK_SETUP = 6,
+                TASK_RUNTIME = 7,
+                TASK_TEARDOWN = 8
             }
         }
 

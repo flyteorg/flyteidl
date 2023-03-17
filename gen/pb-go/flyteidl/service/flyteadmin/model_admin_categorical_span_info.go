@@ -11,6 +11,6 @@ package flyteadmin
 
 // CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration.
 type AdminCategoricalSpanInfo struct {
-	// category defines the category that this span is labelled as.
-	Category *CategoricalSpanInfoCategory `json:"category,omitempty"`
+	// category defines the category that this span is labeled as.
+	Category string `json:"category,omitempty"`
 }

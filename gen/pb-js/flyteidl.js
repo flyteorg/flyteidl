@@ -21464,7 +21464,7 @@
                  * Properties of a CategoricalSpanInfo.
                  * @memberof flyteidl.admin
                  * @interface ICategoricalSpanInfo
-                 * @property {flyteidl.admin.CategoricalSpanInfo.Category|null} [category] CategoricalSpanInfo category
+                 * @property {string|null} [category] CategoricalSpanInfo category
                  */
     
                 /**
@@ -21484,11 +21484,11 @@
     
                 /**
                  * CategoricalSpanInfo category.
-                 * @member {flyteidl.admin.CategoricalSpanInfo.Category} category
+                 * @member {string} category
                  * @memberof flyteidl.admin.CategoricalSpanInfo
                  * @instance
                  */
-                CategoricalSpanInfo.prototype.category = 0;
+                CategoricalSpanInfo.prototype.category = "";
     
                 /**
                  * Creates a new CategoricalSpanInfo instance using the specified properties.
@@ -21515,7 +21515,7 @@
                     if (!writer)
                         writer = $Writer.create();
                     if (message.category != null && message.hasOwnProperty("category"))
-                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.category);
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.category);
                     return writer;
                 };
     
@@ -21538,7 +21538,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.category = reader.int32();
+                            message.category = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -21560,17 +21560,8 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.category != null && message.hasOwnProperty("category"))
-                        switch (message.category) {
-                        default:
-                            return "category: enum value expected";
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                            break;
-                        }
+                        if (!$util.isString(message.category))
+                            return "category: string expected";
                     return null;
                 };
     
@@ -21580,19 +21571,25 @@
                  * @enum {string}
                  * @property {number} UNKNOWN=0 UNKNOWN value
                  * @property {number} NODE_TRANSITION=1 NODE_TRANSITION value
-                 * @property {number} EXECUTION_OVERHEAD=2 EXECUTION_OVERHEAD value
-                 * @property {number} EXECUTION_IDLE=3 EXECUTION_IDLE value
-                 * @property {number} PLUGIN_OVERHEAD=4 PLUGIN_OVERHEAD value
-                 * @property {number} PLUGIN_RUNTIME=5 PLUGIN_RUNTIME value
+                 * @property {number} NODE_SETUP=2 NODE_SETUP value
+                 * @property {number} NODE_RESET=3 NODE_RESET value
+                 * @property {number} NODE_IDLE=4 NODE_IDLE value
+                 * @property {number} NODE_TEARDOWN=5 NODE_TEARDOWN value
+                 * @property {number} TASK_SETUP=6 TASK_SETUP value
+                 * @property {number} TASK_RUNTIME=7 TASK_RUNTIME value
+                 * @property {number} TASK_TEARDOWN=8 TASK_TEARDOWN value
                  */
                 CategoricalSpanInfo.Category = (function() {
                     var valuesById = {}, values = Object.create(valuesById);
                     values[valuesById[0] = "UNKNOWN"] = 0;
                     values[valuesById[1] = "NODE_TRANSITION"] = 1;
-                    values[valuesById[2] = "EXECUTION_OVERHEAD"] = 2;
-                    values[valuesById[3] = "EXECUTION_IDLE"] = 3;
-                    values[valuesById[4] = "PLUGIN_OVERHEAD"] = 4;
-                    values[valuesById[5] = "PLUGIN_RUNTIME"] = 5;
+                    values[valuesById[2] = "NODE_SETUP"] = 2;
+                    values[valuesById[3] = "NODE_RESET"] = 3;
+                    values[valuesById[4] = "NODE_IDLE"] = 4;
+                    values[valuesById[5] = "NODE_TEARDOWN"] = 5;
+                    values[valuesById[6] = "TASK_SETUP"] = 6;
+                    values[valuesById[7] = "TASK_RUNTIME"] = 7;
+                    values[valuesById[8] = "TASK_TEARDOWN"] = 8;
                     return values;
                 })();
     

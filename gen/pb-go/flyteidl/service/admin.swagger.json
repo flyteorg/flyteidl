@@ -3248,19 +3248,6 @@
       "default": "RESERVATION_DISABLED",
       "description": "Indicates the status of a catalog reservation operation.\n\n - RESERVATION_DISABLED: Used to indicate that reservations are disabled\n - RESERVATION_ACQUIRED: Used to indicate that a reservation was successfully acquired or extended\n - RESERVATION_EXISTS: Used to indicate that an active reservation currently exists\n - RESERVATION_RELEASED: Used to indicate that the reservation has been successfully released\n - RESERVATION_FAILURE: Used to indicate that a reservation operation resulted in failure"
     },
-    "CategoricalSpanInfoCategory": {
-      "type": "string",
-      "enum": [
-        "UNKNOWN",
-        "NODE_TRANSITION",
-        "EXECUTION_OVERHEAD",
-        "EXECUTION_IDLE",
-        "PLUGIN_OVERHEAD",
-        "PLUGIN_RUNTIME"
-      ],
-      "default": "UNKNOWN",
-      "description": "Category defines a collection of span categories."
-    },
     "ComparisonExpressionOperator": {
       "type": "string",
       "enum": [
@@ -3584,8 +3571,8 @@
       "type": "object",
       "properties": {
         "category": {
-          "$ref": "#/definitions/CategoricalSpanInfoCategory",
-          "description": "category defines the category that this span is labelled as."
+          "type": "string",
+          "description": "category defines the category that this span is labeled as."
         }
       },
       "description": "CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration."

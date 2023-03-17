@@ -198,16 +198,19 @@ inline bool Sort_Direction_Parse(
 enum CategoricalSpanInfo_Category {
   CategoricalSpanInfo_Category_UNKNOWN = 0,
   CategoricalSpanInfo_Category_NODE_TRANSITION = 1,
-  CategoricalSpanInfo_Category_EXECUTION_OVERHEAD = 2,
-  CategoricalSpanInfo_Category_EXECUTION_IDLE = 3,
-  CategoricalSpanInfo_Category_PLUGIN_OVERHEAD = 4,
-  CategoricalSpanInfo_Category_PLUGIN_RUNTIME = 5,
+  CategoricalSpanInfo_Category_NODE_SETUP = 2,
+  CategoricalSpanInfo_Category_NODE_RESET = 3,
+  CategoricalSpanInfo_Category_NODE_IDLE = 4,
+  CategoricalSpanInfo_Category_NODE_TEARDOWN = 5,
+  CategoricalSpanInfo_Category_TASK_SETUP = 6,
+  CategoricalSpanInfo_Category_TASK_RUNTIME = 7,
+  CategoricalSpanInfo_Category_TASK_TEARDOWN = 8,
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CategoricalSpanInfo_Category_CategoricalSpanInfo_Category_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CategoricalSpanInfo_Category_IsValid(int value);
 const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MIN = CategoricalSpanInfo_Category_UNKNOWN;
-const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_PLUGIN_RUNTIME;
+const CategoricalSpanInfo_Category CategoricalSpanInfo_Category_Category_MAX = CategoricalSpanInfo_Category_TASK_TEARDOWN;
 const int CategoricalSpanInfo_Category_Category_ARRAYSIZE = CategoricalSpanInfo_Category_Category_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CategoricalSpanInfo_Category_descriptor();
@@ -3563,14 +3566,20 @@ class CategoricalSpanInfo final :
     CategoricalSpanInfo_Category_UNKNOWN;
   static const Category NODE_TRANSITION =
     CategoricalSpanInfo_Category_NODE_TRANSITION;
-  static const Category EXECUTION_OVERHEAD =
-    CategoricalSpanInfo_Category_EXECUTION_OVERHEAD;
-  static const Category EXECUTION_IDLE =
-    CategoricalSpanInfo_Category_EXECUTION_IDLE;
-  static const Category PLUGIN_OVERHEAD =
-    CategoricalSpanInfo_Category_PLUGIN_OVERHEAD;
-  static const Category PLUGIN_RUNTIME =
-    CategoricalSpanInfo_Category_PLUGIN_RUNTIME;
+  static const Category NODE_SETUP =
+    CategoricalSpanInfo_Category_NODE_SETUP;
+  static const Category NODE_RESET =
+    CategoricalSpanInfo_Category_NODE_RESET;
+  static const Category NODE_IDLE =
+    CategoricalSpanInfo_Category_NODE_IDLE;
+  static const Category NODE_TEARDOWN =
+    CategoricalSpanInfo_Category_NODE_TEARDOWN;
+  static const Category TASK_SETUP =
+    CategoricalSpanInfo_Category_TASK_SETUP;
+  static const Category TASK_RUNTIME =
+    CategoricalSpanInfo_Category_TASK_RUNTIME;
+  static const Category TASK_TEARDOWN =
+    CategoricalSpanInfo_Category_TASK_TEARDOWN;
   static inline bool Category_IsValid(int value) {
     return CategoricalSpanInfo_Category_IsValid(value);
   }
@@ -3594,18 +3603,26 @@ class CategoricalSpanInfo final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+  // string category = 1;
   void clear_category();
   static const int kCategoryFieldNumber = 1;
-  ::flyteidl::admin::CategoricalSpanInfo_Category category() const;
-  void set_category(::flyteidl::admin::CategoricalSpanInfo_Category value);
+  const ::std::string& category() const;
+  void set_category(const ::std::string& value);
+  #if LANG_CXX11
+  void set_category(::std::string&& value);
+  #endif
+  void set_category(const char* value);
+  void set_category(const char* value, size_t size);
+  ::std::string* mutable_category();
+  ::std::string* release_category();
+  void set_allocated_category(::std::string* category);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.CategoricalSpanInfo)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  int category_;
+  ::google::protobuf::internal::ArenaStringPtr category_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
 };
@@ -6289,18 +6306,57 @@ inline Span::InfoCase Span::info_case() const {
 
 // CategoricalSpanInfo
 
-// .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+// string category = 1;
 inline void CategoricalSpanInfo::clear_category() {
-  category_ = 0;
+  category_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::flyteidl::admin::CategoricalSpanInfo_Category CategoricalSpanInfo::category() const {
+inline const ::std::string& CategoricalSpanInfo::category() const {
   // @@protoc_insertion_point(field_get:flyteidl.admin.CategoricalSpanInfo.category)
-  return static_cast< ::flyteidl::admin::CategoricalSpanInfo_Category >(category_);
+  return category_.GetNoArena();
 }
-inline void CategoricalSpanInfo::set_category(::flyteidl::admin::CategoricalSpanInfo_Category value) {
+inline void CategoricalSpanInfo::set_category(const ::std::string& value) {
   
-  category_ = value;
+  category_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.admin.CategoricalSpanInfo.category)
+}
+#if LANG_CXX11
+inline void CategoricalSpanInfo::set_category(::std::string&& value) {
+  
+  category_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.admin.CategoricalSpanInfo.category)
+}
+#endif
+inline void CategoricalSpanInfo::set_category(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  category_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.admin.CategoricalSpanInfo.category)
+}
+inline void CategoricalSpanInfo::set_category(const char* value, size_t size) {
+  
+  category_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.admin.CategoricalSpanInfo.category)
+}
+inline ::std::string* CategoricalSpanInfo::mutable_category() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.CategoricalSpanInfo.category)
+  return category_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CategoricalSpanInfo::release_category() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.CategoricalSpanInfo.category)
+  
+  return category_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CategoricalSpanInfo::set_allocated_category(::std::string* category) {
+  if (category != nullptr) {
+    
+  } else {
+    
+  }
+  category_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), category);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.CategoricalSpanInfo.category)
 }
 
 // -------------------------------------------------------------------

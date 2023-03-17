@@ -38,14 +38,17 @@ class CategoricalSpanInfo(_message.Message):
     class Category(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
-    EXECUTION_IDLE: CategoricalSpanInfo.Category
-    EXECUTION_OVERHEAD: CategoricalSpanInfo.Category
+    NODE_IDLE: CategoricalSpanInfo.Category
+    NODE_RESET: CategoricalSpanInfo.Category
+    NODE_SETUP: CategoricalSpanInfo.Category
+    NODE_TEARDOWN: CategoricalSpanInfo.Category
     NODE_TRANSITION: CategoricalSpanInfo.Category
-    PLUGIN_OVERHEAD: CategoricalSpanInfo.Category
-    PLUGIN_RUNTIME: CategoricalSpanInfo.Category
+    TASK_RUNTIME: CategoricalSpanInfo.Category
+    TASK_SETUP: CategoricalSpanInfo.Category
+    TASK_TEARDOWN: CategoricalSpanInfo.Category
     UNKNOWN: CategoricalSpanInfo.Category
-    category: CategoricalSpanInfo.Category
-    def __init__(self, category: _Optional[_Union[CategoricalSpanInfo.Category, str]] = ...) -> None: ...
+    category: str
+    def __init__(self, category: _Optional[str] = ...) -> None: ...
 
 class EmailNotification(_message.Message):
     __slots__ = ["recipients_email"]

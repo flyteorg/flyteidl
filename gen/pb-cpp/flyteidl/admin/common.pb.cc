@@ -918,28 +918,28 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0227\n\010"
   "category\030\003 \001(\0132#.flyteidl.admin.Categori"
   "calSpanInfoH\000\0226\n\treference\030\004 \001(\0132!.flyte"
-  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\331\001"
-  "\n\023CategoricalSpanInfo\022>\n\010category\030\001 \001(\0162"
-  ",.flyteidl.admin.CategoricalSpanInfo.Cat"
-  "egory\"\201\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_"
-  "TRANSITION\020\001\022\026\n\022EXECUTION_OVERHEAD\020\002\022\022\n\016"
-  "EXECUTION_IDLE\020\003\022\023\n\017PLUGIN_OVERHEAD\020\004\022\022\n"
-  "\016PLUGIN_RUNTIME\020\005\"\367\001\n\021ReferenceSpanInfo\022"
-  "A\n\013workflow_id\030\001 \001(\0132*.flyteidl.core.Wor"
-  "kflowExecutionIdentifierH\000\0229\n\007node_id\030\002 "
-  "\001(\0132&.flyteidl.core.NodeExecutionIdentif"
-  "ierH\000\0229\n\007task_id\030\003 \001(\0132&.flyteidl.core.T"
-  "askExecutionIdentifierH\000\022#\n\005spans\030\004 \003(\0132"
-  "\024.flyteidl.admin.SpanB\004\n\002id*\\\n\020NamedEnti"
-  "tyState\022\027\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAME"
-  "D_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020"
-  "\002B7Z5github.com/flyteorg/flyteidl/gen/pb"
-  "-go/flyteidl/adminb\006proto3"
+  "idl.admin.ReferenceSpanInfoH\000B\006\n\004info\"\315\001"
+  "\n\023CategoricalSpanInfo\022\020\n\010category\030\001 \001(\t\""
+  "\243\001\n\010Category\022\013\n\007UNKNOWN\020\000\022\023\n\017NODE_TRANSI"
+  "TION\020\001\022\016\n\nNODE_SETUP\020\002\022\016\n\nNODE_RESET\020\003\022\r"
+  "\n\tNODE_IDLE\020\004\022\021\n\rNODE_TEARDOWN\020\005\022\016\n\nTASK"
+  "_SETUP\020\006\022\020\n\014TASK_RUNTIME\020\007\022\021\n\rTASK_TEARD"
+  "OWN\020\010\"\367\001\n\021ReferenceSpanInfo\022A\n\013workflow_"
+  "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti"
+  "onIdentifierH\000\0229\n\007node_id\030\002 \001(\0132&.flytei"
+  "dl.core.NodeExecutionIdentifierH\000\0229\n\007tas"
+  "k_id\030\003 \001(\0132&.flyteidl.core.TaskExecution"
+  "IdentifierH\000\022#\n\005spans\030\004 \003(\0132\024.flyteidl.a"
+  "dmin.SpanB\004\n\002id*\\\n\020NamedEntityState\022\027\n\023N"
+  "AMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARC"
+  "HIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github."
+  "com/flyteorg/flyteidl/gen/pb-go/flyteidl"
+  "/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3346,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 3334,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
@@ -989,6 +989,9 @@ bool CategoricalSpanInfo_Category_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
+    case 7:
+    case 8:
       return true;
     default:
       return false;
@@ -998,10 +1001,13 @@ bool CategoricalSpanInfo_Category_IsValid(int value) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const CategoricalSpanInfo_Category CategoricalSpanInfo::UNKNOWN;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_TRANSITION;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::EXECUTION_OVERHEAD;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::EXECUTION_IDLE;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::PLUGIN_OVERHEAD;
-const CategoricalSpanInfo_Category CategoricalSpanInfo::PLUGIN_RUNTIME;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_SETUP;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_RESET;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_IDLE;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::NODE_TEARDOWN;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_SETUP;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_RUNTIME;
+const CategoricalSpanInfo_Category CategoricalSpanInfo::TASK_TEARDOWN;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::Category_MIN;
 const CategoricalSpanInfo_Category CategoricalSpanInfo::Category_MAX;
 const int CategoricalSpanInfo::Category_ARRAYSIZE;
@@ -10260,12 +10266,17 @@ CategoricalSpanInfo::CategoricalSpanInfo(const CategoricalSpanInfo& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  category_ = from.category_;
+  category_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.category().size() > 0) {
+    category_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.category_);
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.CategoricalSpanInfo)
 }
 
 void CategoricalSpanInfo::SharedCtor() {
-  category_ = 0;
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_CategoricalSpanInfo_flyteidl_2fadmin_2fcommon_2eproto.base);
+  category_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 CategoricalSpanInfo::~CategoricalSpanInfo() {
@@ -10274,6 +10285,7 @@ CategoricalSpanInfo::~CategoricalSpanInfo() {
 }
 
 void CategoricalSpanInfo::SharedDtor() {
+  category_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void CategoricalSpanInfo::SetCachedSize(int size) const {
@@ -10291,7 +10303,7 @@ void CategoricalSpanInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  category_ = 0;
+  category_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -10308,12 +10320,20 @@ const char* CategoricalSpanInfo::_InternalParse(const char* begin, const char* e
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+      // string category = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_category(static_cast<::flyteidl::admin::CategoricalSpanInfo_Category>(val));
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.admin.CategoricalSpanInfo.category");
+        object = msg->mutable_category();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       default: {
@@ -10331,6 +10351,13 @@ const char* CategoricalSpanInfo::_InternalParse(const char* begin, const char* e
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool CategoricalSpanInfo::MergePartialFromCodedStream(
@@ -10343,14 +10370,15 @@ bool CategoricalSpanInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
+      // string category = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_category(static_cast< ::flyteidl::admin::CategoricalSpanInfo_Category >(value));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_category()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->category().data(), static_cast<int>(this->category().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.admin.CategoricalSpanInfo.category"));
         } else {
           goto handle_unusual;
         }
@@ -10384,9 +10412,13 @@ void CategoricalSpanInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
-  if (this->category() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+  // string category = 1;
+  if (this->category().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->category().data(), static_cast<int>(this->category().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.CategoricalSpanInfo.category");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->category(), output);
   }
 
@@ -10403,10 +10435,15 @@ void CategoricalSpanInfo::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
-  if (this->category() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->category(), target);
+  // string category = 1;
+  if (this->category().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->category().data(), static_cast<int>(this->category().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.admin.CategoricalSpanInfo.category");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->category(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -10430,10 +10467,11 @@ size_t CategoricalSpanInfo::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .flyteidl.admin.CategoricalSpanInfo.Category category = 1;
-  if (this->category() != 0) {
+  // string category = 1;
+  if (this->category().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->category());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->category());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -10463,8 +10501,9 @@ void CategoricalSpanInfo::MergeFrom(const CategoricalSpanInfo& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.category() != 0) {
-    set_category(from.category());
+  if (from.category().size() > 0) {
+
+    category_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.category_);
   }
 }
 
@@ -10493,7 +10532,8 @@ void CategoricalSpanInfo::Swap(CategoricalSpanInfo* other) {
 void CategoricalSpanInfo::InternalSwap(CategoricalSpanInfo* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(category_, other->category_);
+  category_.Swap(&other->category_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::google::protobuf::Metadata CategoricalSpanInfo::GetMetadata() const {
