@@ -26,6 +26,48 @@ public final class Pytorch {
      * <code>int32 workers = 1;</code>
      */
     int getWorkers();
+
+    /**
+     * <code>int32 minReplicas = 2;</code>
+     */
+    int getMinReplicas();
+
+    /**
+     * <code>int32 maxReplicas = 3;</code>
+     */
+    int getMaxReplicas();
+
+    /**
+     * <code>string RDZVBackend = 4;</code>
+     */
+    java.lang.String getRDZVBackend();
+    /**
+     * <code>string RDZVBackend = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getRDZVBackendBytes();
+
+    /**
+     * <pre>
+     * int32 RDZVPort = 5;
+     * string RDZVHost = 6;
+     * string RDZVID
+     * RDZVConf
+     * bool standalone = 7;
+     * </pre>
+     *
+     * <code>int32 nProcPerNode = 8;</code>
+     */
+    int getNProcPerNode();
+
+    /**
+     * <pre>
+     * Metrics
+     * </pre>
+     *
+     * <code>int32 maxRestarts = 9;</code>
+     */
+    int getMaxRestarts();
   }
   /**
    * <pre>
@@ -44,6 +86,7 @@ public final class Pytorch {
       super(builder);
     }
     private DistributedPyTorchTrainingTask() {
+      rDZVBackend_ = "";
     }
 
     @java.lang.Override
@@ -73,6 +116,32 @@ public final class Pytorch {
             case 8: {
 
               workers_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              minReplicas_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              maxReplicas_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rDZVBackend_ = s;
+              break;
+            }
+            case 64: {
+
+              nProcPerNode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              maxRestarts_ = input.readInt32();
               break;
             }
             default: {
@@ -120,6 +189,88 @@ public final class Pytorch {
       return workers_;
     }
 
+    public static final int MINREPLICAS_FIELD_NUMBER = 2;
+    private int minReplicas_;
+    /**
+     * <code>int32 minReplicas = 2;</code>
+     */
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+
+    public static final int MAXREPLICAS_FIELD_NUMBER = 3;
+    private int maxReplicas_;
+    /**
+     * <code>int32 maxReplicas = 3;</code>
+     */
+    public int getMaxReplicas() {
+      return maxReplicas_;
+    }
+
+    public static final int RDZVBACKEND_FIELD_NUMBER = 4;
+    private volatile java.lang.Object rDZVBackend_;
+    /**
+     * <code>string RDZVBackend = 4;</code>
+     */
+    public java.lang.String getRDZVBackend() {
+      java.lang.Object ref = rDZVBackend_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rDZVBackend_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string RDZVBackend = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRDZVBackendBytes() {
+      java.lang.Object ref = rDZVBackend_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rDZVBackend_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NPROCPERNODE_FIELD_NUMBER = 8;
+    private int nProcPerNode_;
+    /**
+     * <pre>
+     * int32 RDZVPort = 5;
+     * string RDZVHost = 6;
+     * string RDZVID
+     * RDZVConf
+     * bool standalone = 7;
+     * </pre>
+     *
+     * <code>int32 nProcPerNode = 8;</code>
+     */
+    public int getNProcPerNode() {
+      return nProcPerNode_;
+    }
+
+    public static final int MAXRESTARTS_FIELD_NUMBER = 9;
+    private int maxRestarts_;
+    /**
+     * <pre>
+     * Metrics
+     * </pre>
+     *
+     * <code>int32 maxRestarts = 9;</code>
+     */
+    public int getMaxRestarts() {
+      return maxRestarts_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -137,6 +288,21 @@ public final class Pytorch {
       if (workers_ != 0) {
         output.writeInt32(1, workers_);
       }
+      if (minReplicas_ != 0) {
+        output.writeInt32(2, minReplicas_);
+      }
+      if (maxReplicas_ != 0) {
+        output.writeInt32(3, maxReplicas_);
+      }
+      if (!getRDZVBackendBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, rDZVBackend_);
+      }
+      if (nProcPerNode_ != 0) {
+        output.writeInt32(8, nProcPerNode_);
+      }
+      if (maxRestarts_ != 0) {
+        output.writeInt32(9, maxRestarts_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -149,6 +315,25 @@ public final class Pytorch {
       if (workers_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, workers_);
+      }
+      if (minReplicas_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, minReplicas_);
+      }
+      if (maxReplicas_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxReplicas_);
+      }
+      if (!getRDZVBackendBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rDZVBackend_);
+      }
+      if (nProcPerNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, nProcPerNode_);
+      }
+      if (maxRestarts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, maxRestarts_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -167,6 +352,16 @@ public final class Pytorch {
 
       if (getWorkers()
           != other.getWorkers()) return false;
+      if (getMinReplicas()
+          != other.getMinReplicas()) return false;
+      if (getMaxReplicas()
+          != other.getMaxReplicas()) return false;
+      if (!getRDZVBackend()
+          .equals(other.getRDZVBackend())) return false;
+      if (getNProcPerNode()
+          != other.getNProcPerNode()) return false;
+      if (getMaxRestarts()
+          != other.getMaxRestarts()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -180,6 +375,16 @@ public final class Pytorch {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + WORKERS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkers();
+      hash = (37 * hash) + MINREPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinReplicas();
+      hash = (37 * hash) + MAXREPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxReplicas();
+      hash = (37 * hash) + RDZVBACKEND_FIELD_NUMBER;
+      hash = (53 * hash) + getRDZVBackend().hashCode();
+      hash = (37 * hash) + NPROCPERNODE_FIELD_NUMBER;
+      hash = (53 * hash) + getNProcPerNode();
+      hash = (37 * hash) + MAXRESTARTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxRestarts();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -319,6 +524,16 @@ public final class Pytorch {
         super.clear();
         workers_ = 0;
 
+        minReplicas_ = 0;
+
+        maxReplicas_ = 0;
+
+        rDZVBackend_ = "";
+
+        nProcPerNode_ = 0;
+
+        maxRestarts_ = 0;
+
         return this;
       }
 
@@ -346,6 +561,11 @@ public final class Pytorch {
       public flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask buildPartial() {
         flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask result = new flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask(this);
         result.workers_ = workers_;
+        result.minReplicas_ = minReplicas_;
+        result.maxReplicas_ = maxReplicas_;
+        result.rDZVBackend_ = rDZVBackend_;
+        result.nProcPerNode_ = nProcPerNode_;
+        result.maxRestarts_ = maxRestarts_;
         onBuilt();
         return result;
       }
@@ -396,6 +616,22 @@ public final class Pytorch {
         if (other == flyteidl.plugins.Pytorch.DistributedPyTorchTrainingTask.getDefaultInstance()) return this;
         if (other.getWorkers() != 0) {
           setWorkers(other.getWorkers());
+        }
+        if (other.getMinReplicas() != 0) {
+          setMinReplicas(other.getMinReplicas());
+        }
+        if (other.getMaxReplicas() != 0) {
+          setMaxReplicas(other.getMaxReplicas());
+        }
+        if (!other.getRDZVBackend().isEmpty()) {
+          rDZVBackend_ = other.rDZVBackend_;
+          onChanged();
+        }
+        if (other.getNProcPerNode() != 0) {
+          setNProcPerNode(other.getNProcPerNode());
+        }
+        if (other.getMaxRestarts() != 0) {
+          setMaxRestarts(other.getMaxRestarts());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -460,6 +696,215 @@ public final class Pytorch {
       public Builder clearWorkers() {
         
         workers_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int minReplicas_ ;
+      /**
+       * <code>int32 minReplicas = 2;</code>
+       */
+      public int getMinReplicas() {
+        return minReplicas_;
+      }
+      /**
+       * <code>int32 minReplicas = 2;</code>
+       */
+      public Builder setMinReplicas(int value) {
+        
+        minReplicas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 minReplicas = 2;</code>
+       */
+      public Builder clearMinReplicas() {
+        
+        minReplicas_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxReplicas_ ;
+      /**
+       * <code>int32 maxReplicas = 3;</code>
+       */
+      public int getMaxReplicas() {
+        return maxReplicas_;
+      }
+      /**
+       * <code>int32 maxReplicas = 3;</code>
+       */
+      public Builder setMaxReplicas(int value) {
+        
+        maxReplicas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 maxReplicas = 3;</code>
+       */
+      public Builder clearMaxReplicas() {
+        
+        maxReplicas_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rDZVBackend_ = "";
+      /**
+       * <code>string RDZVBackend = 4;</code>
+       */
+      public java.lang.String getRDZVBackend() {
+        java.lang.Object ref = rDZVBackend_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rDZVBackend_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string RDZVBackend = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRDZVBackendBytes() {
+        java.lang.Object ref = rDZVBackend_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rDZVBackend_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string RDZVBackend = 4;</code>
+       */
+      public Builder setRDZVBackend(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rDZVBackend_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string RDZVBackend = 4;</code>
+       */
+      public Builder clearRDZVBackend() {
+        
+        rDZVBackend_ = getDefaultInstance().getRDZVBackend();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string RDZVBackend = 4;</code>
+       */
+      public Builder setRDZVBackendBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rDZVBackend_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int nProcPerNode_ ;
+      /**
+       * <pre>
+       * int32 RDZVPort = 5;
+       * string RDZVHost = 6;
+       * string RDZVID
+       * RDZVConf
+       * bool standalone = 7;
+       * </pre>
+       *
+       * <code>int32 nProcPerNode = 8;</code>
+       */
+      public int getNProcPerNode() {
+        return nProcPerNode_;
+      }
+      /**
+       * <pre>
+       * int32 RDZVPort = 5;
+       * string RDZVHost = 6;
+       * string RDZVID
+       * RDZVConf
+       * bool standalone = 7;
+       * </pre>
+       *
+       * <code>int32 nProcPerNode = 8;</code>
+       */
+      public Builder setNProcPerNode(int value) {
+        
+        nProcPerNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * int32 RDZVPort = 5;
+       * string RDZVHost = 6;
+       * string RDZVID
+       * RDZVConf
+       * bool standalone = 7;
+       * </pre>
+       *
+       * <code>int32 nProcPerNode = 8;</code>
+       */
+      public Builder clearNProcPerNode() {
+        
+        nProcPerNode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxRestarts_ ;
+      /**
+       * <pre>
+       * Metrics
+       * </pre>
+       *
+       * <code>int32 maxRestarts = 9;</code>
+       */
+      public int getMaxRestarts() {
+        return maxRestarts_;
+      }
+      /**
+       * <pre>
+       * Metrics
+       * </pre>
+       *
+       * <code>int32 maxRestarts = 9;</code>
+       */
+      public Builder setMaxRestarts(int value) {
+        
+        maxRestarts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Metrics
+       * </pre>
+       *
+       * <code>int32 maxRestarts = 9;</code>
+       */
+      public Builder clearMaxRestarts() {
+        
+        maxRestarts_ = 0;
         onChanged();
         return this;
       }
@@ -531,10 +976,12 @@ public final class Pytorch {
   static {
     java.lang.String[] descriptorData = {
       "\n\036flyteidl/plugins/pytorch.proto\022\020flytei" +
-      "dl.plugins\"1\n\036DistributedPyTorchTraining" +
-      "Task\022\017\n\007workers\030\001 \001(\005B9Z7github.com/flyt" +
-      "eorg/flyteidl/gen/pb-go/flyteidl/plugins" +
-      "b\006proto3"
+      "dl.plugins\"\233\001\n\036DistributedPyTorchTrainin" +
+      "gTask\022\017\n\007workers\030\001 \001(\005\022\023\n\013minReplicas\030\002 " +
+      "\001(\005\022\023\n\013maxReplicas\030\003 \001(\005\022\023\n\013RDZVBackend\030" +
+      "\004 \001(\t\022\024\n\014nProcPerNode\030\010 \001(\005\022\023\n\013maxRestar" +
+      "ts\030\t \001(\005B9Z7github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -553,7 +1000,7 @@ public final class Pytorch {
     internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_DistributedPyTorchTrainingTask_descriptor,
-        new java.lang.String[] { "Workers", });
+        new java.lang.String[] { "Workers", "MinReplicas", "MaxReplicas", "RDZVBackend", "NProcPerNode", "MaxRestarts", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

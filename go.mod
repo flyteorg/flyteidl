@@ -3,6 +3,7 @@ module github.com/flyteorg/flyteidl
 go 1.16
 
 require (
+	github.com/EngHabu/mockery v0.0.0-20220916190332-dde70e38baba // indirect
 	github.com/antihax/optional v1.0.0
 	github.com/flyteorg/flytestdlib v1.0.0
 	github.com/go-test/deep v1.0.7
@@ -16,9 +17,9 @@ require (
 	github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.7.1
 	github.com/vektra/mockery v1.1.2 // indirect
-	golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 	golang.org/x/oauth2 v0.0.0-20210126194326-f9ce19ea3013
 	google.golang.org/api v0.38.0
 	google.golang.org/genproto v0.0.0-20210126160654-44e461bb6506
