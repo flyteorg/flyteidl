@@ -3567,16 +3567,6 @@
       },
       "description": "Defines permissions associated with executions created by this launch plan spec.\nUse either of these roles when they have permissions required by your workflow execution.\nDeprecated."
     },
-    "adminCategoricalSpanInfo": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "type": "string",
-          "description": "category defines the category that this span is labeled as."
-        }
-      },
-      "description": "CategoricalSpanInfo represents a labelled Span, providing a brief attribution for the duration."
-    },
     "adminClusterAssignment": {
       "type": "object",
       "properties": {
@@ -4929,31 +4919,6 @@
       },
       "description": "Encapsulates user settings pertaining to offloaded data (i.e. Blobs, Schema, query data, etc.).\nSee https://github.com/flyteorg/flyte/issues/211 for more background information."
     },
-    "adminReferenceSpanInfo": {
-      "type": "object",
-      "properties": {
-        "workflow_id": {
-          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
-          "description": "workflow_id is the id of the workflow execution this Span represents."
-        },
-        "node_id": {
-          "$ref": "#/definitions/coreNodeExecutionIdentifier",
-          "description": "node_id is the id of the node execution this Span represents."
-        },
-        "task_id": {
-          "$ref": "#/definitions/coreTaskExecutionIdentifier",
-          "description": "task_id is the id of the task execution this Span represents."
-        },
-        "spans": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/adminSpan"
-          },
-          "description": "spans defines a collection of Spans that breakdown this execution."
-        }
-      },
-      "description": "ReferenceSpanInfo represents a collection of Spans belonging to a specific Flyte entity."
-    },
     "adminSchedule": {
       "type": "object",
       "properties": {
@@ -5009,30 +4974,6 @@
         }
       },
       "title": "Link to source code used to define this entity"
-    },
-    "adminSpan": {
-      "type": "object",
-      "properties": {
-        "start_time": {
-          "type": "string",
-          "format": "date-time",
-          "description": "start_time defines the instance this span began."
-        },
-        "end_time": {
-          "type": "string",
-          "format": "date-time",
-          "description": "end_time defines the instance this span completed."
-        },
-        "category": {
-          "$ref": "#/definitions/adminCategoricalSpanInfo",
-          "description": "category labels the span with a brief description."
-        },
-        "reference": {
-          "$ref": "#/definitions/adminReferenceSpanInfo",
-          "description": "reference allows nesting spans by providing a hierarchical interface to represent Flyte entity\nreplationships (ex. workflow -\u003e node -\u003e task)."
-        }
-      },
-      "description": "Span represents a duration trace of Flyte execution. This can refer to either a category, which labels the span with\na description, or a reference, which facilitates hierarchical breakdown of spans to capture Flyte entity\nrelationships (ex. workflow -\u003e node -\u003e task)."
     },
     "adminSystemMetadata": {
       "type": "object",
@@ -5515,7 +5456,7 @@
       "type": "object",
       "properties": {
         "span": {
-          "$ref": "#/definitions/adminSpan",
+          "$ref": "#/definitions/coreSpan",
           "description": "Span defines the top-level breakdown of the workflows execution. More precise information is nested in a\nhierarchical structure using Flyte entity references."
         }
       },
@@ -6727,6 +6668,45 @@
         }
       },
       "description": "SleepCondition represents a dependency on waiting for the specified duration."
+    },
+    "coreSpan": {
+      "type": "object",
+      "properties": {
+        "start_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "start_time defines the instance this span began."
+        },
+        "end_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "end_time defines the instance this span completed."
+        },
+        "workflow_id": {
+          "$ref": "#/definitions/coreWorkflowExecutionIdentifier",
+          "description": "workflow_id is the id of the workflow execution this Span represents."
+        },
+        "node_id": {
+          "$ref": "#/definitions/coreNodeExecutionIdentifier",
+          "description": "node_id is the id of the node execution this Span represents."
+        },
+        "task_id": {
+          "$ref": "#/definitions/coreTaskExecutionIdentifier",
+          "description": "task_id is the id of the task execution this Span represents."
+        },
+        "operation_id": {
+          "type": "string",
+          "description": "operation_id is the id of a unique operation that this Span represents."
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreSpan"
+          },
+          "description": "spans defines a collection of Spans that breakdown this execution."
+        }
+      },
+      "description": "Span represents a duration trace of Flyte execution. The id field denotes a Flyte execution entity or an operation\nwhich uniquely identifies the Span. The spans attribute allows this Span to be further broken down into more\nprecise definitions."
     },
     "coreSql": {
       "type": "object",

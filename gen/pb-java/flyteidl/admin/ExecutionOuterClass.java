@@ -26942,7 +26942,7 @@ public final class ExecutionOuterClass {
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
     boolean hasSpan();
     /**
@@ -26951,18 +26951,18 @@ public final class ExecutionOuterClass {
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
-    flyteidl.admin.Common.Span getSpan();
+    flyteidl.core.Metrics.Span getSpan();
     /**
      * <pre>
      * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
-    flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder();
+    flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder();
   }
   /**
    * <pre>
@@ -27008,11 +27008,11 @@ public final class ExecutionOuterClass {
               done = true;
               break;
             case 10: {
-              flyteidl.admin.Common.Span.Builder subBuilder = null;
+              flyteidl.core.Metrics.Span.Builder subBuilder = null;
               if (span_ != null) {
                 subBuilder = span_.toBuilder();
               }
-              span_ = input.readMessage(flyteidl.admin.Common.Span.parser(), extensionRegistry);
+              span_ = input.readMessage(flyteidl.core.Metrics.Span.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(span_);
                 span_ = subBuilder.buildPartial();
@@ -27053,14 +27053,14 @@ public final class ExecutionOuterClass {
     }
 
     public static final int SPAN_FIELD_NUMBER = 1;
-    private flyteidl.admin.Common.Span span_;
+    private flyteidl.core.Metrics.Span span_;
     /**
      * <pre>
      * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
     public boolean hasSpan() {
       return span_ != null;
@@ -27071,10 +27071,10 @@ public final class ExecutionOuterClass {
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
-    public flyteidl.admin.Common.Span getSpan() {
-      return span_ == null ? flyteidl.admin.Common.Span.getDefaultInstance() : span_;
+    public flyteidl.core.Metrics.Span getSpan() {
+      return span_ == null ? flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
     }
     /**
      * <pre>
@@ -27082,9 +27082,9 @@ public final class ExecutionOuterClass {
      * hierarchical structure using Flyte entity references.
      * </pre>
      *
-     * <code>.flyteidl.admin.Span span = 1;</code>
+     * <code>.flyteidl.core.Span span = 1;</code>
      */
-    public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
+    public flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder() {
       return getSpan();
     }
 
@@ -27407,16 +27407,16 @@ public final class ExecutionOuterClass {
         return this;
       }
 
-      private flyteidl.admin.Common.Span span_;
+      private flyteidl.core.Metrics.Span span_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> spanBuilder_;
+          flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder> spanBuilder_;
       /**
        * <pre>
        * Span defines the top-level breakdown of the workflows execution. More precise information is nested in a
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
       public boolean hasSpan() {
         return spanBuilder_ != null || span_ != null;
@@ -27427,11 +27427,11 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
-      public flyteidl.admin.Common.Span getSpan() {
+      public flyteidl.core.Metrics.Span getSpan() {
         if (spanBuilder_ == null) {
-          return span_ == null ? flyteidl.admin.Common.Span.getDefaultInstance() : span_;
+          return span_ == null ? flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
         } else {
           return spanBuilder_.getMessage();
         }
@@ -27442,9 +27442,9 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
-      public Builder setSpan(flyteidl.admin.Common.Span value) {
+      public Builder setSpan(flyteidl.core.Metrics.Span value) {
         if (spanBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -27463,10 +27463,10 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
       public Builder setSpan(
-          flyteidl.admin.Common.Span.Builder builderForValue) {
+          flyteidl.core.Metrics.Span.Builder builderForValue) {
         if (spanBuilder_ == null) {
           span_ = builderForValue.build();
           onChanged();
@@ -27482,13 +27482,13 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
-      public Builder mergeSpan(flyteidl.admin.Common.Span value) {
+      public Builder mergeSpan(flyteidl.core.Metrics.Span value) {
         if (spanBuilder_ == null) {
           if (span_ != null) {
             span_ =
-              flyteidl.admin.Common.Span.newBuilder(span_).mergeFrom(value).buildPartial();
+              flyteidl.core.Metrics.Span.newBuilder(span_).mergeFrom(value).buildPartial();
           } else {
             span_ = value;
           }
@@ -27505,7 +27505,7 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
       public Builder clearSpan() {
         if (spanBuilder_ == null) {
@@ -27524,9 +27524,9 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
-      public flyteidl.admin.Common.Span.Builder getSpanBuilder() {
+      public flyteidl.core.Metrics.Span.Builder getSpanBuilder() {
         
         onChanged();
         return getSpanFieldBuilder().getBuilder();
@@ -27537,14 +27537,14 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
-      public flyteidl.admin.Common.SpanOrBuilder getSpanOrBuilder() {
+      public flyteidl.core.Metrics.SpanOrBuilder getSpanOrBuilder() {
         if (spanBuilder_ != null) {
           return spanBuilder_.getMessageOrBuilder();
         } else {
           return span_ == null ?
-              flyteidl.admin.Common.Span.getDefaultInstance() : span_;
+              flyteidl.core.Metrics.Span.getDefaultInstance() : span_;
         }
       }
       /**
@@ -27553,14 +27553,14 @@ public final class ExecutionOuterClass {
        * hierarchical structure using Flyte entity references.
        * </pre>
        *
-       * <code>.flyteidl.admin.Span span = 1;</code>
+       * <code>.flyteidl.core.Span span = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder> 
+          flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder> 
           getSpanFieldBuilder() {
         if (spanBuilder_ == null) {
           spanBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.admin.Common.Span, flyteidl.admin.Common.Span.Builder, flyteidl.admin.Common.SpanOrBuilder>(
+              flyteidl.core.Metrics.Span, flyteidl.core.Metrics.Span.Builder, flyteidl.core.Metrics.SpanOrBuilder>(
                   getSpan(),
                   getParentForChildren(),
                   isClean());
@@ -27750,114 +27750,115 @@ public final class ExecutionOuterClass {
       "ent.proto\032\033flyteidl/admin/common.proto\032\034" +
       "flyteidl/core/literals.proto\032\035flyteidl/c" +
       "ore/execution.proto\032\036flyteidl/core/ident" +
-      "ifier.proto\032\034flyteidl/core/security.prot" +
-      "o\032\036google/protobuf/duration.proto\032\037googl" +
-      "e/protobuf/timestamp.proto\032\036google/proto" +
-      "buf/wrappers.proto\"\237\001\n\026ExecutionCreateRe" +
-      "quest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014" +
-      "\n\004name\030\003 \001(\t\022+\n\004spec\030\004 \001(\0132\035.flyteidl.ad" +
-      "min.ExecutionSpec\022)\n\006inputs\030\005 \001(\0132\031.flyt" +
-      "eidl.core.LiteralMap\"\177\n\030ExecutionRelaunc" +
-      "hRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wor" +
-      "kflowExecutionIdentifier\022\014\n\004name\030\003 \001(\t\022\027" +
-      "\n\017overwrite_cache\030\004 \001(\010J\004\010\002\020\003\"\224\001\n\027Execut" +
-      "ionRecoverRequest\0226\n\002id\030\001 \001(\0132*.flyteidl" +
-      ".core.WorkflowExecutionIdentifier\022\014\n\004nam" +
-      "e\030\002 \001(\t\0223\n\010metadata\030\003 \001(\0132!.flyteidl.adm" +
-      "in.ExecutionMetadata\"Q\n\027ExecutionCreateR" +
-      "esponse\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Work" +
-      "flowExecutionIdentifier\"U\n\033WorkflowExecu" +
-      "tionGetRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.co" +
-      "re.WorkflowExecutionIdentifier\"\243\001\n\tExecu" +
-      "tion\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\022+\n\004spec\030\002 \001(\0132\035.fly" +
-      "teidl.admin.ExecutionSpec\0221\n\007closure\030\003 \001" +
-      "(\0132 .flyteidl.admin.ExecutionClosure\"M\n\r" +
-      "ExecutionList\022-\n\nexecutions\030\001 \003(\0132\031.flyt" +
-      "eidl.admin.Execution\022\r\n\005token\030\002 \001(\t\"X\n\016L" +
-      "iteralMapBlob\022/\n\006values\030\001 \001(\0132\031.flyteidl" +
-      ".core.LiteralMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n" +
-      "\004data\"1\n\rAbortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n" +
-      "\tprincipal\030\002 \001(\t\"\360\005\n\020ExecutionClosure\0225\n" +
-      "\007outputs\030\001 \001(\0132\036.flyteidl.admin.LiteralM" +
-      "apBlobB\002\030\001H\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.c" +
-      "ore.ExecutionErrorH\000\022\031\n\013abort_cause\030\n \001(" +
-      "\tB\002\030\001H\000\0227\n\016abort_metadata\030\014 \001(\0132\035.flytei" +
-      "dl.admin.AbortMetadataH\000\0224\n\013output_data\030" +
-      "\r \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001H\000\0226" +
-      "\n\017computed_inputs\030\003 \001(\0132\031.flyteidl.core." +
-      "LiteralMapB\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyteidl" +
-      ".core.WorkflowExecution.Phase\022.\n\nstarted" +
-      "_at\030\005 \001(\0132\032.google.protobuf.Timestamp\022+\n" +
-      "\010duration\030\006 \001(\0132\031.google.protobuf.Durati" +
-      "on\022.\n\ncreated_at\030\007 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022.\n\nupdated_at\030\010 \001(\0132\032.google." +
-      "protobuf.Timestamp\0223\n\rnotifications\030\t \003(" +
-      "\0132\034.flyteidl.admin.Notification\022.\n\013workf" +
-      "low_id\030\013 \001(\0132\031.flyteidl.core.Identifier\022" +
-      "I\n\024state_change_details\030\016 \001(\0132+.flyteidl" +
-      ".admin.ExecutionStateChangeDetailsB\017\n\rou" +
-      "tput_result\"+\n\016SystemMetadata\022\031\n\021executi" +
-      "on_cluster\030\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=" +
-      "\n\004mode\030\001 \001(\0162/.flyteidl.admin.ExecutionM" +
-      "etadata.ExecutionMode\022\021\n\tprincipal\030\002 \001(\t" +
-      "\022\017\n\007nesting\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132" +
-      "\032.google.protobuf.Timestamp\022E\n\025parent_no" +
-      "de_execution\030\005 \001(\0132&.flyteidl.core.NodeE" +
-      "xecutionIdentifier\022G\n\023reference_executio" +
-      "n\030\020 \001(\0132*.flyteidl.core.WorkflowExecutio" +
-      "nIdentifier\0227\n\017system_metadata\030\021 \001(\0132\036.f" +
-      "lyteidl.admin.SystemMetadata\"g\n\rExecutio" +
-      "nMode\022\n\n\006MANUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYST" +
-      "EM\020\002\022\014\n\010RELAUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r" +
-      "\n\tRECOVERED\020\005\"G\n\020NotificationList\0223\n\rnot" +
-      "ifications\030\001 \003(\0132\034.flyteidl.admin.Notifi" +
-      "cation\"\200\006\n\rExecutionSpec\022.\n\013launch_plan\030" +
-      "\001 \001(\0132\031.flyteidl.core.Identifier\022-\n\006inpu" +
-      "ts\030\002 \001(\0132\031.flyteidl.core.LiteralMapB\002\030\001\022" +
-      "3\n\010metadata\030\003 \001(\0132!.flyteidl.admin.Execu" +
-      "tionMetadata\0229\n\rnotifications\030\005 \001(\0132 .fl" +
-      "yteidl.admin.NotificationListH\000\022\025\n\013disab" +
-      "le_all\030\006 \001(\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteid" +
-      "l.admin.Labels\0220\n\013annotations\030\010 \001(\0132\033.fl" +
-      "yteidl.admin.Annotations\0228\n\020security_con" +
-      "text\030\n \001(\0132\036.flyteidl.core.SecurityConte" +
-      "xt\022/\n\tauth_role\030\020 \001(\0132\030.flyteidl.admin.A" +
-      "uthRoleB\002\030\001\022;\n\022quality_of_service\030\021 \001(\0132" +
-      "\037.flyteidl.core.QualityOfService\022\027\n\017max_" +
-      "parallelism\030\022 \001(\005\022C\n\026raw_output_data_con" +
-      "fig\030\023 \001(\0132#.flyteidl.admin.RawOutputData" +
-      "Config\022=\n\022cluster_assignment\030\024 \001(\0132!.fly" +
-      "teidl.admin.ClusterAssignment\0221\n\rinterru" +
-      "ptible\030\025 \001(\0132\032.google.protobuf.BoolValue" +
-      "\022\027\n\017overwrite_cache\030\026 \001(\010B\030\n\026notificatio" +
-      "n_overridesJ\004\010\004\020\005\"b\n\031ExecutionTerminateR" +
+      "ifier.proto\032\033flyteidl/core/metrics.proto" +
+      "\032\034flyteidl/core/security.proto\032\036google/p" +
+      "rotobuf/duration.proto\032\037google/protobuf/" +
+      "timestamp.proto\032\036google/protobuf/wrapper" +
+      "s.proto\"\237\001\n\026ExecutionCreateRequest\022\017\n\007pr" +
+      "oject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 \001(" +
+      "\t\022+\n\004spec\030\004 \001(\0132\035.flyteidl.admin.Executi" +
+      "onSpec\022)\n\006inputs\030\005 \001(\0132\031.flyteidl.core.L" +
+      "iteralMap\"\177\n\030ExecutionRelaunchRequest\0226\n" +
+      "\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecut" +
+      "ionIdentifier\022\014\n\004name\030\003 \001(\t\022\027\n\017overwrite" +
+      "_cache\030\004 \001(\010J\004\010\002\020\003\"\224\001\n\027ExecutionRecoverR" +
       "equest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workf" +
-      "lowExecutionIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n" +
-      "\032ExecutionTerminateResponse\"Y\n\037WorkflowE" +
-      "xecutionGetDataRequest\0226\n\002id\030\001 \001(\0132*.fly" +
-      "teidl.core.WorkflowExecutionIdentifier\"\336" +
-      "\001\n WorkflowExecutionGetDataResponse\022,\n\007o" +
-      "utputs\030\001 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030" +
-      "\001\022+\n\006inputs\030\002 \001(\0132\027.flyteidl.admin.UrlBl" +
-      "obB\002\030\001\022.\n\013full_inputs\030\003 \001(\0132\031.flyteidl.c" +
-      "ore.LiteralMap\022/\n\014full_outputs\030\004 \001(\0132\031.f" +
-      "lyteidl.core.LiteralMap\"\177\n\026ExecutionUpda" +
-      "teRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Wo" +
-      "rkflowExecutionIdentifier\022-\n\005state\030\002 \001(\016" +
-      "2\036.flyteidl.admin.ExecutionState\"\220\001\n\033Exe" +
-      "cutionStateChangeDetails\022-\n\005state\030\001 \001(\0162" +
-      "\036.flyteidl.admin.ExecutionState\022/\n\013occur" +
-      "red_at\030\002 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022\021\n\tprincipal\030\003 \001(\t\"\031\n\027ExecutionUpdateRe" +
-      "sponse\"k\n\"WorkflowExecutionGetMetricsReq" +
-      "uest\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflo" +
-      "wExecutionIdentifier\022\r\n\005depth\030\002 \001(\005\"I\n#W" +
-      "orkflowExecutionGetMetricsResponse\022\"\n\004sp" +
-      "an\030\001 \001(\0132\024.flyteidl.admin.Span*>\n\016Execut" +
-      "ionState\022\024\n\020EXECUTION_ACTIVE\020\000\022\026\n\022EXECUT" +
-      "ION_ARCHIVED\020\001B7Z5github.com/flyteorg/fl" +
-      "yteidl/gen/pb-go/flyteidl/adminb\006proto3"
+      "lowExecutionIdentifier\022\014\n\004name\030\002 \001(\t\0223\n\010" +
+      "metadata\030\003 \001(\0132!.flyteidl.admin.Executio" +
+      "nMetadata\"Q\n\027ExecutionCreateResponse\0226\n\002" +
+      "id\030\001 \001(\0132*.flyteidl.core.WorkflowExecuti" +
+      "onIdentifier\"U\n\033WorkflowExecutionGetRequ" +
+      "est\0226\n\002id\030\001 \001(\0132*.flyteidl.core.Workflow" +
+      "ExecutionIdentifier\"\243\001\n\tExecution\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022+\n\004spec\030\002 \001(\0132\035.flyteidl.admin" +
+      ".ExecutionSpec\0221\n\007closure\030\003 \001(\0132 .flytei" +
+      "dl.admin.ExecutionClosure\"M\n\rExecutionLi" +
+      "st\022-\n\nexecutions\030\001 \003(\0132\031.flyteidl.admin." +
+      "Execution\022\r\n\005token\030\002 \001(\t\"X\n\016LiteralMapBl" +
+      "ob\022/\n\006values\030\001 \001(\0132\031.flyteidl.core.Liter" +
+      "alMapB\002\030\001H\000\022\r\n\003uri\030\002 \001(\tH\000B\006\n\004data\"1\n\rAb" +
+      "ortMetadata\022\r\n\005cause\030\001 \001(\t\022\021\n\tprincipal\030" +
+      "\002 \001(\t\"\360\005\n\020ExecutionClosure\0225\n\007outputs\030\001 " +
+      "\001(\0132\036.flyteidl.admin.LiteralMapBlobB\002\030\001H" +
+      "\000\022.\n\005error\030\002 \001(\0132\035.flyteidl.core.Executi" +
+      "onErrorH\000\022\031\n\013abort_cause\030\n \001(\tB\002\030\001H\000\0227\n\016" +
+      "abort_metadata\030\014 \001(\0132\035.flyteidl.admin.Ab" +
+      "ortMetadataH\000\0224\n\013output_data\030\r \001(\0132\031.fly" +
+      "teidl.core.LiteralMapB\002\030\001H\000\0226\n\017computed_" +
+      "inputs\030\003 \001(\0132\031.flyteidl.core.LiteralMapB" +
+      "\002\030\001\0225\n\005phase\030\004 \001(\0162&.flyteidl.core.Workf" +
+      "lowExecution.Phase\022.\n\nstarted_at\030\005 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022+\n\010duration\030\006" +
+      " \001(\0132\031.google.protobuf.Duration\022.\n\ncreat" +
+      "ed_at\030\007 \001(\0132\032.google.protobuf.Timestamp\022" +
+      ".\n\nupdated_at\030\010 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\0223\n\rnotifications\030\t \003(\0132\034.flyteid" +
+      "l.admin.Notification\022.\n\013workflow_id\030\013 \001(" +
+      "\0132\031.flyteidl.core.Identifier\022I\n\024state_ch" +
+      "ange_details\030\016 \001(\0132+.flyteidl.admin.Exec" +
+      "utionStateChangeDetailsB\017\n\routput_result" +
+      "\"+\n\016SystemMetadata\022\031\n\021execution_cluster\030" +
+      "\001 \001(\t\"\332\003\n\021ExecutionMetadata\022=\n\004mode\030\001 \001(" +
+      "\0162/.flyteidl.admin.ExecutionMetadata.Exe" +
+      "cutionMode\022\021\n\tprincipal\030\002 \001(\t\022\017\n\007nesting" +
+      "\030\003 \001(\r\0220\n\014scheduled_at\030\004 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022E\n\025parent_node_executio" +
+      "n\030\005 \001(\0132&.flyteidl.core.NodeExecutionIde" +
+      "ntifier\022G\n\023reference_execution\030\020 \001(\0132*.f" +
+      "lyteidl.core.WorkflowExecutionIdentifier" +
+      "\0227\n\017system_metadata\030\021 \001(\0132\036.flyteidl.adm" +
+      "in.SystemMetadata\"g\n\rExecutionMode\022\n\n\006MA" +
+      "NUAL\020\000\022\r\n\tSCHEDULED\020\001\022\n\n\006SYSTEM\020\002\022\014\n\010REL" +
+      "AUNCH\020\003\022\022\n\016CHILD_WORKFLOW\020\004\022\r\n\tRECOVERED" +
+      "\020\005\"G\n\020NotificationList\0223\n\rnotifications\030" +
+      "\001 \003(\0132\034.flyteidl.admin.Notification\"\200\006\n\r" +
+      "ExecutionSpec\022.\n\013launch_plan\030\001 \001(\0132\031.fly" +
+      "teidl.core.Identifier\022-\n\006inputs\030\002 \001(\0132\031." +
+      "flyteidl.core.LiteralMapB\002\030\001\0223\n\010metadata" +
+      "\030\003 \001(\0132!.flyteidl.admin.ExecutionMetadat" +
+      "a\0229\n\rnotifications\030\005 \001(\0132 .flyteidl.admi" +
+      "n.NotificationListH\000\022\025\n\013disable_all\030\006 \001(" +
+      "\010H\000\022&\n\006labels\030\007 \001(\0132\026.flyteidl.admin.Lab" +
+      "els\0220\n\013annotations\030\010 \001(\0132\033.flyteidl.admi" +
+      "n.Annotations\0228\n\020security_context\030\n \001(\0132" +
+      "\036.flyteidl.core.SecurityContext\022/\n\tauth_" +
+      "role\030\020 \001(\0132\030.flyteidl.admin.AuthRoleB\002\030\001" +
+      "\022;\n\022quality_of_service\030\021 \001(\0132\037.flyteidl." +
+      "core.QualityOfService\022\027\n\017max_parallelism" +
+      "\030\022 \001(\005\022C\n\026raw_output_data_config\030\023 \001(\0132#" +
+      ".flyteidl.admin.RawOutputDataConfig\022=\n\022c" +
+      "luster_assignment\030\024 \001(\0132!.flyteidl.admin" +
+      ".ClusterAssignment\0221\n\rinterruptible\030\025 \001(" +
+      "\0132\032.google.protobuf.BoolValue\022\027\n\017overwri" +
+      "te_cache\030\026 \001(\010B\030\n\026notification_overrides" +
+      "J\004\010\004\020\005\"b\n\031ExecutionTerminateRequest\0226\n\002i" +
+      "d\030\001 \001(\0132*.flyteidl.core.WorkflowExecutio" +
+      "nIdentifier\022\r\n\005cause\030\002 \001(\t\"\034\n\032ExecutionT" +
+      "erminateResponse\"Y\n\037WorkflowExecutionGet" +
+      "DataRequest\0226\n\002id\030\001 \001(\0132*.flyteidl.core." +
+      "WorkflowExecutionIdentifier\"\336\001\n Workflow" +
+      "ExecutionGetDataResponse\022,\n\007outputs\030\001 \001(" +
+      "\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022+\n\006inputs" +
+      "\030\002 \001(\0132\027.flyteidl.admin.UrlBlobB\002\030\001\022.\n\013f" +
+      "ull_inputs\030\003 \001(\0132\031.flyteidl.core.Literal" +
+      "Map\022/\n\014full_outputs\030\004 \001(\0132\031.flyteidl.cor" +
+      "e.LiteralMap\"\177\n\026ExecutionUpdateRequest\0226" +
+      "\n\002id\030\001 \001(\0132*.flyteidl.core.WorkflowExecu" +
+      "tionIdentifier\022-\n\005state\030\002 \001(\0162\036.flyteidl" +
+      ".admin.ExecutionState\"\220\001\n\033ExecutionState" +
+      "ChangeDetails\022-\n\005state\030\001 \001(\0162\036.flyteidl." +
+      "admin.ExecutionState\022/\n\013occurred_at\030\002 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\021\n\tprincip" +
+      "al\030\003 \001(\t\"\031\n\027ExecutionUpdateResponse\"k\n\"W" +
+      "orkflowExecutionGetMetricsRequest\0226\n\002id\030" +
+      "\001 \001(\0132*.flyteidl.core.WorkflowExecutionI" +
+      "dentifier\022\r\n\005depth\030\002 \001(\005\"H\n#WorkflowExec" +
+      "utionGetMetricsResponse\022!\n\004span\030\001 \001(\0132\023." +
+      "flyteidl.core.Span*>\n\016ExecutionState\022\024\n\020" +
+      "EXECUTION_ACTIVE\020\000\022\026\n\022EXECUTION_ARCHIVED" +
+      "\020\001B7Z5github.com/flyteorg/flyteidl/gen/p" +
+      "b-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27875,6 +27876,7 @@ public final class ExecutionOuterClass {
           flyteidl.core.Literals.getDescriptor(),
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.Metrics.getDescriptor(),
           flyteidl.core.Security.getDescriptor(),
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
@@ -28023,6 +28025,7 @@ public final class ExecutionOuterClass {
     flyteidl.core.Literals.getDescriptor();
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.Metrics.getDescriptor();
     flyteidl.core.Security.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

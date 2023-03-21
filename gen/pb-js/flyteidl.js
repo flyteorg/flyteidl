@@ -15279,6 +15279,270 @@
                 return ErrorDocument;
             })();
     
+            core.Span = (function() {
+    
+                /**
+                 * Properties of a Span.
+                 * @memberof flyteidl.core
+                 * @interface ISpan
+                 * @property {google.protobuf.ITimestamp|null} [startTime] Span startTime
+                 * @property {google.protobuf.ITimestamp|null} [endTime] Span endTime
+                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [workflowId] Span workflowId
+                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] Span nodeId
+                 * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskId] Span taskId
+                 * @property {string|null} [operationId] Span operationId
+                 * @property {Array.<flyteidl.core.ISpan>|null} [spans] Span spans
+                 */
+    
+                /**
+                 * Constructs a new Span.
+                 * @memberof flyteidl.core
+                 * @classdesc Represents a Span.
+                 * @implements ISpan
+                 * @constructor
+                 * @param {flyteidl.core.ISpan=} [properties] Properties to set
+                 */
+                function Span(properties) {
+                    this.spans = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Span startTime.
+                 * @member {google.protobuf.ITimestamp|null|undefined} startTime
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.startTime = null;
+    
+                /**
+                 * Span endTime.
+                 * @member {google.protobuf.ITimestamp|null|undefined} endTime
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.endTime = null;
+    
+                /**
+                 * Span workflowId.
+                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} workflowId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.workflowId = null;
+    
+                /**
+                 * Span nodeId.
+                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.nodeId = null;
+    
+                /**
+                 * Span taskId.
+                 * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.taskId = null;
+    
+                /**
+                 * Span operationId.
+                 * @member {string} operationId
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.operationId = "";
+    
+                /**
+                 * Span spans.
+                 * @member {Array.<flyteidl.core.ISpan>} spans
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Span.prototype.spans = $util.emptyArray;
+    
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+    
+                /**
+                 * Span id.
+                 * @member {"workflowId"|"nodeId"|"taskId"|"operationId"|undefined} id
+                 * @memberof flyteidl.core.Span
+                 * @instance
+                 */
+                Object.defineProperty(Span.prototype, "id", {
+                    get: $util.oneOfGetter($oneOfFields = ["workflowId", "nodeId", "taskId", "operationId"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+    
+                /**
+                 * Creates a new Span instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {flyteidl.core.ISpan=} [properties] Properties to set
+                 * @returns {flyteidl.core.Span} Span instance
+                 */
+                Span.create = function create(properties) {
+                    return new Span(properties);
+                };
+    
+                /**
+                 * Encodes the specified Span message. Does not implicitly {@link flyteidl.core.Span.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {flyteidl.core.ISpan} message Span message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Span.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.startTime != null && message.hasOwnProperty("startTime"))
+                        $root.google.protobuf.Timestamp.encode(message.startTime, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.endTime != null && message.hasOwnProperty("endTime"))
+                        $root.google.protobuf.Timestamp.encode(message.endTime, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId"))
+                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.workflowId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.nodeId != null && message.hasOwnProperty("nodeId"))
+                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.taskId != null && message.hasOwnProperty("taskId"))
+                        $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    if (message.operationId != null && message.hasOwnProperty("operationId"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.operationId);
+                    if (message.spans != null && message.spans.length)
+                        for (var i = 0; i < message.spans.length; ++i)
+                            $root.flyteidl.core.Span.encode(message.spans[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a Span message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.core.Span} Span
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Span.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.core.Span();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.startTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 2:
+                            message.endTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.workflowId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.taskId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
+                            break;
+                        case 6:
+                            message.operationId = reader.string();
+                            break;
+                        case 7:
+                            if (!(message.spans && message.spans.length))
+                                message.spans = [];
+                            message.spans.push($root.flyteidl.core.Span.decode(reader, reader.uint32()));
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a Span message.
+                 * @function verify
+                 * @memberof flyteidl.core.Span
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Span.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.startTime != null && message.hasOwnProperty("startTime")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.startTime);
+                        if (error)
+                            return "startTime." + error;
+                    }
+                    if (message.endTime != null && message.hasOwnProperty("endTime")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.endTime);
+                        if (error)
+                            return "endTime." + error;
+                    }
+                    if (message.workflowId != null && message.hasOwnProperty("workflowId")) {
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.workflowId);
+                            if (error)
+                                return "workflowId." + error;
+                        }
+                    }
+                    if (message.nodeId != null && message.hasOwnProperty("nodeId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeId);
+                            if (error)
+                                return "nodeId." + error;
+                        }
+                    }
+                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        {
+                            var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskId);
+                            if (error)
+                                return "taskId." + error;
+                        }
+                    }
+                    if (message.operationId != null && message.hasOwnProperty("operationId")) {
+                        if (properties.id === 1)
+                            return "id: multiple values";
+                        properties.id = 1;
+                        if (!$util.isString(message.operationId))
+                            return "operationId: string expected";
+                    }
+                    if (message.spans != null && message.hasOwnProperty("spans")) {
+                        if (!Array.isArray(message.spans))
+                            return "spans: array expected";
+                        for (var i = 0; i < message.spans.length; ++i) {
+                            var error = $root.flyteidl.core.Span.verify(message.spans[i]);
+                            if (error)
+                                return "spans." + error;
+                        }
+                    }
+                    return null;
+                };
+    
+                return Span;
+            })();
+    
             core.WorkflowClosure = (function() {
     
                 /**
@@ -21266,545 +21530,6 @@
                 return RawOutputDataConfig;
             })();
     
-            admin.Span = (function() {
-    
-                /**
-                 * Properties of a Span.
-                 * @memberof flyteidl.admin
-                 * @interface ISpan
-                 * @property {google.protobuf.ITimestamp|null} [startTime] Span startTime
-                 * @property {google.protobuf.ITimestamp|null} [endTime] Span endTime
-                 * @property {flyteidl.admin.ICategoricalSpanInfo|null} [category] Span category
-                 * @property {flyteidl.admin.IReferenceSpanInfo|null} [reference] Span reference
-                 */
-    
-                /**
-                 * Constructs a new Span.
-                 * @memberof flyteidl.admin
-                 * @classdesc Represents a Span.
-                 * @implements ISpan
-                 * @constructor
-                 * @param {flyteidl.admin.ISpan=} [properties] Properties to set
-                 */
-                function Span(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Span startTime.
-                 * @member {google.protobuf.ITimestamp|null|undefined} startTime
-                 * @memberof flyteidl.admin.Span
-                 * @instance
-                 */
-                Span.prototype.startTime = null;
-    
-                /**
-                 * Span endTime.
-                 * @member {google.protobuf.ITimestamp|null|undefined} endTime
-                 * @memberof flyteidl.admin.Span
-                 * @instance
-                 */
-                Span.prototype.endTime = null;
-    
-                /**
-                 * Span category.
-                 * @member {flyteidl.admin.ICategoricalSpanInfo|null|undefined} category
-                 * @memberof flyteidl.admin.Span
-                 * @instance
-                 */
-                Span.prototype.category = null;
-    
-                /**
-                 * Span reference.
-                 * @member {flyteidl.admin.IReferenceSpanInfo|null|undefined} reference
-                 * @memberof flyteidl.admin.Span
-                 * @instance
-                 */
-                Span.prototype.reference = null;
-    
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * Span info.
-                 * @member {"category"|"reference"|undefined} info
-                 * @memberof flyteidl.admin.Span
-                 * @instance
-                 */
-                Object.defineProperty(Span.prototype, "info", {
-                    get: $util.oneOfGetter($oneOfFields = ["category", "reference"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-    
-                /**
-                 * Creates a new Span instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.admin.Span
-                 * @static
-                 * @param {flyteidl.admin.ISpan=} [properties] Properties to set
-                 * @returns {flyteidl.admin.Span} Span instance
-                 */
-                Span.create = function create(properties) {
-                    return new Span(properties);
-                };
-    
-                /**
-                 * Encodes the specified Span message. Does not implicitly {@link flyteidl.admin.Span.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.admin.Span
-                 * @static
-                 * @param {flyteidl.admin.ISpan} message Span message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Span.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.startTime != null && message.hasOwnProperty("startTime"))
-                        $root.google.protobuf.Timestamp.encode(message.startTime, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.endTime != null && message.hasOwnProperty("endTime"))
-                        $root.google.protobuf.Timestamp.encode(message.endTime, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.category != null && message.hasOwnProperty("category"))
-                        $root.flyteidl.admin.CategoricalSpanInfo.encode(message.category, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.reference != null && message.hasOwnProperty("reference"))
-                        $root.flyteidl.admin.ReferenceSpanInfo.encode(message.reference, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a Span message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.admin.Span
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.admin.Span} Span
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Span.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Span();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.startTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.endTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.category = $root.flyteidl.admin.CategoricalSpanInfo.decode(reader, reader.uint32());
-                            break;
-                        case 4:
-                            message.reference = $root.flyteidl.admin.ReferenceSpanInfo.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a Span message.
-                 * @function verify
-                 * @memberof flyteidl.admin.Span
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Span.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    var properties = {};
-                    if (message.startTime != null && message.hasOwnProperty("startTime")) {
-                        var error = $root.google.protobuf.Timestamp.verify(message.startTime);
-                        if (error)
-                            return "startTime." + error;
-                    }
-                    if (message.endTime != null && message.hasOwnProperty("endTime")) {
-                        var error = $root.google.protobuf.Timestamp.verify(message.endTime);
-                        if (error)
-                            return "endTime." + error;
-                    }
-                    if (message.category != null && message.hasOwnProperty("category")) {
-                        properties.info = 1;
-                        {
-                            var error = $root.flyteidl.admin.CategoricalSpanInfo.verify(message.category);
-                            if (error)
-                                return "category." + error;
-                        }
-                    }
-                    if (message.reference != null && message.hasOwnProperty("reference")) {
-                        if (properties.info === 1)
-                            return "info: multiple values";
-                        properties.info = 1;
-                        {
-                            var error = $root.flyteidl.admin.ReferenceSpanInfo.verify(message.reference);
-                            if (error)
-                                return "reference." + error;
-                        }
-                    }
-                    return null;
-                };
-    
-                return Span;
-            })();
-    
-            admin.CategoricalSpanInfo = (function() {
-    
-                /**
-                 * Properties of a CategoricalSpanInfo.
-                 * @memberof flyteidl.admin
-                 * @interface ICategoricalSpanInfo
-                 * @property {string|null} [category] CategoricalSpanInfo category
-                 */
-    
-                /**
-                 * Constructs a new CategoricalSpanInfo.
-                 * @memberof flyteidl.admin
-                 * @classdesc Represents a CategoricalSpanInfo.
-                 * @implements ICategoricalSpanInfo
-                 * @constructor
-                 * @param {flyteidl.admin.ICategoricalSpanInfo=} [properties] Properties to set
-                 */
-                function CategoricalSpanInfo(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * CategoricalSpanInfo category.
-                 * @member {string} category
-                 * @memberof flyteidl.admin.CategoricalSpanInfo
-                 * @instance
-                 */
-                CategoricalSpanInfo.prototype.category = "";
-    
-                /**
-                 * Creates a new CategoricalSpanInfo instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.admin.CategoricalSpanInfo
-                 * @static
-                 * @param {flyteidl.admin.ICategoricalSpanInfo=} [properties] Properties to set
-                 * @returns {flyteidl.admin.CategoricalSpanInfo} CategoricalSpanInfo instance
-                 */
-                CategoricalSpanInfo.create = function create(properties) {
-                    return new CategoricalSpanInfo(properties);
-                };
-    
-                /**
-                 * Encodes the specified CategoricalSpanInfo message. Does not implicitly {@link flyteidl.admin.CategoricalSpanInfo.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.admin.CategoricalSpanInfo
-                 * @static
-                 * @param {flyteidl.admin.ICategoricalSpanInfo} message CategoricalSpanInfo message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                CategoricalSpanInfo.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.category != null && message.hasOwnProperty("category"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.category);
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a CategoricalSpanInfo message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.admin.CategoricalSpanInfo
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.admin.CategoricalSpanInfo} CategoricalSpanInfo
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                CategoricalSpanInfo.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.CategoricalSpanInfo();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.category = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a CategoricalSpanInfo message.
-                 * @function verify
-                 * @memberof flyteidl.admin.CategoricalSpanInfo
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                CategoricalSpanInfo.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.category != null && message.hasOwnProperty("category"))
-                        if (!$util.isString(message.category))
-                            return "category: string expected";
-                    return null;
-                };
-    
-                /**
-                 * Category enum.
-                 * @name flyteidl.admin.CategoricalSpanInfo.Category
-                 * @enum {string}
-                 * @property {number} UNKNOWN=0 UNKNOWN value
-                 * @property {number} NODE_IDLE=1 NODE_IDLE value
-                 * @property {number} NODE_RESET=2 NODE_RESET value
-                 * @property {number} NODE_SETUP=3 NODE_SETUP value
-                 * @property {number} NODE_TEARDOWN=4 NODE_TEARDOWN value
-                 * @property {number} NODE_TRANSITION=5 NODE_TRANSITION value
-                 * @property {number} TASK_RUNTIME=6 TASK_RUNTIME value
-                 * @property {number} TASK_SETUP=7 TASK_SETUP value
-                 * @property {number} TASK_TEARDOWN=8 TASK_TEARDOWN value
-                 * @property {number} WORKFLOW_SETUP=9 WORKFLOW_SETUP value
-                 * @property {number} WORKFLOW_TEARDOWN=10 WORKFLOW_TEARDOWN value
-                 */
-                CategoricalSpanInfo.Category = (function() {
-                    var valuesById = {}, values = Object.create(valuesById);
-                    values[valuesById[0] = "UNKNOWN"] = 0;
-                    values[valuesById[1] = "NODE_IDLE"] = 1;
-                    values[valuesById[2] = "NODE_RESET"] = 2;
-                    values[valuesById[3] = "NODE_SETUP"] = 3;
-                    values[valuesById[4] = "NODE_TEARDOWN"] = 4;
-                    values[valuesById[5] = "NODE_TRANSITION"] = 5;
-                    values[valuesById[6] = "TASK_RUNTIME"] = 6;
-                    values[valuesById[7] = "TASK_SETUP"] = 7;
-                    values[valuesById[8] = "TASK_TEARDOWN"] = 8;
-                    values[valuesById[9] = "WORKFLOW_SETUP"] = 9;
-                    values[valuesById[10] = "WORKFLOW_TEARDOWN"] = 10;
-                    return values;
-                })();
-    
-                return CategoricalSpanInfo;
-            })();
-    
-            admin.ReferenceSpanInfo = (function() {
-    
-                /**
-                 * Properties of a ReferenceSpanInfo.
-                 * @memberof flyteidl.admin
-                 * @interface IReferenceSpanInfo
-                 * @property {flyteidl.core.IWorkflowExecutionIdentifier|null} [workflowId] ReferenceSpanInfo workflowId
-                 * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeId] ReferenceSpanInfo nodeId
-                 * @property {flyteidl.core.ITaskExecutionIdentifier|null} [taskId] ReferenceSpanInfo taskId
-                 * @property {Array.<flyteidl.admin.ISpan>|null} [spans] ReferenceSpanInfo spans
-                 */
-    
-                /**
-                 * Constructs a new ReferenceSpanInfo.
-                 * @memberof flyteidl.admin
-                 * @classdesc Represents a ReferenceSpanInfo.
-                 * @implements IReferenceSpanInfo
-                 * @constructor
-                 * @param {flyteidl.admin.IReferenceSpanInfo=} [properties] Properties to set
-                 */
-                function ReferenceSpanInfo(properties) {
-                    this.spans = [];
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * ReferenceSpanInfo workflowId.
-                 * @member {flyteidl.core.IWorkflowExecutionIdentifier|null|undefined} workflowId
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @instance
-                 */
-                ReferenceSpanInfo.prototype.workflowId = null;
-    
-                /**
-                 * ReferenceSpanInfo nodeId.
-                 * @member {flyteidl.core.INodeExecutionIdentifier|null|undefined} nodeId
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @instance
-                 */
-                ReferenceSpanInfo.prototype.nodeId = null;
-    
-                /**
-                 * ReferenceSpanInfo taskId.
-                 * @member {flyteidl.core.ITaskExecutionIdentifier|null|undefined} taskId
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @instance
-                 */
-                ReferenceSpanInfo.prototype.taskId = null;
-    
-                /**
-                 * ReferenceSpanInfo spans.
-                 * @member {Array.<flyteidl.admin.ISpan>} spans
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @instance
-                 */
-                ReferenceSpanInfo.prototype.spans = $util.emptyArray;
-    
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * ReferenceSpanInfo id.
-                 * @member {"workflowId"|"nodeId"|"taskId"|undefined} id
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @instance
-                 */
-                Object.defineProperty(ReferenceSpanInfo.prototype, "id", {
-                    get: $util.oneOfGetter($oneOfFields = ["workflowId", "nodeId", "taskId"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-    
-                /**
-                 * Creates a new ReferenceSpanInfo instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @static
-                 * @param {flyteidl.admin.IReferenceSpanInfo=} [properties] Properties to set
-                 * @returns {flyteidl.admin.ReferenceSpanInfo} ReferenceSpanInfo instance
-                 */
-                ReferenceSpanInfo.create = function create(properties) {
-                    return new ReferenceSpanInfo(properties);
-                };
-    
-                /**
-                 * Encodes the specified ReferenceSpanInfo message. Does not implicitly {@link flyteidl.admin.ReferenceSpanInfo.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @static
-                 * @param {flyteidl.admin.IReferenceSpanInfo} message ReferenceSpanInfo message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                ReferenceSpanInfo.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.workflowId != null && message.hasOwnProperty("workflowId"))
-                        $root.flyteidl.core.WorkflowExecutionIdentifier.encode(message.workflowId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.nodeId != null && message.hasOwnProperty("nodeId"))
-                        $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeId, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                    if (message.taskId != null && message.hasOwnProperty("taskId"))
-                        $root.flyteidl.core.TaskExecutionIdentifier.encode(message.taskId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                    if (message.spans != null && message.spans.length)
-                        for (var i = 0; i < message.spans.length; ++i)
-                            $root.flyteidl.admin.Span.encode(message.spans[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a ReferenceSpanInfo message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.admin.ReferenceSpanInfo} ReferenceSpanInfo
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                ReferenceSpanInfo.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.ReferenceSpanInfo();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.workflowId = $root.flyteidl.core.WorkflowExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 2:
-                            message.nodeId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 3:
-                            message.taskId = $root.flyteidl.core.TaskExecutionIdentifier.decode(reader, reader.uint32());
-                            break;
-                        case 4:
-                            if (!(message.spans && message.spans.length))
-                                message.spans = [];
-                            message.spans.push($root.flyteidl.admin.Span.decode(reader, reader.uint32()));
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a ReferenceSpanInfo message.
-                 * @function verify
-                 * @memberof flyteidl.admin.ReferenceSpanInfo
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                ReferenceSpanInfo.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    var properties = {};
-                    if (message.workflowId != null && message.hasOwnProperty("workflowId")) {
-                        properties.id = 1;
-                        {
-                            var error = $root.flyteidl.core.WorkflowExecutionIdentifier.verify(message.workflowId);
-                            if (error)
-                                return "workflowId." + error;
-                        }
-                    }
-                    if (message.nodeId != null && message.hasOwnProperty("nodeId")) {
-                        if (properties.id === 1)
-                            return "id: multiple values";
-                        properties.id = 1;
-                        {
-                            var error = $root.flyteidl.core.NodeExecutionIdentifier.verify(message.nodeId);
-                            if (error)
-                                return "nodeId." + error;
-                        }
-                    }
-                    if (message.taskId != null && message.hasOwnProperty("taskId")) {
-                        if (properties.id === 1)
-                            return "id: multiple values";
-                        properties.id = 1;
-                        {
-                            var error = $root.flyteidl.core.TaskExecutionIdentifier.verify(message.taskId);
-                            if (error)
-                                return "taskId." + error;
-                        }
-                    }
-                    if (message.spans != null && message.hasOwnProperty("spans")) {
-                        if (!Array.isArray(message.spans))
-                            return "spans: array expected";
-                        for (var i = 0; i < message.spans.length; ++i) {
-                            var error = $root.flyteidl.admin.Span.verify(message.spans[i]);
-                            if (error)
-                                return "spans." + error;
-                        }
-                    }
-                    return null;
-                };
-    
-                return ReferenceSpanInfo;
-            })();
-    
             admin.DescriptionEntity = (function() {
     
                 /**
@@ -27281,7 +27006,7 @@
                  * Properties of a WorkflowExecutionGetMetricsResponse.
                  * @memberof flyteidl.admin
                  * @interface IWorkflowExecutionGetMetricsResponse
-                 * @property {flyteidl.admin.ISpan|null} [span] WorkflowExecutionGetMetricsResponse span
+                 * @property {flyteidl.core.ISpan|null} [span] WorkflowExecutionGetMetricsResponse span
                  */
     
                 /**
@@ -27301,7 +27026,7 @@
     
                 /**
                  * WorkflowExecutionGetMetricsResponse span.
-                 * @member {flyteidl.admin.ISpan|null|undefined} span
+                 * @member {flyteidl.core.ISpan|null|undefined} span
                  * @memberof flyteidl.admin.WorkflowExecutionGetMetricsResponse
                  * @instance
                  */
@@ -27332,7 +27057,7 @@
                     if (!writer)
                         writer = $Writer.create();
                     if (message.span != null && message.hasOwnProperty("span"))
-                        $root.flyteidl.admin.Span.encode(message.span, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.flyteidl.core.Span.encode(message.span, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
     
@@ -27355,7 +27080,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.span = $root.flyteidl.admin.Span.decode(reader, reader.uint32());
+                            message.span = $root.flyteidl.core.Span.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -27377,7 +27102,7 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.span != null && message.hasOwnProperty("span")) {
-                        var error = $root.flyteidl.admin.Span.verify(message.span);
+                        var error = $root.flyteidl.core.Span.verify(message.span);
                         if (error)
                             return "span." + error;
                     }

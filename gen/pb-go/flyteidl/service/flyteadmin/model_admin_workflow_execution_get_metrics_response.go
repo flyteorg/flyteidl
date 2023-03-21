@@ -12,5 +12,5 @@ package flyteadmin
 // WorkflowExecutionGetMetricsResponse represents the response containing metrics for the specified workflow execution.
 type AdminWorkflowExecutionGetMetricsResponse struct {
 	// Span defines the top-level breakdown of the workflows execution. More precise information is nested in a hierarchical structure using Flyte entity references.
-	Span *AdminSpan `json:"span,omitempty"`
+	Span *CoreSpan `json:"span,omitempty"`
 }

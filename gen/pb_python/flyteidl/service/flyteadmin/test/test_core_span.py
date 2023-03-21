@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import flyteadmin
-from flyteadmin.models.admin_reference_span_info import AdminReferenceSpanInfo  # noqa: E501
+from flyteadmin.models.core_span import CoreSpan  # noqa: E501
 from flyteadmin.rest import ApiException
 
 
-class TestAdminReferenceSpanInfo(unittest.TestCase):
-    """AdminReferenceSpanInfo unit test stubs"""
+class TestCoreSpan(unittest.TestCase):
+    """CoreSpan unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestAdminReferenceSpanInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAdminReferenceSpanInfo(self):
-        """Test AdminReferenceSpanInfo"""
+    def testCoreSpan(self):
+        """Test CoreSpan"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = flyteadmin.models.admin_reference_span_info.AdminReferenceSpanInfo()  # noqa: E501
+        # model = flyteadmin.models.core_span.CoreSpan()  # noqa: E501
         pass
 
 

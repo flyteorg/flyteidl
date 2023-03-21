@@ -26,7 +26,6 @@ from flyteadmin.models.admin_abort_metadata import AdminAbortMetadata
 from flyteadmin.models.admin_annotations import AdminAnnotations
 from flyteadmin.models.admin_auth import AdminAuth
 from flyteadmin.models.admin_auth_role import AdminAuthRole
-from flyteadmin.models.admin_categorical_span_info import AdminCategoricalSpanInfo
 from flyteadmin.models.admin_cluster_assignment import AdminClusterAssignment
 from flyteadmin.models.admin_cluster_resource_attributes import AdminClusterResourceAttributes
 from flyteadmin.models.admin_cron_schedule import AdminCronSchedule
@@ -109,12 +108,10 @@ from flyteadmin.models.admin_project_register_response import AdminProjectRegist
 from flyteadmin.models.admin_project_update_response import AdminProjectUpdateResponse
 from flyteadmin.models.admin_projects import AdminProjects
 from flyteadmin.models.admin_raw_output_data_config import AdminRawOutputDataConfig
-from flyteadmin.models.admin_reference_span_info import AdminReferenceSpanInfo
 from flyteadmin.models.admin_schedule import AdminSchedule
 from flyteadmin.models.admin_slack_notification import AdminSlackNotification
 from flyteadmin.models.admin_sort import AdminSort
 from flyteadmin.models.admin_source_code import AdminSourceCode
-from flyteadmin.models.admin_span import AdminSpan
 from flyteadmin.models.admin_system_metadata import AdminSystemMetadata
 from flyteadmin.models.admin_task import AdminTask
 from flyteadmin.models.admin_task_closure import AdminTaskClosure
@@ -220,6 +217,7 @@ from flyteadmin.models.core_security_context import CoreSecurityContext
 from flyteadmin.models.core_signal_condition import CoreSignalCondition
 from flyteadmin.models.core_simple_type import CoreSimpleType
 from flyteadmin.models.core_sleep_condition import CoreSleepCondition
+from flyteadmin.models.core_span import CoreSpan
 from flyteadmin.models.core_sql import CoreSql
 from flyteadmin.models.core_structured_dataset import CoreStructuredDataset
 from flyteadmin.models.core_structured_dataset_metadata import CoreStructuredDatasetMetadata

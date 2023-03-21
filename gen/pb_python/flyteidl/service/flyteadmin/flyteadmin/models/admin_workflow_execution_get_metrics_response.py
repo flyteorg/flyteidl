@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from flyteadmin.models.admin_span import AdminSpan  # noqa: F401,E501
+from flyteadmin.models.core_span import CoreSpan  # noqa: F401,E501
 
 
 class AdminWorkflowExecutionGetMetricsResponse(object):
@@ -33,7 +33,7 @@ class AdminWorkflowExecutionGetMetricsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'span': 'AdminSpan'
+        'span': 'CoreSpan'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class AdminWorkflowExecutionGetMetricsResponse(object):
         Span defines the top-level breakdown of the workflows execution. More precise information is nested in a hierarchical structure using Flyte entity references.  # noqa: E501
 
         :return: The span of this AdminWorkflowExecutionGetMetricsResponse.  # noqa: E501
-        :rtype: AdminSpan
+        :rtype: CoreSpan
         """
         return self._span
 
@@ -67,7 +67,7 @@ class AdminWorkflowExecutionGetMetricsResponse(object):
         Span defines the top-level breakdown of the workflows execution. More precise information is nested in a hierarchical structure using Flyte entity references.  # noqa: E501
 
         :param span: The span of this AdminWorkflowExecutionGetMetricsResponse.  # noqa: E501
-        :type: AdminSpan
+        :type: CoreSpan
         """
 
         self._span = span

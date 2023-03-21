@@ -3,6 +3,7 @@ from flyteidl.admin import common_pb2 as _common_pb2
 from flyteidl.core import literals_pb2 as _literals_pb2
 from flyteidl.core import execution_pb2 as _execution_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
+from flyteidl.core import metrics_pb2 as _metrics_pb2
 from flyteidl.core import security_pb2 as _security_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
@@ -258,8 +259,8 @@ class WorkflowExecutionGetMetricsRequest(_message.Message):
 class WorkflowExecutionGetMetricsResponse(_message.Message):
     __slots__ = ["span"]
     SPAN_FIELD_NUMBER: _ClassVar[int]
-    span: _common_pb2.Span
-    def __init__(self, span: _Optional[_Union[_common_pb2.Span, _Mapping]] = ...) -> None: ...
+    span: _metrics_pb2.Span
+    def __init__(self, span: _Optional[_Union[_metrics_pb2.Span, _Mapping]] = ...) -> None: ...
 
 class WorkflowExecutionGetRequest(_message.Message):
     __slots__ = ["id"]

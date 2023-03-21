@@ -6375,6 +6375,97 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a Span. */
+        interface ISpan {
+
+            /** Span startTime */
+            startTime?: (google.protobuf.ITimestamp|null);
+
+            /** Span endTime */
+            endTime?: (google.protobuf.ITimestamp|null);
+
+            /** Span workflowId */
+            workflowId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** Span nodeId */
+            nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** Span taskId */
+            taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** Span operationId */
+            operationId?: (string|null);
+
+            /** Span spans */
+            spans?: (flyteidl.core.ISpan[]|null);
+        }
+
+        /** Represents a Span. */
+        class Span implements ISpan {
+
+            /**
+             * Constructs a new Span.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.core.ISpan);
+
+            /** Span startTime. */
+            public startTime?: (google.protobuf.ITimestamp|null);
+
+            /** Span endTime. */
+            public endTime?: (google.protobuf.ITimestamp|null);
+
+            /** Span workflowId. */
+            public workflowId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
+
+            /** Span nodeId. */
+            public nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** Span taskId. */
+            public taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
+
+            /** Span operationId. */
+            public operationId: string;
+
+            /** Span spans. */
+            public spans: flyteidl.core.ISpan[];
+
+            /** Span id. */
+            public id?: ("workflowId"|"nodeId"|"taskId"|"operationId");
+
+            /**
+             * Creates a new Span instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Span instance
+             */
+            public static create(properties?: flyteidl.core.ISpan): flyteidl.core.Span;
+
+            /**
+             * Encodes the specified Span message. Does not implicitly {@link flyteidl.core.Span.verify|verify} messages.
+             * @param message Span message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.core.ISpan, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Span message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Span
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.core.Span;
+
+            /**
+             * Verifies a Span message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a WorkflowClosure. */
         interface IWorkflowClosure {
 
@@ -8795,222 +8886,6 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a Span. */
-        interface ISpan {
-
-            /** Span startTime */
-            startTime?: (google.protobuf.ITimestamp|null);
-
-            /** Span endTime */
-            endTime?: (google.protobuf.ITimestamp|null);
-
-            /** Span category */
-            category?: (flyteidl.admin.ICategoricalSpanInfo|null);
-
-            /** Span reference */
-            reference?: (flyteidl.admin.IReferenceSpanInfo|null);
-        }
-
-        /** Represents a Span. */
-        class Span implements ISpan {
-
-            /**
-             * Constructs a new Span.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.ISpan);
-
-            /** Span startTime. */
-            public startTime?: (google.protobuf.ITimestamp|null);
-
-            /** Span endTime. */
-            public endTime?: (google.protobuf.ITimestamp|null);
-
-            /** Span category. */
-            public category?: (flyteidl.admin.ICategoricalSpanInfo|null);
-
-            /** Span reference. */
-            public reference?: (flyteidl.admin.IReferenceSpanInfo|null);
-
-            /** Span info. */
-            public info?: ("category"|"reference");
-
-            /**
-             * Creates a new Span instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Span instance
-             */
-            public static create(properties?: flyteidl.admin.ISpan): flyteidl.admin.Span;
-
-            /**
-             * Encodes the specified Span message. Does not implicitly {@link flyteidl.admin.Span.verify|verify} messages.
-             * @param message Span message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.ISpan, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Span message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Span
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.Span;
-
-            /**
-             * Verifies a Span message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a CategoricalSpanInfo. */
-        interface ICategoricalSpanInfo {
-
-            /** CategoricalSpanInfo category */
-            category?: (string|null);
-        }
-
-        /** Represents a CategoricalSpanInfo. */
-        class CategoricalSpanInfo implements ICategoricalSpanInfo {
-
-            /**
-             * Constructs a new CategoricalSpanInfo.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.ICategoricalSpanInfo);
-
-            /** CategoricalSpanInfo category. */
-            public category: string;
-
-            /**
-             * Creates a new CategoricalSpanInfo instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns CategoricalSpanInfo instance
-             */
-            public static create(properties?: flyteidl.admin.ICategoricalSpanInfo): flyteidl.admin.CategoricalSpanInfo;
-
-            /**
-             * Encodes the specified CategoricalSpanInfo message. Does not implicitly {@link flyteidl.admin.CategoricalSpanInfo.verify|verify} messages.
-             * @param message CategoricalSpanInfo message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.ICategoricalSpanInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a CategoricalSpanInfo message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns CategoricalSpanInfo
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.CategoricalSpanInfo;
-
-            /**
-             * Verifies a CategoricalSpanInfo message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        namespace CategoricalSpanInfo {
-
-            /** Category enum. */
-            enum Category {
-                UNKNOWN = 0,
-                NODE_IDLE = 1,
-                NODE_RESET = 2,
-                NODE_SETUP = 3,
-                NODE_TEARDOWN = 4,
-                NODE_TRANSITION = 5,
-                TASK_RUNTIME = 6,
-                TASK_SETUP = 7,
-                TASK_TEARDOWN = 8,
-                WORKFLOW_SETUP = 9,
-                WORKFLOW_TEARDOWN = 10
-            }
-        }
-
-        /** Properties of a ReferenceSpanInfo. */
-        interface IReferenceSpanInfo {
-
-            /** ReferenceSpanInfo workflowId */
-            workflowId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo nodeId */
-            nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo taskId */
-            taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo spans */
-            spans?: (flyteidl.admin.ISpan[]|null);
-        }
-
-        /** Represents a ReferenceSpanInfo. */
-        class ReferenceSpanInfo implements IReferenceSpanInfo {
-
-            /**
-             * Constructs a new ReferenceSpanInfo.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.admin.IReferenceSpanInfo);
-
-            /** ReferenceSpanInfo workflowId. */
-            public workflowId?: (flyteidl.core.IWorkflowExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo nodeId. */
-            public nodeId?: (flyteidl.core.INodeExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo taskId. */
-            public taskId?: (flyteidl.core.ITaskExecutionIdentifier|null);
-
-            /** ReferenceSpanInfo spans. */
-            public spans: flyteidl.admin.ISpan[];
-
-            /** ReferenceSpanInfo id. */
-            public id?: ("workflowId"|"nodeId"|"taskId");
-
-            /**
-             * Creates a new ReferenceSpanInfo instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns ReferenceSpanInfo instance
-             */
-            public static create(properties?: flyteidl.admin.IReferenceSpanInfo): flyteidl.admin.ReferenceSpanInfo;
-
-            /**
-             * Encodes the specified ReferenceSpanInfo message. Does not implicitly {@link flyteidl.admin.ReferenceSpanInfo.verify|verify} messages.
-             * @param message ReferenceSpanInfo message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.admin.IReferenceSpanInfo, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a ReferenceSpanInfo message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns ReferenceSpanInfo
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.ReferenceSpanInfo;
-
-            /**
-             * Verifies a ReferenceSpanInfo message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a DescriptionEntity. */
         interface IDescriptionEntity {
 
@@ -11325,7 +11200,7 @@ export namespace flyteidl {
         interface IWorkflowExecutionGetMetricsResponse {
 
             /** WorkflowExecutionGetMetricsResponse span */
-            span?: (flyteidl.admin.ISpan|null);
+            span?: (flyteidl.core.ISpan|null);
         }
 
         /** Represents a WorkflowExecutionGetMetricsResponse. */
@@ -11338,7 +11213,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.IWorkflowExecutionGetMetricsResponse);
 
             /** WorkflowExecutionGetMetricsResponse span. */
-            public span?: (flyteidl.admin.ISpan|null);
+            public span?: (flyteidl.core.ISpan|null);
 
             /**
              * Creates a new WorkflowExecutionGetMetricsResponse instance using the specified properties.

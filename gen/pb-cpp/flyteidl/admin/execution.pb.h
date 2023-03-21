@@ -37,6 +37,7 @@
 #include "flyteidl/core/literals.pb.h"
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include "flyteidl/core/metrics.pb.h"
 #include "flyteidl/core/security.pb.h"
 #include <google/protobuf/duration.pb.h>
 #include <google/protobuf/timestamp.pb.h>
@@ -3506,21 +3507,21 @@ class WorkflowExecutionGetMetricsResponse final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.admin.Span span = 1;
+  // .flyteidl.core.Span span = 1;
   bool has_span() const;
   void clear_span();
   static const int kSpanFieldNumber = 1;
-  const ::flyteidl::admin::Span& span() const;
-  ::flyteidl::admin::Span* release_span();
-  ::flyteidl::admin::Span* mutable_span();
-  void set_allocated_span(::flyteidl::admin::Span* span);
+  const ::flyteidl::core::Span& span() const;
+  ::flyteidl::core::Span* release_span();
+  ::flyteidl::core::Span* mutable_span();
+  void set_allocated_span(::flyteidl::core::Span* span);
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.WorkflowExecutionGetMetricsResponse)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::admin::Span* span_;
+  ::flyteidl::core::Span* span_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fexecution_2eproto;
 };
@@ -6831,33 +6832,33 @@ inline void WorkflowExecutionGetMetricsRequest::set_depth(::google::protobuf::in
 
 // WorkflowExecutionGetMetricsResponse
 
-// .flyteidl.admin.Span span = 1;
+// .flyteidl.core.Span span = 1;
 inline bool WorkflowExecutionGetMetricsResponse::has_span() const {
   return this != internal_default_instance() && span_ != nullptr;
 }
-inline const ::flyteidl::admin::Span& WorkflowExecutionGetMetricsResponse::span() const {
-  const ::flyteidl::admin::Span* p = span_;
+inline const ::flyteidl::core::Span& WorkflowExecutionGetMetricsResponse::span() const {
+  const ::flyteidl::core::Span* p = span_;
   // @@protoc_insertion_point(field_get:flyteidl.admin.WorkflowExecutionGetMetricsResponse.span)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::Span*>(
-      &::flyteidl::admin::_Span_default_instance_);
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Span*>(
+      &::flyteidl::core::_Span_default_instance_);
 }
-inline ::flyteidl::admin::Span* WorkflowExecutionGetMetricsResponse::release_span() {
+inline ::flyteidl::core::Span* WorkflowExecutionGetMetricsResponse::release_span() {
   // @@protoc_insertion_point(field_release:flyteidl.admin.WorkflowExecutionGetMetricsResponse.span)
   
-  ::flyteidl::admin::Span* temp = span_;
+  ::flyteidl::core::Span* temp = span_;
   span_ = nullptr;
   return temp;
 }
-inline ::flyteidl::admin::Span* WorkflowExecutionGetMetricsResponse::mutable_span() {
+inline ::flyteidl::core::Span* WorkflowExecutionGetMetricsResponse::mutable_span() {
   
   if (span_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::admin::Span>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::flyteidl::core::Span>(GetArenaNoVirtual());
     span_ = p;
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.admin.WorkflowExecutionGetMetricsResponse.span)
   return span_;
 }
-inline void WorkflowExecutionGetMetricsResponse::set_allocated_span(::flyteidl::admin::Span* span) {
+inline void WorkflowExecutionGetMetricsResponse::set_allocated_span(::flyteidl::core::Span* span) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(span_);
