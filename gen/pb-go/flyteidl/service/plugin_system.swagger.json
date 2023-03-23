@@ -1052,7 +1052,7 @@
           "type": "string",
           "description": "The unique id identifying the job."
         },
-        "message": {
+        "error_message": {
           "type": "string",
           "description": "Error message if fail to create job."
         }
@@ -1128,12 +1128,13 @@
     "serviceState": {
       "type": "string",
       "enum": [
-        "FAILED",
+        "RETRYABLE_FAILURE",
+        "PERMANENT_FAILURE",
         "PENDING",
         "RUNNING",
         "SUCCEEDED"
       ],
-      "default": "FAILED",
+      "default": "RETRYABLE_FAILURE",
       "description": "The state of the execution is used to control its visibility in the UI/CLI."
     },
     "serviceTaskDeleteResponse": {
@@ -1147,7 +1148,7 @@
           "$ref": "#/definitions/serviceState",
           "description": "The state of the execution is used to control its visibility in the UI/CLI."
         },
-        "message": {
+        "error_message": {
           "type": "string",
           "description": "Error message if fail to get job."
         },

@@ -88,15 +88,16 @@ namespace flyteidl {
 namespace service {
 
 enum State {
-  FAILED = 0,
-  PENDING = 1,
-  RUNNING = 2,
-  SUCCEEDED = 3,
+  RETRYABLE_FAILURE = 0,
+  PERMANENT_FAILURE = 1,
+  PENDING = 2,
+  RUNNING = 3,
+  SUCCEEDED = 4,
   State_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   State_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool State_IsValid(int value);
-const State State_MIN = FAILED;
+const State State_MIN = RETRYABLE_FAILURE;
 const State State_MAX = SUCCEEDED;
 const int State_ARRAYSIZE = State_MAX + 1;
 
@@ -284,6 +285,12 @@ class TaskCreateResponse final :
   }
   static const TaskCreateResponse& default_instance();
 
+  enum ValueCase {
+    kJobId = 1,
+    kErrorMessage = 2,
+    VALUE_NOT_SET = 0,
+  };
+
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const TaskCreateResponse* internal_default_instance() {
     return reinterpret_cast<const TaskCreateResponse*>(
@@ -348,6 +355,9 @@ class TaskCreateResponse final :
   // accessors -------------------------------------------------------
 
   // string job_id = 1;
+  private:
+  bool has_job_id() const;
+  public:
   void clear_job_id();
   static const int kJobIdFieldNumber = 1;
   const ::std::string& job_id() const;
@@ -361,28 +371,43 @@ class TaskCreateResponse final :
   ::std::string* release_job_id();
   void set_allocated_job_id(::std::string* job_id);
 
-  // string message = 2;
-  void clear_message();
-  static const int kMessageFieldNumber = 2;
-  const ::std::string& message() const;
-  void set_message(const ::std::string& value);
+  // string error_message = 2;
+  private:
+  bool has_error_message() const;
+  public:
+  void clear_error_message();
+  static const int kErrorMessageFieldNumber = 2;
+  const ::std::string& error_message() const;
+  void set_error_message(const ::std::string& value);
   #if LANG_CXX11
-  void set_message(::std::string&& value);
+  void set_error_message(::std::string&& value);
   #endif
-  void set_message(const char* value);
-  void set_message(const char* value, size_t size);
-  ::std::string* mutable_message();
-  ::std::string* release_message();
-  void set_allocated_message(::std::string* message);
+  void set_error_message(const char* value);
+  void set_error_message(const char* value, size_t size);
+  ::std::string* mutable_error_message();
+  ::std::string* release_error_message();
+  void set_allocated_error_message(::std::string* error_message);
 
+  void clear_value();
+  ValueCase value_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.TaskCreateResponse)
  private:
   class HasBitSetters;
+  void set_has_job_id();
+  void set_has_error_message();
+
+  inline bool has_value() const;
+  inline void clear_has_value();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr job_id_;
-  ::google::protobuf::internal::ArenaStringPtr message_;
+  union ValueUnion {
+    ValueUnion() {}
+    ::google::protobuf::internal::ArenaStringPtr job_id_;
+    ::google::protobuf::internal::ArenaStringPtr error_message_;
+  } value_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
   friend struct ::TableStruct_flyteidl_2fservice_2fplugin_5fsystem_2eproto;
 };
 // -------------------------------------------------------------------
@@ -617,19 +642,19 @@ class TaskGetResponse final :
 
   // accessors -------------------------------------------------------
 
-  // string message = 2;
-  void clear_message();
-  static const int kMessageFieldNumber = 2;
-  const ::std::string& message() const;
-  void set_message(const ::std::string& value);
+  // string error_message = 2;
+  void clear_error_message();
+  static const int kErrorMessageFieldNumber = 2;
+  const ::std::string& error_message() const;
+  void set_error_message(const ::std::string& value);
   #if LANG_CXX11
-  void set_message(::std::string&& value);
+  void set_error_message(::std::string&& value);
   #endif
-  void set_message(const char* value);
-  void set_message(const char* value, size_t size);
-  ::std::string* mutable_message();
-  ::std::string* release_message();
-  void set_allocated_message(::std::string* message);
+  void set_error_message(const char* value);
+  void set_error_message(const char* value, size_t size);
+  ::std::string* mutable_error_message();
+  ::std::string* release_error_message();
+  void set_allocated_error_message(::std::string* error_message);
 
   // .flyteidl.core.LiteralMap outputs = 3;
   bool has_outputs() const;
@@ -651,7 +676,7 @@ class TaskGetResponse final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr message_;
+  ::google::protobuf::internal::ArenaStringPtr error_message_;
   ::flyteidl::core::LiteralMap* outputs_;
   int state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1056,111 +1081,198 @@ inline void TaskCreateRequest::set_allocated_output_prefix(::std::string* output
 // TaskCreateResponse
 
 // string job_id = 1;
+inline bool TaskCreateResponse::has_job_id() const {
+  return value_case() == kJobId;
+}
+inline void TaskCreateResponse::set_has_job_id() {
+  _oneof_case_[0] = kJobId;
+}
 inline void TaskCreateResponse::clear_job_id() {
-  job_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_job_id()) {
+    value_.job_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_value();
+  }
 }
 inline const ::std::string& TaskCreateResponse::job_id() const {
   // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateResponse.job_id)
-  return job_id_.GetNoArena();
+  if (has_job_id()) {
+    return value_.job_id_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
 }
 inline void TaskCreateResponse::set_job_id(const ::std::string& value) {
-  
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.job_id)
+  if (!has_job_id()) {
+    clear_value();
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.job_id)
 }
 #if LANG_CXX11
 inline void TaskCreateResponse::set_job_id(::std::string&& value) {
-  
-  job_id_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.job_id)
+  if (!has_job_id()) {
+    clear_value();
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
   // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskCreateResponse.job_id)
 }
 #endif
 inline void TaskCreateResponse::set_job_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  if (!has_job_id()) {
+    clear_value();
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
   // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskCreateResponse.job_id)
 }
 inline void TaskCreateResponse::set_job_id(const char* value, size_t size) {
-  
-  job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+  if (!has_job_id()) {
+    clear_value();
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.job_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
   // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskCreateResponse.job_id)
 }
 inline ::std::string* TaskCreateResponse::mutable_job_id() {
-  
+  if (!has_job_id()) {
+    clear_value();
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateResponse.job_id)
-  return job_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return value_.job_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* TaskCreateResponse::release_job_id() {
   // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateResponse.job_id)
-  
-  return job_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (has_job_id()) {
+    clear_has_value();
+    return value_.job_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
 }
 inline void TaskCreateResponse::set_allocated_job_id(::std::string* job_id) {
-  if (job_id != nullptr) {
-    
-  } else {
-    
+  if (has_value()) {
+    clear_value();
   }
-  job_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), job_id);
+  if (job_id != nullptr) {
+    set_has_job_id();
+    value_.job_id_.UnsafeSetDefault(job_id);
+  }
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateResponse.job_id)
 }
 
-// string message = 2;
-inline void TaskCreateResponse::clear_message() {
-  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string error_message = 2;
+inline bool TaskCreateResponse::has_error_message() const {
+  return value_case() == kErrorMessage;
 }
-inline const ::std::string& TaskCreateResponse::message() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateResponse.message)
-  return message_.GetNoArena();
+inline void TaskCreateResponse::set_has_error_message() {
+  _oneof_case_[0] = kErrorMessage;
 }
-inline void TaskCreateResponse::set_message(const ::std::string& value) {
-  
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.message)
+inline void TaskCreateResponse::clear_error_message() {
+  if (has_error_message()) {
+    value_.error_message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_value();
+  }
+}
+inline const ::std::string& TaskCreateResponse::error_message() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskCreateResponse.error_message)
+  if (has_error_message()) {
+    return value_.error_message_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void TaskCreateResponse::set_error_message(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.error_message)
+  if (!has_error_message()) {
+    clear_value();
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.error_message)
 }
 #if LANG_CXX11
-inline void TaskCreateResponse::set_message(::std::string&& value) {
-  
-  message_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskCreateResponse.message)
+inline void TaskCreateResponse::set_error_message(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskCreateResponse.error_message)
+  if (!has_error_message()) {
+    clear_value();
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskCreateResponse.error_message)
 }
 #endif
-inline void TaskCreateResponse::set_message(const char* value) {
+inline void TaskCreateResponse::set_error_message(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskCreateResponse.message)
-}
-inline void TaskCreateResponse::set_message(const char* value, size_t size) {
-  
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskCreateResponse.message)
-}
-inline ::std::string* TaskCreateResponse::mutable_message() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateResponse.message)
-  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* TaskCreateResponse::release_message() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateResponse.message)
-  
-  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void TaskCreateResponse::set_allocated_message(::std::string* message) {
-  if (message != nullptr) {
-    
-  } else {
-    
+  if (!has_error_message()) {
+    clear_value();
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateResponse.message)
+  value_.error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskCreateResponse.error_message)
+}
+inline void TaskCreateResponse::set_error_message(const char* value, size_t size) {
+  if (!has_error_message()) {
+    clear_value();
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskCreateResponse.error_message)
+}
+inline ::std::string* TaskCreateResponse::mutable_error_message() {
+  if (!has_error_message()) {
+    clear_value();
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskCreateResponse.error_message)
+  return value_.error_message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* TaskCreateResponse::release_error_message() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskCreateResponse.error_message)
+  if (has_error_message()) {
+    clear_has_value();
+    return value_.error_message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void TaskCreateResponse::set_allocated_error_message(::std::string* error_message) {
+  if (has_value()) {
+    clear_value();
+  }
+  if (error_message != nullptr) {
+    set_has_error_message();
+    value_.error_message_.UnsafeSetDefault(error_message);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskCreateResponse.error_message)
 }
 
+inline bool TaskCreateResponse::has_value() const {
+  return value_case() != VALUE_NOT_SET;
+}
+inline void TaskCreateResponse::clear_has_value() {
+  _oneof_case_[0] = VALUE_NOT_SET;
+}
+inline TaskCreateResponse::ValueCase TaskCreateResponse::value_case() const {
+  return TaskCreateResponse::ValueCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // TaskGetRequest
@@ -1289,57 +1401,57 @@ inline void TaskGetResponse::set_state(::flyteidl::service::State value) {
   // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetResponse.state)
 }
 
-// string message = 2;
-inline void TaskGetResponse::clear_message() {
-  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string error_message = 2;
+inline void TaskGetResponse::clear_error_message() {
+  error_message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& TaskGetResponse::message() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetResponse.message)
-  return message_.GetNoArena();
+inline const ::std::string& TaskGetResponse::error_message() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.TaskGetResponse.error_message)
+  return error_message_.GetNoArena();
 }
-inline void TaskGetResponse::set_message(const ::std::string& value) {
+inline void TaskGetResponse::set_error_message(const ::std::string& value) {
   
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetResponse.message)
+  error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.TaskGetResponse.error_message)
 }
 #if LANG_CXX11
-inline void TaskGetResponse::set_message(::std::string&& value) {
+inline void TaskGetResponse::set_error_message(::std::string&& value) {
   
-  message_.SetNoArena(
+  error_message_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskGetResponse.message)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.TaskGetResponse.error_message)
 }
 #endif
-inline void TaskGetResponse::set_message(const char* value) {
+inline void TaskGetResponse::set_error_message(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskGetResponse.message)
+  error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.TaskGetResponse.error_message)
 }
-inline void TaskGetResponse::set_message(const char* value, size_t size) {
+inline void TaskGetResponse::set_error_message(const char* value, size_t size) {
   
-  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  error_message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskGetResponse.message)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.TaskGetResponse.error_message)
 }
-inline ::std::string* TaskGetResponse::mutable_message() {
+inline ::std::string* TaskGetResponse::mutable_error_message() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetResponse.message)
-  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.TaskGetResponse.error_message)
+  return error_message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* TaskGetResponse::release_message() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetResponse.message)
+inline ::std::string* TaskGetResponse::release_error_message() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.TaskGetResponse.error_message)
   
-  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return error_message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void TaskGetResponse::set_allocated_message(::std::string* message) {
-  if (message != nullptr) {
+inline void TaskGetResponse::set_allocated_error_message(::std::string* error_message) {
+  if (error_message != nullptr) {
     
   } else {
     
   }
-  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetResponse.message)
+  error_message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), error_message);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.TaskGetResponse.error_message)
 }
 
 // .flyteidl.core.LiteralMap outputs = 3;

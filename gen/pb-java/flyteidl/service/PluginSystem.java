@@ -24,40 +24,48 @@ public final class PluginSystem {
   public enum State
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>FAILED = 0;</code>
+     * <code>RETRYABLE_FAILURE = 0;</code>
      */
-    FAILED(0),
+    RETRYABLE_FAILURE(0),
     /**
-     * <code>PENDING = 1;</code>
+     * <code>PERMANENT_FAILURE = 1;</code>
      */
-    PENDING(1),
+    PERMANENT_FAILURE(1),
     /**
-     * <code>RUNNING = 2;</code>
+     * <code>PENDING = 2;</code>
      */
-    RUNNING(2),
+    PENDING(2),
     /**
-     * <code>SUCCEEDED = 3;</code>
+     * <code>RUNNING = 3;</code>
      */
-    SUCCEEDED(3),
+    RUNNING(3),
+    /**
+     * <code>SUCCEEDED = 4;</code>
+     */
+    SUCCEEDED(4),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>FAILED = 0;</code>
+     * <code>RETRYABLE_FAILURE = 0;</code>
      */
-    public static final int FAILED_VALUE = 0;
+    public static final int RETRYABLE_FAILURE_VALUE = 0;
     /**
-     * <code>PENDING = 1;</code>
+     * <code>PERMANENT_FAILURE = 1;</code>
      */
-    public static final int PENDING_VALUE = 1;
+    public static final int PERMANENT_FAILURE_VALUE = 1;
     /**
-     * <code>RUNNING = 2;</code>
+     * <code>PENDING = 2;</code>
      */
-    public static final int RUNNING_VALUE = 2;
+    public static final int PENDING_VALUE = 2;
     /**
-     * <code>SUCCEEDED = 3;</code>
+     * <code>RUNNING = 3;</code>
      */
-    public static final int SUCCEEDED_VALUE = 3;
+    public static final int RUNNING_VALUE = 3;
+    /**
+     * <code>SUCCEEDED = 4;</code>
+     */
+    public static final int SUCCEEDED_VALUE = 4;
 
 
     public final int getNumber() {
@@ -78,10 +86,11 @@ public final class PluginSystem {
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return FAILED;
-        case 1: return PENDING;
-        case 2: return RUNNING;
-        case 3: return SUCCEEDED;
+        case 0: return RETRYABLE_FAILURE;
+        case 1: return PERMANENT_FAILURE;
+        case 2: return PENDING;
+        case 3: return RUNNING;
+        case 4: return SUCCEEDED;
         default: return null;
       }
     }
@@ -196,7 +205,7 @@ public final class PluginSystem {
 
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -204,7 +213,7 @@ public final class PluginSystem {
     java.lang.String getOutputPrefix();
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -396,7 +405,7 @@ public final class PluginSystem {
     private volatile java.lang.Object outputPrefix_;
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -415,7 +424,7 @@ public final class PluginSystem {
     }
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written.
+     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -1127,7 +1136,7 @@ public final class PluginSystem {
       private java.lang.Object outputPrefix_ = "";
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1146,7 +1155,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1166,7 +1175,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1183,7 +1192,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1196,7 +1205,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written.
+       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1292,18 +1301,20 @@ public final class PluginSystem {
      * Error message if fail to create job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
-    java.lang.String getMessage();
+    java.lang.String getErrorMessage();
     /**
      * <pre>
      * Error message if fail to create job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
     com.google.protobuf.ByteString
-        getMessageBytes();
+        getErrorMessageBytes();
+
+    public flyteidl.service.PluginSystem.TaskCreateResponse.ValueCase getValueCase();
   }
   /**
    * <pre>
@@ -1322,8 +1333,6 @@ public final class PluginSystem {
       super(builder);
     }
     private TaskCreateResponse() {
-      jobId_ = "";
-      message_ = "";
     }
 
     @java.lang.Override
@@ -1352,14 +1361,14 @@ public final class PluginSystem {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              jobId_ = s;
+              valueCase_ = 1;
+              value_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              message_ = s;
+              valueCase_ = 2;
+              value_ = s;
               break;
             }
             default: {
@@ -1394,8 +1403,45 @@ public final class PluginSystem {
               flyteidl.service.PluginSystem.TaskCreateResponse.class, flyteidl.service.PluginSystem.TaskCreateResponse.Builder.class);
     }
 
+    private int valueCase_ = 0;
+    private java.lang.Object value_;
+    public enum ValueCase
+        implements com.google.protobuf.Internal.EnumLite {
+      JOB_ID(1),
+      ERROR_MESSAGE(2),
+      VALUE_NOT_SET(0);
+      private final int value;
+      private ValueCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ValueCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ValueCase forNumber(int value) {
+        switch (value) {
+          case 1: return JOB_ID;
+          case 2: return ERROR_MESSAGE;
+          case 0: return VALUE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ValueCase
+    getValueCase() {
+      return ValueCase.forNumber(
+          valueCase_);
+    }
+
     public static final int JOB_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object jobId_;
     /**
      * <pre>
      * The unique id identifying the job.
@@ -1404,14 +1450,19 @@ public final class PluginSystem {
      * <code>string job_id = 1;</code>
      */
     public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
+      java.lang.Object ref = "";
+      if (valueCase_ == 1) {
+        ref = value_;
+      }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        jobId_ = s;
+        if (valueCase_ == 1) {
+          value_ = s;
+        }
         return s;
       }
     }
@@ -1424,36 +1475,45 @@ public final class PluginSystem {
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
-      java.lang.Object ref = jobId_;
+      java.lang.Object ref = "";
+      if (valueCase_ == 1) {
+        ref = value_;
+      }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        jobId_ = b;
+        if (valueCase_ == 1) {
+          value_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object message_;
+    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
     /**
      * <pre>
      * Error message if fail to create job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = "";
+      if (valueCase_ == 2) {
+        ref = value_;
+      }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        if (valueCase_ == 2) {
+          value_ = s;
+        }
         return s;
       }
     }
@@ -1462,16 +1522,21 @@ public final class PluginSystem {
      * Error message if fail to create job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
+        getErrorMessageBytes() {
+      java.lang.Object ref = "";
+      if (valueCase_ == 2) {
+        ref = value_;
+      }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        message_ = b;
+        if (valueCase_ == 2) {
+          value_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1492,11 +1557,11 @@ public final class PluginSystem {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getJobIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
+      if (valueCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      if (valueCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -1507,11 +1572,11 @@ public final class PluginSystem {
       if (size != -1) return size;
 
       size = 0;
-      if (!getJobIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
+      if (valueCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      if (valueCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1528,10 +1593,19 @@ public final class PluginSystem {
       }
       flyteidl.service.PluginSystem.TaskCreateResponse other = (flyteidl.service.PluginSystem.TaskCreateResponse) obj;
 
-      if (!getJobId()
-          .equals(other.getJobId())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
+      if (!getValueCase().equals(other.getValueCase())) return false;
+      switch (valueCase_) {
+        case 1:
+          if (!getJobId()
+              .equals(other.getJobId())) return false;
+          break;
+        case 2:
+          if (!getErrorMessage()
+              .equals(other.getErrorMessage())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1543,10 +1617,18 @@ public final class PluginSystem {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getJobId().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
+      switch (valueCase_) {
+        case 1:
+          hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getJobId().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getErrorMessage().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1684,10 +1766,8 @@ public final class PluginSystem {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jobId_ = "";
-
-        message_ = "";
-
+        valueCase_ = 0;
+        value_ = null;
         return this;
       }
 
@@ -1714,8 +1794,13 @@ public final class PluginSystem {
       @java.lang.Override
       public flyteidl.service.PluginSystem.TaskCreateResponse buildPartial() {
         flyteidl.service.PluginSystem.TaskCreateResponse result = new flyteidl.service.PluginSystem.TaskCreateResponse(this);
-        result.jobId_ = jobId_;
-        result.message_ = message_;
+        if (valueCase_ == 1) {
+          result.value_ = value_;
+        }
+        if (valueCase_ == 2) {
+          result.value_ = value_;
+        }
+        result.valueCase_ = valueCase_;
         onBuilt();
         return result;
       }
@@ -1764,13 +1849,22 @@ public final class PluginSystem {
 
       public Builder mergeFrom(flyteidl.service.PluginSystem.TaskCreateResponse other) {
         if (other == flyteidl.service.PluginSystem.TaskCreateResponse.getDefaultInstance()) return this;
-        if (!other.getJobId().isEmpty()) {
-          jobId_ = other.jobId_;
-          onChanged();
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          onChanged();
+        switch (other.getValueCase()) {
+          case JOB_ID: {
+            valueCase_ = 1;
+            value_ = other.value_;
+            onChanged();
+            break;
+          }
+          case ERROR_MESSAGE: {
+            valueCase_ = 2;
+            value_ = other.value_;
+            onChanged();
+            break;
+          }
+          case VALUE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1800,8 +1894,22 @@ public final class PluginSystem {
         }
         return this;
       }
+      private int valueCase_ = 0;
+      private java.lang.Object value_;
+      public ValueCase
+          getValueCase() {
+        return ValueCase.forNumber(
+            valueCase_);
+      }
 
-      private java.lang.Object jobId_ = "";
+      public Builder clearValue() {
+        valueCase_ = 0;
+        value_ = null;
+        onChanged();
+        return this;
+      }
+
+
       /**
        * <pre>
        * The unique id identifying the job.
@@ -1810,12 +1918,17 @@ public final class PluginSystem {
        * <code>string job_id = 1;</code>
        */
       public java.lang.String getJobId() {
-        java.lang.Object ref = jobId_;
+        java.lang.Object ref = "";
+        if (valueCase_ == 1) {
+          ref = value_;
+        }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          jobId_ = s;
+          if (valueCase_ == 1) {
+            value_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1830,12 +1943,17 @@ public final class PluginSystem {
        */
       public com.google.protobuf.ByteString
           getJobIdBytes() {
-        java.lang.Object ref = jobId_;
+        java.lang.Object ref = "";
+        if (valueCase_ == 1) {
+          ref = value_;
+        }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          jobId_ = b;
+          if (valueCase_ == 1) {
+            value_ = b;
+          }
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1853,8 +1971,8 @@ public final class PluginSystem {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        jobId_ = value;
+  valueCase_ = 1;
+        value_ = value;
         onChanged();
         return this;
       }
@@ -1866,9 +1984,11 @@ public final class PluginSystem {
        * <code>string job_id = 1;</code>
        */
       public Builder clearJobId() {
-        
-        jobId_ = getDefaultInstance().getJobId();
-        onChanged();
+        if (valueCase_ == 1) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
         return this;
       }
       /**
@@ -1884,27 +2004,31 @@ public final class PluginSystem {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        jobId_ = value;
+        valueCase_ = 1;
+        value_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object message_ = "";
       /**
        * <pre>
        * Error message if fail to create job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
+      public java.lang.String getErrorMessage() {
+        java.lang.Object ref = "";
+        if (valueCase_ == 2) {
+          ref = value_;
+        }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          message_ = s;
+          if (valueCase_ == 2) {
+            value_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1915,16 +2039,21 @@ public final class PluginSystem {
        * Error message if fail to create job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
+          getErrorMessageBytes() {
+        java.lang.Object ref = "";
+        if (valueCase_ == 2) {
+          ref = value_;
+        }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          message_ = b;
+          if (valueCase_ == 2) {
+            value_ = b;
+          }
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1935,15 +2064,15 @@ public final class PluginSystem {
        * Error message if fail to create job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder setMessage(
+      public Builder setErrorMessage(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        message_ = value;
+  valueCase_ = 2;
+        value_ = value;
         onChanged();
         return this;
       }
@@ -1952,12 +2081,14 @@ public final class PluginSystem {
        * Error message if fail to create job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder clearMessage() {
-        
-        message_ = getDefaultInstance().getMessage();
-        onChanged();
+      public Builder clearErrorMessage() {
+        if (valueCase_ == 2) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
         return this;
       }
       /**
@@ -1965,16 +2096,16 @@ public final class PluginSystem {
        * Error message if fail to create job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder setMessageBytes(
+      public Builder setErrorMessageBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        message_ = value;
+        valueCase_ = 2;
+        value_ = value;
         onChanged();
         return this;
       }
@@ -2823,18 +2954,18 @@ public final class PluginSystem {
      * Error message if fail to get job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
-    java.lang.String getMessage();
+    java.lang.String getErrorMessage();
     /**
      * <pre>
      * Error message if fail to get job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
     com.google.protobuf.ByteString
-        getMessageBytes();
+        getErrorMessageBytes();
 
     /**
      * <pre>
@@ -2885,7 +3016,7 @@ public final class PluginSystem {
     }
     private TaskGetResponse() {
       state_ = 0;
-      message_ = "";
+      errorMessage_ = "";
     }
 
     @java.lang.Override
@@ -2921,7 +3052,7 @@ public final class PluginSystem {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              message_ = s;
+              errorMessage_ = s;
               break;
             }
             case 26: {
@@ -2994,24 +3125,24 @@ public final class PluginSystem {
       return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object message_;
+    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object errorMessage_;
     /**
      * <pre>
      * Error message if fail to get job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        message_ = s;
+        errorMessage_ = s;
         return s;
       }
     }
@@ -3020,16 +3151,16 @@ public final class PluginSystem {
      * Error message if fail to get job.
      * </pre>
      *
-     * <code>string message = 2;</code>
+     * <code>string error_message = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
+        getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        message_ = b;
+        errorMessage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3089,11 +3220,11 @@ public final class PluginSystem {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (state_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+      if (state_ != flyteidl.service.PluginSystem.State.RETRYABLE_FAILURE.getNumber()) {
         output.writeEnum(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+      if (!getErrorMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
       }
       if (outputs_ != null) {
         output.writeMessage(3, getOutputs());
@@ -3107,12 +3238,12 @@ public final class PluginSystem {
       if (size != -1) return size;
 
       size = 0;
-      if (state_ != flyteidl.service.PluginSystem.State.FAILED.getNumber()) {
+      if (state_ != flyteidl.service.PluginSystem.State.RETRYABLE_FAILURE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
       }
-      if (!getMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+      if (!getErrorMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
       }
       if (outputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -3134,8 +3265,8 @@ public final class PluginSystem {
       flyteidl.service.PluginSystem.TaskGetResponse other = (flyteidl.service.PluginSystem.TaskGetResponse) obj;
 
       if (state_ != other.state_) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
+      if (!getErrorMessage()
+          .equals(other.getErrorMessage())) return false;
       if (hasOutputs() != other.hasOutputs()) return false;
       if (hasOutputs()) {
         if (!getOutputs()
@@ -3154,8 +3285,8 @@ public final class PluginSystem {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMessage().hashCode();
       if (hasOutputs()) {
         hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getOutputs().hashCode();
@@ -3299,7 +3430,7 @@ public final class PluginSystem {
         super.clear();
         state_ = 0;
 
-        message_ = "";
+        errorMessage_ = "";
 
         if (outputsBuilder_ == null) {
           outputs_ = null;
@@ -3334,7 +3465,7 @@ public final class PluginSystem {
       public flyteidl.service.PluginSystem.TaskGetResponse buildPartial() {
         flyteidl.service.PluginSystem.TaskGetResponse result = new flyteidl.service.PluginSystem.TaskGetResponse(this);
         result.state_ = state_;
-        result.message_ = message_;
+        result.errorMessage_ = errorMessage_;
         if (outputsBuilder_ == null) {
           result.outputs_ = outputs_;
         } else {
@@ -3391,8 +3522,8 @@ public final class PluginSystem {
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
+        if (!other.getErrorMessage().isEmpty()) {
+          errorMessage_ = other.errorMessage_;
           onChanged();
         }
         if (other.hasOutputs()) {
@@ -3492,21 +3623,21 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object message_ = "";
+      private java.lang.Object errorMessage_ = "";
       /**
        * <pre>
        * Error message if fail to get job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
+      public java.lang.String getErrorMessage() {
+        java.lang.Object ref = errorMessage_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          message_ = s;
+          errorMessage_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3517,16 +3648,16 @@ public final class PluginSystem {
        * Error message if fail to get job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
+          getErrorMessageBytes() {
+        java.lang.Object ref = errorMessage_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          message_ = b;
+          errorMessage_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3537,15 +3668,15 @@ public final class PluginSystem {
        * Error message if fail to get job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder setMessage(
+      public Builder setErrorMessage(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        message_ = value;
+        errorMessage_ = value;
         onChanged();
         return this;
       }
@@ -3554,11 +3685,11 @@ public final class PluginSystem {
        * Error message if fail to get job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder clearMessage() {
+      public Builder clearErrorMessage() {
         
-        message_ = getDefaultInstance().getMessage();
+        errorMessage_ = getDefaultInstance().getErrorMessage();
         onChanged();
         return this;
       }
@@ -3567,16 +3698,16 @@ public final class PluginSystem {
        * Error message if fail to get job.
        * </pre>
        *
-       * <code>string message = 2;</code>
+       * <code>string error_message = 2;</code>
        */
-      public Builder setMessageBytes(
+      public Builder setErrorMessageBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        message_ = value;
+        errorMessage_ = value;
         onChanged();
         return this;
       }
@@ -5035,25 +5166,26 @@ public final class PluginSystem {
       "equest\022)\n\006inputs\030\001 \001(\0132\031.flyteidl.core.L" +
       "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
       "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
-      "5\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\022\017\n" +
-      "\007message\030\002 \001(\t\"3\n\016TaskGetRequest\022\021\n\ttask" +
-      "_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"v\n\017TaskGetRe" +
-      "sponse\022&\n\005state\030\001 \001(\0162\027.flyteidl.service" +
-      ".State\022\017\n\007message\030\002 \001(\t\022*\n\007outputs\030\003 \001(\013" +
-      "2\031.flyteidl.core.LiteralMap\"6\n\021TaskDelet" +
-      "eRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id\030\002 " +
-      "\001(\t\"\024\n\022TaskDeleteResponse*<\n\005State\022\n\n\006FA" +
-      "ILED\020\000\022\013\n\007PENDING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCC" +
-      "EEDED\020\0032\236\002\n\024BackendPluginService\022Y\n\nCrea" +
-      "teTask\022#.flyteidl.service.TaskCreateRequ" +
-      "est\032$.flyteidl.service.TaskCreateRespons" +
-      "e\"\000\022P\n\007GetTask\022 .flyteidl.service.TaskGe" +
-      "tRequest\032!.flyteidl.service.TaskGetRespo" +
-      "nse\"\000\022Y\n\nDeleteTask\022#.flyteidl.service.T" +
-      "askDeleteRequest\032$.flyteidl.service.Task" +
-      "DeleteResponse\"\000B9Z7github.com/flyteorg/" +
-      "flyteidl/gen/pb-go/flyteidl/serviceb\006pro" +
-      "to3"
+      "H\n\022TaskCreateResponse\022\020\n\006job_id\030\001 \001(\tH\000\022" +
+      "\027\n\rerror_message\030\002 \001(\tH\000B\007\n\005value\"3\n\016Tas" +
+      "kGetRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id" +
+      "\030\002 \001(\t\"|\n\017TaskGetResponse\022&\n\005state\030\001 \001(\016" +
+      "2\027.flyteidl.service.State\022\025\n\rerror_messa" +
+      "ge\030\002 \001(\t\022*\n\007outputs\030\003 \001(\0132\031.flyteidl.cor" +
+      "e.LiteralMap\"6\n\021TaskDeleteRequest\022\021\n\ttas" +
+      "k_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDele" +
+      "teResponse*^\n\005State\022\025\n\021RETRYABLE_FAILURE" +
+      "\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013" +
+      "\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\0042\236\002\n\024BackendPl" +
+      "uginService\022Y\n\nCreateTask\022#.flyteidl.ser" +
+      "vice.TaskCreateRequest\032$.flyteidl.servic" +
+      "e.TaskCreateResponse\"\000\022P\n\007GetTask\022 .flyt" +
+      "eidl.service.TaskGetRequest\032!.flyteidl.s" +
+      "ervice.TaskGetResponse\"\000\022Y\n\nDeleteTask\022#" +
+      ".flyteidl.service.TaskDeleteRequest\032$.fl" +
+      "yteidl.service.TaskDeleteResponse\"\000B9Z7g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5081,7 +5213,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskCreateResponse_descriptor,
-        new java.lang.String[] { "JobId", "Message", });
+        new java.lang.String[] { "JobId", "ErrorMessage", "Value", });
     internal_static_flyteidl_service_TaskGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_service_TaskGetRequest_fieldAccessorTable = new
@@ -5093,7 +5225,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskGetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskGetResponse_descriptor,
-        new java.lang.String[] { "State", "Message", "Outputs", });
+        new java.lang.String[] { "State", "ErrorMessage", "Outputs", });
     internal_static_flyteidl_service_TaskDeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_service_TaskDeleteRequest_fieldAccessorTable = new

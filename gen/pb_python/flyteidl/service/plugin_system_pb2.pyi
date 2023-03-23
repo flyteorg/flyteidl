@@ -7,8 +7,9 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
-FAILED: State
 PENDING: State
+PERMANENT_FAILURE: State
+RETRYABLE_FAILURE: State
 RUNNING: State
 SUCCEEDED: State
 
@@ -23,12 +24,12 @@ class TaskCreateRequest(_message.Message):
     def __init__(self, inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., template: _Optional[_Union[_tasks_pb2.TaskTemplate, _Mapping]] = ..., output_prefix: _Optional[str] = ...) -> None: ...
 
 class TaskCreateResponse(_message.Message):
-    __slots__ = ["job_id", "message"]
+    __slots__ = ["error_message", "job_id"]
+    ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     JOB_ID_FIELD_NUMBER: _ClassVar[int]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    error_message: str
     job_id: str
-    message: str
-    def __init__(self, job_id: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...
+    def __init__(self, job_id: _Optional[str] = ..., error_message: _Optional[str] = ...) -> None: ...
 
 class TaskDeleteRequest(_message.Message):
     __slots__ = ["job_id", "task_type"]
@@ -51,14 +52,14 @@ class TaskGetRequest(_message.Message):
     def __init__(self, task_type: _Optional[str] = ..., job_id: _Optional[str] = ...) -> None: ...
 
 class TaskGetResponse(_message.Message):
-    __slots__ = ["message", "outputs", "state"]
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ["error_message", "outputs", "state"]
+    ERROR_MESSAGE_FIELD_NUMBER: _ClassVar[int]
     OUTPUTS_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
-    message: str
+    error_message: str
     outputs: _literals_pb2.LiteralMap
     state: State
-    def __init__(self, state: _Optional[_Union[State, str]] = ..., message: _Optional[str] = ..., outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
+    def __init__(self, state: _Optional[_Union[State, str]] = ..., error_message: _Optional[str] = ..., outputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ...) -> None: ...
 
 class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
