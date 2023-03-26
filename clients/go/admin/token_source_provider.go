@@ -211,6 +211,7 @@ func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context
 		refreshTime := time.Time{}
 		if token, err := p.tokenCache.GetToken(); err == nil {
 			refreshTime = token.Expiry.Add(-getRandomDuration(p.tokenRefreshWindow))
+			logger.Infof(ctx, "initializing with cached token, expiry: %v, refreshTime: %v", token.Expiry, refreshTime)
 		}
 		return &customTokenSource{
 			ctx:                ctx,
@@ -247,7 +248,7 @@ func (s *customTokenSource) fetchTokenFromCache() (*oauth2.Token, bool) {
 		return nil, false
 	}
 	if time.Now().After(s.refreshTime) && !s.failedToRefresh {
-		logger.Infof(s.ctx, "cached token refresh window exceeded")
+		logger.Infof(s.ctx, "cached token refresh window exceeded, refreshTime: %v", s.refreshTime)
 		return token, true
 	}
 	return token, false
@@ -272,13 +273,13 @@ func (s *customTokenSource) Token() (*oauth2.Token, error) {
 		logger.Errorf(s.ctx, "failed to refresh token")
 		return nil, err
 	}
-	logger.Infof(s.ctx, "refreshed token")
 	err = s.tokenCache.SaveToken(token)
 	if err != nil {
 		logger.Warnf(s.ctx, "failed to cache token, using anyway")
 	}
 	s.failedToRefresh = false
 	s.refreshTime = token.Expiry.Add(-getRandomDuration(s.tokenRefreshWindow))
+	logger.Infof(s.ctx, "refreshed token, expiry: %v, refreshTime: %v", token.Expiry, s.refreshTime)
 	return token, nil
 }
 
