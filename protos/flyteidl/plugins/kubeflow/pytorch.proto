@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package flyteidl.plugins.kubeflow;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
+
+import "flyteidl/plugins/kubeflow/common.proto";
+
+// Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
+message DistributedPyTorchTrainingTask {
+  // Worker replicas spec
+  DistributedPyTorchTrainingReplicaSpec worker_replicas = 1;
+
+  // Master replicas spec
+  DistributedPyTorchTrainingReplicaSpec master_replicas = 2;
+
+  // RunPolicy encapsulates various runtime policies of the distributed training
+	// job, for example how to clean up resources and how long the job can stay
+	// active.
+  RunPolicy run_policy = 3;
+
+  // SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
+	SuccessPolicy success_policy = 4;
+}
+
+message DistributedPyTorchTrainingReplicaSpec {
+  // Number of workers
+  int32 replicas = 1;
+
+  // Unique name of a PodTemplate k8s resource to be used as the base configuration.
+  // PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+  string pod_template_name = 2;
+
+  // Restart policy for the worker
+  RestartPolicy restart_policy = 3;
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package flyteidl.plugins.kubeflow;
+
+option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
+
+
+message RunPolicy {
+  // CleanPodPolicy defines the policy to kill pods after the job completes.
+  // Default to None.
+  CleanPodPolicy clean_pod_policy = 1;
+  // TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
+  // reconcile gets called periodically. Default to infinite.
+  int32 ttl_seconds_after_finished = 2;
+
+  // Specifies the duration in seconds relative to the startTime that the job may be active
+  // before the system tries to terminate it; value must be positive integer.
+  int32 activeDeadlineSeconds = 3;
+
+  // Number of retries before marking this job failed.
+  int32 backoff_limit = 4;
+}
+
+enum SuccessPolicy {
+  SUCCESS_POLICY_DEFAULT = 0;
+  SUCCESS_POLICY_ALL_WORKERS = 1;
+}
+
+enum CleanPodPolicy {
+  CLEANPOD_POLICY_UNDEFINED = 0;
+  CLEANPOD_POLICY_ALL = 1;
+  CLEANPOD_POLICY_RUNNING = 2;
+  CLEANPOD_POLICY_NONE = 3;
+}
+
+enum RestartPolicy {
+  // Always means the pod will always be restarted. This policy is good for parameter servers 
+  // since they never exit and should always be restarted in the event of failure.
+  RESTART_POLICY_ALWAYS = 0;
+
+  // OnFailure means the pod will be restarted if the pod exits due to failure.
+  // A non-zero exit code indicates a failure.
+  // An exit code of 0 indicates success and the pod will not be restarted.
+  // This policy is good for chief and workers.
+  RESTART_POLICY_ON_FAILURE = 1;
+
+  // Never means pods that terminate will never be restarted. 
+  // This policy should rarely be used because Kubernetes will terminate pods for any number of reasons.
+  RESTART_POLICY_NEVER = 2;
+}
