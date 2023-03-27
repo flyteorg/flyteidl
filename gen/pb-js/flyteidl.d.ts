@@ -19787,9 +19787,6 @@ export namespace flyteidl {
 
             /** TaskCreateResponse jobId */
             jobId?: (string|null);
-
-            /** TaskCreateResponse errorMessage */
-            errorMessage?: (string|null);
         }
 
         /** Represents a TaskCreateResponse. */
@@ -19803,12 +19800,6 @@ export namespace flyteidl {
 
             /** TaskCreateResponse jobId. */
             public jobId: string;
-
-            /** TaskCreateResponse errorMessage. */
-            public errorMessage: string;
-
-            /** TaskCreateResponse value. */
-            public value?: ("jobId"|"errorMessage");
 
             /**
              * Creates a new TaskCreateResponse instance using the specified properties.
@@ -19907,9 +19898,6 @@ export namespace flyteidl {
             /** TaskGetResponse state */
             state?: (flyteidl.service.State|null);
 
-            /** TaskGetResponse errorMessage */
-            errorMessage?: (string|null);
-
             /** TaskGetResponse outputs */
             outputs?: (flyteidl.core.ILiteralMap|null);
         }
@@ -19925,9 +19913,6 @@ export namespace flyteidl {
 
             /** TaskGetResponse state. */
             public state: flyteidl.service.State;
-
-            /** TaskGetResponse errorMessage. */
-            public errorMessage: string;
 
             /** TaskGetResponse outputs. */
             public outputs?: (flyteidl.core.ILiteralMap|null);

@@ -1279,42 +1279,14 @@ public final class PluginSystem {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
      * <code>string job_id = 1;</code>
      */
     java.lang.String getJobId();
     /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
      * <code>string job_id = 1;</code>
      */
     com.google.protobuf.ByteString
         getJobIdBytes();
-
-    /**
-     * <pre>
-     * Error message if fail to create job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    java.lang.String getErrorMessage();
-    /**
-     * <pre>
-     * Error message if fail to create job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getErrorMessageBytes();
-
-    public flyteidl.service.PluginSystem.TaskCreateResponse.ValueCase getValueCase();
   }
   /**
    * <pre>
@@ -1333,6 +1305,7 @@ public final class PluginSystem {
       super(builder);
     }
     private TaskCreateResponse() {
+      jobId_ = "";
     }
 
     @java.lang.Override
@@ -1361,14 +1334,8 @@ public final class PluginSystem {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              valueCase_ = 1;
-              value_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              valueCase_ = 2;
-              value_ = s;
+
+              jobId_ = s;
               break;
             }
             default: {
@@ -1403,140 +1370,34 @@ public final class PluginSystem {
               flyteidl.service.PluginSystem.TaskCreateResponse.class, flyteidl.service.PluginSystem.TaskCreateResponse.Builder.class);
     }
 
-    private int valueCase_ = 0;
-    private java.lang.Object value_;
-    public enum ValueCase
-        implements com.google.protobuf.Internal.EnumLite {
-      JOB_ID(1),
-      ERROR_MESSAGE(2),
-      VALUE_NOT_SET(0);
-      private final int value;
-      private ValueCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ValueCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static ValueCase forNumber(int value) {
-        switch (value) {
-          case 1: return JOB_ID;
-          case 2: return ERROR_MESSAGE;
-          case 0: return VALUE_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public ValueCase
-    getValueCase() {
-      return ValueCase.forNumber(
-          valueCase_);
-    }
-
     public static final int JOB_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object jobId_;
     /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
      * <code>string job_id = 1;</code>
      */
     public java.lang.String getJobId() {
-      java.lang.Object ref = "";
-      if (valueCase_ == 1) {
-        ref = value_;
-      }
+      java.lang.Object ref = jobId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (valueCase_ == 1) {
-          value_ = s;
-        }
+        jobId_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * The unique id identifying the job.
-     * </pre>
-     *
      * <code>string job_id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
-      java.lang.Object ref = "";
-      if (valueCase_ == 1) {
-        ref = value_;
-      }
+      java.lang.Object ref = jobId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (valueCase_ == 1) {
-          value_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-    /**
-     * <pre>
-     * Error message if fail to create job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    public java.lang.String getErrorMessage() {
-      java.lang.Object ref = "";
-      if (valueCase_ == 2) {
-        ref = value_;
-      }
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (valueCase_ == 2) {
-          value_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Error message if fail to create job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getErrorMessageBytes() {
-      java.lang.Object ref = "";
-      if (valueCase_ == 2) {
-        ref = value_;
-      }
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (valueCase_ == 2) {
-          value_ = b;
-        }
+        jobId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1557,11 +1418,8 @@ public final class PluginSystem {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (valueCase_ == 1) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
-      }
-      if (valueCase_ == 2) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      if (!getJobIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1572,11 +1430,8 @@ public final class PluginSystem {
       if (size != -1) return size;
 
       size = 0;
-      if (valueCase_ == 1) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
-      }
-      if (valueCase_ == 2) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      if (!getJobIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1593,19 +1448,8 @@ public final class PluginSystem {
       }
       flyteidl.service.PluginSystem.TaskCreateResponse other = (flyteidl.service.PluginSystem.TaskCreateResponse) obj;
 
-      if (!getValueCase().equals(other.getValueCase())) return false;
-      switch (valueCase_) {
-        case 1:
-          if (!getJobId()
-              .equals(other.getJobId())) return false;
-          break;
-        case 2:
-          if (!getErrorMessage()
-              .equals(other.getErrorMessage())) return false;
-          break;
-        case 0:
-        default:
-      }
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1617,18 +1461,8 @@ public final class PluginSystem {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      switch (valueCase_) {
-        case 1:
-          hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
-          hash = (53 * hash) + getJobId().hashCode();
-          break;
-        case 2:
-          hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
-          hash = (53 * hash) + getErrorMessage().hashCode();
-          break;
-        case 0:
-        default:
-      }
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1766,8 +1600,8 @@ public final class PluginSystem {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        valueCase_ = 0;
-        value_ = null;
+        jobId_ = "";
+
         return this;
       }
 
@@ -1794,13 +1628,7 @@ public final class PluginSystem {
       @java.lang.Override
       public flyteidl.service.PluginSystem.TaskCreateResponse buildPartial() {
         flyteidl.service.PluginSystem.TaskCreateResponse result = new flyteidl.service.PluginSystem.TaskCreateResponse(this);
-        if (valueCase_ == 1) {
-          result.value_ = value_;
-        }
-        if (valueCase_ == 2) {
-          result.value_ = value_;
-        }
-        result.valueCase_ = valueCase_;
+        result.jobId_ = jobId_;
         onBuilt();
         return result;
       }
@@ -1849,22 +1677,9 @@ public final class PluginSystem {
 
       public Builder mergeFrom(flyteidl.service.PluginSystem.TaskCreateResponse other) {
         if (other == flyteidl.service.PluginSystem.TaskCreateResponse.getDefaultInstance()) return this;
-        switch (other.getValueCase()) {
-          case JOB_ID: {
-            valueCase_ = 1;
-            value_ = other.value_;
-            onChanged();
-            break;
-          }
-          case ERROR_MESSAGE: {
-            valueCase_ = 2;
-            value_ = other.value_;
-            onChanged();
-            break;
-          }
-          case VALUE_NOT_SET: {
-            break;
-          }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1894,76 +1709,40 @@ public final class PluginSystem {
         }
         return this;
       }
-      private int valueCase_ = 0;
-      private java.lang.Object value_;
-      public ValueCase
-          getValueCase() {
-        return ValueCase.forNumber(
-            valueCase_);
-      }
 
-      public Builder clearValue() {
-        valueCase_ = 0;
-        value_ = null;
-        onChanged();
-        return this;
-      }
-
-
+      private java.lang.Object jobId_ = "";
       /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
        * <code>string job_id = 1;</code>
        */
       public java.lang.String getJobId() {
-        java.lang.Object ref = "";
-        if (valueCase_ == 1) {
-          ref = value_;
-        }
+        java.lang.Object ref = jobId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          if (valueCase_ == 1) {
-            value_ = s;
-          }
+          jobId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
        * <code>string job_id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getJobIdBytes() {
-        java.lang.Object ref = "";
-        if (valueCase_ == 1) {
-          ref = value_;
-        }
+        java.lang.Object ref = jobId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          if (valueCase_ == 1) {
-            value_ = b;
-          }
+          jobId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
        * <code>string job_id = 1;</code>
        */
       public Builder setJobId(
@@ -1971,31 +1750,21 @@ public final class PluginSystem {
         if (value == null) {
     throw new NullPointerException();
   }
-  valueCase_ = 1;
-        value_ = value;
+  
+        jobId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
        * <code>string job_id = 1;</code>
        */
       public Builder clearJobId() {
-        if (valueCase_ == 1) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
         return this;
       }
       /**
-       * <pre>
-       * The unique id identifying the job.
-       * </pre>
-       *
        * <code>string job_id = 1;</code>
        */
       public Builder setJobIdBytes(
@@ -2004,108 +1773,8 @@ public final class PluginSystem {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        valueCase_ = 1;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <pre>
-       * Error message if fail to create job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public java.lang.String getErrorMessage() {
-        java.lang.Object ref = "";
-        if (valueCase_ == 2) {
-          ref = value_;
-        }
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (valueCase_ == 2) {
-            value_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Error message if fail to create job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getErrorMessageBytes() {
-        java.lang.Object ref = "";
-        if (valueCase_ == 2) {
-          ref = value_;
-        }
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          if (valueCase_ == 2) {
-            value_ = b;
-          }
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Error message if fail to create job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder setErrorMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  valueCase_ = 2;
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Error message if fail to create job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder clearErrorMessage() {
-        if (valueCase_ == 2) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * Error message if fail to create job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder setErrorMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        valueCase_ = 2;
-        value_ = value;
+        
+        jobId_ = value;
         onChanged();
         return this;
       }
@@ -2951,30 +2620,12 @@ public final class PluginSystem {
 
     /**
      * <pre>
-     * Error message if fail to get job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    java.lang.String getErrorMessage();
-    /**
-     * <pre>
-     * Error message if fail to get job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getErrorMessageBytes();
-
-    /**
-     * <pre>
      * The outputs of the execution. It's typically used by sql task. Flyteplugins service will create a
      * Structured dataset pointing to the query result table.
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     boolean hasOutputs();
     /**
@@ -2984,7 +2635,7 @@ public final class PluginSystem {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     flyteidl.core.Literals.LiteralMap getOutputs();
     /**
@@ -2994,7 +2645,7 @@ public final class PluginSystem {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder();
   }
@@ -3016,7 +2667,6 @@ public final class PluginSystem {
     }
     private TaskGetResponse() {
       state_ = 0;
-      errorMessage_ = "";
     }
 
     @java.lang.Override
@@ -3050,12 +2700,6 @@ public final class PluginSystem {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              errorMessage_ = s;
-              break;
-            }
-            case 26: {
               flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
               if (outputs_ != null) {
                 subBuilder = outputs_.toBuilder();
@@ -3125,49 +2769,7 @@ public final class PluginSystem {
       return result == null ? flyteidl.service.PluginSystem.State.UNRECOGNIZED : result;
     }
 
-    public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object errorMessage_;
-    /**
-     * <pre>
-     * Error message if fail to get job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    public java.lang.String getErrorMessage() {
-      java.lang.Object ref = errorMessage_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        errorMessage_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Error message if fail to get job.
-     * </pre>
-     *
-     * <code>string error_message = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getErrorMessageBytes() {
-      java.lang.Object ref = errorMessage_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        errorMessage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OUTPUTS_FIELD_NUMBER = 3;
+    public static final int OUTPUTS_FIELD_NUMBER = 2;
     private flyteidl.core.Literals.LiteralMap outputs_;
     /**
      * <pre>
@@ -3176,7 +2778,7 @@ public final class PluginSystem {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     public boolean hasOutputs() {
       return outputs_ != null;
@@ -3188,7 +2790,7 @@ public final class PluginSystem {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     public flyteidl.core.Literals.LiteralMap getOutputs() {
       return outputs_ == null ? flyteidl.core.Literals.LiteralMap.getDefaultInstance() : outputs_;
@@ -3200,7 +2802,7 @@ public final class PluginSystem {
      * +optional
      * </pre>
      *
-     * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+     * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
      */
     public flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder() {
       return getOutputs();
@@ -3223,11 +2825,8 @@ public final class PluginSystem {
       if (state_ != flyteidl.service.PluginSystem.State.RETRYABLE_FAILURE.getNumber()) {
         output.writeEnum(1, state_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
-      }
       if (outputs_ != null) {
-        output.writeMessage(3, getOutputs());
+        output.writeMessage(2, getOutputs());
       }
       unknownFields.writeTo(output);
     }
@@ -3242,12 +2841,9 @@ public final class PluginSystem {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, state_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
-      }
       if (outputs_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOutputs());
+          .computeMessageSize(2, getOutputs());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3265,8 +2861,6 @@ public final class PluginSystem {
       flyteidl.service.PluginSystem.TaskGetResponse other = (flyteidl.service.PluginSystem.TaskGetResponse) obj;
 
       if (state_ != other.state_) return false;
-      if (!getErrorMessage()
-          .equals(other.getErrorMessage())) return false;
       if (hasOutputs() != other.hasOutputs()) return false;
       if (hasOutputs()) {
         if (!getOutputs()
@@ -3285,8 +2879,6 @@ public final class PluginSystem {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
-      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getErrorMessage().hashCode();
       if (hasOutputs()) {
         hash = (37 * hash) + OUTPUTS_FIELD_NUMBER;
         hash = (53 * hash) + getOutputs().hashCode();
@@ -3430,8 +3022,6 @@ public final class PluginSystem {
         super.clear();
         state_ = 0;
 
-        errorMessage_ = "";
-
         if (outputsBuilder_ == null) {
           outputs_ = null;
         } else {
@@ -3465,7 +3055,6 @@ public final class PluginSystem {
       public flyteidl.service.PluginSystem.TaskGetResponse buildPartial() {
         flyteidl.service.PluginSystem.TaskGetResponse result = new flyteidl.service.PluginSystem.TaskGetResponse(this);
         result.state_ = state_;
-        result.errorMessage_ = errorMessage_;
         if (outputsBuilder_ == null) {
           result.outputs_ = outputs_;
         } else {
@@ -3521,10 +3110,6 @@ public final class PluginSystem {
         if (other == flyteidl.service.PluginSystem.TaskGetResponse.getDefaultInstance()) return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
-        }
-        if (!other.getErrorMessage().isEmpty()) {
-          errorMessage_ = other.errorMessage_;
-          onChanged();
         }
         if (other.hasOutputs()) {
           mergeOutputs(other.getOutputs());
@@ -3623,95 +3208,6 @@ public final class PluginSystem {
         return this;
       }
 
-      private java.lang.Object errorMessage_ = "";
-      /**
-       * <pre>
-       * Error message if fail to get job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public java.lang.String getErrorMessage() {
-        java.lang.Object ref = errorMessage_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          errorMessage_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Error message if fail to get job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getErrorMessageBytes() {
-        java.lang.Object ref = errorMessage_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          errorMessage_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Error message if fail to get job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder setErrorMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        errorMessage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Error message if fail to get job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder clearErrorMessage() {
-        
-        errorMessage_ = getDefaultInstance().getErrorMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Error message if fail to get job.
-       * </pre>
-       *
-       * <code>string error_message = 2;</code>
-       */
-      public Builder setErrorMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        errorMessage_ = value;
-        onChanged();
-        return this;
-      }
-
       private flyteidl.core.Literals.LiteralMap outputs_;
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> outputsBuilder_;
@@ -3722,7 +3218,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public boolean hasOutputs() {
         return outputsBuilder_ != null || outputs_ != null;
@@ -3734,7 +3230,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public flyteidl.core.Literals.LiteralMap getOutputs() {
         if (outputsBuilder_ == null) {
@@ -3750,7 +3246,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public Builder setOutputs(flyteidl.core.Literals.LiteralMap value) {
         if (outputsBuilder_ == null) {
@@ -3772,7 +3268,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public Builder setOutputs(
           flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
@@ -3792,7 +3288,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public Builder mergeOutputs(flyteidl.core.Literals.LiteralMap value) {
         if (outputsBuilder_ == null) {
@@ -3816,7 +3312,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public Builder clearOutputs() {
         if (outputsBuilder_ == null) {
@@ -3836,7 +3332,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public flyteidl.core.Literals.LiteralMap.Builder getOutputsBuilder() {
         
@@ -3850,7 +3346,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       public flyteidl.core.Literals.LiteralMapOrBuilder getOutputsOrBuilder() {
         if (outputsBuilder_ != null) {
@@ -3867,7 +3363,7 @@ public final class PluginSystem {
        * +optional
        * </pre>
        *
-       * <code>.flyteidl.core.LiteralMap outputs = 3;</code>
+       * <code>.flyteidl.core.LiteralMap outputs = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
@@ -5166,26 +4662,25 @@ public final class PluginSystem {
       "equest\022)\n\006inputs\030\001 \001(\0132\031.flyteidl.core.L" +
       "iteralMap\022-\n\010template\030\002 \001(\0132\033.flyteidl.c" +
       "ore.TaskTemplate\022\025\n\routput_prefix\030\003 \001(\t\"" +
-      "H\n\022TaskCreateResponse\022\020\n\006job_id\030\001 \001(\tH\000\022" +
-      "\027\n\rerror_message\030\002 \001(\tH\000B\007\n\005value\"3\n\016Tas" +
-      "kGetRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job_id" +
-      "\030\002 \001(\t\"|\n\017TaskGetResponse\022&\n\005state\030\001 \001(\016" +
-      "2\027.flyteidl.service.State\022\025\n\rerror_messa" +
-      "ge\030\002 \001(\t\022*\n\007outputs\030\003 \001(\0132\031.flyteidl.cor" +
-      "e.LiteralMap\"6\n\021TaskDeleteRequest\022\021\n\ttas" +
-      "k_type\030\001 \001(\t\022\016\n\006job_id\030\002 \001(\t\"\024\n\022TaskDele" +
-      "teResponse*^\n\005State\022\025\n\021RETRYABLE_FAILURE" +
-      "\020\000\022\025\n\021PERMANENT_FAILURE\020\001\022\013\n\007PENDING\020\002\022\013" +
-      "\n\007RUNNING\020\003\022\r\n\tSUCCEEDED\020\0042\236\002\n\024BackendPl" +
-      "uginService\022Y\n\nCreateTask\022#.flyteidl.ser" +
-      "vice.TaskCreateRequest\032$.flyteidl.servic" +
-      "e.TaskCreateResponse\"\000\022P\n\007GetTask\022 .flyt" +
-      "eidl.service.TaskGetRequest\032!.flyteidl.s" +
-      "ervice.TaskGetResponse\"\000\022Y\n\nDeleteTask\022#" +
-      ".flyteidl.service.TaskDeleteRequest\032$.fl" +
-      "yteidl.service.TaskDeleteResponse\"\000B9Z7g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/serviceb\006proto3"
+      "$\n\022TaskCreateResponse\022\016\n\006job_id\030\001 \001(\t\"3\n" +
+      "\016TaskGetRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006jo" +
+      "b_id\030\002 \001(\t\"e\n\017TaskGetResponse\022&\n\005state\030\001" +
+      " \001(\0162\027.flyteidl.service.State\022*\n\007outputs" +
+      "\030\002 \001(\0132\031.flyteidl.core.LiteralMap\"6\n\021Tas" +
+      "kDeleteRequest\022\021\n\ttask_type\030\001 \001(\t\022\016\n\006job" +
+      "_id\030\002 \001(\t\"\024\n\022TaskDeleteResponse*^\n\005State" +
+      "\022\025\n\021RETRYABLE_FAILURE\020\000\022\025\n\021PERMANENT_FAI" +
+      "LURE\020\001\022\013\n\007PENDING\020\002\022\013\n\007RUNNING\020\003\022\r\n\tSUCC" +
+      "EEDED\020\0042\236\002\n\024BackendPluginService\022Y\n\nCrea" +
+      "teTask\022#.flyteidl.service.TaskCreateRequ" +
+      "est\032$.flyteidl.service.TaskCreateRespons" +
+      "e\"\000\022P\n\007GetTask\022 .flyteidl.service.TaskGe" +
+      "tRequest\032!.flyteidl.service.TaskGetRespo" +
+      "nse\"\000\022Y\n\nDeleteTask\022#.flyteidl.service.T" +
+      "askDeleteRequest\032$.flyteidl.service.Task" +
+      "DeleteResponse\"\000B9Z7github.com/flyteorg/" +
+      "flyteidl/gen/pb-go/flyteidl/serviceb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5213,7 +4708,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskCreateResponse_descriptor,
-        new java.lang.String[] { "JobId", "ErrorMessage", "Value", });
+        new java.lang.String[] { "JobId", });
     internal_static_flyteidl_service_TaskGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_service_TaskGetRequest_fieldAccessorTable = new
@@ -5225,7 +4720,7 @@ public final class PluginSystem {
     internal_static_flyteidl_service_TaskGetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_TaskGetResponse_descriptor,
-        new java.lang.String[] { "State", "ErrorMessage", "Outputs", });
+        new java.lang.String[] { "State", "Outputs", });
     internal_static_flyteidl_service_TaskDeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_flyteidl_service_TaskDeleteRequest_fieldAccessorTable = new

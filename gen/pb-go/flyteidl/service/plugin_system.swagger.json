@@ -1049,12 +1049,7 @@
       "type": "object",
       "properties": {
         "job_id": {
-          "type": "string",
-          "description": "The unique id identifying the job."
-        },
-        "error_message": {
-          "type": "string",
-          "description": "Error message if fail to create job."
+          "type": "string"
         }
       },
       "description": "Represents a create response structure."
@@ -1147,10 +1142,6 @@
         "state": {
           "$ref": "#/definitions/serviceState",
           "description": "The state of the execution is used to control its visibility in the UI/CLI."
-        },
-        "error_message": {
-          "type": "string",
-          "description": "Error message if fail to get job."
         },
         "outputs": {
           "$ref": "#/definitions/coreLiteralMap",

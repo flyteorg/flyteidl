@@ -46016,7 +46016,6 @@
                  * @memberof flyteidl.service
                  * @interface ITaskCreateResponse
                  * @property {string|null} [jobId] TaskCreateResponse jobId
-                 * @property {string|null} [errorMessage] TaskCreateResponse errorMessage
                  */
     
                 /**
@@ -46041,28 +46040,6 @@
                  * @instance
                  */
                 TaskCreateResponse.prototype.jobId = "";
-    
-                /**
-                 * TaskCreateResponse errorMessage.
-                 * @member {string} errorMessage
-                 * @memberof flyteidl.service.TaskCreateResponse
-                 * @instance
-                 */
-                TaskCreateResponse.prototype.errorMessage = "";
-    
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-    
-                /**
-                 * TaskCreateResponse value.
-                 * @member {"jobId"|"errorMessage"|undefined} value
-                 * @memberof flyteidl.service.TaskCreateResponse
-                 * @instance
-                 */
-                Object.defineProperty(TaskCreateResponse.prototype, "value", {
-                    get: $util.oneOfGetter($oneOfFields = ["jobId", "errorMessage"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
     
                 /**
                  * Creates a new TaskCreateResponse instance using the specified properties.
@@ -46090,8 +46067,6 @@
                         writer = $Writer.create();
                     if (message.jobId != null && message.hasOwnProperty("jobId"))
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.jobId);
-                    if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.errorMessage);
                     return writer;
                 };
     
@@ -46116,9 +46091,6 @@
                         case 1:
                             message.jobId = reader.string();
                             break;
-                        case 2:
-                            message.errorMessage = reader.string();
-                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -46138,19 +46110,9 @@
                 TaskCreateResponse.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    var properties = {};
-                    if (message.jobId != null && message.hasOwnProperty("jobId")) {
-                        properties.value = 1;
+                    if (message.jobId != null && message.hasOwnProperty("jobId"))
                         if (!$util.isString(message.jobId))
                             return "jobId: string expected";
-                    }
-                    if (message.errorMessage != null && message.hasOwnProperty("errorMessage")) {
-                        if (properties.value === 1)
-                            return "value: multiple values";
-                        properties.value = 1;
-                        if (!$util.isString(message.errorMessage))
-                            return "errorMessage: string expected";
-                    }
                     return null;
                 };
     
@@ -46291,7 +46253,6 @@
                  * @memberof flyteidl.service
                  * @interface ITaskGetResponse
                  * @property {flyteidl.service.State|null} [state] TaskGetResponse state
-                 * @property {string|null} [errorMessage] TaskGetResponse errorMessage
                  * @property {flyteidl.core.ILiteralMap|null} [outputs] TaskGetResponse outputs
                  */
     
@@ -46317,14 +46278,6 @@
                  * @instance
                  */
                 TaskGetResponse.prototype.state = 0;
-    
-                /**
-                 * TaskGetResponse errorMessage.
-                 * @member {string} errorMessage
-                 * @memberof flyteidl.service.TaskGetResponse
-                 * @instance
-                 */
-                TaskGetResponse.prototype.errorMessage = "";
     
                 /**
                  * TaskGetResponse outputs.
@@ -46360,10 +46313,8 @@
                         writer = $Writer.create();
                     if (message.state != null && message.hasOwnProperty("state"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
-                    if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.errorMessage);
                     if (message.outputs != null && message.hasOwnProperty("outputs"))
-                        $root.flyteidl.core.LiteralMap.encode(message.outputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.flyteidl.core.LiteralMap.encode(message.outputs, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -46389,9 +46340,6 @@
                             message.state = reader.int32();
                             break;
                         case 2:
-                            message.errorMessage = reader.string();
-                            break;
-                        case 3:
                             message.outputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                             break;
                         default:
@@ -46424,9 +46372,6 @@
                         case 4:
                             break;
                         }
-                    if (message.errorMessage != null && message.hasOwnProperty("errorMessage"))
-                        if (!$util.isString(message.errorMessage))
-                            return "errorMessage: string expected";
                     if (message.outputs != null && message.hasOwnProperty("outputs")) {
                         var error = $root.flyteidl.core.LiteralMap.verify(message.outputs);
                         if (error)

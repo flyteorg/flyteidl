@@ -39,12 +39,7 @@ message TaskCreateRequest {
 
 // Represents a create response structure.
 message TaskCreateResponse {
-  oneof value {
-    // The unique id identifying the job.
-    string job_id = 1;
-    // Error message if fail to create job.
-    string error_message = 2;
-  }
+  string job_id = 1;
 }
 
 // A message used to fetch a job state from backend plugin server.
@@ -59,12 +54,10 @@ message TaskGetRequest {
 message TaskGetResponse {
   // The state of the execution is used to control its visibility in the UI/CLI.
   State state = 1;
-  // Error message if fail to get job.
-  string error_message = 2;
   // The outputs of the execution. It's typically used by sql task. Flyteplugins service will create a
   // Structured dataset pointing to the query result table.
   // +optional
-  core.LiteralMap outputs = 3;
+  core.LiteralMap outputs = 2;
 }
 
 // A message used to delete a task.
