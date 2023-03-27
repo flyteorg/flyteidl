@@ -33,7 +33,7 @@ message TaskCreateRequest {
   core.LiteralMap inputs = 1;
   // Template of the task that encapsulates all the metadata of the task.
   core.TaskTemplate template = 2;
-  // Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+  // Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
   string output_prefix = 3;
 }
 
