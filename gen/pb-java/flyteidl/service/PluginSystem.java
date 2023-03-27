@@ -205,7 +205,7 @@ public final class PluginSystem {
 
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -213,7 +213,7 @@ public final class PluginSystem {
     java.lang.String getOutputPrefix();
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -405,7 +405,7 @@ public final class PluginSystem {
     private volatile java.lang.Object outputPrefix_;
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -424,7 +424,7 @@ public final class PluginSystem {
     }
     /**
      * <pre>
-     * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+     * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
      * </pre>
      *
      * <code>string output_prefix = 3;</code>
@@ -1136,7 +1136,7 @@ public final class PluginSystem {
       private java.lang.Object outputPrefix_ = "";
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1155,7 +1155,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1175,7 +1175,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1192,7 +1192,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>
@@ -1205,7 +1205,7 @@ public final class PluginSystem {
       }
       /**
        * <pre>
-       * Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+       * Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
        * </pre>
        *
        * <code>string output_prefix = 3;</code>

@@ -68,7 +68,7 @@ type TaskCreateRequest struct {
 	Inputs *core.LiteralMap `protobuf:"bytes,1,opt,name=inputs,proto3" json:"inputs,omitempty"`
 	// Template of the task that encapsulates all the metadata of the task.
 	Template *core.TaskTemplate `protobuf:"bytes,2,opt,name=template,proto3" json:"template,omitempty"`
-	// Prefix for where offloaded data from user workflows will be written. (e.g. s3://my-bucket/randomstring)
+	// Prefix for where task output data will be written. (e.g. s3://my-bucket/randomstring)
 	OutputPrefix         string   `protobuf:"bytes,3,opt,name=output_prefix,json=outputPrefix,proto3" json:"output_prefix,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
