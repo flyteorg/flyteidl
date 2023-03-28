@@ -35,6 +35,8 @@ const (
 	AuthTypeExternalCommand
 	// AuthTypeDeviceFlow Uses device flow to authenticate in a constrained environment with no access to browser
 	AuthTypeDeviceFlow
+	// AuthTypeAPIKey Uses API Key to authenticate
+	AuthTypeAPIKey
 )
 
 type Config struct {
@@ -52,6 +54,7 @@ type Config struct {
 	ClientID             string   `json:"clientId" pflag:",Client ID"`
 	ClientSecretLocation string   `json:"clientSecretLocation" pflag:",File containing the client secret"`
 	ClientSecretEnvVar   string   `json:"clientSecretEnvVar" pflag:",Environment variable containing the client secret"`
+	APIKeyEnvVar         string   `json:"apiKeyEnvVar" pflag:",Environment variable containing the API Key"`
 	Scopes               []string `json:"scopes" pflag:",List of scopes to request"`
 	UseAudienceFromAdmin bool     `json:"useAudienceFromAdmin" pflag:",Use Audience configured from admins public endpoint config."`
 	Audience             string   `json:"audience" pflag:",Audience to use when initiating OAuth2 authorization requests."`
@@ -89,6 +92,7 @@ var (
 		ClientID:             DefaultClientID,
 		AuthType:             AuthTypeClientSecret,
 		ClientSecretLocation: DefaultClientSecretLocation,
+		APIKeyEnvVar:         "FLYTE_API_KEY",
 		PkceConfig: pkce.Config{
 			TokenRefreshGracePeriod: config.Duration{Duration: 5 * time.Minute},
 			BrowserSessionTimeout:   config.Duration{Duration: 2 * time.Minute},
