@@ -4,6 +4,7 @@ package flyteidl.plugins.kubeflow;
 
 option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
+import "flyteidl/core/tasks.proto";
 import "flyteidl/plugins/kubeflow/common.proto";
 
 // Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
@@ -21,19 +22,18 @@ message DistributedTensorflowTrainingTask {
 	// job, for example how to clean up resources and how long the job can stay
 	// active.
   RunPolicy run_policy = 4;
-
-  // SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-	SuccessPolicy success_policy = 5;
 }
 
 message DistributedTensorflowTrainingReplicaSpec {
-  // Number of workers
+  // Number of replicas
   int32 replicas = 1;
 
-  // Unique name of a PodTemplate k8s resource to be used as the base configuration.
-  // PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
-  string pod_template_name = 2;
+  // Image used for the replica group
+  string image = 2;
 
-  // Restart policy for the worker
-  RestartPolicy restart_policy = 3;
+  // Resources required for the replica group
+  core.Resources resources = 3;
+  
+  // RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+  RestartPolicy restart_policy = 4;
 }

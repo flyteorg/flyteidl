@@ -123,23 +123,6 @@ public final class Tensorflow {
      * <code>.flyteidl.plugins.kubeflow.RunPolicy run_policy = 4;</code>
      */
     flyteidl.plugins.kubeflow.Common.RunPolicyOrBuilder getRunPolicyOrBuilder();
-
-    /**
-     * <pre>
-     * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-     */
-    int getSuccessPolicyValue();
-    /**
-     * <pre>
-     * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-     */
-    flyteidl.plugins.kubeflow.Common.SuccessPolicy getSuccessPolicy();
   }
   /**
    * <pre>
@@ -158,7 +141,6 @@ public final class Tensorflow {
       super(builder);
     }
     private DistributedTensorflowTrainingTask() {
-      successPolicy_ = 0;
     }
 
     @java.lang.Override
@@ -235,12 +217,6 @@ public final class Tensorflow {
                 runPolicy_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              successPolicy_ = rawValue;
               break;
             }
             default: {
@@ -413,31 +389,6 @@ public final class Tensorflow {
       return getRunPolicy();
     }
 
-    public static final int SUCCESS_POLICY_FIELD_NUMBER = 5;
-    private int successPolicy_;
-    /**
-     * <pre>
-     * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-     */
-    public int getSuccessPolicyValue() {
-      return successPolicy_;
-    }
-    /**
-     * <pre>
-     * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-     * </pre>
-     *
-     * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-     */
-    public flyteidl.plugins.kubeflow.Common.SuccessPolicy getSuccessPolicy() {
-      @SuppressWarnings("deprecation")
-      flyteidl.plugins.kubeflow.Common.SuccessPolicy result = flyteidl.plugins.kubeflow.Common.SuccessPolicy.valueOf(successPolicy_);
-      return result == null ? flyteidl.plugins.kubeflow.Common.SuccessPolicy.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -464,9 +415,6 @@ public final class Tensorflow {
       if (runPolicy_ != null) {
         output.writeMessage(4, getRunPolicy());
       }
-      if (successPolicy_ != flyteidl.plugins.kubeflow.Common.SuccessPolicy.SUCCESS_POLICY_DEFAULT.getNumber()) {
-        output.writeEnum(5, successPolicy_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -491,10 +439,6 @@ public final class Tensorflow {
       if (runPolicy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getRunPolicy());
-      }
-      if (successPolicy_ != flyteidl.plugins.kubeflow.Common.SuccessPolicy.SUCCESS_POLICY_DEFAULT.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, successPolicy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -531,7 +475,6 @@ public final class Tensorflow {
         if (!getRunPolicy()
             .equals(other.getRunPolicy())) return false;
       }
-      if (successPolicy_ != other.successPolicy_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -559,8 +502,6 @@ public final class Tensorflow {
         hash = (37 * hash) + RUN_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getRunPolicy().hashCode();
       }
-      hash = (37 * hash) + SUCCESS_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + successPolicy_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -722,8 +663,6 @@ public final class Tensorflow {
           runPolicy_ = null;
           runPolicyBuilder_ = null;
         }
-        successPolicy_ = 0;
-
         return this;
       }
 
@@ -770,7 +709,6 @@ public final class Tensorflow {
         } else {
           result.runPolicy_ = runPolicyBuilder_.build();
         }
-        result.successPolicy_ = successPolicy_;
         onBuilt();
         return result;
       }
@@ -830,9 +768,6 @@ public final class Tensorflow {
         }
         if (other.hasRunPolicy()) {
           mergeRunPolicy(other.getRunPolicy());
-        }
-        if (other.successPolicy_ != 0) {
-          setSuccessPolicyValue(other.getSuccessPolicyValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1492,71 +1427,6 @@ public final class Tensorflow {
         }
         return runPolicyBuilder_;
       }
-
-      private int successPolicy_ = 0;
-      /**
-       * <pre>
-       * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-       */
-      public int getSuccessPolicyValue() {
-        return successPolicy_;
-      }
-      /**
-       * <pre>
-       * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-       */
-      public Builder setSuccessPolicyValue(int value) {
-        successPolicy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-       */
-      public flyteidl.plugins.kubeflow.Common.SuccessPolicy getSuccessPolicy() {
-        @SuppressWarnings("deprecation")
-        flyteidl.plugins.kubeflow.Common.SuccessPolicy result = flyteidl.plugins.kubeflow.Common.SuccessPolicy.valueOf(successPolicy_);
-        return result == null ? flyteidl.plugins.kubeflow.Common.SuccessPolicy.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-       */
-      public Builder setSuccessPolicy(flyteidl.plugins.kubeflow.Common.SuccessPolicy value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        successPolicy_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * SuccessPolicy defines the policy to mark the TFJob as succeeded. Default to None.
-       * </pre>
-       *
-       * <code>.flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 5;</code>
-       */
-      public Builder clearSuccessPolicy() {
-        
-        successPolicy_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1616,7 +1486,7 @@ public final class Tensorflow {
 
     /**
      * <pre>
-     * Number of workers
+     * Number of replicas
      * </pre>
      *
      * <code>int32 replicas = 1;</code>
@@ -1625,38 +1495,61 @@ public final class Tensorflow {
 
     /**
      * <pre>
-     * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-     * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+     * Image used for the replica group
      * </pre>
      *
-     * <code>string pod_template_name = 2;</code>
+     * <code>string image = 2;</code>
      */
-    java.lang.String getPodTemplateName();
+    java.lang.String getImage();
     /**
      * <pre>
-     * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-     * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+     * Image used for the replica group
      * </pre>
      *
-     * <code>string pod_template_name = 2;</code>
+     * <code>string image = 2;</code>
      */
     com.google.protobuf.ByteString
-        getPodTemplateNameBytes();
+        getImageBytes();
 
     /**
      * <pre>
-     * Restart policy for the worker
+     * Resources required for the replica group
      * </pre>
      *
-     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    boolean hasResources();
+    /**
+     * <pre>
+     * Resources required for the replica group
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    flyteidl.core.Tasks.Resources getResources();
+    /**
+     * <pre>
+     * Resources required for the replica group
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder();
+
+    /**
+     * <pre>
+     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
      */
     int getRestartPolicyValue();
     /**
      * <pre>
-     * Restart policy for the worker
+     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
      * </pre>
      *
-     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
      */
     flyteidl.plugins.kubeflow.Common.RestartPolicy getRestartPolicy();
   }
@@ -1673,7 +1566,7 @@ public final class Tensorflow {
       super(builder);
     }
     private DistributedTensorflowTrainingReplicaSpec() {
-      podTemplateName_ = "";
+      image_ = "";
       restartPolicy_ = 0;
     }
 
@@ -1709,10 +1602,23 @@ public final class Tensorflow {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              podTemplateName_ = s;
+              image_ = s;
               break;
             }
-            case 24: {
+            case 26: {
+              flyteidl.core.Tasks.Resources.Builder subBuilder = null;
+              if (resources_ != null) {
+                subBuilder = resources_.toBuilder();
+              }
+              resources_ = input.readMessage(flyteidl.core.Tasks.Resources.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resources_);
+                resources_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 32: {
               int rawValue = input.readEnum();
 
               restartPolicy_ = rawValue;
@@ -1754,7 +1660,7 @@ public final class Tensorflow {
     private int replicas_;
     /**
      * <pre>
-     * Number of workers
+     * Number of replicas
      * </pre>
      *
      * <code>int32 replicas = 1;</code>
@@ -1763,68 +1669,99 @@ public final class Tensorflow {
       return replicas_;
     }
 
-    public static final int POD_TEMPLATE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object podTemplateName_;
+    public static final int IMAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object image_;
     /**
      * <pre>
-     * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-     * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+     * Image used for the replica group
      * </pre>
      *
-     * <code>string pod_template_name = 2;</code>
+     * <code>string image = 2;</code>
      */
-    public java.lang.String getPodTemplateName() {
-      java.lang.Object ref = podTemplateName_;
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        podTemplateName_ = s;
+        image_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-     * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+     * Image used for the replica group
      * </pre>
      *
-     * <code>string pod_template_name = 2;</code>
+     * <code>string image = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getPodTemplateNameBytes() {
-      java.lang.Object ref = podTemplateName_;
+        getImageBytes() {
+      java.lang.Object ref = image_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        podTemplateName_ = b;
+        image_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int RESTART_POLICY_FIELD_NUMBER = 3;
+    public static final int RESOURCES_FIELD_NUMBER = 3;
+    private flyteidl.core.Tasks.Resources resources_;
+    /**
+     * <pre>
+     * Resources required for the replica group
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    public boolean hasResources() {
+      return resources_ != null;
+    }
+    /**
+     * <pre>
+     * Resources required for the replica group
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    public flyteidl.core.Tasks.Resources getResources() {
+      return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+    }
+    /**
+     * <pre>
+     * Resources required for the replica group
+     * </pre>
+     *
+     * <code>.flyteidl.core.Resources resources = 3;</code>
+     */
+    public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+      return getResources();
+    }
+
+    public static final int RESTART_POLICY_FIELD_NUMBER = 4;
     private int restartPolicy_;
     /**
      * <pre>
-     * Restart policy for the worker
+     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
      * </pre>
      *
-     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
      */
     public int getRestartPolicyValue() {
       return restartPolicy_;
     }
     /**
      * <pre>
-     * Restart policy for the worker
+     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
      * </pre>
      *
-     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+     * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
      */
     public flyteidl.plugins.kubeflow.Common.RestartPolicy getRestartPolicy() {
       @SuppressWarnings("deprecation")
@@ -1849,11 +1786,14 @@ public final class Tensorflow {
       if (replicas_ != 0) {
         output.writeInt32(1, replicas_);
       }
-      if (!getPodTemplateNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, podTemplateName_);
+      if (!getImageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, image_);
+      }
+      if (resources_ != null) {
+        output.writeMessage(3, getResources());
       }
       if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
-        output.writeEnum(3, restartPolicy_);
+        output.writeEnum(4, restartPolicy_);
       }
       unknownFields.writeTo(output);
     }
@@ -1868,12 +1808,16 @@ public final class Tensorflow {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, replicas_);
       }
-      if (!getPodTemplateNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, podTemplateName_);
+      if (!getImageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, image_);
+      }
+      if (resources_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResources());
       }
       if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, restartPolicy_);
+          .computeEnumSize(4, restartPolicy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1892,8 +1836,13 @@ public final class Tensorflow {
 
       if (getReplicas()
           != other.getReplicas()) return false;
-      if (!getPodTemplateName()
-          .equals(other.getPodTemplateName())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
+      if (hasResources() != other.hasResources()) return false;
+      if (hasResources()) {
+        if (!getResources()
+            .equals(other.getResources())) return false;
+      }
       if (restartPolicy_ != other.restartPolicy_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -1908,8 +1857,12 @@ public final class Tensorflow {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REPLICAS_FIELD_NUMBER;
       hash = (53 * hash) + getReplicas();
-      hash = (37 * hash) + POD_TEMPLATE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getPodTemplateName().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
+      if (hasResources()) {
+        hash = (37 * hash) + RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getResources().hashCode();
+      }
       hash = (37 * hash) + RESTART_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + restartPolicy_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2047,8 +2000,14 @@ public final class Tensorflow {
         super.clear();
         replicas_ = 0;
 
-        podTemplateName_ = "";
+        image_ = "";
 
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
         restartPolicy_ = 0;
 
         return this;
@@ -2078,7 +2037,12 @@ public final class Tensorflow {
       public flyteidl.plugins.kubeflow.Tensorflow.DistributedTensorflowTrainingReplicaSpec buildPartial() {
         flyteidl.plugins.kubeflow.Tensorflow.DistributedTensorflowTrainingReplicaSpec result = new flyteidl.plugins.kubeflow.Tensorflow.DistributedTensorflowTrainingReplicaSpec(this);
         result.replicas_ = replicas_;
-        result.podTemplateName_ = podTemplateName_;
+        result.image_ = image_;
+        if (resourcesBuilder_ == null) {
+          result.resources_ = resources_;
+        } else {
+          result.resources_ = resourcesBuilder_.build();
+        }
         result.restartPolicy_ = restartPolicy_;
         onBuilt();
         return result;
@@ -2131,9 +2095,12 @@ public final class Tensorflow {
         if (other.getReplicas() != 0) {
           setReplicas(other.getReplicas());
         }
-        if (!other.getPodTemplateName().isEmpty()) {
-          podTemplateName_ = other.podTemplateName_;
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
           onChanged();
+        }
+        if (other.hasResources()) {
+          mergeResources(other.getResources());
         }
         if (other.restartPolicy_ != 0) {
           setRestartPolicyValue(other.getRestartPolicyValue());
@@ -2170,7 +2137,7 @@ public final class Tensorflow {
       private int replicas_ ;
       /**
        * <pre>
-       * Number of workers
+       * Number of replicas
        * </pre>
        *
        * <code>int32 replicas = 1;</code>
@@ -2180,7 +2147,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Number of workers
+       * Number of replicas
        * </pre>
        *
        * <code>int32 replicas = 1;</code>
@@ -2193,7 +2160,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Number of workers
+       * Number of replicas
        * </pre>
        *
        * <code>int32 replicas = 1;</code>
@@ -2205,22 +2172,21 @@ public final class Tensorflow {
         return this;
       }
 
-      private java.lang.Object podTemplateName_ = "";
+      private java.lang.Object image_ = "";
       /**
        * <pre>
-       * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-       * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+       * Image used for the replica group
        * </pre>
        *
-       * <code>string pod_template_name = 2;</code>
+       * <code>string image = 2;</code>
        */
-      public java.lang.String getPodTemplateName() {
-        java.lang.Object ref = podTemplateName_;
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          podTemplateName_ = s;
+          image_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2228,20 +2194,19 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-       * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+       * Image used for the replica group
        * </pre>
        *
-       * <code>string pod_template_name = 2;</code>
+       * <code>string image = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getPodTemplateNameBytes() {
-        java.lang.Object ref = podTemplateName_;
+          getImageBytes() {
+        java.lang.Object ref = image_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          podTemplateName_ = b;
+          image_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2249,73 +2214,223 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-       * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+       * Image used for the replica group
        * </pre>
        *
-       * <code>string pod_template_name = 2;</code>
+       * <code>string image = 2;</code>
        */
-      public Builder setPodTemplateName(
+      public Builder setImage(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        podTemplateName_ = value;
+        image_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-       * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+       * Image used for the replica group
        * </pre>
        *
-       * <code>string pod_template_name = 2;</code>
+       * <code>string image = 2;</code>
        */
-      public Builder clearPodTemplateName() {
+      public Builder clearImage() {
         
-        podTemplateName_ = getDefaultInstance().getPodTemplateName();
+        image_ = getDefaultInstance().getImage();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Unique name of a PodTemplate k8s resource to be used as the base configuration.
-       * PodTemplate specified here will be overriden by the pod template specified at the task metedata level.
+       * Image used for the replica group
        * </pre>
        *
-       * <code>string pod_template_name = 2;</code>
+       * <code>string image = 2;</code>
        */
-      public Builder setPodTemplateNameBytes(
+      public Builder setImageBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        podTemplateName_ = value;
+        image_ = value;
         onChanged();
         return this;
+      }
+
+      private flyteidl.core.Tasks.Resources resources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> resourcesBuilder_;
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public boolean hasResources() {
+        return resourcesBuilder_ != null || resources_ != null;
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public flyteidl.core.Tasks.Resources getResources() {
+        if (resourcesBuilder_ == null) {
+          return resources_ == null ? flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        } else {
+          return resourcesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public Builder setResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resources_ = value;
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public Builder setResources(
+          flyteidl.core.Tasks.Resources.Builder builderForValue) {
+        if (resourcesBuilder_ == null) {
+          resources_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourcesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public Builder mergeResources(flyteidl.core.Tasks.Resources value) {
+        if (resourcesBuilder_ == null) {
+          if (resources_ != null) {
+            resources_ =
+              flyteidl.core.Tasks.Resources.newBuilder(resources_).mergeFrom(value).buildPartial();
+          } else {
+            resources_ = value;
+          }
+          onChanged();
+        } else {
+          resourcesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public Builder clearResources() {
+        if (resourcesBuilder_ == null) {
+          resources_ = null;
+          onChanged();
+        } else {
+          resources_ = null;
+          resourcesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public flyteidl.core.Tasks.Resources.Builder getResourcesBuilder() {
+        
+        onChanged();
+        return getResourcesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      public flyteidl.core.Tasks.ResourcesOrBuilder getResourcesOrBuilder() {
+        if (resourcesBuilder_ != null) {
+          return resourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return resources_ == null ?
+              flyteidl.core.Tasks.Resources.getDefaultInstance() : resources_;
+        }
+      }
+      /**
+       * <pre>
+       * Resources required for the replica group
+       * </pre>
+       *
+       * <code>.flyteidl.core.Resources resources = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder> 
+          getResourcesFieldBuilder() {
+        if (resourcesBuilder_ == null) {
+          resourcesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Tasks.Resources, flyteidl.core.Tasks.Resources.Builder, flyteidl.core.Tasks.ResourcesOrBuilder>(
+                  getResources(),
+                  getParentForChildren(),
+                  isClean());
+          resources_ = null;
+        }
+        return resourcesBuilder_;
       }
 
       private int restartPolicy_ = 0;
       /**
        * <pre>
-       * Restart policy for the worker
+       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
        * </pre>
        *
-       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
        */
       public int getRestartPolicyValue() {
         return restartPolicy_;
       }
       /**
        * <pre>
-       * Restart policy for the worker
+       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
        * </pre>
        *
-       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
        */
       public Builder setRestartPolicyValue(int value) {
         restartPolicy_ = value;
@@ -2324,10 +2439,10 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Restart policy for the worker
+       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
        * </pre>
        *
-       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
        */
       public flyteidl.plugins.kubeflow.Common.RestartPolicy getRestartPolicy() {
         @SuppressWarnings("deprecation")
@@ -2336,10 +2451,10 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Restart policy for the worker
+       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
        * </pre>
        *
-       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
        */
       public Builder setRestartPolicy(flyteidl.plugins.kubeflow.Common.RestartPolicy value) {
         if (value == null) {
@@ -2352,10 +2467,10 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * Restart policy for the worker
+       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
        * </pre>
        *
-       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;</code>
+       * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
        */
       public Builder clearRestartPolicy() {
         
@@ -2436,25 +2551,25 @@ public final class Tensorflow {
   static {
     java.lang.String[] descriptorData = {
       "\n*flyteidl/plugins/kubeflow/tensorflow.p" +
-      "roto\022\031flyteidl.plugins.kubeflow\032&flyteid" +
-      "l/plugins/kubeflow/common.proto\"\264\003\n!Dist" +
-      "ributedTensorflowTrainingTask\022\\\n\017worker_" +
-      "replicas\030\001 \001(\0132C.flyteidl.plugins.kubefl" +
-      "ow.DistributedTensorflowTrainingReplicaS" +
-      "pec\022X\n\013ps_replicas\030\002 \001(\0132C.flyteidl.plug" +
+      "roto\022\031flyteidl.plugins.kubeflow\032\031flyteid" +
+      "l/core/tasks.proto\032&flyteidl/plugins/kub" +
+      "eflow/common.proto\"\362\002\n!DistributedTensor" +
+      "flowTrainingTask\022\\\n\017worker_replicas\030\001 \001(" +
+      "\0132C.flyteidl.plugins.kubeflow.Distribute" +
+      "dTensorflowTrainingReplicaSpec\022X\n\013ps_rep" +
+      "licas\030\002 \001(\0132C.flyteidl.plugins.kubeflow." +
+      "DistributedTensorflowTrainingReplicaSpec" +
+      "\022[\n\016chief_replicas\030\003 \001(\0132C.flyteidl.plug" +
       "ins.kubeflow.DistributedTensorflowTraini" +
-      "ngReplicaSpec\022[\n\016chief_replicas\030\003 \001(\0132C." +
-      "flyteidl.plugins.kubeflow.DistributedTen" +
-      "sorflowTrainingReplicaSpec\0228\n\nrun_policy" +
-      "\030\004 \001(\0132$.flyteidl.plugins.kubeflow.RunPo" +
-      "licy\022@\n\016success_policy\030\005 \001(\0162(.flyteidl." +
-      "plugins.kubeflow.SuccessPolicy\"\231\001\n(Distr" +
-      "ibutedTensorflowTrainingReplicaSpec\022\020\n\010r" +
-      "eplicas\030\001 \001(\005\022\031\n\021pod_template_name\030\002 \001(\t" +
-      "\022@\n\016restart_policy\030\003 \001(\0162(.flyteidl.plug" +
-      "ins.kubeflow.RestartPolicyB9Z7github.com" +
-      "/flyteorg/flyteidl/gen/pb-go/flyteidl/pl" +
-      "uginsb\006proto3"
+      "ngReplicaSpec\0228\n\nrun_policy\030\004 \001(\0132$.flyt" +
+      "eidl.plugins.kubeflow.RunPolicy\"\272\001\n(Dist" +
+      "ributedTensorflowTrainingReplicaSpec\022\020\n\010" +
+      "replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresourc" +
+      "es\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016re" +
+      "start_policy\030\004 \001(\0162(.flyteidl.plugins.ku" +
+      "beflow.RestartPolicyB9Z7github.com/flyte" +
+      "org/flyteidl/gen/pb-go/flyteidl/pluginsb" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2467,6 +2582,7 @@ public final class Tensorflow {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          flyteidl.core.Tasks.getDescriptor(),
           flyteidl.plugins.kubeflow.Common.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingTask_descriptor =
@@ -2474,13 +2590,14 @@ public final class Tensorflow {
     internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingTask_descriptor,
-        new java.lang.String[] { "WorkerReplicas", "PsReplicas", "ChiefReplicas", "RunPolicy", "SuccessPolicy", });
+        new java.lang.String[] { "WorkerReplicas", "PsReplicas", "ChiefReplicas", "RunPolicy", });
     internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingReplicaSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingReplicaSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedTensorflowTrainingReplicaSpec_descriptor,
-        new java.lang.String[] { "Replicas", "PodTemplateName", "RestartPolicy", });
+        new java.lang.String[] { "Replicas", "Image", "Resources", "RestartPolicy", });
+    flyteidl.core.Tasks.getDescriptor();
     flyteidl.plugins.kubeflow.Common.getDescriptor();
   }
 

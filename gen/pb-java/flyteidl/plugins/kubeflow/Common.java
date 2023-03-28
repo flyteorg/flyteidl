@@ -15,143 +15,61 @@ public final class Common {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code flyteidl.plugins.kubeflow.SuccessPolicy}
-   */
-  public enum SuccessPolicy
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>SUCCESS_POLICY_DEFAULT = 0;</code>
-     */
-    SUCCESS_POLICY_DEFAULT(0),
-    /**
-     * <code>SUCCESS_POLICY_ALL_WORKERS = 1;</code>
-     */
-    SUCCESS_POLICY_ALL_WORKERS(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>SUCCESS_POLICY_DEFAULT = 0;</code>
-     */
-    public static final int SUCCESS_POLICY_DEFAULT_VALUE = 0;
-    /**
-     * <code>SUCCESS_POLICY_ALL_WORKERS = 1;</code>
-     */
-    public static final int SUCCESS_POLICY_ALL_WORKERS_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static SuccessPolicy valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static SuccessPolicy forNumber(int value) {
-      switch (value) {
-        case 0: return SUCCESS_POLICY_DEFAULT;
-        case 1: return SUCCESS_POLICY_ALL_WORKERS;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<SuccessPolicy>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        SuccessPolicy> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<SuccessPolicy>() {
-            public SuccessPolicy findValueByNumber(int number) {
-              return SuccessPolicy.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return flyteidl.plugins.kubeflow.Common.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final SuccessPolicy[] VALUES = values();
-
-    public static SuccessPolicy valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private SuccessPolicy(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:flyteidl.plugins.kubeflow.SuccessPolicy)
-  }
-
-  /**
    * Protobuf enum {@code flyteidl.plugins.kubeflow.CleanPodPolicy}
    */
   public enum CleanPodPolicy
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CLEANPOD_POLICY_UNDEFINED = 0;</code>
+     * <pre>
+     * The All policy means all pods even completed pods will be deleted immediately when the job finishes.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_ALL = 0;</code>
      */
-    CLEANPOD_POLICY_UNDEFINED(0),
+    CLEANPOD_POLICY_ALL(0),
     /**
-     * <code>CLEANPOD_POLICY_ALL = 1;</code>
+     * <pre>
+     * The Running policy means that only pods still running when a job completes (e.g. parameter servers) will be deleted immediately; completed pods will not be deleted so that the logs will be preserved. This is the default value.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_RUNNING = 1;</code>
      */
-    CLEANPOD_POLICY_ALL(1),
+    CLEANPOD_POLICY_RUNNING(1),
     /**
-     * <code>CLEANPOD_POLICY_RUNNING = 2;</code>
+     * <pre>
+     * The None policy means that no pods will be deleted when the job completes.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_NONE = 2;</code>
      */
-    CLEANPOD_POLICY_RUNNING(2),
-    /**
-     * <code>CLEANPOD_POLICY_NONE = 3;</code>
-     */
-    CLEANPOD_POLICY_NONE(3),
+    CLEANPOD_POLICY_NONE(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>CLEANPOD_POLICY_UNDEFINED = 0;</code>
+     * <pre>
+     * The All policy means all pods even completed pods will be deleted immediately when the job finishes.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_ALL = 0;</code>
      */
-    public static final int CLEANPOD_POLICY_UNDEFINED_VALUE = 0;
+    public static final int CLEANPOD_POLICY_ALL_VALUE = 0;
     /**
-     * <code>CLEANPOD_POLICY_ALL = 1;</code>
+     * <pre>
+     * The Running policy means that only pods still running when a job completes (e.g. parameter servers) will be deleted immediately; completed pods will not be deleted so that the logs will be preserved. This is the default value.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_RUNNING = 1;</code>
      */
-    public static final int CLEANPOD_POLICY_ALL_VALUE = 1;
+    public static final int CLEANPOD_POLICY_RUNNING_VALUE = 1;
     /**
-     * <code>CLEANPOD_POLICY_RUNNING = 2;</code>
+     * <pre>
+     * The None policy means that no pods will be deleted when the job completes.
+     * </pre>
+     *
+     * <code>CLEANPOD_POLICY_NONE = 2;</code>
      */
-    public static final int CLEANPOD_POLICY_RUNNING_VALUE = 2;
-    /**
-     * <code>CLEANPOD_POLICY_NONE = 3;</code>
-     */
-    public static final int CLEANPOD_POLICY_NONE_VALUE = 3;
+    public static final int CLEANPOD_POLICY_NONE_VALUE = 2;
 
 
     public final int getNumber() {
@@ -172,10 +90,9 @@ public final class Common {
 
     public static CleanPodPolicy forNumber(int value) {
       switch (value) {
-        case 0: return CLEANPOD_POLICY_UNDEFINED;
-        case 1: return CLEANPOD_POLICY_ALL;
-        case 2: return CLEANPOD_POLICY_RUNNING;
-        case 3: return CLEANPOD_POLICY_NONE;
+        case 0: return CLEANPOD_POLICY_ALL;
+        case 1: return CLEANPOD_POLICY_RUNNING;
+        case 2: return CLEANPOD_POLICY_NONE;
         default: return null;
       }
     }
@@ -202,7 +119,7 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return flyteidl.plugins.kubeflow.Common.getDescriptor().getEnumTypes().get(1);
+      return flyteidl.plugins.kubeflow.Common.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final CleanPodPolicy[] VALUES = values();
@@ -343,7 +260,7 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return flyteidl.plugins.kubeflow.Common.getDescriptor().getEnumTypes().get(2);
+      return flyteidl.plugins.kubeflow.Common.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final RestartPolicy[] VALUES = values();
@@ -375,8 +292,7 @@ public final class Common {
 
     /**
      * <pre>
-     * CleanPodPolicy defines the policy to kill pods after the job completes.
-     * Default to None.
+     * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -384,8 +300,7 @@ public final class Common {
     int getCleanPodPolicyValue();
     /**
      * <pre>
-     * CleanPodPolicy defines the policy to kill pods after the job completes.
-     * Default to None.
+     * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -394,8 +309,7 @@ public final class Common {
 
     /**
      * <pre>
-     * TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-     * reconcile gets called periodically. Default to infinite.
+     * TTL to clean up jobs. Default to infinite.
      * </pre>
      *
      * <code>int32 ttl_seconds_after_finished = 2;</code>
@@ -518,8 +432,7 @@ public final class Common {
     private int cleanPodPolicy_;
     /**
      * <pre>
-     * CleanPodPolicy defines the policy to kill pods after the job completes.
-     * Default to None.
+     * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -529,8 +442,7 @@ public final class Common {
     }
     /**
      * <pre>
-     * CleanPodPolicy defines the policy to kill pods after the job completes.
-     * Default to None.
+     * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -545,8 +457,7 @@ public final class Common {
     private int ttlSecondsAfterFinished_;
     /**
      * <pre>
-     * TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-     * reconcile gets called periodically. Default to infinite.
+     * TTL to clean up jobs. Default to infinite.
      * </pre>
      *
      * <code>int32 ttl_seconds_after_finished = 2;</code>
@@ -596,7 +507,7 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_UNDEFINED.getNumber()) {
+      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_ALL.getNumber()) {
         output.writeEnum(1, cleanPodPolicy_);
       }
       if (ttlSecondsAfterFinished_ != 0) {
@@ -617,7 +528,7 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_UNDEFINED.getNumber()) {
+      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_ALL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, cleanPodPolicy_);
       }
@@ -937,8 +848,7 @@ public final class Common {
       private int cleanPodPolicy_ = 0;
       /**
        * <pre>
-       * CleanPodPolicy defines the policy to kill pods after the job completes.
-       * Default to None.
+       * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -948,8 +858,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * CleanPodPolicy defines the policy to kill pods after the job completes.
-       * Default to None.
+       * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -961,8 +870,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * CleanPodPolicy defines the policy to kill pods after the job completes.
-       * Default to None.
+       * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -974,8 +882,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * CleanPodPolicy defines the policy to kill pods after the job completes.
-       * Default to None.
+       * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -991,8 +898,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * CleanPodPolicy defines the policy to kill pods after the job completes.
-       * Default to None.
+       * CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.CleanPodPolicy clean_pod_policy = 1;</code>
@@ -1007,8 +913,7 @@ public final class Common {
       private int ttlSecondsAfterFinished_ ;
       /**
        * <pre>
-       * TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-       * reconcile gets called periodically. Default to infinite.
+       * TTL to clean up jobs. Default to infinite.
        * </pre>
        *
        * <code>int32 ttl_seconds_after_finished = 2;</code>
@@ -1018,8 +923,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-       * reconcile gets called periodically. Default to infinite.
+       * TTL to clean up jobs. Default to infinite.
        * </pre>
        *
        * <code>int32 ttl_seconds_after_finished = 2;</code>
@@ -1032,8 +936,7 @@ public final class Common {
       }
       /**
        * <pre>
-       * TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-       * reconcile gets called periodically. Default to infinite.
+       * TTL to clean up jobs. Default to infinite.
        * </pre>
        *
        * <code>int32 ttl_seconds_after_finished = 2;</code>
@@ -1196,16 +1099,13 @@ public final class Common {
       "lugins.kubeflow.CleanPodPolicy\022\"\n\032ttl_se" +
       "conds_after_finished\030\002 \001(\005\022\035\n\025activeDead" +
       "lineSeconds\030\003 \001(\005\022\025\n\rbackoff_limit\030\004 \001(\005" +
-      "*K\n\rSuccessPolicy\022\032\n\026SUCCESS_POLICY_DEFA" +
-      "ULT\020\000\022\036\n\032SUCCESS_POLICY_ALL_WORKERS\020\001*\177\n" +
-      "\016CleanPodPolicy\022\035\n\031CLEANPOD_POLICY_UNDEF" +
-      "INED\020\000\022\027\n\023CLEANPOD_POLICY_ALL\020\001\022\033\n\027CLEAN" +
-      "POD_POLICY_RUNNING\020\002\022\030\n\024CLEANPOD_POLICY_" +
-      "NONE\020\003*c\n\rRestartPolicy\022\031\n\025RESTART_POLIC" +
-      "Y_ALWAYS\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020" +
-      "\001\022\030\n\024RESTART_POLICY_NEVER\020\002B9Z7github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/p" +
-      "luginsb\006proto3"
+      "*`\n\016CleanPodPolicy\022\027\n\023CLEANPOD_POLICY_AL" +
+      "L\020\000\022\033\n\027CLEANPOD_POLICY_RUNNING\020\001\022\030\n\024CLEA" +
+      "NPOD_POLICY_NONE\020\002*c\n\rRestartPolicy\022\031\n\025R" +
+      "ESTART_POLICY_ALWAYS\020\000\022\035\n\031RESTART_POLICY" +
+      "_ON_FAILURE\020\001\022\030\n\024RESTART_POLICY_NEVER\020\002B" +
+      "9Z7github.com/flyteorg/flyteidl/gen/pb-g" +
+      "o/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

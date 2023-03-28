@@ -6,13 +6,10 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 CLEANPOD_POLICY_ALL: CleanPodPolicy
 CLEANPOD_POLICY_NONE: CleanPodPolicy
 CLEANPOD_POLICY_RUNNING: CleanPodPolicy
-CLEANPOD_POLICY_UNDEFINED: CleanPodPolicy
 DESCRIPTOR: _descriptor.FileDescriptor
 RESTART_POLICY_ALWAYS: RestartPolicy
 RESTART_POLICY_NEVER: RestartPolicy
 RESTART_POLICY_ON_FAILURE: RestartPolicy
-SUCCESS_POLICY_ALL_WORKERS: SuccessPolicy
-SUCCESS_POLICY_DEFAULT: SuccessPolicy
 
 class RunPolicy(_message.Message):
     __slots__ = ["activeDeadlineSeconds", "backoff_limit", "clean_pod_policy", "ttl_seconds_after_finished"]
@@ -25,9 +22,6 @@ class RunPolicy(_message.Message):
     clean_pod_policy: CleanPodPolicy
     ttl_seconds_after_finished: int
     def __init__(self, clean_pod_policy: _Optional[_Union[CleanPodPolicy, str]] = ..., ttl_seconds_after_finished: _Optional[int] = ..., activeDeadlineSeconds: _Optional[int] = ..., backoff_limit: _Optional[int] = ...) -> None: ...
-
-class SuccessPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
 
 class CleanPodPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []

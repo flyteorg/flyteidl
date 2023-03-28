@@ -45,7 +45,7 @@ void InitDefaults_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto() {
 }
 
 ::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[1];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[3];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[2];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -80,21 +80,18 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fcommon_2epr
   "lugins.kubeflow.CleanPodPolicy\022\"\n\032ttl_se"
   "conds_after_finished\030\002 \001(\005\022\035\n\025activeDead"
   "lineSeconds\030\003 \001(\005\022\025\n\rbackoff_limit\030\004 \001(\005"
-  "*K\n\rSuccessPolicy\022\032\n\026SUCCESS_POLICY_DEFA"
-  "ULT\020\000\022\036\n\032SUCCESS_POLICY_ALL_WORKERS\020\001*\177\n"
-  "\016CleanPodPolicy\022\035\n\031CLEANPOD_POLICY_UNDEF"
-  "INED\020\000\022\027\n\023CLEANPOD_POLICY_ALL\020\001\022\033\n\027CLEAN"
-  "POD_POLICY_RUNNING\020\002\022\030\n\024CLEANPOD_POLICY_"
-  "NONE\020\003*c\n\rRestartPolicy\022\031\n\025RESTART_POLIC"
-  "Y_ALWAYS\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020"
-  "\001\022\030\n\024RESTART_POLICY_NEVER\020\002B9Z7github.co"
-  "m/flyteorg/flyteidl/gen/pb-go/flyteidl/p"
-  "luginsb\006proto3"
+  "*`\n\016CleanPodPolicy\022\027\n\023CLEANPOD_POLICY_AL"
+  "L\020\000\022\033\n\027CLEANPOD_POLICY_RUNNING\020\001\022\030\n\024CLEA"
+  "NPOD_POLICY_NONE\020\002*c\n\rRestartPolicy\022\031\n\025R"
+  "ESTART_POLICY_ALWAYS\020\000\022\035\n\031RESTART_POLICY"
+  "_ON_FAILURE\020\001\022\030\n\024RESTART_POLICY_NEVER\020\002B"
+  "9Z7github.com/flyteorg/flyteidl/gen/pb-g"
+  "o/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto,
-  "flyteidl/plugins/kubeflow/common.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 614,
+  "flyteidl/plugins/kubeflow/common.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 506,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto() {
@@ -109,30 +106,15 @@ static bool dynamic_init_dummy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto = 
 namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
-const ::google::protobuf::EnumDescriptor* SuccessPolicy_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[0];
-}
-bool SuccessPolicy_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
 const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[1];
+  return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[0];
 }
 bool CleanPodPolicy_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
     case 2:
-    case 3:
       return true;
     default:
       return false;
@@ -141,7 +123,7 @@ bool CleanPodPolicy_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* RestartPolicy_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto);
-  return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[2];
+  return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[1];
 }
 bool RestartPolicy_IsValid(int value) {
   switch (value) {

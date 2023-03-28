@@ -16,8 +16,9 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RunPolicy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto;
 namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
@@ -59,8 +60,9 @@ static void InitDefaultsDistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins
   ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto}, {
+      &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
@@ -80,19 +82,19 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpyt
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, worker_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, master_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, run_policy_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, success_policy_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, replicas_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, pod_template_name_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, image_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, resources_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, restart_policy_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask)},
-  { 9, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
+  { 8, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -108,35 +110,36 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto[] =
   "\n\'flyteidl/plugins/kubeflow/pytorch.prot"
-  "o\022\031flyteidl.plugins.kubeflow\032&flyteidl/p"
-  "lugins/kubeflow/common.proto\"\322\002\n\036Distrib"
-  "utedPyTorchTrainingTask\022Y\n\017worker_replic"
-  "as\030\001 \001(\0132@.flyteidl.plugins.kubeflow.Dis"
-  "tributedPyTorchTrainingReplicaSpec\022Y\n\017ma"
-  "ster_replicas\030\002 \001(\0132@.flyteidl.plugins.k"
-  "ubeflow.DistributedPyTorchTrainingReplic"
-  "aSpec\0228\n\nrun_policy\030\003 \001(\0132$.flyteidl.plu"
-  "gins.kubeflow.RunPolicy\022@\n\016success_polic"
-  "y\030\004 \001(\0162(.flyteidl.plugins.kubeflow.Succ"
-  "essPolicy\"\226\001\n%DistributedPyTorchTraining"
-  "ReplicaSpec\022\020\n\010replicas\030\001 \001(\005\022\031\n\021pod_tem"
-  "plate_name\030\002 \001(\t\022@\n\016restart_policy\030\003 \001(\016"
-  "2(.flyteidl.plugins.kubeflow.RestartPoli"
-  "cyB9Z7github.com/flyteorg/flyteidl/gen/p"
-  "b-go/flyteidl/pluginsb\006proto3"
+  "o\022\031flyteidl.plugins.kubeflow\032\031flyteidl/c"
+  "ore/tasks.proto\032&flyteidl/plugins/kubefl"
+  "ow/common.proto\"\220\002\n\036DistributedPyTorchTr"
+  "ainingTask\022Y\n\017worker_replicas\030\001 \001(\0132@.fl"
+  "yteidl.plugins.kubeflow.DistributedPyTor"
+  "chTrainingReplicaSpec\022Y\n\017master_replicas"
+  "\030\002 \001(\0132@.flyteidl.plugins.kubeflow.Distr"
+  "ibutedPyTorchTrainingReplicaSpec\0228\n\nrun_"
+  "policy\030\003 \001(\0132$.flyteidl.plugins.kubeflow"
+  ".RunPolicy\"\267\001\n%DistributedPyTorchTrainin"
+  "gReplicaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030"
+  "\002 \001(\t\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core"
+  ".Resources\022@\n\016restart_policy\030\004 \001(\0162(.fly"
+  "teidl.plugins.kubeflow.RestartPolicyB9Z7"
+  "github.com/flyteorg/flyteidl/gen/pb-go/f"
+  "lyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto,
-  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 669,
+  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 663,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[2] =
   {
+    ::AddDescriptors_flyteidl_2fcore_2ftasks_2eproto,
     ::AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, deps, 1);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, deps, 2);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -184,7 +187,6 @@ void DistributedPyTorchTrainingTask::clear_run_policy() {
 const int DistributedPyTorchTrainingTask::kWorkerReplicasFieldNumber;
 const int DistributedPyTorchTrainingTask::kMasterReplicasFieldNumber;
 const int DistributedPyTorchTrainingTask::kRunPolicyFieldNumber;
-const int DistributedPyTorchTrainingTask::kSuccessPolicyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask()
@@ -211,7 +213,6 @@ DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask(const Distributed
   } else {
     run_policy_ = nullptr;
   }
-  success_policy_ = from.success_policy_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.kubeflow.DistributedPyTorchTrainingTask)
 }
 
@@ -219,8 +220,8 @@ void DistributedPyTorchTrainingTask::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
   ::memset(&worker_replicas_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&success_policy_) -
-      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(success_policy_));
+      reinterpret_cast<char*>(&run_policy_) -
+      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(run_policy_));
 }
 
 DistributedPyTorchTrainingTask::~DistributedPyTorchTrainingTask() {
@@ -261,7 +262,6 @@ void DistributedPyTorchTrainingTask::Clear() {
     delete run_policy_;
   }
   run_policy_ = nullptr;
-  success_policy_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -315,14 +315,6 @@ const char* DistributedPyTorchTrainingTask::_InternalParse(const char* begin, co
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
-        break;
-      }
-      // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-      case 4: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
-        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
-        msg->set_success_policy(static_cast<::flyteidl::plugins::kubeflow::SuccessPolicy>(val));
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -388,20 +380,6 @@ bool DistributedPyTorchTrainingTask::MergePartialFromCodedStream(
         break;
       }
 
-      // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
-          int value = 0;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_success_policy(static_cast< ::flyteidl::plugins::kubeflow::SuccessPolicy >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -447,12 +425,6 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
       3, HasBitSetters::run_policy(this), output);
   }
 
-  // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-  if (this->success_policy() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->success_policy(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -485,12 +457,6 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         3, HasBitSetters::run_policy(this), target);
-  }
-
-  // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-  if (this->success_policy() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->success_policy(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -535,12 +501,6 @@ size_t DistributedPyTorchTrainingTask::ByteSizeLong() const {
         *run_policy_);
   }
 
-  // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-  if (this->success_policy() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->success_policy());
-  }
-
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -577,9 +537,6 @@ void DistributedPyTorchTrainingTask::MergeFrom(const DistributedPyTorchTrainingT
   if (from.has_run_policy()) {
     mutable_run_policy()->::flyteidl::plugins::kubeflow::RunPolicy::MergeFrom(from.run_policy());
   }
-  if (from.success_policy() != 0) {
-    set_success_policy(from.success_policy());
-  }
 }
 
 void DistributedPyTorchTrainingTask::CopyFrom(const ::google::protobuf::Message& from) {
@@ -610,7 +567,6 @@ void DistributedPyTorchTrainingTask::InternalSwap(DistributedPyTorchTrainingTask
   swap(worker_replicas_, other->worker_replicas_);
   swap(master_replicas_, other->master_replicas_);
   swap(run_policy_, other->run_policy_);
-  swap(success_policy_, other->success_policy_);
 }
 
 ::google::protobuf::Metadata DistributedPyTorchTrainingTask::GetMetadata() const {
@@ -622,14 +578,28 @@ void DistributedPyTorchTrainingTask::InternalSwap(DistributedPyTorchTrainingTask
 // ===================================================================
 
 void DistributedPyTorchTrainingReplicaSpec::InitAsDefaultInstance() {
+  ::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingReplicaSpec_default_instance_._instance.get_mutable()->resources_ = const_cast< ::flyteidl::core::Resources*>(
+      ::flyteidl::core::Resources::internal_default_instance());
 }
 class DistributedPyTorchTrainingReplicaSpec::HasBitSetters {
  public:
+  static const ::flyteidl::core::Resources& resources(const DistributedPyTorchTrainingReplicaSpec* msg);
 };
 
+const ::flyteidl::core::Resources&
+DistributedPyTorchTrainingReplicaSpec::HasBitSetters::resources(const DistributedPyTorchTrainingReplicaSpec* msg) {
+  return *msg->resources_;
+}
+void DistributedPyTorchTrainingReplicaSpec::clear_resources() {
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DistributedPyTorchTrainingReplicaSpec::kReplicasFieldNumber;
-const int DistributedPyTorchTrainingReplicaSpec::kPodTemplateNameFieldNumber;
+const int DistributedPyTorchTrainingReplicaSpec::kImageFieldNumber;
+const int DistributedPyTorchTrainingReplicaSpec::kResourcesFieldNumber;
 const int DistributedPyTorchTrainingReplicaSpec::kRestartPolicyFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -642,9 +612,14 @@ DistributedPyTorchTrainingReplicaSpec::DistributedPyTorchTrainingReplicaSpec(con
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.pod_template_name().size() > 0) {
-    pod_template_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pod_template_name_);
+  image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.image().size() > 0) {
+    image_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_);
+  }
+  if (from.has_resources()) {
+    resources_ = new ::flyteidl::core::Resources(*from.resources_);
+  } else {
+    resources_ = nullptr;
   }
   ::memcpy(&replicas_, &from.replicas_,
     static_cast<size_t>(reinterpret_cast<char*>(&restart_policy_) -
@@ -655,10 +630,10 @@ DistributedPyTorchTrainingReplicaSpec::DistributedPyTorchTrainingReplicaSpec(con
 void DistributedPyTorchTrainingReplicaSpec::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
-  pod_template_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&replicas_, 0, static_cast<size_t>(
+  image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&resources_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&restart_policy_) -
-      reinterpret_cast<char*>(&replicas_)) + sizeof(restart_policy_));
+      reinterpret_cast<char*>(&resources_)) + sizeof(restart_policy_));
 }
 
 DistributedPyTorchTrainingReplicaSpec::~DistributedPyTorchTrainingReplicaSpec() {
@@ -667,7 +642,8 @@ DistributedPyTorchTrainingReplicaSpec::~DistributedPyTorchTrainingReplicaSpec() 
 }
 
 void DistributedPyTorchTrainingReplicaSpec::SharedDtor() {
-  pod_template_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete resources_;
 }
 
 void DistributedPyTorchTrainingReplicaSpec::SetCachedSize(int size) const {
@@ -685,7 +661,11 @@ void DistributedPyTorchTrainingReplicaSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pod_template_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
+    delete resources_;
+  }
+  resources_ = nullptr;
   ::memset(&replicas_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&restart_policy_) -
       reinterpret_cast<char*>(&replicas_)) + sizeof(restart_policy_));
@@ -712,13 +692,13 @@ const char* DistributedPyTorchTrainingReplicaSpec::_InternalParse(const char* be
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // string pod_template_name = 2;
+      // string image = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.pod_template_name");
-        object = msg->mutable_pod_template_name();
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.image");
+        object = msg->mutable_image();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -728,9 +708,22 @@ const char* DistributedPyTorchTrainingReplicaSpec::_InternalParse(const char* be
         ptr += size;
         break;
       }
-      // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+      // .flyteidl.core.Resources resources = 3;
       case 3: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::core::Resources::_InternalParse;
+        object = msg->mutable_resources();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
         msg->set_restart_policy(static_cast<::flyteidl::plugins::kubeflow::RestartPolicy>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
@@ -783,24 +776,35 @@ bool DistributedPyTorchTrainingReplicaSpec::MergePartialFromCodedStream(
         break;
       }
 
-      // string pod_template_name = 2;
+      // string image = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_pod_template_name()));
+                input, this->mutable_image()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->pod_template_name().data(), static_cast<int>(this->pod_template_name().length()),
+            this->image().data(), static_cast<int>(this->image().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.pod_template_name"));
+            "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.image"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+      // .flyteidl.core.Resources resources = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_resources()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
           int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
@@ -844,20 +848,26 @@ void DistributedPyTorchTrainingReplicaSpec::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->replicas(), output);
   }
 
-  // string pod_template_name = 2;
-  if (this->pod_template_name().size() > 0) {
+  // string image = 2;
+  if (this->image().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->pod_template_name().data(), static_cast<int>(this->pod_template_name().length()),
+      this->image().data(), static_cast<int>(this->image().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.pod_template_name");
+      "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.image");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->pod_template_name(), output);
+      2, this->image(), output);
   }
 
-  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+  // .flyteidl.core.Resources resources = 3;
+  if (this->has_resources()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::resources(this), output);
+  }
+
+  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
   if (this->restart_policy() != 0) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      3, this->restart_policy(), output);
+      4, this->restart_policy(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -878,21 +888,28 @@ void DistributedPyTorchTrainingReplicaSpec::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->replicas(), target);
   }
 
-  // string pod_template_name = 2;
-  if (this->pod_template_name().size() > 0) {
+  // string image = 2;
+  if (this->image().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->pod_template_name().data(), static_cast<int>(this->pod_template_name().length()),
+      this->image().data(), static_cast<int>(this->image().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.pod_template_name");
+      "flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec.image");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->pod_template_name(), target);
+        2, this->image(), target);
   }
 
-  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+  // .flyteidl.core.Resources resources = 3;
+  if (this->has_resources()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::resources(this), target);
+  }
+
+  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
   if (this->restart_policy() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      3, this->restart_policy(), target);
+      4, this->restart_policy(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -916,11 +933,18 @@ size_t DistributedPyTorchTrainingReplicaSpec::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string pod_template_name = 2;
-  if (this->pod_template_name().size() > 0) {
+  // string image = 2;
+  if (this->image().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->pod_template_name());
+        this->image());
+  }
+
+  // .flyteidl.core.Resources resources = 3;
+  if (this->has_resources()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *resources_);
   }
 
   // int32 replicas = 1;
@@ -930,7 +954,7 @@ size_t DistributedPyTorchTrainingReplicaSpec::ByteSizeLong() const {
         this->replicas());
   }
 
-  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
   if (this->restart_policy() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->restart_policy());
@@ -963,9 +987,12 @@ void DistributedPyTorchTrainingReplicaSpec::MergeFrom(const DistributedPyTorchTr
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.pod_template_name().size() > 0) {
+  if (from.image().size() > 0) {
 
-    pod_template_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.pod_template_name_);
+    image_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_);
+  }
+  if (from.has_resources()) {
+    mutable_resources()->::flyteidl::core::Resources::MergeFrom(from.resources());
   }
   if (from.replicas() != 0) {
     set_replicas(from.replicas());
@@ -1000,8 +1027,9 @@ void DistributedPyTorchTrainingReplicaSpec::Swap(DistributedPyTorchTrainingRepli
 void DistributedPyTorchTrainingReplicaSpec::InternalSwap(DistributedPyTorchTrainingReplicaSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  pod_template_name_.Swap(&other->pod_template_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  image_.Swap(&other->image_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(resources_, other->resources_);
   swap(replicas_, other->replicas_);
   swap(restart_policy_, other->restart_policy_);
 }

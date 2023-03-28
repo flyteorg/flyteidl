@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "flyteidl/core/tasks.pb.h"
 #include "flyteidl/plugins/kubeflow/common.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -195,12 +196,6 @@ class DistributedMPITrainingTask final :
   ::flyteidl::plugins::kubeflow::RunPolicy* mutable_run_policy();
   void set_allocated_run_policy(::flyteidl::plugins::kubeflow::RunPolicy* run_policy);
 
-  // .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-  void clear_success_policy();
-  static const int kSuccessPolicyFieldNumber = 4;
-  ::flyteidl::plugins::kubeflow::SuccessPolicy success_policy() const;
-  void set_success_policy(::flyteidl::plugins::kubeflow::SuccessPolicy value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.kubeflow.DistributedMPITrainingTask)
  private:
   class HasBitSetters;
@@ -209,7 +204,6 @@ class DistributedMPITrainingTask final :
   ::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec* worker_replicas_;
   ::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec* launcher_replicas_;
   ::flyteidl::plugins::kubeflow::RunPolicy* run_policy_;
-  int success_policy_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto;
 };
@@ -310,19 +304,28 @@ class DistributedMPITrainingReplicaSpec final :
 
   // accessors -------------------------------------------------------
 
-  // string pod_template_name = 2;
-  void clear_pod_template_name();
-  static const int kPodTemplateNameFieldNumber = 2;
-  const ::std::string& pod_template_name() const;
-  void set_pod_template_name(const ::std::string& value);
+  // string image = 2;
+  void clear_image();
+  static const int kImageFieldNumber = 2;
+  const ::std::string& image() const;
+  void set_image(const ::std::string& value);
   #if LANG_CXX11
-  void set_pod_template_name(::std::string&& value);
+  void set_image(::std::string&& value);
   #endif
-  void set_pod_template_name(const char* value);
-  void set_pod_template_name(const char* value, size_t size);
-  ::std::string* mutable_pod_template_name();
-  ::std::string* release_pod_template_name();
-  void set_allocated_pod_template_name(::std::string* pod_template_name);
+  void set_image(const char* value);
+  void set_image(const char* value, size_t size);
+  ::std::string* mutable_image();
+  ::std::string* release_image();
+  void set_allocated_image(::std::string* image);
+
+  // .flyteidl.core.Resources resources = 3;
+  bool has_resources() const;
+  void clear_resources();
+  static const int kResourcesFieldNumber = 3;
+  const ::flyteidl::core::Resources& resources() const;
+  ::flyteidl::core::Resources* release_resources();
+  ::flyteidl::core::Resources* mutable_resources();
+  void set_allocated_resources(::flyteidl::core::Resources* resources);
 
   // int32 replicas = 1;
   void clear_replicas();
@@ -330,9 +333,9 @@ class DistributedMPITrainingReplicaSpec final :
   ::google::protobuf::int32 replicas() const;
   void set_replicas(::google::protobuf::int32 value);
 
-  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+  // .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
   void clear_restart_policy();
-  static const int kRestartPolicyFieldNumber = 3;
+  static const int kRestartPolicyFieldNumber = 4;
   ::flyteidl::plugins::kubeflow::RestartPolicy restart_policy() const;
   void set_restart_policy(::flyteidl::plugins::kubeflow::RestartPolicy value);
 
@@ -341,7 +344,8 @@ class DistributedMPITrainingReplicaSpec final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr pod_template_name_;
+  ::google::protobuf::internal::ArenaStringPtr image_;
+  ::flyteidl::core::Resources* resources_;
   ::google::protobuf::int32 replicas_;
   int restart_policy_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -505,20 +509,6 @@ inline void DistributedMPITrainingTask::set_allocated_run_policy(::flyteidl::plu
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.run_policy)
 }
 
-// .flyteidl.plugins.kubeflow.SuccessPolicy success_policy = 4;
-inline void DistributedMPITrainingTask::clear_success_policy() {
-  success_policy_ = 0;
-}
-inline ::flyteidl::plugins::kubeflow::SuccessPolicy DistributedMPITrainingTask::success_policy() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.success_policy)
-  return static_cast< ::flyteidl::plugins::kubeflow::SuccessPolicy >(success_policy_);
-}
-inline void DistributedMPITrainingTask::set_success_policy(::flyteidl::plugins::kubeflow::SuccessPolicy value) {
-  
-  success_policy_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.success_policy)
-}
-
 // -------------------------------------------------------------------
 
 // DistributedMPITrainingReplicaSpec
@@ -537,60 +527,105 @@ inline void DistributedMPITrainingReplicaSpec::set_replicas(::google::protobuf::
   // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.replicas)
 }
 
-// string pod_template_name = 2;
-inline void DistributedMPITrainingReplicaSpec::clear_pod_template_name() {
-  pod_template_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string image = 2;
+inline void DistributedMPITrainingReplicaSpec::clear_image() {
+  image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& DistributedMPITrainingReplicaSpec::pod_template_name() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
-  return pod_template_name_.GetNoArena();
+inline const ::std::string& DistributedMPITrainingReplicaSpec::image() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
+  return image_.GetNoArena();
 }
-inline void DistributedMPITrainingReplicaSpec::set_pod_template_name(const ::std::string& value) {
+inline void DistributedMPITrainingReplicaSpec::set_image(const ::std::string& value) {
   
-  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
 }
 #if LANG_CXX11
-inline void DistributedMPITrainingReplicaSpec::set_pod_template_name(::std::string&& value) {
+inline void DistributedMPITrainingReplicaSpec::set_image(::std::string&& value) {
   
-  pod_template_name_.SetNoArena(
+  image_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
 }
 #endif
-inline void DistributedMPITrainingReplicaSpec::set_pod_template_name(const char* value) {
+inline void DistributedMPITrainingReplicaSpec::set_image(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
 }
-inline void DistributedMPITrainingReplicaSpec::set_pod_template_name(const char* value, size_t size) {
+inline void DistributedMPITrainingReplicaSpec::set_image(const char* value, size_t size) {
   
-  pod_template_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  image_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
 }
-inline ::std::string* DistributedMPITrainingReplicaSpec::mutable_pod_template_name() {
+inline ::std::string* DistributedMPITrainingReplicaSpec::mutable_image() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
-  return pod_template_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
+  return image_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* DistributedMPITrainingReplicaSpec::release_pod_template_name() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+inline ::std::string* DistributedMPITrainingReplicaSpec::release_image() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
   
-  return pod_template_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return image_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void DistributedMPITrainingReplicaSpec::set_allocated_pod_template_name(::std::string* pod_template_name) {
-  if (pod_template_name != nullptr) {
+inline void DistributedMPITrainingReplicaSpec::set_allocated_image(::std::string* image) {
+  if (image != nullptr) {
     
   } else {
     
   }
-  pod_template_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pod_template_name);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.pod_template_name)
+  image_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.image)
 }
 
-// .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 3;
+// .flyteidl.core.Resources resources = 3;
+inline bool DistributedMPITrainingReplicaSpec::has_resources() const {
+  return this != internal_default_instance() && resources_ != nullptr;
+}
+inline const ::flyteidl::core::Resources& DistributedMPITrainingReplicaSpec::resources() const {
+  const ::flyteidl::core::Resources* p = resources_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.resources)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::core::Resources*>(
+      &::flyteidl::core::_Resources_default_instance_);
+}
+inline ::flyteidl::core::Resources* DistributedMPITrainingReplicaSpec::release_resources() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.resources)
+  
+  ::flyteidl::core::Resources* temp = resources_;
+  resources_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::core::Resources* DistributedMPITrainingReplicaSpec::mutable_resources() {
+  
+  if (resources_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::core::Resources>(GetArenaNoVirtual());
+    resources_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.resources)
+  return resources_;
+}
+inline void DistributedMPITrainingReplicaSpec::set_allocated_resources(::flyteidl::core::Resources* resources) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resources_);
+  }
+  if (resources) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      resources = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resources, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resources_ = resources;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.resources)
+}
+
+// .flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;
 inline void DistributedMPITrainingReplicaSpec::clear_restart_policy() {
   restart_policy_ = 0;
 }

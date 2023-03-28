@@ -6,31 +6,29 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
 
 message RunPolicy {
-  // CleanPodPolicy defines the policy to kill pods after the job completes.
-  // Default to None.
+  // CleanPodPolicy defines the policy to kill pods after the job completes. Default to None.
   CleanPodPolicy clean_pod_policy = 1;
-  // TTL to clean up jobs. It may take extra ReconcilePeriod seconds for the cleanup, since
-  // reconcile gets called periodically. Default to infinite.
+
+  // TTL to clean up jobs. Default to infinite.
   int32 ttl_seconds_after_finished = 2;
 
   // Specifies the duration in seconds relative to the startTime that the job may be active
   // before the system tries to terminate it; value must be positive integer.
   int32 activeDeadlineSeconds = 3;
-
+  
   // Number of retries before marking this job failed.
   int32 backoff_limit = 4;
 }
 
-enum SuccessPolicy {
-  SUCCESS_POLICY_DEFAULT = 0;
-  SUCCESS_POLICY_ALL_WORKERS = 1;
-}
-
 enum CleanPodPolicy {
-  CLEANPOD_POLICY_UNDEFINED = 0;
-  CLEANPOD_POLICY_ALL = 1;
-  CLEANPOD_POLICY_RUNNING = 2;
-  CLEANPOD_POLICY_NONE = 3;
+  // The All policy means all pods even completed pods will be deleted immediately when the job finishes.
+  CLEANPOD_POLICY_ALL = 0;
+
+  // The Running policy means that only pods still running when a job completes (e.g. parameter servers) will be deleted immediately; completed pods will not be deleted so that the logs will be preserved. This is the default value.
+  CLEANPOD_POLICY_RUNNING = 1;
+
+  // The None policy means that no pods will be deleted when the job completes.
+  CLEANPOD_POLICY_NONE = 2;
 }
 
 enum RestartPolicy {

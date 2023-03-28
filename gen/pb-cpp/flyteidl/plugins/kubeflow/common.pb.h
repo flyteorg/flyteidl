@@ -67,37 +67,15 @@ namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
 
-enum SuccessPolicy {
-  SUCCESS_POLICY_DEFAULT = 0,
-  SUCCESS_POLICY_ALL_WORKERS = 1,
-  SuccessPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  SuccessPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool SuccessPolicy_IsValid(int value);
-const SuccessPolicy SuccessPolicy_MIN = SUCCESS_POLICY_DEFAULT;
-const SuccessPolicy SuccessPolicy_MAX = SUCCESS_POLICY_ALL_WORKERS;
-const int SuccessPolicy_ARRAYSIZE = SuccessPolicy_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* SuccessPolicy_descriptor();
-inline const ::std::string& SuccessPolicy_Name(SuccessPolicy value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    SuccessPolicy_descriptor(), value);
-}
-inline bool SuccessPolicy_Parse(
-    const ::std::string& name, SuccessPolicy* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<SuccessPolicy>(
-    SuccessPolicy_descriptor(), name, value);
-}
 enum CleanPodPolicy {
-  CLEANPOD_POLICY_UNDEFINED = 0,
-  CLEANPOD_POLICY_ALL = 1,
-  CLEANPOD_POLICY_RUNNING = 2,
-  CLEANPOD_POLICY_NONE = 3,
+  CLEANPOD_POLICY_ALL = 0,
+  CLEANPOD_POLICY_RUNNING = 1,
+  CLEANPOD_POLICY_NONE = 2,
   CleanPodPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CleanPodPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CleanPodPolicy_IsValid(int value);
-const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_UNDEFINED;
+const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_ALL;
 const CleanPodPolicy CleanPodPolicy_MAX = CLEANPOD_POLICY_NONE;
 const int CleanPodPolicy_ARRAYSIZE = CleanPodPolicy_MAX + 1;
 
@@ -346,11 +324,6 @@ inline void RunPolicy::set_backoff_limit(::google::protobuf::int32 value) {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::plugins::kubeflow::SuccessPolicy> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::kubeflow::SuccessPolicy>() {
-  return ::flyteidl::plugins::kubeflow::SuccessPolicy_descriptor();
-}
 template <> struct is_proto_enum< ::flyteidl::plugins::kubeflow::CleanPodPolicy> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::kubeflow::CleanPodPolicy>() {

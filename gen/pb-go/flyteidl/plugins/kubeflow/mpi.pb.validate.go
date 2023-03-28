@@ -74,8 +74,6 @@ func (m *DistributedMPITrainingTask) Validate() error {
 		}
 	}
 
-	// no validation rules for SuccessPolicy
-
 	return nil
 }
 
@@ -145,7 +143,17 @@ func (m *DistributedMPITrainingReplicaSpec) Validate() error {
 
 	// no validation rules for Replicas
 
-	// no validation rules for PodTemplateName
+	// no validation rules for Image
+
+	if v, ok := interface{}(m.GetResources()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return DistributedMPITrainingReplicaSpecValidationError{
+				field:  "Resources",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	// no validation rules for RestartPolicy
 
