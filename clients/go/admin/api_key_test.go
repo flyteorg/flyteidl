@@ -50,7 +50,7 @@ func TestAPIKey_Encode(t *testing.T) {
 				Secret:   tt.apiKey.Secret,
 			}
 			got, err := k.Encode()
-			if !tt.wantErr(t, err, fmt.Sprintf("Encode()")) {
+			if !tt.wantErr(t, err, "Encode()") {
 				return
 			}
 			assert.Equalf(t, tt.want, got, "Encode()")
