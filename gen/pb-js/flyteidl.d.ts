@@ -19437,151 +19437,11 @@ export namespace flyteidl {
             type CreateDownloadLinkCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLinkResponse) => void;
         }
 
-        /** Properties of a UserInfoRequest. */
-        interface IUserInfoRequest {
-        }
-
-        /** Represents a UserInfoRequest. */
-        class UserInfoRequest implements IUserInfoRequest {
+        /** Represents an ExternalPluginService */
+        class ExternalPluginService extends $protobuf.rpc.Service {
 
             /**
-             * Constructs a new UserInfoRequest.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.service.IUserInfoRequest);
-
-            /**
-             * Creates a new UserInfoRequest instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns UserInfoRequest instance
-             */
-            public static create(properties?: flyteidl.service.IUserInfoRequest): flyteidl.service.UserInfoRequest;
-
-            /**
-             * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
-             * @param message UserInfoRequest message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.service.IUserInfoRequest, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a UserInfoRequest message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns UserInfoRequest
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoRequest;
-
-            /**
-             * Verifies a UserInfoRequest message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Properties of a UserInfoResponse. */
-        interface IUserInfoResponse {
-
-            /** UserInfoResponse subject */
-            subject?: (string|null);
-
-            /** UserInfoResponse name */
-            name?: (string|null);
-
-            /** UserInfoResponse preferredUsername */
-            preferredUsername?: (string|null);
-
-            /** UserInfoResponse givenName */
-            givenName?: (string|null);
-
-            /** UserInfoResponse familyName */
-            familyName?: (string|null);
-
-            /** UserInfoResponse email */
-            email?: (string|null);
-
-            /** UserInfoResponse picture */
-            picture?: (string|null);
-
-            /** UserInfoResponse additionalClaims */
-            additionalClaims?: (google.protobuf.IStruct|null);
-        }
-
-        /** Represents a UserInfoResponse. */
-        class UserInfoResponse implements IUserInfoResponse {
-
-            /**
-             * Constructs a new UserInfoResponse.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.service.IUserInfoResponse);
-
-            /** UserInfoResponse subject. */
-            public subject: string;
-
-            /** UserInfoResponse name. */
-            public name: string;
-
-            /** UserInfoResponse preferredUsername. */
-            public preferredUsername: string;
-
-            /** UserInfoResponse givenName. */
-            public givenName: string;
-
-            /** UserInfoResponse familyName. */
-            public familyName: string;
-
-            /** UserInfoResponse email. */
-            public email: string;
-
-            /** UserInfoResponse picture. */
-            public picture: string;
-
-            /** UserInfoResponse additionalClaims. */
-            public additionalClaims?: (google.protobuf.IStruct|null);
-
-            /**
-             * Creates a new UserInfoResponse instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns UserInfoResponse instance
-             */
-            public static create(properties?: flyteidl.service.IUserInfoResponse): flyteidl.service.UserInfoResponse;
-
-            /**
-             * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
-             * @param message UserInfoResponse message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.service.IUserInfoResponse, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a UserInfoResponse message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns UserInfoResponse
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoResponse;
-
-            /**
-             * Verifies a UserInfoResponse message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
-        /** Represents an IdentityService */
-        class IdentityService extends $protobuf.rpc.Service {
-
-            /**
-             * Constructs a new IdentityService service.
+             * Constructs a new ExternalPluginService service.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
@@ -19589,65 +19449,20 @@ export namespace flyteidl {
             constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
             /**
-             * Creates new IdentityService service using the specified rpc implementation.
+             * Creates new ExternalPluginService service using the specified rpc implementation.
              * @param rpcImpl RPC implementation
              * @param [requestDelimited=false] Whether requests are length-delimited
              * @param [responseDelimited=false] Whether responses are length-delimited
              * @returns RPC service. Useful where requests and/or responses are streamed.
              */
-            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): IdentityService;
-
-            /**
-             * Calls UserInfo.
-             * @param request UserInfoRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and UserInfoResponse
-             */
-            public userInfo(request: flyteidl.service.IUserInfoRequest, callback: flyteidl.service.IdentityService.UserInfoCallback): void;
-
-            /**
-             * Calls UserInfo.
-             * @param request UserInfoRequest message or plain object
-             * @returns Promise
-             */
-            public userInfo(request: flyteidl.service.IUserInfoRequest): Promise<flyteidl.service.UserInfoResponse>;
-        }
-
-        namespace IdentityService {
-
-            /**
-             * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
-             * @param error Error, if any
-             * @param [response] UserInfoResponse
-             */
-            type UserInfoCallback = (error: (Error|null), response?: flyteidl.service.UserInfoResponse) => void;
-        }
-
-        /** Represents a BackendPluginService */
-        class BackendPluginService extends $protobuf.rpc.Service {
-
-            /**
-             * Constructs a new BackendPluginService service.
-             * @param rpcImpl RPC implementation
-             * @param [requestDelimited=false] Whether requests are length-delimited
-             * @param [responseDelimited=false] Whether responses are length-delimited
-             */
-            constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-            /**
-             * Creates new BackendPluginService service using the specified rpc implementation.
-             * @param rpcImpl RPC implementation
-             * @param [requestDelimited=false] Whether requests are length-delimited
-             * @param [responseDelimited=false] Whether responses are length-delimited
-             * @returns RPC service. Useful where requests and/or responses are streamed.
-             */
-            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): BackendPluginService;
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): ExternalPluginService;
 
             /**
              * Calls CreateTask.
              * @param request TaskCreateRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and TaskCreateResponse
              */
-            public createTask(request: flyteidl.service.ITaskCreateRequest, callback: flyteidl.service.BackendPluginService.CreateTaskCallback): void;
+            public createTask(request: flyteidl.service.ITaskCreateRequest, callback: flyteidl.service.ExternalPluginService.CreateTaskCallback): void;
 
             /**
              * Calls CreateTask.
@@ -19661,7 +19476,7 @@ export namespace flyteidl {
              * @param request TaskGetRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and TaskGetResponse
              */
-            public getTask(request: flyteidl.service.ITaskGetRequest, callback: flyteidl.service.BackendPluginService.GetTaskCallback): void;
+            public getTask(request: flyteidl.service.ITaskGetRequest, callback: flyteidl.service.ExternalPluginService.GetTaskCallback): void;
 
             /**
              * Calls GetTask.
@@ -19675,7 +19490,7 @@ export namespace flyteidl {
              * @param request TaskDeleteRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and TaskDeleteResponse
              */
-            public deleteTask(request: flyteidl.service.ITaskDeleteRequest, callback: flyteidl.service.BackendPluginService.DeleteTaskCallback): void;
+            public deleteTask(request: flyteidl.service.ITaskDeleteRequest, callback: flyteidl.service.ExternalPluginService.DeleteTaskCallback): void;
 
             /**
              * Calls DeleteTask.
@@ -19685,24 +19500,24 @@ export namespace flyteidl {
             public deleteTask(request: flyteidl.service.ITaskDeleteRequest): Promise<flyteidl.service.TaskDeleteResponse>;
         }
 
-        namespace BackendPluginService {
+        namespace ExternalPluginService {
 
             /**
-             * Callback as used by {@link flyteidl.service.BackendPluginService#createTask}.
+             * Callback as used by {@link flyteidl.service.ExternalPluginService#createTask}.
              * @param error Error, if any
              * @param [response] TaskCreateResponse
              */
             type CreateTaskCallback = (error: (Error|null), response?: flyteidl.service.TaskCreateResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.BackendPluginService#getTask}.
+             * Callback as used by {@link flyteidl.service.ExternalPluginService#getTask}.
              * @param error Error, if any
              * @param [response] TaskGetResponse
              */
             type GetTaskCallback = (error: (Error|null), response?: flyteidl.service.TaskGetResponse) => void;
 
             /**
-             * Callback as used by {@link flyteidl.service.BackendPluginService#deleteTask}.
+             * Callback as used by {@link flyteidl.service.ExternalPluginService#deleteTask}.
              * @param error Error, if any
              * @param [response] TaskDeleteResponse
              */
@@ -20052,6 +19867,191 @@ export namespace flyteidl {
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a UserInfoRequest. */
+        interface IUserInfoRequest {
+        }
+
+        /** Represents a UserInfoRequest. */
+        class UserInfoRequest implements IUserInfoRequest {
+
+            /**
+             * Constructs a new UserInfoRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IUserInfoRequest);
+
+            /**
+             * Creates a new UserInfoRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UserInfoRequest instance
+             */
+            public static create(properties?: flyteidl.service.IUserInfoRequest): flyteidl.service.UserInfoRequest;
+
+            /**
+             * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
+             * @param message UserInfoRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IUserInfoRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a UserInfoRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UserInfoRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoRequest;
+
+            /**
+             * Verifies a UserInfoRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a UserInfoResponse. */
+        interface IUserInfoResponse {
+
+            /** UserInfoResponse subject */
+            subject?: (string|null);
+
+            /** UserInfoResponse name */
+            name?: (string|null);
+
+            /** UserInfoResponse preferredUsername */
+            preferredUsername?: (string|null);
+
+            /** UserInfoResponse givenName */
+            givenName?: (string|null);
+
+            /** UserInfoResponse familyName */
+            familyName?: (string|null);
+
+            /** UserInfoResponse email */
+            email?: (string|null);
+
+            /** UserInfoResponse picture */
+            picture?: (string|null);
+
+            /** UserInfoResponse additionalClaims */
+            additionalClaims?: (google.protobuf.IStruct|null);
+        }
+
+        /** Represents a UserInfoResponse. */
+        class UserInfoResponse implements IUserInfoResponse {
+
+            /**
+             * Constructs a new UserInfoResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IUserInfoResponse);
+
+            /** UserInfoResponse subject. */
+            public subject: string;
+
+            /** UserInfoResponse name. */
+            public name: string;
+
+            /** UserInfoResponse preferredUsername. */
+            public preferredUsername: string;
+
+            /** UserInfoResponse givenName. */
+            public givenName: string;
+
+            /** UserInfoResponse familyName. */
+            public familyName: string;
+
+            /** UserInfoResponse email. */
+            public email: string;
+
+            /** UserInfoResponse picture. */
+            public picture: string;
+
+            /** UserInfoResponse additionalClaims. */
+            public additionalClaims?: (google.protobuf.IStruct|null);
+
+            /**
+             * Creates a new UserInfoResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns UserInfoResponse instance
+             */
+            public static create(properties?: flyteidl.service.IUserInfoResponse): flyteidl.service.UserInfoResponse;
+
+            /**
+             * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
+             * @param message UserInfoResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IUserInfoResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a UserInfoResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns UserInfoResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.UserInfoResponse;
+
+            /**
+             * Verifies a UserInfoResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Represents an IdentityService */
+        class IdentityService extends $protobuf.rpc.Service {
+
+            /**
+             * Constructs a new IdentityService service.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             */
+            constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+            /**
+             * Creates new IdentityService service using the specified rpc implementation.
+             * @param rpcImpl RPC implementation
+             * @param [requestDelimited=false] Whether requests are length-delimited
+             * @param [responseDelimited=false] Whether responses are length-delimited
+             * @returns RPC service. Useful where requests and/or responses are streamed.
+             */
+            public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): IdentityService;
+
+            /**
+             * Calls UserInfo.
+             * @param request UserInfoRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and UserInfoResponse
+             */
+            public userInfo(request: flyteidl.service.IUserInfoRequest, callback: flyteidl.service.IdentityService.UserInfoCallback): void;
+
+            /**
+             * Calls UserInfo.
+             * @param request UserInfoRequest message or plain object
+             * @returns Promise
+             */
+            public userInfo(request: flyteidl.service.IUserInfoRequest): Promise<flyteidl.service.UserInfoResponse>;
+        }
+
+        namespace IdentityService {
+
+            /**
+             * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
+             * @param error Error, if any
+             * @param [response] UserInfoResponse
+             */
+            type UserInfoCallback = (error: (Error|null), response?: flyteidl.service.UserInfoResponse) => void;
         }
 
         /** Represents a SignalService */

@@ -45315,433 +45315,41 @@
                 return DataProxyService;
             })();
     
-            service.UserInfoRequest = (function() {
+            service.ExternalPluginService = (function() {
     
                 /**
-                 * Properties of a UserInfoRequest.
+                 * Constructs a new ExternalPluginService service.
                  * @memberof flyteidl.service
-                 * @interface IUserInfoRequest
-                 */
-    
-                /**
-                 * Constructs a new UserInfoRequest.
-                 * @memberof flyteidl.service
-                 * @classdesc Represents a UserInfoRequest.
-                 * @implements IUserInfoRequest
-                 * @constructor
-                 * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
-                 */
-                function UserInfoRequest(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Creates a new UserInfoRequest instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.service.UserInfoRequest
-                 * @static
-                 * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
-                 * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest instance
-                 */
-                UserInfoRequest.create = function create(properties) {
-                    return new UserInfoRequest(properties);
-                };
-    
-                /**
-                 * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.service.UserInfoRequest
-                 * @static
-                 * @param {flyteidl.service.IUserInfoRequest} message UserInfoRequest message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                UserInfoRequest.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a UserInfoRequest message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.service.UserInfoRequest
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                UserInfoRequest.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoRequest();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a UserInfoRequest message.
-                 * @function verify
-                 * @memberof flyteidl.service.UserInfoRequest
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                UserInfoRequest.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    return null;
-                };
-    
-                return UserInfoRequest;
-            })();
-    
-            service.UserInfoResponse = (function() {
-    
-                /**
-                 * Properties of a UserInfoResponse.
-                 * @memberof flyteidl.service
-                 * @interface IUserInfoResponse
-                 * @property {string|null} [subject] UserInfoResponse subject
-                 * @property {string|null} [name] UserInfoResponse name
-                 * @property {string|null} [preferredUsername] UserInfoResponse preferredUsername
-                 * @property {string|null} [givenName] UserInfoResponse givenName
-                 * @property {string|null} [familyName] UserInfoResponse familyName
-                 * @property {string|null} [email] UserInfoResponse email
-                 * @property {string|null} [picture] UserInfoResponse picture
-                 * @property {google.protobuf.IStruct|null} [additionalClaims] UserInfoResponse additionalClaims
-                 */
-    
-                /**
-                 * Constructs a new UserInfoResponse.
-                 * @memberof flyteidl.service
-                 * @classdesc Represents a UserInfoResponse.
-                 * @implements IUserInfoResponse
-                 * @constructor
-                 * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
-                 */
-                function UserInfoResponse(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * UserInfoResponse subject.
-                 * @member {string} subject
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.subject = "";
-    
-                /**
-                 * UserInfoResponse name.
-                 * @member {string} name
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.name = "";
-    
-                /**
-                 * UserInfoResponse preferredUsername.
-                 * @member {string} preferredUsername
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.preferredUsername = "";
-    
-                /**
-                 * UserInfoResponse givenName.
-                 * @member {string} givenName
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.givenName = "";
-    
-                /**
-                 * UserInfoResponse familyName.
-                 * @member {string} familyName
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.familyName = "";
-    
-                /**
-                 * UserInfoResponse email.
-                 * @member {string} email
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.email = "";
-    
-                /**
-                 * UserInfoResponse picture.
-                 * @member {string} picture
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.picture = "";
-    
-                /**
-                 * UserInfoResponse additionalClaims.
-                 * @member {google.protobuf.IStruct|null|undefined} additionalClaims
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @instance
-                 */
-                UserInfoResponse.prototype.additionalClaims = null;
-    
-                /**
-                 * Creates a new UserInfoResponse instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @static
-                 * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
-                 * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse instance
-                 */
-                UserInfoResponse.create = function create(properties) {
-                    return new UserInfoResponse(properties);
-                };
-    
-                /**
-                 * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @static
-                 * @param {flyteidl.service.IUserInfoResponse} message UserInfoResponse message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                UserInfoResponse.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.subject != null && message.hasOwnProperty("subject"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.subject);
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                    if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
-                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.preferredUsername);
-                    if (message.givenName != null && message.hasOwnProperty("givenName"))
-                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.givenName);
-                    if (message.familyName != null && message.hasOwnProperty("familyName"))
-                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.familyName);
-                    if (message.email != null && message.hasOwnProperty("email"))
-                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.email);
-                    if (message.picture != null && message.hasOwnProperty("picture"))
-                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.picture);
-                    if (message.additionalClaims != null && message.hasOwnProperty("additionalClaims"))
-                        $root.google.protobuf.Struct.encode(message.additionalClaims, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a UserInfoResponse message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                UserInfoResponse.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoResponse();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.subject = reader.string();
-                            break;
-                        case 2:
-                            message.name = reader.string();
-                            break;
-                        case 3:
-                            message.preferredUsername = reader.string();
-                            break;
-                        case 4:
-                            message.givenName = reader.string();
-                            break;
-                        case 5:
-                            message.familyName = reader.string();
-                            break;
-                        case 6:
-                            message.email = reader.string();
-                            break;
-                        case 7:
-                            message.picture = reader.string();
-                            break;
-                        case 8:
-                            message.additionalClaims = $root.google.protobuf.Struct.decode(reader, reader.uint32());
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a UserInfoResponse message.
-                 * @function verify
-                 * @memberof flyteidl.service.UserInfoResponse
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                UserInfoResponse.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.subject != null && message.hasOwnProperty("subject"))
-                        if (!$util.isString(message.subject))
-                            return "subject: string expected";
-                    if (message.name != null && message.hasOwnProperty("name"))
-                        if (!$util.isString(message.name))
-                            return "name: string expected";
-                    if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
-                        if (!$util.isString(message.preferredUsername))
-                            return "preferredUsername: string expected";
-                    if (message.givenName != null && message.hasOwnProperty("givenName"))
-                        if (!$util.isString(message.givenName))
-                            return "givenName: string expected";
-                    if (message.familyName != null && message.hasOwnProperty("familyName"))
-                        if (!$util.isString(message.familyName))
-                            return "familyName: string expected";
-                    if (message.email != null && message.hasOwnProperty("email"))
-                        if (!$util.isString(message.email))
-                            return "email: string expected";
-                    if (message.picture != null && message.hasOwnProperty("picture"))
-                        if (!$util.isString(message.picture))
-                            return "picture: string expected";
-                    if (message.additionalClaims != null && message.hasOwnProperty("additionalClaims")) {
-                        var error = $root.google.protobuf.Struct.verify(message.additionalClaims);
-                        if (error)
-                            return "additionalClaims." + error;
-                    }
-                    return null;
-                };
-    
-                return UserInfoResponse;
-            })();
-    
-            service.IdentityService = (function() {
-    
-                /**
-                 * Constructs a new IdentityService service.
-                 * @memberof flyteidl.service
-                 * @classdesc Represents an IdentityService
+                 * @classdesc Represents an ExternalPluginService
                  * @extends $protobuf.rpc.Service
                  * @constructor
                  * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
                  * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
                  * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
                  */
-                function IdentityService(rpcImpl, requestDelimited, responseDelimited) {
+                function ExternalPluginService(rpcImpl, requestDelimited, responseDelimited) {
                     $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
                 }
     
-                (IdentityService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = IdentityService;
+                (ExternalPluginService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = ExternalPluginService;
     
                 /**
-                 * Creates new IdentityService service using the specified rpc implementation.
+                 * Creates new ExternalPluginService service using the specified rpc implementation.
                  * @function create
-                 * @memberof flyteidl.service.IdentityService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @static
                  * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
                  * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
                  * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-                 * @returns {IdentityService} RPC service. Useful where requests and/or responses are streamed.
+                 * @returns {ExternalPluginService} RPC service. Useful where requests and/or responses are streamed.
                  */
-                IdentityService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                ExternalPluginService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
                     return new this(rpcImpl, requestDelimited, responseDelimited);
                 };
     
                 /**
-                 * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
-                 * @memberof flyteidl.service.IdentityService
-                 * @typedef UserInfoCallback
-                 * @type {function}
-                 * @param {Error|null} error Error, if any
-                 * @param {flyteidl.service.UserInfoResponse} [response] UserInfoResponse
-                 */
-    
-                /**
-                 * Calls UserInfo.
-                 * @function userInfo
-                 * @memberof flyteidl.service.IdentityService
-                 * @instance
-                 * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
-                 * @param {flyteidl.service.IdentityService.UserInfoCallback} callback Node-style callback called with the error, if any, and UserInfoResponse
-                 * @returns {undefined}
-                 * @variation 1
-                 */
-                Object.defineProperty(IdentityService.prototype.userInfo = function userInfo(request, callback) {
-                    return this.rpcCall(userInfo, $root.flyteidl.service.UserInfoRequest, $root.flyteidl.service.UserInfoResponse, request, callback);
-                }, "name", { value: "UserInfo" });
-    
-                /**
-                 * Calls UserInfo.
-                 * @function userInfo
-                 * @memberof flyteidl.service.IdentityService
-                 * @instance
-                 * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
-                 * @returns {Promise<flyteidl.service.UserInfoResponse>} Promise
-                 * @variation 2
-                 */
-    
-                return IdentityService;
-            })();
-    
-            service.BackendPluginService = (function() {
-    
-                /**
-                 * Constructs a new BackendPluginService service.
-                 * @memberof flyteidl.service
-                 * @classdesc Represents a BackendPluginService
-                 * @extends $protobuf.rpc.Service
-                 * @constructor
-                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-                 */
-                function BackendPluginService(rpcImpl, requestDelimited, responseDelimited) {
-                    $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
-                }
-    
-                (BackendPluginService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = BackendPluginService;
-    
-                /**
-                 * Creates new BackendPluginService service using the specified rpc implementation.
-                 * @function create
-                 * @memberof flyteidl.service.BackendPluginService
-                 * @static
-                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-                 * @returns {BackendPluginService} RPC service. Useful where requests and/or responses are streamed.
-                 */
-                BackendPluginService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
-                    return new this(rpcImpl, requestDelimited, responseDelimited);
-                };
-    
-                /**
-                 * Callback as used by {@link flyteidl.service.BackendPluginService#createTask}.
-                 * @memberof flyteidl.service.BackendPluginService
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#createTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @typedef CreateTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -45751,21 +45359,21 @@
                 /**
                  * Calls CreateTask.
                  * @function createTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
-                 * @param {flyteidl.service.BackendPluginService.CreateTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
+                 * @param {flyteidl.service.ExternalPluginService.CreateTaskCallback} callback Node-style callback called with the error, if any, and TaskCreateResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(BackendPluginService.prototype.createTask = function createTask(request, callback) {
+                Object.defineProperty(ExternalPluginService.prototype.createTask = function createTask(request, callback) {
                     return this.rpcCall(createTask, $root.flyteidl.service.TaskCreateRequest, $root.flyteidl.service.TaskCreateResponse, request, callback);
                 }, "name", { value: "CreateTask" });
     
                 /**
                  * Calls CreateTask.
                  * @function createTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskCreateRequest} request TaskCreateRequest message or plain object
                  * @returns {Promise<flyteidl.service.TaskCreateResponse>} Promise
@@ -45773,8 +45381,8 @@
                  */
     
                 /**
-                 * Callback as used by {@link flyteidl.service.BackendPluginService#getTask}.
-                 * @memberof flyteidl.service.BackendPluginService
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#getTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @typedef GetTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -45784,21 +45392,21 @@
                 /**
                  * Calls GetTask.
                  * @function getTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
-                 * @param {flyteidl.service.BackendPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskGetResponse
+                 * @param {flyteidl.service.ExternalPluginService.GetTaskCallback} callback Node-style callback called with the error, if any, and TaskGetResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(BackendPluginService.prototype.getTask = function getTask(request, callback) {
+                Object.defineProperty(ExternalPluginService.prototype.getTask = function getTask(request, callback) {
                     return this.rpcCall(getTask, $root.flyteidl.service.TaskGetRequest, $root.flyteidl.service.TaskGetResponse, request, callback);
                 }, "name", { value: "GetTask" });
     
                 /**
                  * Calls GetTask.
                  * @function getTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskGetRequest} request TaskGetRequest message or plain object
                  * @returns {Promise<flyteidl.service.TaskGetResponse>} Promise
@@ -45806,8 +45414,8 @@
                  */
     
                 /**
-                 * Callback as used by {@link flyteidl.service.BackendPluginService#deleteTask}.
-                 * @memberof flyteidl.service.BackendPluginService
+                 * Callback as used by {@link flyteidl.service.ExternalPluginService#deleteTask}.
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @typedef DeleteTaskCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
@@ -45817,28 +45425,28 @@
                 /**
                  * Calls DeleteTask.
                  * @function deleteTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
-                 * @param {flyteidl.service.BackendPluginService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and TaskDeleteResponse
+                 * @param {flyteidl.service.ExternalPluginService.DeleteTaskCallback} callback Node-style callback called with the error, if any, and TaskDeleteResponse
                  * @returns {undefined}
                  * @variation 1
                  */
-                Object.defineProperty(BackendPluginService.prototype.deleteTask = function deleteTask(request, callback) {
+                Object.defineProperty(ExternalPluginService.prototype.deleteTask = function deleteTask(request, callback) {
                     return this.rpcCall(deleteTask, $root.flyteidl.service.TaskDeleteRequest, $root.flyteidl.service.TaskDeleteResponse, request, callback);
                 }, "name", { value: "DeleteTask" });
     
                 /**
                  * Calls DeleteTask.
                  * @function deleteTask
-                 * @memberof flyteidl.service.BackendPluginService
+                 * @memberof flyteidl.service.ExternalPluginService
                  * @instance
                  * @param {flyteidl.service.ITaskDeleteRequest} request TaskDeleteRequest message or plain object
                  * @returns {Promise<flyteidl.service.TaskDeleteResponse>} Promise
                  * @variation 2
                  */
     
-                return BackendPluginService;
+                return ExternalPluginService;
             })();
     
             /**
@@ -46601,6 +46209,398 @@
                 };
     
                 return TaskDeleteResponse;
+            })();
+    
+            service.UserInfoRequest = (function() {
+    
+                /**
+                 * Properties of a UserInfoRequest.
+                 * @memberof flyteidl.service
+                 * @interface IUserInfoRequest
+                 */
+    
+                /**
+                 * Constructs a new UserInfoRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a UserInfoRequest.
+                 * @implements IUserInfoRequest
+                 * @constructor
+                 * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
+                 */
+                function UserInfoRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Creates a new UserInfoRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.UserInfoRequest
+                 * @static
+                 * @param {flyteidl.service.IUserInfoRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest instance
+                 */
+                UserInfoRequest.create = function create(properties) {
+                    return new UserInfoRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified UserInfoRequest message. Does not implicitly {@link flyteidl.service.UserInfoRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.UserInfoRequest
+                 * @static
+                 * @param {flyteidl.service.IUserInfoRequest} message UserInfoRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                UserInfoRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a UserInfoRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.UserInfoRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.UserInfoRequest} UserInfoRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                UserInfoRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a UserInfoRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.UserInfoRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                UserInfoRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    return null;
+                };
+    
+                return UserInfoRequest;
+            })();
+    
+            service.UserInfoResponse = (function() {
+    
+                /**
+                 * Properties of a UserInfoResponse.
+                 * @memberof flyteidl.service
+                 * @interface IUserInfoResponse
+                 * @property {string|null} [subject] UserInfoResponse subject
+                 * @property {string|null} [name] UserInfoResponse name
+                 * @property {string|null} [preferredUsername] UserInfoResponse preferredUsername
+                 * @property {string|null} [givenName] UserInfoResponse givenName
+                 * @property {string|null} [familyName] UserInfoResponse familyName
+                 * @property {string|null} [email] UserInfoResponse email
+                 * @property {string|null} [picture] UserInfoResponse picture
+                 * @property {google.protobuf.IStruct|null} [additionalClaims] UserInfoResponse additionalClaims
+                 */
+    
+                /**
+                 * Constructs a new UserInfoResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a UserInfoResponse.
+                 * @implements IUserInfoResponse
+                 * @constructor
+                 * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
+                 */
+                function UserInfoResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * UserInfoResponse subject.
+                 * @member {string} subject
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.subject = "";
+    
+                /**
+                 * UserInfoResponse name.
+                 * @member {string} name
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.name = "";
+    
+                /**
+                 * UserInfoResponse preferredUsername.
+                 * @member {string} preferredUsername
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.preferredUsername = "";
+    
+                /**
+                 * UserInfoResponse givenName.
+                 * @member {string} givenName
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.givenName = "";
+    
+                /**
+                 * UserInfoResponse familyName.
+                 * @member {string} familyName
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.familyName = "";
+    
+                /**
+                 * UserInfoResponse email.
+                 * @member {string} email
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.email = "";
+    
+                /**
+                 * UserInfoResponse picture.
+                 * @member {string} picture
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.picture = "";
+    
+                /**
+                 * UserInfoResponse additionalClaims.
+                 * @member {google.protobuf.IStruct|null|undefined} additionalClaims
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @instance
+                 */
+                UserInfoResponse.prototype.additionalClaims = null;
+    
+                /**
+                 * Creates a new UserInfoResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @static
+                 * @param {flyteidl.service.IUserInfoResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse instance
+                 */
+                UserInfoResponse.create = function create(properties) {
+                    return new UserInfoResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified UserInfoResponse message. Does not implicitly {@link flyteidl.service.UserInfoResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @static
+                 * @param {flyteidl.service.IUserInfoResponse} message UserInfoResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                UserInfoResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.subject != null && message.hasOwnProperty("subject"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.subject);
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                    if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.preferredUsername);
+                    if (message.givenName != null && message.hasOwnProperty("givenName"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.givenName);
+                    if (message.familyName != null && message.hasOwnProperty("familyName"))
+                        writer.uint32(/* id 5, wireType 2 =*/42).string(message.familyName);
+                    if (message.email != null && message.hasOwnProperty("email"))
+                        writer.uint32(/* id 6, wireType 2 =*/50).string(message.email);
+                    if (message.picture != null && message.hasOwnProperty("picture"))
+                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.picture);
+                    if (message.additionalClaims != null && message.hasOwnProperty("additionalClaims"))
+                        $root.google.protobuf.Struct.encode(message.additionalClaims, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a UserInfoResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.UserInfoResponse} UserInfoResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                UserInfoResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.UserInfoResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.subject = reader.string();
+                            break;
+                        case 2:
+                            message.name = reader.string();
+                            break;
+                        case 3:
+                            message.preferredUsername = reader.string();
+                            break;
+                        case 4:
+                            message.givenName = reader.string();
+                            break;
+                        case 5:
+                            message.familyName = reader.string();
+                            break;
+                        case 6:
+                            message.email = reader.string();
+                            break;
+                        case 7:
+                            message.picture = reader.string();
+                            break;
+                        case 8:
+                            message.additionalClaims = $root.google.protobuf.Struct.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a UserInfoResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.UserInfoResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                UserInfoResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.subject != null && message.hasOwnProperty("subject"))
+                        if (!$util.isString(message.subject))
+                            return "subject: string expected";
+                    if (message.name != null && message.hasOwnProperty("name"))
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
+                    if (message.preferredUsername != null && message.hasOwnProperty("preferredUsername"))
+                        if (!$util.isString(message.preferredUsername))
+                            return "preferredUsername: string expected";
+                    if (message.givenName != null && message.hasOwnProperty("givenName"))
+                        if (!$util.isString(message.givenName))
+                            return "givenName: string expected";
+                    if (message.familyName != null && message.hasOwnProperty("familyName"))
+                        if (!$util.isString(message.familyName))
+                            return "familyName: string expected";
+                    if (message.email != null && message.hasOwnProperty("email"))
+                        if (!$util.isString(message.email))
+                            return "email: string expected";
+                    if (message.picture != null && message.hasOwnProperty("picture"))
+                        if (!$util.isString(message.picture))
+                            return "picture: string expected";
+                    if (message.additionalClaims != null && message.hasOwnProperty("additionalClaims")) {
+                        var error = $root.google.protobuf.Struct.verify(message.additionalClaims);
+                        if (error)
+                            return "additionalClaims." + error;
+                    }
+                    return null;
+                };
+    
+                return UserInfoResponse;
+            })();
+    
+            service.IdentityService = (function() {
+    
+                /**
+                 * Constructs a new IdentityService service.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents an IdentityService
+                 * @extends $protobuf.rpc.Service
+                 * @constructor
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 */
+                function IdentityService(rpcImpl, requestDelimited, responseDelimited) {
+                    $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+                }
+    
+                (IdentityService.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = IdentityService;
+    
+                /**
+                 * Creates new IdentityService service using the specified rpc implementation.
+                 * @function create
+                 * @memberof flyteidl.service.IdentityService
+                 * @static
+                 * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+                 * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+                 * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+                 * @returns {IdentityService} RPC service. Useful where requests and/or responses are streamed.
+                 */
+                IdentityService.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+                    return new this(rpcImpl, requestDelimited, responseDelimited);
+                };
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.IdentityService#userInfo}.
+                 * @memberof flyteidl.service.IdentityService
+                 * @typedef UserInfoCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.UserInfoResponse} [response] UserInfoResponse
+                 */
+    
+                /**
+                 * Calls UserInfo.
+                 * @function userInfo
+                 * @memberof flyteidl.service.IdentityService
+                 * @instance
+                 * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
+                 * @param {flyteidl.service.IdentityService.UserInfoCallback} callback Node-style callback called with the error, if any, and UserInfoResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(IdentityService.prototype.userInfo = function userInfo(request, callback) {
+                    return this.rpcCall(userInfo, $root.flyteidl.service.UserInfoRequest, $root.flyteidl.service.UserInfoResponse, request, callback);
+                }, "name", { value: "UserInfo" });
+    
+                /**
+                 * Calls UserInfo.
+                 * @function userInfo
+                 * @memberof flyteidl.service.IdentityService
+                 * @instance
+                 * @param {flyteidl.service.IUserInfoRequest} request UserInfoRequest message or plain object
+                 * @returns {Promise<flyteidl.service.UserInfoResponse>} Promise
+                 * @variation 2
+                 */
+    
+                return IdentityService;
             })();
     
             service.SignalService = (function() {

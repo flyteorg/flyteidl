@@ -6,8 +6,8 @@ import "flyteidl/core/literals.proto";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/core/interface.proto";
 
-// BackendPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
-service BackendPluginService {
+// ExternalPluginService defines an RPC Service that allows propeller to send the request to the backend plugin server.
+service ExternalPluginService {
   // Send a task create request to the backend plugin server.
   rpc CreateTask (TaskCreateRequest) returns (TaskCreateResponse){};
   // Get job status.
