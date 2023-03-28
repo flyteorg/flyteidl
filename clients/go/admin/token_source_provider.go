@@ -43,34 +43,28 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 
 	var tokenProvider TokenSourceProvider
 	var err error
-	switch cfg.AuthType {
-	case AuthTypeClientSecret:
-		tokenURL := cfg.TokenURL
-		if len(tokenURL) == 0 {
-			metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
-			if err != nil {
-				return nil, fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
-			}
 
-			tokenURL = metadata.TokenEndpoint
+	apiKey := os.Getenv(cfg.APIKeyEnvVar)
+	if len(apiKey) > 0 {
+		logger.Debugf(ctx, "Using API key from environment variable [%s]", cfg.APIKeyEnvVar)
+		cfg.AuthType = AuthTypeAPIKey
+	}
+
+	switch cfg.AuthType {
+	case AuthTypeAPIKey:
+		tokenURL, scopes, audienceValue, err := resolveAuthMetadata(ctx, cfg, authClient)
+		if err != nil {
+			return nil, err
 		}
 
-		scopes := cfg.Scopes
-		audienceValue := cfg.Audience
-
-		if len(scopes) == 0 || cfg.UseAudienceFromAdmin {
-			publicClientConfig, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
-			if err != nil {
-				return nil, fmt.Errorf("failed to fetch client metadata. Error: %v", err)
-			}
-			// Update scopes from publicClientConfig
-			if len(scopes) == 0 {
-				scopes = publicClientConfig.Scopes
-			}
-			// Update audience from publicClientConfig
-			if cfg.UseAudienceFromAdmin {
-				audienceValue = publicClientConfig.Audience
-			}
+		tokenProvider, err = NewClientCredentialsTokenSourceProviderFromAPIKey(cfg, scopes, tokenURL, tokenCache, audienceValue)
+		if err != nil {
+			return nil, err
+		}
+	case AuthTypeClientSecret:
+		tokenURL, scopes, audienceValue, err := resolveAuthMetadata(ctx, cfg, authClient)
+		if err != nil {
+			return nil, err
 		}
 
 		tokenProvider, err = NewClientCredentialsTokenSourceProvider(ctx, cfg, scopes, tokenURL, tokenCache, audienceValue)
@@ -107,6 +101,37 @@ func NewTokenSourceProvider(ctx context.Context, cfg *Config, tokenCache cache.T
 	}
 
 	return tokenProvider, nil
+}
+
+func resolveAuthMetadata(ctx context.Context, cfg *Config, authClient service.AuthMetadataServiceClient) (string, []string, string, error) {
+	tokenURL := cfg.TokenURL
+	if len(tokenURL) == 0 {
+		metadata, err := authClient.GetOAuth2Metadata(ctx, &service.OAuth2MetadataRequest{})
+		if err != nil {
+			return "", nil, "", fmt.Errorf("failed to fetch auth metadata. Error: %v", err)
+		}
+
+		tokenURL = metadata.TokenEndpoint
+	}
+
+	scopes := cfg.Scopes
+	audienceValue := cfg.Audience
+
+	if len(scopes) == 0 || cfg.UseAudienceFromAdmin {
+		publicClientConfig, err := authClient.GetPublicClientConfig(ctx, &service.PublicClientAuthConfigRequest{})
+		if err != nil {
+			return "", nil, "", fmt.Errorf("failed to fetch client metadata. Error: %v", err)
+		}
+		// Update scopes from publicClientConfig
+		if len(scopes) == 0 {
+			scopes = publicClientConfig.Scopes
+		}
+		// Update audience from publicClientConfig
+		if cfg.UseAudienceFromAdmin {
+			audienceValue = publicClientConfig.Audience
+		}
+	}
+	return tokenURL, scopes, audienceValue, nil
 }
 
 type ExternalTokenSourceProvider struct {
@@ -172,6 +197,21 @@ type ClientCredentialsTokenSourceProvider struct {
 	tokenCache         cache.TokenCache
 }
 
+func NewClientCredentialsTokenSourceProviderFromAPIKey(cfg *Config, scopes []string, tokenURL string,
+	tokenCache cache.TokenCache, audience string) (TokenSourceProvider, error) {
+	apiKey := os.Getenv(cfg.APIKeyEnvVar)
+	if len(apiKey) == 0 {
+		return nil, fmt.Errorf("API key is empty at Env Var [%v]", cfg.APIKeyEnvVar)
+	}
+
+	decoded, err := DecodeAPIKey(apiKey)
+	if err != nil {
+		return nil, fmt.Errorf("failed to decode API key. Error: %w", err)
+	}
+
+	return newClientCredentialsTokenSourceProvider(cfg, decoded.ClientID, decoded.Secret, scopes, tokenURL, tokenCache, audience)
+}
+
 func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, scopes []string, tokenURL string,
 	tokenCache cache.TokenCache, audience string) (TokenSourceProvider, error) {
 	var secret string
@@ -185,6 +225,12 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 		}
 		secret = string(secretBytes)
 	}
+
+	return newClientCredentialsTokenSourceProvider(cfg, cfg.ClientID, secret, scopes, tokenURL, tokenCache, audience)
+}
+
+func newClientCredentialsTokenSourceProvider(cfg *Config, clientID, secret string, scopes []string, tokenURL string,
+	tokenCache cache.TokenCache, audience string) (TokenSourceProvider, error) {
 	endpointParams := url.Values{}
 	if len(audience) > 0 {
 		endpointParams = url.Values{audienceKey: {audience}}
@@ -195,14 +241,15 @@ func NewClientCredentialsTokenSourceProvider(ctx context.Context, cfg *Config, s
 	}
 	return ClientCredentialsTokenSourceProvider{
 		ccConfig: clientcredentials.Config{
-			ClientID:       cfg.ClientID,
+			ClientID:       clientID,
 			ClientSecret:   secret,
 			TokenURL:       tokenURL,
 			Scopes:         scopes,
 			EndpointParams: endpointParams,
 		},
 		tokenRefreshWindow: cfg.TokenRefreshWindow.Duration,
-		tokenCache:         tokenCache}, nil
+		tokenCache:         tokenCache,
+	}, nil
 }
 
 func (p ClientCredentialsTokenSourceProvider) GetTokenSource(ctx context.Context) (oauth2.TokenSource, error) {
