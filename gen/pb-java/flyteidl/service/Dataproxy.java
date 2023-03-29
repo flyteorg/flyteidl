@@ -45,9 +45,13 @@ public final class Dataproxy {
      * Used for users to download data
      * </pre>
      *
-     * <code>ARTIFACT_TYPE_IO = 2;</code>
+     * <code>ARTIFACT_TYPE_INPUT = 2;</code>
      */
-    ARTIFACT_TYPE_IO(2),
+    ARTIFACT_TYPE_INPUT(2),
+    /**
+     * <code>ARTIFACT_TYPE_OUTPUT = 3;</code>
+     */
+    ARTIFACT_TYPE_OUTPUT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -73,9 +77,13 @@ public final class Dataproxy {
      * Used for users to download data
      * </pre>
      *
-     * <code>ARTIFACT_TYPE_IO = 2;</code>
+     * <code>ARTIFACT_TYPE_INPUT = 2;</code>
      */
-    public static final int ARTIFACT_TYPE_IO_VALUE = 2;
+    public static final int ARTIFACT_TYPE_INPUT_VALUE = 2;
+    /**
+     * <code>ARTIFACT_TYPE_OUTPUT = 3;</code>
+     */
+    public static final int ARTIFACT_TYPE_OUTPUT_VALUE = 3;
 
 
     public final int getNumber() {
@@ -98,7 +106,8 @@ public final class Dataproxy {
       switch (value) {
         case 0: return ARTIFACT_TYPE_UNDEFINED;
         case 1: return ARTIFACT_TYPE_DECK;
-        case 2: return ARTIFACT_TYPE_IO;
+        case 2: return ARTIFACT_TYPE_INPUT;
+        case 3: return ARTIFACT_TYPE_OUTPUT;
         default: return null;
       }
     }
@@ -4305,6 +4314,24 @@ public final class Dataproxy {
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeExecutionIdOrBuilder();
 
+    /**
+     * <pre>
+     * can add a flyte url as an option for the source
+     * </pre>
+     *
+     * <code>string flyte_url = 4;</code>
+     */
+    java.lang.String getFlyteUrl();
+    /**
+     * <pre>
+     * can add a flyte url as an option for the source
+     * </pre>
+     *
+     * <code>string flyte_url = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getFlyteUrlBytes();
+
     public flyteidl.service.Dataproxy.CreateDownloadLinkRequest.SourceCase getSourceCase();
   }
   /**
@@ -4384,6 +4411,12 @@ public final class Dataproxy {
               sourceCase_ = 3;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 4;
+              source_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4421,6 +4454,7 @@ public final class Dataproxy {
     public enum SourceCase
         implements com.google.protobuf.Internal.EnumLite {
       NODE_EXECUTION_ID(3),
+      FLYTE_URL(4),
       SOURCE_NOT_SET(0);
       private final int value;
       private SourceCase(int value) {
@@ -4437,6 +4471,7 @@ public final class Dataproxy {
       public static SourceCase forNumber(int value) {
         switch (value) {
           case 3: return NODE_EXECUTION_ID;
+          case 4: return FLYTE_URL;
           case 0: return SOURCE_NOT_SET;
           default: return null;
         }
@@ -4557,6 +4592,57 @@ public final class Dataproxy {
       return flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance();
     }
 
+    public static final int FLYTE_URL_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * can add a flyte url as an option for the source
+     * </pre>
+     *
+     * <code>string flyte_url = 4;</code>
+     */
+    public java.lang.String getFlyteUrl() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 4) {
+        ref = source_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 4) {
+          source_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * can add a flyte url as an option for the source
+     * </pre>
+     *
+     * <code>string flyte_url = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFlyteUrlBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 4) {
+        ref = source_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (sourceCase_ == 4) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4580,6 +4666,9 @@ public final class Dataproxy {
       if (sourceCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier) source_);
       }
+      if (sourceCase_ == 4) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, source_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4600,6 +4689,9 @@ public final class Dataproxy {
       if (sourceCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier) source_);
+      }
+      if (sourceCase_ == 4) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, source_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4628,6 +4720,10 @@ public final class Dataproxy {
           if (!getNodeExecutionId()
               .equals(other.getNodeExecutionId())) return false;
           break;
+        case 4:
+          if (!getFlyteUrl()
+              .equals(other.getFlyteUrl())) return false;
+          break;
         case 0:
         default:
       }
@@ -4652,6 +4748,10 @@ public final class Dataproxy {
         case 3:
           hash = (37 * hash) + NODE_EXECUTION_ID_FIELD_NUMBER;
           hash = (53 * hash) + getNodeExecutionId().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + FLYTE_URL_FIELD_NUMBER;
+          hash = (53 * hash) + getFlyteUrl().hashCode();
           break;
         case 0:
         default:
@@ -4842,6 +4942,9 @@ public final class Dataproxy {
             result.source_ = nodeExecutionIdBuilder_.build();
           }
         }
+        if (sourceCase_ == 4) {
+          result.source_ = source_;
+        }
         result.sourceCase_ = sourceCase_;
         onBuilt();
         return result;
@@ -4900,6 +5003,12 @@ public final class Dataproxy {
         switch (other.getSourceCase()) {
           case NODE_EXECUTION_ID: {
             mergeNodeExecutionId(other.getNodeExecutionId());
+            break;
+          }
+          case FLYTE_URL: {
+            sourceCase_ = 4;
+            source_ = other.source_;
+            onChanged();
             break;
           }
           case SOURCE_NOT_SET: {
@@ -5365,6 +5474,106 @@ public final class Dataproxy {
         sourceCase_ = 3;
         onChanged();;
         return nodeExecutionIdBuilder_;
+      }
+
+      /**
+       * <pre>
+       * can add a flyte url as an option for the source
+       * </pre>
+       *
+       * <code>string flyte_url = 4;</code>
+       */
+      public java.lang.String getFlyteUrl() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 4) {
+          ref = source_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (sourceCase_ == 4) {
+            source_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * can add a flyte url as an option for the source
+       * </pre>
+       *
+       * <code>string flyte_url = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFlyteUrlBytes() {
+        java.lang.Object ref = "";
+        if (sourceCase_ == 4) {
+          ref = source_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (sourceCase_ == 4) {
+            source_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * can add a flyte url as an option for the source
+       * </pre>
+       *
+       * <code>string flyte_url = 4;</code>
+       */
+      public Builder setFlyteUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  sourceCase_ = 4;
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * can add a flyte url as an option for the source
+       * </pre>
+       *
+       * <code>string flyte_url = 4;</code>
+       */
+      public Builder clearFlyteUrl() {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * can add a flyte url as an option for the source
+       * </pre>
+       *
+       * <code>string flyte_url = 4;</code>
+       */
+      public Builder setFlyteUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        sourceCase_ = 4;
+        source_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7518,37 +7727,39 @@ public final class Dataproxy {
       "\001(\0132\031.google.protobuf.Duration:\002\030\001\"h\n\036Cr" +
       "eateDownloadLocationResponse\022\022\n\nsigned_u" +
       "rl\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp:\002\030\001\"\320\001\n\031CreateDownloadL" +
+      "otobuf.Timestamp:\002\030\001\"\345\001\n\031CreateDownloadL" +
       "inkRequest\0225\n\rartifact_type\030\001 \001(\0162\036.flyt" +
       "eidl.service.ArtifactType\022-\n\nexpires_in\030" +
       "\002 \001(\0132\031.google.protobuf.Duration\022C\n\021node" +
       "_execution_id\030\003 \001(\0132&.flyteidl.core.Node" +
-      "ExecutionIdentifierH\000B\010\n\006source\"`\n\032Creat" +
-      "eDownloadLinkResponse\022\022\n\nsigned_url\030\001 \003(" +
-      "\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf." +
-      "Timestamp\"+\n\026ResolveArtifactRequest\022\021\n\tf" +
-      "lyte_url\030\001 \001(\t\"-\n\027ResolveArtifactRespons" +
-      "e\022\022\n\nnative_url\030\001 \001(\t*Y\n\014ArtifactType\022\033\n" +
-      "\027ARTIFACT_TYPE_UNDEFINED\020\000\022\026\n\022ARTIFACT_T" +
-      "YPE_DECK\020\001\022\024\n\020ARTIFACT_TYPE_IO\020\0022\221\005\n\020Dat" +
-      "aProxyService\022\240\001\n\024CreateUploadLocation\022-" +
-      ".flyteidl.service.CreateUploadLocationRe" +
-      "quest\032..flyteidl.service.CreateUploadLoc" +
-      "ationResponse\")\202\323\344\223\002#\"\036/api/v1/dataproxy" +
-      "/artifact_urn:\001*\022\246\001\n\026CreateDownloadLocat" +
-      "ion\022/.flyteidl.service.CreateDownloadLoc" +
-      "ationRequest\0320.flyteidl.service.CreateDo" +
-      "wnloadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/" +
-      "v1/dataproxy/artifact_urn\022\233\001\n\022CreateDown" +
-      "loadLink\022+.flyteidl.service.CreateDownlo" +
-      "adLinkRequest\032,.flyteidl.service.CreateD" +
-      "ownloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/dat" +
-      "aproxy/artifact_link:\001*\022\222\001\n\017ResolveArtif" +
-      "act\022(.flyteidl.service.ResolveArtifactRe" +
-      "quest\032).flyteidl.service.ResolveArtifact" +
-      "Response\"*\202\323\344\223\002$\022\"/api/v1/dataproxy/reso" +
-      "lve_artifactB9Z7github.com/flyteorg/flyt" +
-      "eidl/gen/pb-go/flyteidl/serviceb\006proto3"
+      "ExecutionIdentifierH\000\022\023\n\tflyte_url\030\004 \001(\t" +
+      "H\000B\010\n\006source\"`\n\032CreateDownloadLinkRespon" +
+      "se\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001" +
+      "(\0132\032.google.protobuf.Timestamp\"+\n\026Resolv" +
+      "eArtifactRequest\022\021\n\tflyte_url\030\001 \001(\t\"-\n\027R" +
+      "esolveArtifactResponse\022\022\n\nnative_url\030\001 \001" +
+      "(\t*v\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDE" +
+      "FINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\001\022\027\n\023ARTIF" +
+      "ACT_TYPE_INPUT\020\002\022\030\n\024ARTIFACT_TYPE_OUTPUT" +
+      "\020\0032\221\005\n\020DataProxyService\022\240\001\n\024CreateUpload" +
+      "Location\022-.flyteidl.service.CreateUpload" +
+      "LocationRequest\032..flyteidl.service.Creat" +
+      "eUploadLocationResponse\")\202\323\344\223\002#\"\036/api/v1" +
+      "/dataproxy/artifact_urn:\001*\022\246\001\n\026CreateDow" +
+      "nloadLocation\022/.flyteidl.service.CreateD" +
+      "ownloadLocationRequest\0320.flyteidl.servic" +
+      "e.CreateDownloadLocationResponse\")\210\002\001\202\323\344" +
+      "\223\002 \022\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022" +
+      "CreateDownloadLink\022+.flyteidl.service.Cr" +
+      "eateDownloadLinkRequest\032,.flyteidl.servi" +
+      "ce.CreateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/" +
+      "api/v1/dataproxy/artifact_link:\001*\022\222\001\n\017Re" +
+      "solveArtifact\022(.flyteidl.service.Resolve" +
+      "ArtifactRequest\032).flyteidl.service.Resol" +
+      "veArtifactResponse\"*\202\323\344\223\002$\022\"/api/v1/data" +
+      "proxy/resolve_artifactB9Z7github.com/fly" +
+      "teorg/flyteidl/gen/pb-go/flyteidl/servic" +
+      "eb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7595,7 +7806,7 @@ public final class Dataproxy {
     internal_static_flyteidl_service_CreateDownloadLinkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkRequest_descriptor,
-        new java.lang.String[] { "ArtifactType", "ExpiresIn", "NodeExecutionId", "Source", });
+        new java.lang.String[] { "ArtifactType", "ExpiresIn", "NodeExecutionId", "FlyteUrl", "Source", });
     internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable = new

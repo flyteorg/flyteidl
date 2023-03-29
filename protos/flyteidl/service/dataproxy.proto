@@ -76,7 +76,8 @@ enum ArtifactType {
   ARTIFACT_TYPE_DECK = 1;
 
   // Used for users to download data
-  ARTIFACT_TYPE_IO = 2;
+  ARTIFACT_TYPE_INPUT = 2;
+  ARTIFACT_TYPE_OUTPUT = 3;
 }
 
 // CreateDownloadLinkRequest defines the request parameters to create a download link (signed url)

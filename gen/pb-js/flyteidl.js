@@ -44865,13 +44865,15 @@
              * @enum {string}
              * @property {number} ARTIFACT_TYPE_UNDEFINED=0 ARTIFACT_TYPE_UNDEFINED value
              * @property {number} ARTIFACT_TYPE_DECK=1 ARTIFACT_TYPE_DECK value
-             * @property {number} ARTIFACT_TYPE_IO=2 ARTIFACT_TYPE_IO value
+             * @property {number} ARTIFACT_TYPE_INPUT=2 ARTIFACT_TYPE_INPUT value
+             * @property {number} ARTIFACT_TYPE_OUTPUT=3 ARTIFACT_TYPE_OUTPUT value
              */
             service.ArtifactType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "ARTIFACT_TYPE_UNDEFINED"] = 0;
                 values[valuesById[1] = "ARTIFACT_TYPE_DECK"] = 1;
-                values[valuesById[2] = "ARTIFACT_TYPE_IO"] = 2;
+                values[valuesById[2] = "ARTIFACT_TYPE_INPUT"] = 2;
+                values[valuesById[3] = "ARTIFACT_TYPE_OUTPUT"] = 3;
                 return values;
             })();
     
@@ -44884,6 +44886,7 @@
                  * @property {flyteidl.service.ArtifactType|null} [artifactType] CreateDownloadLinkRequest artifactType
                  * @property {google.protobuf.IDuration|null} [expiresIn] CreateDownloadLinkRequest expiresIn
                  * @property {flyteidl.core.INodeExecutionIdentifier|null} [nodeExecutionId] CreateDownloadLinkRequest nodeExecutionId
+                 * @property {string|null} [flyteUrl] CreateDownloadLinkRequest flyteUrl
                  */
     
                 /**
@@ -44925,17 +44928,25 @@
                  */
                 CreateDownloadLinkRequest.prototype.nodeExecutionId = null;
     
+                /**
+                 * CreateDownloadLinkRequest flyteUrl.
+                 * @member {string} flyteUrl
+                 * @memberof flyteidl.service.CreateDownloadLinkRequest
+                 * @instance
+                 */
+                CreateDownloadLinkRequest.prototype.flyteUrl = "";
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * CreateDownloadLinkRequest source.
-                 * @member {"nodeExecutionId"|undefined} source
+                 * @member {"nodeExecutionId"|"flyteUrl"|undefined} source
                  * @memberof flyteidl.service.CreateDownloadLinkRequest
                  * @instance
                  */
                 Object.defineProperty(CreateDownloadLinkRequest.prototype, "source", {
-                    get: $util.oneOfGetter($oneOfFields = ["nodeExecutionId"]),
+                    get: $util.oneOfGetter($oneOfFields = ["nodeExecutionId", "flyteUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -44969,6 +44980,8 @@
                         $root.google.protobuf.Duration.encode(message.expiresIn, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     if (message.nodeExecutionId != null && message.hasOwnProperty("nodeExecutionId"))
                         $root.flyteidl.core.NodeExecutionIdentifier.encode(message.nodeExecutionId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.flyteUrl);
                     return writer;
                 };
     
@@ -44999,6 +45012,9 @@
                         case 3:
                             message.nodeExecutionId = $root.flyteidl.core.NodeExecutionIdentifier.decode(reader, reader.uint32());
                             break;
+                        case 4:
+                            message.flyteUrl = reader.string();
+                            break;
                         default:
                             reader.skipType(tag & 7);
                             break;
@@ -45026,6 +45042,7 @@
                         case 0:
                         case 1:
                         case 2:
+                        case 3:
                             break;
                         }
                     if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
@@ -45040,6 +45057,13 @@
                             if (error)
                                 return "nodeExecutionId." + error;
                         }
+                    }
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl")) {
+                        if (properties.source === 1)
+                            return "source: multiple values";
+                        properties.source = 1;
+                        if (!$util.isString(message.flyteUrl))
+                            return "flyteUrl: string expected";
                     }
                     return null;
                 };

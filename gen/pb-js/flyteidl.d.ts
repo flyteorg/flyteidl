@@ -19223,7 +19223,8 @@ export namespace flyteidl {
         enum ArtifactType {
             ARTIFACT_TYPE_UNDEFINED = 0,
             ARTIFACT_TYPE_DECK = 1,
-            ARTIFACT_TYPE_IO = 2
+            ARTIFACT_TYPE_INPUT = 2,
+            ARTIFACT_TYPE_OUTPUT = 3
         }
 
         /** Properties of a CreateDownloadLinkRequest. */
@@ -19237,6 +19238,9 @@ export namespace flyteidl {
 
             /** CreateDownloadLinkRequest nodeExecutionId */
             nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
+
+            /** CreateDownloadLinkRequest flyteUrl */
+            flyteUrl?: (string|null);
         }
 
         /** Represents a CreateDownloadLinkRequest. */
@@ -19257,8 +19261,11 @@ export namespace flyteidl {
             /** CreateDownloadLinkRequest nodeExecutionId. */
             public nodeExecutionId?: (flyteidl.core.INodeExecutionIdentifier|null);
 
+            /** CreateDownloadLinkRequest flyteUrl. */
+            public flyteUrl: string;
+
             /** CreateDownloadLinkRequest source. */
-            public source?: "nodeExecutionId";
+            public source?: ("nodeExecutionId"|"flyteUrl");
 
             /**
              * Creates a new CreateDownloadLinkRequest instance using the specified properties.

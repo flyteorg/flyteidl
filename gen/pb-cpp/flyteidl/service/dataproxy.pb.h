@@ -99,13 +99,14 @@ namespace service {
 enum ArtifactType {
   ARTIFACT_TYPE_UNDEFINED = 0,
   ARTIFACT_TYPE_DECK = 1,
-  ARTIFACT_TYPE_IO = 2,
+  ARTIFACT_TYPE_INPUT = 2,
+  ARTIFACT_TYPE_OUTPUT = 3,
   ArtifactType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ArtifactType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ArtifactType_IsValid(int value);
 const ArtifactType ArtifactType_MIN = ARTIFACT_TYPE_UNDEFINED;
-const ArtifactType ArtifactType_MAX = ARTIFACT_TYPE_IO;
+const ArtifactType ArtifactType_MAX = ARTIFACT_TYPE_OUTPUT;
 const int ArtifactType_ARRAYSIZE = ArtifactType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ArtifactType_descriptor();
@@ -734,6 +735,7 @@ class CreateDownloadLinkRequest final :
 
   enum SourceCase {
     kNodeExecutionId = 3,
+    kFlyteUrl = 4,
     SOURCE_NOT_SET = 0,
   };
 
@@ -824,12 +826,30 @@ class CreateDownloadLinkRequest final :
   ::flyteidl::core::NodeExecutionIdentifier* mutable_node_execution_id();
   void set_allocated_node_execution_id(::flyteidl::core::NodeExecutionIdentifier* node_execution_id);
 
+  // string flyte_url = 4;
+  private:
+  bool has_flyte_url() const;
+  public:
+  void clear_flyte_url();
+  static const int kFlyteUrlFieldNumber = 4;
+  const ::std::string& flyte_url() const;
+  void set_flyte_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_flyte_url(::std::string&& value);
+  #endif
+  void set_flyte_url(const char* value);
+  void set_flyte_url(const char* value, size_t size);
+  ::std::string* mutable_flyte_url();
+  ::std::string* release_flyte_url();
+  void set_allocated_flyte_url(::std::string* flyte_url);
+
   void clear_source();
   SourceCase source_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkRequest)
  private:
   class HasBitSetters;
   void set_has_node_execution_id();
+  void set_has_flyte_url();
 
   inline bool has_source() const;
   inline void clear_has_source();
@@ -840,6 +860,7 @@ class CreateDownloadLinkRequest final :
   union SourceUnion {
     SourceUnion() {}
     ::flyteidl::core::NodeExecutionIdentifier* node_execution_id_;
+    ::google::protobuf::internal::ArenaStringPtr flyte_url_;
   } source_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1952,6 +1973,98 @@ inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::mut
   }
   // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.node_execution_id)
   return source_.node_execution_id_;
+}
+
+// string flyte_url = 4;
+inline bool CreateDownloadLinkRequest::has_flyte_url() const {
+  return source_case() == kFlyteUrl;
+}
+inline void CreateDownloadLinkRequest::set_has_flyte_url() {
+  _oneof_case_[0] = kFlyteUrl;
+}
+inline void CreateDownloadLinkRequest::clear_flyte_url() {
+  if (has_flyte_url()) {
+    source_.flyte_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_source();
+  }
+}
+inline const ::std::string& CreateDownloadLinkRequest::flyte_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+  if (has_flyte_url()) {
+    return source_.flyte_url_.GetNoArena();
+  }
+  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
+}
+inline void CreateDownloadLinkRequest::set_flyte_url(const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+  if (!has_flyte_url()) {
+    clear_source();
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+}
+#if LANG_CXX11
+inline void CreateDownloadLinkRequest::set_flyte_url(::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+  if (!has_flyte_url()) {
+    clear_source();
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+}
+#endif
+inline void CreateDownloadLinkRequest::set_flyte_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  if (!has_flyte_url()) {
+    clear_source();
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+}
+inline void CreateDownloadLinkRequest::set_flyte_url(const char* value, size_t size) {
+  if (!has_flyte_url()) {
+    clear_source();
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+}
+inline ::std::string* CreateDownloadLinkRequest::mutable_flyte_url() {
+  if (!has_flyte_url()) {
+    clear_source();
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+  return source_.flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CreateDownloadLinkRequest::release_flyte_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
+  if (has_flyte_url()) {
+    clear_has_source();
+    return source_.flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
+}
+inline void CreateDownloadLinkRequest::set_allocated_flyte_url(::std::string* flyte_url) {
+  if (has_source()) {
+    clear_source();
+  }
+  if (flyte_url != nullptr) {
+    set_has_flyte_url();
+    source_.flyte_url_.UnsafeSetDefault(flyte_url);
+  }
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
 }
 
 inline bool CreateDownloadLinkRequest::has_source() const {

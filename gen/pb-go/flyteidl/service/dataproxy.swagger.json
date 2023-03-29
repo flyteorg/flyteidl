@@ -161,10 +161,11 @@
       "enum": [
         "ARTIFACT_TYPE_UNDEFINED",
         "ARTIFACT_TYPE_DECK",
-        "ARTIFACT_TYPE_IO"
+        "ARTIFACT_TYPE_INPUT",
+        "ARTIFACT_TYPE_OUTPUT"
       ],
       "default": "ARTIFACT_TYPE_UNDEFINED",
-      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.\n - ARTIFACT_TYPE_IO: Used for users to download data",
+      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.\n - ARTIFACT_TYPE_INPUT: Used for users to download data",
       "title": "ArtifactType"
     },
     "serviceCreateDownloadLinkRequest": {
@@ -181,6 +182,10 @@
         "node_execution_id": {
           "$ref": "#/definitions/coreNodeExecutionIdentifier",
           "description": "NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the\nmost recent attempt of the task."
+        },
+        "flyte_url": {
+          "type": "string",
+          "title": "can add a flyte url as an option for the source"
         }
       },
       "title": "CreateDownloadLinkRequest defines the request parameters to create a download link (signed url)"
