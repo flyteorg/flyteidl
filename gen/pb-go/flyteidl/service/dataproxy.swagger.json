@@ -99,6 +99,30 @@
           "DataProxyService"
         ]
       }
+    },
+    "/api/v1/dataproxy/resolve_artifact": {
+      "get": {
+        "operationId": "ResolveArtifact",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceResolveArtifactResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "flyte_url",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DataProxyService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -136,10 +160,11 @@
       "type": "string",
       "enum": [
         "ARTIFACT_TYPE_UNDEFINED",
-        "ARTIFACT_TYPE_DECK"
+        "ARTIFACT_TYPE_DECK",
+        "ARTIFACT_TYPE_IO"
       ],
       "default": "ARTIFACT_TYPE_UNDEFINED",
-      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.",
+      "description": "- ARTIFACT_TYPE_UNDEFINED: ARTIFACT_TYPE_UNDEFINED is the default, often invalid, value for the enum.\n - ARTIFACT_TYPE_DECK: ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan\nfinishes executing.\n - ARTIFACT_TYPE_IO: Used for users to download data",
       "title": "ArtifactType"
     },
     "serviceCreateDownloadLinkRequest": {
@@ -234,6 +259,14 @@
           "type": "string",
           "format": "date-time",
           "description": "ExpiresAt defines when will the signed URL expires."
+        }
+      }
+    },
+    "serviceResolveArtifactResponse": {
+      "type": "object",
+      "properties": {
+        "native_url": {
+          "type": "string"
         }
       }
     }

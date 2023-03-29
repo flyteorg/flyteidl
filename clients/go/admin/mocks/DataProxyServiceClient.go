@@ -160,3 +160,51 @@ func (_m *DataProxyServiceClient) CreateUploadLocation(ctx context.Context, in *
 
 	return r0, r1
 }
+
+type DataProxyServiceClient_ResolveArtifact struct {
+	*mock.Call
+}
+
+func (_m DataProxyServiceClient_ResolveArtifact) Return(_a0 *service.ResolveArtifactResponse, _a1 error) *DataProxyServiceClient_ResolveArtifact {
+	return &DataProxyServiceClient_ResolveArtifact{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *DataProxyServiceClient) OnResolveArtifact(ctx context.Context, in *service.ResolveArtifactRequest, opts ...grpc.CallOption) *DataProxyServiceClient_ResolveArtifact {
+	c_call := _m.On("ResolveArtifact", ctx, in, opts)
+	return &DataProxyServiceClient_ResolveArtifact{Call: c_call}
+}
+
+func (_m *DataProxyServiceClient) OnResolveArtifactMatch(matchers ...interface{}) *DataProxyServiceClient_ResolveArtifact {
+	c_call := _m.On("ResolveArtifact", matchers...)
+	return &DataProxyServiceClient_ResolveArtifact{Call: c_call}
+}
+
+// ResolveArtifact provides a mock function with given fields: ctx, in, opts
+func (_m *DataProxyServiceClient) ResolveArtifact(ctx context.Context, in *service.ResolveArtifactRequest, opts ...grpc.CallOption) (*service.ResolveArtifactResponse, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *service.ResolveArtifactResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *service.ResolveArtifactRequest, ...grpc.CallOption) *service.ResolveArtifactResponse); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*service.ResolveArtifactResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *service.ResolveArtifactRequest, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}

@@ -44865,11 +44865,13 @@
              * @enum {string}
              * @property {number} ARTIFACT_TYPE_UNDEFINED=0 ARTIFACT_TYPE_UNDEFINED value
              * @property {number} ARTIFACT_TYPE_DECK=1 ARTIFACT_TYPE_DECK value
+             * @property {number} ARTIFACT_TYPE_IO=2 ARTIFACT_TYPE_IO value
              */
             service.ArtifactType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "ARTIFACT_TYPE_UNDEFINED"] = 0;
                 values[valuesById[1] = "ARTIFACT_TYPE_DECK"] = 1;
+                values[valuesById[2] = "ARTIFACT_TYPE_IO"] = 2;
                 return values;
             })();
     
@@ -45023,6 +45025,7 @@
                             return "artifactType: enum value expected";
                         case 0:
                         case 1:
+                        case 2:
                             break;
                         }
                     if (message.expiresIn != null && message.hasOwnProperty("expiresIn")) {
@@ -45181,6 +45184,226 @@
                 return CreateDownloadLinkResponse;
             })();
     
+            service.ResolveArtifactRequest = (function() {
+    
+                /**
+                 * Properties of a ResolveArtifactRequest.
+                 * @memberof flyteidl.service
+                 * @interface IResolveArtifactRequest
+                 * @property {string|null} [flyteUrl] ResolveArtifactRequest flyteUrl
+                 */
+    
+                /**
+                 * Constructs a new ResolveArtifactRequest.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a ResolveArtifactRequest.
+                 * @implements IResolveArtifactRequest
+                 * @constructor
+                 * @param {flyteidl.service.IResolveArtifactRequest=} [properties] Properties to set
+                 */
+                function ResolveArtifactRequest(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ResolveArtifactRequest flyteUrl.
+                 * @member {string} flyteUrl
+                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @instance
+                 */
+                ResolveArtifactRequest.prototype.flyteUrl = "";
+    
+                /**
+                 * Creates a new ResolveArtifactRequest instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @static
+                 * @param {flyteidl.service.IResolveArtifactRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.ResolveArtifactRequest} ResolveArtifactRequest instance
+                 */
+                ResolveArtifactRequest.create = function create(properties) {
+                    return new ResolveArtifactRequest(properties);
+                };
+    
+                /**
+                 * Encodes the specified ResolveArtifactRequest message. Does not implicitly {@link flyteidl.service.ResolveArtifactRequest.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @static
+                 * @param {flyteidl.service.IResolveArtifactRequest} message ResolveArtifactRequest message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ResolveArtifactRequest.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.flyteUrl);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a ResolveArtifactRequest message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.ResolveArtifactRequest} ResolveArtifactRequest
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ResolveArtifactRequest.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.ResolveArtifactRequest();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.flyteUrl = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a ResolveArtifactRequest message.
+                 * @function verify
+                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ResolveArtifactRequest.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        if (!$util.isString(message.flyteUrl))
+                            return "flyteUrl: string expected";
+                    return null;
+                };
+    
+                return ResolveArtifactRequest;
+            })();
+    
+            service.ResolveArtifactResponse = (function() {
+    
+                /**
+                 * Properties of a ResolveArtifactResponse.
+                 * @memberof flyteidl.service
+                 * @interface IResolveArtifactResponse
+                 * @property {string|null} [nativeUrl] ResolveArtifactResponse nativeUrl
+                 */
+    
+                /**
+                 * Constructs a new ResolveArtifactResponse.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a ResolveArtifactResponse.
+                 * @implements IResolveArtifactResponse
+                 * @constructor
+                 * @param {flyteidl.service.IResolveArtifactResponse=} [properties] Properties to set
+                 */
+                function ResolveArtifactResponse(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ResolveArtifactResponse nativeUrl.
+                 * @member {string} nativeUrl
+                 * @memberof flyteidl.service.ResolveArtifactResponse
+                 * @instance
+                 */
+                ResolveArtifactResponse.prototype.nativeUrl = "";
+    
+                /**
+                 * Creates a new ResolveArtifactResponse instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.ResolveArtifactResponse
+                 * @static
+                 * @param {flyteidl.service.IResolveArtifactResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.ResolveArtifactResponse} ResolveArtifactResponse instance
+                 */
+                ResolveArtifactResponse.create = function create(properties) {
+                    return new ResolveArtifactResponse(properties);
+                };
+    
+                /**
+                 * Encodes the specified ResolveArtifactResponse message. Does not implicitly {@link flyteidl.service.ResolveArtifactResponse.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.ResolveArtifactResponse
+                 * @static
+                 * @param {flyteidl.service.IResolveArtifactResponse} message ResolveArtifactResponse message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ResolveArtifactResponse.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.nativeUrl);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a ResolveArtifactResponse message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.ResolveArtifactResponse
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.ResolveArtifactResponse} ResolveArtifactResponse
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ResolveArtifactResponse.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.ResolveArtifactResponse();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.nativeUrl = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a ResolveArtifactResponse message.
+                 * @function verify
+                 * @memberof flyteidl.service.ResolveArtifactResponse
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ResolveArtifactResponse.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.nativeUrl != null && message.hasOwnProperty("nativeUrl"))
+                        if (!$util.isString(message.nativeUrl))
+                            return "nativeUrl: string expected";
+                    return null;
+                };
+    
+                return ResolveArtifactResponse;
+            })();
+    
             service.DataProxyService = (function() {
     
                 /**
@@ -45309,6 +45532,39 @@
                  * @instance
                  * @param {flyteidl.service.ICreateDownloadLinkRequest} request CreateDownloadLinkRequest message or plain object
                  * @returns {Promise<flyteidl.service.CreateDownloadLinkResponse>} Promise
+                 * @variation 2
+                 */
+    
+                /**
+                 * Callback as used by {@link flyteidl.service.DataProxyService#resolveArtifact}.
+                 * @memberof flyteidl.service.DataProxyService
+                 * @typedef ResolveArtifactCallback
+                 * @type {function}
+                 * @param {Error|null} error Error, if any
+                 * @param {flyteidl.service.ResolveArtifactResponse} [response] ResolveArtifactResponse
+                 */
+    
+                /**
+                 * Calls ResolveArtifact.
+                 * @function resolveArtifact
+                 * @memberof flyteidl.service.DataProxyService
+                 * @instance
+                 * @param {flyteidl.service.IResolveArtifactRequest} request ResolveArtifactRequest message or plain object
+                 * @param {flyteidl.service.DataProxyService.ResolveArtifactCallback} callback Node-style callback called with the error, if any, and ResolveArtifactResponse
+                 * @returns {undefined}
+                 * @variation 1
+                 */
+                Object.defineProperty(DataProxyService.prototype.resolveArtifact = function resolveArtifact(request, callback) {
+                    return this.rpcCall(resolveArtifact, $root.flyteidl.service.ResolveArtifactRequest, $root.flyteidl.service.ResolveArtifactResponse, request, callback);
+                }, "name", { value: "ResolveArtifact" });
+    
+                /**
+                 * Calls ResolveArtifact.
+                 * @function resolveArtifact
+                 * @memberof flyteidl.service.DataProxyService
+                 * @instance
+                 * @param {flyteidl.service.IResolveArtifactRequest} request ResolveArtifactRequest message or plain object
+                 * @returns {Promise<flyteidl.service.ResolveArtifactResponse>} Promise
                  * @variation 2
                  */
     

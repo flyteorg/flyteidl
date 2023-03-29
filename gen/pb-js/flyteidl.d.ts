@@ -19222,7 +19222,8 @@ export namespace flyteidl {
         /** ArtifactType enum. */
         enum ArtifactType {
             ARTIFACT_TYPE_UNDEFINED = 0,
-            ARTIFACT_TYPE_DECK = 1
+            ARTIFACT_TYPE_DECK = 1,
+            ARTIFACT_TYPE_IO = 2
         }
 
         /** Properties of a CreateDownloadLinkRequest. */
@@ -19350,6 +19351,110 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a ResolveArtifactRequest. */
+        interface IResolveArtifactRequest {
+
+            /** ResolveArtifactRequest flyteUrl */
+            flyteUrl?: (string|null);
+        }
+
+        /** Represents a ResolveArtifactRequest. */
+        class ResolveArtifactRequest implements IResolveArtifactRequest {
+
+            /**
+             * Constructs a new ResolveArtifactRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IResolveArtifactRequest);
+
+            /** ResolveArtifactRequest flyteUrl. */
+            public flyteUrl: string;
+
+            /**
+             * Creates a new ResolveArtifactRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResolveArtifactRequest instance
+             */
+            public static create(properties?: flyteidl.service.IResolveArtifactRequest): flyteidl.service.ResolveArtifactRequest;
+
+            /**
+             * Encodes the specified ResolveArtifactRequest message. Does not implicitly {@link flyteidl.service.ResolveArtifactRequest.verify|verify} messages.
+             * @param message ResolveArtifactRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IResolveArtifactRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResolveArtifactRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResolveArtifactRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.ResolveArtifactRequest;
+
+            /**
+             * Verifies a ResolveArtifactRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a ResolveArtifactResponse. */
+        interface IResolveArtifactResponse {
+
+            /** ResolveArtifactResponse nativeUrl */
+            nativeUrl?: (string|null);
+        }
+
+        /** Represents a ResolveArtifactResponse. */
+        class ResolveArtifactResponse implements IResolveArtifactResponse {
+
+            /**
+             * Constructs a new ResolveArtifactResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IResolveArtifactResponse);
+
+            /** ResolveArtifactResponse nativeUrl. */
+            public nativeUrl: string;
+
+            /**
+             * Creates a new ResolveArtifactResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ResolveArtifactResponse instance
+             */
+            public static create(properties?: flyteidl.service.IResolveArtifactResponse): flyteidl.service.ResolveArtifactResponse;
+
+            /**
+             * Encodes the specified ResolveArtifactResponse message. Does not implicitly {@link flyteidl.service.ResolveArtifactResponse.verify|verify} messages.
+             * @param message ResolveArtifactResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IResolveArtifactResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ResolveArtifactResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ResolveArtifactResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.ResolveArtifactResponse;
+
+            /**
+             * Verifies a ResolveArtifactResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Represents a DataProxyService */
         class DataProxyService extends $protobuf.rpc.Service {
 
@@ -19411,6 +19516,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createDownloadLink(request: flyteidl.service.ICreateDownloadLinkRequest): Promise<flyteidl.service.CreateDownloadLinkResponse>;
+
+            /**
+             * Calls ResolveArtifact.
+             * @param request ResolveArtifactRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and ResolveArtifactResponse
+             */
+            public resolveArtifact(request: flyteidl.service.IResolveArtifactRequest, callback: flyteidl.service.DataProxyService.ResolveArtifactCallback): void;
+
+            /**
+             * Calls ResolveArtifact.
+             * @param request ResolveArtifactRequest message or plain object
+             * @returns Promise
+             */
+            public resolveArtifact(request: flyteidl.service.IResolveArtifactRequest): Promise<flyteidl.service.ResolveArtifactResponse>;
         }
 
         namespace DataProxyService {
@@ -19435,6 +19554,13 @@ export namespace flyteidl {
              * @param [response] CreateDownloadLinkResponse
              */
             type CreateDownloadLinkCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLinkResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#resolveArtifact}.
+             * @param error Error, if any
+             * @param [response] ResolveArtifactResponse
+             */
+            type ResolveArtifactCallback = (error: (Error|null), response?: flyteidl.service.ResolveArtifactResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */

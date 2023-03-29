@@ -9,6 +9,7 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 ARTIFACT_TYPE_DECK: ArtifactType
+ARTIFACT_TYPE_IO: ArtifactType
 ARTIFACT_TYPE_UNDEFINED: ArtifactType
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -69,6 +70,18 @@ class CreateUploadLocationResponse(_message.Message):
     native_url: str
     signed_url: str
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class ResolveArtifactRequest(_message.Message):
+    __slots__ = ["flyte_url"]
+    FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
+    flyte_url: str
+    def __init__(self, flyte_url: _Optional[str] = ...) -> None: ...
+
+class ResolveArtifactResponse(_message.Message):
+    __slots__ = ["native_url"]
+    NATIVE_URL_FIELD_NUMBER: _ClassVar[int]
+    native_url: str
+    def __init__(self, native_url: _Optional[str] = ...) -> None: ...
 
 class ArtifactType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
