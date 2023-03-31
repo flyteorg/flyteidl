@@ -9,12 +9,12 @@ import (
 
 func TestLiteralTypeForLiterals(t *testing.T) {
 	t.Run("empty", func(t *testing.T) {
-		lt := literalTypeForLiterals(nil)
+		lt := LiteralTypeForLiterals(nil)
 		assert.Equal(t, core.SimpleType_NONE.String(), lt.GetSimple().String())
 	})
 
 	t.Run("homogenous", func(t *testing.T) {
-		lt := literalTypeForLiterals([]*core.Literal{
+		lt := LiteralTypeForLiterals([]*core.Literal{
 			MustMakeLiteral(5),
 			MustMakeLiteral(0),
 			MustMakeLiteral(5),
@@ -24,7 +24,7 @@ func TestLiteralTypeForLiterals(t *testing.T) {
 	})
 
 	t.Run("non-homogenous", func(t *testing.T) {
-		lt := literalTypeForLiterals([]*core.Literal{
+		lt := LiteralTypeForLiterals([]*core.Literal{
 			MustMakeLiteral("hello"),
 			MustMakeLiteral(5),
 			MustMakeLiteral("world"),
@@ -38,7 +38,7 @@ func TestLiteralTypeForLiterals(t *testing.T) {
 	})
 
 	t.Run("non-homogenous ensure ordering", func(t *testing.T) {
-		lt := literalTypeForLiterals([]*core.Literal{
+		lt := LiteralTypeForLiterals([]*core.Literal{
 			MustMakeLiteral(5),
 			MustMakeLiteral("world"),
 			MustMakeLiteral(0),

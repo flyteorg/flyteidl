@@ -7,7 +7,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 )
 
-func literalTypeForPrimitive(primitive *core.Primitive) *core.LiteralType {
+func LiteralTypeForPrimitive(primitive *core.Primitive) *core.LiteralType {
 	simpleType := core.SimpleType_NONE
 	switch primitive.GetValue().(type) {
 	case *core.Primitive_Integer:
@@ -28,12 +28,12 @@ func literalTypeForPrimitive(primitive *core.Primitive) *core.LiteralType {
 }
 
 // Gets literal type for scalar value. This can be used to compare the underlying type of two scalars for compatibility.
-func literalTypeForScalar(scalar *core.Scalar) *core.LiteralType {
+func LiteralTypeForScalar(scalar *core.Scalar) *core.LiteralType {
 	// TODO: Should we just pass the type information with the value?  That way we don't have to guess?
 	var literalType *core.LiteralType
 	switch v := scalar.GetValue().(type) {
 	case *core.Scalar_Primitive:
-		literalType = literalTypeForPrimitive(scalar.GetPrimitive())
+		literalType = LiteralTypeForPrimitive(scalar.GetPrimitive())
 	case *core.Scalar_Blob:
 		if scalar.GetBlob().GetMetadata() == nil {
 			return nil
@@ -88,17 +88,17 @@ func literalTypeForScalar(scalar *core.Scalar) *core.LiteralType {
 func LiteralTypeForLiteral(l *core.Literal) *core.LiteralType {
 	switch l.GetValue().(type) {
 	case *core.Literal_Scalar:
-		return literalTypeForScalar(l.GetScalar())
+		return LiteralTypeForScalar(l.GetScalar())
 	case *core.Literal_Collection:
 		return &core.LiteralType{
 			Type: &core.LiteralType_CollectionType{
-				CollectionType: literalTypeForLiterals(l.GetCollection().Literals),
+				CollectionType: LiteralTypeForLiterals(l.GetCollection().Literals),
 			},
 		}
 	case *core.Literal_Map:
 		return &core.LiteralType{
 			Type: &core.LiteralType_MapValueType{
-				MapValueType: literalTypeForLiterals(maps.Values(l.GetMap().Literals)),
+				MapValueType: LiteralTypeForLiterals(maps.Values(l.GetMap().Literals)),
 			},
 		}
 	}
@@ -106,7 +106,7 @@ func LiteralTypeForLiteral(l *core.Literal) *core.LiteralType {
 	return nil
 }
 
-func literalTypeForLiterals(literals []*core.Literal) *core.LiteralType {
+func LiteralTypeForLiterals(literals []*core.Literal) *core.LiteralType {
 	innerType := make([]*core.LiteralType, 0, 1)
 	innerTypeSet := sets.NewString()
 	for _, x := range literals {
