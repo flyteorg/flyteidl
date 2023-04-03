@@ -8042,6 +8042,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -8556,6 +8560,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -9069,6 +9077,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -10053,6 +10065,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -10567,6 +10583,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11080,6 +11100,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -11679,8 +11703,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -11707,7 +11731,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -11941,8 +11965,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -11969,7 +11993,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -12590,6 +12614,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -13104,6 +13132,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -13617,6 +13649,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -15227,8 +15263,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -15255,7 +15291,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -15505,8 +15541,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -15533,7 +15569,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -16202,8 +16238,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -16230,7 +16266,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -16474,8 +16510,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -16502,7 +16538,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -17237,6 +17273,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -17751,6 +17791,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -18264,6 +18308,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -19248,6 +19296,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -19762,6 +19814,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -20275,6 +20331,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -20874,8 +20934,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -20902,7 +20962,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -21136,8 +21196,8 @@ definitions:
                 - value: "value"
                   key: "key"
                 ports:
-                - container_port: 6
-                - container_port: 6
+                - container_port: 1
+                - container_port: 1
                 config:
                 - value: "value"
                   key: "key"
@@ -21164,7 +21224,7 @@ definitions:
                 generates_deck: true
                 tags:
                   key: "tags"
-              task_type_version: 1
+              task_type_version: 5
               custom:
                 fields:
                   key:
@@ -21785,6 +21845,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -22299,6 +22363,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -22812,6 +22880,10 @@ definitions:
                               integer: "integer"
                             var: "var"
                           operator: {}
+                array_node:
+                  min_successes: "min_successes"
+                  parallelism: "parallelism"
+                  min_success_ratio: 6.0274563
                 metadata:
                   retries:
                     retries: 0
@@ -24067,6 +24139,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -24581,6 +24657,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -25094,6 +25174,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -26078,6 +26162,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -26592,6 +26680,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -27105,6 +27197,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -27704,8 +27800,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -27732,7 +27828,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -27966,8 +28062,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -27994,7 +28090,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -28615,6 +28711,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -29129,6 +29229,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -29642,6 +29746,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -30848,6 +30956,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -31362,6 +31474,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -31875,6 +31991,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -32859,6 +32979,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -33373,6 +33497,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -33886,6 +34014,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -34485,8 +34617,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -34513,7 +34645,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -34747,8 +34879,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -34775,7 +34907,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -35396,6 +35528,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -35910,6 +36046,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -36423,6 +36563,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -37418,6 +37562,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -37932,6 +38080,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -38445,6 +38597,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -39429,6 +39585,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -39943,6 +40103,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -40456,6 +40620,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -41055,8 +41223,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -41083,7 +41251,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -41317,8 +41485,8 @@ definitions:
                   - value: "value"
                     key: "key"
                   ports:
-                  - container_port: 6
-                  - container_port: 6
+                  - container_port: 1
+                  - container_port: 1
                   config:
                   - value: "value"
                     key: "key"
@@ -41345,7 +41513,7 @@ definitions:
                   generates_deck: true
                   tags:
                     key: "tags"
-                task_type_version: 1
+                task_type_version: 5
                 custom:
                   fields:
                     key:
@@ -41966,6 +42134,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -42480,6 +42652,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -42993,6 +43169,10 @@ definitions:
                                 integer: "integer"
                               var: "var"
                             operator: {}
+                  array_node:
+                    min_successes: "min_successes"
+                    parallelism: "parallelism"
+                    min_success_ratio: 6.0274563
                   metadata:
                     retries:
                       retries: 0
@@ -43608,6 +43788,37 @@ definitions:
       \ signal_id."
     example:
       signal_id: "signal_id"
+  coreArrayNode:
+    type: "object"
+    properties:
+      node:
+        title: "TODO @hamersaw docs"
+        $ref: "#/definitions/coreNode"
+      parallelism:
+        type: "string"
+        format: "int64"
+        description: "Defines the minimum number of instances to bring up concurrently\
+          \ at any given point. Note that this is an\noptimistic restriction and that,\
+          \ due to network partitioning or other failures, the actual number of currently\n\
+          running instances might be more. This has to be a positive number if assigned.\
+          \ Default value is size."
+      min_successes:
+        type: "string"
+        format: "int64"
+        description: "An absolute number of the minimum number of successful completions\
+          \ of subtasks. As soon as this criteria is met,\nthe array job will be marked\
+          \ as successful and outputs will be computed. This has to be a non-negative\
+          \ number if\nassigned. Default value is size (if specified)."
+      min_success_ratio:
+        type: "number"
+        format: "float"
+        description: "If the array job size is not known beforehand, the min_success_ratio\
+          \ can instead be used to determine when an array\njob can be marked successful."
+    title: "TODO @hamersaw docs"
+    example:
+      min_successes: "min_successes"
+      parallelism: "parallelism"
+      min_success_ratio: 6.0274563
   coreBinary:
     type: "object"
     properties:
@@ -44307,8 +44518,8 @@ definitions:
           - value: "value"
             key: "key"
           ports:
-          - container_port: 6
-          - container_port: 6
+          - container_port: 1
+          - container_port: 1
           config:
           - value: "value"
             key: "key"
@@ -44335,7 +44546,7 @@ definitions:
           generates_deck: true
           tags:
             key: "tags"
-        task_type_version: 1
+        task_type_version: 5
         custom:
           fields:
             key:
@@ -44968,6 +45179,10 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            min_successes: "min_successes"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -45482,6 +45697,10 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            min_successes: "min_successes"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -45995,6 +46214,10 @@ definitions:
                         integer: "integer"
                       var: "var"
                     operator: {}
+          array_node:
+            min_successes: "min_successes"
+            parallelism: "parallelism"
+            min_success_ratio: 6.0274563
           metadata:
             retries:
               retries: 0
@@ -47006,6 +47229,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -47520,6 +47747,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -48033,6 +48264,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -49017,6 +49252,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -49531,6 +49770,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -50044,6 +50287,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -50643,8 +50890,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -50671,7 +50918,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -50905,8 +51152,8 @@ definitions:
             - value: "value"
               key: "key"
             ports:
-            - container_port: 6
-            - container_port: 6
+            - container_port: 1
+            - container_port: 1
             config:
             - value: "value"
               key: "key"
@@ -50933,7 +51180,7 @@ definitions:
             generates_deck: true
             tags:
               key: "tags"
-          task_type_version: 1
+          task_type_version: 5
           custom:
             fields:
               key:
@@ -51554,6 +51801,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -52068,6 +52319,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -52581,6 +52836,10 @@ definitions:
                           integer: "integer"
                         var: "var"
                       operator: {}
+            array_node:
+              min_successes: "min_successes"
+              parallelism: "parallelism"
+              min_success_ratio: 6.0274563
             metadata:
               retries:
                 retries: 0
@@ -53273,8 +53532,8 @@ definitions:
       - value: "value"
         key: "key"
       ports:
-      - container_port: 6
-      - container_port: 6
+      - container_port: 1
+      - container_port: 1
       config:
       - value: "value"
         key: "key"
@@ -53294,7 +53553,7 @@ definitions:
           \ be a valid port number, 0 < x < 65536."
     description: "Defines port properties for a container."
     example:
-      container_port: 6
+      container_port: 1
   coreDataLoadingConfig:
     type: "object"
     properties:
@@ -54035,6 +54294,9 @@ definitions:
       gate_node:
         description: "Information about the condition to evaluate in this node."
         $ref: "#/definitions/coreGateNode"
+      array_node:
+        title: "TODO @hamersaw docs"
+        $ref: "#/definitions/coreArrayNode"
     description: "A Workflow graph Node. One unit of execution in the graph. Each\
       \ node can be linked to a Task, a Workflow or a branch\nnode."
     example:
@@ -54114,6 +54376,10 @@ definitions:
                     integer: "integer"
                   var: "var"
                 operator: {}
+      array_node:
+        min_successes: "min_successes"
+        parallelism: "parallelism"
+        min_success_ratio: 6.0274563
       metadata:
         retries:
           retries: 0
@@ -55954,8 +56220,8 @@ definitions:
         - value: "value"
           key: "key"
         ports:
-        - container_port: 6
-        - container_port: 6
+        - container_port: 1
+        - container_port: 1
         config:
         - value: "value"
           key: "key"
@@ -55982,7 +56248,7 @@ definitions:
         generates_deck: true
         tags:
           key: "tags"
-      task_type_version: 1
+      task_type_version: 5
       custom:
         fields:
           key:
@@ -57166,6 +57432,10 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          min_successes: "min_successes"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -57680,6 +57950,10 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          min_successes: "min_successes"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -58193,6 +58467,10 @@ definitions:
                       integer: "integer"
                     var: "var"
                   operator: {}
+        array_node:
+          min_successes: "min_successes"
+          parallelism: "parallelism"
+          min_success_ratio: 6.0274563
         metadata:
           retries:
             retries: 0
@@ -59522,6 +59800,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -60036,6 +60318,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -60549,6 +60835,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -61533,6 +61823,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -62047,6 +62341,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -62560,6 +62858,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -63159,8 +63461,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -63187,7 +63489,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -63421,8 +63723,8 @@ definitions:
               - value: "value"
                 key: "key"
               ports:
-              - container_port: 6
-              - container_port: 6
+              - container_port: 1
+              - container_port: 1
               config:
               - value: "value"
                 key: "key"
@@ -63449,7 +63751,7 @@ definitions:
               generates_deck: true
               tags:
                 key: "tags"
-            task_type_version: 1
+            task_type_version: 5
             custom:
               fields:
                 key:
@@ -64070,6 +64372,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -64584,6 +64890,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
@@ -65097,6 +65407,10 @@ definitions:
                             integer: "integer"
                           var: "var"
                         operator: {}
+              array_node:
+                min_successes: "min_successes"
+                parallelism: "parallelism"
+                min_success_ratio: 6.0274563
               metadata:
                 retries:
                   retries: 0
