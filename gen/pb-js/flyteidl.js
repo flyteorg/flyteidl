@@ -45208,24 +45208,24 @@
                 return CreateDownloadLinkResponse;
             })();
     
-            service.ResolveArtifactRequest = (function() {
+            service.FlyteArtifactRequest = (function() {
     
                 /**
-                 * Properties of a ResolveArtifactRequest.
+                 * Properties of a FlyteArtifactRequest.
                  * @memberof flyteidl.service
-                 * @interface IResolveArtifactRequest
-                 * @property {string|null} [flyteUrl] ResolveArtifactRequest flyteUrl
+                 * @interface IFlyteArtifactRequest
+                 * @property {string|null} [flyteUrl] FlyteArtifactRequest flyteUrl
                  */
     
                 /**
-                 * Constructs a new ResolveArtifactRequest.
+                 * Constructs a new FlyteArtifactRequest.
                  * @memberof flyteidl.service
-                 * @classdesc Represents a ResolveArtifactRequest.
-                 * @implements IResolveArtifactRequest
+                 * @classdesc Represents a FlyteArtifactRequest.
+                 * @implements IFlyteArtifactRequest
                  * @constructor
-                 * @param {flyteidl.service.IResolveArtifactRequest=} [properties] Properties to set
+                 * @param {flyteidl.service.IFlyteArtifactRequest=} [properties] Properties to set
                  */
-                function ResolveArtifactRequest(properties) {
+                function FlyteArtifactRequest(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -45233,35 +45233,35 @@
                 }
     
                 /**
-                 * ResolveArtifactRequest flyteUrl.
+                 * FlyteArtifactRequest flyteUrl.
                  * @member {string} flyteUrl
-                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @memberof flyteidl.service.FlyteArtifactRequest
                  * @instance
                  */
-                ResolveArtifactRequest.prototype.flyteUrl = "";
+                FlyteArtifactRequest.prototype.flyteUrl = "";
     
                 /**
-                 * Creates a new ResolveArtifactRequest instance using the specified properties.
+                 * Creates a new FlyteArtifactRequest instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @memberof flyteidl.service.FlyteArtifactRequest
                  * @static
-                 * @param {flyteidl.service.IResolveArtifactRequest=} [properties] Properties to set
-                 * @returns {flyteidl.service.ResolveArtifactRequest} ResolveArtifactRequest instance
+                 * @param {flyteidl.service.IFlyteArtifactRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.FlyteArtifactRequest} FlyteArtifactRequest instance
                  */
-                ResolveArtifactRequest.create = function create(properties) {
-                    return new ResolveArtifactRequest(properties);
+                FlyteArtifactRequest.create = function create(properties) {
+                    return new FlyteArtifactRequest(properties);
                 };
     
                 /**
-                 * Encodes the specified ResolveArtifactRequest message. Does not implicitly {@link flyteidl.service.ResolveArtifactRequest.verify|verify} messages.
+                 * Encodes the specified FlyteArtifactRequest message. Does not implicitly {@link flyteidl.service.FlyteArtifactRequest.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @memberof flyteidl.service.FlyteArtifactRequest
                  * @static
-                 * @param {flyteidl.service.IResolveArtifactRequest} message ResolveArtifactRequest message or plain object to encode
+                 * @param {flyteidl.service.IFlyteArtifactRequest} message FlyteArtifactRequest message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                ResolveArtifactRequest.encode = function encode(message, writer) {
+                FlyteArtifactRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
@@ -45270,20 +45270,20 @@
                 };
     
                 /**
-                 * Decodes a ResolveArtifactRequest message from the specified reader or buffer.
+                 * Decodes a FlyteArtifactRequest message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @memberof flyteidl.service.FlyteArtifactRequest
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.ResolveArtifactRequest} ResolveArtifactRequest
+                 * @returns {flyteidl.service.FlyteArtifactRequest} FlyteArtifactRequest
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                ResolveArtifactRequest.decode = function decode(reader, length) {
+                FlyteArtifactRequest.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.ResolveArtifactRequest();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteArtifactRequest();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -45299,14 +45299,14 @@
                 };
     
                 /**
-                 * Verifies a ResolveArtifactRequest message.
+                 * Verifies a FlyteArtifactRequest message.
                  * @function verify
-                 * @memberof flyteidl.service.ResolveArtifactRequest
+                 * @memberof flyteidl.service.FlyteArtifactRequest
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                ResolveArtifactRequest.verify = function verify(message) {
+                FlyteArtifactRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
@@ -45315,7 +45315,7 @@
                     return null;
                 };
     
-                return ResolveArtifactRequest;
+                return FlyteArtifactRequest;
             })();
     
             service.ResolveArtifactResponse = (function() {
@@ -45573,13 +45573,13 @@
                  * @function resolveArtifact
                  * @memberof flyteidl.service.DataProxyService
                  * @instance
-                 * @param {flyteidl.service.IResolveArtifactRequest} request ResolveArtifactRequest message or plain object
+                 * @param {flyteidl.service.IFlyteArtifactRequest} request FlyteArtifactRequest message or plain object
                  * @param {flyteidl.service.DataProxyService.ResolveArtifactCallback} callback Node-style callback called with the error, if any, and ResolveArtifactResponse
                  * @returns {undefined}
                  * @variation 1
                  */
                 Object.defineProperty(DataProxyService.prototype.resolveArtifact = function resolveArtifact(request, callback) {
-                    return this.rpcCall(resolveArtifact, $root.flyteidl.service.ResolveArtifactRequest, $root.flyteidl.service.ResolveArtifactResponse, request, callback);
+                    return this.rpcCall(resolveArtifact, $root.flyteidl.service.FlyteArtifactRequest, $root.flyteidl.service.ResolveArtifactResponse, request, callback);
                 }, "name", { value: "ResolveArtifact" });
     
                 /**
@@ -45587,7 +45587,7 @@
                  * @function resolveArtifact
                  * @memberof flyteidl.service.DataProxyService
                  * @instance
-                 * @param {flyteidl.service.IResolveArtifactRequest} request ResolveArtifactRequest message or plain object
+                 * @param {flyteidl.service.IFlyteArtifactRequest} request FlyteArtifactRequest message or plain object
                  * @returns {Promise<flyteidl.service.ResolveArtifactResponse>} Promise
                  * @variation 2
                  */

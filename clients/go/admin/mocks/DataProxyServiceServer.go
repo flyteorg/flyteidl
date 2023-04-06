@@ -145,7 +145,7 @@ func (_m DataProxyServiceServer_ResolveArtifact) Return(_a0 *service.ResolveArti
 	return &DataProxyServiceServer_ResolveArtifact{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *DataProxyServiceServer) OnResolveArtifact(_a0 context.Context, _a1 *service.ResolveArtifactRequest) *DataProxyServiceServer_ResolveArtifact {
+func (_m *DataProxyServiceServer) OnResolveArtifact(_a0 context.Context, _a1 *service.FlyteArtifactRequest) *DataProxyServiceServer_ResolveArtifact {
 	c_call := _m.On("ResolveArtifact", _a0, _a1)
 	return &DataProxyServiceServer_ResolveArtifact{Call: c_call}
 }
@@ -156,11 +156,11 @@ func (_m *DataProxyServiceServer) OnResolveArtifactMatch(matchers ...interface{}
 }
 
 // ResolveArtifact provides a mock function with given fields: _a0, _a1
-func (_m *DataProxyServiceServer) ResolveArtifact(_a0 context.Context, _a1 *service.ResolveArtifactRequest) (*service.ResolveArtifactResponse, error) {
+func (_m *DataProxyServiceServer) ResolveArtifact(_a0 context.Context, _a1 *service.FlyteArtifactRequest) (*service.ResolveArtifactResponse, error) {
 	ret := _m.Called(_a0, _a1)
 
 	var r0 *service.ResolveArtifactResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *service.ResolveArtifactRequest) *service.ResolveArtifactResponse); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *service.FlyteArtifactRequest) *service.ResolveArtifactResponse); ok {
 		r0 = rf(_a0, _a1)
 	} else {
 		if ret.Get(0) != nil {
@@ -169,7 +169,7 @@ func (_m *DataProxyServiceServer) ResolveArtifact(_a0 context.Context, _a1 *serv
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *service.ResolveArtifactRequest) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *service.FlyteArtifactRequest) error); ok {
 		r1 = rf(_a0, _a1)
 	} else {
 		r1 = ret.Error(1)

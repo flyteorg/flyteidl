@@ -109,11 +109,8 @@ message CreateDownloadLinkResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
-message ResolveArtifactRequest {
+message FlyteArtifactRequest {
   string flyte_url = 1;
-
-  // unclear if this buys us anything
-  // ArtifactType artifact_type = 2;
 }
 
 message ResolveArtifactResponse {
@@ -155,7 +152,7 @@ service DataProxyService {
     // };
   }
 
-  rpc ResolveArtifact (ResolveArtifactRequest) returns (ResolveArtifactResponse) {
+  rpc ResolveArtifact (FlyteArtifactRequest) returns (ResolveArtifactResponse) {
     // Takes an address like flyte://v1/proj/development/execid/n2/0/i and return the s3 path.
     option (google.api.http) = {
       get: "/api/v1/dataproxy/resolve_artifact"

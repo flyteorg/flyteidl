@@ -74,7 +74,7 @@ class CreateUploadLocationResponse(_message.Message):
     signed_url: str
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
-class ResolveArtifactRequest(_message.Message):
+class FlyteArtifactRequest(_message.Message):
     __slots__ = ["flyte_url"]
     FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
     flyte_url: str

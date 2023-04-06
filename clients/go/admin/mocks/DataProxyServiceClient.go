@@ -169,7 +169,7 @@ func (_m DataProxyServiceClient_ResolveArtifact) Return(_a0 *service.ResolveArti
 	return &DataProxyServiceClient_ResolveArtifact{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *DataProxyServiceClient) OnResolveArtifact(ctx context.Context, in *service.ResolveArtifactRequest, opts ...grpc.CallOption) *DataProxyServiceClient_ResolveArtifact {
+func (_m *DataProxyServiceClient) OnResolveArtifact(ctx context.Context, in *service.FlyteArtifactRequest, opts ...grpc.CallOption) *DataProxyServiceClient_ResolveArtifact {
 	c_call := _m.On("ResolveArtifact", ctx, in, opts)
 	return &DataProxyServiceClient_ResolveArtifact{Call: c_call}
 }
@@ -180,7 +180,7 @@ func (_m *DataProxyServiceClient) OnResolveArtifactMatch(matchers ...interface{}
 }
 
 // ResolveArtifact provides a mock function with given fields: ctx, in, opts
-func (_m *DataProxyServiceClient) ResolveArtifact(ctx context.Context, in *service.ResolveArtifactRequest, opts ...grpc.CallOption) (*service.ResolveArtifactResponse, error) {
+func (_m *DataProxyServiceClient) ResolveArtifact(ctx context.Context, in *service.FlyteArtifactRequest, opts ...grpc.CallOption) (*service.ResolveArtifactResponse, error) {
 	_va := make([]interface{}, len(opts))
 	for _i := range opts {
 		_va[_i] = opts[_i]
@@ -191,7 +191,7 @@ func (_m *DataProxyServiceClient) ResolveArtifact(ctx context.Context, in *servi
 	ret := _m.Called(_ca...)
 
 	var r0 *service.ResolveArtifactResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *service.ResolveArtifactRequest, ...grpc.CallOption) *service.ResolveArtifactResponse); ok {
+	if rf, ok := ret.Get(0).(func(context.Context, *service.FlyteArtifactRequest, ...grpc.CallOption) *service.ResolveArtifactResponse); ok {
 		r0 = rf(ctx, in, opts...)
 	} else {
 		if ret.Get(0) != nil {
@@ -200,7 +200,7 @@ func (_m *DataProxyServiceClient) ResolveArtifact(ctx context.Context, in *servi
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *service.ResolveArtifactRequest, ...grpc.CallOption) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *service.FlyteArtifactRequest, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)

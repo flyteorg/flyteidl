@@ -87,7 +87,7 @@ var (
 )
 
 func request_DataProxyService_ResolveArtifact_0(ctx context.Context, marshaler runtime.Marshaler, client DataProxyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq ResolveArtifactRequest
+	var protoReq FlyteArtifactRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {

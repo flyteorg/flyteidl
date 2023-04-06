@@ -32,7 +32,7 @@ class DataProxyServiceStub(object):
                 )
         self.ResolveArtifact = channel.unary_unary(
                 '/flyteidl.service.DataProxyService/ResolveArtifact',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactRequest.SerializeToString,
+                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.FromString,
                 )
 
@@ -88,7 +88,7 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
             ),
             'ResolveArtifact': grpc.unary_unary_rpc_method_handler(
                     servicer.ResolveArtifact,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactRequest.FromString,
+                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.FromString,
                     response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.SerializeToString,
             ),
     }
@@ -165,7 +165,7 @@ class DataProxyService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/ResolveArtifact',
-            flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactRequest.SerializeToString,
+            flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.SerializeToString,
             flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

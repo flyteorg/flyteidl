@@ -6564,8 +6564,8 @@ public final class Dataproxy {
 
   }
 
-  public interface ResolveArtifactRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.ResolveArtifactRequest)
+  public interface FlyteArtifactRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteArtifactRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -6579,18 +6579,18 @@ public final class Dataproxy {
         getFlyteUrlBytes();
   }
   /**
-   * Protobuf type {@code flyteidl.service.ResolveArtifactRequest}
+   * Protobuf type {@code flyteidl.service.FlyteArtifactRequest}
    */
-  public  static final class ResolveArtifactRequest extends
+  public  static final class FlyteArtifactRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.ResolveArtifactRequest)
-      ResolveArtifactRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteArtifactRequest)
+      FlyteArtifactRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ResolveArtifactRequest.newBuilder() to construct.
-    private ResolveArtifactRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use FlyteArtifactRequest.newBuilder() to construct.
+    private FlyteArtifactRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ResolveArtifactRequest() {
+    private FlyteArtifactRequest() {
       flyteUrl_ = "";
     }
 
@@ -6599,7 +6599,7 @@ public final class Dataproxy {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ResolveArtifactRequest(
+    private FlyteArtifactRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6645,15 +6645,15 @@ public final class Dataproxy {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactRequest_descriptor;
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactRequest_fieldAccessorTable
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              flyteidl.service.Dataproxy.ResolveArtifactRequest.class, flyteidl.service.Dataproxy.ResolveArtifactRequest.Builder.class);
+              flyteidl.service.Dataproxy.FlyteArtifactRequest.class, flyteidl.service.Dataproxy.FlyteArtifactRequest.Builder.class);
     }
 
     public static final int FLYTE_URL_FIELD_NUMBER = 1;
@@ -6729,10 +6729,10 @@ public final class Dataproxy {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof flyteidl.service.Dataproxy.ResolveArtifactRequest)) {
+      if (!(obj instanceof flyteidl.service.Dataproxy.FlyteArtifactRequest)) {
         return super.equals(obj);
       }
-      flyteidl.service.Dataproxy.ResolveArtifactRequest other = (flyteidl.service.Dataproxy.ResolveArtifactRequest) obj;
+      flyteidl.service.Dataproxy.FlyteArtifactRequest other = (flyteidl.service.Dataproxy.FlyteArtifactRequest) obj;
 
       if (!getFlyteUrl()
           .equals(other.getFlyteUrl())) return false;
@@ -6754,69 +6754,69 @@ public final class Dataproxy {
       return hash;
     }
 
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(byte[] data)
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(java.io.InputStream input)
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseDelimitedFrom(java.io.InputStream input)
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseDelimitedFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest parseFrom(
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6829,7 +6829,7 @@ public final class Dataproxy {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(flyteidl.service.Dataproxy.ResolveArtifactRequest prototype) {
+    public static Builder newBuilder(flyteidl.service.Dataproxy.FlyteArtifactRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -6845,26 +6845,26 @@ public final class Dataproxy {
       return builder;
     }
     /**
-     * Protobuf type {@code flyteidl.service.ResolveArtifactRequest}
+     * Protobuf type {@code flyteidl.service.FlyteArtifactRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.ResolveArtifactRequest)
-        flyteidl.service.Dataproxy.ResolveArtifactRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteArtifactRequest)
+        flyteidl.service.Dataproxy.FlyteArtifactRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactRequest_descriptor;
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactRequest_fieldAccessorTable
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                flyteidl.service.Dataproxy.ResolveArtifactRequest.class, flyteidl.service.Dataproxy.ResolveArtifactRequest.Builder.class);
+                flyteidl.service.Dataproxy.FlyteArtifactRequest.class, flyteidl.service.Dataproxy.FlyteArtifactRequest.Builder.class);
       }
 
-      // Construct using flyteidl.service.Dataproxy.ResolveArtifactRequest.newBuilder()
+      // Construct using flyteidl.service.Dataproxy.FlyteArtifactRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6890,17 +6890,17 @@ public final class Dataproxy {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactRequest_descriptor;
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
       }
 
       @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactRequest getDefaultInstanceForType() {
-        return flyteidl.service.Dataproxy.ResolveArtifactRequest.getDefaultInstance();
+      public flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstanceForType() {
+        return flyteidl.service.Dataproxy.FlyteArtifactRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactRequest build() {
-        flyteidl.service.Dataproxy.ResolveArtifactRequest result = buildPartial();
+      public flyteidl.service.Dataproxy.FlyteArtifactRequest build() {
+        flyteidl.service.Dataproxy.FlyteArtifactRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -6908,8 +6908,8 @@ public final class Dataproxy {
       }
 
       @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactRequest buildPartial() {
-        flyteidl.service.Dataproxy.ResolveArtifactRequest result = new flyteidl.service.Dataproxy.ResolveArtifactRequest(this);
+      public flyteidl.service.Dataproxy.FlyteArtifactRequest buildPartial() {
+        flyteidl.service.Dataproxy.FlyteArtifactRequest result = new flyteidl.service.Dataproxy.FlyteArtifactRequest(this);
         result.flyteUrl_ = flyteUrl_;
         onBuilt();
         return result;
@@ -6949,16 +6949,16 @@ public final class Dataproxy {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Dataproxy.ResolveArtifactRequest) {
-          return mergeFrom((flyteidl.service.Dataproxy.ResolveArtifactRequest)other);
+        if (other instanceof flyteidl.service.Dataproxy.FlyteArtifactRequest) {
+          return mergeFrom((flyteidl.service.Dataproxy.FlyteArtifactRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(flyteidl.service.Dataproxy.ResolveArtifactRequest other) {
-        if (other == flyteidl.service.Dataproxy.ResolveArtifactRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(flyteidl.service.Dataproxy.FlyteArtifactRequest other) {
+        if (other == flyteidl.service.Dataproxy.FlyteArtifactRequest.getDefaultInstance()) return this;
         if (!other.getFlyteUrl().isEmpty()) {
           flyteUrl_ = other.flyteUrl_;
           onChanged();
@@ -6978,11 +6978,11 @@ public final class Dataproxy {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        flyteidl.service.Dataproxy.ResolveArtifactRequest parsedMessage = null;
+        flyteidl.service.Dataproxy.FlyteArtifactRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Dataproxy.ResolveArtifactRequest) e.getUnfinishedMessage();
+          parsedMessage = (flyteidl.service.Dataproxy.FlyteArtifactRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7073,41 +7073,41 @@ public final class Dataproxy {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.ResolveArtifactRequest)
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteArtifactRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:flyteidl.service.ResolveArtifactRequest)
-    private static final flyteidl.service.Dataproxy.ResolveArtifactRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactRequest)
+    private static final flyteidl.service.Dataproxy.FlyteArtifactRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.ResolveArtifactRequest();
+      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.FlyteArtifactRequest();
     }
 
-    public static flyteidl.service.Dataproxy.ResolveArtifactRequest getDefaultInstance() {
+    public static flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ResolveArtifactRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ResolveArtifactRequest>() {
+    private static final com.google.protobuf.Parser<FlyteArtifactRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FlyteArtifactRequest>() {
       @java.lang.Override
-      public ResolveArtifactRequest parsePartialFrom(
+      public FlyteArtifactRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResolveArtifactRequest(input, extensionRegistry);
+        return new FlyteArtifactRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ResolveArtifactRequest> parser() {
+    public static com.google.protobuf.Parser<FlyteArtifactRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ResolveArtifactRequest> getParserForType() {
+    public com.google.protobuf.Parser<FlyteArtifactRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public flyteidl.service.Dataproxy.ResolveArtifactRequest getDefaultInstanceForType() {
+    public flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7693,10 +7693,10 @@ public final class Dataproxy {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_ResolveArtifactRequest_descriptor;
+    internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_ResolveArtifactRequest_fieldAccessorTable;
+      internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_service_ResolveArtifactResponse_descriptor;
   private static final 
@@ -7735,31 +7735,31 @@ public final class Dataproxy {
       "ExecutionIdentifierH\000\022\023\n\tflyte_url\030\004 \001(\t" +
       "H\000B\010\n\006source\"`\n\032CreateDownloadLinkRespon" +
       "se\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001" +
-      "(\0132\032.google.protobuf.Timestamp\"+\n\026Resolv" +
-      "eArtifactRequest\022\021\n\tflyte_url\030\001 \001(\t\"-\n\027R" +
-      "esolveArtifactResponse\022\022\n\nnative_url\030\001 \001" +
-      "(\t*v\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDE" +
-      "FINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\001\022\027\n\023ARTIF" +
-      "ACT_TYPE_INPUT\020\002\022\030\n\024ARTIFACT_TYPE_OUTPUT" +
-      "\020\0032\221\005\n\020DataProxyService\022\240\001\n\024CreateUpload" +
-      "Location\022-.flyteidl.service.CreateUpload" +
-      "LocationRequest\032..flyteidl.service.Creat" +
-      "eUploadLocationResponse\")\202\323\344\223\002#\"\036/api/v1" +
-      "/dataproxy/artifact_urn:\001*\022\246\001\n\026CreateDow" +
-      "nloadLocation\022/.flyteidl.service.CreateD" +
-      "ownloadLocationRequest\0320.flyteidl.servic" +
-      "e.CreateDownloadLocationResponse\")\210\002\001\202\323\344" +
-      "\223\002 \022\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022" +
-      "CreateDownloadLink\022+.flyteidl.service.Cr" +
-      "eateDownloadLinkRequest\032,.flyteidl.servi" +
-      "ce.CreateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/" +
-      "api/v1/dataproxy/artifact_link:\001*\022\222\001\n\017Re" +
-      "solveArtifact\022(.flyteidl.service.Resolve" +
-      "ArtifactRequest\032).flyteidl.service.Resol" +
-      "veArtifactResponse\"*\202\323\344\223\002$\022\"/api/v1/data" +
-      "proxy/resolve_artifactB9Z7github.com/fly" +
-      "teorg/flyteidl/gen/pb-go/flyteidl/servic" +
-      "eb\006proto3"
+      "(\0132\032.google.protobuf.Timestamp\")\n\024FlyteA" +
+      "rtifactRequest\022\021\n\tflyte_url\030\001 \001(\t\"-\n\027Res" +
+      "olveArtifactResponse\022\022\n\nnative_url\030\001 \001(\t" +
+      "*v\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFI" +
+      "NED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\001\022\027\n\023ARTIFAC" +
+      "T_TYPE_INPUT\020\002\022\030\n\024ARTIFACT_TYPE_OUTPUT\020\003" +
+      "2\217\005\n\020DataProxyService\022\240\001\n\024CreateUploadLo" +
+      "cation\022-.flyteidl.service.CreateUploadLo" +
+      "cationRequest\032..flyteidl.service.CreateU" +
+      "ploadLocationResponse\")\202\323\344\223\002#\"\036/api/v1/d" +
+      "ataproxy/artifact_urn:\001*\022\246\001\n\026CreateDownl" +
+      "oadLocation\022/.flyteidl.service.CreateDow" +
+      "nloadLocationRequest\0320.flyteidl.service." +
+      "CreateDownloadLocationResponse\")\210\002\001\202\323\344\223\002" +
+      " \022\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022Cr" +
+      "eateDownloadLink\022+.flyteidl.service.Crea" +
+      "teDownloadLinkRequest\032,.flyteidl.service" +
+      ".CreateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/ap" +
+      "i/v1/dataproxy/artifact_link:\001*\022\220\001\n\017Reso" +
+      "lveArtifact\022&.flyteidl.service.FlyteArti" +
+      "factRequest\032).flyteidl.service.ResolveAr" +
+      "tifactResponse\"*\202\323\344\223\002$\022\"/api/v1/dataprox" +
+      "y/resolve_artifactB9Z7github.com/flyteor" +
+      "g/flyteidl/gen/pb-go/flyteidl/serviceb\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7813,11 +7813,11 @@ public final class Dataproxy {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor,
         new java.lang.String[] { "SignedUrl", "ExpiresAt", });
-    internal_static_flyteidl_service_ResolveArtifactRequest_descriptor =
+    internal_static_flyteidl_service_FlyteArtifactRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_service_ResolveArtifactRequest_fieldAccessorTable = new
+    internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_ResolveArtifactRequest_descriptor,
+        internal_static_flyteidl_service_FlyteArtifactRequest_descriptor,
         new java.lang.String[] { "FlyteUrl", });
     internal_static_flyteidl_service_ResolveArtifactResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);

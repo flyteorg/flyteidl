@@ -73,9 +73,9 @@ extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationReque
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
-class ResolveArtifactRequest;
-class ResolveArtifactRequestDefaultTypeInternal;
-extern ResolveArtifactRequestDefaultTypeInternal _ResolveArtifactRequest_default_instance_;
+class FlyteArtifactRequest;
+class FlyteArtifactRequestDefaultTypeInternal;
+extern FlyteArtifactRequestDefaultTypeInternal _FlyteArtifactRequest_default_instance_;
 class ResolveArtifactResponse;
 class ResolveArtifactResponseDefaultTypeInternal;
 extern ResolveArtifactResponseDefaultTypeInternal _ResolveArtifactResponse_default_instance_;
@@ -89,7 +89,7 @@ template<> ::flyteidl::service::CreateDownloadLocationRequest* Arena::CreateMayb
 template<> ::flyteidl::service::CreateDownloadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateDownloadLocationResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
-template<> ::flyteidl::service::ResolveArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::service::ResolveArtifactRequest>(Arena*);
+template<> ::flyteidl::service::FlyteArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::service::FlyteArtifactRequest>(Arena*);
 template<> ::flyteidl::service::ResolveArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::service::ResolveArtifactResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -1007,25 +1007,25 @@ class CreateDownloadLinkResponse final :
 };
 // -------------------------------------------------------------------
 
-class ResolveArtifactRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.ResolveArtifactRequest) */ {
+class FlyteArtifactRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteArtifactRequest) */ {
  public:
-  ResolveArtifactRequest();
-  virtual ~ResolveArtifactRequest();
+  FlyteArtifactRequest();
+  virtual ~FlyteArtifactRequest();
 
-  ResolveArtifactRequest(const ResolveArtifactRequest& from);
+  FlyteArtifactRequest(const FlyteArtifactRequest& from);
 
-  inline ResolveArtifactRequest& operator=(const ResolveArtifactRequest& from) {
+  inline FlyteArtifactRequest& operator=(const FlyteArtifactRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  ResolveArtifactRequest(ResolveArtifactRequest&& from) noexcept
-    : ResolveArtifactRequest() {
+  FlyteArtifactRequest(FlyteArtifactRequest&& from) noexcept
+    : FlyteArtifactRequest() {
     *this = ::std::move(from);
   }
 
-  inline ResolveArtifactRequest& operator=(ResolveArtifactRequest&& from) noexcept {
+  inline FlyteArtifactRequest& operator=(FlyteArtifactRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1037,34 +1037,34 @@ class ResolveArtifactRequest final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const ResolveArtifactRequest& default_instance();
+  static const FlyteArtifactRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ResolveArtifactRequest* internal_default_instance() {
-    return reinterpret_cast<const ResolveArtifactRequest*>(
-               &_ResolveArtifactRequest_default_instance_);
+  static inline const FlyteArtifactRequest* internal_default_instance() {
+    return reinterpret_cast<const FlyteArtifactRequest*>(
+               &_FlyteArtifactRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  void Swap(ResolveArtifactRequest* other);
-  friend void swap(ResolveArtifactRequest& a, ResolveArtifactRequest& b) {
+  void Swap(FlyteArtifactRequest* other);
+  friend void swap(FlyteArtifactRequest& a, FlyteArtifactRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline ResolveArtifactRequest* New() const final {
-    return CreateMaybeMessage<ResolveArtifactRequest>(nullptr);
+  inline FlyteArtifactRequest* New() const final {
+    return CreateMaybeMessage<FlyteArtifactRequest>(nullptr);
   }
 
-  ResolveArtifactRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ResolveArtifactRequest>(arena);
+  FlyteArtifactRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FlyteArtifactRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ResolveArtifactRequest& from);
-  void MergeFrom(const ResolveArtifactRequest& from);
+  void CopyFrom(const FlyteArtifactRequest& from);
+  void MergeFrom(const FlyteArtifactRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1086,7 +1086,7 @@ class ResolveArtifactRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ResolveArtifactRequest* other);
+  void InternalSwap(FlyteArtifactRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1116,7 +1116,7 @@ class ResolveArtifactRequest final :
   ::std::string* release_flyte_url();
   void set_allocated_flyte_url(::std::string* flyte_url);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.service.ResolveArtifactRequest)
+  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactRequest)
  private:
   class HasBitSetters;
 
@@ -2197,59 +2197,59 @@ inline void CreateDownloadLinkResponse::set_allocated_expires_at(::google::proto
 
 // -------------------------------------------------------------------
 
-// ResolveArtifactRequest
+// FlyteArtifactRequest
 
 // string flyte_url = 1;
-inline void ResolveArtifactRequest::clear_flyte_url() {
+inline void FlyteArtifactRequest::clear_flyte_url() {
   flyte_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& ResolveArtifactRequest::flyte_url() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.ResolveArtifactRequest.flyte_url)
+inline const ::std::string& FlyteArtifactRequest::flyte_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteArtifactRequest.flyte_url)
   return flyte_url_.GetNoArena();
 }
-inline void ResolveArtifactRequest::set_flyte_url(const ::std::string& value) {
+inline void FlyteArtifactRequest::set_flyte_url(const ::std::string& value) {
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteArtifactRequest.flyte_url)
 }
 #if LANG_CXX11
-inline void ResolveArtifactRequest::set_flyte_url(::std::string&& value) {
+inline void FlyteArtifactRequest::set_flyte_url(::std::string&& value) {
   
   flyte_url_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteArtifactRequest.flyte_url)
 }
 #endif
-inline void ResolveArtifactRequest::set_flyte_url(const char* value) {
+inline void FlyteArtifactRequest::set_flyte_url(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteArtifactRequest.flyte_url)
 }
-inline void ResolveArtifactRequest::set_flyte_url(const char* value, size_t size) {
+inline void FlyteArtifactRequest::set_flyte_url(const char* value, size_t size) {
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteArtifactRequest.flyte_url)
 }
-inline ::std::string* ResolveArtifactRequest::mutable_flyte_url() {
+inline ::std::string* FlyteArtifactRequest::mutable_flyte_url() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteArtifactRequest.flyte_url)
   return flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ResolveArtifactRequest::release_flyte_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.ResolveArtifactRequest.flyte_url)
+inline ::std::string* FlyteArtifactRequest::release_flyte_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteArtifactRequest.flyte_url)
   
   return flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ResolveArtifactRequest::set_allocated_flyte_url(::std::string* flyte_url) {
+inline void FlyteArtifactRequest::set_allocated_flyte_url(::std::string* flyte_url) {
   if (flyte_url != nullptr) {
     
   } else {
     
   }
   flyte_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), flyte_url);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.ResolveArtifactRequest.flyte_url)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteArtifactRequest.flyte_url)
 }
 
 // -------------------------------------------------------------------

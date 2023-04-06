@@ -19358,52 +19358,52 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a ResolveArtifactRequest. */
-        interface IResolveArtifactRequest {
+        /** Properties of a FlyteArtifactRequest. */
+        interface IFlyteArtifactRequest {
 
-            /** ResolveArtifactRequest flyteUrl */
+            /** FlyteArtifactRequest flyteUrl */
             flyteUrl?: (string|null);
         }
 
-        /** Represents a ResolveArtifactRequest. */
-        class ResolveArtifactRequest implements IResolveArtifactRequest {
+        /** Represents a FlyteArtifactRequest. */
+        class FlyteArtifactRequest implements IFlyteArtifactRequest {
 
             /**
-             * Constructs a new ResolveArtifactRequest.
+             * Constructs a new FlyteArtifactRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.service.IResolveArtifactRequest);
+            constructor(properties?: flyteidl.service.IFlyteArtifactRequest);
 
-            /** ResolveArtifactRequest flyteUrl. */
+            /** FlyteArtifactRequest flyteUrl. */
             public flyteUrl: string;
 
             /**
-             * Creates a new ResolveArtifactRequest instance using the specified properties.
+             * Creates a new FlyteArtifactRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns ResolveArtifactRequest instance
+             * @returns FlyteArtifactRequest instance
              */
-            public static create(properties?: flyteidl.service.IResolveArtifactRequest): flyteidl.service.ResolveArtifactRequest;
+            public static create(properties?: flyteidl.service.IFlyteArtifactRequest): flyteidl.service.FlyteArtifactRequest;
 
             /**
-             * Encodes the specified ResolveArtifactRequest message. Does not implicitly {@link flyteidl.service.ResolveArtifactRequest.verify|verify} messages.
-             * @param message ResolveArtifactRequest message or plain object to encode
+             * Encodes the specified FlyteArtifactRequest message. Does not implicitly {@link flyteidl.service.FlyteArtifactRequest.verify|verify} messages.
+             * @param message FlyteArtifactRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.service.IResolveArtifactRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.service.IFlyteArtifactRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a ResolveArtifactRequest message from the specified reader or buffer.
+             * Decodes a FlyteArtifactRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns ResolveArtifactRequest
+             * @returns FlyteArtifactRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.ResolveArtifactRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteArtifactRequest;
 
             /**
-             * Verifies a ResolveArtifactRequest message.
+             * Verifies a FlyteArtifactRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -19526,17 +19526,17 @@ export namespace flyteidl {
 
             /**
              * Calls ResolveArtifact.
-             * @param request ResolveArtifactRequest message or plain object
+             * @param request FlyteArtifactRequest message or plain object
              * @param callback Node-style callback called with the error, if any, and ResolveArtifactResponse
              */
-            public resolveArtifact(request: flyteidl.service.IResolveArtifactRequest, callback: flyteidl.service.DataProxyService.ResolveArtifactCallback): void;
+            public resolveArtifact(request: flyteidl.service.IFlyteArtifactRequest, callback: flyteidl.service.DataProxyService.ResolveArtifactCallback): void;
 
             /**
              * Calls ResolveArtifact.
-             * @param request ResolveArtifactRequest message or plain object
+             * @param request FlyteArtifactRequest message or plain object
              * @returns Promise
              */
-            public resolveArtifact(request: flyteidl.service.IResolveArtifactRequest): Promise<flyteidl.service.ResolveArtifactResponse>;
+            public resolveArtifact(request: flyteidl.service.IFlyteArtifactRequest): Promise<flyteidl.service.ResolveArtifactResponse>;
         }
 
         namespace DataProxyService {
