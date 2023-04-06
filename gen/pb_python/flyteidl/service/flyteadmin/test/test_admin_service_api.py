@@ -106,6 +106,12 @@ class TestAdminServiceApi(unittest.TestCase):
         """
         pass
 
+    def test_get_data(self):
+        """Test case for get_data
+
+        """
+        pass
+
     def test_get_description_entity(self):
         """Test case for get_description_entity
 

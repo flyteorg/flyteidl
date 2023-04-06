@@ -3,6 +3,7 @@
 import grpc
 
 from flyteidl.admin import common_pb2 as flyteidl_dot_admin_dot_common__pb2
+from flyteidl.admin import data_pb2 as flyteidl_dot_admin_dot_data__pb2
 from flyteidl.admin import description_entity_pb2 as flyteidl_dot_admin_dot_description__entity__pb2
 from flyteidl.admin import event_pb2 as flyteidl_dot_admin_dot_event__pb2
 from flyteidl.admin import execution_pb2 as flyteidl_dot_admin_dot_execution__pb2
@@ -164,6 +165,11 @@ class AdminServiceStub(object):
                 '/flyteidl.service.AdminService/GetNodeExecutionData',
                 request_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataResponse.FromString,
+                )
+        self.GetData = channel.unary_unary(
+                '/flyteidl.service.AdminService/GetData',
+                request_serializer=flyteidl_dot_admin_dot_data__pb2.FlyteArtifactGetRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_admin_dot_data__pb2.DataResponse.FromString,
                 )
         self.RegisterProject = channel.unary_unary(
                 '/flyteidl.service.AdminService/RegisterProject',
@@ -495,6 +501,12 @@ class AdminServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RegisterProject(self, request, context):
         """Registers a :ref:`ref_flyteidl.admin.Project` with the Flyte deployment.
         """
@@ -815,6 +827,11 @@ def add_AdminServiceServicer_to_server(servicer, server):
                     servicer.GetNodeExecutionData,
                     request_deserializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.FromString,
                     response_serializer=flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataResponse.SerializeToString,
+            ),
+            'GetData': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetData,
+                    request_deserializer=flyteidl_dot_admin_dot_data__pb2.FlyteArtifactGetRequest.FromString,
+                    response_serializer=flyteidl_dot_admin_dot_data__pb2.DataResponse.SerializeToString,
             ),
             'RegisterProject': grpc.unary_unary_rpc_method_handler(
                     servicer.RegisterProject,
@@ -1414,6 +1431,23 @@ class AdminService(object):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AdminService/GetNodeExecutionData',
             flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataRequest.SerializeToString,
             flyteidl_dot_admin_dot_node__execution__pb2.NodeExecutionGetDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.AdminService/GetData',
+            flyteidl_dot_admin_dot_data__pb2.FlyteArtifactGetRequest.SerializeToString,
+            flyteidl_dot_admin_dot_data__pb2.DataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

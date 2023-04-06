@@ -20743,6 +20743,565 @@ public final class Common {
 
   }
 
+  public interface FlyteArtifactOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.admin.FlyteArtifact)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    java.lang.String getFlyteUrl();
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFlyteUrlBytes();
+  }
+  /**
+   * <pre>
+   * Wraps a flyte url, a unique identifier in the form of flyte://&lt;something&gt; that uniquely, for a given Flyte
+   * backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.admin.FlyteArtifact}
+   */
+  public  static final class FlyteArtifact extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.admin.FlyteArtifact)
+      FlyteArtifactOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlyteArtifact.newBuilder() to construct.
+    private FlyteArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlyteArtifact() {
+      flyteUrl_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlyteArtifact(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flyteUrl_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_FlyteArtifact_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.admin.Common.internal_static_flyteidl_admin_FlyteArtifact_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.admin.Common.FlyteArtifact.class, flyteidl.admin.Common.FlyteArtifact.Builder.class);
+    }
+
+    public static final int FLYTE_URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object flyteUrl_;
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    public java.lang.String getFlyteUrl() {
+      java.lang.Object ref = flyteUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flyteUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFlyteUrlBytes() {
+      java.lang.Object ref = flyteUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flyteUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFlyteUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, flyteUrl_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFlyteUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, flyteUrl_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.admin.Common.FlyteArtifact)) {
+        return super.equals(obj);
+      }
+      flyteidl.admin.Common.FlyteArtifact other = (flyteidl.admin.Common.FlyteArtifact) obj;
+
+      if (!getFlyteUrl()
+          .equals(other.getFlyteUrl())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FLYTE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFlyteUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.admin.Common.FlyteArtifact parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.admin.Common.FlyteArtifact prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Wraps a flyte url, a unique identifier in the form of flyte://&lt;something&gt; that uniquely, for a given Flyte
+     * backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.admin.FlyteArtifact}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.admin.FlyteArtifact)
+        flyteidl.admin.Common.FlyteArtifactOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_FlyteArtifact_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_FlyteArtifact_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.admin.Common.FlyteArtifact.class, flyteidl.admin.Common.FlyteArtifact.Builder.class);
+      }
+
+      // Construct using flyteidl.admin.Common.FlyteArtifact.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        flyteUrl_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.admin.Common.internal_static_flyteidl_admin_FlyteArtifact_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.FlyteArtifact getDefaultInstanceForType() {
+        return flyteidl.admin.Common.FlyteArtifact.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.FlyteArtifact build() {
+        flyteidl.admin.Common.FlyteArtifact result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.admin.Common.FlyteArtifact buildPartial() {
+        flyteidl.admin.Common.FlyteArtifact result = new flyteidl.admin.Common.FlyteArtifact(this);
+        result.flyteUrl_ = flyteUrl_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.admin.Common.FlyteArtifact) {
+          return mergeFrom((flyteidl.admin.Common.FlyteArtifact)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.admin.Common.FlyteArtifact other) {
+        if (other == flyteidl.admin.Common.FlyteArtifact.getDefaultInstance()) return this;
+        if (!other.getFlyteUrl().isEmpty()) {
+          flyteUrl_ = other.flyteUrl_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.admin.Common.FlyteArtifact parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.admin.Common.FlyteArtifact) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object flyteUrl_ = "";
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public java.lang.String getFlyteUrl() {
+        java.lang.Object ref = flyteUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flyteUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFlyteUrlBytes() {
+        java.lang.Object ref = flyteUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flyteUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder setFlyteUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flyteUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder clearFlyteUrl() {
+        
+        flyteUrl_ = getDefaultInstance().getFlyteUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder setFlyteUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flyteUrl_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.admin.FlyteArtifact)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.admin.FlyteArtifact)
+    private static final flyteidl.admin.Common.FlyteArtifact DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.admin.Common.FlyteArtifact();
+    }
+
+    public static flyteidl.admin.Common.FlyteArtifact getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlyteArtifact>
+        PARSER = new com.google.protobuf.AbstractParser<FlyteArtifact>() {
+      @java.lang.Override
+      public FlyteArtifact parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlyteArtifact(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlyteArtifact> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlyteArtifact> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.admin.Common.FlyteArtifact getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor;
   private static final 
@@ -20863,6 +21422,11 @@ public final class Common {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_RawOutputDataConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_admin_FlyteArtifact_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_admin_FlyteArtifact_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20934,11 +21498,12 @@ public final class Common {
       "\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001(\t\022\"" +
       "\n\032kubernetes_service_account\030\002 \001(\t:\002\030\001\"5" +
       "\n\023RawOutputDataConfig\022\036\n\026output_location" +
-      "_prefix\030\001 \001(\t*\\\n\020NamedEntityState\022\027\n\023NAM" +
-      "ED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHI" +
-      "VED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github.co" +
-      "m/flyteorg/flyteidl/gen/pb-go/flyteidl/a" +
-      "dminb\006proto3"
+      "_prefix\030\001 \001(\t\"\"\n\rFlyteArtifact\022\021\n\tflyte_" +
+      "url\030\001 \001(\t*\\\n\020NamedEntityState\022\027\n\023NAMED_E" +
+      "NTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020" +
+      "\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5github.com/fl" +
+      "yteorg/flyteidl/gen/pb-go/flyteidl/admin" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21099,6 +21664,12 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_RawOutputDataConfig_descriptor,
         new java.lang.String[] { "OutputLocationPrefix", });
+    internal_static_flyteidl_admin_FlyteArtifact_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_flyteidl_admin_FlyteArtifact_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_admin_FlyteArtifact_descriptor,
+        new java.lang.String[] { "FlyteUrl", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

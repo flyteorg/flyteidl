@@ -37,6 +37,7 @@
 #include "flyteidl/admin/workflow.pb.h"
 #include "flyteidl/admin/workflow_attributes.pb.h"
 #include "flyteidl/admin/launch_plan.pb.h"
+#include "flyteidl/admin/data.pb.h"
 #include "flyteidl/admin/event.pb.h"
 #include "flyteidl/admin/execution.pb.h"
 #include "flyteidl/admin/matchable_resource.pb.h"

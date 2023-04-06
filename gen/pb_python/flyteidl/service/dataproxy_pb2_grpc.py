@@ -30,11 +30,6 @@ class DataProxyServiceStub(object):
                 request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
                 response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
                 )
-        self.ResolveArtifact = channel.unary_unary(
-                '/flyteidl.service.DataProxyService/ResolveArtifact',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.FromString,
-                )
 
 
 class DataProxyServiceServicer(object):
@@ -62,12 +57,6 @@ class DataProxyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ResolveArtifact(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_DataProxyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -85,11 +74,6 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
                     servicer.CreateDownloadLink,
                     request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.FromString,
                     response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.SerializeToString,
-            ),
-            'ResolveArtifact': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResolveArtifact,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -150,22 +134,5 @@ class DataProxyService(object):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/CreateDownloadLink',
             flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkRequest.SerializeToString,
             flyteidl_dot_service_dot_dataproxy__pb2.CreateDownloadLinkResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ResolveArtifact(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/ResolveArtifact',
-            flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.ResolveArtifactResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

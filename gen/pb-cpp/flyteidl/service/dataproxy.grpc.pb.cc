@@ -23,7 +23,6 @@ static const char* DataProxyService_method_names[] = {
   "/flyteidl.service.DataProxyService/CreateUploadLocation",
   "/flyteidl.service.DataProxyService/CreateDownloadLocation",
   "/flyteidl.service.DataProxyService/CreateDownloadLink",
-  "/flyteidl.service.DataProxyService/ResolveArtifact",
 };
 
 std::unique_ptr< DataProxyService::Stub> DataProxyService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -36,7 +35,6 @@ DataProxyService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
   : channel_(channel), rpcmethod_CreateUploadLocation_(DataProxyService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateDownloadLocation_(DataProxyService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CreateDownloadLink_(DataProxyService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ResolveArtifact_(DataProxyService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status DataProxyService::Stub::CreateUploadLocation(::grpc::ClientContext* context, const ::flyteidl::service::CreateUploadLocationRequest& request, ::flyteidl::service::CreateUploadLocationResponse* response) {
@@ -123,34 +121,6 @@ void DataProxyService::Stub::experimental_async::CreateDownloadLink(::grpc::Clie
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::CreateDownloadLinkResponse>::Create(channel_.get(), cq, rpcmethod_CreateDownloadLink_, context, request, false);
 }
 
-::grpc::Status DataProxyService::Stub::ResolveArtifact(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactRequest& request, ::flyteidl::service::ResolveArtifactResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ResolveArtifact_, context, request, response);
-}
-
-void DataProxyService::Stub::experimental_async::ResolveArtifact(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactRequest* request, ::flyteidl::service::ResolveArtifactResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ResolveArtifact_, context, request, response, std::move(f));
-}
-
-void DataProxyService::Stub::experimental_async::ResolveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::ResolveArtifactResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ResolveArtifact_, context, request, response, std::move(f));
-}
-
-void DataProxyService::Stub::experimental_async::ResolveArtifact(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactRequest* request, ::flyteidl::service::ResolveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ResolveArtifact_, context, request, response, reactor);
-}
-
-void DataProxyService::Stub::experimental_async::ResolveArtifact(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::ResolveArtifactResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ResolveArtifact_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::ResolveArtifactResponse>* DataProxyService::Stub::AsyncResolveArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::ResolveArtifactResponse>::Create(channel_.get(), cq, rpcmethod_ResolveArtifact_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::flyteidl::service::ResolveArtifactResponse>* DataProxyService::Stub::PrepareAsyncResolveArtifactRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::flyteidl::service::ResolveArtifactResponse>::Create(channel_.get(), cq, rpcmethod_ResolveArtifact_, context, request, false);
-}
-
 DataProxyService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       DataProxyService_method_names[0],
@@ -167,11 +137,6 @@ DataProxyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< DataProxyService::Service, ::flyteidl::service::CreateDownloadLinkRequest, ::flyteidl::service::CreateDownloadLinkResponse>(
           std::mem_fn(&DataProxyService::Service::CreateDownloadLink), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      DataProxyService_method_names[3],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< DataProxyService::Service, ::flyteidl::service::FlyteArtifactRequest, ::flyteidl::service::ResolveArtifactResponse>(
-          std::mem_fn(&DataProxyService::Service::ResolveArtifact), this)));
 }
 
 DataProxyService::Service::~Service() {
@@ -192,13 +157,6 @@ DataProxyService::Service::~Service() {
 }
 
 ::grpc::Status DataProxyService::Service::CreateDownloadLink(::grpc::ServerContext* context, const ::flyteidl::service::CreateDownloadLinkRequest* request, ::flyteidl::service::CreateDownloadLinkResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status DataProxyService::Service::ResolveArtifact(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactRequest* request, ::flyteidl::service::ResolveArtifactResponse* response) {
   (void) context;
   (void) request;
   (void) response;

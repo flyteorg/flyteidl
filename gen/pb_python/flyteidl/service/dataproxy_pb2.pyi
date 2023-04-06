@@ -9,22 +9,18 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 
 ARTIFACT_TYPE_DECK: ArtifactType
-ARTIFACT_TYPE_INPUT: ArtifactType
-ARTIFACT_TYPE_OUTPUT: ArtifactType
 ARTIFACT_TYPE_UNDEFINED: ArtifactType
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class CreateDownloadLinkRequest(_message.Message):
-    __slots__ = ["artifact_type", "expires_in", "flyte_url", "node_execution_id"]
+    __slots__ = ["artifact_type", "expires_in", "node_execution_id"]
     ARTIFACT_TYPE_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_IN_FIELD_NUMBER: _ClassVar[int]
-    FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
     NODE_EXECUTION_ID_FIELD_NUMBER: _ClassVar[int]
     artifact_type: ArtifactType
     expires_in: _duration_pb2.Duration
-    flyte_url: str
     node_execution_id: _identifier_pb2.NodeExecutionIdentifier
-    def __init__(self, artifact_type: _Optional[_Union[ArtifactType, str]] = ..., expires_in: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., node_execution_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ..., flyte_url: _Optional[str] = ...) -> None: ...
+    def __init__(self, artifact_type: _Optional[_Union[ArtifactType, str]] = ..., expires_in: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., node_execution_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ...) -> None: ...
 
 class CreateDownloadLinkResponse(_message.Message):
     __slots__ = ["expires_at", "signed_url"]
@@ -73,18 +69,6 @@ class CreateUploadLocationResponse(_message.Message):
     native_url: str
     signed_url: str
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
-
-class FlyteArtifactRequest(_message.Message):
-    __slots__ = ["flyte_url"]
-    FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
-    flyte_url: str
-    def __init__(self, flyte_url: _Optional[str] = ...) -> None: ...
-
-class ResolveArtifactResponse(_message.Message):
-    __slots__ = ["native_url"]
-    NATIVE_URL_FIELD_NUMBER: _ClassVar[int]
-    native_url: str
-    def __init__(self, native_url: _Optional[str] = ...) -> None: ...
 
 class ArtifactType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []

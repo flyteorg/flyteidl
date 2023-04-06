@@ -466,6 +466,47 @@ func (_m *AdminServiceServer) GetActiveLaunchPlan(_a0 context.Context, _a1 *admi
 	return r0, r1
 }
 
+type AdminServiceServer_GetData struct {
+	*mock.Call
+}
+
+func (_m AdminServiceServer_GetData) Return(_a0 *admin.DataResponse, _a1 error) *AdminServiceServer_GetData {
+	return &AdminServiceServer_GetData{Call: _m.Call.Return(_a0, _a1)}
+}
+
+func (_m *AdminServiceServer) OnGetData(_a0 context.Context, _a1 *admin.FlyteArtifactGetRequest) *AdminServiceServer_GetData {
+	c_call := _m.On("GetData", _a0, _a1)
+	return &AdminServiceServer_GetData{Call: c_call}
+}
+
+func (_m *AdminServiceServer) OnGetDataMatch(matchers ...interface{}) *AdminServiceServer_GetData {
+	c_call := _m.On("GetData", matchers...)
+	return &AdminServiceServer_GetData{Call: c_call}
+}
+
+// GetData provides a mock function with given fields: _a0, _a1
+func (_m *AdminServiceServer) GetData(_a0 context.Context, _a1 *admin.FlyteArtifactGetRequest) (*admin.DataResponse, error) {
+	ret := _m.Called(_a0, _a1)
+
+	var r0 *admin.DataResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *admin.FlyteArtifactGetRequest) *admin.DataResponse); ok {
+		r0 = rf(_a0, _a1)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*admin.DataResponse)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *admin.FlyteArtifactGetRequest) error); ok {
+		r1 = rf(_a0, _a1)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 type AdminServiceServer_GetDescriptionEntity struct {
 	*mock.Call
 }

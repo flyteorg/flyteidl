@@ -46,7 +46,7 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -73,12 +73,6 @@ extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationReque
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
-class FlyteArtifactRequest;
-class FlyteArtifactRequestDefaultTypeInternal;
-extern FlyteArtifactRequestDefaultTypeInternal _FlyteArtifactRequest_default_instance_;
-class ResolveArtifactResponse;
-class ResolveArtifactResponseDefaultTypeInternal;
-extern ResolveArtifactResponseDefaultTypeInternal _ResolveArtifactResponse_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
@@ -89,8 +83,6 @@ template<> ::flyteidl::service::CreateDownloadLocationRequest* Arena::CreateMayb
 template<> ::flyteidl::service::CreateDownloadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateDownloadLocationResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
-template<> ::flyteidl::service::FlyteArtifactRequest* Arena::CreateMaybeMessage<::flyteidl::service::FlyteArtifactRequest>(Arena*);
-template<> ::flyteidl::service::ResolveArtifactResponse* Arena::CreateMaybeMessage<::flyteidl::service::ResolveArtifactResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -99,14 +91,12 @@ namespace service {
 enum ArtifactType {
   ARTIFACT_TYPE_UNDEFINED = 0,
   ARTIFACT_TYPE_DECK = 1,
-  ARTIFACT_TYPE_INPUT = 2,
-  ARTIFACT_TYPE_OUTPUT = 3,
   ArtifactType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   ArtifactType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool ArtifactType_IsValid(int value);
 const ArtifactType ArtifactType_MIN = ARTIFACT_TYPE_UNDEFINED;
-const ArtifactType ArtifactType_MAX = ARTIFACT_TYPE_OUTPUT;
+const ArtifactType ArtifactType_MAX = ARTIFACT_TYPE_DECK;
 const int ArtifactType_ARRAYSIZE = ArtifactType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ArtifactType_descriptor();
@@ -735,7 +725,6 @@ class CreateDownloadLinkRequest final :
 
   enum SourceCase {
     kNodeExecutionId = 3,
-    kFlyteUrl = 4,
     SOURCE_NOT_SET = 0,
   };
 
@@ -826,30 +815,12 @@ class CreateDownloadLinkRequest final :
   ::flyteidl::core::NodeExecutionIdentifier* mutable_node_execution_id();
   void set_allocated_node_execution_id(::flyteidl::core::NodeExecutionIdentifier* node_execution_id);
 
-  // string flyte_url = 4;
-  private:
-  bool has_flyte_url() const;
-  public:
-  void clear_flyte_url();
-  static const int kFlyteUrlFieldNumber = 4;
-  const ::std::string& flyte_url() const;
-  void set_flyte_url(const ::std::string& value);
-  #if LANG_CXX11
-  void set_flyte_url(::std::string&& value);
-  #endif
-  void set_flyte_url(const char* value);
-  void set_flyte_url(const char* value, size_t size);
-  ::std::string* mutable_flyte_url();
-  ::std::string* release_flyte_url();
-  void set_allocated_flyte_url(::std::string* flyte_url);
-
   void clear_source();
   SourceCase source_case() const;
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkRequest)
  private:
   class HasBitSetters;
   void set_has_node_execution_id();
-  void set_has_flyte_url();
 
   inline bool has_source() const;
   inline void clear_has_source();
@@ -860,7 +831,6 @@ class CreateDownloadLinkRequest final :
   union SourceUnion {
     SourceUnion() {}
     ::flyteidl::core::NodeExecutionIdentifier* node_execution_id_;
-    ::google::protobuf::internal::ArenaStringPtr flyte_url_;
   } source_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -1002,246 +972,6 @@ class CreateDownloadLinkResponse final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField<::std::string> signed_url_;
   ::google::protobuf::Timestamp* expires_at_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
-};
-// -------------------------------------------------------------------
-
-class FlyteArtifactRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteArtifactRequest) */ {
- public:
-  FlyteArtifactRequest();
-  virtual ~FlyteArtifactRequest();
-
-  FlyteArtifactRequest(const FlyteArtifactRequest& from);
-
-  inline FlyteArtifactRequest& operator=(const FlyteArtifactRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  FlyteArtifactRequest(FlyteArtifactRequest&& from) noexcept
-    : FlyteArtifactRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline FlyteArtifactRequest& operator=(FlyteArtifactRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const FlyteArtifactRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FlyteArtifactRequest* internal_default_instance() {
-    return reinterpret_cast<const FlyteArtifactRequest*>(
-               &_FlyteArtifactRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  void Swap(FlyteArtifactRequest* other);
-  friend void swap(FlyteArtifactRequest& a, FlyteArtifactRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline FlyteArtifactRequest* New() const final {
-    return CreateMaybeMessage<FlyteArtifactRequest>(nullptr);
-  }
-
-  FlyteArtifactRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FlyteArtifactRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FlyteArtifactRequest& from);
-  void MergeFrom(const FlyteArtifactRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(FlyteArtifactRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string flyte_url = 1;
-  void clear_flyte_url();
-  static const int kFlyteUrlFieldNumber = 1;
-  const ::std::string& flyte_url() const;
-  void set_flyte_url(const ::std::string& value);
-  #if LANG_CXX11
-  void set_flyte_url(::std::string&& value);
-  #endif
-  void set_flyte_url(const char* value);
-  void set_flyte_url(const char* value, size_t size);
-  ::std::string* mutable_flyte_url();
-  ::std::string* release_flyte_url();
-  void set_allocated_flyte_url(::std::string* flyte_url);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactRequest)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr flyte_url_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ResolveArtifactResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.ResolveArtifactResponse) */ {
- public:
-  ResolveArtifactResponse();
-  virtual ~ResolveArtifactResponse();
-
-  ResolveArtifactResponse(const ResolveArtifactResponse& from);
-
-  inline ResolveArtifactResponse& operator=(const ResolveArtifactResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  ResolveArtifactResponse(ResolveArtifactResponse&& from) noexcept
-    : ResolveArtifactResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline ResolveArtifactResponse& operator=(ResolveArtifactResponse&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const ResolveArtifactResponse& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ResolveArtifactResponse* internal_default_instance() {
-    return reinterpret_cast<const ResolveArtifactResponse*>(
-               &_ResolveArtifactResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  void Swap(ResolveArtifactResponse* other);
-  friend void swap(ResolveArtifactResponse& a, ResolveArtifactResponse& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ResolveArtifactResponse* New() const final {
-    return CreateMaybeMessage<ResolveArtifactResponse>(nullptr);
-  }
-
-  ResolveArtifactResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ResolveArtifactResponse>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ResolveArtifactResponse& from);
-  void MergeFrom(const ResolveArtifactResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ResolveArtifactResponse* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string native_url = 1;
-  void clear_native_url();
-  static const int kNativeUrlFieldNumber = 1;
-  const ::std::string& native_url() const;
-  void set_native_url(const ::std::string& value);
-  #if LANG_CXX11
-  void set_native_url(::std::string&& value);
-  #endif
-  void set_native_url(const char* value);
-  void set_native_url(const char* value, size_t size);
-  ::std::string* mutable_native_url();
-  ::std::string* release_native_url();
-  void set_allocated_native_url(::std::string* native_url);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.service.ResolveArtifactResponse)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr native_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -1975,98 +1705,6 @@ inline ::flyteidl::core::NodeExecutionIdentifier* CreateDownloadLinkRequest::mut
   return source_.node_execution_id_;
 }
 
-// string flyte_url = 4;
-inline bool CreateDownloadLinkRequest::has_flyte_url() const {
-  return source_case() == kFlyteUrl;
-}
-inline void CreateDownloadLinkRequest::set_has_flyte_url() {
-  _oneof_case_[0] = kFlyteUrl;
-}
-inline void CreateDownloadLinkRequest::clear_flyte_url() {
-  if (has_flyte_url()) {
-    source_.flyte_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    clear_has_source();
-  }
-}
-inline const ::std::string& CreateDownloadLinkRequest::flyte_url() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-  if (has_flyte_url()) {
-    return source_.flyte_url_.GetNoArena();
-  }
-  return *&::google::protobuf::internal::GetEmptyStringAlreadyInited();
-}
-inline void CreateDownloadLinkRequest::set_flyte_url(const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-  if (!has_flyte_url()) {
-    clear_source();
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-}
-#if LANG_CXX11
-inline void CreateDownloadLinkRequest::set_flyte_url(::std::string&& value) {
-  // @@protoc_insertion_point(field_set:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-  if (!has_flyte_url()) {
-    clear_source();
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-}
-#endif
-inline void CreateDownloadLinkRequest::set_flyte_url(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!has_flyte_url()) {
-    clear_source();
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-}
-inline void CreateDownloadLinkRequest::set_flyte_url(const char* value, size_t size) {
-  if (!has_flyte_url()) {
-    clear_source();
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  source_.flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-}
-inline ::std::string* CreateDownloadLinkRequest::mutable_flyte_url() {
-  if (!has_flyte_url()) {
-    clear_source();
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-  return source_.flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* CreateDownloadLinkRequest::release_flyte_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-  if (has_flyte_url()) {
-    clear_has_source();
-    return source_.flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  } else {
-    return nullptr;
-  }
-}
-inline void CreateDownloadLinkRequest::set_allocated_flyte_url(::std::string* flyte_url) {
-  if (has_source()) {
-    clear_source();
-  }
-  if (flyte_url != nullptr) {
-    set_has_flyte_url();
-    source_.flyte_url_.UnsafeSetDefault(flyte_url);
-  }
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkRequest.flyte_url)
-}
-
 inline bool CreateDownloadLinkRequest::has_source() const {
   return source_case() != SOURCE_NOT_SET;
 }
@@ -2195,127 +1833,9 @@ inline void CreateDownloadLinkResponse::set_allocated_expires_at(::google::proto
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkResponse.expires_at)
 }
 
-// -------------------------------------------------------------------
-
-// FlyteArtifactRequest
-
-// string flyte_url = 1;
-inline void FlyteArtifactRequest::clear_flyte_url() {
-  flyte_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& FlyteArtifactRequest::flyte_url() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteArtifactRequest.flyte_url)
-  return flyte_url_.GetNoArena();
-}
-inline void FlyteArtifactRequest::set_flyte_url(const ::std::string& value) {
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteArtifactRequest.flyte_url)
-}
-#if LANG_CXX11
-inline void FlyteArtifactRequest::set_flyte_url(::std::string&& value) {
-  
-  flyte_url_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteArtifactRequest.flyte_url)
-}
-#endif
-inline void FlyteArtifactRequest::set_flyte_url(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteArtifactRequest.flyte_url)
-}
-inline void FlyteArtifactRequest::set_flyte_url(const char* value, size_t size) {
-  
-  flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteArtifactRequest.flyte_url)
-}
-inline ::std::string* FlyteArtifactRequest::mutable_flyte_url() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteArtifactRequest.flyte_url)
-  return flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* FlyteArtifactRequest::release_flyte_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteArtifactRequest.flyte_url)
-  
-  return flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void FlyteArtifactRequest::set_allocated_flyte_url(::std::string* flyte_url) {
-  if (flyte_url != nullptr) {
-    
-  } else {
-    
-  }
-  flyte_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), flyte_url);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteArtifactRequest.flyte_url)
-}
-
-// -------------------------------------------------------------------
-
-// ResolveArtifactResponse
-
-// string native_url = 1;
-inline void ResolveArtifactResponse::clear_native_url() {
-  native_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& ResolveArtifactResponse::native_url() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.ResolveArtifactResponse.native_url)
-  return native_url_.GetNoArena();
-}
-inline void ResolveArtifactResponse::set_native_url(const ::std::string& value) {
-  
-  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.ResolveArtifactResponse.native_url)
-}
-#if LANG_CXX11
-inline void ResolveArtifactResponse::set_native_url(::std::string&& value) {
-  
-  native_url_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.ResolveArtifactResponse.native_url)
-}
-#endif
-inline void ResolveArtifactResponse::set_native_url(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.ResolveArtifactResponse.native_url)
-}
-inline void ResolveArtifactResponse::set_native_url(const char* value, size_t size) {
-  
-  native_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.ResolveArtifactResponse.native_url)
-}
-inline ::std::string* ResolveArtifactResponse::mutable_native_url() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.ResolveArtifactResponse.native_url)
-  return native_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* ResolveArtifactResponse::release_native_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.ResolveArtifactResponse.native_url)
-  
-  return native_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void ResolveArtifactResponse::set_allocated_native_url(::std::string* native_url) {
-  if (native_url != nullptr) {
-    
-  } else {
-    
-  }
-  native_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), native_url);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.ResolveArtifactResponse.native_url)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

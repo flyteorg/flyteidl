@@ -40,18 +40,6 @@ public final class Dataproxy {
      * <code>ARTIFACT_TYPE_DECK = 1;</code>
      */
     ARTIFACT_TYPE_DECK(1),
-    /**
-     * <pre>
-     * Used for users to download data
-     * </pre>
-     *
-     * <code>ARTIFACT_TYPE_INPUT = 2;</code>
-     */
-    ARTIFACT_TYPE_INPUT(2),
-    /**
-     * <code>ARTIFACT_TYPE_OUTPUT = 3;</code>
-     */
-    ARTIFACT_TYPE_OUTPUT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -72,18 +60,6 @@ public final class Dataproxy {
      * <code>ARTIFACT_TYPE_DECK = 1;</code>
      */
     public static final int ARTIFACT_TYPE_DECK_VALUE = 1;
-    /**
-     * <pre>
-     * Used for users to download data
-     * </pre>
-     *
-     * <code>ARTIFACT_TYPE_INPUT = 2;</code>
-     */
-    public static final int ARTIFACT_TYPE_INPUT_VALUE = 2;
-    /**
-     * <code>ARTIFACT_TYPE_OUTPUT = 3;</code>
-     */
-    public static final int ARTIFACT_TYPE_OUTPUT_VALUE = 3;
 
 
     public final int getNumber() {
@@ -106,8 +82,6 @@ public final class Dataproxy {
       switch (value) {
         case 0: return ARTIFACT_TYPE_UNDEFINED;
         case 1: return ARTIFACT_TYPE_DECK;
-        case 2: return ARTIFACT_TYPE_INPUT;
-        case 3: return ARTIFACT_TYPE_OUTPUT;
         default: return null;
       }
     }
@@ -4314,24 +4288,6 @@ public final class Dataproxy {
      */
     flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifierOrBuilder getNodeExecutionIdOrBuilder();
 
-    /**
-     * <pre>
-     * can add a flyte url as an option for the source
-     * </pre>
-     *
-     * <code>string flyte_url = 4;</code>
-     */
-    java.lang.String getFlyteUrl();
-    /**
-     * <pre>
-     * can add a flyte url as an option for the source
-     * </pre>
-     *
-     * <code>string flyte_url = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getFlyteUrlBytes();
-
     public flyteidl.service.Dataproxy.CreateDownloadLinkRequest.SourceCase getSourceCase();
   }
   /**
@@ -4411,12 +4367,6 @@ public final class Dataproxy {
               sourceCase_ = 3;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              sourceCase_ = 4;
-              source_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4454,7 +4404,6 @@ public final class Dataproxy {
     public enum SourceCase
         implements com.google.protobuf.Internal.EnumLite {
       NODE_EXECUTION_ID(3),
-      FLYTE_URL(4),
       SOURCE_NOT_SET(0);
       private final int value;
       private SourceCase(int value) {
@@ -4471,7 +4420,6 @@ public final class Dataproxy {
       public static SourceCase forNumber(int value) {
         switch (value) {
           case 3: return NODE_EXECUTION_ID;
-          case 4: return FLYTE_URL;
           case 0: return SOURCE_NOT_SET;
           default: return null;
         }
@@ -4592,57 +4540,6 @@ public final class Dataproxy {
       return flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier.getDefaultInstance();
     }
 
-    public static final int FLYTE_URL_FIELD_NUMBER = 4;
-    /**
-     * <pre>
-     * can add a flyte url as an option for the source
-     * </pre>
-     *
-     * <code>string flyte_url = 4;</code>
-     */
-    public java.lang.String getFlyteUrl() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 4) {
-        ref = source_;
-      }
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (sourceCase_ == 4) {
-          source_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * can add a flyte url as an option for the source
-     * </pre>
-     *
-     * <code>string flyte_url = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFlyteUrlBytes() {
-      java.lang.Object ref = "";
-      if (sourceCase_ == 4) {
-        ref = source_;
-      }
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (sourceCase_ == 4) {
-          source_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4666,9 +4563,6 @@ public final class Dataproxy {
       if (sourceCase_ == 3) {
         output.writeMessage(3, (flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier) source_);
       }
-      if (sourceCase_ == 4) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, source_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -4689,9 +4583,6 @@ public final class Dataproxy {
       if (sourceCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (flyteidl.core.IdentifierOuterClass.NodeExecutionIdentifier) source_);
-      }
-      if (sourceCase_ == 4) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, source_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4720,10 +4611,6 @@ public final class Dataproxy {
           if (!getNodeExecutionId()
               .equals(other.getNodeExecutionId())) return false;
           break;
-        case 4:
-          if (!getFlyteUrl()
-              .equals(other.getFlyteUrl())) return false;
-          break;
         case 0:
         default:
       }
@@ -4748,10 +4635,6 @@ public final class Dataproxy {
         case 3:
           hash = (37 * hash) + NODE_EXECUTION_ID_FIELD_NUMBER;
           hash = (53 * hash) + getNodeExecutionId().hashCode();
-          break;
-        case 4:
-          hash = (37 * hash) + FLYTE_URL_FIELD_NUMBER;
-          hash = (53 * hash) + getFlyteUrl().hashCode();
           break;
         case 0:
         default:
@@ -4942,9 +4825,6 @@ public final class Dataproxy {
             result.source_ = nodeExecutionIdBuilder_.build();
           }
         }
-        if (sourceCase_ == 4) {
-          result.source_ = source_;
-        }
         result.sourceCase_ = sourceCase_;
         onBuilt();
         return result;
@@ -5003,12 +4883,6 @@ public final class Dataproxy {
         switch (other.getSourceCase()) {
           case NODE_EXECUTION_ID: {
             mergeNodeExecutionId(other.getNodeExecutionId());
-            break;
-          }
-          case FLYTE_URL: {
-            sourceCase_ = 4;
-            source_ = other.source_;
-            onChanged();
             break;
           }
           case SOURCE_NOT_SET: {
@@ -5474,106 +5348,6 @@ public final class Dataproxy {
         sourceCase_ = 3;
         onChanged();;
         return nodeExecutionIdBuilder_;
-      }
-
-      /**
-       * <pre>
-       * can add a flyte url as an option for the source
-       * </pre>
-       *
-       * <code>string flyte_url = 4;</code>
-       */
-      public java.lang.String getFlyteUrl() {
-        java.lang.Object ref = "";
-        if (sourceCase_ == 4) {
-          ref = source_;
-        }
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (sourceCase_ == 4) {
-            source_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * can add a flyte url as an option for the source
-       * </pre>
-       *
-       * <code>string flyte_url = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFlyteUrlBytes() {
-        java.lang.Object ref = "";
-        if (sourceCase_ == 4) {
-          ref = source_;
-        }
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          if (sourceCase_ == 4) {
-            source_ = b;
-          }
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * can add a flyte url as an option for the source
-       * </pre>
-       *
-       * <code>string flyte_url = 4;</code>
-       */
-      public Builder setFlyteUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  sourceCase_ = 4;
-        source_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * can add a flyte url as an option for the source
-       * </pre>
-       *
-       * <code>string flyte_url = 4;</code>
-       */
-      public Builder clearFlyteUrl() {
-        if (sourceCase_ == 4) {
-          sourceCase_ = 0;
-          source_ = null;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * can add a flyte url as an option for the source
-       * </pre>
-       *
-       * <code>string flyte_url = 4;</code>
-       */
-      public Builder setFlyteUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        sourceCase_ = 4;
-        source_ = value;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6564,1104 +6338,6 @@ public final class Dataproxy {
 
   }
 
-  public interface FlyteArtifactRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteArtifactRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string flyte_url = 1;</code>
-     */
-    java.lang.String getFlyteUrl();
-    /**
-     * <code>string flyte_url = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getFlyteUrlBytes();
-  }
-  /**
-   * Protobuf type {@code flyteidl.service.FlyteArtifactRequest}
-   */
-  public  static final class FlyteArtifactRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteArtifactRequest)
-      FlyteArtifactRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use FlyteArtifactRequest.newBuilder() to construct.
-    private FlyteArtifactRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private FlyteArtifactRequest() {
-      flyteUrl_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private FlyteArtifactRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              flyteUrl_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.service.Dataproxy.FlyteArtifactRequest.class, flyteidl.service.Dataproxy.FlyteArtifactRequest.Builder.class);
-    }
-
-    public static final int FLYTE_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object flyteUrl_;
-    /**
-     * <code>string flyte_url = 1;</code>
-     */
-    public java.lang.String getFlyteUrl() {
-      java.lang.Object ref = flyteUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        flyteUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string flyte_url = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFlyteUrlBytes() {
-      java.lang.Object ref = flyteUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        flyteUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getFlyteUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, flyteUrl_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getFlyteUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, flyteUrl_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.service.Dataproxy.FlyteArtifactRequest)) {
-        return super.equals(obj);
-      }
-      flyteidl.service.Dataproxy.FlyteArtifactRequest other = (flyteidl.service.Dataproxy.FlyteArtifactRequest) obj;
-
-      if (!getFlyteUrl()
-          .equals(other.getFlyteUrl())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FLYTE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getFlyteUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.service.Dataproxy.FlyteArtifactRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code flyteidl.service.FlyteArtifactRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteArtifactRequest)
-        flyteidl.service.Dataproxy.FlyteArtifactRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.service.Dataproxy.FlyteArtifactRequest.class, flyteidl.service.Dataproxy.FlyteArtifactRequest.Builder.class);
-      }
-
-      // Construct using flyteidl.service.Dataproxy.FlyteArtifactRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        flyteUrl_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstanceForType() {
-        return flyteidl.service.Dataproxy.FlyteArtifactRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.FlyteArtifactRequest build() {
-        flyteidl.service.Dataproxy.FlyteArtifactRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.FlyteArtifactRequest buildPartial() {
-        flyteidl.service.Dataproxy.FlyteArtifactRequest result = new flyteidl.service.Dataproxy.FlyteArtifactRequest(this);
-        result.flyteUrl_ = flyteUrl_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Dataproxy.FlyteArtifactRequest) {
-          return mergeFrom((flyteidl.service.Dataproxy.FlyteArtifactRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.service.Dataproxy.FlyteArtifactRequest other) {
-        if (other == flyteidl.service.Dataproxy.FlyteArtifactRequest.getDefaultInstance()) return this;
-        if (!other.getFlyteUrl().isEmpty()) {
-          flyteUrl_ = other.flyteUrl_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.service.Dataproxy.FlyteArtifactRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Dataproxy.FlyteArtifactRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object flyteUrl_ = "";
-      /**
-       * <code>string flyte_url = 1;</code>
-       */
-      public java.lang.String getFlyteUrl() {
-        java.lang.Object ref = flyteUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          flyteUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string flyte_url = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFlyteUrlBytes() {
-        java.lang.Object ref = flyteUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          flyteUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string flyte_url = 1;</code>
-       */
-      public Builder setFlyteUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        flyteUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string flyte_url = 1;</code>
-       */
-      public Builder clearFlyteUrl() {
-        
-        flyteUrl_ = getDefaultInstance().getFlyteUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string flyte_url = 1;</code>
-       */
-      public Builder setFlyteUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        flyteUrl_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteArtifactRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactRequest)
-    private static final flyteidl.service.Dataproxy.FlyteArtifactRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.FlyteArtifactRequest();
-    }
-
-    public static flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<FlyteArtifactRequest>
-        PARSER = new com.google.protobuf.AbstractParser<FlyteArtifactRequest>() {
-      @java.lang.Override
-      public FlyteArtifactRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FlyteArtifactRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<FlyteArtifactRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<FlyteArtifactRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.service.Dataproxy.FlyteArtifactRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ResolveArtifactResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:flyteidl.service.ResolveArtifactResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string native_url = 1;</code>
-     */
-    java.lang.String getNativeUrl();
-    /**
-     * <code>string native_url = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNativeUrlBytes();
-  }
-  /**
-   * Protobuf type {@code flyteidl.service.ResolveArtifactResponse}
-   */
-  public  static final class ResolveArtifactResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:flyteidl.service.ResolveArtifactResponse)
-      ResolveArtifactResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ResolveArtifactResponse.newBuilder() to construct.
-    private ResolveArtifactResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ResolveArtifactResponse() {
-      nativeUrl_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ResolveArtifactResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nativeUrl_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              flyteidl.service.Dataproxy.ResolveArtifactResponse.class, flyteidl.service.Dataproxy.ResolveArtifactResponse.Builder.class);
-    }
-
-    public static final int NATIVE_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object nativeUrl_;
-    /**
-     * <code>string native_url = 1;</code>
-     */
-    public java.lang.String getNativeUrl() {
-      java.lang.Object ref = nativeUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nativeUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string native_url = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNativeUrlBytes() {
-      java.lang.Object ref = nativeUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nativeUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNativeUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nativeUrl_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNativeUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nativeUrl_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof flyteidl.service.Dataproxy.ResolveArtifactResponse)) {
-        return super.equals(obj);
-      }
-      flyteidl.service.Dataproxy.ResolveArtifactResponse other = (flyteidl.service.Dataproxy.ResolveArtifactResponse) obj;
-
-      if (!getNativeUrl()
-          .equals(other.getNativeUrl())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NATIVE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getNativeUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(flyteidl.service.Dataproxy.ResolveArtifactResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code flyteidl.service.ResolveArtifactResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:flyteidl.service.ResolveArtifactResponse)
-        flyteidl.service.Dataproxy.ResolveArtifactResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                flyteidl.service.Dataproxy.ResolveArtifactResponse.class, flyteidl.service.Dataproxy.ResolveArtifactResponse.Builder.class);
-      }
-
-      // Construct using flyteidl.service.Dataproxy.ResolveArtifactResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        nativeUrl_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_ResolveArtifactResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactResponse getDefaultInstanceForType() {
-        return flyteidl.service.Dataproxy.ResolveArtifactResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactResponse build() {
-        flyteidl.service.Dataproxy.ResolveArtifactResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public flyteidl.service.Dataproxy.ResolveArtifactResponse buildPartial() {
-        flyteidl.service.Dataproxy.ResolveArtifactResponse result = new flyteidl.service.Dataproxy.ResolveArtifactResponse(this);
-        result.nativeUrl_ = nativeUrl_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof flyteidl.service.Dataproxy.ResolveArtifactResponse) {
-          return mergeFrom((flyteidl.service.Dataproxy.ResolveArtifactResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(flyteidl.service.Dataproxy.ResolveArtifactResponse other) {
-        if (other == flyteidl.service.Dataproxy.ResolveArtifactResponse.getDefaultInstance()) return this;
-        if (!other.getNativeUrl().isEmpty()) {
-          nativeUrl_ = other.nativeUrl_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        flyteidl.service.Dataproxy.ResolveArtifactResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (flyteidl.service.Dataproxy.ResolveArtifactResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object nativeUrl_ = "";
-      /**
-       * <code>string native_url = 1;</code>
-       */
-      public java.lang.String getNativeUrl() {
-        java.lang.Object ref = nativeUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nativeUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string native_url = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNativeUrlBytes() {
-        java.lang.Object ref = nativeUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nativeUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string native_url = 1;</code>
-       */
-      public Builder setNativeUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        nativeUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string native_url = 1;</code>
-       */
-      public Builder clearNativeUrl() {
-        
-        nativeUrl_ = getDefaultInstance().getNativeUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string native_url = 1;</code>
-       */
-      public Builder setNativeUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nativeUrl_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:flyteidl.service.ResolveArtifactResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:flyteidl.service.ResolveArtifactResponse)
-    private static final flyteidl.service.Dataproxy.ResolveArtifactResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.ResolveArtifactResponse();
-    }
-
-    public static flyteidl.service.Dataproxy.ResolveArtifactResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ResolveArtifactResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ResolveArtifactResponse>() {
-      @java.lang.Override
-      public ResolveArtifactResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResolveArtifactResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ResolveArtifactResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ResolveArtifactResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public flyteidl.service.Dataproxy.ResolveArtifactResponse getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_service_CreateUploadLocationResponse_descriptor;
   private static final 
@@ -7692,16 +6368,6 @@ public final class Dataproxy {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_FlyteArtifactRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_service_ResolveArtifactResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_service_ResolveArtifactResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7727,39 +6393,31 @@ public final class Dataproxy {
       "\001(\0132\031.google.protobuf.Duration:\002\030\001\"h\n\036Cr" +
       "eateDownloadLocationResponse\022\022\n\nsigned_u" +
       "rl\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp:\002\030\001\"\345\001\n\031CreateDownloadL" +
+      "otobuf.Timestamp:\002\030\001\"\320\001\n\031CreateDownloadL" +
       "inkRequest\0225\n\rartifact_type\030\001 \001(\0162\036.flyt" +
       "eidl.service.ArtifactType\022-\n\nexpires_in\030" +
       "\002 \001(\0132\031.google.protobuf.Duration\022C\n\021node" +
       "_execution_id\030\003 \001(\0132&.flyteidl.core.Node" +
-      "ExecutionIdentifierH\000\022\023\n\tflyte_url\030\004 \001(\t" +
-      "H\000B\010\n\006source\"`\n\032CreateDownloadLinkRespon" +
-      "se\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001" +
-      "(\0132\032.google.protobuf.Timestamp\")\n\024FlyteA" +
-      "rtifactRequest\022\021\n\tflyte_url\030\001 \001(\t\"-\n\027Res" +
-      "olveArtifactResponse\022\022\n\nnative_url\030\001 \001(\t" +
-      "*v\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFI" +
-      "NED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\001\022\027\n\023ARTIFAC" +
-      "T_TYPE_INPUT\020\002\022\030\n\024ARTIFACT_TYPE_OUTPUT\020\003" +
-      "2\217\005\n\020DataProxyService\022\240\001\n\024CreateUploadLo" +
-      "cation\022-.flyteidl.service.CreateUploadLo" +
-      "cationRequest\032..flyteidl.service.CreateU" +
-      "ploadLocationResponse\")\202\323\344\223\002#\"\036/api/v1/d" +
-      "ataproxy/artifact_urn:\001*\022\246\001\n\026CreateDownl" +
-      "oadLocation\022/.flyteidl.service.CreateDow" +
-      "nloadLocationRequest\0320.flyteidl.service." +
-      "CreateDownloadLocationResponse\")\210\002\001\202\323\344\223\002" +
-      " \022\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022Cr" +
-      "eateDownloadLink\022+.flyteidl.service.Crea" +
-      "teDownloadLinkRequest\032,.flyteidl.service" +
-      ".CreateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/ap" +
-      "i/v1/dataproxy/artifact_link:\001*\022\220\001\n\017Reso" +
-      "lveArtifact\022&.flyteidl.service.FlyteArti" +
-      "factRequest\032).flyteidl.service.ResolveAr" +
-      "tifactResponse\"*\202\323\344\223\002$\022\"/api/v1/dataprox" +
-      "y/resolve_artifactB9Z7github.com/flyteor" +
-      "g/flyteidl/gen/pb-go/flyteidl/serviceb\006p" +
-      "roto3"
+      "ExecutionIdentifierH\000B\010\n\006source\"`\n\032Creat" +
+      "eDownloadLinkResponse\022\022\n\nsigned_url\030\001 \003(" +
+      "\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf." +
+      "Timestamp*C\n\014ArtifactType\022\033\n\027ARTIFACT_TY" +
+      "PE_UNDEFINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\374" +
+      "\003\n\020DataProxyService\022\240\001\n\024CreateUploadLoca" +
+      "tion\022-.flyteidl.service.CreateUploadLoca" +
+      "tionRequest\032..flyteidl.service.CreateUpl" +
+      "oadLocationResponse\")\202\323\344\223\002#\"\036/api/v1/dat" +
+      "aproxy/artifact_urn:\001*\022\246\001\n\026CreateDownloa" +
+      "dLocation\022/.flyteidl.service.CreateDownl" +
+      "oadLocationRequest\0320.flyteidl.service.Cr" +
+      "eateDownloadLocationResponse\")\210\002\001\202\323\344\223\002 \022" +
+      "\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022Crea" +
+      "teDownloadLink\022+.flyteidl.service.Create" +
+      "DownloadLinkRequest\032,.flyteidl.service.C" +
+      "reateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/api/" +
+      "v1/dataproxy/artifact_link:\001*B9Z7github." +
+      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
+      "/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7806,25 +6464,13 @@ public final class Dataproxy {
     internal_static_flyteidl_service_CreateDownloadLinkRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkRequest_descriptor,
-        new java.lang.String[] { "ArtifactType", "ExpiresIn", "NodeExecutionId", "FlyteUrl", "Source", });
+        new java.lang.String[] { "ArtifactType", "ExpiresIn", "NodeExecutionId", "Source", });
     internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor,
         new java.lang.String[] { "SignedUrl", "ExpiresAt", });
-    internal_static_flyteidl_service_FlyteArtifactRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_flyteidl_service_FlyteArtifactRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_FlyteArtifactRequest_descriptor,
-        new java.lang.String[] { "FlyteUrl", });
-    internal_static_flyteidl_service_ResolveArtifactResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_flyteidl_service_ResolveArtifactResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_service_ResolveArtifactResponse_descriptor,
-        new java.lang.String[] { "NativeUrl", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

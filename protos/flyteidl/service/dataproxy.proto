@@ -74,10 +74,6 @@ enum ArtifactType {
   // ARTIFACT_TYPE_DECK refers to the deck html file optionally generated after a task, a workflow or a launch plan
   // finishes executing.
   ARTIFACT_TYPE_DECK = 1;
-
-  // Used for users to download data
-  ARTIFACT_TYPE_INPUT = 2;
-  ARTIFACT_TYPE_OUTPUT = 3;
 }
 
 // CreateDownloadLinkRequest defines the request parameters to create a download link (signed url)
@@ -94,9 +90,6 @@ message CreateDownloadLinkRequest {
     // NodeId is the unique identifier for the node execution. For a task node, this will retrieve the output of the
     // most recent attempt of the task.
     core.NodeExecutionIdentifier node_execution_id = 3;
-
-    // can add a flyte url as an option for the source
-    string flyte_url = 4;
   }
 }
 
@@ -107,14 +100,6 @@ message CreateDownloadLinkResponse {
 
   // ExpiresAt defines when will the signed URL expire.
   google.protobuf.Timestamp expires_at = 2;
-}
-
-message FlyteArtifactRequest {
-  string flyte_url = 1;
-}
-
-message ResolveArtifactResponse {
-  string native_url = 1;
 }
 
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
@@ -150,12 +135,5 @@ service DataProxyService {
     // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
     //   description: "Creates a read-only http location that is accessible for tasks at runtime."
     // };
-  }
-
-  rpc ResolveArtifact (FlyteArtifactRequest) returns (ResolveArtifactResponse) {
-    // Takes an address like flyte://v1/proj/development/execid/n2/0/i and return the s3 path.
-    option (google.api.http) = {
-      get: "/api/v1/dataproxy/resolve_artifact"
-    };
   }
 }
