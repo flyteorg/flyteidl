@@ -46,6 +46,16 @@ func (m *DistributedPyTorchTrainingTask) Validate() error {
 
 	// no validation rules for Workers
 
+	// no validation rules for RDZVBackend
+
+	// no validation rules for MinReplicas
+
+	// no validation rules for MaxReplicas
+
+	// no validation rules for NProcPerNode
+
+	// no validation rules for MaxRestarts
+
 	return nil
 }
 

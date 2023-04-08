@@ -160,18 +160,61 @@ class DistributedPyTorchTrainingTask final :
 
   // accessors -------------------------------------------------------
 
+  // string RDZVBackend = 2;
+  void clear_rdzvbackend();
+  static const int kRDZVBackendFieldNumber = 2;
+  const ::std::string& rdzvbackend() const;
+  void set_rdzvbackend(const ::std::string& value);
+  #if LANG_CXX11
+  void set_rdzvbackend(::std::string&& value);
+  #endif
+  void set_rdzvbackend(const char* value);
+  void set_rdzvbackend(const char* value, size_t size);
+  ::std::string* mutable_rdzvbackend();
+  ::std::string* release_rdzvbackend();
+  void set_allocated_rdzvbackend(::std::string* rdzvbackend);
+
   // int32 workers = 1;
   void clear_workers();
   static const int kWorkersFieldNumber = 1;
   ::google::protobuf::int32 workers() const;
   void set_workers(::google::protobuf::int32 value);
 
+  // int32 minReplicas = 3;
+  void clear_minreplicas();
+  static const int kMinReplicasFieldNumber = 3;
+  ::google::protobuf::int32 minreplicas() const;
+  void set_minreplicas(::google::protobuf::int32 value);
+
+  // int32 maxReplicas = 4;
+  void clear_maxreplicas();
+  static const int kMaxReplicasFieldNumber = 4;
+  ::google::protobuf::int32 maxreplicas() const;
+  void set_maxreplicas(::google::protobuf::int32 value);
+
+  // int32 nProcPerNode = 5;
+  void clear_nprocpernode();
+  static const int kNProcPerNodeFieldNumber = 5;
+  ::google::protobuf::int32 nprocpernode() const;
+  void set_nprocpernode(::google::protobuf::int32 value);
+
+  // int32 maxRestarts = 6;
+  void clear_maxrestarts();
+  static const int kMaxRestartsFieldNumber = 6;
+  ::google::protobuf::int32 maxrestarts() const;
+  void set_maxrestarts(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr rdzvbackend_;
   ::google::protobuf::int32 workers_;
+  ::google::protobuf::int32 minreplicas_;
+  ::google::protobuf::int32 maxreplicas_;
+  ::google::protobuf::int32 nprocpernode_;
+  ::google::protobuf::int32 maxrestarts_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fpytorch_2eproto;
 };
@@ -198,6 +241,115 @@ inline void DistributedPyTorchTrainingTask::set_workers(::google::protobuf::int3
   
   workers_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.workers)
+}
+
+// string RDZVBackend = 2;
+inline void DistributedPyTorchTrainingTask::clear_rdzvbackend() {
+  rdzvbackend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& DistributedPyTorchTrainingTask::rdzvbackend() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+  return rdzvbackend_.GetNoArena();
+}
+inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const ::std::string& value) {
+  
+  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+}
+#if LANG_CXX11
+inline void DistributedPyTorchTrainingTask::set_rdzvbackend(::std::string&& value) {
+  
+  rdzvbackend_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+}
+#endif
+inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+}
+inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const char* value, size_t size) {
+  
+  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+}
+inline ::std::string* DistributedPyTorchTrainingTask::mutable_rdzvbackend() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+  return rdzvbackend_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* DistributedPyTorchTrainingTask::release_rdzvbackend() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+  
+  return rdzvbackend_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void DistributedPyTorchTrainingTask::set_allocated_rdzvbackend(::std::string* rdzvbackend) {
+  if (rdzvbackend != nullptr) {
+    
+  } else {
+    
+  }
+  rdzvbackend_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rdzvbackend);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+}
+
+// int32 minReplicas = 3;
+inline void DistributedPyTorchTrainingTask::clear_minreplicas() {
+  minreplicas_ = 0;
+}
+inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::minreplicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.minReplicas)
+  return minreplicas_;
+}
+inline void DistributedPyTorchTrainingTask::set_minreplicas(::google::protobuf::int32 value) {
+  
+  minreplicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.minReplicas)
+}
+
+// int32 maxReplicas = 4;
+inline void DistributedPyTorchTrainingTask::clear_maxreplicas() {
+  maxreplicas_ = 0;
+}
+inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::maxreplicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.maxReplicas)
+  return maxreplicas_;
+}
+inline void DistributedPyTorchTrainingTask::set_maxreplicas(::google::protobuf::int32 value) {
+  
+  maxreplicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.maxReplicas)
+}
+
+// int32 nProcPerNode = 5;
+inline void DistributedPyTorchTrainingTask::clear_nprocpernode() {
+  nprocpernode_ = 0;
+}
+inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::nprocpernode() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.nProcPerNode)
+  return nprocpernode_;
+}
+inline void DistributedPyTorchTrainingTask::set_nprocpernode(::google::protobuf::int32 value) {
+  
+  nprocpernode_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.nProcPerNode)
+}
+
+// int32 maxRestarts = 6;
+inline void DistributedPyTorchTrainingTask::clear_maxrestarts() {
+  maxrestarts_ = 0;
+}
+inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::maxrestarts() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.maxRestarts)
+  return maxrestarts_;
+}
+inline void DistributedPyTorchTrainingTask::set_maxrestarts(::google::protobuf::int32 value) {
+  
+  maxrestarts_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.maxRestarts)
 }
 
 #ifdef __GNUC__

@@ -53,6 +53,11 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fpytorch_2eprot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, workers_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, rdzvbackend_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, minreplicas_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, maxreplicas_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, nprocpernode_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::DistributedPyTorchTrainingTask, maxrestarts_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::DistributedPyTorchTrainingTask)},
@@ -70,15 +75,17 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto[] =
   "\n\036flyteidl/plugins/pytorch.proto\022\020flytei"
-  "dl.plugins\"1\n\036DistributedPyTorchTraining"
-  "Task\022\017\n\007workers\030\001 \001(\005B9Z7github.com/flyt"
-  "eorg/flyteidl/gen/pb-go/flyteidl/plugins"
-  "b\006proto3"
+  "dl.plugins\"\233\001\n\036DistributedPyTorchTrainin"
+  "gTask\022\017\n\007workers\030\001 \001(\005\022\023\n\013RDZVBackend\030\002 "
+  "\001(\t\022\023\n\013minReplicas\030\003 \001(\005\022\023\n\013maxReplicas\030"
+  "\004 \001(\005\022\024\n\014nProcPerNode\030\005 \001(\005\022\023\n\013maxRestar"
+  "ts\030\006 \001(\005B9Z7github.com/flyteorg/flyteidl"
+  "/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fpytorch_2eproto,
-  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 168,
+  "flyteidl/plugins/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fpytorch_2eproto, 275,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fpytorch_2eproto() {
@@ -103,6 +110,11 @@ class DistributedPyTorchTrainingTask::HasBitSetters {
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int DistributedPyTorchTrainingTask::kWorkersFieldNumber;
+const int DistributedPyTorchTrainingTask::kRDZVBackendFieldNumber;
+const int DistributedPyTorchTrainingTask::kMinReplicasFieldNumber;
+const int DistributedPyTorchTrainingTask::kMaxReplicasFieldNumber;
+const int DistributedPyTorchTrainingTask::kNProcPerNodeFieldNumber;
+const int DistributedPyTorchTrainingTask::kMaxRestartsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask()
@@ -114,12 +126,23 @@ DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask(const Distributed
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  workers_ = from.workers_;
+  rdzvbackend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.rdzvbackend().size() > 0) {
+    rdzvbackend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzvbackend_);
+  }
+  ::memcpy(&workers_, &from.workers_,
+    static_cast<size_t>(reinterpret_cast<char*>(&maxrestarts_) -
+    reinterpret_cast<char*>(&workers_)) + sizeof(maxrestarts_));
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.DistributedPyTorchTrainingTask)
 }
 
 void DistributedPyTorchTrainingTask::SharedCtor() {
-  workers_ = 0;
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fpytorch_2eproto.base);
+  rdzvbackend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&workers_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&maxrestarts_) -
+      reinterpret_cast<char*>(&workers_)) + sizeof(maxrestarts_));
 }
 
 DistributedPyTorchTrainingTask::~DistributedPyTorchTrainingTask() {
@@ -128,6 +151,7 @@ DistributedPyTorchTrainingTask::~DistributedPyTorchTrainingTask() {
 }
 
 void DistributedPyTorchTrainingTask::SharedDtor() {
+  rdzvbackend_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void DistributedPyTorchTrainingTask::SetCachedSize(int size) const {
@@ -145,7 +169,10 @@ void DistributedPyTorchTrainingTask::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  workers_ = 0;
+  rdzvbackend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&workers_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&maxrestarts_) -
+      reinterpret_cast<char*>(&workers_)) + sizeof(maxrestarts_));
   _internal_metadata_.Clear();
 }
 
@@ -169,6 +196,50 @@ const char* DistributedPyTorchTrainingTask::_InternalParse(const char* begin, co
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
+      // string RDZVBackend = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend");
+        object = msg->mutable_rdzvbackend();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // int32 minReplicas = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        msg->set_minreplicas(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 maxReplicas = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        msg->set_maxreplicas(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 nProcPerNode = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
+        msg->set_nprocpernode(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 maxRestarts = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 48) goto handle_unusual;
+        msg->set_maxrestarts(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -184,6 +255,13 @@ const char* DistributedPyTorchTrainingTask::_InternalParse(const char* begin, co
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool DistributedPyTorchTrainingTask::MergePartialFromCodedStream(
@@ -203,6 +281,73 @@ bool DistributedPyTorchTrainingTask::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &workers_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string RDZVBackend = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_rdzvbackend()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->rdzvbackend().data(), static_cast<int>(this->rdzvbackend().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 minReplicas = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &minreplicas_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 maxReplicas = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &maxreplicas_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 nProcPerNode = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &nprocpernode_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 maxRestarts = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (48 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &maxrestarts_)));
         } else {
           goto handle_unusual;
         }
@@ -241,6 +386,36 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->workers(), output);
   }
 
+  // string RDZVBackend = 2;
+  if (this->rdzvbackend().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rdzvbackend().data(), static_cast<int>(this->rdzvbackend().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->rdzvbackend(), output);
+  }
+
+  // int32 minReplicas = 3;
+  if (this->minreplicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->minreplicas(), output);
+  }
+
+  // int32 maxReplicas = 4;
+  if (this->maxreplicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->maxreplicas(), output);
+  }
+
+  // int32 nProcPerNode = 5;
+  if (this->nprocpernode() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->nprocpernode(), output);
+  }
+
+  // int32 maxRestarts = 6;
+  if (this->maxrestarts() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->maxrestarts(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -257,6 +432,37 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
   // int32 workers = 1;
   if (this->workers() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->workers(), target);
+  }
+
+  // string RDZVBackend = 2;
+  if (this->rdzvbackend().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rdzvbackend().data(), static_cast<int>(this->rdzvbackend().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->rdzvbackend(), target);
+  }
+
+  // int32 minReplicas = 3;
+  if (this->minreplicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->minreplicas(), target);
+  }
+
+  // int32 maxReplicas = 4;
+  if (this->maxreplicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->maxreplicas(), target);
+  }
+
+  // int32 nProcPerNode = 5;
+  if (this->nprocpernode() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->nprocpernode(), target);
+  }
+
+  // int32 maxRestarts = 6;
+  if (this->maxrestarts() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->maxrestarts(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -280,11 +486,46 @@ size_t DistributedPyTorchTrainingTask::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string RDZVBackend = 2;
+  if (this->rdzvbackend().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->rdzvbackend());
+  }
+
   // int32 workers = 1;
   if (this->workers() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->workers());
+  }
+
+  // int32 minReplicas = 3;
+  if (this->minreplicas() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->minreplicas());
+  }
+
+  // int32 maxReplicas = 4;
+  if (this->maxreplicas() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->maxreplicas());
+  }
+
+  // int32 nProcPerNode = 5;
+  if (this->nprocpernode() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->nprocpernode());
+  }
+
+  // int32 maxRestarts = 6;
+  if (this->maxrestarts() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->maxrestarts());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -314,8 +555,24 @@ void DistributedPyTorchTrainingTask::MergeFrom(const DistributedPyTorchTrainingT
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.rdzvbackend().size() > 0) {
+
+    rdzvbackend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzvbackend_);
+  }
   if (from.workers() != 0) {
     set_workers(from.workers());
+  }
+  if (from.minreplicas() != 0) {
+    set_minreplicas(from.minreplicas());
+  }
+  if (from.maxreplicas() != 0) {
+    set_maxreplicas(from.maxreplicas());
+  }
+  if (from.nprocpernode() != 0) {
+    set_nprocpernode(from.nprocpernode());
+  }
+  if (from.maxrestarts() != 0) {
+    set_maxrestarts(from.maxrestarts());
   }
 }
 
@@ -344,7 +601,13 @@ void DistributedPyTorchTrainingTask::Swap(DistributedPyTorchTrainingTask* other)
 void DistributedPyTorchTrainingTask::InternalSwap(DistributedPyTorchTrainingTask* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  rdzvbackend_.Swap(&other->rdzvbackend_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(workers_, other->workers_);
+  swap(minreplicas_, other->minreplicas_);
+  swap(maxreplicas_, other->maxreplicas_);
+  swap(nprocpernode_, other->nprocpernode_);
+  swap(maxrestarts_, other->maxrestarts_);
 }
 
 ::google::protobuf::Metadata DistributedPyTorchTrainingTask::GetMetadata() const {

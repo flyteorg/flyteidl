@@ -110,6 +110,18 @@ pub struct DistributedPyTorchTrainingTask {
     /// number of worker replicas spawned in the cluster for this job
     #[prost(int32, tag="1")]
     pub workers: i32,
+    /// config for an elastic pytorch job
+    /// <https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go>
+    #[prost(string, tag="2")]
+    pub rdzv_backend: ::prost::alloc::string::String,
+    #[prost(int32, tag="3")]
+    pub min_replicas: i32,
+    #[prost(int32, tag="4")]
+    pub max_replicas: i32,
+    #[prost(int32, tag="5")]
+    pub n_proc_per_node: i32,
+    #[prost(int32, tag="6")]
+    pub max_restarts: i32,
 }
 /// Defines a query to execute on a hive cluster.
 #[allow(clippy::derive_partial_eq_without_eq)]

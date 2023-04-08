@@ -8,4 +8,12 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 message DistributedPyTorchTrainingTask {
   // number of worker replicas spawned in the cluster for this job
   int32 workers = 1;
+
+  // config for an elastic pytorch job
+  // https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go
+  string RDZVBackend = 2;
+  int32 minReplicas = 3;
+  int32 maxReplicas = 4;
+  int32 nProcPerNode = 5;
+  int32 maxRestarts = 6;  
 }
