@@ -41,7 +41,7 @@ struct TableStruct_flyteidl_2fplugins_2fpytorch_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[1]
+  static const ::google::protobuf::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -53,17 +53,169 @@ namespace plugins {
 class DistributedPyTorchTrainingTask;
 class DistributedPyTorchTrainingTaskDefaultTypeInternal;
 extern DistributedPyTorchTrainingTaskDefaultTypeInternal _DistributedPyTorchTrainingTask_default_instance_;
+class ElasticConfig;
+class ElasticConfigDefaultTypeInternal;
+extern ElasticConfigDefaultTypeInternal _ElasticConfig_default_instance_;
 }  // namespace plugins
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
 template<> ::flyteidl::plugins::DistributedPyTorchTrainingTask* Arena::CreateMaybeMessage<::flyteidl::plugins::DistributedPyTorchTrainingTask>(Arena*);
+template<> ::flyteidl::plugins::ElasticConfig* Arena::CreateMaybeMessage<::flyteidl::plugins::ElasticConfig>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
 namespace plugins {
 
 // ===================================================================
+
+class ElasticConfig final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.ElasticConfig) */ {
+ public:
+  ElasticConfig();
+  virtual ~ElasticConfig();
+
+  ElasticConfig(const ElasticConfig& from);
+
+  inline ElasticConfig& operator=(const ElasticConfig& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ElasticConfig(ElasticConfig&& from) noexcept
+    : ElasticConfig() {
+    *this = ::std::move(from);
+  }
+
+  inline ElasticConfig& operator=(ElasticConfig&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const ElasticConfig& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ElasticConfig* internal_default_instance() {
+    return reinterpret_cast<const ElasticConfig*>(
+               &_ElasticConfig_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(ElasticConfig* other);
+  friend void swap(ElasticConfig& a, ElasticConfig& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ElasticConfig* New() const final {
+    return CreateMaybeMessage<ElasticConfig>(nullptr);
+  }
+
+  ElasticConfig* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ElasticConfig>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ElasticConfig& from);
+  void MergeFrom(const ElasticConfig& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ElasticConfig* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string rdzv_backend = 1;
+  void clear_rdzv_backend();
+  static const int kRdzvBackendFieldNumber = 1;
+  const ::std::string& rdzv_backend() const;
+  void set_rdzv_backend(const ::std::string& value);
+  #if LANG_CXX11
+  void set_rdzv_backend(::std::string&& value);
+  #endif
+  void set_rdzv_backend(const char* value);
+  void set_rdzv_backend(const char* value, size_t size);
+  ::std::string* mutable_rdzv_backend();
+  ::std::string* release_rdzv_backend();
+  void set_allocated_rdzv_backend(::std::string* rdzv_backend);
+
+  // int32 min_replicas = 2;
+  void clear_min_replicas();
+  static const int kMinReplicasFieldNumber = 2;
+  ::google::protobuf::int32 min_replicas() const;
+  void set_min_replicas(::google::protobuf::int32 value);
+
+  // int32 max_replicas = 3;
+  void clear_max_replicas();
+  static const int kMaxReplicasFieldNumber = 3;
+  ::google::protobuf::int32 max_replicas() const;
+  void set_max_replicas(::google::protobuf::int32 value);
+
+  // int32 nproc_per_node = 4;
+  void clear_nproc_per_node();
+  static const int kNprocPerNodeFieldNumber = 4;
+  ::google::protobuf::int32 nproc_per_node() const;
+  void set_nproc_per_node(::google::protobuf::int32 value);
+
+  // int32 max_restarts = 5;
+  void clear_max_restarts();
+  static const int kMaxRestartsFieldNumber = 5;
+  ::google::protobuf::int32 max_restarts() const;
+  void set_max_restarts(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.plugins.ElasticConfig)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr rdzv_backend_;
+  ::google::protobuf::int32 min_replicas_;
+  ::google::protobuf::int32 max_replicas_;
+  ::google::protobuf::int32 nproc_per_node_;
+  ::google::protobuf::int32 max_restarts_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fplugins_2fpytorch_2eproto;
+};
+// -------------------------------------------------------------------
 
 class DistributedPyTorchTrainingTask final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.plugins.DistributedPyTorchTrainingTask) */ {
@@ -103,7 +255,7 @@ class DistributedPyTorchTrainingTask final :
                &_DistributedPyTorchTrainingTask_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(DistributedPyTorchTrainingTask* other);
   friend void swap(DistributedPyTorchTrainingTask& a, DistributedPyTorchTrainingTask& b) {
@@ -160,19 +312,14 @@ class DistributedPyTorchTrainingTask final :
 
   // accessors -------------------------------------------------------
 
-  // string RDZVBackend = 2;
-  void clear_rdzvbackend();
-  static const int kRDZVBackendFieldNumber = 2;
-  const ::std::string& rdzvbackend() const;
-  void set_rdzvbackend(const ::std::string& value);
-  #if LANG_CXX11
-  void set_rdzvbackend(::std::string&& value);
-  #endif
-  void set_rdzvbackend(const char* value);
-  void set_rdzvbackend(const char* value, size_t size);
-  ::std::string* mutable_rdzvbackend();
-  ::std::string* release_rdzvbackend();
-  void set_allocated_rdzvbackend(::std::string* rdzvbackend);
+  // .flyteidl.plugins.ElasticConfig elastic_config = 2;
+  bool has_elastic_config() const;
+  void clear_elastic_config();
+  static const int kElasticConfigFieldNumber = 2;
+  const ::flyteidl::plugins::ElasticConfig& elastic_config() const;
+  ::flyteidl::plugins::ElasticConfig* release_elastic_config();
+  ::flyteidl::plugins::ElasticConfig* mutable_elastic_config();
+  void set_allocated_elastic_config(::flyteidl::plugins::ElasticConfig* elastic_config);
 
   // int32 workers = 1;
   void clear_workers();
@@ -180,41 +327,13 @@ class DistributedPyTorchTrainingTask final :
   ::google::protobuf::int32 workers() const;
   void set_workers(::google::protobuf::int32 value);
 
-  // int32 minReplicas = 3;
-  void clear_minreplicas();
-  static const int kMinReplicasFieldNumber = 3;
-  ::google::protobuf::int32 minreplicas() const;
-  void set_minreplicas(::google::protobuf::int32 value);
-
-  // int32 maxReplicas = 4;
-  void clear_maxreplicas();
-  static const int kMaxReplicasFieldNumber = 4;
-  ::google::protobuf::int32 maxreplicas() const;
-  void set_maxreplicas(::google::protobuf::int32 value);
-
-  // int32 nProcPerNode = 5;
-  void clear_nprocpernode();
-  static const int kNProcPerNodeFieldNumber = 5;
-  ::google::protobuf::int32 nprocpernode() const;
-  void set_nprocpernode(::google::protobuf::int32 value);
-
-  // int32 maxRestarts = 6;
-  void clear_maxrestarts();
-  static const int kMaxRestartsFieldNumber = 6;
-  ::google::protobuf::int32 maxrestarts() const;
-  void set_maxrestarts(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.DistributedPyTorchTrainingTask)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr rdzvbackend_;
+  ::flyteidl::plugins::ElasticConfig* elastic_config_;
   ::google::protobuf::int32 workers_;
-  ::google::protobuf::int32 minreplicas_;
-  ::google::protobuf::int32 maxreplicas_;
-  ::google::protobuf::int32 nprocpernode_;
-  ::google::protobuf::int32 maxrestarts_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fpytorch_2eproto;
 };
@@ -227,6 +346,119 @@ class DistributedPyTorchTrainingTask final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// ElasticConfig
+
+// string rdzv_backend = 1;
+inline void ElasticConfig::clear_rdzv_backend() {
+  rdzv_backend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ElasticConfig::rdzv_backend() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.ElasticConfig.rdzv_backend)
+  return rdzv_backend_.GetNoArena();
+}
+inline void ElasticConfig::set_rdzv_backend(const ::std::string& value) {
+  
+  rdzv_backend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.ElasticConfig.rdzv_backend)
+}
+#if LANG_CXX11
+inline void ElasticConfig::set_rdzv_backend(::std::string&& value) {
+  
+  rdzv_backend_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.ElasticConfig.rdzv_backend)
+}
+#endif
+inline void ElasticConfig::set_rdzv_backend(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  rdzv_backend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.ElasticConfig.rdzv_backend)
+}
+inline void ElasticConfig::set_rdzv_backend(const char* value, size_t size) {
+  
+  rdzv_backend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.ElasticConfig.rdzv_backend)
+}
+inline ::std::string* ElasticConfig::mutable_rdzv_backend() {
+  
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.ElasticConfig.rdzv_backend)
+  return rdzv_backend_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ElasticConfig::release_rdzv_backend() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.ElasticConfig.rdzv_backend)
+  
+  return rdzv_backend_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ElasticConfig::set_allocated_rdzv_backend(::std::string* rdzv_backend) {
+  if (rdzv_backend != nullptr) {
+    
+  } else {
+    
+  }
+  rdzv_backend_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rdzv_backend);
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.ElasticConfig.rdzv_backend)
+}
+
+// int32 min_replicas = 2;
+inline void ElasticConfig::clear_min_replicas() {
+  min_replicas_ = 0;
+}
+inline ::google::protobuf::int32 ElasticConfig::min_replicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.ElasticConfig.min_replicas)
+  return min_replicas_;
+}
+inline void ElasticConfig::set_min_replicas(::google::protobuf::int32 value) {
+  
+  min_replicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.ElasticConfig.min_replicas)
+}
+
+// int32 max_replicas = 3;
+inline void ElasticConfig::clear_max_replicas() {
+  max_replicas_ = 0;
+}
+inline ::google::protobuf::int32 ElasticConfig::max_replicas() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.ElasticConfig.max_replicas)
+  return max_replicas_;
+}
+inline void ElasticConfig::set_max_replicas(::google::protobuf::int32 value) {
+  
+  max_replicas_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.ElasticConfig.max_replicas)
+}
+
+// int32 nproc_per_node = 4;
+inline void ElasticConfig::clear_nproc_per_node() {
+  nproc_per_node_ = 0;
+}
+inline ::google::protobuf::int32 ElasticConfig::nproc_per_node() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.ElasticConfig.nproc_per_node)
+  return nproc_per_node_;
+}
+inline void ElasticConfig::set_nproc_per_node(::google::protobuf::int32 value) {
+  
+  nproc_per_node_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.ElasticConfig.nproc_per_node)
+}
+
+// int32 max_restarts = 5;
+inline void ElasticConfig::clear_max_restarts() {
+  max_restarts_ = 0;
+}
+inline ::google::protobuf::int32 ElasticConfig::max_restarts() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.ElasticConfig.max_restarts)
+  return max_restarts_;
+}
+inline void ElasticConfig::set_max_restarts(::google::protobuf::int32 value) {
+  
+  max_restarts_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.ElasticConfig.max_restarts)
+}
+
+// -------------------------------------------------------------------
+
 // DistributedPyTorchTrainingTask
 
 // int32 workers = 1;
@@ -243,118 +475,62 @@ inline void DistributedPyTorchTrainingTask::set_workers(::google::protobuf::int3
   // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.workers)
 }
 
-// string RDZVBackend = 2;
-inline void DistributedPyTorchTrainingTask::clear_rdzvbackend() {
-  rdzvbackend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .flyteidl.plugins.ElasticConfig elastic_config = 2;
+inline bool DistributedPyTorchTrainingTask::has_elastic_config() const {
+  return this != internal_default_instance() && elastic_config_ != nullptr;
 }
-inline const ::std::string& DistributedPyTorchTrainingTask::rdzvbackend() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-  return rdzvbackend_.GetNoArena();
+inline void DistributedPyTorchTrainingTask::clear_elastic_config() {
+  if (GetArenaNoVirtual() == nullptr && elastic_config_ != nullptr) {
+    delete elastic_config_;
+  }
+  elastic_config_ = nullptr;
 }
-inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const ::std::string& value) {
+inline const ::flyteidl::plugins::ElasticConfig& DistributedPyTorchTrainingTask::elastic_config() const {
+  const ::flyteidl::plugins::ElasticConfig* p = elastic_config_;
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.elastic_config)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::plugins::ElasticConfig*>(
+      &::flyteidl::plugins::_ElasticConfig_default_instance_);
+}
+inline ::flyteidl::plugins::ElasticConfig* DistributedPyTorchTrainingTask::release_elastic_config() {
+  // @@protoc_insertion_point(field_release:flyteidl.plugins.DistributedPyTorchTrainingTask.elastic_config)
   
-  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+  ::flyteidl::plugins::ElasticConfig* temp = elastic_config_;
+  elastic_config_ = nullptr;
+  return temp;
 }
-#if LANG_CXX11
-inline void DistributedPyTorchTrainingTask::set_rdzvbackend(::std::string&& value) {
+inline ::flyteidl::plugins::ElasticConfig* DistributedPyTorchTrainingTask::mutable_elastic_config() {
   
-  rdzvbackend_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
+  if (elastic_config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::plugins::ElasticConfig>(GetArenaNoVirtual());
+    elastic_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DistributedPyTorchTrainingTask.elastic_config)
+  return elastic_config_;
 }
-#endif
-inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-}
-inline void DistributedPyTorchTrainingTask::set_rdzvbackend(const char* value, size_t size) {
-  
-  rdzvbackend_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-}
-inline ::std::string* DistributedPyTorchTrainingTask::mutable_rdzvbackend() {
-  
-  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-  return rdzvbackend_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* DistributedPyTorchTrainingTask::release_rdzvbackend() {
-  // @@protoc_insertion_point(field_release:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-  
-  return rdzvbackend_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void DistributedPyTorchTrainingTask::set_allocated_rdzvbackend(::std::string* rdzvbackend) {
-  if (rdzvbackend != nullptr) {
+inline void DistributedPyTorchTrainingTask::set_allocated_elastic_config(::flyteidl::plugins::ElasticConfig* elastic_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete elastic_config_;
+  }
+  if (elastic_config) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      elastic_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, elastic_config, submessage_arena);
+    }
     
   } else {
     
   }
-  rdzvbackend_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rdzvbackend);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DistributedPyTorchTrainingTask.RDZVBackend)
-}
-
-// int32 minReplicas = 3;
-inline void DistributedPyTorchTrainingTask::clear_minreplicas() {
-  minreplicas_ = 0;
-}
-inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::minreplicas() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.minReplicas)
-  return minreplicas_;
-}
-inline void DistributedPyTorchTrainingTask::set_minreplicas(::google::protobuf::int32 value) {
-  
-  minreplicas_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.minReplicas)
-}
-
-// int32 maxReplicas = 4;
-inline void DistributedPyTorchTrainingTask::clear_maxreplicas() {
-  maxreplicas_ = 0;
-}
-inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::maxreplicas() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.maxReplicas)
-  return maxreplicas_;
-}
-inline void DistributedPyTorchTrainingTask::set_maxreplicas(::google::protobuf::int32 value) {
-  
-  maxreplicas_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.maxReplicas)
-}
-
-// int32 nProcPerNode = 5;
-inline void DistributedPyTorchTrainingTask::clear_nprocpernode() {
-  nprocpernode_ = 0;
-}
-inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::nprocpernode() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.nProcPerNode)
-  return nprocpernode_;
-}
-inline void DistributedPyTorchTrainingTask::set_nprocpernode(::google::protobuf::int32 value) {
-  
-  nprocpernode_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.nProcPerNode)
-}
-
-// int32 maxRestarts = 6;
-inline void DistributedPyTorchTrainingTask::clear_maxrestarts() {
-  maxrestarts_ = 0;
-}
-inline ::google::protobuf::int32 DistributedPyTorchTrainingTask::maxrestarts() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.DistributedPyTorchTrainingTask.maxRestarts)
-  return maxrestarts_;
-}
-inline void DistributedPyTorchTrainingTask::set_maxrestarts(::google::protobuf::int32 value) {
-  
-  maxrestarts_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.DistributedPyTorchTrainingTask.maxRestarts)
+  elastic_config_ = elastic_config;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.DistributedPyTorchTrainingTask.elastic_config)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
