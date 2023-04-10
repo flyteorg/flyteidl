@@ -37,7 +37,6 @@
 #include "flyteidl/admin/workflow.pb.h"
 #include "flyteidl/admin/workflow_attributes.pb.h"
 #include "flyteidl/admin/launch_plan.pb.h"
-#include "flyteidl/admin/data.pb.h"
 #include "flyteidl/admin/event.pb.h"
 #include "flyteidl/admin/execution.pb.h"
 #include "flyteidl/admin/matchable_resource.pb.h"
@@ -46,8 +45,6 @@
 #include "flyteidl/admin/version.pb.h"
 #include "flyteidl/admin/common.pb.h"
 #include "flyteidl/admin/description_entity.pb.h"
-#include "flyteidl/core/identifier.pb.h"
-#include "flyteidl/core/metrics.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_flyteidl_2fservice_2fadmin_2eproto

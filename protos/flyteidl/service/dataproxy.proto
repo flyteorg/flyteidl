@@ -8,6 +8,8 @@ import "google/api/annotations.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "flyteidl/core/identifier.proto";
+import "flyteidl/core/literals.proto";
+
 
 message CreateUploadLocationResponse {
   // SignedUrl specifies the url to use to upload content to (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
@@ -102,6 +104,29 @@ message CreateDownloadLinkResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
+// Wraps a flyte url, a unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
+// backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
+//      flyte://v1/proj/development/execid/n2/i (for node execution)
+message FlyteArtifact {
+  string flyte_url = 1;
+}
+
+// General request artifact to retrieve data from a Flyte artifact url.
+message FlyteArtifactGetRequest {
+  FlyteArtifact artifact = 1;
+}
+
+message DataResponse {
+  oneof data {
+    // literal map data will be returned
+    core.LiteralMap literal_map                = 1;
+
+    // Flyte deck html will be returned as a signed url users can download
+    CreateDownloadLinkResponse flyte_deck_download_link = 2;
+  }
+}
+
 // DataProxyService defines an RPC Service that allows access to user-data in a controlled manner.
 service DataProxyService {
   // CreateUploadLocation creates a signed url to upload artifacts to for a given project/domain.
@@ -135,5 +160,12 @@ service DataProxyService {
     // option (grpc.gateway.protoc_gen_swagger.options.openapiv2_operation) = {
     //   description: "Creates a read-only http location that is accessible for tasks at runtime."
     // };
+  }
+
+  rpc GetData (FlyteArtifactGetRequest) returns (DataResponse) {
+    // Takes an address like flyte://v1/proj/development/execid/n2/0/i and return the actual data
+    option (google.api.http) = {
+      get: "/api/v1/data/get_artifact"
+    };
   }
 }

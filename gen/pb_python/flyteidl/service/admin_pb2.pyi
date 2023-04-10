@@ -6,7 +6,6 @@ from flyteidl.admin import task_pb2 as _task_pb2
 from flyteidl.admin import workflow_pb2 as _workflow_pb2
 from flyteidl.admin import workflow_attributes_pb2 as _workflow_attributes_pb2
 from flyteidl.admin import launch_plan_pb2 as _launch_plan_pb2
-from flyteidl.admin import data_pb2 as _data_pb2
 from flyteidl.admin import event_pb2 as _event_pb2
 from flyteidl.admin import execution_pb2 as _execution_pb2
 from flyteidl.admin import matchable_resource_pb2 as _matchable_resource_pb2
@@ -15,8 +14,6 @@ from flyteidl.admin import task_execution_pb2 as _task_execution_pb2
 from flyteidl.admin import version_pb2 as _version_pb2
 from flyteidl.admin import common_pb2 as _common_pb2
 from flyteidl.admin import description_entity_pb2 as _description_entity_pb2
-from flyteidl.core import identifier_pb2 as _identifier_pb2
-from flyteidl.core import metrics_pb2 as _metrics_pb2
 from google.protobuf import descriptor as _descriptor
 from typing import ClassVar as _ClassVar
 

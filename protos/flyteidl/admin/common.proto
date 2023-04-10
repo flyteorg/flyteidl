@@ -301,9 +301,3 @@ message RawOutputDataConfig {
     // e.g. s3://bucket/key or s3://bucket/
     string output_location_prefix = 1;
 }
-
-// Wraps a flyte url, a unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
-// backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
-message FlyteArtifact {
-    string flyte_url = 1;
-}

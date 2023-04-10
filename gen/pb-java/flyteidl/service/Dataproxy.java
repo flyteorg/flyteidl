@@ -6338,6 +6338,2217 @@ public final class Dataproxy {
 
   }
 
+  public interface FlyteArtifactOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteArtifact)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    java.lang.String getFlyteUrl();
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFlyteUrlBytes();
+  }
+  /**
+   * <pre>
+   * Wraps a flyte url, a unique identifier in the form of flyte://&lt;something&gt; that uniquely, for a given Flyte
+   * backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+   * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
+   *      flyte://v1/proj/development/execid/n2/i (for node execution)
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.service.FlyteArtifact}
+   */
+  public  static final class FlyteArtifact extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteArtifact)
+      FlyteArtifactOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlyteArtifact.newBuilder() to construct.
+    private FlyteArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlyteArtifact() {
+      flyteUrl_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlyteArtifact(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              flyteUrl_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifact_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifact_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.service.Dataproxy.FlyteArtifact.class, flyteidl.service.Dataproxy.FlyteArtifact.Builder.class);
+    }
+
+    public static final int FLYTE_URL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object flyteUrl_;
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    public java.lang.String getFlyteUrl() {
+      java.lang.Object ref = flyteUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flyteUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string flyte_url = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFlyteUrlBytes() {
+      java.lang.Object ref = flyteUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        flyteUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFlyteUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, flyteUrl_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFlyteUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, flyteUrl_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.service.Dataproxy.FlyteArtifact)) {
+        return super.equals(obj);
+      }
+      flyteidl.service.Dataproxy.FlyteArtifact other = (flyteidl.service.Dataproxy.FlyteArtifact) obj;
+
+      if (!getFlyteUrl()
+          .equals(other.getFlyteUrl())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FLYTE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getFlyteUrl().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifact parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.service.Dataproxy.FlyteArtifact prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Wraps a flyte url, a unique identifier in the form of flyte://&lt;something&gt; that uniquely, for a given Flyte
+     * backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+     * e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
+     *      flyte://v1/proj/development/execid/n2/i (for node execution)
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.service.FlyteArtifact}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteArtifact)
+        flyteidl.service.Dataproxy.FlyteArtifactOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifact_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifact_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.service.Dataproxy.FlyteArtifact.class, flyteidl.service.Dataproxy.FlyteArtifact.Builder.class);
+      }
+
+      // Construct using flyteidl.service.Dataproxy.FlyteArtifact.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        flyteUrl_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifact_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifact getDefaultInstanceForType() {
+        return flyteidl.service.Dataproxy.FlyteArtifact.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifact build() {
+        flyteidl.service.Dataproxy.FlyteArtifact result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifact buildPartial() {
+        flyteidl.service.Dataproxy.FlyteArtifact result = new flyteidl.service.Dataproxy.FlyteArtifact(this);
+        result.flyteUrl_ = flyteUrl_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.service.Dataproxy.FlyteArtifact) {
+          return mergeFrom((flyteidl.service.Dataproxy.FlyteArtifact)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.service.Dataproxy.FlyteArtifact other) {
+        if (other == flyteidl.service.Dataproxy.FlyteArtifact.getDefaultInstance()) return this;
+        if (!other.getFlyteUrl().isEmpty()) {
+          flyteUrl_ = other.flyteUrl_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.service.Dataproxy.FlyteArtifact parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.service.Dataproxy.FlyteArtifact) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object flyteUrl_ = "";
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public java.lang.String getFlyteUrl() {
+        java.lang.Object ref = flyteUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flyteUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFlyteUrlBytes() {
+        java.lang.Object ref = flyteUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          flyteUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder setFlyteUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        flyteUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder clearFlyteUrl() {
+        
+        flyteUrl_ = getDefaultInstance().getFlyteUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string flyte_url = 1;</code>
+       */
+      public Builder setFlyteUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        flyteUrl_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteArtifact)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifact)
+    private static final flyteidl.service.Dataproxy.FlyteArtifact DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.FlyteArtifact();
+    }
+
+    public static flyteidl.service.Dataproxy.FlyteArtifact getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlyteArtifact>
+        PARSER = new com.google.protobuf.AbstractParser<FlyteArtifact>() {
+      @java.lang.Override
+      public FlyteArtifact parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlyteArtifact(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlyteArtifact> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlyteArtifact> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.service.Dataproxy.FlyteArtifact getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FlyteArtifactGetRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.FlyteArtifactGetRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    boolean hasArtifact();
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    flyteidl.service.Dataproxy.FlyteArtifact getArtifact();
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    flyteidl.service.Dataproxy.FlyteArtifactOrBuilder getArtifactOrBuilder();
+  }
+  /**
+   * <pre>
+   * General request artifact to retrieve data from a Flyte artifact url.
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.service.FlyteArtifactGetRequest}
+   */
+  public  static final class FlyteArtifactGetRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.service.FlyteArtifactGetRequest)
+      FlyteArtifactGetRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FlyteArtifactGetRequest.newBuilder() to construct.
+    private FlyteArtifactGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FlyteArtifactGetRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FlyteArtifactGetRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.service.Dataproxy.FlyteArtifact.Builder subBuilder = null;
+              if (artifact_ != null) {
+                subBuilder = artifact_.toBuilder();
+              }
+              artifact_ = input.readMessage(flyteidl.service.Dataproxy.FlyteArtifact.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(artifact_);
+                artifact_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactGetRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.service.Dataproxy.FlyteArtifactGetRequest.class, flyteidl.service.Dataproxy.FlyteArtifactGetRequest.Builder.class);
+    }
+
+    public static final int ARTIFACT_FIELD_NUMBER = 1;
+    private flyteidl.service.Dataproxy.FlyteArtifact artifact_;
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    public boolean hasArtifact() {
+      return artifact_ != null;
+    }
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    public flyteidl.service.Dataproxy.FlyteArtifact getArtifact() {
+      return artifact_ == null ? flyteidl.service.Dataproxy.FlyteArtifact.getDefaultInstance() : artifact_;
+    }
+    /**
+     * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+     */
+    public flyteidl.service.Dataproxy.FlyteArtifactOrBuilder getArtifactOrBuilder() {
+      return getArtifact();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (artifact_ != null) {
+        output.writeMessage(1, getArtifact());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (artifact_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getArtifact());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.service.Dataproxy.FlyteArtifactGetRequest)) {
+        return super.equals(obj);
+      }
+      flyteidl.service.Dataproxy.FlyteArtifactGetRequest other = (flyteidl.service.Dataproxy.FlyteArtifactGetRequest) obj;
+
+      if (hasArtifact() != other.hasArtifact()) return false;
+      if (hasArtifact()) {
+        if (!getArtifact()
+            .equals(other.getArtifact())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasArtifact()) {
+        hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
+        hash = (53 * hash) + getArtifact().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.service.Dataproxy.FlyteArtifactGetRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * General request artifact to retrieve data from a Flyte artifact url.
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.service.FlyteArtifactGetRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.FlyteArtifactGetRequest)
+        flyteidl.service.Dataproxy.FlyteArtifactGetRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactGetRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.service.Dataproxy.FlyteArtifactGetRequest.class, flyteidl.service.Dataproxy.FlyteArtifactGetRequest.Builder.class);
+      }
+
+      // Construct using flyteidl.service.Dataproxy.FlyteArtifactGetRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifactGetRequest getDefaultInstanceForType() {
+        return flyteidl.service.Dataproxy.FlyteArtifactGetRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifactGetRequest build() {
+        flyteidl.service.Dataproxy.FlyteArtifactGetRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.FlyteArtifactGetRequest buildPartial() {
+        flyteidl.service.Dataproxy.FlyteArtifactGetRequest result = new flyteidl.service.Dataproxy.FlyteArtifactGetRequest(this);
+        if (artifactBuilder_ == null) {
+          result.artifact_ = artifact_;
+        } else {
+          result.artifact_ = artifactBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.service.Dataproxy.FlyteArtifactGetRequest) {
+          return mergeFrom((flyteidl.service.Dataproxy.FlyteArtifactGetRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.service.Dataproxy.FlyteArtifactGetRequest other) {
+        if (other == flyteidl.service.Dataproxy.FlyteArtifactGetRequest.getDefaultInstance()) return this;
+        if (other.hasArtifact()) {
+          mergeArtifact(other.getArtifact());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.service.Dataproxy.FlyteArtifactGetRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.service.Dataproxy.FlyteArtifactGetRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private flyteidl.service.Dataproxy.FlyteArtifact artifact_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.service.Dataproxy.FlyteArtifact, flyteidl.service.Dataproxy.FlyteArtifact.Builder, flyteidl.service.Dataproxy.FlyteArtifactOrBuilder> artifactBuilder_;
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public boolean hasArtifact() {
+        return artifactBuilder_ != null || artifact_ != null;
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public flyteidl.service.Dataproxy.FlyteArtifact getArtifact() {
+        if (artifactBuilder_ == null) {
+          return artifact_ == null ? flyteidl.service.Dataproxy.FlyteArtifact.getDefaultInstance() : artifact_;
+        } else {
+          return artifactBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public Builder setArtifact(flyteidl.service.Dataproxy.FlyteArtifact value) {
+        if (artifactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          artifact_ = value;
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public Builder setArtifact(
+          flyteidl.service.Dataproxy.FlyteArtifact.Builder builderForValue) {
+        if (artifactBuilder_ == null) {
+          artifact_ = builderForValue.build();
+          onChanged();
+        } else {
+          artifactBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public Builder mergeArtifact(flyteidl.service.Dataproxy.FlyteArtifact value) {
+        if (artifactBuilder_ == null) {
+          if (artifact_ != null) {
+            artifact_ =
+              flyteidl.service.Dataproxy.FlyteArtifact.newBuilder(artifact_).mergeFrom(value).buildPartial();
+          } else {
+            artifact_ = value;
+          }
+          onChanged();
+        } else {
+          artifactBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public Builder clearArtifact() {
+        if (artifactBuilder_ == null) {
+          artifact_ = null;
+          onChanged();
+        } else {
+          artifact_ = null;
+          artifactBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public flyteidl.service.Dataproxy.FlyteArtifact.Builder getArtifactBuilder() {
+        
+        onChanged();
+        return getArtifactFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      public flyteidl.service.Dataproxy.FlyteArtifactOrBuilder getArtifactOrBuilder() {
+        if (artifactBuilder_ != null) {
+          return artifactBuilder_.getMessageOrBuilder();
+        } else {
+          return artifact_ == null ?
+              flyteidl.service.Dataproxy.FlyteArtifact.getDefaultInstance() : artifact_;
+        }
+      }
+      /**
+       * <code>.flyteidl.service.FlyteArtifact artifact = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.service.Dataproxy.FlyteArtifact, flyteidl.service.Dataproxy.FlyteArtifact.Builder, flyteidl.service.Dataproxy.FlyteArtifactOrBuilder> 
+          getArtifactFieldBuilder() {
+        if (artifactBuilder_ == null) {
+          artifactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.service.Dataproxy.FlyteArtifact, flyteidl.service.Dataproxy.FlyteArtifact.Builder, flyteidl.service.Dataproxy.FlyteArtifactOrBuilder>(
+                  getArtifact(),
+                  getParentForChildren(),
+                  isClean());
+          artifact_ = null;
+        }
+        return artifactBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.FlyteArtifactGetRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactGetRequest)
+    private static final flyteidl.service.Dataproxy.FlyteArtifactGetRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.FlyteArtifactGetRequest();
+    }
+
+    public static flyteidl.service.Dataproxy.FlyteArtifactGetRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FlyteArtifactGetRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FlyteArtifactGetRequest>() {
+      @java.lang.Override
+      public FlyteArtifactGetRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FlyteArtifactGetRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FlyteArtifactGetRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FlyteArtifactGetRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.service.Dataproxy.FlyteArtifactGetRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DataResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.service.DataResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    boolean hasLiteralMap();
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    flyteidl.core.Literals.LiteralMap getLiteralMap();
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    flyteidl.core.Literals.LiteralMapOrBuilder getLiteralMapOrBuilder();
+
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    boolean hasFlyteDeckDownloadLink();
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink();
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder();
+
+    public flyteidl.service.Dataproxy.DataResponse.DataCase getDataCase();
+  }
+  /**
+   * Protobuf type {@code flyteidl.service.DataResponse}
+   */
+  public  static final class DataResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.service.DataResponse)
+      DataResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DataResponse.newBuilder() to construct.
+    private DataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DataResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DataResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              flyteidl.core.Literals.LiteralMap.Builder subBuilder = null;
+              if (dataCase_ == 1) {
+                subBuilder = ((flyteidl.core.Literals.LiteralMap) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(flyteidl.core.Literals.LiteralMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.core.Literals.LiteralMap) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 1;
+              break;
+            }
+            case 18: {
+              flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder subBuilder = null;
+              if (dataCase_ == 2) {
+                subBuilder = ((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(flyteidl.service.Dataproxy.CreateDownloadLinkResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 2;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_DataResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.service.Dataproxy.internal_static_flyteidl_service_DataResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.service.Dataproxy.DataResponse.class, flyteidl.service.Dataproxy.DataResponse.Builder.class);
+    }
+
+    private int dataCase_ = 0;
+    private java.lang.Object data_;
+    public enum DataCase
+        implements com.google.protobuf.Internal.EnumLite {
+      LITERAL_MAP(1),
+      FLYTE_DECK_DOWNLOAD_LINK(2),
+      DATA_NOT_SET(0);
+      private final int value;
+      private DataCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataCase forNumber(int value) {
+        switch (value) {
+          case 1: return LITERAL_MAP;
+          case 2: return FLYTE_DECK_DOWNLOAD_LINK;
+          case 0: return DATA_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataCase
+    getDataCase() {
+      return DataCase.forNumber(
+          dataCase_);
+    }
+
+    public static final int LITERAL_MAP_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    public boolean hasLiteralMap() {
+      return dataCase_ == 1;
+    }
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    public flyteidl.core.Literals.LiteralMap getLiteralMap() {
+      if (dataCase_ == 1) {
+         return (flyteidl.core.Literals.LiteralMap) data_;
+      }
+      return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * literal map data will be returned
+     * </pre>
+     *
+     * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+     */
+    public flyteidl.core.Literals.LiteralMapOrBuilder getLiteralMapOrBuilder() {
+      if (dataCase_ == 1) {
+         return (flyteidl.core.Literals.LiteralMap) data_;
+      }
+      return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+    }
+
+    public static final int FLYTE_DECK_DOWNLOAD_LINK_FIELD_NUMBER = 2;
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    public boolean hasFlyteDeckDownloadLink() {
+      return dataCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    public flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink() {
+      if (dataCase_ == 2) {
+         return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+      }
+      return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Flyte deck html will be returned as a signed url users can download
+     * </pre>
+     *
+     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     */
+    public flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder() {
+      if (dataCase_ == 2) {
+         return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+      }
+      return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (dataCase_ == 1) {
+        output.writeMessage(1, (flyteidl.core.Literals.LiteralMap) data_);
+      }
+      if (dataCase_ == 2) {
+        output.writeMessage(2, (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (flyteidl.core.Literals.LiteralMap) data_);
+      }
+      if (dataCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.service.Dataproxy.DataResponse)) {
+        return super.equals(obj);
+      }
+      flyteidl.service.Dataproxy.DataResponse other = (flyteidl.service.Dataproxy.DataResponse) obj;
+
+      if (!getDataCase().equals(other.getDataCase())) return false;
+      switch (dataCase_) {
+        case 1:
+          if (!getLiteralMap()
+              .equals(other.getLiteralMap())) return false;
+          break;
+        case 2:
+          if (!getFlyteDeckDownloadLink()
+              .equals(other.getFlyteDeckDownloadLink())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (dataCase_) {
+        case 1:
+          hash = (37 * hash) + LITERAL_MAP_FIELD_NUMBER;
+          hash = (53 * hash) + getLiteralMap().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + FLYTE_DECK_DOWNLOAD_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getFlyteDeckDownloadLink().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.service.Dataproxy.DataResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.service.Dataproxy.DataResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code flyteidl.service.DataResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.service.DataResponse)
+        flyteidl.service.Dataproxy.DataResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_DataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_DataResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.service.Dataproxy.DataResponse.class, flyteidl.service.Dataproxy.DataResponse.Builder.class);
+      }
+
+      // Construct using flyteidl.service.Dataproxy.DataResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dataCase_ = 0;
+        data_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.service.Dataproxy.internal_static_flyteidl_service_DataResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.DataResponse getDefaultInstanceForType() {
+        return flyteidl.service.Dataproxy.DataResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.DataResponse build() {
+        flyteidl.service.Dataproxy.DataResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.service.Dataproxy.DataResponse buildPartial() {
+        flyteidl.service.Dataproxy.DataResponse result = new flyteidl.service.Dataproxy.DataResponse(this);
+        if (dataCase_ == 1) {
+          if (literalMapBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = literalMapBuilder_.build();
+          }
+        }
+        if (dataCase_ == 2) {
+          if (flyteDeckDownloadLinkBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = flyteDeckDownloadLinkBuilder_.build();
+          }
+        }
+        result.dataCase_ = dataCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.service.Dataproxy.DataResponse) {
+          return mergeFrom((flyteidl.service.Dataproxy.DataResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.service.Dataproxy.DataResponse other) {
+        if (other == flyteidl.service.Dataproxy.DataResponse.getDefaultInstance()) return this;
+        switch (other.getDataCase()) {
+          case LITERAL_MAP: {
+            mergeLiteralMap(other.getLiteralMap());
+            break;
+          }
+          case FLYTE_DECK_DOWNLOAD_LINK: {
+            mergeFlyteDeckDownloadLink(other.getFlyteDeckDownloadLink());
+            break;
+          }
+          case DATA_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.service.Dataproxy.DataResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.service.Dataproxy.DataResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataCase_ = 0;
+      private java.lang.Object data_;
+      public DataCase
+          getDataCase() {
+        return DataCase.forNumber(
+            dataCase_);
+      }
+
+      public Builder clearData() {
+        dataCase_ = 0;
+        data_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> literalMapBuilder_;
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public boolean hasLiteralMap() {
+        return dataCase_ == 1;
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap getLiteralMap() {
+        if (literalMapBuilder_ == null) {
+          if (dataCase_ == 1) {
+            return (flyteidl.core.Literals.LiteralMap) data_;
+          }
+          return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+        } else {
+          if (dataCase_ == 1) {
+            return literalMapBuilder_.getMessage();
+          }
+          return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public Builder setLiteralMap(flyteidl.core.Literals.LiteralMap value) {
+        if (literalMapBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          literalMapBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public Builder setLiteralMap(
+          flyteidl.core.Literals.LiteralMap.Builder builderForValue) {
+        if (literalMapBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          literalMapBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public Builder mergeLiteralMap(flyteidl.core.Literals.LiteralMap value) {
+        if (literalMapBuilder_ == null) {
+          if (dataCase_ == 1 &&
+              data_ != flyteidl.core.Literals.LiteralMap.getDefaultInstance()) {
+            data_ = flyteidl.core.Literals.LiteralMap.newBuilder((flyteidl.core.Literals.LiteralMap) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 1) {
+            literalMapBuilder_.mergeFrom(value);
+          }
+          literalMapBuilder_.setMessage(value);
+        }
+        dataCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public Builder clearLiteralMap() {
+        if (literalMapBuilder_ == null) {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 1) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          literalMapBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public flyteidl.core.Literals.LiteralMap.Builder getLiteralMapBuilder() {
+        return getLiteralMapFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      public flyteidl.core.Literals.LiteralMapOrBuilder getLiteralMapOrBuilder() {
+        if ((dataCase_ == 1) && (literalMapBuilder_ != null)) {
+          return literalMapBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 1) {
+            return (flyteidl.core.Literals.LiteralMap) data_;
+          }
+          return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * literal map data will be returned
+       * </pre>
+       *
+       * <code>.flyteidl.core.LiteralMap literal_map = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder> 
+          getLiteralMapFieldBuilder() {
+        if (literalMapBuilder_ == null) {
+          if (!(dataCase_ == 1)) {
+            data_ = flyteidl.core.Literals.LiteralMap.getDefaultInstance();
+          }
+          literalMapBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.core.Literals.LiteralMap, flyteidl.core.Literals.LiteralMap.Builder, flyteidl.core.Literals.LiteralMapOrBuilder>(
+                  (flyteidl.core.Literals.LiteralMap) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 1;
+        onChanged();;
+        return literalMapBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder> flyteDeckDownloadLinkBuilder_;
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public boolean hasFlyteDeckDownloadLink() {
+        return dataCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink() {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (dataCase_ == 2) {
+            return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+          }
+          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+        } else {
+          if (dataCase_ == 2) {
+            return flyteDeckDownloadLinkBuilder_.getMessage();
+          }
+          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public Builder setFlyteDeckDownloadLink(flyteidl.service.Dataproxy.CreateDownloadLinkResponse value) {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          flyteDeckDownloadLinkBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public Builder setFlyteDeckDownloadLink(
+          flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder builderForValue) {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          flyteDeckDownloadLinkBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public Builder mergeFlyteDeckDownloadLink(flyteidl.service.Dataproxy.CreateDownloadLinkResponse value) {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (dataCase_ == 2 &&
+              data_ != flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance()) {
+            data_ = flyteidl.service.Dataproxy.CreateDownloadLinkResponse.newBuilder((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 2) {
+            flyteDeckDownloadLinkBuilder_.mergeFrom(value);
+          }
+          flyteDeckDownloadLinkBuilder_.setMessage(value);
+        }
+        dataCase_ = 2;
+        return this;
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public Builder clearFlyteDeckDownloadLink() {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 2) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          flyteDeckDownloadLinkBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder getFlyteDeckDownloadLinkBuilder() {
+        return getFlyteDeckDownloadLinkFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      public flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder() {
+        if ((dataCase_ == 2) && (flyteDeckDownloadLinkBuilder_ != null)) {
+          return flyteDeckDownloadLinkBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 2) {
+            return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+          }
+          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Flyte deck html will be returned as a signed url users can download
+       * </pre>
+       *
+       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder> 
+          getFlyteDeckDownloadLinkFieldBuilder() {
+        if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (!(dataCase_ == 2)) {
+            data_ = flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+          }
+          flyteDeckDownloadLinkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder>(
+                  (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 2;
+        onChanged();;
+        return flyteDeckDownloadLinkBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.service.DataResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.service.DataResponse)
+    private static final flyteidl.service.Dataproxy.DataResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.service.Dataproxy.DataResponse();
+    }
+
+    public static flyteidl.service.Dataproxy.DataResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataResponse>
+        PARSER = new com.google.protobuf.AbstractParser<DataResponse>() {
+      @java.lang.Override
+      public DataResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DataResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DataResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.service.Dataproxy.DataResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_service_CreateUploadLocationResponse_descriptor;
   private static final 
@@ -6368,6 +8579,21 @@ public final class Dataproxy {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_service_CreateDownloadLinkResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_service_FlyteArtifact_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_service_FlyteArtifact_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_service_FlyteArtifactGetRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_service_DataResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_service_DataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6381,43 +8607,53 @@ public final class Dataproxy {
       "eidl.service\032\034google/api/annotations.pro" +
       "to\032\036google/protobuf/duration.proto\032\037goog" +
       "le/protobuf/timestamp.proto\032\036flyteidl/co" +
-      "re/identifier.proto\"v\n\034CreateUploadLocat" +
-      "ionResponse\022\022\n\nsigned_url\030\001 \001(\t\022\022\n\nnativ" +
-      "e_url\030\002 \001(\t\022.\n\nexpires_at\030\003 \001(\0132\032.google" +
-      ".protobuf.Timestamp\"\224\001\n\033CreateUploadLoca" +
-      "tionRequest\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002" +
-      " \001(\t\022\020\n\010filename\030\003 \001(\t\022-\n\nexpires_in\030\004 \001" +
-      "(\0132\031.google.protobuf.Duration\022\023\n\013content" +
-      "_md5\030\005 \001(\014\"f\n\035CreateDownloadLocationRequ" +
-      "est\022\022\n\nnative_url\030\001 \001(\t\022-\n\nexpires_in\030\002 " +
-      "\001(\0132\031.google.protobuf.Duration:\002\030\001\"h\n\036Cr" +
-      "eateDownloadLocationResponse\022\022\n\nsigned_u" +
-      "rl\030\001 \001(\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp:\002\030\001\"\320\001\n\031CreateDownloadL" +
-      "inkRequest\0225\n\rartifact_type\030\001 \001(\0162\036.flyt" +
-      "eidl.service.ArtifactType\022-\n\nexpires_in\030" +
-      "\002 \001(\0132\031.google.protobuf.Duration\022C\n\021node" +
-      "_execution_id\030\003 \001(\0132&.flyteidl.core.Node" +
-      "ExecutionIdentifierH\000B\010\n\006source\"`\n\032Creat" +
-      "eDownloadLinkResponse\022\022\n\nsigned_url\030\001 \003(" +
-      "\t\022.\n\nexpires_at\030\002 \001(\0132\032.google.protobuf." +
-      "Timestamp*C\n\014ArtifactType\022\033\n\027ARTIFACT_TY" +
-      "PE_UNDEFINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\374" +
-      "\003\n\020DataProxyService\022\240\001\n\024CreateUploadLoca" +
-      "tion\022-.flyteidl.service.CreateUploadLoca" +
-      "tionRequest\032..flyteidl.service.CreateUpl" +
-      "oadLocationResponse\")\202\323\344\223\002#\"\036/api/v1/dat" +
-      "aproxy/artifact_urn:\001*\022\246\001\n\026CreateDownloa" +
-      "dLocation\022/.flyteidl.service.CreateDownl" +
-      "oadLocationRequest\0320.flyteidl.service.Cr" +
-      "eateDownloadLocationResponse\")\210\002\001\202\323\344\223\002 \022" +
-      "\036/api/v1/dataproxy/artifact_urn\022\233\001\n\022Crea" +
-      "teDownloadLink\022+.flyteidl.service.Create" +
-      "DownloadLinkRequest\032,.flyteidl.service.C" +
-      "reateDownloadLinkResponse\"*\202\323\344\223\002$\"\037/api/" +
-      "v1/dataproxy/artifact_link:\001*B9Z7github." +
-      "com/flyteorg/flyteidl/gen/pb-go/flyteidl" +
-      "/serviceb\006proto3"
+      "re/identifier.proto\032\034flyteidl/core/liter" +
+      "als.proto\"v\n\034CreateUploadLocationRespons" +
+      "e\022\022\n\nsigned_url\030\001 \001(\t\022\022\n\nnative_url\030\002 \001(" +
+      "\t\022.\n\nexpires_at\030\003 \001(\0132\032.google.protobuf." +
+      "Timestamp\"\224\001\n\033CreateUploadLocationReques" +
+      "t\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\020\n\010fi" +
+      "lename\030\003 \001(\t\022-\n\nexpires_in\030\004 \001(\0132\031.googl" +
+      "e.protobuf.Duration\022\023\n\013content_md5\030\005 \001(\014" +
+      "\"f\n\035CreateDownloadLocationRequest\022\022\n\nnat" +
+      "ive_url\030\001 \001(\t\022-\n\nexpires_in\030\002 \001(\0132\031.goog" +
+      "le.protobuf.Duration:\002\030\001\"h\n\036CreateDownlo" +
+      "adLocationResponse\022\022\n\nsigned_url\030\001 \001(\t\022." +
+      "\n\nexpires_at\030\002 \001(\0132\032.google.protobuf.Tim" +
+      "estamp:\002\030\001\"\320\001\n\031CreateDownloadLinkRequest" +
+      "\0225\n\rartifact_type\030\001 \001(\0162\036.flyteidl.servi" +
+      "ce.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031.go" +
+      "ogle.protobuf.Duration\022C\n\021node_execution" +
+      "_id\030\003 \001(\0132&.flyteidl.core.NodeExecutionI" +
+      "dentifierH\000B\010\n\006source\"`\n\032CreateDownloadL" +
+      "inkResponse\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpir" +
+      "es_at\030\002 \001(\0132\032.google.protobuf.Timestamp\"" +
+      "\"\n\rFlyteArtifact\022\021\n\tflyte_url\030\001 \001(\t\"L\n\027F" +
+      "lyteArtifactGetRequest\0221\n\010artifact\030\001 \001(\013" +
+      "2\037.flyteidl.service.FlyteArtifact\"\232\001\n\014Da" +
+      "taResponse\0220\n\013literal_map\030\001 \001(\0132\031.flytei" +
+      "dl.core.LiteralMapH\000\022P\n\030flyte_deck_downl" +
+      "oad_link\030\002 \001(\0132,.flyteidl.service.Create" +
+      "DownloadLinkResponseH\000B\006\n\004data*C\n\014Artifa" +
+      "ctType\022\033\n\027ARTIFACT_TYPE_UNDEFINED\020\000\022\026\n\022A" +
+      "RTIFACT_TYPE_DECK\020\0012\365\004\n\020DataProxyService" +
+      "\022\240\001\n\024CreateUploadLocation\022-.flyteidl.ser" +
+      "vice.CreateUploadLocationRequest\032..flyte" +
+      "idl.service.CreateUploadLocationResponse" +
+      "\")\202\323\344\223\002#\"\036/api/v1/dataproxy/artifact_urn" +
+      ":\001*\022\246\001\n\026CreateDownloadLocation\022/.flyteid" +
+      "l.service.CreateDownloadLocationRequest\032" +
+      "0.flyteidl.service.CreateDownloadLocatio" +
+      "nResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/dataproxy/" +
+      "artifact_urn\022\233\001\n\022CreateDownloadLink\022+.fl" +
+      "yteidl.service.CreateDownloadLinkRequest" +
+      "\032,.flyteidl.service.CreateDownloadLinkRe" +
+      "sponse\"*\202\323\344\223\002$\"\037/api/v1/dataproxy/artifa" +
+      "ct_link:\001*\022w\n\007GetData\022).flyteidl.service" +
+      ".FlyteArtifactGetRequest\032\036.flyteidl.serv" +
+      "ice.DataResponse\"!\202\323\344\223\002\033\022\031/api/v1/data/g" +
+      "et_artifactB9Z7github.com/flyteorg/flyte" +
+      "idl/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6434,6 +8670,7 @@ public final class Dataproxy {
           com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.Literals.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_service_CreateUploadLocationResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -6471,6 +8708,24 @@ public final class Dataproxy {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_CreateDownloadLinkResponse_descriptor,
         new java.lang.String[] { "SignedUrl", "ExpiresAt", });
+    internal_static_flyteidl_service_FlyteArtifact_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_flyteidl_service_FlyteArtifact_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_service_FlyteArtifact_descriptor,
+        new java.lang.String[] { "FlyteUrl", });
+    internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_flyteidl_service_FlyteArtifactGetRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_service_FlyteArtifactGetRequest_descriptor,
+        new java.lang.String[] { "Artifact", });
+    internal_static_flyteidl_service_DataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_flyteidl_service_DataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_service_DataResponse_descriptor,
+        new java.lang.String[] { "LiteralMap", "FlyteDeckDownloadLink", "Data", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
@@ -6480,6 +8735,7 @@ public final class Dataproxy {
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.Literals.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

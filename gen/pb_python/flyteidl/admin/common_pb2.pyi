@@ -39,12 +39,6 @@ class EmailNotification(_message.Message):
     recipients_email: _containers.RepeatedScalarFieldContainer[str]
     def __init__(self, recipients_email: _Optional[_Iterable[str]] = ...) -> None: ...
 
-class FlyteArtifact(_message.Message):
-    __slots__ = ["flyte_url"]
-    FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
-    flyte_url: str
-    def __init__(self, flyte_url: _Optional[str] = ...) -> None: ...
-
 class Labels(_message.Message):
     __slots__ = ["values"]
     class ValuesEntry(_message.Message):

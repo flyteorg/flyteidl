@@ -2,6 +2,7 @@ from google.api import annotations_pb2 as _annotations_pb2
 from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from flyteidl.core import identifier_pb2 as _identifier_pb2
+from flyteidl.core import literals_pb2 as _literals_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -69,6 +70,26 @@ class CreateUploadLocationResponse(_message.Message):
     native_url: str
     signed_url: str
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class DataResponse(_message.Message):
+    __slots__ = ["flyte_deck_download_link", "literal_map"]
+    FLYTE_DECK_DOWNLOAD_LINK_FIELD_NUMBER: _ClassVar[int]
+    LITERAL_MAP_FIELD_NUMBER: _ClassVar[int]
+    flyte_deck_download_link: CreateDownloadLinkResponse
+    literal_map: _literals_pb2.LiteralMap
+    def __init__(self, literal_map: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., flyte_deck_download_link: _Optional[_Union[CreateDownloadLinkResponse, _Mapping]] = ...) -> None: ...
+
+class FlyteArtifact(_message.Message):
+    __slots__ = ["flyte_url"]
+    FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
+    flyte_url: str
+    def __init__(self, flyte_url: _Optional[str] = ...) -> None: ...
+
+class FlyteArtifactGetRequest(_message.Message):
+    __slots__ = ["artifact"]
+    ARTIFACT_FIELD_NUMBER: _ClassVar[int]
+    artifact: FlyteArtifact
+    def __init__(self, artifact: _Optional[_Union[FlyteArtifact, _Mapping]] = ...) -> None: ...
 
 class ArtifactType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []

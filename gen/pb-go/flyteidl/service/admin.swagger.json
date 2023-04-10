@@ -299,30 +299,6 @@
         ]
       }
     },
-    "/api/v1/data/get_artifact": {
-      "get": {
-        "operationId": "GetData",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/adminDataResponse"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "artifact.flyte_url",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/api/v1/data/node_executions/{id.execution_id.project}/{id.execution_id.domain}/{id.execution_id.name}/{id.node_id}": {
       "get": {
         "summary": "Fetches input and output data for a :ref:`ref_flyteidl.admin.NodeExecution`.",
@@ -3626,24 +3602,6 @@
       },
       "description": "Options for schedules to run according to a cron expression."
     },
-    "adminDataResponse": {
-      "type": "object",
-      "properties": {
-        "literal_map": {
-          "$ref": "#/definitions/coreLiteralMap",
-          "title": "literal map data will be returned"
-        },
-        "flyte_deck": {
-          "type": "string",
-          "format": "byte",
-          "title": "Flyte deck html will be returned as bytes"
-        },
-        "dynamic_workflow": {
-          "$ref": "#/definitions/flyteidladminDynamicWorkflowNodeMetadata",
-          "description": "Only applicable if the node/task produced a futures file."
-        }
-      }
-    },
     "adminDescription": {
       "type": "object",
       "properties": {
@@ -4133,15 +4091,6 @@
       ],
       "default": "MINUTE",
       "description": "Represents a frequency at which to run a schedule."
-    },
-    "adminFlyteArtifact": {
-      "type": "object",
-      "properties": {
-        "flyte_url": {
-          "type": "string"
-        }
-      },
-      "description": "Wraps a flyte url, a unique identifier in the form of flyte://\u003csomething\u003e that uniquely, for a given Flyte\nbackend, identifies a Flyte artifact (input, output, flyte deck, etc.)."
     },
     "adminGetVersionResponse": {
       "type": "object",
