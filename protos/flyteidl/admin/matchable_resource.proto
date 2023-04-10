@@ -54,7 +54,13 @@ message TaskResourceSpec {
 message TaskResourceAttributes {
   TaskResourceSpec defaults = 1;
 
+  // These are limits from the system's perspective. Resources requested by the user (either in defaults or limits)
+  // are checked against these limits. Defaults in this message, (fields 1 and 3) are also checked against these limits.
   TaskResourceSpec limits = 2;
+
+  // If set, these limits will be used as the default limits for tasks that do not specify limits. If not set, but
+  // defaults (field 1) are set, then the defaults will be used as the limits.
+  TaskResourceSpec default_limits = 3;
 }
 
 message ClusterResourceAttributes {
