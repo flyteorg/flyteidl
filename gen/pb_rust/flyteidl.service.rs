@@ -173,6 +173,42 @@ pub struct CreateDownloadLinkResponse {
     #[prost(message, optional, tag="2")]
     pub expires_at: ::core::option::Option<::prost_types::Timestamp>,
 }
+/// Wraps a flyte url, a unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
+/// backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
+/// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
+///       flyte://v1/proj/development/execid/n2/i (for node execution)
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct FlyteArtifact {
+    #[prost(string, tag="1")]
+    pub flyte_url: ::prost::alloc::string::String,
+}
+/// General request artifact to retrieve data from a Flyte artifact url.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetDataRequest {
+    #[prost(message, optional, tag="1")]
+    pub artifact: ::core::option::Option<FlyteArtifact>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GetDataResponse {
+    #[prost(oneof="get_data_response::Data", tags="1, 2")]
+    pub data: ::core::option::Option<get_data_response::Data>,
+}
+/// Nested message and enum types in `GetDataResponse`.
+pub mod get_data_response {
+    #[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Data {
+        /// literal map data will be returned
+        #[prost(message, tag="1")]
+        LiteralMap(super::super::core::LiteralMap),
+        /// Flyte deck html will be returned as a signed url users can download
+        #[prost(message, tag="2")]
+        FlyteDeckDownloadLink(super::CreateDownloadLinkResponse),
+    }
+}
 /// ArtifactType
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
