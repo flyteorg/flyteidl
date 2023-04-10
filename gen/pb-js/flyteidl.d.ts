@@ -19402,113 +19402,113 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a FlyteArtifactGetRequest. */
-        interface IFlyteArtifactGetRequest {
+        /** Properties of a GetDataRequest. */
+        interface IGetDataRequest {
 
-            /** FlyteArtifactGetRequest artifact */
+            /** GetDataRequest artifact */
             artifact?: (flyteidl.service.IFlyteArtifact|null);
         }
 
-        /** Represents a FlyteArtifactGetRequest. */
-        class FlyteArtifactGetRequest implements IFlyteArtifactGetRequest {
+        /** Represents a GetDataRequest. */
+        class GetDataRequest implements IGetDataRequest {
 
             /**
-             * Constructs a new FlyteArtifactGetRequest.
+             * Constructs a new GetDataRequest.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.service.IFlyteArtifactGetRequest);
+            constructor(properties?: flyteidl.service.IGetDataRequest);
 
-            /** FlyteArtifactGetRequest artifact. */
+            /** GetDataRequest artifact. */
             public artifact?: (flyteidl.service.IFlyteArtifact|null);
 
             /**
-             * Creates a new FlyteArtifactGetRequest instance using the specified properties.
+             * Creates a new GetDataRequest instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns FlyteArtifactGetRequest instance
+             * @returns GetDataRequest instance
              */
-            public static create(properties?: flyteidl.service.IFlyteArtifactGetRequest): flyteidl.service.FlyteArtifactGetRequest;
+            public static create(properties?: flyteidl.service.IGetDataRequest): flyteidl.service.GetDataRequest;
 
             /**
-             * Encodes the specified FlyteArtifactGetRequest message. Does not implicitly {@link flyteidl.service.FlyteArtifactGetRequest.verify|verify} messages.
-             * @param message FlyteArtifactGetRequest message or plain object to encode
+             * Encodes the specified GetDataRequest message. Does not implicitly {@link flyteidl.service.GetDataRequest.verify|verify} messages.
+             * @param message GetDataRequest message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.service.IFlyteArtifactGetRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.service.IGetDataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a FlyteArtifactGetRequest message from the specified reader or buffer.
+             * Decodes a GetDataRequest message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns FlyteArtifactGetRequest
+             * @returns GetDataRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteArtifactGetRequest;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.GetDataRequest;
 
             /**
-             * Verifies a FlyteArtifactGetRequest message.
+             * Verifies a GetDataRequest message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a DataResponse. */
-        interface IDataResponse {
+        /** Properties of a GetDataResponse. */
+        interface IGetDataResponse {
 
-            /** DataResponse literalMap */
+            /** GetDataResponse literalMap */
             literalMap?: (flyteidl.core.ILiteralMap|null);
 
-            /** DataResponse flyteDeckDownloadLink */
+            /** GetDataResponse flyteDeckDownloadLink */
             flyteDeckDownloadLink?: (flyteidl.service.ICreateDownloadLinkResponse|null);
         }
 
-        /** Represents a DataResponse. */
-        class DataResponse implements IDataResponse {
+        /** Represents a GetDataResponse. */
+        class GetDataResponse implements IGetDataResponse {
 
             /**
-             * Constructs a new DataResponse.
+             * Constructs a new GetDataResponse.
              * @param [properties] Properties to set
              */
-            constructor(properties?: flyteidl.service.IDataResponse);
+            constructor(properties?: flyteidl.service.IGetDataResponse);
 
-            /** DataResponse literalMap. */
+            /** GetDataResponse literalMap. */
             public literalMap?: (flyteidl.core.ILiteralMap|null);
 
-            /** DataResponse flyteDeckDownloadLink. */
+            /** GetDataResponse flyteDeckDownloadLink. */
             public flyteDeckDownloadLink?: (flyteidl.service.ICreateDownloadLinkResponse|null);
 
-            /** DataResponse data. */
+            /** GetDataResponse data. */
             public data?: ("literalMap"|"flyteDeckDownloadLink");
 
             /**
-             * Creates a new DataResponse instance using the specified properties.
+             * Creates a new GetDataResponse instance using the specified properties.
              * @param [properties] Properties to set
-             * @returns DataResponse instance
+             * @returns GetDataResponse instance
              */
-            public static create(properties?: flyteidl.service.IDataResponse): flyteidl.service.DataResponse;
+            public static create(properties?: flyteidl.service.IGetDataResponse): flyteidl.service.GetDataResponse;
 
             /**
-             * Encodes the specified DataResponse message. Does not implicitly {@link flyteidl.service.DataResponse.verify|verify} messages.
-             * @param message DataResponse message or plain object to encode
+             * Encodes the specified GetDataResponse message. Does not implicitly {@link flyteidl.service.GetDataResponse.verify|verify} messages.
+             * @param message GetDataResponse message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: flyteidl.service.IDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: flyteidl.service.IGetDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
-             * Decodes a DataResponse message from the specified reader or buffer.
+             * Decodes a GetDataResponse message from the specified reader or buffer.
              * @param reader Reader or buffer to decode from
              * @param [length] Message length if known beforehand
-             * @returns DataResponse
+             * @returns GetDataResponse
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.DataResponse;
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.GetDataResponse;
 
             /**
-             * Verifies a DataResponse message.
+             * Verifies a GetDataResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -19579,17 +19579,17 @@ export namespace flyteidl {
 
             /**
              * Calls GetData.
-             * @param request FlyteArtifactGetRequest message or plain object
-             * @param callback Node-style callback called with the error, if any, and DataResponse
+             * @param request GetDataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and GetDataResponse
              */
-            public getData(request: flyteidl.service.IFlyteArtifactGetRequest, callback: flyteidl.service.DataProxyService.GetDataCallback): void;
+            public getData(request: flyteidl.service.IGetDataRequest, callback: flyteidl.service.DataProxyService.GetDataCallback): void;
 
             /**
              * Calls GetData.
-             * @param request FlyteArtifactGetRequest message or plain object
+             * @param request GetDataRequest message or plain object
              * @returns Promise
              */
-            public getData(request: flyteidl.service.IFlyteArtifactGetRequest): Promise<flyteidl.service.DataResponse>;
+            public getData(request: flyteidl.service.IGetDataRequest): Promise<flyteidl.service.GetDataResponse>;
         }
 
         namespace DataProxyService {
@@ -19618,9 +19618,9 @@ export namespace flyteidl {
             /**
              * Callback as used by {@link flyteidl.service.DataProxyService#getData}.
              * @param error Error, if any
-             * @param [response] DataResponse
+             * @param [response] GetDataResponse
              */
-            type GetDataCallback = (error: (Error|null), response?: flyteidl.service.DataResponse) => void;
+            type GetDataCallback = (error: (Error|null), response?: flyteidl.service.GetDataResponse) => void;
         }
 
         /** Properties of a UserInfoRequest. */

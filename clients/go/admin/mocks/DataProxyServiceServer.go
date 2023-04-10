@@ -141,11 +141,11 @@ type DataProxyServiceServer_GetData struct {
 	*mock.Call
 }
 
-func (_m DataProxyServiceServer_GetData) Return(_a0 *service.DataResponse, _a1 error) *DataProxyServiceServer_GetData {
+func (_m DataProxyServiceServer_GetData) Return(_a0 *service.GetDataResponse, _a1 error) *DataProxyServiceServer_GetData {
 	return &DataProxyServiceServer_GetData{Call: _m.Call.Return(_a0, _a1)}
 }
 
-func (_m *DataProxyServiceServer) OnGetData(_a0 context.Context, _a1 *service.FlyteArtifactGetRequest) *DataProxyServiceServer_GetData {
+func (_m *DataProxyServiceServer) OnGetData(_a0 context.Context, _a1 *service.GetDataRequest) *DataProxyServiceServer_GetData {
 	c_call := _m.On("GetData", _a0, _a1)
 	return &DataProxyServiceServer_GetData{Call: c_call}
 }
@@ -156,20 +156,20 @@ func (_m *DataProxyServiceServer) OnGetDataMatch(matchers ...interface{}) *DataP
 }
 
 // GetData provides a mock function with given fields: _a0, _a1
-func (_m *DataProxyServiceServer) GetData(_a0 context.Context, _a1 *service.FlyteArtifactGetRequest) (*service.DataResponse, error) {
+func (_m *DataProxyServiceServer) GetData(_a0 context.Context, _a1 *service.GetDataRequest) (*service.GetDataResponse, error) {
 	ret := _m.Called(_a0, _a1)
 
-	var r0 *service.DataResponse
-	if rf, ok := ret.Get(0).(func(context.Context, *service.FlyteArtifactGetRequest) *service.DataResponse); ok {
+	var r0 *service.GetDataResponse
+	if rf, ok := ret.Get(0).(func(context.Context, *service.GetDataRequest) *service.GetDataResponse); ok {
 		r0 = rf(_a0, _a1)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*service.DataResponse)
+			r0 = ret.Get(0).(*service.GetDataResponse)
 		}
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *service.FlyteArtifactGetRequest) error); ok {
+	if rf, ok := ret.Get(1).(func(context.Context, *service.GetDataRequest) error); ok {
 		r1 = rf(_a0, _a1)
 	} else {
 		r1 = ret.Error(1)

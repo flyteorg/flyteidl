@@ -22,7 +22,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceDataResponse"
+              "$ref": "#/definitions/serviceGetDataResponse"
             }
           }
         },
@@ -739,7 +739,16 @@
         }
       }
     },
-    "serviceDataResponse": {
+    "serviceFlyteArtifact": {
+      "type": "object",
+      "properties": {
+        "flyte_url": {
+          "type": "string"
+        }
+      },
+      "title": "Wraps a flyte url, a unique identifier in the form of flyte://\u003csomething\u003e that uniquely, for a given Flyte\nbackend, identifies a Flyte artifact (input, output, flyte deck, etc.).\ne.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)\n     flyte://v1/proj/development/execid/n2/i (for node execution)"
+    },
+    "serviceGetDataResponse": {
       "type": "object",
       "properties": {
         "literal_map": {
@@ -751,15 +760,6 @@
           "title": "Flyte deck html will be returned as a signed url users can download"
         }
       }
-    },
-    "serviceFlyteArtifact": {
-      "type": "object",
-      "properties": {
-        "flyte_url": {
-          "type": "string"
-        }
-      },
-      "title": "Wraps a flyte url, a unique identifier in the form of flyte://\u003csomething\u003e that uniquely, for a given Flyte\nbackend, identifies a Flyte artifact (input, output, flyte deck, etc.).\ne.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)\n     flyte://v1/proj/development/execid/n2/i (for node execution)"
     }
   }
 }

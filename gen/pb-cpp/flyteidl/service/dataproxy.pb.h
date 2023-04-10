@@ -74,15 +74,15 @@ extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationReque
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
-class DataResponse;
-class DataResponseDefaultTypeInternal;
-extern DataResponseDefaultTypeInternal _DataResponse_default_instance_;
 class FlyteArtifact;
 class FlyteArtifactDefaultTypeInternal;
 extern FlyteArtifactDefaultTypeInternal _FlyteArtifact_default_instance_;
-class FlyteArtifactGetRequest;
-class FlyteArtifactGetRequestDefaultTypeInternal;
-extern FlyteArtifactGetRequestDefaultTypeInternal _FlyteArtifactGetRequest_default_instance_;
+class GetDataRequest;
+class GetDataRequestDefaultTypeInternal;
+extern GetDataRequestDefaultTypeInternal _GetDataRequest_default_instance_;
+class GetDataResponse;
+class GetDataResponseDefaultTypeInternal;
+extern GetDataResponseDefaultTypeInternal _GetDataResponse_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
@@ -93,9 +93,9 @@ template<> ::flyteidl::service::CreateDownloadLocationRequest* Arena::CreateMayb
 template<> ::flyteidl::service::CreateDownloadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateDownloadLocationResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
-template<> ::flyteidl::service::DataResponse* Arena::CreateMaybeMessage<::flyteidl::service::DataResponse>(Arena*);
 template<> ::flyteidl::service::FlyteArtifact* Arena::CreateMaybeMessage<::flyteidl::service::FlyteArtifact>(Arena*);
-template<> ::flyteidl::service::FlyteArtifactGetRequest* Arena::CreateMaybeMessage<::flyteidl::service::FlyteArtifactGetRequest>(Arena*);
+template<> ::flyteidl::service::GetDataRequest* Arena::CreateMaybeMessage<::flyteidl::service::GetDataRequest>(Arena*);
+template<> ::flyteidl::service::GetDataResponse* Arena::CreateMaybeMessage<::flyteidl::service::GetDataResponse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -1110,25 +1110,25 @@ class FlyteArtifact final :
 };
 // -------------------------------------------------------------------
 
-class FlyteArtifactGetRequest final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteArtifactGetRequest) */ {
+class GetDataRequest final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.GetDataRequest) */ {
  public:
-  FlyteArtifactGetRequest();
-  virtual ~FlyteArtifactGetRequest();
+  GetDataRequest();
+  virtual ~GetDataRequest();
 
-  FlyteArtifactGetRequest(const FlyteArtifactGetRequest& from);
+  GetDataRequest(const GetDataRequest& from);
 
-  inline FlyteArtifactGetRequest& operator=(const FlyteArtifactGetRequest& from) {
+  inline GetDataRequest& operator=(const GetDataRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  FlyteArtifactGetRequest(FlyteArtifactGetRequest&& from) noexcept
-    : FlyteArtifactGetRequest() {
+  GetDataRequest(GetDataRequest&& from) noexcept
+    : GetDataRequest() {
     *this = ::std::move(from);
   }
 
-  inline FlyteArtifactGetRequest& operator=(FlyteArtifactGetRequest&& from) noexcept {
+  inline GetDataRequest& operator=(GetDataRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1140,34 +1140,34 @@ class FlyteArtifactGetRequest final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const FlyteArtifactGetRequest& default_instance();
+  static const GetDataRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FlyteArtifactGetRequest* internal_default_instance() {
-    return reinterpret_cast<const FlyteArtifactGetRequest*>(
-               &_FlyteArtifactGetRequest_default_instance_);
+  static inline const GetDataRequest* internal_default_instance() {
+    return reinterpret_cast<const GetDataRequest*>(
+               &_GetDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  void Swap(FlyteArtifactGetRequest* other);
-  friend void swap(FlyteArtifactGetRequest& a, FlyteArtifactGetRequest& b) {
+  void Swap(GetDataRequest* other);
+  friend void swap(GetDataRequest& a, GetDataRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FlyteArtifactGetRequest* New() const final {
-    return CreateMaybeMessage<FlyteArtifactGetRequest>(nullptr);
+  inline GetDataRequest* New() const final {
+    return CreateMaybeMessage<GetDataRequest>(nullptr);
   }
 
-  FlyteArtifactGetRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FlyteArtifactGetRequest>(arena);
+  GetDataRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetDataRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FlyteArtifactGetRequest& from);
-  void MergeFrom(const FlyteArtifactGetRequest& from);
+  void CopyFrom(const GetDataRequest& from);
+  void MergeFrom(const GetDataRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1189,7 +1189,7 @@ class FlyteArtifactGetRequest final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FlyteArtifactGetRequest* other);
+  void InternalSwap(GetDataRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1214,7 +1214,7 @@ class FlyteArtifactGetRequest final :
   ::flyteidl::service::FlyteArtifact* mutable_artifact();
   void set_allocated_artifact(::flyteidl::service::FlyteArtifact* artifact);
 
-  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifactGetRequest)
+  // @@protoc_insertion_point(class_scope:flyteidl.service.GetDataRequest)
  private:
   class HasBitSetters;
 
@@ -1225,25 +1225,25 @@ class FlyteArtifactGetRequest final :
 };
 // -------------------------------------------------------------------
 
-class DataResponse final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.DataResponse) */ {
+class GetDataResponse final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.GetDataResponse) */ {
  public:
-  DataResponse();
-  virtual ~DataResponse();
+  GetDataResponse();
+  virtual ~GetDataResponse();
 
-  DataResponse(const DataResponse& from);
+  GetDataResponse(const GetDataResponse& from);
 
-  inline DataResponse& operator=(const DataResponse& from) {
+  inline GetDataResponse& operator=(const GetDataResponse& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  DataResponse(DataResponse&& from) noexcept
-    : DataResponse() {
+  GetDataResponse(GetDataResponse&& from) noexcept
+    : GetDataResponse() {
     *this = ::std::move(from);
   }
 
-  inline DataResponse& operator=(DataResponse&& from) noexcept {
+  inline GetDataResponse& operator=(GetDataResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1255,7 +1255,7 @@ class DataResponse final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const DataResponse& default_instance();
+  static const GetDataResponse& default_instance();
 
   enum DataCase {
     kLiteralMap = 1,
@@ -1264,31 +1264,31 @@ class DataResponse final :
   };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const DataResponse* internal_default_instance() {
-    return reinterpret_cast<const DataResponse*>(
-               &_DataResponse_default_instance_);
+  static inline const GetDataResponse* internal_default_instance() {
+    return reinterpret_cast<const GetDataResponse*>(
+               &_GetDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  void Swap(DataResponse* other);
-  friend void swap(DataResponse& a, DataResponse& b) {
+  void Swap(GetDataResponse* other);
+  friend void swap(GetDataResponse& a, GetDataResponse& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline DataResponse* New() const final {
-    return CreateMaybeMessage<DataResponse>(nullptr);
+  inline GetDataResponse* New() const final {
+    return CreateMaybeMessage<GetDataResponse>(nullptr);
   }
 
-  DataResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<DataResponse>(arena);
+  GetDataResponse* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<GetDataResponse>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const DataResponse& from);
-  void MergeFrom(const DataResponse& from);
+  void CopyFrom(const GetDataResponse& from);
+  void MergeFrom(const GetDataResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1310,7 +1310,7 @@ class DataResponse final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(DataResponse* other);
+  void InternalSwap(GetDataResponse* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -1346,7 +1346,7 @@ class DataResponse final :
 
   void clear_data();
   DataCase data_case() const;
-  // @@protoc_insertion_point(class_scope:flyteidl.service.DataResponse)
+  // @@protoc_insertion_point(class_scope:flyteidl.service.GetDataResponse)
  private:
   class HasBitSetters;
   void set_has_literal_map();
@@ -2283,41 +2283,41 @@ inline void FlyteArtifact::set_allocated_flyte_url(::std::string* flyte_url) {
 
 // -------------------------------------------------------------------
 
-// FlyteArtifactGetRequest
+// GetDataRequest
 
 // .flyteidl.service.FlyteArtifact artifact = 1;
-inline bool FlyteArtifactGetRequest::has_artifact() const {
+inline bool GetDataRequest::has_artifact() const {
   return this != internal_default_instance() && artifact_ != nullptr;
 }
-inline void FlyteArtifactGetRequest::clear_artifact() {
+inline void GetDataRequest::clear_artifact() {
   if (GetArenaNoVirtual() == nullptr && artifact_ != nullptr) {
     delete artifact_;
   }
   artifact_ = nullptr;
 }
-inline const ::flyteidl::service::FlyteArtifact& FlyteArtifactGetRequest::artifact() const {
+inline const ::flyteidl::service::FlyteArtifact& GetDataRequest::artifact() const {
   const ::flyteidl::service::FlyteArtifact* p = artifact_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteArtifactGetRequest.artifact)
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.artifact)
   return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::service::FlyteArtifact*>(
       &::flyteidl::service::_FlyteArtifact_default_instance_);
 }
-inline ::flyteidl::service::FlyteArtifact* FlyteArtifactGetRequest::release_artifact() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteArtifactGetRequest.artifact)
+inline ::flyteidl::service::FlyteArtifact* GetDataRequest::release_artifact() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.artifact)
   
   ::flyteidl::service::FlyteArtifact* temp = artifact_;
   artifact_ = nullptr;
   return temp;
 }
-inline ::flyteidl::service::FlyteArtifact* FlyteArtifactGetRequest::mutable_artifact() {
+inline ::flyteidl::service::FlyteArtifact* GetDataRequest::mutable_artifact() {
   
   if (artifact_ == nullptr) {
     auto* p = CreateMaybeMessage<::flyteidl::service::FlyteArtifact>(GetArenaNoVirtual());
     artifact_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteArtifactGetRequest.artifact)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.artifact)
   return artifact_;
 }
-inline void FlyteArtifactGetRequest::set_allocated_artifact(::flyteidl::service::FlyteArtifact* artifact) {
+inline void GetDataRequest::set_allocated_artifact(::flyteidl::service::FlyteArtifact* artifact) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete artifact_;
@@ -2333,22 +2333,22 @@ inline void FlyteArtifactGetRequest::set_allocated_artifact(::flyteidl::service:
     
   }
   artifact_ = artifact;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteArtifactGetRequest.artifact)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.GetDataRequest.artifact)
 }
 
 // -------------------------------------------------------------------
 
-// DataResponse
+// GetDataResponse
 
 // .flyteidl.core.LiteralMap literal_map = 1;
-inline bool DataResponse::has_literal_map() const {
+inline bool GetDataResponse::has_literal_map() const {
   return data_case() == kLiteralMap;
 }
-inline void DataResponse::set_has_literal_map() {
+inline void GetDataResponse::set_has_literal_map() {
   _oneof_case_[0] = kLiteralMap;
 }
-inline ::flyteidl::core::LiteralMap* DataResponse::release_literal_map() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.DataResponse.literal_map)
+inline ::flyteidl::core::LiteralMap* GetDataResponse::release_literal_map() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataResponse.literal_map)
   if (has_literal_map()) {
     clear_has_data();
       ::flyteidl::core::LiteralMap* temp = data_.literal_map_;
@@ -2358,38 +2358,38 @@ inline ::flyteidl::core::LiteralMap* DataResponse::release_literal_map() {
     return nullptr;
   }
 }
-inline const ::flyteidl::core::LiteralMap& DataResponse::literal_map() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.DataResponse.literal_map)
+inline const ::flyteidl::core::LiteralMap& GetDataResponse::literal_map() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataResponse.literal_map)
   return has_literal_map()
       ? *data_.literal_map_
       : *reinterpret_cast< ::flyteidl::core::LiteralMap*>(&::flyteidl::core::_LiteralMap_default_instance_);
 }
-inline ::flyteidl::core::LiteralMap* DataResponse::mutable_literal_map() {
+inline ::flyteidl::core::LiteralMap* GetDataResponse::mutable_literal_map() {
   if (!has_literal_map()) {
     clear_data();
     set_has_literal_map();
     data_.literal_map_ = CreateMaybeMessage< ::flyteidl::core::LiteralMap >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.DataResponse.literal_map)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.literal_map)
   return data_.literal_map_;
 }
 
 // .flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;
-inline bool DataResponse::has_flyte_deck_download_link() const {
+inline bool GetDataResponse::has_flyte_deck_download_link() const {
   return data_case() == kFlyteDeckDownloadLink;
 }
-inline void DataResponse::set_has_flyte_deck_download_link() {
+inline void GetDataResponse::set_has_flyte_deck_download_link() {
   _oneof_case_[0] = kFlyteDeckDownloadLink;
 }
-inline void DataResponse::clear_flyte_deck_download_link() {
+inline void GetDataResponse::clear_flyte_deck_download_link() {
   if (has_flyte_deck_download_link()) {
     delete data_.flyte_deck_download_link_;
     clear_has_data();
   }
 }
-inline ::flyteidl::service::CreateDownloadLinkResponse* DataResponse::release_flyte_deck_download_link() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.DataResponse.flyte_deck_download_link)
+inline ::flyteidl::service::CreateDownloadLinkResponse* GetDataResponse::release_flyte_deck_download_link() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataResponse.flyte_deck_download_link)
   if (has_flyte_deck_download_link()) {
     clear_has_data();
       ::flyteidl::service::CreateDownloadLinkResponse* temp = data_.flyte_deck_download_link_;
@@ -2399,31 +2399,31 @@ inline ::flyteidl::service::CreateDownloadLinkResponse* DataResponse::release_fl
     return nullptr;
   }
 }
-inline const ::flyteidl::service::CreateDownloadLinkResponse& DataResponse::flyte_deck_download_link() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.DataResponse.flyte_deck_download_link)
+inline const ::flyteidl::service::CreateDownloadLinkResponse& GetDataResponse::flyte_deck_download_link() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataResponse.flyte_deck_download_link)
   return has_flyte_deck_download_link()
       ? *data_.flyte_deck_download_link_
       : *reinterpret_cast< ::flyteidl::service::CreateDownloadLinkResponse*>(&::flyteidl::service::_CreateDownloadLinkResponse_default_instance_);
 }
-inline ::flyteidl::service::CreateDownloadLinkResponse* DataResponse::mutable_flyte_deck_download_link() {
+inline ::flyteidl::service::CreateDownloadLinkResponse* GetDataResponse::mutable_flyte_deck_download_link() {
   if (!has_flyte_deck_download_link()) {
     clear_data();
     set_has_flyte_deck_download_link();
     data_.flyte_deck_download_link_ = CreateMaybeMessage< ::flyteidl::service::CreateDownloadLinkResponse >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.DataResponse.flyte_deck_download_link)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.flyte_deck_download_link)
   return data_.flyte_deck_download_link_;
 }
 
-inline bool DataResponse::has_data() const {
+inline bool GetDataResponse::has_data() const {
   return data_case() != DATA_NOT_SET;
 }
-inline void DataResponse::clear_has_data() {
+inline void GetDataResponse::clear_has_data() {
   _oneof_case_[0] = DATA_NOT_SET;
 }
-inline DataResponse::DataCase DataResponse::data_case() const {
-  return DataResponse::DataCase(_oneof_case_[0]);
+inline GetDataResponse::DataCase GetDataResponse::data_case() const {
+  return GetDataResponse::DataCase(_oneof_case_[0]);
 }
 #ifdef __GNUC__
   #pragma GCC diagnostic pop

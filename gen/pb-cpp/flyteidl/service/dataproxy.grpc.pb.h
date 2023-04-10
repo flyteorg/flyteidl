@@ -73,12 +73,12 @@ class DataProxyService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLinkResponse>> PrepareAsyncCreateDownloadLink(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLinkResponse>>(PrepareAsyncCreateDownloadLinkRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::flyteidl::service::DataResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>> AsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>>(AsyncGetDataRaw(context, request, cq));
+    virtual ::grpc::Status GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::flyteidl::service::GetDataResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>> AsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>>(AsyncGetDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>>(PrepareAsyncGetDataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>>(PrepareAsyncGetDataRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -98,10 +98,10 @@ class DataProxyService final {
       virtual void CreateDownloadLink(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateDownloadLinkResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateDownloadLink(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest* request, ::flyteidl::service::CreateDownloadLinkResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       virtual void CreateDownloadLink(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateDownloadLinkResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::DataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::DataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::GetDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::GetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -111,8 +111,8 @@ class DataProxyService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLocationResponse>* PrepareAsyncCreateDownloadLocationRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLinkResponse>* AsyncCreateDownloadLinkRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::CreateDownloadLinkResponse>* PrepareAsyncCreateDownloadLinkRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::DataResponse>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::flyteidl::service::GetDataResponse>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -138,12 +138,12 @@ class DataProxyService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::CreateDownloadLinkResponse>> PrepareAsyncCreateDownloadLink(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::CreateDownloadLinkResponse>>(PrepareAsyncCreateDownloadLinkRaw(context, request, cq));
     }
-    ::grpc::Status GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::flyteidl::service::DataResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>> AsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>>(AsyncGetDataRaw(context, request, cq));
+    ::grpc::Status GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::flyteidl::service::GetDataResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>> AsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>>(AsyncGetDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>>(PrepareAsyncGetDataRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>> PrepareAsyncGetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>>(PrepareAsyncGetDataRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -160,10 +160,10 @@ class DataProxyService final {
       void CreateDownloadLink(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateDownloadLinkResponse* response, std::function<void(::grpc::Status)>) override;
       void CreateDownloadLink(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest* request, ::flyteidl::service::CreateDownloadLinkResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       void CreateDownloadLink(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::CreateDownloadLinkResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::DataResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetData(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::DataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::GetDataResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetData(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetData(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::flyteidl::service::GetDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -181,8 +181,8 @@ class DataProxyService final {
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::CreateDownloadLocationResponse>* PrepareAsyncCreateDownloadLocationRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLocationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::CreateDownloadLinkResponse>* AsyncCreateDownloadLinkRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::flyteidl::service::CreateDownloadLinkResponse>* PrepareAsyncCreateDownloadLinkRaw(::grpc::ClientContext* context, const ::flyteidl::service::CreateDownloadLinkRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::DataResponse>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::FlyteArtifactGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>* AsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::flyteidl::service::GetDataResponse>* PrepareAsyncGetDataRaw(::grpc::ClientContext* context, const ::flyteidl::service::GetDataRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateUploadLocation_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateDownloadLocation_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateDownloadLink_;
@@ -200,7 +200,7 @@ class DataProxyService final {
     virtual ::grpc::Status CreateDownloadLocation(::grpc::ServerContext* context, const ::flyteidl::service::CreateDownloadLocationRequest* request, ::flyteidl::service::CreateDownloadLocationResponse* response);
     // CreateDownloadLocation creates a signed url to download artifacts.
     virtual ::grpc::Status CreateDownloadLink(::grpc::ServerContext* context, const ::flyteidl::service::CreateDownloadLinkRequest* request, ::flyteidl::service::CreateDownloadLinkResponse* response);
-    virtual ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response);
+    virtual ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateUploadLocation : public BaseClass {
@@ -274,11 +274,11 @@ class DataProxyService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetData(::grpc::ServerContext* context, ::flyteidl::service::FlyteArtifactGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::DataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetData(::grpc::ServerContext* context, ::flyteidl::service::GetDataRequest* request, ::grpc::ServerAsyncResponseWriter< ::flyteidl::service::GetDataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -383,17 +383,17 @@ class DataProxyService final {
    public:
     ExperimentalWithCallbackMethod_GetData() {
       ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::FlyteArtifactGetRequest, ::flyteidl::service::DataResponse>(
+        new ::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::GetDataRequest, ::flyteidl::service::GetDataResponse>(
           [this](::grpc::ServerContext* context,
-                 const ::flyteidl::service::FlyteArtifactGetRequest* request,
-                 ::flyteidl::service::DataResponse* response,
+                 const ::flyteidl::service::GetDataRequest* request,
+                 ::flyteidl::service::GetDataResponse* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
                    return this->GetData(context, request, response, controller);
                  }));
     }
     void SetMessageAllocatorFor_GetData(
-        ::grpc::experimental::MessageAllocator< ::flyteidl::service::FlyteArtifactGetRequest, ::flyteidl::service::DataResponse>* allocator) {
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::FlyteArtifactGetRequest, ::flyteidl::service::DataResponse>*>(
+        ::grpc::experimental::MessageAllocator< ::flyteidl::service::GetDataRequest, ::flyteidl::service::GetDataResponse>* allocator) {
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::flyteidl::service::GetDataRequest, ::flyteidl::service::GetDataResponse>*>(
           ::grpc::Service::experimental().GetHandler(3))
               ->SetMessageAllocator(allocator);
     }
@@ -401,11 +401,11 @@ class DataProxyService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   typedef ExperimentalWithCallbackMethod_CreateUploadLocation<ExperimentalWithCallbackMethod_CreateDownloadLocation<ExperimentalWithCallbackMethod_CreateDownloadLink<ExperimentalWithCallbackMethod_GetData<Service > > > > ExperimentalCallbackService;
   template <class BaseClass>
@@ -471,7 +471,7 @@ class DataProxyService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -548,7 +548,7 @@ class DataProxyService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -650,7 +650,7 @@ class DataProxyService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -723,18 +723,18 @@ class DataProxyService final {
    public:
     WithStreamedUnaryMethod_GetData() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::FlyteArtifactGetRequest, ::flyteidl::service::DataResponse>(std::bind(&WithStreamedUnaryMethod_GetData<BaseClass>::StreamedGetData, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::flyteidl::service::GetDataRequest, ::flyteidl::service::GetDataResponse>(std::bind(&WithStreamedUnaryMethod_GetData<BaseClass>::StreamedGetData, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::FlyteArtifactGetRequest* request, ::flyteidl::service::DataResponse* response) override {
+    ::grpc::Status GetData(::grpc::ServerContext* context, const ::flyteidl::service::GetDataRequest* request, ::flyteidl::service::GetDataResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::FlyteArtifactGetRequest,::flyteidl::service::DataResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::flyteidl::service::GetDataRequest,::flyteidl::service::GetDataResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateUploadLocation<WithStreamedUnaryMethod_CreateDownloadLocation<WithStreamedUnaryMethod_CreateDownloadLink<WithStreamedUnaryMethod_GetData<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;

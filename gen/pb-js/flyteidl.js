@@ -45291,24 +45291,24 @@
                 return FlyteArtifact;
             })();
     
-            service.FlyteArtifactGetRequest = (function() {
+            service.GetDataRequest = (function() {
     
                 /**
-                 * Properties of a FlyteArtifactGetRequest.
+                 * Properties of a GetDataRequest.
                  * @memberof flyteidl.service
-                 * @interface IFlyteArtifactGetRequest
-                 * @property {flyteidl.service.IFlyteArtifact|null} [artifact] FlyteArtifactGetRequest artifact
+                 * @interface IGetDataRequest
+                 * @property {flyteidl.service.IFlyteArtifact|null} [artifact] GetDataRequest artifact
                  */
     
                 /**
-                 * Constructs a new FlyteArtifactGetRequest.
+                 * Constructs a new GetDataRequest.
                  * @memberof flyteidl.service
-                 * @classdesc Represents a FlyteArtifactGetRequest.
-                 * @implements IFlyteArtifactGetRequest
+                 * @classdesc Represents a GetDataRequest.
+                 * @implements IGetDataRequest
                  * @constructor
-                 * @param {flyteidl.service.IFlyteArtifactGetRequest=} [properties] Properties to set
+                 * @param {flyteidl.service.IGetDataRequest=} [properties] Properties to set
                  */
-                function FlyteArtifactGetRequest(properties) {
+                function GetDataRequest(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -45316,35 +45316,35 @@
                 }
     
                 /**
-                 * FlyteArtifactGetRequest artifact.
+                 * GetDataRequest artifact.
                  * @member {flyteidl.service.IFlyteArtifact|null|undefined} artifact
-                 * @memberof flyteidl.service.FlyteArtifactGetRequest
+                 * @memberof flyteidl.service.GetDataRequest
                  * @instance
                  */
-                FlyteArtifactGetRequest.prototype.artifact = null;
+                GetDataRequest.prototype.artifact = null;
     
                 /**
-                 * Creates a new FlyteArtifactGetRequest instance using the specified properties.
+                 * Creates a new GetDataRequest instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.service.FlyteArtifactGetRequest
+                 * @memberof flyteidl.service.GetDataRequest
                  * @static
-                 * @param {flyteidl.service.IFlyteArtifactGetRequest=} [properties] Properties to set
-                 * @returns {flyteidl.service.FlyteArtifactGetRequest} FlyteArtifactGetRequest instance
+                 * @param {flyteidl.service.IGetDataRequest=} [properties] Properties to set
+                 * @returns {flyteidl.service.GetDataRequest} GetDataRequest instance
                  */
-                FlyteArtifactGetRequest.create = function create(properties) {
-                    return new FlyteArtifactGetRequest(properties);
+                GetDataRequest.create = function create(properties) {
+                    return new GetDataRequest(properties);
                 };
     
                 /**
-                 * Encodes the specified FlyteArtifactGetRequest message. Does not implicitly {@link flyteidl.service.FlyteArtifactGetRequest.verify|verify} messages.
+                 * Encodes the specified GetDataRequest message. Does not implicitly {@link flyteidl.service.GetDataRequest.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.service.FlyteArtifactGetRequest
+                 * @memberof flyteidl.service.GetDataRequest
                  * @static
-                 * @param {flyteidl.service.IFlyteArtifactGetRequest} message FlyteArtifactGetRequest message or plain object to encode
+                 * @param {flyteidl.service.IGetDataRequest} message GetDataRequest message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                FlyteArtifactGetRequest.encode = function encode(message, writer) {
+                GetDataRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.artifact != null && message.hasOwnProperty("artifact"))
@@ -45353,20 +45353,20 @@
                 };
     
                 /**
-                 * Decodes a FlyteArtifactGetRequest message from the specified reader or buffer.
+                 * Decodes a GetDataRequest message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.service.FlyteArtifactGetRequest
+                 * @memberof flyteidl.service.GetDataRequest
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.FlyteArtifactGetRequest} FlyteArtifactGetRequest
+                 * @returns {flyteidl.service.GetDataRequest} GetDataRequest
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                FlyteArtifactGetRequest.decode = function decode(reader, length) {
+                GetDataRequest.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteArtifactGetRequest();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.GetDataRequest();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -45382,14 +45382,14 @@
                 };
     
                 /**
-                 * Verifies a FlyteArtifactGetRequest message.
+                 * Verifies a GetDataRequest message.
                  * @function verify
-                 * @memberof flyteidl.service.FlyteArtifactGetRequest
+                 * @memberof flyteidl.service.GetDataRequest
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                FlyteArtifactGetRequest.verify = function verify(message) {
+                GetDataRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.artifact != null && message.hasOwnProperty("artifact")) {
@@ -45400,28 +45400,28 @@
                     return null;
                 };
     
-                return FlyteArtifactGetRequest;
+                return GetDataRequest;
             })();
     
-            service.DataResponse = (function() {
+            service.GetDataResponse = (function() {
     
                 /**
-                 * Properties of a DataResponse.
+                 * Properties of a GetDataResponse.
                  * @memberof flyteidl.service
-                 * @interface IDataResponse
-                 * @property {flyteidl.core.ILiteralMap|null} [literalMap] DataResponse literalMap
-                 * @property {flyteidl.service.ICreateDownloadLinkResponse|null} [flyteDeckDownloadLink] DataResponse flyteDeckDownloadLink
+                 * @interface IGetDataResponse
+                 * @property {flyteidl.core.ILiteralMap|null} [literalMap] GetDataResponse literalMap
+                 * @property {flyteidl.service.ICreateDownloadLinkResponse|null} [flyteDeckDownloadLink] GetDataResponse flyteDeckDownloadLink
                  */
     
                 /**
-                 * Constructs a new DataResponse.
+                 * Constructs a new GetDataResponse.
                  * @memberof flyteidl.service
-                 * @classdesc Represents a DataResponse.
-                 * @implements IDataResponse
+                 * @classdesc Represents a GetDataResponse.
+                 * @implements IGetDataResponse
                  * @constructor
-                 * @param {flyteidl.service.IDataResponse=} [properties] Properties to set
+                 * @param {flyteidl.service.IGetDataResponse=} [properties] Properties to set
                  */
-                function DataResponse(properties) {
+                function GetDataResponse(properties) {
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -45429,57 +45429,57 @@
                 }
     
                 /**
-                 * DataResponse literalMap.
+                 * GetDataResponse literalMap.
                  * @member {flyteidl.core.ILiteralMap|null|undefined} literalMap
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
-                DataResponse.prototype.literalMap = null;
+                GetDataResponse.prototype.literalMap = null;
     
                 /**
-                 * DataResponse flyteDeckDownloadLink.
+                 * GetDataResponse flyteDeckDownloadLink.
                  * @member {flyteidl.service.ICreateDownloadLinkResponse|null|undefined} flyteDeckDownloadLink
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
-                DataResponse.prototype.flyteDeckDownloadLink = null;
+                GetDataResponse.prototype.flyteDeckDownloadLink = null;
     
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
-                 * DataResponse data.
+                 * GetDataResponse data.
                  * @member {"literalMap"|"flyteDeckDownloadLink"|undefined} data
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
-                Object.defineProperty(DataResponse.prototype, "data", {
+                Object.defineProperty(GetDataResponse.prototype, "data", {
                     get: $util.oneOfGetter($oneOfFields = ["literalMap", "flyteDeckDownloadLink"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
                 /**
-                 * Creates a new DataResponse instance using the specified properties.
+                 * Creates a new GetDataResponse instance using the specified properties.
                  * @function create
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @static
-                 * @param {flyteidl.service.IDataResponse=} [properties] Properties to set
-                 * @returns {flyteidl.service.DataResponse} DataResponse instance
+                 * @param {flyteidl.service.IGetDataResponse=} [properties] Properties to set
+                 * @returns {flyteidl.service.GetDataResponse} GetDataResponse instance
                  */
-                DataResponse.create = function create(properties) {
-                    return new DataResponse(properties);
+                GetDataResponse.create = function create(properties) {
+                    return new GetDataResponse(properties);
                 };
     
                 /**
-                 * Encodes the specified DataResponse message. Does not implicitly {@link flyteidl.service.DataResponse.verify|verify} messages.
+                 * Encodes the specified GetDataResponse message. Does not implicitly {@link flyteidl.service.GetDataResponse.verify|verify} messages.
                  * @function encode
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @static
-                 * @param {flyteidl.service.IDataResponse} message DataResponse message or plain object to encode
+                 * @param {flyteidl.service.IGetDataResponse} message GetDataResponse message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
-                DataResponse.encode = function encode(message, writer) {
+                GetDataResponse.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
                     if (message.literalMap != null && message.hasOwnProperty("literalMap"))
@@ -45490,20 +45490,20 @@
                 };
     
                 /**
-                 * Decodes a DataResponse message from the specified reader or buffer.
+                 * Decodes a GetDataResponse message from the specified reader or buffer.
                  * @function decode
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @static
                  * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
                  * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.DataResponse} DataResponse
+                 * @returns {flyteidl.service.GetDataResponse} GetDataResponse
                  * @throws {Error} If the payload is not a reader or valid buffer
                  * @throws {$protobuf.util.ProtocolError} If required fields are missing
                  */
-                DataResponse.decode = function decode(reader, length) {
+                GetDataResponse.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.DataResponse();
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.GetDataResponse();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
@@ -45522,14 +45522,14 @@
                 };
     
                 /**
-                 * Verifies a DataResponse message.
+                 * Verifies a GetDataResponse message.
                  * @function verify
-                 * @memberof flyteidl.service.DataResponse
+                 * @memberof flyteidl.service.GetDataResponse
                  * @static
                  * @param {Object.<string,*>} message Plain object to verify
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
-                DataResponse.verify = function verify(message) {
+                GetDataResponse.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     var properties = {};
@@ -45554,7 +45554,7 @@
                     return null;
                 };
     
-                return DataResponse;
+                return GetDataResponse;
             })();
     
             service.DataProxyService = (function() {
@@ -45694,7 +45694,7 @@
                  * @typedef GetDataCallback
                  * @type {function}
                  * @param {Error|null} error Error, if any
-                 * @param {flyteidl.service.DataResponse} [response] DataResponse
+                 * @param {flyteidl.service.GetDataResponse} [response] GetDataResponse
                  */
     
                 /**
@@ -45702,13 +45702,13 @@
                  * @function getData
                  * @memberof flyteidl.service.DataProxyService
                  * @instance
-                 * @param {flyteidl.service.IFlyteArtifactGetRequest} request FlyteArtifactGetRequest message or plain object
-                 * @param {flyteidl.service.DataProxyService.GetDataCallback} callback Node-style callback called with the error, if any, and DataResponse
+                 * @param {flyteidl.service.IGetDataRequest} request GetDataRequest message or plain object
+                 * @param {flyteidl.service.DataProxyService.GetDataCallback} callback Node-style callback called with the error, if any, and GetDataResponse
                  * @returns {undefined}
                  * @variation 1
                  */
                 Object.defineProperty(DataProxyService.prototype.getData = function getData(request, callback) {
-                    return this.rpcCall(getData, $root.flyteidl.service.FlyteArtifactGetRequest, $root.flyteidl.service.DataResponse, request, callback);
+                    return this.rpcCall(getData, $root.flyteidl.service.GetDataRequest, $root.flyteidl.service.GetDataResponse, request, callback);
                 }, "name", { value: "GetData" });
     
                 /**
@@ -45716,8 +45716,8 @@
                  * @function getData
                  * @memberof flyteidl.service.DataProxyService
                  * @instance
-                 * @param {flyteidl.service.IFlyteArtifactGetRequest} request FlyteArtifactGetRequest message or plain object
-                 * @returns {Promise<flyteidl.service.DataResponse>} Promise
+                 * @param {flyteidl.service.IGetDataRequest} request GetDataRequest message or plain object
+                 * @returns {Promise<flyteidl.service.GetDataResponse>} Promise
                  * @variation 2
                  */
     

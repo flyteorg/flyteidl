@@ -87,7 +87,7 @@ var (
 )
 
 func request_DataProxyService_GetData_0(ctx context.Context, marshaler runtime.Marshaler, client DataProxyServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq FlyteArtifactGetRequest
+	var protoReq GetDataRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {

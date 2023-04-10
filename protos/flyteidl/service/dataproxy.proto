@@ -113,11 +113,11 @@ message FlyteArtifact {
 }
 
 // General request artifact to retrieve data from a Flyte artifact url.
-message FlyteArtifactGetRequest {
+message GetDataRequest {
   FlyteArtifact artifact = 1;
 }
 
-message DataResponse {
+message GetDataResponse {
   oneof data {
     // literal map data will be returned
     core.LiteralMap literal_map                = 1;
@@ -162,7 +162,7 @@ service DataProxyService {
     // };
   }
 
-  rpc GetData (FlyteArtifactGetRequest) returns (DataResponse) {
+  rpc GetData (GetDataRequest) returns (GetDataResponse) {
     // Takes an address like flyte://v1/proj/development/execid/n2/0/i and return the actual data
     option (google.api.http) = {
       get: "/api/v1/data/get_artifact"

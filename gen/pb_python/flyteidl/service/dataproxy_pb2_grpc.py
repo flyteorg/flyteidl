@@ -32,8 +32,8 @@ class DataProxyServiceStub(object):
                 )
         self.GetData = channel.unary_unary(
                 '/flyteidl.service.DataProxyService/GetData',
-                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactGetRequest.SerializeToString,
-                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.DataResponse.FromString,
+                request_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
+                response_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
                 )
 
 
@@ -88,8 +88,8 @@ def add_DataProxyServiceServicer_to_server(servicer, server):
             ),
             'GetData': grpc.unary_unary_rpc_method_handler(
                     servicer.GetData,
-                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactGetRequest.FromString,
-                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.DataResponse.SerializeToString,
+                    request_deserializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.FromString,
+                    response_serializer=flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -165,7 +165,7 @@ class DataProxyService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/flyteidl.service.DataProxyService/GetData',
-            flyteidl_dot_service_dot_dataproxy__pb2.FlyteArtifactGetRequest.SerializeToString,
-            flyteidl_dot_service_dot_dataproxy__pb2.DataResponse.FromString,
+            flyteidl_dot_service_dot_dataproxy__pb2.GetDataRequest.SerializeToString,
+            flyteidl_dot_service_dot_dataproxy__pb2.GetDataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
