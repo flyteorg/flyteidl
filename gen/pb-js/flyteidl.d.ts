@@ -12332,6 +12332,9 @@ export namespace flyteidl {
 
             /** TaskResourceAttributes limits */
             limits?: (flyteidl.admin.ITaskResourceSpec|null);
+
+            /** TaskResourceAttributes defaultLimits */
+            defaultLimits?: (flyteidl.admin.ITaskResourceSpec|null);
         }
 
         /** Represents a TaskResourceAttributes. */
@@ -12348,6 +12351,9 @@ export namespace flyteidl {
 
             /** TaskResourceAttributes limits. */
             public limits?: (flyteidl.admin.ITaskResourceSpec|null);
+
+            /** TaskResourceAttributes defaultLimits. */
+            public defaultLimits?: (flyteidl.admin.ITaskResourceSpec|null);
 
             /**
              * Creates a new TaskResourceAttributes instance using the specified properties.

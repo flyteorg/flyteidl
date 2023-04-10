@@ -463,6 +463,15 @@ class TaskResourceAttributes final :
   ::flyteidl::admin::TaskResourceSpec* mutable_limits();
   void set_allocated_limits(::flyteidl::admin::TaskResourceSpec* limits);
 
+  // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+  bool has_default_limits() const;
+  void clear_default_limits();
+  static const int kDefaultLimitsFieldNumber = 3;
+  const ::flyteidl::admin::TaskResourceSpec& default_limits() const;
+  ::flyteidl::admin::TaskResourceSpec* release_default_limits();
+  ::flyteidl::admin::TaskResourceSpec* mutable_default_limits();
+  void set_allocated_default_limits(::flyteidl::admin::TaskResourceSpec* default_limits);
+
   // @@protoc_insertion_point(class_scope:flyteidl.admin.TaskResourceAttributes)
  private:
   class HasBitSetters;
@@ -470,6 +479,7 @@ class TaskResourceAttributes final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::flyteidl::admin::TaskResourceSpec* defaults_;
   ::flyteidl::admin::TaskResourceSpec* limits_;
+  ::flyteidl::admin::TaskResourceSpec* default_limits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fmatchable_5fresource_2eproto;
 };
@@ -2329,6 +2339,57 @@ inline void TaskResourceAttributes::set_allocated_limits(::flyteidl::admin::Task
   }
   limits_ = limits;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskResourceAttributes.limits)
+}
+
+// .flyteidl.admin.TaskResourceSpec default_limits = 3;
+inline bool TaskResourceAttributes::has_default_limits() const {
+  return this != internal_default_instance() && default_limits_ != nullptr;
+}
+inline void TaskResourceAttributes::clear_default_limits() {
+  if (GetArenaNoVirtual() == nullptr && default_limits_ != nullptr) {
+    delete default_limits_;
+  }
+  default_limits_ = nullptr;
+}
+inline const ::flyteidl::admin::TaskResourceSpec& TaskResourceAttributes::default_limits() const {
+  const ::flyteidl::admin::TaskResourceSpec* p = default_limits_;
+  // @@protoc_insertion_point(field_get:flyteidl.admin.TaskResourceAttributes.default_limits)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::admin::TaskResourceSpec*>(
+      &::flyteidl::admin::_TaskResourceSpec_default_instance_);
+}
+inline ::flyteidl::admin::TaskResourceSpec* TaskResourceAttributes::release_default_limits() {
+  // @@protoc_insertion_point(field_release:flyteidl.admin.TaskResourceAttributes.default_limits)
+  
+  ::flyteidl::admin::TaskResourceSpec* temp = default_limits_;
+  default_limits_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::admin::TaskResourceSpec* TaskResourceAttributes::mutable_default_limits() {
+  
+  if (default_limits_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::admin::TaskResourceSpec>(GetArenaNoVirtual());
+    default_limits_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.TaskResourceAttributes.default_limits)
+  return default_limits_;
+}
+inline void TaskResourceAttributes::set_allocated_default_limits(::flyteidl::admin::TaskResourceSpec* default_limits) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete default_limits_;
+  }
+  if (default_limits) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      default_limits = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, default_limits, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  default_limits_ = default_limits;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.admin.TaskResourceAttributes.default_limits)
 }
 
 // -------------------------------------------------------------------

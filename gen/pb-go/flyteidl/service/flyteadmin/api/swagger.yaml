@@ -6942,6 +6942,12 @@ definitions:
               ephemeral_storage: "ephemeral_storage"
               storage: "storage"
               gpu: "gpu"
+            default_limits:
+              memory: "memory"
+              cpu: "cpu"
+              ephemeral_storage: "ephemeral_storage"
+              storage: "storage"
+              gpu: "gpu"
             limits:
               memory: "memory"
               cpu: "cpu"
@@ -7037,6 +7043,12 @@ definitions:
             - "tags"
           task_resource_attributes:
             defaults:
+              memory: "memory"
+              cpu: "cpu"
+              ephemeral_storage: "ephemeral_storage"
+              storage: "storage"
+              gpu: "gpu"
+            default_limits:
               memory: "memory"
               cpu: "cpu"
               ephemeral_storage: "ephemeral_storage"
@@ -7170,6 +7182,12 @@ definitions:
           - "tags"
         task_resource_attributes:
           defaults:
+            memory: "memory"
+            cpu: "cpu"
+            ephemeral_storage: "ephemeral_storage"
+            storage: "storage"
+            gpu: "gpu"
+          default_limits:
             memory: "memory"
             cpu: "cpu"
             ephemeral_storage: "ephemeral_storage"
@@ -7310,6 +7328,12 @@ definitions:
         - "tags"
       task_resource_attributes:
         defaults:
+          memory: "memory"
+          cpu: "cpu"
+          ephemeral_storage: "ephemeral_storage"
+          storage: "storage"
+          gpu: "gpu"
+        default_limits:
           memory: "memory"
           cpu: "cpu"
           ephemeral_storage: "ephemeral_storage"
@@ -14619,6 +14643,12 @@ definitions:
             ephemeral_storage: "ephemeral_storage"
             storage: "storage"
             gpu: "gpu"
+          default_limits:
+            memory: "memory"
+            cpu: "cpu"
+            ephemeral_storage: "ephemeral_storage"
+            storage: "storage"
+            gpu: "gpu"
           limits:
             memory: "memory"
             cpu: "cpu"
@@ -14734,6 +14764,12 @@ definitions:
             - "tags"
           task_resource_attributes:
             defaults:
+              memory: "memory"
+              cpu: "cpu"
+              ephemeral_storage: "ephemeral_storage"
+              storage: "storage"
+              gpu: "gpu"
+            default_limits:
               memory: "memory"
               cpu: "cpu"
               ephemeral_storage: "ephemeral_storage"
@@ -14862,6 +14898,12 @@ definitions:
             ephemeral_storage: "ephemeral_storage"
             storage: "storage"
             gpu: "gpu"
+          default_limits:
+            memory: "memory"
+            cpu: "cpu"
+            ephemeral_storage: "ephemeral_storage"
+            storage: "storage"
+            gpu: "gpu"
           limits:
             memory: "memory"
             cpu: "cpu"
@@ -14981,6 +15023,12 @@ definitions:
             - "tags"
           task_resource_attributes:
             defaults:
+              memory: "memory"
+              cpu: "cpu"
+              ephemeral_storage: "ephemeral_storage"
+              storage: "storage"
+              gpu: "gpu"
+            default_limits:
               memory: "memory"
               cpu: "cpu"
               ephemeral_storage: "ephemeral_storage"
@@ -16698,11 +16746,26 @@ definitions:
       defaults:
         $ref: "#/definitions/adminTaskResourceSpec"
       limits:
+        description: "These are limits from the system's perspective. Resources requested\
+          \ by the user (either in defaults or limits)\nare checked against these\
+          \ limits. Defaults in this message, (fields 1 and 3) are also checked against\
+          \ these limits."
+        $ref: "#/definitions/adminTaskResourceSpec"
+      default_limits:
+        description: "If set, these limits will be used as the default limits for\
+          \ tasks that do not specify limits. If not set, but\ndefaults (field 1)\
+          \ are set, then the defaults will be used as the limits."
         $ref: "#/definitions/adminTaskResourceSpec"
     description: "Defines task resource defaults and limits that will be applied at\
       \ task registration."
     example:
       defaults:
+        memory: "memory"
+        cpu: "cpu"
+        ephemeral_storage: "ephemeral_storage"
+        storage: "storage"
+        gpu: "gpu"
+      default_limits:
         memory: "memory"
         cpu: "cpu"
         ephemeral_storage: "ephemeral_storage"
@@ -23463,6 +23526,12 @@ definitions:
             ephemeral_storage: "ephemeral_storage"
             storage: "storage"
             gpu: "gpu"
+          default_limits:
+            memory: "memory"
+            cpu: "cpu"
+            ephemeral_storage: "ephemeral_storage"
+            storage: "storage"
+            gpu: "gpu"
           limits:
             memory: "memory"
             cpu: "cpu"
@@ -23585,6 +23654,12 @@ definitions:
             - "tags"
           task_resource_attributes:
             defaults:
+              memory: "memory"
+              cpu: "cpu"
+              ephemeral_storage: "ephemeral_storage"
+              storage: "storage"
+              gpu: "gpu"
+            default_limits:
               memory: "memory"
               cpu: "cpu"
               ephemeral_storage: "ephemeral_storage"

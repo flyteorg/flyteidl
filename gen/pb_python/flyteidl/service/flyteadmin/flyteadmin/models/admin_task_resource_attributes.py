@@ -34,25 +34,30 @@ class AdminTaskResourceAttributes(object):
     """
     swagger_types = {
         'defaults': 'AdminTaskResourceSpec',
-        'limits': 'AdminTaskResourceSpec'
+        'limits': 'AdminTaskResourceSpec',
+        'default_limits': 'AdminTaskResourceSpec'
     }
 
     attribute_map = {
         'defaults': 'defaults',
-        'limits': 'limits'
+        'limits': 'limits',
+        'default_limits': 'default_limits'
     }
 
-    def __init__(self, defaults=None, limits=None):  # noqa: E501
+    def __init__(self, defaults=None, limits=None, default_limits=None):  # noqa: E501
         """AdminTaskResourceAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._defaults = None
         self._limits = None
+        self._default_limits = None
         self.discriminator = None
 
         if defaults is not None:
             self.defaults = defaults
         if limits is not None:
             self.limits = limits
+        if default_limits is not None:
+            self.default_limits = default_limits
 
     @property
     def defaults(self):
@@ -79,6 +84,7 @@ class AdminTaskResourceAttributes(object):
     def limits(self):
         """Gets the limits of this AdminTaskResourceAttributes.  # noqa: E501
 
+        These are limits from the system's perspective. Resources requested by the user (either in defaults or limits) are checked against these limits. Defaults in this message, (fields 1 and 3) are also checked against these limits.  # noqa: E501
 
         :return: The limits of this AdminTaskResourceAttributes.  # noqa: E501
         :rtype: AdminTaskResourceSpec
@@ -89,12 +95,36 @@ class AdminTaskResourceAttributes(object):
     def limits(self, limits):
         """Sets the limits of this AdminTaskResourceAttributes.
 
+        These are limits from the system's perspective. Resources requested by the user (either in defaults or limits) are checked against these limits. Defaults in this message, (fields 1 and 3) are also checked against these limits.  # noqa: E501
 
         :param limits: The limits of this AdminTaskResourceAttributes.  # noqa: E501
         :type: AdminTaskResourceSpec
         """
 
         self._limits = limits
+
+    @property
+    def default_limits(self):
+        """Gets the default_limits of this AdminTaskResourceAttributes.  # noqa: E501
+
+        If set, these limits will be used as the default limits for tasks that do not specify limits. If not set, but defaults (field 1) are set, then the defaults will be used as the limits.  # noqa: E501
+
+        :return: The default_limits of this AdminTaskResourceAttributes.  # noqa: E501
+        :rtype: AdminTaskResourceSpec
+        """
+        return self._default_limits
+
+    @default_limits.setter
+    def default_limits(self, default_limits):
+        """Sets the default_limits of this AdminTaskResourceAttributes.
+
+        If set, these limits will be used as the default limits for tasks that do not specify limits. If not set, but defaults (field 1) are set, then the defaults will be used as the limits.  # noqa: E501
+
+        :param default_limits: The default_limits of this AdminTaskResourceAttributes.  # noqa: E501
+        :type: AdminTaskResourceSpec
+        """
+
+        self._default_limits = default_limits
 
     def to_dict(self):
         """Returns the model properties as a dict"""

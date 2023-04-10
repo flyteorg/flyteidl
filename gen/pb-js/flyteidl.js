@@ -29665,6 +29665,7 @@
                  * @interface ITaskResourceAttributes
                  * @property {flyteidl.admin.ITaskResourceSpec|null} [defaults] TaskResourceAttributes defaults
                  * @property {flyteidl.admin.ITaskResourceSpec|null} [limits] TaskResourceAttributes limits
+                 * @property {flyteidl.admin.ITaskResourceSpec|null} [defaultLimits] TaskResourceAttributes defaultLimits
                  */
     
                 /**
@@ -29699,6 +29700,14 @@
                 TaskResourceAttributes.prototype.limits = null;
     
                 /**
+                 * TaskResourceAttributes defaultLimits.
+                 * @member {flyteidl.admin.ITaskResourceSpec|null|undefined} defaultLimits
+                 * @memberof flyteidl.admin.TaskResourceAttributes
+                 * @instance
+                 */
+                TaskResourceAttributes.prototype.defaultLimits = null;
+    
+                /**
                  * Creates a new TaskResourceAttributes instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.TaskResourceAttributes
@@ -29726,6 +29735,8 @@
                         $root.flyteidl.admin.TaskResourceSpec.encode(message.defaults, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     if (message.limits != null && message.hasOwnProperty("limits"))
                         $root.flyteidl.admin.TaskResourceSpec.encode(message.limits, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.defaultLimits != null && message.hasOwnProperty("defaultLimits"))
+                        $root.flyteidl.admin.TaskResourceSpec.encode(message.defaultLimits, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -29752,6 +29763,9 @@
                             break;
                         case 2:
                             message.limits = $root.flyteidl.admin.TaskResourceSpec.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.defaultLimits = $root.flyteidl.admin.TaskResourceSpec.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -29781,6 +29795,11 @@
                         var error = $root.flyteidl.admin.TaskResourceSpec.verify(message.limits);
                         if (error)
                             return "limits." + error;
+                    }
+                    if (message.defaultLimits != null && message.hasOwnProperty("defaultLimits")) {
+                        var error = $root.flyteidl.admin.TaskResourceSpec.verify(message.defaultLimits);
+                        if (error)
+                            return "defaultLimits." + error;
                     }
                     return null;
                 };

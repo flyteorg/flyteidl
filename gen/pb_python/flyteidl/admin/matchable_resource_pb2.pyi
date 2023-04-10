@@ -111,12 +111,14 @@ class PluginOverrides(_message.Message):
     def __init__(self, overrides: _Optional[_Iterable[_Union[PluginOverride, _Mapping]]] = ...) -> None: ...
 
 class TaskResourceAttributes(_message.Message):
-    __slots__ = ["defaults", "limits"]
+    __slots__ = ["default_limits", "defaults", "limits"]
     DEFAULTS_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_LIMITS_FIELD_NUMBER: _ClassVar[int]
     LIMITS_FIELD_NUMBER: _ClassVar[int]
+    default_limits: TaskResourceSpec
     defaults: TaskResourceSpec
     limits: TaskResourceSpec
-    def __init__(self, defaults: _Optional[_Union[TaskResourceSpec, _Mapping]] = ..., limits: _Optional[_Union[TaskResourceSpec, _Mapping]] = ...) -> None: ...
+    def __init__(self, defaults: _Optional[_Union[TaskResourceSpec, _Mapping]] = ..., limits: _Optional[_Union[TaskResourceSpec, _Mapping]] = ..., default_limits: _Optional[_Union[TaskResourceSpec, _Mapping]] = ...) -> None: ...
 
 class TaskResourceSpec(_message.Message):
     __slots__ = ["cpu", "ephemeral_storage", "gpu", "memory", "storage"]

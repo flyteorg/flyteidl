@@ -139,6 +139,16 @@ func (m *TaskResourceAttributes) Validate() error {
 		}
 	}
 
+	if v, ok := interface{}(m.GetDefaultLimits()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return TaskResourceAttributesValidationError{
+				field:  "DefaultLimits",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
+
 	return nil
 }
 

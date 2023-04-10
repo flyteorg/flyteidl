@@ -1463,8 +1463,14 @@ pub struct TaskResourceSpec {
 pub struct TaskResourceAttributes {
     #[prost(message, optional, tag="1")]
     pub defaults: ::core::option::Option<TaskResourceSpec>,
+    /// These are limits from the system's perspective. Resources requested by the user (either in defaults or limits)
+    /// are checked against these limits. Defaults in this message, (fields 1 and 3) are also checked against these limits.
     #[prost(message, optional, tag="2")]
     pub limits: ::core::option::Option<TaskResourceSpec>,
+    /// If set, these limits will be used as the default limits for tasks that do not specify limits. If not set, but
+    /// defaults (field 1) are set, then the defaults will be used as the limits.
+    #[prost(message, optional, tag="3")]
+    pub default_limits: ::core::option::Option<TaskResourceSpec>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

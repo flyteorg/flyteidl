@@ -335,6 +335,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskResourceAttributes, defaults_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskResourceAttributes, limits_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::TaskResourceAttributes, default_limits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -428,17 +429,17 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fmatchable_5freso
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::admin::TaskResourceSpec)},
   { 10, -1, sizeof(::flyteidl::admin::TaskResourceAttributes)},
-  { 17, 24, sizeof(::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse)},
-  { 26, -1, sizeof(::flyteidl::admin::ClusterResourceAttributes)},
-  { 32, -1, sizeof(::flyteidl::admin::ExecutionQueueAttributes)},
-  { 38, -1, sizeof(::flyteidl::admin::ExecutionClusterLabel)},
-  { 44, -1, sizeof(::flyteidl::admin::PluginOverride)},
-  { 52, -1, sizeof(::flyteidl::admin::PluginOverrides)},
-  { 58, -1, sizeof(::flyteidl::admin::WorkflowExecutionConfig)},
-  { 70, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
-  { 84, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
-  { 94, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
-  { 100, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
+  { 18, 25, sizeof(::flyteidl::admin::ClusterResourceAttributes_AttributesEntry_DoNotUse)},
+  { 27, -1, sizeof(::flyteidl::admin::ClusterResourceAttributes)},
+  { 33, -1, sizeof(::flyteidl::admin::ExecutionQueueAttributes)},
+  { 39, -1, sizeof(::flyteidl::admin::ExecutionClusterLabel)},
+  { 45, -1, sizeof(::flyteidl::admin::PluginOverride)},
+  { 53, -1, sizeof(::flyteidl::admin::PluginOverrides)},
+  { 59, -1, sizeof(::flyteidl::admin::WorkflowExecutionConfig)},
+  { 71, -1, sizeof(::flyteidl::admin::MatchingAttributes)},
+  { 85, -1, sizeof(::flyteidl::admin::MatchableAttributesConfiguration)},
+  { 95, -1, sizeof(::flyteidl::admin::ListMatchableAttributesRequest)},
+  { 101, -1, sizeof(::flyteidl::admin::ListMatchableAttributesResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -472,68 +473,69 @@ const char descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2ep
   "tobuf/wrappers.proto\"h\n\020TaskResourceSpec"
   "\022\013\n\003cpu\030\001 \001(\t\022\013\n\003gpu\030\002 \001(\t\022\016\n\006memory\030\003 \001"
   "(\t\022\017\n\007storage\030\004 \001(\t\022\031\n\021ephemeral_storage"
-  "\030\005 \001(\t\"~\n\026TaskResourceAttributes\0222\n\010defa"
-  "ults\030\001 \001(\0132 .flyteidl.admin.TaskResource"
-  "Spec\0220\n\006limits\030\002 \001(\0132 .flyteidl.admin.Ta"
-  "skResourceSpec\"\235\001\n\031ClusterResourceAttrib"
-  "utes\022M\n\nattributes\030\001 \003(\01329.flyteidl.admi"
-  "n.ClusterResourceAttributes.AttributesEn"
-  "try\0321\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-  "alue\030\002 \001(\t:\0028\001\"(\n\030ExecutionQueueAttribut"
-  "es\022\014\n\004tags\030\001 \003(\t\"&\n\025ExecutionClusterLabe"
-  "l\022\r\n\005value\030\001 \001(\t\"\301\001\n\016PluginOverride\022\021\n\tt"
-  "ask_type\030\001 \001(\t\022\021\n\tplugin_id\030\002 \003(\t\022U\n\027mis"
-  "sing_plugin_behavior\030\004 \001(\01624.flyteidl.ad"
-  "min.PluginOverride.MissingPluginBehavior"
-  "\"2\n\025MissingPluginBehavior\022\010\n\004FAIL\020\000\022\017\n\013U"
-  "SE_DEFAULT\020\001\"D\n\017PluginOverrides\0221\n\toverr"
-  "ides\030\001 \003(\0132\036.flyteidl.admin.PluginOverri"
-  "de\"\327\002\n\027WorkflowExecutionConfig\022\027\n\017max_pa"
-  "rallelism\030\001 \001(\005\0228\n\020security_context\030\002 \001("
-  "\0132\036.flyteidl.core.SecurityContext\022C\n\026raw"
-  "_output_data_config\030\003 \001(\0132#.flyteidl.adm"
-  "in.RawOutputDataConfig\022&\n\006labels\030\004 \001(\0132\026"
-  ".flyteidl.admin.Labels\0220\n\013annotations\030\005 "
-  "\001(\0132\033.flyteidl.admin.Annotations\0221\n\rinte"
-  "rruptible\030\006 \001(\0132\032.google.protobuf.BoolVa"
-  "lue\022\027\n\017overwrite_cache\030\007 \001(\010\"\341\004\n\022Matchin"
-  "gAttributes\022J\n\030task_resource_attributes\030"
-  "\001 \001(\0132&.flyteidl.admin.TaskResourceAttri"
-  "butesH\000\022P\n\033cluster_resource_attributes\030\002"
-  " \001(\0132).flyteidl.admin.ClusterResourceAtt"
-  "ributesH\000\022N\n\032execution_queue_attributes\030"
-  "\003 \001(\0132(.flyteidl.admin.ExecutionQueueAtt"
-  "ributesH\000\022H\n\027execution_cluster_label\030\004 \001"
-  "(\0132%.flyteidl.admin.ExecutionClusterLabe"
-  "lH\000\022=\n\022quality_of_service\030\005 \001(\0132\037.flytei"
-  "dl.core.QualityOfServiceH\000\022;\n\020plugin_ove"
-  "rrides\030\006 \001(\0132\037.flyteidl.admin.PluginOver"
-  "ridesH\000\022L\n\031workflow_execution_config\030\007 \001"
-  "(\0132\'.flyteidl.admin.WorkflowExecutionCon"
-  "figH\000\022\?\n\022cluster_assignment\030\010 \001(\0132!.flyt"
-  "eidl.admin.ClusterAssignmentH\000B\010\n\006target"
-  "\"\242\001\n MatchableAttributesConfiguration\0226\n"
-  "\nattributes\030\001 \001(\0132\".flyteidl.admin.Match"
-  "ingAttributes\022\016\n\006domain\030\002 \001(\t\022\017\n\007project"
-  "\030\003 \001(\t\022\020\n\010workflow\030\004 \001(\t\022\023\n\013launch_plan\030"
-  "\005 \001(\t\"Z\n\036ListMatchableAttributesRequest\022"
-  "8\n\rresource_type\030\001 \001(\0162!.flyteidl.admin."
-  "MatchableResource\"k\n\037ListMatchableAttrib"
-  "utesResponse\022H\n\016configurations\030\001 \003(\01320.f"
-  "lyteidl.admin.MatchableAttributesConfigu"
-  "ration*\340\001\n\021MatchableResource\022\021\n\rTASK_RES"
-  "OURCE\020\000\022\024\n\020CLUSTER_RESOURCE\020\001\022\023\n\017EXECUTI"
-  "ON_QUEUE\020\002\022\033\n\027EXECUTION_CLUSTER_LABEL\020\003\022"
-  "$\n QUALITY_OF_SERVICE_SPECIFICATION\020\004\022\023\n"
-  "\017PLUGIN_OVERRIDE\020\005\022\035\n\031WORKFLOW_EXECUTION"
-  "_CONFIG\020\006\022\026\n\022CLUSTER_ASSIGNMENT\020\007B7Z5git"
-  "hub.com/flyteorg/flyteidl/gen/pb-go/flyt"
-  "eidl/adminb\006proto3"
+  "\030\005 \001(\t\"\270\001\n\026TaskResourceAttributes\0222\n\010def"
+  "aults\030\001 \001(\0132 .flyteidl.admin.TaskResourc"
+  "eSpec\0220\n\006limits\030\002 \001(\0132 .flyteidl.admin.T"
+  "askResourceSpec\0228\n\016default_limits\030\003 \001(\0132"
+  " .flyteidl.admin.TaskResourceSpec\"\235\001\n\031Cl"
+  "usterResourceAttributes\022M\n\nattributes\030\001 "
+  "\003(\01329.flyteidl.admin.ClusterResourceAttr"
+  "ibutes.AttributesEntry\0321\n\017AttributesEntr"
+  "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\030Exe"
+  "cutionQueueAttributes\022\014\n\004tags\030\001 \003(\t\"&\n\025E"
+  "xecutionClusterLabel\022\r\n\005value\030\001 \001(\t\"\301\001\n\016"
+  "PluginOverride\022\021\n\ttask_type\030\001 \001(\t\022\021\n\tplu"
+  "gin_id\030\002 \003(\t\022U\n\027missing_plugin_behavior\030"
+  "\004 \001(\01624.flyteidl.admin.PluginOverride.Mi"
+  "ssingPluginBehavior\"2\n\025MissingPluginBeha"
+  "vior\022\010\n\004FAIL\020\000\022\017\n\013USE_DEFAULT\020\001\"D\n\017Plugi"
+  "nOverrides\0221\n\toverrides\030\001 \003(\0132\036.flyteidl"
+  ".admin.PluginOverride\"\327\002\n\027WorkflowExecut"
+  "ionConfig\022\027\n\017max_parallelism\030\001 \001(\005\0228\n\020se"
+  "curity_context\030\002 \001(\0132\036.flyteidl.core.Sec"
+  "urityContext\022C\n\026raw_output_data_config\030\003"
+  " \001(\0132#.flyteidl.admin.RawOutputDataConfi"
+  "g\022&\n\006labels\030\004 \001(\0132\026.flyteidl.admin.Label"
+  "s\0220\n\013annotations\030\005 \001(\0132\033.flyteidl.admin."
+  "Annotations\0221\n\rinterruptible\030\006 \001(\0132\032.goo"
+  "gle.protobuf.BoolValue\022\027\n\017overwrite_cach"
+  "e\030\007 \001(\010\"\341\004\n\022MatchingAttributes\022J\n\030task_r"
+  "esource_attributes\030\001 \001(\0132&.flyteidl.admi"
+  "n.TaskResourceAttributesH\000\022P\n\033cluster_re"
+  "source_attributes\030\002 \001(\0132).flyteidl.admin"
+  ".ClusterResourceAttributesH\000\022N\n\032executio"
+  "n_queue_attributes\030\003 \001(\0132(.flyteidl.admi"
+  "n.ExecutionQueueAttributesH\000\022H\n\027executio"
+  "n_cluster_label\030\004 \001(\0132%.flyteidl.admin.E"
+  "xecutionClusterLabelH\000\022=\n\022quality_of_ser"
+  "vice\030\005 \001(\0132\037.flyteidl.core.QualityOfServ"
+  "iceH\000\022;\n\020plugin_overrides\030\006 \001(\0132\037.flytei"
+  "dl.admin.PluginOverridesH\000\022L\n\031workflow_e"
+  "xecution_config\030\007 \001(\0132\'.flyteidl.admin.W"
+  "orkflowExecutionConfigH\000\022\?\n\022cluster_assi"
+  "gnment\030\010 \001(\0132!.flyteidl.admin.ClusterAss"
+  "ignmentH\000B\010\n\006target\"\242\001\n MatchableAttribu"
+  "tesConfiguration\0226\n\nattributes\030\001 \001(\0132\".f"
+  "lyteidl.admin.MatchingAttributes\022\016\n\006doma"
+  "in\030\002 \001(\t\022\017\n\007project\030\003 \001(\t\022\020\n\010workflow\030\004 "
+  "\001(\t\022\023\n\013launch_plan\030\005 \001(\t\"Z\n\036ListMatchabl"
+  "eAttributesRequest\0228\n\rresource_type\030\001 \001("
+  "\0162!.flyteidl.admin.MatchableResource\"k\n\037"
+  "ListMatchableAttributesResponse\022H\n\016confi"
+  "gurations\030\001 \003(\01320.flyteidl.admin.Matchab"
+  "leAttributesConfiguration*\340\001\n\021MatchableR"
+  "esource\022\021\n\rTASK_RESOURCE\020\000\022\024\n\020CLUSTER_RE"
+  "SOURCE\020\001\022\023\n\017EXECUTION_QUEUE\020\002\022\033\n\027EXECUTI"
+  "ON_CLUSTER_LABEL\020\003\022$\n QUALITY_OF_SERVICE"
+  "_SPECIFICATION\020\004\022\023\n\017PLUGIN_OVERRIDE\020\005\022\035\n"
+  "\031WORKFLOW_EXECUTION_CONFIG\020\006\022\026\n\022CLUSTER_"
+  "ASSIGNMENT\020\007B7Z5github.com/flyteorg/flyt"
+  "eidl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fmatchable_5fresource_2eproto,
-  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 2578,
+  "flyteidl/admin/matchable_resource.proto", &assign_descriptors_table_flyteidl_2fadmin_2fmatchable_5fresource_2eproto, 2637,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fmatchable_5fresource_2eproto() {
@@ -1190,11 +1192,14 @@ void TaskResourceAttributes::InitAsDefaultInstance() {
       ::flyteidl::admin::TaskResourceSpec::internal_default_instance());
   ::flyteidl::admin::_TaskResourceAttributes_default_instance_._instance.get_mutable()->limits_ = const_cast< ::flyteidl::admin::TaskResourceSpec*>(
       ::flyteidl::admin::TaskResourceSpec::internal_default_instance());
+  ::flyteidl::admin::_TaskResourceAttributes_default_instance_._instance.get_mutable()->default_limits_ = const_cast< ::flyteidl::admin::TaskResourceSpec*>(
+      ::flyteidl::admin::TaskResourceSpec::internal_default_instance());
 }
 class TaskResourceAttributes::HasBitSetters {
  public:
   static const ::flyteidl::admin::TaskResourceSpec& defaults(const TaskResourceAttributes* msg);
   static const ::flyteidl::admin::TaskResourceSpec& limits(const TaskResourceAttributes* msg);
+  static const ::flyteidl::admin::TaskResourceSpec& default_limits(const TaskResourceAttributes* msg);
 };
 
 const ::flyteidl::admin::TaskResourceSpec&
@@ -1205,9 +1210,14 @@ const ::flyteidl::admin::TaskResourceSpec&
 TaskResourceAttributes::HasBitSetters::limits(const TaskResourceAttributes* msg) {
   return *msg->limits_;
 }
+const ::flyteidl::admin::TaskResourceSpec&
+TaskResourceAttributes::HasBitSetters::default_limits(const TaskResourceAttributes* msg) {
+  return *msg->default_limits_;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TaskResourceAttributes::kDefaultsFieldNumber;
 const int TaskResourceAttributes::kLimitsFieldNumber;
+const int TaskResourceAttributes::kDefaultLimitsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 TaskResourceAttributes::TaskResourceAttributes()
@@ -1229,6 +1239,11 @@ TaskResourceAttributes::TaskResourceAttributes(const TaskResourceAttributes& fro
   } else {
     limits_ = nullptr;
   }
+  if (from.has_default_limits()) {
+    default_limits_ = new ::flyteidl::admin::TaskResourceSpec(*from.default_limits_);
+  } else {
+    default_limits_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.TaskResourceAttributes)
 }
 
@@ -1236,8 +1251,8 @@ void TaskResourceAttributes::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_TaskResourceAttributes_flyteidl_2fadmin_2fmatchable_5fresource_2eproto.base);
   ::memset(&defaults_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&limits_) -
-      reinterpret_cast<char*>(&defaults_)) + sizeof(limits_));
+      reinterpret_cast<char*>(&default_limits_) -
+      reinterpret_cast<char*>(&defaults_)) + sizeof(default_limits_));
 }
 
 TaskResourceAttributes::~TaskResourceAttributes() {
@@ -1248,6 +1263,7 @@ TaskResourceAttributes::~TaskResourceAttributes() {
 void TaskResourceAttributes::SharedDtor() {
   if (this != internal_default_instance()) delete defaults_;
   if (this != internal_default_instance()) delete limits_;
+  if (this != internal_default_instance()) delete default_limits_;
 }
 
 void TaskResourceAttributes::SetCachedSize(int size) const {
@@ -1273,6 +1289,10 @@ void TaskResourceAttributes::Clear() {
     delete limits_;
   }
   limits_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && default_limits_ != nullptr) {
+    delete default_limits_;
+  }
+  default_limits_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1309,6 +1329,19 @@ const char* TaskResourceAttributes::_InternalParse(const char* begin, const char
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::admin::TaskResourceSpec::_InternalParse;
         object = msg->mutable_limits();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::admin::TaskResourceSpec::_InternalParse;
+        object = msg->mutable_default_limits();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -1367,6 +1400,17 @@ bool TaskResourceAttributes::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_default_limits()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1406,6 +1450,12 @@ void TaskResourceAttributes::SerializeWithCachedSizes(
       2, HasBitSetters::limits(this), output);
   }
 
+  // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+  if (this->has_default_limits()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::default_limits(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1431,6 +1481,13 @@ void TaskResourceAttributes::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::limits(this), target);
+  }
+
+  // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+  if (this->has_default_limits()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::default_limits(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1468,6 +1525,13 @@ size_t TaskResourceAttributes::ByteSizeLong() const {
         *limits_);
   }
 
+  // .flyteidl.admin.TaskResourceSpec default_limits = 3;
+  if (this->has_default_limits()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *default_limits_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1501,6 +1565,9 @@ void TaskResourceAttributes::MergeFrom(const TaskResourceAttributes& from) {
   if (from.has_limits()) {
     mutable_limits()->::flyteidl::admin::TaskResourceSpec::MergeFrom(from.limits());
   }
+  if (from.has_default_limits()) {
+    mutable_default_limits()->::flyteidl::admin::TaskResourceSpec::MergeFrom(from.default_limits());
+  }
 }
 
 void TaskResourceAttributes::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1530,6 +1597,7 @@ void TaskResourceAttributes::InternalSwap(TaskResourceAttributes* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(defaults_, other->defaults_);
   swap(limits_, other->limits_);
+  swap(default_limits_, other->default_limits_);
 }
 
 ::google::protobuf::Metadata TaskResourceAttributes::GetMetadata() const {
