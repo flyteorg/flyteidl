@@ -126,7 +126,7 @@ public final class Tensorflow {
   }
   /**
    * <pre>
-   * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
+   * Proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedTensorflowTrainingTask}
@@ -599,7 +599,7 @@ public final class Tensorflow {
     }
     /**
      * <pre>
-     * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
+     * Proto for plugin that enables distributed training using https://github.com/kubeflow/tf-operator
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedTensorflowTrainingTask}
@@ -1538,7 +1538,7 @@ public final class Tensorflow {
 
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy Determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1546,7 +1546,7 @@ public final class Tensorflow {
     int getRestartPolicyValue();
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy Determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1748,7 +1748,7 @@ public final class Tensorflow {
     private int restartPolicy_;
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy Determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1758,7 +1758,7 @@ public final class Tensorflow {
     }
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy Determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2417,7 +2417,7 @@ public final class Tensorflow {
       private int restartPolicy_ = 0;
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy Determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2427,7 +2427,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy Determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2439,7 +2439,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy Determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2451,7 +2451,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy Determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2467,7 +2467,7 @@ public final class Tensorflow {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy Determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>

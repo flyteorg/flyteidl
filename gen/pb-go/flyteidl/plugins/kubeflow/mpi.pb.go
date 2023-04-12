@@ -21,7 +21,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-// Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
+// Proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
 type DistributedMPITrainingTask struct {
 	// Worker replicas spec
 	WorkerReplicas *DistributedMPITrainingReplicaSpec `protobuf:"bytes,1,opt,name=worker_replicas,json=workerReplicas,proto3" json:"worker_replicas,omitempty"`
@@ -82,6 +82,7 @@ func (m *DistributedMPITrainingTask) GetRunPolicy() *RunPolicy {
 	return nil
 }
 
+// Replica specification for distributed MPI training
 type DistributedMPITrainingReplicaSpec struct {
 	// Number of replicas
 	Replicas int32 `protobuf:"varint,1,opt,name=replicas,proto3" json:"replicas,omitempty"`
@@ -89,7 +90,7 @@ type DistributedMPITrainingReplicaSpec struct {
 	Image string `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`
 	// Resources required for the replica group
 	Resources *core.Resources `protobuf:"bytes,3,opt,name=resources,proto3" json:"resources,omitempty"`
-	// RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+	// Restart policy determines whether pods will be restarted when they exit
 	RestartPolicy        RestartPolicy `protobuf:"varint,4,opt,name=restart_policy,json=restartPolicy,proto3,enum=flyteidl.plugins.kubeflow.RestartPolicy" json:"restart_policy,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`

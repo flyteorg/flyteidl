@@ -67,28 +67,6 @@ namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
 
-enum CleanPodPolicy {
-  CLEANPOD_POLICY_ALL = 0,
-  CLEANPOD_POLICY_RUNNING = 1,
-  CLEANPOD_POLICY_NONE = 2,
-  CleanPodPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
-  CleanPodPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
-};
-bool CleanPodPolicy_IsValid(int value);
-const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_ALL;
-const CleanPodPolicy CleanPodPolicy_MAX = CLEANPOD_POLICY_NONE;
-const int CleanPodPolicy_ARRAYSIZE = CleanPodPolicy_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor();
-inline const ::std::string& CleanPodPolicy_Name(CleanPodPolicy value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    CleanPodPolicy_descriptor(), value);
-}
-inline bool CleanPodPolicy_Parse(
-    const ::std::string& name, CleanPodPolicy* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<CleanPodPolicy>(
-    CleanPodPolicy_descriptor(), name, value);
-}
 enum RestartPolicy {
   RESTART_POLICY_ALWAYS = 0,
   RESTART_POLICY_ON_FAILURE = 1,
@@ -110,6 +88,28 @@ inline bool RestartPolicy_Parse(
     const ::std::string& name, RestartPolicy* value) {
   return ::google::protobuf::internal::ParseNamedEnum<RestartPolicy>(
     RestartPolicy_descriptor(), name, value);
+}
+enum CleanPodPolicy {
+  CLEANPOD_POLICY_ALL = 0,
+  CLEANPOD_POLICY_RUNNING = 1,
+  CLEANPOD_POLICY_NONE = 2,
+  CleanPodPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
+  CleanPodPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
+};
+bool CleanPodPolicy_IsValid(int value);
+const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_ALL;
+const CleanPodPolicy CleanPodPolicy_MAX = CLEANPOD_POLICY_NONE;
+const int CleanPodPolicy_ARRAYSIZE = CleanPodPolicy_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor();
+inline const ::std::string& CleanPodPolicy_Name(CleanPodPolicy value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CleanPodPolicy_descriptor(), value);
+}
+inline bool CleanPodPolicy_Parse(
+    const ::std::string& name, CleanPodPolicy* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CleanPodPolicy>(
+    CleanPodPolicy_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -220,11 +220,11 @@ class RunPolicy final :
   ::google::protobuf::int32 ttl_seconds_after_finished() const;
   void set_ttl_seconds_after_finished(::google::protobuf::int32 value);
 
-  // int32 activeDeadlineSeconds = 3;
-  void clear_activedeadlineseconds();
+  // int32 active_deadline_seconds = 3;
+  void clear_active_deadline_seconds();
   static const int kActiveDeadlineSecondsFieldNumber = 3;
-  ::google::protobuf::int32 activedeadlineseconds() const;
-  void set_activedeadlineseconds(::google::protobuf::int32 value);
+  ::google::protobuf::int32 active_deadline_seconds() const;
+  void set_active_deadline_seconds(::google::protobuf::int32 value);
 
   // int32 backoff_limit = 4;
   void clear_backoff_limit();
@@ -239,7 +239,7 @@ class RunPolicy final :
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   int clean_pod_policy_;
   ::google::protobuf::int32 ttl_seconds_after_finished_;
-  ::google::protobuf::int32 activedeadlineseconds_;
+  ::google::protobuf::int32 active_deadline_seconds_;
   ::google::protobuf::int32 backoff_limit_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto;
@@ -283,18 +283,18 @@ inline void RunPolicy::set_ttl_seconds_after_finished(::google::protobuf::int32 
   // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.RunPolicy.ttl_seconds_after_finished)
 }
 
-// int32 activeDeadlineSeconds = 3;
-inline void RunPolicy::clear_activedeadlineseconds() {
-  activedeadlineseconds_ = 0;
+// int32 active_deadline_seconds = 3;
+inline void RunPolicy::clear_active_deadline_seconds() {
+  active_deadline_seconds_ = 0;
 }
-inline ::google::protobuf::int32 RunPolicy::activedeadlineseconds() const {
-  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.RunPolicy.activeDeadlineSeconds)
-  return activedeadlineseconds_;
+inline ::google::protobuf::int32 RunPolicy::active_deadline_seconds() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.RunPolicy.active_deadline_seconds)
+  return active_deadline_seconds_;
 }
-inline void RunPolicy::set_activedeadlineseconds(::google::protobuf::int32 value) {
+inline void RunPolicy::set_active_deadline_seconds(::google::protobuf::int32 value) {
   
-  activedeadlineseconds_ = value;
-  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.RunPolicy.activeDeadlineSeconds)
+  active_deadline_seconds_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.RunPolicy.active_deadline_seconds)
 }
 
 // int32 backoff_limit = 4;
@@ -324,15 +324,15 @@ inline void RunPolicy::set_backoff_limit(::google::protobuf::int32 value) {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::flyteidl::plugins::kubeflow::CleanPodPolicy> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::kubeflow::CleanPodPolicy>() {
-  return ::flyteidl::plugins::kubeflow::CleanPodPolicy_descriptor();
-}
 template <> struct is_proto_enum< ::flyteidl::plugins::kubeflow::RestartPolicy> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::kubeflow::RestartPolicy>() {
   return ::flyteidl::plugins::kubeflow::RestartPolicy_descriptor();
+}
+template <> struct is_proto_enum< ::flyteidl::plugins::kubeflow::CleanPodPolicy> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::flyteidl::plugins::kubeflow::CleanPodPolicy>() {
+  return ::flyteidl::plugins::kubeflow::CleanPodPolicy_descriptor();
 }
 
 }  // namespace protobuf

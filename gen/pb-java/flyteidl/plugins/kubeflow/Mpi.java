@@ -101,7 +101,7 @@ public final class Mpi {
   }
   /**
    * <pre>
-   * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
+   * Proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedMPITrainingTask}
@@ -512,7 +512,7 @@ public final class Mpi {
     }
     /**
      * <pre>
-     * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
+     * Proto for plugin that enables distributed training using https://github.com/kubeflow/mpi-operator
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedMPITrainingTask}
@@ -1284,7 +1284,7 @@ public final class Mpi {
 
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * Restart policy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1292,7 +1292,7 @@ public final class Mpi {
     int getRestartPolicyValue();
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * Restart policy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1300,6 +1300,10 @@ public final class Mpi {
     flyteidl.plugins.kubeflow.Common.RestartPolicy getRestartPolicy();
   }
   /**
+   * <pre>
+   * Replica specification for distributed MPI training
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec}
    */
   public  static final class DistributedMPITrainingReplicaSpec extends
@@ -1494,7 +1498,7 @@ public final class Mpi {
     private int restartPolicy_;
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * Restart policy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1504,7 +1508,7 @@ public final class Mpi {
     }
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * Restart policy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1707,6 +1711,10 @@ public final class Mpi {
       return builder;
     }
     /**
+     * <pre>
+     * Replica specification for distributed MPI training
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec}
      */
     public static final class Builder extends
@@ -2163,7 +2171,7 @@ public final class Mpi {
       private int restartPolicy_ = 0;
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * Restart policy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2173,7 +2181,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * Restart policy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2185,7 +2193,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * Restart policy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2197,7 +2205,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * Restart policy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2213,7 +2221,7 @@ public final class Mpi {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * Restart policy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>

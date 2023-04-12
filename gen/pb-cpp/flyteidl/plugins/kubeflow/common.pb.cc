@@ -56,7 +56,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fcom
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::RunPolicy, clean_pod_policy_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::RunPolicy, ttl_seconds_after_finished_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::RunPolicy, activedeadlineseconds_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::RunPolicy, active_deadline_seconds_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::RunPolicy, backoff_limit_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -75,23 +75,23 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[] =
   "\n&flyteidl/plugins/kubeflow/common.proto"
-  "\022\031flyteidl.plugins.kubeflow\"\252\001\n\tRunPolic"
+  "\022\031flyteidl.plugins.kubeflow\"\254\001\n\tRunPolic"
   "y\022C\n\020clean_pod_policy\030\001 \001(\0162).flyteidl.p"
   "lugins.kubeflow.CleanPodPolicy\022\"\n\032ttl_se"
-  "conds_after_finished\030\002 \001(\005\022\035\n\025activeDead"
-  "lineSeconds\030\003 \001(\005\022\025\n\rbackoff_limit\030\004 \001(\005"
-  "*`\n\016CleanPodPolicy\022\027\n\023CLEANPOD_POLICY_AL"
-  "L\020\000\022\033\n\027CLEANPOD_POLICY_RUNNING\020\001\022\030\n\024CLEA"
-  "NPOD_POLICY_NONE\020\002*c\n\rRestartPolicy\022\031\n\025R"
-  "ESTART_POLICY_ALWAYS\020\000\022\035\n\031RESTART_POLICY"
-  "_ON_FAILURE\020\001\022\030\n\024RESTART_POLICY_NEVER\020\002B"
-  "9Z7github.com/flyteorg/flyteidl/gen/pb-g"
-  "o/flyteidl/pluginsb\006proto3"
+  "conds_after_finished\030\002 \001(\005\022\037\n\027active_dea"
+  "dline_seconds\030\003 \001(\005\022\025\n\rbackoff_limit\030\004 \001"
+  "(\005*c\n\rRestartPolicy\022\031\n\025RESTART_POLICY_AL"
+  "WAYS\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020\001\022\030\n"
+  "\024RESTART_POLICY_NEVER\020\002*`\n\016CleanPodPolic"
+  "y\022\027\n\023CLEANPOD_POLICY_ALL\020\000\022\033\n\027CLEANPOD_P"
+  "OLICY_RUNNING\020\001\022\030\n\024CLEANPOD_POLICY_NONE\020"
+  "\002B9Z7github.com/flyteorg/flyteidl/gen/pb"
+  "-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto,
-  "flyteidl/plugins/kubeflow/common.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 506,
+  "flyteidl/plugins/kubeflow/common.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto, 508,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto() {
@@ -106,11 +106,11 @@ static bool dynamic_init_dummy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto = 
 namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
-const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor() {
+const ::google::protobuf::EnumDescriptor* RestartPolicy_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[0];
 }
-bool CleanPodPolicy_IsValid(int value) {
+bool RestartPolicy_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -121,11 +121,11 @@ bool CleanPodPolicy_IsValid(int value) {
   }
 }
 
-const ::google::protobuf::EnumDescriptor* RestartPolicy_descriptor() {
+const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor() {
   ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto);
   return file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto[1];
 }
-bool RestartPolicy_IsValid(int value) {
+bool CleanPodPolicy_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -230,10 +230,10 @@ const char* RunPolicy::_InternalParse(const char* begin, const char* end, void* 
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // int32 activeDeadlineSeconds = 3;
+      // int32 active_deadline_seconds = 3;
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
-        msg->set_activedeadlineseconds(::google::protobuf::internal::ReadVarint(&ptr));
+        msg->set_active_deadline_seconds(::google::protobuf::internal::ReadVarint(&ptr));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
@@ -298,13 +298,13 @@ bool RunPolicy::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 activeDeadlineSeconds = 3;
+      // int32 active_deadline_seconds = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &activedeadlineseconds_)));
+                 input, &active_deadline_seconds_)));
         } else {
           goto handle_unusual;
         }
@@ -362,9 +362,9 @@ void RunPolicy::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->ttl_seconds_after_finished(), output);
   }
 
-  // int32 activeDeadlineSeconds = 3;
-  if (this->activedeadlineseconds() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->activedeadlineseconds(), output);
+  // int32 active_deadline_seconds = 3;
+  if (this->active_deadline_seconds() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->active_deadline_seconds(), output);
   }
 
   // int32 backoff_limit = 4;
@@ -396,9 +396,9 @@ void RunPolicy::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->ttl_seconds_after_finished(), target);
   }
 
-  // int32 activeDeadlineSeconds = 3;
-  if (this->activedeadlineseconds() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->activedeadlineseconds(), target);
+  // int32 active_deadline_seconds = 3;
+  if (this->active_deadline_seconds() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->active_deadline_seconds(), target);
   }
 
   // int32 backoff_limit = 4;
@@ -440,11 +440,11 @@ size_t RunPolicy::ByteSizeLong() const {
         this->ttl_seconds_after_finished());
   }
 
-  // int32 activeDeadlineSeconds = 3;
-  if (this->activedeadlineseconds() != 0) {
+  // int32 active_deadline_seconds = 3;
+  if (this->active_deadline_seconds() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->activedeadlineseconds());
+        this->active_deadline_seconds());
   }
 
   // int32 backoff_limit = 4;
@@ -487,8 +487,8 @@ void RunPolicy::MergeFrom(const RunPolicy& from) {
   if (from.ttl_seconds_after_finished() != 0) {
     set_ttl_seconds_after_finished(from.ttl_seconds_after_finished());
   }
-  if (from.activedeadlineseconds() != 0) {
-    set_activedeadlineseconds(from.activedeadlineseconds());
+  if (from.active_deadline_seconds() != 0) {
+    set_active_deadline_seconds(from.active_deadline_seconds());
   }
   if (from.backoff_limit() != 0) {
     set_backoff_limit(from.backoff_limit());
@@ -522,7 +522,7 @@ void RunPolicy::InternalSwap(RunPolicy* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(clean_pod_policy_, other->clean_pod_policy_);
   swap(ttl_seconds_after_finished_, other->ttl_seconds_after_finished_);
-  swap(activedeadlineseconds_, other->activedeadlineseconds_);
+  swap(active_deadline_seconds_, other->active_deadline_seconds_);
   swap(backoff_limit_, other->backoff_limit_);
 }
 

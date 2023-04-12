@@ -101,7 +101,7 @@ public final class Pytorch {
   }
   /**
    * <pre>
-   * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
+   * Proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
    * </pre>
    *
    * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedPyTorchTrainingTask}
@@ -512,7 +512,7 @@ public final class Pytorch {
     }
     /**
      * <pre>
-     * Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
+     * Proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
      * </pre>
      *
      * Protobuf type {@code flyteidl.plugins.kubeflow.DistributedPyTorchTrainingTask}
@@ -1284,7 +1284,7 @@ public final class Pytorch {
 
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1292,7 +1292,7 @@ public final class Pytorch {
     int getRestartPolicyValue();
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1494,7 +1494,7 @@ public final class Pytorch {
     private int restartPolicy_;
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -1504,7 +1504,7 @@ public final class Pytorch {
     }
     /**
      * <pre>
-     * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+     * RestartPolicy determines whether pods will be restarted when they exit
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2163,7 +2163,7 @@ public final class Pytorch {
       private int restartPolicy_ = 0;
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2173,7 +2173,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2185,7 +2185,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2197,7 +2197,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
@@ -2213,7 +2213,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+       * RestartPolicy determines whether pods will be restarted when they exit
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>

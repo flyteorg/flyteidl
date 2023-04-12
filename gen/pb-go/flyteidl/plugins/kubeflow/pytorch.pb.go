@@ -21,7 +21,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-// Custom proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
+// Proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
 type DistributedPyTorchTrainingTask struct {
 	// Worker replicas spec
 	WorkerReplicas *DistributedPyTorchTrainingReplicaSpec `protobuf:"bytes,1,opt,name=worker_replicas,json=workerReplicas,proto3" json:"worker_replicas,omitempty"`
@@ -89,7 +89,7 @@ type DistributedPyTorchTrainingReplicaSpec struct {
 	Image string `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`
 	// Resources required for the replica group
 	Resources *core.Resources `protobuf:"bytes,3,opt,name=resources,proto3" json:"resources,omitempty"`
-	// RestartPolicy Determines whether pods will be restarted when they exit. The allowed values are as follows:
+	// RestartPolicy determines whether pods will be restarted when they exit
 	RestartPolicy        RestartPolicy `protobuf:"varint,4,opt,name=restart_policy,json=restartPolicy,proto3,enum=flyteidl.plugins.kubeflow.RestartPolicy" json:"restart_policy,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
