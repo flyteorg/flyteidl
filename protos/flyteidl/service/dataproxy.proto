@@ -165,7 +165,7 @@ service DataProxyService {
   rpc GetData (GetDataRequest) returns (GetDataResponse) {
     // Takes an address like flyte://v1/proj/development/execid/n2/0/i and return the actual data
     option (google.api.http) = {
-      get: "/api/v1/data/get_artifact"
+      get: "/api/v1/data"
     };
   }
 }
