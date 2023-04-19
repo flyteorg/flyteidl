@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[9]
+  static const ::google::protobuf::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -74,9 +74,6 @@ extern CreateUploadLocationRequestDefaultTypeInternal _CreateUploadLocationReque
 class CreateUploadLocationResponse;
 class CreateUploadLocationResponseDefaultTypeInternal;
 extern CreateUploadLocationResponseDefaultTypeInternal _CreateUploadLocationResponse_default_instance_;
-class FlyteArtifact;
-class FlyteArtifactDefaultTypeInternal;
-extern FlyteArtifactDefaultTypeInternal _FlyteArtifact_default_instance_;
 class GetDataRequest;
 class GetDataRequestDefaultTypeInternal;
 extern GetDataRequestDefaultTypeInternal _GetDataRequest_default_instance_;
@@ -93,7 +90,6 @@ template<> ::flyteidl::service::CreateDownloadLocationRequest* Arena::CreateMayb
 template<> ::flyteidl::service::CreateDownloadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateDownloadLocationResponse>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationRequest>(Arena*);
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
-template<> ::flyteidl::service::FlyteArtifact* Arena::CreateMaybeMessage<::flyteidl::service::FlyteArtifact>(Arena*);
 template<> ::flyteidl::service::GetDataRequest* Arena::CreateMaybeMessage<::flyteidl::service::GetDataRequest>(Arena*);
 template<> ::flyteidl::service::GetDataResponse* Arena::CreateMaybeMessage<::flyteidl::service::GetDataResponse>(Arena*);
 }  // namespace protobuf
@@ -990,126 +986,6 @@ class CreateDownloadLinkResponse final :
 };
 // -------------------------------------------------------------------
 
-class FlyteArtifact final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.FlyteArtifact) */ {
- public:
-  FlyteArtifact();
-  virtual ~FlyteArtifact();
-
-  FlyteArtifact(const FlyteArtifact& from);
-
-  inline FlyteArtifact& operator=(const FlyteArtifact& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  FlyteArtifact(FlyteArtifact&& from) noexcept
-    : FlyteArtifact() {
-    *this = ::std::move(from);
-  }
-
-  inline FlyteArtifact& operator=(FlyteArtifact&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const FlyteArtifact& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FlyteArtifact* internal_default_instance() {
-    return reinterpret_cast<const FlyteArtifact*>(
-               &_FlyteArtifact_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  void Swap(FlyteArtifact* other);
-  friend void swap(FlyteArtifact& a, FlyteArtifact& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline FlyteArtifact* New() const final {
-    return CreateMaybeMessage<FlyteArtifact>(nullptr);
-  }
-
-  FlyteArtifact* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FlyteArtifact>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FlyteArtifact& from);
-  void MergeFrom(const FlyteArtifact& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(FlyteArtifact* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string flyte_url = 1;
-  void clear_flyte_url();
-  static const int kFlyteUrlFieldNumber = 1;
-  const ::std::string& flyte_url() const;
-  void set_flyte_url(const ::std::string& value);
-  #if LANG_CXX11
-  void set_flyte_url(::std::string&& value);
-  #endif
-  void set_flyte_url(const char* value);
-  void set_flyte_url(const char* value, size_t size);
-  ::std::string* mutable_flyte_url();
-  ::std::string* release_flyte_url();
-  void set_allocated_flyte_url(::std::string* flyte_url);
-
-  // @@protoc_insertion_point(class_scope:flyteidl.service.FlyteArtifact)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr flyte_url_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
-};
-// -------------------------------------------------------------------
-
 class GetDataRequest final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.GetDataRequest) */ {
  public:
@@ -1148,7 +1024,7 @@ class GetDataRequest final :
                &_GetDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(GetDataRequest* other);
   friend void swap(GetDataRequest& a, GetDataRequest& b) {
@@ -1205,21 +1081,26 @@ class GetDataRequest final :
 
   // accessors -------------------------------------------------------
 
-  // .flyteidl.service.FlyteArtifact artifact = 1;
-  bool has_artifact() const;
-  void clear_artifact();
-  static const int kArtifactFieldNumber = 1;
-  const ::flyteidl::service::FlyteArtifact& artifact() const;
-  ::flyteidl::service::FlyteArtifact* release_artifact();
-  ::flyteidl::service::FlyteArtifact* mutable_artifact();
-  void set_allocated_artifact(::flyteidl::service::FlyteArtifact* artifact);
+  // string flyte_url = 1;
+  void clear_flyte_url();
+  static const int kFlyteUrlFieldNumber = 1;
+  const ::std::string& flyte_url() const;
+  void set_flyte_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_flyte_url(::std::string&& value);
+  #endif
+  void set_flyte_url(const char* value);
+  void set_flyte_url(const char* value, size_t size);
+  ::std::string* mutable_flyte_url();
+  ::std::string* release_flyte_url();
+  void set_allocated_flyte_url(::std::string* flyte_url);
 
   // @@protoc_insertion_point(class_scope:flyteidl.service.GetDataRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::flyteidl::service::FlyteArtifact* artifact_;
+  ::google::protobuf::internal::ArenaStringPtr flyte_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
 };
@@ -1269,7 +1150,7 @@ class GetDataResponse final :
                &_GetDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(GetDataResponse* other);
   friend void swap(GetDataResponse& a, GetDataResponse& b) {
@@ -2226,114 +2107,59 @@ inline void CreateDownloadLinkResponse::set_allocated_expires_at(::google::proto
 
 // -------------------------------------------------------------------
 
-// FlyteArtifact
+// GetDataRequest
 
 // string flyte_url = 1;
-inline void FlyteArtifact::clear_flyte_url() {
+inline void GetDataRequest::clear_flyte_url() {
   flyte_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& FlyteArtifact::flyte_url() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.FlyteArtifact.flyte_url)
+inline const ::std::string& GetDataRequest::flyte_url() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.flyte_url)
   return flyte_url_.GetNoArena();
 }
-inline void FlyteArtifact::set_flyte_url(const ::std::string& value) {
+inline void GetDataRequest::set_flyte_url(const ::std::string& value) {
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:flyteidl.service.FlyteArtifact.flyte_url)
+  // @@protoc_insertion_point(field_set:flyteidl.service.GetDataRequest.flyte_url)
 }
 #if LANG_CXX11
-inline void FlyteArtifact::set_flyte_url(::std::string&& value) {
+inline void GetDataRequest::set_flyte_url(::std::string&& value) {
   
   flyte_url_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.FlyteArtifact.flyte_url)
+  // @@protoc_insertion_point(field_set_rvalue:flyteidl.service.GetDataRequest.flyte_url)
 }
 #endif
-inline void FlyteArtifact::set_flyte_url(const char* value) {
+inline void GetDataRequest::set_flyte_url(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:flyteidl.service.FlyteArtifact.flyte_url)
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.GetDataRequest.flyte_url)
 }
-inline void FlyteArtifact::set_flyte_url(const char* value, size_t size) {
+inline void GetDataRequest::set_flyte_url(const char* value, size_t size) {
   
   flyte_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.FlyteArtifact.flyte_url)
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.GetDataRequest.flyte_url)
 }
-inline ::std::string* FlyteArtifact::mutable_flyte_url() {
+inline ::std::string* GetDataRequest::mutable_flyte_url() {
   
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.FlyteArtifact.flyte_url)
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.flyte_url)
   return flyte_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* FlyteArtifact::release_flyte_url() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.FlyteArtifact.flyte_url)
+inline ::std::string* GetDataRequest::release_flyte_url() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.flyte_url)
   
   return flyte_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void FlyteArtifact::set_allocated_flyte_url(::std::string* flyte_url) {
+inline void GetDataRequest::set_allocated_flyte_url(::std::string* flyte_url) {
   if (flyte_url != nullptr) {
     
   } else {
     
   }
   flyte_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), flyte_url);
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.FlyteArtifact.flyte_url)
-}
-
-// -------------------------------------------------------------------
-
-// GetDataRequest
-
-// .flyteidl.service.FlyteArtifact artifact = 1;
-inline bool GetDataRequest::has_artifact() const {
-  return this != internal_default_instance() && artifact_ != nullptr;
-}
-inline void GetDataRequest::clear_artifact() {
-  if (GetArenaNoVirtual() == nullptr && artifact_ != nullptr) {
-    delete artifact_;
-  }
-  artifact_ = nullptr;
-}
-inline const ::flyteidl::service::FlyteArtifact& GetDataRequest::artifact() const {
-  const ::flyteidl::service::FlyteArtifact* p = artifact_;
-  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataRequest.artifact)
-  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::service::FlyteArtifact*>(
-      &::flyteidl::service::_FlyteArtifact_default_instance_);
-}
-inline ::flyteidl::service::FlyteArtifact* GetDataRequest::release_artifact() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataRequest.artifact)
-  
-  ::flyteidl::service::FlyteArtifact* temp = artifact_;
-  artifact_ = nullptr;
-  return temp;
-}
-inline ::flyteidl::service::FlyteArtifact* GetDataRequest::mutable_artifact() {
-  
-  if (artifact_ == nullptr) {
-    auto* p = CreateMaybeMessage<::flyteidl::service::FlyteArtifact>(GetArenaNoVirtual());
-    artifact_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataRequest.artifact)
-  return artifact_;
-}
-inline void GetDataRequest::set_allocated_artifact(::flyteidl::service::FlyteArtifact* artifact) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete artifact_;
-  }
-  if (artifact) {
-    ::google::protobuf::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      artifact = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, artifact, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  artifact_ = artifact;
-  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.GetDataRequest.artifact)
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.GetDataRequest.flyte_url)
 }
 
 // -------------------------------------------------------------------
@@ -2428,8 +2254,6 @@ inline GetDataResponse::DataCase GetDataResponse::data_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -45181,123 +45181,13 @@
                 return CreateDownloadLinkResponse;
             })();
     
-            service.FlyteArtifact = (function() {
-    
-                /**
-                 * Properties of a FlyteArtifact.
-                 * @memberof flyteidl.service
-                 * @interface IFlyteArtifact
-                 * @property {string|null} [flyteUrl] FlyteArtifact flyteUrl
-                 */
-    
-                /**
-                 * Constructs a new FlyteArtifact.
-                 * @memberof flyteidl.service
-                 * @classdesc Represents a FlyteArtifact.
-                 * @implements IFlyteArtifact
-                 * @constructor
-                 * @param {flyteidl.service.IFlyteArtifact=} [properties] Properties to set
-                 */
-                function FlyteArtifact(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * FlyteArtifact flyteUrl.
-                 * @member {string} flyteUrl
-                 * @memberof flyteidl.service.FlyteArtifact
-                 * @instance
-                 */
-                FlyteArtifact.prototype.flyteUrl = "";
-    
-                /**
-                 * Creates a new FlyteArtifact instance using the specified properties.
-                 * @function create
-                 * @memberof flyteidl.service.FlyteArtifact
-                 * @static
-                 * @param {flyteidl.service.IFlyteArtifact=} [properties] Properties to set
-                 * @returns {flyteidl.service.FlyteArtifact} FlyteArtifact instance
-                 */
-                FlyteArtifact.create = function create(properties) {
-                    return new FlyteArtifact(properties);
-                };
-    
-                /**
-                 * Encodes the specified FlyteArtifact message. Does not implicitly {@link flyteidl.service.FlyteArtifact.verify|verify} messages.
-                 * @function encode
-                 * @memberof flyteidl.service.FlyteArtifact
-                 * @static
-                 * @param {flyteidl.service.IFlyteArtifact} message FlyteArtifact message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                FlyteArtifact.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.flyteUrl);
-                    return writer;
-                };
-    
-                /**
-                 * Decodes a FlyteArtifact message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof flyteidl.service.FlyteArtifact
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {flyteidl.service.FlyteArtifact} FlyteArtifact
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                FlyteArtifact.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.FlyteArtifact();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.flyteUrl = reader.string();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Verifies a FlyteArtifact message.
-                 * @function verify
-                 * @memberof flyteidl.service.FlyteArtifact
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                FlyteArtifact.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
-                        if (!$util.isString(message.flyteUrl))
-                            return "flyteUrl: string expected";
-                    return null;
-                };
-    
-                return FlyteArtifact;
-            })();
-    
             service.GetDataRequest = (function() {
     
                 /**
                  * Properties of a GetDataRequest.
                  * @memberof flyteidl.service
                  * @interface IGetDataRequest
-                 * @property {flyteidl.service.IFlyteArtifact|null} [artifact] GetDataRequest artifact
+                 * @property {string|null} [flyteUrl] GetDataRequest flyteUrl
                  */
     
                 /**
@@ -45316,12 +45206,12 @@
                 }
     
                 /**
-                 * GetDataRequest artifact.
-                 * @member {flyteidl.service.IFlyteArtifact|null|undefined} artifact
+                 * GetDataRequest flyteUrl.
+                 * @member {string} flyteUrl
                  * @memberof flyteidl.service.GetDataRequest
                  * @instance
                  */
-                GetDataRequest.prototype.artifact = null;
+                GetDataRequest.prototype.flyteUrl = "";
     
                 /**
                  * Creates a new GetDataRequest instance using the specified properties.
@@ -45347,8 +45237,8 @@
                 GetDataRequest.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.artifact != null && message.hasOwnProperty("artifact"))
-                        $root.flyteidl.service.FlyteArtifact.encode(message.artifact, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.flyteUrl);
                     return writer;
                 };
     
@@ -45371,7 +45261,7 @@
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            message.artifact = $root.flyteidl.service.FlyteArtifact.decode(reader, reader.uint32());
+                            message.flyteUrl = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -45392,11 +45282,9 @@
                 GetDataRequest.verify = function verify(message) {
                     if (typeof message !== "object" || message === null)
                         return "object expected";
-                    if (message.artifact != null && message.hasOwnProperty("artifact")) {
-                        var error = $root.flyteidl.service.FlyteArtifact.verify(message.artifact);
-                        if (error)
-                            return "artifact." + error;
-                    }
+                    if (message.flyteUrl != null && message.hasOwnProperty("flyteUrl"))
+                        if (!$util.isString(message.flyteUrl))
+                            return "flyteUrl: string expected";
                     return null;
                 };
     

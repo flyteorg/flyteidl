@@ -230,7 +230,7 @@ var (
 
 	pattern_DataProxyService_CreateDownloadLink_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "dataproxy", "artifact_link"}, ""))
 
-	pattern_DataProxyService_GetData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "data", "get_artifact"}, ""))
+	pattern_DataProxyService_GetData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "data"}, ""))
 )
 
 var (

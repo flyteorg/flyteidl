@@ -71,17 +71,11 @@ class CreateUploadLocationResponse(_message.Message):
     signed_url: str
     def __init__(self, signed_url: _Optional[str] = ..., native_url: _Optional[str] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
-class FlyteArtifact(_message.Message):
+class GetDataRequest(_message.Message):
     __slots__ = ["flyte_url"]
     FLYTE_URL_FIELD_NUMBER: _ClassVar[int]
     flyte_url: str
     def __init__(self, flyte_url: _Optional[str] = ...) -> None: ...
-
-class GetDataRequest(_message.Message):
-    __slots__ = ["artifact"]
-    ARTIFACT_FIELD_NUMBER: _ClassVar[int]
-    artifact: FlyteArtifact
-    def __init__(self, artifact: _Optional[_Union[FlyteArtifact, _Mapping]] = ...) -> None: ...
 
 class GetDataResponse(_message.Message):
     __slots__ = ["flyte_deck_download_link", "literal_map"]

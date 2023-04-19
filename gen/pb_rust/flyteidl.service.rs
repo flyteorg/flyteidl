@@ -173,22 +173,16 @@ pub struct CreateDownloadLinkResponse {
     #[prost(message, optional, tag="2")]
     pub expires_at: ::core::option::Option<::prost_types::Timestamp>,
 }
-/// Wraps a flyte url, a unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
-/// backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
-/// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
-///       flyte://v1/proj/development/execid/n2/i (for node execution)
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct FlyteArtifact {
-    #[prost(string, tag="1")]
-    pub flyte_url: ::prost::alloc::string::String,
-}
 /// General request artifact to retrieve data from a Flyte artifact url.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GetDataRequest {
-    #[prost(message, optional, tag="1")]
-    pub artifact: ::core::option::Option<FlyteArtifact>,
+    /// A unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
+    /// backend, identifies a Flyte artifact (\[i\]nput, \[o\]utput, flyte \[d\]eck, etc.).
+    /// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
+    ///       flyte://v1/proj/development/execid/n2/i (for node execution input)
+    #[prost(string, tag="1")]
+    pub flyte_url: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/data/get_artifact": {
+    "/api/v1/data": {
       "get": {
         "operationId": "GetData",
         "responses": {
@@ -28,7 +28,8 @@
         },
         "parameters": [
           {
-            "name": "artifact.flyte_url",
+            "name": "flyte_url",
+            "description": "A unique identifier in the form of flyte://\u003csomething\u003e that uniquely, for a given Flyte\nbackend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).\ne.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)\n     flyte://v1/proj/development/execid/n2/i (for node execution input).",
             "in": "query",
             "required": false,
             "type": "string"
@@ -738,15 +739,6 @@
           "description": "ExpiresAt defines when will the signed URL expires."
         }
       }
-    },
-    "serviceFlyteArtifact": {
-      "type": "object",
-      "properties": {
-        "flyte_url": {
-          "type": "string"
-        }
-      },
-      "title": "Wraps a flyte url, a unique identifier in the form of flyte://\u003csomething\u003e that uniquely, for a given Flyte\nbackend, identifies a Flyte artifact (input, output, flyte deck, etc.).\ne.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)\n     flyte://v1/proj/development/execid/n2/i (for node execution)"
     },
     "serviceGetDataResponse": {
       "type": "object",

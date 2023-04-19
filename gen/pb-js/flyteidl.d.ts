@@ -19350,63 +19350,11 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
-        /** Properties of a FlyteArtifact. */
-        interface IFlyteArtifact {
-
-            /** FlyteArtifact flyteUrl */
-            flyteUrl?: (string|null);
-        }
-
-        /** Represents a FlyteArtifact. */
-        class FlyteArtifact implements IFlyteArtifact {
-
-            /**
-             * Constructs a new FlyteArtifact.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: flyteidl.service.IFlyteArtifact);
-
-            /** FlyteArtifact flyteUrl. */
-            public flyteUrl: string;
-
-            /**
-             * Creates a new FlyteArtifact instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns FlyteArtifact instance
-             */
-            public static create(properties?: flyteidl.service.IFlyteArtifact): flyteidl.service.FlyteArtifact;
-
-            /**
-             * Encodes the specified FlyteArtifact message. Does not implicitly {@link flyteidl.service.FlyteArtifact.verify|verify} messages.
-             * @param message FlyteArtifact message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: flyteidl.service.IFlyteArtifact, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a FlyteArtifact message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns FlyteArtifact
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.FlyteArtifact;
-
-            /**
-             * Verifies a FlyteArtifact message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-        }
-
         /** Properties of a GetDataRequest. */
         interface IGetDataRequest {
 
-            /** GetDataRequest artifact */
-            artifact?: (flyteidl.service.IFlyteArtifact|null);
+            /** GetDataRequest flyteUrl */
+            flyteUrl?: (string|null);
         }
 
         /** Represents a GetDataRequest. */
@@ -19418,8 +19366,8 @@ export namespace flyteidl {
              */
             constructor(properties?: flyteidl.service.IGetDataRequest);
 
-            /** GetDataRequest artifact. */
-            public artifact?: (flyteidl.service.IFlyteArtifact|null);
+            /** GetDataRequest flyteUrl. */
+            public flyteUrl: string;
 
             /**
              * Creates a new GetDataRequest instance using the specified properties.

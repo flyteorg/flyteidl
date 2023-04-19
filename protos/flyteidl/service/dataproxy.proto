@@ -104,17 +104,13 @@ message CreateDownloadLinkResponse {
   google.protobuf.Timestamp expires_at = 2;
 }
 
-// Wraps a flyte url, a unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
-// backend, identifies a Flyte artifact (input, output, flyte deck, etc.).
-// e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt)
-//      flyte://v1/proj/development/execid/n2/i (for node execution)
-message FlyteArtifact {
-  string flyte_url = 1;
-}
-
 // General request artifact to retrieve data from a Flyte artifact url.
 message GetDataRequest {
-  FlyteArtifact artifact = 1;
+  // A unique identifier in the form of flyte://<something> that uniquely, for a given Flyte
+  // backend, identifies a Flyte artifact ([i]nput, [o]utput, flyte [d]eck, etc.).
+  // e.g. flyte://v1/proj/development/execid/n2/0/i (for 0th task execution attempt input)
+  //      flyte://v1/proj/development/execid/n2/i (for node execution input)
+  string flyte_url = 1;
 }
 
 message GetDataResponse {
