@@ -8886,6 +8886,70 @@ export namespace flyteidl {
             public static verify(message: { [k: string]: any }): (string|null);
         }
 
+        /** Properties of a FlyteURLs. */
+        interface IFlyteURLs {
+
+            /** FlyteURLs inputs */
+            inputs?: (string|null);
+
+            /** FlyteURLs outputs */
+            outputs?: (string|null);
+
+            /** FlyteURLs deck */
+            deck?: (string|null);
+        }
+
+        /** Represents a FlyteURLs. */
+        class FlyteURLs implements IFlyteURLs {
+
+            /**
+             * Constructs a new FlyteURLs.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.admin.IFlyteURLs);
+
+            /** FlyteURLs inputs. */
+            public inputs: string;
+
+            /** FlyteURLs outputs. */
+            public outputs: string;
+
+            /** FlyteURLs deck. */
+            public deck: string;
+
+            /**
+             * Creates a new FlyteURLs instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns FlyteURLs instance
+             */
+            public static create(properties?: flyteidl.admin.IFlyteURLs): flyteidl.admin.FlyteURLs;
+
+            /**
+             * Encodes the specified FlyteURLs message. Does not implicitly {@link flyteidl.admin.FlyteURLs.verify|verify} messages.
+             * @param message FlyteURLs message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.admin.IFlyteURLs, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a FlyteURLs message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns FlyteURLs
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.admin.FlyteURLs;
+
+            /**
+             * Verifies a FlyteURLs message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
         /** Properties of a DescriptionEntity. */
         interface IDescriptionEntity {
 
@@ -13809,6 +13873,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataResponse dynamicWorkflow */
             dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+
+            /** NodeExecutionGetDataResponse flyteUrls */
+            flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
         }
 
         /** Represents a NodeExecutionGetDataResponse. */
@@ -13834,6 +13901,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataResponse dynamicWorkflow. */
             public dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+
+            /** NodeExecutionGetDataResponse flyteUrls. */
+            public flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
 
             /**
              * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
@@ -16339,6 +16409,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs */
             fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse flyteUrls */
+            flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
         }
 
         /** Represents a TaskExecutionGetDataResponse. */
@@ -16361,6 +16434,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs. */
             public fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse flyteUrls. */
+            public flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
 
             /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.

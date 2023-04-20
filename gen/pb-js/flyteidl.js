@@ -21530,6 +21530,150 @@
                 return RawOutputDataConfig;
             })();
     
+            admin.FlyteURLs = (function() {
+    
+                /**
+                 * Properties of a FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @interface IFlyteURLs
+                 * @property {string|null} [inputs] FlyteURLs inputs
+                 * @property {string|null} [outputs] FlyteURLs outputs
+                 * @property {string|null} [deck] FlyteURLs deck
+                 */
+    
+                /**
+                 * Constructs a new FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a FlyteURLs.
+                 * @implements IFlyteURLs
+                 * @constructor
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 */
+                function FlyteURLs(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * FlyteURLs inputs.
+                 * @member {string} inputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.inputs = "";
+    
+                /**
+                 * FlyteURLs outputs.
+                 * @member {string} outputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.outputs = "";
+    
+                /**
+                 * FlyteURLs deck.
+                 * @member {string} deck
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.deck = "";
+    
+                /**
+                 * Creates a new FlyteURLs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs instance
+                 */
+                FlyteURLs.create = function create(properties) {
+                    return new FlyteURLs(properties);
+                };
+    
+                /**
+                 * Encodes the specified FlyteURLs message. Does not implicitly {@link flyteidl.admin.FlyteURLs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs} message FlyteURLs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                FlyteURLs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputs);
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputs);
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.deck);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a FlyteURLs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                FlyteURLs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FlyteURLs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.inputs = reader.string();
+                            break;
+                        case 2:
+                            message.outputs = reader.string();
+                            break;
+                        case 3:
+                            message.deck = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a FlyteURLs message.
+                 * @function verify
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                FlyteURLs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        if (!$util.isString(message.inputs))
+                            return "inputs: string expected";
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        if (!$util.isString(message.outputs))
+                            return "outputs: string expected";
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        if (!$util.isString(message.deck))
+                            return "deck: string expected";
+                    return null;
+                };
+    
+                return FlyteURLs;
+            })();
+    
             admin.DescriptionEntity = (function() {
     
                 /**
@@ -33240,6 +33384,7 @@
                  * @property {flyteidl.core.ILiteralMap|null} [fullInputs] NodeExecutionGetDataResponse fullInputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] NodeExecutionGetDataResponse fullOutputs
                  * @property {flyteidl.admin.IDynamicWorkflowNodeMetadata|null} [dynamicWorkflow] NodeExecutionGetDataResponse dynamicWorkflow
+                 * @property {flyteidl.admin.IFlyteURLs|null} [flyteUrls] NodeExecutionGetDataResponse flyteUrls
                  */
     
                 /**
@@ -33298,6 +33443,14 @@
                 NodeExecutionGetDataResponse.prototype.dynamicWorkflow = null;
     
                 /**
+                 * NodeExecutionGetDataResponse flyteUrls.
+                 * @member {flyteidl.admin.IFlyteURLs|null|undefined} flyteUrls
+                 * @memberof flyteidl.admin.NodeExecutionGetDataResponse
+                 * @instance
+                 */
+                NodeExecutionGetDataResponse.prototype.flyteUrls = null;
+    
+                /**
                  * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.NodeExecutionGetDataResponse
@@ -33331,6 +33484,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                     if (message.dynamicWorkflow != null && message.hasOwnProperty("dynamicWorkflow"))
                         $root.flyteidl.admin.DynamicWorkflowNodeMetadata.encode(message.dynamicWorkflow, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls"))
+                        $root.flyteidl.admin.FlyteURLs.encode(message.flyteUrls, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                     return writer;
                 };
     
@@ -33366,6 +33521,9 @@
                             break;
                         case 16:
                             message.dynamicWorkflow = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.decode(reader, reader.uint32());
+                            break;
+                        case 17:
+                            message.flyteUrls = $root.flyteidl.admin.FlyteURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -33410,6 +33568,11 @@
                         var error = $root.flyteidl.admin.DynamicWorkflowNodeMetadata.verify(message.dynamicWorkflow);
                         if (error)
                             return "dynamicWorkflow." + error;
+                    }
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls")) {
+                        var error = $root.flyteidl.admin.FlyteURLs.verify(message.flyteUrls);
+                        if (error)
+                            return "flyteUrls." + error;
                     }
                     return null;
                 };
@@ -39085,6 +39248,7 @@
                  * @property {flyteidl.admin.IUrlBlob|null} [outputs] TaskExecutionGetDataResponse outputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullInputs] TaskExecutionGetDataResponse fullInputs
                  * @property {flyteidl.core.ILiteralMap|null} [fullOutputs] TaskExecutionGetDataResponse fullOutputs
+                 * @property {flyteidl.admin.IFlyteURLs|null} [flyteUrls] TaskExecutionGetDataResponse flyteUrls
                  */
     
                 /**
@@ -39135,6 +39299,14 @@
                 TaskExecutionGetDataResponse.prototype.fullOutputs = null;
     
                 /**
+                 * TaskExecutionGetDataResponse flyteUrls.
+                 * @member {flyteidl.admin.IFlyteURLs|null|undefined} flyteUrls
+                 * @memberof flyteidl.admin.TaskExecutionGetDataResponse
+                 * @instance
+                 */
+                TaskExecutionGetDataResponse.prototype.flyteUrls = null;
+    
+                /**
                  * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.TaskExecutionGetDataResponse
@@ -39166,6 +39338,8 @@
                         $root.flyteidl.core.LiteralMap.encode(message.fullInputs, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     if (message.fullOutputs != null && message.hasOwnProperty("fullOutputs"))
                         $root.flyteidl.core.LiteralMap.encode(message.fullOutputs, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls"))
+                        $root.flyteidl.admin.FlyteURLs.encode(message.flyteUrls, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                     return writer;
                 };
     
@@ -39198,6 +39372,9 @@
                             break;
                         case 4:
                             message.fullOutputs = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
+                            break;
+                        case 5:
+                            message.flyteUrls = $root.flyteidl.admin.FlyteURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -39237,6 +39414,11 @@
                         var error = $root.flyteidl.core.LiteralMap.verify(message.fullOutputs);
                         if (error)
                             return "fullOutputs." + error;
+                    }
+                    if (message.flyteUrls != null && message.hasOwnProperty("flyteUrls")) {
+                        var error = $root.flyteidl.admin.FlyteURLs.verify(message.flyteUrls);
+                        if (error)
+                            return "flyteUrls." + error;
                     }
                     return null;
                 };
