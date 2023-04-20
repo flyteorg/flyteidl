@@ -25,7 +25,7 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 type DistributedPyTorchTrainingTask struct {
 	// Worker replicas spec
 	WorkerReplicas *DistributedPyTorchTrainingReplicaSpec `protobuf:"bytes,1,opt,name=worker_replicas,json=workerReplicas,proto3" json:"worker_replicas,omitempty"`
-	// Master replicas spec
+	// Master replicas spec, master replicas can only have 1 replica
 	MasterReplicas *DistributedPyTorchTrainingReplicaSpec `protobuf:"bytes,2,opt,name=master_replicas,json=masterReplicas,proto3" json:"master_replicas,omitempty"`
 	// RunPolicy encapsulates various runtime policies of the distributed training
 	// job, for example how to clean up resources and how long the job can stay

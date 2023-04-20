@@ -45,7 +45,7 @@ public final class Pytorch {
 
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -53,7 +53,7 @@ public final class Pytorch {
     boolean hasMasterReplicas();
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -61,7 +61,7 @@ public final class Pytorch {
     flyteidl.plugins.kubeflow.Pytorch.DistributedPyTorchTrainingReplicaSpec getMasterReplicas();
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -250,7 +250,7 @@ public final class Pytorch {
     private flyteidl.plugins.kubeflow.Pytorch.DistributedPyTorchTrainingReplicaSpec masterReplicas_;
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -260,7 +260,7 @@ public final class Pytorch {
     }
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -270,7 +270,7 @@ public final class Pytorch {
     }
     /**
      * <pre>
-     * Master replicas spec
+     * Master replicas spec, master replicas can only have 1 replica
      * </pre>
      *
      * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -855,7 +855,7 @@ public final class Pytorch {
           flyteidl.plugins.kubeflow.Pytorch.DistributedPyTorchTrainingReplicaSpec, flyteidl.plugins.kubeflow.Pytorch.DistributedPyTorchTrainingReplicaSpec.Builder, flyteidl.plugins.kubeflow.Pytorch.DistributedPyTorchTrainingReplicaSpecOrBuilder> masterReplicasBuilder_;
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -865,7 +865,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -879,7 +879,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -899,7 +899,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -917,7 +917,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -939,7 +939,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -957,7 +957,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -969,7 +969,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>
@@ -984,7 +984,7 @@ public final class Pytorch {
       }
       /**
        * <pre>
-       * Master replicas spec
+       * Master replicas spec, master replicas can only have 1 replica
        * </pre>
        *
        * <code>.flyteidl.plugins.kubeflow.DistributedPyTorchTrainingReplicaSpec master_replicas = 2;</code>

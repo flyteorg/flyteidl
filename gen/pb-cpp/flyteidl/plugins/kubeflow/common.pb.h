@@ -90,15 +90,15 @@ inline bool RestartPolicy_Parse(
     RestartPolicy_descriptor(), name, value);
 }
 enum CleanPodPolicy {
-  CLEANPOD_POLICY_ALL = 0,
+  CLEANPOD_POLICY_NONE = 0,
   CLEANPOD_POLICY_RUNNING = 1,
-  CLEANPOD_POLICY_NONE = 2,
+  CLEANPOD_POLICY_ALL = 2,
   CleanPodPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   CleanPodPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool CleanPodPolicy_IsValid(int value);
-const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_ALL;
-const CleanPodPolicy CleanPodPolicy_MAX = CLEANPOD_POLICY_NONE;
+const CleanPodPolicy CleanPodPolicy_MIN = CLEANPOD_POLICY_NONE;
+const CleanPodPolicy CleanPodPolicy_MAX = CLEANPOD_POLICY_ALL;
 const int CleanPodPolicy_ARRAYSIZE = CleanPodPolicy_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CleanPodPolicy_descriptor();

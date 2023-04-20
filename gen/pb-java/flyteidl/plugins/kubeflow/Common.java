@@ -127,32 +127,32 @@ public final class Common {
   public enum CleanPodPolicy
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CLEANPOD_POLICY_ALL = 0;</code>
+     * <code>CLEANPOD_POLICY_NONE = 0;</code>
      */
-    CLEANPOD_POLICY_ALL(0),
+    CLEANPOD_POLICY_NONE(0),
     /**
      * <code>CLEANPOD_POLICY_RUNNING = 1;</code>
      */
     CLEANPOD_POLICY_RUNNING(1),
     /**
-     * <code>CLEANPOD_POLICY_NONE = 2;</code>
+     * <code>CLEANPOD_POLICY_ALL = 2;</code>
      */
-    CLEANPOD_POLICY_NONE(2),
+    CLEANPOD_POLICY_ALL(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>CLEANPOD_POLICY_ALL = 0;</code>
+     * <code>CLEANPOD_POLICY_NONE = 0;</code>
      */
-    public static final int CLEANPOD_POLICY_ALL_VALUE = 0;
+    public static final int CLEANPOD_POLICY_NONE_VALUE = 0;
     /**
      * <code>CLEANPOD_POLICY_RUNNING = 1;</code>
      */
     public static final int CLEANPOD_POLICY_RUNNING_VALUE = 1;
     /**
-     * <code>CLEANPOD_POLICY_NONE = 2;</code>
+     * <code>CLEANPOD_POLICY_ALL = 2;</code>
      */
-    public static final int CLEANPOD_POLICY_NONE_VALUE = 2;
+    public static final int CLEANPOD_POLICY_ALL_VALUE = 2;
 
 
     public final int getNumber() {
@@ -173,9 +173,9 @@ public final class Common {
 
     public static CleanPodPolicy forNumber(int value) {
       switch (value) {
-        case 0: return CLEANPOD_POLICY_ALL;
+        case 0: return CLEANPOD_POLICY_NONE;
         case 1: return CLEANPOD_POLICY_RUNNING;
-        case 2: return CLEANPOD_POLICY_NONE;
+        case 2: return CLEANPOD_POLICY_ALL;
         default: return null;
       }
     }
@@ -449,7 +449,7 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_ALL.getNumber()) {
+      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_NONE.getNumber()) {
         output.writeEnum(1, cleanPodPolicy_);
       }
       if (ttlSecondsAfterFinished_ != 0) {
@@ -470,7 +470,7 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_ALL.getNumber()) {
+      if (cleanPodPolicy_ != flyteidl.plugins.kubeflow.Common.CleanPodPolicy.CLEANPOD_POLICY_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, cleanPodPolicy_);
       }
@@ -1044,8 +1044,8 @@ public final class Common {
       "(\005*c\n\rRestartPolicy\022\031\n\025RESTART_POLICY_AL" +
       "WAYS\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020\001\022\030\n" +
       "\024RESTART_POLICY_NEVER\020\002*`\n\016CleanPodPolic" +
-      "y\022\027\n\023CLEANPOD_POLICY_ALL\020\000\022\033\n\027CLEANPOD_P" +
-      "OLICY_RUNNING\020\001\022\030\n\024CLEANPOD_POLICY_NONE\020" +
+      "y\022\030\n\024CLEANPOD_POLICY_NONE\020\000\022\033\n\027CLEANPOD_" +
+      "POLICY_RUNNING\020\001\022\027\n\023CLEANPOD_POLICY_ALL\020" +
       "\002B9Z7github.com/flyteorg/flyteidl/gen/pb" +
       "-go/flyteidl/pluginsb\006proto3"
     };

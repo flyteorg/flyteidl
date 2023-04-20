@@ -12,9 +12,9 @@ enum RestartPolicy {
 }
 
 enum CleanPodPolicy {
-    CLEANPOD_POLICY_ALL = 0;
+    CLEANPOD_POLICY_NONE = 0;
     CLEANPOD_POLICY_RUNNING = 1;
-    CLEANPOD_POLICY_NONE = 2;
+    CLEANPOD_POLICY_ALL = 2;
 }
 
 message RunPolicy {
