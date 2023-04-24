@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 
+<<<<<<< HEAD
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='flyteidl/plugins/pytorch.proto',
   package='flyteidl.plugins',
@@ -22,8 +23,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   serialized_options=_b('Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins'),
   serialized_pb=_b('\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"1\n\x1e\x44istributedPyTorchTrainingTask\x12\x0f\n\x07workers\x18\x01 \x01(\x05\x42\x39Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/pluginsb\x06proto3')
 )
+=======
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x66lyteidl/plugins/pytorch.proto\x12\x10\x66lyteidl.plugins\"\xc1\x01\n\rElasticConfig\x12!\n\x0crdzv_backend\x18\x01 \x01(\tR\x0brdzvBackend\x12!\n\x0cmin_replicas\x18\x02 \x01(\x05R\x0bminReplicas\x12!\n\x0cmax_replicas\x18\x03 \x01(\x05R\x0bmaxReplicas\x12$\n\x0enproc_per_node\x18\x04 \x01(\x05R\x0cnprocPerNode\x12!\n\x0cmax_restarts\x18\x05 \x01(\x05R\x0bmaxRestarts\"\x82\x01\n\x1e\x44istributedPyTorchTrainingTask\x12\x18\n\x07workers\x18\x01 \x01(\x05R\x07workers\x12\x46\n\x0e\x65lastic_config\x18\x02 \x01(\x0b\x32\x1f.flyteidl.plugins.ElasticConfigR\relasticConfigB\xbe\x01\n\x14\x63om.flyteidl.pluginsB\x0cPytorchProtoP\x01Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\xa2\x02\x03\x46PX\xaa\x02\x10\x46lyteidl.Plugins\xca\x02\x10\x46lyteidl\\Plugins\xe2\x02\x1c\x46lyteidl\\Plugins\\GPBMetadata\xea\x02\x11\x46lyteidl::Pluginsb\x06proto3')
+>>>>>>> 6a7b3143 (Feat: Add `ElasticConfig` message type for torch elastic training (#394))
 
 
+<<<<<<< HEAD
 
 
 _DISTRIBUTEDPYTORCHTRAININGTASK = _descriptor.Descriptor(
@@ -68,4 +73,12 @@ _sym_db.RegisterMessage(DistributedPyTorchTrainingTask)
 
 
 DESCRIPTOR._options = None
+=======
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\024com.flyteidl.pluginsB\014PytorchProtoP\001Z7github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins\242\002\003FPX\252\002\020Flyteidl.Plugins\312\002\020Flyteidl\\Plugins\342\002\034Flyteidl\\Plugins\\GPBMetadata\352\002\021Flyteidl::Plugins'
+  _globals['_ELASTICCONFIG']._serialized_start=53
+  _globals['_ELASTICCONFIG']._serialized_end=246
+  _globals['_DISTRIBUTEDPYTORCHTRAININGTASK']._serialized_start=249
+  _globals['_DISTRIBUTEDPYTORCHTRAININGTASK']._serialized_end=379
+>>>>>>> 6a7b3143 (Feat: Add `ElasticConfig` message type for torch elastic training (#394))
 # @@protoc_insertion_point(module_scope)
