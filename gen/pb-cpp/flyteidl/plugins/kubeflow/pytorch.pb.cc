@@ -18,10 +18,15 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2ftasks_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RunPolicy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto;
 namespace flyteidl {
 namespace plugins {
 namespace kubeflow {
+class ElasticConfigDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ElasticConfig> _instance;
+} _ElasticConfig_default_instance_;
 class DistributedPyTorchTrainingTaskDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<DistributedPyTorchTrainingTask> _instance;
@@ -33,6 +38,20 @@ class DistributedPyTorchTrainingReplicaSpecDefaultTypeInternal {
 }  // namespace kubeflow
 }  // namespace plugins
 }  // namespace flyteidl
+static void InitDefaultsElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::flyteidl::plugins::kubeflow::_ElasticConfig_default_instance_;
+    new (ptr) ::flyteidl::plugins::kubeflow::ElasticConfig();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::flyteidl::plugins::kubeflow::ElasticConfig::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto}, {}};
+
 static void InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -44,10 +63,11 @@ static void InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkube
   ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsDistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto}, {
       &scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base,
-      &scc_info_RunPolicy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto.base,}};
+      &scc_info_RunPolicy_flyteidl_2fplugins_2fkubeflow_2fcommon_2eproto.base,
+      &scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base,}};
 
 static void InitDefaultsDistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -65,15 +85,26 @@ static void InitDefaultsDistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins
       &scc_info_Resources_flyteidl_2fcore_2ftasks_2eproto.base,}};
 
 void InitDefaults_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_DistributedPyTorchTrainingReplicaSpec_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto[2];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto[3];
 constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = nullptr;
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = nullptr;
 
 const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, rdzv_backend_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, min_replicas_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, max_replicas_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, nproc_per_node_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::ElasticConfig, max_restarts_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -82,6 +113,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpyt
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, worker_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, master_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, run_policy_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask, elastic_config_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -93,11 +125,13 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fpyt
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec, restart_policy_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask)},
-  { 8, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
+  { 0, -1, sizeof(::flyteidl::plugins::kubeflow::ElasticConfig)},
+  { 10, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask)},
+  { 19, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::kubeflow::_ElasticConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingTask_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingReplicaSpec_default_instance_),
 };
@@ -105,32 +139,37 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = {
   {}, AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, "flyteidl/plugins/kubeflow/pytorch.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto::offsets,
-  file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 2, file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto,
+  file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 3, file_level_enum_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, file_level_service_descriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto[] =
   "\n\'flyteidl/plugins/kubeflow/pytorch.prot"
   "o\022\031flyteidl.plugins.kubeflow\032\031flyteidl/c"
   "ore/tasks.proto\032&flyteidl/plugins/kubefl"
-  "ow/common.proto\"\220\002\n\036DistributedPyTorchTr"
-  "ainingTask\022Y\n\017worker_replicas\030\001 \001(\0132@.fl"
-  "yteidl.plugins.kubeflow.DistributedPyTor"
-  "chTrainingReplicaSpec\022Y\n\017master_replicas"
-  "\030\002 \001(\0132@.flyteidl.plugins.kubeflow.Distr"
-  "ibutedPyTorchTrainingReplicaSpec\0228\n\nrun_"
-  "policy\030\003 \001(\0132$.flyteidl.plugins.kubeflow"
-  ".RunPolicy\"\267\001\n%DistributedPyTorchTrainin"
-  "gReplicaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030"
-  "\002 \001(\t\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core"
-  ".Resources\022@\n\016restart_policy\030\004 \001(\0162(.fly"
-  "teidl.plugins.kubeflow.RestartPolicyB9Z7"
-  "github.com/flyteorg/flyteidl/gen/pb-go/f"
-  "lyteidl/pluginsb\006proto3"
+  "ow/common.proto\"\177\n\rElasticConfig\022\024\n\014rdzv"
+  "_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014"
+  "max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001"
+  "(\005\022\024\n\014max_restarts\030\005 \001(\005\"\322\002\n\036Distributed"
+  "PyTorchTrainingTask\022Y\n\017worker_replicas\030\001"
+  " \001(\0132@.flyteidl.plugins.kubeflow.Distrib"
+  "utedPyTorchTrainingReplicaSpec\022Y\n\017master"
+  "_replicas\030\002 \001(\0132@.flyteidl.plugins.kubef"
+  "low.DistributedPyTorchTrainingReplicaSpe"
+  "c\0228\n\nrun_policy\030\003 \001(\0132$.flyteidl.plugins"
+  ".kubeflow.RunPolicy\022@\n\016elastic_config\030\004 "
+  "\001(\0132(.flyteidl.plugins.kubeflow.ElasticC"
+  "onfig\"\267\001\n%DistributedPyTorchTrainingRepl"
+  "icaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t"
+  "\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Reso"
+  "urces\022@\n\016restart_policy\030\004 \001(\0162(.flyteidl"
+  ".plugins.kubeflow.RestartPolicyB9Z7githu"
+  "b.com/flyteorg/flyteidl/gen/pb-go/flytei"
+  "dl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto,
-  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 663,
+  "flyteidl/plugins/kubeflow/pytorch.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto, 858,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto() {
@@ -150,6 +189,480 @@ namespace kubeflow {
 
 // ===================================================================
 
+void ElasticConfig::InitAsDefaultInstance() {
+}
+class ElasticConfig::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int ElasticConfig::kRdzvBackendFieldNumber;
+const int ElasticConfig::kMinReplicasFieldNumber;
+const int ElasticConfig::kMaxReplicasFieldNumber;
+const int ElasticConfig::kNprocPerNodeFieldNumber;
+const int ElasticConfig::kMaxRestartsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ElasticConfig::ElasticConfig()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:flyteidl.plugins.kubeflow.ElasticConfig)
+}
+ElasticConfig::ElasticConfig(const ElasticConfig& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  rdzv_backend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.rdzv_backend().size() > 0) {
+    rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
+  }
+  ::memcpy(&min_replicas_, &from.min_replicas_,
+    static_cast<size_t>(reinterpret_cast<char*>(&max_restarts_) -
+    reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
+  // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.kubeflow.ElasticConfig)
+}
+
+void ElasticConfig::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
+  rdzv_backend_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&min_replicas_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&max_restarts_) -
+      reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
+}
+
+ElasticConfig::~ElasticConfig() {
+  // @@protoc_insertion_point(destructor:flyteidl.plugins.kubeflow.ElasticConfig)
+  SharedDtor();
+}
+
+void ElasticConfig::SharedDtor() {
+  rdzv_backend_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void ElasticConfig::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ElasticConfig& ElasticConfig::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_ElasticConfig_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ElasticConfig::Clear() {
+// @@protoc_insertion_point(message_clear_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  rdzv_backend_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&min_replicas_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&max_restarts_) -
+      reinterpret_cast<char*>(&min_replicas_)) + sizeof(max_restarts_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* ElasticConfig::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<ElasticConfig*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string rdzv_backend = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("flyteidl.plugins.kubeflow.ElasticConfig.rdzv_backend");
+        object = msg->mutable_rdzv_backend();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // int32 min_replicas = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        msg->set_min_replicas(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 max_replicas = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        msg->set_max_replicas(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 nproc_per_node = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        msg->set_nproc_per_node(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // int32 max_restarts = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 40) goto handle_unusual;
+        msg->set_max_restarts(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool ElasticConfig::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string rdzv_backend = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_rdzv_backend()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->rdzv_backend().data(), static_cast<int>(this->rdzv_backend().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.kubeflow.ElasticConfig.rdzv_backend"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 min_replicas = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &min_replicas_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 max_replicas = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &max_replicas_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 nproc_per_node = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &nproc_per_node_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 max_restarts = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (40 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &max_restarts_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:flyteidl.plugins.kubeflow.ElasticConfig)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:flyteidl.plugins.kubeflow.ElasticConfig)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void ElasticConfig::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string rdzv_backend = 1;
+  if (this->rdzv_backend().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rdzv_backend().data(), static_cast<int>(this->rdzv_backend().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.ElasticConfig.rdzv_backend");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->rdzv_backend(), output);
+  }
+
+  // int32 min_replicas = 2;
+  if (this->min_replicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->min_replicas(), output);
+  }
+
+  // int32 max_replicas = 3;
+  if (this->max_replicas() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->max_replicas(), output);
+  }
+
+  // int32 nproc_per_node = 4;
+  if (this->nproc_per_node() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->nproc_per_node(), output);
+  }
+
+  // int32 max_restarts = 5;
+  if (this->max_restarts() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->max_restarts(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:flyteidl.plugins.kubeflow.ElasticConfig)
+}
+
+::google::protobuf::uint8* ElasticConfig::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string rdzv_backend = 1;
+  if (this->rdzv_backend().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->rdzv_backend().data(), static_cast<int>(this->rdzv_backend().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.ElasticConfig.rdzv_backend");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->rdzv_backend(), target);
+  }
+
+  // int32 min_replicas = 2;
+  if (this->min_replicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->min_replicas(), target);
+  }
+
+  // int32 max_replicas = 3;
+  if (this->max_replicas() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->max_replicas(), target);
+  }
+
+  // int32 nproc_per_node = 4;
+  if (this->nproc_per_node() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->nproc_per_node(), target);
+  }
+
+  // int32 max_restarts = 5;
+  if (this->max_restarts() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->max_restarts(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:flyteidl.plugins.kubeflow.ElasticConfig)
+  return target;
+}
+
+size_t ElasticConfig::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string rdzv_backend = 1;
+  if (this->rdzv_backend().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->rdzv_backend());
+  }
+
+  // int32 min_replicas = 2;
+  if (this->min_replicas() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->min_replicas());
+  }
+
+  // int32 max_replicas = 3;
+  if (this->max_replicas() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->max_replicas());
+  }
+
+  // int32 nproc_per_node = 4;
+  if (this->nproc_per_node() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->nproc_per_node());
+  }
+
+  // int32 max_restarts = 5;
+  if (this->max_restarts() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->max_restarts());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ElasticConfig::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ElasticConfig* source =
+      ::google::protobuf::DynamicCastToGenerated<ElasticConfig>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:flyteidl.plugins.kubeflow.ElasticConfig)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:flyteidl.plugins.kubeflow.ElasticConfig)
+    MergeFrom(*source);
+  }
+}
+
+void ElasticConfig::MergeFrom(const ElasticConfig& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.rdzv_backend().size() > 0) {
+
+    rdzv_backend_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.rdzv_backend_);
+  }
+  if (from.min_replicas() != 0) {
+    set_min_replicas(from.min_replicas());
+  }
+  if (from.max_replicas() != 0) {
+    set_max_replicas(from.max_replicas());
+  }
+  if (from.nproc_per_node() != 0) {
+    set_nproc_per_node(from.nproc_per_node());
+  }
+  if (from.max_restarts() != 0) {
+    set_max_restarts(from.max_restarts());
+  }
+}
+
+void ElasticConfig::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ElasticConfig::CopyFrom(const ElasticConfig& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:flyteidl.plugins.kubeflow.ElasticConfig)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ElasticConfig::IsInitialized() const {
+  return true;
+}
+
+void ElasticConfig::Swap(ElasticConfig* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ElasticConfig::InternalSwap(ElasticConfig* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  rdzv_backend_.Swap(&other->rdzv_backend_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(min_replicas_, other->min_replicas_);
+  swap(max_replicas_, other->max_replicas_);
+  swap(nproc_per_node_, other->nproc_per_node_);
+  swap(max_restarts_, other->max_restarts_);
+}
+
+::google::protobuf::Metadata ElasticConfig::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto);
+  return ::file_level_metadata_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void DistributedPyTorchTrainingTask::InitAsDefaultInstance() {
   ::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingTask_default_instance_._instance.get_mutable()->worker_replicas_ = const_cast< ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec*>(
       ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec::internal_default_instance());
@@ -157,12 +670,15 @@ void DistributedPyTorchTrainingTask::InitAsDefaultInstance() {
       ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec::internal_default_instance());
   ::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingTask_default_instance_._instance.get_mutable()->run_policy_ = const_cast< ::flyteidl::plugins::kubeflow::RunPolicy*>(
       ::flyteidl::plugins::kubeflow::RunPolicy::internal_default_instance());
+  ::flyteidl::plugins::kubeflow::_DistributedPyTorchTrainingTask_default_instance_._instance.get_mutable()->elastic_config_ = const_cast< ::flyteidl::plugins::kubeflow::ElasticConfig*>(
+      ::flyteidl::plugins::kubeflow::ElasticConfig::internal_default_instance());
 }
 class DistributedPyTorchTrainingTask::HasBitSetters {
  public:
   static const ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec& worker_replicas(const DistributedPyTorchTrainingTask* msg);
   static const ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec& master_replicas(const DistributedPyTorchTrainingTask* msg);
   static const ::flyteidl::plugins::kubeflow::RunPolicy& run_policy(const DistributedPyTorchTrainingTask* msg);
+  static const ::flyteidl::plugins::kubeflow::ElasticConfig& elastic_config(const DistributedPyTorchTrainingTask* msg);
 };
 
 const ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingReplicaSpec&
@@ -177,6 +693,10 @@ const ::flyteidl::plugins::kubeflow::RunPolicy&
 DistributedPyTorchTrainingTask::HasBitSetters::run_policy(const DistributedPyTorchTrainingTask* msg) {
   return *msg->run_policy_;
 }
+const ::flyteidl::plugins::kubeflow::ElasticConfig&
+DistributedPyTorchTrainingTask::HasBitSetters::elastic_config(const DistributedPyTorchTrainingTask* msg) {
+  return *msg->elastic_config_;
+}
 void DistributedPyTorchTrainingTask::clear_run_policy() {
   if (GetArenaNoVirtual() == nullptr && run_policy_ != nullptr) {
     delete run_policy_;
@@ -187,6 +707,7 @@ void DistributedPyTorchTrainingTask::clear_run_policy() {
 const int DistributedPyTorchTrainingTask::kWorkerReplicasFieldNumber;
 const int DistributedPyTorchTrainingTask::kMasterReplicasFieldNumber;
 const int DistributedPyTorchTrainingTask::kRunPolicyFieldNumber;
+const int DistributedPyTorchTrainingTask::kElasticConfigFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask()
@@ -213,6 +734,11 @@ DistributedPyTorchTrainingTask::DistributedPyTorchTrainingTask(const Distributed
   } else {
     run_policy_ = nullptr;
   }
+  if (from.has_elastic_config()) {
+    elastic_config_ = new ::flyteidl::plugins::kubeflow::ElasticConfig(*from.elastic_config_);
+  } else {
+    elastic_config_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.kubeflow.DistributedPyTorchTrainingTask)
 }
 
@@ -220,8 +746,8 @@ void DistributedPyTorchTrainingTask::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_DistributedPyTorchTrainingTask_flyteidl_2fplugins_2fkubeflow_2fpytorch_2eproto.base);
   ::memset(&worker_replicas_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&run_policy_) -
-      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(run_policy_));
+      reinterpret_cast<char*>(&elastic_config_) -
+      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(elastic_config_));
 }
 
 DistributedPyTorchTrainingTask::~DistributedPyTorchTrainingTask() {
@@ -233,6 +759,7 @@ void DistributedPyTorchTrainingTask::SharedDtor() {
   if (this != internal_default_instance()) delete worker_replicas_;
   if (this != internal_default_instance()) delete master_replicas_;
   if (this != internal_default_instance()) delete run_policy_;
+  if (this != internal_default_instance()) delete elastic_config_;
 }
 
 void DistributedPyTorchTrainingTask::SetCachedSize(int size) const {
@@ -262,6 +789,10 @@ void DistributedPyTorchTrainingTask::Clear() {
     delete run_policy_;
   }
   run_policy_ = nullptr;
+  if (GetArenaNoVirtual() == nullptr && elastic_config_ != nullptr) {
+    delete elastic_config_;
+  }
+  elastic_config_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -311,6 +842,19 @@ const char* DistributedPyTorchTrainingTask::_InternalParse(const char* begin, co
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         parser_till_end = ::flyteidl::plugins::kubeflow::RunPolicy::_InternalParse;
         object = msg->mutable_run_policy();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // .flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::flyteidl::plugins::kubeflow::ElasticConfig::_InternalParse;
+        object = msg->mutable_elastic_config();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -380,6 +924,17 @@ bool DistributedPyTorchTrainingTask::MergePartialFromCodedStream(
         break;
       }
 
+      // .flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_elastic_config()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -425,6 +980,12 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
       3, HasBitSetters::run_policy(this), output);
   }
 
+  // .flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;
+  if (this->has_elastic_config()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, HasBitSetters::elastic_config(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -457,6 +1018,13 @@ void DistributedPyTorchTrainingTask::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         3, HasBitSetters::run_policy(this), target);
+  }
+
+  // .flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;
+  if (this->has_elastic_config()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, HasBitSetters::elastic_config(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -501,6 +1069,13 @@ size_t DistributedPyTorchTrainingTask::ByteSizeLong() const {
         *run_policy_);
   }
 
+  // .flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;
+  if (this->has_elastic_config()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *elastic_config_);
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -537,6 +1112,9 @@ void DistributedPyTorchTrainingTask::MergeFrom(const DistributedPyTorchTrainingT
   if (from.has_run_policy()) {
     mutable_run_policy()->::flyteidl::plugins::kubeflow::RunPolicy::MergeFrom(from.run_policy());
   }
+  if (from.has_elastic_config()) {
+    mutable_elastic_config()->::flyteidl::plugins::kubeflow::ElasticConfig::MergeFrom(from.elastic_config());
+  }
 }
 
 void DistributedPyTorchTrainingTask::CopyFrom(const ::google::protobuf::Message& from) {
@@ -567,6 +1145,7 @@ void DistributedPyTorchTrainingTask::InternalSwap(DistributedPyTorchTrainingTask
   swap(worker_replicas_, other->worker_replicas_);
   swap(master_replicas_, other->master_replicas_);
   swap(run_policy_, other->run_policy_);
+  swap(elastic_config_, other->elastic_config_);
 }
 
 ::google::protobuf::Metadata DistributedPyTorchTrainingTask::GetMetadata() const {
@@ -1046,6 +1625,9 @@ void DistributedPyTorchTrainingReplicaSpec::InternalSwap(DistributedPyTorchTrain
 }  // namespace flyteidl
 namespace google {
 namespace protobuf {
+template<> PROTOBUF_NOINLINE ::flyteidl::plugins::kubeflow::ElasticConfig* Arena::CreateMaybeMessage< ::flyteidl::plugins::kubeflow::ElasticConfig >(Arena* arena) {
+  return Arena::CreateInternal< ::flyteidl::plugins::kubeflow::ElasticConfig >(arena);
+}
 template<> PROTOBUF_NOINLINE ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask* Arena::CreateMaybeMessage< ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::plugins::kubeflow::DistributedPyTorchTrainingTask >(arena);
 }

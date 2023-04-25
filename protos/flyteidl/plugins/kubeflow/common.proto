@@ -6,9 +6,9 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 
 
 enum RestartPolicy {
-    RESTART_POLICY_ALWAYS = 0;
+    RESTART_POLICY_NEVER = 0;
     RESTART_POLICY_ON_FAILURE = 1;
-    RESTART_POLICY_NEVER = 2;
+    RESTART_POLICY_ALWAYS = 2;
 }
 
 enum CleanPodPolicy {

@@ -7,18 +7,18 @@ DESCRIPTOR: _descriptor.FileDescriptor
 
 class RestartPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
-    RESTART_POLICY_ALWAYS: _ClassVar[RestartPolicy]
-    RESTART_POLICY_ON_FAILURE: _ClassVar[RestartPolicy]
     RESTART_POLICY_NEVER: _ClassVar[RestartPolicy]
+    RESTART_POLICY_ON_FAILURE: _ClassVar[RestartPolicy]
+    RESTART_POLICY_ALWAYS: _ClassVar[RestartPolicy]
 
 class CleanPodPolicy(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
     CLEANPOD_POLICY_NONE: _ClassVar[CleanPodPolicy]
     CLEANPOD_POLICY_RUNNING: _ClassVar[CleanPodPolicy]
     CLEANPOD_POLICY_ALL: _ClassVar[CleanPodPolicy]
-RESTART_POLICY_ALWAYS: RestartPolicy
-RESTART_POLICY_ON_FAILURE: RestartPolicy
 RESTART_POLICY_NEVER: RestartPolicy
+RESTART_POLICY_ON_FAILURE: RestartPolicy
+RESTART_POLICY_ALWAYS: RestartPolicy
 CLEANPOD_POLICY_NONE: CleanPodPolicy
 CLEANPOD_POLICY_RUNNING: CleanPodPolicy
 CLEANPOD_POLICY_ALL: CleanPodPolicy

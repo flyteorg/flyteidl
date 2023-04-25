@@ -68,15 +68,15 @@ namespace plugins {
 namespace kubeflow {
 
 enum RestartPolicy {
-  RESTART_POLICY_ALWAYS = 0,
+  RESTART_POLICY_NEVER = 0,
   RESTART_POLICY_ON_FAILURE = 1,
-  RESTART_POLICY_NEVER = 2,
+  RESTART_POLICY_ALWAYS = 2,
   RestartPolicy_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::min(),
   RestartPolicy_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::google::protobuf::int32>::max()
 };
 bool RestartPolicy_IsValid(int value);
-const RestartPolicy RestartPolicy_MIN = RESTART_POLICY_ALWAYS;
-const RestartPolicy RestartPolicy_MAX = RESTART_POLICY_NEVER;
+const RestartPolicy RestartPolicy_MIN = RESTART_POLICY_NEVER;
+const RestartPolicy RestartPolicy_MAX = RESTART_POLICY_ALWAYS;
 const int RestartPolicy_ARRAYSIZE = RestartPolicy_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* RestartPolicy_descriptor();

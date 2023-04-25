@@ -20,32 +20,32 @@ public final class Common {
   public enum RestartPolicy
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>RESTART_POLICY_ALWAYS = 0;</code>
+     * <code>RESTART_POLICY_NEVER = 0;</code>
      */
-    RESTART_POLICY_ALWAYS(0),
+    RESTART_POLICY_NEVER(0),
     /**
      * <code>RESTART_POLICY_ON_FAILURE = 1;</code>
      */
     RESTART_POLICY_ON_FAILURE(1),
     /**
-     * <code>RESTART_POLICY_NEVER = 2;</code>
+     * <code>RESTART_POLICY_ALWAYS = 2;</code>
      */
-    RESTART_POLICY_NEVER(2),
+    RESTART_POLICY_ALWAYS(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>RESTART_POLICY_ALWAYS = 0;</code>
+     * <code>RESTART_POLICY_NEVER = 0;</code>
      */
-    public static final int RESTART_POLICY_ALWAYS_VALUE = 0;
+    public static final int RESTART_POLICY_NEVER_VALUE = 0;
     /**
      * <code>RESTART_POLICY_ON_FAILURE = 1;</code>
      */
     public static final int RESTART_POLICY_ON_FAILURE_VALUE = 1;
     /**
-     * <code>RESTART_POLICY_NEVER = 2;</code>
+     * <code>RESTART_POLICY_ALWAYS = 2;</code>
      */
-    public static final int RESTART_POLICY_NEVER_VALUE = 2;
+    public static final int RESTART_POLICY_ALWAYS_VALUE = 2;
 
 
     public final int getNumber() {
@@ -66,9 +66,9 @@ public final class Common {
 
     public static RestartPolicy forNumber(int value) {
       switch (value) {
-        case 0: return RESTART_POLICY_ALWAYS;
+        case 0: return RESTART_POLICY_NEVER;
         case 1: return RESTART_POLICY_ON_FAILURE;
-        case 2: return RESTART_POLICY_NEVER;
+        case 2: return RESTART_POLICY_ALWAYS;
         default: return null;
       }
     }
@@ -1041,9 +1041,9 @@ public final class Common {
       "lugins.kubeflow.CleanPodPolicy\022\"\n\032ttl_se" +
       "conds_after_finished\030\002 \001(\005\022\037\n\027active_dea" +
       "dline_seconds\030\003 \001(\005\022\025\n\rbackoff_limit\030\004 \001" +
-      "(\005*c\n\rRestartPolicy\022\031\n\025RESTART_POLICY_AL" +
-      "WAYS\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020\001\022\030\n" +
-      "\024RESTART_POLICY_NEVER\020\002*`\n\016CleanPodPolic" +
+      "(\005*c\n\rRestartPolicy\022\030\n\024RESTART_POLICY_NE" +
+      "VER\020\000\022\035\n\031RESTART_POLICY_ON_FAILURE\020\001\022\031\n\025" +
+      "RESTART_POLICY_ALWAYS\020\002*`\n\016CleanPodPolic" +
       "y\022\030\n\024CLEANPOD_POLICY_NONE\020\000\022\033\n\027CLEANPOD_" +
       "POLICY_RUNNING\020\001\022\027\n\023CLEANPOD_POLICY_ALL\020" +
       "\002B9Z7github.com/flyteorg/flyteidl/gen/pb" +

@@ -14,6 +14,813 @@ public final class Pytorch {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ElasticConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:flyteidl.plugins.kubeflow.ElasticConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string rdzv_backend = 1;</code>
+     */
+    java.lang.String getRdzvBackend();
+    /**
+     * <code>string rdzv_backend = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRdzvBackendBytes();
+
+    /**
+     * <code>int32 min_replicas = 2;</code>
+     */
+    int getMinReplicas();
+
+    /**
+     * <code>int32 max_replicas = 3;</code>
+     */
+    int getMaxReplicas();
+
+    /**
+     * <code>int32 nproc_per_node = 4;</code>
+     */
+    int getNprocPerNode();
+
+    /**
+     * <code>int32 max_restarts = 5;</code>
+     */
+    int getMaxRestarts();
+  }
+  /**
+   * <pre>
+   * Custom proto for torch elastic config for distributed training using 
+   * https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go
+   * </pre>
+   *
+   * Protobuf type {@code flyteidl.plugins.kubeflow.ElasticConfig}
+   */
+  public  static final class ElasticConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:flyteidl.plugins.kubeflow.ElasticConfig)
+      ElasticConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ElasticConfig.newBuilder() to construct.
+    private ElasticConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ElasticConfig() {
+      rdzvBackend_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ElasticConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rdzvBackend_ = s;
+              break;
+            }
+            case 16: {
+
+              minReplicas_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              maxReplicas_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              nprocPerNode_ = input.readInt32();
+              break;
+            }
+            case 40: {
+
+              maxRestarts_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return flyteidl.plugins.kubeflow.Pytorch.internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return flyteidl.plugins.kubeflow.Pytorch.internal_static_flyteidl_plugins_kubeflow_ElasticConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.class, flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder.class);
+    }
+
+    public static final int RDZV_BACKEND_FIELD_NUMBER = 1;
+    private volatile java.lang.Object rdzvBackend_;
+    /**
+     * <code>string rdzv_backend = 1;</code>
+     */
+    public java.lang.String getRdzvBackend() {
+      java.lang.Object ref = rdzvBackend_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rdzvBackend_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string rdzv_backend = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRdzvBackendBytes() {
+      java.lang.Object ref = rdzvBackend_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rdzvBackend_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MIN_REPLICAS_FIELD_NUMBER = 2;
+    private int minReplicas_;
+    /**
+     * <code>int32 min_replicas = 2;</code>
+     */
+    public int getMinReplicas() {
+      return minReplicas_;
+    }
+
+    public static final int MAX_REPLICAS_FIELD_NUMBER = 3;
+    private int maxReplicas_;
+    /**
+     * <code>int32 max_replicas = 3;</code>
+     */
+    public int getMaxReplicas() {
+      return maxReplicas_;
+    }
+
+    public static final int NPROC_PER_NODE_FIELD_NUMBER = 4;
+    private int nprocPerNode_;
+    /**
+     * <code>int32 nproc_per_node = 4;</code>
+     */
+    public int getNprocPerNode() {
+      return nprocPerNode_;
+    }
+
+    public static final int MAX_RESTARTS_FIELD_NUMBER = 5;
+    private int maxRestarts_;
+    /**
+     * <code>int32 max_restarts = 5;</code>
+     */
+    public int getMaxRestarts() {
+      return maxRestarts_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRdzvBackendBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, rdzvBackend_);
+      }
+      if (minReplicas_ != 0) {
+        output.writeInt32(2, minReplicas_);
+      }
+      if (maxReplicas_ != 0) {
+        output.writeInt32(3, maxReplicas_);
+      }
+      if (nprocPerNode_ != 0) {
+        output.writeInt32(4, nprocPerNode_);
+      }
+      if (maxRestarts_ != 0) {
+        output.writeInt32(5, maxRestarts_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRdzvBackendBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, rdzvBackend_);
+      }
+      if (minReplicas_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, minReplicas_);
+      }
+      if (maxReplicas_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, maxReplicas_);
+      }
+      if (nprocPerNode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, nprocPerNode_);
+      }
+      if (maxRestarts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, maxRestarts_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof flyteidl.plugins.kubeflow.Pytorch.ElasticConfig)) {
+        return super.equals(obj);
+      }
+      flyteidl.plugins.kubeflow.Pytorch.ElasticConfig other = (flyteidl.plugins.kubeflow.Pytorch.ElasticConfig) obj;
+
+      if (!getRdzvBackend()
+          .equals(other.getRdzvBackend())) return false;
+      if (getMinReplicas()
+          != other.getMinReplicas()) return false;
+      if (getMaxReplicas()
+          != other.getMaxReplicas()) return false;
+      if (getNprocPerNode()
+          != other.getNprocPerNode()) return false;
+      if (getMaxRestarts()
+          != other.getMaxRestarts()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RDZV_BACKEND_FIELD_NUMBER;
+      hash = (53 * hash) + getRdzvBackend().hashCode();
+      hash = (37 * hash) + MIN_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinReplicas();
+      hash = (37 * hash) + MAX_REPLICAS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxReplicas();
+      hash = (37 * hash) + NPROC_PER_NODE_FIELD_NUMBER;
+      hash = (53 * hash) + getNprocPerNode();
+      hash = (37 * hash) + MAX_RESTARTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxRestarts();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(flyteidl.plugins.kubeflow.Pytorch.ElasticConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Custom proto for torch elastic config for distributed training using 
+     * https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go
+     * </pre>
+     *
+     * Protobuf type {@code flyteidl.plugins.kubeflow.ElasticConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:flyteidl.plugins.kubeflow.ElasticConfig)
+        flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return flyteidl.plugins.kubeflow.Pytorch.internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return flyteidl.plugins.kubeflow.Pytorch.internal_static_flyteidl_plugins_kubeflow_ElasticConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.class, flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder.class);
+      }
+
+      // Construct using flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        rdzvBackend_ = "";
+
+        minReplicas_ = 0;
+
+        maxReplicas_ = 0;
+
+        nprocPerNode_ = 0;
+
+        maxRestarts_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return flyteidl.plugins.kubeflow.Pytorch.internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getDefaultInstanceForType() {
+        return flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig build() {
+        flyteidl.plugins.kubeflow.Pytorch.ElasticConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig buildPartial() {
+        flyteidl.plugins.kubeflow.Pytorch.ElasticConfig result = new flyteidl.plugins.kubeflow.Pytorch.ElasticConfig(this);
+        result.rdzvBackend_ = rdzvBackend_;
+        result.minReplicas_ = minReplicas_;
+        result.maxReplicas_ = maxReplicas_;
+        result.nprocPerNode_ = nprocPerNode_;
+        result.maxRestarts_ = maxRestarts_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof flyteidl.plugins.kubeflow.Pytorch.ElasticConfig) {
+          return mergeFrom((flyteidl.plugins.kubeflow.Pytorch.ElasticConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(flyteidl.plugins.kubeflow.Pytorch.ElasticConfig other) {
+        if (other == flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.getDefaultInstance()) return this;
+        if (!other.getRdzvBackend().isEmpty()) {
+          rdzvBackend_ = other.rdzvBackend_;
+          onChanged();
+        }
+        if (other.getMinReplicas() != 0) {
+          setMinReplicas(other.getMinReplicas());
+        }
+        if (other.getMaxReplicas() != 0) {
+          setMaxReplicas(other.getMaxReplicas());
+        }
+        if (other.getNprocPerNode() != 0) {
+          setNprocPerNode(other.getNprocPerNode());
+        }
+        if (other.getMaxRestarts() != 0) {
+          setMaxRestarts(other.getMaxRestarts());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        flyteidl.plugins.kubeflow.Pytorch.ElasticConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (flyteidl.plugins.kubeflow.Pytorch.ElasticConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object rdzvBackend_ = "";
+      /**
+       * <code>string rdzv_backend = 1;</code>
+       */
+      public java.lang.String getRdzvBackend() {
+        java.lang.Object ref = rdzvBackend_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rdzvBackend_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string rdzv_backend = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRdzvBackendBytes() {
+        java.lang.Object ref = rdzvBackend_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rdzvBackend_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string rdzv_backend = 1;</code>
+       */
+      public Builder setRdzvBackend(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rdzvBackend_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rdzv_backend = 1;</code>
+       */
+      public Builder clearRdzvBackend() {
+        
+        rdzvBackend_ = getDefaultInstance().getRdzvBackend();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string rdzv_backend = 1;</code>
+       */
+      public Builder setRdzvBackendBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rdzvBackend_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int minReplicas_ ;
+      /**
+       * <code>int32 min_replicas = 2;</code>
+       */
+      public int getMinReplicas() {
+        return minReplicas_;
+      }
+      /**
+       * <code>int32 min_replicas = 2;</code>
+       */
+      public Builder setMinReplicas(int value) {
+        
+        minReplicas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 min_replicas = 2;</code>
+       */
+      public Builder clearMinReplicas() {
+        
+        minReplicas_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxReplicas_ ;
+      /**
+       * <code>int32 max_replicas = 3;</code>
+       */
+      public int getMaxReplicas() {
+        return maxReplicas_;
+      }
+      /**
+       * <code>int32 max_replicas = 3;</code>
+       */
+      public Builder setMaxReplicas(int value) {
+        
+        maxReplicas_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_replicas = 3;</code>
+       */
+      public Builder clearMaxReplicas() {
+        
+        maxReplicas_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nprocPerNode_ ;
+      /**
+       * <code>int32 nproc_per_node = 4;</code>
+       */
+      public int getNprocPerNode() {
+        return nprocPerNode_;
+      }
+      /**
+       * <code>int32 nproc_per_node = 4;</code>
+       */
+      public Builder setNprocPerNode(int value) {
+        
+        nprocPerNode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 nproc_per_node = 4;</code>
+       */
+      public Builder clearNprocPerNode() {
+        
+        nprocPerNode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxRestarts_ ;
+      /**
+       * <code>int32 max_restarts = 5;</code>
+       */
+      public int getMaxRestarts() {
+        return maxRestarts_;
+      }
+      /**
+       * <code>int32 max_restarts = 5;</code>
+       */
+      public Builder setMaxRestarts(int value) {
+        
+        maxRestarts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_restarts = 5;</code>
+       */
+      public Builder clearMaxRestarts() {
+        
+        maxRestarts_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:flyteidl.plugins.kubeflow.ElasticConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:flyteidl.plugins.kubeflow.ElasticConfig)
+    private static final flyteidl.plugins.kubeflow.Pytorch.ElasticConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new flyteidl.plugins.kubeflow.Pytorch.ElasticConfig();
+    }
+
+    public static flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ElasticConfig>
+        PARSER = new com.google.protobuf.AbstractParser<ElasticConfig>() {
+      @java.lang.Override
+      public ElasticConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ElasticConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ElasticConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ElasticConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DistributedPyTorchTrainingTaskOrBuilder extends
       // @@protoc_insertion_point(interface_extends:flyteidl.plugins.kubeflow.DistributedPyTorchTrainingTask)
       com.google.protobuf.MessageOrBuilder {
@@ -98,6 +905,31 @@ public final class Pytorch {
      * <code>.flyteidl.plugins.kubeflow.RunPolicy run_policy = 3;</code>
      */
     flyteidl.plugins.kubeflow.Common.RunPolicyOrBuilder getRunPolicyOrBuilder();
+
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    boolean hasElasticConfig();
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getElasticConfig();
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder getElasticConfigOrBuilder();
   }
   /**
    * <pre>
@@ -177,6 +1009,19 @@ public final class Pytorch {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(runPolicy_);
                 runPolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder subBuilder = null;
+              if (elasticConfig_ != null) {
+                subBuilder = elasticConfig_.toBuilder();
+              }
+              elasticConfig_ = input.readMessage(flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(elasticConfig_);
+                elasticConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -318,6 +1163,39 @@ public final class Pytorch {
       return getRunPolicy();
     }
 
+    public static final int ELASTIC_CONFIG_FIELD_NUMBER = 4;
+    private flyteidl.plugins.kubeflow.Pytorch.ElasticConfig elasticConfig_;
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    public boolean hasElasticConfig() {
+      return elasticConfig_ != null;
+    }
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getElasticConfig() {
+      return elasticConfig_ == null ? flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.getDefaultInstance() : elasticConfig_;
+    }
+    /**
+     * <pre>
+     * config for an elastic pytorch job
+     * </pre>
+     *
+     * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+     */
+    public flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder getElasticConfigOrBuilder() {
+      return getElasticConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -341,6 +1219,9 @@ public final class Pytorch {
       if (runPolicy_ != null) {
         output.writeMessage(3, getRunPolicy());
       }
+      if (elasticConfig_ != null) {
+        output.writeMessage(4, getElasticConfig());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -361,6 +1242,10 @@ public final class Pytorch {
       if (runPolicy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRunPolicy());
+      }
+      if (elasticConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getElasticConfig());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -392,6 +1277,11 @@ public final class Pytorch {
         if (!getRunPolicy()
             .equals(other.getRunPolicy())) return false;
       }
+      if (hasElasticConfig() != other.hasElasticConfig()) return false;
+      if (hasElasticConfig()) {
+        if (!getElasticConfig()
+            .equals(other.getElasticConfig())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -414,6 +1304,10 @@ public final class Pytorch {
       if (hasRunPolicy()) {
         hash = (37 * hash) + RUN_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getRunPolicy().hashCode();
+      }
+      if (hasElasticConfig()) {
+        hash = (37 * hash) + ELASTIC_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getElasticConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -570,6 +1464,12 @@ public final class Pytorch {
           runPolicy_ = null;
           runPolicyBuilder_ = null;
         }
+        if (elasticConfigBuilder_ == null) {
+          elasticConfig_ = null;
+        } else {
+          elasticConfig_ = null;
+          elasticConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -610,6 +1510,11 @@ public final class Pytorch {
           result.runPolicy_ = runPolicy_;
         } else {
           result.runPolicy_ = runPolicyBuilder_.build();
+        }
+        if (elasticConfigBuilder_ == null) {
+          result.elasticConfig_ = elasticConfig_;
+        } else {
+          result.elasticConfig_ = elasticConfigBuilder_.build();
         }
         onBuilt();
         return result;
@@ -667,6 +1572,9 @@ public final class Pytorch {
         }
         if (other.hasRunPolicy()) {
           mergeRunPolicy(other.getRunPolicy());
+        }
+        if (other.hasElasticConfig()) {
+          mergeElasticConfig(other.getElasticConfig());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1173,6 +2081,159 @@ public final class Pytorch {
         }
         return runPolicyBuilder_;
       }
+
+      private flyteidl.plugins.kubeflow.Pytorch.ElasticConfig elasticConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.kubeflow.Pytorch.ElasticConfig, flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder, flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder> elasticConfigBuilder_;
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public boolean hasElasticConfig() {
+        return elasticConfigBuilder_ != null || elasticConfig_ != null;
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig getElasticConfig() {
+        if (elasticConfigBuilder_ == null) {
+          return elasticConfig_ == null ? flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.getDefaultInstance() : elasticConfig_;
+        } else {
+          return elasticConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public Builder setElasticConfig(flyteidl.plugins.kubeflow.Pytorch.ElasticConfig value) {
+        if (elasticConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          elasticConfig_ = value;
+          onChanged();
+        } else {
+          elasticConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public Builder setElasticConfig(
+          flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder builderForValue) {
+        if (elasticConfigBuilder_ == null) {
+          elasticConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          elasticConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public Builder mergeElasticConfig(flyteidl.plugins.kubeflow.Pytorch.ElasticConfig value) {
+        if (elasticConfigBuilder_ == null) {
+          if (elasticConfig_ != null) {
+            elasticConfig_ =
+              flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.newBuilder(elasticConfig_).mergeFrom(value).buildPartial();
+          } else {
+            elasticConfig_ = value;
+          }
+          onChanged();
+        } else {
+          elasticConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public Builder clearElasticConfig() {
+        if (elasticConfigBuilder_ == null) {
+          elasticConfig_ = null;
+          onChanged();
+        } else {
+          elasticConfig_ = null;
+          elasticConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder getElasticConfigBuilder() {
+        
+        onChanged();
+        return getElasticConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      public flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder getElasticConfigOrBuilder() {
+        if (elasticConfigBuilder_ != null) {
+          return elasticConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return elasticConfig_ == null ?
+              flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.getDefaultInstance() : elasticConfig_;
+        }
+      }
+      /**
+       * <pre>
+       * config for an elastic pytorch job
+       * </pre>
+       *
+       * <code>.flyteidl.plugins.kubeflow.ElasticConfig elastic_config = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          flyteidl.plugins.kubeflow.Pytorch.ElasticConfig, flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder, flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder> 
+          getElasticConfigFieldBuilder() {
+        if (elasticConfigBuilder_ == null) {
+          elasticConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.plugins.kubeflow.Pytorch.ElasticConfig, flyteidl.plugins.kubeflow.Pytorch.ElasticConfig.Builder, flyteidl.plugins.kubeflow.Pytorch.ElasticConfigOrBuilder>(
+                  getElasticConfig(),
+                  getParentForChildren(),
+                  isClean());
+          elasticConfig_ = null;
+        }
+        return elasticConfigBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1538,7 +2599,7 @@ public final class Pytorch {
       if (resources_ != null) {
         output.writeMessage(3, getResources());
       }
-      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
+      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         output.writeEnum(4, restartPolicy_);
       }
       unknownFields.writeTo(output);
@@ -1561,7 +2622,7 @@ public final class Pytorch {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getResources());
       }
-      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
+      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, restartPolicy_);
       }
@@ -2278,6 +3339,11 @@ public final class Pytorch {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_flyteidl_plugins_kubeflow_ElasticConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2299,20 +3365,25 @@ public final class Pytorch {
       "\n\'flyteidl/plugins/kubeflow/pytorch.prot" +
       "o\022\031flyteidl.plugins.kubeflow\032\031flyteidl/c" +
       "ore/tasks.proto\032&flyteidl/plugins/kubefl" +
-      "ow/common.proto\"\220\002\n\036DistributedPyTorchTr" +
-      "ainingTask\022Y\n\017worker_replicas\030\001 \001(\0132@.fl" +
-      "yteidl.plugins.kubeflow.DistributedPyTor" +
-      "chTrainingReplicaSpec\022Y\n\017master_replicas" +
-      "\030\002 \001(\0132@.flyteidl.plugins.kubeflow.Distr" +
-      "ibutedPyTorchTrainingReplicaSpec\0228\n\nrun_" +
-      "policy\030\003 \001(\0132$.flyteidl.plugins.kubeflow" +
-      ".RunPolicy\"\267\001\n%DistributedPyTorchTrainin" +
-      "gReplicaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030" +
-      "\002 \001(\t\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core" +
-      ".Resources\022@\n\016restart_policy\030\004 \001(\0162(.fly" +
-      "teidl.plugins.kubeflow.RestartPolicyB9Z7" +
-      "github.com/flyteorg/flyteidl/gen/pb-go/f" +
-      "lyteidl/pluginsb\006proto3"
+      "ow/common.proto\"\177\n\rElasticConfig\022\024\n\014rdzv" +
+      "_backend\030\001 \001(\t\022\024\n\014min_replicas\030\002 \001(\005\022\024\n\014" +
+      "max_replicas\030\003 \001(\005\022\026\n\016nproc_per_node\030\004 \001" +
+      "(\005\022\024\n\014max_restarts\030\005 \001(\005\"\322\002\n\036Distributed" +
+      "PyTorchTrainingTask\022Y\n\017worker_replicas\030\001" +
+      " \001(\0132@.flyteidl.plugins.kubeflow.Distrib" +
+      "utedPyTorchTrainingReplicaSpec\022Y\n\017master" +
+      "_replicas\030\002 \001(\0132@.flyteidl.plugins.kubef" +
+      "low.DistributedPyTorchTrainingReplicaSpe" +
+      "c\0228\n\nrun_policy\030\003 \001(\0132$.flyteidl.plugins" +
+      ".kubeflow.RunPolicy\022@\n\016elastic_config\030\004 " +
+      "\001(\0132(.flyteidl.plugins.kubeflow.ElasticC" +
+      "onfig\"\267\001\n%DistributedPyTorchTrainingRepl" +
+      "icaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t" +
+      "\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Reso" +
+      "urces\022@\n\016restart_policy\030\004 \001(\0162(.flyteidl" +
+      ".plugins.kubeflow.RestartPolicyB9Z7githu" +
+      "b.com/flyteorg/flyteidl/gen/pb-go/flytei" +
+      "dl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2328,14 +3399,20 @@ public final class Pytorch {
           flyteidl.core.Tasks.getDescriptor(),
           flyteidl.plugins.kubeflow.Common.getDescriptor(),
         }, assigner);
-    internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_descriptor =
+    internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_flyteidl_plugins_kubeflow_ElasticConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_flyteidl_plugins_kubeflow_ElasticConfig_descriptor,
+        new java.lang.String[] { "RdzvBackend", "MinReplicas", "MaxReplicas", "NprocPerNode", "MaxRestarts", });
+    internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingTask_descriptor,
-        new java.lang.String[] { "WorkerReplicas", "MasterReplicas", "RunPolicy", });
+        new java.lang.String[] { "WorkerReplicas", "MasterReplicas", "RunPolicy", "ElasticConfig", });
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingReplicaSpec_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingReplicaSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedPyTorchTrainingReplicaSpec_descriptor,

@@ -1792,7 +1792,7 @@ public final class Tensorflow {
       if (resources_ != null) {
         output.writeMessage(3, getResources());
       }
-      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
+      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         output.writeEnum(4, restartPolicy_);
       }
       unknownFields.writeTo(output);
@@ -1815,7 +1815,7 @@ public final class Tensorflow {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getResources());
       }
-      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_ALWAYS.getNumber()) {
+      if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, restartPolicy_);
       }

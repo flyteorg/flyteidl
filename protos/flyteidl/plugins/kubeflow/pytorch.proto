@@ -7,6 +7,16 @@ option go_package = "github.com/flyteorg/flyteidl/gen/pb-go/flyteidl/plugins";
 import "flyteidl/core/tasks.proto";
 import "flyteidl/plugins/kubeflow/common.proto";
 
+// Custom proto for torch elastic config for distributed training using 
+// https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go
+message ElasticConfig {
+  string rdzv_backend = 1;
+  int32 min_replicas = 2;
+  int32 max_replicas = 3;
+  int32 nproc_per_node = 4;
+  int32 max_restarts = 5;
+}
+
 // Proto for plugin that enables distributed training using https://github.com/kubeflow/pytorch-operator
 message DistributedPyTorchTrainingTask {
   // Worker replicas spec
@@ -19,6 +29,9 @@ message DistributedPyTorchTrainingTask {
   // job, for example how to clean up resources and how long the job can stay
   // active.
   RunPolicy run_policy = 3;
+
+  // config for an elastic pytorch job
+  ElasticConfig elastic_config = 4;
 }
 
 message DistributedPyTorchTrainingReplicaSpec {

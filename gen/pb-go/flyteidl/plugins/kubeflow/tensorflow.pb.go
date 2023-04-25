@@ -157,7 +157,7 @@ func (m *DistributedTensorflowTrainingReplicaSpec) GetRestartPolicy() RestartPol
 	if m != nil {
 		return m.RestartPolicy
 	}
-	return RestartPolicy_RESTART_POLICY_ALWAYS
+	return RestartPolicy_RESTART_POLICY_NEVER
 }
 
 func init() {
