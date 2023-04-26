@@ -304,6 +304,28 @@ class DistributedMPITrainingReplicaSpec final :
 
   // accessors -------------------------------------------------------
 
+  // repeated string command = 5;
+  int command_size() const;
+  void clear_command();
+  static const int kCommandFieldNumber = 5;
+  const ::std::string& command(int index) const;
+  ::std::string* mutable_command(int index);
+  void set_command(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_command(int index, ::std::string&& value);
+  #endif
+  void set_command(int index, const char* value);
+  void set_command(int index, const char* value, size_t size);
+  ::std::string* add_command();
+  void add_command(const ::std::string& value);
+  #if LANG_CXX11
+  void add_command(::std::string&& value);
+  #endif
+  void add_command(const char* value);
+  void add_command(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& command() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_command();
+
   // string image = 2;
   void clear_image();
   static const int kImageFieldNumber = 2;
@@ -344,6 +366,7 @@ class DistributedMPITrainingReplicaSpec final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> command_;
   ::google::protobuf::internal::ArenaStringPtr image_;
   ::flyteidl::core::Resources* resources_;
   ::google::protobuf::int32 replicas_;
@@ -637,6 +660,75 @@ inline void DistributedMPITrainingReplicaSpec::set_restart_policy(::flyteidl::pl
   
   restart_policy_ = value;
   // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.restart_policy)
+}
+
+// repeated string command = 5;
+inline int DistributedMPITrainingReplicaSpec::command_size() const {
+  return command_.size();
+}
+inline void DistributedMPITrainingReplicaSpec::clear_command() {
+  command_.Clear();
+}
+inline const ::std::string& DistributedMPITrainingReplicaSpec::command(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  return command_.Get(index);
+}
+inline ::std::string* DistributedMPITrainingReplicaSpec::mutable_command(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  return command_.Mutable(index);
+}
+inline void DistributedMPITrainingReplicaSpec::set_command(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  command_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void DistributedMPITrainingReplicaSpec::set_command(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  command_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void DistributedMPITrainingReplicaSpec::set_command(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  command_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+inline void DistributedMPITrainingReplicaSpec::set_command(int index, const char* value, size_t size) {
+  command_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+inline ::std::string* DistributedMPITrainingReplicaSpec::add_command() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  return command_.Add();
+}
+inline void DistributedMPITrainingReplicaSpec::add_command(const ::std::string& value) {
+  command_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+#if LANG_CXX11
+inline void DistributedMPITrainingReplicaSpec::add_command(::std::string&& value) {
+  command_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+#endif
+inline void DistributedMPITrainingReplicaSpec::add_command(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  command_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+inline void DistributedMPITrainingReplicaSpec::add_command(const char* value, size_t size) {
+  command_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+DistributedMPITrainingReplicaSpec::command() const {
+  // @@protoc_insertion_point(field_list:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  return command_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+DistributedMPITrainingReplicaSpec::mutable_command() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command)
+  return &command_;
 }
 
 #ifdef __GNUC__

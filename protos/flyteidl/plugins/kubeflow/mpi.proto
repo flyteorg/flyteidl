@@ -34,4 +34,7 @@ message DistributedMPITrainingReplicaSpec {
   
   // Restart policy determines whether pods will be restarted when they exit
   RestartPolicy restart_policy = 4;
+
+  // MPI sometimes requires different command set for different replica groups
+  repeated string command = 5;
 }

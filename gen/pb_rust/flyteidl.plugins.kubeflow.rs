@@ -106,6 +106,9 @@ pub struct DistributedMpiTrainingReplicaSpec {
     /// Restart policy determines whether pods will be restarted when they exit
     #[prost(enumeration="RestartPolicy", tag="4")]
     pub restart_policy: i32,
+    /// MPI sometimes requires different command set for different replica groups
+    #[prost(string, repeated, tag="5")]
+    pub command: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
 /// Custom proto for torch elastic config for distributed training using 
 /// <https://github.com/kubeflow/training-operator/blob/master/pkg/apis/kubeflow.org/v1/pytorch_types.go>

@@ -1298,6 +1298,41 @@ public final class Mpi {
      * <code>.flyteidl.plugins.kubeflow.RestartPolicy restart_policy = 4;</code>
      */
     flyteidl.plugins.kubeflow.Common.RestartPolicy getRestartPolicy();
+
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getCommandList();
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    int getCommandCount();
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    java.lang.String getCommand(int index);
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getCommandBytes(int index);
   }
   /**
    * <pre>
@@ -1318,6 +1353,7 @@ public final class Mpi {
     private DistributedMPITrainingReplicaSpec() {
       image_ = "";
       restartPolicy_ = 0;
+      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1374,6 +1410,15 @@ public final class Mpi {
               restartPolicy_ = rawValue;
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                command_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              command_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1389,6 +1434,9 @@ public final class Mpi {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          command_ = command_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1406,6 +1454,7 @@ public final class Mpi {
               flyteidl.plugins.kubeflow.Mpi.DistributedMPITrainingReplicaSpec.class, flyteidl.plugins.kubeflow.Mpi.DistributedMPITrainingReplicaSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int REPLICAS_FIELD_NUMBER = 1;
     private int replicas_;
     /**
@@ -1519,6 +1568,51 @@ public final class Mpi {
       return result == null ? flyteidl.plugins.kubeflow.Common.RestartPolicy.UNRECOGNIZED : result;
     }
 
+    public static final int COMMAND_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList command_;
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getCommandList() {
+      return command_;
+    }
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    public int getCommandCount() {
+      return command_.size();
+    }
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    public java.lang.String getCommand(int index) {
+      return command_.get(index);
+    }
+    /**
+     * <pre>
+     * MPI sometimes requires different command set for different replica groups
+     * </pre>
+     *
+     * <code>repeated string command = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCommandBytes(int index) {
+      return command_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1545,6 +1639,9 @@ public final class Mpi {
       if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         output.writeEnum(4, restartPolicy_);
       }
+      for (int i = 0; i < command_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, command_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1568,6 +1665,14 @@ public final class Mpi {
       if (restartPolicy_ != flyteidl.plugins.kubeflow.Common.RestartPolicy.RESTART_POLICY_NEVER.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, restartPolicy_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < command_.size(); i++) {
+          dataSize += computeStringSizeNoTag(command_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCommandList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1594,6 +1699,8 @@ public final class Mpi {
             .equals(other.getResources())) return false;
       }
       if (restartPolicy_ != other.restartPolicy_) return false;
+      if (!getCommandList()
+          .equals(other.getCommandList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1615,6 +1722,10 @@ public final class Mpi {
       }
       hash = (37 * hash) + RESTART_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + restartPolicy_;
+      if (getCommandCount() > 0) {
+        hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+        hash = (53 * hash) + getCommandList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1764,6 +1875,8 @@ public final class Mpi {
         }
         restartPolicy_ = 0;
 
+        command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1790,6 +1903,8 @@ public final class Mpi {
       @java.lang.Override
       public flyteidl.plugins.kubeflow.Mpi.DistributedMPITrainingReplicaSpec buildPartial() {
         flyteidl.plugins.kubeflow.Mpi.DistributedMPITrainingReplicaSpec result = new flyteidl.plugins.kubeflow.Mpi.DistributedMPITrainingReplicaSpec(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.replicas_ = replicas_;
         result.image_ = image_;
         if (resourcesBuilder_ == null) {
@@ -1798,6 +1913,12 @@ public final class Mpi {
           result.resources_ = resourcesBuilder_.build();
         }
         result.restartPolicy_ = restartPolicy_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          command_ = command_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.command_ = command_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1859,6 +1980,16 @@ public final class Mpi {
         if (other.restartPolicy_ != 0) {
           setRestartPolicyValue(other.getRestartPolicyValue());
         }
+        if (!other.command_.isEmpty()) {
+          if (command_.isEmpty()) {
+            command_ = other.command_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureCommandIsMutable();
+            command_.addAll(other.command_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1887,6 +2018,7 @@ public final class Mpi {
         }
         return this;
       }
+      private int bitField0_;
 
       private int replicas_ ;
       /**
@@ -2232,6 +2364,136 @@ public final class Mpi {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.LazyStringList command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureCommandIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          command_ = new com.google.protobuf.LazyStringArrayList(command_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getCommandList() {
+        return command_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public int getCommandCount() {
+        return command_.size();
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public java.lang.String getCommand(int index) {
+        return command_.get(index);
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCommandBytes(int index) {
+        return command_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public Builder setCommand(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCommandIsMutable();
+        command_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public Builder addCommand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureCommandIsMutable();
+        command_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public Builder addAllCommand(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureCommandIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, command_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public Builder clearCommand() {
+        command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * MPI sometimes requires different command set for different replica groups
+       * </pre>
+       *
+       * <code>repeated string command = 5;</code>
+       */
+      public Builder addCommandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureCommandIsMutable();
+        command_.add(value);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2313,14 +2575,14 @@ public final class Mpi {
       "plicaSpec\022W\n\021launcher_replicas\030\002 \001(\0132<.f" +
       "lyteidl.plugins.kubeflow.DistributedMPIT" +
       "rainingReplicaSpec\0228\n\nrun_policy\030\003 \001(\0132$" +
-      ".flyteidl.plugins.kubeflow.RunPolicy\"\263\001\n" +
+      ".flyteidl.plugins.kubeflow.RunPolicy\"\304\001\n" +
       "!DistributedMPITrainingReplicaSpec\022\020\n\010re" +
       "plicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresources" +
       "\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016rest" +
       "art_policy\030\004 \001(\0162(.flyteidl.plugins.kube" +
-      "flow.RestartPolicyB9Z7github.com/flyteor" +
-      "g/flyteidl/gen/pb-go/flyteidl/pluginsb\006p" +
-      "roto3"
+      "flow.RestartPolicy\022\017\n\007command\030\005 \003(\tB9Z7g" +
+      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
+      "yteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2347,7 +2609,7 @@ public final class Mpi {
     internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingReplicaSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingReplicaSpec_descriptor,
-        new java.lang.String[] { "Replicas", "Image", "Resources", "RestartPolicy", });
+        new java.lang.String[] { "Replicas", "Image", "Resources", "RestartPolicy", "Command", });
     flyteidl.core.Tasks.getDescriptor();
     flyteidl.plugins.kubeflow.Common.getDescriptor();
   }

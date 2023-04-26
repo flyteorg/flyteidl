@@ -91,6 +91,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fmpi
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec, image_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec, resources_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec, restart_policy_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec, command_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask)},
@@ -118,19 +119,19 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto
   "plicaSpec\022W\n\021launcher_replicas\030\002 \001(\0132<.f"
   "lyteidl.plugins.kubeflow.DistributedMPIT"
   "rainingReplicaSpec\0228\n\nrun_policy\030\003 \001(\0132$"
-  ".flyteidl.plugins.kubeflow.RunPolicy\"\263\001\n"
+  ".flyteidl.plugins.kubeflow.RunPolicy\"\304\001\n"
   "!DistributedMPITrainingReplicaSpec\022\020\n\010re"
   "plicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresources"
   "\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016rest"
   "art_policy\030\004 \001(\0162(.flyteidl.plugins.kube"
-  "flow.RestartPolicyB9Z7github.com/flyteor"
-  "g/flyteidl/gen/pb-go/flyteidl/pluginsb\006p"
-  "roto3"
+  "flow.RestartPolicy\022\017\n\007command\030\005 \003(\tB9Z7g"
+  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
+  "yteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto,
-  "flyteidl/plugins/kubeflow/mpi.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 645,
+  "flyteidl/plugins/kubeflow/mpi.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 662,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto() {
@@ -601,6 +602,7 @@ const int DistributedMPITrainingReplicaSpec::kReplicasFieldNumber;
 const int DistributedMPITrainingReplicaSpec::kImageFieldNumber;
 const int DistributedMPITrainingReplicaSpec::kResourcesFieldNumber;
 const int DistributedMPITrainingReplicaSpec::kRestartPolicyFieldNumber;
+const int DistributedMPITrainingReplicaSpec::kCommandFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedMPITrainingReplicaSpec::DistributedMPITrainingReplicaSpec()
@@ -610,7 +612,8 @@ DistributedMPITrainingReplicaSpec::DistributedMPITrainingReplicaSpec()
 }
 DistributedMPITrainingReplicaSpec::DistributedMPITrainingReplicaSpec(const DistributedMPITrainingReplicaSpec& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      command_(from.command_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   image_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.image().size() > 0) {
@@ -661,6 +664,7 @@ void DistributedMPITrainingReplicaSpec::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  command_.Clear();
   image_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && resources_ != nullptr) {
     delete resources_;
@@ -727,6 +731,25 @@ const char* DistributedMPITrainingReplicaSpec::_InternalParse(const char* begin,
         ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
         msg->set_restart_policy(static_cast<::flyteidl::plugins::kubeflow::RestartPolicy>(val));
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // repeated string command = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command");
+          object = msg->add_command();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 42 && (ptr += 1));
         break;
       }
       default: {
@@ -816,6 +839,22 @@ bool DistributedMPITrainingReplicaSpec::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string command = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_command()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->command(this->command_size() - 1).data(),
+            static_cast<int>(this->command(this->command_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -870,6 +909,16 @@ void DistributedMPITrainingReplicaSpec::SerializeWithCachedSizes(
       4, this->restart_policy(), output);
   }
 
+  // repeated string command = 5;
+  for (int i = 0, n = this->command_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->command(i).data(), static_cast<int>(this->command(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      5, this->command(i), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -912,6 +961,16 @@ void DistributedMPITrainingReplicaSpec::SerializeWithCachedSizes(
       4, this->restart_policy(), target);
   }
 
+  // repeated string command = 5;
+  for (int i = 0, n = this->command_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->command(i).data(), static_cast<int>(this->command(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "flyteidl.plugins.kubeflow.DistributedMPITrainingReplicaSpec.command");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(5, this->command(i), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -932,6 +991,14 @@ size_t DistributedMPITrainingReplicaSpec::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string command = 5;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->command_size());
+  for (int i = 0, n = this->command_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->command(i));
+  }
 
   // string image = 2;
   if (this->image().size() > 0) {
@@ -987,6 +1054,7 @@ void DistributedMPITrainingReplicaSpec::MergeFrom(const DistributedMPITrainingRe
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  command_.MergeFrom(from.command_);
   if (from.image().size() > 0) {
 
     image_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.image_);
@@ -1027,6 +1095,7 @@ void DistributedMPITrainingReplicaSpec::Swap(DistributedMPITrainingReplicaSpec* 
 void DistributedMPITrainingReplicaSpec::InternalSwap(DistributedMPITrainingReplicaSpec* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  command_.InternalSwap(CastToBase(&other->command_));
   image_.Swap(&other->image_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(resources_, other->resources_);
