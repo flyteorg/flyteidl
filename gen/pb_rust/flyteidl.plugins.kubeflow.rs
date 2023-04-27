@@ -89,6 +89,9 @@ pub struct DistributedMpiTrainingTask {
     /// active.
     #[prost(message, optional, tag="3")]
     pub run_policy: ::core::option::Option<RunPolicy>,
+    /// Number of slots per worker
+    #[prost(int32, tag="4")]
+    pub slots: i32,
 }
 /// Replica specification for distributed MPI training
 #[allow(clippy::derive_partial_eq_without_eq)]

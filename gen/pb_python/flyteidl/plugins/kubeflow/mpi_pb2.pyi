@@ -8,14 +8,16 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DistributedMPITrainingTask(_message.Message):
-    __slots__ = ["worker_replicas", "launcher_replicas", "run_policy"]
+    __slots__ = ["worker_replicas", "launcher_replicas", "run_policy", "slots"]
     WORKER_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     LAUNCHER_REPLICAS_FIELD_NUMBER: _ClassVar[int]
     RUN_POLICY_FIELD_NUMBER: _ClassVar[int]
+    SLOTS_FIELD_NUMBER: _ClassVar[int]
     worker_replicas: DistributedMPITrainingReplicaSpec
     launcher_replicas: DistributedMPITrainingReplicaSpec
     run_policy: _common_pb2.RunPolicy
-    def __init__(self, worker_replicas: _Optional[_Union[DistributedMPITrainingReplicaSpec, _Mapping]] = ..., launcher_replicas: _Optional[_Union[DistributedMPITrainingReplicaSpec, _Mapping]] = ..., run_policy: _Optional[_Union[_common_pb2.RunPolicy, _Mapping]] = ...) -> None: ...
+    slots: int
+    def __init__(self, worker_replicas: _Optional[_Union[DistributedMPITrainingReplicaSpec, _Mapping]] = ..., launcher_replicas: _Optional[_Union[DistributedMPITrainingReplicaSpec, _Mapping]] = ..., run_policy: _Optional[_Union[_common_pb2.RunPolicy, _Mapping]] = ..., slots: _Optional[int] = ...) -> None: ...
 
 class DistributedMPITrainingReplicaSpec(_message.Message):
     __slots__ = ["replicas", "image", "resources", "restart_policy", "command"]

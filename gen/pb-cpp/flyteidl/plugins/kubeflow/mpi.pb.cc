@@ -82,6 +82,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fmpi
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask, worker_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask, launcher_replicas_),
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask, run_policy_),
+  PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask, slots_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -95,7 +96,7 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fplugins_2fkubeflow_2fmpi
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedMPITrainingTask)},
-  { 8, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec)},
+  { 9, -1, sizeof(::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -113,25 +114,25 @@ const char descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto
   "\n#flyteidl/plugins/kubeflow/mpi.proto\022\031f"
   "lyteidl.plugins.kubeflow\032\031flyteidl/core/"
   "tasks.proto\032&flyteidl/plugins/kubeflow/c"
-  "ommon.proto\"\206\002\n\032DistributedMPITrainingTa"
+  "ommon.proto\"\225\002\n\032DistributedMPITrainingTa"
   "sk\022U\n\017worker_replicas\030\001 \001(\0132<.flyteidl.p"
   "lugins.kubeflow.DistributedMPITrainingRe"
   "plicaSpec\022W\n\021launcher_replicas\030\002 \001(\0132<.f"
   "lyteidl.plugins.kubeflow.DistributedMPIT"
   "rainingReplicaSpec\0228\n\nrun_policy\030\003 \001(\0132$"
-  ".flyteidl.plugins.kubeflow.RunPolicy\"\304\001\n"
-  "!DistributedMPITrainingReplicaSpec\022\020\n\010re"
-  "plicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresources"
-  "\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016rest"
-  "art_policy\030\004 \001(\0162(.flyteidl.plugins.kube"
-  "flow.RestartPolicy\022\017\n\007command\030\005 \003(\tB9Z7g"
-  "ithub.com/flyteorg/flyteidl/gen/pb-go/fl"
-  "yteidl/pluginsb\006proto3"
+  ".flyteidl.plugins.kubeflow.RunPolicy\022\r\n\005"
+  "slots\030\004 \001(\005\"\304\001\n!DistributedMPITrainingRe"
+  "plicaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001"
+  "(\t\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Re"
+  "sources\022@\n\016restart_policy\030\004 \001(\0162(.flytei"
+  "dl.plugins.kubeflow.RestartPolicy\022\017\n\007com"
+  "mand\030\005 \003(\tB9Z7github.com/flyteorg/flytei"
+  "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto = {
   false, InitDefaults_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 
   descriptor_table_protodef_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto,
-  "flyteidl/plugins/kubeflow/mpi.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 662,
+  "flyteidl/plugins/kubeflow/mpi.proto", &assign_descriptors_table_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto, 677,
 };
 
 void AddDescriptors_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto() {
@@ -188,6 +189,7 @@ void DistributedMPITrainingTask::clear_run_policy() {
 const int DistributedMPITrainingTask::kWorkerReplicasFieldNumber;
 const int DistributedMPITrainingTask::kLauncherReplicasFieldNumber;
 const int DistributedMPITrainingTask::kRunPolicyFieldNumber;
+const int DistributedMPITrainingTask::kSlotsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DistributedMPITrainingTask::DistributedMPITrainingTask()
@@ -214,6 +216,7 @@ DistributedMPITrainingTask::DistributedMPITrainingTask(const DistributedMPITrain
   } else {
     run_policy_ = nullptr;
   }
+  slots_ = from.slots_;
   // @@protoc_insertion_point(copy_constructor:flyteidl.plugins.kubeflow.DistributedMPITrainingTask)
 }
 
@@ -221,8 +224,8 @@ void DistributedMPITrainingTask::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
       &scc_info_DistributedMPITrainingTask_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto.base);
   ::memset(&worker_replicas_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&run_policy_) -
-      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(run_policy_));
+      reinterpret_cast<char*>(&slots_) -
+      reinterpret_cast<char*>(&worker_replicas_)) + sizeof(slots_));
 }
 
 DistributedMPITrainingTask::~DistributedMPITrainingTask() {
@@ -263,6 +266,7 @@ void DistributedMPITrainingTask::Clear() {
     delete run_policy_;
   }
   run_policy_ = nullptr;
+  slots_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -316,6 +320,13 @@ const char* DistributedMPITrainingTask::_InternalParse(const char* begin, const 
         ptr += size;
         GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
             {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // int32 slots = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 32) goto handle_unusual;
+        msg->set_slots(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
       default: {
@@ -381,6 +392,19 @@ bool DistributedMPITrainingTask::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 slots = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (32 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &slots_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -426,6 +450,11 @@ void DistributedMPITrainingTask::SerializeWithCachedSizes(
       3, HasBitSetters::run_policy(this), output);
   }
 
+  // int32 slots = 4;
+  if (this->slots() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->slots(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -458,6 +487,11 @@ void DistributedMPITrainingTask::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         3, HasBitSetters::run_policy(this), target);
+  }
+
+  // int32 slots = 4;
+  if (this->slots() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->slots(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -502,6 +536,13 @@ size_t DistributedMPITrainingTask::ByteSizeLong() const {
         *run_policy_);
   }
 
+  // int32 slots = 4;
+  if (this->slots() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->slots());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -538,6 +579,9 @@ void DistributedMPITrainingTask::MergeFrom(const DistributedMPITrainingTask& fro
   if (from.has_run_policy()) {
     mutable_run_policy()->::flyteidl::plugins::kubeflow::RunPolicy::MergeFrom(from.run_policy());
   }
+  if (from.slots() != 0) {
+    set_slots(from.slots());
+  }
 }
 
 void DistributedMPITrainingTask::CopyFrom(const ::google::protobuf::Message& from) {
@@ -568,6 +612,7 @@ void DistributedMPITrainingTask::InternalSwap(DistributedMPITrainingTask* other)
   swap(worker_replicas_, other->worker_replicas_);
   swap(launcher_replicas_, other->launcher_replicas_);
   swap(run_policy_, other->run_policy_);
+  swap(slots_, other->slots_);
 }
 
 ::google::protobuf::Metadata DistributedMPITrainingTask::GetMetadata() const {

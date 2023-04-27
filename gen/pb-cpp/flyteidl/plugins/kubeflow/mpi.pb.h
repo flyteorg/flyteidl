@@ -196,6 +196,12 @@ class DistributedMPITrainingTask final :
   ::flyteidl::plugins::kubeflow::RunPolicy* mutable_run_policy();
   void set_allocated_run_policy(::flyteidl::plugins::kubeflow::RunPolicy* run_policy);
 
+  // int32 slots = 4;
+  void clear_slots();
+  static const int kSlotsFieldNumber = 4;
+  ::google::protobuf::int32 slots() const;
+  void set_slots(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:flyteidl.plugins.kubeflow.DistributedMPITrainingTask)
  private:
   class HasBitSetters;
@@ -204,6 +210,7 @@ class DistributedMPITrainingTask final :
   ::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec* worker_replicas_;
   ::flyteidl::plugins::kubeflow::DistributedMPITrainingReplicaSpec* launcher_replicas_;
   ::flyteidl::plugins::kubeflow::RunPolicy* run_policy_;
+  ::google::protobuf::int32 slots_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fplugins_2fkubeflow_2fmpi_2eproto;
 };
@@ -530,6 +537,20 @@ inline void DistributedMPITrainingTask::set_allocated_run_policy(::flyteidl::plu
   }
   run_policy_ = run_policy;
   // @@protoc_insertion_point(field_set_allocated:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.run_policy)
+}
+
+// int32 slots = 4;
+inline void DistributedMPITrainingTask::clear_slots() {
+  slots_ = 0;
+}
+inline ::google::protobuf::int32 DistributedMPITrainingTask::slots() const {
+  // @@protoc_insertion_point(field_get:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.slots)
+  return slots_;
+}
+inline void DistributedMPITrainingTask::set_slots(::google::protobuf::int32 value) {
+  
+  slots_ = value;
+  // @@protoc_insertion_point(field_set:flyteidl.plugins.kubeflow.DistributedMPITrainingTask.slots)
 }
 
 // -------------------------------------------------------------------

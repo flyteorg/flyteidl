@@ -98,6 +98,15 @@ public final class Mpi {
      * <code>.flyteidl.plugins.kubeflow.RunPolicy run_policy = 3;</code>
      */
     flyteidl.plugins.kubeflow.Common.RunPolicyOrBuilder getRunPolicyOrBuilder();
+
+    /**
+     * <pre>
+     * Number of slots per worker
+     * </pre>
+     *
+     * <code>int32 slots = 4;</code>
+     */
+    int getSlots();
   }
   /**
    * <pre>
@@ -179,6 +188,11 @@ public final class Mpi {
                 runPolicy_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 32: {
+
+              slots_ = input.readInt32();
               break;
             }
             default: {
@@ -318,6 +332,19 @@ public final class Mpi {
       return getRunPolicy();
     }
 
+    public static final int SLOTS_FIELD_NUMBER = 4;
+    private int slots_;
+    /**
+     * <pre>
+     * Number of slots per worker
+     * </pre>
+     *
+     * <code>int32 slots = 4;</code>
+     */
+    public int getSlots() {
+      return slots_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -341,6 +368,9 @@ public final class Mpi {
       if (runPolicy_ != null) {
         output.writeMessage(3, getRunPolicy());
       }
+      if (slots_ != 0) {
+        output.writeInt32(4, slots_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -361,6 +391,10 @@ public final class Mpi {
       if (runPolicy_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getRunPolicy());
+      }
+      if (slots_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, slots_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -392,6 +426,8 @@ public final class Mpi {
         if (!getRunPolicy()
             .equals(other.getRunPolicy())) return false;
       }
+      if (getSlots()
+          != other.getSlots()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -415,6 +451,8 @@ public final class Mpi {
         hash = (37 * hash) + RUN_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getRunPolicy().hashCode();
       }
+      hash = (37 * hash) + SLOTS_FIELD_NUMBER;
+      hash = (53 * hash) + getSlots();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -570,6 +608,8 @@ public final class Mpi {
           runPolicy_ = null;
           runPolicyBuilder_ = null;
         }
+        slots_ = 0;
+
         return this;
       }
 
@@ -611,6 +651,7 @@ public final class Mpi {
         } else {
           result.runPolicy_ = runPolicyBuilder_.build();
         }
+        result.slots_ = slots_;
         onBuilt();
         return result;
       }
@@ -667,6 +708,9 @@ public final class Mpi {
         }
         if (other.hasRunPolicy()) {
           mergeRunPolicy(other.getRunPolicy());
+        }
+        if (other.getSlots() != 0) {
+          setSlots(other.getSlots());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1172,6 +1216,44 @@ public final class Mpi {
           runPolicy_ = null;
         }
         return runPolicyBuilder_;
+      }
+
+      private int slots_ ;
+      /**
+       * <pre>
+       * Number of slots per worker
+       * </pre>
+       *
+       * <code>int32 slots = 4;</code>
+       */
+      public int getSlots() {
+        return slots_;
+      }
+      /**
+       * <pre>
+       * Number of slots per worker
+       * </pre>
+       *
+       * <code>int32 slots = 4;</code>
+       */
+      public Builder setSlots(int value) {
+        
+        slots_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Number of slots per worker
+       * </pre>
+       *
+       * <code>int32 slots = 4;</code>
+       */
+      public Builder clearSlots() {
+        
+        slots_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2569,20 +2651,20 @@ public final class Mpi {
       "\n#flyteidl/plugins/kubeflow/mpi.proto\022\031f" +
       "lyteidl.plugins.kubeflow\032\031flyteidl/core/" +
       "tasks.proto\032&flyteidl/plugins/kubeflow/c" +
-      "ommon.proto\"\206\002\n\032DistributedMPITrainingTa" +
+      "ommon.proto\"\225\002\n\032DistributedMPITrainingTa" +
       "sk\022U\n\017worker_replicas\030\001 \001(\0132<.flyteidl.p" +
       "lugins.kubeflow.DistributedMPITrainingRe" +
       "plicaSpec\022W\n\021launcher_replicas\030\002 \001(\0132<.f" +
       "lyteidl.plugins.kubeflow.DistributedMPIT" +
       "rainingReplicaSpec\0228\n\nrun_policy\030\003 \001(\0132$" +
-      ".flyteidl.plugins.kubeflow.RunPolicy\"\304\001\n" +
-      "!DistributedMPITrainingReplicaSpec\022\020\n\010re" +
-      "plicas\030\001 \001(\005\022\r\n\005image\030\002 \001(\t\022+\n\tresources" +
-      "\030\003 \001(\0132\030.flyteidl.core.Resources\022@\n\016rest" +
-      "art_policy\030\004 \001(\0162(.flyteidl.plugins.kube" +
-      "flow.RestartPolicy\022\017\n\007command\030\005 \003(\tB9Z7g" +
-      "ithub.com/flyteorg/flyteidl/gen/pb-go/fl" +
-      "yteidl/pluginsb\006proto3"
+      ".flyteidl.plugins.kubeflow.RunPolicy\022\r\n\005" +
+      "slots\030\004 \001(\005\"\304\001\n!DistributedMPITrainingRe" +
+      "plicaSpec\022\020\n\010replicas\030\001 \001(\005\022\r\n\005image\030\002 \001" +
+      "(\t\022+\n\tresources\030\003 \001(\0132\030.flyteidl.core.Re" +
+      "sources\022@\n\016restart_policy\030\004 \001(\0162(.flytei" +
+      "dl.plugins.kubeflow.RestartPolicy\022\017\n\007com" +
+      "mand\030\005 \003(\tB9Z7github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/pluginsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2603,7 +2685,7 @@ public final class Mpi {
     internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingTask_descriptor,
-        new java.lang.String[] { "WorkerReplicas", "LauncherReplicas", "RunPolicy", });
+        new java.lang.String[] { "WorkerReplicas", "LauncherReplicas", "RunPolicy", "Slots", });
     internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingReplicaSpec_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_flyteidl_plugins_kubeflow_DistributedMPITrainingReplicaSpec_fieldAccessorTable = new

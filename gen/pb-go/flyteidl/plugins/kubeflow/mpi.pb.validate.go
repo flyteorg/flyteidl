@@ -74,6 +74,8 @@ func (m *DistributedMPITrainingTask) Validate() error {
 		}
 	}
 
+	// no validation rules for Slots
+
 	return nil
 }
 
