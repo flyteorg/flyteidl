@@ -69,6 +69,16 @@ class CreateDownloadLinkRequest(_message.Message):
     def __init__(self, artifact_type: _Optional[_Union[ArtifactType, str]] = ..., expires_in: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ..., node_execution_id: _Optional[_Union[_identifier_pb2.NodeExecutionIdentifier, _Mapping]] = ...) -> None: ...
 
 class CreateDownloadLinkResponse(_message.Message):
+    __slots__ = ["signed_url", "expires_at", "pre_signed_urls"]
+    SIGNED_URL_FIELD_NUMBER: _ClassVar[int]
+    EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]
+    PRE_SIGNED_URLS_FIELD_NUMBER: _ClassVar[int]
+    signed_url: _containers.RepeatedScalarFieldContainer[str]
+    expires_at: _timestamp_pb2.Timestamp
+    pre_signed_urls: PreSignedURLs
+    def __init__(self, signed_url: _Optional[_Iterable[str]] = ..., expires_at: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., pre_signed_urls: _Optional[_Union[PreSignedURLs, _Mapping]] = ...) -> None: ...
+
+class PreSignedURLs(_message.Message):
     __slots__ = ["signed_url", "expires_at"]
     SIGNED_URL_FIELD_NUMBER: _ClassVar[int]
     EXPIRES_AT_FIELD_NUMBER: _ClassVar[int]

@@ -45234,6 +45234,7 @@
                  * @interface ICreateDownloadLinkResponse
                  * @property {Array.<string>|null} [signedUrl] CreateDownloadLinkResponse signedUrl
                  * @property {google.protobuf.ITimestamp|null} [expiresAt] CreateDownloadLinkResponse expiresAt
+                 * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] CreateDownloadLinkResponse preSignedUrls
                  */
     
                 /**
@@ -45269,6 +45270,14 @@
                 CreateDownloadLinkResponse.prototype.expiresAt = null;
     
                 /**
+                 * CreateDownloadLinkResponse preSignedUrls.
+                 * @member {flyteidl.service.IPreSignedURLs|null|undefined} preSignedUrls
+                 * @memberof flyteidl.service.CreateDownloadLinkResponse
+                 * @instance
+                 */
+                CreateDownloadLinkResponse.prototype.preSignedUrls = null;
+    
+                /**
                  * Creates a new CreateDownloadLinkResponse instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.service.CreateDownloadLinkResponse
@@ -45297,6 +45306,8 @@
                             writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
                     if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
                         $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls"))
+                        $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                     return writer;
                 };
     
@@ -45325,6 +45336,9 @@
                             break;
                         case 2:
                             message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        case 3:
+                            message.preSignedUrls = $root.flyteidl.service.PreSignedURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -45357,10 +45371,152 @@
                         if (error)
                             return "expiresAt." + error;
                     }
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls")) {
+                        var error = $root.flyteidl.service.PreSignedURLs.verify(message.preSignedUrls);
+                        if (error)
+                            return "preSignedUrls." + error;
+                    }
                     return null;
                 };
     
                 return CreateDownloadLinkResponse;
+            })();
+    
+            service.PreSignedURLs = (function() {
+    
+                /**
+                 * Properties of a PreSignedURLs.
+                 * @memberof flyteidl.service
+                 * @interface IPreSignedURLs
+                 * @property {Array.<string>|null} [signedUrl] PreSignedURLs signedUrl
+                 * @property {google.protobuf.ITimestamp|null} [expiresAt] PreSignedURLs expiresAt
+                 */
+    
+                /**
+                 * Constructs a new PreSignedURLs.
+                 * @memberof flyteidl.service
+                 * @classdesc Represents a PreSignedURLs.
+                 * @implements IPreSignedURLs
+                 * @constructor
+                 * @param {flyteidl.service.IPreSignedURLs=} [properties] Properties to set
+                 */
+                function PreSignedURLs(properties) {
+                    this.signedUrl = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * PreSignedURLs signedUrl.
+                 * @member {Array.<string>} signedUrl
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @instance
+                 */
+                PreSignedURLs.prototype.signedUrl = $util.emptyArray;
+    
+                /**
+                 * PreSignedURLs expiresAt.
+                 * @member {google.protobuf.ITimestamp|null|undefined} expiresAt
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @instance
+                 */
+                PreSignedURLs.prototype.expiresAt = null;
+    
+                /**
+                 * Creates a new PreSignedURLs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {flyteidl.service.IPreSignedURLs=} [properties] Properties to set
+                 * @returns {flyteidl.service.PreSignedURLs} PreSignedURLs instance
+                 */
+                PreSignedURLs.create = function create(properties) {
+                    return new PreSignedURLs(properties);
+                };
+    
+                /**
+                 * Encodes the specified PreSignedURLs message. Does not implicitly {@link flyteidl.service.PreSignedURLs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {flyteidl.service.IPreSignedURLs} message PreSignedURLs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PreSignedURLs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.signedUrl != null && message.signedUrl.length)
+                        for (var i = 0; i < message.signedUrl.length; ++i)
+                            writer.uint32(/* id 1, wireType 2 =*/10).string(message.signedUrl[i]);
+                    if (message.expiresAt != null && message.hasOwnProperty("expiresAt"))
+                        $root.google.protobuf.Timestamp.encode(message.expiresAt, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a PreSignedURLs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.service.PreSignedURLs} PreSignedURLs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PreSignedURLs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.service.PreSignedURLs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            if (!(message.signedUrl && message.signedUrl.length))
+                                message.signedUrl = [];
+                            message.signedUrl.push(reader.string());
+                            break;
+                        case 2:
+                            message.expiresAt = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a PreSignedURLs message.
+                 * @function verify
+                 * @memberof flyteidl.service.PreSignedURLs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PreSignedURLs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.signedUrl != null && message.hasOwnProperty("signedUrl")) {
+                        if (!Array.isArray(message.signedUrl))
+                            return "signedUrl: array expected";
+                        for (var i = 0; i < message.signedUrl.length; ++i)
+                            if (!$util.isString(message.signedUrl[i]))
+                                return "signedUrl: string[] expected";
+                    }
+                    if (message.expiresAt != null && message.hasOwnProperty("expiresAt")) {
+                        var error = $root.google.protobuf.Timestamp.verify(message.expiresAt);
+                        if (error)
+                            return "expiresAt." + error;
+                    }
+                    return null;
+                };
+    
+                return PreSignedURLs;
             })();
     
             service.GetDataRequest = (function() {

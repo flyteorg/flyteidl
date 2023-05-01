@@ -19376,6 +19376,9 @@ export namespace flyteidl {
 
             /** CreateDownloadLinkResponse expiresAt */
             expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateDownloadLinkResponse preSignedUrls */
+            preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
         }
 
         /** Represents a CreateDownloadLinkResponse. */
@@ -19392,6 +19395,9 @@ export namespace flyteidl {
 
             /** CreateDownloadLinkResponse expiresAt. */
             public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateDownloadLinkResponse preSignedUrls. */
+            public preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
 
             /**
              * Creates a new CreateDownloadLinkResponse instance using the specified properties.
@@ -19420,6 +19426,64 @@ export namespace flyteidl {
 
             /**
              * Verifies a CreateDownloadLinkResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PreSignedURLs. */
+        interface IPreSignedURLs {
+
+            /** PreSignedURLs signedUrl */
+            signedUrl?: (string[]|null);
+
+            /** PreSignedURLs expiresAt */
+            expiresAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a PreSignedURLs. */
+        class PreSignedURLs implements IPreSignedURLs {
+
+            /**
+             * Constructs a new PreSignedURLs.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IPreSignedURLs);
+
+            /** PreSignedURLs signedUrl. */
+            public signedUrl: string[];
+
+            /** PreSignedURLs expiresAt. */
+            public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new PreSignedURLs instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PreSignedURLs instance
+             */
+            public static create(properties?: flyteidl.service.IPreSignedURLs): flyteidl.service.PreSignedURLs;
+
+            /**
+             * Encodes the specified PreSignedURLs message. Does not implicitly {@link flyteidl.service.PreSignedURLs.verify|verify} messages.
+             * @param message PreSignedURLs message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IPreSignedURLs, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PreSignedURLs message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PreSignedURLs
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.PreSignedURLs;
+
+            /**
+             * Verifies a PreSignedURLs message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */

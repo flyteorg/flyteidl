@@ -47,7 +47,7 @@ struct TableStruct_flyteidl_2fservice_2fdataproxy_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[8]
+  static const ::google::protobuf::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -80,6 +80,9 @@ extern GetDataRequestDefaultTypeInternal _GetDataRequest_default_instance_;
 class GetDataResponse;
 class GetDataResponseDefaultTypeInternal;
 extern GetDataResponseDefaultTypeInternal _GetDataResponse_default_instance_;
+class PreSignedURLs;
+class PreSignedURLsDefaultTypeInternal;
+extern PreSignedURLsDefaultTypeInternal _PreSignedURLs_default_instance_;
 }  // namespace service
 }  // namespace flyteidl
 namespace google {
@@ -92,6 +95,7 @@ template<> ::flyteidl::service::CreateUploadLocationRequest* Arena::CreateMaybeM
 template<> ::flyteidl::service::CreateUploadLocationResponse* Arena::CreateMaybeMessage<::flyteidl::service::CreateUploadLocationResponse>(Arena*);
 template<> ::flyteidl::service::GetDataRequest* Arena::CreateMaybeMessage<::flyteidl::service::GetDataRequest>(Arena*);
 template<> ::flyteidl::service::GetDataResponse* Arena::CreateMaybeMessage<::flyteidl::service::GetDataResponse>(Arena*);
+template<> ::flyteidl::service::PreSignedURLs* Arena::CreateMaybeMessage<::flyteidl::service::PreSignedURLs>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace flyteidl {
@@ -974,7 +978,155 @@ class CreateDownloadLinkResponse final :
   ::google::protobuf::Timestamp* mutable_expires_at();
   void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
 
+  // .flyteidl.service.PreSignedURLs pre_signed_urls = 3;
+  bool has_pre_signed_urls() const;
+  void clear_pre_signed_urls();
+  static const int kPreSignedUrlsFieldNumber = 3;
+  const ::flyteidl::service::PreSignedURLs& pre_signed_urls() const;
+  ::flyteidl::service::PreSignedURLs* release_pre_signed_urls();
+  ::flyteidl::service::PreSignedURLs* mutable_pre_signed_urls();
+  void set_allocated_pre_signed_urls(::flyteidl::service::PreSignedURLs* pre_signed_urls);
+
   // @@protoc_insertion_point(class_scope:flyteidl.service.CreateDownloadLinkResponse)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> signed_url_;
+  ::google::protobuf::Timestamp* expires_at_;
+  ::flyteidl::service::PreSignedURLs* pre_signed_urls_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_flyteidl_2fservice_2fdataproxy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PreSignedURLs final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.service.PreSignedURLs) */ {
+ public:
+  PreSignedURLs();
+  virtual ~PreSignedURLs();
+
+  PreSignedURLs(const PreSignedURLs& from);
+
+  inline PreSignedURLs& operator=(const PreSignedURLs& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PreSignedURLs(PreSignedURLs&& from) noexcept
+    : PreSignedURLs() {
+    *this = ::std::move(from);
+  }
+
+  inline PreSignedURLs& operator=(PreSignedURLs&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const PreSignedURLs& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PreSignedURLs* internal_default_instance() {
+    return reinterpret_cast<const PreSignedURLs*>(
+               &_PreSignedURLs_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(PreSignedURLs* other);
+  friend void swap(PreSignedURLs& a, PreSignedURLs& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PreSignedURLs* New() const final {
+    return CreateMaybeMessage<PreSignedURLs>(nullptr);
+  }
+
+  PreSignedURLs* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PreSignedURLs>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PreSignedURLs& from);
+  void MergeFrom(const PreSignedURLs& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PreSignedURLs* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string signed_url = 1;
+  int signed_url_size() const;
+  void clear_signed_url();
+  static const int kSignedUrlFieldNumber = 1;
+  const ::std::string& signed_url(int index) const;
+  ::std::string* mutable_signed_url(int index);
+  void set_signed_url(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_signed_url(int index, ::std::string&& value);
+  #endif
+  void set_signed_url(int index, const char* value);
+  void set_signed_url(int index, const char* value, size_t size);
+  ::std::string* add_signed_url();
+  void add_signed_url(const ::std::string& value);
+  #if LANG_CXX11
+  void add_signed_url(::std::string&& value);
+  #endif
+  void add_signed_url(const char* value);
+  void add_signed_url(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& signed_url() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_signed_url();
+
+  // .google.protobuf.Timestamp expires_at = 2;
+  bool has_expires_at() const;
+  void clear_expires_at();
+  static const int kExpiresAtFieldNumber = 2;
+  const ::google::protobuf::Timestamp& expires_at() const;
+  ::google::protobuf::Timestamp* release_expires_at();
+  ::google::protobuf::Timestamp* mutable_expires_at();
+  void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
+
+  // @@protoc_insertion_point(class_scope:flyteidl.service.PreSignedURLs)
  private:
   class HasBitSetters;
 
@@ -1024,7 +1176,7 @@ class GetDataRequest final :
                &_GetDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(GetDataRequest* other);
   friend void swap(GetDataRequest& a, GetDataRequest& b) {
@@ -1150,7 +1302,7 @@ class GetDataResponse final :
                &_GetDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(GetDataResponse* other);
   friend void swap(GetDataResponse& a, GetDataResponse& b) {
@@ -2105,6 +2257,176 @@ inline void CreateDownloadLinkResponse::set_allocated_expires_at(::google::proto
   // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkResponse.expires_at)
 }
 
+// .flyteidl.service.PreSignedURLs pre_signed_urls = 3;
+inline bool CreateDownloadLinkResponse::has_pre_signed_urls() const {
+  return this != internal_default_instance() && pre_signed_urls_ != nullptr;
+}
+inline void CreateDownloadLinkResponse::clear_pre_signed_urls() {
+  if (GetArenaNoVirtual() == nullptr && pre_signed_urls_ != nullptr) {
+    delete pre_signed_urls_;
+  }
+  pre_signed_urls_ = nullptr;
+}
+inline const ::flyteidl::service::PreSignedURLs& CreateDownloadLinkResponse::pre_signed_urls() const {
+  const ::flyteidl::service::PreSignedURLs* p = pre_signed_urls_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.CreateDownloadLinkResponse.pre_signed_urls)
+  return p != nullptr ? *p : *reinterpret_cast<const ::flyteidl::service::PreSignedURLs*>(
+      &::flyteidl::service::_PreSignedURLs_default_instance_);
+}
+inline ::flyteidl::service::PreSignedURLs* CreateDownloadLinkResponse::release_pre_signed_urls() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.CreateDownloadLinkResponse.pre_signed_urls)
+  
+  ::flyteidl::service::PreSignedURLs* temp = pre_signed_urls_;
+  pre_signed_urls_ = nullptr;
+  return temp;
+}
+inline ::flyteidl::service::PreSignedURLs* CreateDownloadLinkResponse::mutable_pre_signed_urls() {
+  
+  if (pre_signed_urls_ == nullptr) {
+    auto* p = CreateMaybeMessage<::flyteidl::service::PreSignedURLs>(GetArenaNoVirtual());
+    pre_signed_urls_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.CreateDownloadLinkResponse.pre_signed_urls)
+  return pre_signed_urls_;
+}
+inline void CreateDownloadLinkResponse::set_allocated_pre_signed_urls(::flyteidl::service::PreSignedURLs* pre_signed_urls) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete pre_signed_urls_;
+  }
+  if (pre_signed_urls) {
+    ::google::protobuf::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      pre_signed_urls = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pre_signed_urls, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pre_signed_urls_ = pre_signed_urls;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.CreateDownloadLinkResponse.pre_signed_urls)
+}
+
+// -------------------------------------------------------------------
+
+// PreSignedURLs
+
+// repeated string signed_url = 1;
+inline int PreSignedURLs::signed_url_size() const {
+  return signed_url_.size();
+}
+inline void PreSignedURLs::clear_signed_url() {
+  signed_url_.Clear();
+}
+inline const ::std::string& PreSignedURLs::signed_url(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.PreSignedURLs.signed_url)
+  return signed_url_.Get(index);
+}
+inline ::std::string* PreSignedURLs::mutable_signed_url(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PreSignedURLs.signed_url)
+  return signed_url_.Mutable(index);
+}
+inline void PreSignedURLs::set_signed_url(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.PreSignedURLs.signed_url)
+  signed_url_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void PreSignedURLs::set_signed_url(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:flyteidl.service.PreSignedURLs.signed_url)
+  signed_url_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void PreSignedURLs::set_signed_url(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  signed_url_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:flyteidl.service.PreSignedURLs.signed_url)
+}
+inline void PreSignedURLs::set_signed_url(int index, const char* value, size_t size) {
+  signed_url_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:flyteidl.service.PreSignedURLs.signed_url)
+}
+inline ::std::string* PreSignedURLs::add_signed_url() {
+  // @@protoc_insertion_point(field_add_mutable:flyteidl.service.PreSignedURLs.signed_url)
+  return signed_url_.Add();
+}
+inline void PreSignedURLs::add_signed_url(const ::std::string& value) {
+  signed_url_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:flyteidl.service.PreSignedURLs.signed_url)
+}
+#if LANG_CXX11
+inline void PreSignedURLs::add_signed_url(::std::string&& value) {
+  signed_url_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:flyteidl.service.PreSignedURLs.signed_url)
+}
+#endif
+inline void PreSignedURLs::add_signed_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  signed_url_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:flyteidl.service.PreSignedURLs.signed_url)
+}
+inline void PreSignedURLs::add_signed_url(const char* value, size_t size) {
+  signed_url_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:flyteidl.service.PreSignedURLs.signed_url)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+PreSignedURLs::signed_url() const {
+  // @@protoc_insertion_point(field_list:flyteidl.service.PreSignedURLs.signed_url)
+  return signed_url_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+PreSignedURLs::mutable_signed_url() {
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.service.PreSignedURLs.signed_url)
+  return &signed_url_;
+}
+
+// .google.protobuf.Timestamp expires_at = 2;
+inline bool PreSignedURLs::has_expires_at() const {
+  return this != internal_default_instance() && expires_at_ != nullptr;
+}
+inline const ::google::protobuf::Timestamp& PreSignedURLs::expires_at() const {
+  const ::google::protobuf::Timestamp* p = expires_at_;
+  // @@protoc_insertion_point(field_get:flyteidl.service.PreSignedURLs.expires_at)
+  return p != nullptr ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* PreSignedURLs::release_expires_at() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.PreSignedURLs.expires_at)
+  
+  ::google::protobuf::Timestamp* temp = expires_at_;
+  expires_at_ = nullptr;
+  return temp;
+}
+inline ::google::protobuf::Timestamp* PreSignedURLs::mutable_expires_at() {
+  
+  if (expires_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    expires_at_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.PreSignedURLs.expires_at)
+  return expires_at_;
+}
+inline void PreSignedURLs::set_allocated_expires_at(::google::protobuf::Timestamp* expires_at) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_at_);
+  }
+  if (expires_at) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      expires_at = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_at_ = expires_at;
+  // @@protoc_insertion_point(field_set_allocated:flyteidl.service.PreSignedURLs.expires_at)
+}
+
 // -------------------------------------------------------------------
 
 // GetDataRequest
@@ -2254,6 +2576,8 @@ inline GetDataResponse::DataCase GetDataResponse::data_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

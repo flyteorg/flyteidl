@@ -167,6 +167,23 @@ pub mod create_download_link_request {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct CreateDownloadLinkResponse {
     /// SignedUrl specifies the url to use to download content from (e.g. <https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...>)
+    ///
+    /// deprecate
+    #[prost(string, repeated, tag="1")]
+    pub signed_url: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// ExpiresAt defines when will the signed URL expire.
+    ///
+    /// deprecate
+    #[prost(message, optional, tag="2")]
+    pub expires_at: ::core::option::Option<::prost_types::Timestamp>,
+    /// New wrapper object since the message is shared across this and the GetDataResponse
+    #[prost(message, optional, tag="3")]
+    pub pre_signed_urls: ::core::option::Option<PreSignedUrLs>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct PreSignedUrLs {
+    /// SignedUrl specifies the url to use to download content from (e.g. <https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...>)
     #[prost(string, repeated, tag="1")]
     pub signed_url: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// ExpiresAt defines when will the signed URL expire.
