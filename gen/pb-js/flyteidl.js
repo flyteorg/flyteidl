@@ -45636,7 +45636,7 @@
                  * @memberof flyteidl.service
                  * @interface IGetDataResponse
                  * @property {flyteidl.core.ILiteralMap|null} [literalMap] GetDataResponse literalMap
-                 * @property {flyteidl.service.ICreateDownloadLinkResponse|null} [flyteDeckDownloadLink] GetDataResponse flyteDeckDownloadLink
+                 * @property {flyteidl.service.IPreSignedURLs|null} [preSignedUrls] GetDataResponse preSignedUrls
                  */
     
                 /**
@@ -45663,24 +45663,24 @@
                 GetDataResponse.prototype.literalMap = null;
     
                 /**
-                 * GetDataResponse flyteDeckDownloadLink.
-                 * @member {flyteidl.service.ICreateDownloadLinkResponse|null|undefined} flyteDeckDownloadLink
+                 * GetDataResponse preSignedUrls.
+                 * @member {flyteidl.service.IPreSignedURLs|null|undefined} preSignedUrls
                  * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
-                GetDataResponse.prototype.flyteDeckDownloadLink = null;
+                GetDataResponse.prototype.preSignedUrls = null;
     
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
                 /**
                  * GetDataResponse data.
-                 * @member {"literalMap"|"flyteDeckDownloadLink"|undefined} data
+                 * @member {"literalMap"|"preSignedUrls"|undefined} data
                  * @memberof flyteidl.service.GetDataResponse
                  * @instance
                  */
                 Object.defineProperty(GetDataResponse.prototype, "data", {
-                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "flyteDeckDownloadLink"]),
+                    get: $util.oneOfGetter($oneOfFields = ["literalMap", "preSignedUrls"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
     
@@ -45710,8 +45710,8 @@
                         writer = $Writer.create();
                     if (message.literalMap != null && message.hasOwnProperty("literalMap"))
                         $root.flyteidl.core.LiteralMap.encode(message.literalMap, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                    if (message.flyteDeckDownloadLink != null && message.hasOwnProperty("flyteDeckDownloadLink"))
-                        $root.flyteidl.service.CreateDownloadLinkResponse.encode(message.flyteDeckDownloadLink, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls"))
+                        $root.flyteidl.service.PreSignedURLs.encode(message.preSignedUrls, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                     return writer;
                 };
     
@@ -45737,7 +45737,7 @@
                             message.literalMap = $root.flyteidl.core.LiteralMap.decode(reader, reader.uint32());
                             break;
                         case 2:
-                            message.flyteDeckDownloadLink = $root.flyteidl.service.CreateDownloadLinkResponse.decode(reader, reader.uint32());
+                            message.preSignedUrls = $root.flyteidl.service.PreSignedURLs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -45767,14 +45767,14 @@
                                 return "literalMap." + error;
                         }
                     }
-                    if (message.flyteDeckDownloadLink != null && message.hasOwnProperty("flyteDeckDownloadLink")) {
+                    if (message.preSignedUrls != null && message.hasOwnProperty("preSignedUrls")) {
                         if (properties.data === 1)
                             return "data: multiple values";
                         properties.data = 1;
                         {
-                            var error = $root.flyteidl.service.CreateDownloadLinkResponse.verify(message.flyteDeckDownloadLink);
+                            var error = $root.flyteidl.service.PreSignedURLs.verify(message.preSignedUrls);
                             if (error)
-                                return "flyteDeckDownloadLink." + error;
+                                return "preSignedUrls." + error;
                         }
                     }
                     return null;

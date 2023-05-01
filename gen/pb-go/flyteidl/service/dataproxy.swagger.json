@@ -751,8 +751,8 @@
           "$ref": "#/definitions/coreLiteralMap",
           "title": "literal map data will be returned"
         },
-        "flyte_deck_download_link": {
-          "$ref": "#/definitions/serviceCreateDownloadLinkResponse",
+        "pre_signed_urls": {
+          "$ref": "#/definitions/servicePreSignedURLs",
           "title": "Flyte deck html will be returned as a signed url users can download"
         }
       }

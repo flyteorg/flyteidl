@@ -1292,7 +1292,7 @@ class GetDataResponse final :
 
   enum DataCase {
     kLiteralMap = 1,
-    kFlyteDeckDownloadLink = 2,
+    kPreSignedUrls = 2,
     DATA_NOT_SET = 0,
   };
 
@@ -1368,14 +1368,14 @@ class GetDataResponse final :
   ::flyteidl::core::LiteralMap* mutable_literal_map();
   void set_allocated_literal_map(::flyteidl::core::LiteralMap* literal_map);
 
-  // .flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;
-  bool has_flyte_deck_download_link() const;
-  void clear_flyte_deck_download_link();
-  static const int kFlyteDeckDownloadLinkFieldNumber = 2;
-  const ::flyteidl::service::CreateDownloadLinkResponse& flyte_deck_download_link() const;
-  ::flyteidl::service::CreateDownloadLinkResponse* release_flyte_deck_download_link();
-  ::flyteidl::service::CreateDownloadLinkResponse* mutable_flyte_deck_download_link();
-  void set_allocated_flyte_deck_download_link(::flyteidl::service::CreateDownloadLinkResponse* flyte_deck_download_link);
+  // .flyteidl.service.PreSignedURLs pre_signed_urls = 2;
+  bool has_pre_signed_urls() const;
+  void clear_pre_signed_urls();
+  static const int kPreSignedUrlsFieldNumber = 2;
+  const ::flyteidl::service::PreSignedURLs& pre_signed_urls() const;
+  ::flyteidl::service::PreSignedURLs* release_pre_signed_urls();
+  ::flyteidl::service::PreSignedURLs* mutable_pre_signed_urls();
+  void set_allocated_pre_signed_urls(::flyteidl::service::PreSignedURLs* pre_signed_urls);
 
   void clear_data();
   DataCase data_case() const;
@@ -1383,7 +1383,7 @@ class GetDataResponse final :
  private:
   class HasBitSetters;
   void set_has_literal_map();
-  void set_has_flyte_deck_download_link();
+  void set_has_pre_signed_urls();
 
   inline bool has_data() const;
   inline void clear_has_data();
@@ -1392,7 +1392,7 @@ class GetDataResponse final :
   union DataUnion {
     DataUnion() {}
     ::flyteidl::core::LiteralMap* literal_map_;
-    ::flyteidl::service::CreateDownloadLinkResponse* flyte_deck_download_link_;
+    ::flyteidl::service::PreSignedURLs* pre_signed_urls_;
   } data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 _oneof_case_[1];
@@ -2523,45 +2523,45 @@ inline ::flyteidl::core::LiteralMap* GetDataResponse::mutable_literal_map() {
   return data_.literal_map_;
 }
 
-// .flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;
-inline bool GetDataResponse::has_flyte_deck_download_link() const {
-  return data_case() == kFlyteDeckDownloadLink;
+// .flyteidl.service.PreSignedURLs pre_signed_urls = 2;
+inline bool GetDataResponse::has_pre_signed_urls() const {
+  return data_case() == kPreSignedUrls;
 }
-inline void GetDataResponse::set_has_flyte_deck_download_link() {
-  _oneof_case_[0] = kFlyteDeckDownloadLink;
+inline void GetDataResponse::set_has_pre_signed_urls() {
+  _oneof_case_[0] = kPreSignedUrls;
 }
-inline void GetDataResponse::clear_flyte_deck_download_link() {
-  if (has_flyte_deck_download_link()) {
-    delete data_.flyte_deck_download_link_;
+inline void GetDataResponse::clear_pre_signed_urls() {
+  if (has_pre_signed_urls()) {
+    delete data_.pre_signed_urls_;
     clear_has_data();
   }
 }
-inline ::flyteidl::service::CreateDownloadLinkResponse* GetDataResponse::release_flyte_deck_download_link() {
-  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataResponse.flyte_deck_download_link)
-  if (has_flyte_deck_download_link()) {
+inline ::flyteidl::service::PreSignedURLs* GetDataResponse::release_pre_signed_urls() {
+  // @@protoc_insertion_point(field_release:flyteidl.service.GetDataResponse.pre_signed_urls)
+  if (has_pre_signed_urls()) {
     clear_has_data();
-      ::flyteidl::service::CreateDownloadLinkResponse* temp = data_.flyte_deck_download_link_;
-    data_.flyte_deck_download_link_ = nullptr;
+      ::flyteidl::service::PreSignedURLs* temp = data_.pre_signed_urls_;
+    data_.pre_signed_urls_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::flyteidl::service::CreateDownloadLinkResponse& GetDataResponse::flyte_deck_download_link() const {
-  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataResponse.flyte_deck_download_link)
-  return has_flyte_deck_download_link()
-      ? *data_.flyte_deck_download_link_
-      : *reinterpret_cast< ::flyteidl::service::CreateDownloadLinkResponse*>(&::flyteidl::service::_CreateDownloadLinkResponse_default_instance_);
+inline const ::flyteidl::service::PreSignedURLs& GetDataResponse::pre_signed_urls() const {
+  // @@protoc_insertion_point(field_get:flyteidl.service.GetDataResponse.pre_signed_urls)
+  return has_pre_signed_urls()
+      ? *data_.pre_signed_urls_
+      : *reinterpret_cast< ::flyteidl::service::PreSignedURLs*>(&::flyteidl::service::_PreSignedURLs_default_instance_);
 }
-inline ::flyteidl::service::CreateDownloadLinkResponse* GetDataResponse::mutable_flyte_deck_download_link() {
-  if (!has_flyte_deck_download_link()) {
+inline ::flyteidl::service::PreSignedURLs* GetDataResponse::mutable_pre_signed_urls() {
+  if (!has_pre_signed_urls()) {
     clear_data();
-    set_has_flyte_deck_download_link();
-    data_.flyte_deck_download_link_ = CreateMaybeMessage< ::flyteidl::service::CreateDownloadLinkResponse >(
+    set_has_pre_signed_urls();
+    data_.pre_signed_urls_ = CreateMaybeMessage< ::flyteidl::service::PreSignedURLs >(
         GetArenaNoVirtual());
   }
-  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.flyte_deck_download_link)
-  return data_.flyte_deck_download_link_;
+  // @@protoc_insertion_point(field_mutable:flyteidl.service.GetDataResponse.pre_signed_urls)
+  return data_.pre_signed_urls_;
 }
 
 inline bool GetDataResponse::has_data() const {

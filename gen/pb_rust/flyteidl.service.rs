@@ -217,7 +217,7 @@ pub mod get_data_response {
         LiteralMap(super::super::core::LiteralMap),
         /// Flyte deck html will be returned as a signed url users can download
         #[prost(message, tag="2")]
-        FlyteDeckDownloadLink(super::CreateDownloadLinkResponse),
+        PreSignedUrls(super::PreSignedUrLs),
     }
 }
 /// ArtifactType

@@ -8174,25 +8174,25 @@ public final class Dataproxy {
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    boolean hasFlyteDeckDownloadLink();
+    boolean hasPreSignedUrls();
     /**
      * <pre>
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink();
+    flyteidl.service.Dataproxy.PreSignedURLs getPreSignedUrls();
     /**
      * <pre>
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder();
+    flyteidl.service.Dataproxy.PreSignedURLsOrBuilder getPreSignedUrlsOrBuilder();
 
     public flyteidl.service.Dataproxy.GetDataResponse.DataCase getDataCase();
   }
@@ -8250,14 +8250,14 @@ public final class Dataproxy {
               break;
             }
             case 18: {
-              flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder subBuilder = null;
+              flyteidl.service.Dataproxy.PreSignedURLs.Builder subBuilder = null;
               if (dataCase_ == 2) {
-                subBuilder = ((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_).toBuilder();
+                subBuilder = ((flyteidl.service.Dataproxy.PreSignedURLs) data_).toBuilder();
               }
               data_ =
-                  input.readMessage(flyteidl.service.Dataproxy.CreateDownloadLinkResponse.parser(), extensionRegistry);
+                  input.readMessage(flyteidl.service.Dataproxy.PreSignedURLs.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+                subBuilder.mergeFrom((flyteidl.service.Dataproxy.PreSignedURLs) data_);
                 data_ = subBuilder.buildPartial();
               }
               dataCase_ = 2;
@@ -8300,7 +8300,7 @@ public final class Dataproxy {
     public enum DataCase
         implements com.google.protobuf.Internal.EnumLite {
       LITERAL_MAP(1),
-      FLYTE_DECK_DOWNLOAD_LINK(2),
+      PRE_SIGNED_URLS(2),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -8317,7 +8317,7 @@ public final class Dataproxy {
       public static DataCase forNumber(int value) {
         switch (value) {
           case 1: return LITERAL_MAP;
-          case 2: return FLYTE_DECK_DOWNLOAD_LINK;
+          case 2: return PRE_SIGNED_URLS;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -8371,15 +8371,15 @@ public final class Dataproxy {
       return flyteidl.core.Literals.LiteralMap.getDefaultInstance();
     }
 
-    public static final int FLYTE_DECK_DOWNLOAD_LINK_FIELD_NUMBER = 2;
+    public static final int PRE_SIGNED_URLS_FIELD_NUMBER = 2;
     /**
      * <pre>
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    public boolean hasFlyteDeckDownloadLink() {
+    public boolean hasPreSignedUrls() {
       return dataCase_ == 2;
     }
     /**
@@ -8387,26 +8387,26 @@ public final class Dataproxy {
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    public flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink() {
+    public flyteidl.service.Dataproxy.PreSignedURLs getPreSignedUrls() {
       if (dataCase_ == 2) {
-         return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+         return (flyteidl.service.Dataproxy.PreSignedURLs) data_;
       }
-      return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+      return flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
     }
     /**
      * <pre>
      * Flyte deck html will be returned as a signed url users can download
      * </pre>
      *
-     * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+     * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
      */
-    public flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder() {
+    public flyteidl.service.Dataproxy.PreSignedURLsOrBuilder getPreSignedUrlsOrBuilder() {
       if (dataCase_ == 2) {
-         return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+         return (flyteidl.service.Dataproxy.PreSignedURLs) data_;
       }
-      return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+      return flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8427,7 +8427,7 @@ public final class Dataproxy {
         output.writeMessage(1, (flyteidl.core.Literals.LiteralMap) data_);
       }
       if (dataCase_ == 2) {
-        output.writeMessage(2, (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+        output.writeMessage(2, (flyteidl.service.Dataproxy.PreSignedURLs) data_);
       }
       unknownFields.writeTo(output);
     }
@@ -8444,7 +8444,7 @@ public final class Dataproxy {
       }
       if (dataCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_);
+          .computeMessageSize(2, (flyteidl.service.Dataproxy.PreSignedURLs) data_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8468,8 +8468,8 @@ public final class Dataproxy {
               .equals(other.getLiteralMap())) return false;
           break;
         case 2:
-          if (!getFlyteDeckDownloadLink()
-              .equals(other.getFlyteDeckDownloadLink())) return false;
+          if (!getPreSignedUrls()
+              .equals(other.getPreSignedUrls())) return false;
           break;
         case 0:
         default:
@@ -8491,8 +8491,8 @@ public final class Dataproxy {
           hash = (53 * hash) + getLiteralMap().hashCode();
           break;
         case 2:
-          hash = (37 * hash) + FLYTE_DECK_DOWNLOAD_LINK_FIELD_NUMBER;
-          hash = (53 * hash) + getFlyteDeckDownloadLink().hashCode();
+          hash = (37 * hash) + PRE_SIGNED_URLS_FIELD_NUMBER;
+          hash = (53 * hash) + getPreSignedUrls().hashCode();
           break;
         case 0:
         default:
@@ -8666,10 +8666,10 @@ public final class Dataproxy {
           }
         }
         if (dataCase_ == 2) {
-          if (flyteDeckDownloadLinkBuilder_ == null) {
+          if (preSignedUrlsBuilder_ == null) {
             result.data_ = data_;
           } else {
-            result.data_ = flyteDeckDownloadLinkBuilder_.build();
+            result.data_ = preSignedUrlsBuilder_.build();
           }
         }
         result.dataCase_ = dataCase_;
@@ -8726,8 +8726,8 @@ public final class Dataproxy {
             mergeLiteralMap(other.getLiteralMap());
             break;
           }
-          case FLYTE_DECK_DOWNLOAD_LINK: {
-            mergeFlyteDeckDownloadLink(other.getFlyteDeckDownloadLink());
+          case PRE_SIGNED_URLS: {
+            mergePreSignedUrls(other.getPreSignedUrls());
             break;
           }
           case DATA_NOT_SET: {
@@ -8951,15 +8951,15 @@ public final class Dataproxy {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder> flyteDeckDownloadLinkBuilder_;
+          flyteidl.service.Dataproxy.PreSignedURLs, flyteidl.service.Dataproxy.PreSignedURLs.Builder, flyteidl.service.Dataproxy.PreSignedURLsOrBuilder> preSignedUrlsBuilder_;
       /**
        * <pre>
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public boolean hasFlyteDeckDownloadLink() {
+      public boolean hasPreSignedUrls() {
         return dataCase_ == 2;
       }
       /**
@@ -8967,19 +8967,19 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public flyteidl.service.Dataproxy.CreateDownloadLinkResponse getFlyteDeckDownloadLink() {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+      public flyteidl.service.Dataproxy.PreSignedURLs getPreSignedUrls() {
+        if (preSignedUrlsBuilder_ == null) {
           if (dataCase_ == 2) {
-            return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+            return (flyteidl.service.Dataproxy.PreSignedURLs) data_;
           }
-          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+          return flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
         } else {
           if (dataCase_ == 2) {
-            return flyteDeckDownloadLinkBuilder_.getMessage();
+            return preSignedUrlsBuilder_.getMessage();
           }
-          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+          return flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
         }
       }
       /**
@@ -8987,17 +8987,17 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public Builder setFlyteDeckDownloadLink(flyteidl.service.Dataproxy.CreateDownloadLinkResponse value) {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+      public Builder setPreSignedUrls(flyteidl.service.Dataproxy.PreSignedURLs value) {
+        if (preSignedUrlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           data_ = value;
           onChanged();
         } else {
-          flyteDeckDownloadLinkBuilder_.setMessage(value);
+          preSignedUrlsBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -9007,15 +9007,15 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public Builder setFlyteDeckDownloadLink(
-          flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder builderForValue) {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+      public Builder setPreSignedUrls(
+          flyteidl.service.Dataproxy.PreSignedURLs.Builder builderForValue) {
+        if (preSignedUrlsBuilder_ == null) {
           data_ = builderForValue.build();
           onChanged();
         } else {
-          flyteDeckDownloadLinkBuilder_.setMessage(builderForValue.build());
+          preSignedUrlsBuilder_.setMessage(builderForValue.build());
         }
         dataCase_ = 2;
         return this;
@@ -9025,13 +9025,13 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public Builder mergeFlyteDeckDownloadLink(flyteidl.service.Dataproxy.CreateDownloadLinkResponse value) {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+      public Builder mergePreSignedUrls(flyteidl.service.Dataproxy.PreSignedURLs value) {
+        if (preSignedUrlsBuilder_ == null) {
           if (dataCase_ == 2 &&
-              data_ != flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance()) {
-            data_ = flyteidl.service.Dataproxy.CreateDownloadLinkResponse.newBuilder((flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_)
+              data_ != flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance()) {
+            data_ = flyteidl.service.Dataproxy.PreSignedURLs.newBuilder((flyteidl.service.Dataproxy.PreSignedURLs) data_)
                 .mergeFrom(value).buildPartial();
           } else {
             data_ = value;
@@ -9039,9 +9039,9 @@ public final class Dataproxy {
           onChanged();
         } else {
           if (dataCase_ == 2) {
-            flyteDeckDownloadLinkBuilder_.mergeFrom(value);
+            preSignedUrlsBuilder_.mergeFrom(value);
           }
-          flyteDeckDownloadLinkBuilder_.setMessage(value);
+          preSignedUrlsBuilder_.setMessage(value);
         }
         dataCase_ = 2;
         return this;
@@ -9051,10 +9051,10 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public Builder clearFlyteDeckDownloadLink() {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+      public Builder clearPreSignedUrls() {
+        if (preSignedUrlsBuilder_ == null) {
           if (dataCase_ == 2) {
             dataCase_ = 0;
             data_ = null;
@@ -9065,7 +9065,7 @@ public final class Dataproxy {
             dataCase_ = 0;
             data_ = null;
           }
-          flyteDeckDownloadLinkBuilder_.clear();
+          preSignedUrlsBuilder_.clear();
         }
         return this;
       }
@@ -9074,26 +9074,26 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder getFlyteDeckDownloadLinkBuilder() {
-        return getFlyteDeckDownloadLinkFieldBuilder().getBuilder();
+      public flyteidl.service.Dataproxy.PreSignedURLs.Builder getPreSignedUrlsBuilder() {
+        return getPreSignedUrlsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
-      public flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder getFlyteDeckDownloadLinkOrBuilder() {
-        if ((dataCase_ == 2) && (flyteDeckDownloadLinkBuilder_ != null)) {
-          return flyteDeckDownloadLinkBuilder_.getMessageOrBuilder();
+      public flyteidl.service.Dataproxy.PreSignedURLsOrBuilder getPreSignedUrlsOrBuilder() {
+        if ((dataCase_ == 2) && (preSignedUrlsBuilder_ != null)) {
+          return preSignedUrlsBuilder_.getMessageOrBuilder();
         } else {
           if (dataCase_ == 2) {
-            return (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_;
+            return (flyteidl.service.Dataproxy.PreSignedURLs) data_;
           }
-          return flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+          return flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
         }
       }
       /**
@@ -9101,25 +9101,25 @@ public final class Dataproxy {
        * Flyte deck html will be returned as a signed url users can download
        * </pre>
        *
-       * <code>.flyteidl.service.CreateDownloadLinkResponse flyte_deck_download_link = 2;</code>
+       * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder> 
-          getFlyteDeckDownloadLinkFieldBuilder() {
-        if (flyteDeckDownloadLinkBuilder_ == null) {
+          flyteidl.service.Dataproxy.PreSignedURLs, flyteidl.service.Dataproxy.PreSignedURLs.Builder, flyteidl.service.Dataproxy.PreSignedURLsOrBuilder> 
+          getPreSignedUrlsFieldBuilder() {
+        if (preSignedUrlsBuilder_ == null) {
           if (!(dataCase_ == 2)) {
-            data_ = flyteidl.service.Dataproxy.CreateDownloadLinkResponse.getDefaultInstance();
+            data_ = flyteidl.service.Dataproxy.PreSignedURLs.getDefaultInstance();
           }
-          flyteDeckDownloadLinkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              flyteidl.service.Dataproxy.CreateDownloadLinkResponse, flyteidl.service.Dataproxy.CreateDownloadLinkResponse.Builder, flyteidl.service.Dataproxy.CreateDownloadLinkResponseOrBuilder>(
-                  (flyteidl.service.Dataproxy.CreateDownloadLinkResponse) data_,
+          preSignedUrlsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              flyteidl.service.Dataproxy.PreSignedURLs, flyteidl.service.Dataproxy.PreSignedURLs.Builder, flyteidl.service.Dataproxy.PreSignedURLsOrBuilder>(
+                  (flyteidl.service.Dataproxy.PreSignedURLs) data_,
                   getParentForChildren(),
                   isClean());
           data_ = null;
         }
         dataCase_ = 2;
         onChanged();;
-        return flyteDeckDownloadLinkBuilder_;
+        return preSignedUrlsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9257,30 +9257,29 @@ public final class Dataproxy {
       "vice.PreSignedURLs\"S\n\rPreSignedURLs\022\022\n\ns" +
       "igned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001(\0132\032.go" +
       "ogle.protobuf.Timestamp\"#\n\016GetDataReques" +
-      "t\022\021\n\tflyte_url\030\001 \001(\t\"\235\001\n\017GetDataResponse" +
+      "t\022\021\n\tflyte_url\030\001 \001(\t\"\207\001\n\017GetDataResponse" +
       "\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl.core.Li" +
-      "teralMapH\000\022P\n\030flyte_deck_download_link\030\002" +
-      " \001(\0132,.flyteidl.service.CreateDownloadLi" +
-      "nkResponseH\000B\006\n\004data*C\n\014ArtifactType\022\033\n\027" +
-      "ARTIFACT_TYPE_UNDEFINED\020\000\022\026\n\022ARTIFACT_TY" +
-      "PE_DECK\020\0012\342\004\n\020DataProxyService\022\240\001\n\024Creat" +
-      "eUploadLocation\022-.flyteidl.service.Creat" +
-      "eUploadLocationRequest\032..flyteidl.servic" +
-      "e.CreateUploadLocationResponse\")\202\323\344\223\002#\"\036" +
-      "/api/v1/dataproxy/artifact_urn:\001*\022\246\001\n\026Cr" +
-      "eateDownloadLocation\022/.flyteidl.service." +
-      "CreateDownloadLocationRequest\0320.flyteidl" +
-      ".service.CreateDownloadLocationResponse\"" +
-      ")\210\002\001\202\323\344\223\002 \022\036/api/v1/dataproxy/artifact_u" +
-      "rn\022\233\001\n\022CreateDownloadLink\022+.flyteidl.ser" +
-      "vice.CreateDownloadLinkRequest\032,.flyteid" +
-      "l.service.CreateDownloadLinkResponse\"*\202\323" +
-      "\344\223\002$\"\037/api/v1/dataproxy/artifact_link:\001*" +
-      "\022d\n\007GetData\022 .flyteidl.service.GetDataRe" +
-      "quest\032!.flyteidl.service.GetDataResponse" +
-      "\"\024\202\323\344\223\002\016\022\014/api/v1/dataB9Z7github.com/fly" +
-      "teorg/flyteidl/gen/pb-go/flyteidl/servic" +
-      "eb\006proto3"
+      "teralMapH\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.fl" +
+      "yteidl.service.PreSignedURLsH\000B\006\n\004data*C" +
+      "\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFINE" +
+      "D\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataProx" +
+      "yService\022\240\001\n\024CreateUploadLocation\022-.flyt" +
+      "eidl.service.CreateUploadLocationRequest" +
+      "\032..flyteidl.service.CreateUploadLocation" +
+      "Response\")\202\323\344\223\002#\"\036/api/v1/dataproxy/arti" +
+      "fact_urn:\001*\022\246\001\n\026CreateDownloadLocation\022/" +
+      ".flyteidl.service.CreateDownloadLocation" +
+      "Request\0320.flyteidl.service.CreateDownloa" +
+      "dLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/da" +
+      "taproxy/artifact_urn\022\233\001\n\022CreateDownloadL" +
+      "ink\022+.flyteidl.service.CreateDownloadLin" +
+      "kRequest\032,.flyteidl.service.CreateDownlo" +
+      "adLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/dataprox" +
+      "y/artifact_link:\001*\022d\n\007GetData\022 .flyteidl" +
+      ".service.GetDataRequest\032!.flyteidl.servi" +
+      "ce.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/data" +
+      "B9Z7github.com/flyteorg/flyteidl/gen/pb-" +
+      "go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9352,7 +9351,7 @@ public final class Dataproxy {
     internal_static_flyteidl_service_GetDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_service_GetDataResponse_descriptor,
-        new java.lang.String[] { "LiteralMap", "FlyteDeckDownloadLink", "Data", });
+        new java.lang.String[] { "LiteralMap", "PreSignedUrls", "Data", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

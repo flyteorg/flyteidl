@@ -130,7 +130,7 @@ message GetDataResponse {
     core.LiteralMap literal_map                = 1;
 
     // Flyte deck html will be returned as a signed url users can download
-    CreateDownloadLinkResponse flyte_deck_download_link = 2;
+    PreSignedURLs pre_signed_urls = 2;
   }
 }
 
