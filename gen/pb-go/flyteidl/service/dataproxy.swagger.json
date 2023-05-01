@@ -680,7 +680,7 @@
         },
         "pre_signed_urls": {
           "$ref": "#/definitions/servicePreSignedURLs",
-          "title": "New wrapper object since the message is shared across this and the GetDataResponse"
+          "title": "New wrapper object containing the signed urls and expiration time"
         }
       },
       "title": "CreateDownloadLinkResponse defines the response for the generated links"
@@ -772,7 +772,8 @@
           "format": "date-time",
           "description": "ExpiresAt defines when will the signed URL expire."
         }
-      }
+      },
+      "title": "Wrapper object since the message is shared across this and the GetDataResponse"
     }
   }
 }

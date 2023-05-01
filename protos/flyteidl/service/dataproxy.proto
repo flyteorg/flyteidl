@@ -98,15 +98,16 @@ message CreateDownloadLinkRequest {
 // CreateDownloadLinkResponse defines the response for the generated links
 message CreateDownloadLinkResponse {
   // SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
-  repeated string signed_url = 1;  // deprecate
+  repeated string signed_url = 1 [deprecated = true];
 
   // ExpiresAt defines when will the signed URL expire.
-  google.protobuf.Timestamp expires_at = 2;  // deprecate
+  google.protobuf.Timestamp expires_at = 2 [deprecated = true];
 
-  // New wrapper object since the message is shared across this and the GetDataResponse
+  // New wrapper object containing the signed urls and expiration time
   PreSignedURLs pre_signed_urls = 3;
 }
 
+// Wrapper object since the message is shared across this and the GetDataResponse
 message PreSignedURLs {
   // SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
   repeated string signed_url = 1;

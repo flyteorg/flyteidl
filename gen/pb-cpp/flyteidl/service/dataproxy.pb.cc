@@ -342,41 +342,41 @@ const char descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto[] =
   "ce.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031.go"
   "ogle.protobuf.Duration\022C\n\021node_execution"
   "_id\030\003 \001(\0132&.flyteidl.core.NodeExecutionI"
-  "dentifierH\000B\010\n\006source\"\232\001\n\032CreateDownload"
-  "LinkResponse\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpi"
-  "res_at\030\002 \001(\0132\032.google.protobuf.Timestamp"
-  "\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyteidl.ser"
-  "vice.PreSignedURLs\"S\n\rPreSignedURLs\022\022\n\ns"
-  "igned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001(\0132\032.go"
-  "ogle.protobuf.Timestamp\"#\n\016GetDataReques"
-  "t\022\021\n\tflyte_url\030\001 \001(\t\"\207\001\n\017GetDataResponse"
-  "\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl.core.Li"
-  "teralMapH\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.fl"
-  "yteidl.service.PreSignedURLsH\000B\006\n\004data*C"
-  "\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFINE"
-  "D\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataProx"
-  "yService\022\240\001\n\024CreateUploadLocation\022-.flyt"
-  "eidl.service.CreateUploadLocationRequest"
-  "\032..flyteidl.service.CreateUploadLocation"
-  "Response\")\202\323\344\223\002#\"\036/api/v1/dataproxy/arti"
-  "fact_urn:\001*\022\246\001\n\026CreateDownloadLocation\022/"
-  ".flyteidl.service.CreateDownloadLocation"
-  "Request\0320.flyteidl.service.CreateDownloa"
-  "dLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/da"
-  "taproxy/artifact_urn\022\233\001\n\022CreateDownloadL"
-  "ink\022+.flyteidl.service.CreateDownloadLin"
-  "kRequest\032,.flyteidl.service.CreateDownlo"
-  "adLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/dataprox"
-  "y/artifact_link:\001*\022d\n\007GetData\022 .flyteidl"
-  ".service.GetDataRequest\032!.flyteidl.servi"
-  "ce.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/data"
-  "B9Z7github.com/flyteorg/flyteidl/gen/pb-"
-  "go/flyteidl/serviceb\006proto3"
+  "dentifierH\000B\010\n\006source\"\242\001\n\032CreateDownload"
+  "LinkResponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222\n\n"
+  "expires_at\030\002 \001(\0132\032.google.protobuf.Times"
+  "tampB\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyt"
+  "eidl.service.PreSignedURLs\"S\n\rPreSignedU"
+  "RLs\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 "
+  "\001(\0132\032.google.protobuf.Timestamp\"#\n\016GetDa"
+  "taRequest\022\021\n\tflyte_url\030\001 \001(\t\"\207\001\n\017GetData"
+  "Response\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl"
+  ".core.LiteralMapH\000\022:\n\017pre_signed_urls\030\002 "
+  "\001(\0132\037.flyteidl.service.PreSignedURLsH\000B\006"
+  "\n\004data*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_"
+  "UNDEFINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020"
+  "DataProxyService\022\240\001\n\024CreateUploadLocatio"
+  "n\022-.flyteidl.service.CreateUploadLocatio"
+  "nRequest\032..flyteidl.service.CreateUpload"
+  "LocationResponse\")\202\323\344\223\002#\"\036/api/v1/datapr"
+  "oxy/artifact_urn:\001*\022\246\001\n\026CreateDownloadLo"
+  "cation\022/.flyteidl.service.CreateDownload"
+  "LocationRequest\0320.flyteidl.service.Creat"
+  "eDownloadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/a"
+  "pi/v1/dataproxy/artifact_urn\022\233\001\n\022CreateD"
+  "ownloadLink\022+.flyteidl.service.CreateDow"
+  "nloadLinkRequest\032,.flyteidl.service.Crea"
+  "teDownloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/"
+  "dataproxy/artifact_link:\001*\022d\n\007GetData\022 ."
+  "flyteidl.service.GetDataRequest\032!.flytei"
+  "dl.service.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api"
+  "/v1/dataB9Z7github.com/flyteorg/flyteidl"
+  "/gen/pb-go/flyteidl/serviceb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fservice_2fdataproxy_2eproto = {
   false, InitDefaults_flyteidl_2fservice_2fdataproxy_2eproto, 
   descriptor_table_protodef_flyteidl_2fservice_2fdataproxy_2eproto,
-  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 2067,
+  "flyteidl/service/dataproxy.proto", &assign_descriptors_table_flyteidl_2fservice_2fdataproxy_2eproto, 2075,
 };
 
 void AddDescriptors_flyteidl_2fservice_2fdataproxy_2eproto() {
@@ -2744,7 +2744,7 @@ const char* CreateDownloadLinkResponse::_InternalParse(const char* begin, const 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated string signed_url = 1;
+      // repeated string signed_url = 1 [deprecated = true];
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
@@ -2763,7 +2763,7 @@ const char* CreateDownloadLinkResponse::_InternalParse(const char* begin, const 
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
         break;
       }
-      // .google.protobuf.Timestamp expires_at = 2;
+      // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
@@ -2823,7 +2823,7 @@ bool CreateDownloadLinkResponse::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string signed_url = 1;
+      // repeated string signed_url = 1 [deprecated = true];
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
@@ -2839,7 +2839,7 @@ bool CreateDownloadLinkResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // .google.protobuf.Timestamp expires_at = 2;
+      // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -2888,7 +2888,7 @@ void CreateDownloadLinkResponse::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
+  // repeated string signed_url = 1 [deprecated = true];
   for (int i = 0, n = this->signed_url_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
@@ -2898,7 +2898,7 @@ void CreateDownloadLinkResponse::SerializeWithCachedSizes(
       1, this->signed_url(i), output);
   }
 
-  // .google.protobuf.Timestamp expires_at = 2;
+  // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
   if (this->has_expires_at()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, HasBitSetters::expires_at(this), output);
@@ -2923,7 +2923,7 @@ void CreateDownloadLinkResponse::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
+  // repeated string signed_url = 1 [deprecated = true];
   for (int i = 0, n = this->signed_url_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->signed_url(i).data(), static_cast<int>(this->signed_url(i).length()),
@@ -2933,7 +2933,7 @@ void CreateDownloadLinkResponse::SerializeWithCachedSizes(
       WriteStringToArray(1, this->signed_url(i), target);
   }
 
-  // .google.protobuf.Timestamp expires_at = 2;
+  // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
   if (this->has_expires_at()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -2968,7 +2968,7 @@ size_t CreateDownloadLinkResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string signed_url = 1;
+  // repeated string signed_url = 1 [deprecated = true];
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->signed_url_size());
   for (int i = 0, n = this->signed_url_size(); i < n; i++) {
@@ -2976,7 +2976,7 @@ size_t CreateDownloadLinkResponse::ByteSizeLong() const {
       this->signed_url(i));
   }
 
-  // .google.protobuf.Timestamp expires_at = 2;
+  // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
   if (this->has_expires_at()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(

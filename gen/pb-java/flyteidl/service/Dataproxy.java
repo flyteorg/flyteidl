@@ -5411,34 +5411,34 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    java.util.List<java.lang.String>
+    @java.lang.Deprecated java.util.List<java.lang.String>
         getSignedUrlList();
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    int getSignedUrlCount();
+    @java.lang.Deprecated int getSignedUrlCount();
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    java.lang.String getSignedUrl(int index);
+    @java.lang.Deprecated java.lang.String getSignedUrl(int index);
     /**
      * <pre>
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    com.google.protobuf.ByteString
+    @java.lang.Deprecated com.google.protobuf.ByteString
         getSignedUrlBytes(int index);
 
     /**
@@ -5446,29 +5446,29 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    boolean hasExpiresAt();
+    @java.lang.Deprecated boolean hasExpiresAt();
     /**
      * <pre>
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    com.google.protobuf.Timestamp getExpiresAt();
+    @java.lang.Deprecated com.google.protobuf.Timestamp getExpiresAt();
     /**
      * <pre>
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
+    @java.lang.Deprecated com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
 
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -5476,7 +5476,7 @@ public final class Dataproxy {
     boolean hasPreSignedUrls();
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -5484,7 +5484,7 @@ public final class Dataproxy {
     flyteidl.service.Dataproxy.PreSignedURLs getPreSignedUrls();
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -5613,9 +5613,9 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getSignedUrlList() {
       return signedUrl_;
     }
@@ -5624,9 +5624,9 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    public int getSignedUrlCount() {
+    @java.lang.Deprecated public int getSignedUrlCount() {
       return signedUrl_.size();
     }
     /**
@@ -5634,9 +5634,9 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    public java.lang.String getSignedUrl(int index) {
+    @java.lang.Deprecated public java.lang.String getSignedUrl(int index) {
       return signedUrl_.get(index);
     }
     /**
@@ -5644,9 +5644,9 @@ public final class Dataproxy {
      * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
      * </pre>
      *
-     * <code>repeated string signed_url = 1;</code>
+     * <code>repeated string signed_url = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getSignedUrlBytes(int index) {
       return signedUrl_.getByteString(index);
     }
@@ -5658,9 +5658,9 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    public boolean hasExpiresAt() {
+    @java.lang.Deprecated public boolean hasExpiresAt() {
       return expiresAt_ != null;
     }
     /**
@@ -5668,9 +5668,9 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.Timestamp getExpiresAt() {
+    @java.lang.Deprecated public com.google.protobuf.Timestamp getExpiresAt() {
       return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
     }
     /**
@@ -5678,9 +5678,9 @@ public final class Dataproxy {
      * ExpiresAt defines when will the signed URL expire.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+     * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
       return getExpiresAt();
     }
 
@@ -5688,7 +5688,7 @@ public final class Dataproxy {
     private flyteidl.service.Dataproxy.PreSignedURLs preSignedUrls_;
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -5698,7 +5698,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -5708,7 +5708,7 @@ public final class Dataproxy {
     }
     /**
      * <pre>
-     * New wrapper object since the message is shared across this and the GetDataResponse
+     * New wrapper object containing the signed urls and expiration time
      * </pre>
      *
      * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6116,9 +6116,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public com.google.protobuf.ProtocolStringList
+      @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
           getSignedUrlList() {
         return signedUrl_.getUnmodifiableView();
       }
@@ -6127,9 +6127,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public int getSignedUrlCount() {
+      @java.lang.Deprecated public int getSignedUrlCount() {
         return signedUrl_.size();
       }
       /**
@@ -6137,9 +6137,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public java.lang.String getSignedUrl(int index) {
+      @java.lang.Deprecated public java.lang.String getSignedUrl(int index) {
         return signedUrl_.get(index);
       }
       /**
@@ -6147,9 +6147,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getSignedUrlBytes(int index) {
         return signedUrl_.getByteString(index);
       }
@@ -6158,9 +6158,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public Builder setSignedUrl(
+      @java.lang.Deprecated public Builder setSignedUrl(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6175,9 +6175,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public Builder addSignedUrl(
+      @java.lang.Deprecated public Builder addSignedUrl(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6192,9 +6192,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public Builder addAllSignedUrl(
+      @java.lang.Deprecated public Builder addAllSignedUrl(
           java.lang.Iterable<java.lang.String> values) {
         ensureSignedUrlIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6207,9 +6207,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public Builder clearSignedUrl() {
+      @java.lang.Deprecated public Builder clearSignedUrl() {
         signedUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
@@ -6220,9 +6220,9 @@ public final class Dataproxy {
        * SignedUrl specifies the url to use to download content from (e.g. https://my-bucket.s3.amazonaws.com/randomstring/suffix.tar?X-...)
        * </pre>
        *
-       * <code>repeated string signed_url = 1;</code>
+       * <code>repeated string signed_url = 1 [deprecated = true];</code>
        */
-      public Builder addSignedUrlBytes(
+      @java.lang.Deprecated public Builder addSignedUrlBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -6242,9 +6242,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public boolean hasExpiresAt() {
+      @java.lang.Deprecated public boolean hasExpiresAt() {
         return expiresAtBuilder_ != null || expiresAt_ != null;
       }
       /**
@@ -6252,9 +6252,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.Timestamp getExpiresAt() {
+      @java.lang.Deprecated public com.google.protobuf.Timestamp getExpiresAt() {
         if (expiresAtBuilder_ == null) {
           return expiresAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiresAt_;
         } else {
@@ -6266,9 +6266,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public Builder setExpiresAt(com.google.protobuf.Timestamp value) {
+      @java.lang.Deprecated public Builder setExpiresAt(com.google.protobuf.Timestamp value) {
         if (expiresAtBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6286,9 +6286,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public Builder setExpiresAt(
+      @java.lang.Deprecated public Builder setExpiresAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (expiresAtBuilder_ == null) {
           expiresAt_ = builderForValue.build();
@@ -6304,9 +6304,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public Builder mergeExpiresAt(com.google.protobuf.Timestamp value) {
+      @java.lang.Deprecated public Builder mergeExpiresAt(com.google.protobuf.Timestamp value) {
         if (expiresAtBuilder_ == null) {
           if (expiresAt_ != null) {
             expiresAt_ =
@@ -6326,9 +6326,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public Builder clearExpiresAt() {
+      @java.lang.Deprecated public Builder clearExpiresAt() {
         if (expiresAtBuilder_ == null) {
           expiresAt_ = null;
           onChanged();
@@ -6344,9 +6344,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.Timestamp.Builder getExpiresAtBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getExpiresAtBuilder() {
         
         onChanged();
         return getExpiresAtFieldBuilder().getBuilder();
@@ -6356,9 +6356,9 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
+      @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder() {
         if (expiresAtBuilder_ != null) {
           return expiresAtBuilder_.getMessageOrBuilder();
         } else {
@@ -6371,7 +6371,7 @@ public final class Dataproxy {
        * ExpiresAt defines when will the signed URL expire.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp expires_at = 2;</code>
+       * <code>.google.protobuf.Timestamp expires_at = 2 [deprecated = true];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -6392,7 +6392,7 @@ public final class Dataproxy {
           flyteidl.service.Dataproxy.PreSignedURLs, flyteidl.service.Dataproxy.PreSignedURLs.Builder, flyteidl.service.Dataproxy.PreSignedURLsOrBuilder> preSignedUrlsBuilder_;
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6402,7 +6402,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6416,7 +6416,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6436,7 +6436,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6454,7 +6454,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6476,7 +6476,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6494,7 +6494,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6506,7 +6506,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6521,7 +6521,7 @@ public final class Dataproxy {
       }
       /**
        * <pre>
-       * New wrapper object since the message is shared across this and the GetDataResponse
+       * New wrapper object containing the signed urls and expiration time
        * </pre>
        *
        * <code>.flyteidl.service.PreSignedURLs pre_signed_urls = 3;</code>
@@ -6657,6 +6657,10 @@ public final class Dataproxy {
     com.google.protobuf.TimestampOrBuilder getExpiresAtOrBuilder();
   }
   /**
+   * <pre>
+   * Wrapper object since the message is shared across this and the GetDataResponse
+   * </pre>
+   *
    * Protobuf type {@code flyteidl.service.PreSignedURLs}
    */
   public  static final class PreSignedURLs extends
@@ -7010,6 +7014,10 @@ public final class Dataproxy {
       return builder;
     }
     /**
+     * <pre>
+     * Wrapper object since the message is shared across this and the GetDataResponse
+     * </pre>
+     *
      * Protobuf type {@code flyteidl.service.PreSignedURLs}
      */
     public static final class Builder extends
@@ -9250,36 +9258,36 @@ public final class Dataproxy {
       "ce.ArtifactType\022-\n\nexpires_in\030\002 \001(\0132\031.go" +
       "ogle.protobuf.Duration\022C\n\021node_execution" +
       "_id\030\003 \001(\0132&.flyteidl.core.NodeExecutionI" +
-      "dentifierH\000B\010\n\006source\"\232\001\n\032CreateDownload" +
-      "LinkResponse\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpi" +
-      "res_at\030\002 \001(\0132\032.google.protobuf.Timestamp" +
-      "\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyteidl.ser" +
-      "vice.PreSignedURLs\"S\n\rPreSignedURLs\022\022\n\ns" +
-      "igned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\"#\n\016GetDataReques" +
-      "t\022\021\n\tflyte_url\030\001 \001(\t\"\207\001\n\017GetDataResponse" +
-      "\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl.core.Li" +
-      "teralMapH\000\022:\n\017pre_signed_urls\030\002 \001(\0132\037.fl" +
-      "yteidl.service.PreSignedURLsH\000B\006\n\004data*C" +
-      "\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_UNDEFINE" +
-      "D\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020DataProx" +
-      "yService\022\240\001\n\024CreateUploadLocation\022-.flyt" +
-      "eidl.service.CreateUploadLocationRequest" +
-      "\032..flyteidl.service.CreateUploadLocation" +
-      "Response\")\202\323\344\223\002#\"\036/api/v1/dataproxy/arti" +
-      "fact_urn:\001*\022\246\001\n\026CreateDownloadLocation\022/" +
-      ".flyteidl.service.CreateDownloadLocation" +
-      "Request\0320.flyteidl.service.CreateDownloa" +
-      "dLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/api/v1/da" +
-      "taproxy/artifact_urn\022\233\001\n\022CreateDownloadL" +
-      "ink\022+.flyteidl.service.CreateDownloadLin" +
-      "kRequest\032,.flyteidl.service.CreateDownlo" +
-      "adLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/dataprox" +
-      "y/artifact_link:\001*\022d\n\007GetData\022 .flyteidl" +
-      ".service.GetDataRequest\032!.flyteidl.servi" +
-      "ce.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api/v1/data" +
-      "B9Z7github.com/flyteorg/flyteidl/gen/pb-" +
-      "go/flyteidl/serviceb\006proto3"
+      "dentifierH\000B\010\n\006source\"\242\001\n\032CreateDownload" +
+      "LinkResponse\022\026\n\nsigned_url\030\001 \003(\tB\002\030\001\0222\n\n" +
+      "expires_at\030\002 \001(\0132\032.google.protobuf.Times" +
+      "tampB\002\030\001\0228\n\017pre_signed_urls\030\003 \001(\0132\037.flyt" +
+      "eidl.service.PreSignedURLs\"S\n\rPreSignedU" +
+      "RLs\022\022\n\nsigned_url\030\001 \003(\t\022.\n\nexpires_at\030\002 " +
+      "\001(\0132\032.google.protobuf.Timestamp\"#\n\016GetDa" +
+      "taRequest\022\021\n\tflyte_url\030\001 \001(\t\"\207\001\n\017GetData" +
+      "Response\0220\n\013literal_map\030\001 \001(\0132\031.flyteidl" +
+      ".core.LiteralMapH\000\022:\n\017pre_signed_urls\030\002 " +
+      "\001(\0132\037.flyteidl.service.PreSignedURLsH\000B\006" +
+      "\n\004data*C\n\014ArtifactType\022\033\n\027ARTIFACT_TYPE_" +
+      "UNDEFINED\020\000\022\026\n\022ARTIFACT_TYPE_DECK\020\0012\342\004\n\020" +
+      "DataProxyService\022\240\001\n\024CreateUploadLocatio" +
+      "n\022-.flyteidl.service.CreateUploadLocatio" +
+      "nRequest\032..flyteidl.service.CreateUpload" +
+      "LocationResponse\")\202\323\344\223\002#\"\036/api/v1/datapr" +
+      "oxy/artifact_urn:\001*\022\246\001\n\026CreateDownloadLo" +
+      "cation\022/.flyteidl.service.CreateDownload" +
+      "LocationRequest\0320.flyteidl.service.Creat" +
+      "eDownloadLocationResponse\")\210\002\001\202\323\344\223\002 \022\036/a" +
+      "pi/v1/dataproxy/artifact_urn\022\233\001\n\022CreateD" +
+      "ownloadLink\022+.flyteidl.service.CreateDow" +
+      "nloadLinkRequest\032,.flyteidl.service.Crea" +
+      "teDownloadLinkResponse\"*\202\323\344\223\002$\"\037/api/v1/" +
+      "dataproxy/artifact_link:\001*\022d\n\007GetData\022 ." +
+      "flyteidl.service.GetDataRequest\032!.flytei" +
+      "dl.service.GetDataResponse\"\024\202\323\344\223\002\016\022\014/api" +
+      "/v1/dataB9Z7github.com/flyteorg/flyteidl" +
+      "/gen/pb-go/flyteidl/serviceb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

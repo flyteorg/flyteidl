@@ -947,36 +947,36 @@ class CreateDownloadLinkResponse final :
 
   // accessors -------------------------------------------------------
 
-  // repeated string signed_url = 1;
-  int signed_url_size() const;
-  void clear_signed_url();
-  static const int kSignedUrlFieldNumber = 1;
-  const ::std::string& signed_url(int index) const;
-  ::std::string* mutable_signed_url(int index);
-  void set_signed_url(int index, const ::std::string& value);
+  // repeated string signed_url = 1 [deprecated = true];
+  PROTOBUF_DEPRECATED int signed_url_size() const;
+  PROTOBUF_DEPRECATED void clear_signed_url();
+  PROTOBUF_DEPRECATED static const int kSignedUrlFieldNumber = 1;
+  PROTOBUF_DEPRECATED const ::std::string& signed_url(int index) const;
+  PROTOBUF_DEPRECATED ::std::string* mutable_signed_url(int index);
+  PROTOBUF_DEPRECATED void set_signed_url(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_signed_url(int index, ::std::string&& value);
+  PROTOBUF_DEPRECATED void set_signed_url(int index, ::std::string&& value);
   #endif
-  void set_signed_url(int index, const char* value);
-  void set_signed_url(int index, const char* value, size_t size);
-  ::std::string* add_signed_url();
-  void add_signed_url(const ::std::string& value);
+  PROTOBUF_DEPRECATED void set_signed_url(int index, const char* value);
+  PROTOBUF_DEPRECATED void set_signed_url(int index, const char* value, size_t size);
+  PROTOBUF_DEPRECATED ::std::string* add_signed_url();
+  PROTOBUF_DEPRECATED void add_signed_url(const ::std::string& value);
   #if LANG_CXX11
-  void add_signed_url(::std::string&& value);
+  PROTOBUF_DEPRECATED void add_signed_url(::std::string&& value);
   #endif
-  void add_signed_url(const char* value);
-  void add_signed_url(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& signed_url() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_signed_url();
+  PROTOBUF_DEPRECATED void add_signed_url(const char* value);
+  PROTOBUF_DEPRECATED void add_signed_url(const char* value, size_t size);
+  PROTOBUF_DEPRECATED const ::google::protobuf::RepeatedPtrField<::std::string>& signed_url() const;
+  PROTOBUF_DEPRECATED ::google::protobuf::RepeatedPtrField<::std::string>* mutable_signed_url();
 
-  // .google.protobuf.Timestamp expires_at = 2;
-  bool has_expires_at() const;
-  void clear_expires_at();
-  static const int kExpiresAtFieldNumber = 2;
-  const ::google::protobuf::Timestamp& expires_at() const;
-  ::google::protobuf::Timestamp* release_expires_at();
-  ::google::protobuf::Timestamp* mutable_expires_at();
-  void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
+  // .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
+  PROTOBUF_DEPRECATED bool has_expires_at() const;
+  PROTOBUF_DEPRECATED void clear_expires_at();
+  PROTOBUF_DEPRECATED static const int kExpiresAtFieldNumber = 2;
+  PROTOBUF_DEPRECATED const ::google::protobuf::Timestamp& expires_at() const;
+  PROTOBUF_DEPRECATED ::google::protobuf::Timestamp* release_expires_at();
+  PROTOBUF_DEPRECATED ::google::protobuf::Timestamp* mutable_expires_at();
+  PROTOBUF_DEPRECATED void set_allocated_expires_at(::google::protobuf::Timestamp* expires_at);
 
   // .flyteidl.service.PreSignedURLs pre_signed_urls = 3;
   bool has_pre_signed_urls() const;
@@ -2142,7 +2142,7 @@ inline CreateDownloadLinkRequest::SourceCase CreateDownloadLinkRequest::source_c
 
 // CreateDownloadLinkResponse
 
-// repeated string signed_url = 1;
+// repeated string signed_url = 1 [deprecated = true];
 inline int CreateDownloadLinkResponse::signed_url_size() const {
   return signed_url_.size();
 }
@@ -2211,7 +2211,7 @@ CreateDownloadLinkResponse::mutable_signed_url() {
   return &signed_url_;
 }
 
-// .google.protobuf.Timestamp expires_at = 2;
+// .google.protobuf.Timestamp expires_at = 2 [deprecated = true];
 inline bool CreateDownloadLinkResponse::has_expires_at() const {
   return this != internal_default_instance() && expires_at_ != nullptr;
 }
