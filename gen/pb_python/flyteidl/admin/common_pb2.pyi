@@ -182,6 +182,7 @@ class RawOutputDataConfig(_message.Message):
     output_location_prefix: str
     def __init__(self, output_location_prefix: _Optional[str] = ...) -> None: ...
 
+<<<<<<< HEAD
 class ResourceListRequest(_message.Message):
     __slots__ = ["filters", "id", "limit", "sort_by", "token"]
     FILTERS_FIELD_NUMBER: _ClassVar[int]
@@ -224,3 +225,14 @@ class UrlBlob(_message.Message):
 
 class NamedEntityState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
+=======
+class FlyteURLs(_message.Message):
+    __slots__ = ["inputs", "outputs", "deck"]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+    DECK_FIELD_NUMBER: _ClassVar[int]
+    inputs: str
+    outputs: str
+    deck: str
+    def __init__(self, inputs: _Optional[str] = ..., outputs: _Optional[str] = ..., deck: _Optional[str] = ...) -> None: ...
+>>>>>>> 513ff822 (Data addresses #minor (#391))
