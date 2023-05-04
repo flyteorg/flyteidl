@@ -344,6 +344,16 @@ pub struct Annotations {
     #[prost(map="string, string", tag="1")]
     pub values: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
 }
+/// Environment variable values to be applied to an execution resource.
+/// In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined
+/// to specify how to merge environment variables defined at registration and execution time.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Envs {
+    /// Map of custom environment variables to be applied to the execution resource.
+    #[prost(map="string, string", tag="1")]
+    pub values: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+}
 /// Defines permissions associated with executions created by this launch plan spec.
 /// Use either of these roles when they have permissions required by your workflow execution.
 /// Deprecated.
@@ -366,6 +376,17 @@ pub struct RawOutputDataConfig {
     /// e.g. s3://bucket/key or s3://bucket/
     #[prost(string, tag="1")]
     pub output_location_prefix: ::prost::alloc::string::String,
+}
+/// These URLs are returned as part of node and task execution data requests.
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct FlyteUrLs {
+    #[prost(string, tag="1")]
+    pub inputs: ::prost::alloc::string::String,
+    #[prost(string, tag="2")]
+    pub outputs: ::prost::alloc::string::String,
+    #[prost(string, tag="3")]
+    pub deck: ::prost::alloc::string::String,
 }
 /// The status of the named entity is used to control its visibility in the UI.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
@@ -979,6 +1000,9 @@ pub struct ExecutionSpec {
     /// data once execution finishes successfully.
     #[prost(bool, tag="22")]
     pub overwrite_cache: bool,
+    /// Environment variables to be set for the execution.
+    #[prost(message, optional, tag="23")]
+    pub envs: ::core::option::Option<Envs>,
     #[prost(oneof="execution_spec::NotificationOverrides", tags="5, 6")]
     pub notification_overrides: ::core::option::Option<execution_spec::NotificationOverrides>,
 }
@@ -1321,6 +1345,9 @@ pub struct LaunchPlanSpec {
     /// data once execution finishes successfully.
     #[prost(bool, tag="20")]
     pub overwrite_cache: bool,
+    /// Environment variables to be set for the execution.
+    #[prost(message, optional, tag="21")]
+    pub envs: ::core::option::Option<Envs>,
 }
 /// Values computed by the flyte platform after launch plan registration.
 /// These include expected_inputs required to be present in a CreateExecutionRequest
@@ -1572,6 +1599,9 @@ pub struct WorkflowExecutionConfig {
     /// data once execution finishes successfully.
     #[prost(bool, tag="7")]
     pub overwrite_cache: bool,
+    /// Environment variables to be set for the execution.
+    #[prost(message, optional, tag="8")]
+    pub envs: ::core::option::Option<Envs>,
 }
 /// Generic container for encapsulating all types of the above attributes messages.
 #[allow(clippy::derive_partial_eq_without_eq)]

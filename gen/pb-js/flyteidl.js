@@ -21293,6 +21293,128 @@
                 return Annotations;
             })();
     
+            admin.Envs = (function() {
+    
+                /**
+                 * Properties of an Envs.
+                 * @memberof flyteidl.admin
+                 * @interface IEnvs
+                 * @property {Object.<string,string>|null} [values] Envs values
+                 */
+    
+                /**
+                 * Constructs a new Envs.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents an Envs.
+                 * @implements IEnvs
+                 * @constructor
+                 * @param {flyteidl.admin.IEnvs=} [properties] Properties to set
+                 */
+                function Envs(properties) {
+                    this.values = {};
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Envs values.
+                 * @member {Object.<string,string>} values
+                 * @memberof flyteidl.admin.Envs
+                 * @instance
+                 */
+                Envs.prototype.values = $util.emptyObject;
+    
+                /**
+                 * Creates a new Envs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {flyteidl.admin.IEnvs=} [properties] Properties to set
+                 * @returns {flyteidl.admin.Envs} Envs instance
+                 */
+                Envs.create = function create(properties) {
+                    return new Envs(properties);
+                };
+    
+                /**
+                 * Encodes the specified Envs message. Does not implicitly {@link flyteidl.admin.Envs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {flyteidl.admin.IEnvs} message Envs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Envs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.values != null && message.hasOwnProperty("values"))
+                        for (var keys = Object.keys(message.values), i = 0; i < keys.length; ++i)
+                            writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.values[keys[i]]).ldelim();
+                    return writer;
+                };
+    
+                /**
+                 * Decodes an Envs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.Envs} Envs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Envs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Envs(), key;
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            reader.skip().pos++;
+                            if (message.values === $util.emptyObject)
+                                message.values = {};
+                            key = reader.string();
+                            reader.pos++;
+                            message.values[key] = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies an Envs message.
+                 * @function verify
+                 * @memberof flyteidl.admin.Envs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Envs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.values != null && message.hasOwnProperty("values")) {
+                        if (!$util.isObject(message.values))
+                            return "values: object expected";
+                        var key = Object.keys(message.values);
+                        for (var i = 0; i < key.length; ++i)
+                            if (!$util.isString(message.values[key[i]]))
+                                return "values: string{k:string} expected";
+                    }
+                    return null;
+                };
+    
+                return Envs;
+            })();
+    
             admin.AuthRole = (function() {
     
                 /**
@@ -21528,6 +21650,150 @@
                 };
     
                 return RawOutputDataConfig;
+            })();
+    
+            admin.FlyteURLs = (function() {
+    
+                /**
+                 * Properties of a FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @interface IFlyteURLs
+                 * @property {string|null} [inputs] FlyteURLs inputs
+                 * @property {string|null} [outputs] FlyteURLs outputs
+                 * @property {string|null} [deck] FlyteURLs deck
+                 */
+    
+                /**
+                 * Constructs a new FlyteURLs.
+                 * @memberof flyteidl.admin
+                 * @classdesc Represents a FlyteURLs.
+                 * @implements IFlyteURLs
+                 * @constructor
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 */
+                function FlyteURLs(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * FlyteURLs inputs.
+                 * @member {string} inputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.inputs = "";
+    
+                /**
+                 * FlyteURLs outputs.
+                 * @member {string} outputs
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.outputs = "";
+    
+                /**
+                 * FlyteURLs deck.
+                 * @member {string} deck
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @instance
+                 */
+                FlyteURLs.prototype.deck = "";
+    
+                /**
+                 * Creates a new FlyteURLs instance using the specified properties.
+                 * @function create
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs=} [properties] Properties to set
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs instance
+                 */
+                FlyteURLs.create = function create(properties) {
+                    return new FlyteURLs(properties);
+                };
+    
+                /**
+                 * Encodes the specified FlyteURLs message. Does not implicitly {@link flyteidl.admin.FlyteURLs.verify|verify} messages.
+                 * @function encode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {flyteidl.admin.IFlyteURLs} message FlyteURLs message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                FlyteURLs.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.inputs);
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.outputs);
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.deck);
+                    return writer;
+                };
+    
+                /**
+                 * Decodes a FlyteURLs message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {flyteidl.admin.FlyteURLs} FlyteURLs
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                FlyteURLs.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.FlyteURLs();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.inputs = reader.string();
+                            break;
+                        case 2:
+                            message.outputs = reader.string();
+                            break;
+                        case 3:
+                            message.deck = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Verifies a FlyteURLs message.
+                 * @function verify
+                 * @memberof flyteidl.admin.FlyteURLs
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                FlyteURLs.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.inputs != null && message.hasOwnProperty("inputs"))
+                        if (!$util.isString(message.inputs))
+                            return "inputs: string expected";
+                    if (message.outputs != null && message.hasOwnProperty("outputs"))
+                        if (!$util.isString(message.outputs))
+                            return "outputs: string expected";
+                    if (message.deck != null && message.hasOwnProperty("deck"))
+                        if (!$util.isString(message.deck))
+                            return "deck: string expected";
+                    return null;
+                };
+    
+                return FlyteURLs;
             })();
     
             admin.DescriptionEntity = (function() {
@@ -25603,6 +25869,7 @@
                  * @property {flyteidl.admin.IClusterAssignment|null} [clusterAssignment] ExecutionSpec clusterAssignment
                  * @property {google.protobuf.IBoolValue|null} [interruptible] ExecutionSpec interruptible
                  * @property {boolean|null} [overwriteCache] ExecutionSpec overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] ExecutionSpec envs
                  */
     
                 /**
@@ -25740,6 +26007,14 @@
                  */
                 ExecutionSpec.prototype.overwriteCache = false;
     
+                /**
+                 * ExecutionSpec envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.ExecutionSpec
+                 * @instance
+                 */
+                ExecutionSpec.prototype.envs = null;
+    
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
     
@@ -25808,6 +26083,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 22, wireType 0 =*/176).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 23, wireType 2 =*/186).fork()).ldelim();
                     return writer;
                 };
     
@@ -25873,6 +26150,9 @@
                             break;
                         case 22:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 23:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -25970,6 +26250,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     
@@ -27785,6 +28070,7 @@
                  * @property {number|null} [maxParallelism] LaunchPlanSpec maxParallelism
                  * @property {google.protobuf.IBoolValue|null} [interruptible] LaunchPlanSpec interruptible
                  * @property {boolean|null} [overwriteCache] LaunchPlanSpec overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] LaunchPlanSpec envs
                  */
     
                 /**
@@ -27923,6 +28209,14 @@
                 LaunchPlanSpec.prototype.overwriteCache = false;
     
                 /**
+                 * LaunchPlanSpec envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.LaunchPlanSpec
+                 * @instance
+                 */
+                LaunchPlanSpec.prototype.envs = null;
+    
+                /**
                  * Creates a new LaunchPlanSpec instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.LaunchPlanSpec
@@ -27976,6 +28270,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 19, wireType 2 =*/154).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 20, wireType 0 =*/160).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 21, wireType 2 =*/170).fork()).ldelim();
                     return writer;
                 };
     
@@ -28041,6 +28337,9 @@
                             break;
                         case 20:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 21:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -28130,6 +28429,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     
@@ -30442,6 +30746,7 @@
                  * @property {flyteidl.admin.IAnnotations|null} [annotations] WorkflowExecutionConfig annotations
                  * @property {google.protobuf.IBoolValue|null} [interruptible] WorkflowExecutionConfig interruptible
                  * @property {boolean|null} [overwriteCache] WorkflowExecutionConfig overwriteCache
+                 * @property {flyteidl.admin.IEnvs|null} [envs] WorkflowExecutionConfig envs
                  */
     
                 /**
@@ -30516,6 +30821,14 @@
                 WorkflowExecutionConfig.prototype.overwriteCache = false;
     
                 /**
+                 * WorkflowExecutionConfig envs.
+                 * @member {flyteidl.admin.IEnvs|null|undefined} envs
+                 * @memberof flyteidl.admin.WorkflowExecutionConfig
+                 * @instance
+                 */
+                WorkflowExecutionConfig.prototype.envs = null;
+    
+                /**
                  * Creates a new WorkflowExecutionConfig instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.admin.WorkflowExecutionConfig
@@ -30553,6 +30866,8 @@
                         $root.google.protobuf.BoolValue.encode(message.interruptible, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         writer.uint32(/* id 7, wireType 0 =*/56).bool(message.overwriteCache);
+                    if (message.envs != null && message.hasOwnProperty("envs"))
+                        $root.flyteidl.admin.Envs.encode(message.envs, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
                     return writer;
                 };
     
@@ -30594,6 +30909,9 @@
                             break;
                         case 7:
                             message.overwriteCache = reader.bool();
+                            break;
+                        case 8:
+                            message.envs = $root.flyteidl.admin.Envs.decode(reader, reader.uint32());
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -30645,6 +30963,11 @@
                     if (message.overwriteCache != null && message.hasOwnProperty("overwriteCache"))
                         if (typeof message.overwriteCache !== "boolean")
                             return "overwriteCache: boolean expected";
+                    if (message.envs != null && message.hasOwnProperty("envs")) {
+                        var error = $root.flyteidl.admin.Envs.verify(message.envs);
+                        if (error)
+                            return "envs." + error;
+                    }
                     return null;
                 };
     

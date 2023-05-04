@@ -216,6 +216,19 @@ class Annotations(_message.Message):
     values: _containers.ScalarMap[str, str]
     def __init__(self, values: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
+class Envs(_message.Message):
+    __slots__ = ["values"]
+    class ValuesEntry(_message.Message):
+        __slots__ = ["key", "value"]
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    VALUES_FIELD_NUMBER: _ClassVar[int]
+    values: _containers.ScalarMap[str, str]
+    def __init__(self, values: _Optional[_Mapping[str, str]] = ...) -> None: ...
+
 class AuthRole(_message.Message):
     __slots__ = ["assumable_iam_role", "kubernetes_service_account"]
     ASSUMABLE_IAM_ROLE_FIELD_NUMBER: _ClassVar[int]
@@ -229,3 +242,13 @@ class RawOutputDataConfig(_message.Message):
     OUTPUT_LOCATION_PREFIX_FIELD_NUMBER: _ClassVar[int]
     output_location_prefix: str
     def __init__(self, output_location_prefix: _Optional[str] = ...) -> None: ...
+
+class FlyteURLs(_message.Message):
+    __slots__ = ["inputs", "outputs", "deck"]
+    INPUTS_FIELD_NUMBER: _ClassVar[int]
+    OUTPUTS_FIELD_NUMBER: _ClassVar[int]
+    DECK_FIELD_NUMBER: _ClassVar[int]
+    inputs: str
+    outputs: str
+    deck: str
+    def __init__(self, inputs: _Optional[str] = ..., outputs: _Optional[str] = ..., deck: _Optional[str] = ...) -> None: ...
