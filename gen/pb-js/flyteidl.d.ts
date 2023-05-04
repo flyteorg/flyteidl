@@ -13943,6 +13943,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataResponse dynamicWorkflow */
             dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+
+            /** NodeExecutionGetDataResponse flyteUrls */
+            flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
         }
 
         /** Represents a NodeExecutionGetDataResponse. */
@@ -13968,6 +13971,9 @@ export namespace flyteidl {
 
             /** NodeExecutionGetDataResponse dynamicWorkflow. */
             public dynamicWorkflow?: (flyteidl.admin.IDynamicWorkflowNodeMetadata|null);
+
+            /** NodeExecutionGetDataResponse flyteUrls. */
+            public flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
 
             /**
              * Creates a new NodeExecutionGetDataResponse instance using the specified properties.
@@ -16473,6 +16479,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs */
             fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse flyteUrls */
+            flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
         }
 
         /** Represents a TaskExecutionGetDataResponse. */
@@ -16495,6 +16504,9 @@ export namespace flyteidl {
 
             /** TaskExecutionGetDataResponse fullOutputs. */
             public fullOutputs?: (flyteidl.core.ILiteralMap|null);
+
+            /** TaskExecutionGetDataResponse flyteUrls. */
+            public flyteUrls?: (flyteidl.admin.IFlyteURLs|null);
 
             /**
              * Creates a new TaskExecutionGetDataResponse instance using the specified properties.
@@ -19434,6 +19446,9 @@ export namespace flyteidl {
 
             /** CreateDownloadLinkResponse expiresAt */
             expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateDownloadLinkResponse preSignedUrls */
+            preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
         }
 
         /** Represents a CreateDownloadLinkResponse. */
@@ -19450,6 +19465,9 @@ export namespace flyteidl {
 
             /** CreateDownloadLinkResponse expiresAt. */
             public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /** CreateDownloadLinkResponse preSignedUrls. */
+            public preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
 
             /**
              * Creates a new CreateDownloadLinkResponse instance using the specified properties.
@@ -19478,6 +19496,177 @@ export namespace flyteidl {
 
             /**
              * Verifies a CreateDownloadLinkResponse message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a PreSignedURLs. */
+        interface IPreSignedURLs {
+
+            /** PreSignedURLs signedUrl */
+            signedUrl?: (string[]|null);
+
+            /** PreSignedURLs expiresAt */
+            expiresAt?: (google.protobuf.ITimestamp|null);
+        }
+
+        /** Represents a PreSignedURLs. */
+        class PreSignedURLs implements IPreSignedURLs {
+
+            /**
+             * Constructs a new PreSignedURLs.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IPreSignedURLs);
+
+            /** PreSignedURLs signedUrl. */
+            public signedUrl: string[];
+
+            /** PreSignedURLs expiresAt. */
+            public expiresAt?: (google.protobuf.ITimestamp|null);
+
+            /**
+             * Creates a new PreSignedURLs instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns PreSignedURLs instance
+             */
+            public static create(properties?: flyteidl.service.IPreSignedURLs): flyteidl.service.PreSignedURLs;
+
+            /**
+             * Encodes the specified PreSignedURLs message. Does not implicitly {@link flyteidl.service.PreSignedURLs.verify|verify} messages.
+             * @param message PreSignedURLs message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IPreSignedURLs, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a PreSignedURLs message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns PreSignedURLs
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.PreSignedURLs;
+
+            /**
+             * Verifies a PreSignedURLs message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetDataRequest. */
+        interface IGetDataRequest {
+
+            /** GetDataRequest flyteUrl */
+            flyteUrl?: (string|null);
+        }
+
+        /** Represents a GetDataRequest. */
+        class GetDataRequest implements IGetDataRequest {
+
+            /**
+             * Constructs a new GetDataRequest.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IGetDataRequest);
+
+            /** GetDataRequest flyteUrl. */
+            public flyteUrl: string;
+
+            /**
+             * Creates a new GetDataRequest instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetDataRequest instance
+             */
+            public static create(properties?: flyteidl.service.IGetDataRequest): flyteidl.service.GetDataRequest;
+
+            /**
+             * Encodes the specified GetDataRequest message. Does not implicitly {@link flyteidl.service.GetDataRequest.verify|verify} messages.
+             * @param message GetDataRequest message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IGetDataRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetDataRequest message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetDataRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.GetDataRequest;
+
+            /**
+             * Verifies a GetDataRequest message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+        }
+
+        /** Properties of a GetDataResponse. */
+        interface IGetDataResponse {
+
+            /** GetDataResponse literalMap */
+            literalMap?: (flyteidl.core.ILiteralMap|null);
+
+            /** GetDataResponse preSignedUrls */
+            preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
+        }
+
+        /** Represents a GetDataResponse. */
+        class GetDataResponse implements IGetDataResponse {
+
+            /**
+             * Constructs a new GetDataResponse.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: flyteidl.service.IGetDataResponse);
+
+            /** GetDataResponse literalMap. */
+            public literalMap?: (flyteidl.core.ILiteralMap|null);
+
+            /** GetDataResponse preSignedUrls. */
+            public preSignedUrls?: (flyteidl.service.IPreSignedURLs|null);
+
+            /** GetDataResponse data. */
+            public data?: ("literalMap"|"preSignedUrls");
+
+            /**
+             * Creates a new GetDataResponse instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns GetDataResponse instance
+             */
+            public static create(properties?: flyteidl.service.IGetDataResponse): flyteidl.service.GetDataResponse;
+
+            /**
+             * Encodes the specified GetDataResponse message. Does not implicitly {@link flyteidl.service.GetDataResponse.verify|verify} messages.
+             * @param message GetDataResponse message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: flyteidl.service.IGetDataResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a GetDataResponse message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns GetDataResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): flyteidl.service.GetDataResponse;
+
+            /**
+             * Verifies a GetDataResponse message.
              * @param message Plain object to verify
              * @returns `null` if valid, otherwise the reason why it is not
              */
@@ -19545,6 +19734,20 @@ export namespace flyteidl {
              * @returns Promise
              */
             public createDownloadLink(request: flyteidl.service.ICreateDownloadLinkRequest): Promise<flyteidl.service.CreateDownloadLinkResponse>;
+
+            /**
+             * Calls GetData.
+             * @param request GetDataRequest message or plain object
+             * @param callback Node-style callback called with the error, if any, and GetDataResponse
+             */
+            public getData(request: flyteidl.service.IGetDataRequest, callback: flyteidl.service.DataProxyService.GetDataCallback): void;
+
+            /**
+             * Calls GetData.
+             * @param request GetDataRequest message or plain object
+             * @returns Promise
+             */
+            public getData(request: flyteidl.service.IGetDataRequest): Promise<flyteidl.service.GetDataResponse>;
         }
 
         namespace DataProxyService {
@@ -19569,6 +19772,13 @@ export namespace flyteidl {
              * @param [response] CreateDownloadLinkResponse
              */
             type CreateDownloadLinkCallback = (error: (Error|null), response?: flyteidl.service.CreateDownloadLinkResponse) => void;
+
+            /**
+             * Callback as used by {@link flyteidl.service.DataProxyService#getData}.
+             * @param error Error, if any
+             * @param [response] GetDataResponse
+             */
+            type GetDataCallback = (error: (Error|null), response?: flyteidl.service.GetDataResponse) => void;
         }
 
         /** Represents an ExternalPluginService */

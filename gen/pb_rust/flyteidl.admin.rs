@@ -1980,6 +1980,8 @@ pub struct NodeExecutionGetDataResponse {
     /// Optional Workflow closure for a dynamically generated workflow, in the case this node yields a dynamic workflow we return its structure here.
     #[prost(message, optional, tag="16")]
     pub dynamic_workflow: ::core::option::Option<DynamicWorkflowNodeMetadata>,
+    #[prost(message, optional, tag="17")]
+    pub flyte_urls: ::core::option::Option<FlyteUrLs>,
 }
 /// Represents the Email object that is sent to a publisher/subscriber
 /// to forward the notification.
@@ -2609,6 +2611,10 @@ pub struct TaskExecutionGetDataResponse {
     /// Full_outputs will only be populated if they are under a configured size threshold.
     #[prost(message, optional, tag="4")]
     pub full_outputs: ::core::option::Option<super::core::LiteralMap>,
+    /// flyte tiny url to fetch a core.LiteralMap of task execution's IO
+    /// Deck will be empty for task
+    #[prost(message, optional, tag="5")]
+    pub flyte_urls: ::core::option::Option<FlyteUrLs>,
 }
 /// Response for the GetVersion API
 #[allow(clippy::derive_partial_eq_without_eq)]
