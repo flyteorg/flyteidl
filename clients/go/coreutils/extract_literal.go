@@ -64,6 +64,8 @@ func ExtractFromLiteral(literal *core.Literal) (interface{}, error) {
 			return scalarValue.StructuredDataset.Uri, nil
 		case *core.Scalar_Union:
 			return scalarValue.Union, nil
+		case *core.Scalar_NoneType:
+			return nil, nil
 		default:
 			return nil, fmt.Errorf("unsupported literal scalar type %T", scalarValue)
 		}

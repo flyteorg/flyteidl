@@ -199,4 +199,59 @@ func TestFetchLiteral(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, literalVal, extractedLiteralVal)
 	})
+
+	t.Run("Union", func(t *testing.T) {
+		input := int64(1)
+		var literalType = &core.LiteralType{
+			Type: &core.LiteralType_UnionType{
+				UnionType: &core.UnionType{
+					Variants: []*core.LiteralType{
+						{Type: &core.LiteralType_Simple{Simple: core.SimpleType_INTEGER}},
+						{Type: &core.LiteralType_Simple{Simple: core.SimpleType_FLOAT}},
+					},
+				},
+			},
+		}
+		lit, err := MakeLiteralForType(literalType, input)
+
+		expectedLiteral := &core.Union{
+			Type: &core.LiteralType{
+				Type: &core.LiteralType_Simple{
+					Simple: core.SimpleType_INTEGER,
+				},
+			},
+			Value: MustMakeLiteral(input),
+		}
+		assert.NoError(t, err)
+		extractedLiteralVal, err := ExtractFromLiteral(lit)
+		assert.NoError(t, err)
+		assert.Equal(t, expectedLiteral, extractedLiteralVal)
+	})
+
+	t.Run("Union with None", func(t *testing.T) {
+		var literalType = &core.LiteralType{
+			Type: &core.LiteralType_UnionType{
+				UnionType: &core.UnionType{
+					Variants: []*core.LiteralType{
+						{Type: &core.LiteralType_Simple{Simple: core.SimpleType_INTEGER}},
+						{Type: &core.LiteralType_Simple{Simple: core.SimpleType_NONE}},
+					},
+				},
+			},
+		}
+		lit, err := MakeLiteralForType(literalType, nil)
+
+		expectedLiteral := &core.Union{
+			Type: &core.LiteralType{
+				Type: &core.LiteralType_Simple{
+					Simple: core.SimpleType_NONE,
+				},
+			},
+			Value: MustMakeLiteral(nil),
+		}
+		assert.NoError(t, err)
+		extractedLiteralVal, err := ExtractFromLiteral(lit)
+		assert.NoError(t, err)
+		assert.Equal(t, expectedLiteral, extractedLiteralVal)
+	})
 }
