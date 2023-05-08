@@ -351,8 +351,8 @@ pub struct Annotations {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Envs {
     /// Map of custom environment variables to be applied to the execution resource.
-    #[prost(map="string, string", tag="1")]
-    pub values: ::std::collections::HashMap<::prost::alloc::string::String, ::prost::alloc::string::String>,
+    #[prost(message, repeated, tag="1")]
+    pub values: ::prost::alloc::vec::Vec<super::core::KeyValuePair>,
 }
 /// Defines permissions associated with executions created by this launch plan spec.
 /// Use either of these roles when they have permissions required by your workflow execution.

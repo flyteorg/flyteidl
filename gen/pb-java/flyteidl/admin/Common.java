@@ -19378,7 +19378,24 @@ public final class Common {
      * Map of custom environment variables to be applied to the execution resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; values = 1;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+     */
+    java.util.List<flyteidl.core.Literals.KeyValuePair> 
+        getValuesList();
+    /**
+     * <pre>
+     * Map of custom environment variables to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+     */
+    flyteidl.core.Literals.KeyValuePair getValues(int index);
+    /**
+     * <pre>
+     * Map of custom environment variables to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
      */
     int getValuesCount();
     /**
@@ -19386,46 +19403,19 @@ public final class Common {
      * Map of custom environment variables to be applied to the execution resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; values = 1;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
      */
-    boolean containsValues(
-        java.lang.String key);
-    /**
-     * Use {@link #getValuesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getValues();
+    java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+        getValuesOrBuilderList();
     /**
      * <pre>
      * Map of custom environment variables to be applied to the execution resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; values = 1;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
      */
-    java.util.Map<java.lang.String, java.lang.String>
-    getValuesMap();
-    /**
-     * <pre>
-     * Map of custom environment variables to be applied to the execution resource.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; values = 1;</code>
-     */
-
-    java.lang.String getValuesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <pre>
-     * Map of custom environment variables to be applied to the execution resource.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; values = 1;</code>
-     */
-
-    java.lang.String getValuesOrThrow(
-        java.lang.String key);
+    flyteidl.core.Literals.KeyValuePairOrBuilder getValuesOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -19446,6 +19436,7 @@ public final class Common {
       super(builder);
     }
     private Envs() {
+      values_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -19474,15 +19465,11 @@ public final class Common {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                values_ = com.google.protobuf.MapField.newMapField(
-                    ValuesDefaultEntryHolder.defaultEntry);
+                values_ = new java.util.ArrayList<flyteidl.core.Literals.KeyValuePair>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              values__ = input.readMessage(
-                  ValuesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              values_.getMutableMap().put(
-                  values__.getKey(), values__.getValue());
+              values_.add(
+                  input.readMessage(flyteidl.core.Literals.KeyValuePair.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -19500,6 +19487,9 @@ public final class Common {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -19509,18 +19499,6 @@ public final class Common {
       return flyteidl.admin.Common.internal_static_flyteidl_admin_Envs_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetValues();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -19530,95 +19508,58 @@ public final class Common {
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
-    private static final class ValuesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  flyteidl.admin.Common.internal_static_flyteidl_admin_Envs_ValuesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> values_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetValues() {
-      if (values_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ValuesDefaultEntryHolder.defaultEntry);
-      }
+    private java.util.List<flyteidl.core.Literals.KeyValuePair> values_;
+    /**
+     * <pre>
+     * Map of custom environment variables to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+     */
+    public java.util.List<flyteidl.core.Literals.KeyValuePair> getValuesList() {
       return values_;
     }
-
+    /**
+     * <pre>
+     * Map of custom environment variables to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+     */
+    public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+        getValuesOrBuilderList() {
+      return values_;
+    }
+    /**
+     * <pre>
+     * Map of custom environment variables to be applied to the execution resource.
+     * </pre>
+     *
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+     */
     public int getValuesCount() {
-      return internalGetValues().getMap().size();
+      return values_.size();
     }
     /**
      * <pre>
      * Map of custom environment variables to be applied to the execution resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; values = 1;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
      */
-
-    public boolean containsValues(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetValues().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getValuesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getValues() {
-      return getValuesMap();
+    public flyteidl.core.Literals.KeyValuePair getValues(int index) {
+      return values_.get(index);
     }
     /**
      * <pre>
      * Map of custom environment variables to be applied to the execution resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; values = 1;</code>
+     * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
      */
-
-    public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
-      return internalGetValues().getMap();
-    }
-    /**
-     * <pre>
-     * Map of custom environment variables to be applied to the execution resource.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; values = 1;</code>
-     */
-
-    public java.lang.String getValuesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetValues().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * Map of custom environment variables to be applied to the execution resource.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; values = 1;</code>
-     */
-
-    public java.lang.String getValuesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetValues().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public flyteidl.core.Literals.KeyValuePairOrBuilder getValuesOrBuilder(
+        int index) {
+      return values_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -19635,12 +19576,9 @@ public final class Common {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetValues(),
-          ValuesDefaultEntryHolder.defaultEntry,
-          1);
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeMessage(1, values_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19650,15 +19588,9 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetValues().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        values__ = ValuesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (int i = 0; i < values_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, values__);
+          .computeMessageSize(1, values_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19675,8 +19607,8 @@ public final class Common {
       }
       flyteidl.admin.Common.Envs other = (flyteidl.admin.Common.Envs) obj;
 
-      if (!internalGetValues().equals(
-          other.internalGetValues())) return false;
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19688,9 +19620,9 @@ public final class Common {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetValues().getMap().isEmpty()) {
+      if (getValuesCount() > 0) {
         hash = (37 * hash) + VALUES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetValues().hashCode();
+        hash = (53 * hash) + getValuesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -19805,28 +19737,6 @@ public final class Common {
         return flyteidl.admin.Common.internal_static_flyteidl_admin_Envs_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetValues();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableValues();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -19848,12 +19758,18 @@ public final class Common {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getValuesFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableValues().clear();
+        if (valuesBuilder_ == null) {
+          values_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          valuesBuilder_.clear();
+        }
         return this;
       }
 
@@ -19881,8 +19797,15 @@ public final class Common {
       public flyteidl.admin.Common.Envs buildPartial() {
         flyteidl.admin.Common.Envs result = new flyteidl.admin.Common.Envs(this);
         int from_bitField0_ = bitField0_;
-        result.values_ = internalGetValues();
-        result.values_.makeImmutable();
+        if (valuesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            values_ = java.util.Collections.unmodifiableList(values_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.values_ = values_;
+        } else {
+          result.values_ = valuesBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -19931,8 +19854,32 @@ public final class Common {
 
       public Builder mergeFrom(flyteidl.admin.Common.Envs other) {
         if (other == flyteidl.admin.Common.Envs.getDefaultInstance()) return this;
-        internalGetMutableValues().mergeFrom(
-            other.internalGetValues());
+        if (valuesBuilder_ == null) {
+          if (!other.values_.isEmpty()) {
+            if (values_.isEmpty()) {
+              values_ = other.values_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureValuesIsMutable();
+              values_.addAll(other.values_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.values_.isEmpty()) {
+            if (valuesBuilder_.isEmpty()) {
+              valuesBuilder_.dispose();
+              valuesBuilder_ = null;
+              values_ = other.values_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              valuesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getValuesFieldBuilder() : null;
+            } else {
+              valuesBuilder_.addAllMessages(other.values_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -19963,101 +19910,210 @@ public final class Common {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> values_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetValues() {
-        if (values_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ValuesDefaultEntryHolder.defaultEntry);
-        }
-        return values_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableValues() {
-        onChanged();;
-        if (values_ == null) {
-          values_ = com.google.protobuf.MapField.newMapField(
-              ValuesDefaultEntryHolder.defaultEntry);
-        }
-        if (!values_.isMutable()) {
-          values_ = values_.copy();
-        }
-        return values_;
+      private java.util.List<flyteidl.core.Literals.KeyValuePair> values_ =
+        java.util.Collections.emptyList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          values_ = new java.util.ArrayList<flyteidl.core.Literals.KeyValuePair>(values_);
+          bitField0_ |= 0x00000001;
+         }
       }
 
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder> valuesBuilder_;
+
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Literals.KeyValuePair> getValuesList() {
+        if (valuesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(values_);
+        } else {
+          return valuesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
       public int getValuesCount() {
-        return internalGetValues().getMap().size();
-      }
-      /**
-       * <pre>
-       * Map of custom environment variables to be applied to the execution resource.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; values = 1;</code>
-       */
-
-      public boolean containsValues(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetValues().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getValuesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getValues() {
-        return getValuesMap();
-      }
-      /**
-       * <pre>
-       * Map of custom environment variables to be applied to the execution resource.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; values = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
-        return internalGetValues().getMap();
-      }
-      /**
-       * <pre>
-       * Map of custom environment variables to be applied to the execution resource.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; values = 1;</code>
-       */
-
-      public java.lang.String getValuesOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetValues().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <pre>
-       * Map of custom environment variables to be applied to the execution resource.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; values = 1;</code>
-       */
-
-      public java.lang.String getValuesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetValues().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+        if (valuesBuilder_ == null) {
+          return values_.size();
+        } else {
+          return valuesBuilder_.getCount();
         }
-        return map.get(key);
       }
-
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public flyteidl.core.Literals.KeyValuePair getValues(int index) {
+        if (valuesBuilder_ == null) {
+          return values_.get(index);
+        } else {
+          return valuesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder setValues(
+          int index, flyteidl.core.Literals.KeyValuePair value) {
+        if (valuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.set(index, value);
+          onChanged();
+        } else {
+          valuesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder setValues(
+          int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
+        if (valuesBuilder_ == null) {
+          ensureValuesIsMutable();
+          values_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          valuesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder addValues(flyteidl.core.Literals.KeyValuePair value) {
+        if (valuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.add(value);
+          onChanged();
+        } else {
+          valuesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder addValues(
+          int index, flyteidl.core.Literals.KeyValuePair value) {
+        if (valuesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValuesIsMutable();
+          values_.add(index, value);
+          onChanged();
+        } else {
+          valuesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder addValues(
+          flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
+        if (valuesBuilder_ == null) {
+          ensureValuesIsMutable();
+          values_.add(builderForValue.build());
+          onChanged();
+        } else {
+          valuesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder addValues(
+          int index, flyteidl.core.Literals.KeyValuePair.Builder builderForValue) {
+        if (valuesBuilder_ == null) {
+          ensureValuesIsMutable();
+          values_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          valuesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends flyteidl.core.Literals.KeyValuePair> values) {
+        if (valuesBuilder_ == null) {
+          ensureValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, values_);
+          onChanged();
+        } else {
+          valuesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
       public Builder clearValues() {
-        internalGetMutableValues().getMutableMap()
-            .clear();
+        if (valuesBuilder_ == null) {
+          values_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          valuesBuilder_.clear();
+        }
         return this;
       }
       /**
@@ -20065,38 +20121,16 @@ public final class Common {
        * Map of custom environment variables to be applied to the execution resource.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; values = 1;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
        */
-
-      public Builder removeValues(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableValues().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableValues() {
-        return internalGetMutableValues().getMutableMap();
-      }
-      /**
-       * <pre>
-       * Map of custom environment variables to be applied to the execution resource.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; values = 1;</code>
-       */
-      public Builder putValues(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableValues().getMutableMap()
-            .put(key, value);
+      public Builder removeValues(int index) {
+        if (valuesBuilder_ == null) {
+          ensureValuesIsMutable();
+          values_.remove(index);
+          onChanged();
+        } else {
+          valuesBuilder_.remove(index);
+        }
         return this;
       }
       /**
@@ -20104,14 +20138,88 @@ public final class Common {
        * Map of custom environment variables to be applied to the execution resource.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; values = 1;</code>
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
        */
-
-      public Builder putAllValues(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableValues().getMutableMap()
-            .putAll(values);
-        return this;
+      public flyteidl.core.Literals.KeyValuePair.Builder getValuesBuilder(
+          int index) {
+        return getValuesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public flyteidl.core.Literals.KeyValuePairOrBuilder getValuesOrBuilder(
+          int index) {
+        if (valuesBuilder_ == null) {
+          return values_.get(index);  } else {
+          return valuesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public java.util.List<? extends flyteidl.core.Literals.KeyValuePairOrBuilder> 
+           getValuesOrBuilderList() {
+        if (valuesBuilder_ != null) {
+          return valuesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(values_);
+        }
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public flyteidl.core.Literals.KeyValuePair.Builder addValuesBuilder() {
+        return getValuesFieldBuilder().addBuilder(
+            flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public flyteidl.core.Literals.KeyValuePair.Builder addValuesBuilder(
+          int index) {
+        return getValuesFieldBuilder().addBuilder(
+            index, flyteidl.core.Literals.KeyValuePair.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Map of custom environment variables to be applied to the execution resource.
+       * </pre>
+       *
+       * <code>repeated .flyteidl.core.KeyValuePair values = 1;</code>
+       */
+      public java.util.List<flyteidl.core.Literals.KeyValuePair.Builder> 
+           getValuesBuilderList() {
+        return getValuesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder> 
+          getValuesFieldBuilder() {
+        if (valuesBuilder_ == null) {
+          valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              flyteidl.core.Literals.KeyValuePair, flyteidl.core.Literals.KeyValuePair.Builder, flyteidl.core.Literals.KeyValuePairOrBuilder>(
+                  values_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          values_ = null;
+        }
+        return valuesBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -22487,11 +22595,6 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_flyteidl_admin_Envs_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_flyteidl_admin_Envs_ValuesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_flyteidl_admin_Envs_ValuesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_flyteidl_admin_AuthRole_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -22517,75 +22620,74 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n\033flyteidl/admin/common.proto\022\016flyteidl." +
       "admin\032\035flyteidl/core/execution.proto\032\036fl" +
-      "yteidl/core/identifier.proto\032\037google/pro" +
-      "tobuf/timestamp.proto\"F\n\025NamedEntityIden" +
-      "tifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022" +
-      "\014\n\004name\030\003 \001(\t\"[\n\023NamedEntityMetadata\022\023\n\013" +
-      "description\030\001 \001(\t\022/\n\005state\030\002 \001(\0162 .flyte" +
-      "idl.admin.NamedEntityState\"\253\001\n\013NamedEnti" +
-      "ty\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.cor" +
-      "e.ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.ad" +
-      "min.NamedEntityIdentifier\0225\n\010metadata\030\003 " +
-      "\001(\0132#.flyteidl.admin.NamedEntityMetadata" +
-      "\"r\n\004Sort\022\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\016" +
-      "2\036.flyteidl.admin.Sort.Direction\"*\n\tDire" +
-      "ction\022\016\n\nDESCENDING\020\000\022\r\n\tASCENDING\020\001\"\231\001\n" +
-      " NamedEntityIdentifierListRequest\022\017\n\007pro" +
-      "ject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(" +
-      "\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyt" +
-      "eidl.admin.Sort\022\017\n\007filters\030\006 \001(\t\"\303\001\n\026Nam" +
-      "edEntityListRequest\0222\n\rresource_type\030\001 \001" +
-      "(\0162\033.flyteidl.core.ResourceType\022\017\n\007proje" +
-      "ct\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022" +
-      "\r\n\005token\030\005 \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flytei" +
-      "dl.admin.Sort\022\017\n\007filters\030\007 \001(\t\"c\n\031NamedE" +
-      "ntityIdentifierList\0227\n\010entities\030\001 \003(\0132%." +
-      "flyteidl.admin.NamedEntityIdentifier\022\r\n\005" +
-      "token\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010entiti" +
-      "es\030\001 \003(\0132\033.flyteidl.admin.NamedEntity\022\r\n" +
-      "\005token\030\002 \001(\t\"~\n\025NamedEntityGetRequest\0222\n" +
-      "\rresource_type\030\001 \001(\0162\033.flyteidl.core.Res" +
-      "ourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.N" +
-      "amedEntityIdentifier\"\270\001\n\030NamedEntityUpda" +
-      "teRequest\0222\n\rresource_type\030\001 \001(\0162\033.flyte" +
-      "idl.core.ResourceType\0221\n\002id\030\002 \001(\0132%.flyt" +
-      "eidl.admin.NamedEntityIdentifier\0225\n\010meta" +
-      "data\030\003 \001(\0132#.flyteidl.admin.NamedEntityM" +
-      "etadata\"\033\n\031NamedEntityUpdateResponse\"9\n\020" +
-      "ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl." +
-      "core.Identifier\"\236\001\n\023ResourceListRequest\022" +
-      "1\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEntity" +
-      "Identifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t" +
-      "\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.fly" +
-      "teidl.admin.Sort\"-\n\021EmailNotification\022\030\n" +
-      "\020recipients_email\030\001 \003(\t\"1\n\025PagerDutyNoti" +
-      "fication\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021Sl" +
-      "ackNotification\022\030\n\020recipients_email\030\001 \003(" +
-      "\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(\0162&.fly" +
-      "teidl.core.WorkflowExecution.Phase\0222\n\005em" +
-      "ail\030\002 \001(\0132!.flyteidl.admin.EmailNotifica" +
-      "tionH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.ad" +
-      "min.PagerDutyNotificationH\000\0222\n\005slack\030\004 \001" +
-      "(\0132!.flyteidl.admin.SlackNotificationH\000B" +
-      "\006\n\004type\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes" +
-      "\030\002 \001(\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".f" +
-      "lyteidl.admin.Labels.ValuesEntry\032-\n\013Valu" +
-      "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      "u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyteid" +
-      "l.admin.Annotations.ValuesEntry\032-\n\013Value" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"g" +
-      "\n\004Envs\0220\n\006values\030\001 \003(\0132 .flyteidl.admin." +
-      "Envs.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"N\n\010AuthRole\022\032\n\022a" +
-      "ssumable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_se" +
-      "rvice_account\030\002 \001(\t:\002\030\001\"5\n\023RawOutputData" +
-      "Config\022\036\n\026output_location_prefix\030\001 \001(\t\":" +
-      "\n\tFlyteURLs\022\016\n\006inputs\030\001 \001(\t\022\017\n\007outputs\030\002" +
-      " \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020NamedEntityState\022\027" +
-      "\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_" +
-      "ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gith" +
-      "ub.com/flyteorg/flyteidl/gen/pb-go/flyte" +
-      "idl/adminb\006proto3"
+      "yteidl/core/identifier.proto\032\034flyteidl/c" +
+      "ore/literals.proto\032\037google/protobuf/time" +
+      "stamp.proto\"F\n\025NamedEntityIdentifier\022\017\n\007" +
+      "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 " +
+      "\001(\t\"[\n\023NamedEntityMetadata\022\023\n\013descriptio" +
+      "n\030\001 \001(\t\022/\n\005state\030\002 \001(\0162 .flyteidl.admin." +
+      "NamedEntityState\"\253\001\n\013NamedEntity\0222\n\rreso" +
+      "urce_type\030\001 \001(\0162\033.flyteidl.core.Resource" +
+      "Type\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.NamedE" +
+      "ntityIdentifier\0225\n\010metadata\030\003 \001(\0132#.flyt" +
+      "eidl.admin.NamedEntityMetadata\"r\n\004Sort\022\013" +
+      "\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036.flyteid" +
+      "l.admin.Sort.Direction\"*\n\tDirection\022\016\n\nD" +
+      "ESCENDING\020\000\022\r\n\tASCENDING\020\001\"\231\001\n NamedEnti" +
+      "tyIdentifierListRequest\022\017\n\007project\030\001 \001(\t" +
+      "\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token" +
+      "\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin" +
+      ".Sort\022\017\n\007filters\030\006 \001(\t\"\303\001\n\026NamedEntityLi" +
+      "stRequest\0222\n\rresource_type\030\001 \001(\0162\033.flyte" +
+      "idl.core.ResourceType\022\017\n\007project\030\002 \001(\t\022\016" +
+      "\n\006domain\030\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022\r\n\005token\030\005" +
+      " \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flyteidl.admin.S" +
+      "ort\022\017\n\007filters\030\007 \001(\t\"c\n\031NamedEntityIdent" +
+      "ifierList\0227\n\010entities\030\001 \003(\0132%.flyteidl.a" +
+      "dmin.NamedEntityIdentifier\022\r\n\005token\030\002 \001(" +
+      "\t\"O\n\017NamedEntityList\022-\n\010entities\030\001 \003(\0132\033" +
+      ".flyteidl.admin.NamedEntity\022\r\n\005token\030\002 \001" +
+      "(\t\"~\n\025NamedEntityGetRequest\0222\n\rresource_" +
+      "type\030\001 \001(\0162\033.flyteidl.core.ResourceType\022" +
+      "1\n\002id\030\002 \001(\0132%.flyteidl.admin.NamedEntity" +
+      "Identifier\"\270\001\n\030NamedEntityUpdateRequest\022" +
+      "2\n\rresource_type\030\001 \001(\0162\033.flyteidl.core.R" +
+      "esourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin" +
+      ".NamedEntityIdentifier\0225\n\010metadata\030\003 \001(\013" +
+      "2#.flyteidl.admin.NamedEntityMetadata\"\033\n" +
+      "\031NamedEntityUpdateResponse\"9\n\020ObjectGetR" +
+      "equest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident" +
+      "ifier\"\236\001\n\023ResourceListRequest\0221\n\002id\030\001 \001(" +
+      "\0132%.flyteidl.admin.NamedEntityIdentifier" +
+      "\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filter" +
+      "s\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi" +
+      "n.Sort\"-\n\021EmailNotification\022\030\n\020recipient" +
+      "s_email\030\001 \003(\t\"1\n\025PagerDutyNotification\022\030" +
+      "\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNotific" +
+      "ation\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014Noti" +
+      "fication\0226\n\006phases\030\001 \003(\0162&.flyteidl.core" +
+      ".WorkflowExecution.Phase\0222\n\005email\030\002 \001(\0132" +
+      "!.flyteidl.admin.EmailNotificationH\000\022;\n\n" +
+      "pager_duty\030\003 \001(\0132%.flyteidl.admin.PagerD" +
+      "utyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.flyte" +
+      "idl.admin.SlackNotificationH\000B\006\n\004type\")\n" +
+      "\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:\002\030\001" +
+      "\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl.ad" +
+      "min.Labels.ValuesEntry\032-\n\013ValuesEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Annotat" +
+      "ions\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin.An" +
+      "notations.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Envs\022+\n\006" +
+      "values\030\001 \003(\0132\033.flyteidl.core.KeyValuePai" +
+      "r\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001(" +
+      "\t\022\"\n\032kubernetes_service_account\030\002 \001(\t:\002\030" +
+      "\001\"5\n\023RawOutputDataConfig\022\036\n\026output_locat" +
+      "ion_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006inputs\030" +
+      "\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020" +
+      "NamedEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020" +
+      "\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_G" +
+      "ENERATED\020\002B7Z5github.com/flyteorg/flytei" +
+      "dl/gen/pb-go/flyteidl/adminb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22600,6 +22702,7 @@ public final class Common {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           flyteidl.core.Execution.getDescriptor(),
           flyteidl.core.IdentifierOuterClass.getDescriptor(),
+          flyteidl.core.Literals.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
     internal_static_flyteidl_admin_NamedEntityIdentifier_descriptor =
@@ -22740,12 +22843,6 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_flyteidl_admin_Envs_descriptor,
         new java.lang.String[] { "Values", });
-    internal_static_flyteidl_admin_Envs_ValuesEntry_descriptor =
-      internal_static_flyteidl_admin_Envs_descriptor.getNestedTypes().get(0);
-    internal_static_flyteidl_admin_Envs_ValuesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_flyteidl_admin_Envs_ValuesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_flyteidl_admin_AuthRole_descriptor =
       getDescriptor().getMessageTypes().get(21);
     internal_static_flyteidl_admin_AuthRole_fieldAccessorTable = new
@@ -22766,6 +22863,7 @@ public final class Common {
         new java.lang.String[] { "Inputs", "Outputs", "Deck", });
     flyteidl.core.Execution.getDescriptor();
     flyteidl.core.IdentifierOuterClass.getDescriptor();
+    flyteidl.core.Literals.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

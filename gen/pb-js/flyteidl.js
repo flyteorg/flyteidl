@@ -14264,6 +14264,7 @@
                  * @property {string|null} [iamRole] Identity iamRole
                  * @property {string|null} [k8sServiceAccount] Identity k8sServiceAccount
                  * @property {flyteidl.core.IOAuth2Client|null} [oauth2Client] Identity oauth2Client
+                 * @property {string|null} [userIdentifier] Identity userIdentifier
                  */
     
                 /**
@@ -14306,6 +14307,14 @@
                 Identity.prototype.oauth2Client = null;
     
                 /**
+                 * Identity userIdentifier.
+                 * @member {string} userIdentifier
+                 * @memberof flyteidl.core.Identity
+                 * @instance
+                 */
+                Identity.prototype.userIdentifier = "";
+    
+                /**
                  * Creates a new Identity instance using the specified properties.
                  * @function create
                  * @memberof flyteidl.core.Identity
@@ -14335,6 +14344,8 @@
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.k8sServiceAccount);
                     if (message.oauth2Client != null && message.hasOwnProperty("oauth2Client"))
                         $root.flyteidl.core.OAuth2Client.encode(message.oauth2Client, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    if (message.userIdentifier != null && message.hasOwnProperty("userIdentifier"))
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.userIdentifier);
                     return writer;
                 };
     
@@ -14364,6 +14375,9 @@
                             break;
                         case 3:
                             message.oauth2Client = $root.flyteidl.core.OAuth2Client.decode(reader, reader.uint32());
+                            break;
+                        case 4:
+                            message.userIdentifier = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -14395,6 +14409,9 @@
                         if (error)
                             return "oauth2Client." + error;
                     }
+                    if (message.userIdentifier != null && message.hasOwnProperty("userIdentifier"))
+                        if (!$util.isString(message.userIdentifier))
+                            return "userIdentifier: string expected";
                     return null;
                 };
     
@@ -21299,7 +21316,7 @@
                  * Properties of an Envs.
                  * @memberof flyteidl.admin
                  * @interface IEnvs
-                 * @property {Object.<string,string>|null} [values] Envs values
+                 * @property {Array.<flyteidl.core.IKeyValuePair>|null} [values] Envs values
                  */
     
                 /**
@@ -21311,7 +21328,7 @@
                  * @param {flyteidl.admin.IEnvs=} [properties] Properties to set
                  */
                 function Envs(properties) {
-                    this.values = {};
+                    this.values = [];
                     if (properties)
                         for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                             if (properties[keys[i]] != null)
@@ -21320,11 +21337,11 @@
     
                 /**
                  * Envs values.
-                 * @member {Object.<string,string>} values
+                 * @member {Array.<flyteidl.core.IKeyValuePair>} values
                  * @memberof flyteidl.admin.Envs
                  * @instance
                  */
-                Envs.prototype.values = $util.emptyObject;
+                Envs.prototype.values = $util.emptyArray;
     
                 /**
                  * Creates a new Envs instance using the specified properties.
@@ -21350,9 +21367,9 @@
                 Envs.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.values != null && message.hasOwnProperty("values"))
-                        for (var keys = Object.keys(message.values), i = 0; i < keys.length; ++i)
-                            writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.values[keys[i]]).ldelim();
+                    if (message.values != null && message.values.length)
+                        for (var i = 0; i < message.values.length; ++i)
+                            $root.flyteidl.core.KeyValuePair.encode(message.values[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                     return writer;
                 };
     
@@ -21370,17 +21387,14 @@
                 Envs.decode = function decode(reader, length) {
                     if (!(reader instanceof $Reader))
                         reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Envs(), key;
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.flyteidl.admin.Envs();
                     while (reader.pos < end) {
                         var tag = reader.uint32();
                         switch (tag >>> 3) {
                         case 1:
-                            reader.skip().pos++;
-                            if (message.values === $util.emptyObject)
-                                message.values = {};
-                            key = reader.string();
-                            reader.pos++;
-                            message.values[key] = reader.string();
+                            if (!(message.values && message.values.length))
+                                message.values = [];
+                            message.values.push($root.flyteidl.core.KeyValuePair.decode(reader, reader.uint32()));
                             break;
                         default:
                             reader.skipType(tag & 7);
@@ -21402,12 +21416,13 @@
                     if (typeof message !== "object" || message === null)
                         return "object expected";
                     if (message.values != null && message.hasOwnProperty("values")) {
-                        if (!$util.isObject(message.values))
-                            return "values: object expected";
-                        var key = Object.keys(message.values);
-                        for (var i = 0; i < key.length; ++i)
-                            if (!$util.isString(message.values[key[i]]))
-                                return "values: string{k:string} expected";
+                        if (!Array.isArray(message.values))
+                            return "values: array expected";
+                        for (var i = 0; i < message.values.length; ++i) {
+                            var error = $root.flyteidl.core.KeyValuePair.verify(message.values[i]);
+                            if (error)
+                                return "values." + error;
+                        }
                     }
                     return null;
                 };

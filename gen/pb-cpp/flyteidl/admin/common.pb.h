@@ -37,6 +37,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "flyteidl/core/execution.pb.h"
 #include "flyteidl/core/identifier.pb.h"
+#include "flyteidl/core/literals.pb.h"
 #include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -48,7 +49,7 @@ struct TableStruct_flyteidl_2fadmin_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[27]
+  static const ::google::protobuf::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -72,9 +73,6 @@ extern EmailNotificationDefaultTypeInternal _EmailNotification_default_instance_
 class Envs;
 class EnvsDefaultTypeInternal;
 extern EnvsDefaultTypeInternal _Envs_default_instance_;
-class Envs_ValuesEntry_DoNotUse;
-class Envs_ValuesEntry_DoNotUseDefaultTypeInternal;
-extern Envs_ValuesEntry_DoNotUseDefaultTypeInternal _Envs_ValuesEntry_DoNotUse_default_instance_;
 class FlyteURLs;
 class FlyteURLsDefaultTypeInternal;
 extern FlyteURLsDefaultTypeInternal _FlyteURLs_default_instance_;
@@ -147,7 +145,6 @@ template<> ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse* Arena::CreateMay
 template<> ::flyteidl::admin::AuthRole* Arena::CreateMaybeMessage<::flyteidl::admin::AuthRole>(Arena*);
 template<> ::flyteidl::admin::EmailNotification* Arena::CreateMaybeMessage<::flyteidl::admin::EmailNotification>(Arena*);
 template<> ::flyteidl::admin::Envs* Arena::CreateMaybeMessage<::flyteidl::admin::Envs>(Arena*);
-template<> ::flyteidl::admin::Envs_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Envs_ValuesEntry_DoNotUse>(Arena*);
 template<> ::flyteidl::admin::FlyteURLs* Arena::CreateMaybeMessage<::flyteidl::admin::FlyteURLs>(Arena*);
 template<> ::flyteidl::admin::Labels* Arena::CreateMaybeMessage<::flyteidl::admin::Labels>(Arena*);
 template<> ::flyteidl::admin::Labels_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage<::flyteidl::admin::Labels_ValuesEntry_DoNotUse>(Arena*);
@@ -3022,30 +3019,6 @@ class Annotations final :
 };
 // -------------------------------------------------------------------
 
-class Envs_ValuesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Envs_ValuesEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-static bool _ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  typedef ::google::protobuf::internal::MapEntry<Envs_ValuesEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  Envs_ValuesEntry_DoNotUse();
-  Envs_ValuesEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const Envs_ValuesEntry_DoNotUse& other);
-  static const Envs_ValuesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Envs_ValuesEntry_DoNotUse*>(&_Envs_ValuesEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
 class Envs final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:flyteidl.admin.Envs) */ {
  public:
@@ -3084,7 +3057,7 @@ class Envs final :
                &_Envs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(Envs* other);
   friend void swap(Envs& a, Envs& b) {
@@ -3139,29 +3112,26 @@ class Envs final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
-  // map<string, string> values = 1;
+  // repeated .flyteidl.core.KeyValuePair values = 1;
   int values_size() const;
   void clear_values();
   static const int kValuesFieldNumber = 1;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      values() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
+  ::flyteidl::core::KeyValuePair* mutable_values(int index);
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
       mutable_values();
+  const ::flyteidl::core::KeyValuePair& values(int index) const;
+  ::flyteidl::core::KeyValuePair* add_values();
+  const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
+      values() const;
 
   // @@protoc_insertion_point(class_scope:flyteidl.admin.Envs)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      Envs_ValuesEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > values_;
+  ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair > values_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_flyteidl_2fadmin_2fcommon_2eproto;
 };
@@ -3205,7 +3175,7 @@ class AuthRole final :
                &_AuthRole_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(AuthRole* other);
   friend void swap(AuthRole& a, AuthRole& b) {
@@ -3340,7 +3310,7 @@ class RawOutputDataConfig final :
                &_RawOutputDataConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(RawOutputDataConfig* other);
   friend void swap(RawOutputDataConfig& a, RawOutputDataConfig& b) {
@@ -3460,7 +3430,7 @@ class FlyteURLs final :
                &_FlyteURLs_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(FlyteURLs* other);
   friend void swap(FlyteURLs& a, FlyteURLs& b) {
@@ -5726,26 +5696,33 @@ Annotations::mutable_values() {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // Envs
 
-// map<string, string> values = 1;
+// repeated .flyteidl.core.KeyValuePair values = 1;
 inline int Envs::values_size() const {
   return values_.size();
 }
-inline void Envs::clear_values() {
-  values_.Clear();
+inline ::flyteidl::core::KeyValuePair* Envs::mutable_values(int index) {
+  // @@protoc_insertion_point(field_mutable:flyteidl.admin.Envs.values)
+  return values_.Mutable(index);
 }
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-Envs::values() const {
-  // @@protoc_insertion_point(field_map:flyteidl.admin.Envs.values)
-  return values_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
+inline ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >*
 Envs::mutable_values() {
-  // @@protoc_insertion_point(field_mutable_map:flyteidl.admin.Envs.values)
-  return values_.MutableMap();
+  // @@protoc_insertion_point(field_mutable_list:flyteidl.admin.Envs.values)
+  return &values_;
+}
+inline const ::flyteidl::core::KeyValuePair& Envs::values(int index) const {
+  // @@protoc_insertion_point(field_get:flyteidl.admin.Envs.values)
+  return values_.Get(index);
+}
+inline ::flyteidl::core::KeyValuePair* Envs::add_values() {
+  // @@protoc_insertion_point(field_add:flyteidl.admin.Envs.values)
+  return values_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::flyteidl::core::KeyValuePair >&
+Envs::values() const {
+  // @@protoc_insertion_point(field_list:flyteidl.admin.Envs.values)
+  return values_;
 }
 
 // -------------------------------------------------------------------
@@ -6081,8 +6058,6 @@ inline void FlyteURLs::set_allocated_deck(::std::string* deck) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

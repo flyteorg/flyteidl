@@ -3713,9 +3713,9 @@
       "type": "object",
       "properties": {
         "values": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coreKeyValuePair"
           },
           "description": "Map of custom environment variables to be applied to the execution resource."
         }
@@ -6062,6 +6062,10 @@
         "oauth2_client": {
           "$ref": "#/definitions/coreOAuth2Client",
           "description": "oauth2_client references an oauth2 client. Backend plugins can use this information to impersonate the client when\nmaking external calls."
+        },
+        "user_identifier": {
+          "type": "string",
+          "description": "user_identifier references the id of the user who executes the task."
         }
       },
       "description": "Identity encapsulates the various security identities a task can run as. It's up to the underlying plugin to pick the\nright identity for the execution environment."

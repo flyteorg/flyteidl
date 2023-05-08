@@ -1605,7 +1605,20 @@ func (m *Envs) Validate() error {
 		return nil
 	}
 
-	// no validation rules for Values
+	for idx, item := range m.GetValues() {
+		_, _ = idx, item
+
+		if v, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := v.Validate(); err != nil {
+				return EnvsValidationError{
+					field:  fmt.Sprintf("Values[%v]", idx),
+					reason: "embedded message failed validation",
+					cause:  err,
+				}
+			}
+		}
+
+	}
 
 	return nil
 }

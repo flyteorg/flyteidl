@@ -5967,6 +5967,9 @@ export namespace flyteidl {
 
             /** Identity oauth2Client */
             oauth2Client?: (flyteidl.core.IOAuth2Client|null);
+
+            /** Identity userIdentifier */
+            userIdentifier?: (string|null);
         }
 
         /** Represents an Identity. */
@@ -5986,6 +5989,9 @@ export namespace flyteidl {
 
             /** Identity oauth2Client. */
             public oauth2Client?: (flyteidl.core.IOAuth2Client|null);
+
+            /** Identity userIdentifier. */
+            public userIdentifier: string;
 
             /**
              * Creates a new Identity instance using the specified properties.
@@ -8780,7 +8786,7 @@ export namespace flyteidl {
         interface IEnvs {
 
             /** Envs values */
-            values?: ({ [k: string]: string }|null);
+            values?: (flyteidl.core.IKeyValuePair[]|null);
         }
 
         /** Represents an Envs. */
@@ -8793,7 +8799,7 @@ export namespace flyteidl {
             constructor(properties?: flyteidl.admin.IEnvs);
 
             /** Envs values. */
-            public values: { [k: string]: string };
+            public values: flyteidl.core.IKeyValuePair[];
 
             /**
              * Creates a new Envs instance using the specified properties.

@@ -18,7 +18,6 @@
 
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Annotations_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EmailNotification_flyteidl_2fadmin_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Envs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Labels_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NamedEntityIdentifier_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NamedEntityMetadata_flyteidl_2fadmin_2fcommon_2eproto;
@@ -27,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::prot
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Sort_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fadmin_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_NamedEntity_flyteidl_2fadmin_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fidentifier_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier_flyteidl_2fcore_2fidentifier_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_flyteidl_2fcore_2fliterals_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_KeyValuePair_flyteidl_2fcore_2fliterals_2eproto;
 namespace flyteidl {
 namespace admin {
 class NamedEntityIdentifierDefaultTypeInternal {
@@ -120,10 +120,6 @@ class AnnotationsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Annotations> _instance;
 } _Annotations_default_instance_;
-class Envs_ValuesEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Envs_ValuesEntry_DoNotUse> _instance;
-} _Envs_ValuesEntry_DoNotUse_default_instance_;
 class EnvsDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Envs> _instance;
@@ -465,19 +461,6 @@ static void InitDefaultsAnnotations_flyteidl_2fadmin_2fcommon_2eproto() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAnnotations_flyteidl_2fadmin_2fcommon_2eproto}, {
       &scc_info_Annotations_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base,}};
 
-static void InitDefaultsEnvs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::flyteidl::admin::_Envs_ValuesEntry_DoNotUse_default_instance_;
-    new (ptr) ::flyteidl::admin::Envs_ValuesEntry_DoNotUse();
-  }
-  ::flyteidl::admin::Envs_ValuesEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Envs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEnvs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto}, {}};
-
 static void InitDefaultsEnvs_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -491,7 +474,7 @@ static void InitDefaultsEnvs_flyteidl_2fadmin_2fcommon_2eproto() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_Envs_flyteidl_2fadmin_2fcommon_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEnvs_flyteidl_2fadmin_2fcommon_2eproto}, {
-      &scc_info_Envs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base,}};
+      &scc_info_KeyValuePair_flyteidl_2fcore_2fliterals_2eproto.base,}};
 
 static void InitDefaultsAuthRole_flyteidl_2fadmin_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -558,14 +541,13 @@ void InitDefaults_flyteidl_2fadmin_2fcommon_2eproto() {
   ::google::protobuf::internal::InitSCC(&scc_info_Labels_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Annotations_flyteidl_2fadmin_2fcommon_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Envs_ValuesEntry_DoNotUse_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Envs_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AuthRole_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RawOutputDataConfig_flyteidl_2fadmin_2fcommon_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_FlyteURLs_flyteidl_2fadmin_2fcommon_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[27];
+::google::protobuf::Metadata file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[26];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto[2];
 constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto = nullptr;
 
@@ -738,15 +720,6 @@ const ::google::protobuf::uint32 TableStruct_flyteidl_2fadmin_2fcommon_2eproto::
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Annotations, values_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Envs_ValuesEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Envs_ValuesEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Envs_ValuesEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Envs_ValuesEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::flyteidl::admin::Envs, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -798,11 +771,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SE
   { 147, -1, sizeof(::flyteidl::admin::Labels)},
   { 153, 160, sizeof(::flyteidl::admin::Annotations_ValuesEntry_DoNotUse)},
   { 162, -1, sizeof(::flyteidl::admin::Annotations)},
-  { 168, 175, sizeof(::flyteidl::admin::Envs_ValuesEntry_DoNotUse)},
-  { 177, -1, sizeof(::flyteidl::admin::Envs)},
-  { 183, -1, sizeof(::flyteidl::admin::AuthRole)},
-  { 190, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
-  { 196, -1, sizeof(::flyteidl::admin::FlyteURLs)},
+  { 168, -1, sizeof(::flyteidl::admin::Envs)},
+  { 174, -1, sizeof(::flyteidl::admin::AuthRole)},
+  { 181, -1, sizeof(::flyteidl::admin::RawOutputDataConfig)},
+  { 187, -1, sizeof(::flyteidl::admin::FlyteURLs)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -828,7 +800,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Labels_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Annotations_ValuesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Annotations_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Envs_ValuesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_Envs_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_AuthRole_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::flyteidl::admin::_RawOutputDataConfig_default_instance_),
@@ -838,96 +809,96 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 ::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto = {
   {}, AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto, "flyteidl/admin/common.proto", schemas,
   file_default_instances, TableStruct_flyteidl_2fadmin_2fcommon_2eproto::offsets,
-  file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto, 27, file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto,
+  file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto, 26, file_level_enum_descriptors_flyteidl_2fadmin_2fcommon_2eproto, file_level_service_descriptors_flyteidl_2fadmin_2fcommon_2eproto,
 };
 
 const char descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto[] =
   "\n\033flyteidl/admin/common.proto\022\016flyteidl."
   "admin\032\035flyteidl/core/execution.proto\032\036fl"
-  "yteidl/core/identifier.proto\032\037google/pro"
-  "tobuf/timestamp.proto\"F\n\025NamedEntityIden"
-  "tifier\022\017\n\007project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022"
-  "\014\n\004name\030\003 \001(\t\"[\n\023NamedEntityMetadata\022\023\n\013"
-  "description\030\001 \001(\t\022/\n\005state\030\002 \001(\0162 .flyte"
-  "idl.admin.NamedEntityState\"\253\001\n\013NamedEnti"
-  "ty\0222\n\rresource_type\030\001 \001(\0162\033.flyteidl.cor"
-  "e.ResourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.ad"
-  "min.NamedEntityIdentifier\0225\n\010metadata\030\003 "
-  "\001(\0132#.flyteidl.admin.NamedEntityMetadata"
-  "\"r\n\004Sort\022\013\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\016"
-  "2\036.flyteidl.admin.Sort.Direction\"*\n\tDire"
-  "ction\022\016\n\nDESCENDING\020\000\022\r\n\tASCENDING\020\001\"\231\001\n"
-  " NamedEntityIdentifierListRequest\022\017\n\007pro"
-  "ject\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001("
-  "\r\022\r\n\005token\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyt"
-  "eidl.admin.Sort\022\017\n\007filters\030\006 \001(\t\"\303\001\n\026Nam"
-  "edEntityListRequest\0222\n\rresource_type\030\001 \001"
-  "(\0162\033.flyteidl.core.ResourceType\022\017\n\007proje"
-  "ct\030\002 \001(\t\022\016\n\006domain\030\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022"
-  "\r\n\005token\030\005 \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flytei"
-  "dl.admin.Sort\022\017\n\007filters\030\007 \001(\t\"c\n\031NamedE"
-  "ntityIdentifierList\0227\n\010entities\030\001 \003(\0132%."
-  "flyteidl.admin.NamedEntityIdentifier\022\r\n\005"
-  "token\030\002 \001(\t\"O\n\017NamedEntityList\022-\n\010entiti"
-  "es\030\001 \003(\0132\033.flyteidl.admin.NamedEntity\022\r\n"
-  "\005token\030\002 \001(\t\"~\n\025NamedEntityGetRequest\0222\n"
-  "\rresource_type\030\001 \001(\0162\033.flyteidl.core.Res"
-  "ourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.N"
-  "amedEntityIdentifier\"\270\001\n\030NamedEntityUpda"
-  "teRequest\0222\n\rresource_type\030\001 \001(\0162\033.flyte"
-  "idl.core.ResourceType\0221\n\002id\030\002 \001(\0132%.flyt"
-  "eidl.admin.NamedEntityIdentifier\0225\n\010meta"
-  "data\030\003 \001(\0132#.flyteidl.admin.NamedEntityM"
-  "etadata\"\033\n\031NamedEntityUpdateResponse\"9\n\020"
-  "ObjectGetRequest\022%\n\002id\030\001 \001(\0132\031.flyteidl."
-  "core.Identifier\"\236\001\n\023ResourceListRequest\022"
-  "1\n\002id\030\001 \001(\0132%.flyteidl.admin.NamedEntity"
-  "Identifier\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t"
-  "\022\017\n\007filters\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.fly"
-  "teidl.admin.Sort\"-\n\021EmailNotification\022\030\n"
-  "\020recipients_email\030\001 \003(\t\"1\n\025PagerDutyNoti"
-  "fication\022\030\n\020recipients_email\030\001 \003(\t\"-\n\021Sl"
-  "ackNotification\022\030\n\020recipients_email\030\001 \003("
-  "\t\"\363\001\n\014Notification\0226\n\006phases\030\001 \003(\0162&.fly"
-  "teidl.core.WorkflowExecution.Phase\0222\n\005em"
-  "ail\030\002 \001(\0132!.flyteidl.admin.EmailNotifica"
-  "tionH\000\022;\n\npager_duty\030\003 \001(\0132%.flyteidl.ad"
-  "min.PagerDutyNotificationH\000\0222\n\005slack\030\004 \001"
-  "(\0132!.flyteidl.admin.SlackNotificationH\000B"
-  "\006\n\004type\")\n\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes"
-  "\030\002 \001(\003:\002\030\001\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".f"
-  "lyteidl.admin.Labels.ValuesEntry\032-\n\013Valu"
-  "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
-  "u\n\013Annotations\0227\n\006values\030\001 \003(\0132\'.flyteid"
-  "l.admin.Annotations.ValuesEntry\032-\n\013Value"
-  "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"g"
-  "\n\004Envs\0220\n\006values\030\001 \003(\0132 .flyteidl.admin."
-  "Envs.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003key\030\001"
-  " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"N\n\010AuthRole\022\032\n\022a"
-  "ssumable_iam_role\030\001 \001(\t\022\"\n\032kubernetes_se"
-  "rvice_account\030\002 \001(\t:\002\030\001\"5\n\023RawOutputData"
-  "Config\022\036\n\026output_location_prefix\030\001 \001(\t\":"
-  "\n\tFlyteURLs\022\016\n\006inputs\030\001 \001(\t\022\017\n\007outputs\030\002"
-  " \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020NamedEntityState\022\027"
-  "\n\023NAMED_ENTITY_ACTIVE\020\000\022\031\n\025NAMED_ENTITY_"
-  "ARCHIVED\020\001\022\024\n\020SYSTEM_GENERATED\020\002B7Z5gith"
-  "ub.com/flyteorg/flyteidl/gen/pb-go/flyte"
-  "idl/adminb\006proto3"
+  "yteidl/core/identifier.proto\032\034flyteidl/c"
+  "ore/literals.proto\032\037google/protobuf/time"
+  "stamp.proto\"F\n\025NamedEntityIdentifier\022\017\n\007"
+  "project\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\022\014\n\004name\030\003 "
+  "\001(\t\"[\n\023NamedEntityMetadata\022\023\n\013descriptio"
+  "n\030\001 \001(\t\022/\n\005state\030\002 \001(\0162 .flyteidl.admin."
+  "NamedEntityState\"\253\001\n\013NamedEntity\0222\n\rreso"
+  "urce_type\030\001 \001(\0162\033.flyteidl.core.Resource"
+  "Type\0221\n\002id\030\002 \001(\0132%.flyteidl.admin.NamedE"
+  "ntityIdentifier\0225\n\010metadata\030\003 \001(\0132#.flyt"
+  "eidl.admin.NamedEntityMetadata\"r\n\004Sort\022\013"
+  "\n\003key\030\001 \001(\t\0221\n\tdirection\030\002 \001(\0162\036.flyteid"
+  "l.admin.Sort.Direction\"*\n\tDirection\022\016\n\nD"
+  "ESCENDING\020\000\022\r\n\tASCENDING\020\001\"\231\001\n NamedEnti"
+  "tyIdentifierListRequest\022\017\n\007project\030\001 \001(\t"
+  "\022\016\n\006domain\030\002 \001(\t\022\r\n\005limit\030\003 \001(\r\022\r\n\005token"
+  "\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admin"
+  ".Sort\022\017\n\007filters\030\006 \001(\t\"\303\001\n\026NamedEntityLi"
+  "stRequest\0222\n\rresource_type\030\001 \001(\0162\033.flyte"
+  "idl.core.ResourceType\022\017\n\007project\030\002 \001(\t\022\016"
+  "\n\006domain\030\003 \001(\t\022\r\n\005limit\030\004 \001(\r\022\r\n\005token\030\005"
+  " \001(\t\022%\n\007sort_by\030\006 \001(\0132\024.flyteidl.admin.S"
+  "ort\022\017\n\007filters\030\007 \001(\t\"c\n\031NamedEntityIdent"
+  "ifierList\0227\n\010entities\030\001 \003(\0132%.flyteidl.a"
+  "dmin.NamedEntityIdentifier\022\r\n\005token\030\002 \001("
+  "\t\"O\n\017NamedEntityList\022-\n\010entities\030\001 \003(\0132\033"
+  ".flyteidl.admin.NamedEntity\022\r\n\005token\030\002 \001"
+  "(\t\"~\n\025NamedEntityGetRequest\0222\n\rresource_"
+  "type\030\001 \001(\0162\033.flyteidl.core.ResourceType\022"
+  "1\n\002id\030\002 \001(\0132%.flyteidl.admin.NamedEntity"
+  "Identifier\"\270\001\n\030NamedEntityUpdateRequest\022"
+  "2\n\rresource_type\030\001 \001(\0162\033.flyteidl.core.R"
+  "esourceType\0221\n\002id\030\002 \001(\0132%.flyteidl.admin"
+  ".NamedEntityIdentifier\0225\n\010metadata\030\003 \001(\013"
+  "2#.flyteidl.admin.NamedEntityMetadata\"\033\n"
+  "\031NamedEntityUpdateResponse\"9\n\020ObjectGetR"
+  "equest\022%\n\002id\030\001 \001(\0132\031.flyteidl.core.Ident"
+  "ifier\"\236\001\n\023ResourceListRequest\0221\n\002id\030\001 \001("
+  "\0132%.flyteidl.admin.NamedEntityIdentifier"
+  "\022\r\n\005limit\030\002 \001(\r\022\r\n\005token\030\003 \001(\t\022\017\n\007filter"
+  "s\030\004 \001(\t\022%\n\007sort_by\030\005 \001(\0132\024.flyteidl.admi"
+  "n.Sort\"-\n\021EmailNotification\022\030\n\020recipient"
+  "s_email\030\001 \003(\t\"1\n\025PagerDutyNotification\022\030"
+  "\n\020recipients_email\030\001 \003(\t\"-\n\021SlackNotific"
+  "ation\022\030\n\020recipients_email\030\001 \003(\t\"\363\001\n\014Noti"
+  "fication\0226\n\006phases\030\001 \003(\0162&.flyteidl.core"
+  ".WorkflowExecution.Phase\0222\n\005email\030\002 \001(\0132"
+  "!.flyteidl.admin.EmailNotificationH\000\022;\n\n"
+  "pager_duty\030\003 \001(\0132%.flyteidl.admin.PagerD"
+  "utyNotificationH\000\0222\n\005slack\030\004 \001(\0132!.flyte"
+  "idl.admin.SlackNotificationH\000B\006\n\004type\")\n"
+  "\007UrlBlob\022\013\n\003url\030\001 \001(\t\022\r\n\005bytes\030\002 \001(\003:\002\030\001"
+  "\"k\n\006Labels\0222\n\006values\030\001 \003(\0132\".flyteidl.ad"
+  "min.Labels.ValuesEntry\032-\n\013ValuesEntry\022\013\n"
+  "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\013Annotat"
+  "ions\0227\n\006values\030\001 \003(\0132\'.flyteidl.admin.An"
+  "notations.ValuesEntry\032-\n\013ValuesEntry\022\013\n\003"
+  "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\004Envs\022+\n\006"
+  "values\030\001 \003(\0132\033.flyteidl.core.KeyValuePai"
+  "r\"N\n\010AuthRole\022\032\n\022assumable_iam_role\030\001 \001("
+  "\t\022\"\n\032kubernetes_service_account\030\002 \001(\t:\002\030"
+  "\001\"5\n\023RawOutputDataConfig\022\036\n\026output_locat"
+  "ion_prefix\030\001 \001(\t\":\n\tFlyteURLs\022\016\n\006inputs\030"
+  "\001 \001(\t\022\017\n\007outputs\030\002 \001(\t\022\014\n\004deck\030\003 \001(\t*\\\n\020"
+  "NamedEntityState\022\027\n\023NAMED_ENTITY_ACTIVE\020"
+  "\000\022\031\n\025NAMED_ENTITY_ARCHIVED\020\001\022\024\n\020SYSTEM_G"
+  "ENERATED\020\002B7Z5github.com/flyteorg/flytei"
+  "dl/gen/pb-go/flyteidl/adminb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_flyteidl_2fadmin_2fcommon_2eproto = {
   false, InitDefaults_flyteidl_2fadmin_2fcommon_2eproto, 
   descriptor_table_protodef_flyteidl_2fadmin_2fcommon_2eproto,
-  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2817,
+  "flyteidl/admin/common.proto", &assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto, 2795,
 };
 
 void AddDescriptors_flyteidl_2fadmin_2fcommon_2eproto() {
-  static constexpr ::google::protobuf::internal::InitFunc deps[3] =
+  static constexpr ::google::protobuf::internal::InitFunc deps[4] =
   {
     ::AddDescriptors_flyteidl_2fcore_2fexecution_2eproto,
     ::AddDescriptors_flyteidl_2fcore_2fidentifier_2eproto,
+    ::AddDescriptors_flyteidl_2fcore_2fliterals_2eproto,
     ::AddDescriptors_google_2fprotobuf_2ftimestamp_2eproto,
   };
- ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fcommon_2eproto, deps, 3);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_flyteidl_2fadmin_2fcommon_2eproto, deps, 4);
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -8966,53 +8937,15 @@ void Annotations::InternalSwap(Annotations* other) {
 
 // ===================================================================
 
-Envs_ValuesEntry_DoNotUse::Envs_ValuesEntry_DoNotUse() {}
-Envs_ValuesEntry_DoNotUse::Envs_ValuesEntry_DoNotUse(::google::protobuf::Arena* arena)
-    : SuperType(arena) {}
-void Envs_ValuesEntry_DoNotUse::MergeFrom(const Envs_ValuesEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata Envs_ValuesEntry_DoNotUse::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_flyteidl_2fadmin_2fcommon_2eproto);
-  return ::file_level_metadata_flyteidl_2fadmin_2fcommon_2eproto[22];
-}
-void Envs_ValuesEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Envs_ValuesEntry_DoNotUse::_ParseMap(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx) {
-  using MF = ::google::protobuf::internal::MapField<
-      Envs_ValuesEntry_DoNotUse, EntryKeyType, EntryValueType,
-      kEntryKeyFieldType, kEntryValueFieldType,
-      kEntryDefaultEnumValue>;
-  auto mf = static_cast<MF*>(object);
-  Parser<MF, ::google::protobuf::Map<EntryKeyType, EntryValueType>> parser(mf);
-#define DO_(x) if (!(x)) return false
-  DO_(parser.ParseMap(begin, end));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.key().data(), static_cast<int>(parser.key().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.Envs.ValuesEntry.key"));
-  DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-    parser.value().data(), static_cast<int>(parser.value().length()),
-    ::google::protobuf::internal::WireFormatLite::PARSE,
-    "flyteidl.admin.Envs.ValuesEntry.value"));
-#undef DO_
-  return true;
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-
-// ===================================================================
-
 void Envs::InitAsDefaultInstance() {
 }
 class Envs::HasBitSetters {
  public:
 };
 
+void Envs::clear_values() {
+  values_.Clear();
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Envs::kValuesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -9024,9 +8957,9 @@ Envs::Envs()
 }
 Envs::Envs(const Envs& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      values_(from.values_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  values_.MergeFrom(from.values_);
   // @@protoc_insertion_point(copy_constructor:flyteidl.admin.Envs)
 }
 
@@ -9075,21 +9008,18 @@ const char* Envs::_InternalParse(const char* begin, const char* end, void* objec
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // map<string, string> values = 1;
+      // repeated .flyteidl.core.KeyValuePair values = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::google::protobuf::internal::SlowMapEntryParser;
-          auto parse_map = ::flyteidl::admin::Envs_ValuesEntry_DoNotUse::_ParseMap;
-          ctx->extra_parse_data().payload.clear();
-          ctx->extra_parse_data().parse_map = parse_map;
-          object = &msg->values_;
+          parser_till_end = ::flyteidl::core::KeyValuePair::_InternalParse;
+          object = msg->add_values();
           if (size > end - ptr) goto len_delim_till_end;
-          auto newend = ptr + size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(parse_map(ptr, newend, object, ctx));
-          ptr = newend;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
           if (ptr >= end) break;
         } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
         break;
@@ -9124,26 +9054,11 @@ bool Envs::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // map<string, string> values = 1;
+      // repeated .flyteidl.core.KeyValuePair values = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          Envs_ValuesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              Envs_ValuesEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&values_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.Envs.ValuesEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "flyteidl.admin.Envs.ValuesEntry.value"));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_values()));
         } else {
           goto handle_unusual;
         }
@@ -9177,53 +9092,13 @@ void Envs::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, string> values = 1;
-  if (!this->values().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.Envs.ValuesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.Envs.ValuesEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->values().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->values().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->values().begin();
-          it != this->values().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Envs_ValuesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(values_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(1, *entry, output);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<Envs_ValuesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->values().begin();
-          it != this->values().end(); ++it) {
-        entry.reset(values_.NewEntryWrapper(it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(1, *entry, output);
-        Utf8Check::Check(&(*it));
-      }
-    }
+  // repeated .flyteidl.core.KeyValuePair values = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->values_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->values(static_cast<int>(i)),
+      output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9239,53 +9114,12 @@ void Envs::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, string> values = 1;
-  if (!this->values().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.Envs.ValuesEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "flyteidl.admin.Envs.ValuesEntry.value");
-      }
-    };
-
-    if (false &&
-        this->values().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->values().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->values().begin();
-          it != this->values().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Envs_ValuesEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(values_.NewEntryWrapper(items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, *entry, target);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      ::std::unique_ptr<Envs_ValuesEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->values().begin();
-          it != this->values().end(); ++it) {
-        entry.reset(values_.NewEntryWrapper(it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(1, *entry, target);
-        Utf8Check::Check(&(*it));
-      }
-    }
+  // repeated .flyteidl.core.KeyValuePair values = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->values_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->values(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9309,17 +9143,14 @@ size_t Envs::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> values = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->values_size());
+  // repeated .flyteidl.core.KeyValuePair values = 1;
   {
-    ::std::unique_ptr<Envs_ValuesEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->values().begin();
-        it != this->values().end(); ++it) {
-      entry.reset(values_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
+    unsigned int count = static_cast<unsigned int>(this->values_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->values(static_cast<int>(i)));
     }
   }
 
@@ -9378,7 +9209,7 @@ void Envs::Swap(Envs* other) {
 void Envs::InternalSwap(Envs* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  values_.Swap(&other->values_);
+  CastToBase(&values_)->InternalSwap(CastToBase(&other->values_));
 }
 
 ::google::protobuf::Metadata Envs::GetMetadata() const {
@@ -10567,9 +10398,6 @@ template<> PROTOBUF_NOINLINE ::flyteidl::admin::Annotations_ValuesEntry_DoNotUse
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::Annotations* Arena::CreateMaybeMessage< ::flyteidl::admin::Annotations >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::Annotations >(arena);
-}
-template<> PROTOBUF_NOINLINE ::flyteidl::admin::Envs_ValuesEntry_DoNotUse* Arena::CreateMaybeMessage< ::flyteidl::admin::Envs_ValuesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::flyteidl::admin::Envs_ValuesEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::flyteidl::admin::Envs* Arena::CreateMaybeMessage< ::flyteidl::admin::Envs >(Arena* arena) {
   return Arena::CreateInternal< ::flyteidl::admin::Envs >(arena);

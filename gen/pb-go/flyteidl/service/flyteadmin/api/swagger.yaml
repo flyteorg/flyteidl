@@ -3409,17 +3409,20 @@ definitions:
     type: "object"
     properties:
       values:
-        type: "object"
+        type: "array"
         description: "Map of custom environment variables to be applied to the execution\
           \ resource."
-        additionalProperties:
-          type: "string"
+        items:
+          $ref: "#/definitions/coreKeyValuePair"
     description: "Environment variable values to be applied to an execution resource.\n\
       In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify\
       \ how to merge environment variables defined at registration and execution time."
     example:
       values:
-        key: "values"
+      - value: "value"
+        key: "key"
+      - value: "value"
+        key: "key"
   adminExecution:
     type: "object"
     properties:
@@ -3532,7 +3535,10 @@ definitions:
         max_parallelism: 6
         envs:
           values:
-            key: "values"
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         labels:
           values:
@@ -3586,6 +3592,7 @@ definitions:
               - "recipients_email"
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -3909,7 +3916,10 @@ definitions:
           max_parallelism: 6
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -3963,6 +3973,7 @@ definitions:
                 - "recipients_email"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -4102,7 +4113,10 @@ definitions:
           max_parallelism: 6
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -4156,6 +4170,7 @@ definitions:
                 - "recipients_email"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -4403,7 +4418,10 @@ definitions:
       max_parallelism: 6
       envs:
         values:
-          key: "values"
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       labels:
         values:
@@ -4457,6 +4475,7 @@ definitions:
             - "recipients_email"
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -4931,7 +4950,10 @@ definitions:
         max_parallelism: 5
         envs:
           values:
-            key: "values"
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         labels:
           values:
@@ -5112,6 +5134,7 @@ definitions:
               required: true
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -5733,7 +5756,10 @@ definitions:
           max_parallelism: 5
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -5914,6 +5940,7 @@ definitions:
                 required: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -6250,7 +6277,10 @@ definitions:
           max_parallelism: 5
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -6431,6 +6461,7 @@ definitions:
                 required: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -6659,7 +6690,10 @@ definitions:
       max_parallelism: 5
       envs:
         values:
-          key: "values"
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       labels:
         values:
@@ -6840,6 +6874,7 @@ definitions:
             required: true
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -6941,10 +6976,14 @@ definitions:
                 key: "values"
             envs:
               values:
-                key: "values"
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -7044,10 +7083,14 @@ definitions:
                 key: "values"
             envs:
               values:
-                key: "values"
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -7180,10 +7223,14 @@ definitions:
               key: "values"
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -7323,10 +7370,14 @@ definitions:
             key: "values"
         envs:
           values:
-            key: "values"
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -11944,6 +11995,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -12206,6 +12258,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -14636,10 +14689,14 @@ definitions:
               key: "values"
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -14759,10 +14816,14 @@ definitions:
                 key: "values"
             envs:
               values:
-                key: "values"
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -14885,10 +14946,14 @@ definitions:
               key: "values"
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -15012,10 +15077,14 @@ definitions:
                 key: "values"
             envs:
               values:
-                key: "values"
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -15504,6 +15573,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -15782,6 +15852,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -16473,6 +16544,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -16745,6 +16817,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -21145,6 +21218,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -21407,6 +21481,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -23500,10 +23575,14 @@ definitions:
               key: "values"
           envs:
             values:
-              key: "values"
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -23630,10 +23709,14 @@ definitions:
                 key: "values"
             envs:
               values:
-                key: "values"
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -27981,6 +28064,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -28243,6 +28327,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -30365,10 +30450,14 @@ definitions:
           key: "values"
       envs:
         values:
-          key: "values"
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -34768,6 +34857,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -35030,6 +35120,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -41338,6 +41429,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -41600,6 +41692,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -44590,6 +44683,7 @@ definitions:
           key: "config"
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -50926,6 +51020,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -51188,6 +51283,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -53616,10 +53712,15 @@ definitions:
         description: "oauth2_client references an oauth2 client. Backend plugins can\
           \ use this information to impersonate the client when\nmaking external calls."
         $ref: "#/definitions/coreOAuth2Client"
+      user_identifier:
+        type: "string"
+        description: "user_identifier references the id of the user who executes the\
+          \ task."
     description: "Identity encapsulates the various security identities a task can\
       \ run as. It's up to the underlying plugin to pick the\nright identity for the\
       \ execution environment."
     example:
+      user_identifier: "user_identifier"
       iam_role: "iam_role"
       oauth2_client:
         client_secret:
@@ -55508,6 +55609,7 @@ definitions:
     description: "SecurityContext holds security attributes that apply to tasks."
     example:
       run_as:
+        user_identifier: "user_identifier"
         iam_role: "iam_role"
         oauth2_client:
           client_secret:
@@ -56237,6 +56339,7 @@ definitions:
         key: "config"
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -63442,6 +63545,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -63704,6 +63808,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
