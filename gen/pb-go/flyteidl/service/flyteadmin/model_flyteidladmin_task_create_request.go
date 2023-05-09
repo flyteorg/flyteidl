@@ -9,6 +9,7 @@
 
 package flyteadmin
 
-// Represents a response structure if task creation succeeds.
-type AdminTaskCreateResponse struct {
+type FlyteidladminTaskCreateRequest struct {
+	Id *CoreIdentifier `json:"id,omitempty"`
+	Spec *AdminTaskSpec `json:"spec,omitempty"`
 }

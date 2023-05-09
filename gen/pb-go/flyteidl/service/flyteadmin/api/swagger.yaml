@@ -2193,13 +2193,13 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/adminTaskCreateRequest"
+          $ref: "#/definitions/flyteidladminTaskCreateRequest"
         x-exportParamName: "Body"
       responses:
         200:
           description: "A successful response."
           schema:
-            $ref: "#/definitions/adminTaskCreateResponse"
+            $ref: "#/definitions/flyteidladminTaskCreateResponse"
   /api/v1/tasks/{id.project}/{id.domain}:
     get:
       tags:
@@ -3405,6 +3405,24 @@ definitions:
       recipients_email:
       - "recipients_email"
       - "recipients_email"
+  adminEnvs:
+    type: "object"
+    properties:
+      values:
+        type: "array"
+        description: "Map of custom environment variables to be applied to the execution\
+          \ resource."
+        items:
+          $ref: "#/definitions/coreKeyValuePair"
+    description: "Environment variable values to be applied to an execution resource.\n\
+      In the future a mode (e.g. OVERRIDE, APPEND, etc) can be defined\nto specify\
+      \ how to merge environment variables defined at registration and execution time."
+    example:
+      values:
+      - value: "value"
+        key: "key"
+      - value: "value"
+        key: "key"
   adminExecution:
     type: "object"
     properties:
@@ -3515,6 +3533,12 @@ definitions:
           values:
             key: "values"
         max_parallelism: 6
+        envs:
+          values:
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         labels:
           values:
@@ -3568,6 +3592,7 @@ definitions:
               - "recipients_email"
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -3889,6 +3914,12 @@ definitions:
             values:
               key: "values"
           max_parallelism: 6
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -3942,6 +3973,7 @@ definitions:
                 - "recipients_email"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -4079,6 +4111,12 @@ definitions:
             values:
               key: "values"
           max_parallelism: 6
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -4132,6 +4170,7 @@ definitions:
                 - "recipients_email"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -4346,6 +4385,9 @@ definitions:
           \ be overwritten for a single execution.\nIf enabled, all calculations are\
           \ performed even if cached results would be available, overwriting the stored\n\
           data once execution finishes successfully."
+      envs:
+        description: "Environment variables to be set for the execution."
+        $ref: "#/definitions/adminEnvs"
     description: "An ExecutionSpec encompasses all data used to launch this execution.\
       \ The Spec does not change over the lifetime\nof an execution as it progresses\
       \ across phase changes."
@@ -4374,6 +4416,12 @@ definitions:
         values:
           key: "values"
       max_parallelism: 6
+      envs:
+        values:
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       labels:
         values:
@@ -4427,6 +4475,7 @@ definitions:
             - "recipients_email"
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -4548,6 +4597,21 @@ definitions:
     - "HOUR"
     - "DAY"
     default: "MINUTE"
+  adminFlyteURLs:
+    type: "object"
+    properties:
+      inputs:
+        type: "string"
+      outputs:
+        type: "string"
+      deck:
+        type: "string"
+    description: "These URLs are returned as part of node and task execution data\
+      \ requests."
+    example:
+      outputs: "outputs"
+      inputs: "inputs"
+      deck: "deck"
   adminGetVersionResponse:
     type: "object"
     properties:
@@ -4884,6 +4948,12 @@ definitions:
           values:
             key: "values"
         max_parallelism: 5
+        envs:
+          values:
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         labels:
           values:
@@ -5064,6 +5134,7 @@ definitions:
               required: true
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -5683,6 +5754,12 @@ definitions:
             values:
               key: "values"
           max_parallelism: 5
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -5863,6 +5940,7 @@ definitions:
                 required: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -6197,6 +6275,12 @@ definitions:
             values:
               key: "values"
           max_parallelism: 5
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           labels:
             values:
@@ -6377,6 +6461,7 @@ definitions:
                 required: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -6541,6 +6626,9 @@ definitions:
           \ be overwritten for a single execution.\nIf enabled, all calculations are\
           \ performed even if cached results would be available, overwriting the stored\n\
           data once execution finishes successfully."
+      envs:
+        description: "Environment variables to be set for the execution."
+        $ref: "#/definitions/adminEnvs"
     description: "User-provided launch plan definition and configuration values."
     example:
       workflow_id:
@@ -6600,6 +6688,12 @@ definitions:
         values:
           key: "values"
       max_parallelism: 5
+      envs:
+        values:
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       labels:
         values:
@@ -6780,6 +6874,7 @@ definitions:
             required: true
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -6879,9 +6974,16 @@ definitions:
             annotations:
               values:
                 key: "values"
+            envs:
+              values:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -6979,9 +7081,16 @@ definitions:
             annotations:
               values:
                 key: "values"
+            envs:
+              values:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -7112,9 +7221,16 @@ definitions:
           annotations:
             values:
               key: "values"
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -7252,9 +7368,16 @@ definitions:
         annotations:
           values:
             key: "values"
+        envs:
+          values:
+          - value: "value"
+            key: "key"
+          - value: "value"
+            key: "key"
         interruptible: true
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -7614,12 +7737,18 @@ definitions:
           \ in the case this node yields a dynamic workflow we return its structure\
           \ here."
         $ref: "#/definitions/flyteidladminDynamicWorkflowNodeMetadata"
+      flyte_urls:
+        $ref: "#/definitions/adminFlyteURLs"
     description: "Response structure for NodeExecutionGetDataRequest which contains\
       \ inputs and outputs for a node execution."
     example:
       outputs:
         bytes: "bytes"
         url: "url"
+      flyte_urls:
+        outputs: "outputs"
+        inputs: "inputs"
+        deck: "deck"
       full_inputs:
         literals: {}
       dynamic_workflow:
@@ -11890,6 +12019,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -12152,6 +12282,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -14592,9 +14723,16 @@ definitions:
           annotations:
             values:
               key: "values"
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -14712,9 +14850,16 @@ definitions:
             annotations:
               values:
                 key: "values"
+            envs:
+              values:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -14835,9 +14980,16 @@ definitions:
           annotations:
             values:
               key: "values"
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -14959,9 +15111,16 @@ definitions:
             annotations:
               values:
                 key: "values"
+            envs:
+              values:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -15450,6 +15609,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -15728,6 +15888,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -15772,20 +15933,6 @@ definitions:
           sql:
             dialect: {}
             statement: "statement"
-  adminTaskCreateRequest:
-    type: "object"
-    properties:
-      id:
-        title: "id represents the unique identifier of the task.\n+required"
-        $ref: "#/definitions/coreIdentifier"
-      spec:
-        title: "Represents the specification for task.\n+required"
-        $ref: "#/definitions/adminTaskSpec"
-    title: "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task`\
-      \ for more details"
-  adminTaskCreateResponse:
-    type: "object"
-    description: "Represents a response structure if task creation succeeds."
   adminTaskExecutionClosure:
     type: "object"
     properties:
@@ -15962,12 +16109,20 @@ definitions:
         description: "Full_outputs will only be populated if they are under a configured\
           \ size threshold."
         $ref: "#/definitions/coreLiteralMap"
+      flyte_urls:
+        title: "flyte tiny url to fetch a core.LiteralMap of task execution's IO\n\
+          Deck will be empty for task"
+        $ref: "#/definitions/adminFlyteURLs"
     description: "Response structure for TaskExecutionGetDataRequest which contains\
       \ inputs and outputs for a task execution."
     example:
       outputs:
         bytes: "bytes"
         url: "url"
+      flyte_urls:
+        outputs: "outputs"
+        inputs: "inputs"
+        deck: "deck"
       full_inputs:
         literals: {}
       inputs:
@@ -16425,6 +16580,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -16697,6 +16853,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -21121,6 +21278,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -21383,6 +21541,7 @@ definitions:
                 key: "config"
               security_context:
                 run_as:
+                  user_identifier: "user_identifier"
                   iam_role: "iam_role"
                   oauth2_client:
                     client_secret:
@@ -23486,9 +23645,16 @@ definitions:
           annotations:
             values:
               key: "values"
+          envs:
+            values:
+            - value: "value"
+              key: "key"
+            - value: "value"
+              key: "key"
           interruptible: true
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -23613,9 +23779,16 @@ definitions:
             annotations:
               values:
                 key: "values"
+            envs:
+              values:
+              - value: "value"
+                key: "key"
+              - value: "value"
+                key: "key"
             interruptible: true
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -27987,6 +28160,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -28249,6 +28423,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -30368,6 +30543,9 @@ definitions:
           \ be overwritten for a single execution.\nIf enabled, all calculations are\
           \ performed even if cached results would be available, overwriting the stored\n\
           data once execution finishes successfully."
+      envs:
+        description: "Environment variables to be set for the execution."
+        $ref: "#/definitions/adminEnvs"
     description: "Adds defaults for customizable workflow-execution specifications\
       \ and overrides."
     example:
@@ -30378,9 +30556,16 @@ definitions:
       annotations:
         values:
           key: "values"
+      envs:
+        values:
+        - value: "value"
+          key: "key"
+        - value: "value"
+          key: "key"
       interruptible: true
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -34804,6 +34989,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -35066,6 +35252,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -41410,6 +41597,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -41672,6 +41860,7 @@ definitions:
                   key: "config"
                 security_context:
                   run_as:
+                    user_identifier: "user_identifier"
                     iam_role: "iam_role"
                     oauth2_client:
                       client_secret:
@@ -44705,6 +44894,7 @@ definitions:
           key: "config"
         security_context:
           run_as:
+            user_identifier: "user_identifier"
             iam_role: "iam_role"
             oauth2_client:
               client_secret:
@@ -51077,6 +51267,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -51339,6 +51530,7 @@ definitions:
             key: "config"
           security_context:
             run_as:
+              user_identifier: "user_identifier"
               iam_role: "iam_role"
               oauth2_client:
                 client_secret:
@@ -53779,10 +53971,15 @@ definitions:
         description: "oauth2_client references an oauth2 client. Backend plugins can\
           \ use this information to impersonate the client when\nmaking external calls."
         $ref: "#/definitions/coreOAuth2Client"
+      user_identifier:
+        type: "string"
+        description: "user_identifier references the id of the user who executes the\
+          \ task."
     description: "Identity encapsulates the various security identities a task can\
       \ run as. It's up to the underlying plugin to pick the\nright identity for the\
       \ execution environment."
     example:
+      user_identifier: "user_identifier"
       iam_role: "iam_role"
       oauth2_client:
         client_secret:
@@ -55678,6 +55875,7 @@ definitions:
     description: "SecurityContext holds security attributes that apply to tasks."
     example:
       run_as:
+        user_identifier: "user_identifier"
         iam_role: "iam_role"
         oauth2_client:
           client_secret:
@@ -56407,6 +56605,7 @@ definitions:
         key: "config"
       security_context:
         run_as:
+          user_identifier: "user_identifier"
           iam_role: "iam_role"
           oauth2_client:
             client_secret:
@@ -63648,6 +63847,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -63910,6 +64110,7 @@ definitions:
               key: "config"
             security_context:
               run_as:
+                user_identifier: "user_identifier"
                 iam_role: "iam_role"
                 oauth2_client:
                   client_secret:
@@ -66066,6 +66267,20 @@ definitions:
         output_data:
           literals: {}
         deck_uri: "deck_uri"
+  flyteidladminTaskCreateRequest:
+    type: "object"
+    properties:
+      id:
+        title: "id represents the unique identifier of the task.\n+required"
+        $ref: "#/definitions/coreIdentifier"
+      spec:
+        title: "Represents the specification for task.\n+required"
+        $ref: "#/definitions/adminTaskSpec"
+    title: "Represents a request structure to create a revision of a task.\nSee :ref:`ref_flyteidl.admin.Task`\
+      \ for more details"
+  flyteidladminTaskCreateResponse:
+    type: "object"
+    description: "Represents a response structure if task creation succeeds."
   flyteidladminTaskExecution:
     type: "object"
     properties:
