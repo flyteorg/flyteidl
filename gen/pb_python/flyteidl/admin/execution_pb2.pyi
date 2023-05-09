@@ -143,11 +143,16 @@ class ExecutionRelaunchRequest(_message.Message):
     def __init__(self, id: _Optional[_Union[_identifier_pb2.WorkflowExecutionIdentifier, _Mapping]] = ..., name: _Optional[str] = ..., overwrite_cache: bool = ...) -> None: ...
 
 class ExecutionSpec(_message.Message):
+<<<<<<< HEAD
     __slots__ = ["annotations", "auth_role", "cluster_assignment", "disable_all", "inputs", "interruptible", "labels", "launch_plan", "max_parallelism", "metadata", "notifications", "overwrite_cache", "quality_of_service", "raw_output_data_config", "security_context"]
     ANNOTATIONS_FIELD_NUMBER: _ClassVar[int]
     AUTH_ROLE_FIELD_NUMBER: _ClassVar[int]
     CLUSTER_ASSIGNMENT_FIELD_NUMBER: _ClassVar[int]
     DISABLE_ALL_FIELD_NUMBER: _ClassVar[int]
+=======
+    __slots__ = ["launch_plan", "inputs", "metadata", "notifications", "disable_all", "labels", "annotations", "security_context", "auth_role", "quality_of_service", "max_parallelism", "raw_output_data_config", "cluster_assignment", "interruptible", "overwrite_cache", "envs"]
+    LAUNCH_PLAN_FIELD_NUMBER: _ClassVar[int]
+>>>>>>> 44ae4010 (Add envs to execution spec (#400))
     INPUTS_FIELD_NUMBER: _ClassVar[int]
     INTERRUPTIBLE_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
@@ -156,6 +161,7 @@ class ExecutionSpec(_message.Message):
     METADATA_FIELD_NUMBER: _ClassVar[int]
     NOTIFICATIONS_FIELD_NUMBER: _ClassVar[int]
     OVERWRITE_CACHE_FIELD_NUMBER: _ClassVar[int]
+<<<<<<< HEAD
     QUALITY_OF_SERVICE_FIELD_NUMBER: _ClassVar[int]
     RAW_OUTPUT_DATA_CONFIG_FIELD_NUMBER: _ClassVar[int]
     SECURITY_CONTEXT_FIELD_NUMBER: _ClassVar[int]
@@ -163,6 +169,10 @@ class ExecutionSpec(_message.Message):
     auth_role: _common_pb2.AuthRole
     cluster_assignment: _cluster_assignment_pb2.ClusterAssignment
     disable_all: bool
+=======
+    ENVS_FIELD_NUMBER: _ClassVar[int]
+    launch_plan: _identifier_pb2.Identifier
+>>>>>>> 44ae4010 (Add envs to execution spec (#400))
     inputs: _literals_pb2.LiteralMap
     interruptible: _wrappers_pb2.BoolValue
     labels: _common_pb2.Labels
@@ -171,10 +181,15 @@ class ExecutionSpec(_message.Message):
     metadata: ExecutionMetadata
     notifications: NotificationList
     overwrite_cache: bool
+<<<<<<< HEAD
     quality_of_service: _execution_pb2.QualityOfService
     raw_output_data_config: _common_pb2.RawOutputDataConfig
     security_context: _security_pb2.SecurityContext
     def __init__(self, launch_plan: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., metadata: _Optional[_Union[ExecutionMetadata, _Mapping]] = ..., notifications: _Optional[_Union[NotificationList, _Mapping]] = ..., disable_all: bool = ..., labels: _Optional[_Union[_common_pb2.Labels, _Mapping]] = ..., annotations: _Optional[_Union[_common_pb2.Annotations, _Mapping]] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., auth_role: _Optional[_Union[_common_pb2.AuthRole, _Mapping]] = ..., quality_of_service: _Optional[_Union[_execution_pb2.QualityOfService, _Mapping]] = ..., max_parallelism: _Optional[int] = ..., raw_output_data_config: _Optional[_Union[_common_pb2.RawOutputDataConfig, _Mapping]] = ..., cluster_assignment: _Optional[_Union[_cluster_assignment_pb2.ClusterAssignment, _Mapping]] = ..., interruptible: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., overwrite_cache: bool = ...) -> None: ...
+=======
+    envs: _common_pb2.Envs
+    def __init__(self, launch_plan: _Optional[_Union[_identifier_pb2.Identifier, _Mapping]] = ..., inputs: _Optional[_Union[_literals_pb2.LiteralMap, _Mapping]] = ..., metadata: _Optional[_Union[ExecutionMetadata, _Mapping]] = ..., notifications: _Optional[_Union[NotificationList, _Mapping]] = ..., disable_all: bool = ..., labels: _Optional[_Union[_common_pb2.Labels, _Mapping]] = ..., annotations: _Optional[_Union[_common_pb2.Annotations, _Mapping]] = ..., security_context: _Optional[_Union[_security_pb2.SecurityContext, _Mapping]] = ..., auth_role: _Optional[_Union[_common_pb2.AuthRole, _Mapping]] = ..., quality_of_service: _Optional[_Union[_execution_pb2.QualityOfService, _Mapping]] = ..., max_parallelism: _Optional[int] = ..., raw_output_data_config: _Optional[_Union[_common_pb2.RawOutputDataConfig, _Mapping]] = ..., cluster_assignment: _Optional[_Union[_cluster_assignment_pb2.ClusterAssignment, _Mapping]] = ..., interruptible: _Optional[_Union[_wrappers_pb2.BoolValue, _Mapping]] = ..., overwrite_cache: bool = ..., envs: _Optional[_Union[_common_pb2.Envs, _Mapping]] = ...) -> None: ...
+>>>>>>> 44ae4010 (Add envs to execution spec (#400))
 
 class ExecutionStateChangeDetails(_message.Message):
     __slots__ = ["occurred_at", "principal", "state"]
